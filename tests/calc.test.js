@@ -39,13 +39,35 @@ a(near(C.parsePrice('63.5c').p, .635) && near(C.parsePrice(String(C.toAmerican(6
 {
   const plats = [{ id: 'polymarket_us', name: 'Polymarket US' }, { id: 'fanduel', name: 'FanDuel' }, { id: 'bet365', name: 'bet365' }];
   const recs = [{ platform: 'Polymarket US', gap: -0.06 }, { platform: 'Polymarket US', gap: -0.08 }, { platform: 'Some Book', gap: 0.1 }, { platform: 'FanDuel', gap: 'x' }];
-  const cmp = [{ book: 'fanduel', diff: 2 }, { book: 'fanduel', diff: 3 }, { book: 'fanduel', diff: NaN }];
+  // two checks of two bets on FanDuel (+2¢ and +3¢ vs Polymarket US) and a broken row
+  const cmp = [{ date: 'd', market_id: 'm1', side: 'yes', fetched_at: 't', book: 'fanduel', book_chance: 52, polymarket_price: 50, diff: 2 },
+    { date: 'd', market_id: 'm2', side: 'yes', fetched_at: 't', book: 'fanduel', book_chance: 43, polymarket_price: 40, diff: 3 },
+    { date: 'd', market_id: 'm3', side: 'yes', fetched_at: 't', book: 'fanduel', book_chance: NaN, polymarket_price: 40, diff: NaN }];
   const s = C.platformSummary(recs, cmp, plats);
   a(s.rows[0].logged.n === 2 && near(s.rows[0].logged.avgGap, -0.07) && s.rows[0].total === 2, 'logged count + avg gap');
   a(s.rows[1].logged.n === 0 && s.rows[1].feed.n === 2 && near(s.rows[1].feed.avgDiff, 2.5) && s.rows[1].total === 2, 'feed count + avg diff, bad rows skipped');
   a(s.rows[2].total === 0 && s.rows[2].logged.avgGap === null && s.rows[2].feed.avgDiff === null, 'empty row');
   a(s.other.n === 1 && near(s.other.avgGap, 0.1), 'unlisted platforms -> Other');
   a(C.platformSummary(null, null, plats).rows.length === 3, 'tolerates missing data');
+}
+
+// Record tab + pick cards: baseline follows "My platform" (compareToBaseline)
+{
+  const row = (m, book, bc, pm, k) => ({ date: 'd', market_id: m, side: 'yes', fetched_at: 't', refs: [], book, book_chance: bc, polymarket_price: pm, kalshi_price: k });
+  const cmp = [row('m1', 'fanduel', 52, 50, 49), row('m1', 'kalshi', 48, 50, 49), row('m2', 'fanduel', 43, 40, undefined), row('m3', 'bovada', 61, 60, 58)];
+  const g = C.groupPrices(cmp);
+  a(g.length === 3 && g[0].prices.kalshi === 49 && g[0].prices.fanduel === 52 && g[0].prices.polymarket_us === 50, 'groups per bet; Kalshi snapshot price beats the feed row');
+  const pmBase = C.compareToBaseline(cmp, 'polymarket_us');
+  a(pmBase.fanduel.n === 2 && near(pmBase.fanduel.avgDiff, 2.5) && pmBase.kalshi.n === 2 && near(pmBase.kalshi.avgDiff, -1.5) && !pmBase.polymarket_us, 'Polymarket US baseline');
+  const kBase = C.compareToBaseline(cmp, 'kalshi');
+  a(kBase.polymarket_us.n === 2 && near(kBase.polymarket_us.avgDiff, 1.5), 'Kalshi baseline: Polymarket US becomes a compared row');
+  a(kBase.fanduel.n === 1 && near(kBase.fanduel.avgDiff, 3) && near(kBase.bovada.avgDiff, 3), 'bet with no Kalshi price (m2) left out of the averages');
+  a(!kBase.kalshi, 'no row for the baseline itself');
+  const plats = [{ id: 'polymarket_us', name: 'Polymarket US' }, { id: 'kalshi', name: 'Kalshi' }, { id: 'fanduel', name: 'FanDuel' }];
+  const s = C.platformSummary([], cmp, plats, 'kalshi');
+  a(s.rows[1].feed.n === 0 && s.rows[0].feed.n === 2 && s.rows[2].feed.n === 1, 'platformSummary takes the baseline');
+  a(C.compareToBaseline(cmp, 'draftkings') && Object.keys(C.compareToBaseline(cmp, 'draftkings')).length === 0, 'future platform with no prices: everything a dash');
+  a(Object.keys(C.compareToBaseline([row('m9', 'fanduel', 50, 40, 41)], 'fanduel')).join() === 'polymarket_us,kalshi', 'any feed app can be the baseline');
 }
 
 // Payout explainer ("41¢ · $10 pays $24.39 · 41% chance"), js/calc.js payout / slipPays

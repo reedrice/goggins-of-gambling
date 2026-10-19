@@ -197,7 +197,8 @@
     S.setPrefs({ platform: id });
     renderPlatformToggle();
     const tab = (location.hash || '#picks').slice(1);
-    if (['picks', 'settings', 'calc'].includes(tab)) go(tab);
+    // Record too: its "Price vs. <your app>" column follows this setting.
+    if (['picks', 'settings', 'calc', 'record'].includes(tab)) go(tab);
     toast(STR.platformSaved(platformById(id).name));
   }
 
@@ -398,8 +399,11 @@
   /**
    * "Other apps" line for a single-bet card: the cheapest app price for this
    * exact bet from today's data/book-odds.json rows (refs with leg null),
-   * compared with Polymarket US at the same moment. '' when there's no data,
-   * the feed is off, or the rows are for a different slate.
+   * compared with the user's "My platform" (Polymarket US, Kalshi, ...) at the
+   * same check (BetCalc.groupPrices). Polymarket US counts as an "other app"
+   * when Kalshi is the user's app. No price from the user's app = the
+   * cheapest is shown with a dash instead of a difference. '' when there's no
+   * data, the feed is off, or the rows are for a different slate.
    * @param {object} pk pick
    * @returns {string} HTML
    */
@@ -407,18 +411,30 @@
     const bo = bookOdds;
     if (!bo || bo.status !== 'active' || !Array.isArray(bo.comparisons) || !picksData) return '';
     const rows = bo.comparisons.filter(r => r.date === picksData.slate_date && Array.isArray(r.refs) &&
-      r.refs.some(x => x.pick_id === pk.id && x.leg === null) && typeof r.book_chance === 'number');
-    if (!rows.length) return '';
-    const best = rows.reduce((a, b) => (b.book_chance < a.book_chance ? b : a));
-    const name = (platformById(best.book) || { name: best.book }).name;
-    // Show cents (or the user's format) plus the app's own American odds.
-    const price = esc(fmtP(best.book_chance)) + (S.getPrefs().priceFormat === 'cents' && best.book_price ? ` (${esc(best.book_price)}; ${esc(payShort(best.book_chance))})` : ` (${esc(payShort(best.book_chance))})`);
-    const pm = esc(fmtP(best.polymarket_price)) + `; ${esc(payShort(best.polymarket_price))}`;
+      r.refs.some(x => x.pick_id === pk.id && x.leg === null));
+    // Latest check of this bet: one price per app (polymarket_us, kalshi, books).
+    const groups = C.groupPrices(rows).sort((a, b) => String(b.fetched_at).localeCompare(String(a.fetched_at)));
+    if (!groups.length) return '';
+    const g = groups[0];
+    const me = myPlatform();
+    const others = Object.entries(g.prices).filter(([id]) => id !== me.id);
+    if (!others.length) return '';
+    const [bestId, bestP] = others.reduce((a, b) => (b[1] < a[1] ? b : a));
+    const name = (platformById(bestId) || { name: bestId }).name;
+    // Show cents (or the user's format) plus the app's own American odds (sportsbooks only).
+    const bookPrice = g.rows[bestId] && g.rows[bestId].book_price;
+    const price = esc(fmtP(bestP)) + (S.getPrefs().priceFormat === 'cents' && bookPrice && bestId !== 'kalshi' ? ` (${esc(bookPrice)}; ${esc(payShort(bestP))})` : ` (${esc(payShort(bestP))})`);
     const P = STR.picks;
-    const text = best.book_chance < best.polymarket_price
-      ? P.otherCheaper(esc(name), price, esc(String(Math.round((best.polymarket_price - best.book_chance) * 10) / 10)), pm)
-      : P.otherNone(pm, esc(name), price);
-    return `<div class="other-apps small">${text} <span class="muted">${esc(P.otherAsOf(fmtTime(best.fetched_at)))}</span> ${tip('otherApps')}</div>`;
+    const base = g.prices[me.id];
+    let text;
+    if (typeof base !== 'number') text = P.otherNoBase(esc(name), price, esc(me.name));
+    else {
+      const mine = esc(fmtP(base)) + `; ${esc(payShort(base))}`;
+      text = bestP < base
+        ? P.otherCheaper(esc(name), price, esc(String(Math.round((base - bestP) * 10) / 10)), esc(me.name), mine)
+        : P.otherNone(esc(me.name), mine, esc(name), price);
+    }
+    return `<div class="other-apps small">${text} <span class="muted">${esc(P.otherAsOf(fmtTime(g.fetched_at)))}</span> ${tip('otherApps')}</div>`;
   }
 
   /** Color legend for the risk labels, shown once above the picks. */
@@ -1079,14 +1095,17 @@
    * "How each app's prices compare" (Record tab). One block per platform in
    * APP_CONFIG.platforms order. Five cells, ONE value each (dash = no data):
    *   Bets you logged | Paid vs. our estimate | From odds feed |
-   *   Price vs. Polymarket | Total
+   *   Price vs. <your app> | Total
    * (Owner feedback: don't stack the % under the count.) Details:
    *   1. Bets you logged: shared bet-log records (count + average payout gap
    *      vs. our multiplied estimate)
    *   2. From odds feed: data/book-odds.json comparisons (count + average
-   *      cents difference vs. Polymarket US). Until the feed is switched on
+   *      cents difference vs. the user's "My platform", BetCalc.compareToBaseline;
+   *      bets with no price from that app are left out). The user's app is
+   *      listed first and labelled "Your app (we compare others to this)";
+   *      with Kalshi picked, Polymarket US is an ordinary compared row. Until the feed is switched on
    *      (status !== 'active') every row says "Coming soon, waiting on odds
-   *      feed". Polymarket US is the baseline; platforms with oddsApi:null
+   *      feed". Platforms with oddsApi:null
    *      (bet365) say "Not in the odds feed".
    *   3. Total: both counts added.
    * Laid out as a 5-column grid under each app name (CSS .pc-*) so it fits a
@@ -1101,7 +1120,9 @@
     if (!log) html += `<p class="error">${esc(R.logError)}</p>`;
     const recs = (log && log.records) || [];
     const feedOn = !!(odds && odds.status === 'active');
-    const sum = C.platformSummary(recs, feedOn ? odds.comparisons : [], CFG.platforms);
+    // Baseline = the user's "My platform": every diff is "that app minus yours".
+    const me = myPlatform();
+    const sum = C.platformSummary(recs, feedOn ? odds.comparisons : [], CFG.platforms, me.id);
     // One value per cell; a dash when there's nothing yet. Feed status notes
     // (baseline / paid plan / not in feed / coming soon) sit under the app name.
     const dash = `<span class="muted">${esc(R.dash)}</span>`;
@@ -1109,11 +1130,11 @@
     const diffCell = f => {
       if (!f.n) return dash;
       const d = Math.round(f.avgDiff * 10) / 10;
-      // app costs MORE than Polymarket = you win less = red
+      // app costs MORE than the user's app = you win less = red
       return `<span class="${d > 0 ? 'neg' : d < 0 ? 'pos' : ''}">${d > 0 ? '+' : d < 0 ? '−' : ''}${esc(String(Math.abs(d)))}¢</span>`;
     };
     const feedNote = (p, f) => {
-      if (p.id === (odds && odds.baseline || 'polymarket_us')) return R.feedBaseline;
+      if (p.id === me.id) return R.feedBaseline;
       if (!p.oddsApi) return R.feedMissing;
       if (!feedOn) return R.feedSoon;
       if (!f.n && p.oddsApiPaid) return R.feedPaid;
@@ -1138,10 +1159,10 @@
         <span>${esc(R.colLogged)} ${tip('colLogged')}</span>
         <span>${esc(R.colGap)} ${tip('colGap')}</span>
         <span>${esc(R.colFeed)} ${tip('colFeed')}</span>
-        <span>${esc(R.colDiff)} ${tip('colDiff')}</span>
+        <span>${esc(R.colDiff(me.name))} ${tip('colDiff')}</span>
         <span>${esc(R.colTotal)} ${tip('colTotal')}</span>
       </div>
-      ${CFG.platforms.map((p, i) => block(p, sum.rows[i])).join('')}
+      ${CFG.platforms.map((p, i) => [p, sum.rows[i]]).sort((a, b) => (b[0].id === me.id) - (a[0].id === me.id)).map(([p, row]) => block(p, row)).join('')}
       ${sum.other.n ? block(Object.assign({}, CFG.otherPlatform, { oddsApi: null }), { logged: sum.other, feed: { n: 0, avgDiff: null }, total: sum.other.n }) : ''}
     </div>`;
     if (log) html += `<p class="muted small">${esc(R.platLag(recs.length))}</p>`;

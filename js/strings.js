@@ -110,8 +110,10 @@ window.STR = {
     kalshiEventOnly: 'Kalshi game page',
     kalshiPrice: c => `Kalshi: ${c}`,
     // "Other apps" line on single-bet cards (from data/book-odds.json).
-    otherCheaper: (app, price, less, pm) => `Other apps: cheapest is ${app} at ${price}, ${less}¢ less than Polymarket US (${pm}).`,
-    otherNone: (pm, app, price) => `Other apps: none cheaper than Polymarket US (${pm}). Closest: ${app} at ${price}.`,
+    // base = the user's "My platform" name; mine = its price (+ payout).
+    otherCheaper: (app, price, less, base, mine) => `Other apps: cheapest is ${app} at ${price}, ${less}¢ less than ${base} (${mine}).`,
+    otherNone: (base, mine, app, price) => `Other apps: none cheaper than ${base} (${mine}). Closest: ${app} at ${price}.`,
+    otherNoBase: (app, price, base) => `Other apps: cheapest is ${app} at ${price}. No ${base} price for this bet yet (–).`,
     otherAsOf: when => `Checked ${when}.`,
     toCalc: 'Use in bet builder',
     loaded: 'Added to the bet builder. Now type what the app says it pays.'
@@ -301,11 +303,11 @@ window.STR = {
     colLogged: 'Bets you logged',      // count of manual entries in the shared bet log
     colGap: 'Paid vs. our estimate',   // average payout difference of those bets, e.g. -6.9%
     colFeed: 'From odds feed',         // count of automatic price checks (The Odds API)
-    colDiff: 'Price vs. Polymarket',   // average price difference of those checks, e.g. +3.2¢
+    colDiff: app => `Price vs. ${app}`, // average price difference vs. the user's "My platform", e.g. +3.2¢
     colTotal: 'Total',                 // both counts added up
     dash: '–',                         // shown in any cell with no data yet
     feedSoon: 'Coming soon, waiting on odds feed',
-    feedBaseline: 'We compare other apps to this one',
+    feedBaseline: 'Your app (we compare others to this)',
     feedMissing: 'Not in the odds feed',
     feedPaid: 'Needs a paid odds plan',
     platNone: 'No bets logged yet',
@@ -398,12 +400,12 @@ window.STR = {
     myPlatform: 'Tapping "Open in app" takes you to this app\'s page for the bet. If the bet isn\'t on Kalshi, we\'ll say so and open a search.',
     colLogged: 'How many combo bets you or your friends saved with "Share" on for this app.',
     colGap: 'On average, how much more or less the app paid on those bets than the picks multiply out to. Example: −7% means a bet we priced at 3.19x paid about 2.97x.',
-    colDiff: 'On average, how much more the app charges than Polymarket US for the same bet. Example: +3¢ means you pay 3¢ more per share there, so you win a bit less. A minus means it\'s cheaper.',
+    colDiff: 'On average, how much more each app charges than your app (the one picked under "My platform") for the same bet. Example: +3¢ means you pay 3¢ more per share there, so you win a bit less. A minus means it\'s cheaper. A dash means we have no price from your app for those bets yet.',
     colFeed: 'How many of our picks we found on this app in the daily price check.',
     hitChance: 'My best guess at how often this bet wins, from the sportsbooks\' fair prices (and, for combos, how the picks affect each other). Example: 34% means about 1 win in 3.',
     risk: 'Safer = wins 60%+ of the time. Coin flip = 45–59%. Risky = 25–44%. Long shot = under 25%. Riskier bets should get smaller amounts.',
     take: 'My one-line call: is the price good enough to bet, and how big.',
-    otherApps: 'Each morning we look up the same bet on other apps (FanDuel, DraftKings, BetMGM, Bovada, ESPN Bet, Kalshi) and show the cheapest. A cheaper price means a bigger payout. Prices move, so check before you bet.',
+    otherApps: 'Each morning we look up the same bet on other apps (FanDuel, DraftKings, BetMGM, Bovada, ESPN Bet, Kalshi, Polymarket US) and show the cheapest, compared with your app (the one picked under "My platform"). A cheaper price means a bigger payout. Prices move, so check before you bet.',
     colTotal: 'How many comparisons we have for this app so far, from both sources. More means the numbers are more reliable.',
     priceFormat: 'Only changes how prices look. You can still type prices any way you like.'
   },

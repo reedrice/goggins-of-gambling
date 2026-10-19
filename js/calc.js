@@ -214,14 +214,17 @@
    * table. Pure, so it's unit-tested in Node.
    *
    * @param {object[]} records data/bet-log.json records ({platform: name, gap})
-   * @param {object[]} comparisons data/book-odds.json comparisons
-   *   ({book: platform id, diff: cents, book minus Polymarket US})
+   * @param {object[]} comparisons data/book-odds.json comparisons (see groupPrices)
    * @param {{id:string,name:string}[]} platforms APP_CONFIG.platforms
+   * @param {string} [baseline='polymarket_us'] the user's "My platform" id:
+   *   every feed diff is "that app's price minus YOUR app's price" for the
+   *   same bet at the same check (compareToBaseline). The baseline's own row
+   *   has feed.n = 0.
    * @returns {{rows: {id,name,logged:{n,avgGap},feed:{n,avgDiff},total:number}[],
    *            other: {n,avgGap}}} avg* are null when n = 0. `other` collects
    *   logged bets whose platform isn't in the list ("Other" row).
    */
-  function platformSummary(records, comparisons, platforms) {
+  function platformSummary(records, comparisons, platforms, baseline) {
     const acc = () => ({ n: 0, sum: 0 });
     const logged = {}, feed = {}, other = acc();
     const names = new Set(platforms.map(p => p.name));
@@ -230,18 +233,76 @@
       const b = names.has(r.platform) ? (logged[r.platform] = logged[r.platform] || acc()) : other;
       b.n++; b.sum += r.gap;
     });
-    (comparisons || []).forEach(c => {
-      if (!c || typeof c.diff !== 'number' || !isFinite(c.diff)) return;
-      const b = feed[c.book] = feed[c.book] || acc();
-      b.n++; b.sum += c.diff;
-    });
+    const cmp = compareToBaseline(comparisons, baseline || 'polymarket_us');
+    Object.entries(cmp).forEach(([id, v]) => (feed[id] = v));
     const avg = (b, k) => ({ n: b ? b.n : 0, [k]: b && b.n ? b.sum / b.n : null });
     const rows = platforms.map(p => {
-      const l = avg(logged[p.name], 'avgGap'), f = avg(feed[p.id], 'avgDiff');
+      const l = avg(logged[p.name], 'avgGap'), f = feed[p.id] || { n: 0, avgDiff: null };   // feed is already averaged
       return { id: p.id, name: p.name, logged: l, feed: f, total: l.n + f.n };
     });
     return { rows, other: avg(other, 'avgGap') };
   }
 
-  return { parsePrice, describe, parlay, gap, expectedValue, profit, edgePts, toAmerican, formatPrice, payout, slipPays, platformSummary };
+  // ------------------------------------------- baseline = "My platform"
+  // data/book-odds.json has one row per (bet, other app, check). Each row
+  // carries the Polymarket US price (polymarket_price) and, since Oct 19
+  // 2026, the Kalshi price from the market snapshot (kalshi_price), so the
+  // comparison can be made against EITHER app. Rows are grouped per bet and
+  // check; inside a group every app has at most one price.
+
+  const isCents = v => typeof v === 'number' && isFinite(v) && v > 0 && v < 100;
+
+  /**
+   * Group book-odds rows into one price list per bet and check.
+   * Price sources per app id:
+   *   polymarket_us : row.polymarket_price
+   *   kalshi        : row.kalshi_price (snapshot ask), else a "kalshi" feed row's book_chance
+   *   anything else : that app's row book_chance
+   * @param {object[]} comparisons
+   * @returns {{key:string, date, market_id, side, refs:object[], fetched_at, prices:Object<string,number>, rows:Object<string,object>}[]}
+   */
+  function groupPrices(comparisons) {
+    const groups = new Map();
+    (comparisons || []).forEach(c => {
+      if (!c || !c.market_id) return;
+      const key = [c.date, c.market_id, c.side, c.fetched_at].join('|');
+      let g = groups.get(key);
+      if (!g) groups.set(key, (g = { key, date: c.date, market_id: c.market_id, side: c.side, refs: c.refs || [], fetched_at: c.fetched_at, prices: {}, rows: {} }));
+      if (isCents(c.polymarket_price)) g.prices.polymarket_us = c.polymarket_price;
+      if (isCents(c.kalshi_price)) g.snapKalshi = c.kalshi_price;
+      if (c.book && isCents(c.book_chance)) { g.rows[c.book] = c; g.prices[c.book] = c.book_chance; }
+    });
+    // Kalshi: the snapshot ask (what the Kalshi app charges) beats the feed's
+    // "kalshi" row, whatever order the rows came in.
+    return [...groups.values()].map(g => {
+      if (isCents(g.snapKalshi)) g.prices.kalshi = g.snapKalshi;
+      delete g.snapKalshi;
+      return g;
+    });
+  }
+
+  /**
+   * Average price difference of every app vs. the baseline app, in cents
+   * (positive = that app costs more than yours, so it pays less). A bet with
+   * no baseline price is left out of every average (the UI shows a dash).
+   * @param {object[]} comparisons @param {string} baseline app id
+   * @returns {Object<string,{n:number,avgDiff:number|null}>}
+   */
+  function compareToBaseline(comparisons, baseline) {
+    const acc = {};
+    groupPrices(comparisons).forEach(g => {
+      const base = g.prices[baseline];
+      if (!isCents(base)) return;
+      Object.entries(g.prices).forEach(([id, p]) => {
+        if (id === baseline) return;
+        const a = acc[id] = acc[id] || { n: 0, sum: 0 };
+        a.n++; a.sum += p - base;
+      });
+    });
+    const out = {};
+    Object.entries(acc).forEach(([id, a]) => (out[id] = { n: a.n, avgDiff: a.n ? a.sum / a.n : null }));
+    return out;
+  }
+
+  return { parsePrice, describe, parlay, gap, expectedValue, profit, edgePts, toAmerican, formatPrice, payout, slipPays, platformSummary, groupPrices, compareToBaseline };
 });

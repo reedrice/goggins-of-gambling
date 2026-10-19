@@ -299,10 +299,10 @@ One block per app (in `APP_CONFIG.platforms` order, plus "Other" only if someone
 | **Bets you logged** | `data/bet-log.json` (shared, manual) | count of records |
 | **Paid vs. our estimate** | same | average `gap`, e.g. `-6.9%` (red below 0) |
 | **From odds feed** | `data/book-odds.json` (automatic) | count of comparison rows |
-| **Price vs. Polymarket** | same | average `diff` in cents, e.g. `+3.2¢` (red = that app charges more) |
+| **Price vs. <your app>** | same | average price difference vs. the user's "My platform" in cents, e.g. `+3.2¢` (red = that app charges more). See "Baseline follows My platform" below |
 | **Total** | both | logged count + feed count |
 
-Feed status notes sit next to the app name, not in a cell: "We compare other apps to this one" (Polymarket US, the baseline), "Needs a paid odds plan" (`oddsApiPaid`, no rows), "Not in the odds feed" (`oddsApi: null`, bet365), and "Coming soon, waiting on odds feed" (whenever `status` isn't `"active"`).
+Feed status notes sit next to the app name, not in a cell: "Your app (we compare others to this)" (the user's "My platform", listed first), "Needs a paid odds plan" (`oddsApiPaid`, no rows), "Not in the odds feed" (`oddsApi: null`, bet365), and "Coming soon, waiting on odds feed" (whenever `status` isn't `"active"`).
 
 The numbers come from `BetCalc.platformSummary(records, comparisons, platforms)`, which is pure and tested in `tests/calc.test.js`. All labels and the five (i) tooltips are in `STR.record` / `STR.tips` (`colLogged`, `colGap`, `colFeed`, `colDiff`, `colTotal`).
 
@@ -333,6 +333,7 @@ The numbers come from `BetCalc.platformSummary(records, comparisons, platforms)`
     "book_price": "+108",           // the app's American odds
     "book_chance": 48.1,            // the same price in cents
     "polymarket_price": 49,         // live Polymarket US cost of the same side, fetched right after
+    "kalshi_price": 48,             // Kalshi ask for the same side from the market snapshot (null = not on Kalshi). Added Oct 19 2026
     "diff": -0.9,                   // book_chance - polymarket_price. Positive = that app charges more (pays less)
     "fetched_at": "ISO"
   }]
@@ -353,6 +354,23 @@ node scripts/fetch-book-odds.mjs --commit       # price today's picks, write dat
 - **Matching** is documented in the script header: game by both team names within 36h; h2h by team; spreads by team + signed line from the side label; totals by Over/Under + line; props by player name, with Polymarket "N+" = Over N−0.5 and anytime TD/goal = "Yes". Prop types are mapped in `PROP_MARKETS` (NBA: points, rebounds, assists, threes, blocks, steals, PRA), and sports in `SPORT_KEYS` (`basketball_nba`, `basketball_wnba`). A sport is only priced when a pick needs it, so NBA costs nothing on days without NBA picks.
 - **Priority when the cap is tight:** sports are ranked by how many of today's picks/legs they have. Game lines are taken in that order while they fit `--max-credits`, then prop games (the one with the most prop picks first). Whatever doesn't fit is named in the log and in `meta.props`. The log line `Priority (most picks first): nfl 6, nhl 4, mlb 3` shows the order. A dry run with one extra NBA prop pick planned 12 credits (lines 6, props 6), right at the cap.
 - **UI:** the Record tab's "From odds feed" column shows each app's count and average difference; "Total" adds the logged bets. Single-bet pick cards show an "Other apps" line: "cheapest is Kalshi at 48.1¢ (+108), 0.9¢ less than Polymarket US (49¢)" or "none cheaper…". It uses today's rows whose `refs` point at that pick.
+
+
+### Baseline follows "My platform" (since Oct 19, 2026)
+
+The comparison is made against **the user's own app** (`betdash_prefs.platform`: Polymarket US or Kalshi, or any later `CFG.myPlatforms` entry), all client-side:
+
+- `BetCalc.groupPrices(comparisons)` groups rows per bet and check (`date|market_id|side|fetched_at`) into one price per app:
+  - `polymarket_us` = `polymarket_price`
+  - `kalshi` = `kalshi_price` (snapshot ask), else the feed's `kalshi` row
+  - every other app = its row's `book_chance`
+- `BetCalc.compareToBaseline(comparisons, id)` averages "that app minus yours" per app. **A bet with no price from your app is left out of every average**; an app left with nothing shows a dash. `platformSummary(..., baselineId)` uses it.
+- Record tab: header "Price vs. <your app>", your app listed first with "Your app (we compare others to this)". With Kalshi picked, Polymarket US becomes a normal row.
+- Pick cards: the "Other apps" line names the cheapest app other than yours, compared with your app's price; with no price from your app it says so with a dash (`STR.picks.otherNoBase`).
+- Switching "My platform" re-renders Picks, Settings, the bet builder and Record immediately (`setPlatform`).
+- `fetch-book-odds.mjs` writes `kalshi_price` on every row from now on. Rows written before that fall back to the feed's Kalshi rows (7 of 12 bets on Oct 19), so a Kalshi baseline covers fewer bets until the next run.
+- The top-level `baseline` and `diff` fields stay Polymarket-based for the script's own summary and validator; the app doesn't use them for display.
+- Tests: `tests/calc.test.js` ("baseline follows My platform").
 
 ## 18. Pick evaluation: "My hit chance", risk label, "My take"
 

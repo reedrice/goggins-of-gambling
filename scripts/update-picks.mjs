@@ -265,6 +265,7 @@ export function validateBookOdds(d) {
     if (!['yes', 'no'].includes(c.side)) errs.push(`${w}.side: "yes" or "no"`);
     if (!cents(c.book_chance)) errs.push(`${w}.book_chance: cents 0-100`);
     if (!cents(c.polymarket_price)) errs.push(`${w}.polymarket_price: cents 0-100`);
+    if (c.kalshi_price !== undefined && c.kalshi_price !== null && !cents(c.kalshi_price)) errs.push(`${w}.kalshi_price: cents 0-100 or null`);
     if (typeof c.diff !== 'number' || Math.abs(c.diff - (c.book_chance - c.polymarket_price)) > 0.11) errs.push(`${w}.diff: must equal book_chance - polymarket_price`);
     if (c.book === 'polymarket_us') errs.push(`${w}.book: polymarket_us is the baseline, not a comparison`);
     if (!Array.isArray(c.refs) || !c.refs.every(r => r && typeof r.pick_id === 'string' && (r.leg === null || Number.isInteger(r.leg)))) errs.push(`${w}.refs: [{pick_id, leg: null|index}] required`);

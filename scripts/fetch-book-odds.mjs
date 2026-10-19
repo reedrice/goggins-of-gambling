@@ -368,6 +368,9 @@ for (const t of targets) {
       label: `${sideLabel(t) === 'Yes' || sideLabel(t) === 'No' ? t.m.label + ' — ' + sideLabel(t) : sideLabel(t)}`,
       refs: t.refs, book: q.book, odds_api_key: q.odds_api_key,
       book_price: fmtAmerican(q.price), book_chance: c, polymarket_price: pm,
+      // Kalshi price of the same side from the market snapshot (null if not on
+      // Kalshi), so the app can compare against Kalshi when that's "My platform".
+      kalshi_price: t.m.kalshi ? (t.side === 'no' ? t.m.kalshi.no : t.m.kalshi.yes) ?? null : null,
       diff: Math.round((c - pm) * 10) / 10, fetched_at: fetchedAt
     });
   }
