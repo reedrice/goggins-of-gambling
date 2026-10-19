@@ -1,5 +1,7 @@
 # HANDOFF: guide for maintainers and AI agents
 
+> Product direction, tiers and the legal checklist: see [ROADMAP.md](ROADMAP.md).
+
 Read this before you change anything. It covers the whole system.
 
 ## 1. What this is
