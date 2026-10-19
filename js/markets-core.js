@@ -75,6 +75,19 @@
     return s;
   }
 
+  /**
+   * Full team name WITH the city, for search ("san" -> San Jose Sharks).
+   * NHL/NBA put only the nickname in `name` ("Sharks") and the city version
+   * in safeName ("San Jose Sharks"); the NFL does the opposite ("San
+   * Francisco 49ers" / "SF 49ers"). So take the longest of name, safeName
+   * and alias.
+   * @param {object} t raw API team @returns {string}
+   */
+  function fullName(t) {
+    return [t && t.name, t && t.safeName, t && t.alias].filter(x => typeof x === 'string' && x.trim())
+      .sort((a, b) => b.length - a.length)[0] || '';
+  }
+
   /** @param {string|number|null} v dollars string @returns {number|null} cents, 1 decimal */
   function cents(v) {
     const n = parseFloat(v);
@@ -160,13 +173,13 @@
    * Compact a whole raw event.
    * @param {object} e raw event (payload.event)
    * @returns {object} {id, slug, sport, league, title, start_time, date, url, polymarket_url,
-   *                    teams:[{abbr,name,short,logo,color}], markets:[...]}
+   *                    teams:[{abbr,name,short,full,logo,color}], markets:[...]}
    */
   function compactEvent(e) {
     const league = String(e.slug).split('-')[0];
     const teams = (e.teams || []).map(t => ({
       abbr: t.abbreviation, display: t.displayAbbreviation || String(t.abbreviation).toUpperCase(),
-      name: t.name, short: nickname(t), logo: t.logo || t.shortIcon || null,
+      name: t.name, short: nickname(t), full: fullName(t), logo: t.logo || t.shortIcon || null,
       color: (t.color && t.color.dark) || t.colorPrimary || null
     }));
     const teamById = {};
@@ -264,6 +277,6 @@
     return 'https://kalshi.com/search?query=' + encodeURIComponent(q || '');
   }
 
-  return { GATEWAY, LEAGUES, nickname, cents, fmtLine, classify, compactMarket, compactEvent, ctDate, bboPrices,
+  return { GATEWAY, LEAGUES, nickname, fullName, cents, fmtLine, classify, compactMarket, compactEvent, ctDate, bboPrices,
     kalshiSlug, kalshiEventUrl, kalshiMarketUrl, kalshiSearchUrl };
 });

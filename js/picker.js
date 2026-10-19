@@ -177,8 +177,8 @@
   /** Per-event cached search rows: [{ev, m, hay, who}] */
   const searchRows = new Map();
 
-  /** "Brock Purdy" style words for a team: nickname, full name (has the city), abbreviations. */
-  const teamWords = t => (t ? `${t.short} ${t.name} ${t.display} ${t.abbr}` : '');
+  /** Search words for a team: nickname, name, full name with city (`full`, e.g. "San Jose Sharks"), abbreviations. */
+  const teamWords = t => (t ? `${t.short} ${t.name} ${t.full || ''} ${t.display} ${t.abbr}` : '');
 
   /**
    * Build (once) the search rows for an event.
