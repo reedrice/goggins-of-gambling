@@ -24,3 +24,13 @@ a(near(slip.estMultiple, 3.1888) && near(C.gap(2.97, slip.estMultiple), -0.0686)
 a(near(C.expectedValue(5, 2.97, .645*.497), 5*(2.97*.645*.497-1)), 'ev');
 a(near(C.parlay([.33,.43]).estMultiple, 7.047), 'flyers+sharks 7.05');
 a(near(C.profit(5, 2.97, 'won'), 9.85) && C.profit(5,3,'lost') === -5 && C.profit(5,3,'push') === 0, 'profit');
+
+// Price display formats (cents default; American / decimal optional)
+a(C.toAmerican(63) === -170, '63 -> -170');
+a(C.toAmerican(48) === 108, '48 -> +108');
+a(C.toAmerican(50) === -100 && C.formatPrice(50, 'american') === '+100', '50 -> evens (+100)');
+a(C.formatPrice(48, 'american') === '+108' && C.formatPrice(63, 'american') === '-170', 'american strings');
+a(C.formatPrice(63) === '63¢' && C.formatPrice(63.5) === '63.5¢', 'cents is the default');
+a(C.formatPrice(40, 'decimal') === '2.50', 'decimal');
+a(C.toAmerican(0) === null && C.formatPrice(100) === '—', 'out of range');
+a(near(C.parsePrice('63.5c').p, .635) && near(C.parsePrice(String(C.toAmerican(63))).p, .63, .002), 'round-trips through parsePrice');

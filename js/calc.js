@@ -151,5 +151,36 @@
     return fairPct - pricePct;
   }
 
-  return { parsePrice, describe, parlay, gap, expectedValue, profit, edgePts };
+  /**
+   * Price in cents -> American odds (whole number).
+   * Formula from the owner's spec, with p in percent (0–100):
+   *   p >= 50 :  -100 * p / (100 - p)     63 -> -170.27 -> -170
+   *   p <  50 :  +100 * (100 - p) / p     48 -> +108.33 -> +108
+   * Exactly 50 gives -100, which is the same price as +100 ("even money");
+   * formatPrice() shows it as "+100".
+   * @param {number} pct cents/percent, 0 < pct < 100
+   * @returns {number|null} e.g. -170, 108; null if out of range
+   */
+  function toAmerican(pct) {
+    if (!(pct > 0 && pct < 100)) return null;
+    return Math.round(pct >= 50 ? (-100 * pct) / (100 - pct) : (100 * (100 - pct)) / pct);
+  }
+
+  /**
+   * Display a price (cents) in the user's chosen format.
+   * @param {number} pct cents, e.g. 63 or 63.5
+   * @param {'cents'|'american'|'decimal'} [format] default 'cents'
+   * @returns {string} "63¢" | "-170" | "+108" | "+100" | "1.59"
+   */
+  function formatPrice(pct, format = 'cents') {
+    if (!(pct > 0 && pct < 100)) return '—';
+    if (format === 'american') {
+      const a = toAmerican(pct);
+      return a === -100 ? '+100' : (a > 0 ? '+' : '') + a;   // evens shown as +100
+    }
+    if (format === 'decimal') return (100 / pct).toFixed(2);
+    return (Math.round(pct * 10) / 10) + '¢';
+  }
+
+  return { parsePrice, describe, parlay, gap, expectedValue, profit, edgePts, toAmerican, formatPrice };
 });

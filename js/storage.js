@@ -24,7 +24,10 @@
  *       category: "single"|"prop"|"parlay"|"longshot"|"nonsports",
  *       platform: string,          slip platform, or "A + B" if legs differ
  *       legs: [{desc: string, price: string (as typed), platform: string,
- *               p: number (parsed implied probability)}],
+ *               p: number (parsed probability),
+ *               // present when the leg came from the market picker:
+ *               marketId, side: "yes"|"no", eventSlug, eventTitle,
+ *               teams: [{league, abbr}], link, kalshiUrl, asOf: ISO}],
  *       estMultiple: number, quotedMultiple: number, hitChance: number,
  *       stake: number,             $ (PRIVATE — never shared)
  *       status: "open"|"won"|"lost"|"push",
@@ -35,6 +38,10 @@
  *       pickId: string|null        id from data/picks.json if created from a pick
  *     }
  *   betdash_settings  JSON { shareByDefault: boolean }
+ *   betdash_prefs     JSON { platform: "polymarket_us"|"kalshi",   "My platform" for
+ *                            Open-market links (header toggle, onboarding and
+ *                            Settings all read/write this one value)
+ *                            priceFormat: "cents"|"american"|"decimal" (default cents) }
  *   betdash_gh_token  string — user's fine-grained GitHub token (contents:write
  *                     on this repo). Local only; excluded from exports.
  *   betdash_gh_login  string — cached GitHub login resolved from GET /user.
@@ -50,8 +57,12 @@
     bets: 'betdash_bets',
     settings: 'betdash_settings',
     token: 'betdash_gh_token',
-    login: 'betdash_gh_login'
+    login: 'betdash_gh_login',
+    prefs: 'betdash_prefs'
   });
+
+  /** Defaults for betdash_prefs. Cents stay the default price display. */
+  const PREF_DEFAULTS = Object.freeze({ platform: 'polymarket_us', priceFormat: 'cents' });
 
   /**
    * Read and JSON-parse a key.
@@ -109,6 +120,13 @@
   /** @param {object} s partial settings merged into existing */
   function setSettings(s) { writeJSON(KEYS.settings, Object.assign(getSettings(), s)); }
 
+  /** @returns {{platform:string, priceFormat:string}} prefs merged over defaults */
+  function getPrefs() { return Object.assign({}, PREF_DEFAULTS, readJSON(KEYS.prefs, {})); }
+  /** @param {object} p partial prefs. Side effect: localStorage write. */
+  function setPrefs(p) { writeJSON(KEYS.prefs, Object.assign(getPrefs(), p)); }
+  /** @returns {boolean} true once the user has chosen a platform (onboarding step) */
+  function hasPrefs() { return localStorage.getItem(KEYS.prefs) !== null; }
+
   /** @returns {string} token or "" */
   function getToken() { return localStorage.getItem(KEYS.token) || ''; }
   /** @param {string} t token; empty string removes it (and the cached login) */
@@ -124,7 +142,7 @@
   /**
    * Build a backup object. The GitHub token is deliberately EXCLUDED so a
    * backup file can be stored/shared without leaking credentials.
-   * @returns {object} {format, version, exportedAt, profile, bets, settings}
+   * @returns {object} {format, version, exportedAt, profile, bets, settings, prefs}
    */
   function exportAll() {
     return {
@@ -133,7 +151,8 @@
       exportedAt: new Date().toISOString(),
       profile: getProfile(),
       bets: getBets(),
-      settings: getSettings()
+      settings: getSettings(),
+      prefs: getPrefs()
     };
   }
 
@@ -150,6 +169,7 @@
     setProfile(data.profile);
     setBets(data.bets);
     if (data.settings) writeJSON(KEYS.settings, data.settings);
+    if (data.prefs) writeJSON(KEYS.prefs, data.prefs);
   }
 
   /**
@@ -160,7 +180,7 @@
 
   window.Store = {
     KEYS, getProfile, setProfile, getBets, setBets, upsertBet, deleteBet,
-    getSettings, setSettings, getToken, setToken, getLogin, setLogin,
+    getSettings, setSettings, getPrefs, setPrefs, hasPrefs, getToken, setToken, getLogin, setLogin,
     exportAll, importAll, resetAll
   };
 })();
