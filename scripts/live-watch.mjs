@@ -38,6 +38,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { classify, fetchContext } from './live-context.mjs';
 
 const GATEWAY = 'https://gateway.polymarket.us';
 const args = process.argv.slice(2);
@@ -308,7 +309,7 @@ export const tierOf = e => (e >= BIG_EDGE ? 'big' : e >= SLIGHT_EDGE ? 'slight' 
  * Stores chances (prob points) and American odds only; the browser works out
  * "$10 pays $X" (HANDOFF §32), so no dollar figures are committed.
  */
-export function buildLive(open, ev, prev, nowIso = new Date().toISOString()) {
+export function buildLive(open, ev, prev, nowIso = new Date().toISOString(), ctx = null) {
   const byId = Object.fromEntries((ev.markets || []).map(m => [m.id, m]));
   const prevEdges = Object.fromEntries(((prev && prev.edges) || []).map(e => [e.key, e]));
   const edges = [], seen = new Set();
@@ -321,13 +322,16 @@ export function buildLive(open, ev, prev, nowIso = new Date().toISOString()) {
       { i: 1, now: 100 - q.bid, open: o.noBuy ?? 100 - o.mid },
     ];
     for (const sd of both) {
-      const edge = +(sd.open - sd.now).toFixed(1), tier = tierOf(edge);
-      if (!tier) continue;
+      const edge = +(sd.open - sd.now).toFixed(1);
+      if (!tierOf(edge)) continue;
+      // Why did it move? score / injury / likely news / real edge (live-context.mjs).
+      const c = classify(ctx, o, sd.i, edge);
       const key = `${o.id}:${sd.i}`; seen.add(key);
       edges.push({ key, market_id: o.id, market: o.kind, group: o.group || (o.kind === 'Player prop' ? 'prop' : 'game'),
         question: o.question, side: o.sides[sd.i],
         open_chance: +sd.open.toFixed(1), now_chance: +sd.now.toFixed(1),
-        open_odds: american(sd.open), now_odds: american(sd.now), edge, tier,
+        open_odds: american(sd.open), now_odds: american(sd.now), edge, tier: c.tier,
+        class: c.class, reason: c.reason, context: c.context,
         first_seen: prevEdges[key]?.first_seen || nowIso, status: 'open' });
     }
   }
@@ -339,6 +343,8 @@ export function buildLive(open, ev, prev, nowIso = new Date().toISOString()) {
     _note: 'Real Polymarket US prices (gateway.polymarket.us). Chances in points (0-100). No dollar amounts.',
     slug: open.slug, game: open.title, url: open.url, start_time: open.start_time,
     status: gameOver(ev) ? 'final' : started ? 'live' : 'pregame',
+    // Live game context from ESPN (score, clock, injuries) or { available: false }.
+    game_context: ctx || { available: false, error: 'not fetched' },
     updated: nowIso, open_taken_at: open.taken_at, thresholds: { big: BIG_EDGE, slight: SLIGHT_EDGE },
     open: open.markets.map(o => ({ market_id: o.id, market: o.kind, group: o.group, mtype: o.mtype, period: o.period, line: o.line,
       question: o.question, sides: o.sides, teams: o.teams, player: o.player, mid: o.mid, yes_buy: o.yesBuy, no_buy: o.noBuy })),
@@ -359,7 +365,9 @@ async function publish() {
   // repo (so any machine/runner keeps the SAME open), else take one now.
   if (!fs.existsSync(OPEN_FILE) && !prev) await snapshot();
   const open = fs.existsSync(OPEN_FILE) ? JSON.parse(fs.readFileSync(OPEN_FILE, 'utf8')) : openFromPublished(prev);
-  const out = buildLive(open, await fetchEvent(), prev);
+  const ev = await fetchEvent();
+  const ctx = await fetchContext(SLUG, ev.title || open.title);   // never throws
+  const out = buildLive(open, ev, prev, new Date().toISOString(), ctx);
   fs.mkdirSync(ALERTS_DIR, { recursive: true });
   fs.writeFileSync(file, JSON.stringify(out, null, 1));
   console.log(`Published ${out.edges.filter(e => e.status === 'open').length} edge(s), status ${out.status} -> ${file}`);

@@ -129,3 +129,10 @@ test('game-line types: periods, team totals, and side names (shapes from the rea
   const q1 = { sportsMarketType: 'football_team_first_quarter_spread', marketSides: [S('Commanders', '+1.50', true), S('49ers', '-1.50', false)] };
   assert.deepStrictEqual(describe(q1, lineInfo(q1.sportsMarketType, 'football')).sides, ['Commanders +1.50 (Q1)', '49ers -1.50 (Q1)']);
 });
+
+test('buildLive stores game_context and classifies every edge (unverified when ESPN is missing)', () => {
+  const open = { ...F.open, start_time: '2099-01-01T00:00:00Z', taken_at: 'T0', markets: F.open.markets.map(m => ({ ...m, yesBuy: 51, noBuy: 51 })) };
+  const j = buildLive(open, F.event, null, '2026-10-19T20:00:00Z', { available: false, error: 'test' });
+  assert.strictEqual(j.game_context.available, false);
+  for (const e of j.edges) { assert.strictEqual(e.class, 'unverified'); assert.ok(e.context); }
+});
