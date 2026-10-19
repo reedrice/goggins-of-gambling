@@ -53,6 +53,7 @@ data/bet-log.json     shared calibration log (written by the app with users' tok
 tests/calc.test.js        node: math
 tests/github-log.test.js  node: log writer against a mocked API
 tests/smoke.js            headless Chrome UI walk-through (puppeteer-core, --no-save)
+scripts/update-picks.mjs  daily-job CLI: validate, write, commit, and push picks/predictions
 .nojekyll             tells Pages to serve files as-is
 README.md             user-facing overview and the picks.json schema
 ```
@@ -137,10 +138,33 @@ Backups (`Export JSON`) use the format `{format:"betdash-backup", version:1, exp
 
 ## 8. How the daily job updates picks
 
-1. Build the new slate in the `picks.json` schema. Use **units, not dollars**, and the platform's actual ask prices (Reed's app is **Polymarket US**, a different exchange from polymarket.com). Set `verify_note` whenever a price came from somewhere else.
-2. Overwrite `data/picks.json` and set `updated_at` to now (ISO, UTC is fine; the UI shows CT).
-3. Grade yesterday's `data/predictions.json` entries (set `result` and `final_score`), then append today's predictions with `result: "pending"`.
-4. Validate with `python3 -c "import json;json.load(open('data/picks.json'))"`, then commit to `main` with a descriptive message (e.g. `Update picks for 2026-10-20 slate` plus a body listing the sections and counts) and push. Pages redeploys in about a minute, and the app cache-busts its fetches.
+Use **`scripts/update-picks.mjs`**. It's plain Node 18+ with no dependencies. It validates the schema **and** the privacy rule before writing anything, stages only the data file it changed, commits to `main` with a descriptive generated message, then runs `git pull --rebase` and `git push`.
+
+```bash
+node scripts/update-picks.mjs validate [file]              # check only (picks.json, or predictions.json by filename)
+node scripts/update-picks.mjs picks /tmp/new-picks.json    # replace data/picks.json, commit, push
+node scripts/update-picks.mjs add-predictions /tmp/p.json  # append [{id,date,sport,game,pick,win_prob,projected_score?,...}]
+node scripts/update-picks.mjs grade /tmp/grades.json       # [{id, result: win|loss|push, final_score?}]
+node scripts/update-picks.mjs grade <id> win "SF 30 – WAS 17"
+# flags: --dry-run (validate + print the commit, write nothing), --no-push, -m "extra body line"
+```
+
+Exit codes: `0` ok, `1` validation failed (nothing written), `2` usage error, `3` git failure.
+
+The validator rejects:
+- unknown sections
+- duplicate ids
+- prices or fair values outside 0–100
+- a missing `side` or `stake_units`
+- parlays and long shots with fewer than 2 legs
+- bad `action` or `result` values, non-http links, and malformed dates
+- **any** key named like `stake`/`bankroll`/`payout`/`token`, or any text that looks like `$5`, `USD 10`, or a GitHub token
+
+Daily routine:
+1. Build the new slate in the `picks.json` schema. Use **units, not dollars**, and the platform's actual ask prices (Reed's app is **Polymarket US**, a different exchange from polymarket.com). Set `verify_note` whenever a price came from somewhere else. Set `updated_at` to now (UTC is fine; the UI shows CT).
+2. `grade` yesterday's predictions.
+3. `add-predictions` today's game predictions (`result` defaults to `pending`; ids like `2026-10-20-was-sf`).
+4. `picks` the new slate. Pages redeploys in about a minute, and the app cache-busts its fetches.
 5. Read `data/bet-log.json` to compare quoted vs. estimated multiples per platform and tune `skip_below`.
 
 ## 9. Renaming the brand
@@ -159,4 +183,4 @@ If you also rename the GitHub repo, update `repoName` in `config.js` and the URL
 
 - Push to `main`. Pages builds from `main` at `/` (root). Check progress with `gh api repos/reedrice/goggins-of-gambling/pages/builds/latest`.
 - Verify with `curl -sI https://reedrice.github.io/goggins-of-gambling/`, which should return 200, and the same for `/data/picks.json`.
-- Before pushing, run `node tests/calc.test.js && node tests/github-log.test.js`, plus `tests/smoke.js` if you changed the UI.
+- Before pushing, run `node tests/calc.test.js && node tests/github-log.test.js && node scripts/update-picks.mjs validate`, plus `tests/smoke.js` if you changed the UI.

@@ -88,6 +88,8 @@ A daily job overwrites this whole file. All fields are optional unless marked **
 
 **Prediction** (`sections.predictions`): `{ id, sport, game, start_time (ISO), pick, win_prob (50–100), projected_score, player_projections: [string], reasoning }`.
 
+**Updating it:** run `node scripts/update-picks.mjs picks <file>`. It validates the schema and blocks any dollar amounts, then commits and pushes to `main`. The same script appends and grades predictions. See [HANDOFF.md §8](HANDOFF.md#8-how-the-daily-job-updates-picks).
+
 Other data files (`data/predictions.json`, `data/bet-log.json`) are documented in [HANDOFF.md](HANDOFF.md#data-files).
 
 ## Run locally and test
