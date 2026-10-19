@@ -817,7 +817,60 @@
     return { graded: graded.length, wins: graded.filter(p => p.result === 'win').length, buckets: Object.values(map).sort((a, b) => a.lo - b.lo) };
   }
 
-  /** Record tab: prediction record + per-platform pricing table (all 10 rows). */
+  /**
+   * "How each app's prices compare" (Record tab). One block per platform in
+   * APP_CONFIG.platforms order, each with three cells:
+   *   1. Bets you logged: shared bet-log records (count + average payout gap
+   *      vs. our multiplied estimate)
+   *   2. From odds feed: data/book-odds.json comparisons (count + average
+   *      cents difference vs. Polymarket US). Until the feed is switched on
+   *      (status !== 'active') every row says "Coming soon, waiting on odds
+   *      feed". Polymarket US is the baseline; platforms with oddsApi:null
+   *      (bet365) say "Not in the odds feed".
+   *   3. Total: both counts added.
+   * Laid out as a 3-column grid under each app name (CSS .pc-*) so it fits a
+   * phone without sideways scrolling. Numbers come from BetCalc.platformSummary.
+   * @param {object|null} log data/bet-log.json @param {object|null} odds data/book-odds.json
+   * @returns {string} HTML
+   */
+  function renderPlatformCompare(log, odds) {
+    const R = STR.record;
+    let html = `<h3>${esc(R.platTitle)}</h3><p class="muted small">${esc(R.platNote)}</p>`;
+    if (!log) html += `<p class="error">${esc(R.logError)}</p>`;
+    const recs = (log && log.records) || [];
+    const feedOn = !!(odds && odds.status === 'active');
+    const sum = C.platformSummary(recs, feedOn ? odds.comparisons : [], CFG.platforms);
+    const loggedCell = l => l.n
+      ? `<b>${esc(R.loggedCount(l.n))}</b><span class="${sign(l.avgGap)}">${esc(R.loggedGap(pct(l.avgGap, 1)))}</span>`
+      : `<span class="muted">${esc(R.platNone)}</span>`;
+    const feedCell = (p, f) => {
+      if (p.id === (odds && odds.baseline || 'polymarket_us')) return `<span class="muted">${esc(R.feedBaseline)}</span>`;
+      if (!p.oddsApi) return `<span class="muted">${esc(R.feedMissing)}</span>`;
+      if (!feedOn) return `<span class="muted">${esc(R.feedSoon)}</span>`;
+      if (!f.n) return `<span class="muted">${esc(R.noneYet)}</span>`;
+      const d = Math.round(f.avgDiff * 10) / 10;
+      // book costs MORE than Polymarket = worse for the bettor = red
+      return `<b>${esc(R.feedCount(f.n))}</b><span class="${d > 0 ? 'neg' : d < 0 ? 'pos' : ''}">${esc(d === 0 ? R.feedSame : R.feedDiff(Math.abs(d), d > 0))}</span>`;
+    };
+    const block = (p, row) => `
+      <div class="pc-row">
+        <div class="pc-name">${platformBadge(p.name)} ${esc(p.name)}</div>
+        <div class="pc-cells">
+          <div class="pc-cell">${loggedCell(row.logged)}</div>
+          <div class="pc-cell">${feedCell(p, row.feed)}</div>
+          <div class="pc-cell pc-total"><b>${row.total}</b></div>
+        </div>
+      </div>`;
+    html += `<div class="pc">
+      <div class="pc-head"><span>${esc(R.colLogged)} ${tip('colLogged')}</span><span>${esc(R.colFeed)} ${tip('colFeed')}</span><span>${esc(R.colTotal)} ${tip('colTotal')}</span></div>
+      ${CFG.platforms.map((p, i) => block(p, sum.rows[i])).join('')}
+      ${sum.other.n ? block(Object.assign({}, CFG.otherPlatform, { name: CFG.otherPlatform.name, oddsApi: null }), { logged: sum.other, feed: { n: 0 }, total: sum.other.n }) : ''}
+    </div>`;
+    if (log) html += `<p class="muted small">${esc(R.platLag(recs.length))}</p>`;
+    return html;
+  }
+
+  /** Record tab: prediction record + per-platform price comparison (all 10 apps). */
   async function renderRecord() {
     const R = STR.record;
     const el = $('#tab-record');
@@ -825,6 +878,10 @@
     let preds = null, log = null;
     try { preds = await fetchData('data/predictions.json'); } catch (e) { /* shown below */ }
     try { log = await fetchData(CFG.betLogPath); } catch (e) { /* shown below */ }
+    // data/book-odds.json: automatic price comparisons (The Odds API). Missing
+    // or status "waiting_for_feed" -> the middle column says "Coming soon".
+    let odds = null;
+    try { odds = await fetchData(CFG.bookOddsPath || 'data/book-odds.json'); } catch (e) { /* optional */ }
     let html = `<h2>${esc(R.title)}</h2>`;
     if (!preds) html += `<p class="error">${esc(R.loadError)}</p>`;
     else {
@@ -840,20 +897,7 @@
         ${list.length ? `<h3>${esc(R.recent)}</h3><div class="table-wrap"><table><tr><th>${esc(R.date)}</th><th>${esc(R.pick)}</th><th class="num">${esc(R.chance)}</th><th>${esc(R.result)}</th></tr>
           ${list.slice().sort((a, b) => String(b.date).localeCompare(String(a.date))).slice(0, 30).map(p => `<tr><td>${esc(p.date)}</td><td>${esc(p.pick)}<div class="muted small">${esc(p.game)}</div></td><td class="num">${esc(p.win_prob)}%</td><td><span class="badge ${p.result === 'win' ? 'won' : p.result === 'loss' ? 'lost' : 'open'}">${esc(R.resultWords[p.result] || p.result)}</span></td></tr>`).join('')}</table></div>` : ''}`;
     }
-    html += `<h3>${esc(R.platTitle)} ${tip('gap')}</h3><p class="muted small">${esc(R.platNote)}</p>`;
-    if (!log) html += `<p class="error">${esc(R.logError)}</p>`;
-    else {
-      const recs = log.records || [];
-      const by = {};
-      recs.forEach(r => { if (typeof r.gap === 'number') { const b = by[r.platform] || (by[r.platform] = { n: 0, sum: 0 }); b.n++; b.sum += r.gap; } });
-      const listed = CFG.platforms.map(p => p.name);
-      const extra = Object.keys(by).filter(n => !listed.includes(n));
-      const row = (name, b) => `<tr><td>${platformBadge(name)} ${esc(name)}</td>${b ? `<td class="num">${b.n}</td><td class="num ${sign(b.sum / b.n)}">${pct(b.sum / b.n, 1)}</td>` : `<td class="muted" colspan="2">${esc(R.platNone)}</td>`}</tr>`;
-      const other = extra.reduce((acc, n) => ({ n: acc.n + by[n].n, sum: acc.sum + by[n].sum }), { n: 0, sum: 0 });
-      html += `<div class="table-wrap"><table><tr><th>${esc(R.platName)}</th><th class="num">${esc(R.platSlips)}</th><th class="num">${esc(R.platGap)}</th></tr>
-        ${listed.map(n => row(n, by[n])).join('')}${other.n ? row(CFG.otherPlatform.name, other) : ''}</table></div>
-        <p class="muted small">${esc(R.platLag(recs.length))}</p>`;
-    }
+    html += renderPlatformCompare(log, odds);
     el.innerHTML = html;
   }
 

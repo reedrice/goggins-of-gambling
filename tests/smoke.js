@@ -76,7 +76,11 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   console.log('money after win:', await p.$eval('#hdr-bankroll', e => e.textContent));
   await p.screenshot({ path: SHOT + '/6-bets.png', fullPage: true });
   await p.click('[data-go="record"]'); await wait(800);
-  console.log('platform rows:', await p.$$eval('#tab-record table:last-of-type tr', x => x.slice(1).map(r => r.innerText.replace(/\s+/g, ' ').trim()).join(' | ')));
+  console.log('platform rows:', await p.$$eval('#tab-record .pc-row', x => x.map(r => r.innerText.replace(/\s+/g, ' ').trim()).join(' | ')));
+  console.log('record fits phone (no sideways scroll):', await p.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth));
+  await p.addStyleTag({ content: '.topbar,.tabbar,.plat-bar{visibility:hidden}' });   // keep fixed bars out of the element shot
+  await (await p.$('#tab-record .pc')).screenshot({ path: SHOT + '/7b-compare.png' });
+  await p.addStyleTag({ content: '.topbar,.tabbar,.plat-bar{visibility:visible}' });
   await p.screenshot({ path: SHOT + '/7-record.png', fullPage: true });
   await p.click('[data-go="settings"]'); await wait(200);
   await tap('#set-plat [data-plat="kalshi"]'); await wait(300);

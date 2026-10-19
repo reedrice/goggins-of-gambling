@@ -34,3 +34,16 @@ a(C.formatPrice(63) === '63¢' && C.formatPrice(63.5) === '63.5¢', 'cents is th
 a(C.formatPrice(40, 'decimal') === '2.50', 'decimal');
 a(C.toAmerican(0) === null && C.formatPrice(100) === '—', 'out of range');
 a(near(C.parsePrice('63.5c').p, .635) && near(C.parsePrice(String(C.toAmerican(63))).p, .63, .002), 'round-trips through parsePrice');
+
+// Record tab: per-app summary (bets you logged / from odds feed / total)
+{
+  const plats = [{ id: 'polymarket_us', name: 'Polymarket US' }, { id: 'fanduel', name: 'FanDuel' }, { id: 'bet365', name: 'bet365' }];
+  const recs = [{ platform: 'Polymarket US', gap: -0.06 }, { platform: 'Polymarket US', gap: -0.08 }, { platform: 'Some Book', gap: 0.1 }, { platform: 'FanDuel', gap: 'x' }];
+  const cmp = [{ book: 'fanduel', diff: 2 }, { book: 'fanduel', diff: 3 }, { book: 'fanduel', diff: NaN }];
+  const s = C.platformSummary(recs, cmp, plats);
+  a(s.rows[0].logged.n === 2 && near(s.rows[0].logged.avgGap, -0.07) && s.rows[0].total === 2, 'logged count + avg gap');
+  a(s.rows[1].logged.n === 0 && s.rows[1].feed.n === 2 && near(s.rows[1].feed.avgDiff, 2.5) && s.rows[1].total === 2, 'feed count + avg diff, bad rows skipped');
+  a(s.rows[2].total === 0 && s.rows[2].logged.avgGap === null && s.rows[2].feed.avgDiff === null, 'empty row');
+  a(s.other.n === 1 && near(s.other.avgGap, 0.1), 'unlisted platforms -> Other');
+  a(C.platformSummary(null, null, plats).rows.length === 3, 'tolerates missing data');
+}

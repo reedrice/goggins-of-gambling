@@ -182,5 +182,39 @@
     return (Math.round(pct * 10) / 10) + '¢';
   }
 
-  return { parsePrice, describe, parlay, gap, expectedValue, profit, edgePts, toAmerican, formatPrice };
+  /**
+   * Per-platform numbers for the Record tab's "How each app's prices compare"
+   * table. Pure, so it's unit-tested in Node.
+   *
+   * @param {object[]} records data/bet-log.json records ({platform: name, gap})
+   * @param {object[]} comparisons data/book-odds.json comparisons
+   *   ({book: platform id, diff: cents, book minus Polymarket US})
+   * @param {{id:string,name:string}[]} platforms APP_CONFIG.platforms
+   * @returns {{rows: {id,name,logged:{n,avgGap},feed:{n,avgDiff},total:number}[],
+   *            other: {n,avgGap}}} avg* are null when n = 0. `other` collects
+   *   logged bets whose platform isn't in the list ("Other" row).
+   */
+  function platformSummary(records, comparisons, platforms) {
+    const acc = () => ({ n: 0, sum: 0 });
+    const logged = {}, feed = {}, other = acc();
+    const names = new Set(platforms.map(p => p.name));
+    (records || []).forEach(r => {
+      if (!r || typeof r.gap !== 'number' || !isFinite(r.gap)) return;
+      const b = names.has(r.platform) ? (logged[r.platform] = logged[r.platform] || acc()) : other;
+      b.n++; b.sum += r.gap;
+    });
+    (comparisons || []).forEach(c => {
+      if (!c || typeof c.diff !== 'number' || !isFinite(c.diff)) return;
+      const b = feed[c.book] = feed[c.book] || acc();
+      b.n++; b.sum += c.diff;
+    });
+    const avg = (b, k) => ({ n: b ? b.n : 0, [k]: b && b.n ? b.sum / b.n : null });
+    const rows = platforms.map(p => {
+      const l = avg(logged[p.name], 'avgGap'), f = avg(feed[p.id], 'avgDiff');
+      return { id: p.id, name: p.name, logged: l, feed: f, total: l.n + f.n };
+    });
+    return { rows, other: avg(other, 'avgGap') };
+  }
+
+  return { parsePrice, describe, parlay, gap, expectedValue, profit, edgePts, toAmerican, formatPrice, platformSummary };
 });

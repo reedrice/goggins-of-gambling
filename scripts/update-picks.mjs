@@ -11,7 +11,7 @@
  *   tokens) is enforced mechanically. Zero dependencies; Node 18+.
  *
  * USAGE (run from anywhere inside the repo)
- *   node scripts/update-picks.mjs validate [picks.json]          # default: data/picks.json
+ *   node scripts/update-picks.mjs validate [picks.json]          # default: data/picks.json (also predictions.json, book-odds.json)
  *   node scripts/update-picks.mjs picks <new-picks.json>         # validate + replace + commit + push
  *   node scripts/update-picks.mjs add-predictions <preds.json>   # file = array of Prediction objects
  *   node scripts/update-picks.mjs grade <grades.json>            # file = [{id, result, final_score?}]
@@ -209,6 +209,32 @@ export function validatePredictionsFile(d) {
   return errs;
 }
 
+/**
+ * Validate data/book-odds.json (automatic per-app price comparisons from The
+ * Odds API; schema in HANDOFF.md). Dollar-free like everything else.
+ * @param {object} d @returns {string[]} errors
+ */
+export function validateBookOdds(d) {
+  const errs = [];
+  if (!d || d.schema_version !== 1) errs.push('schema_version: must be 1');
+  if (!['waiting_for_feed', 'active'].includes(d && d.status)) errs.push('status: must be "waiting_for_feed" or "active"');
+  if (!Array.isArray(d && d.comparisons)) return [...errs, 'comparisons: array required'];
+  const books = ['polymarket_us', 'kalshi', 'bovada', 'fanduel', 'draftkings', 'betmgm', 'caesars', 'espnbet', 'fanatics', 'bet365'];
+  const cents = v => typeof v === 'number' && v > 0 && v < 100;
+  d.comparisons.forEach((c, i) => {
+    const w = `comparisons[${i}]`;
+    if (!c || typeof c !== 'object') return errs.push(`${w}: object required`);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(c.date || '')) errs.push(`${w}.date: YYYY-MM-DD required`);
+    if (!books.includes(c.book)) errs.push(`${w}.book: one of ${books.join(', ')}`);
+    if (!['yes', 'no'].includes(c.side)) errs.push(`${w}.side: "yes" or "no"`);
+    if (!cents(c.book_chance)) errs.push(`${w}.book_chance: cents 0-100`);
+    if (!cents(c.polymarket_price)) errs.push(`${w}.polymarket_price: cents 0-100`);
+    if (typeof c.diff !== 'number' || Math.abs(c.diff - (c.book_chance - c.polymarket_price)) > 0.11) errs.push(`${w}.diff: must equal book_chance - polymarket_price`);
+  });
+  scanPrivacy(d, 'root', errs);
+  return errs;
+}
+
 // ------------------------------------------------------------------ git
 
 /** Run git in the repo root. @returns {string} stdout @throws on non-zero exit */
@@ -257,7 +283,8 @@ function failIf(errs, label) {
 /** `validate [file]`: report only, never writes. */
 function cmdValidate(file = PICKS) {
   const d = readJSON(file);
-  const errs = path.basename(file) === 'predictions.json' ? validatePredictionsFile(d) : validatePicks(d);
+  const base = path.basename(file);
+  const errs = base === 'predictions.json' ? validatePredictionsFile(d) : base === 'book-odds.json' ? validateBookOdds(d) : validatePicks(d);
   failIf(errs, file);
   console.log(`✓ ${file} is valid.`);
 }

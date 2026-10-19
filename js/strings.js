@@ -204,10 +204,23 @@ window.STR = {
     pts: n => `${n} pts`,
     recent: 'Recent picks', date: 'Date', pick: 'Pick', chance: 'Chance', result: 'Result',
     resultWords: { win: 'won', loss: 'lost', pending: 'not finished', push: 'refund' },
-    platTitle: 'How each app pays on combo bets',
-    platNote: 'Compared with what the picks would pay if we just multiplied them together. Below 0% means the app pays less.',
-    platName: 'App', platSlips: 'Bets logged', platGap: 'Pays vs. our estimate',
+    // "How each app's prices compare": one block per app, three columns.
+    platTitle: 'How each app\'s prices compare',
+    platNote: 'Which apps pay more or less for the same bet. Two sources: combo bets people logged here, and (soon) prices we pull in automatically.',
+    colLogged: 'Bets you logged',      // manual entries in the shared bet log
+    colFeed: 'From odds feed',         // automatic price checks (The Odds API)
+    colTotal: 'Total',                 // both counts added up
+    loggedCount: n => `${n} bet${n === 1 ? '' : 's'}`,
+    loggedGap: g => `pays ${g} vs. our estimate`,           // g like "-6.9%"
+    feedCount: n => `${n} price${n === 1 ? '' : 's'}`,
+    feedDiff: (c, more) => `${c}¢ ${more ? 'more' : 'less'} than Polymarket US`,
+    feedSame: 'same as Polymarket US',
+    feedSoon: 'Coming soon, waiting on odds feed',
+    feedBaseline: 'We compare other apps to this one',
+    feedMissing: 'Not in the odds feed',
+    noneYet: 'None yet',
     platNone: 'No bets logged yet',
+    platOther: 'Other apps',
     platLag: n => `${n} shared bet(s). New ones can take a minute or two to show up.`,
     logError: 'Couldn\'t load the shared numbers.'
   },
@@ -264,6 +277,9 @@ window.STR = {
     roi: 'Money won or lost compared with the money you bet. Example: +10% means you\'re up $10 for every $100 you\'ve bet.',
     calibration: 'If we\'re honest, picks we give 60% should win about 6 out of 10 times. This table checks that.',
     myPlatform: 'Tapping "Open in app" takes you to this app\'s page for the bet. If the bet isn\'t on Kalshi, we\'ll say so and open a search.',
+    colLogged: 'Combo bets you or your friends saved with "Share" on. We compare what the app paid with what the picks multiply out to. Example: −7% means the app paid 7% less.',
+    colFeed: 'Each day we\'ll look up the same picks on other apps and compare the price with Polymarket US. Example: "2¢ more" means that app charges a bit more for the same bet, so you\'d win a bit less.',
+    colTotal: 'How many comparisons we have for this app so far, from both sources. More means the numbers are more reliable.',
     priceFormat: 'Only changes how prices look. You can still type prices any way you like.'
   },
 

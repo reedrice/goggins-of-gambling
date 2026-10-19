@@ -60,6 +60,7 @@ data/markets/events/<slug>.json snapshot: every market of one game (lazy-loaded)
 data/picks.json       today's picks (overwritten daily by the job)
 data/predictions.json game predictions and grades (appended by the job)
 data/bet-log.json     shared calibration log (written by the app with users' tokens)
+data/book-odds.json   automatic per-app price comparisons (The Odds API; empty until the feed is set up, §17)
 tests/calc.test.js        node: math
 tests/github-log.test.js  node: log writer against a mocked API
 tests/smoke.js            headless Chrome UI walk-through (puppeteer-core, --no-save)
@@ -254,6 +255,48 @@ All UI text lives in `js/strings.js`, grouped by screen and commented. Rules (al
 
 ## 16. Platforms and price display
 
-`APP_CONFIG.platforms` is the single ordered list: Polymarket US, Kalshi, Bovada, FanDuel, DraftKings, BetMGM, Caesars, ESPN Bet, Fanatics, bet365 (`{id, name, short, color}`), plus `otherPlatform`. It feeds the leg dropdown in Build a bet (with **Other**) and the Record tab's "How each app pays on combo bets" table, which shows every platform with a colored badge, "No bets logged yet" when empty, and Other only if it has data. `myPlatforms` lists the ones that can be the "I bet on" choice.
+`APP_CONFIG.platforms` is the single ordered list: Polymarket US, Kalshi, Bovada, FanDuel, DraftKings, BetMGM, Caesars, ESPN Bet, Fanatics, bet365 (`{id, name, short, color}`), plus `otherPlatform`. It feeds the leg dropdown in Build a bet (with **Other**) and the Record tab's "How each app's prices compare" section (§17). Each entry also has `oddsApi`, its The Odds API bookmaker key (null = not in the feed). `myPlatforms` lists the ones that can be the "I bet on" choice.
 
 Prices show as **cents by default** (Polymarket style). Settings → Price format can switch display to American (63¢ → −170, 48¢ → +108, 50¢ → +100) or decimal (`BetCalc.formatPrice`). Price inputs accept any format regardless of the setting. Picker legs store fractional cents as `"63.5c"` so they don't parse as decimal odds.
+
+## 17. Record tab: "How each app's prices compare" and data/book-odds.json
+
+One block per app (in `APP_CONFIG.platforms` order, plus "Other" only if someone logged a bet there). Each block has three cells laid out as a CSS grid (`.pc-*` in style.css), so the section fits a phone with no sideways scroll:
+
+| column | source | shows |
+|---|---|---|
+| **Bets you logged** | `data/bet-log.json` (shared, manual) | count + average `gap` ("pays −6.9% vs. our estimate"), or "No bets logged yet" |
+| **From odds feed** | `data/book-odds.json` (automatic) | count + average `diff` ("2¢ more than Polymarket US"). Until `status` is `"active"`, every row says **"Coming soon, waiting on odds feed"**. Polymarket US says "We compare other apps to this one" (it's the baseline). Apps with `oddsApi: null` (bet365) say "Not in the odds feed" |
+| **Total** | both | logged count + feed count |
+
+The numbers come from `BetCalc.platformSummary(records, comparisons, platforms)`, which is pure and tested in `tests/calc.test.js`. All labels and the three (i) tooltips are in `STR.record` / `STR.tips` (`colLogged`, `colFeed`, `colTotal`).
+
+**data/book-odds.json** (dollar-free; check it with `node scripts/update-picks.mjs validate data/book-odds.json`):
+```jsonc
+{
+  "schema_version": 1,
+  "status": "waiting_for_feed",     // set to "active" once the job fills comparisons; the UI ignores rows until then
+  "updated_at": null,               // ISO 8601 of the last feed run
+  "source": "The Odds API (https://the-odds-api.com), regions us,us2,us_ex",
+  "baseline": "polymarket_us",      // platform id everything is compared against
+  "comparisons": [{                 // one row per (pick or leg) x (app) per day
+    "date": "2026-10-20",           // slate date
+    "pick_id": "s-phi-ml",          // id in picks.json
+    "leg": null,                    // leg index for parlays/long shots, else null
+    "market_id": "aec-nhl-col-phi-2026-10-19",  // Polymarket US market slug
+    "side": "no",                   // our side of that market
+    "book": "fanduel",              // platform id from APP_CONFIG.platforms
+    "odds_api_key": "fanduel",      // bookmaker key in the feed
+    "book_price": "+190",           // as the app lists it (American)
+    "book_chance": 34.5,            // that price as cents (0-100)
+    "polymarket_price": 33,         // Polymarket US cost in cents at the same time
+    "diff": 1.5,                    // book_chance - polymarket_price. Positive = that app charges more
+    "fetched_at": "2026-10-20T14:00:00Z"
+  }]
+}
+```
+
+**Turning the feed on later** (needs an API key; it's not set up yet, so nothing calls the API today):
+1. Get a key at the-odds-api.com and keep it **out of the repo** (an environment variable in the daily job, e.g. `ODDS_API_KEY`). Never commit it.
+2. In the daily job, for each pick/leg with a `market_id`, call `GET https://api.the-odds-api.com/v4/sports/{sport}/odds?regions=us,us2,us_ex&markets=h2h,spreads,totals&oddsFormat=american&apiKey=…` (player props need the per-event endpoint `/v4/sports/{sport}/events/{id}/odds`). Match by team and line, convert American to cents (`BetCalc.parsePrice`), and append one row per app using the `oddsApi` keys in `config.js`. Caesars (`williamhill_us`) and Fanatics need a paid plan. ESPN Bet appears as `espnbet` ("theScore Bet"). bet365 isn't in the US feed.
+3. Set `status: "active"` and `updated_at`, validate, commit and push. The Record tab picks it up on the next load.
