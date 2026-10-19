@@ -474,6 +474,87 @@
     renderPlatformToggle();
     window.Picker.loadIndex().catch(() => {});
     go(location.hash ? location.hash.slice(1) : savedView());
+    startLiveAlerts();
+  }
+
+  // ------------------------------------------- live alerts: badge + pop-up
+  // Pablo's request for Richie (HANDOFF §31 "Requests for Reed's bot", Oct 19 2026).
+  // Reads Richie's feed data/live/<LiveBets.SLUG>.json (his file, we only read it):
+  // alerts[] newest first, each {id, at (ISO UTC), type, tier, text, ...}.
+  //  - Badge on the "Live Bets 🔴" toggle and the bottom-bar Picks button =
+  //    alerts newer than localStorage['liveBets.alertsSeen.' + SLUG]. That key is
+  //    Richie's and READ-ONLY here: js/live-bets.js writes it when the Live view
+  //    draws, which clears the badge. No stored value yet = every alert counts.
+  //  - Pop-up on any page for a new big edge (type 'new_edge', tier 'big'),
+  //    linking to #live. Dismissed ids are kept in OUR key betdash_liveDismissed.
+  //  - Polls about every 60 s, only while the page is visible.
+  // Missing LiveBets/SLUG/file or bad JSON = no badge, no pop-up, no error shown.
+  // Text goes in with textContent (data is untrusted). No cents, no dollars.
+  const LIVE_POLL_MS = 60000, LIVE_DISMISS_KEY = 'betdash_liveDismissed';
+  const LIVE_TXT = { toast: 'New big edge:', see: 'See it', close: 'Close' };   // kept here: strings.js is outside this change's scope
+  let liveAlerts = [], liveTimer = null;
+  const liveSlug = () => (window.LiveBets && typeof LiveBets.SLUG === 'string' && /^[a-z0-9-]+$/.test(LiveBets.SLUG) ? LiveBets.SLUG : '');
+  const readLS = k => { try { return localStorage.getItem(k); } catch (e) { return null; } };
+
+  /** Alerts newer than Richie's last-seen marker (all of them when there is none). */
+  function liveNew() {
+    const slug = liveSlug(); if (!slug) return [];
+    const seen = readLS('liveBets.alertsSeen.' + slug);
+    return liveAlerts.filter(a => a && typeof a.at === 'string' && (!seen || a.at > seen));
+  }
+
+  /** Put the count on the toggle + Picks nav button ('' hides it; 9+ caps it). */
+  function paintLiveBadges() {
+    const n = liveNew().length, txt = n ? (n > 9 ? '9+' : String(n)) : '';
+    document.querySelectorAll('[data-picks-view="live"], .tabbar [data-go="picks"]').forEach(b => {
+      let i = b.querySelector('.live-badge');
+      if (!txt) { if (i) i.remove(); return; }
+      if (!i) { i = document.createElement('i'); i.className = 'live-badge'; b.appendChild(i); }
+      i.textContent = txt; i.setAttribute('aria-label', txt + ' new live alerts');
+    });
+  }
+
+  /** Small dismissible pop-up for the newest not-dismissed big edge. */
+  function paintLiveToast() {
+    let dismissed = [];
+    try { dismissed = JSON.parse(readLS(LIVE_DISMISS_KEY) || '[]'); } catch (e) { dismissed = []; }
+    if (!Array.isArray(dismissed)) dismissed = [];
+    const onLive = !$('#tab-picks').hidden && picksView === 'live';
+    const a = onLive ? null : liveNew().find(x => x.type === 'new_edge' && x.tier === 'big' && x.id && !dismissed.includes(x.id));
+    let t = $('#live-toast');
+    if (!a) { if (t) t.remove(); return; }
+    if (t && t.dataset.id === String(a.id)) return;
+    if (t) t.remove();
+    t = document.createElement('div'); t.id = 'live-toast'; t.className = 'live-toast'; t.setAttribute('role', 'status'); t.dataset.id = String(a.id);
+    const msg = document.createElement('a'); msg.href = '#live'; msg.className = 'lt-msg';
+    const b = document.createElement('b'); b.textContent = LIVE_TXT.toast + ' ';
+    msg.append('🔴 ', b, String(a.text || a.side || ''), ' ');
+    const see = document.createElement('span'); see.className = 'lt-see'; see.textContent = LIVE_TXT.see + ' →'; msg.appendChild(see);
+    const x = document.createElement('button'); x.type = 'button'; x.className = 'lt-x'; x.textContent = '×'; x.setAttribute('aria-label', LIVE_TXT.close);
+    const dismiss = () => { try { localStorage.setItem(LIVE_DISMISS_KEY, JSON.stringify([a.id, ...dismissed].slice(0, 100))); } catch (e) {} t.remove(); };
+    msg.onclick = dismiss; x.onclick = dismiss;
+    t.append(msg, x); document.body.appendChild(t);
+  }
+
+  /** Fetch the feed once, then repaint. Any failure = treat as no alerts. */
+  async function pollLiveAlerts() {
+    const slug = liveSlug();
+    if (!slug) { liveAlerts = []; } else {
+      try {
+        const r = await fetch(`data/live/${slug}.json?ts=${Date.now()}`, { cache: 'no-store' });
+        const j = r.ok ? await r.json() : null;
+        liveAlerts = j && Array.isArray(j.alerts) ? j.alerts.slice(0, 50) : [];
+      } catch (e) { liveAlerts = []; }
+    }
+    paintLiveBadges(); paintLiveToast();
+  }
+
+  /** Poll every ~60 s while visible; poll right away when the page comes back. */
+  function startLiveAlerts() {
+    const tick = () => { if (document.visibilityState === 'visible') pollLiveAlerts(); };
+    tick();
+    clearInterval(liveTimer); liveTimer = setInterval(tick, LIVE_POLL_MS);
+    document.addEventListener('visibilitychange', tick);
   }
 
   // ---------------------------------------------------------------- picks
@@ -645,8 +726,10 @@
       // Richie's container. Keep this tie-in tiny: one div + one call.
       $('#picks-view').innerHTML = '<div id="live-bets-root" class="live-bets-root"></div>';
       if (window.LiveBets && typeof LiveBets.render === 'function') LiveBets.render($('#live-bets-root'));
+      [0, 1500, 4000].forEach(ms => setTimeout(() => { paintLiveBadges(); paintLiveToast(); }, ms));   // Richie's view updates its seen key -> badge clears
       return;
     }
+    paintLiveBadges(); paintLiveToast();
     return renderTodayPicks();
   }
 

@@ -687,7 +687,7 @@ pregame open (free API, no Odds API credits).
 
 ### Requests for Reed's bot
 - (live-watch, Oct 19, 2026) Optional: show a small "Live price moves" list for a game from `data/live/<slug>-alerts.json` (side, open → now American odds, "$10 pays $X" worked out from `now_chance`). Fields are in §31.
-- (Live Bets alerts, Oct 19, 2026, Richie) **Please add site-wide Live Bets alert notifications.** Richie's files need no change for this; the data and the last-seen marker already exist.
+- ✅ **DONE Oct 19, 2026 (Reed's bot, see §33).** (Live Bets alerts, Oct 19, 2026, Richie) **Please add site-wide Live Bets alert notifications.** Richie's files need no change for this; the data and the last-seen marker already exist.
   1. **Badge:** show the number of new alerts on the "Live Bets 🔴" toggle (app.js `renderPicks`) and on the bottom-bar Picks nav item.
   2. **Optional toast:** on any page, a small dismissible banner or toast when a new **big edge** alert arrives (`type === 'new_edge' && tier === 'big'`), e.g. "New big edge: <text>" with a link to `#live`.
   - **Data:** `fetch('data/live/' + LiveBets.SLUG + '.json?ts=' + Date.now())`. `window.LiveBets.SLUG` is the current game (today `nfl-was-sf-2026-10-19`). Read the `alerts` array: **newest first**, up to 50. Each entry has `id` (unique, stable), `key`, `at` (ISO UTC time), `type` (`new_edge` | `gone` | `news` | `removed`), `tier` (`big` | `slight`), `side`, `market`, `now_odds` (American), `now_chance` (0-100), `edge` (points), `text` (plain sentence, no dollar figures) and `url` (https Polymarket link). There are no alerts before kickoff, and anything past +500 / -500 is already filtered out.
@@ -738,3 +738,19 @@ The Picks tab has a two-option toggle at the top: **"Today's Picks" | "Live Bets
 - Alerts feed (Oct 19, 2026): `publish` keeps `alerts` (newest first, last 50) and `alert_seen` (ids already alerted) **inside the same data/live/<slug>.json**, so /workspace/live-loop.sh needs no change. Events, each sent once: `new_edge` (and again if slight moves up to big), `gone`, `news` (25+ pts, likely news) and `removed` (a shown edge now explained by injury, worded only as "removed from list"). There are no alerts before kickoff. Entries hold the time, a plain sentence, side, market, American odds, chance and link. No dollar figures; the page works out "$10 pays $X". `liveAlerts()` is tested in tests/live-watch.test.mjs.
 - Odds limit (Oct 19, 2026, Richie): `ODDS_LIMIT = 500` in scripts/live-watch.mjs. Any side whose **current** price is longer than +500 or shorter than -500 (chance under 16.7% or over 83.3%) is not tracked anywhere: no edge, no alert, no "Moved for a reason" item. An edge or alert that crosses the limit later is dropped quietly (no "gone" alert, and its old alert is removed). js/live-bets.js applies the same limit as a safety net (`inLimit`). Tests are in both test files.
 - Alerts box (Oct 19, 2026): the top of the Live Bets view shows the `alerts` feed newest first (scrolls past about 3 on phones). Each entry has the CT time, a plain sentence, American odds + "$10 pays $X" (whole dollars) for new edges and news, and a link. Entries newer than the viewer's previous refresh are highlighted "NEW". Last seen is kept in localStorage `liveBets.alertsSeen.<slug>`, and a first visit highlights nothing. Empty state: "No alerts yet. They'll show up here once the game starts." The same +500 / -500 filter applies to the edge lists, Moved for a reason and the Alerts box.
+
+## 33. Live Bets alerts badge + big-edge pop-up (done for Pablo/Richie, Oct 19, 2026)
+
+Built exactly as Pablo asked under "Requests for Reed's bot" (§31). The code is in js/app.js ("live alerts" block) and the styles are in css/style.css §22. **Richie's files are untouched.**
+
+- **Feed:** `data/live/<LiveBets.SLUG>.json` (Richie's file, read only), fetched with `?ts=` and `no-store`. It uses the first 50 `alerts`.
+- **Badge:** a red count on the "Live Bets 🔴" toggle and the bottom-bar Picks button.
+  - It counts alerts whose `at` is newer than `localStorage['liveBets.alertsSeen.' + SLUG]`. That key is **read-only for us**: Richie's view writes it when it draws, so opening Live Bets clears the badge (we repaint 0 / 1.5 / 4 s after the view opens).
+  - With no stored value yet, every alert counts. Above 9 it shows "9+".
+- **Pop-up:** shows on any page except the Live view itself, for the newest alert with `type === 'new_edge' && tier === 'big'` that hasn't been dismissed.
+  - It reads "🔴 New big edge: <text> See it →" and links to `#live`.
+  - Tapping it or the × dismisses it. Dismissed ids are kept in **our own key** `betdash_liveDismissed` (the last 100).
+- **Polling:** every 60 s, only while `document.visibilityState === 'visible'`. It also checks right away when the page becomes visible again.
+- **Safety:** a missing `LiveBets` / `SLUG` / file, or bad JSON, just means no badge and no pop-up. Text goes in with `textContent`. The only link is `#live`. No cents, no dollars.
+- **Wording:** the pop-up words ("New big edge:", "See it", "Close") sit in app.js `LIVE_TXT`, because this change was limited to index.html, app.js and our CSS. Move them to `STR.live` later if wanted.
+- **Test:** `CH=<chromium> NODE_PATH=<puppeteer-core> node tests/live-alerts.smoke.js <site url>` serves made-up TEST alerts by intercepting the feed request (nothing is written to data/live). It checks the badge count, the pop-up on two pages, dismissal, and that the badge clears on opening Live Bets.
