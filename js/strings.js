@@ -102,6 +102,14 @@ window.STR = {
   stake: (dollars, units) => `${dollars} (${unitWords(units)})`,
   stakeRange: (lo, hi, ulo, uhi) => `${lo}–${hi} (${unitWords(ulo)} to ${unitWords(uhi)})`,
 
+  /** Game start hints on slip legs and open bets (js/gametime.js). */
+  gameTime: {
+    started: 'Started',
+    startsMin: m => `Starts in ${m} min`,
+    startsHours: (h, m) => `Starts in ${h}h${m ? ` ${m}m` : ''}`,
+    startsDays: d => `Starts in ${d} days`
+  },
+
   // ---------------------------------------------------------------- calculator
   calc: {
     title: 'Build a bet',

@@ -29,6 +29,8 @@ global.fetch = async (url, opts = {}) => {
     legs: [{ desc: 'G +1.5', price: '63', p: 0.63 }], estMultiple: 3.3069, quotedMultiple: 2.97, stake: 5, status: 'open' };
   const rec = G.buildRecord(bet, 'tester');
   ok(!('stake' in rec) && !JSON.stringify(rec).includes('"p"'), 'no stake / private fields in record');
+  const rec2 = G.buildRecord(Object.assign({}, bet, { legs: [{ desc: 'A', price: '50', startTime: '2026-10-20T00:15:00Z', marketId: 'x' }, { desc: 'B', price: '40', startTime: 'tonight $5' }] }), 'tester');
+  ok(rec2.legs[0].start_time === '2026-10-20T00:15:00Z' && !('marketId' in rec2.legs[0]) && !('start_time' in rec2.legs[1]), 'leg start_time copied only when strict ISO');
   ok(rec.result === 'pending' && rec.gap === +(2.97 / 3.3069 - 1).toFixed(4), 'record gap + pending');
   await G.upsertRecord(rec, 'tok');
   ok(puts === 2, 'retried once after 409 (puts=' + puts + ')');

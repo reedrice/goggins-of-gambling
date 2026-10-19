@@ -98,6 +98,19 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await sb.evaluate(e => e.scrollIntoView({ block: 'center' })); await sb.click(); await wait(1500);
   await p.screenshot({ path: SHOT + '/4-game.png' });
   console.log('slip legs:', await p.$$eval('#slip .leg', x => x.map(e => e.querySelector('.leg-desc, .l-desc').textContent || e.querySelector('.l-desc').value).join(' | ')));
+  // Game start times: add an MLB leg (starts 7:08 PM, before the 7:15 PM NFL legs) + a typed leg.
+  await p.$eval('.psearch', e => { e.value = 'guardians rays under'; e.dispatchEvent(new Event('input')); }); await wait(1200);
+  await tap('.presults .pbtn:not([disabled])'); await wait(1500);
+  await tap('#add-manual'); await wait(300);
+  await p.type('#slip .l-desc', 'Typed by hand'); await p.type('#slip .leg:last-child .l-price', '50').catch(() => {});
+  const legTimes = await p.$$eval('#slip .leg', x => x.map(e => ((e.querySelector('.leg-desc b') || {}).textContent || 'typed') + ' => ' + ((e.querySelector('.leg-when') || {}).textContent || '(no time)').trim()));
+  console.log('slip leg times (sorted):\n   ' + legTimes.join('\n   '));
+  await p.$eval('#slip', e => e.scrollIntoView({ block: 'start' })); await wait(300);
+  await p.addStyleTag({ content: '.topbar,.tabbar,.plat-bar{visibility:hidden}' });
+  await (await p.$('#slip')).screenshot({ path: SHOT + '/5b-slip-times.png' });
+  await p.addStyleTag({ content: '.topbar,.tabbar,.plat-bar{visibility:visible}' });
+  // Remove the typed leg again (no price -> can't save).
+  await p.$$eval('#slip [data-rm]', x => x[x.length - 1].click()); await wait(300);
   console.log('related flags:', await p.$$eval('#slip .related-flag', x => x.length), '| as-of:', await p.$eval('#slip-asof', e => e.textContent));
   console.log('calc:', await p.$eval('#calc-out', e => e.innerText.replace(/\n/g, ' ')));
   await p.type('#c-quoted', '4.5'); await p.type('#c-stake', '5');
@@ -111,6 +124,19 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   // Kalshi links must be the app-friendly 3-part form (series/slug/event[?op_market_ticker=…]).
   console.log('saved leg kalshi links:', await p.evaluate(() => JSON.parse(localStorage.betdash_bets)[0].legs.map(l => l.kalshiUrl)));
   console.log('old link upgraded:', await p.evaluate(() => Picker.fixKalshiUrl('https://kalshi.com/markets/kxnflgame/kxnflgame-26oct19wassf')));
+  console.log('saved leg start times:', await p.evaluate(() => JSON.parse(localStorage.betdash_bets)[0].legs.map(l => l.startTime)));
+  console.log('shared-log legs:', JSON.stringify(await p.evaluate(() => GitHubLog.buildRecord(JSON.parse(localStorage.betdash_bets)[0], 'x').legs)));
+  console.log('my bets leg times:', await p.$$eval('#tab-bets .bet-legs .leg-when', x => x.map(e => e.textContent.trim()).join(' | ')));
+  // An older bet saved before start times existed: filled in from the snapshot by market id.
+  await p.evaluate(() => { const bs = JSON.parse(localStorage.betdash_bets); bs.push({ id: 'old1', createdAt: '2026-10-19T06:00:00Z', settledAt: null, category: 'single', platform: 'Polymarket US', legs: [{ desc: 'Under 6.5 (old bet)', price: '49', platform: 'Polymarket US', p: 0.49, marketId: 'tsc-mlb-cle-tb-2026-10-19-7pt5' }], estMultiple: 2.04, quotedMultiple: 2.04, hitChance: 0.49, stake: 1, status: 'open', share: false, shared: false }); localStorage.betdash_bets = JSON.stringify(bs); });
+  await p.click('[data-go="picks"]'); await wait(300); await p.click('[data-go="bets"]'); await wait(1500);
+  console.log('old bet backfilled:', await p.evaluate(() => JSON.parse(localStorage.betdash_bets).find(b => b.id === 'old1').legs[0].startTime));
+  await p.addStyleTag({ content: '.topbar,.tabbar,.plat-bar{visibility:hidden}' });
+  await (await p.$('#tab-bets .card')).screenshot({ path: SHOT + '/6b-bet-times.png' });
+  await p.addStyleTag({ content: '.topbar,.tabbar,.plat-bar{visibility:visible}' });
+  console.log('bets fit phone (no sideways scroll):', await p.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth));
+  await p.evaluate(() => { localStorage.betdash_bets = JSON.stringify(JSON.parse(localStorage.betdash_bets).filter(b => b.id !== 'old1')); });
+  await p.click('[data-go="picks"]'); await wait(300); await p.click('[data-go="bets"]'); await wait(500);
   console.log('bet logos:', await p.$$eval('#tab-bets .tlogo', x => x.length));
   await tap('[data-settle="won"]'); await wait(300);
   console.log('money after win:', await p.$eval('#hdr-bankroll', e => e.textContent));

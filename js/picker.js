@@ -24,7 +24,8 @@
  *
  * LEG OBJECT passed to opts.onAdd (see storage.js Bet.legs):
  *   { desc, platform:'Polymarket US', price:'63.5c'|'64', link, kalshiUrl,
- *     kalshiPrice, marketId, side, eventSlug, eventTitle, teams[], asOf, live }
+ *     kalshiPrice, marketId, side, eventSlug, eventTitle, startTime (ISO game start),
+ *     teams[], asOf, live }
  */
 (function () {
   'use strict';
@@ -165,6 +166,7 @@
       kalshiMatch: m.kalshi ? 'market' : ev.kalshi_url ? 'event' : 'none',
       kalshiPrice: m.kalshi ? (side === 'yes' ? m.kalshi.yes : m.kalshi.no) : null,
       marketId: m.id, side, eventSlug: ev.slug, eventTitle: shortTitle(ev),
+      startTime: ev.start_time || null, // game start (ISO), shown on the slip and saved bets (js/gametime.js)
       teams: sideTeams(ev, m, side).map(t => ({ league: t.league, abbr: t.abbr, logo: t.logo, color: t.color, display: t.display })),
       asOf, live: !!live
     };
@@ -644,5 +646,13 @@
     return slugs[m[1].toUpperCase()] ? MC.kalshiEventUrl(m[2], slugs) : url;
   }
 
-  window.Picker = { create, loadIndex, loadEvent, liveEvent, livePrice, kalshiUrlFromTicker, fixKalshiUrl };
+  /**
+   * Game start (ISO) for a leg that has none stored (typed-in legs, picks,
+   * bets saved before start times existed), from the loaded snapshot index.
+   * Synchronous: returns null until loadIndex() has finished.
+   * @param {object} leg @returns {string|null}
+   */
+  function startTimeFor(leg) { return window.GameTime.lookup(leg, cache.index); }
+
+  window.Picker = { create, loadIndex, loadEvent, liveEvent, livePrice, kalshiUrlFromTicker, fixKalshiUrl, startTimeFor };
 })();

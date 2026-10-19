@@ -38,6 +38,7 @@
   const S = window.Store;
   const G = window.GitHubLog;
   const T = window.Teams;
+  const GT = window.GameTime;
 
   /** Calculator platform dropdown: config order + Other. */
   const PLATFORMS = [...CFG.platforms, CFG.otherPlatform];
@@ -510,7 +511,8 @@
       link: o.polymarket_url || pk.polymarket_url || pk.link, kalshiUrl: o.kalshi_url || pk.kalshi_url || null,
       kalshiMatch: o.kalshi_match || pk.kalshi_match || null, kalshiPrice: typeof o.kalshi_price === 'number' ? o.kalshi_price : null,
       marketId: o.market_id || null, side: o.market_side || null, eventSlug: slug, eventTitle: pk.event || '',
-      teams: o.team ? [teamRef(o.team)] : (pk.teams || []).map(teamRef), asOf: picksData.updated_at, live: false
+      teams: o.team ? [teamRef(o.team)] : (pk.teams || []).map(teamRef), asOf: picksData.updated_at, live: false,
+      startTime: GT.valid(o.start_time) ? o.start_time : GT.valid(pk.start_time) ? pk.start_time : null // else looked up from the snapshot in legStart()
     };
   }
 
@@ -528,8 +530,11 @@
       quoted: pk.quoted_multiple ? String(pk.quoted_multiple) : (legs.length === 1 && pk.price ? (100 / pk.price).toFixed(2) : ''),
       stake: pk.stake_units > 0 ? (pk.stake_units * unit).toFixed(2) : ''
     });
+    calc.legs = GT.sortLegs(calc.legs, legStart);
     go('calc');
     toast(STR.picks.loaded);
+    // Snapshot index may still be loading: once it's there, fill start times and re-sort.
+    window.Picker.loadIndex().then(() => { calc.legs = GT.sortLegs(calc.legs, legStart); if ($('#slip')) renderSlip(); }).catch(() => {});
     refreshLivePrices(true);
   }
 
@@ -606,9 +611,41 @@
     renderSlip();
   }
 
-  /** Picker callback: add a leg, then fetch its live price. */
+  // ---------------------------------------------------------------- game start times
+  //
+  // Every leg shows when its game starts ("Mon Oct 19 · 7:08 PM CT ·
+  // Starts in 2h"). Source order: leg.startTime (stored by the picker) ->
+  // snapshot lookup by game/market id (then stored on the leg) -> nothing.
+  // Formatting and lookup rules: js/gametime.js.
+
+  /**
+   * Start time of a leg, filling leg.startTime from the snapshot when found.
+   * @param {object} l slip or saved leg (mutated: startTime) @returns {string|null} ISO
+   */
+  function legStart(l) {
+    if (!l) return null;
+    if (GT.valid(l.startTime)) return l.startTime;
+    const t = window.Picker.startTimeFor(l);
+    if (t) l.startTime = t;
+    return t || null;
+  }
+
+  /**
+   * One line: "🕒 Mon Oct 19 · 7:08 PM CT · Starts in 2h". '' when unknown.
+   * @param {object} l leg @param {boolean} withHint add the countdown (open slips/bets only)
+   */
+  function legWhen(l, withHint) {
+    const iso = legStart(l);
+    if (!iso) return '';
+    const h = withHint ? GT.hint(iso, Date.now(), STR.gameTime) : '';
+    const started = h === STR.gameTime.started;
+    return `<div class="leg-when small"><span aria-hidden="true">🕒</span> ${esc(GT.format(iso))}${h ? ` · <span class="${started ? 'warn-text' : 'muted'}">${esc(h)}</span>` : ''}</div>`;
+  }
+
+  /** Picker callback: add a leg (slip stays in game order), then fetch its live price. */
   function addPickedLeg(leg) {
     calc.legs.push(leg);
+    calc.legs = GT.sortLegs(calc.legs, legStart);
     autoCategory();
     renderSlip();
     toast(STR.calc.added(leg.desc));
@@ -663,8 +700,9 @@
       return `<div class="leg ${related ? 'related' : ''}" data-i="${i}">
         <button class="btn btn-sm btn-danger remove" data-rm="${i}" aria-label="${esc(K.remove)}">✕</button>
         <div class="leg-top">${l.teams && l.teams.length ? `<span class="logos">${T.badges(l.teams, 28)}</span>` : platformBadge(l.platform)}
-          ${l.manual ? `<input class="l-desc" placeholder="${esc(K.legDescPh)}" value="${esc(l.desc)}" aria-label="${esc(K.legDesc)}">` : `<div class="leg-desc"><b>${esc(l.desc)}</b>${l.eventTitle ? `<div class="muted small">${esc(l.eventTitle)}</div>` : ''}</div>`}
+          ${l.manual ? `<input class="l-desc" placeholder="${esc(K.legDescPh)}" value="${esc(l.desc)}" aria-label="${esc(K.legDesc)}">` : `<div class="leg-desc"><b>${esc(l.desc)}</b>${l.eventTitle ? `<div class="muted small">${esc(l.eventTitle)}</div>` : ''}${legWhen(l, true)}</div>`}
         </div>
+        ${l.manual ? legWhen(l, true) : ''}
         <div class="leg-grid">
           <select class="l-plat" aria-label="${esc(K.legPlatform)}">${known ? '' : `<option selected>${esc(l.platform)}</option>`}${PLATFORMS.map(p => `<option ${p.name === l.platform ? 'selected' : ''}>${esc(p.name)}</option>`).join('')}</select>
           <input class="l-price" inputmode="text" placeholder="${esc(K.legPricePh)}" value="${esc(l.price)}" aria-label="${esc(K.legPrice)}">
@@ -728,7 +766,8 @@
       legs: calc.legs.map((l, i) => ({
         desc: l.desc || `Pick ${i + 1}`, price: l.price, platform: l.platform, p: r.parsed[i].p,
         marketId: l.marketId || null, side: l.side || null, eventSlug: l.eventSlug || null, eventTitle: l.eventTitle || null,
-        teams: l.teams || [], link: l.link || null, kalshiUrl: l.kalshiUrl || null, asOf: l.asOf || null
+        teams: l.teams || [], link: l.link || null, kalshiUrl: l.kalshiUrl || null, asOf: l.asOf || null,
+        startTime: legStart(l) // game start ISO or null (never made up)
       })),
       estMultiple: r.est, quotedMultiple: r.quoted, hitChance: r.hit, stake: r.stake,
       status: 'open', share, shared: false, pickId: calc.pickId
@@ -784,9 +823,31 @@
     ctx.fillText(money(hi), 4, 14); ctx.fillText(money(lo), 4, h - 6);
   }
 
-  /** Legs of a saved bet with logos. */
-  function legsHtml(b) {
-    return b.legs.map(l => `<span class="bleg">${l.teams && l.teams.length ? T.badges(l.teams, 20) : platformBadge(l.platform)} ${esc(l.desc)}</span>`).join('');
+  /**
+   * Legs of a saved bet with logos and game start, earliest game first.
+   * @param {object} b Bet @param {boolean} [withHint] countdown (open bets)
+   */
+  function legsHtml(b, withHint) {
+    return GT.sortLegs(b.legs, legStart).map(l => `<div class="bleg">${l.teams && l.teams.length ? T.badges(l.teams, 20) : platformBadge(l.platform)}<span class="bleg-txt">${esc(l.desc)}${legWhen(l, withHint)}</span></div>`).join('');
+  }
+
+  /**
+   * Older saved bets have no leg start times: look them up once the
+   * snapshot index is loaded, store them, and redraw if any were found.
+   * Side effect: localStorage (S.upsertBet).
+   */
+  function backfillBetTimes() {
+    window.Picker.loadIndex().then(() => {
+      let changed = 0;
+      S.getBets().forEach(b => {
+        const missing = (b.legs || []).filter(l => !GT.valid(l.startTime));
+        if (!missing.length) return;
+        const before = missing.length;
+        missing.forEach(legStart);
+        if (missing.some(l => GT.valid(l.startTime))) { S.upsertBet(b); changed += before; }
+      });
+      if (changed && !$('#tab-bets').hidden) renderBets();
+    }).catch(() => {});
   }
 
   /** My bets tab. */
@@ -805,7 +866,7 @@
       <canvas class="chart" id="bk-chart"></canvas>
       <h3>${esc(B.openTitle(open.length))}</h3>
       ${open.length ? open.map(b => `<div class="card">
-        <div class="pick-head"><div><div class="bet-legs">${legsHtml(b)}</div>
+        <div class="pick-head"><div><div class="bet-legs">${legsHtml(b, true)}</div>
         <div class="pick-sub">${platformBadge(b.platform.split(' + ')[0])} ${esc(STR.categories[b.category] || b.category)} · ${esc(b.platform)} · ${fmtTime(b.createdAt)}${b.share ? (b.shared ? B.shared : B.sharePending) : ''}</div></div>
         <span class="badge open">${esc(B.status.open)}</span></div>
         <div class="pick-stats">
@@ -836,6 +897,7 @@
       if (confirm(B.delConfirm)) { S.deleteBet(b.dataset.del); renderHeader(); renderBets(); }
     }));
     wireBackup(el);
+    backfillBetTimes();
   }
 
   /** Change status, update bankroll, re-share if it was shared. */

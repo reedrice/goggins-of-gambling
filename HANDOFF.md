@@ -46,11 +46,12 @@ The scripts load in this order (classic `<script>` tags; each one sets a single 
 ```
 index.html            DOM skeleton (empty onboarding container, header, "I bet on" bar, 5 tab sections, tab bar, tooltip bubble)
 config.js             brand + repo config + platforms[] (one ordered list used everywhere)
-css/style.css         dark mobile-first theme (sections 1-12; 9 = picker/logos/toggle/tooltips, 10 = Record compare table, 11 = pick evaluation box, 12 = Build-a-bet filter panel)
+css/style.css         dark mobile-first theme (sections 1-13; 13 = leg start times; 9 = picker/logos/toggle/tooltips, 10 = Record compare table, 11 = pick evaluation box, 12 = Build-a-bet filter panel)
 js/strings.js         all UI text (plain-language rules in its header)
 js/calc.js            odds and parlay math (pure)
 js/evaluate.js        per-pick hit chance, risk label, "My take" verdict, prediction lookup (browser + Node, §18)
 js/storage.js         localStorage schema and access
+js/gametime.js        game start times on slip legs / saved bets: format, countdown, snapshot lookup, sort (browser + Node, §20)
 js/teams.js           team logos: Polymarket logo -> ESPN CDN -> colored circle; ESPN abbreviation fixes
 js/markets-core.js    Polymarket US event/market compaction + labels (browser + Node)
 js/picker-filters.js  Build-a-bet filter rules: day/sport, bet types + sub-types, team, player (browser + Node, §19)
@@ -64,6 +65,7 @@ data/predictions.json game predictions and grades (appended by the job)
 data/bet-log.json     shared calibration log (written by the app with users' tokens)
 data/book-odds.json   automatic per-app price comparisons (The Odds API, written daily by fetch-book-odds.mjs, §17)
 tests/calc.test.js        node: math
+tests/gametime.test.js    node: start-time format (CT/ET), hints, lookup, leg order
 tests/evaluate.test.js    node: hit chance / risk / verdict defaults (js/evaluate.js)
 tests/picker-filters.test.js node: filter tree rules (js/picker-filters.js)
 tests/github-log.test.js  node: log writer against a mocked API
@@ -120,7 +122,8 @@ The Record tab computes win-pick accuracy and **calibration** in 5-point buckets
     "author": "reedrice",           // GitHub login from GET /user
     "platform": "Polymarket US",    // or "A + B" if legs differ
     "category": "parlay",           // single|prop|parlay|longshot|nonsports
-    "legs": [{ "desc": "Under 6.5", "price": "48" }],  // price as typed
+    "legs": [{ "desc": "Under 6.5", "price": "48",   // price as typed
+               "start_time": "2026-10-20T00:08:00Z" }], // game start (ISO); only when known, never guessed
     "estimated_multiple": 3.19,
     "quoted_multiple": 2.97,
     "gap": -0.0686,
@@ -396,3 +399,21 @@ Unticked sub-types are stored as a list of *off* keys, so a new bucket is on by 
 **Memory:** sessionStorage `betdash_picker_filters` (see §7), cleaned with `PickerFilters.sanitize`. A saved day that's no longer in the snapshot falls back to today.
 
 **Tests:** `node tests/picker-filters.test.js`. tests/smoke.js covers "San" with all bets, then with Player props only (every row must be a 49ers player), plus the team list, the player dropdown, the remembered state after reload, Reset, and no sideways scroll at 390px.
+
+## 20. Game start times on slips and saved bets (js/gametime.js)
+
+Every leg on the slip being built, and on saved bets in My bets (open cards and the settled table), shows its game's start in the viewer's own time zone: `🕒 Mon Oct 19 · 7:08 PM CT · Starts in 2h 5m`.
+- The countdown ("Starts in 25 min / 2h 5m / 3 days", or "Started" in yellow) appears only on the slip and on open bets.
+- A past start only ever says "Started", never "Final", because the app doesn't know scores.
+- Zones show as CT/ET/MT/PT (from CDT/CST, etc.); other zones show as the browser names them.
+
+**Where the time comes from (never invented):**
+1. `leg.startTime` (ISO): set by `Picker` when a leg is added from the picker (the event's `start_time`), or from `start_time` on a pick or its leg when loaded from the Picks page, and saved on the bet (storage.js schema).
+2. Otherwise, `GameTime.lookup(leg, index)` searches `data/markets/index.json`: first by `eventSlug`, then by a game slug contained in `marketId` (`tsc-mlb-cle-tb-2026-10-19-7pt5` contains `mlb-cle-tb-2026-10-19`). `app.js legStart()` writes the result onto the leg. `backfillBetTimes()` (run after each My bets render) saves it into older bets in localStorage, so the time survives after the game leaves the 4-day snapshot.
+3. Typed-in legs and games not in the snapshot show no time.
+
+**Order:** slip legs are sorted earliest game first when a leg is added or a pick is loaded (typed legs stay at the end). Saved bets are displayed in game order; the stored order is unchanged.
+
+**Shared bet log:** `GitHubLog.buildRecord` copies `start_time` per leg only when it is a strict ISO string. Still no other leg fields, and no dollars.
+
+**Tests:** `node tests/gametime.test.js`, the github-log test (strict ISO only), and tests/smoke.js. The smoke test adds an MLB leg plus an NFL leg plus a typed leg and checks the order and times, the saved `startTime`, the shared-log legs, an old bet backfilled by market id, and no sideways scroll at 390px.

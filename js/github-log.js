@@ -106,7 +106,7 @@
    * Build the shareable record for a bet. ALLOW-LIST ONLY — no dollars.
    * @param {object} bet private Bet from Store (see storage.js schema)
    * @param {string} author GitHub login
-   * @returns {object} {id, timestamp, author, platform, category, legs[{desc,price}],
+   * @returns {object} {id, timestamp, author, platform, category, legs[{desc,price,start_time?}],
    *                    estimated_multiple, quoted_multiple, gap, result}
    */
   function buildRecord(bet, author) {
@@ -118,7 +118,14 @@
       author,
       platform: bet.platform,
       category: bet.category,
-      legs: (bet.legs || []).map(l => ({ desc: String(l.desc || ''), price: String(l.price || '') })),
+      // start_time: the game's start (ISO, UTC) when known, so the log can
+      // be read in game order. Only a strict ISO string is copied; no other
+      // leg field (and never the stake) leaves the device.
+      legs: (bet.legs || []).map(l => {
+        const o = { desc: String(l.desc || ''), price: String(l.price || '') };
+        if (typeof l.startTime === 'string' && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d+)?)?(Z|[+-]\d{2}:\d{2})$/.test(l.startTime)) o.start_time = l.startTime;
+        return o;
+      }),
       estimated_multiple: est,
       quoted_multiple: quoted,
       gap: est && quoted ? round(quoted / est - 1, 4) : null,

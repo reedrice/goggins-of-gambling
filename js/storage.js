@@ -27,7 +27,9 @@
  *               p: number (parsed probability),
  *               // present when the leg came from the market picker:
  *               marketId, side: "yes"|"no", eventSlug, eventTitle,
- *               teams: [{league, abbr}], link, kalshiUrl, asOf: ISO}],
+ *               teams: [{league, abbr}], link, kalshiUrl, asOf: ISO,
+ *               startTime: ISO|null  game start; from the picker, or looked
+ *                 up from the market snapshot (js/gametime.js); never guessed}],
  *       estMultiple: number, quotedMultiple: number, hitChance: number,
  *       stake: number,             $ (PRIVATE — never shared)
  *       status: "open"|"won"|"lost"|"push",
