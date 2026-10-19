@@ -49,6 +49,18 @@
  *   compared with the live Polymarket US cost of the same side
  *   (gateway.polymarket.us bbo, falling back to the snapshot).
  *   diff = book cents - Polymarket cents (positive = that app charges more).
+ *
+ * VEGAS NUMBERS FOR BUILD A BET (data/vegas-lines.json, HANDOFF §26)
+ *   Besides the pick comparisons above, the same run writes a small lookup
+ *   {"<market_id>|<yes|no>": {p:"+120", b:"draftkings", n:5}} = the best
+ *   American odds any of our books offers for that exact side, which book,
+ *   and how many books priced it. Game lines (moneyline / spread / total) are
+ *   fetched for EVERY game of every sport in the snapshot, not only picks:
+ *   one /odds call per sport returns all its games, so it costs just
+ *   (markets) credits per sport. This only happens with credits to spare
+ *   after the pick lines + props fit --max-credits; it never raises the cap.
+ *   Props appear only where a pick already needed them. Nothing is guessed:
+ *   a side the books don't price simply has no entry.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -62,6 +74,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const Core = require(path.join(ROOT, 'js/markets-core.js'));
 const PICKS = path.join(ROOT, 'data/picks.json');
 const OUT = path.join(ROOT, 'data/book-odds.json');
+const VEGAS = path.join(ROOT, 'data/vegas-lines.json');
 const MK_DIR = path.join(ROOT, 'data/markets');
 const API = 'https://api.the-odds-api.com/v4';
 const KEEP_DAYS = 60;   // history kept in book-odds.json
@@ -110,6 +123,13 @@ const PROP_MARKETS = {
   basketball_player_steals: 'player_steals',
   basketball_player_points_rebounds_assists: 'player_points_rebounds_assists'
 };
+/**
+ * Full-game line ids only: aec-nhl-ana-nyr-DATE (who wins), asc-…-DATE-pos-1pt5
+ * (spread), tsc-…-DATE-6pt5 / -total-6pt5 (total). Period, half, quarter,
+ * first-5 and team-total markets (p1, 1h, q2, f5, tt-…) are skipped: the Odds
+ * API featured markets are full-game, so matching them would show wrong numbers.
+ */
+const FULL_GAME = /^(aec-[a-z]+-[a-z0-9]+-[a-z0-9]+-\d{4}-\d{2}-\d{2}|asc-[a-z]+-[a-z0-9]+-[a-z0-9]+-\d{4}-\d{2}-\d{2}-(pos|neg)-\d+pt\d+|tsc-[a-z]+-[a-z0-9]+-[a-z0-9]+-\d{4}-\d{2}-\d{2}-(total-)?\d+pt\d+)$/;
 const YES_ONLY = new Set(['player_anytime_td', 'player_goal_scorer_anytime']);
 
 // ------------------------------------------------------------------ args/util
@@ -174,10 +194,14 @@ function loadTargets() {
   const picks = JSON.parse(fs.readFileSync(PICKS, 'utf8'));
   const index = JSON.parse(fs.readFileSync(path.join(MK_DIR, 'index.json'), 'utf8'));
   const markets = {};
+  const gameLines = [];   // every moneyline/spread/total side of every game (for data/vegas-lines.json)
   for (const e of index.events) {
     let ev;
     try { ev = JSON.parse(fs.readFileSync(path.join(MK_DIR, e.file), 'utf8')); } catch (x) { continue; }
-    ev.markets.forEach(m => (markets[m.id] = { ev, m }));
+    ev.markets.forEach(m => {
+      markets[m.id] = { ev, m };
+      if (SPORT_KEYS[ev.league] && LINE_MARKETS[m.type] && FULL_GAME.test(m.id)) ['yes', 'no'].forEach(side => gameLines.push({ market_id: m.id, side, ev, m, mkey: LINE_MARKETS[m.type], refs: [] }));
+    });
   }
   const byKey = new Map(), missing = [];
   const add = (o, pick_id, leg) => {
@@ -194,7 +218,7 @@ function loadTargets() {
     add(p, p.id, null);
     (p.legs || []).forEach((l, i) => add(l, p.id, i));
   }));
-  return { slate: picks.slate_date, targets: [...byKey.values()], missing: [...new Set(missing)] };
+  return { slate: picks.slate_date, targets: [...byKey.values()], missing: [...new Set(missing)], gameLines };
 }
 
 /** Odds API market key for a target, or null if we can't price it. */
@@ -254,7 +278,7 @@ function findOutcome(t, mkey, outcomes) {
 
 if (!KEY && !flag('--dry-run')) { console.error('ODDS_API_KEY is not set. Nothing fetched.'); process.exit(2); }
 
-const { slate, targets, missing } = loadTargets();
+const { slate, targets, missing, gameLines } = loadTargets();
 if (missing.length) console.log(`Not in the market snapshot (run fetch-markets first?): ${missing.join(', ')}`);
 
 // Plan: featured markets per sport, prop markets per game.
@@ -282,6 +306,19 @@ for (const lg of order) {
   if (lineCost + p.lines.size <= MAX_CREDITS) lineCost += p.lines.size;
   else { dropped.push(`${lg} game lines`); p.lines = new Set(); }
 }
+// VEGAS UPGRADE (runs BEFORE props, so Build a Bet game bets win over props
+// when the cap is tight): widen each sport's call to all three game-line
+// markets, sports with the most games first, so every game gets Vegas
+// numbers. Never exceeds --max-credits; props get what's left.
+const vegasLeagues = [...new Set(gameLines.map(g => g.ev.league))].sort((a, b) => gameLines.filter(g => g.ev.league === b).length - gameLines.filter(g => g.ev.league === a).length);
+for (const lg of vegasLeagues) {
+  const p = plan[lg] || (plan[lg] = { lines: new Set(), props: new Map() });
+  const extra = Object.values(LINE_MARKETS).filter(k => !p.lines.has(k));
+  if (lineCost + extra.length <= MAX_CREDITS) { extra.forEach(k => p.lines.add(k)); lineCost += extra.length; }
+  else if (extra.length) dropped.push(`${lg} all-game Vegas lines`);
+}
+if (!order.length) order.push(...Object.keys(plan));
+for (const lg of Object.keys(plan)) if (!order.includes(lg)) order.push(lg);
 let withProps = !flag('--no-props');
 let propsNote = flag('--no-props') ? 'skipped (--no-props)' : '';
 const propGames = [];
@@ -312,7 +349,8 @@ const fetchedAt = new Date().toISOString();
 const quotes = new Map();   // target key -> [{book, outcome}]
 const booksSeen = new Set();
 const keyOf = t => t.market_id + '|' + t.side;
-const take = (t, bookmakers, mkey) => {
+const vquotes = new Map();  // same shape, for the all-games Vegas lookup only
+const take = (t, bookmakers, mkey, into = quotes) => {
   for (const b of bookmakers || []) {
     const pid = BOOK_TO_PLATFORM[b.key];
     if (!pid) continue;
@@ -320,8 +358,8 @@ const take = (t, bookmakers, mkey) => {
     const mk = (b.markets || []).find(x => x.key === mkey);
     const o = mk && findOutcome(t, mkey, mk.outcomes || []);
     if (o && isFinite(o.price)) {
-      if (!quotes.has(keyOf(t))) quotes.set(keyOf(t), []);
-      quotes.get(keyOf(t)).push({ book: pid, odds_api_key: b.key, price: o.price });
+      if (!into.has(keyOf(t))) into.set(keyOf(t), []);
+      into.get(keyOf(t)).push({ book: pid, odds_api_key: b.key, price: o.price });
     }
   }
 };
@@ -337,6 +375,13 @@ for (const [lg, p] of Object.entries(plan)) {
     for (const t of mine.filter(x => x.m.type !== 'prop')) {
       const oe = findEvent(events, t.ev);
       if (oe) take(t, oe.bookmakers, t.mkey);
+    }
+    // Every other game line of this sport (Vegas numbers only; no Polymarket compare rows).
+    const evCache = new Map();
+    for (const t of gameLines.filter(x => x.ev.league === lg && p.lines.has(x.mkey))) {
+      if (!evCache.has(t.ev.slug)) evCache.set(t.ev.slug, findEvent(events, t.ev));
+      const oe = evCache.get(t.ev.slug);
+      if (oe) take(t, oe.bookmakers, t.mkey, vquotes);
     }
   }
   if (withProps && p.props.size) {
@@ -376,11 +421,27 @@ for (const t of targets) {
   }
 }
 
+// Vegas lookup for Build a Bet / pick cards: best American price per side.
+// (data/vegas-lines.json; both the pick quotes and the all-games quotes.)
+const vegas = {};
+for (const m of [vquotes, quotes]) for (const [k, qs] of m) {
+  // Kalshi is a prediction market (cents), not a Vegas sportsbook: leave it out.
+  const good = qs.filter(q => q.book !== 'kalshi' && americanToCents(q.price) !== null);
+  if (!good.length || vegas[k]) continue;
+  const best = good.reduce((a, b) => (americanToCents(b.price) < americanToCents(a.price) ? b : a));   // lowest chance = biggest payout
+  vegas[k] = { p: fmtAmerican(best.price), b: best.book, n: good.length };
+}
+fs.writeFileSync(VEGAS, JSON.stringify({ schema_version: 1, updated_at: fetchedAt, source: 'The Odds API', lines: vegas }) + '\n');
+console.log(`Vegas lookup: ${Object.keys(vegas).length} sides written to data/vegas-lines.json`);
+
 // Merge with history: replace today's rows, keep KEEP_DAYS of past days.
 let doc = {};
 try { doc = JSON.parse(fs.readFileSync(OUT, 'utf8')); } catch (e) { /* new file */ }
 const cutoff = new Date(Date.parse(slate + 'T12:00:00Z') - KEEP_DAYS * 86400e3).toISOString().slice(0, 10);
-const history = (doc.comparisons || []).filter(r => r && r.date !== slate && r.date >= cutoff && Array.isArray(r.refs));
+// Rows from earlier runs TODAY are kept for markets this run didn't re-price
+// (e.g. props dropped to fit the credit cap), so a lines-heavy run doesn't erase them.
+const repriced = new Set(rows.map(r => r.market_id + '|' + r.side));
+const history = (doc.comparisons || []).filter(r => r && r.date >= cutoff && Array.isArray(r.refs) && (r.date !== slate || !repriced.has(r.market_id + '|' + r.side)));
 const comparisons = [...history, ...rows];
 const books = {};
 for (const r of comparisons) { const b = books[r.book] || (books[r.book] = { priced: 0, sum: 0 }); b.priced++; b.sum += r.diff; }
@@ -414,7 +475,7 @@ summary.forEach(l => console.log(l));
 
 if (flag('--commit')) {
   const git = (...a) => execFileSync('git', a, { cwd: ROOT, encoding: 'utf8' }).trim();
-  git('add', '--', 'data/book-odds.json');
+  git('add', '--', 'data/book-odds.json', 'data/vegas-lines.json');
   if (!git('diff', '--cached', '--name-only')) console.log('No odds changes to commit.');
   else {
     git('commit', '-m', `Update other-app prices for ${slate}\n\n${summary.join('\n')}\n\nWritten by scripts/fetch-book-odds.mjs from The Odds API and live\nPolymarket US prices. Prices only; no dollar amounts, no API key.`);

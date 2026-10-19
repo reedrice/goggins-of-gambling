@@ -1,17 +1,18 @@
 {
  "schema_version": 1,
  "status": "active",
- "updated_at": "2026-10-19T12:19:42.150Z",
+ "updated_at": "2026-10-19T17:15:32.520Z",
  "source": "The Odds API (https://the-odds-api.com) + live Polymarket US prices",
  "baseline": "polymarket_us",
  "last_run": {
-  "at": "2026-10-19T12:19:42.150Z",
+  "at": "2026-10-19T17:15:32.520Z",
   "slate_date": "2026-10-19",
   "sports": [
    "nfl",
    "mlb",
    "nhl",
-   "nba"
+   "nba",
+   "wnba"
   ],
   "books_requested": [
    "kalshi",
@@ -31,220 +32,40 @@
    "fanduel",
    "kalshi"
   ],
-  "priced_today": 16,
-  "targets": 21,
-  "rows_today": 60,
+  "priced_today": 6,
+  "targets": 20,
+  "rows_today": 35,
   "props": "included",
   "credits_used": 12,
-  "credits_remaining": 451
+  "credits_remaining": 427
  },
  "books": {
   "draftkings": {
    "priced": 12,
-   "avg_diff": 3.56
-  },
-  "fanduel": {
-   "priced": 8,
-   "avg_diff": 1.94
-  },
-  "espnbet": {
-   "priced": 12,
-   "avg_diff": 3.39
-  },
-  "kalshi": {
-   "priced": 5,
-   "avg_diff": 0.1
+   "avg_diff": 3.33
   },
   "betmgm": {
    "priced": 11,
-   "avg_diff": 3.98
+   "avg_diff": 3.75
   },
   "bovada": {
+   "priced": 13,
+   "avg_diff": 2.66
+  },
+  "espnbet": {
    "priced": 12,
-   "avg_diff": 2.82
+   "avg_diff": 3.15
+  },
+  "fanduel": {
+   "priced": 8,
+   "avg_diff": 1.71
+  },
+  "kalshi": {
+   "priced": 6,
+   "avg_diff": 0.1
   }
  },
  "comparisons": [
-  {
-   "date": "2026-10-19",
-   "market_id": "tsc-nfl-was-sf-2026-10-19-total-51pt5",
-   "side": "no",
-   "label": "Under 51.5",
-   "refs": [
-    {
-     "pick_id": "s-was-sf-under515",
-     "leg": null
-    }
-   ],
-   "book": "draftkings",
-   "odds_api_key": "draftkings",
-   "book_price": "-105",
-   "book_chance": 51.2,
-   "polymarket_price": 48,
-   "kalshi_price": 49,
-   "diff": 3.2,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "tsc-nfl-was-sf-2026-10-19-total-51pt5",
-   "side": "no",
-   "label": "Under 51.5",
-   "refs": [
-    {
-     "pick_id": "s-was-sf-under515",
-     "leg": null
-    }
-   ],
-   "book": "fanduel",
-   "odds_api_key": "fanduel",
-   "book_price": "-108",
-   "book_chance": 51.9,
-   "polymarket_price": 48,
-   "kalshi_price": 49,
-   "diff": 3.9,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "tsc-nfl-was-sf-2026-10-19-total-51pt5",
-   "side": "no",
-   "label": "Under 51.5",
-   "refs": [
-    {
-     "pick_id": "s-was-sf-under515",
-     "leg": null
-    }
-   ],
-   "book": "espnbet",
-   "odds_api_key": "espnbet",
-   "book_price": "-110",
-   "book_chance": 52.4,
-   "polymarket_price": 48,
-   "kalshi_price": 49,
-   "diff": 4.4,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-mlb-cle-tb-2026-10-19",
-   "side": "yes",
-   "label": "Guardians",
-   "refs": [
-    {
-     "pick_id": "s-cle-ml",
-     "leg": null
-    }
-   ],
-   "book": "fanduel",
-   "odds_api_key": "fanduel",
-   "book_price": "+126",
-   "book_chance": 44.2,
-   "polymarket_price": 42.5,
-   "kalshi_price": 43,
-   "diff": 1.7,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-mlb-cle-tb-2026-10-19",
-   "side": "yes",
-   "label": "Guardians",
-   "refs": [
-    {
-     "pick_id": "s-cle-ml",
-     "leg": null
-    }
-   ],
-   "book": "kalshi",
-   "odds_api_key": "kalshi",
-   "book_price": "+133",
-   "book_chance": 42.9,
-   "polymarket_price": 42.5,
-   "kalshi_price": 43,
-   "diff": 0.4,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-mlb-cle-tb-2026-10-19",
-   "side": "yes",
-   "label": "Guardians",
-   "refs": [
-    {
-     "pick_id": "s-cle-ml",
-     "leg": null
-    }
-   ],
-   "book": "espnbet",
-   "odds_api_key": "espnbet",
-   "book_price": "+125",
-   "book_chance": 44.4,
-   "polymarket_price": 42.5,
-   "kalshi_price": 43,
-   "diff": 1.9,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-mlb-cle-tb-2026-10-19",
-   "side": "yes",
-   "label": "Guardians",
-   "refs": [
-    {
-     "pick_id": "s-cle-ml",
-     "leg": null
-    }
-   ],
-   "book": "betmgm",
-   "odds_api_key": "betmgm",
-   "book_price": "+125",
-   "book_chance": 44.4,
-   "polymarket_price": 42.5,
-   "kalshi_price": 43,
-   "diff": 1.9,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-mlb-cle-tb-2026-10-19",
-   "side": "yes",
-   "label": "Guardians",
-   "refs": [
-    {
-     "pick_id": "s-cle-ml",
-     "leg": null
-    }
-   ],
-   "book": "bovada",
-   "odds_api_key": "bovada",
-   "book_price": "+124",
-   "book_chance": 44.6,
-   "polymarket_price": 42.5,
-   "kalshi_price": 43,
-   "diff": 2.1,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-mlb-cle-tb-2026-10-19",
-   "side": "yes",
-   "label": "Guardians",
-   "refs": [
-    {
-     "pick_id": "s-cle-ml",
-     "leg": null
-    }
-   ],
-   "book": "draftkings",
-   "odds_api_key": "draftkings",
-   "book_price": "+123",
-   "book_chance": 44.8,
-   "polymarket_price": 42.5,
-   "kalshi_price": 43,
-   "diff": 2.3,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
   {
    "date": "2026-10-19",
    "market_id": "astatc-nfl-was-sf-2026-10-19-int-bropur-gte1",
@@ -699,366 +520,6 @@
   },
   {
    "date": "2026-10-19",
-   "market_id": "aec-nba-phi-ny-2026-10-20",
-   "side": "no",
-   "label": "Knicks",
-   "refs": [
-    {
-     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
-     "leg": 1
-    }
-   ],
-   "book": "fanduel",
-   "odds_api_key": "fanduel",
-   "book_price": "-184",
-   "book_chance": 64.8,
-   "polymarket_price": 62,
-   "kalshi_price": 62,
-   "diff": 2.8,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nba-phi-ny-2026-10-20",
-   "side": "no",
-   "label": "Knicks",
-   "refs": [
-    {
-     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
-     "leg": 1
-    }
-   ],
-   "book": "betmgm",
-   "odds_api_key": "betmgm",
-   "book_price": "-190",
-   "book_chance": 65.5,
-   "polymarket_price": 62,
-   "kalshi_price": 62,
-   "diff": 3.5,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nba-phi-ny-2026-10-20",
-   "side": "no",
-   "label": "Knicks",
-   "refs": [
-    {
-     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
-     "leg": 1
-    }
-   ],
-   "book": "draftkings",
-   "odds_api_key": "draftkings",
-   "book_price": "-185",
-   "book_chance": 64.9,
-   "polymarket_price": 62,
-   "kalshi_price": 62,
-   "diff": 2.9,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nba-phi-ny-2026-10-20",
-   "side": "no",
-   "label": "Knicks",
-   "refs": [
-    {
-     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
-     "leg": 1
-    }
-   ],
-   "book": "bovada",
-   "odds_api_key": "bovada",
-   "book_price": "-175",
-   "book_chance": 63.6,
-   "polymarket_price": 62,
-   "kalshi_price": 62,
-   "diff": 1.6,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nba-phi-ny-2026-10-20",
-   "side": "no",
-   "label": "Knicks",
-   "refs": [
-    {
-     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
-     "leg": 1
-    }
-   ],
-   "book": "espnbet",
-   "odds_api_key": "espnbet",
-   "book_price": "-175",
-   "book_chance": 63.6,
-   "polymarket_price": 62,
-   "kalshi_price": 62,
-   "diff": 1.6,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nba-phi-ny-2026-10-20",
-   "side": "no",
-   "label": "Knicks",
-   "refs": [
-    {
-     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
-     "leg": 1
-    }
-   ],
-   "book": "kalshi",
-   "odds_api_key": "kalshi",
-   "book_price": "-163",
-   "book_chance": 62,
-   "polymarket_price": 62,
-   "kalshi_price": 62,
-   "diff": 0,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nba-okc-sa-2026-10-20",
-   "side": "no",
-   "label": "Spurs",
-   "refs": [
-    {
-     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
-     "leg": 2
-    }
-   ],
-   "book": "fanduel",
-   "odds_api_key": "fanduel",
-   "book_price": "-130",
-   "book_chance": 56.5,
-   "polymarket_price": 56,
-   "kalshi_price": 56,
-   "diff": 0.5,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nba-okc-sa-2026-10-20",
-   "side": "no",
-   "label": "Spurs",
-   "refs": [
-    {
-     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
-     "leg": 2
-    }
-   ],
-   "book": "betmgm",
-   "odds_api_key": "betmgm",
-   "book_price": "-135",
-   "book_chance": 57.4,
-   "polymarket_price": 56,
-   "kalshi_price": 56,
-   "diff": 1.4,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nba-okc-sa-2026-10-20",
-   "side": "no",
-   "label": "Spurs",
-   "refs": [
-    {
-     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
-     "leg": 2
-    }
-   ],
-   "book": "draftkings",
-   "odds_api_key": "draftkings",
-   "book_price": "-135",
-   "book_chance": 57.4,
-   "polymarket_price": 56,
-   "kalshi_price": 56,
-   "diff": 1.4,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nba-okc-sa-2026-10-20",
-   "side": "no",
-   "label": "Spurs",
-   "refs": [
-    {
-     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
-     "leg": 2
-    }
-   ],
-   "book": "bovada",
-   "odds_api_key": "bovada",
-   "book_price": "-135",
-   "book_chance": 57.4,
-   "polymarket_price": 56,
-   "kalshi_price": 56,
-   "diff": 1.4,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nba-okc-sa-2026-10-20",
-   "side": "no",
-   "label": "Spurs",
-   "refs": [
-    {
-     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
-     "leg": 2
-    }
-   ],
-   "book": "espnbet",
-   "odds_api_key": "espnbet",
-   "book_price": "-135",
-   "book_chance": 57.4,
-   "polymarket_price": 56,
-   "kalshi_price": 56,
-   "diff": 1.4,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nba-okc-sa-2026-10-20",
-   "side": "no",
-   "label": "Spurs",
-   "refs": [
-    {
-     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
-     "leg": 2
-    }
-   ],
-   "book": "kalshi",
-   "odds_api_key": "kalshi",
-   "book_price": "-127",
-   "book_chance": 55.9,
-   "polymarket_price": 56,
-   "kalshi_price": 56,
-   "diff": -0.1,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nba-bos-det-2026-10-20",
-   "side": "no",
-   "label": "Pistons",
-   "refs": [
-    {
-     "pick_id": "2026-10-20-x-balanced-det-cade-wemby",
-     "leg": 0
-    }
-   ],
-   "book": "fanduel",
-   "odds_api_key": "fanduel",
-   "book_price": "-108",
-   "book_chance": 51.9,
-   "polymarket_price": 49,
-   "kalshi_price": 49,
-   "diff": 2.9,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nba-bos-det-2026-10-20",
-   "side": "no",
-   "label": "Pistons",
-   "refs": [
-    {
-     "pick_id": "2026-10-20-x-balanced-det-cade-wemby",
-     "leg": 0
-    }
-   ],
-   "book": "betmgm",
-   "odds_api_key": "betmgm",
-   "book_price": "-105",
-   "book_chance": 51.2,
-   "polymarket_price": 49,
-   "kalshi_price": 49,
-   "diff": 2.2,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nba-bos-det-2026-10-20",
-   "side": "no",
-   "label": "Pistons",
-   "refs": [
-    {
-     "pick_id": "2026-10-20-x-balanced-det-cade-wemby",
-     "leg": 0
-    }
-   ],
-   "book": "draftkings",
-   "odds_api_key": "draftkings",
-   "book_price": "-108",
-   "book_chance": 51.9,
-   "polymarket_price": 49,
-   "kalshi_price": 49,
-   "diff": 2.9,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nba-bos-det-2026-10-20",
-   "side": "no",
-   "label": "Pistons",
-   "refs": [
-    {
-     "pick_id": "2026-10-20-x-balanced-det-cade-wemby",
-     "leg": 0
-    }
-   ],
-   "book": "bovada",
-   "odds_api_key": "bovada",
-   "book_price": "-110",
-   "book_chance": 52.4,
-   "polymarket_price": 49,
-   "kalshi_price": 49,
-   "diff": 3.4,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nba-bos-det-2026-10-20",
-   "side": "no",
-   "label": "Pistons",
-   "refs": [
-    {
-     "pick_id": "2026-10-20-x-balanced-det-cade-wemby",
-     "leg": 0
-    }
-   ],
-   "book": "espnbet",
-   "odds_api_key": "espnbet",
-   "book_price": "-105",
-   "book_chance": 51.2,
-   "polymarket_price": 49,
-   "kalshi_price": 49,
-   "diff": 2.2,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nba-bos-det-2026-10-20",
-   "side": "no",
-   "label": "Pistons",
-   "refs": [
-    {
-     "pick_id": "2026-10-20-x-balanced-det-cade-wemby",
-     "leg": 0
-    }
-   ],
-   "book": "kalshi",
-   "odds_api_key": "kalshi",
-   "book_price": "+104",
-   "book_chance": 49,
-   "polymarket_price": 49,
-   "kalshi_price": 49,
-   "diff": 0,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
    "market_id": "astatc-nba-bos-det-2026-10-20-pts-cadcun-gte25",
    "side": "yes",
    "label": "Cade Cunningham 25+ points — Yes",
@@ -1079,126 +540,6 @@
    "polymarket_price": 50,
    "kalshi_price": 50,
    "diff": 1.2,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nfl-was-sf-2026-10-19",
-   "side": "yes",
-   "label": "Commanders",
-   "refs": [
-    {
-     "pick_id": "l-was-upset-script",
-     "leg": 0
-    }
-   ],
-   "book": "draftkings",
-   "odds_api_key": "draftkings",
-   "book_price": "+320",
-   "book_chance": 23.8,
-   "polymarket_price": 21.8,
-   "kalshi_price": 22,
-   "diff": 2,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nfl-was-sf-2026-10-19",
-   "side": "yes",
-   "label": "Commanders",
-   "refs": [
-    {
-     "pick_id": "l-was-upset-script",
-     "leg": 0
-    }
-   ],
-   "book": "kalshi",
-   "odds_api_key": "kalshi",
-   "book_price": "+355",
-   "book_chance": 22,
-   "polymarket_price": 21.8,
-   "kalshi_price": 22,
-   "diff": 0.2,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nfl-was-sf-2026-10-19",
-   "side": "yes",
-   "label": "Commanders",
-   "refs": [
-    {
-     "pick_id": "l-was-upset-script",
-     "leg": 0
-    }
-   ],
-   "book": "fanduel",
-   "odds_api_key": "fanduel",
-   "book_price": "+350",
-   "book_chance": 22.2,
-   "polymarket_price": 21.8,
-   "kalshi_price": 22,
-   "diff": 0.4,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nfl-was-sf-2026-10-19",
-   "side": "yes",
-   "label": "Commanders",
-   "refs": [
-    {
-     "pick_id": "l-was-upset-script",
-     "leg": 0
-    }
-   ],
-   "book": "betmgm",
-   "odds_api_key": "betmgm",
-   "book_price": "+333",
-   "book_chance": 23.1,
-   "polymarket_price": 21.8,
-   "kalshi_price": 22,
-   "diff": 1.3,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nfl-was-sf-2026-10-19",
-   "side": "yes",
-   "label": "Commanders",
-   "refs": [
-    {
-     "pick_id": "l-was-upset-script",
-     "leg": 0
-    }
-   ],
-   "book": "bovada",
-   "odds_api_key": "bovada",
-   "book_price": "+330",
-   "book_chance": 23.3,
-   "polymarket_price": 21.8,
-   "kalshi_price": 22,
-   "diff": 1.5,
-   "fetched_at": "2026-10-19T12:19:42.150Z"
-  },
-  {
-   "date": "2026-10-19",
-   "market_id": "aec-nfl-was-sf-2026-10-19",
-   "side": "yes",
-   "label": "Commanders",
-   "refs": [
-    {
-     "pick_id": "l-was-upset-script",
-     "leg": 0
-    }
-   ],
-   "book": "espnbet",
-   "odds_api_key": "espnbet",
-   "book_price": "+320",
-   "book_chance": 23.8,
-   "polymarket_price": 21.8,
-   "kalshi_price": 22,
-   "diff": 2,
    "fetched_at": "2026-10-19T12:19:42.150Z"
   },
   {
@@ -1340,6 +681,706 @@
    "kalshi_price": 40,
    "diff": 2.5,
    "fetched_at": "2026-10-19T12:19:42.150Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "tsc-nfl-was-sf-2026-10-19-total-51pt5",
+   "side": "no",
+   "label": "Under 51.5",
+   "refs": [
+    {
+     "pick_id": "s-was-sf-under515",
+     "leg": null
+    }
+   ],
+   "book": "draftkings",
+   "odds_api_key": "draftkings",
+   "book_price": "-105",
+   "book_chance": 51.2,
+   "polymarket_price": 49.5,
+   "kalshi_price": 49,
+   "diff": 1.7,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "tsc-nfl-was-sf-2026-10-19-total-51pt5",
+   "side": "no",
+   "label": "Under 51.5",
+   "refs": [
+    {
+     "pick_id": "s-was-sf-under515",
+     "leg": null
+    }
+   ],
+   "book": "kalshi",
+   "odds_api_key": "kalshi",
+   "book_price": "+100",
+   "book_chance": 50,
+   "polymarket_price": 49.5,
+   "kalshi_price": 49,
+   "diff": 0.5,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "tsc-nfl-was-sf-2026-10-19-total-51pt5",
+   "side": "no",
+   "label": "Under 51.5",
+   "refs": [
+    {
+     "pick_id": "s-was-sf-under515",
+     "leg": null
+    }
+   ],
+   "book": "fanduel",
+   "odds_api_key": "fanduel",
+   "book_price": "-108",
+   "book_chance": 51.9,
+   "polymarket_price": 49.5,
+   "kalshi_price": 49,
+   "diff": 2.4,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "tsc-nfl-was-sf-2026-10-19-total-51pt5",
+   "side": "no",
+   "label": "Under 51.5",
+   "refs": [
+    {
+     "pick_id": "s-was-sf-under515",
+     "leg": null
+    }
+   ],
+   "book": "bovada",
+   "odds_api_key": "bovada",
+   "book_price": "-105",
+   "book_chance": 51.2,
+   "polymarket_price": 49.5,
+   "kalshi_price": 49,
+   "diff": 1.7,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "tsc-nfl-was-sf-2026-10-19-total-51pt5",
+   "side": "no",
+   "label": "Under 51.5",
+   "refs": [
+    {
+     "pick_id": "s-was-sf-under515",
+     "leg": null
+    }
+   ],
+   "book": "espnbet",
+   "odds_api_key": "espnbet",
+   "book_price": "-110",
+   "book_chance": 52.4,
+   "polymarket_price": 49.5,
+   "kalshi_price": 49,
+   "diff": 2.9,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-mlb-cle-tb-2026-10-19",
+   "side": "yes",
+   "label": "Guardians",
+   "refs": [
+    {
+     "pick_id": "s-cle-ml",
+     "leg": null
+    }
+   ],
+   "book": "fanduel",
+   "odds_api_key": "fanduel",
+   "book_price": "+130",
+   "book_chance": 43.5,
+   "polymarket_price": 42,
+   "kalshi_price": 43,
+   "diff": 1.5,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-mlb-cle-tb-2026-10-19",
+   "side": "yes",
+   "label": "Guardians",
+   "refs": [
+    {
+     "pick_id": "s-cle-ml",
+     "leg": null
+    }
+   ],
+   "book": "kalshi",
+   "odds_api_key": "kalshi",
+   "book_price": "+138",
+   "book_chance": 42,
+   "polymarket_price": 42,
+   "kalshi_price": 43,
+   "diff": 0,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-mlb-cle-tb-2026-10-19",
+   "side": "yes",
+   "label": "Guardians",
+   "refs": [
+    {
+     "pick_id": "s-cle-ml",
+     "leg": null
+    }
+   ],
+   "book": "espnbet",
+   "odds_api_key": "espnbet",
+   "book_price": "+130",
+   "book_chance": 43.5,
+   "polymarket_price": 42,
+   "kalshi_price": 43,
+   "diff": 1.5,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-mlb-cle-tb-2026-10-19",
+   "side": "yes",
+   "label": "Guardians",
+   "refs": [
+    {
+     "pick_id": "s-cle-ml",
+     "leg": null
+    }
+   ],
+   "book": "betmgm",
+   "odds_api_key": "betmgm",
+   "book_price": "+130",
+   "book_chance": 43.5,
+   "polymarket_price": 42,
+   "kalshi_price": 43,
+   "diff": 1.5,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-mlb-cle-tb-2026-10-19",
+   "side": "yes",
+   "label": "Guardians",
+   "refs": [
+    {
+     "pick_id": "s-cle-ml",
+     "leg": null
+    }
+   ],
+   "book": "bovada",
+   "odds_api_key": "bovada",
+   "book_price": "+130",
+   "book_chance": 43.5,
+   "polymarket_price": 42,
+   "kalshi_price": 43,
+   "diff": 1.5,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-mlb-cle-tb-2026-10-19",
+   "side": "yes",
+   "label": "Guardians",
+   "refs": [
+    {
+     "pick_id": "s-cle-ml",
+     "leg": null
+    }
+   ],
+   "book": "draftkings",
+   "odds_api_key": "draftkings",
+   "book_price": "+130",
+   "book_chance": 43.5,
+   "polymarket_price": 42,
+   "kalshi_price": 43,
+   "diff": 1.5,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nba-phi-ny-2026-10-20",
+   "side": "no",
+   "label": "Knicks",
+   "refs": [
+    {
+     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
+     "leg": 1
+    }
+   ],
+   "book": "fanduel",
+   "odds_api_key": "fanduel",
+   "book_price": "-190",
+   "book_chance": 65.5,
+   "polymarket_price": 63,
+   "kalshi_price": 62,
+   "diff": 2.5,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nba-phi-ny-2026-10-20",
+   "side": "no",
+   "label": "Knicks",
+   "refs": [
+    {
+     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
+     "leg": 1
+    }
+   ],
+   "book": "betmgm",
+   "odds_api_key": "betmgm",
+   "book_price": "-190",
+   "book_chance": 65.5,
+   "polymarket_price": 63,
+   "kalshi_price": 62,
+   "diff": 2.5,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nba-phi-ny-2026-10-20",
+   "side": "no",
+   "label": "Knicks",
+   "refs": [
+    {
+     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
+     "leg": 1
+    }
+   ],
+   "book": "draftkings",
+   "odds_api_key": "draftkings",
+   "book_price": "-185",
+   "book_chance": 64.9,
+   "polymarket_price": 63,
+   "kalshi_price": 62,
+   "diff": 1.9,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nba-phi-ny-2026-10-20",
+   "side": "no",
+   "label": "Knicks",
+   "refs": [
+    {
+     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
+     "leg": 1
+    }
+   ],
+   "book": "bovada",
+   "odds_api_key": "bovada",
+   "book_price": "-180",
+   "book_chance": 64.3,
+   "polymarket_price": 63,
+   "kalshi_price": 62,
+   "diff": 1.3,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nba-phi-ny-2026-10-20",
+   "side": "no",
+   "label": "Knicks",
+   "refs": [
+    {
+     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
+     "leg": 1
+    }
+   ],
+   "book": "espnbet",
+   "odds_api_key": "espnbet",
+   "book_price": "-175",
+   "book_chance": 63.6,
+   "polymarket_price": 63,
+   "kalshi_price": 62,
+   "diff": 0.6,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nba-phi-ny-2026-10-20",
+   "side": "no",
+   "label": "Knicks",
+   "refs": [
+    {
+     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
+     "leg": 1
+    }
+   ],
+   "book": "kalshi",
+   "odds_api_key": "kalshi",
+   "book_price": "-170",
+   "book_chance": 63,
+   "polymarket_price": 63,
+   "kalshi_price": 62,
+   "diff": 0,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nba-okc-sa-2026-10-20",
+   "side": "no",
+   "label": "Spurs",
+   "refs": [
+    {
+     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
+     "leg": 2
+    }
+   ],
+   "book": "fanduel",
+   "odds_api_key": "fanduel",
+   "book_price": "-130",
+   "book_chance": 56.5,
+   "polymarket_price": 56,
+   "kalshi_price": 56,
+   "diff": 0.5,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nba-okc-sa-2026-10-20",
+   "side": "no",
+   "label": "Spurs",
+   "refs": [
+    {
+     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
+     "leg": 2
+    }
+   ],
+   "book": "betmgm",
+   "odds_api_key": "betmgm",
+   "book_price": "-135",
+   "book_chance": 57.4,
+   "polymarket_price": 56,
+   "kalshi_price": 56,
+   "diff": 1.4,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nba-okc-sa-2026-10-20",
+   "side": "no",
+   "label": "Spurs",
+   "refs": [
+    {
+     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
+     "leg": 2
+    }
+   ],
+   "book": "draftkings",
+   "odds_api_key": "draftkings",
+   "book_price": "-135",
+   "book_chance": 57.4,
+   "polymarket_price": 56,
+   "kalshi_price": 56,
+   "diff": 1.4,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nba-okc-sa-2026-10-20",
+   "side": "no",
+   "label": "Spurs",
+   "refs": [
+    {
+     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
+     "leg": 2
+    }
+   ],
+   "book": "bovada",
+   "odds_api_key": "bovada",
+   "book_price": "-135",
+   "book_chance": 57.4,
+   "polymarket_price": 56,
+   "kalshi_price": 56,
+   "diff": 1.4,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nba-okc-sa-2026-10-20",
+   "side": "no",
+   "label": "Spurs",
+   "refs": [
+    {
+     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
+     "leg": 2
+    }
+   ],
+   "book": "espnbet",
+   "odds_api_key": "espnbet",
+   "book_price": "-135",
+   "book_chance": 57.4,
+   "polymarket_price": 56,
+   "kalshi_price": 56,
+   "diff": 1.4,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nba-okc-sa-2026-10-20",
+   "side": "no",
+   "label": "Spurs",
+   "refs": [
+    {
+     "pick_id": "2026-10-20-x-safer-nyk-sa-duren",
+     "leg": 2
+    }
+   ],
+   "book": "kalshi",
+   "odds_api_key": "kalshi",
+   "book_price": "-127",
+   "book_chance": 55.9,
+   "polymarket_price": 56,
+   "kalshi_price": 56,
+   "diff": -0.1,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nba-bos-det-2026-10-20",
+   "side": "no",
+   "label": "Pistons",
+   "refs": [
+    {
+     "pick_id": "2026-10-20-x-balanced-det-cade-wemby",
+     "leg": 0
+    }
+   ],
+   "book": "fanduel",
+   "odds_api_key": "fanduel",
+   "book_price": "-102",
+   "book_chance": 50.5,
+   "polymarket_price": 49,
+   "kalshi_price": 49,
+   "diff": 1.5,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nba-bos-det-2026-10-20",
+   "side": "no",
+   "label": "Pistons",
+   "refs": [
+    {
+     "pick_id": "2026-10-20-x-balanced-det-cade-wemby",
+     "leg": 0
+    }
+   ],
+   "book": "betmgm",
+   "odds_api_key": "betmgm",
+   "book_price": "+100",
+   "book_chance": 50,
+   "polymarket_price": 49,
+   "kalshi_price": 49,
+   "diff": 1,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nba-bos-det-2026-10-20",
+   "side": "no",
+   "label": "Pistons",
+   "refs": [
+    {
+     "pick_id": "2026-10-20-x-balanced-det-cade-wemby",
+     "leg": 0
+    }
+   ],
+   "book": "draftkings",
+   "odds_api_key": "draftkings",
+   "book_price": "-108",
+   "book_chance": 51.9,
+   "polymarket_price": 49,
+   "kalshi_price": 49,
+   "diff": 2.9,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nba-bos-det-2026-10-20",
+   "side": "no",
+   "label": "Pistons",
+   "refs": [
+    {
+     "pick_id": "2026-10-20-x-balanced-det-cade-wemby",
+     "leg": 0
+    }
+   ],
+   "book": "bovada",
+   "odds_api_key": "bovada",
+   "book_price": "-110",
+   "book_chance": 52.4,
+   "polymarket_price": 49,
+   "kalshi_price": 49,
+   "diff": 3.4,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nba-bos-det-2026-10-20",
+   "side": "no",
+   "label": "Pistons",
+   "refs": [
+    {
+     "pick_id": "2026-10-20-x-balanced-det-cade-wemby",
+     "leg": 0
+    }
+   ],
+   "book": "espnbet",
+   "odds_api_key": "espnbet",
+   "book_price": "-105",
+   "book_chance": 51.2,
+   "polymarket_price": 49,
+   "kalshi_price": 49,
+   "diff": 2.2,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nba-bos-det-2026-10-20",
+   "side": "no",
+   "label": "Pistons",
+   "refs": [
+    {
+     "pick_id": "2026-10-20-x-balanced-det-cade-wemby",
+     "leg": 0
+    }
+   ],
+   "book": "kalshi",
+   "odds_api_key": "kalshi",
+   "book_price": "+104",
+   "book_chance": 49,
+   "polymarket_price": 49,
+   "kalshi_price": 49,
+   "diff": 0,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nfl-was-sf-2026-10-19",
+   "side": "yes",
+   "label": "Commanders",
+   "refs": [
+    {
+     "pick_id": "l-was-upset-script",
+     "leg": 0
+    }
+   ],
+   "book": "draftkings",
+   "odds_api_key": "draftkings",
+   "book_price": "+310",
+   "book_chance": 24.4,
+   "polymarket_price": 21.8,
+   "kalshi_price": 22,
+   "diff": 2.6,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nfl-was-sf-2026-10-19",
+   "side": "yes",
+   "label": "Commanders",
+   "refs": [
+    {
+     "pick_id": "l-was-upset-script",
+     "leg": 0
+    }
+   ],
+   "book": "kalshi",
+   "odds_api_key": "kalshi",
+   "book_price": "+355",
+   "book_chance": 22,
+   "polymarket_price": 21.8,
+   "kalshi_price": 22,
+   "diff": 0.2,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nfl-was-sf-2026-10-19",
+   "side": "yes",
+   "label": "Commanders",
+   "refs": [
+    {
+     "pick_id": "l-was-upset-script",
+     "leg": 0
+    }
+   ],
+   "book": "fanduel",
+   "odds_api_key": "fanduel",
+   "book_price": "+320",
+   "book_chance": 23.8,
+   "polymarket_price": 21.8,
+   "kalshi_price": 22,
+   "diff": 2,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nfl-was-sf-2026-10-19",
+   "side": "yes",
+   "label": "Commanders",
+   "refs": [
+    {
+     "pick_id": "l-was-upset-script",
+     "leg": 0
+    }
+   ],
+   "book": "betmgm",
+   "odds_api_key": "betmgm",
+   "book_price": "+333",
+   "book_chance": 23.1,
+   "polymarket_price": 21.8,
+   "kalshi_price": 22,
+   "diff": 1.3,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nfl-was-sf-2026-10-19",
+   "side": "yes",
+   "label": "Commanders",
+   "refs": [
+    {
+     "pick_id": "l-was-upset-script",
+     "leg": 0
+    }
+   ],
+   "book": "bovada",
+   "odds_api_key": "bovada",
+   "book_price": "+330",
+   "book_chance": 23.3,
+   "polymarket_price": 21.8,
+   "kalshi_price": 22,
+   "diff": 1.5,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nfl-was-sf-2026-10-19",
+   "side": "yes",
+   "label": "Commanders",
+   "refs": [
+    {
+     "pick_id": "l-was-upset-script",
+     "leg": 0
+    }
+   ],
+   "book": "espnbet",
+   "odds_api_key": "espnbet",
+   "book_price": "+320",
+   "book_chance": 23.8,
+   "polymarket_price": 21.8,
+   "kalshi_price": 22,
+   "diff": 2,
+   "fetched_at": "2026-10-19T17:15:32.520Z"
   }
  ]
 }
