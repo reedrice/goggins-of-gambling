@@ -263,15 +263,19 @@ Prices show as **cents by default** (Polymarket style). Settings → Price forma
 
 ## 17. Record tab: "How each app's prices compare" and data/book-odds.json
 
-One block per app (in `APP_CONFIG.platforms` order, plus "Other" only if someone logged a bet there). Each block has three cells laid out as a CSS grid (`.pc-*` in style.css), so the section fits a phone with no sideways scroll:
+One block per app (in `APP_CONFIG.platforms` order, plus "Other" only if someone logged a bet there). Under each app name is a 5-column grid (`.pc-*` in style.css) with **one value per cell** and a dash (–) when there's no data. It fits a 390px phone with no sideways scroll. The owner asked for the % not to be stacked under the count.
 
-| column | source | shows |
+| column | source | value |
 |---|---|---|
-| **Bets you logged** | `data/bet-log.json` (shared, manual) | count + average `gap` ("pays −6.9% vs. our estimate"), or "No bets logged yet" |
-| **From odds feed** | `data/book-odds.json` (automatic) | count + average `diff` ("2¢ more than Polymarket US"). Until `status` is `"active"`, every row says **"Coming soon, waiting on odds feed"**. Polymarket US says "We compare other apps to this one" (it's the baseline). Apps with `oddsApi: null` (bet365) say "Not in the odds feed" |
+| **Bets you logged** | `data/bet-log.json` (shared, manual) | count of records |
+| **Paid vs. our estimate** | same | average `gap`, e.g. `-6.9%` (red below 0) |
+| **From odds feed** | `data/book-odds.json` (automatic) | count of comparison rows |
+| **Price vs. Polymarket** | same | average `diff` in cents, e.g. `+3.2¢` (red = that app charges more) |
 | **Total** | both | logged count + feed count |
 
-The numbers come from `BetCalc.platformSummary(records, comparisons, platforms)`, which is pure and tested in `tests/calc.test.js`. All labels and the three (i) tooltips are in `STR.record` / `STR.tips` (`colLogged`, `colFeed`, `colTotal`).
+Feed status notes sit next to the app name, not in a cell: "We compare other apps to this one" (Polymarket US, the baseline), "Needs a paid odds plan" (`oddsApiPaid`, no rows), "Not in the odds feed" (`oddsApi: null`, bet365), and "Coming soon, waiting on odds feed" (whenever `status` isn't `"active"`).
+
+The numbers come from `BetCalc.platformSummary(records, comparisons, platforms)`, which is pure and tested in `tests/calc.test.js`. All labels and the five (i) tooltips are in `STR.record` / `STR.tips` (`colLogged`, `colGap`, `colFeed`, `colDiff`, `colTotal`).
 
 **data/book-odds.json** is written by `scripts/fetch-book-odds.mjs` (dollar-free; check it with `node scripts/update-picks.mjs validate data/book-odds.json`):
 ```jsonc

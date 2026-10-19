@@ -852,7 +852,10 @@
 
   /**
    * "How each app's prices compare" (Record tab). One block per platform in
-   * APP_CONFIG.platforms order, each with three cells:
+   * APP_CONFIG.platforms order. Five cells, ONE value each (dash = no data):
+   *   Bets you logged | Paid vs. our estimate | From odds feed |
+   *   Price vs. Polymarket | Total
+   * (Owner feedback: don't stack the % under the count.) Details:
    *   1. Bets you logged: shared bet-log records (count + average payout gap
    *      vs. our multiplied estimate)
    *   2. From odds feed: data/book-odds.json comparisons (count + average
@@ -861,8 +864,9 @@
    *      feed". Polymarket US is the baseline; platforms with oddsApi:null
    *      (bet365) say "Not in the odds feed".
    *   3. Total: both counts added.
-   * Laid out as a 3-column grid under each app name (CSS .pc-*) so it fits a
-   * phone without sideways scrolling. Numbers come from BetCalc.platformSummary.
+   * Laid out as a 5-column grid under each app name (CSS .pc-*) so it fits a
+   * 390px phone without sideways scrolling. Feed status notes ("Needs a paid
+   * odds plan", "Coming soon…") go next to the app name, not in a cell. Numbers come from BetCalc.platformSummary.
    * @param {object|null} log data/bet-log.json @param {object|null} odds data/book-odds.json
    * @returns {string} HTML
    */
@@ -873,31 +877,47 @@
     const recs = (log && log.records) || [];
     const feedOn = !!(odds && odds.status === 'active');
     const sum = C.platformSummary(recs, feedOn ? odds.comparisons : [], CFG.platforms);
-    const loggedCell = l => l.n
-      ? `<b>${esc(R.loggedCount(l.n))}</b><span class="${sign(l.avgGap)}">${esc(R.loggedGap(pct(l.avgGap, 1)))}</span>`
-      : `<span class="muted">${esc(R.platNone)}</span>`;
-    const feedCell = (p, f) => {
-      if (p.id === (odds && odds.baseline || 'polymarket_us')) return `<span class="muted">${esc(R.feedBaseline)}</span>`;
-      if (!p.oddsApi) return `<span class="muted">${esc(R.feedMissing)}</span>`;
-      if (!feedOn) return `<span class="muted">${esc(R.feedSoon)}</span>`;
-      if (!f.n) return `<span class="muted">${esc(p.oddsApiPaid ? R.feedPaid : R.noneYet)}</span>`;
+    // One value per cell; a dash when there's nothing yet. Feed status notes
+    // (baseline / paid plan / not in feed / coming soon) sit under the app name.
+    const dash = `<span class="muted">${esc(R.dash)}</span>`;
+    const gapCell = l => (l.n ? `<span class="${sign(l.avgGap)}">${esc(pct(l.avgGap, 1))}</span>` : dash);
+    const diffCell = f => {
+      if (!f.n) return dash;
       const d = Math.round(f.avgDiff * 10) / 10;
-      // book costs MORE than Polymarket = worse for the bettor = red
-      return `<b>${esc(R.feedCount(f.n))}</b><span class="${d > 0 ? 'neg' : d < 0 ? 'pos' : ''}">${esc(d === 0 ? R.feedSame : R.feedDiff(Math.abs(d), d > 0))}</span>`;
+      // app costs MORE than Polymarket = you win less = red
+      return `<span class="${d > 0 ? 'neg' : d < 0 ? 'pos' : ''}">${d > 0 ? '+' : d < 0 ? '−' : ''}${esc(String(Math.abs(d)))}¢</span>`;
     };
-    const block = (p, row) => `
+    const feedNote = (p, f) => {
+      if (p.id === (odds && odds.baseline || 'polymarket_us')) return R.feedBaseline;
+      if (!p.oddsApi) return R.feedMissing;
+      if (!feedOn) return R.feedSoon;
+      if (!f.n && p.oddsApiPaid) return R.feedPaid;
+      return '';
+    };
+    const block = (p, row) => {
+      const note = feedNote(p, row.feed);
+      return `
       <div class="pc-row">
-        <div class="pc-name">${platformBadge(p.name)} ${esc(p.name)}</div>
+        <div class="pc-name">${platformBadge(p.name)} <span>${esc(p.name)}</span>${note ? `<span class="pc-note muted">${esc(note)}</span>` : ''}</div>
         <div class="pc-cells">
-          <div class="pc-cell">${loggedCell(row.logged)}</div>
-          <div class="pc-cell">${feedCell(p, row.feed)}</div>
+          <div class="pc-cell">${row.logged.n ? `<b>${row.logged.n}</b>` : dash}</div>
+          <div class="pc-cell">${gapCell(row.logged)}</div>
+          <div class="pc-cell">${row.feed.n ? `<b>${row.feed.n}</b>` : dash}</div>
+          <div class="pc-cell">${diffCell(row.feed)}</div>
           <div class="pc-cell pc-total"><b>${row.total}</b></div>
         </div>
       </div>`;
+    };
     html += `<div class="pc">
-      <div class="pc-head"><span>${esc(R.colLogged)} ${tip('colLogged')}</span><span>${esc(R.colFeed)} ${tip('colFeed')}</span><span>${esc(R.colTotal)} ${tip('colTotal')}</span></div>
+      <div class="pc-head">
+        <span>${esc(R.colLogged)} ${tip('colLogged')}</span>
+        <span>${esc(R.colGap)} ${tip('colGap')}</span>
+        <span>${esc(R.colFeed)} ${tip('colFeed')}</span>
+        <span>${esc(R.colDiff)} ${tip('colDiff')}</span>
+        <span>${esc(R.colTotal)} ${tip('colTotal')}</span>
+      </div>
       ${CFG.platforms.map((p, i) => block(p, sum.rows[i])).join('')}
-      ${sum.other.n ? block(Object.assign({}, CFG.otherPlatform, { name: CFG.otherPlatform.name, oddsApi: null }), { logged: sum.other, feed: { n: 0 }, total: sum.other.n }) : ''}
+      ${sum.other.n ? block(Object.assign({}, CFG.otherPlatform, { oddsApi: null }), { logged: sum.other, feed: { n: 0, avgDiff: null }, total: sum.other.n }) : ''}
     </div>`;
     if (log) html += `<p class="muted small">${esc(R.platLag(recs.length))}</p>`;
     return html;
