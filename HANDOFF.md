@@ -680,3 +680,4 @@ pregame open (free API, no Odds API credits).
   thin ones (bid/ask gap > 6 pts, or <4% / >96%). Shows the side that got cheaper in American
   odds + "$10 pays $X" + event link. No cents.
 - `--dir` overrides the working folder (handy for simulated tests).
+- Oct 19, 2026: tests added. `node --test tests/live-watch.test.mjs` runs on TEST DATA (made-up prices) in tests/fixtures/live-watch-sample.json. The script now exports its pure helpers plus `findMoves()` and only runs the CLI when executed directly.

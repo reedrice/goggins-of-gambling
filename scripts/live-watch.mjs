@@ -28,6 +28,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { pathToFileURL } from 'node:url';
 
 const GATEWAY = 'https://gateway.polymarket.us';
 const args = process.argv.slice(2);
@@ -55,16 +56,16 @@ async function fetchEvent() {
 }
 
 /** Yes-side quote in probability points (0-100), or null if missing. */
-function quote(m) {
+export function quote(m) {
   const b = Number(m.bestBidQuote?.value), a = Number(m.bestAskQuote?.value);
   if (!(b > 0) || !(a > 0)) return null;
   return { bid: b * 100, ask: a * 100, mid: (a + b) * 50, width: (a - b) * 100 };
 }
-const isOpen = m => m.active && !m.closed && m.status === 'MARKET_STATUS_OPEN';
-const liquid = q => q && q.width <= MAX_WIDTH && q.mid >= 4 && q.mid <= 96;
+export const isOpen = m => m.active && !m.closed && m.status === 'MARKET_STATUS_OPEN';
+export const liquid = q => q && q.width <= MAX_WIDTH && q.mid >= 4 && q.mid <= 96;
 
 /** Plain-English name of the "Yes" and "No" sides of a market. */
-function sides(m) {
+export function sides(m) {
   const yes = m.marketSides?.find(s => s.long), no = m.marketSides?.find(s => !s.long);
   const tn = s => s?.team?.alias || s?.team?.name;
   if (/winner$/.test(m.sportsMarketType)) return [`${tn(yes)} win`, `${tn(no)} win`];
@@ -75,7 +76,7 @@ function sides(m) {
 }
 
 /** Pick the markets worth watching: ML, main spread, main total, key props. */
-function selectMarkets(ev) {
+export function selectMarkets(ev) {
   const ms = ev.markets.filter(isOpen).map(m => ({ m, q: quote(m) })).filter(x => liquid(x.q));
   const near50 = t => ms.filter(x => x.m.sportsMarketType === t).sort((a, b) => Math.abs(a.q.mid - 50) - Math.abs(b.q.mid - 50))[0];
   const out = [];
@@ -92,13 +93,45 @@ function selectMarkets(ev) {
 }
 
 /** Probability points -> American odds string, e.g. 40 -> "+150". */
-function american(p) {
+export function american(p) {
   if (!(p > 0 && p < 100)) return '—';
   return p >= 50 ? `-${Math.round(100 * p / (100 - p))}` : `+${Math.round(100 * (100 - p) / p)}`;
 }
 /** What $10 returns (stake + profit) buying at price p (prob points). */
-const pays = p => (10 * 100 / p).toFixed(2);
+export const pays = p => (10 * 100 / p).toFixed(2);
 const marketUrl = () => `https://polymarket.us/sports/${SLUG.split('-')[0]}/${SLUG}`;
+
+/**
+ * Pure core of "check" (no network, no files) so tests can feed it saved
+ * sample data. open = the snapshot object, last = { marketId: mid } from the
+ * previous check, ev = a Polymarket US event payload.
+ * Returns { mids, alerts: [{size, text}], watched, skipped }.
+ */
+export function findMoves(open, last, ev, cfg = {}) {
+  const openMove = cfg.openMove ?? OPEN_MOVE, stepMove = cfg.stepMove ?? STEP_MOVE;
+  const byId = Object.fromEntries(ev.markets.map(m => [m.id, m]));
+  const mids = {}, alerts = [];
+  let watched = 0, skipped = 0;
+  for (const o of open.markets) {
+    const m = byId[o.id]; const q = m && quote(m);
+    if (!m || !isOpen(m) || !liquid(q)) { skipped++; continue; }   // settled, paused or thin now
+    watched++;
+    mids[o.id] = +q.mid.toFixed(1);
+    const dOpen = q.mid - o.mid, dLast = last[o.id] != null ? q.mid - last[o.id] : 0;
+    if (Math.abs(dOpen) < openMove && Math.abs(dLast) < stepMove) continue;
+    // The side whose chance DROPPED is the one that now pays more ("juicier").
+    const yesCheaper = dOpen < 0;
+    const side = yesCheaper ? o.sides[0] : o.sides[1];
+    const nowP = yesCheaper ? q.ask : 100 - q.bid;          // price to buy that side now
+    const openP = yesCheaper ? o.mid : 100 - o.mid;
+    alerts.push({ size: Math.abs(dOpen), text:
+      `• ${side} (${o.kind})\n` +
+      `  Opened ${american(openP)} → now ${american(nowP)}. $10 pays $${pays(nowP)} now (was about $${pays(openP)}).\n` +
+      `  Chance moved ${Math.abs(dOpen).toFixed(0)} pts from open` + (dLast ? `, ${dLast > 0 ? '+' : ''}${(yesCheaper ? -dLast : dLast).toFixed(0)} since last check` : '') + `.\n` +
+      `  Bet it: ${open.url}` });
+  }
+  return { mids, alerts, watched, skipped };
+}
 
 async function snapshot() {
   const ev = await fetchEvent();
@@ -115,27 +148,7 @@ async function check() {
   const open = JSON.parse(fs.readFileSync(OPEN_FILE, 'utf8'));
   const last = fs.existsSync(LAST_FILE) ? JSON.parse(fs.readFileSync(LAST_FILE, 'utf8')).mids : {};
   const ev = await fetchEvent();
-  const byId = Object.fromEntries(ev.markets.map(m => [m.id, m]));
-  const mids = {}, alerts = [];
-  let watched = 0, skipped = 0;
-  for (const o of open.markets) {
-    const m = byId[o.id]; const q = m && quote(m);
-    if (!m || !isOpen(m) || !liquid(q)) { skipped++; continue; }   // settled, paused or thin now
-    watched++;
-    mids[o.id] = +q.mid.toFixed(1);
-    const dOpen = q.mid - o.mid, dLast = last[o.id] != null ? q.mid - last[o.id] : 0;
-    if (Math.abs(dOpen) < OPEN_MOVE && Math.abs(dLast) < STEP_MOVE) continue;
-    // The side whose chance DROPPED is the one that now pays more ("juicier").
-    const yesCheaper = dOpen < 0;
-    const side = yesCheaper ? o.sides[0] : o.sides[1];
-    const nowP = yesCheaper ? q.ask : 100 - q.bid;          // price to buy that side now
-    const openP = yesCheaper ? o.mid : 100 - o.mid;
-    alerts.push({ size: Math.abs(dOpen), text:
-      `• ${side} (${o.kind})\n` +
-      `  Opened ${american(openP)} → now ${american(nowP)}. $10 pays $${pays(nowP)} now (was about $${pays(openP)}).\n` +
-      `  Chance moved ${Math.abs(dOpen).toFixed(0)} pts from open` + (dLast ? `, ${dLast > 0 ? '+' : ''}${(yesCheaper ? -dLast : dLast).toFixed(0)} since last check` : '') + `.\n` +
-      `  Bet it: ${open.url}` });
-  }
+  const { mids, alerts, watched, skipped } = findMoves(open, last, ev);
   fs.writeFileSync(LAST_FILE, JSON.stringify({ at: new Date().toISOString(), mids }, null, 1));
   const now = new Date().toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit' });
   if (!alerts.length) { console.log(`${now} CT — no big moves (${watched} markets watched, ${skipped} thin/settled skipped).`); return; }
@@ -143,6 +156,9 @@ async function check() {
   alerts.sort((a, b) => b.size - a.size).forEach(a => console.log(a.text));
 }
 
-const run = { snapshot, check }[cmd];
-if (!run) { console.log('Usage: node scripts/live-watch.mjs snapshot|check [--slug ...]'); process.exit(1); }
-run().catch(e => { console.error('live-watch error:', e.message); process.exit(1); });
+// Only run the CLI when executed directly (tests import the functions above).
+if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
+  const run = { snapshot, check }[cmd];
+  if (!run) { console.log('Usage: node scripts/live-watch.mjs snapshot|check [--slug ...]'); process.exit(1); }
+  run().catch(e => { console.error('live-watch error:', e.message); process.exit(1); });
+}

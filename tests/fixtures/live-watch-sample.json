@@ -1,0 +1,21 @@
+{
+ "_note": "TEST DATA ONLY. Made-up prices shaped like a gateway.polymarket.us /v1/events/slug payload. Not real market prices.",
+ "open": {
+  "slug": "nfl-aaa-bbb-2099-01-01", "title": "TEST AAA @ BBB", "url": "https://polymarket.us/sports/nfl/nfl-aaa-bbb-2099-01-01",
+  "markets": [
+   {"id": "ml", "kind": "Moneyline", "type": "football_team_full_game_winner", "question": "TEST", "sides": ["AAA win", "BBB win"], "mid": 50},
+   {"id": "tot", "kind": "Main total", "type": "football_team_full_game_total", "question": "TEST", "sides": ["Over 40.5 points", "Under 40.5 points"], "mid": 50},
+   {"id": "thin", "kind": "Player prop", "type": "football_player_receptions", "question": "TEST", "sides": ["Yes: x", "No: x"], "mid": 50},
+   {"id": "calm", "kind": "Main spread", "type": "football_team_full_game_spread", "question": "TEST", "sides": ["AAA +1.5", "BBB -1.5"], "mid": 50}
+  ]
+ },
+ "event": {
+  "title": "TEST AAA @ BBB",
+  "markets": [
+   {"id": "ml", "active": true, "closed": false, "status": "MARKET_STATUS_OPEN", "bestBidQuote": {"value": "0.38"}, "bestAskQuote": {"value": "0.40"}},
+   {"id": "tot", "active": true, "closed": false, "status": "MARKET_STATUS_OPEN", "bestBidQuote": {"value": "0.61"}, "bestAskQuote": {"value": "0.63"}},
+   {"id": "thin", "active": true, "closed": false, "status": "MARKET_STATUS_OPEN", "bestBidQuote": {"value": "0.20"}, "bestAskQuote": {"value": "0.40"}},
+   {"id": "calm", "active": true, "closed": false, "status": "MARKET_STATUS_OPEN", "bestBidQuote": {"value": "0.51"}, "bestAskQuote": {"value": "0.53"}}
+  ]
+ }
+}
