@@ -455,10 +455,14 @@
 
   /** Show one tab and render it (hash-based). */
   function go(name) {
+    // #live and #picks are the two views of the Picks tab (renderPicks).
+    if (name === 'live' || name === 'picks') { picksView = name; S.setPrefs({ picksView: name }); }
+    if (name === 'live') name = 'picks';
     if (!$('#tab-' + name)) name = 'picks';
     document.querySelectorAll('.tab').forEach(s => (s.hidden = s.dataset.tab !== name));
     document.querySelectorAll('.tabbar button').forEach(b => b.classList.toggle('active', b.dataset.go === name));
-    if (location.hash !== '#' + name) history.replaceState(null, '', '#' + name);
+    const want = '#' + (name === 'picks' ? picksView || savedView() : name);
+    if (location.hash !== want) history.replaceState(null, '', want);
     ({ picks: renderPicks, calc: renderCalc, bets: renderBets, record: renderRecord, trent: renderTrent, settings: renderSettings })[name]();
     window.scrollTo(0, 0);
   }
@@ -469,7 +473,7 @@
     renderHeader();
     renderPlatformToggle();
     window.Picker.loadIndex().catch(() => {});
-    go((location.hash || '#picks').slice(1));
+    go(location.hash ? location.hash.slice(1) : savedView());
   }
 
   // ---------------------------------------------------------------- picks
@@ -622,8 +626,32 @@
   }
 
   /** Fetch + render data/picks.json. Waits briefly for team logos. */
-  async function renderPicks() {
-    const el = $('#tab-picks');
+  // ------------------------------------------------- picks view toggle
+  // Two views on the Picks tab: "Today's Picks" (#picks) | "Live Bets 🔴" (#live).
+  // Remembered in localStorage (betdash_prefs.picksView) and linkable by hash.
+  // The Live Bets view is RICHIE'S AREA (HANDOFF §32): this file only draws the
+  // toggle and hands him an empty container; js/live-bets.js fills it.
+  let picksView = null;
+  const savedView = () => (S.getPrefs().picksView === 'live' ? 'live' : 'picks');
+
+  /** Picks tab entry point: toggle on top, then the chosen view. */
+  function renderPicks() {
+    const tab = $('#tab-picks');
+    if (!picksView) picksView = savedView();
+    const btn = (v, label) => `<button type="button" class="${picksView === v ? 'on' : ''}" data-picks-view="${v}" aria-pressed="${picksView === v}">${esc(label)}</button>`;
+    tab.innerHTML = `<div class="view-toggle" role="group" aria-label="${esc(STR.live.group)}">${btn('picks', STR.live.today)}${btn('live', STR.live.live)}</div><div id="picks-view"></div>`;
+    tab.querySelectorAll('[data-picks-view]').forEach(b => (b.onclick = () => go(b.dataset.picksView)));
+    if (picksView === 'live') {
+      // Richie's container. Keep this tie-in tiny: one div + one call.
+      $('#picks-view').innerHTML = '<div id="live-bets-root" class="live-bets-root"></div>';
+      if (window.LiveBets && typeof LiveBets.render === 'function') LiveBets.render($('#live-bets-root'));
+      return;
+    }
+    return renderTodayPicks();
+  }
+
+  async function renderTodayPicks() {
+    const el = $('#picks-view');
     el.innerHTML = `<h2>${esc(STR.picks.title)}</h2><p class="muted">${esc(STR.loading)}</p>`;
     let predFile = null;
     try {
@@ -1451,7 +1479,7 @@
     T.install();
     installTips();
     applyBrand();
-    document.querySelectorAll('.tabbar button').forEach(b => (b.onclick = () => go(b.dataset.go)));
+    document.querySelectorAll('.tabbar button').forEach(b => (b.onclick = () => go(b.dataset.go === 'picks' ? savedView() : b.dataset.go)));   // Picks reopens the remembered view
     window.addEventListener('hashchange', () => { if (S.getProfile()) go(location.hash.slice(1)); });
     if (!S.getProfile()) showOnboarding(); else startApp();
   }

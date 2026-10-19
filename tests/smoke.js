@@ -195,6 +195,11 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   console.log('picks on Oct 20 (NBA opening night):', await p.$$eval('#tab-picks .card', cs => cs.length));
   await p.evaluate(() => { const b = document.querySelector('[data-pick-day]'); if (b) b.click(); }); await wait(800);
   console.log('sport chips (first day):', await p.$$eval('[data-pick-sport]', x => x.map(e => e.innerText).join(',')));
+  // Picks tab toggle: Today's Picks | Live Bets 🔴 (Live view = Richie's js/live-bets.js).
+  await p.evaluate(() => document.querySelector('[data-go="picks"]').click()); await wait(800);
+  await p.click('[data-picks-view="live"]'); await wait(500);
+  console.log('live view:', await p.evaluate(() => [location.hash, !!document.querySelector('#live-bets-root'), document.querySelector('#live-bets-root')?.innerText.trim(), JSON.parse(localStorage.betdash_prefs).picksView].join(' | ')));
+  await p.click('[data-picks-view="picks"]'); await wait(800);
   console.log('localStorage keys:', await p.evaluate(() => Object.keys(localStorage)));
   console.log('ERRORS:', errs.length ? errs : 'none');
   await b.close();

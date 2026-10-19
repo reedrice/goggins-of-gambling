@@ -120,6 +120,8 @@ window.STR = {
   },
 
   // ---------------------------------------------------------------- picks
+  /** Picks tab toggle. The Live Bets view itself is Richie's (js/live-bets.js, HANDOFF §32). */
+  live: { group: 'Which view', today: "Today's Picks", live: 'Live Bets 🔴', soon: 'Live bets coming soon' },
   picks: {
     title: 'Today\'s picks',
     updated: (slate, when) => `Games on ${slate} · Updated ${when}`,

@@ -15,7 +15,7 @@
 
   SCRIPT ORDER (plain classic scripts, no bundler; each attaches one global)
     config.js -> strings.js -> calc.js -> storage.js -> gametime.js -> evaluate.js -> teams.js ->
-    positions.js -> markets-core.js -> picker-filters.js -> picker-groups.js -> picker.js -> github-log.js -> app.js
+    positions.js -> markets-core.js -> picker-filters.js -> picker-groups.js -> picker.js -> github-log.js -> live-bets.js (Richie) -> app.js
 -->
 <html lang="en">
 <head>
@@ -26,6 +26,7 @@
   <title>Loading…</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%94%A5%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/live-bets.css">  <!-- Richie's area, HANDOFF §32 -->
 </head>
 <body>
   <!-- FIRST-RUN ONBOARDING: filled by app.js (text from js/strings.js) when no profile exists; blocks everything else. -->
@@ -75,6 +76,7 @@
   <script src="js/plain.js"></script>
   <script src="js/vegas.js"></script>
   <script src="js/trent.js"></script>
+  <script src="js/live-bets.js"></script>  <!-- Richie's area, HANDOFF §32 -->
   <script src="js/storage.js"></script>
   <script src="js/gametime.js"></script>
   <script src="js/evaluate.js"></script>
