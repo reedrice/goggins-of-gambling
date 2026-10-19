@@ -4,7 +4,9 @@
 import test from 'node:test';
 import assert from 'node:assert';
 import fs from 'node:fs';
-import { american, pays, quote, liquid, findMoves } from '../scripts/live-watch.mjs';
+import os from 'node:os';
+import path from 'node:path';
+import { american, pays, quote, liquid, findMoves, appendAlerts, gameOver } from '../scripts/live-watch.mjs';
 
 const F = JSON.parse(fs.readFileSync(new URL('./fixtures/live-watch-sample.json', import.meta.url), 'utf8'));
 
@@ -45,4 +47,19 @@ test('open and now are both buy prices', () => {
   assert.strictEqual(a.openP, 51);   // open buy price, not the 50 mid
   assert.strictEqual(a.nowP, 40);    // now ask
   assert.match(a.text, /-11 pts from open/);
+});
+
+test('appendAlerts saves prices only (no $) and appends across checks', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'lw-'));
+  const { alerts } = findMoves(F.open, {}, F.event);
+  appendAlerts(dir, 'test-slug', alerts); const f = appendAlerts(dir, 'test-slug', alerts);
+  const raw = fs.readFileSync(f, 'utf8'), j = JSON.parse(raw);
+  assert.strictEqual(j.alerts.length, 4);
+  assert.doesNotMatch(raw, /\$|¢/);
+  assert.match(j.alerts[0].now_odds, /^[+-]\d+$/);
+});
+
+test('gameOver', () => {
+  assert.strictEqual(gameOver(F.event), false);
+  assert.strictEqual(gameOver({ markets: [{ closed: true }] }), true);
 });

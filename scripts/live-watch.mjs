@@ -16,6 +16,10 @@
  *       Pull current prices, compare to the opening line AND the previous
  *       check, print only notable moves. Saves state to <tag>-last.json.
  *
+ *   node scripts/live-watch.mjs watch [--every 150] [--max-checks 200]
+ *       Run "check" every N seconds until the game ends (or max checks) and
+ *       append alerts to data/live/<slug>-alerts.json (prices only).
+ *
  * Options: --dir (default /workspace/live), --players "Purdy,Daniels,..."
  *
  * PRIVACY: files hold only public market prices — never dollar amounts,
@@ -42,7 +46,8 @@ const OPEN_FILE = path.join(DIR, `${TAG}-open.json`);
 const LAST_FILE = path.join(DIR, `${TAG}-last.json`);
 const OPEN_MOVE = Number(opt('open-move', 10));   // pts of implied prob vs open
 const STEP_MOVE = Number(opt('step-move', 6));    // pts vs previous check
-const MAX_WIDTH = 6;                              // max bid/ask gap in pts
+const MAX_WIDTH = 6;
+const ALERTS_DIR = opt('alerts-dir', path.join(path.dirname(new URL(import.meta.url).pathname), '..', 'data', 'live'));                              // max bid/ask gap in pts
 const PLAYERS = opt('players', 'Purdy,Daniels,McCaffrey,Kittle,Evans,Samuel,McLaurin,Aiyuk,Pearsall,Croskey-Merritt,Ertz,Jennings')
   .split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
 const PROP_TYPES = /player_(passing_yards|rushing_yards|receiving_yards|receptions|touchdowns|passing_touchdowns|interceptions_thrown)$/;
@@ -137,7 +142,7 @@ export function findMoves(open, last, ev, cfg = {}) {
     // Signed from THIS side's point of view: negative = cheaper (pays more).
     const sideOpen = yesCheaper ? dOpen : -dOpen, sideLast = yesCheaper ? dLast : -dLast;
     const sgn = x => `${x > 0 ? '+' : ''}${x.toFixed(0)}`;
-    alerts.push({ size: Math.max(Math.abs(dOpen), Math.abs(dLast)), side, nowP, openP, text:
+    alerts.push({ kind: o.kind, id: o.id, size: Math.max(Math.abs(dOpen), Math.abs(dLast)), side, nowP, openP, text:
       `• ${side} (${o.kind})\n` +
       `  Opened ${american(openP)} → now ${american(nowP)}. $10 pays $${pays(nowP)} now (was about $${pays(openP)}).\n` +
       `  Chance of this side ${sgn(sideOpen)} pts from open` + (dLast ? `, ${sgn(sideLast)} since last check` : '') + `.\n` +
@@ -164,14 +169,45 @@ async function check() {
   const { mids, alerts, watched, skipped } = findMoves(open, last, ev);
   fs.writeFileSync(LAST_FILE, JSON.stringify({ at: new Date().toISOString(), mids }, null, 1));
   const now = new Date().toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit' });
-  if (!alerts.length) { console.log(`${now} CT — no big moves (${watched} markets watched, ${skipped} thin/settled skipped).`); return; }
+  if (!alerts.length) { console.log(`${now} CT — no big moves (${watched} markets watched, ${skipped} thin/settled skipped).`); return { alerts, ev }; }
   console.log(`${now} CT — ${alerts.length} big move(s) on ${open.title}:`);
   alerts.sort((a, b) => b.size - a.size).forEach(a => console.log(a.text));
+  return { alerts, ev };
+}
+
+/**
+ * Append alerts to <dir>/<slug>-alerts.json. PRICES ONLY: side, kind and
+ * American odds / chance points. No dollar figures, stakes or bankrolls.
+ */
+export function appendAlerts(dir, slug, alerts, at = new Date().toISOString()) {
+  const file = path.join(dir, `${slug}-alerts.json`);
+  const data = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : { slug, alerts: [] };
+  for (const a of alerts) data.alerts.push({ at, market_id: a.id, kind: a.kind, side: a.side,
+    open_odds: american(a.openP), now_odds: american(a.nowP), open_chance: +a.openP.toFixed(1), now_chance: +a.nowP.toFixed(1) });
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(file, JSON.stringify(data, null, 1));
+  return file;
+}
+
+/** Game is over when the event says so or every watched market is closed. */
+export const gameOver = ev => !!(ev.ended || ev.closed || (ev.markets || []).every(m => m.closed || !m.active));
+
+/** Loop "check" until the game ends. Errors on one check don't stop the loop. */
+async function watch() {
+  const every = Number(opt('every', 150)) * 1000, max = Number(opt('max-checks', 200));
+  for (let i = 1; i <= max; i++) {
+    try {
+      const r = await check();
+      if (r && r.alerts.length) console.log('  saved ->', appendAlerts(ALERTS_DIR, SLUG, r.alerts));
+      if (r && gameOver(r.ev)) { console.log('Game over, stopping.'); return; }
+    } catch (e) { console.error('check failed (will retry):', e.message); }
+    if (i < max) await new Promise(res => setTimeout(res, every));
+  }
 }
 
 // Only run the CLI when executed directly (tests import the functions above).
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
-  const run = { snapshot, check }[cmd];
-  if (!run) { console.log('Usage: node scripts/live-watch.mjs snapshot|check [--slug ...]'); process.exit(1); }
+  const run = { snapshot, check, watch }[cmd];
+  if (!run) { console.log('Usage: node scripts/live-watch.mjs snapshot|check|watch [--slug ...]'); process.exit(1); }
   run().catch(e => { console.error('live-watch error:', e.message); process.exit(1); });
 }
