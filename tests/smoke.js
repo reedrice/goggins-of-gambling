@@ -44,9 +44,11 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await cards[0].screenshot({ path: SHOT + '/2b-card-single.png' });
   await cards[9].screenshot({ path: SHOT + '/2c-card-parlay.png' });
   await p.addStyleTag({ content: '.topbar,.tabbar,.plat-bar{visibility:visible}' });
-  console.log('other-apps lines:', await p.$$eval('#tab-picks .other-apps', x => x.length), '| first:', await p.$eval('#tab-picks .other-apps', e => e.innerText).catch(() => 'none'));
-  // Payout explainer: "48¢ · $10 pays $20.83 · 48% chance" on cards, combo totals, one (i).
-  console.log('pay lines:', await p.$$eval('#tab-picks .payx', x => x.length + ' | ' + x[0].textContent.trim()), '| combo total:', await p.$eval('#tab-picks .slip-pay', e => e.textContent.replace(/\s+/g, ' ').trim()).catch(() => 'none'), '| how-prices tips:', await p.$$eval('#tab-picks [data-tip="howPrices"]', x => x.length));
+  // 2nd-grade money words: "Price on <my app>: 63¢" once per bet, "Cheaper on X" only when cheaper.
+  console.log('price-on lines:', await p.$$eval('#tab-picks .price-on', x => x.length), '| cheaper lines:', await p.$$eval('#tab-picks .cheaper', x => x.length), '| first:', await p.$eval('#tab-picks .price-on', e => e.innerText).catch(() => 'none'));
+  // "Bet $10 → get $20.83 back" on cards/legs, "If all 3 win: your $5 turns into …" on combos, one (i).
+  console.log('pay lines:', await p.$$eval('#tab-picks .pay-big', x => x.length + ' | ' + x[0].textContent.trim()), '| combo total:', await p.$$eval('#tab-picks .pay-big', x => (x.find(e => /If all/.test(e.textContent)) || { textContent: 'none' }).textContent.replace(/\s+/g, ' ').trim()), '| how-prices tips:', await p.$$eval('#tab-picks [data-tip="howPrices"]', x => x.length));
+  console.log('tap lines:', await p.$$eval('#tab-picks .tap', x => x.length + ' | ' + (x[0] ? x[0].textContent.trim() : '')), '| spread notes:', await p.$$eval('#tab-picks .spread-note', x => x.length + ' | ' + (x[0] ? x[0].textContent.trim() : '')), '| "%" or "x" left in money lines:', await p.$$eval('#tab-picks .pay-big, #tab-picks .chance-line, #tab-picks .eval-pct', x => x.filter(e => /%|\dx\b/.test(e.textContent)).length));
   // Player position badges on pick cards + their tap tooltip.
   console.log('pick-card positions:', await p.$$eval('#tab-picks .pos-badge', x => x.map(e => (e.closest('.pick-sub, li') || e.parentElement).className + ': ' + (e.closest('.pick-sub, li') || e.parentElement).textContent.replace(/\s+/g, ' ').trim().slice(0, 40)).join(' | ')));
   if (await p.$('#tab-picks .pos-badge')) { await tap('#tab-picks .pos-badge'); await wait(200); console.log('position tooltip:', await p.$eval('#tip-pop', e => (e.hidden ? 'HIDDEN' : e.textContent))); await p.mouse.click(5, 300); }
@@ -180,7 +182,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   console.log('header toggle after settings change:', await p.$eval('#plat-toggle .on', e => e.textContent.trim()));
   await p.select('#set-fmt', 'american');
   await p.click('[data-go="picks"]'); await p.waitForSelector('#tab-picks .card');
-  console.log('american price on first card:', await p.$eval('#tab-picks .stat .v', e => e.textContent));
+  console.log('american price on first card:', await p.$eval('#tab-picks .price-on', e => e.textContent));
   await p.screenshot({ path: SHOT + '/8-settings-picks.png' });
   console.log('localStorage keys:', await p.evaluate(() => Object.keys(localStorage)));
   console.log('ERRORS:', errs.length ? errs : 'none');

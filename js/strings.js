@@ -6,6 +6,10 @@
  *   Brand text (app name, tagline) is NOT here; it lives in config.js.
  *
  * WRITING RULES (the owner asked for these; keep them when editing)
+ *   - Write so a 2nd grader gets it (Reed, Oct 19 2026). Lead with dollars
+ *     ("Bet $10 → get $15.75 back") and plain chances ("about 6 out of 10
+ *     times", "about 1 in 4"), never % or "x". Cents show ONCE, small:
+ *     "Price on Polymarket US: 63¢". See STR.plain and js/plain.js.
  *   - Write for someone who has never bet before.
  *   - No jargon in labels: avoid EV, independent, implied probability, vig,
  *     no-vig, correlation, edge, units, multiple. Use the plain phrases below.
@@ -29,12 +33,35 @@ window.STR = {
   // '41¢ · $10 pays $24.39 · 41% chance'. The stake is the user's own
   // standard bet from their local profile ($10 if not set), never stored in the repo.
   pay: {
-    line: (price, stake, pays, chance) => `${price} · ${stake} pays ${pays} · ${chance}% chance`,
-    short: (stake, pays) => `${stake} pays ${pays}`,          // compact: Build-a-bet buttons, Kalshi/other-app prices
-    slip: (stake, pays) => `Your ${stake} pays ${pays} if all legs hit`,
+    short: (stake, pays) => `${stake} → ${pays}`,          // compact: Build-a-bet buttons, other-app prices
     slipNote: 'at these prices',
     howTitle: 'How prices work',
-    diffNote: '+3¢ means that app charges 3¢ more for the same $1 share, so it pays a little less. − means it pays more.'
+    diffNote: '"3¢ more" means that app charges 3¢ more for the same $1 ticket, so it pays a little less. "Less" means it pays more.'
+  },
+
+  // ---------------------------------------------------------------- 2nd-grade money words
+  // Used on pick cards, combo cards, the bet slip, Build-a-bet buttons and My
+  // bets (app.js). Chance shapes come from js/plain.js chanceWords().
+  plain: {
+    betGet: (stake, back) => `Bet ${stake} → get ${back} back`,
+    // one pick
+    chance: { of10: n => `Wins about ${n} out of 10 times`, oneIn: n => `Wins about 1 in ${n} times`, almost: 'Wins almost every time' },
+    // combo of k picks (2 = "Both win …", 3+ = "All 3 win …")
+    allChance: { of10: (k, n) => `${k === 2 ? 'Both' : 'All ' + k} win about ${n} out of 10 times`, oneIn: (k, n) => `${k === 2 ? 'Both' : 'All ' + k} win about 1 in ${n} times`, almost: k => `${k === 2 ? 'Both' : 'All ' + k} win almost every time` },
+    priceOn: (app, c) => `Price on ${app}: ${c}`,
+    cheaperOn: (app, c) => `Cheaper on ${app} (${c})`,
+    tap: what => `Tap: ${what}`,
+    ifAllWin: (k, stake, back) => `If ${k === 2 ? 'both' : 'all ' + k} win: your ${stake} turns into ${back}`,
+    ifWins: (stake, back) => `If it wins: your ${stake} turns into ${back}`,
+    onlyIf: (stake, min) => `Only bet if the app says your ${stake} pays at least ${min}`,
+    appSaid: (stake, pays) => `Your app said: your ${stake} pays ${pays}`,
+    deal: { good: 'Good deal: cheaper than it should be', fair: 'Fair price', pricey: 'A bit pricey' },
+    // Spreads: '+1.5 = they win, or lose by just 1 run'
+    spreadPlus: (line, n, unit) => (n === 1 ? `${line} = they win, or lose by just 1 ${unit}` : `${line} = they win, or lose by ${n} ${unit} or less`),
+    spreadMinus: (line, n, unit) => `${line} = they must win by ${n} ${unit} or more`,
+    youBet: stake => `You bet ${stake}`,
+    youGet: back => `If it wins you get ${back} back`,
+    gotBack: back => `got ${back} back`
   },
   // Player position badge tooltip (js/positions.js): 'QB = Quarterback'
   posTip: (abbr, name) => `${abbr} = ${name}`,
@@ -88,7 +115,7 @@ window.STR = {
       singles: 'Single bets',
       props: 'Player bets',
       parlays: 'Combo bets',
-      longshots: 'Long shots',
+      longshots: 'Big payout combos (hard to hit)',
       nonsports: 'Not sports'
     },
     price: 'Price',
@@ -96,7 +123,7 @@ window.STR = {
     advantage: 'Your price advantage',
     payout: 'Payout',
     ourPayout: 'Our estimate',
-    appPayout: 'App pays',
+    appPayout: 'What your app says it pays (type it in)',
     chance: 'Chance to win',
     skipBelow: 'Skip if under',
     bet: 'Suggested bet',
@@ -116,7 +143,7 @@ window.STR = {
     otherNoBase: (app, price, base) => `Other apps: cheapest is ${app} at ${price}. No ${base} price for this bet yet (–).`,
     otherAsOf: when => `Checked ${when}.`,
     toCalc: 'Use in bet builder',
-    loaded: 'Added to the bet builder. Now type what the app says it pays.'
+    loaded: 'Added to the bet builder. Now type what your app says it pays.'
   },
 
   /** "Suggested bet" text: dollars first, then how it compares to their standard bet. */
@@ -229,19 +256,19 @@ window.STR = {
     refreshed: 'Prices refreshed.',
     refreshFail: 'Couldn\'t get live prices right now. Showing the last known prices.',
     category: 'Type of bet',
-    quoted: 'What the app says it pays',
+    quoted: 'What your app says it pays (type it in)',
     quotedPh: 'e.g. 2.97',
-    quotedHint: 'The payout number on your bet slip (how many times your money).',
+    quotedHint: 'If your app says "$10 pays $29.70", type 2.97 (that\'s $29.70 ÷ $10).',
     stakeLabel: 'Your bet ($)',
     myChance: 'How likely do you think this wins?',
     myChanceHint: 'Optional. We\'ll guess if you leave it blank.',
     myChancePh: '%',
-    outPayout: 'Payout (how many times your money)',
-    outChance: 'Chance to win',
-    outGap: 'App pays vs. our estimate',
-    outProfit: 'Expected profit per $10 bet',
+    outPayout: 'Payout (how many times your money)',   // legacy
+    outChance: 'Chance to win',                        // legacy
+    outGap: 'Your app vs. our math',
+    outProfit: 'Win or lose per $10, over many tries',
     outReturn: 'If it wins, you get back',
-    outSize: 'Size',
+    outSize: 'How big a bet',
     overMax: max => `That's more than your limit of ${max} per slip.`,
     overMaxConfirm: max => `That's more than your ${max} limit per slip. Save anyway?`,
     share: 'Share these numbers (no dollar amounts) to help improve picks',
@@ -256,7 +283,7 @@ window.STR = {
     shareFail: msg => `Sharing didn't work: ${msg}`
   },
 
-  categories: { single: 'Single bet', prop: 'Player bet', parlay: 'Combo bet', longshot: 'Long shot', nonsports: 'Not sports' },
+  categories: { single: 'Single bet', prop: 'Player bet', parlay: 'Combo bet', longshot: 'Big payout combo', nonsports: 'Not sports' },
 
   // ---------------------------------------------------------------- my bets
   bets: {
@@ -303,7 +330,8 @@ window.STR = {
     colLogged: 'Bets you logged',      // count of manual entries in the shared bet log
     colGap: 'Paid vs. our estimate',   // average payout difference of those bets, e.g. -6.9%
     colFeed: 'From odds feed',         // count of automatic price checks (The Odds API)
-    colDiff: app => `Price vs. ${app}`, // average price difference vs. the user's "My platform", e.g. +3.2¢
+    colDiff: app => `Costs vs. ${app}`, // average price difference vs. the user's "My platform": "3¢ more" / "2¢ less"
+    diffMore: c => `${c}¢ more`, diffLess: c => `${c}¢ less`, diffSame: 'same',
     colTotal: 'Total',                 // both counts added up
     dash: '–',                         // shown in any cell with no data yet
     feedSoon: 'Coming soon, waiting on odds feed',
@@ -351,12 +379,13 @@ window.STR = {
   // ---------------------------------------------------------------- pick evaluation
   // "My hit chance", risk level and "My take" on every pick card (js/evaluate.js).
   eval: {
-    hitChance: 'My hit chance',
+    hitChance: 'How often it wins',
     take: 'My take:',
-    // Risk levels; thresholds live in js/evaluate.js (RISK_LEVELS).
-    risk: { safer: 'Safer', coin_flip: 'Coin flip', risky: 'Risky', long_shot: 'Long shot' },
-    legendTitle: 'How risky?',
-    legend: { safer: '60%+', coin_flip: '45–59%', risky: '25–44%', long_shot: 'under 25%' },
+    // Risk levels; thresholds live in js/evaluate.js (RISK_LEVELS). Keys stay
+    // safer/coin_flip/risky/long_shot in picks.json; only the words changed.
+    risk: { safer: 'Good chance', coin_flip: 'Coin flip', risky: 'Hard to hit', long_shot: 'Very hard to hit' },
+    legendTitle: 'How hard?',
+    legend: { safer: '6+ out of 10', coin_flip: 'about 5 out of 10', risky: '3 or 4 out of 10', long_shot: 'less than 1 in 4' },
     sameGameGiven: 'These picks are from the same game and affect each other. This chance already allows for that.',
     sameGameLegs: 'These picks are from the same game. This chance assumes they don\'t affect each other, so treat it as rough.',
     diffGames: 'Picks are from different games, so they don\'t affect each other.',
@@ -371,41 +400,43 @@ window.STR = {
       tooLow: 'The app pays too little. Skip.',
       barely: 'Barely worth it, small play only.',
       goodCombo: 'Good payout, I\'d play it small.',
-      payCheck: x => `Play it only if the app pays at least ${x}x.`,
-      longshotCheck: x => `Long shot. Tiny play, only if the app pays ${x}x or more.`,
-      longshot: 'Long shot. Tiny play only.'
+      // No numbers here: the card's "Only bet if the app says your $5 pays at
+      // least $21.30" line gives the amount in dollars (x kept for callers).
+      payCheck: x => 'Small bet, only if your app pays enough (see the "Only bet if" line).',
+      longshotCheck: x => 'Hard to hit. Tiny bet, only if your app pays enough (see the "Only bet if" line).',
+      longshot: 'Hard to hit. Tiny bet only.'
     }
   },
 
   // ---------------------------------------------------------------- tooltips (i)
   tips: {
-    howPrices: 'Each share costs the price in cents and pays $1 if it wins. 41¢ = about a 41% chance; $10 buys ~24 shares and pays ~$24.39.',
-    price: 'What it costs to buy one share. A share pays $1 if you win. Example: at 40¢, a $10 bet buys 25 shares and pays $25.',
-    fair: 'What this bet should cost based on the big sportsbooks, after taking out their fee. Example: fair 47¢ means it wins about 47 times in 100.',
-    advantage: 'How much cheaper the price is than the fair price. Example: price 44¢ and fair 48¢ means you\'re getting it 4¢ cheap. Bigger is better.',
-    payout: 'How many times your money you get back if you win, including your bet. Example: 2.5x on a $10 bet returns $25.',
-    ourPayout: 'What this combo should pay if the picks didn\'t affect each other. Example: two 50¢ picks = 2 × 2 = 4x.',
-    chance: 'How often this should win, based on the prices. Example: 30% means about 3 times out of 10.',
-    skipBelow: 'If the app offers less than this, the bet isn\'t worth it. Skip it.',
-    unit: 'Your standard bet is the amount you usually put on one bet, about 2% of your money. Bigger confidence picks use more of it, long shots use less.',
-    related: 'These picks are from the same game, so one can make the other more likely. Apps often pay less for these combos than the math says.',
-    gap: 'Compares what the app pays with our math. Example: −7% means the app pays 7% less than the picks multiplied together.',
-    profit: 'What you\'d make on average per $10 if you placed this same bet many times. Below $0 means you\'d lose money over time.',
+    howPrices: 'The price is like the cost of a ticket. If you\'re right, every ticket turns into $1. Cheaper tickets win less often but pay more. A 63¢ ticket wins about 6 out of 10 times.',
+    price: 'What one ticket costs. If you\'re right, the ticket turns into $1. At 40¢, $10 buys 25 tickets, so you get $25 back if you win.',
+    fair: 'What the ticket should cost, going by the big sportsbooks. A fair price of 47¢ means it wins about 47 times out of 100.',
+    advantage: 'If the ticket costs less than it should, that\'s a good deal. 44¢ when it should be 48¢ is 4¢ cheap.',
+    payout: 'How much you get back if you win, counting the money you bet. Bet $10 → get $25 back.',
+    ourPayout: 'What this combo should pay if every pick wins, using today\'s prices.',
+    chance: 'How often this wins. "6 out of 10" means if you made this bet 10 times, you\'d win about 6.',
+    skipBelow: 'Your app sometimes pays less for combos than the math says. If it pays less than this, don\'t bet it.',
+    unit: 'Your standard bet is how much you usually bet on one thing. Picks that win more often get more of it. Hard-to-hit ones get less.',
+    related: 'These picks are from the same game, so one can help the other happen. Apps often pay less for these combos.',
+    gap: 'Did your app pay more or less than our math? −7% means it paid a little less.',
+    profit: 'If you made this exact bet many, many times, this is what you\'d win or lose on average for every $10. Below $0 means you\'d slowly lose money.',
     myChance: 'If you have your own guess, type it and we\'ll use it. Example: type 40 if you think it wins 4 times in 10.',
-    quoted: 'Your app shows how much the slip pays. Type that number so we can compare it with our estimate. Example: "$10 pays $29.70" = 2.97.',
+    quoted: 'Look at your app\'s bet slip. If it says "$10 pays $29.70", type 2.97 (that\'s $29.70 ÷ $10). We use it to check the payout.',
     snapshot: 'Prices come from a daily copy of the markets and update live when you open a game or tap Refresh.',
     share: 'Only the bet details are shared (what, price, payout, result) so we can learn which apps pay fairly. Your dollar amounts never leave this phone.',
     roi: 'Money won or lost compared with the money you bet. Example: +10% means you\'re up $10 for every $100 you\'ve bet.',
     calibration: 'If we\'re honest, picks we give 60% should win about 6 out of 10 times. This table checks that.',
     myPlatform: 'Tapping "Open in app" takes you to this app\'s page for the bet. If the bet isn\'t on Kalshi, we\'ll say so and open a search.',
     colLogged: 'How many combo bets you or your friends saved with "Share" on for this app.',
-    colGap: 'On average, how much more or less the app paid on those bets than the picks multiply out to. Example: −7% means a bet we priced at 3.19x paid about 2.97x.',
-    colDiff: 'On average, how much more each app charges than your app (the one picked under "My platform") for the same bet. Example: +3¢ means you pay 3¢ more per share there, so you win a bit less. A minus means it\'s cheaper. A dash means we have no price from your app for those bets yet.',
+    colGap: 'Did the app pay more or less than our math on combos people saved? −7% means it paid a little less.',
+    colDiff: 'Does this app charge more or less than your app for the same ticket? "3¢ more" means you pay a bit more there, so you win a bit less. A dash means we don\'t have your app\'s price for those bets yet.',
     colFeed: 'How many of our picks we found on this app in the daily price check.',
-    hitChance: 'My best guess at how often this bet wins, from the sportsbooks\' fair prices (and, for combos, how the picks affect each other). Example: 34% means about 1 win in 3.',
-    risk: 'Safer = wins 60%+ of the time. Coin flip = 45–59%. Risky = 25–44%. Long shot = under 25%. Riskier bets should get smaller amounts.',
-    take: 'My one-line call: is the price good enough to bet, and how big.',
-    otherApps: 'Each morning we look up the same bet on other apps (FanDuel, DraftKings, BetMGM, Bovada, ESPN Bet, Kalshi, Polymarket US) and show the cheapest, compared with your app (the one picked under "My platform"). A cheaper price means a bigger payout. Prices move, so check before you bet.',
+    hitChance: 'My best guess at how often this bet wins, going by the big sportsbooks. "1 in 4" means you\'d win about once every 4 tries.',
+    risk: 'Good chance = wins 6 or more times out of 10. Coin flip = about half the time. Hard to hit = 3 or 4 out of 10. Very hard to hit = less than 1 in 4. Harder bets should be smaller bets.',
+    take: 'My short answer: is this a good bet, and how big should it be?',
+    otherApps: 'Every morning we check the same bet on other apps. If one is cheaper than your app, we show it. Cheaper ticket = more money back if you win.',
     colTotal: 'How many comparisons we have for this app so far, from both sources. More means the numbers are more reliable.',
     priceFormat: 'Only changes how prices look. You can still type prices any way you like.'
   },

@@ -695,7 +695,7 @@
         const lab = side === 'yes' ? m.side_yes_label : m.side_no_label;
         const k = m.kalshi && (side === 'yes' ? m.kalshi.yes : m.kalshi.no);
         return `<button type="button" class="pbtn" ${c == null ? 'disabled' : ''} data-add="${esc(ev.slug)}|${esc(m.id)}|${side}">
-          <span class="pbtn-lab">${esc(lab)}</span><b>${c == null ? '—' : esc(opts.fmt(c))}</b>${c != null && opts.pay ? `<span class="pbtn-pay">${esc(opts.pay(c))}</span>` : ''}${k ? `<span class="kpx">Kalshi ${esc(opts.fmt(k))}</span>` : ''}</button>`;
+          <span class="pbtn-lab">${esc(lab)}</span>${/* dollars first ("$10 → $15.75"), the cents price small under it */ ''}<b>${c == null ? '—' : esc(opts.pay ? opts.pay(c) : opts.fmt(c))}</b>${c != null && opts.pay ? `<span class="pbtn-pay">${esc(opts.fmt(c))}</span>` : ''}${/* Kalshi only when it's cheaper */ ''}${k && (c == null || k < c) ? `<span class="kpx">${esc(window.STR && STR.plain ? STR.plain.cheaperOn('Kalshi', opts.fmt(k)) : 'Kalshi ' + opts.fmt(k))}</span>` : ''}</button>`;
       };
       const logos = m.player ? window.Teams.badge(Object.assign({ league: ev.league }, (ev.teams || []).find(t => t.abbr === m.team) || {}), 22) : withGame ? window.Teams.badges(teamsOf(ev), 20) : '';
       return `<div class="mrow">
