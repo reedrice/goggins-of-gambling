@@ -46,9 +46,10 @@ The scripts load in this order (classic `<script>` tags; each one sets a single 
 ```
 index.html            DOM skeleton (empty onboarding container, header, "I bet on" bar, 5 tab sections, tab bar, tooltip bubble)
 config.js             brand + repo config + platforms[] (one ordered list used everywhere)
-css/style.css         dark mobile-first theme (sections 1-16; 16 = payout explainer; 13 = leg start times, 14 = grouped results, 15 = position badges; 9 = picker/logos/toggle/tooltips, 10 = Record compare table, 11 = pick evaluation box, 12 = Build-a-bet filter panel)
+css/style.css         dark mobile-first theme (sections 1-18; 18 = 2nd-grade money words, 16 = payout explainer; 13 = leg start times, 14 = grouped results, 15 = position badges; 9 = picker/logos/toggle/tooltips, 10 = Record compare table, 11 = pick evaluation box, 12 = Build-a-bet filter panel)
 js/strings.js         all UI text (plain-language rules in its header)
 js/calc.js            odds and parlay math (pure)
+js/plain.js           2nd-grade money words: "6 out of 10" / "1 in 4", dots, "Tap:" split, spread explainer, deal word (browser + Node, §25)
 js/evaluate.js        per-pick hit chance, risk label, "My take" verdict, prediction lookup (browser + Node, §18)
 js/storage.js         localStorage schema and access
 js/gametime.js        game start times on slip legs / saved bets: format, countdown, snapshot lookup, sort (browser + Node, §20)
@@ -68,6 +69,7 @@ data/bet-log.json     shared calibration log (written by the app with users' tok
 data/positions.json   player positions per league from ESPN rosters (written daily by fetch-positions.mjs, §21)
 data/book-odds.json   automatic per-app price comparisons (The Odds API, written daily by fetch-book-odds.mjs, §17)
 tests/calc.test.js        node: math (incl. payout explainer: payout / slipPays)
+tests/plain.test.js       node: 2nd-grade wording helpers (js/plain.js, §25)
 tests/gametime.test.js    node: start-time format (CT/ET), hints, lookup, leg order
 tests/evaluate.test.js    node: hit chance / risk / verdict defaults (js/evaluate.js)
 tests/picker-filters.test.js node: filter tree rules (js/picker-filters.js)
@@ -203,7 +205,7 @@ Daily routine:
    - **Remove it:** pass `--drop <id>` to `picks`.
    - The commit body lists every carried-over id; check it.
    - Clear `pending_news` once the news is in (e.g. "Embiid and LeBron are both playing").
-0b. **Follow Reed's pick-building rules (§24):** merit only, never skip a pick because it's in an open slip; mix sports in slips freely.
+0b. **Follow Reed's pick-building rules (§24):** merit only, never skip a pick because it's in an open slip; mix sports in slips freely; title the three slips "Small payout · 3 picks" / "Medium payout · 3 picks" / "Big payout · 4 picks"; write reasoning in 2nd-grade words (no ¢, %, "x").
 1. Build the new slate in the `picks.json` schema. Use **units, not dollars**, and the platform's actual ask prices (Reed's app is **Polymarket US**, a different exchange from polymarket.com). Set `verify_note` whenever a price came from somewhere else. Set `updated_at` to now (UTC is fine; the UI shows CT).
 2. `grade` yesterday's predictions.
 3. `add-predictions` today's game predictions (`result` defaults to `pending`; ids like `2026-10-20-was-sf`).
@@ -284,7 +286,7 @@ Takes 30-60s. It covers NFL, MLB, NHL, NBA, WNBA and the main soccer leagues (`M
 
 ## 15. Plain language and strings (js/strings.js)
 
-All UI text lives in `js/strings.js`, grouped by screen and commented. Rules (also in its header): no jargon (EV, implied probability, vig, no-vig, correlation, edge, units, multiple, independent). Use "Chance to win", "Fair price", "Your price advantage", "Payout (how many times your money)", "Picks that affect each other", "Expected profit per $10 bet, on average over time". Anything that needs more explanation gets an (i) button: add the text to `STR.tips` and render `tip('key')`. Sizes show as dollars ("$5.00 (half your standard bet)"); `units` stay in `picks.json` only. Pick text in `picks.json` (reasoning, notes) should follow the same rules.
+All UI text lives in `js/strings.js`, grouped by screen and commented. Rules (also in its header): no jargon (EV, implied probability, vig, no-vig, correlation, edge, units, multiple, independent). Money and odds wording follows §25 (dollars first, "6 out of 10", cents once). Use "Chance to win", "Fair price", "Your price advantage", "Picks that affect each other", "Expected profit per $10 bet, on average over time". Anything that needs more explanation gets an (i) button: add the text to `STR.tips` and render `tip('key')`. Sizes show as dollars ("$5.00 (half your standard bet)"); `units` stay in `picks.json` only. Pick text in `picks.json` (reasoning, notes) should follow the same rules.
 
 ## 16. Platforms and price display
 
@@ -379,8 +381,8 @@ The comparison is made against **the user's own app** (`betdash_prefs.platform`:
 Every pick card (singles, props, parlays, long shots, non-sports) shows an evaluation box above the price stats. Logic: `js/evaluate.js` (`window.PickEval`, also `require()`d by `scripts/update-picks.mjs`). Text: `STR.eval` in `js/strings.js`. CSS: `css/style.css` section 11.
 
 Box contents:
-1. **My hit chance:** a % and a bar colored by risk.
-2. **Risk badge** (legend "How risky?" shown once above the picks).
+1. **How often it wins:** "Wins about 5 out of 10 times" / "All 3 win about 1 in 4 times" (§25) and a bar colored by risk.
+2. **Risk badge**: Good chance / Coin flip / Hard to hit / Very hard to hit (legend "How hard?" shown once above the picks).
 3. For combos: a same-game note ("affect each other, this chance already allows for that") or a different-games note.
 4. **My take:** a one-line verdict.
 5. 🔮 **Prediction line(s):** "My prediction: SF wins 30–17 (66%)", shown only when a game prediction matches (from `sections.predictions` or `data/predictions.json`). There's nothing to show if no predictions exist; never invent one.
@@ -399,15 +401,15 @@ Box contents:
 
 | label | hit chance |
 |---|---|
-| Safer (green) | 60% or more |
+| Good chance, key `safer` (green) | 60% or more |
 | Coin flip (yellow) | 45% to under 60% |
-| Risky (orange) | 25% to under 45% |
-| Long shot (red) | under 25% |
+| Hard to hit, key `risky` (orange) | 25% to under 45% |
+| Very hard to hit, key `long_shot` (red) | under 25% |
 
 ### Default "My take" rules (`verdictFor`)
 - `action` skip: "Skip. Not worth it today." `action` wait: "Wait for the news, then play it small."
 - Singles/props/nonsports, by edge (`fair − price`, points): 3 or more = "Good price, I'd play it"; 1 to under 3 = "Fair price, small play only"; under 1 = "Thin price, tiny play or skip".
-- Parlays/long shots with `quoted_multiple` and `skip_below`: quoted below skip = "The app pays too little. Skip."; under 5% above skip = "Barely worth it, small play only"; otherwise "Good payout, I'd play it small". With only `skip_below`: "Play it only if the app pays at least Nx" (long shots: "Long shot. Tiny play, only if the app pays Nx or more"). With neither, a long shot says "Long shot. Tiny play only." and a parlay says "Fair price, small play only." A single with no edge data also says "Fair price, small play only.".
+- Parlays/long shots with `quoted_multiple` and `skip_below`: quoted below skip = "The app pays too little. Skip."; under 5% above skip = "Barely worth it, small play only"; otherwise "Good payout, I'd play it small". With only `skip_below`: "Small bet, only if your app pays enough (see the "Only bet if" line)" (long shots: "Hard to hit. Tiny bet, only if …"; the numbers are on the card's dollar line, §25). With neither, a long shot says "Hard to hit. Tiny bet only." and a parlay says "Fair price, small play only." A single with no edge data also says "Fair price, small play only.".
 
 ### Validation and backfill
 `update-picks.mjs` validates the fields: hit_prob 0-100, risk enum, verdict string ≤120, same_game boolean, prediction_id string. `picks` fills missing values with `PickEval.fillDefaults` (never overwrites explicit ones) and validates again before writing. `fill` does the same on the existing data/picks.json. The browser also computes defaults at render time, so an unfilled file still shows a full box.
@@ -506,7 +508,9 @@ Anything else gets **no badge**. It's never guessed, and it's listed in `positio
 
 **Match rate on 2026-10-19:** 100% in every league with props: NFL 34/34, NBA 27/27, NHL 71/71, MLB 14/14, WNBA 13/13, soccer (EPL 1, La Liga 3, Serie A 5).
 
-## 22. Payout explainer next to every price ("41¢ · $10 pays $24.39 · 41% chance")
+## 22. Payout explainer next to every price (replaced by §25 on Oct 19, 2026)
+
+> The text formats below are history. Since §25, cards and slips say "Bet $10 → get $24.39 back" + "Wins about 4 out of 10 times" instead of `STR.pay.line`. The math (`payout`, `slipPays`, `exStake()`) is unchanged.
 
 Reed didn't know what "Kalshi 41¢" meant, so every price now has a small second line in plain words.
 
@@ -564,4 +568,27 @@ These apply to every singles, props, parlay and long-shot pick: the daily routin
    - Still leave a player out when the **price** is bad (e.g. Daniels 175+ passing yards, Avalanche ML on Oct 19), and say why.
 2. **Mix sports freely.** A slip can combine MLB + NFL + NHL + NBA/WNBA legs whenever that makes the best combination. Don't keep a slip to one sport. Set `sport` to the mix (e.g. `"NFL + MLB"`); `same_game` is false once legs span games.
 3. **Rebuilding a slip:** use `add-picks <file> --replace --drop <old-id>` (§8) so the old version is updated or removed, never duplicated. Tonight's slips use stable ids (`x-tonight-safer`, `x-tonight-balanced`, `l-tonight-longshot`); reuse them for later rebuilds the same day.
+4. **Slip tier names (Oct 19, 2026).** Title the three daily slips by payout size, in the `market` field: **"Small payout · 3 picks"** (steadiest), **"Medium payout · 3 picks"** and **"Big payout · 4 picks"** (hardest to hit; goes in `longshots`). Change the count to match the legs. Never use "safer / balanced / long shot" in titles. The ids keep their old `safer` / `balanced` / `longshot` words so `--replace` still matches. The combo card shows `market` as its title, and the legs list below says what's in it.
+5. **Write reasoning in 2nd-grade words (§25).** No ¢, %, "x" multiples or "books 64.5%" in `reasoning`, `verdict` or `notes`. Say "a bit cheap compared with the big sportsbooks", "they help each other", "all 4 hitting is rare". (No `$` either: the privacy scan rejects it.)
+
+## 25. 2nd-grade money words (Oct 19, 2026)
+
+Reed: the ¢ values and explanations were still too technical, so make them simple enough for a 2nd grader. Helpers live in `js/plain.js` (`window.Plain`, pure, tested in `tests/plain.test.js`); sentences in `STR.plain`; rendering in app.js (`chanceText`, `chanceHtml`, `betGetText`, `appPrices`, `priceLineHtml`, `spreadHtml`, `tapHtml`, `plainLegHtml`); CSS §18.
+
+**Rules (keep them):**
+- **Dollars first:** "Bet $10 → get $15.75 back". The amount is the user's standard bet (`exStake()`, else $10), worked out in the browser only.
+- **Chance in words, no %:** `chanceWords(p)`. From 30% up it's "Wins about 6 out of 10 times"; below that it's "about 1 in 4" (and from 1 in 10, rounded to 5s: "1 in 20", "1 in 30"); 95%+ is "almost every time". Combos say "All 3 win about 1 in 4 times" / "Both win …". Ten dots (`●●●●●●○○○○`) show it at a glance.
+- **Cents once, small:** "Price on <My platform>: 63.5¢". Another app shows only when it's cheaper: "Cheaper on Kalshi (63¢)" (`appPrices`: pick/leg `price` = Polymarket US, `kalshi_price` = Kalshi, plus book-odds rows for singles). With Kalshi as My platform, the Kalshi price leads.
+- **No "tap" in titles:** `splitTap()` cuts `(tap "Guardians +1.5")` and `— YES` / `— NO (4 or fewer)` off the title. The card then shows a separate "👉 Tap: Guardians +1.5" / "Tap: No (4 or fewer)" line. Keep writing leg `desc` with those markers; the app does the split.
+- **Spreads explained:** `spreadNote()` gives "+1.5 = they win, or lose by just 1 run" (MLB runs, NHL goals, otherwise points) and "-1.5 = they must win by 2 runs or more". It ignores "1+ hits" props.
+- **Combo cards (no tiles):** "If all 3 win: your $5 turns into $23.40" (suggested stake = `stake_units` × the user's standard bet, × the app quote, else our estimate), then "Only bet if the app says your $5 pays at least $21.30" (stake × `skip_below`).
+- **Single cards:** "Bet $10 → get $X back", then a deal word from the edge (≥1¢ "Good deal", over −1¢ "Fair price", else "A bit pricey"), then the price line.
+- **Risk labels:** Good chance / Coin flip / Hard to hit / Very hard to hit (same keys and thresholds in picks.json). The legend reads "6+ out of 10 … less than 1 in 4".
+- **Verdicts carry no numbers:** "Small bet, only if your app pays enough (see the "Only bet if" line)." The dollar line on the card gives the number.
+- **Build a bet:** the buttons show "$10 → $15.75" in bold, the cents small below, and Kalshi only when cheaper. Slip legs: "Bet $10 → get … back · Wins about 6 out of 10 times", plus "Cheaper on Kalshi" when it beats the typed price. Total: "If all 3 win: your $10 turns into …" plus the chance sentence. The quote field is "What your app says it pays (type it in)".
+- **My bets:** "If all 3 win: your $5 turns into $X" plus the chance sentence. Settled rows say "If it wins you get $X back" (no "2.97x").
+- **Record:** the price-difference cells say "3¢ more" / "0.2¢ less" / "same" (`STR.record.diffMore/diffLess/diffSame`).
+- **Tips (ⓘ):** kid words ("The price is like the cost of a ticket. If you're right, every ticket turns into $1…"). New tips must follow the same style.
+
+Checked at 390px with no sideways scroll (tests/smoke.js prints `"%" or "x" left in money lines: 0`).
 
