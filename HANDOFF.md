@@ -49,6 +49,7 @@ config.js             brand + repo config + platforms[] (one ordered list used e
 css/style.css         dark mobile-first theme (sections 1-18; 18 = 2nd-grade money words, 16 = payout explainer; 13 = leg start times, 14 = grouped results, 15 = position badges; 9 = picker/logos/toggle/tooltips, 10 = Record compare table, 11 = pick evaluation box, 12 = Build-a-bet filter panel)
 js/strings.js         all UI text (plain-language rules in its header)
 js/calc.js            odds and parlay math (pure)
+js/trent.js           Fade Trent math: record, units, fade, validate (browser + Node, §28)
 js/vegas.js           cents -> American odds ("44¢ (+127)") + lookup of real sportsbook "Vegas" numbers from data/vegas-lines.json (§26)
 js/plain.js           2nd-grade money words: "6 out of 10" / "1 in 4", dots, "Tap:" split, spread explainer, deal word (browser + Node, §25)
 js/evaluate.js        per-pick hit chance, risk label, "My take" verdict, prediction lookup (browser + Node, §18)
@@ -68,10 +69,12 @@ data/picks.json       today's picks (overwritten daily by the job)
 data/predictions.json game predictions and grades (appended by the job)
 data/bet-log.json     shared calibration log (written by the app with users' tokens)
 data/positions.json   player positions per league from ESPN rosters (written daily by fetch-positions.mjs, §21)
+data/trent-picks.json @BookitWithTrent's X picks, graded on real finals (scripts/trent-picks.mjs, §28)
 data/vegas-lines.json best sportsbook American price per market side, all games' full-game lines (written by fetch-book-odds.mjs, §26)
 data/book-odds.json   automatic per-app price comparisons (The Odds API, written daily by fetch-book-odds.mjs, §17)
 tests/calc.test.js        node: math (incl. payout explainer: payout / slipPays)
 tests/ingest-vegas.test.mjs node: exact-line matching of hand-read odds (scripts/ingest-vegas.mjs, §27)
+tests/trent.test.js       node: Fade Trent math + data/trent-picks.json validity (§28)
 tests/vegas.test.js       node: cents -> American conversion, Vegas lookup rules (js/vegas.js, §26)
 tests/plain.test.js       node: 2nd-grade wording helpers (js/plain.js, §25)
 tests/gametime.test.js    node: start-time format (CT/ET), hints, lookup, leg order
@@ -209,7 +212,7 @@ Daily routine:
    - **Remove it:** pass `--drop <id>` to `picks`.
    - The commit body lists every carried-over id; check it.
    - Clear `pending_news` once the news is in (e.g. "Embiid and LeBron are both playing").
-0b. **Follow Reed's pick-building rules (§24):** merit only, never skip a pick because it's in an open slip; mix sports in slips freely; title the three slips "Small payout · 3 picks" / "Medium payout · 3 picks" / "Big payout · 4 picks"; write reasoning in 2nd-grade words (no ¢, %, "x").
+0b. **Follow Reed's pick-building rules (§24):** merit only, never skip a pick because it's in an open slip; mix sports in slips freely; title the three slips "Small payout · 3 picks" / "Medium payout · 3 picks" / "Big payout · 4 picks"; write reasoning in 2nd-grade words (no ¢, %, "x"); **the digest/report to Reed uses dollar payouts ("10 dollars → 22.73 back" (money sign in the UI)) and American odds ("+127", "Vegas +133 (Bovada)"), never cents (§29)**; update the Fade Trent tab (§28).
 1. Build the new slate in the `picks.json` schema. Use **units, not dollars**, and the platform's actual ask prices (Reed's app is **Polymarket US**, a different exchange from polymarket.com). Set `verify_note` whenever a price came from somewhere else. Set `updated_at` to now (UTC is fine; the UI shows CT).
 2. `grade` yesterday's predictions.
 3. `add-predictions` today's game predictions (`result` defaults to `pending`; ids like `2026-10-20-was-sf`).
@@ -582,7 +585,7 @@ Reed: the ¢ values and explanations were still too technical, so make them simp
 **Rules (keep them):**
 - **Dollars first:** "Bet $10 → get $15.75 back". The amount is the user's standard bet (`exStake()`, else $10), worked out in the browser only.
 - **Chance in words, no %:** `chanceWords(p)`. From 30% up it's "Wins about 6 out of 10 times"; below that it's "about 1 in 4" (and from 1 in 10, rounded to 5s: "1 in 20", "1 in 30"); 95%+ is "almost every time". Combos say "All 3 win about 1 in 4 times" / "Both win …". Ten dots (`●●●●●●○○○○`) show it at a glance.
-- **Cents once, small:** "Price on <My platform>: 63.5¢". Another app shows only when it's cheaper: "Cheaper on Kalshi (63¢)" (`appPrices`: pick/leg `price` = Polymarket US, `kalshi_price` = Kalshi, plus book-odds rows for singles). With Kalshi as My platform, the Kalshi price leads.
+- **No cents on screen (updated Oct 19, 2026, §29).** ~~Cents once, small: "Price on <My platform>: 63.5¢".~~ Another app shows only when it's cheaper: "Cheaper on Kalshi (63¢)" (`appPrices`: pick/leg `price` = Polymarket US, `kalshi_price` = Kalshi, plus book-odds rows for singles). With Kalshi as My platform, the Kalshi price leads.
 - **No "tap" in titles:** `splitTap()` cuts `(tap "Guardians +1.5")` and `— YES` / `— NO (4 or fewer)` off the title. The card then shows a separate "👉 Tap: Guardians +1.5" / "Tap: No (4 or fewer)" line. Keep writing leg `desc` with those markers; the app does the split.
 - **Spreads explained:** `spreadNote()` gives "+1.5 = they win, or lose by just 1 run" (MLB runs, NHL goals, otherwise points) and "-1.5 = they must win by 2 runs or more". It ignores "1+ hits" props.
 - **Combo cards (no tiles):** "If all 3 win: your $5 turns into $23.40" (suggested stake = `stake_units` × the user's standard bet, × the app quote, else our estimate), then "Only bet if the app says your $5 pays at least $21.30" (stake × `skip_below`).
@@ -600,6 +603,8 @@ Checked at 390px with no sideways scroll (tests/smoke.js prints `"%" or "x" left
 ## 26. American odds and "Vegas" numbers on the small price line (Oct 19, 2026)
 
 Reed wanted the +/- number next to the cents, e.g. `44¢ (+127)`, and real sportsbook odds where they exist.
+
+> **Update (§29):** cents are no longer shown at all. The small line is now "Vegas +133 (Bovada)" when real, else the app's own price as +/- ("Polymarket US price: +127", Build a Bet just "+127").
 
 **Always shown (client-side math, js/vegas.js `americanOf`, tested in tests/vegas.test.js):** the user's own app price, converted: under 50¢ = +round(100×(100−p)/p), 50¢ and up = −round(100×p/(100−p)); 50¢ shows as +100. It appears on the small price line of Build a Bet Yes/No buttons, single pick cards ("Price on Polymarket US: 63.5¢ (-174)"), combo legs and slip legs. Cents always come with it, whatever price format the user chose.
 
@@ -626,3 +631,28 @@ The Odds API run (§26) spends its 12 credits on game lines, so most player prop
 4. **In the app:** js/vegas.js loads both files. Each entry is hidden after 36h (by its own `at`), and when both files price a side the bigger payout is shown, e.g. "Vegas: +110 (Bovada)". Re-ingesting replaces the same keys and drops entries older than 36h.
 
 Tests: tests/ingest-vegas.test.mjs (matching), tests/vegas.test.js (two-file lookup). Oct 19, 2026 first read: 60 entries, 37 sides matched (NHL points/assists/goal, Purdy/Daniels INT and pass TDs, Purdy 20+ rush yds, McCaffrey 5+ receptions, anytime TDs, Ramírez/Caminero hits/HR/RBI/total bases).
+
+## 28. Fade Trent tab (data/trent-picks.json, js/trent.js, scripts/trent-picks.mjs)
+
+Tracks the betting picks @BookitWithTrent (X user id **66287704**) posts, graded on real final scores, plus what fading him (betting the other side) would have done. Tab: 🙃 "Fade Trent" (app.js `renderTrent`, `STR.trent`, CSS §20).
+
+**Daily routine step:**
+1. Read his new posts with the x MCP tools: `get_users_posts` `{id: "66287704", max_results: 25, exclude: "retweets", since_id: <newest id already read>}` (page with `pagination_token`). `search_posts_all` (`from:BookitWithTrent since:YYYY-MM-DD`) works too.
+2. Keep **only picks he wrote out in the text**: league, game, pick, odds and units if stated, post time, post link (`https://x.com/BookitWithTrent/status/<id>`). One post with two picks = two rows (`<id>-tb`, `<id>-nd`). Pick only in an image (PrizePicks lineups, "Saints ❌", "Surgical Six"), or bet type unclear (e.g. "jake ferguson +1600") → skip, or add with `unclear: true` (stays pending, never counted). Never invent a pick or a line.
+3. `node scripts/trent-picks.mjs add new.json --read-through <newest post time>` merges by id (graded rows are never overwritten).
+4. For finished games, look up the **real final** (ESPN / MLB.com / AP) and run `node scripts/trent-picks.mjs grade <id> win|loss|push --score "Packers 23, Cowboys 13" --source <url>`. Postponed = push, note "no action". Grade on the final even if his own ✅/❌ post disagrees (Broncos +2.5 on Oct 15 is an example), and say so in `note`.
+5. `node scripts/trent-picks.mjs summary`, then commit (`--commit`). `validate` runs on every save.
+
+**Math (js/trent.js, tests/trent.test.js):** "5u" = 5 units risked. Wins at his stated odds; spreads/totals with no odds use the standard -110 (counted in "assumed"); moneylines with no odds get no unit result. Win % leaves pushes out. Fade = flipped result; fade units only for spreads/totals at -110 (a moneyline's other-side price isn't known).
+
+**First read (Oct 19, 2026, posts Oct 14–19):** 11 picks found (8 graded, 1 pending, 2 unclear). His record 5-2-1 (71.4%), +7.91u. Fading him: 2-5-1.
+
+## 29. No cents anywhere on screen (Oct 19, 2026)
+
+Reed: drop the Polymarket/Kalshi cent values. Cents stay **internal** (picks.json, calc, book-odds), but the UI shows only:
+- dollars: "10 dollars → 22.73 back" (money sign in the UI) / "Bet 10 → get 22.73 back";
+- odds: the real **Vegas** number when we have one ("Vegas +133 (Bovada)"), else the app's own price as American odds ("+127" on Build a Bet, "Polymarket US price: +127" on cards and slip legs). "Cheaper on Kalshi (+138)" also uses odds.
+- `fmtP` never returns cents (decimal if the user picked it, else American); the Settings "Cents" option is gone and the default is American (`storage.js`).
+- Record: price differences say "pays a bit less / pays less / pays a lot less / pays more / same" (under 2¢, 2–5¢, over 5¢ internally).
+- Pick text: `Plain.noCents()` turns any "41¢" in reasoning/notes/news into "+144" as a safety net, but **write picks.json text and the daily digest without cents** (dollars + American odds).
+- Tips (howPrices, price, fair, advantage, colDiff, americanOdds) are rewritten without cents. tests/smoke.js checks that no "¢" is visible on Picks, Build a Bet and Record.
