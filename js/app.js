@@ -409,7 +409,7 @@
       </div>
       <label class="field"><span>My hit chance % <em>optional, for EV</em></span><input id="c-my" inputmode="decimal" placeholder="defaults to independent hit chance" value="${esc(calc.myHit)}"></label>
       <div id="calc-out2" class="calc-out"></div>
-      <label class="toggle"><input type="checkbox" id="c-share" ${share ? 'checked' : ''} ${hasToken ? '' : 'disabled'}>
+      <label class="toggle"><input type="checkbox" id="c-share" ${share && hasToken ? 'checked' : ''} ${hasToken ? '' : 'disabled'}>
         <span>Share this bet's numbers <span class="muted small">(legs, prices, multiples, result — never $)</span></span></label>
       ${hasToken ? '' : '<p class="muted small">Sharing is off: add your GitHub token in Settings to contribute to the shared calibration log.</p>'}
       <p id="c-warn" class="error"></p>
