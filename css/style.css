@@ -445,3 +445,19 @@ canvas.chart { width: 100%; height: 190px; display: block; background: var(--car
 .live-toast .lt-msg { flex: 1; color: var(--text); text-decoration: none; font-size: 14px; line-height: 1.35; overflow-wrap: anywhere; }
 .live-toast .lt-see { color: var(--accent); font-weight: 700; white-space: nowrap; }
 .live-toast .lt-x { flex: none; width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent; color: var(--muted); font-size: 22px; cursor: pointer; }
+
+/* 23. PLAY MONEY (points, just for fun): app.js "play money", js/play.js. */
+.play-tag { display: inline-block; margin: 2px 0 8px; padding: 6px 10px; border-radius: 8px; background: #1d2b1f;
+  border: 1px solid #2f6b3a; color: #9be3a8; font-size: 13px; font-weight: 700; }
+.btn-play { background: #2f6b3a; border-color: #2f6b3a; color: #fff; }
+a.btn-play { display: block; text-align: center; text-decoration: none; margin-top: 10px; }
+.play-calc { margin-top: 18px; border-color: #2f6b3a; }
+.play-calc #p-line { margin: 6px 0 10px; }
+.play-bet .pb-legs > div { margin-bottom: 2px; }
+.play-bet.won { border-color: #2f6b3a; } .play-bet.lost { opacity: .75; }
+.play-board { width: 100%; border-collapse: collapse; font-size: 13px; table-layout: fixed; }
+.play-board th, .play-board td { padding: 7px 4px; border-bottom: 1px solid var(--card-2); text-align: right; overflow-wrap: anywhere; }
+.play-board th:nth-child(1), .play-board td:nth-child(1) { width: 22px; text-align: left; color: var(--muted); }
+.play-board th:nth-child(2), .play-board td:nth-child(2) { text-align: left; width: 32%; }
+.play-board th { color: var(--muted); font-weight: 600; font-size: 12px; }
+.play-board tr.me td { color: #9be3a8; font-weight: 700; }

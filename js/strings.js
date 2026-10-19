@@ -311,6 +311,30 @@ window.STR = {
   categories: { single: 'Single bet', prop: 'Player bet', parlay: 'Combo bet', longshot: 'Big payout combo', nonsports: 'Not sports' },
 
   // ---------------------------------------------------------------- my bets
+  /** PLAY MONEY: points only, just for fun (js/play.js, app.js "play money"). */
+  play: {
+    label: 'Play money, just for fun',
+    banner: '🎮 Play money, just for fun. No real money. Points only.',
+    viewMine: 'My bets', viewPlay: 'Play money 🎮', viewGroup: 'Which bets',
+    title: 'Play money',
+    nameLabel: 'Pick a display name', namePh: 'e.g. Reed', nameHint: '2 to 20 letters or numbers. Others will see it on the leaderboard.',
+    start: 'Start with 1,000 points',
+    points: 'Points', wl: 'Won-Lost', roi: 'Gain per point bet', best: 'Best hit',
+    open: n => `Open play bets (${n})`, settled: 'Finished play bets', none: 'No play bets yet. Tap "🎮 Play" on a pick card or use Build a Bet.',
+    betGet: (s, x) => `Bet ${s} pts, get ${x} back`,
+    won: x => `Won · got ${x} pts back`, lost: 'Lost', push: 'Refunded', waiting: 'Waiting for the result',
+    check: 'Check results', checking: 'Checking results…', settledN: n => `${n} play bet(s) finished.`,
+    board: 'Leaderboard', boardNote: 'Shared board updates when the daily job runs. Your own row updates right away.',
+    colName: 'Name', colPts: 'Points', colWL: 'W-L', colRoi: 'ROI', colBest: 'Best hit',
+    you: '(you)', notPosted: 'not posted yet',
+    post: 'Post my score', postNote: 'Opens a ready-made GitHub post (needs a free GitHub account). The leaderboard script checks every bet against the real results.',
+    calcTitle: '🎮 Bet play points on this slip', calcStake: 'Points to bet', calcBtn: n => `Bet ${n} play pts`,
+    calcNeedsReal: 'Play bets need picks from the game list (real Polymarket US markets).',
+    cardBtn: '🎮 Play',
+    confirm: (desc, odds, s, x) => `Play money, just for fun.\n\n${desc}\nPolymarket US price: ${odds}\nBet ${s} pts, get ${x} back if it wins.`,
+    placed: (s, x) => `Play bet placed: ${s} pts → ${x} back if it wins.`,
+    err: { stake: 'Type a whole number of points.', broke: 'Not enough points.', legs: 'Add 1 to 10 picks first.', price: 'Couldn\'t get a live Polymarket US price. Try again.', name: 'Pick a display name first (Play money view on My Bets).' }
+  },
   bets: {
     title: name => `${name}'s money`,
     privateNote: (unit, max) => `🔒 Only on this phone. Standard bet ${unit} · Limit per slip ${max}`,

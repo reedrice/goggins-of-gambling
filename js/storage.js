@@ -60,7 +60,8 @@
     settings: 'betdash_settings',
     token: 'betdash_gh_token',
     login: 'betdash_gh_login',
-    prefs: 'betdash_prefs'
+    prefs: 'betdash_prefs',
+    play: 'betdash_play'          // PLAY MONEY (points, just for fun): {name, bets[]}, js/play.js
   });
 
   /** Defaults for betdash_prefs. Cents stay the default price display. */
@@ -127,6 +128,10 @@
   /** @param {object} p partial prefs. Side effect: localStorage write. */
   function setPrefs(p) { writeJSON(KEYS.prefs, Object.assign(getPrefs(), p)); }
   /** @returns {boolean} true once the user has chosen a platform (onboarding step) */
+  /** Play money state: { name, bets: [{id, at, stake, legs:[{marketId, side, c, desc, eventSlug}], status, ret, settledAt}] }. */
+  function getPlay() { const v = readJSON(KEYS.play, null); return v && Array.isArray(v.bets) ? v : { name: '', bets: [] }; }
+  function setPlay(v) { writeJSON(KEYS.play, v); }
+
   function hasPrefs() { return localStorage.getItem(KEYS.prefs) !== null; }
 
   /** @returns {string} token or "" */
@@ -154,7 +159,8 @@
       profile: getProfile(),
       bets: getBets(),
       settings: getSettings(),
-      prefs: getPrefs()
+      prefs: getPrefs(),
+      play: getPlay()   // play money points (not real money)
     };
   }
 
@@ -172,6 +178,7 @@
     setBets(data.bets);
     if (data.settings) writeJSON(KEYS.settings, data.settings);
     if (data.prefs) writeJSON(KEYS.prefs, data.prefs);
+    if (data.play) writeJSON(KEYS.play, data.play);   // play money points
   }
 
   /**
@@ -182,7 +189,7 @@
 
   window.Store = {
     KEYS, getProfile, setProfile, getBets, setBets, upsertBet, deleteBet,
-    getSettings, setSettings, getPrefs, setPrefs, hasPrefs, getToken, setToken, getLogin, setLogin,
+    getSettings, setSettings, getPrefs, setPrefs, hasPrefs, getToken, setToken, getLogin, setLogin, getPlay, setPlay,
     exportAll, importAll, resetAll
   };
 })();

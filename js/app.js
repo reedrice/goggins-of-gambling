@@ -458,10 +458,12 @@
     // #live and #picks are the two views of the Picks tab (renderPicks).
     if (name === 'live' || name === 'picks') { picksView = name; S.setPrefs({ picksView: name }); }
     if (name === 'live') name = 'picks';
+    // #play and #bets are the two views of the My Bets tab ("My bets" | "Play money 🎮").
+    if (name === 'play' || name === 'bets') { betsView = name; S.setPrefs({ betsView: name }); name = 'bets'; }
     if (!$('#tab-' + name)) name = 'picks';
     document.querySelectorAll('.tab').forEach(s => (s.hidden = s.dataset.tab !== name));
     document.querySelectorAll('.tabbar button').forEach(b => b.classList.toggle('active', b.dataset.go === name));
-    const want = '#' + (name === 'picks' ? picksView || savedView() : name);
+    const want = '#' + (name === 'picks' ? picksView || savedView() : name === 'bets' ? betsView || savedBetsView() : name);
     if (location.hash !== want) history.replaceState(null, '', want);
     ({ picks: renderPicks, calc: renderCalc, bets: renderBets, record: renderRecord, trent: renderTrent, settings: renderSettings })[name]();
     window.scrollTo(0, 0);
@@ -475,6 +477,157 @@
     window.Picker.loadIndex().catch(() => {});
     go(location.hash ? location.hash.slice(1) : savedView());
     startLiveAlerts();
+  }
+
+  // ------------------------------------------- PLAY MONEY (points, just for fun)
+  // Math + checks: js/play.js (window.Play). State: localStorage betdash_play
+  // ({name, bets}) via Store.getPlay/setPlay. No real money anywhere: points only.
+  // Prices: the LIVE Polymarket US buy price (Picker.livePrice) at the moment the
+  // bet is placed, shown as American odds + "Bet 100 pts, get X back".
+  // Results: settlePlay() reads each game from the public Polymarket US gateway
+  // (closed market, winning side priced 1) — real results only.
+  // Shared leaderboard: "Post my score" opens a pre-filled public GitHub issue;
+  // scripts/play-leaderboard.mjs re-settles those bets and writes
+  // data/play/leaderboard.json (HANDOFF §34). No keys or secrets on the site.
+  const PY = window.Play;
+  let playStake = PY.DEFAULT_STAKE, lastSettle = 0, playBoard = null;
+  const pts = n => Math.round(n).toLocaleString('en-US');
+
+  /** Can a pick card be played? Every leg needs a real market id + side. */
+  function playable(pk) {
+    const legs = Array.isArray(pk.legs) && pk.legs.length ? pk.legs : [pk];
+    return legs.length <= PY.MAX_LEGS && legs.every(l => l.market_id && (l.market_side === 'yes' || l.market_side === 'no'));
+  }
+
+  /** Live Polymarket US price for each leg (null when any is missing). */
+  async function livePlayPrices(legs) {
+    const cs = await Promise.all(legs.map(l => window.Picker.livePrice(l.marketId, l.side).catch(() => null)));
+    return cs.every(c => c >= 1 && c <= 99) ? cs : null;
+  }
+
+  /** Validate + store a new play bet. legs: [{marketId, side, c, desc, eventSlug}]. */
+  function placePlay(stake, legs) {
+    const X = STR.play, st = S.getPlay();
+    if (!PY.validName(st.name)) { toast(X.err.name, 4000); go('play'); return false; }
+    const err = PY.checkNew(st.bets, stake, legs);
+    if (err) { toast(X.err[err], 4000); return false; }
+    const back = PY.getBack(stake, legs.map(l => l.c));
+    st.bets.push({ id: uid(), at: new Date().toISOString(), stake, legs, status: 'open', ret: 0, settledAt: null });
+    S.setPlay(st);
+    toast(X.placed(pts(stake), pts(back)), 3500);
+    return true;
+  }
+
+  /** "🎮 Play" on a pick card: live price -> confirm -> place 100 pts. */
+  async function playPick(id) {
+    let pk = null;
+    Object.values(picksData.sections || {}).forEach(list => (list || []).forEach(p => { if (p.id === id) pk = p; }));
+    if (!pk || !playable(pk)) return;
+    const raw = Array.isArray(pk.legs) && pk.legs.length ? pk.legs : [pk];
+    const legs = raw.map(l => ({ marketId: l.market_id, side: l.market_side, desc: String(l.desc || pk.side || pk.market || '').slice(0, 80) }));
+    const cs = await livePlayPrices(legs);
+    if (!cs) return toast(STR.play.err.price, 4000);
+    legs.forEach((l, i) => { l.c = cs[i]; l.eventSlug = PY.gameSlug(l.marketId); });
+    const stake = PY.DEFAULT_STAKE, back = PY.getBack(stake, cs);
+    if (!confirm(STR.play.confirm(legs.map(l => l.desc).join(' + '), PY.comboOdds(cs), pts(stake), pts(back)))) return;
+    placePlay(stake, legs);
+  }
+
+  /** Build a Bet: the play line under the slip ("Bet 100 pts, get 227 back · +127"). */
+  function updatePlayLine() {
+    const line = $('#p-line'), btn = $('#p-bet');
+    if (!line || !btn) return;
+    const legs = calc.legs, ok = legs.length && legs.every(l => l.marketId && l.side);
+    const cs = ok ? legs.map(l => C.parsePrice(l.price)).map(x => (x ? x.p * 100 : null)) : [];
+    const priced = ok && cs.every(c => c >= 1 && c <= 99);
+    btn.textContent = STR.play.calcBtn(pts(playStake || 0));
+    btn.disabled = !priced || !(playStake > 0);
+    line.textContent = !legs.length ? '' : !ok ? STR.play.calcNeedsReal
+      : priced ? `${STR.play.betGet(pts(playStake || 0), pts(PY.getBack(playStake || 0, cs)))} · ${PY.comboOdds(cs)}` : '';
+  }
+
+  /** Build a Bet: place the slip as a play bet at fresh live prices. */
+  async function playFromCalc() {
+    const legs = calc.legs.map(l => ({ marketId: l.marketId, side: l.side, desc: String(l.desc || '').slice(0, 80), eventSlug: l.eventSlug || PY.gameSlug(l.marketId) }));
+    if (!legs.length || !legs.every(l => l.marketId && l.side)) return toast(STR.play.calcNeedsReal, 4000);
+    const cs = await livePlayPrices(legs);
+    if (!cs) return toast(STR.play.err.price, 4000);
+    legs.forEach((l, i) => (l.c = cs[i]));
+    if (placePlay(playStake, legs)) go('play');
+  }
+
+  /** Settle open play bets from real results (at most every 2 min unless forced). */
+  async function settlePlay(force) {
+    if (!force && Date.now() - lastSettle < 120000) return 0;
+    lastSettle = Date.now();
+    const st = S.getPlay(), open = st.bets.filter(b => b.status === 'open');
+    if (!open.length) return 0;
+    const cache = {};
+    const ev = slug => cache[slug] || (cache[slug] = fetch(`${window.MarketsCore.GATEWAY}/v1/events/slug/${encodeURIComponent(slug)}`).then(r => (r.ok ? r.json() : null)).catch(() => null));
+    let n = 0;
+    for (const b of open) {
+      const res = await Promise.all(b.legs.map(async l => { const slug = l.eventSlug || PY.gameSlug(l.marketId); return slug ? PY.legResult(await ev(slug), l.marketId, l.side) : null; }));
+      const r = PY.settle(b, res);
+      if (r.status !== 'open') { Object.assign(b, r, { settledAt: new Date().toISOString() }); n++; }
+    }
+    if (n) S.setPlay(st);
+    return n;
+  }
+
+  /** Pre-filled GitHub issue for "Post my score" (public; no token needed). */
+  function postScoreUrl(st) {
+    const body = 'Play money, just for fun. Posted from the dashboard; the leaderboard script re-checks every bet.\n\n```json\n' + JSON.stringify(PY.submission(st.name, st.bets)) + '\n```';
+    return `https://github.com/${CFG.repoOwner || 'reedrice'}/${CFG.repoName || 'goggins-of-gambling'}/issues/new?title=${encodeURIComponent(PY.ISSUE_PREFIX + st.name)}&body=${encodeURIComponent(body)}`;
+  }
+
+  /** The Play money view (My Bets tab -> "Play money 🎮", #play). */
+  async function renderPlay() {
+    const X = STR.play, el = $('#bets-view');
+    const draw = () => {
+      if ($('#bets-view') !== el) return;
+      const st = S.getPlay();
+      if (!PY.validName(st.name)) {
+        el.innerHTML = `<div class="play-tag">${esc(X.banner)}</div><h2>${esc(X.title)}</h2>
+          <label class="field"><span>${esc(X.nameLabel)}</span><input id="play-name" maxlength="20" placeholder="${esc(X.namePh)}" value="${esc(S.getProfile().name || '')}"></label>
+          <p class="muted small">${esc(X.nameHint)}</p><button class="btn btn-play btn-xl" id="play-start">${esc(X.start)}</button>`;
+        $('#play-start').onclick = () => { const n = PY.cleanName($('#play-name').value); if (!PY.validName(n)) return toast(X.nameHint, 4000); S.setPlay({ name: n, bets: st.bets }); draw(); };
+        return;
+      }
+      const s = PY.stats(st.bets);
+      const kpi = (k, v, cls = '') => `<div class="kpi"><div class="k">${esc(k)}</div><div class="v ${cls}">${v}</div></div>`;
+      const roi = s.roi == null ? STR.none : `${s.roi > 0 ? '+' : ''}${Math.round(s.roi * 100)}%`;
+      const best = s.best ? `${esc(s.best.odds)} · ${esc(pts(s.best.ret))}` : STR.none;
+      const betCard = b => {
+        const cs = b.legs.map(l => l.c), back = PY.getBack(b.stake, cs);
+        const res = b.status === 'won' ? X.won(pts(b.ret)) : b.status === 'lost' ? X.lost : b.status === 'push' ? X.push : X.waiting;
+        return `<div class="card play-bet ${esc(b.status)}"><div class="pb-legs">${b.legs.map(l => `<div><b>${esc(l.desc || l.marketId)}</b> <span class="muted small">${esc(PY.american(l.c))}</span></div>`).join('')}</div>
+          <div class="small">${esc(X.betGet(pts(b.stake), pts(back)))} · ${esc(PY.comboOdds(cs))}</div>
+          <div class="small pb-res">${esc(res)} · <span class="muted">${esc(fmtTime(b.at))}</span></div></div>`;
+      };
+      const open = st.bets.filter(b => b.status === 'open').reverse(), done = st.bets.filter(b => b.status !== 'open').reverse();
+      // Leaderboard: shared rows + my own live row (marked "you"; replaces my posted row if names match).
+      const rows = ((playBoard && playBoard.rows) || []).filter(r => r && r.name !== st.name).map(r => Object.assign({}, r));
+      rows.push({ name: st.name, points: s.points, w: s.w, l: s.l, roi: s.roi, best: s.best, me: true });
+      rows.sort((a, b) => b.points - a.points);
+      const fmtRoi = r => (r == null ? '–' : `${r > 0 ? '+' : ''}${Math.round(r * 100)}%`);
+      el.innerHTML = `<div class="play-tag">${esc(X.banner)}</div>
+        <h2>${esc(X.title)} · ${esc(st.name)}</h2>
+        <div class="kpis">${kpi(X.points, esc(pts(s.points)))}${kpi(X.wl, `${s.w}-${s.l}`)}${kpi(X.roi, esc(roi), s.roi == null ? '' : sign(s.roi))}${kpi(X.best, best)}</div>
+        <button class="btn btn-sm" id="play-check">${esc(X.check)}</button>
+        <h3>${esc(X.open(open.length))}</h3>${open.length ? open.map(betCard).join('') : `<div class="section-empty">${esc(X.none)}</div>`}
+        ${done.length ? `<h3>${esc(X.settled)}</h3>${done.map(betCard).join('')}` : ''}
+        <h3>${esc(X.board)}</h3>
+        <table class="play-board"><thead><tr><th>#</th><th>${esc(X.colName)}</th><th>${esc(X.colPts)}</th><th>${esc(X.colWL)}</th><th>${esc(X.colRoi)}</th><th>${esc(X.colBest)}</th></tr></thead>
+        <tbody>${rows.map((r, i) => `<tr class="${r.me ? 'me' : ''}"><td>${i + 1}</td><td>${esc(r.name)}${r.me ? ` <span class="muted small">${esc(X.you)}</span>` : ''}</td><td>${esc(pts(r.points))}</td><td>${r.w}-${r.l}</td><td>${esc(fmtRoi(r.roi))}</td><td>${r.best ? esc(r.best.odds) : '–'}</td></tr>`).join('')}</tbody></table>
+        <p class="muted small">${esc(X.boardNote)}</p>
+        <a class="btn btn-play" id="play-post" target="_blank" rel="noopener" href="${esc(postScoreUrl(st))}">${esc(X.post)} ↗</a>
+        <p class="muted small">${esc(X.postNote)}</p>`;
+      $('#play-check').onclick = async () => { toast(X.checking); const n = await settlePlay(true); toast(X.settledN(n)); draw(); };
+    };
+    draw();
+    const [n] = await Promise.all([settlePlay(false), fetchData('data/play/leaderboard.json').then(d => (playBoard = d)).catch(() => null)]);
+    draw();
+    if (n) toast(STR.play.settledN(n));
   }
 
   // ------------------------------------------- live alerts: badge + pop-up
@@ -692,6 +845,7 @@
       <div class="pick-actions">
         ${openButton(pk, pk.side || pk.event)}
         <button class="btn btn-sm btn-primary" data-load-pick="${esc(pk.id)}" data-cat="${esc(cat)}">${esc(P.toCalc)}</button>
+        ${playable(pk) ? `<button class="btn btn-sm btn-play" data-play-pick="${esc(pk.id)}">${esc(STR.play.cardBtn)}</button>` : ''}
       </div>
     </div>`;
   }
@@ -801,6 +955,7 @@
     }
     el.innerHTML = html;
     el.querySelectorAll('[data-load-pick]').forEach(b => (b.onclick = () => loadPickIntoCalc(b.dataset.loadPick, b.dataset.cat)));
+    el.querySelectorAll('[data-play-pick]').forEach(b => (b.onclick = () => playPick(b.dataset.playPick)));
     el.querySelectorAll('[data-pick-day]').forEach(b => (b.onclick = () => { picksDay = b.dataset.pickDay; renderPicks(); }));
     el.querySelectorAll('[data-pick-sport]').forEach(b => (b.onclick = () => { picksSport = b.dataset.pickSport; renderPicks(); }));
   }
@@ -951,7 +1106,14 @@
       ${hasToken ? '' : `<p class="muted small">${esc(K.shareOff)}</p>`}
       <p id="c-warn" class="error"></p>
       <button class="btn btn-primary btn-xl" id="c-save">${esc(K.saveBet)}</button>
-      <button class="btn btn-sm" id="c-clear" style="margin-top:10px">${esc(K.clear)}</button>`;
+      <button class="btn btn-sm" id="c-clear" style="margin-top:10px">${esc(K.clear)}</button>
+      <div class="play-calc card">
+        <div class="play-tag">${esc(STR.play.banner)}</div>
+        <h3>${esc(STR.play.calcTitle)}</h3>
+        <label class="field"><span>${esc(STR.play.calcStake)}</span><input id="p-stake" inputmode="numeric" value="${esc(String(playStake))}"></label>
+        <div id="p-line" class="small"></div>
+        <button class="btn btn-play btn-xl" id="p-bet"></button>
+      </div>`;
     picker = window.Picker.create($('#picker-root'), { onAdd: addPickedLeg, fmt: fmtP, pay: payShort });
     $('#add-manual').onclick = () => {
       calc.legs.push({ desc: '', platform: myPlatform().name, price: '', manual: true });
@@ -966,6 +1128,8 @@
     $('#c-my').oninput = e => { calc.myHit = e.target.value; updateCalcOut(); };
     $('#c-share').onchange = e => (calc.share = e.target.checked);
     $('#c-save').onclick = saveCalcBet;
+    $('#p-stake').oninput = e => { playStake = parseInt(e.target.value, 10) || 0; updatePlayLine(); };
+    $('#p-bet').onclick = playFromCalc;
     $('#c-clear').onclick = () => { calc = freshCalc(); renderCalc(); };
     renderSlip();
   }
@@ -1127,6 +1291,7 @@
       kpi(K.outProfit, r.ev10 === null ? STR.none : money(r.ev10), sign(r.ev10), 'profit') +
       kpi(K.outReturn, money(r.payout)) +
       kpi(K.outSize, r.stake ? `${money(r.stake)} <span class="small muted">(${esc(STR.unitWords(+(r.stake / unit).toFixed(2)))})</span>` : STR.none, '', 'unit');
+    updatePlayLine();
     const w = $('#c-warn');
     if (w) w.textContent = r.stake && r.stake > S.getProfile().maxPerSlip ? K.overMax(money(S.getProfile().maxPerSlip)) : '';
   }
@@ -1232,9 +1397,23 @@
   }
 
   /** My bets tab. */
+  // ------------------------------------------------- my bets view toggle
+  let betsView = null;
+  const savedBetsView = () => (S.getPrefs().betsView === 'play' ? 'play' : 'bets');
+
+  /** My Bets tab: toggle "My bets" | "Play money 🎮", then that view. */
   function renderBets() {
+    const tab = $('#tab-bets'), X = STR.play;
+    if (!betsView) betsView = savedBetsView();
+    const btn = (v, label) => `<button type="button" class="${betsView === v ? 'on' : ''}" data-bets-view="${v}" aria-pressed="${betsView === v}">${esc(label)}</button>`;
+    tab.innerHTML = `<div class="view-toggle" role="group" aria-label="${esc(X.viewGroup)}">${btn('bets', X.viewMine)}${btn('play', X.viewPlay)}</div><div id="bets-view"></div>`;
+    tab.querySelectorAll('[data-bets-view]').forEach(b => (b.onclick = () => go(b.dataset.betsView)));
+    return betsView === 'play' ? renderPlay() : renderMyBets();
+  }
+
+  function renderMyBets() {
     const B = STR.bets;
-    const el = $('#tab-bets');
+    const el = $('#bets-view');
     const p = S.getProfile(), st = bankrollStats(), rec = recordByCategory();
     const bets = S.getBets();
     const open = bets.filter(b => b.status === 'open').sort((a, b) => b.createdAt.localeCompare(a.createdAt));
@@ -1579,7 +1758,7 @@
     T.install();
     installTips();
     applyBrand();
-    document.querySelectorAll('.tabbar button').forEach(b => (b.onclick = () => go(b.dataset.go === 'picks' ? savedView() : b.dataset.go)));   // Picks reopens the remembered view
+    document.querySelectorAll('.tabbar button').forEach(b => (b.onclick = () => go(b.dataset.go === 'picks' ? savedView() : b.dataset.go === 'bets' ? savedBetsView() : b.dataset.go)));   // Picks reopens the remembered view
     window.addEventListener('hashchange', () => { if (S.getProfile()) go(location.hash.slice(1)); });
     if (!S.getProfile()) showOnboarding(); else startApp();
   }
