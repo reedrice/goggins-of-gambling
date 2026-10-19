@@ -82,6 +82,8 @@ A daily job overwrites this whole file. All fields are optional unless marked **
 | `hit_prob` | number | estimated true hit chance % (0–100). Defaults to `fair` (singles) or the product of legs (combos). Shown as "My hit chance" |
 | `risk` | `safer`/`coin_flip`/`risky`/`long_shot` | risk badge. Default from hit chance: 60%+ / 45–59% / 25–44% / under 25% |
 | `verdict` | string (≤120) | "My take" one-liner. Default from `action` and edge |
+| `slate_date` | YYYY-MM-DD | game day (CT) if it isn't the file's `slate_date`, e.g. tomorrow's slips. The Picks tab shows a Today / Tomorrow switcher |
+| `start_time` | ISO 8601 | first game's start (legs can have their own) |
 | `prediction_id` | string | game prediction to show on the card (default: matched by game name) |
 | `polymarket_url`, `kalshi_url`, `kalshi_match`, `kalshi_price` | written by `scripts/fetch-markets.mjs` | per-platform Open links; `kalshi_match` is `market`, `event` or `none` |
 | `player`, `player_team`, `league` | written by `scripts/fetch-markets.mjs` | for player props (picks and legs): who it is, for the position badge ("Brock Purdy QB") |
@@ -98,7 +100,7 @@ A daily job overwrites this whole file. All fields are optional unless marked **
 
 **Prediction** (`sections.predictions`): `{ id, sport, game, start_time (ISO), pick, win_prob (50–100), projected_score, player_projections: [string], reasoning }`.
 
-**Updating it:** run `node scripts/update-picks.mjs picks <file>`. It validates the schema and blocks any dollar amounts, then commits and pushes to `main`. The same script appends and grades predictions. See [HANDOFF.md §8](HANDOFF.md#8-how-the-daily-job-updates-picks).
+**Updating it:** run `node scripts/update-picks.mjs picks <file>` (keeps not-yet-played later-day picks), or `add-picks <file>` to add tomorrow's picks next to today's. It validates the schema and blocks any dollar amounts, then commits and pushes to `main`. The same script appends and grades predictions. See [HANDOFF.md §8](HANDOFF.md#8-how-the-daily-job-updates-picks).
 
 Other data files (`data/predictions.json`, `data/bet-log.json`) are documented in [HANDOFF.md](HANDOFF.md#data-files).
 

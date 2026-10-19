@@ -74,6 +74,7 @@ tests/picker-filters.test.js node: filter tree rules (js/picker-filters.js)
 tests/picker-groups.test.js  node: result grouping, line order, default open state, speed (js/picker-groups.js)
 tests/github-log.test.js  node: log writer against a mocked API
 tests/positions.test.js   node: player-name matching, never-guess rule, lookup, badge HTML (js/positions.js)
+tests/update-picks.test.mjs node: next-day picks: slate_date/start_time checks, carry-over rules (§23)
 tests/markets-core.test.js node: team full names (NBA city + nickname) and NBA prop buckets
 tests/smoke.js            headless Chrome UI walk-through (puppeteer-core, --no-save)
 scripts/update-picks.mjs  daily-job CLI: validate, write, commit, and push picks/predictions
@@ -173,11 +174,14 @@ Use **`scripts/update-picks.mjs`**. It's plain Node 18+ with no dependencies. It
 ```bash
 node scripts/update-picks.mjs validate [file]              # check only (picks.json, or predictions.json by filename)
 node scripts/update-picks.mjs picks /tmp/new-picks.json    # replace data/picks.json (auto-fills hit_prob/risk/verdict/same_game, §18), commit, push
+node scripts/update-picks.mjs add-picks /tmp/extra.json   # ADD picks (e.g. tomorrow's, with slate_date) without replacing the file (§23)
+node scripts/update-picks.mjs list [--date 2026-10-20]     # read-only: day, section, id, side of every pick
 node scripts/update-picks.mjs fill                         # backfill missing hit_prob/risk/verdict/same_game in data/picks.json, commit, push
 node scripts/update-picks.mjs add-predictions /tmp/p.json  # append [{id,date,sport,game,pick,win_prob,projected_score?,...}]
 node scripts/update-picks.mjs grade /tmp/grades.json       # [{id, result: win|loss|push, final_score?}]
 node scripts/update-picks.mjs grade <id> win "SF 30 – WAS 17"
 # flags: --dry-run (validate + print the commit, write nothing), --no-push, -m "extra body line"
+#        picks only: --drop <id> (don't carry that existing pick over; repeatable), --replace-all (carry nothing over)
 ```
 
 Exit codes: `0` ok, `1` validation failed (nothing written), `2` usage error, `3` git failure.
@@ -192,6 +196,12 @@ The validator rejects:
 - **any** key named like `stake`/`bankroll`/`payout`/`token`, or any text that looks like `$5`, `USD 10`, or a GitHub token
 
 Daily routine:
+0. **Check for picks already on the board for today:** `node scripts/update-picks.mjs list --date <today>`. The day before, extra slips may have been added for today with `add-picks` (each carries `"slate_date": "<today>"`). `picks` (step 4) **keeps them automatically** (carry-over, §23). Don't add a second copy under a new id:
+   - **Keep as is:** do nothing; it stays on the page.
+   - **Update it** (new prices, injury news, hit_prob): put a pick with the **same id** in the new file; the new one replaces it.
+   - **Remove it:** pass `--drop <id>` to `picks`.
+   - The commit body lists every carried-over id; check it.
+   - Clear `pending_news` once the news is in (e.g. "Embiid and LeBron are both playing").
 1. Build the new slate in the `picks.json` schema. Use **units, not dollars**, and the platform's actual ask prices (Reed's app is **Polymarket US**, a different exchange from polymarket.com). Set `verify_note` whenever a price came from somewhere else. Set `updated_at` to now (UTC is fine; the UI shows CT).
 2. `grade` yesterday's predictions.
 3. `add-predictions` today's game predictions (`result` defaults to `pending`; ids like `2026-10-20-was-sf`).
@@ -503,3 +513,23 @@ The price itself follows the user's chosen display format (cents, American or de
 
 CSS: §16 `.payx` (12px muted second line), `.slip-pay`, `.pbtn-pay`. Checked at 390px with no sideways scroll.
 
+## 23. Next-day picks and the Today / Tomorrow switcher
+
+Since Oct 19, 2026, `data/picks.json` can hold **more than one game day**. Reed wanted the Oct 20 opening-night NBA slips on the page while the Oct 19 games were still to be played.
+
+- **Schema:** each pick can have an optional `slate_date` (YYYY-MM-DD, the game day in Central time) and `start_time` (ISO, first leg's tip). If `slate_date` is missing, the pick belongs to the file's top-level `slate_date`. Legs can have their own `start_time`. The validator checks the formats; ids must be unique across all days.
+- **UI** (app.js `renderPicks`, helpers `pickDays` / `pickDayOf` / `defaultPickDay` / `dayWords`):
+  - With more than one day in the file, chips appear above the picks, e.g. "Today, Mon, Oct 19 (7)" and "Tomorrow, Tue, Oct 20 (3)". Every section shows only the selected day.
+  - Default: today (CT) if it has picks, else the next day with picks, else the latest.
+  - The selection lasts while the page is open.
+  - Strings: `STR.picks.dayGroup` / `dayToday` / `dayTomorrow`. CSS reuses `.chips` / `.chip`.
+  - Pick-card legs with a `start_time` show "🕒 Tue 6:00 PM CT".
+- **Writing:**
+  - `add-picks <file>` (`{"sections":{"parlays":[...]}}`) appends to the current file. It fills the §18 defaults, validates (including duplicate ids), and commits.
+  - `picks <file>` replaces the file but **carries over** existing picks whose day is on or after the new `slate_date`, unless the new file has the same id or the id is passed with `--drop`. `--replace-all` turns this off.
+  - Carried picks get an explicit `slate_date`. Picks from earlier days drop off as before.
+  - Covered by `tests/update-picks.test.mjs`.
+- **Other apps' prices** (§17) are keyed by the file's `slate_date`. Next-day picks get them once their day becomes the slate (the 7 AM run). Predictions are matched by the pick's own day.
+- **Oct 20, 2026 example:** ids `2026-10-20-x-safer-nyk-sa-duren`, `2026-10-20-x-balanced-det-cade-wemby` (parlays) and `2026-10-20-l-embiid-lebron-cade-wemby` (longshots).
+  - The Oct 20 7 AM run carries them over. It should update them by id with fresh prices, or `--drop` them, and never re-add the same slips under new ids.
+  - Pending news to clear: Embiid/LeBron playing (76ers report before 6 PM CT) and Chet Holmgren (quad, day-to-day).
