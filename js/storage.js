@@ -64,7 +64,7 @@
   });
 
   /** Defaults for betdash_prefs. Cents stay the default price display. */
-  const PREF_DEFAULTS = Object.freeze({ platform: 'polymarket_us', priceFormat: 'cents' });
+  const PREF_DEFAULTS = Object.freeze({ platform: 'polymarket_us', priceFormat: 'american' })   // no cents on screen (Oct 19 2026);
 
   /**
    * Read and JSON-parse a key.

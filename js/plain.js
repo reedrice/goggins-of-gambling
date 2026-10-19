@@ -113,5 +113,20 @@
     return 'pricey';
   }
 
-  return { chanceWords, dots, splitTap, spreadNote, leagueOf, dealWord };
+  /**
+   * Safety net for pick text written by the daily job: any "41¢" / "63.5 ¢"
+   * becomes its American odds ("+144" / "-174"), because Reed asked for no
+   * cents anywhere on screen (Oct 19, 2026). Other text is left alone.
+   * @param {string} text @returns {string}
+   */
+  function noCents(text) {
+    return String(text == null ? '' : text).replace(/(\d{1,2}(?:\.\d+)?)\s?¢/g, (all, n) => {
+      const c = Number(n);
+      if (!(c > 0 && c < 100)) return all;
+      const a = Math.round(c >= 50 ? (-100 * c) / (100 - c) : (100 * (100 - c)) / c);
+      return a === -100 ? '+100' : (a > 0 ? '+' : '') + a;
+    });
+  }
+
+  return { chanceWords, dots, splitTap, spreadNote, leagueOf, dealWord, noCents };
 });

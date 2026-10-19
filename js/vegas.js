@@ -11,7 +11,9 @@
  *      side, from data/vegas-lines.json (written by scripts/fetch-book-odds.mjs,
  *      HANDOFF §26). Missing, stale (older than 36 hours) or unpriced sides
  *      return null: nothing is ever guessed or filled in.
- *   3. centsText(cents) "44¢ (+127)" - the one small price line used everywhere.
+ *   3. centsText(cents) "44¢ (+127)" - kept for tests/scripts only. Since Oct 19
+ *      2026 the UI shows NO cents (Reed): the small line is the Vegas number if we
+ *      have one, else the app's own price as American odds (americanOf).
  *
  * The file is keyed "<market_id>|<yes|no>" -> {p:"+120", b:"draftkings", n:5}
  * (p = best American price, b = that book, n = how many books priced it).

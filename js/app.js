@@ -21,7 +21,8 @@
  *   platform     "My platform": where every Open button deep-links. The header
  *                toggle, the onboarding step and Settings all write this one
  *                localStorage value (betdash_prefs.platform).
- *   priceFormat  cents (default) | american | decimal. Display only; inputs
+ *   priceFormat  american (default) | decimal. Old 'cents' is shown as american:
+ *                NO cents on screen since Oct 19 2026 (Reed). Display only; inputs
  *                accept any format.
  *
  * SECURITY
@@ -83,10 +84,11 @@
   const sign = v => (v > 0 ? 'pos' : v < 0 ? 'neg' : '');
 
   /** Price (cents) in the user's chosen display format. */
-  const fmtP = c => C.formatPrice(c, S.getPrefs().priceFormat);
+  // Never cents on screen (Reed, Oct 19 2026): decimal if chosen, else American odds. Cents stay internal.
+  const fmtP = c => C.formatPrice(c, S.getPrefs().priceFormat === 'decimal' ? 'decimal' : 'american');
 
   // ------------------------------------------------- payout explainer
-  // Next to every price: "41¢ · $10 pays $24.39 · 41% chance". The example
+  // Next to every price: "$10 → $24.39". The example
   // stake is the user's own standard bet from their local profile ($10 when
   // not set). It is computed here in the browser only and never written to
   // the repo. Math: BetCalc.payout / slipPays (tested in tests/calc.test.js).
@@ -157,7 +159,7 @@
     return { mine: { name: named(mineC.id), c: mineC.c }, cheaper: best ? { name: named(best.id), c: best.c } : null };
   }
 
-  /** "Price on Polymarket US: 63.5¢ · Cheaper on Kalshi (61¢)". @returns {string} HTML ('' when no price) */
+  /** "Vegas -185 (BetMGM)" or "Polymarket US price: -174", plus "Cheaper on Kalshi (-170)". @returns {string} HTML ('' when no price) */
   /**
    * Vegas line for a pick/leg/slip leg: "Vegas: +120 (DraftKings)" from the
    * sportsbook lookup (js/vegas.js); '' when no real price exists. Never guessed.
@@ -172,8 +174,9 @@
     const { mine, cheaper } = appPrices(o, extra);
     if (!mine) return '';
     // Cents ALWAYS come with their American odds: "63.5¢ (-174)"; then the real Vegas number when we have one.
+    // No cents (Reed, Oct 19 2026): the real Vegas number when we have one, else the app's own price as +/- odds.
     const vg = vegasText(o.market_id, o.market_side);
-    return `<div class="price-on small muted">${esc(STR.plain.priceOn(mine.name, window.Vegas.centsText(mine.c) || fmtP(mine.c)))}${vg ? ` · <span class="vegas-line">${esc(vg)}</span>` : ''}${withTip ? ' ' + tip('americanOdds') : ''}${cheaper ? ` · <span class="cheaper">${esc(STR.plain.cheaperOn(cheaper.name, fmtP(cheaper.c)))}</span>` : ''}</div>`;
+    return `<div class="price-on small muted">${vg ? `<span class="vegas-line">${esc(vg)}</span>` : esc(STR.plain.appOdds(mine.name, fmtP(mine.c)))}${withTip ? ' ' + tip('americanOdds') : ''}${cheaper ? ` · <span class="cheaper">${esc(STR.plain.cheaperOn(cheaper.name, fmtP(cheaper.c)))}</span>` : ''}</div>`;
   }
 
   /** "+1.5 = they win, or lose by just 1 run" for a spread text. @returns {string} HTML */
@@ -196,7 +199,7 @@
    *   Wins about 6 out of 10 times ●●●●●●○○○○
    *   👉 Tap: Guardians +1.5
    *   +1.5 = they win, or lose by just 1 run
-   *   Price on Polymarket US: 63.5¢ · Cheaper on Kalshi (61¢)
+   *   Vegas -185 (BetMGM)   (else "Polymarket US price: -174") · Cheaper on Kalshi (-170)
    *   🕒 Mon Oct 19 · 7:08 PM CT
    * @param {object} l picks.json leg @returns {string} HTML
    */
@@ -456,7 +459,7 @@
     document.querySelectorAll('.tab').forEach(s => (s.hidden = s.dataset.tab !== name));
     document.querySelectorAll('.tabbar button').forEach(b => b.classList.toggle('active', b.dataset.go === name));
     if (location.hash !== '#' + name) history.replaceState(null, '', '#' + name);
-    ({ picks: renderPicks, calc: renderCalc, bets: renderBets, record: renderRecord, settings: renderSettings })[name]();
+    ({ picks: renderPicks, calc: renderCalc, bets: renderBets, record: renderRecord, trent: renderTrent, settings: renderSettings })[name]();
     window.scrollTo(0, 0);
   }
 
@@ -489,7 +492,7 @@
   /**
    * Other apps' prices for a single bet, from today's data/book-odds.json rows
    * (refs with leg null), latest check only (BetCalc.groupPrices). Fed into
-   * appPrices() so the card only says "Cheaper on X (61¢)" when another app
+   * appPrices() so the card only says "Cheaper on X (-156)" when another app
    * really is cheaper than the user's "My platform" (Reed, Oct 19 2026: show
    * the other app only if it's cheaper). [] when there's no data, the feed is
    * off, or the rows are for a different slate.
@@ -570,7 +573,7 @@
     // Plain money lines (no tiles). Combo: "If all 3 win: your $5 turns into
     // $23.40" + "Only bet if the app says your $5 pays at least $21.30".
     // Single: "Bet $10 → get $25 back", tap line, spread note, deal word,
-    // "Price on <my app>: 40¢ · Cheaper on Kalshi (39¢)".
+    // "Vegas +150 (Bovada)" or "Polymarket US price: +150" · "Cheaper on Kalshi (+156)".
     const st = pickStake(pk);
     const multX = pk.quoted_multiple || pk.est_multiple;
     const sp = PL.splitTap(pk.side || '');
@@ -596,9 +599,10 @@
       ${moneyHtml}
       ${isMulti ? `<ul class="legs">${pk.legs.map((l, i) => `<li>${l.team ? T.badge(teamRef(l.team), 20) : ''}${plainLegHtml(l, i === 0)}</li>`).join('')}</ul>` : ''}
       <div><b>${esc(P.bet)}:</b> ${esc(stakeText(pk))} ${tip('unit')}</div>
-      ${pk.pending_news ? `<div class="news">⏳ <b>${esc(P.news)}</b> ${esc(pk.pending_news)}</div>` : ''}
-      ${pk.verify_note ? `<div class="verify">⚠️ ${esc(pk.verify_note)}</div>` : ''}
-      ${pk.reasoning ? `<div class="reason">${esc(pk.reasoning)}</div>` : ''}
+      ${/* PL.noCents: any "41¢" the daily job wrote shows as American odds */ ''}
+      ${pk.pending_news ? `<div class="news">⏳ <b>${esc(P.news)}</b> ${esc(PL.noCents(pk.pending_news))}</div>` : ''}
+      ${pk.verify_note ? `<div class="verify">⚠️ ${esc(PL.noCents(pk.verify_note))}</div>` : ''}
+      ${pk.reasoning ? `<div class="reason">${esc(PL.noCents(pk.reasoning))}</div>` : ''}
       <div class="pick-actions">
         ${openButton(pk, pk.side || pk.event)}
         <button class="btn btn-sm btn-primary" data-load-pick="${esc(pk.id)}" data-cat="${esc(cat)}">${esc(P.toCalc)}</button>
@@ -647,7 +651,7 @@
       <div class="updated">${esc(STR.picks.updated(dayWords(picksDay || d.slate_date || ''), fmtTime(d.updated_at)))}</div>
       ${days.length > 1 ? `<div class="chips pick-days" role="group" aria-label="${esc(STR.picks.dayGroup)}">${days.map(day =>
         `<button type="button" class="chip ${day === picksDay ? 'on' : ''}" data-pick-day="${esc(day)}" aria-pressed="${day === picksDay}">${esc(dayWords(day, true))} <span class="muted small">(${countOnDay(d, day)})</span></button>`).join('')}</div>` : ''}
-      ${isFileDay ? (d.notes || []).map(n => `<div class="verify">${esc(n)}</div>`).join('') : ''}
+      ${isFileDay ? (d.notes || []).map(n => `<div class="verify">${esc(PL.noCents(n))}</div>`).join('') : ''}
       ${riskLegend()}`;
     for (const [key, cat] of PICK_SECTIONS) {
       const items = (sec[key] || []).filter(onDay);
@@ -953,11 +957,11 @@
       // Plain: "Bet $10 → get $11.76 back · Wins about 8 out of 10 times" (no "x", no %).
       h.textContent = l.price ? (ok ? `${betGetText(ok.p * 100) || fmtP(ok.p * 100)} · ${chanceText(ok.p)}` : K.cantRead) : '';
       h.className = 'leg-hint' + (l.price && !ok ? ' error' : '');
-      // Small price line: "63¢ (-170) · Vegas: -174 (BetMGM)" (only when the typed price is readable).
+      // Small price line: "Vegas -174 (BetMGM)" or "Polymarket US price: -170" (only when the typed price is readable).
       const am = $('.leg-am', div);
       if (am) {
         am.hidden = !ok;
-        if (ok) $('.am-t', am).textContent = (window.Vegas.centsText(ok.p * 100) || '') + (vegasText(l.marketId, l.side) ? ' · ' + vegasText(l.marketId, l.side) : '');
+        if (ok) $('.am-t', am).textContent = vegasText(l.marketId, l.side) || STR.plain.appOdds(l.platform, fmtP(ok.p * 100));   // Vegas, else the typed price as +/- odds
       }
       // Kalshi only when it's cheaper than the price typed for this leg.
       const ch = $('.leg-cheaper', div);
@@ -1229,7 +1233,7 @@
       if (!f.n) return dash;
       const d = Math.round(f.avgDiff * 10) / 10;
       // app costs MORE than the user's app = you win less = red
-      // Plain words: "3¢ more" / "2¢ less" / "same"
+      // Plain words, no cents: "pays less" / "pays a bit more" / "same"
       return `<span class="${d > 0 ? 'neg' : d < 0 ? 'pos' : ''}">${esc(d > 0 ? R.diffMore(d) : d < 0 ? R.diffLess(Math.abs(d)) : R.diffSame)}</span>`;
     };
     const feedNote = (p, f) => {
@@ -1269,6 +1273,50 @@
   }
 
   /** Record tab: prediction record + per-platform price comparison (all 10 apps). */
+  // ---------------------------------------------------------------- Fade Trent
+  /**
+   * "Fade Trent" tab: @BookitWithTrent's X picks from data/trent-picks.json,
+   * graded on real final scores (HANDOFF §28). Math in js/trent.js. All text
+   * from the file goes through esc(); links through safeUrl().
+   */
+  async function renderTrent() {
+    const X = STR.trent;
+    const el = $('#tab-trent');
+    el.innerHTML = `<h2>${esc(X.title)}</h2><p class="muted">${esc(STR.loading)}</p>`;
+    let doc;
+    try { doc = await fetchData('data/trent-picks.json'); } catch (e) { el.innerHTML = `<h2>${esc(X.title)}</h2><p class="error">${esc(X.loadError)}</p>`; return; }
+    const TR = window.Trent, picks = Array.isArray(doc.picks) ? doc.picks : [];
+    const s = TR.summary(picks), a = s.all;
+    const rec = x => `${x.w}-${x.l}-${x.p}`;
+    const u = n => `<span class="${sign(n)}">${n > 0 ? '+' : ''}${esc(String(n))}u</span>`;
+    const kpi = (k, v) => `<div class="kpi"><div class="k">${esc(k)}</div><div class="v">${v}</div></div>`;
+    const day = iso => new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'America/Chicago' });
+    const link = (href, txt) => { const h = safeUrl(href); return h ? `<a href="${esc(h)}" target="_blank" rel="noopener">${esc(txt)}</a>` : ''; };
+    const card = p => {
+      const r = p.unclear ? 'unclear' : p.result, f = TR.fadeResult(p);
+      return `<div class="card trent-pick ${p.unclear ? 'unclear' : ''}">
+        <div class="tp-top"><div><div class="tp-pick">${esc(p.pick)}</div>
+          <div class="pick-sub">${esc(p.league)} · ${esc(p.game)} · ${esc(day(p.posted_at))}</div></div>
+          <span class="badge ${r === 'win' ? 'won' : r === 'loss' ? 'lost' : 'push'}">${esc(X.result[r] || r)}</span></div>
+        <div class="small">${[p.units ? X.unitsShown(p.units) : '', p.odds ? X.odds(p.odds) : ''].filter(Boolean).map(esc).join(' ')}${f ? ` <span class="fade-${esc(f)}">· ${esc(X.fadeWould(f))}</span>` : ''}</div>
+        ${p.final_score ? `<div class="small muted">${esc(X.final(p.final_score))} ${link(p.graded_from, X.source)}</div>` : ''}
+        ${p.note ? `<div class="small muted">${esc(p.note)}</div>` : ''}
+        <div class="small">${link(p.url, X.post)}</div>
+      </div>`;
+    };
+    const leagues = Object.entries(s.byLeague).filter(([, v]) => v.w + v.l + v.p);
+    el.innerHTML = `<h2>${esc(X.title)} ${tip('fadeTrent')}</h2>
+      <p class="muted small">${esc(X.intro(doc.account || 'BookitWithTrent'))}</p>
+      <div class="kpis">${kpi(X.record, rec(a))}${kpi(X.winPct, a.winPct === null ? X.none : esc(a.winPct + '%'))}${kpi(X.units, u(a.units))}${kpi(X.fade, rec({ w: a.fw, l: a.fl, p: a.fp }))}</div>
+      <p class="muted small">${esc(X.unitsNote(a.unitsN, a.assumed))} ${a.fadeN ? esc(X.fadeUnitsNote((a.fadeUnits > 0 ? '+' : '') + a.fadeUnits + 'u', a.fadeN)) : ''}</p>
+      <h3>${esc(X.bySport)}</h3>
+      <div class="table-wrap"><table><tr><th>${esc(X.colSport)}</th><th>${esc(X.colRecord)}</th><th class="num">${esc(X.colPct)}</th><th class="num">${esc(X.colUnits)}</th><th>${esc(X.colFade)}</th></tr>
+        ${leagues.map(([k, v]) => `<tr><td>${esc(k)}</td><td>${rec(v)}</td><td class="num">${v.winPct === null ? X.none : esc(v.winPct + '%')}</td><td class="num">${u(v.units)}</td><td>${rec({ w: v.fw, l: v.fl, p: v.fp })}</td></tr>`).join('')}</table></div>
+      <h3>${esc(X.picksTitle)}</h3>
+      <p class="muted small">${esc(X.pending(a.pending))} · ${esc(X.unclear(a.unclear))}${doc.read_from && doc.read_through ? ' · ' + esc(X.read(day(doc.read_from), day(doc.read_through))) : ''}</p>
+      ${picks.slice().sort((x, y) => String(y.posted_at).localeCompare(String(x.posted_at))).map(card).join('')}`;
+  }
+
   async function renderRecord() {
     const R = STR.record;
     const el = $('#tab-record');

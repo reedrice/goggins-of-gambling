@@ -55,4 +55,10 @@ test('dealWord', () => {
   assert.strictEqual(P.dealWord(-1.5), 'pricey');
   assert.strictEqual(P.dealWord(null), null);
 });
+test('noCents turns cents in text into American odds', () => {
+  assert.strictEqual(P.noCents('Guardians +1.5 at 63.5¢ (books 64.5%). Purdy at 41¢.'), 'Guardians +1.5 at -174 (books 64.5%). Purdy at +144.');
+  assert.strictEqual(P.noCents('50 ¢ even'), '+100 even');
+  assert.strictEqual(P.noCents('no prices here'), 'no prices here');
+  assert.strictEqual(P.noCents(null), '');
+});
 process.exit(fails ? 1 : 0);

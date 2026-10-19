@@ -9,7 +9,8 @@
  *   - Write so a 2nd grader gets it (Reed, Oct 19 2026). Lead with dollars
  *     ("Bet $10 → get $15.75 back") and plain chances ("about 6 out of 10
  *     times", "about 1 in 4"), never % or "x". Cents show ONCE, small:
- *     "Price on Polymarket US: 63¢". See STR.plain and js/plain.js.
+ *     NO CENTS on screen (Oct 19 2026): prices show as American odds
+ *     ("+127") or the Vegas number ("Vegas +133 (Bovada)"). See STR.plain.
  *   - Write for someone who has never bet before.
  *   - No jargon in labels: avoid EV, independent, implied probability, vig,
  *     no-vig, correlation, edge, units, multiple. Use the plain phrases below.
@@ -29,14 +30,14 @@ window.STR = {
   cancel: 'Cancel',
   close: 'Close',
   tipButton: 'What does this mean?',
-  // Plain-language payout next to every price (app.js payText / picker.js):
-  // '41¢ · $10 pays $24.39 · 41% chance'. The stake is the user's own
+  // Plain-language payout next to every price (app.js / picker.js):
+  // '$10 → $24.39'. The stake is the user's own
   // standard bet from their local profile ($10 if not set), never stored in the repo.
   pay: {
     short: (stake, pays) => `${stake} → ${pays}`,          // compact: Build-a-bet buttons, other-app prices
     slipNote: 'at these prices',
     howTitle: 'How prices work',
-    diffNote: '"3¢ more" means that app charges 3¢ more for the same $1 ticket, so it pays a little less. "Less" means it pays more.'
+    diffNote: '"Pays less" means the same bet wins you a little less money on that app than on yours. "Pays more" means it wins you more.'
   },
 
   // ---------------------------------------------------------------- 2nd-grade money words
@@ -50,7 +51,8 @@ window.STR = {
     allChance: { of10: (k, n) => `${k === 2 ? 'Both' : 'All ' + k} win about ${n} out of 10 times`, oneIn: (k, n) => `${k === 2 ? 'Both' : 'All ' + k} win about 1 in ${n} times`, almost: k => `${k === 2 ? 'Both' : 'All ' + k} win almost every time` },
     priceOn: (app, c) => `Price on ${app}: ${c}`,
     // Cents + American ("Vegas") odds on the small line: "44¢ (+127)". The ⓘ explains the number.
-    vegas: (num, book) => `Vegas: ${num}${book ? ` (${book})` : ''}`,
+    vegas: (num, book) => `Vegas ${num}${book ? ` (${book})` : ''}`,
+    appOdds: (app, odds) => `${app} price: ${odds}`,      // no Vegas number: the app's own price as +/- odds
     cheaperOn: (app, c) => `Cheaper on ${app} (${c})`,
     tap: what => `Tap: ${what}`,
     ifAllWin: (k, stake, back) => `If ${k === 2 ? 'both' : 'all ' + k} win: your ${stake} turns into ${back}`,
@@ -69,7 +71,24 @@ window.STR = {
   posTip: (abbr, name) => `${abbr} = ${name}`,
 
   // ---------------------------------------------------------------- tabs
-  tabs: { picks: 'Picks', calc: 'Build a bet', bets: 'My bets', record: 'Record', settings: 'Settings' },
+  tabs: { picks: 'Picks', calc: 'Build a bet', bets: 'My bets', record: 'Record', trent: 'Fade Trent', settings: 'Settings' },
+
+  // ---------------------------------------------------------------- Fade Trent tab (app.js renderTrent, js/trent.js, HANDOFF §28)
+  trent: {
+    title: 'Fade Trent',
+    intro: handle => `Picks @${handle} posted on X, checked against the real final scores. "Fade" means betting the other side.`,
+    loadError: 'Couldn\'t load Trent\'s picks. Try again later.',
+    record: 'His record', winPct: 'He wins', units: 'His units', fade: 'Fade record',
+    unitsNote: (n, a) => `From ${n} picks with units.${a ? ` ${a} spread pick${a > 1 ? 's' : ''} had no odds, so the usual -110 was used.` : ''}`,
+    fadeUnitsNote: (u, n) => `Fading his spreads (at -110): ${u} over ${n} pick${n === 1 ? '' : 's'}.`,
+    bySport: 'By sport', colSport: 'Sport', colRecord: 'Trent', colPct: 'Win %', colUnits: 'Units', colFade: 'Fade',
+    picksTitle: 'His picks', pending: n => `${n} waiting on the game`, unclear: n => `${n} unclear (not counted)`,
+    result: { win: 'Won', loss: 'Lost', push: 'Push', pending: 'Waiting', unclear: 'Unclear' },
+    fadeWould: r => ({ win: 'Fade would have won', loss: 'Fade would have lost', push: 'Fade: push' })[r] || '',
+    unitsShown: u => `${u}u`, odds: o => `at ${o}`, final: s => `Final: ${s}`, post: 'See post ↗', source: 'Score ↗',
+    read: (from, to) => `Posts read from ${from} to ${to}.`,
+    none: '—'
+  },
 
   // ---------------------------------------------------------------- header / platform toggle
   bankroll: 'My money',
@@ -137,13 +156,8 @@ window.STR = {
     openPlatform: name => `Open in ${name} ↗`,
     notOnKalshi: 'Not on Kalshi',
     kalshiEventOnly: 'Kalshi game page',
-    kalshiPrice: c => `Kalshi: ${c}`,
     // "Other apps" line on single-bet cards (from data/book-odds.json).
     // base = the user's "My platform" name; mine = its price (+ payout).
-    otherCheaper: (app, price, less, base, mine) => `Other apps: cheapest is ${app} at ${price}, ${less}¢ less than ${base} (${mine}).`,
-    otherNone: (base, mine, app, price) => `Other apps: none cheaper than ${base} (${mine}). Closest: ${app} at ${price}.`,
-    otherNoBase: (app, price, base) => `Other apps: cheapest is ${app} at ${price}. No ${base} price for this bet yet (–).`,
-    otherAsOf: when => `Checked ${when}.`,
     toCalc: 'Use in bet builder',
     loaded: 'Added to the bet builder. Now type what your app says it pays.'
   },
@@ -332,8 +346,11 @@ window.STR = {
     colLogged: 'Bets you logged',      // count of manual entries in the shared bet log
     colGap: 'Paid vs. our estimate',   // average payout difference of those bets, e.g. -6.9%
     colFeed: 'From odds feed',         // count of automatic price checks (The Odds API)
-    colDiff: app => `Costs vs. ${app}`, // average price difference vs. the user's "My platform": "3¢ more" / "2¢ less"
-    diffMore: c => `${c}¢ more`, diffLess: c => `${c}¢ less`, diffSame: 'same',
+    colDiff: app => `Pays vs. ${app}`, // average payout vs. the user's "My platform", in words (no cents): "pays less" / "pays more"
+    // c = average price difference in cents (internal only, never shown)
+    diffMore: c => (c < 2 ? 'pays a bit less' : c < 5 ? 'pays less' : 'pays a lot less'),
+    diffLess: c => (c < 2 ? 'pays a bit more' : c < 5 ? 'pays more' : 'pays a lot more'),
+    diffSame: 'same',
     colTotal: 'Total',                 // both counts added up
     dash: '–',                         // shown in any cell with no data yet
     feedSoon: 'Coming soon, waiting on odds feed',
@@ -355,7 +372,7 @@ window.STR = {
     profileSaved: 'Saved.', profileErr: 'Fill in name, money, standard bet and limit with numbers above 0.',
     platform: 'Where do you bet?',
     priceFormat: 'Show prices as',
-    formats: { cents: 'Cents (63¢), like Polymarket', american: 'American odds (-170)', decimal: 'Decimal (1.59)' },
+    formats: { american: 'American odds (-170), like Vegas', decimal: 'Decimal (1.59)' },   // no cents option (Reed, Oct 19 2026)
     sharing: 'Sharing numbers',
     sharingNote: (path, repo) => `Sharing sends only what you bet on, prices, payouts and results, never dollar amounts, to ${path} in ${repo} under your GitHub name. Only people Reed added can share.`,
     tokenHow: 'How to get a key',
@@ -412,11 +429,12 @@ window.STR = {
 
   // ---------------------------------------------------------------- tooltips (i)
   tips: {
-    americanOdds: '+127 means a $100 bet wins $127. −150 means you bet $150 to win $100. These are the numbers sportsbooks like DraftKings show. The number next to the ¢ price is the same price, just said the Vegas way. "Vegas" is the best number we found at the big sportsbooks for the same bet.',
-    howPrices: 'The price is like the cost of a ticket. If you\'re right, every ticket turns into $1. Cheaper tickets win less often but pay more. A 63¢ ticket wins about 6 out of 10 times.',
-    price: 'What one ticket costs. If you\'re right, the ticket turns into $1. At 40¢, $10 buys 25 tickets, so you get $25 back if you win.',
-    fair: 'What the ticket should cost, going by the big sportsbooks. A fair price of 47¢ means it wins about 47 times out of 100.',
-    advantage: 'If the ticket costs less than it should, that\'s a good deal. 44¢ when it should be 48¢ is 4¢ cheap.',
+    fadeTrent: 'Trent\'s picks come straight from his X posts. Only picks he wrote out in words count; picks only in a picture or with an unclear bet are skipped or marked unclear. Each one is checked against the real final score. "Fade" is the other side of his bet: if he lost, fading him won.',
+    americanOdds: '+127 means a $100 bet wins $127. −150 means you bet $150 to win $100. Plus numbers win more than you bet; minus numbers win less. "Vegas" is the best number we found at the big sportsbooks for the same bet.',
+    howPrices: 'Every bet shows what you get back: "$10 → $22.73" means bet $10 and get $22.73 back if you win. The small number is the same price the Vegas way: +127 means a $100 bet wins $127, −150 means you bet $150 to win $100. Bigger plus numbers win less often but pay more.',
+    price: 'What this bet pays, the Vegas way. +150 means a $100 bet wins $150. −150 means you bet $150 to win $100.',
+    fair: 'What this bet should pay, going by the big sportsbooks.',
+    advantage: 'If your app pays more than it should, that\'s a good deal.',
     payout: 'How much you get back if you win, counting the money you bet. Bet $10 → get $25 back.',
     ourPayout: 'What this combo should pay if every pick wins, using today\'s prices.',
     chance: 'How often this wins. "6 out of 10" means if you made this bet 10 times, you\'d win about 6.',
@@ -434,7 +452,7 @@ window.STR = {
     myPlatform: 'Tapping "Open in app" takes you to this app\'s page for the bet. If the bet isn\'t on Kalshi, we\'ll say so and open a search.',
     colLogged: 'How many combo bets you or your friends saved with "Share" on for this app.',
     colGap: 'Did the app pay more or less than our math on combos people saved? −7% means it paid a little less.',
-    colDiff: 'Does this app charge more or less than your app for the same ticket? "3¢ more" means you pay a bit more there, so you win a bit less. A dash means we don\'t have your app\'s price for those bets yet.',
+    colDiff: 'Does this app pay more or less than your app for the same bet? "Pays less" means you\'d win a bit less money there. A dash means we don\'t have your app\'s price for those bets yet.',
     colFeed: 'How many of our picks we found on this app in the daily price check.',
     hitChance: 'My best guess at how often this bet wins, going by the big sportsbooks. "1 in 4" means you\'d win about once every 4 tries.',
     risk: 'Good chance = wins 6 or more times out of 10. Coin flip = about half the time. Hard to hit = 3 or 4 out of 10. Very hard to hit = less than 1 in 4. Harder bets should be smaller bets.',
