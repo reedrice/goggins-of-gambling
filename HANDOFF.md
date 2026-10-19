@@ -668,3 +668,15 @@ Reed: drop the Polymarket/Kalshi cent values. Cents stay **internal** (picks.jso
 **Daily routine:** treat NBA like MLB/NFL/NHL: game predictions (`add-predictions`), singles and props judged on merit against Vegas fair (`data/book-odds.json`, `data/vegas-lines.json`), NBA legs in mixed slips. Run fetch-book-odds as usual (the cap ranks sports by picks, so NBA gets lines once it has picks).
 
 **First NBA picks (Oct 20 opening night, Polymarket US prices at 1:41 PM CT):** Celtics @ Pistons Under 221.5 (0.25u), Joel Embiid 25+ points (0.5u), Cade Cunningham 25+ points (0.5u), LeBron James under 15 points (0.25u); predictions DET 51, NY 64, SA 56. All are "Fair price, small play only" (edges about 1.5 to 2.6 points vs the books).
+
+## 31. Live line-movement checker (scripts/live-watch.mjs, Oct 19, 2026)
+Trial for WAS @ SF (nfl-was-sf-2026-10-19). Compares Polymarket US live prices to their own
+pregame open (free API, no Odds API credits).
+- `node scripts/live-watch.mjs snapshot [--slug <event-slug>]` saves opening mids for moneyline,
+  main spread/total (line nearest 50%) and liquid props for key players (`--players`) to
+  `/workspace/live/<tag>-open.json` (outside repo; prices only, no dollars).
+- `node scripts/live-watch.mjs check` prints only moves of 10+ pts from open (`--open-move`) or 6+
+  since last check (`--step-move`); state in `<tag>-last.json`. Skips closed/paused markets and
+  thin ones (bid/ask gap > 6 pts, or <4% / >96%). Shows the side that got cheaper in American
+  odds + "$10 pays $X" + event link. No cents.
+- `--dir` overrides the working folder (handy for simulated tests).
