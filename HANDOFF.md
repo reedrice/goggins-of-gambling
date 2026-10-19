@@ -49,6 +49,7 @@ config.js             brand + repo config + platforms[] (one ordered list used e
 css/style.css         dark mobile-first theme (sections 1-18; 18 = 2nd-grade money words, 16 = payout explainer; 13 = leg start times, 14 = grouped results, 15 = position badges; 9 = picker/logos/toggle/tooltips, 10 = Record compare table, 11 = pick evaluation box, 12 = Build-a-bet filter panel)
 js/strings.js         all UI text (plain-language rules in its header)
 js/calc.js            odds and parlay math (pure)
+js/vegas.js           cents -> American odds ("44¢ (+127)") + lookup of real sportsbook "Vegas" numbers from data/vegas-lines.json (§26)
 js/plain.js           2nd-grade money words: "6 out of 10" / "1 in 4", dots, "Tap:" split, spread explainer, deal word (browser + Node, §25)
 js/evaluate.js        per-pick hit chance, risk label, "My take" verdict, prediction lookup (browser + Node, §18)
 js/storage.js         localStorage schema and access
@@ -67,8 +68,10 @@ data/picks.json       today's picks (overwritten daily by the job)
 data/predictions.json game predictions and grades (appended by the job)
 data/bet-log.json     shared calibration log (written by the app with users' tokens)
 data/positions.json   player positions per league from ESPN rosters (written daily by fetch-positions.mjs, §21)
+data/vegas-lines.json best sportsbook American price per market side, all games' full-game lines (written by fetch-book-odds.mjs, §26)
 data/book-odds.json   automatic per-app price comparisons (The Odds API, written daily by fetch-book-odds.mjs, §17)
 tests/calc.test.js        node: math (incl. payout explainer: payout / slipPays)
+tests/vegas.test.js       node: cents -> American conversion, Vegas lookup rules (js/vegas.js, §26)
 tests/plain.test.js       node: 2nd-grade wording helpers (js/plain.js, §25)
 tests/gametime.test.js    node: start-time format (CT/ET), hints, lookup, leg order
 tests/evaluate.test.js    node: hit chance / risk / verdict defaults (js/evaluate.js)
@@ -592,3 +595,15 @@ Reed: the ¢ values and explanations were still too technical, so make them simp
 
 Checked at 390px with no sideways scroll (tests/smoke.js prints `"%" or "x" left in money lines: 0`).
 
+
+## 26. American odds and "Vegas" numbers on the small price line (Oct 19, 2026)
+
+Reed wanted the +/- number next to the cents, e.g. `44¢ (+127)`, and real sportsbook odds where they exist.
+
+**Always shown (client-side math, js/vegas.js `americanOf`, tested in tests/vegas.test.js):** the user's own app price, converted: under 50¢ = +round(100×(100−p)/p), 50¢ and up = −round(100×p/(100−p)); 50¢ shows as +100. It appears on the small price line of Build a Bet Yes/No buttons, single pick cards ("Price on Polymarket US: 63.5¢ (-174)"), combo legs and slip legs. Cents always come with it, whatever price format the user chose.
+
+**Shown only when real: "Vegas: +120 (DraftKings)"** = the best American price among our books (FanDuel, DraftKings, BetMGM, Bovada, ESPN Bet, ...; Kalshi is a prediction market and is left out) for the exact same side, from `data/vegas-lines.json` (`{updated_at, lines:{"<market_id>|yes|no": {p, b, n}}}`, n = books that priced it). No entry (alt lines, props that weren't fetched, books that don't post it) = nothing shown. Never guessed. Entries older than 36h are hidden (`Vegas.lookup`).
+
+**How the file is made:** `scripts/fetch-book-odds.mjs` (same daily run, same `--max-credits 12` cap, same key rules). After the pick lines are planned it **widens each sport's one `/odds` call to all 3 game-line markets** (h2h, spreads, totals; sports with the most games first, only while it fits the cap) and matches **every full-game moneyline/spread/total** of every game in the snapshot (`FULL_GAME` regex; period, half, quarter, first-5 and team-total markets are skipped because the books' featured markets are full-game only). That runs BEFORE player props, so a tight cap now trims props first (pick prop Vegas numbers and Record prop rows only appear when they fit; rows from earlier runs the same day are kept for markets not re-priced). Cost: 3 credits per sport per run (NFL, MLB, NHL, NBA = 12; WNBA is skipped by the cap). The Odds API only posts the main puck line / spread / total, so alt lines show cents + American but no Vegas line.
+
+**ⓘ tip** `STR.tips.americanOdds` ("+127 means a $100 bet wins $127. −150 means you bet $150 to win $100...") sits in the Build a Bet results and game headers, on single cards, the first leg of each combo, and the slip leg price line. CSS §19.
