@@ -6,7 +6,7 @@ import assert from 'node:assert';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { american, pays, quote, liquid, findMoves, appendAlerts, gameOver, selectMarkets, sportOf, tagOf, lineInfo, describe, tierOf, buildLive, openFromPublished, mergeOpen } from '../scripts/live-watch.mjs';
+import { american, pays, quote, liquid, findMoves, appendAlerts, gameOver, selectMarkets, sportOf, tagOf, lineInfo, describe, tierOf, buildLive, openFromPublished, mergeOpen, liveAlerts, ALERT_CAP } from '../scripts/live-watch.mjs';
 
 const F = JSON.parse(fs.readFileSync(new URL('./fixtures/live-watch-sample.json', import.meta.url), 'utf8'));
 
@@ -144,4 +144,26 @@ test('mergeOpen never overwrites an opening price and stamps each market', () =>
   assert.deepStrictEqual([m.a.yesBuy, m.a.taken_at, m.a.kind], [41, 'T1', 'Moneyline']);   // price kept, label refreshed
   assert.deepStrictEqual([m.b.yesBuy, m.b.taken_at], [21, 'T2']);                         // new market stamped now
   assert.deepStrictEqual([m.gone.yesBuy, m.gone.taken_at], [31, 'T0']);                   // old-only kept
+});
+
+test('alerts: new edge, tier up, gone, news, injury removal; deduped, newest first, capped', () => {
+  const E = (key, o = {}) => ({ key, side: 'S' + key, market: 'Moneyline', tier: 'slight', class: 'edge', status: 'open', edge: 6, now_odds: '+150', now_chance: 40, first_seen: 'F', ...o });
+  // Pregame: nothing.
+  assert.deepStrictEqual(liveAlerts(null, [E('a')], 'pregame', 'T0', 'https://x').alerts, []);
+  const r1 = liveAlerts(null, [E('a'), E('n', { class: 'news', edge: 30 }), E('i', { class: 'injury' })], 'live', 'T1', 'https://x');
+  assert.deepStrictEqual(r1.alerts.map(a => a.type).sort(), ['new_edge', 'news']);          // never-shown injury edge: no alert
+  // Same state 2 minutes later: no repeats.
+  const p1 = { alerts: r1.alerts, alert_seen: r1.seen, edges: [E('a'), E('n', { class: 'news', edge: 30 }), E('b')] };
+  const r2 = liveAlerts(p1, [E('a'), E('n', { class: 'news', edge: 30 })], 'live', 'T2', 'https://x');
+  assert.strictEqual(r2.alerts.length, 2);
+  // a goes big, b gone, then a becomes injury-explained.
+  const r3 = liveAlerts(p1, [E('a', { tier: 'big', edge: 12 }), E('b', { status: 'gone' })], 'live', 'T3', 'https://x');
+  assert.deepStrictEqual(r3.alerts.slice(0, 2).map(a => a.type).sort(), ['gone', 'new_edge']);
+  assert.match(r3.alerts.find(a => a.type === 'new_edge').text, /^New big edge: Sa \(Moneyline\), 12 points cheaper/);
+  const r4 = liveAlerts({ ...p1, alerts: r3.alerts, alert_seen: r3.seen }, [E('a', { class: 'injury' })], 'live', 'T4', 'https://x');
+  assert.strictEqual(r4.alerts[0].type, 'removed'); assert.strictEqual(r4.alerts[0].text, 'Sa (Moneyline) removed from list.');
+  assert.doesNotMatch(JSON.stringify(r4.alerts), /\$|¢|injur/i);
+  // Cap.
+  const many = Array.from({ length: 60 }, (_, i) => E('m' + i));
+  assert.strictEqual(liveAlerts(null, many, 'live', 'T5', 'https://x').alerts.length, ALERT_CAP);
 });

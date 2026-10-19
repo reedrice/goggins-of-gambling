@@ -366,10 +366,12 @@ export function buildLive(open, ev, prev, nowIso = new Date().toISOString(), ctx
   for (const e of Object.values(prevEdges)) if (!seen.has(e.key)) edges.push({ ...e, status: 'gone' });
   edges.sort((a, b) => (a.status === 'gone') - (b.status === 'gone') || b.edge - a.edge);
   const started = open.start_time && Date.parse(nowIso) >= Date.parse(open.start_time);
+  const status = gameOver(ev) ? 'final' : started ? 'live' : 'pregame';
+  const al = liveAlerts(prev, edges, status, nowIso, open.url);
   return {
     _note: 'Real Polymarket US prices (gateway.polymarket.us). Chances in points (0-100). No dollar amounts.',
     slug: open.slug, game: open.title, url: open.url, start_time: open.start_time,
-    status: gameOver(ev) ? 'final' : started ? 'live' : 'pregame',
+    status,
     // Live game context from ESPN (score, clock, injuries) or { available: false }.
     game_context: ctx || { available: false, error: 'not fetched' },
     updated: nowIso, open_taken_at: open.taken_at, thresholds: { big: BIG_EDGE, slight: SLIGHT_EDGE },
@@ -377,7 +379,49 @@ export function buildLive(open, ev, prev, nowIso = new Date().toISOString(), ctx
       question: o.question, sides: o.sides, teams: o.teams, player: o.player, mid: o.mid, yes_buy: o.yesBuy, no_buy: o.noBuy,
       taken_at: o.taken_at || open.taken_at })),
     edges,
+    // Running alert feed (newest first, last ALERT_CAP) + ids already alerted (dedupe).
+    alerts: al.alerts, alert_seen: al.seen,
   };
+}
+
+// ------------------------------------------------------------ alerts feed
+export const ALERT_CAP = 50;
+const SHOWN = c => c === 'edge' || c === 'unverified';
+
+/**
+ * Pure: compare the last publish (prev) with the new edges and return the
+ * updated alert feed. Only runs once the game has started (no pregame alerts).
+ * Events (each alerts ONCE, deduped by id in `seen`):
+ *   new_edge  a real edge appears (or moves up from slight to big)  id new_edge:<key>:<tier>
+ *   gone      a shown edge is no longer cheap enough                id gone:<key>:<first_seen>
+ *   news      a 25+ pt unexplained "likely news" move appears       id news:<key>
+ *   removed   a shown edge is now explained by injury (dropped; no injury text) id removed:<key>
+ * Text is plain and has no dollar figures; the page adds "$10 pays $X".
+ */
+export function liveAlerts(prev, edges, status, nowIso, url) {
+  const old = (prev && prev.alerts) || [], seen = new Set((prev && prev.alert_seen) || []);
+  if (status === 'pregame') return { alerts: old, seen: [...seen] };
+  const prevBy = Object.fromEntries(((prev && prev.edges) || []).map(e => [e.key, e]));
+  const fresh = [];
+  const add = (id, type, e, text) => {
+    if (seen.has(id)) return;
+    seen.add(id);
+    fresh.push({ id, at: nowIso, type, tier: e.tier, side: e.side, market: e.market,
+      now_odds: e.now_odds, now_chance: e.now_chance, edge: e.edge, text, url });
+  };
+  for (const e of edges) {
+    const p = prevBy[e.key], wasShown = p && p.status !== 'gone' && SHOWN(p.class);
+    if (e.status === 'gone') {
+      if (wasShown) add(`gone:${e.key}:${e.first_seen}`, 'gone', e, `Edge gone: ${e.side} (${e.market}) is no longer ${SLIGHT_EDGE}+ points cheaper than open.`);
+      continue;
+    }
+    if (SHOWN(e.class)) add(`new_edge:${e.key}:${e.tier}`, 'new_edge', e,
+      `New ${e.tier} edge: ${e.side} (${e.market}), ${Math.round(e.edge)} points cheaper than open.`);
+    else if (e.class === 'news') add(`news:${e.key}`, 'news', e,
+      `Big move, likely news: ${e.side} (${e.market}) is ${Math.round(e.edge)} points cheaper than open.`);
+    else if (e.class === 'injury' && wasShown) add(`removed:${e.key}`, 'removed', e, `${e.side} (${e.market}) removed from list.`);
+  }
+  return { alerts: [...fresh, ...old].slice(0, ALERT_CAP), seen: [...seen] };
 }
 
 /** Rebuild an opening snapshot from a published data/live/<slug>.json. */
