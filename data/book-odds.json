@@ -1,8 +1,1548 @@
 {
-  "schema_version": 1,
-  "status": "waiting_for_feed",
-  "updated_at": null,
-  "source": "The Odds API (https://the-odds-api.com), regions us,us2,us_ex",
-  "baseline": "polymarket_us",
-  "comparisons": []
+ "schema_version": 1,
+ "status": "active",
+ "updated_at": "2026-10-19T07:28:41.373Z",
+ "source": "The Odds API (https://the-odds-api.com) + live Polymarket US prices",
+ "baseline": "polymarket_us",
+ "last_run": {
+  "at": "2026-10-19T07:28:41.373Z",
+  "slate_date": "2026-10-19",
+  "sports": [
+   "mlb",
+   "nhl",
+   "nfl"
+  ],
+  "books_requested": [
+   "kalshi",
+   "bovada",
+   "fanduel",
+   "draftkings",
+   "betmgm",
+   "williamhill_us",
+   "espnbet",
+   "fanatics"
+  ],
+  "books_returned": [
+   "betmgm",
+   "bovada",
+   "draftkings",
+   "espnbet",
+   "fanduel",
+   "kalshi"
+  ],
+  "priced_today": 13,
+  "targets": 13,
+  "rows_today": 64,
+  "props": "included",
+  "credits_used": 11,
+  "credits_remaining": 489
+ },
+ "books": {
+  "fanduel": {
+   "priced": 12,
+   "avg_diff": 3.21
+  },
+  "kalshi": {
+   "priced": 7,
+   "avg_diff": -0.16
+  },
+  "espnbet": {
+   "priced": 10,
+   "avg_diff": 2.63
+  },
+  "betmgm": {
+   "priced": 11,
+   "avg_diff": 2.97
+  },
+  "bovada": {
+   "priced": 12,
+   "avg_diff": 2.97
+  },
+  "draftkings": {
+   "priced": 12,
+   "avg_diff": 2.93
+  }
+ },
+ "comparisons": [
+  {
+   "date": "2026-10-19",
+   "market_id": "tsc-mlb-cle-tb-2026-10-19-6pt5",
+   "side": "no",
+   "label": "Under 6.5",
+   "refs": [
+    {
+     "pick_id": "s-cle-tb-under65",
+     "leg": null
+    },
+    {
+     "pick_id": "x-cle-plus15-under",
+     "leg": 1
+    },
+    {
+     "pick_id": "l-cle-ml-under",
+     "leg": 1
+    }
+   ],
+   "book": "fanduel",
+   "odds_api_key": "fanduel",
+   "book_price": "-105",
+   "book_chance": 51.2,
+   "polymarket_price": 49,
+   "diff": 2.2,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "tsc-mlb-cle-tb-2026-10-19-6pt5",
+   "side": "no",
+   "label": "Under 6.5",
+   "refs": [
+    {
+     "pick_id": "s-cle-tb-under65",
+     "leg": null
+    },
+    {
+     "pick_id": "x-cle-plus15-under",
+     "leg": 1
+    },
+    {
+     "pick_id": "l-cle-ml-under",
+     "leg": 1
+    }
+   ],
+   "book": "kalshi",
+   "odds_api_key": "kalshi",
+   "book_price": "+108",
+   "book_chance": 48.1,
+   "polymarket_price": 49,
+   "diff": -0.9,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "tsc-mlb-cle-tb-2026-10-19-6pt5",
+   "side": "no",
+   "label": "Under 6.5",
+   "refs": [
+    {
+     "pick_id": "s-cle-tb-under65",
+     "leg": null
+    },
+    {
+     "pick_id": "x-cle-plus15-under",
+     "leg": 1
+    },
+    {
+     "pick_id": "l-cle-ml-under",
+     "leg": 1
+    }
+   ],
+   "book": "espnbet",
+   "odds_api_key": "espnbet",
+   "book_price": "-105",
+   "book_chance": 51.2,
+   "polymarket_price": 49,
+   "diff": 2.2,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "tsc-mlb-cle-tb-2026-10-19-6pt5",
+   "side": "no",
+   "label": "Under 6.5",
+   "refs": [
+    {
+     "pick_id": "s-cle-tb-under65",
+     "leg": null
+    },
+    {
+     "pick_id": "x-cle-plus15-under",
+     "leg": 1
+    },
+    {
+     "pick_id": "l-cle-ml-under",
+     "leg": 1
+    }
+   ],
+   "book": "betmgm",
+   "odds_api_key": "betmgm",
+   "book_price": "-105",
+   "book_chance": 51.2,
+   "polymarket_price": 49,
+   "diff": 2.2,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "tsc-mlb-cle-tb-2026-10-19-6pt5",
+   "side": "no",
+   "label": "Under 6.5",
+   "refs": [
+    {
+     "pick_id": "s-cle-tb-under65",
+     "leg": null
+    },
+    {
+     "pick_id": "x-cle-plus15-under",
+     "leg": 1
+    },
+    {
+     "pick_id": "l-cle-ml-under",
+     "leg": 1
+    }
+   ],
+   "book": "bovada",
+   "odds_api_key": "bovada",
+   "book_price": "+100",
+   "book_chance": 50,
+   "polymarket_price": 49,
+   "diff": 1,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "tsc-mlb-cle-tb-2026-10-19-6pt5",
+   "side": "no",
+   "label": "Under 6.5",
+   "refs": [
+    {
+     "pick_id": "s-cle-tb-under65",
+     "leg": null
+    },
+    {
+     "pick_id": "x-cle-plus15-under",
+     "leg": 1
+    },
+    {
+     "pick_id": "l-cle-ml-under",
+     "leg": 1
+    }
+   ],
+   "book": "draftkings",
+   "odds_api_key": "draftkings",
+   "book_price": "-108",
+   "book_chance": 51.9,
+   "polymarket_price": 49,
+   "diff": 2.9,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "asc-mlb-cle-tb-2026-10-19-pos-1pt5",
+   "side": "yes",
+   "label": "Guardians +1.5",
+   "refs": [
+    {
+     "pick_id": "s-cle-plus15",
+     "leg": null
+    },
+    {
+     "pick_id": "x-cle-plus15-under",
+     "leg": 0
+    }
+   ],
+   "book": "fanduel",
+   "odds_api_key": "fanduel",
+   "book_price": "-200",
+   "book_chance": 66.7,
+   "polymarket_price": 63.5,
+   "diff": 3.2,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "asc-mlb-cle-tb-2026-10-19-pos-1pt5",
+   "side": "yes",
+   "label": "Guardians +1.5",
+   "refs": [
+    {
+     "pick_id": "s-cle-plus15",
+     "leg": null
+    },
+    {
+     "pick_id": "x-cle-plus15-under",
+     "leg": 0
+    }
+   ],
+   "book": "kalshi",
+   "odds_api_key": "kalshi",
+   "book_price": "-170",
+   "book_chance": 63,
+   "polymarket_price": 63.5,
+   "diff": -0.5,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "asc-mlb-cle-tb-2026-10-19-pos-1pt5",
+   "side": "yes",
+   "label": "Guardians +1.5",
+   "refs": [
+    {
+     "pick_id": "s-cle-plus15",
+     "leg": null
+    },
+    {
+     "pick_id": "x-cle-plus15-under",
+     "leg": 0
+    }
+   ],
+   "book": "espnbet",
+   "odds_api_key": "espnbet",
+   "book_price": "-190",
+   "book_chance": 65.5,
+   "polymarket_price": 63.5,
+   "diff": 2,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "asc-mlb-cle-tb-2026-10-19-pos-1pt5",
+   "side": "yes",
+   "label": "Guardians +1.5",
+   "refs": [
+    {
+     "pick_id": "s-cle-plus15",
+     "leg": null
+    },
+    {
+     "pick_id": "x-cle-plus15-under",
+     "leg": 0
+    }
+   ],
+   "book": "betmgm",
+   "odds_api_key": "betmgm",
+   "book_price": "-190",
+   "book_chance": 65.5,
+   "polymarket_price": 63.5,
+   "diff": 2,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "asc-mlb-cle-tb-2026-10-19-pos-1pt5",
+   "side": "yes",
+   "label": "Guardians +1.5",
+   "refs": [
+    {
+     "pick_id": "s-cle-plus15",
+     "leg": null
+    },
+    {
+     "pick_id": "x-cle-plus15-under",
+     "leg": 0
+    }
+   ],
+   "book": "bovada",
+   "odds_api_key": "bovada",
+   "book_price": "-185",
+   "book_chance": 64.9,
+   "polymarket_price": 63.5,
+   "diff": 1.4,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "asc-mlb-cle-tb-2026-10-19-pos-1pt5",
+   "side": "yes",
+   "label": "Guardians +1.5",
+   "refs": [
+    {
+     "pick_id": "s-cle-plus15",
+     "leg": null
+    },
+    {
+     "pick_id": "x-cle-plus15-under",
+     "leg": 0
+    }
+   ],
+   "book": "draftkings",
+   "odds_api_key": "draftkings",
+   "book_price": "-193",
+   "book_chance": 65.9,
+   "polymarket_price": 63.5,
+   "diff": 2.4,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nhl-col-phi-2026-10-19",
+   "side": "no",
+   "label": "Flyers",
+   "refs": [
+    {
+     "pick_id": "s-phi-ml",
+     "leg": null
+    },
+    {
+     "pick_id": "x-phi-sj",
+     "leg": 0
+    },
+    {
+     "pick_id": "l-nhl-dogs3",
+     "leg": 0
+    }
+   ],
+   "book": "fanduel",
+   "odds_api_key": "fanduel",
+   "book_price": "+180",
+   "book_chance": 35.7,
+   "polymarket_price": 34,
+   "diff": 1.7,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nhl-col-phi-2026-10-19",
+   "side": "no",
+   "label": "Flyers",
+   "refs": [
+    {
+     "pick_id": "s-phi-ml",
+     "leg": null
+    },
+    {
+     "pick_id": "x-phi-sj",
+     "leg": 0
+    },
+    {
+     "pick_id": "l-nhl-dogs3",
+     "leg": 0
+    }
+   ],
+   "book": "kalshi",
+   "odds_api_key": "kalshi",
+   "book_price": "+194",
+   "book_chance": 34,
+   "polymarket_price": 34,
+   "diff": 0,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nhl-col-phi-2026-10-19",
+   "side": "no",
+   "label": "Flyers",
+   "refs": [
+    {
+     "pick_id": "s-phi-ml",
+     "leg": null
+    },
+    {
+     "pick_id": "x-phi-sj",
+     "leg": 0
+    },
+    {
+     "pick_id": "l-nhl-dogs3",
+     "leg": 0
+    }
+   ],
+   "book": "draftkings",
+   "odds_api_key": "draftkings",
+   "book_price": "+185",
+   "book_chance": 35.1,
+   "polymarket_price": 34,
+   "diff": 1.1,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nhl-col-phi-2026-10-19",
+   "side": "no",
+   "label": "Flyers",
+   "refs": [
+    {
+     "pick_id": "s-phi-ml",
+     "leg": null
+    },
+    {
+     "pick_id": "x-phi-sj",
+     "leg": 0
+    },
+    {
+     "pick_id": "l-nhl-dogs3",
+     "leg": 0
+    }
+   ],
+   "book": "betmgm",
+   "odds_api_key": "betmgm",
+   "book_price": "+185",
+   "book_chance": 35.1,
+   "polymarket_price": 34,
+   "diff": 1.1,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nhl-col-phi-2026-10-19",
+   "side": "no",
+   "label": "Flyers",
+   "refs": [
+    {
+     "pick_id": "s-phi-ml",
+     "leg": null
+    },
+    {
+     "pick_id": "x-phi-sj",
+     "leg": 0
+    },
+    {
+     "pick_id": "l-nhl-dogs3",
+     "leg": 0
+    }
+   ],
+   "book": "espnbet",
+   "odds_api_key": "espnbet",
+   "book_price": "+180",
+   "book_chance": 35.7,
+   "polymarket_price": 34,
+   "diff": 1.7,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nhl-col-phi-2026-10-19",
+   "side": "no",
+   "label": "Flyers",
+   "refs": [
+    {
+     "pick_id": "s-phi-ml",
+     "leg": null
+    },
+    {
+     "pick_id": "x-phi-sj",
+     "leg": 0
+    },
+    {
+     "pick_id": "l-nhl-dogs3",
+     "leg": 0
+    }
+   ],
+   "book": "bovada",
+   "odds_api_key": "bovada",
+   "book_price": "+200",
+   "book_chance": 33.3,
+   "polymarket_price": 34,
+   "diff": -0.7,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nhl-sj-tor-2026-10-19",
+   "side": "yes",
+   "label": "Sharks",
+   "refs": [
+    {
+     "pick_id": "s-sj-ml",
+     "leg": null
+    },
+    {
+     "pick_id": "x-phi-sj",
+     "leg": 1
+    },
+    {
+     "pick_id": "l-nhl-dogs3",
+     "leg": 1
+    }
+   ],
+   "book": "fanduel",
+   "odds_api_key": "fanduel",
+   "book_price": "+118",
+   "book_chance": 45.9,
+   "polymarket_price": 44,
+   "diff": 1.9,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nhl-sj-tor-2026-10-19",
+   "side": "yes",
+   "label": "Sharks",
+   "refs": [
+    {
+     "pick_id": "s-sj-ml",
+     "leg": null
+    },
+    {
+     "pick_id": "x-phi-sj",
+     "leg": 1
+    },
+    {
+     "pick_id": "l-nhl-dogs3",
+     "leg": 1
+    }
+   ],
+   "book": "kalshi",
+   "odds_api_key": "kalshi",
+   "book_price": "+127",
+   "book_chance": 44.1,
+   "polymarket_price": 44,
+   "diff": 0.1,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nhl-sj-tor-2026-10-19",
+   "side": "yes",
+   "label": "Sharks",
+   "refs": [
+    {
+     "pick_id": "s-sj-ml",
+     "leg": null
+    },
+    {
+     "pick_id": "x-phi-sj",
+     "leg": 1
+    },
+    {
+     "pick_id": "l-nhl-dogs3",
+     "leg": 1
+    }
+   ],
+   "book": "draftkings",
+   "odds_api_key": "draftkings",
+   "book_price": "+120",
+   "book_chance": 45.5,
+   "polymarket_price": 44,
+   "diff": 1.5,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nhl-sj-tor-2026-10-19",
+   "side": "yes",
+   "label": "Sharks",
+   "refs": [
+    {
+     "pick_id": "s-sj-ml",
+     "leg": null
+    },
+    {
+     "pick_id": "x-phi-sj",
+     "leg": 1
+    },
+    {
+     "pick_id": "l-nhl-dogs3",
+     "leg": 1
+    }
+   ],
+   "book": "betmgm",
+   "odds_api_key": "betmgm",
+   "book_price": "+118",
+   "book_chance": 45.9,
+   "polymarket_price": 44,
+   "diff": 1.9,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nhl-sj-tor-2026-10-19",
+   "side": "yes",
+   "label": "Sharks",
+   "refs": [
+    {
+     "pick_id": "s-sj-ml",
+     "leg": null
+    },
+    {
+     "pick_id": "x-phi-sj",
+     "leg": 1
+    },
+    {
+     "pick_id": "l-nhl-dogs3",
+     "leg": 1
+    }
+   ],
+   "book": "espnbet",
+   "odds_api_key": "espnbet",
+   "book_price": "+115",
+   "book_chance": 46.5,
+   "polymarket_price": 44,
+   "diff": 2.5,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nhl-sj-tor-2026-10-19",
+   "side": "yes",
+   "label": "Sharks",
+   "refs": [
+    {
+     "pick_id": "s-sj-ml",
+     "leg": null
+    },
+    {
+     "pick_id": "x-phi-sj",
+     "leg": 1
+    },
+    {
+     "pick_id": "l-nhl-dogs3",
+     "leg": 1
+    }
+   ],
+   "book": "bovada",
+   "odds_api_key": "bovada",
+   "book_price": "+117",
+   "book_chance": 46.1,
+   "polymarket_price": 44,
+   "diff": 2.1,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "astatc-nfl-was-sf-2026-10-19-rec-mikeva-gte6",
+   "side": "yes",
+   "label": "Mike Evans 6+ receptions — Yes",
+   "refs": [
+    {
+     "pick_id": "p-evans-6rec",
+     "leg": null
+    }
+   ],
+   "book": "draftkings",
+   "odds_api_key": "draftkings",
+   "book_price": "-103",
+   "book_chance": 50.7,
+   "polymarket_price": 46,
+   "diff": 4.7,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "astatc-nfl-was-sf-2026-10-19-rec-mikeva-gte6",
+   "side": "yes",
+   "label": "Mike Evans 6+ receptions — Yes",
+   "refs": [
+    {
+     "pick_id": "p-evans-6rec",
+     "leg": null
+    }
+   ],
+   "book": "fanduel",
+   "odds_api_key": "fanduel",
+   "book_price": "-102",
+   "book_chance": 50.5,
+   "polymarket_price": 46,
+   "diff": 4.5,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "astatc-nfl-was-sf-2026-10-19-rec-mikeva-gte6",
+   "side": "yes",
+   "label": "Mike Evans 6+ receptions — Yes",
+   "refs": [
+    {
+     "pick_id": "p-evans-6rec",
+     "leg": null
+    }
+   ],
+   "book": "betmgm",
+   "odds_api_key": "betmgm",
+   "book_price": "-105",
+   "book_chance": 51.2,
+   "polymarket_price": 46,
+   "diff": 5.2,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "astatc-nfl-was-sf-2026-10-19-rec-mikeva-gte6",
+   "side": "yes",
+   "label": "Mike Evans 6+ receptions — Yes",
+   "refs": [
+    {
+     "pick_id": "p-evans-6rec",
+     "leg": null
+    }
+   ],
+   "book": "bovada",
+   "odds_api_key": "bovada",
+   "book_price": "-105",
+   "book_chance": 51.2,
+   "polymarket_price": 46,
+   "diff": 5.2,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "astatc-nfl-was-sf-2026-10-19-rec-mikeva-gte6",
+   "side": "yes",
+   "label": "Mike Evans 6+ receptions — Yes",
+   "refs": [
+    {
+     "pick_id": "p-evans-6rec",
+     "leg": null
+    }
+   ],
+   "book": "espnbet",
+   "odds_api_key": "espnbet",
+   "book_price": "+105",
+   "book_chance": 48.8,
+   "polymarket_price": 46,
+   "diff": 2.8,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "astatc-nfl-was-sf-2026-10-19-int-bropur-gte1",
+   "side": "yes",
+   "label": "Brock Purdy 1+ interceptions thrown — Yes",
+   "refs": [
+    {
+     "pick_id": "p-purdy-int",
+     "leg": null
+    },
+    {
+     "pick_id": "x-purdy-daniels",
+     "leg": 0
+    },
+    {
+     "pick_id": "l-was-upset-script",
+     "leg": 1
+    }
+   ],
+   "book": "draftkings",
+   "odds_api_key": "draftkings",
+   "book_price": "+109",
+   "book_chance": 47.8,
+   "polymarket_price": 42,
+   "diff": 5.8,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "astatc-nfl-was-sf-2026-10-19-int-bropur-gte1",
+   "side": "yes",
+   "label": "Brock Purdy 1+ interceptions thrown — Yes",
+   "refs": [
+    {
+     "pick_id": "p-purdy-int",
+     "leg": null
+    },
+    {
+     "pick_id": "x-purdy-daniels",
+     "leg": 0
+    },
+    {
+     "pick_id": "l-was-upset-script",
+     "leg": 1
+    }
+   ],
+   "book": "betmgm",
+   "odds_api_key": "betmgm",
+   "book_price": "+100",
+   "book_chance": 50,
+   "polymarket_price": 42,
+   "diff": 8,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "astatc-nfl-was-sf-2026-10-19-int-bropur-gte1",
+   "side": "yes",
+   "label": "Brock Purdy 1+ interceptions thrown — Yes",
+   "refs": [
+    {
+     "pick_id": "p-purdy-int",
+     "leg": null
+    },
+    {
+     "pick_id": "x-purdy-daniels",
+     "leg": 0
+    },
+    {
+     "pick_id": "l-was-upset-script",
+     "leg": 1
+    }
+   ],
+   "book": "bovada",
+   "odds_api_key": "bovada",
+   "book_price": "+110",
+   "book_chance": 47.6,
+   "polymarket_price": 42,
+   "diff": 5.6,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "astatc-nfl-was-sf-2026-10-19-int-bropur-gte1",
+   "side": "yes",
+   "label": "Brock Purdy 1+ interceptions thrown — Yes",
+   "refs": [
+    {
+     "pick_id": "p-purdy-int",
+     "leg": null
+    },
+    {
+     "pick_id": "x-purdy-daniels",
+     "leg": 0
+    },
+    {
+     "pick_id": "l-was-upset-script",
+     "leg": 1
+    }
+   ],
+   "book": "espnbet",
+   "odds_api_key": "espnbet",
+   "book_price": "+110",
+   "book_chance": 47.6,
+   "polymarket_price": 42,
+   "diff": 5.6,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "astatc-nhl-sj-tor-2026-10-19-goals-ausmat-gte1",
+   "side": "yes",
+   "label": "Auston Matthews 1+ goals — Yes",
+   "refs": [
+    {
+     "pick_id": "p-matthews-goal",
+     "leg": null
+    }
+   ],
+   "book": "fanduel",
+   "odds_api_key": "fanduel",
+   "book_price": "+120",
+   "book_chance": 45.5,
+   "polymarket_price": 40,
+   "diff": 5.5,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "astatc-nhl-sj-tor-2026-10-19-goals-ausmat-gte1",
+   "side": "yes",
+   "label": "Auston Matthews 1+ goals — Yes",
+   "refs": [
+    {
+     "pick_id": "p-matthews-goal",
+     "leg": null
+    }
+   ],
+   "book": "draftkings",
+   "odds_api_key": "draftkings",
+   "book_price": "+125",
+   "book_chance": 44.4,
+   "polymarket_price": 40,
+   "diff": 4.4,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "astatc-nhl-sj-tor-2026-10-19-goals-ausmat-gte1",
+   "side": "yes",
+   "label": "Auston Matthews 1+ goals — Yes",
+   "refs": [
+    {
+     "pick_id": "p-matthews-goal",
+     "leg": null
+    }
+   ],
+   "book": "bovada",
+   "odds_api_key": "bovada",
+   "book_price": "+117",
+   "book_chance": 46.1,
+   "polymarket_price": 40,
+   "diff": 6.1,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "astatc-nfl-was-sf-2026-10-19-ptd-jaydan-gte2",
+   "side": "yes",
+   "label": "Jayden Daniels 2+ passing touchdowns — Yes",
+   "refs": [
+    {
+     "pick_id": "p-daniels-2td",
+     "leg": null
+    },
+    {
+     "pick_id": "x-purdy-daniels",
+     "leg": 1
+    },
+    {
+     "pick_id": "l-was-upset-script",
+     "leg": 2
+    }
+   ],
+   "book": "draftkings",
+   "odds_api_key": "draftkings",
+   "book_price": "+112",
+   "book_chance": 47.2,
+   "polymarket_price": 44,
+   "diff": 3.2,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "astatc-nfl-was-sf-2026-10-19-ptd-jaydan-gte2",
+   "side": "yes",
+   "label": "Jayden Daniels 2+ passing touchdowns — Yes",
+   "refs": [
+    {
+     "pick_id": "p-daniels-2td",
+     "leg": null
+    },
+    {
+     "pick_id": "x-purdy-daniels",
+     "leg": 1
+    },
+    {
+     "pick_id": "l-was-upset-script",
+     "leg": 2
+    }
+   ],
+   "book": "fanduel",
+   "odds_api_key": "fanduel",
+   "book_price": "+106",
+   "book_chance": 48.5,
+   "polymarket_price": 44,
+   "diff": 4.5,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "astatc-nfl-was-sf-2026-10-19-ptd-jaydan-gte2",
+   "side": "yes",
+   "label": "Jayden Daniels 2+ passing touchdowns — Yes",
+   "refs": [
+    {
+     "pick_id": "p-daniels-2td",
+     "leg": null
+    },
+    {
+     "pick_id": "x-purdy-daniels",
+     "leg": 1
+    },
+    {
+     "pick_id": "l-was-upset-script",
+     "leg": 2
+    }
+   ],
+   "book": "betmgm",
+   "odds_api_key": "betmgm",
+   "book_price": "+120",
+   "book_chance": 45.5,
+   "polymarket_price": 44,
+   "diff": 1.5,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "astatc-nfl-was-sf-2026-10-19-ptd-jaydan-gte2",
+   "side": "yes",
+   "label": "Jayden Daniels 2+ passing touchdowns — Yes",
+   "refs": [
+    {
+     "pick_id": "p-daniels-2td",
+     "leg": null
+    },
+    {
+     "pick_id": "x-purdy-daniels",
+     "leg": 1
+    },
+    {
+     "pick_id": "l-was-upset-script",
+     "leg": 2
+    }
+   ],
+   "book": "bovada",
+   "odds_api_key": "bovada",
+   "book_price": "+105",
+   "book_chance": 48.8,
+   "polymarket_price": 44,
+   "diff": 4.8,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "astatc-nfl-was-sf-2026-10-19-ptd-jaydan-gte2",
+   "side": "yes",
+   "label": "Jayden Daniels 2+ passing touchdowns — Yes",
+   "refs": [
+    {
+     "pick_id": "p-daniels-2td",
+     "leg": null
+    },
+    {
+     "pick_id": "x-purdy-daniels",
+     "leg": 1
+    },
+    {
+     "pick_id": "l-was-upset-script",
+     "leg": 2
+    }
+   ],
+   "book": "espnbet",
+   "odds_api_key": "espnbet",
+   "book_price": "+110",
+   "book_chance": 47.6,
+   "polymarket_price": 44,
+   "diff": 3.6,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "astatc-nfl-was-sf-2026-10-19-td-racwhi-gte1",
+   "side": "yes",
+   "label": "Rachaad White 1+ touchdowns — Yes",
+   "refs": [
+    {
+     "pick_id": "p-white-td",
+     "leg": null
+    }
+   ],
+   "book": "draftkings",
+   "odds_api_key": "draftkings",
+   "book_price": "+115",
+   "book_chance": 46.5,
+   "polymarket_price": 41,
+   "diff": 5.5,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "astatc-nfl-was-sf-2026-10-19-td-racwhi-gte1",
+   "side": "yes",
+   "label": "Rachaad White 1+ touchdowns — Yes",
+   "refs": [
+    {
+     "pick_id": "p-white-td",
+     "leg": null
+    }
+   ],
+   "book": "fanduel",
+   "odds_api_key": "fanduel",
+   "book_price": "+115",
+   "book_chance": 46.5,
+   "polymarket_price": 41,
+   "diff": 5.5,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "astatc-nfl-was-sf-2026-10-19-td-racwhi-gte1",
+   "side": "yes",
+   "label": "Rachaad White 1+ touchdowns — Yes",
+   "refs": [
+    {
+     "pick_id": "p-white-td",
+     "leg": null
+    }
+   ],
+   "book": "betmgm",
+   "odds_api_key": "betmgm",
+   "book_price": "+110",
+   "book_chance": 47.6,
+   "polymarket_price": 41,
+   "diff": 6.6,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "astatc-nfl-was-sf-2026-10-19-td-racwhi-gte1",
+   "side": "yes",
+   "label": "Rachaad White 1+ touchdowns — Yes",
+   "refs": [
+    {
+     "pick_id": "p-white-td",
+     "leg": null
+    }
+   ],
+   "book": "bovada",
+   "odds_api_key": "bovada",
+   "book_price": "+115",
+   "book_chance": 46.5,
+   "polymarket_price": 41,
+   "diff": 5.5,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-mlb-cle-tb-2026-10-19",
+   "side": "yes",
+   "label": "Guardians",
+   "refs": [
+    {
+     "pick_id": "l-cle-ml-under",
+     "leg": 0
+    }
+   ],
+   "book": "fanduel",
+   "odds_api_key": "fanduel",
+   "book_price": "+124",
+   "book_chance": 44.6,
+   "polymarket_price": 43,
+   "diff": 1.6,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-mlb-cle-tb-2026-10-19",
+   "side": "yes",
+   "label": "Guardians",
+   "refs": [
+    {
+     "pick_id": "l-cle-ml-under",
+     "leg": 0
+    }
+   ],
+   "book": "kalshi",
+   "odds_api_key": "kalshi",
+   "book_price": "+133",
+   "book_chance": 42.9,
+   "polymarket_price": 43,
+   "diff": -0.1,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-mlb-cle-tb-2026-10-19",
+   "side": "yes",
+   "label": "Guardians",
+   "refs": [
+    {
+     "pick_id": "l-cle-ml-under",
+     "leg": 0
+    }
+   ],
+   "book": "espnbet",
+   "odds_api_key": "espnbet",
+   "book_price": "+125",
+   "book_chance": 44.4,
+   "polymarket_price": 43,
+   "diff": 1.4,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-mlb-cle-tb-2026-10-19",
+   "side": "yes",
+   "label": "Guardians",
+   "refs": [
+    {
+     "pick_id": "l-cle-ml-under",
+     "leg": 0
+    }
+   ],
+   "book": "betmgm",
+   "odds_api_key": "betmgm",
+   "book_price": "+125",
+   "book_chance": 44.4,
+   "polymarket_price": 43,
+   "diff": 1.4,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-mlb-cle-tb-2026-10-19",
+   "side": "yes",
+   "label": "Guardians",
+   "refs": [
+    {
+     "pick_id": "l-cle-ml-under",
+     "leg": 0
+    }
+   ],
+   "book": "bovada",
+   "odds_api_key": "bovada",
+   "book_price": "+124",
+   "book_chance": 44.6,
+   "polymarket_price": 43,
+   "diff": 1.6,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-mlb-cle-tb-2026-10-19",
+   "side": "yes",
+   "label": "Guardians",
+   "refs": [
+    {
+     "pick_id": "l-cle-ml-under",
+     "leg": 0
+    }
+   ],
+   "book": "draftkings",
+   "odds_api_key": "draftkings",
+   "book_price": "+123",
+   "book_chance": 44.8,
+   "polymarket_price": 43,
+   "diff": 1.8,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nfl-was-sf-2026-10-19",
+   "side": "yes",
+   "label": "Commanders",
+   "refs": [
+    {
+     "pick_id": "l-was-ml-under",
+     "leg": 0
+    },
+    {
+     "pick_id": "l-was-upset-script",
+     "leg": 0
+    }
+   ],
+   "book": "draftkings",
+   "odds_api_key": "draftkings",
+   "book_price": "+350",
+   "book_chance": 22.2,
+   "polymarket_price": 21.8,
+   "diff": 0.4,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nfl-was-sf-2026-10-19",
+   "side": "yes",
+   "label": "Commanders",
+   "refs": [
+    {
+     "pick_id": "l-was-ml-under",
+     "leg": 0
+    },
+    {
+     "pick_id": "l-was-upset-script",
+     "leg": 0
+    }
+   ],
+   "book": "kalshi",
+   "odds_api_key": "kalshi",
+   "book_price": "+355",
+   "book_chance": 22,
+   "polymarket_price": 21.8,
+   "diff": 0.2,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nfl-was-sf-2026-10-19",
+   "side": "yes",
+   "label": "Commanders",
+   "refs": [
+    {
+     "pick_id": "l-was-ml-under",
+     "leg": 0
+    },
+    {
+     "pick_id": "l-was-upset-script",
+     "leg": 0
+    }
+   ],
+   "book": "fanduel",
+   "odds_api_key": "fanduel",
+   "book_price": "+330",
+   "book_chance": 23.3,
+   "polymarket_price": 21.8,
+   "diff": 1.5,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nfl-was-sf-2026-10-19",
+   "side": "yes",
+   "label": "Commanders",
+   "refs": [
+    {
+     "pick_id": "l-was-ml-under",
+     "leg": 0
+    },
+    {
+     "pick_id": "l-was-upset-script",
+     "leg": 0
+    }
+   ],
+   "book": "betmgm",
+   "odds_api_key": "betmgm",
+   "book_price": "+340",
+   "book_chance": 22.7,
+   "polymarket_price": 21.8,
+   "diff": 0.9,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nfl-was-sf-2026-10-19",
+   "side": "yes",
+   "label": "Commanders",
+   "refs": [
+    {
+     "pick_id": "l-was-ml-under",
+     "leg": 0
+    },
+    {
+     "pick_id": "l-was-upset-script",
+     "leg": 0
+    }
+   ],
+   "book": "bovada",
+   "odds_api_key": "bovada",
+   "book_price": "+330",
+   "book_chance": 23.3,
+   "polymarket_price": 21.8,
+   "diff": 1.5,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nfl-was-sf-2026-10-19",
+   "side": "yes",
+   "label": "Commanders",
+   "refs": [
+    {
+     "pick_id": "l-was-ml-under",
+     "leg": 0
+    },
+    {
+     "pick_id": "l-was-upset-script",
+     "leg": 0
+    }
+   ],
+   "book": "espnbet",
+   "odds_api_key": "espnbet",
+   "book_price": "+320",
+   "book_chance": 23.8,
+   "polymarket_price": 21.8,
+   "diff": 2,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "tsc-nfl-was-sf-2026-10-19-total-51pt5",
+   "side": "no",
+   "label": "Under 51.5",
+   "refs": [
+    {
+     "pick_id": "l-was-ml-under",
+     "leg": 1
+    }
+   ],
+   "book": "fanduel",
+   "odds_api_key": "fanduel",
+   "book_price": "-108",
+   "book_chance": 51.9,
+   "polymarket_price": 48,
+   "diff": 3.9,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nhl-ana-nyr-2026-10-19",
+   "side": "yes",
+   "label": "Ducks",
+   "refs": [
+    {
+     "pick_id": "l-nhl-dogs3",
+     "leg": 2
+    }
+   ],
+   "book": "fanduel",
+   "odds_api_key": "fanduel",
+   "book_price": "+115",
+   "book_chance": 46.5,
+   "polymarket_price": 44,
+   "diff": 2.5,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nhl-ana-nyr-2026-10-19",
+   "side": "yes",
+   "label": "Ducks",
+   "refs": [
+    {
+     "pick_id": "l-nhl-dogs3",
+     "leg": 2
+    }
+   ],
+   "book": "kalshi",
+   "odds_api_key": "kalshi",
+   "book_price": "+127",
+   "book_chance": 44.1,
+   "polymarket_price": 44,
+   "diff": 0.1,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nhl-ana-nyr-2026-10-19",
+   "side": "yes",
+   "label": "Ducks",
+   "refs": [
+    {
+     "pick_id": "l-nhl-dogs3",
+     "leg": 2
+    }
+   ],
+   "book": "draftkings",
+   "odds_api_key": "draftkings",
+   "book_price": "+120",
+   "book_chance": 45.5,
+   "polymarket_price": 44,
+   "diff": 1.5,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nhl-ana-nyr-2026-10-19",
+   "side": "yes",
+   "label": "Ducks",
+   "refs": [
+    {
+     "pick_id": "l-nhl-dogs3",
+     "leg": 2
+    }
+   ],
+   "book": "betmgm",
+   "odds_api_key": "betmgm",
+   "book_price": "+118",
+   "book_chance": 45.9,
+   "polymarket_price": 44,
+   "diff": 1.9,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nhl-ana-nyr-2026-10-19",
+   "side": "yes",
+   "label": "Ducks",
+   "refs": [
+    {
+     "pick_id": "l-nhl-dogs3",
+     "leg": 2
+    }
+   ],
+   "book": "espnbet",
+   "odds_api_key": "espnbet",
+   "book_price": "+115",
+   "book_chance": 46.5,
+   "polymarket_price": 44,
+   "diff": 2.5,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  },
+  {
+   "date": "2026-10-19",
+   "market_id": "aec-nhl-ana-nyr-2026-10-19",
+   "side": "yes",
+   "label": "Ducks",
+   "refs": [
+    {
+     "pick_id": "l-nhl-dogs3",
+     "leg": 2
+    }
+   ],
+   "book": "bovada",
+   "odds_api_key": "bovada",
+   "book_price": "+120",
+   "book_chance": 45.5,
+   "polymarket_price": 44,
+   "diff": 1.5,
+   "fetched_at": "2026-10-19T07:28:41.373Z"
+  }
+ ]
 }
