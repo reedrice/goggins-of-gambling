@@ -46,13 +46,14 @@ The scripts load in this order (classic `<script>` tags; each one sets a single 
 ```
 index.html            DOM skeleton (empty onboarding container, header, "I bet on" bar, 5 tab sections, tab bar, tooltip bubble)
 config.js             brand + repo config + platforms[] (one ordered list used everywhere)
-css/style.css         dark mobile-first theme (sections 1-14; 13 = leg start times, 14 = grouped results; 9 = picker/logos/toggle/tooltips, 10 = Record compare table, 11 = pick evaluation box, 12 = Build-a-bet filter panel)
+css/style.css         dark mobile-first theme (sections 1-15; 13 = leg start times, 14 = grouped results, 15 = position badges; 9 = picker/logos/toggle/tooltips, 10 = Record compare table, 11 = pick evaluation box, 12 = Build-a-bet filter panel)
 js/strings.js         all UI text (plain-language rules in its header)
 js/calc.js            odds and parlay math (pure)
 js/evaluate.js        per-pick hit chance, risk label, "My take" verdict, prediction lookup (browser + Node, §18)
 js/storage.js         localStorage schema and access
 js/gametime.js        game start times on slip legs / saved bets: format, countdown, snapshot lookup, sort (browser + Node, §20)
 js/teams.js           team logos: Polymarket logo -> ESPN CDN -> colored circle; ESPN abbreviation fixes
+js/positions.js       player positions: name matching (accents, Jr., initials) + badge/tooltip helpers (browser + Node, §21)
 js/markets-core.js    Polymarket US event/market compaction + labels (browser + Node)
 js/picker-filters.js  Build-a-bet filter rules: day/sport, bet types + sub-types, team, player (browser + Node, §19)
 js/picker-groups.js   groups results: game -> game bets by type / player props by stat category -> player (browser + Node, §19)
@@ -64,6 +65,7 @@ data/markets/events/<slug>.json snapshot: every market of one game (lazy-loaded)
 data/picks.json       today's picks (overwritten daily by the job)
 data/predictions.json game predictions and grades (appended by the job)
 data/bet-log.json     shared calibration log (written by the app with users' tokens)
+data/positions.json   player positions per league from ESPN rosters (written daily by fetch-positions.mjs, §21)
 data/book-odds.json   automatic per-app price comparisons (The Odds API, written daily by fetch-book-odds.mjs, §17)
 tests/calc.test.js        node: math
 tests/gametime.test.js    node: start-time format (CT/ET), hints, lookup, leg order
@@ -71,10 +73,14 @@ tests/evaluate.test.js    node: hit chance / risk / verdict defaults (js/evaluat
 tests/picker-filters.test.js node: filter tree rules (js/picker-filters.js)
 tests/picker-groups.test.js  node: result grouping, line order, default open state, speed (js/picker-groups.js)
 tests/github-log.test.js  node: log writer against a mocked API
+tests/positions.test.js   node: player-name matching, never-guess rule, lookup, badge HTML (js/positions.js)
+tests/markets-core.test.js node: team full names (NBA city + nickname) and NBA prop buckets
 tests/smoke.js            headless Chrome UI walk-through (puppeteer-core, --no-save)
 scripts/update-picks.mjs  daily-job CLI: validate, write, commit, and push picks/predictions
 scripts/fetch-markets.mjs daily-job CLI: refresh data/markets from Polymarket US + match Kalshi, enrich picks.json
+scripts/fetch-positions.mjs daily-job CLI: ESPN rosters (+ NBA depth charts) -> data/positions.json; run by fetch-markets.mjs (§21)
 scripts/fetch-book-odds.mjs daily-job CLI: other apps' prices for today's picks (The Odds API, ODDS_API_KEY) -> data/book-odds.json
+.cache/espn/          git-ignored 20-hour cache of ESPN roster responses
 .nojekyll             tells Pages to serve files as-is
 README.md             user-facing overview and the picks.json schema
 ```
@@ -190,7 +196,7 @@ Daily routine:
 2. `grade` yesterday's predictions.
 3. `add-predictions` today's game predictions (`result` defaults to `pending`; ids like `2026-10-20-was-sf`).
 4. `picks` the new slate. Fill in `hit_prob` (your real estimated chance, especially for same-game parlays), and `verdict`/`prediction_id` when you have something better than the defaults; anything missing is computed and written for you (§18). Pages redeploys in about a minute, and the app cache-busts its fetches.
-5. `node scripts/fetch-markets.mjs --commit` (see §13). Run it **after** step 4 so the new picks get Polymarket/Kalshi links and Kalshi prices.
+5. `node scripts/fetch-markets.mjs --commit` (see §13). Run it **after** step 4 so the new picks get Polymarket/Kalshi links and Kalshi prices. It also refreshes player positions (`data/positions.json`, §21).
 5b. `node scripts/fetch-book-odds.mjs --commit` (see §17). Run it **after** step 5: it prices today's picks at the other apps through The Odds API (needs `ODDS_API_KEY` in the environment; about 6-12 of the 500 monthly credits).
 6. Read `data/bet-log.json` to compare quoted vs. estimated multiples per platform and tune `skip_below`.
 
@@ -235,21 +241,23 @@ Fallback works through one capture-phase `error` listener (`Teams.install()`), s
 **Pricing rule (Polymarket US):** the market side with `long:true` is "Yes" and its quote is the best ask. The No cost is `100 − bestBid`. Spreads are listed under the favorite's slug (e.g. "TB −1.5"); the long side may be the underdog +1.5, so labels come from each side's own team and line (`MarketsCore.fmtLine`). Totals: long = Over.
 
 **Snapshot schema:**
-- `data/markets/index.json`: `{schema_version, updated_at, source, dates[], events:[{id, slug, sport, league, title, start_time, date (CT), url, polymarket_url, kalshi_url, teams:[{abbr, display, name, short, full (name with city, for search), logo, color}], market_count, players:[[name, teamAbbr]], file}]}`.
+- `data/markets/index.json`: `{schema_version, updated_at, source, dates[], events:[{id, slug, sport, league, title, start_time, date (CT), url, polymarket_url, kalshi_url, teams:[{abbr, display, name, short, full (name with city, for search), logo, color}], market_count, players:[[name, teamAbbr]], file}]}`. `full` is the full team name. Polymarket splits NBA names (`name` "76ers", `safeName` "Philadelphia", Lakers `safeName` "Los Angeles L"), so `MarketsCore.fullName` joins them into "Philadelphia 76ers" / "Los Angeles Lakers".
 - `data/markets/events/<slug>.json`: the same event plus `markets:[{id (market slug), type (moneyline|spread|total|prop|other), group (lines|props|other), smt, label, line, side_yes_label, side_no_label, yes_ask, yes_bid, no_cost (cents), player?, team?, kalshi?:{ticker, yes, no}}]`.
 
 **Refreshing it:**
 ```bash
 node scripts/fetch-markets.mjs --commit          # next 4 days, match Kalshi, enrich picks.json, commit + push
-#   --days N   --no-kalshi   --no-push   (no --commit = write files only)
+#   --days N   --no-kalshi   --no-positions   --no-push   (no --commit = write files only)
 ```
-Takes 30-60s. It covers NFL, MLB, NHL, NBA, WNBA and the main soccer leagues (`MarketsCore.LEAGUES`), deletes event files for games that dropped out, and never writes dollars. Run it daily after the picks update; running it again later in the day just makes the snapshot fresher.
+Takes 30-60s. It covers NFL, MLB, NHL, NBA, WNBA and the main soccer leagues (`MarketsCore.LEAGUES`), deletes event files for games that dropped out, and never writes dollars. Run it daily after the picks update; running it again later in the day just makes the snapshot fresher. It also refreshes `data/positions.json` (§21) and tags prop picks/legs in `picks.json` with `player`, `player_team` and `league` (used for the position badge).
+
+**NBA (added 2026-10-19):** game bets (who wins, spread, total, 1st-half / 1st-quarter lines) and player props (`basketball_player_points / rebounds / assists / threes / blocks / steals`) come from the same gateway as every other league. Polymarket US had no PRA or double-double props on 2026-10-19; the code already has categories for them (`combos` bucket, `points_rebounds_assists` etc. in `STR.calc.f.stats`). Polymarket posts props about a day ahead (on 2026-10-19: props for the 3 Oct 20 games only).
 
 ## 14. "I bet on" platform and Kalshi links
 
 `betdash_prefs.platform` decides where every **Open** button goes:
 - **Polymarket US:** `polymarket_url` (`https://polymarket.us/sports/{league}/{event slug}`).
-- **Kalshi:** `fetch-markets.mjs` matches each game through the public API `https://api.elections.kalshi.com/trade-api/v2` (event tickers like `KXNFLGAME-26OCT19WASSF`; MLB adds the start time, `KXMLBGAME-26OCT192008CLETB`; sibling series such as `KXNFLSPREAD`, `KXNFLTOTAL`, `KXNFLPASSINT` share the suffix). Markets match by team code (who wins), favorite + `floor_strike` (spreads), `floor_strike` (totals), and player name + `floor_strike = line − 0.5` (props). Series and team-code tables are `KALSHI_SERIES` and `KALSHI_ALIASES` in the script.
+- **Kalshi:** `fetch-markets.mjs` matches each game through the public API `https://api.elections.kalshi.com/trade-api/v2` (event tickers like `KXNFLGAME-26OCT19WASSF`; MLB adds the start time, `KXMLBGAME-26OCT192008CLETB`; sibling series such as `KXNFLSPREAD`, `KXNFLTOTAL`, `KXNFLPASSINT` share the suffix). Markets match by team code (who wins), favorite + `floor_strike` (spreads), `floor_strike` (totals), and player name + `floor_strike = line − 0.5` (props). Series and team-code tables are `KALSHI_SERIES` and `KALSHI_ALIASES` in the script. NBA series (checked against the Kalshi API on 2026-10-19): `KXNBAGAME`, `KXNBASPREAD`, `KXNBATOTAL`, `KXNBAPTS`, `KXNBAREB`, `KXNBAAST`, `KXNBA3PT`, `KXNBASTL`, `KXNBABLK`, `KXNBAPRA` (there is no `KXNBAPTSREBAST`).
 - On picks it writes `kalshi_url`, `kalshi_match` (`market` | `event` | `none`) and `kalshi_price`. Fallbacks: no exact market → the game's event page; no event at all → Kalshi search (`https://kalshi.com/search?query=…`) and a **"Not on Kalshi"** badge.
 - **Link format (fixed 2026-10-19).** A friend on the Kalshi phone app reported that Open buttons landed on the app's generic "For you" page. The old links were `kalshi.com/markets/<series>/<event>`: a desktop browser redirects these, but the app (which claims every `kalshi.com/markets/*` link via its apple-app-site-association) doesn't. Links now use the same 3-part shape as Kalshi's own Share button:
   ```
@@ -332,7 +340,8 @@ node scripts/fetch-book-odds.mjs --commit       # price today's picks, write dat
 - **Key:** read only from `process.env.ODDS_API_KEY`. The script never prints, logs, writes or commits it: URLs are logged without their query, and errors are scrubbed. Don't add it to any file.
 - **Budget:** free plan, 500 credits/month. One `/odds` call costs (markets requested) × (regions). We send `bookmakers=` with 8 keys, which counts as one region, and we request only the market types today's picks use (e.g. MLB h2h+spreads+totals = 3, NHL h2h = 1, NFL h2h+totals = 2). Player props cost 1 credit per prop market per game (`/events/{id}/odds`) and are fetched only for games with a prop pick, if the run stays within `--max-credits`. `/sports` and `/sports/{sport}/events` are free. The first run (2026-10-19) cost **11 credits** (6 lines + 5 props), leaving 489. At the 12-credit cap, the worst case is about 370 a month.
 - **Books on the free plan (first run):** FanDuel, DraftKings, BetMGM, Bovada, ESPN Bet (`espnbet`, "theScore Bet") and Kalshi (`us_ex`). Caesars (`williamhill_us`) and Fanatics returned nothing; they're paid-plan only (`oddsApiPaid: true` in config, shown as "Needs a paid odds plan"). bet365 isn't in the US feed. Polymarket US is the baseline, so it isn't requested.
-- **Matching** is documented in the script header: game by both team names within 36h; h2h by team; spreads by team + signed line from the side label; totals by Over/Under + line; props by player name, with Polymarket "N+" = Over N−0.5 and anytime TD/goal = "Yes". Prop types are mapped in `PROP_MARKETS`, and sports in `SPORT_KEYS` (NBA/WNBA are ready, but only called when a pick needs them).
+- **Matching** is documented in the script header: game by both team names within 36h; h2h by team; spreads by team + signed line from the side label; totals by Over/Under + line; props by player name, with Polymarket "N+" = Over N−0.5 and anytime TD/goal = "Yes". Prop types are mapped in `PROP_MARKETS` (NBA: points, rebounds, assists, threes, blocks, steals, PRA), and sports in `SPORT_KEYS` (`basketball_nba`, `basketball_wnba`). A sport is only priced when a pick needs it, so NBA costs nothing on days without NBA picks.
+- **Priority when the cap is tight:** sports are ranked by how many of today's picks/legs they have. Game lines are taken in that order while they fit `--max-credits`, then prop games (the one with the most prop picks first). Whatever doesn't fit is named in the log and in `meta.props`. The log line `Priority (most picks first): nfl 6, nhl 4, mlb 3` shows the order. A dry run with one extra NBA prop pick planned 12 credits (lines 6, props 6), right at the cap.
 - **UI:** the Record tab's "From odds feed" column shows each app's count and average difference; "Total" adds the logged bets. Single-bet pick cards show an "Other apps" line: "cheapest is Kalshi at 48.1¢ (+108), 0.9¢ less than Polymarket US (49¢)" or "none cheaper…". It uses today's rows whose `refs` point at that pick.
 
 ## 18. Pick evaluation: "My hit chance", risk label, "My take"
@@ -412,6 +421,7 @@ Game card: both logos, "Commanders @ 49ers", "NFL · Mon Oct 19 · 7:15 PM CT"  
 - **Open all / Close all** buttons sit in the results header.
 - **Speed:** a node's body is only built when it's opened (an NFL game has ~700 bets). Grouping a whole NFL game takes ~15 ms, and "Open all" on 199 props takes ~0.1 s.
 - **"Show N more"** is per list (10 at a time). Open/closed state and page sizes are tracked by stable node ids, e.g. `g|<game>|prop|passing_yards|Brock Purdy`.
+- `STAT_ORDER` is per sport (football, baseball, hockey, basketball, soccer; sport = the `smt` prefix). Basketball: Points, Rebounds, Assists, 3-pointers made, PRA and other combos, Blocks, Steals. A sport with no order yet falls back to the bucket order.
 - Category names are in `STR.calc.f.stats`. An unknown stat is made readable automatically ("shots_blocked" becomes "Shots blocked"). With nothing narrowed and no search, it only shows "N bets for Today…". **Reset filters** goes back to today, all sports, all bets, any team, and clears the search.
 
 **Search fix ("San" showed only game bets):** search rows used to carry both teams' names on every market, so "San" scored all ~700 49ers-game bets the same, main bets got a bonus, and only the top 30 were shown, so no props made the cut. Now a player prop carries only its **own team's** words (nickname, `full` name with city, which the snapshot added on 2026-10-19 because NHL/NBA `name` is only "Sharks", plus abbreviations) plus its stat in plain words and its bucket label. Game bets carry both teams. Results are grouped so props can't be crowded out. Verified: "San" + Player props on 2026-10-19 → 199 props: all 148 of the 49ers player props plus 51 San Jose Sharks props. Ties are sorted by start time, so the 6 PM Sharks game comes first.
@@ -439,3 +449,29 @@ Every leg on the slip being built, and on saved bets in My bets (open cards and 
 **Shared bet log:** `GitHubLog.buildRecord` copies `start_time` per leg only when it is a strict ISO string. Still no other leg fields, and no dollars.
 
 **Tests:** `node tests/gametime.test.js`, the github-log test (strict ISO only), and tests/smoke.js. The smoke test adds an MLB leg plus an NFL leg plus a typed leg and checks the order and times, the saved `startTime`, the shared-log legs, an old bet backfilled by market id, and no sideways scroll at 390px.
+
+## 21. Player positions (js/positions.js, scripts/fetch-positions.mjs, data/positions.json)
+
+**What users see:** a small grey badge after every player's name: `Brock Purdy [QB]`, `Jalen Brunson [PG]`, `Auston Matthews [C]`. Tapping it (or hovering on desktop) shows the full name, e.g. "QB = Quarterback" (`STR.posTip`). It's shown on:
+- Build-a-bet prop rows and player group headers, and the Player dropdown, as plain text: "Brock Purdy · QB".
+- Slip legs and saved bets (My bets). The leg stores `player`, `playerTeam` and `league`. Older legs have none, so they get no badge.
+- Pick cards: after the player's name in the market line, and in front of parlay legs. `fetch-markets.mjs` tags picks/legs with `player`, `player_team` and `league` from the matched market.
+
+**Where positions come from:** ESPN's public APIs (no key).
+- Rosters: `site.api.espn.com/apis/site/v2/sports/{sport}/{league}/teams` and `…/teams/{id}/roster`. These give each league's own codes and names: NFL QB/RB/WR/TE…, NHL C/LW/RW/D/G, MLB **SP/RP**/C/1B…DH (starting vs. relief pitcher comes straight from ESPN).
+- **NBA:** the roster only says G/F/C, so the script reads `…/teams/{id}/depthcharts` and uses each player's highest spot there (PG/SG/SF/PF/C). It falls back to the roster code.
+- Nothing about positions is hardcoded in the app. Codes and full names travel in `positions.json`. A new league needs one line in `ESPN_PATHS` (and an abbreviation alias in `ABBR` if Polymarket and ESPN differ, e.g. WNBA `gsv` → `gs`). Leagues without a path are listed in `skipped_leagues`.
+
+**Name matching** (`Positions.matchName`; tests in `tests/positions.test.js`). `normName` strips accents (Dončić → doncic), Jr./Sr./II–V, periods and apostrophes (C.J. → cj, De'Aaron → deaaron), and hyphens. Then, accepting only a **unique** hit:
+1. same name on the player's team
+2. same name anywhere in the league (traded players)
+3. first initial + last name on the team ("J. Jennings")
+4. short/long first name with the same last name on the team ("Chris" / "Christian")
+
+Anything else gets **no badge**. It's never guessed, and it's listed in `positions.json → unmatched` and in the script output.
+
+**File:** `data/positions.json` = `{schema_version, updated_at, source, leagues:{<league>:{names:{QB:"Quarterback"}, players:{"<polyTeamAbbr>|<normName>":"QB"}}}, stats:{<league>:{players, matched, rate, by:{team, league, initial, nickname}}}, unmatched:{<league>:["Name (abbr)"]}, skipped_leagues:[]}`. It holds only names and positions, no money.
+
+**Refresh:** automatic inside `node scripts/fetch-markets.mjs` (skip with `--no-positions`). It covers every player with a prop in the snapshot, and its counts are in the commit body. Standalone: `node scripts/fetch-positions.mjs [--commit] [--no-push] [--force]`. ESPN responses are cached in `.cache/espn/` (git-ignored) for 20 hours, so a second run the same day is instant. `--force` ignores the cache.
+
+**Match rate on 2026-10-19:** 100% in every league with props: NFL 34/34, NBA 27/27, NHL 71/71, MLB 14/14, WNBA 13/13, soccer (EPL 1, La Liga 3, Serie A 5).

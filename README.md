@@ -15,7 +15,7 @@ If you're an AI agent or a new maintainer, start with **[HANDOFF.md](HANDOFF.md)
 | **Onboarding** | On first visit, a full-screen setup asks for display name, starting money, standard bet size (default 2%), most per bet (default 5%), an optional end date, and **which app you bet on** (Polymarket US or Kalshi). Nothing else shows until it's done. |
 | **"I bet on" bar** | Under the header. Picks Polymarket US or Kalshi; every **Open** button deep-links there. Same setting as onboarding and Settings. |
 | **Picks** | Renders `data/picks.json`: game predictions, single bets, player props, parlays, long shots, and non-sports markets. Stakes are stored in **units** and converted to dollars with *your* unit size. |
-| **Build a bet** | A **market picker**: a step-by-step **Filters** panel (day, sport, team bets or player props with sub-types like yards or goals, team with logos, player), a search box ("purdy", "san") on top of it, or browse by game, then tap Yes/No to add a pick at its Polymarket US price (live when you open a game; daily snapshot otherwise). Team logos everywhere; picks from the same game get flagged. **Type a bet yourself** for any other app (prices as `63`, `0.63`, `-150`, `+120`, or `2.5`). Shows the payout, chance to win, how the app's payout compares to ours, and expected profit per $10. **Save bet** adds the slip to your tracker. |
+| **Build a bet** | A **market picker**: a step-by-step **Filters** panel (day, sport, team bets or player props with sub-types like yards or goals, team with logos, player with position, e.g. "Brock Purdy · QB"), a search box ("purdy", "san") on top of it, or browse by game, then tap Yes/No to add a pick at its Polymarket US price (live when you open a game; daily snapshot otherwise). Team logos everywhere; picks from the same game get flagged. **Type a bet yourself** for any other app (prices as `63`, `0.63`, `-150`, `+120`, or `2.5`). Shows the payout, chance to win, how the app's payout compares to ours, and expected profit per $10. **Save bet** adds the slip to your tracker. |
 | **Bets** | Current bankroll, a bankroll-over-time chart, open bets with settle won/lost/push, settled P/L, and W-L-P and ROI for singles, props, parlays, long shots, and non-sports. Export and import JSON backups. |
 | **Record** | Win-pick accuracy and a calibration table (5-point buckets) from `data/predictions.json`, plus how each of 10 apps compares: combo bets people logged, prices pulled daily from The Odds API vs. Polymarket US, and the total. |
 | **Settings** | Edit or reset your profile, choose your app and price format (cents default, American or decimal), manage your GitHub token, set the share default, and re-sync failed shares. |
@@ -61,7 +61,7 @@ A daily job overwrites this whole file. All fields are optional unless marked **
 | field | type | notes |
 |---|---|---|
 | `id` | string, **required** | unique within the file, e.g. `p-purdy-int` |
-| `sport` | string | `NFL`, `MLB`, `NHL`, `Politics`, ... |
+| `sport` | string | `NFL`, `MLB`, `NHL`, `NBA`, `WNBA`, `Soccer`, `Politics`, ... (free text) |
 | `event` | string | e.g. `Commanders @ 49ers (MNF)` |
 | `market` | string | e.g. `Brock Purdy interceptions` |
 | `side` | string, **required** | the exact thing to buy, e.g. `Purdy 1+ INT — YES` |
@@ -84,6 +84,7 @@ A daily job overwrites this whole file. All fields are optional unless marked **
 | `verdict` | string (≤120) | "My take" one-liner. Default from `action` and edge |
 | `prediction_id` | string | game prediction to show on the card (default: matched by game name) |
 | `polymarket_url`, `kalshi_url`, `kalshi_match`, `kalshi_price` | written by `scripts/fetch-markets.mjs` | per-platform Open links; `kalshi_match` is `market`, `event` or `none` |
+| `player`, `player_team`, `league` | written by `scripts/fetch-markets.mjs` | for player props (picks and legs): who it is, for the position badge ("Brock Purdy QB") |
 
 **MultiPick** (parlays, long shots) has the Pick fields plus:
 

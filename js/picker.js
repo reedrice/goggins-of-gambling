@@ -46,6 +46,7 @@
     if (!r.ok) throw new Error('markets index ' + r.status);
     cache.index = await r.json();
     window.Teams.registerFromIndex(cache.index);
+    await window.Positions.load();   // position badges (no file = no badges)
     return cache.index;
   }
 
@@ -167,6 +168,8 @@
       kalshiPrice: m.kalshi ? (side === 'yes' ? m.kalshi.yes : m.kalshi.no) : null,
       marketId: m.id, side, eventSlug: ev.slug, eventTitle: shortTitle(ev),
       startTime: ev.start_time || null, // game start (ISO), shown on the slip and saved bets (js/gametime.js)
+      // player props: who + which team/league, for the position badge on the slip and saved bets
+      player: m.player || null, playerTeam: m.player ? m.team : null, league: m.player ? ev.league : null,
       teams: sideTeams(ev, m, side).map(t => ({ league: t.league, abbr: t.abbr, logo: t.logo, color: t.color, display: t.display })),
       asOf, live: !!live
     };
@@ -475,7 +478,8 @@
         const players = PF.playerOptions(eventsIn(f), f.team);
         if (f.player && !players.includes(f.player)) f.player = '';
         $('.pf-player').innerHTML = `<option value="">${esc(players.length ? F.anyPlayer : F.noPlayers)}</option>` +
-          players.map(p => `<option value="${esc(p)}" ${p === f.player ? 'selected' : ''}>${esc(p)}</option>`).join('');
+          // option text "Brock Purdy · QB"; the value stays the plain name
+          players.map(p => `<option value="${esc(p)}" ${p === f.player ? 'selected' : ''}>${esc(window.Positions.label(f.team.split(':')[0], f.team.split(':')[1], p))}</option>`).join('');
       }
 
       // Summary line (shown even when the panel is folded) + count.
@@ -572,7 +576,7 @@
         case 'team': return `<span class="pg-ico" aria-hidden="true">🏟️</span><span class="pg-title"><b>${esc(F.gameBets)}</b></span>`;
         case 'prop': return `<span class="pg-ico" aria-hidden="true">🙋</span><span class="pg-title"><b>${esc(F.propBets)}</b></span>`;
         case 'sub': return `<span class="pg-title">${esc(F.teamSubs[n.key] || n.key)}</span>`;
-        case 'player': return `${window.Teams.badge(Object.assign({ league: ev.league }, (ev.teams || []).find(t => t.abbr === n.team) || {}), 22)}<span class="pg-title"><b>${esc(n.player)}</b></span>`;
+        case 'player': return `${window.Teams.badge(Object.assign({ league: ev.league }, (ev.teams || []).find(t => t.abbr === n.team) || {}), 22)}<span class="pg-title"><span class="pg-pname"><b>${esc(n.player)}</b>${window.Positions.badge(ev.league, n.team, n.player)}</span></span>`;
         default: return `<span class="pg-title">${esc(statLabel(n.key))}</span>`;
       }
     }
@@ -669,7 +673,7 @@
         <h4>${esc(STR.calc.gameLines)}</h4>
         ${lines.map(m => marketRow(ev, m)).join('') || `<div class="muted small">${esc(STR.none)}</div>`}
         <h4>${esc(STR.calc.playerProps)}</h4>
-        ${players.map(p => `<details class="pgroup" data-player="${esc(p)}"><summary>${window.Teams.badge(Object.assign({ league: ev.league }, (ev.teams || []).find(t => t.abbr === byPlayer[p][0].team) || {}), 22)} ${esc(p)} <span class="muted small">(${byPlayer[p].length})</span></summary><div class="pgroup-body"></div></details>`).join('') || `<div class="muted small">${esc(STR.none)}</div>`}
+        ${players.map(p => `<details class="pgroup" data-player="${esc(p)}"><summary>${window.Teams.badge(Object.assign({ league: ev.league }, (ev.teams || []).find(t => t.abbr === byPlayer[p][0].team) || {}), 22)} ${esc(p)}${window.Positions.badge(ev.league, byPlayer[p][0].team, p)} <span class="muted small">(${byPlayer[p].length})</span></summary><div class="pgroup-body"></div></details>`).join('') || `<div class="muted small">${esc(STR.none)}</div>`}
         <details class="pgroup" data-other="1"><summary>${esc(STR.calc.other)} <span class="muted small">(${other.length})</span></summary><div class="pgroup-body"></div></details>`;
       // Render group bodies only when opened (an NFL game has ~700 bets).
       $('.pgames').querySelectorAll('details.pgroup').forEach(d => d.addEventListener('toggle', () => {
@@ -694,7 +698,7 @@
       };
       const logos = m.player ? window.Teams.badge(Object.assign({ league: ev.league }, (ev.teams || []).find(t => t.abbr === m.team) || {}), 22) : withGame ? window.Teams.badges(teamsOf(ev), 20) : '';
       return `<div class="mrow">
-        <div class="mlabel">${logos}<span>${esc(m.label)}${withGame ? `<span class="muted small"> · ${esc(shortTitle(ev))}, ${esc(when(ev.start_time, true))}</span>` : ''}</span></div>
+        <div class="mlabel">${logos}<span>${m.player ? window.Positions.inText(m.label, ev.league, m.team, m.player) : esc(m.label)}${withGame ? `<span class="muted small"> · ${esc(shortTitle(ev))}, ${esc(when(ev.start_time, true))}</span>` : ''}</span></div>
         <div class="mbtns">${btn('yes')}${btn('no')}</div>
       </div>`;
     }

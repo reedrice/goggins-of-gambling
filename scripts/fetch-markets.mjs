@@ -15,7 +15,8 @@
  *   sends no CORS headers, so Kalshi matching can only happen here.
  *
  * USAGE
- *   node scripts/fetch-markets.mjs [--days 4] [--no-kalshi] [--commit] [--no-push]
+ *   node scripts/fetch-markets.mjs [--days 4] [--no-kalshi] [--no-positions] [--commit] [--no-push]
+ *     (also refreshes data/positions.json via scripts/fetch-positions.mjs unless --no-positions)
  *     --days N    today (America/Chicago) + N-1 following days (default 4)
  *     --commit    git add/commit the data files with a descriptive message, then push
  *     --no-push   with --commit: commit only
@@ -44,6 +45,7 @@
  *      THE POLYMARKET SIDES (yes = same outcome as side_yes_label).
  */
 import fs from 'node:fs';
+import { refreshPositions } from './fetch-positions.mjs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -374,6 +376,8 @@ function enrichPicks(events) {
     obj.kalshi_url = kt ? Core.kalshiMarketUrl(mk.m.kalshi, obj.market_side === 'no' ? 'no' : 'yes', SLUGS) : (ev.kalshi_url || null);
     // kalshi_match tells the UI how good the link is: exact market, event page, or nothing.
     obj.kalshi_match = kt ? 'market' : ev.kalshi_url ? 'event' : 'none';
+    // Player props: who it is, for the position badge on pick cards (js/positions.js).
+    if (mk && mk.m.player) Object.assign(obj, { player: mk.m.player, player_team: mk.m.team, league: ev.league });
     if (mk && mk.m.kalshi) obj.kalshi_price = obj.market_side === 'no' ? mk.m.kalshi.no : mk.m.kalshi.yes;
     else delete obj.kalshi_price;
     if (JSON.stringify(obj) !== before) n++;
@@ -394,6 +398,11 @@ if (!flag('--no-kalshi')) {
 }
 const { bytes, indexBytes } = writeOutputs(events, dates);
 const enriched = enrichPicks(events);
+// Player positions for everyone with a prop (ESPN rosters, cached 20 h).
+let posLines = [];
+if (!flag('--no-positions')) {
+  try { posLines = (await refreshPositions({ quiet: true })).summary.map(l => 'Positions ' + l); } catch (e) { console.warn('Positions failed (snapshot still written):', e.message); }
+}
 const bySport = events.reduce((a, e) => ((a[e.sport] = (a[e.sport] || 0) + 1), a), {});
 const totalMk = events.reduce((s, e) => s + e.markets.length, 0);
 const summary = [
@@ -401,13 +410,14 @@ const summary = [
   `Games: ${events.length} (${Object.entries(bySport).map(([k, v]) => `${k} ${v}`).join(', ')}), markets: ${totalMk}`,
   `Kalshi: matched ${ks.matched}/${ks.events} games, ${ks.markets} markets with Kalshi prices`,
   `Size: index ${(indexBytes / 1024).toFixed(0)} KB, total ${(bytes / 1024 / 1024).toFixed(1)} MB across ${events.length} event files`,
-  `picks.json: ${enriched} pick/leg link(s) updated`
+  `picks.json: ${enriched} pick/leg link(s) updated`,
+  ...posLines
 ];
 summary.forEach(l => console.log(l));
 
 if (flag('--commit')) {
   const git = (...a) => execFileSync('git', a, { cwd: ROOT, encoding: 'utf8' }).trim();
-  git('add', '-A', '--', 'data/markets', 'data/picks.json');
+  git('add', '-A', '--', 'data/markets', 'data/picks.json', 'data/positions.json');
   if (!git('diff', '--cached', '--name-only')) console.log('No market changes to commit.');
   else {
     git('commit', '-m', `Refresh market snapshot for ${dates[0]} to ${dates[dates.length - 1]}\n\n${summary.join('\n')}\n\nWritten by scripts/fetch-markets.mjs from public Polymarket US and Kalshi\nmarket data. Contains prices only; no dollar amounts or tokens.`);

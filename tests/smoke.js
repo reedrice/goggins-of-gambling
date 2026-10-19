@@ -4,6 +4,7 @@
  *   npm i --no-save puppeteer-core && python3 -m http.server 8765 &
  *   CHROME=/usr/bin/google-chrome node tests/smoke.js http://localhost:8765/
  * Covers: onboarding (incl. platform step) -> picks (logos, Open links) ->
+ * position badges (pick cards, player dropdown, rows, slip, saved bets) ->
  * builder search ("purdy") + filters ("San" + Player props -> 49ers props,
  * team + player dropdowns, remembered, reset) + browse (game -> spread) -> related-picks flag ->
  * live price refresh -> save -> settle -> record (10 platform rows) ->
@@ -44,6 +45,9 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await cards[9].screenshot({ path: SHOT + '/2c-card-parlay.png' });
   await p.addStyleTag({ content: '.topbar,.tabbar,.plat-bar{visibility:visible}' });
   console.log('other-apps lines:', await p.$$eval('#tab-picks .other-apps', x => x.length), '| first:', await p.$eval('#tab-picks .other-apps', e => e.innerText).catch(() => 'none'));
+  // Player position badges on pick cards + their tap tooltip.
+  console.log('pick-card positions:', await p.$$eval('#tab-picks .pos-badge', x => x.map(e => (e.closest('.pick-sub, li') || e.parentElement).className + ': ' + (e.closest('.pick-sub, li') || e.parentElement).textContent.replace(/\s+/g, ' ').trim().slice(0, 40)).join(' | ')));
+  if (await p.$('#tab-picks .pos-badge')) { await tap('#tab-picks .pos-badge'); await wait(200); console.log('position tooltip:', await p.$eval('#tip-pop', e => (e.hidden ? 'HIDDEN' : e.textContent))); await p.mouse.click(5, 300); }
   await p.click('#plat-toggle [data-plat="polymarket_us"]'); await wait(300);
   console.log('first open link (PM US):', await p.$eval('#tab-picks .pick-actions a', a => a.href));
   await p.screenshot({ path: SHOT + '/2-picks.png' });
@@ -85,7 +89,9 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   console.log('team list:', await p.$$eval('.pf-teamopt', x => x.length + ' options, logos ' + x.filter(e => e.querySelector('.tlogo')).length));
   await tap('.pf-teamopt[data-team="nfl:sf"]'); await wait(900);
   console.log('player step visible:', await p.$eval('.pf-player-step', e => !e.hidden), '| players:', await p.$$eval('.pf-player option', x => x.length - 1), '| count:', await p.$eval('.pf-count', e => e.textContent));
+  console.log('player dropdown (with positions):', await p.$$eval('.pf-player option', x => x.slice(1, 6).map(e => e.textContent).join(' | ')));
   await p.select('.pf-player', 'Brock Purdy'); await wait(900);
+  console.log('player header badge:', await p.$eval('.presults details.pg-player > summary', e => e.textContent.replace(/\s+/g, ' ').trim()));
   console.log('Purdy only:', await p.$eval('.pf-count', e => e.textContent), '| categories:', await p.$$eval('.presults details.pg-stat > summary', x => x.map(e => e.textContent.replace(/\s+/g, ' ').trim()).join(', ')), '| first row:', await p.$eval('.presults .mlabel', e => e.textContent.trim()));
   await p.addStyleTag({ content: '.topbar,.tabbar,.plat-bar{visibility:hidden}' });
   await (await p.$('.presults')).screenshot({ path: SHOT + '/3c-grouped-phone.png' });
@@ -142,6 +148,8 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   console.log('old link upgraded:', await p.evaluate(() => Picker.fixKalshiUrl('https://kalshi.com/markets/kxnflgame/kxnflgame-26oct19wassf')));
   console.log('saved leg start times:', await p.evaluate(() => JSON.parse(localStorage.betdash_bets)[0].legs.map(l => l.startTime)));
   console.log('shared-log legs:', JSON.stringify(await p.evaluate(() => GitHubLog.buildRecord(JSON.parse(localStorage.betdash_bets)[0], 'x').legs)));
+  console.log('saved leg players:', await p.evaluate(() => JSON.parse(localStorage.betdash_bets)[0].legs.map(l => l.player && `${l.player} (${l.league}/${l.playerTeam})`)));
+  console.log('my bets position badges:', await p.$$eval('#tab-bets .bet-legs .pos-badge', x => x.map(e => e.textContent + ' = ' + e.dataset.tipText).join(' | ')));
   console.log('my bets leg times:', await p.$$eval('#tab-bets .bet-legs .leg-when', x => x.map(e => e.textContent.trim()).join(' | ')));
   // An older bet saved before start times existed: filled in from the snapshot by market id.
   await p.evaluate(() => { const bs = JSON.parse(localStorage.betdash_bets); bs.push({ id: 'old1', createdAt: '2026-10-19T06:00:00Z', settledAt: null, category: 'single', platform: 'Polymarket US', legs: [{ desc: 'Under 6.5 (old bet)', price: '49', platform: 'Polymarket US', p: 0.49, marketId: 'tsc-mlb-cle-tb-2026-10-19-7pt5' }], estMultiple: 2.04, quotedMultiple: 2.04, hitChance: 0.49, stake: 1, status: 'open', share: false, shared: false }); localStorage.betdash_bets = JSON.stringify(bs); });

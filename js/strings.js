@@ -25,6 +25,8 @@ window.STR = {
   cancel: 'Cancel',
   close: 'Close',
   tipButton: 'What does this mean?',
+  // Player position badge tooltip (js/positions.js): 'QB = Quarterback'
+  posTip: (abbr, name) => `${abbr} = ${name}`,
 
   // ---------------------------------------------------------------- tabs
   tabs: { picks: 'Picks', calc: 'Build a bet', bets: 'My bets', record: 'Record', settings: 'Settings' },

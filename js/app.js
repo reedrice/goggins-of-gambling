@@ -121,11 +121,13 @@
   function installTips() {
     const pop = $('#tip-pop');
     document.addEventListener('click', e => {
-      const b = e.target.closest('.tip');
+      // .tip = (i) button (text from STR.tips); .pos-badge = player position badge
+      // (its own text in data-tip-text, e.g. "QB = Quarterback").
+      const b = e.target.closest('.tip, .pos-badge');
       if (!b) { pop.hidden = true; return; }
       e.preventDefault();
       e.stopPropagation();
-      pop.textContent = STR.tip(b.dataset.tip);
+      pop.textContent = b.dataset.tipText || STR.tip(b.dataset.tip);
       pop.hidden = false;
       const r = b.getBoundingClientRect();
       const w = Math.min(300, window.innerWidth - 24);
@@ -418,6 +420,19 @@
     </div>`;
   }
 
+  /**
+   * Escaped pick text with a position badge after the player's name, for
+   * picks fetch-markets.mjs tagged with player / player_team / league.
+   * @param {string} text @param {object} o pick or leg @returns {string} HTML
+   */
+  const posText = (text, o) => (o && o.player ? window.Positions.inText(text, o.league, o.player_team, o.player) : esc(text));
+
+  /**
+   * Escaped leg text (slip / saved bet) with a position badge. Older legs
+   * without player info get none. @param {object} l leg @returns {string} HTML
+   */
+  const legText = l => (l.player ? window.Positions.inText(l.desc, l.league, l.playerTeam, l.player) : esc(l.desc));
+
   /** One pick card. @param {object} pk @param {string} cat category @param {string} sec section key */
   function pickCard(pk, cat, sec) {
     const P = STR.picks;
@@ -435,7 +450,7 @@
       <div class="pick-head">
         <div class="pick-id">${teams.length ? `<span class="logos">${T.badges(teams, 30)}</span>` : ''}<div>
           <div class="pick-title">${esc(pk.side || pk.market)}</div>
-          <div class="pick-sub">${esc(pk.market && pk.side ? pk.market + ' · ' : '')}${esc(pk.event || '')}</div>
+          <div class="pick-sub">${pk.market && pk.side ? posText(pk.market, pk) + ' · ' : ''}${esc(pk.event || '')}</div>
         </div></div>
         <span class="badge ${esc(action)}">${esc(P.badge[action] || action)}</span>
       </div>
@@ -443,7 +458,7 @@
       <div class="pick-stats">${stats}</div>
       ${!isMulti && typeof pk.kalshi_price === 'number' ? `<div class="muted small">${esc(P.kalshiPrice(fmtP(pk.kalshi_price)))}</div>` : ''}
       ${isMulti ? '' : otherAppsLine(pk)}
-      ${isMulti ? `<ul class="legs">${pk.legs.map(l => `<li>${l.team ? T.badge(teamRef(l.team), 20) : ''}<span>${esc(l.desc)}${typeof l.price === 'number' ? ` <span class="muted">${esc(fmtP(l.price))}</span>` : ''}${typeof l.kalshi_price === 'number' ? ` <span class="kpx">Kalshi ${esc(fmtP(l.kalshi_price))}</span>` : ''}</span></li>`).join('')}</ul>` : ''}
+      ${isMulti ? `<ul class="legs">${pk.legs.map(l => `<li>${l.team ? T.badge(teamRef(l.team), 20) : ''}<span>${posText(l.desc, l)}${typeof l.price === 'number' ? ` <span class="muted">${esc(fmtP(l.price))}</span>` : ''}${typeof l.kalshi_price === 'number' ? ` <span class="kpx">Kalshi ${esc(fmtP(l.kalshi_price))}</span>` : ''}</span></li>`).join('')}</ul>` : ''}
       <div><b>${esc(P.bet)}:</b> ${esc(stakeText(pk))} ${tip('unit')}</div>
       ${pk.pending_news ? `<div class="news">⏳ <b>${esc(P.news)}</b> ${esc(pk.pending_news)}</div>` : ''}
       ${pk.verify_note ? `<div class="verify">⚠️ ${esc(pk.verify_note)}</div>` : ''}
@@ -476,6 +491,7 @@
         fetchData('data/picks.json'),
         fetchData(CFG.bookOddsPath || 'data/book-odds.json').catch(() => null),   // optional
         fetchData('data/predictions.json').catch(() => null),                     // optional
+        window.Positions.load(),                                                   // optional: player position badges
         Promise.race([window.Picker.loadIndex().catch(() => {}), new Promise(r => setTimeout(r, 1500))])
       ]);
     } catch (e) {
@@ -512,6 +528,7 @@
       kalshiMatch: o.kalshi_match || pk.kalshi_match || null, kalshiPrice: typeof o.kalshi_price === 'number' ? o.kalshi_price : null,
       marketId: o.market_id || null, side: o.market_side || null, eventSlug: slug, eventTitle: pk.event || '',
       teams: o.team ? [teamRef(o.team)] : (pk.teams || []).map(teamRef), asOf: picksData.updated_at, live: false,
+      player: o.player || null, playerTeam: o.player_team || null, league: o.league || null,   // position badge
       startTime: GT.valid(o.start_time) ? o.start_time : GT.valid(pk.start_time) ? pk.start_time : null // else looked up from the snapshot in legStart()
     };
   }
@@ -700,7 +717,7 @@
       return `<div class="leg ${related ? 'related' : ''}" data-i="${i}">
         <button class="btn btn-sm btn-danger remove" data-rm="${i}" aria-label="${esc(K.remove)}">✕</button>
         <div class="leg-top">${l.teams && l.teams.length ? `<span class="logos">${T.badges(l.teams, 28)}</span>` : platformBadge(l.platform)}
-          ${l.manual ? `<input class="l-desc" placeholder="${esc(K.legDescPh)}" value="${esc(l.desc)}" aria-label="${esc(K.legDesc)}">` : `<div class="leg-desc"><b>${esc(l.desc)}</b>${l.eventTitle ? `<div class="muted small">${esc(l.eventTitle)}</div>` : ''}${legWhen(l, true)}</div>`}
+          ${l.manual ? `<input class="l-desc" placeholder="${esc(K.legDescPh)}" value="${esc(l.desc)}" aria-label="${esc(K.legDesc)}">` : `<div class="leg-desc"><b>${legText(l)}</b>${l.eventTitle ? `<div class="muted small">${esc(l.eventTitle)}</div>` : ''}${legWhen(l, true)}</div>`}
         </div>
         ${l.manual ? legWhen(l, true) : ''}
         <div class="leg-grid">
@@ -767,7 +784,8 @@
         desc: l.desc || `Pick ${i + 1}`, price: l.price, platform: l.platform, p: r.parsed[i].p,
         marketId: l.marketId || null, side: l.side || null, eventSlug: l.eventSlug || null, eventTitle: l.eventTitle || null,
         teams: l.teams || [], link: l.link || null, kalshiUrl: l.kalshiUrl || null, asOf: l.asOf || null,
-        startTime: legStart(l) // game start ISO or null (never made up)
+        startTime: legStart(l), // game start ISO or null (never made up)
+        player: l.player || null, playerTeam: l.playerTeam || null, league: l.league || null // position badge
       })),
       estMultiple: r.est, quotedMultiple: r.quoted, hitChance: r.hit, stake: r.stake,
       status: 'open', share, shared: false, pickId: calc.pickId
@@ -828,7 +846,7 @@
    * @param {object} b Bet @param {boolean} [withHint] countdown (open bets)
    */
   function legsHtml(b, withHint) {
-    return GT.sortLegs(b.legs, legStart).map(l => `<div class="bleg">${l.teams && l.teams.length ? T.badges(l.teams, 20) : platformBadge(l.platform)}<span class="bleg-txt">${esc(l.desc)}${legWhen(l, withHint)}</span></div>`).join('');
+    return GT.sortLegs(b.legs, legStart).map(l => `<div class="bleg">${l.teams && l.teams.length ? T.badges(l.teams, 20) : platformBadge(l.platform)}<span class="bleg-txt">${legText(l)}${legWhen(l, withHint)}</span></div>`).join('');
   }
 
   /**
