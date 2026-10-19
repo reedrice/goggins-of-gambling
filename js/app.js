@@ -1652,6 +1652,8 @@
     // or status "waiting_for_feed" -> the middle column says "Coming soon".
     let odds = null;
     try { odds = await fetchData(CFG.bookOddsPath || 'data/book-odds.json'); } catch (e) { /* optional */ }
+    let learnDoc = null;
+    try { learnDoc = await fetchData('data/learning.json'); } catch (e) { /* optional: learning loop not run yet */ }
     let html = `<h2>${esc(R.title)}</h2>`;
     if (!preds) html += `<p class="error">${esc(R.loadError)}</p>`;
     else {
@@ -1667,8 +1669,38 @@
         ${list.length ? `<h3>${esc(R.recent)}</h3><div class="table-wrap"><table><tr><th>${esc(R.date)}</th><th>${esc(R.pick)}</th><th class="num">${esc(R.chance)}</th><th>${esc(R.result)}</th></tr>
           ${list.slice().sort((a, b) => String(b.date).localeCompare(String(a.date))).slice(0, 30).map(p => `<tr><td>${esc(p.date)}</td><td>${esc(p.pick)}<div class="muted small">${esc(p.game)}</div></td><td class="num">${esc(p.win_prob)}%</td><td><span class="badge ${p.result === 'win' ? 'won' : p.result === 'loss' ? 'lost' : 'open'}">${esc(R.resultWords[p.result] || p.result)}</span></td></tr>`).join('')}</table></div>` : ''}`;
     }
+    html += learningCardHtml(learnDoc);
     html += renderPlatformCompare(log, odds);
     el.innerHTML = html;
+  }
+
+  /**
+   * "How we're learning" card (Record tab, no new tab). Reads data/learning.json
+   * from scripts/learn.mjs (HANDOFF §36): sample sizes, calibration, CLV,
+   * best/worst categories. Shows only what the file has; never fills in numbers.
+   */
+  function learningCardHtml(L) {
+    const X = STR.record.learn;
+    if (!L || !L.sample) return `<div class="card learn-card"><h3>${esc(X.title)} ${tip('learning')}</h3><div class="section-empty">${esc(X.none)}</div></div>`;
+    const s = L.sample, min = L.min_samples || 30;
+    const kpi = (k, v) => `<div class="kpi"><div class="k">${esc(k)}</div><div class="v">${v}</div></div>`;
+    const calRows = [...((L.calibration && L.calibration.picks) || []).map(b => ['pick', b]), ...((L.calibration && L.calibration.predictions) || []).map(b => ['game', b])];
+    const adj = b => (b.status === 'applied' ? `${b.adjustment_pts > 0 ? '+' : ''}${b.adjustment_pts}` : X.collecting);
+    const clv = L.clv && L.clv.n ? X.clv(L.clv.avg_pts, L.clv.beat_close_pct, L.clv.n) : X.clvNone;
+    const cats = L.categories || [], byKey = k => cats.find(c => c.key === k);
+    const catLine = k => { const c = byKey(k); return c ? `<li>${esc(c.key)}: ${esc(X.catStat(c.w, c.l, c.roi, c.n))}${c.n < min ? ` <span class="muted small">(${esc(X.tooFew)})</span>` : ''}</li>` : ''; };
+    return `<div class="card learn-card"><h3>${esc(X.title)} ${tip('learning')}</h3>
+      <p class="muted small">${esc(X.intro(min))}</p>
+      <div class="kpis">${kpi(X.logged, s.picks_logged)}${kpi(X.gradedPicks, s.picks_graded)}${kpi(X.gradedGames, s.predictions_graded)}${kpi(X.shrink, L.market_shrink && L.market_shrink.status === 'applied' ? esc(String(L.market_shrink.weight)) : esc(X.collecting))}</div>
+      <div class="small"><b>${esc(X.clvTitle)}</b> ${esc(clv)}</div>
+      <h4>${esc(X.calTitle)}</h4>
+      ${calRows.length ? `<div class="table-wrap"><table><tr><th>${esc(X.colWhat)}</th><th class="num">${esc(X.colSaid)}</th><th class="num">${esc(X.colN)}</th><th class="num">${esc(X.colActual)}</th><th class="num">${esc(X.colAdj)}</th></tr>
+        ${calRows.map(([w, b]) => `<tr><td>${esc(X.what[w])}</td><td class="num">${b.lo}–${b.hi}</td><td class="num">${b.n}</td><td class="num">${b.actual}</td><td class="num">${esc(adj(b))}</td></tr>`).join('')}</table></div>`
+        : `<div class="section-empty">${esc(X.calEmpty)}</div>`}
+      <h4>${esc(X.catsTitle)}</h4>
+      ${(L.best || []).length ? `<div class="small">${esc(X.best)}</div><ul class="small">${L.best.map(catLine).join('')}</ul><div class="small">${esc(X.worst)}</div><ul class="small">${(L.worst || []).map(catLine).join('')}</ul>`
+        : `<div class="section-empty">${esc(X.catsEmpty)}</div>`}
+      <p class="muted small">${esc(X.noisy)}${L.updated_at ? ' · ' + esc(STR.record.updated(fmtTime(L.updated_at))) : ''}</p></div>`;
   }
 
   /**

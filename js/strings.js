@@ -363,6 +363,24 @@ window.STR = {
 
   // ---------------------------------------------------------------- record
   record: {
+    /** "How we're learning" card (app.js learningCardHtml, data/learning.json, HANDOFF §36). */
+    learn: {
+      title: "How we're learning",
+      intro: min => `We grade every pick on the real result and check if our chances were right. Changes only kick in after ${min} graded picks of a kind.`,
+      none: 'Nothing graded yet. This fills in as games finish.',
+      logged: 'Picks saved', gradedPicks: 'Picks graded', gradedGames: 'Games graded', shrink: 'Trust in our chances',
+      collecting: 'collecting data',
+      clvTitle: 'Beat the closing price:',
+      clv: (avg, beat, n) => `${beat}% of the time, by ${avg > 0 ? '+' : ''}${avg} points on average (${n} picks).`,
+      clvNone: 'no closing prices captured yet.',
+      calTitle: 'Were our chances right?', calEmpty: 'No graded picks yet.',
+      colWhat: 'Kind', colSaid: 'We said %', colN: 'Graded', colActual: 'Won %', colAdj: 'Change',
+      what: { pick: 'Picks', game: 'Game winners' },
+      catsTitle: 'Best and worst kinds of bets', catsEmpty: 'Needs at least 10 graded picks of one kind.',
+      best: 'Best so far:', worst: 'Worst so far:', tooFew: 'too few to trust yet',
+      catStat: (w, l, roi, n) => `${w}-${l}, ${roi > 0 ? '+' : ''}${roi}% per bet (${n} graded)`,
+      noisy: 'Small samples are noisy: a few games can swing these numbers a lot.'
+    },
     /** "Live Bets record" (app.js liveRecordHtml, data/live-record.json, HANDOFF §35). */
     live: {
       title: 'Live Bets record',
@@ -476,6 +494,7 @@ window.STR = {
 
   // ---------------------------------------------------------------- tooltips (i)
   tips: {
+    learning: '"Change" is how many points we add to or take off our chance for picks like these, once we have 30 graded. "Trust in our chances" of 1 means we keep our number; lower means we lean toward the app\'s price. "Beat the closing price" means the price moved our way before the game started, a good sign.',
     liveRecord: '"Hit rate" is how often the alerts won. "Expected" is how often they should win going by their own odds at alert time. Beating Expected over many alerts is what counts. Units: each alert = 1 unit bet.',
     fadeTrent: 'Trent\'s picks come straight from his X posts. Only picks he wrote out in words count; picks only in a picture or with an unclear bet are skipped or marked unclear. Each one is checked against the real final score. "Fade" is the other side of his bet: if he lost, fading him won.',
     americanOdds: '+127 means a $100 bet wins $127. −150 means you bet $150 to win $100. Plus numbers win more than you bet; minus numbers win less. "Vegas" is the best number we found at the big sportsbooks for the same bet.',
