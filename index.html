@@ -1,0 +1,102 @@
+<!doctype html>
+<!--
+  index.html — the only page of this static single-page app.
+
+  PURPOSE
+    Provides the DOM skeleton: the first-run onboarding overlay, the header,
+    one <section> per tab (Picks, Calculator, Bets, Record, Settings) and the
+    bottom tab bar. All content is rendered by js/app.js.
+
+  BRANDING
+    No brand strings are hardcoded here. Elements with data-brand="appName"
+    / "tagline" / "onboardingPitch" are filled from window.APP_CONFIG
+    (config.js), and document.title is set at runtime. Rename in config.js.
+
+  SCRIPT ORDER
+    config.js -> js/calc.js -> js/storage.js -> js/github-log.js -> js/app.js
+    (plain classic scripts, no bundler; each attaches one global namespace).
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0b0c">
+  <meta name="robots" content="noindex">
+  <title>Loading…</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- FIRST-RUN ONBOARDING: shown full-screen when no profile exists; blocks everything else. -->
+  <div id="onboarding" class="onboarding" hidden>
+    <form id="onboarding-form" class="onboard-card" autocomplete="off" novalidate>
+      <div class="onboard-brand">
+        <h1 class="brand-name" data-brand="appName"></h1>
+        <p class="brand-tag" data-brand="tagline"></p>
+      </div>
+      <p class="onboard-pitch" data-brand="onboardingPitch"></p>
+      <div class="onboard-step">STEP 1 OF 1 — SET UP YOUR BANKROLL</div>
+      <p class="onboard-private">🔒 Everything you enter here stays on <b>this device only</b>. It is never uploaded.</p>
+
+      <label class="field">
+        <span>Your display name</span>
+        <input id="ob-name" name="name" type="text" maxlength="40" placeholder="e.g. Reed" required>
+      </label>
+      <label class="field big">
+        <span>Starting bankroll ($)</span>
+        <input id="ob-bankroll" name="bankroll" type="number" inputmode="decimal" min="1" step="0.01" placeholder="e.g. 500" required>
+      </label>
+      <label class="field">
+        <span>Unit size ($) <em>default = 2% of bankroll</em></span>
+        <input id="ob-unit" name="unit" type="number" inputmode="decimal" min="0.01" step="0.01" placeholder="auto">
+      </label>
+      <label class="field">
+        <span>Max per slip ($) <em>default = 5% of bankroll</em></span>
+        <input id="ob-max" name="max" type="number" inputmode="decimal" min="0.01" step="0.01" placeholder="auto">
+      </label>
+      <label class="field">
+        <span>Bankroll window ends <em>optional</em></span>
+        <input id="ob-end" name="end" type="date">
+      </label>
+      <p id="ob-error" class="error" role="alert"></p>
+      <button type="submit" class="btn btn-primary btn-xl">LOCK IN MY BANKROLL</button>
+    </form>
+  </div>
+
+  <div id="app" class="app" hidden>
+    <header class="topbar">
+      <div>
+        <div class="brand-name small" data-brand="appName"></div>
+        <div class="brand-tag small" id="slogan" data-brand="tagline"></div>
+      </div>
+      <div class="topbar-bank">
+        <div class="label">Bankroll</div>
+        <div id="hdr-bankroll" class="value">—</div>
+      </div>
+    </header>
+
+    <main>
+      <section id="tab-picks" class="tab" data-tab="picks"></section>
+      <section id="tab-calc" class="tab" data-tab="calc" hidden></section>
+      <section id="tab-bets" class="tab" data-tab="bets" hidden></section>
+      <section id="tab-record" class="tab" data-tab="record" hidden></section>
+      <section id="tab-settings" class="tab" data-tab="settings" hidden></section>
+    </main>
+
+    <nav class="tabbar" aria-label="Sections">
+      <button data-go="picks" class="active"><span>🎯</span>Picks</button>
+      <button data-go="calc"><span>🧮</span>Calc</button>
+      <button data-go="bets"><span>💰</span>Bets</button>
+      <button data-go="record"><span>📈</span>Record</button>
+      <button data-go="settings"><span>⚙️</span>Settings</button>
+    </nav>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="config.js"></script>
+  <script src="js/calc.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/github-log.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
