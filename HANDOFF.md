@@ -46,9 +46,10 @@ The scripts load in this order (classic `<script>` tags; each one sets a single 
 ```
 index.html            DOM skeleton (empty onboarding container, header, "I bet on" bar, 5 tab sections, tab bar, tooltip bubble)
 config.js             brand + repo config + platforms[] (one ordered list used everywhere)
-css/style.css         dark mobile-first theme (sections 1-9; 9 = picker/logos/toggle/tooltips)
+css/style.css         dark mobile-first theme (sections 1-11; 9 = picker/logos/toggle/tooltips, 10 = Record compare table, 11 = pick evaluation box)
 js/strings.js         all UI text (plain-language rules in its header)
 js/calc.js            odds and parlay math (pure)
+js/evaluate.js        per-pick hit chance, risk label, "My take" verdict, prediction lookup (browser + Node, §18)
 js/storage.js         localStorage schema and access
 js/teams.js           team logos: Polymarket logo -> ESPN CDN -> colored circle; ESPN abbreviation fixes
 js/markets-core.js    Polymarket US event/market compaction + labels (browser + Node)
@@ -62,6 +63,7 @@ data/predictions.json game predictions and grades (appended by the job)
 data/bet-log.json     shared calibration log (written by the app with users' tokens)
 data/book-odds.json   automatic per-app price comparisons (The Odds API, written daily by fetch-book-odds.mjs, §17)
 tests/calc.test.js        node: math
+tests/evaluate.test.js    node: hit chance / risk / verdict defaults (js/evaluate.js)
 tests/github-log.test.js  node: log writer against a mocked API
 tests/smoke.js            headless Chrome UI walk-through (puppeteer-core, --no-save)
 scripts/update-picks.mjs  daily-job CLI: validate, write, commit, and push picks/predictions
@@ -156,7 +158,8 @@ Use **`scripts/update-picks.mjs`**. It's plain Node 18+ with no dependencies. It
 
 ```bash
 node scripts/update-picks.mjs validate [file]              # check only (picks.json, or predictions.json by filename)
-node scripts/update-picks.mjs picks /tmp/new-picks.json    # replace data/picks.json, commit, push
+node scripts/update-picks.mjs picks /tmp/new-picks.json    # replace data/picks.json (auto-fills hit_prob/risk/verdict/same_game, §18), commit, push
+node scripts/update-picks.mjs fill                         # backfill missing hit_prob/risk/verdict/same_game in data/picks.json, commit, push
 node scripts/update-picks.mjs add-predictions /tmp/p.json  # append [{id,date,sport,game,pick,win_prob,projected_score?,...}]
 node scripts/update-picks.mjs grade /tmp/grades.json       # [{id, result: win|loss|push, final_score?}]
 node scripts/update-picks.mjs grade <id> win "SF 30 – WAS 17"
@@ -178,7 +181,7 @@ Daily routine:
 1. Build the new slate in the `picks.json` schema. Use **units, not dollars**, and the platform's actual ask prices (Reed's app is **Polymarket US**, a different exchange from polymarket.com). Set `verify_note` whenever a price came from somewhere else. Set `updated_at` to now (UTC is fine; the UI shows CT).
 2. `grade` yesterday's predictions.
 3. `add-predictions` today's game predictions (`result` defaults to `pending`; ids like `2026-10-20-was-sf`).
-4. `picks` the new slate. Pages redeploys in about a minute, and the app cache-busts its fetches.
+4. `picks` the new slate. Fill in `hit_prob` (your real estimated chance, especially for same-game parlays), and `verdict`/`prediction_id` when you have something better than the defaults; anything missing is computed and written for you (§18). Pages redeploys in about a minute, and the app cache-busts its fetches.
 5. `node scripts/fetch-markets.mjs --commit` (see §13). Run it **after** step 4 so the new picks get Polymarket/Kalshi links and Kalshi prices.
 5b. `node scripts/fetch-book-odds.mjs --commit` (see §17). Run it **after** step 5: it prices today's picks at the other apps through The Odds API (needs `ODDS_API_KEY` in the environment; about 6-12 of the 500 monthly credits).
 6. Read `data/bet-log.json` to compare quoted vs. estimated multiples per platform and tune `skip_below`.
@@ -323,3 +326,41 @@ node scripts/fetch-book-odds.mjs --commit       # price today's picks, write dat
 - **Books on the free plan (first run):** FanDuel, DraftKings, BetMGM, Bovada, ESPN Bet (`espnbet`, "theScore Bet") and Kalshi (`us_ex`). Caesars (`williamhill_us`) and Fanatics returned nothing; they're paid-plan only (`oddsApiPaid: true` in config, shown as "Needs a paid odds plan"). bet365 isn't in the US feed. Polymarket US is the baseline, so it isn't requested.
 - **Matching** is documented in the script header: game by both team names within 36h; h2h by team; spreads by team + signed line from the side label; totals by Over/Under + line; props by player name, with Polymarket "N+" = Over N−0.5 and anytime TD/goal = "Yes". Prop types are mapped in `PROP_MARKETS`, and sports in `SPORT_KEYS` (NBA/WNBA are ready, but only called when a pick needs them).
 - **UI:** the Record tab's "From odds feed" column shows each app's count and average difference; "Total" adds the logged bets. Single-bet pick cards show an "Other apps" line: "cheapest is Kalshi at 48.1¢ (+108), 0.9¢ less than Polymarket US (49¢)" or "none cheaper…". It uses today's rows whose `refs` point at that pick.
+
+## 18. Pick evaluation: "My hit chance", risk label, "My take"
+
+Every pick card (singles, props, parlays, long shots, non-sports) shows an evaluation box above the price stats. Logic: `js/evaluate.js` (`window.PickEval`, also `require()`d by `scripts/update-picks.mjs`). Text: `STR.eval` in `js/strings.js`. CSS: `css/style.css` section 11.
+
+Box contents:
+1. **My hit chance:** a % and a bar colored by risk.
+2. **Risk badge** (legend "How risky?" shown once above the picks).
+3. For combos: a same-game note ("affect each other, this chance already allows for that") or a different-games note.
+4. **My take:** a one-line verdict.
+5. 🔮 **Prediction line(s):** "My prediction: SF wins 30–17 (66%)", shown only when a game prediction matches (from `sections.predictions` or `data/predictions.json`). There's nothing to show if no predictions exist; never invent one.
+
+### Fields (all optional in picks.json, on every pick type)
+
+| field | type | meaning / default when missing |
+|---|---|---|
+| `hit_prob` | number 0-100 | estimated true chance the bet wins. Default: singles use `fair`, else `price`. Combos use the product of each leg's `fair` (else `price`). Product assumes independence, so **set it yourself for same-game combos** (correlation) |
+| `risk` | `safer` / `coin_flip` / `risky` / `long_shot` | default from `hit_prob` using the thresholds below |
+| `verdict` | string, max 120 chars | "My take" line. Default from `action` + edge (rules below) |
+| `same_game` | boolean | combos only. Default: true when every leg's `market_id` has the same teams+date (`aec-nfl-was-sf-2026-10-19` style), false when they differ, unset if unknown |
+| `prediction_id` | string | id of the game prediction to show on the card. Default: match by the prediction's `game` text appearing in the pick's `event` (same slate date, max 3) |
+
+### Risk thresholds (`RISK_LEVELS` in js/evaluate.js)
+
+| label | hit chance |
+|---|---|
+| Safer (green) | 60% or more |
+| Coin flip (yellow) | 45% to under 60% |
+| Risky (orange) | 25% to under 45% |
+| Long shot (red) | under 25% |
+
+### Default "My take" rules (`verdictFor`)
+- `action` skip: "Skip. Not worth it today." `action` wait: "Wait for the news, then play it small."
+- Singles/props/nonsports, by edge (`fair − price`, points): 3 or more = "Good price, I'd play it"; 1 to under 3 = "Fair price, small play only"; under 1 = "Thin price, tiny play or skip".
+- Parlays/long shots with `quoted_multiple` and `skip_below`: quoted below skip = "The app pays too little. Skip."; under 5% above skip = "Barely worth it, small play only"; otherwise "Good payout, I'd play it small". With only `skip_below`: "Play it only if the app pays at least Nx" (long shots: "Long shot. Tiny play, only if the app pays Nx or more"). With neither, a long shot says "Long shot. Tiny play only." and a parlay says "Fair price, small play only." A single with no edge data also says "Fair price, small play only.".
+
+### Validation and backfill
+`update-picks.mjs` validates the fields: hit_prob 0-100, risk enum, verdict string ≤120, same_game boolean, prediction_id string. `picks` fills missing values with `PickEval.fillDefaults` (never overwrites explicit ones) and validates again before writing. `fill` does the same on the existing data/picks.json. The browser also computes defaults at render time, so an unfilled file still shows a full box.

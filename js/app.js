@@ -50,6 +50,8 @@
   let picksData = null;
   /** data/book-odds.json (other apps' prices); optional, loaded with the picks. */
   let bookOdds = null;
+  /** Game predictions for the "My prediction" line: picks.sections.predictions + data/predictions.json. */
+  let gamePreds = [];
   let picker = null;
 
   // ---------------------------------------------------------------- utils
@@ -381,15 +383,49 @@
     return `<div class="other-apps small">${text} <span class="muted">${esc(P.otherAsOf(fmtTime(best.fetched_at)))}</span> ${tip('otherApps')}</div>`;
   }
 
-  /** One pick card. @param {object} pk @param {string} cat */
-  function pickCard(pk, cat) {
+  /** Color legend for the risk labels, shown once above the picks. */
+  function riskLegend() {
+    const E = STR.eval;
+    return `<div class="risk-legend small"><span class="muted">${esc(E.legendTitle)}</span>
+      ${window.PickEval.RISK_KEYS.map(k => `<span class="risk risk-${k}">${esc(E.risk[k])} <span class="rl">${esc(E.legend[k])}</span></span>`).join('')}</div>`;
+  }
+
+  /**
+   * "My hit chance" bar + risk label + "My take" + "My prediction" block.
+   * Values come from picks.json when the daily job set them, otherwise
+   * PickEval computes them (see js/evaluate.js for the rules + thresholds).
+   * @param {object} pk @param {string} sec section key (singles, parlays, ...)
+   * @returns {string} HTML
+   */
+  function evalBlock(pk, sec) {
+    const E = STR.eval;
+    const ev = window.PickEval.evaluate(pk, sec, STR);
+    const pctTxt = ev.pct === null ? STR.none : (Math.round(ev.pct * 10) / 10) + '%';
+    const width = ev.pct === null ? 0 : Math.max(2, Math.min(100, ev.pct));   // numeric only, safe in style
+    const note = ev.sameGame === true ? (ev.source === 'given' ? E.sameGameGiven : E.sameGameLegs) : ev.sameGame === false ? E.diffGames : '';
+    const preds = window.PickEval.findPredictions(pk, gamePreds, picksData && picksData.slate_date);
+    return `<div class="eval">
+      <div class="eval-top">
+        <span class="eval-k">${esc(E.hitChance)} ${tip('hitChance')}</span>
+        <b class="eval-pct">${esc(pctTxt)}</b>
+        ${ev.risk ? `<span class="risk risk-${esc(ev.risk)}">${esc(E.risk[ev.risk] || ev.risk)}</span>${tip('risk')}` : ''}
+      </div>
+      <div class="hitbar" role="img" aria-label="${esc(E.hitChance + ' ' + pctTxt)}"><span class="risk-bg-${esc(ev.risk || 'none')}" style="width:${width}%"></span></div>
+      ${note ? `<div class="eval-note small muted">${esc(note)}</div>` : ''}
+      <div class="take"><b>${esc(E.take)}</b> ${esc(ev.verdict)} ${tip('take')}</div>
+      ${preds.map(g => `<div class="pred small">🔮 ${esc(E.prediction(g.pick, g.projected_score, g.win_prob))}</div>`).join('')}
+    </div>`;
+  }
+
+  /** One pick card. @param {object} pk @param {string} cat category @param {string} sec section key */
+  function pickCard(pk, cat, sec) {
     const P = STR.picks;
     const isMulti = Array.isArray(pk.legs) && pk.legs.length > 0;
     const action = pk.action || (pk.stake_units > 0 ? 'bet' : 'skip');
     const edge = typeof pk.edge === 'number' ? pk.edge : (typeof pk.fair === 'number' && typeof pk.price === 'number' ? C.edgePts(pk.fair, pk.price) : null);
     const stats = isMulti
       ? stat(P.ourPayout, mult(pk.est_multiple), 'ourPayout') + stat(P.appPayout, pk.quoted_multiple ? mult(pk.quoted_multiple) : STR.none, 'payout') +
-        stat(P.chance, typeof pk.hit_prob === 'number' ? pk.hit_prob + '%' : STR.none, 'chance') + stat(P.skipBelow, pk.skip_below ? mult(pk.skip_below) : STR.none, 'skipBelow')
+        stat(P.skipBelow, pk.skip_below ? mult(pk.skip_below) : STR.none, 'skipBelow')   // hit chance moved to evalBlock
       : stat(P.price, typeof pk.price === 'number' ? esc(fmtP(pk.price)) : STR.none, 'price') + stat(P.fair, typeof pk.fair === 'number' ? esc(fmtP(pk.fair)) : STR.none, 'fair') +
         stat(P.advantage, edge === null ? STR.none : `<span class="${sign(edge)}">${edge > 0 ? '+' : ''}${edge.toFixed(1)}¢</span>`, 'advantage') +
         stat(P.payout, typeof pk.price === 'number' ? mult(100 / pk.price) : STR.none, 'payout');
@@ -402,6 +438,7 @@
         </div></div>
         <span class="badge ${esc(action)}">${esc(P.badge[action] || action)}</span>
       </div>
+      ${evalBlock(pk, sec || 'singles')}
       <div class="pick-stats">${stats}</div>
       ${!isMulti && typeof pk.kalshi_price === 'number' ? `<div class="muted small">${esc(P.kalshiPrice(fmtP(pk.kalshi_price)))}</div>` : ''}
       ${isMulti ? '' : otherAppsLine(pk)}
@@ -432,10 +469,12 @@
   async function renderPicks() {
     const el = $('#tab-picks');
     el.innerHTML = `<h2>${esc(STR.picks.title)}</h2><p class="muted">${esc(STR.loading)}</p>`;
+    let predFile = null;
     try {
-      [picksData, bookOdds] = await Promise.all([
+      [picksData, bookOdds, predFile] = await Promise.all([
         fetchData('data/picks.json'),
         fetchData(CFG.bookOddsPath || 'data/book-odds.json').catch(() => null),   // optional
+        fetchData('data/predictions.json').catch(() => null),                     // optional
         Promise.race([window.Picker.loadIndex().catch(() => {}), new Promise(r => setTimeout(r, 1500))])
       ]);
     } catch (e) {
@@ -443,14 +482,16 @@
       return;
     }
     const d = picksData, sec = d.sections || {};
+    gamePreds = [...(sec.predictions || []), ...((predFile && predFile.predictions) || [])];
     let html = `<h2>${esc(STR.picks.title)}</h2>
       <div class="updated">${esc(STR.picks.updated(d.slate_date || '', fmtTime(d.updated_at)))}</div>
-      ${(d.notes || []).map(n => `<div class="verify">${esc(n)}</div>`).join('')}`;
+      ${(d.notes || []).map(n => `<div class="verify">${esc(n)}</div>`).join('')}
+      ${riskLegend()}`;
     for (const [key, cat] of PICK_SECTIONS) {
       const items = sec[key] || [];
       html += `<h3>${esc(STR.picks.sections[key])}</h3>`;
       if (!items.length) { html += `<div class="section-empty">${esc(STR.picks.empty)}</div>`; continue; }
-      html += items.map(it => (key === 'predictions' ? predictionCard(it) : pickCard(it, cat))).join('');
+      html += items.map(it => (key === 'predictions' ? predictionCard(it) : pickCard(it, cat, key))).join('');
     }
     el.innerHTML = html;
     el.querySelectorAll('[data-load-pick]').forEach(b => (b.onclick = () => loadPickIntoCalc(b.dataset.loadPick, b.dataset.cat)));

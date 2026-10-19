@@ -79,6 +79,10 @@ A daily job overwrites this whole file. All fields are optional unless marked **
 | `market_id` | string | Polymarket US market slug (from `data/markets`), e.g. `aec-nfl-was-sf`. Lets the app pull a live price and build links |
 | `market_side` | `"yes"`/`"no"` | which side of `market_id` the pick is |
 | `team` / `teams` | `{league, abbr}` / `[{league, abbr}]` | shows team logos (`league` = nfl, mlb, nhl, nba, wnba) |
+| `hit_prob` | number | estimated true hit chance % (0–100). Defaults to `fair` (singles) or the product of legs (combos). Shown as "My hit chance" |
+| `risk` | `safer`/`coin_flip`/`risky`/`long_shot` | risk badge. Default from hit chance: 60%+ / 45–59% / 25–44% / under 25% |
+| `verdict` | string (≤120) | "My take" one-liner. Default from `action` and edge |
+| `prediction_id` | string | game prediction to show on the card (default: matched by game name) |
 | `polymarket_url`, `kalshi_url`, `kalshi_match`, `kalshi_price` | written by `scripts/fetch-markets.mjs` | per-platform Open links; `kalshi_match` is `market`, `event` or `none` |
 
 **MultiPick** (parlays, long shots) has the Pick fields plus:
@@ -88,7 +92,7 @@ A daily job overwrites this whole file. All fields are optional unless marked **
 | `legs` | `[{desc, price?, fair?, platform?, market_id?, market_side?, team?}]`, **required** | `price` in cents. Omit it if unknown. Legs get the same link fields as picks |
 | `est_multiple` | number | product of 1/price across legs |
 | `quoted_multiple` | number/null | what the platform actually quoted, if known |
-| `hit_prob` | number | estimated hit chance in % (0–100) |
+| `same_game` | boolean | legs are from the same game (correlated). Default from leg `market_id`s |
 | `skip_below` | number | don't bet if the app quotes below this multiple |
 
 **Prediction** (`sections.predictions`): `{ id, sport, game, start_time (ISO), pick, win_prob (50–100), projected_score, player_projections: [string], reasoning }`.

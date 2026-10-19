@@ -259,6 +259,35 @@ window.STR = {
     resetConfirm: 'Erase your info, bets and key from this phone? Save a backup first if you want to keep them.'
   },
 
+  // ---------------------------------------------------------------- pick evaluation
+  // "My hit chance", risk level and "My take" on every pick card (js/evaluate.js).
+  eval: {
+    hitChance: 'My hit chance',
+    take: 'My take:',
+    // Risk levels; thresholds live in js/evaluate.js (RISK_LEVELS).
+    risk: { safer: 'Safer', coin_flip: 'Coin flip', risky: 'Risky', long_shot: 'Long shot' },
+    legendTitle: 'How risky?',
+    legend: { safer: '60%+', coin_flip: '45–59%', risky: '25–44%', long_shot: 'under 25%' },
+    sameGameGiven: 'These picks are from the same game and affect each other. This chance already allows for that.',
+    sameGameLegs: 'These picks are from the same game. This chance assumes they don\'t affect each other, so treat it as rough.',
+    diffGames: 'Picks are from different games, so they don\'t affect each other.',
+    prediction: (pick, score, pct) => `My prediction: ${pick} win${score ? ', ' + score : ''}${pct ? ` (${pct}% sure)` : ''}`,
+    // Default "My take" sentences (picked by PickEval.verdictFor).
+    verdicts: {
+      skip: 'Skip. Not worth it today.',
+      wait: 'Wait for the news, then play it small.',
+      good: 'Good price, I\'d play it.',
+      fair: 'Fair price, small play only.',
+      thin: 'Thin price, tiny play or skip.',
+      tooLow: 'The app pays too little. Skip.',
+      barely: 'Barely worth it, small play only.',
+      goodCombo: 'Good payout, I\'d play it small.',
+      payCheck: x => `Play it only if the app pays at least ${x}x.`,
+      longshotCheck: x => `Long shot. Tiny play, only if the app pays ${x}x or more.`,
+      longshot: 'Long shot. Tiny play only.'
+    }
+  },
+
   // ---------------------------------------------------------------- tooltips (i)
   tips: {
     price: 'What it costs to buy one share. A share pays $1 if you win. Example: at 40¢, a $10 bet buys 25 shares and pays $25.',
@@ -283,6 +312,9 @@ window.STR = {
     colGap: 'On average, how much more or less the app paid on those bets than the picks multiply out to. Example: −7% means a bet we priced at 3.19x paid about 2.97x.',
     colDiff: 'On average, how much more the app charges than Polymarket US for the same bet. Example: +3¢ means you pay 3¢ more per share there, so you win a bit less. A minus means it\'s cheaper.',
     colFeed: 'How many of our picks we found on this app in the daily price check.',
+    hitChance: 'My best guess at how often this bet wins, from the sportsbooks\' fair prices (and, for combos, how the picks affect each other). Example: 34% means about 1 win in 3.',
+    risk: 'Safer = wins 60%+ of the time. Coin flip = 45–59%. Risky = 25–44%. Long shot = under 25%. Riskier bets should get smaller amounts.',
+    take: 'My one-line call: is the price good enough to bet, and how big.',
     otherApps: 'Each morning we look up the same bet on other apps (FanDuel, DraftKings, BetMGM, Bovada, ESPN Bet, Kalshi) and show the cheapest. A cheaper price means a bigger payout. Prices move, so check before you bet.',
     colTotal: 'How many comparisons we have for this app so far, from both sources. More means the numbers are more reliable.',
     priceFormat: 'Only changes how prices look. You can still type prices any way you like.'

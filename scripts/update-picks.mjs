@@ -12,7 +12,8 @@
  *
  * USAGE (run from anywhere inside the repo)
  *   node scripts/update-picks.mjs validate [picks.json]          # default: data/picks.json (also predictions.json, book-odds.json)
- *   node scripts/update-picks.mjs picks <new-picks.json>         # validate + replace + commit + push
+ *   node scripts/update-picks.mjs picks <new-picks.json>         # fill hit_prob/risk/verdict, validate, replace, commit, push
+ *   node scripts/update-picks.mjs fill                           # fill missing hit_prob/risk/verdict/same_game in data/picks.json, commit, push
  *   node scripts/update-picks.mjs add-predictions <preds.json>   # file = array of Prediction objects
  *   node scripts/update-picks.mjs grade <grades.json>            # file = [{id, result, final_score?}]
  *   node scripts/update-picks.mjs grade <id> <win|loss|push> ["final score"]
@@ -32,6 +33,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { createRequire } from 'node:module';
+import vm from 'node:vm';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PICKS = path.join(ROOT, 'data/picks.json');
@@ -39,6 +42,10 @@ const PREDS = path.join(ROOT, 'data/predictions.json');
 
 const SECTIONS = ['predictions', 'singles', 'props', 'parlays', 'longshots', 'nonsports'];
 const MULTI_SECTIONS = ['parlays', 'longshots'];
+/** Pick evaluation (hit chance / risk / verdict), shared with the app. */
+const PickEval = createRequire(import.meta.url)(path.join(ROOT, 'js/evaluate.js'));
+/** UI strings (verdict wording) from js/strings.js, a browser script run in a sandbox. */
+const STR = (() => { const c = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(ROOT, 'js/strings.js'), 'utf8'), c); return c.window.STR; })();
 const ACTIONS = ['bet', 'wait', 'skip'];
 const RESULTS = ['pending', 'win', 'loss', 'push'];
 /** Keys that would carry money or secrets; forbidden anywhere in public data. */
@@ -146,6 +153,12 @@ function validatePick(pk, sec, where, errs) {
   if (pk.action !== undefined && !ACTIONS.includes(pk.action)) errs.push(`${where}.action: one of ${ACTIONS.join('|')}`);
   if (pk.link !== undefined && pk.link !== null && !(isStr(pk.link) && okLink(pk.link))) errs.push(`${where}.link: http(s) URL expected`);
   if (pk.pending_news !== undefined && pk.pending_news !== null && typeof pk.pending_news !== 'string') errs.push(`${where}.pending_news: string or null`);
+  // Evaluation fields (optional; filled by PickEval.fillDefaults when missing).
+  range(errs, `${where}.hit_prob`, pk.hit_prob, 0, 100);
+  if (pk.risk !== undefined && !PickEval.RISK_KEYS.includes(pk.risk)) errs.push(`${where}.risk: one of ${PickEval.RISK_KEYS.join('|')}`);
+  if (pk.verdict !== undefined && !(isStr(pk.verdict) && pk.verdict.length <= 120)) errs.push(`${where}.verdict: non-empty string, at most 120 characters`);
+  if (pk.same_game !== undefined && typeof pk.same_game !== 'boolean') errs.push(`${where}.same_game: true or false`);
+  if (pk.prediction_id !== undefined && !isStr(pk.prediction_id)) errs.push(`${where}.prediction_id: string`);
   const multi = MULTI_SECTIONS.includes(sec);
   if (multi || pk.legs !== undefined) {
     if (!Array.isArray(pk.legs) || pk.legs.length < (multi ? 2 : 1)) errs.push(`${where}.legs: ${multi ? 'at least 2 legs' : 'array'} required`);
@@ -156,7 +169,6 @@ function validatePick(pk, sec, where, errs) {
     });
     range(errs, `${where}.est_multiple`, pk.est_multiple, 1, 100000, multi);
     range(errs, `${where}.quoted_multiple`, pk.quoted_multiple, 1, 100000);
-    range(errs, `${where}.hit_prob`, pk.hit_prob, 0, 100);
     range(errs, `${where}.skip_below`, pk.skip_below, 1, 100000);
   }
 }
@@ -297,8 +309,25 @@ function cmdPicks(file, o) {
   if (!file) usage('picks needs a file');
   const d = readJSON(file);
   failIf(validatePicks(d), file);
+  const filled = PickEval.fillDefaults(d, STR);   // hit_prob / risk / verdict / same_game when missing
+  failIf(validatePicks(d), file + ' (after filling defaults)');
+  if (filled) o.notes = [...o.notes, `Filled hit chance / risk / verdict defaults on ${filled} pick(s).`];
   const subject = `Update picks for ${d.slate_date} slate`;
   const body = [`Replaced data/picks.json (updated_at ${d.updated_at}).`, ...sectionSummary(d), ...o.notes];
+  if (o.dryRun) return console.log('[dry-run] would commit:\n' + subject + '\n\n' + body.join('\n'));
+  writeJSON(PICKS, d);
+  commitAndPush([PICKS], subject, body, o);
+}
+
+/** `fill`: add missing hit_prob / risk / verdict / same_game to data/picks.json. */
+function cmdFill(o) {
+  const d = readJSON(PICKS);
+  const n = PickEval.fillDefaults(d, STR);
+  failIf(validatePicks(d), PICKS);
+  if (!n) return console.log('Nothing to fill; every pick already has hit_prob, risk and verdict.');
+  const subject = `Fill hit chance, risk and verdict for ${d.slate_date} picks`;
+  const body = [`Computed missing evaluation fields on ${n} pick(s) with js/evaluate.js`,
+    '(hit_prob from fair/price or leg product, risk from hit_prob, verdict from action/edge).', ...o.notes];
   if (o.dryRun) return console.log('[dry-run] would commit:\n' + subject + '\n\n' + body.join('\n'));
   writeJSON(PICKS, d);
   commitAndPush([PICKS], subject, body, o);
@@ -375,6 +404,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   try {
     if (cmd === 'validate') cmdValidate(rest[0] ? path.resolve(rest[0]) : PICKS);
     else if (cmd === 'picks') cmdPicks(rest[0], o);
+    else if (cmd === 'fill') cmdFill(o);
     else if (cmd === 'add-predictions') cmdAddPredictions(rest[0], o);
     else if (cmd === 'grade') cmdGrade(rest, o);
     else usage(cmd ? `unknown command "${cmd}"` : '');
