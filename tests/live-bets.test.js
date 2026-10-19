@@ -57,4 +57,14 @@ assert.strictEqual(LB.ODDS_LIMIT, 500);
 assert.ok(LB.inLimit(50) && LB.inLimit(16.7) && !LB.inLimit(16.6) && !LB.inLimit(83.4));
 const lim = LB.groupEdges([E('ok', 'game', 8), { ...E('far', 'game', 12), now_chance: 10 }, { ...E('fav', 'prop', 6), now_chance: 90 }, { ...E('farnews', 'game', 30, 'news'), now_chance: 12 }]);
 assert.deepStrictEqual([lim.game.total, lim.prop.total, lim.reasons.length], [1, 0, 0]);
-console.log('ok live-bets helpers + data shape + grouping/cap + alerts + odds limit');
+// First visit (option C): unset key -> now - 30 min (ISO, like alert `at`); set key is never changed.
+const mem = () => { const m = {}; return { getItem: k => (k in m ? m[k] : null), setItem: (k, v) => { m[k] = String(v); }, m }; };
+const st = mem(), now = Date.parse('2026-10-20T01:30:00.000Z');
+assert.strictEqual(LB.seedSeen(st, now), '2026-10-20T01:00:00.000Z');
+assert.strictEqual(st.m[LB.SEEN_KEY], '2026-10-20T01:00:00.000Z');
+assert.strictEqual(LB.SEEN_KEY, 'liveBets.alertsSeen.' + LB.SLUG);
+assert.strictEqual(LB.seedSeen(st, now + 3600e3), '2026-10-20T01:00:00.000Z');          // already set: untouched
+// Only alerts in the last 30 minutes count as new for a first-time visitor.
+assert.deepStrictEqual(LB.markNew([{ at: '2026-10-20T01:20:00.000Z' }, { at: '2026-10-20T00:50:00.000Z' }], st.m[LB.SEEN_KEY]), [true, false]);
+assert.strictEqual(LB.seedSeen({ getItem: () => { throw new Error('blocked'); } }, now), null);
+console.log('ok live-bets helpers + data shape + grouping/cap + alerts + odds limit + first-visit seed');

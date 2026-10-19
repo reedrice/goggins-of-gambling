@@ -25,7 +25,11 @@
 (function (root, factory) {
   const api = factory(root);
   if (typeof module === 'object' && module.exports) module.exports = api;   // tests
-  else root.LiveBets = api;
+  else {
+    root.LiveBets = api;
+    // Page load: seed the first-visit "last seen" before app.js's badge reads it.
+    try { if (root.localStorage) api.seedSeen(root.localStorage); } catch (e) { /* storage blocked */ }
+  }
 })(typeof self !== 'undefined' ? self : this, function (root) {
   'use strict';
   const SLUG = 'nfl-was-sf-2026-10-19';           // tonight's game (WAS @ SF)
@@ -101,6 +105,28 @@
   const markNew = (alerts, lastSeen) => (alerts || []).map(a => !!lastSeen && a.at > lastSeen);
   const readSeen = () => { try { return localStorage.getItem(SEEN_KEY); } catch (e) { return null; } };
   const writeSeen = v => { try { if (v) localStorage.setItem(SEEN_KEY, v); } catch (e) { /* private mode */ } };
+
+  /**
+   * FIRST-VISIT RULE (Richie, option C, Oct 19 2026): if the viewer has never
+   * seen alerts (key unset), mark everything older than 30 minutes as seen by
+   * storing (now - 30 min) as an ISO time, the same format as alert `at`
+   * (toISOString). Reed's badge in app.js and our NEW highlighting both read
+   * this key, so a first-time visitor only sees the last 30 minutes as new.
+   * Runs once at PAGE LOAD (see the bottom of this file): index.html loads this
+   * script synchronously before app.js, so the key is set before the badge
+   * first reads it, even if the Live Bets tab is never opened.
+   * Pure (storage passed in) so tests can run it. Returns the stored value.
+   */
+  const FIRST_VISIT_WINDOW_MS = 30 * 60 * 1000;
+  function seedSeen(storage, now = Date.now()) {
+    try {
+      const cur = storage.getItem(SEEN_KEY);
+      if (cur) return cur;
+      const v = new Date(now - FIRST_VISIT_WINDOW_MS).toISOString();
+      storage.setItem(SEEN_KEY, v);
+      return v;
+    } catch (e) { return null; }   // private mode / no storage: leave it
+  }
 
   /** Tiny DOM helper: element with class and text (text via textContent). */
   function el(tag, cls, text) {
@@ -231,5 +257,5 @@
     timer = setInterval(load, REFRESH_MS);
   }
 
-  return { render, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, SLUG, CAP, ODDS_LIMIT };
+  return { render, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
 });
