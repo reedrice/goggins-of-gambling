@@ -102,13 +102,13 @@ main { padding: 8px 14px calc(84px + var(--safe-bottom)); max-width: 760px; marg
 .topbar-bank .value { font-family: var(--font-head); font-size: 24px; }
 .tabbar {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
-  display: grid; grid-template-columns: repeat(5, 1fr);
+  display: grid; grid-template-columns: repeat(6, 1fr);   /* 6 tabs incl. Fade Trent */
   background: var(--bg-2); border-top: 1px solid var(--line);
   padding-bottom: var(--safe-bottom);
 }
 .tabbar button {
   background: none; border: 0; color: var(--muted); padding: 8px 0 10px;
-  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
+  font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .02em; text-align: center; line-height: 1.1;
   display: flex; flex-direction: column; align-items: center; gap: 2px;
 }
 .tabbar button span { font-size: 20px; }
@@ -408,3 +408,10 @@ canvas.chart { width: 100%; height: 190px; display: block; background: var(--car
 .pbtn .vegas { font-size: 10px; color: #8fb8ff; text-align: center; line-height: 1.2; white-space: normal; }
 .pbtn.added .vegas { color: #000; }
 .vegas-line { color: #8fb8ff; }
+
+/* 20. Fade Trent tab (app.js renderTrent) --------------------------------- */
+.trent-pick { display: flex; flex-direction: column; gap: 3px; }
+.trent-pick .tp-top { display: flex; justify-content: space-between; gap: 8px; align-items: flex-start; }
+.trent-pick .tp-pick { font-weight: 700; overflow-wrap: anywhere; }
+.trent-pick.unclear { opacity: .7; }
+.fade-win { color: var(--good); } .fade-loss { color: var(--accent-2); }

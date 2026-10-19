@@ -4,7 +4,7 @@
 
   PURPOSE
     Provides the DOM skeleton: the first-run onboarding overlay, the header,
-    one <section> per tab (Picks, Calculator, Bets, Record, Settings) and the
+    one <section> per tab (Picks, Calculator, Bets, Record, Fade Trent, Settings) and the
     bottom tab bar. All content is rendered by js/app.js.
 
   BRANDING
@@ -50,6 +50,7 @@
       <section id="tab-calc" class="tab" data-tab="calc" hidden></section>
       <section id="tab-bets" class="tab" data-tab="bets" hidden></section>
       <section id="tab-record" class="tab" data-tab="record" hidden></section>
+      <section id="tab-trent" class="tab" data-tab="trent" hidden></section>
       <section id="tab-settings" class="tab" data-tab="settings" hidden></section>
     </main>
 
@@ -59,6 +60,7 @@
       <button data-go="calc"><span>🧮</span><b class="tl"></b></button>
       <button data-go="bets"><span>💰</span><b class="tl"></b></button>
       <button data-go="record"><span>📈</span><b class="tl"></b></button>
+      <button data-go="trent"><span>🙃</span><b class="tl"></b></button>
       <button data-go="settings"><span>⚙️</span><b class="tl"></b></button>
     </nav>
   </div>
@@ -72,6 +74,7 @@
   <script src="js/calc.js"></script>
   <script src="js/plain.js"></script>
   <script src="js/vegas.js"></script>
+  <script src="js/trent.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/gametime.js"></script>
   <script src="js/evaluate.js"></script>

@@ -185,6 +185,10 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await p.click('[data-go="picks"]'); await p.waitForSelector('#tab-picks .card');
   console.log('american price on first card:', await p.$eval('#tab-picks .price-on', e => e.textContent));
   await p.screenshot({ path: SHOT + '/8-settings-picks.png' });
+  // No cents on screen (Reed, Oct 19 2026) + the Fade Trent tab.
+  for (const t of ['picks', 'calc', 'record']) { await p.evaluate(g => document.querySelector(`[data-go="${g}"]`).click(), t); await wait(1500); console.log(`cents (¢) visible on ${t}:`, await p.evaluate(() => (document.querySelector('main, #app').innerText.match(/¢/g) || []).length)); }
+  await p.evaluate(() => document.querySelector('[data-go="trent"]').click()); await p.waitForSelector('#tab-trent .trent-pick');
+  console.log('fade trent:', await p.$eval('#tab-trent .kpis', e => e.innerText.replace(/\s+/g, ' ')), '| cards:', await p.$$eval('#tab-trent .trent-pick', x => x.length), '| fits phone:', await p.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
   console.log('localStorage keys:', await p.evaluate(() => Object.keys(localStorage)));
   console.log('ERRORS:', errs.length ? errs : 'none');
   await b.close();
