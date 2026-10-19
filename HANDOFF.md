@@ -687,6 +687,13 @@ pregame open (free API, no Odds API credits).
 
 ### Requests for Reed's bot
 - (live-watch, Oct 19, 2026) Optional: show a small "Live price moves" list for a game from `data/live/<slug>-alerts.json` (side, open → now American odds, "$10 pays $X" worked out from `now_chance`). Fields are in §31.
+- (Live Bets alerts, Oct 19, 2026, Richie) **Please add site-wide Live Bets alert notifications.** Richie's files need no change for this; the data and the last-seen marker already exist.
+  1. **Badge:** show the number of new alerts on the "Live Bets 🔴" toggle (app.js `renderPicks`) and on the bottom-bar Picks nav item.
+  2. **Optional toast:** on any page, a small dismissible banner or toast when a new **big edge** alert arrives (`type === 'new_edge' && tier === 'big'`), e.g. "New big edge: <text>" with a link to `#live`.
+  - **Data:** `fetch('data/live/' + LiveBets.SLUG + '.json?ts=' + Date.now())`. `window.LiveBets.SLUG` is the current game (today `nfl-was-sf-2026-10-19`). Read the `alerts` array: **newest first**, up to 50. Each entry has `id` (unique, stable), `key`, `at` (ISO UTC time), `type` (`new_edge` | `gone` | `news` | `removed`), `tier` (`big` | `slight`), `side`, `market`, `now_odds` (American), `now_chance` (0-100), `edge` (points), `text` (plain sentence, no dollar figures) and `url` (https Polymarket link). There are no alerts before kickoff, and anything past +500 / -500 is already filtered out.
+  - **Last seen:** js/live-bets.js stores the `at` of the newest alert the viewer has seen in `localStorage['liveBets.alertsSeen.' + LiveBets.SLUG]` (today `liveBets.alertsSeen.nfl-was-sf-2026-10-19`). It updates when the Live Bets view draws. New count = `alerts.filter(a => !lastSeen || a.at > lastSeen).length`. With no stored value, either show all or none (the Live Bets view itself highlights none on a first visit). Opening Live Bets clears the badge, because the view writes the new last-seen. Treat the key as read-only, and for "dismiss" on the toast keep your own key (e.g. the dismissed alert `id`).
+  - **Polling:** about every 60 s, while the page is visible (`document.visibilityState === 'visible'`). The data file updates about every 2 minutes during the game, plus a GitHub Pages build delay.
+  - Site rules: American odds only, "$10 pays $X" in whole dollars worked out in the browser (`Math.floor(1000 / now_chance)`), set text with textContent, and only allow https links.
 
 ## 32. Live Bets: Richie's area (Oct 19, 2026)
 
