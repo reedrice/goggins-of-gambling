@@ -189,6 +189,12 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   for (const t of ['picks', 'calc', 'record']) { await p.evaluate(g => document.querySelector(`[data-go="${g}"]`).click(), t); await wait(1500); console.log(`cents (¢) visible on ${t}:`, await p.evaluate(() => (document.querySelector('main, #app').innerText.match(/¢/g) || []).length)); }
   await p.evaluate(() => document.querySelector('[data-go="trent"]').click()); await p.waitForSelector('#tab-trent .trent-pick');
   console.log('fade trent:', await p.$eval('#tab-trent .kpis', e => e.innerText.replace(/\s+/g, ' ')), '| cards:', await p.$$eval('#tab-trent .trent-pick', x => x.length), '| fits phone:', await p.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+  // NBA is a first-class sport: tomorrow's Picks show NBA cards and an NBA chip.
+  await p.evaluate(() => document.querySelector('[data-go="picks"]').click()); await wait(1000);
+  await p.evaluate(() => { const b = [...document.querySelectorAll('[data-pick-day]')].find(x => x.dataset.pickDay === '2026-10-20'); if (b) b.click(); }); await wait(800);
+  console.log('picks on Oct 20 (NBA opening night):', await p.$$eval('#tab-picks .card', cs => cs.length));
+  await p.evaluate(() => { const b = document.querySelector('[data-pick-day]'); if (b) b.click(); }); await wait(800);
+  console.log('sport chips (first day):', await p.$$eval('[data-pick-sport]', x => x.map(e => e.innerText).join(',')));
   console.log('localStorage keys:', await p.evaluate(() => Object.keys(localStorage)));
   console.log('ERRORS:', errs.length ? errs : 'none');
   await b.close();

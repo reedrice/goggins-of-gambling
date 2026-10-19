@@ -658,3 +658,13 @@ Reed: drop the Polymarket/Kalshi cent values. Cents stay **internal** (picks.jso
 - Record: price differences say "pays a bit less / pays less / pays a lot less / pays more / same" (under 2¢, 2–5¢, over 5¢ internally).
 - Pick text: `Plain.noCents()` turns any "41¢" in reasoning/notes/news into "+144" as a safety net, but **write picks.json text and the daily digest without cents** (dollars + American odds).
 - Tips (howPrices, price, fair, advantage, colDiff, americanOdds) are rewritten without cents. tests/smoke.js checks that no "¢" is visible on Picks, Build a Bet and Record.
+
+## 30. NBA is a first-class sport (audit Oct 19, 2026)
+
+**One list:** `APP_CONFIG.sports` in config.js (`NFL, MLB, NHL, NBA, WNBA, Soccer`) is "our sports" and their display order. Build a Bet's sport chips and the **new Picks-tab sport chips** (shown when a day has picks from 2+ sports; a combo like "NBA + NFL" shows under each) both read it. `tests/sports.test.mjs` fails if a sport in that list is missing from `MarketsCore.LEAGUES`, the Kalshi series map (fetch-markets.mjs), the Odds API `SPORT_KEYS` (fetch-book-odds.mjs), team logos (`teams.js ESPN_LEAGUES`) or positions (fetch-positions.mjs). To add a sport: add it to config.js, then make that test pass.
+
+**Audit result:** NBA was already wired into markets, Kalshi, Vegas odds, logos, positions, picks validation (free-text `sport`) and spread wording (default "points"). What was missing: no shared sport list (Build a Bet had its own hard-coded order), no sport filter on Picks, and **no NBA singles, props or game predictions**, only 3 NBA combo slips for Oct 20. No NBA games on Oct 19.
+
+**Daily routine:** treat NBA like MLB/NFL/NHL: game predictions (`add-predictions`), singles and props judged on merit against Vegas fair (`data/book-odds.json`, `data/vegas-lines.json`), NBA legs in mixed slips. Run fetch-book-odds as usual (the cap ranks sports by picks, so NBA gets lines once it has picks).
+
+**First NBA picks (Oct 20 opening night, Polymarket US prices at 1:41 PM CT):** Celtics @ Pistons Under 221.5 (0.25u), Joel Embiid 25+ points (0.5u), Cade Cunningham 25+ points (0.5u), LeBron James under 15 points (0.25u); predictions DET 51, NY 64, SA 56. All are "Fair price, small play only" (edges about 1.5 to 2.6 points vs the books).
