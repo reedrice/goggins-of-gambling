@@ -767,3 +767,51 @@ A routine runs around **noon and 4 PM CT** to check confirmed lineups, starting 
 - **Gap to know about:** NFL inactives (about 90 minutes before kickoff) and NHL warmups land after the 4 PM run, so late scratches after 4 PM aren't caught by this routine.
 
 - Discord push (Oct 19, 2026): `node scripts/live-discord.mjs [--slug ...]` posts **only** new `new_edge` alerts with tier `big` and `news` ("likely news") alerts from data/live/<slug>.json to a Discord webhook. The URL comes **only** from env `DISCORD_WEBHOOK_URL` (never logged or committed, and scrubbed from errors). Without it the script exits quietly. Each alert posts once: posted ids are stored outside the repo in `/workspace/live/discord-posted.json`. It respects the +500/-500 limit, skips alerts older than 30 min, posts at most 5 per run about 1 s apart, and retries a 429 once after `retry_after`. Messages use `allowed_mentions: none`. Each message has the bet, market, American odds, "$10 pays $X" (whole dollars), edge points, score/clock context and the link. Tests use a mocked fetch: `node --test tests/live-discord.test.mjs`. The box loop (/workspace/live-loop.sh, not in the repo) runs it after every publish.
+
+## 34. Play money + leaderboard (Oct 19, 2026)
+
+**What:** points only, labeled "Play money, just for fun". No real money is involved anywhere.
+- Each person picks a display name and starts with **1,000 points**.
+- Two ways to bet:
+  - **"🎮 Play"** on any pick card whose picks all have a real `market_id`. It fetches the live Polymarket US price, shows a confirm box ("Bet 100 pts, get X back", American odds), and places a 100-point bet.
+  - **"🎮 Bet play points on this slip"** at the bottom of Build a Bet. You choose the points. Only picks from the game list count; typed-in picks can't be played.
+- Prices are the live Polymarket US buy price at the moment the bet is placed, shown as American odds. No cents.
+
+**Where:** My Bets tab → toggle **"My bets" | "Play money 🎮"** (`#bets` / `#play`, remembered in `betdash_prefs.betsView`). It shows:
+- the points, won-lost, ROI ("Gain per point bet") and best hit;
+- open and finished play bets;
+- the leaderboard and a **Post my score** button.
+
+**Code:**
+- `js/play.js` (`window.Play`) holds the pure math, used by the browser, the script and the tests:
+  - payout = stake × Π(100/c), rounded down;
+  - settling: any loss = lost; a voided pick is dropped; all voided = refund;
+  - stats, name rule, bet/submission validation, replay.
+- app.js "PLAY MONEY" block holds the UI.
+- `Store.getPlay/setPlay` uses key `betdash_play` (included in backup export/import).
+- Wording: `STR.play`. CSS: style.css §23.
+
+**Results (real only):**
+- `settlePlay()` reads each game from the public Polymarket US gateway (`/v1/events/slug/<game>`; CORS is open). When the market is `closed`, the side priced `"1"` won (the `long` side = our "yes").
+- It runs when the Play view opens (at most every 2 min) and on "Check results".
+
+**Shared leaderboard: the backend choice:**
+- **Chosen: GitHub issues + a script.** "Post my score" opens a pre-filled public issue titled `Play score: <name>` with a JSON block (name + the newest 40 bets: market, side, price, stake).
+- `node scripts/play-leaderboard.mjs --commit` then:
+  - reads those public issues and keeps each GitHub user's newest post;
+  - **re-settles every bet itself from real Polymarket US results** (statuses from browsers are ignored);
+  - drops bets the points couldn't cover;
+  - writes `data/play/leaderboard.json` and commits only when it changed.
+- No keys or sign-up needed: public issues are readable without auth. An optional `GITHUB_TOKEN` in the job's environment only raises the rate limit and is never printed. **Add it to the daily routine** (after fetch-markets), or run it hourly on game nights.
+- Tradeoffs:
+  - (+) free, nothing to sign up for, no secrets on the site, every score is re-checked.
+  - (−) posting needs a free GitHub account and the post is public (it shows the GitHub login).
+  - (−) the board updates only when the script runs, not instantly.
+  - (−) the price at bet time is self-reported. The script checks it's 1-99 but can't prove it was the real price then. That's fine for play money.
+  - (−) friends without GitHub only see the board; they can't post.
+- **Alternatives:** Supabase or Firebase free tier would give instant, account-free posting. But Reed would have to sign up, create a project, add row-level-security rules, and put a public anon key in the site (safe only with strict rules). It also means another service to keep an eye on. Not needed for play money.
+
+**Tests:**
+- `node tests/play.test.js` (math).
+- `node tests/play-leaderboard.test.mjs` (builder on made-up issues, stubbed results).
+- `CH=<chromium> NODE_PATH=<puppeteer-core> node tests/play.smoke.js <url>` (phone-width flow; settles a real finished game: Packers beat Cowboys on Oct 18).
