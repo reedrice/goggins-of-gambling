@@ -320,8 +320,6 @@ canvas.chart { width: 100%; height: 190px; display: block; background: var(--car
 .pf-player { width: 100%; min-height: 48px; font-size: 16px; }
 .pf-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; border-top: 1px solid var(--line); padding-top: 10px; }
 .pf-count { font-size: 14px; font-weight: 700; flex: 1 1 180px; }
-.pres-head { padding: 10px; font-weight: 800; border-bottom: 1px solid var(--line); }
-.pres-h { margin: 10px 10px 4px; font-family: var(--font-head); text-transform: uppercase; letter-spacing: .04em; color: var(--accent); }
 .pres-more { margin: 8px 10px 12px; }
 
 /* 13. Game start times on slip legs and saved bets (js/gametime.js) ------ */
@@ -331,3 +329,35 @@ canvas.chart { width: 100%; height: 190px; display: block; background: var(--car
 .bleg { display: flex; gap: 6px; align-items: flex-start; }
 .bleg-txt { display: flex; flex-direction: column; min-width: 0; overflow-wrap: anywhere; }
 .bleg .leg-when { font-size: 12px; color: var(--muted); font-weight: 500; }
+
+/* 14. Grouped Build-a-bet results (js/picker-groups.js) -----------------
+   Game card (sticky header) > Game bets (blue) / Player props (green) >
+   type or stat category > player. Each level is indented a little and has
+   a count pill; everything wraps, so no sideways scroll at 390px. */
+.presults { max-height: 72vh; }
+.pres-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 10px; padding: 10px; font-weight: 800; border-bottom: 1px solid var(--line); }
+.pres-tools { display: flex; gap: 6px; }
+.pg > summary { list-style: none; display: flex; align-items: center; gap: 8px; cursor: pointer; min-height: 44px; padding: 6px 10px; }
+.pg > summary::-webkit-details-marker { display: none; }
+.pg > summary::before { content: '▸'; color: var(--muted); flex: none; width: 12px; transition: transform .15s; }
+.pg[open] > summary::before { transform: rotate(90deg); }
+.pg-title { display: flex; flex-direction: column; min-width: 0; flex: 1; overflow-wrap: anywhere; }
+.pg-n { flex: none; margin-left: auto; min-width: 28px; padding: 2px 8px; border-radius: 999px; background: var(--card-2); color: var(--muted); font-size: 12px; font-weight: 800; text-align: center; }
+.pg-ico { flex: none; }
+.pg-body { padding: 0 0 4px; }
+/* level 0: game card with a sticky header inside the scrolling results box */
+.pg-game { border-bottom: 2px solid var(--line); }
+.pg-game > summary { position: sticky; top: 0; z-index: 3; background: var(--bg-2); border-bottom: 1px solid var(--line); min-height: 56px; }
+.pg-game > summary .glogos { flex: none; }
+/* level 1: sections, color-coded */
+.pg-team, .pg-prop { margin: 6px 6px 6px 10px; border-radius: 10px; background: var(--card); border-left: 4px solid #4da3ff; }
+.pg-prop { border-left-color: #34d27b; }
+.pg-team > summary .pg-title b { color: #8cc4ff; }
+.pg-prop > summary .pg-title b { color: #7fe3a8; }
+/* level 2 and 3: indented lists */
+.pg-l2 { margin: 0 6px 0 12px; border-top: 1px solid var(--line); }
+.pg-l2 > summary { font-weight: 700; font-size: 14px; }
+.pg-l3 { margin: 0 4px 0 14px; border-top: 1px dashed var(--line); }
+.pg-l3 > summary { font-size: 14px; min-height: 40px; }
+.pg .mrow { margin: 0 6px 0 12px; }
+.pg .pres-more { margin: 6px 0 8px 22px; }

@@ -49,24 +49,36 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await p.screenshot({ path: SHOT + '/2-picks.png' });
   // Builder: search
   await p.click('[data-go="calc"]'); await wait(300);
-  await p.type('.psearch', 'purdy'); await p.waitForFunction(() => document.querySelectorAll('.presults .mrow').length > 0, { timeout: 15000 });
+  await p.type('.psearch', 'purdy'); await wait(1200);
+  if (!(await p.$('.presults .mrow'))) await tap('[data-expand="all"]');
+  await p.waitForFunction(() => document.querySelectorAll('.presults .mrow').length > 0, { timeout: 15000 });
   console.log('search "purdy":', (await p.$$eval('.presults .mlabel', x => x.slice(0, 5).map(e => e.textContent.trim().replace(/\s+/g, ' ')))).join(' | '));
   await p.screenshot({ path: SHOT + '/3-search.png' });
   await tap('.presults .pbtn:not([disabled])'); await wait(1500);
   // Filters: "San" + Player props only must list 49ers player props (the old bug: only game bets).
   const setQ = async q => { await p.$eval('.psearch', (e, v) => { e.value = v; e.dispatchEvent(new Event('input')); }, q); await wait(900); };
-  const heads = () => p.$$eval('.presults .pres-h', x => x.map(e => e.textContent.replace(/\s+/g, ' ').trim()).join(' | '));
+  // Grouped results: Game -> Game bets / Player props -> type or stat category -> player.
+  const heads = () => p.$$eval('.presults details.pg-game > summary', x => x.map(e => e.textContent.replace(/\s+/g, ' ').trim()).join(' | '));
   await setQ('San');
-  console.log('search "San" (all bets):', await heads());
+  console.log('search "San" (all bets) games:', await heads());
   await tap('[data-kind="team"]'); await wait(900);
   const sfPlayers = await p.evaluate(async () => (await Picker.loadIndex()).events.filter(e => e.slug.startsWith('nfl-') && e.teams.some(t => t.abbr === 'sf')).flatMap(e => e.players.filter(x => x[1] === 'sf').map(x => x[0])));
-  const propLabels = await p.$$eval('.presults .mlabel', x => x.map(e => e.textContent.trim().replace(/\s+/g, ' ')));
-  const sfRows = propLabels.filter(l => sfPlayers.some(n => l.includes(n)));
-  // Every page of results: also count all 49ers rows (Show more until done).
-  while (await p.$('.presults [data-more="prop"]')) { await tap('.presults [data-more="prop"]'); await wait(150); }
-  const allLabels = await p.$$eval('.presults .mlabel', x => x.map(e => e.textContent.trim().replace(/\s+/g, ' ')));
-  console.log('  all pages:', allLabels.length, '| 49ers player rows:', allLabels.filter(l => sfPlayers.some(n => l.includes(n))).length, '| other teams:', [...new Set(allLabels.filter(l => !sfPlayers.some(n => l.includes(n))).map(l => l.split(' · ')[1].split(',')[0]))].join(', '));
-  console.log('search "San" + Player props only:', await heads(), '| shown:', propLabels.length, '| 49ers player rows:', sfRows.length, '| e.g.', sfRows.slice(0, 3).join(' / '));
+  console.log('search "San" + Player props only, games:', await heads());
+  console.log('  default open nodes:', await p.$$eval('.presults details.pg[open]', x => x.length), '| sections:', await p.$$eval('.presults details.pg-l1 > summary', x => x.map(e => e.textContent.replace(/\s+/g, ' ').trim()).join(' | ')));
+  const t0 = Date.now(); await tap('[data-expand="all"]'); await wait(50);
+  console.log('  open all took', Date.now() - t0, 'ms; rows drawn:', await p.$$eval('.presults .mrow', x => x.length));
+  const sfGame = await p.evaluate(sf => {
+    const g = [...document.querySelectorAll('.presults details.pg-game')].find(d => d.dataset.node.includes('nfl-was-sf'));
+    if (!g) return null;
+    const cats = [...g.querySelectorAll('details.pg-stat')].map(d => d.querySelector(':scope > summary').textContent.replace(/\s+/g, ' ').trim());
+    const pls = [...g.querySelectorAll('details.pg-player')].map(d => ({ name: d.dataset.node.split('|').pop(), n: +d.querySelector(':scope > summary .pg-n').textContent }));
+    return { cats, players: pls.length, sum: pls.reduce((a, b) => a + b.n, 0), notSf: pls.filter(x => !sf.includes(x.name)).map(x => x.name) };
+  }, sfPlayers);
+  console.log('  49ers game: categories', sfGame && sfGame.cats.length, '(' + (sfGame && sfGame.cats.slice(0, 6).join(', ')) + ') | player lists:', sfGame && sfGame.players, '| props:', sfGame && sfGame.sum, '| non-49ers players:', sfGame && sfGame.notSf.length);
+  const purdyYds = await p.evaluate(() => { const d = [...document.querySelectorAll('.presults details.pg-player')].find(x => /passing_yards\|Brock Purdy$/.test(x.dataset.node)); return d ? [...d.querySelectorAll('.mlabel')].map(e => (e.textContent.match(/(\d+)\+/) || [])[1]).map(Number) : null; });
+  console.log('  Purdy passing yards lines:', purdyYds && purdyYds.join(', '), '| ascending:', !!purdyYds && purdyYds.every((v, i) => !i || v >= purdyYds[i - 1]));
+  await tap('[data-expand="none"]'); await wait(100);
+  console.log('  after close all, open nodes:', await p.$$eval('.presults details.pg[open]', x => x.length));
   console.log('filter count:', await p.$eval('.pf-count', e => e.textContent), '| prop types:', await p.$$eval('.pf-types [data-sub^="prop:"]', x => x.map(e => e.parentElement.textContent.trim().replace(/\s+/g, ' ')).join(', ')));
   await setQ('');
   await tap('.pf-teambtn'); await wait(200);
@@ -74,7 +86,10 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await tap('.pf-teamopt[data-team="nfl:sf"]'); await wait(900);
   console.log('player step visible:', await p.$eval('.pf-player-step', e => !e.hidden), '| players:', await p.$$eval('.pf-player option', x => x.length - 1), '| count:', await p.$eval('.pf-count', e => e.textContent));
   await p.select('.pf-player', 'Brock Purdy'); await wait(900);
-  console.log('Purdy only:', await p.$eval('.pf-count', e => e.textContent), '| first:', await p.$eval('.presults .mlabel', e => e.textContent.trim()));
+  console.log('Purdy only:', await p.$eval('.pf-count', e => e.textContent), '| categories:', await p.$$eval('.presults details.pg-stat > summary', x => x.map(e => e.textContent.replace(/\s+/g, ' ').trim()).join(', ')), '| first row:', await p.$eval('.presults .mlabel', e => e.textContent.trim()));
+  await p.addStyleTag({ content: '.topbar,.tabbar,.plat-bar{visibility:hidden}' });
+  await (await p.$('.presults')).screenshot({ path: SHOT + '/3c-grouped-phone.png' });
+  await p.addStyleTag({ content: '.topbar,.tabbar,.plat-bar{visibility:visible}' });
   console.log('summary:', await p.$eval('.pf-sum', e => e.textContent));
   await p.addStyleTag({ content: '.topbar,.tabbar,.plat-bar{visibility:hidden}' });
   await (await p.$('.pfilters')).screenshot({ path: SHOT + '/3b-filters.png' });
@@ -100,6 +115,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   console.log('slip legs:', await p.$$eval('#slip .leg', x => x.map(e => e.querySelector('.leg-desc, .l-desc').textContent || e.querySelector('.l-desc').value).join(' | ')));
   // Game start times: add an MLB leg (starts 7:08 PM, before the 7:15 PM NFL legs) + a typed leg.
   await p.$eval('.psearch', e => { e.value = 'guardians rays under'; e.dispatchEvent(new Event('input')); }); await wait(1200);
+  if (!(await p.$('.presults .mrow'))) await tap('[data-expand="all"]');
   await tap('.presults .pbtn:not([disabled])'); await wait(1500);
   await tap('#add-manual'); await wait(300);
   await p.type('#slip .l-desc', 'Typed by hand'); await p.type('#slip .leg:last-child .l-price', '50').catch(() => {});

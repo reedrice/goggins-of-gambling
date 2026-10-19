@@ -175,6 +175,7 @@
   // ---------------------------------------------------------------- search index
 
   const PF = window.PickerFilters;
+  const PG = window.PickerGroups;
 
   /** Per-event cached search rows: [{ev, m, hay, who}] */
   const searchRows = new Map();
@@ -241,9 +242,6 @@
 
   // ---------------------------------------------------------------- UI
 
-  /** Results shown per group before "Show more". */
-  const PAGE = 20;
-
   /**
    * Mount the picker into a container.
    *
@@ -253,7 +251,9 @@
    *     3. Team dropdown with logos  4. Player dropdown (props + team only)
    *     "N bets match" + Reset filters
    *   Search box -> results: every bet that passes the filters AND the search
-   *     text, in two groups (Game bets / Player props), 20 at a time.
+   *     text, grouped Game -> Game bets (Who wins / Spread / Total / Other) and
+   *     Player props (one dropdown per stat category -> players), with counts,
+   *     Open all / Close all and "Show more" per list (js/picker-groups.js).
    *   Browse games: game cards for the filtered day/sport/team -> one game.
    *
    * @param {HTMLElement} root
@@ -267,7 +267,8 @@
       f: null,                  // filter state (PickerFilters shape), set in init()
       panelOpen: saved.panelOpen !== false,
       open: false, game: null, gameData: null, gameStatus: '',
-      q: '', lim: { team: PAGE, prop: PAGE }, teamListOpen: false, loading: false
+      q: '', teamListOpen: false, loading: false,
+      tree: null, openIds: new Set(), leafLim: new Map() // grouped results (see drawTree)
     };
     root.innerHTML = `
       <div class="picker">
@@ -333,7 +334,6 @@
      */
     async function changed() {
       save({ f: state.f, panelOpen: state.panelOpen });
-      state.lim = { team: PAGE, prop: PAGE };
       state.game = null;
       renderFilters(null);
       state.loading = true;
@@ -375,8 +375,16 @@
       if (e.target.closest('.pf-teambtn')) { state.teamListOpen = !state.teamListOpen; renderTeamSel(); return; }
       const tm = e.target.closest('[data-team]');
       if (tm) { state.f.team = tm.dataset.team; state.f.player = ''; state.teamListOpen = false; changed(); return; }
-      const more = e.target.closest('[data-more]');
-      if (more) { state.lim[more.dataset.more] += PAGE; runResults(await loadedEvents()); return; }
+      const more = e.target.closest('[data-more-node]');
+      if (more && state.tree) {
+        const id = more.dataset.moreNode, n = state.tree.index.get(id);
+        state.leafLim.set(id, (state.leafLim.get(id) || LEAF_PAGE) + LEAF_PAGE);
+        const d = bodyOf(id);
+        if (n && d) d.querySelector(':scope > .pg-body').innerHTML = bodyHtml(n);
+        return;
+      }
+      const ex = e.target.closest('[data-expand]');
+      if (ex && state.tree) { state.openIds = ex.dataset.expand === 'all' ? PG.allIds(state.tree) : new Set(); drawTree(); return; }
       if (e.target.closest('.pf-reset')) {
         state.f = PF.defaults(days()[0]);
         input.value = '';
@@ -496,8 +504,10 @@
     // ---------------------------------------------------------- results
 
     /**
-     * List every bet that passes the filters and the search text.
-     * Nothing narrowed and no search: just show how many bets the day has.
+     * List every bet that passes the filters and the search text, grouped
+     * Game -> Game bets -> type, and Game -> Player props -> stat category -> player
+     * (js/picker-groups.js). Nothing narrowed and no search: just show how
+     * many bets the day has.
      * @param {object[]} evs loaded events (day/sport/team already applied)
      */
     function runResults(evs) {
@@ -506,32 +516,98 @@
       const q = norm(input.value);
       state.q = q;
       const tokens = q.length >= 2 ? q.split(' ').filter(Boolean) : [];
-      const hits = { team: [], prop: [] };
+      const hits = [];
       for (const ev of evs) {
         if (!PF.eventPasses(ev, f)) continue;
         for (const r of rowsFor(ev)) {
           if (!PF.marketPasses(ev, r.m, f)) continue;
           const s = tokens.length ? score(tokens, r.hay, r.who) : 1;
-          if (s) hits[PF.kindOf(r.m)].push({ r, s: s + (r.m.group === 'lines' ? 0.5 : 0) });
+          if (s) hits.push({ ev, m: r.m, s });
         }
       }
-      const total = hits.team.length + hits.prop.length;
+      const total = hits.length;
       const show = tokens.length > 0 || PF.isNarrowed(f);
       $('.pf-count').textContent = show ? F.match(total) : F.dayTotal(total, dateLabel(f.day));
-      if (!show) { results.hidden = true; results.innerHTML = ''; return; }
+      if (!show) { results.hidden = true; results.innerHTML = ''; state.tree = null; return; }
       results.hidden = false;
-      if (!total) { results.innerHTML = `<div class="muted pad">${esc(tokens.length ? STR.calc.noResults : F.noMatch)}</div>`; return; }
-      const byScore = (a, b) => b.s - a.s || a.r.ev.start_time.localeCompare(b.r.ev.start_time);
-      const group = (kind, title) => {
-        const list = hits[kind].sort(byScore);
-        if (!list.length) return '';
-        const lim = state.lim[kind];
-        return `<h5 class="pres-h">${esc(title)} <span class="muted small">(${list.length})</span></h5>` +
-          list.slice(0, lim).map(h => marketRow(h.r.ev, h.r.m, true)).join('') +
-          (list.length > lim ? `<button type="button" class="btn btn-sm pres-more" data-more="${kind}">${esc(STR.calc.showMore(Math.min(PAGE, list.length - lim)))}</button>` : '');
-      };
-      results.innerHTML = `<div class="pres-head">${esc(F.match(total))}</div>` + group('team', F.gameBets) + group('prop', F.propBets);
+      if (!total) { results.innerHTML = `<div class="muted pad">${esc(tokens.length ? STR.calc.noResults : F.noMatch)}</div>`; state.tree = null; return; }
+      state.tree = PG.build(hits, { searching: tokens.length > 0 });
+      state.openIds = PG.defaultOpen(state.tree, f);
+      state.leafLim = new Map();
+      drawTree();
     }
+
+    // ---------------------------------------------------------- grouped results
+    //
+    // LAZY: a <details> body is only built when it's open, so a collapsed
+    // 700-bet game costs one header. Open/closed state lives in
+    // state.openIds (node ids from PickerGroups), "Show more" per leaf in
+    // state.leafLim. Game headers are sticky inside the scrolling results box.
+
+    /** Markets shown per leaf before "Show more". */
+    const LEAF_PAGE = 10;
+
+    /** Whole results box: count + Expand all / Collapse all + game cards. */
+    function drawTree() {
+      const t = state.tree;
+      results.innerHTML = `<div class="pres-head"><span>${esc(F.matchGames(t.total, t.games.length))}</span>
+          <span class="pres-tools"><button type="button" class="btn btn-sm" data-expand="all">${esc(F.expandAll)}</button><button type="button" class="btn btn-sm" data-expand="none">${esc(F.collapseAll)}</button></span></div>` +
+        t.games.map(nodeHtml).join('');
+    }
+
+    /** One collapsible node (any level). */
+    function nodeHtml(n) {
+      const open = state.openIds.has(n.id);
+      return `<details class="pg pg-${n.kind} pg-l${n.level}" data-node="${esc(n.id)}" ${open ? 'open' : ''}>
+        <summary class="pg-sum">${summaryHtml(n)}<span class="pg-n" aria-label="${esc(F.betsCount(n.count))}">${n.count}</span></summary>
+        <div class="pg-body">${open ? bodyHtml(n) : ''}</div></details>`;
+    }
+
+    /** Header text of a node: game card, section, type, player or stat. */
+    function summaryHtml(n) {
+      const ev = n.ev;
+      switch (n.kind) {
+        case 'game': return `<span class="glogos">${window.Teams.badges(teamsOf(ev), 26)}</span><span class="pg-title"><b>${esc(shortTitle(ev))}</b>
+          <span class="muted small">${esc(ev.sport)} · ${esc(window.GameTime.format(ev.start_time) || when(ev.start_time, true))}</span></span>`;
+        case 'team': return `<span class="pg-ico" aria-hidden="true">🏟️</span><span class="pg-title"><b>${esc(F.gameBets)}</b></span>`;
+        case 'prop': return `<span class="pg-ico" aria-hidden="true">🙋</span><span class="pg-title"><b>${esc(F.propBets)}</b></span>`;
+        case 'sub': return `<span class="pg-title">${esc(F.teamSubs[n.key] || n.key)}</span>`;
+        case 'player': return `${window.Teams.badge(Object.assign({ league: ev.league }, (ev.teams || []).find(t => t.abbr === n.team) || {}), 22)}<span class="pg-title"><b>${esc(n.player)}</b></span>`;
+        default: return `<span class="pg-title">${esc(statLabel(n.key))}</span>`;
+      }
+    }
+
+    /** "passing_yards" -> "Passing yards" (STR.calc.f.stats, else made readable). */
+    function statLabel(k) {
+      const s = F.stats[k];
+      if (s) return s;
+      const w = String(k).replace(/_/g, ' ');
+      return w.charAt(0).toUpperCase() + w.slice(1);
+    }
+
+    /** Body: child nodes, or (leaf) the markets with a per-leaf "Show more". */
+    function bodyHtml(n) {
+      if (!n.items) return n.children.map(nodeHtml).join('');
+      const lim = state.leafLim.get(n.id) || LEAF_PAGE;
+      return n.items.slice(0, lim).map(m => marketRow(n.ev, m, false)).join('') +
+        (n.items.length > lim ? `<button type="button" class="btn btn-sm pres-more" data-more-node="${esc(n.id)}">${esc(STR.calc.showMore(Math.min(LEAF_PAGE, n.items.length - lim)))}</button>` : '');
+    }
+
+    /** Body element of a node's <details>. */
+    const bodyOf = id => [...results.querySelectorAll('details.pg')].find(d => d.dataset.node === id);
+
+    // Opening a node builds its body the first time ('toggle' doesn't bubble: capture).
+    results.addEventListener('toggle', e => {
+      const d = e.target;
+      if (!state.tree || !(d instanceof HTMLDetailsElement) || !d.classList.contains('pg')) return;
+      const n = state.tree.index.get(d.dataset.node);
+      if (!n) return;
+      if (d.open) {
+        state.openIds.add(n.id);
+        const body = d.querySelector(':scope > .pg-body');
+        if (!body.childElementCount) body.innerHTML = bodyHtml(n);
+      } else state.openIds.delete(n.id);
+    }, true);
 
     // ---------------------------------------------------------- browse
 

@@ -151,7 +151,25 @@ window.STR = {
       gameBets: 'Game bets',
       propBets: 'Player props',
       noProps: 'No player bets posted for these games yet. Polymarket US usually adds them about a day before the game.',
-      noMatch: 'Nothing matches these filters. Try Reset filters.'
+      noMatch: 'Nothing matches these filters. Try Reset filters.',
+      matchGames: (n, g) => `${n} bet${n === 1 ? '' : 's'} in ${g} game${g === 1 ? '' : 's'}`,
+      betsCount: n => `${n} bet${n === 1 ? '' : 's'}`,
+      expandAll: 'Open all',
+      collapseAll: 'Close all',
+      /** Prop category names (Polymarket stat key -> plain words). Unknown ones are made readable automatically. */
+      stats: {
+        passing_yards: 'Passing yards', rushing_yards: 'Rushing yards', receiving_yards: 'Receiving yards',
+        scrimmage_yards: 'Total yards (run + catch)', longest_reception: 'Longest catch', most_passing_yards: 'Most passing yards',
+        receptions: 'Catches', touchdowns: 'Touchdowns (any time)', first_touchdown: 'Scores the first touchdown',
+        team_first_touchdown: "Scores his team's first touchdown", passing_touchdowns: 'Passing touchdowns',
+        interceptions_thrown: 'Interceptions thrown', passing_attempts: 'Pass attempts', passing_completions: 'Completed passes',
+        rushing_attempts: 'Carries', fantasy_points_ppr: 'Fantasy points',
+        hits: 'Hits', total_bases: 'Total bases', hits_runs_rbis: 'Hits + runs + RBIs', rbis: 'RBIs', home_runs: 'Home runs',
+        strikeouts: 'Strikeouts', outs: 'Outs pitched', hits_allowed: 'Hits allowed', earned_runs_allowed: 'Earned runs allowed',
+        walks_allowed: 'Walks allowed',
+        goals: 'Goals scored', assists: 'Assists', points: 'Points', shots: 'Shots', shots_on_goal: 'Shots on goal', saves: 'Saves',
+        rebounds: 'Rebounds', threes: '3-pointers made', blocks: 'Blocks', steals: 'Steals'
+      }
     },
     browse: 'Browse games',
     hideBrowse: 'Hide games',

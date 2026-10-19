@@ -46,7 +46,7 @@ The scripts load in this order (classic `<script>` tags; each one sets a single 
 ```
 index.html            DOM skeleton (empty onboarding container, header, "I bet on" bar, 5 tab sections, tab bar, tooltip bubble)
 config.js             brand + repo config + platforms[] (one ordered list used everywhere)
-css/style.css         dark mobile-first theme (sections 1-13; 13 = leg start times; 9 = picker/logos/toggle/tooltips, 10 = Record compare table, 11 = pick evaluation box, 12 = Build-a-bet filter panel)
+css/style.css         dark mobile-first theme (sections 1-14; 13 = leg start times, 14 = grouped results; 9 = picker/logos/toggle/tooltips, 10 = Record compare table, 11 = pick evaluation box, 12 = Build-a-bet filter panel)
 js/strings.js         all UI text (plain-language rules in its header)
 js/calc.js            odds and parlay math (pure)
 js/evaluate.js        per-pick hit chance, risk label, "My take" verdict, prediction lookup (browser + Node, §18)
@@ -55,7 +55,8 @@ js/gametime.js        game start times on slip legs / saved bets: format, countd
 js/teams.js           team logos: Polymarket logo -> ESPN CDN -> colored circle; ESPN abbreviation fixes
 js/markets-core.js    Polymarket US event/market compaction + labels (browser + Node)
 js/picker-filters.js  Build-a-bet filter rules: day/sport, bet types + sub-types, team, player (browser + Node, §19)
-js/picker.js          market picker UI (filter panel, search, browse) + live Polymarket US fetches
+js/picker-groups.js   groups results: game -> game bets by type / player props by stat category -> player (browser + Node, §19)
+js/picker.js          market picker UI (filter panel, search, grouped results, browse) + live Polymarket US fetches
 js/github-log.js      shared log writer (GitHub REST contents API)
 js/app.js             UI controller
 data/markets/index.json         snapshot: list of upcoming games (small, loaded first)
@@ -68,6 +69,7 @@ tests/calc.test.js        node: math
 tests/gametime.test.js    node: start-time format (CT/ET), hints, lookup, leg order
 tests/evaluate.test.js    node: hit chance / risk / verdict defaults (js/evaluate.js)
 tests/picker-filters.test.js node: filter tree rules (js/picker-filters.js)
+tests/picker-groups.test.js  node: result grouping, line order, default open state, speed (js/picker-groups.js)
 tests/github-log.test.js  node: log writer against a mocked API
 tests/smoke.js            headless Chrome UI walk-through (puppeteer-core, --no-save)
 scripts/update-picks.mjs  daily-job CLI: validate, write, commit, and push picks/predictions
@@ -390,7 +392,27 @@ A step-by-step panel above the search box. It's a `<details>`, so it folds away 
 
 Unticked sub-types are stored as a list of *off* keys, so a new bucket is on by default.
 
-**Results:** whenever anything is narrowed, or there's search text, the list shows "N bets match" with two groups, *Game bets* and *Player props*, each with its own count and 20 rows at a time plus "Show N more". With nothing narrowed and no search, it only shows "N bets for Today…". **Reset filters** goes back to today, all sports, all bets, any team, and clears the search.
+**Results (grouped, js/picker-groups.js):** whenever anything is narrowed, or there's search text, results appear as a tree. Every header has a count pill:
+
+```
+Game card: both logos, "Commanders @ 49ers", "NFL · Mon Oct 19 · 7:15 PM CT"  (sticky inside the results box)
+  🏟️ Game bets (blue)    -> Who wins / Spread / Total score / Other game bets
+  🙋 Player props (green) -> one dropdown per stat category (Passing yards, Rushing yards, Catches,
+                             Touchdowns, Hits, Strikeouts, Goals scored, Assists, Points, Shots…)
+                             -> players (team logo + name) -> their lines, low to high (175+, 200+, 225+)
+```
+
+- **Order:** games by start time (with a search, best match first). Game bets come before Player props. Stat categories follow `STAT_ORDER` (most-bet first per sport). Players are sorted A–Z (best match first when searching). Spreads are sorted by the size of the line.
+- Reed asked for categories **first**, then players. With a Player filter, the categories stay and hold only that player's lines.
+- **Default open/closed** (`defaultOpen`):
+  - 25 or fewer results, or a Player filter: everything is open.
+  - Games: open with 2 or fewer games, a Team filter, or 40 or fewer results.
+  - Sections: open with 60 or fewer results, or a Team filter.
+  - Type/category: open with 12 or fewer. A player inside a category: open with 8 or fewer.
+- **Open all / Close all** buttons sit in the results header.
+- **Speed:** a node's body is only built when it's opened (an NFL game has ~700 bets). Grouping a whole NFL game takes ~15 ms, and "Open all" on 199 props takes ~0.1 s.
+- **"Show N more"** is per list (10 at a time). Open/closed state and page sizes are tracked by stable node ids, e.g. `g|<game>|prop|passing_yards|Brock Purdy`.
+- Category names are in `STR.calc.f.stats`. An unknown stat is made readable automatically ("shots_blocked" becomes "Shots blocked"). With nothing narrowed and no search, it only shows "N bets for Today…". **Reset filters** goes back to today, all sports, all bets, any team, and clears the search.
 
 **Search fix ("San" showed only game bets):** search rows used to carry both teams' names on every market, so "San" scored all ~700 49ers-game bets the same, main bets got a bonus, and only the top 30 were shown, so no props made the cut. Now a player prop carries only its **own team's** words (nickname, `full` name with city, which the snapshot added on 2026-10-19 because NHL/NBA `name` is only "Sharks", plus abbreviations) plus its stat in plain words and its bucket label. Game bets carry both teams. Results are grouped so props can't be crowded out. Verified: "San" + Player props on 2026-10-19 → 199 props: all 148 of the 49ers player props plus 51 San Jose Sharks props. Ties are sorted by start time, so the 6 PM Sharks game comes first.
 
