@@ -1,8 +1,35 @@
 /* css/live-bets.css — styles for the "Live Bets 🔴" view (js/live-bets.js).
-   OWNER: Richie (HANDOFF §32). Scope every rule under .live-bets-root so
-   nothing here can change the rest of the site. Site colors: var(--card),
-   var(--accent), var(--muted) from css/style.css. */
-.live-bets-root .live-bets-empty { text-align: center; padding: 40px 16px; background: var(--card);
+   OWNER: Richie (HANDOFF §32). Every rule is scoped under .live-bets-root so
+   nothing here can change the rest of the site. Site colors come from
+   css/style.css variables (--card, --card-2, --accent, --good, --warn, --muted, --text). */
+.live-bets-root .live-bets-empty { text-align: center; padding: 32px 16px; background: var(--card);
   border: 1px dashed var(--card-2); border-radius: 14px; color: var(--muted); }
 .live-bets-root .live-bets-dot { font-size: 28px; margin-bottom: 8px; }
-.live-bets-root .live-bets-empty p { margin: 0; font-size: 17px; font-weight: 700; color: var(--text); }
+.live-bets-root .live-bets-empty p { margin: 0 0 6px; font-size: 17px; font-weight: 700; color: var(--text); }
+.live-bets-root .lb-sub { font-size: 14px; line-height: 1.4; }
+
+/* Game header */
+.live-bets-root .lb-head { margin: 4px 0 12px; }
+.live-bets-root .lb-game { font-size: 18px; font-weight: 800; color: var(--text); }
+.live-bets-root .lb-status { font-size: 14px; color: var(--accent); font-weight: 700; margin-top: 2px; }
+.live-bets-root .lb-updated { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+/* Edge list: one card per bet, full width on phones */
+.live-bets-root .lb-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.live-bets-root .lb-edge { background: var(--card); border-radius: 14px; padding: 12px 14px;
+  border-left: 4px solid var(--card-2); }
+.live-bets-root .lb-edge.lb-big { border-left-color: var(--good); }
+.live-bets-root .lb-edge.lb-slight { border-left-color: var(--warn); }
+.live-bets-root .lb-edge.lb-gone { opacity: .55; border-left-color: var(--card-2); }
+.live-bets-root .lb-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 12px; }
+.live-bets-root .lb-tier { font-weight: 800; text-transform: uppercase; letter-spacing: .04em; }
+.live-bets-root .lb-big .lb-tier { color: var(--good); }
+.live-bets-root .lb-slight .lb-tier { color: var(--warn); }
+.live-bets-root .lb-pts { color: var(--muted); }
+.live-bets-root .lb-side { font-size: 17px; font-weight: 700; color: var(--text); margin-top: 6px; overflow-wrap: anywhere; }
+.live-bets-root .lb-market { font-size: 13px; color: var(--muted); }
+.live-bets-root .lb-odds { font-size: 16px; font-weight: 700; color: var(--text); margin-top: 6px; }
+.live-bets-root .lb-meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.live-bets-root .lb-link { display: block; margin-top: 10px; padding: 10px; text-align: center; border-radius: 10px;
+  background: var(--card-2); color: var(--text); font-weight: 700; text-decoration: none; }
+.live-bets-root .lb-foot { font-size: 12px; color: var(--muted); margin-top: 12px; text-align: center; }
