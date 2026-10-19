@@ -30,3 +30,19 @@ test('only big moves alert, biggest first, no cents', () => {
   assert.match(r.alerts.find(a => a.text.includes('AAA win')).text, /now \+150/);   // AAA got cheaper
   assert.match(r.alerts.find(a => a.text.includes('Under')).text, /Under 40\.5/);    // Over rose -> Under cheaper
 });
+
+test('step-only alert names the side that just got cheaper, signs from that side', () => {
+  // Calm vs open (+2), but last check had the spread Yes at 60 -> Yes just dropped 8.
+  const r = findMoves(F.open, { calm: 60 }, F.event);
+  const a = r.alerts.find(x => x.text.includes('Main spread'));
+  assert.strictEqual(a.side, 'AAA +1.5');
+  assert.match(a.text, /-8 since last check/);
+});
+
+test('open and now are both buy prices', () => {
+  const open = { ...F.open, markets: F.open.markets.map(m => ({ ...m, yesBuy: 51, noBuy: 51 })) };
+  const a = findMoves(open, {}, F.event).alerts.find(x => x.side === 'AAA win');
+  assert.strictEqual(a.openP, 51);   // open buy price, not the 50 mid
+  assert.strictEqual(a.nowP, 40);    // now ask
+  assert.match(a.text, /-11 pts from open/);
+});

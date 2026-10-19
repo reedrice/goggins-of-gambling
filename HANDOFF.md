@@ -681,3 +681,4 @@ pregame open (free API, no Odds API credits).
   odds + "$10 pays $X" + event link. No cents.
 - `--dir` overrides the working folder (handy for simulated tests).
 - Oct 19, 2026: tests added. `node --test tests/live-watch.test.mjs` runs on TEST DATA (made-up prices) in tests/fixtures/live-watch-sample.json. The script now exports its pure helpers plus `findMoves()` and only runs the CLI when executed directly.
+- Oct 19, 2026: side and sign fix. Alerts name the side that got cheaper based on the move that fired (open or step), signs are from that side's view (negative = cheaper), and snapshots store each side's buy price so open and now are both buy prices. Old snapshots fall back to the mid.

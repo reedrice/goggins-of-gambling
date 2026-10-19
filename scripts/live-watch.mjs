@@ -89,7 +89,9 @@ export function selectMarkets(ev) {
     const ql = x.m.question.toLowerCase();
     if (PLAYERS.some(p => ql.includes(p))) out.push(['Player prop', x]);
   }
-  return out.map(([kind, { m, q }]) => ({ id: m.id, slug: m.slug, kind, type: m.sportsMarketType, question: m.question, sides: sides(m), mid: +q.mid.toFixed(1) }));
+  return out.map(([kind, { m, q }]) => ({ id: m.id, slug: m.slug, kind, type: m.sportsMarketType, question: m.question, sides: sides(m), mid: +q.mid.toFixed(1),
+    // Buy prices (prob pts) of each side at open, so open and now are measured the same way.
+    yesBuy: +q.ask.toFixed(1), noBuy: +(100 - q.bid).toFixed(1) }));
 }
 
 /** Probability points -> American odds string, e.g. 40 -> "+150". */
@@ -117,17 +119,28 @@ export function findMoves(open, last, ev, cfg = {}) {
     if (!m || !isOpen(m) || !liquid(q)) { skipped++; continue; }   // settled, paused or thin now
     watched++;
     mids[o.id] = +q.mid.toFixed(1);
+    // Moves are detected on the Yes-side MID (bid/ask noise cancels out).
     const dOpen = q.mid - o.mid, dLast = last[o.id] != null ? q.mid - last[o.id] : 0;
-    if (Math.abs(dOpen) < openMove && Math.abs(dLast) < stepMove) continue;
-    // The side whose chance DROPPED is the one that now pays more ("juicier").
-    const yesCheaper = dOpen < 0;
+    const bigOpen = Math.abs(dOpen) >= openMove, bigStep = Math.abs(dLast) >= stepMove;
+    if (!bigOpen && !bigStep) continue;
+    // Pick the side that got cheaper, using whichever move actually fired.
+    // (Fix Oct 19: a step-only alert used to follow the open move, which could
+    // point at the side that just got MORE expensive.)
+    const trigger = bigOpen ? dOpen : dLast;
+    const yesCheaper = trigger < 0;
     const side = yesCheaper ? o.sides[0] : o.sides[1];
-    const nowP = yesCheaper ? q.ask : 100 - q.bid;          // price to buy that side now
-    const openP = yesCheaper ? o.mid : 100 - o.mid;
-    alerts.push({ size: Math.abs(dOpen), text:
+    // Open and now are both real BUY prices for that side (fix Oct 19: open used
+    // the mid and now used the ask, which overstated every move by half the gap).
+    // Old snapshots without buy prices fall back to the mid.
+    const nowP = yesCheaper ? q.ask : 100 - q.bid;
+    const openP = yesCheaper ? (o.yesBuy ?? o.mid) : (o.noBuy ?? 100 - o.mid);
+    // Signed from THIS side's point of view: negative = cheaper (pays more).
+    const sideOpen = yesCheaper ? dOpen : -dOpen, sideLast = yesCheaper ? dLast : -dLast;
+    const sgn = x => `${x > 0 ? '+' : ''}${x.toFixed(0)}`;
+    alerts.push({ size: Math.max(Math.abs(dOpen), Math.abs(dLast)), side, nowP, openP, text:
       `• ${side} (${o.kind})\n` +
       `  Opened ${american(openP)} → now ${american(nowP)}. $10 pays $${pays(nowP)} now (was about $${pays(openP)}).\n` +
-      `  Chance moved ${Math.abs(dOpen).toFixed(0)} pts from open` + (dLast ? `, ${dLast > 0 ? '+' : ''}${(yesCheaper ? -dLast : dLast).toFixed(0)} since last check` : '') + `.\n` +
+      `  Chance of this side ${sgn(sideOpen)} pts from open` + (dLast ? `, ${sgn(sideLast)} since last check` : '') + `.\n` +
       `  Bet it: ${open.url}` });
   }
   return { mids, alerts, watched, skipped };
