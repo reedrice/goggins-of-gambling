@@ -886,3 +886,18 @@ The script only **reads** Pablo's `data/live/*.json`. It never writes there.
 Both commit only their own file, and only when it changed (pull --rebase, never force).
 
 Started Oct 19, 2026 with 20 picks logged, 0 graded. Picks published before then have no history.
+
+## 37. "Refresh prices" on Picks + the night-of re-price (Oct 19, 2026)
+
+- **Picks tab:** the button `#picks-refresh` sits under the "Updated" line. It uses `js/live-picks.js` (`LivePicks.reprice(doc, getPrice)`, pure, tested in `tests/live-picks.test.js`).
+  - It re-loads data/picks.json, then gets live Polymarket US buy prices in the browser for each leg whose game has not started (`Picker.livePrice` → `gateway.polymarket.us/v1/markets/{id}/bbo`).
+  - **CORS is open:** this was checked in real Chromium in `tests/refresh.smoke.js`.
+  - Started legs keep their old price. The old price is kept as `price_morning`. A single's `edge` is re-computed as fair − price.
+  - The status line says "Live prices from <time>". If no price comes back (network or CORS), it falls back to the saved picks.json prices: "Could not get live prices. Showing saved prices from <time>."
+  - Nothing is written back to the repo.
+- **Build a Bet** already had `#refresh-px` (live per leg, with "Live prices from…"). It is unchanged.
+- **Vegas lines** always come from committed data. No key ever reaches the browser.
+- **Night-of manual re-price:** commit d101ed5 re-priced the not-started Oct 19 legs in data/picks.json.
+  - Each changed leg keeps `price_morning`, and each pick got `price_checked_at`.
+  - Picks with no edge left, and combos with a leg that already started, were set to `action: "skip"` with a plain verdict.
+  - `data/pick-history.json` keeps the original publish prices (mergeHistory never replaces), so CLV is still measured from the morning price.
