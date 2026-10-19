@@ -37,7 +37,7 @@ test('trailing team moneyline drifting = explained by score', () => {
   const ml = M({ mtype: 'winner', sides: ['Commanders win', '49ers win'], teams: ['Commanders', '49ers'] });
   const r = classify(ctx({ noDaniels: true }), ml, 0, 12);
   assert.strictEqual(r.class, 'score'); assert.match(r.reason, /WSH trailing by 7/);
-  assert.strictEqual(r.context, 'WSH down 7, Q2 9:14, no key injuries');
+  assert.strictEqual(r.context, 'WSH down 7, Q2 9:14');
   // The LEADING team getting cheaper has no score excuse -> real edge.
   assert.strictEqual(classify(ctx({ noDaniels: true }), ml, 1, 12).class, 'edge');
 });
@@ -46,6 +46,7 @@ test('QB hurt in-game (not back) = explained by injury for his team', () => {
   const ml = M({ mtype: 'winner', sides: ['Commanders win', '49ers win'], teams: ['Commanders', '49ers'] });
   const r = classify(ctx(), ml, 0, 12);
   assert.strictEqual(r.class, 'injury'); assert.match(r.reason, /J\.Daniels hurt in-game \(Q2 10:02\)/);
+  assert.doesNotMatch(r.context, /injur|hurt|Daniels/i);   // card context never shows injuries
 });
 
 test('prop player questionable = explained by injury', () => {
@@ -86,7 +87,7 @@ test('pregame: nothing is explained by score', () => {
   const ml = M({ mtype: 'winner', sides: ['Commanders win', '49ers win'], teams: ['Commanders', '49ers'] });
   const c = ctx({ state: 'pre', name: 'STATUS_SCHEDULED', period: 0, noDaniels: true });
   const r = classify(c, ml, 0, 12);
-  assert.strictEqual(r.class, 'edge'); assert.strictEqual(r.context, 'Pregame, no key injuries');
+  assert.strictEqual(r.class, 'edge'); assert.strictEqual(r.context, 'Pregame');
 });
 
 test('ESPN unavailable -> unverified, nothing invented', () => {

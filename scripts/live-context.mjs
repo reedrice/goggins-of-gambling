@@ -8,7 +8,8 @@
  * into one bucket:
  *   'edge'       real edge, no explanation found (tier slight 4-9 / big 10-24)
  *   'score'      explained by score / game state
- *   'injury'     explained by injury
+ *   'injury'     explained by injury: used INTERNALLY only. The view drops these
+ *                edges and never shows injury text (Oct 19, 2026 rule).
  *   'news'       25+ point move with no explanation: probably news we can't see
  *   'unverified' ESPN context couldn't be fetched, so we can't check (shown, but flagged)
  *
@@ -178,7 +179,7 @@ export function scoreReason(ctx, market, i) {
   return null;
 }
 
-/** One-line context for a card, e.g. "WAS down 7, Q2 9:14, no key injuries". */
+/** One-line score context for a card, e.g. "WSH down 7, Q2 9:14" (no injury text). */
 export function contextLine(ctx, market, i, injury) {
   if (!ctx.available) return 'Game info unavailable, not checked';
   const t = teamFor(ctx, market.teams?.[i]);
@@ -186,9 +187,9 @@ export function contextLine(ctx, market, i, injury) {
   if (ctx.game_state === 'pre') score = 'Pregame';
   else if (t && t.score != null) { const m = t.score - other(ctx, t).score; score = m === 0 ? `${t.abbr} tied` : `${t.abbr} ${m > 0 ? 'up' : 'down'} ${Math.abs(m)}`; }
   else score = scoreText(ctx);
+  // Score + clock only. Injuries are used internally to drop edges, never shown (Oct 19 rule).
   const parts = [score];
   if (ctx.game_state !== 'pre') parts.push(clockText(ctx));
-  parts.push(injury || 'no key injuries');
   return parts.join(', ');
 }
 

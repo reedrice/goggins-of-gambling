@@ -13,7 +13,8 @@
  *
  * DATA: data/live/<slug>.json, written by `node scripts/live-watch.mjs publish`.
  * Each edge has class: 'edge' (real), 'unverified' (ESPN context missing),
- * or a reason it moved ('score', 'injury', 'news'). Real/unverified edges show
+ * or a reason it moved ('score', 'news'). 'injury' edges are dropped and no
+ * injury text is ever shown. Real/unverified edges show
  * in two groups, Game lines and Player props, each sorted big to small and
  * capped at CAP cards with "Show more" so neither type swamps the list. The
  * rest go in a collapsed "Moved for a reason" section.
@@ -30,7 +31,10 @@
   const SLUG = 'nfl-was-sf-2026-10-19';           // tonight's game (WAS @ SF)
   const REFRESH_MS = 60 * 1000;                   // about once a minute
   const CAP = 5;                                  // cards per group before "Show more"
-  const REASON_CLASSES = ['score', 'injury', 'news'];
+  // Shown in "Moved for a reason". 'injury' edges are DROPPED entirely: injury
+  // data only decides whether an edge is real and is never shown (Oct 19 rule).
+  const REASON_CLASSES = ['score', 'news'];
+  const HIDDEN_CLASSES = ['injury'];
 
   /** What a $10 bet returns (stake + winnings) at chance p (0-100), in whole
    *  dollars rounded down (no cents): 40 -> "25", 30 -> "33". */
@@ -51,11 +55,14 @@
   /**
    * Split edges for display (pure, tested):
    *   game / prop: real + unverified edges, sorted, first `cap` in shown, rest in more.
-   *   reasons: score / injury / news moves, sorted.
+   *   reasons: score / news moves, sorted (injury edges dropped).
    */
   function groupEdges(edges, cap = CAP) {
     const main = [], reasons = [];
-    for (const e of edges || []) (REASON_CLASSES.includes(e.class) ? reasons : main).push(e);
+    for (const e of edges || []) {
+      if (HIDDEN_CLASSES.includes(e.class)) continue;                 // injury: drop, never show
+      (REASON_CLASSES.includes(e.class) ? reasons : main).push(e);
+    }
     const split = g => { const all = sortEdges(main.filter(e => groupOf(e) === g)); return { shown: all.slice(0, cap), more: all.slice(cap), total: all.length }; };
     return { game: split('game'), prop: split('prop'), reasons: sortEdges(reasons) };
   }
@@ -87,7 +94,7 @@
   }
 
   const TIER_LABEL = { big: 'Big edge', slight: 'Slight edge' };
-  const CLASS_LABEL = { score: 'Explained by score', injury: 'Explained by injury', news: 'Big move, likely news' };
+  const CLASS_LABEL = { score: 'Explained by score', news: 'Big move, likely news' };
 
   /** One edge card. */
   function edgeRow(e, link) {
@@ -160,7 +167,7 @@
       det.append(ul);
       box.append(det);
     }
-    box.append(el('div', 'lb-foot', 'Edges are measured against the pregame Polymarket price. Big edge = 10-24 points cheaper, slight = 4-9, with no score or injury reason found. Score, clock and injuries are from ESPN.'));
+    box.append(el('div', 'lb-foot', 'Edges are measured against the pregame Polymarket price. Big edge = 10-24 points cheaper, slight = 4-9, with no score reason found. Score and clock are from ESPN.'));
   }
 
   /** Entry point (called by app.js). Fetch now, then about every 60s. */

@@ -39,7 +39,9 @@ assert.strictEqual(LB.CAP, 5);
 assert.deepStrictEqual(g.prop.shown.map(e => e.key), ['p8', 'p7', 'p6', 'p5', 'p4']);   // top 5, big to small
 assert.strictEqual(g.prop.more.length, 4); assert.strictEqual(g.prop.total, 9);
 assert.deepStrictEqual(g.game.shown.map(e => e.key), ['g2', 'u1', 'g1', 'g3']);          // gone last; unverified stays in main
-assert.deepStrictEqual(g.reasons.map(e => e.key), ['n1', 's1', 'i1']);                  // explained moves go to "Moved for a reason"
+assert.deepStrictEqual(g.reasons.map(e => e.key), ['n1', 's1']);                        // score + news only
+assert.ok(![...g.game.shown, ...g.prop.shown, ...g.prop.more, ...g.reasons].some(e => e.class === 'injury'));   // injury edges dropped
+assert.strictEqual(g.prop.total, 9);
 assert.deepStrictEqual(LB.groupEdges(edges, 2).game.more.map(e => e.key), ['g1', 'g3']);
 // Score header from ESPN-shaped context (TEST DATA).
 const sb = LB.scoreboard({ game_context: { available: true, game_state: 'in', period: 2, clock: '9:14', possession: 'WSH', away: { abbr: 'WSH', score: 10 }, home: { abbr: 'SF', score: 17 } } });
