@@ -35,6 +35,11 @@
   // data only decides whether an edge is real and is never shown (Oct 19 rule).
   const REASON_CLASSES = ['score', 'news'];
   const HIDDEN_CLASSES = ['injury'];
+  // ODDS LIMIT (Oct 19, 2026): never show a side priced past +500 / -500 right
+  // now (chance under 16.7% or over 83.3%). publish already drops these; this
+  // is a safety net so an old data file can't show one.
+  const ODDS_LIMIT = 500;
+  const inLimit = p => p == null || (p >= 10000 / (ODDS_LIMIT + 100) && p <= 100 * ODDS_LIMIT / (ODDS_LIMIT + 100));
 
   /** What a $10 bet returns (stake + winnings) at chance p (0-100), in whole
    *  dollars rounded down (no cents): 40 -> "25", 30 -> "33". */
@@ -61,6 +66,7 @@
     const main = [], reasons = [];
     for (const e of edges || []) {
       if (HIDDEN_CLASSES.includes(e.class)) continue;                 // injury: drop, never show
+      if (!inLimit(e.now_chance)) continue;                          // past +500 / -500: drop
       (REASON_CLASSES.includes(e.class) ? reasons : main).push(e);
     }
     const split = g => { const all = sortEdges(main.filter(e => groupOf(e) === g)); return { shown: all.slice(0, cap), more: all.slice(cap), total: all.length }; };
@@ -84,6 +90,17 @@
   }
   /** Back-compat helper (tests): status line only. */
   const statusText = d => scoreboard(d).status;
+
+  // ---------------------------------------------------------- alerts box
+  // Running feed from the data file (`alerts`, newest first). Entries newer than
+  // the viewer's previous refresh are highlighted. "Last seen" is remembered per
+  // game in localStorage under our own key, so it survives reopening the tab.
+  const SEEN_KEY = 'liveBets.alertsSeen.' + SLUG;
+  const ALERT_LABEL = { new_edge: 'New edge', gone: 'Edge gone', news: 'Likely news', removed: 'Removed' };
+  /** Pure: which alerts are new since `lastSeen` (ISO or null = none highlighted). */
+  const markNew = (alerts, lastSeen) => (alerts || []).map(a => !!lastSeen && a.at > lastSeen);
+  const readSeen = () => { try { return localStorage.getItem(SEEN_KEY); } catch (e) { return null; } };
+  const writeSeen = v => { try { if (v) localStorage.setItem(SEEN_KEY, v); } catch (e) { /* private mode */ } };
 
   /** Tiny DOM helper: element with class and text (text via textContent). */
   function el(tag, cls, text) {
@@ -118,6 +135,32 @@
     return li;
   }
 
+  /** The Alerts box (top of the view). */
+  function alertsBox(d, ui) {
+    const box = el('section', 'lb-alerts');
+    const list = (d.alerts || []).filter(a => inLimit(a.now_chance));   // odds limit
+    box.append(el('h3', 'lb-group-title', `Alerts${list.length ? ` (${list.length})` : ''}`));
+    if (!list.length) { box.append(el('div', 'lb-none', 'No alerts yet. They\'ll show up here once the game starts.')); return box; }
+    // Highlight what's new since the previous refresh, then remember the newest.
+    if (ui.seenBase === undefined) ui.seenBase = readSeen();
+    const isNew = markNew(list, ui.seenBase);
+    ui.seenBase = list[0].at; writeSeen(list[0].at);
+    const ul = el('ul', 'lb-alert-list');
+    list.forEach((a, i) => {
+      const li = el('li', `lb-alert lb-a-${a.type}${a.tier ? ' lb-a-' + a.tier : ''}${isNew[i] ? ' lb-new' : ''}`);
+      const top = el('div', 'lb-alert-top');
+      top.append(el('span', 'lb-alert-kind', (isNew[i] ? 'NEW · ' : '') + (ALERT_LABEL[a.type] || 'Alert')), el('span', 'lb-alert-time', clock(a.at)));
+      li.append(top, el('div', 'lb-alert-text', a.text));
+      const pay = a.type === 'gone' || a.type === 'removed' ? null : pays10(a.now_chance);
+      if (a.now_odds && pay) li.append(el('div', 'lb-alert-odds', `${a.now_odds} · $10 pays $${pay}`));
+      const link = safeUrl(a.url);
+      if (link) { const l = el('a', 'lb-alert-link', 'Open ↗'); l.href = link; l.target = '_blank'; l.rel = 'noopener'; li.append(l); }
+      ul.append(li);
+    });
+    box.append(ul);
+    return box;
+  }
+
   /** One group (Game lines / Player props) with its own "Show more". */
   function groupBox(title, g, link, ui, key) {
     const box = el('section', 'lb-group');
@@ -139,6 +182,7 @@
   /** Draw the whole view from data `d` into `box`. `ui` keeps open/closed state across refreshes. */
   function draw(box, d, ui) {
     box.replaceChildren();
+    box.append(alertsBox(d, ui));                 // Alerts feed sits at the very top
     const sb = scoreboard(d);
     const head = el('div', 'lb-head');
     head.append(el('div', 'lb-game', d.game || 'Live game'), el('div', 'lb-score', sb.score),
@@ -174,12 +218,12 @@
   function render(rootEl) {
     rootEl.replaceChildren(el('div', 'live-bets-empty', 'Loading live bets…'));
     let timer = null, last = null;
-    const ui = { game: false, prop: false, reasons: false, redraw: () => last && draw(rootEl, last, ui) };
+    const ui = { game: false, prop: false, reasons: false, redraw: () => { if (!last) return; const b = ui.seenBase; ui.seenBase = ui.prevBase; draw(rootEl, last, ui); ui.seenBase = b; } };
     const load = () => {
       if (!rootEl.isConnected && timer) { clearInterval(timer); return; }   // view closed
       fetch(`data/live/${SLUG}.json?ts=${Date.now()}`)
         .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-        .then(d => { last = d; draw(rootEl, d, ui); })
+        .then(d => { last = d; ui.prevBase = ui.seenBase; draw(rootEl, d, ui); })
         .catch(() => { if (!rootEl.querySelector('.lb-head')) {
           rootEl.replaceChildren(el('div', 'live-bets-empty', 'Live bets aren\'t available yet. Try again in a minute.')); } });
     };
@@ -187,5 +231,5 @@
     timer = setInterval(load, REFRESH_MS);
   }
 
-  return { render, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, SLUG, CAP };
+  return { render, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, SLUG, CAP, ODDS_LIMIT };
 });

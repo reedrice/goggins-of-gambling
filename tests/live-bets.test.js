@@ -47,4 +47,14 @@ assert.deepStrictEqual(LB.groupEdges(edges, 2).game.more.map(e => e.key), ['g1',
 const sb = LB.scoreboard({ game_context: { available: true, game_state: 'in', period: 2, clock: '9:14', possession: 'WSH', away: { abbr: 'WSH', score: 10 }, home: { abbr: 'SF', score: 17 } } });
 assert.deepStrictEqual(sb, { score: 'WSH 10 – SF 17', status: 'Q2 9:14 · WSH ball' });
 assert.match(LB.scoreboard({ game_context: { available: false }, status: 'live' }).status, /unavailable/);
-console.log('ok live-bets helpers + data shape + grouping/cap');
+// Alerts: highlight only entries newer than the last refresh; first visit highlights none.
+const al = [{ at: '2026-10-20T01:10:00Z' }, { at: '2026-10-20T01:05:00Z' }, { at: '2026-10-20T01:00:00Z' }];
+assert.deepStrictEqual(LB.markNew(al, '2026-10-20T01:05:00Z'), [true, false, false]);
+assert.deepStrictEqual(LB.markNew(al, null), [false, false, false]);
+assert.ok(Array.isArray(d.alerts) && d.alerts.length <= 50, 'data file has an alerts feed');
+// Odds limit safety net in the view (TEST DATA).
+assert.strictEqual(LB.ODDS_LIMIT, 500);
+assert.ok(LB.inLimit(50) && LB.inLimit(16.7) && !LB.inLimit(16.6) && !LB.inLimit(83.4));
+const lim = LB.groupEdges([E('ok', 'game', 8), { ...E('far', 'game', 12), now_chance: 10 }, { ...E('fav', 'prop', 6), now_chance: 90 }, { ...E('farnews', 'game', 30, 'news'), now_chance: 12 }]);
+assert.deepStrictEqual([lim.game.total, lim.prop.total, lim.reasons.length], [1, 0, 0]);
+console.log('ok live-bets helpers + data shape + grouping/cap + alerts + odds limit');
