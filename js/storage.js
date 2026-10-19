@@ -22,12 +22,16 @@
  *       id: string,                also used as the shared-log record id
  *       createdAt: ISO, settledAt: ISO|null,
  *       category: "single"|"prop"|"parlay"|"longshot"|"nonsports",
- *       platform: string,
- *       legs: [{desc: string, price: string, p: number}],
+ *       platform: string,          slip platform, or "A + B" if legs differ
+ *       legs: [{desc: string, price: string (as typed), platform: string,
+ *               p: number (parsed implied probability)}],
  *       estMultiple: number, quotedMultiple: number, hitChance: number,
  *       stake: number,             $ (PRIVATE — never shared)
  *       status: "open"|"won"|"lost"|"push",
- *       shared: boolean,           whether numbers were sent to the shared log
+ *       share: boolean,            user chose "share this bet's numbers"
+ *       shared: boolean,           latest state was successfully written to
+ *                                  the shared log (false => retry pending)
+ *       syncedStatus: string,      status value last written to the log
  *       pickId: string|null        id from data/picks.json if created from a pick
  *     }
  *   betdash_settings  JSON { shareByDefault: boolean }
