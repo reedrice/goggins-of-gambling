@@ -685,6 +685,7 @@
       ${isMulti ? `<ul class="legs">${pk.legs.map((l, i) => `<li>${l.team ? T.badge(teamRef(l.team), 20) : ''}${plainLegHtml(l, i === 0)}</li>`).join('')}</ul>` : ''}
       <div><b>${esc(P.bet)}:</b> ${esc(stakeText(pk))} ${tip('unit')}</div>
       ${/* PL.noCents: any "41¢" the daily job wrote shows as American odds */ ''}
+      ${lineupHtml(pk.lineup_note)}
       ${pk.pending_news ? `<div class="news">⏳ <b>${esc(P.news)}</b> ${esc(PL.noCents(pk.pending_news))}</div>` : ''}
       ${pk.verify_note ? `<div class="verify">⚠️ ${esc(PL.noCents(pk.verify_note))}</div>` : ''}
       ${pk.reasoning ? `<div class="reason">${esc(PL.noCents(pk.reasoning))}</div>` : ''}
@@ -693,6 +694,22 @@
         <button class="btn btn-sm btn-primary" data-load-pick="${esc(pk.id)}" data-cat="${esc(cat)}">${esc(P.toCalc)}</button>
       </div>
     </div>`;
+  }
+
+  /**
+   * Lineup note from the noon / 4 PM lineup check (scripts/update-picks.mjs
+   * `lineup`, HANDOFF §34): green "in", orange "at risk", red "out", plus
+   * where the news came from and when it was checked (Central time).
+   * @param {{status:string,text:string,source:string,source_url?:string,checked_at:string}|null} n
+   */
+  function lineupHtml(n) {
+    if (!n || !n.text) return '';
+    const L = STR.plain.lineup || {};
+    const icon = { confirmed: '✅', at_risk: '⚠️', out: '⛔' }[n.status] || 'ℹ️';
+    const when = n.checked_at ? new Date(n.checked_at).toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit' }) + ' CT' : '';
+    const src = n.source_url ? `<a href="${esc(n.source_url)}" target="_blank" rel="noopener">${esc(n.source)}</a>` : esc(n.source || '');
+    return `<div class="lineup lineup-${esc(n.status)}">${icon} <b>${esc((L.label || {})[n.status] || 'Lineup:')}</b> ${esc(PL.noCents(n.text))}
+      <span class="lineup-src">${esc(L.source || 'Source:')} ${src}${when ? ` · ${esc(when)}` : ''}</span></div>`;
   }
 
   /** "Who we think wins" card. */

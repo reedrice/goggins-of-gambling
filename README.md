@@ -75,6 +75,7 @@ A daily job overwrites this whole file. All fields are optional unless marked **
 | `reasoning` | string | short reason for the pick |
 | `link` | string | market URL (http/https; a bare host is OK) |
 | `pending_news` | string/null | e.g. `Starting goalies not confirmed`. Shown as a yellow flag |
+| `lineup_note` | object/null | `{status: confirmed\|at_risk\|out, text, source, source_url?, checked_at}` from the lineup check. Green / orange / red line on the card with its source. Set only with `update-picks.mjs lineup` (HANDOFF §34) |
 | `verify_note` | string | e.g. a warning that the price came from another platform |
 | `market_id` | string | Polymarket US market slug (from `data/markets`), e.g. `aec-nfl-was-sf`. Lets the app pull a live price and build links |
 | `market_side` | `"yes"`/`"no"` | which side of `market_id` the pick is |

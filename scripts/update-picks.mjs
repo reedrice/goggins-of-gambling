@@ -21,6 +21,8 @@
  *   node scripts/update-picks.mjs add-predictions <preds.json>   # file = array of Prediction objects
  *   node scripts/update-picks.mjs grade <grades.json>            # file = [{id, result, final_score?}]
  *   node scripts/update-picks.mjs grade <id> <win|loss|push> ["final score"]
+ *   node scripts/update-picks.mjs lineup <notes.json>            # file = [{id, status?, text?, source?, source_url?, clear_pending_news?, pending_news?}]
+ *                                                                # sets/refreshes lineup_note on those picks (see "LINEUP NOTES")
  *
  *   Flags: --no-push (commit only), --dry-run (validate + print, write nothing),
  *          -m "extra commit body line" (repeatable),
@@ -40,6 +42,14 @@
  *   So: re-use an existing id to update a carried pick, --drop it to remove
  *   it, and run `list` first so the new slate doesn't duplicate it under
  *   another id.
+ *
+ * LINEUP NOTES
+ *   The noon / 4 PM lineup check writes one `lineup_note` per affected pick:
+ *   {status: "confirmed"|"at_risk"|"out", text, source, source_url?, checked_at}.
+ *   `lineup` REPLACES the note by pick id (never appends), so re-running the
+ *   check refreshes it instead of stacking duplicates. clear_pending_news:true
+ *   also clears the yellow "Waiting on news" flag once that news is in.
+ *   Never invent news: every note names its source (and links it when it can).
  *
  * GIT BEHAVIOUR
  *   Commits straight to main (owner's preference: no branches/PRs) with a
@@ -68,6 +78,8 @@ const PickEval = createRequire(import.meta.url)(path.join(ROOT, 'js/evaluate.js'
 const STR = (() => { const c = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(ROOT, 'js/strings.js'), 'utf8'), c); return c.window.STR; })();
 const ACTIONS = ['bet', 'wait', 'skip'];
 const RESULTS = ['pending', 'win', 'loss', 'push'];
+/** lineup_note.status values: in and fine / in but shakier / not playing. */
+const LINEUP_STATUSES = ['confirmed', 'at_risk', 'out'];
 /** Keys that would carry money or secrets; forbidden anywhere in public data. */
 const FORBIDDEN_KEYS = /^(stake|stake_usd|stake_dollars|bankroll|payout|payout_usd|profit|pl|balance|token|auth|password)$/i;
 /** "$5", "$ 12.50", "USD 10" or token-looking strings in any text value. */
@@ -177,6 +189,7 @@ function validatePick(pk, sec, where, errs) {
   if (pk.action !== undefined && !ACTIONS.includes(pk.action)) errs.push(`${where}.action: one of ${ACTIONS.join('|')}`);
   if (pk.link !== undefined && pk.link !== null && !(isStr(pk.link) && okLink(pk.link))) errs.push(`${where}.link: http(s) URL expected`);
   if (pk.pending_news !== undefined && pk.pending_news !== null && typeof pk.pending_news !== 'string') errs.push(`${where}.pending_news: string or null`);
+  if (pk.lineup_note !== undefined && pk.lineup_note !== null) validateLineupNote(pk.lineup_note, `${where}.lineup_note`, errs);
   // Evaluation fields (optional; filled by PickEval.fillDefaults when missing).
   range(errs, `${where}.hit_prob`, pk.hit_prob, 0, 100);
   if (pk.risk !== undefined && !PickEval.RISK_KEYS.includes(pk.risk)) errs.push(`${where}.risk: one of ${PickEval.RISK_KEYS.join('|')}`);
@@ -199,6 +212,19 @@ function validatePick(pk, sec, where, errs) {
     range(errs, `${where}.quoted_multiple`, pk.quoted_multiple, 1, 100000);
     range(errs, `${where}.skip_below`, pk.skip_below, 1, 100000);
   }
+}
+
+/**
+ * Validate a lineup_note (written by `lineup`, shown on the pick card).
+ * @param {object} n @param {string} where @param {string[]} errs
+ */
+function validateLineupNote(n, where, errs) {
+  if (!n || typeof n !== 'object' || Array.isArray(n)) return errs.push(`${where}: object expected`);
+  if (!LINEUP_STATUSES.includes(n.status)) errs.push(`${where}.status: one of ${LINEUP_STATUSES.join('|')}`);
+  if (!(isStr(n.text) && n.text.length <= 240)) errs.push(`${where}.text: non-empty string, at most 240 characters`);
+  if (!isStr(n.source)) errs.push(`${where}.source: required (never invent news; name where it came from)`);
+  if (n.source_url !== undefined && !(isStr(n.source_url) && okLink(n.source_url))) errs.push(`${where}.source_url: http(s) URL expected`);
+  if (!isISO(n.checked_at)) errs.push(`${where}.checked_at: ISO 8601 required`);
 }
 
 /**
@@ -509,6 +535,37 @@ function cmdGrade(args, o) {
   commitAndPush([PREDS], subject, body, o);
 }
 
+/**
+ * `lineup <file>`: set or refresh lineup_note on existing picks, by id.
+ * File = [{id, status, text, source, source_url?, clear_pending_news?}].
+ * The note is replaced, never appended, so repeat runs don't duplicate it.
+ */
+function cmdLineup(file, o) {
+  if (!file) usage('lineup needs a file');
+  const list = readJSON(file);
+  if (!Array.isArray(list) || !list.length) usage('file must be a non-empty array of {id, status, text, source, source_url?}');
+  const doc = readJSON(PICKS);
+  const now = new Date().toISOString();
+  const errs = [], lines = [];
+  for (const n of list) {
+    const pk = PICK_SECS.flatMap(s => doc.sections[s] || []).find(p => p && p.id === n.id);
+    if (!pk) { errs.push(`lineup ${n.id}: no such pick`); continue; }
+    // An entry may set the note, update/clear the yellow flag, or both.
+    if (n.text !== undefined) pk.lineup_note = { status: n.status, text: n.text, source: n.source, ...(n.source_url ? { source_url: n.source_url } : {}), checked_at: n.checked_at || now };
+    if (n.clear_pending_news) pk.pending_news = null;
+    else if (typeof n.pending_news === 'string') pk.pending_news = n.pending_news;
+    lines.push(`- ${pk.id}${n.text !== undefined ? ` [${n.status}] ${n.text} (source: ${n.source})` : ''}${n.clear_pending_news ? ' · cleared waiting-on-news flag' : typeof n.pending_news === 'string' ? ` · waiting-on-news now: ${n.pending_news}` : ''}`);
+  }
+  failIf([...errs, ...validatePicks(doc)], 'lineup');
+  doc.updated_at = now;
+  const counts = LINEUP_STATUSES.map(s => `${list.filter(n => n.text !== undefined && n.status === s).length} ${s.replace('_', ' ')}`).join(', ');
+  const subject = `Lineup check: notes on ${lines.length} pick(s) (${counts})`;
+  const body = ['Set lineup_note by pick id (replaces any earlier note, no duplicates):', ...lines, ...o.notes];
+  if (o.dryRun) return console.log('[dry-run] would commit:\n' + subject + '\n\n' + body.join('\n'));
+  writeJSON(PICKS, doc);
+  commitAndPush([PICKS], subject, body, o);
+}
+
 /** Print usage and exit 2. */
 function usage(msg) {
   if (msg) console.error('Error: ' + msg + '\n');
@@ -529,6 +586,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     else if (cmd === 'list') cmdList(o);
     else if (cmd === 'add-predictions') cmdAddPredictions(rest[0], o);
     else if (cmd === 'grade') cmdGrade(rest, o);
+    else if (cmd === 'lineup') cmdLineup(rest[0], o);
     else usage(cmd ? `unknown command "${cmd}"` : '');
   } catch (e) {
     const isGit = e && (e.cmd || e.status !== undefined) && String(e.message).includes('git');

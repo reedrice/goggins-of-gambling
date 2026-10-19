@@ -44,6 +44,11 @@ window.STR = {
   // Used on pick cards, combo cards, the bet slip, Build-a-bet buttons and My
   // bets (app.js). Chance shapes come from js/plain.js chanceWords().
   plain: {
+    // Lineup notes on pick cards (lineup check, HANDOFF §34).
+    lineup: {
+      label: { confirmed: 'Lineup: good to go.', at_risk: 'Lineup: heads up.', out: 'Lineup: not playing.' },
+      source: 'Source:',
+    },
     betGet: (stake, back) => `Bet ${stake} → get ${back} back`,
     // one pick
     chance: { of10: n => `Wins about ${n} out of 10 times`, oneIn: n => `Wins about 1 in ${n} times`, almost: 'Wins almost every time' },

@@ -33,6 +33,18 @@ test('pick with no own day takes the old file day', () => {
   assert.strictEqual(carryOver(old, doc('2026-10-20', [])).length, 1);
   assert.strictEqual(carryOver(old, doc('2026-10-21', [])).length, 0);
 });
+// Lineup notes (HANDOFF §34): status from a fixed list, source required, ISO checked_at.
+test('validator: lineup_note shape', () => {
+  const ok = { status: 'confirmed', text: 'He is in the lineup.', source: 'Daily Faceoff', source_url: 'https://www.dailyfaceoff.com/teams', checked_at: '2026-10-19T21:00:00Z' };
+  assert.deepStrictEqual(validatePicks(doc('2026-10-19', [Object.assign(single('a'), { lineup_note: ok })])), []);
+  assert.deepStrictEqual(validatePicks(doc('2026-10-19', [Object.assign(single('a'), { lineup_note: null })])), []);
+  const bad = n => validatePicks(doc('2026-10-19', [Object.assign(single('a'), { lineup_note: Object.assign({}, ok, n) })])).length;
+  assert.ok(bad({ status: 'maybe' }) > 0, 'unknown status');
+  assert.ok(bad({ source: '' }) > 0, 'missing source');
+  assert.ok(bad({ checked_at: 'noon' }) > 0, 'bad time');
+  assert.ok(bad({ source_url: 'javascript:alert(1)' }) > 0, 'non-http link');
+});
+
 test('validator: slate_date / start_time formats', () => {
   const good = doc('2026-10-19', [Object.assign(single('g', '2026-10-20'), { start_time: '2026-10-20T23:00:00Z' })]);
   assert.deepStrictEqual(validatePicks(good), []);
