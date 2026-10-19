@@ -16,7 +16,9 @@ test('american odds', () => {
   assert.strictEqual(american(0), '—');
 });
 
-test('$10 pays (stake + profit)', () => assert.strictEqual(pays(40), '25.00'));
+test('$10 pays: whole dollars, rounded down', () => { assert.strictEqual(pays(40), '25'); assert.strictEqual(pays(30), '33'); assert.strictEqual(pays(51), '19'); });
+
+test('even odds show +100', () => { assert.strictEqual(american(50), '+100'); assert.strictEqual(american(50.1), '-100'); });
 
 test('thin markets are skipped', () => {
   const thin = F.event.markets.find(m => m.id === 'thin');

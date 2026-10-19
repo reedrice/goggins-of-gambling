@@ -6,7 +6,8 @@ const assert = require('assert');
 const fs = require('fs');
 const LB = require('../js/live-bets.js');
 
-assert.strictEqual(LB.pays10(40), '25.00');          // $10 at +150 returns 25.00
+assert.strictEqual(LB.pays10(40), '25');             // $10 at +150 returns 25
+assert.strictEqual(LB.pays10(30), '33');             // 33.33 rounds DOWN, no cents
 assert.strictEqual(LB.pays10(0), null);
 assert.strictEqual(LB.safeUrl('https://polymarket.us/x'), 'https://polymarket.us/x');
 assert.strictEqual(LB.safeUrl('javascript:alert(1)'), null);

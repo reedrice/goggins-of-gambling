@@ -129,10 +129,12 @@ export function selectMarkets(ev, sp = sportOf(SLUG), players = PLAYERS) {
 /** Probability points -> American odds string, e.g. 40 -> "+150". */
 export function american(p) {
   if (!(p > 0 && p < 100)) return '—';
-  return p >= 50 ? `-${Math.round(100 * p / (100 - p))}` : `+${Math.round(100 * (100 - p) / p)}`;
+  // Even odds (50) show as +100, not -100 (fix Oct 19, 2026).
+  return p > 50 ? `-${Math.round(100 * p / (100 - p))}` : `+${Math.round(100 * (100 - p) / p)}`;
 }
-/** What $10 returns (stake + profit) buying at price p (prob points). */
-export const pays = p => (10 * 100 / p).toFixed(2);
+/** What $10 returns (stake + profit) at price p (prob points), in WHOLE dollars,
+ *  rounded down so we never overstate it (no cents, fix Oct 19, 2026). */
+export const pays = p => String(Math.floor(1000 / p));
 const marketUrl = () => `https://polymarket.us/sports/${SLUG.split('-')[0]}/${SLUG}`;
 
 /**

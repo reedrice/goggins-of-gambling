@@ -27,8 +27,9 @@
   const SLUG = 'nfl-was-sf-2026-10-19';           // tonight's game (WAS @ SF)
   const REFRESH_MS = 60 * 1000;                   // about once a minute
 
-  /** What a $10 bet returns (stake + winnings) at chance p (0-100). "25.00". */
-  const pays10 = p => (p > 0 && p < 100 ? (1000 / p).toFixed(2) : null);
+  /** What a $10 bet returns (stake + winnings) at chance p (0-100), in whole
+   *  dollars rounded down (no cents): 40 -> "25", 30 -> "33". */
+  const pays10 = p => (p > 0 && p < 100 ? String(Math.floor(1000 / p)) : null);
   /** Only allow https: links from data. */
   const safeUrl = u => { try { return new URL(u).protocol === 'https:' ? u : null; } catch (e) { return null; } };
   /** Short Central-time clock, e.g. "7:42 PM CT". */
