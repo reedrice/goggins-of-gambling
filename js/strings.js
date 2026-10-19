@@ -128,6 +128,10 @@ window.STR = {
   /** Picks tab toggle. The Live Bets view itself is Richie's (js/live-bets.js, HANDOFF §32). */
   live: { group: 'Which view', today: "Today's Picks", live: 'Live Bets 🔴', soon: 'Live bets coming soon' },
   picks: {
+    // "Refresh prices" on the Picks tab (js/live-picks.js, HANDOFF §37)
+    pxLoading: 'Getting live prices…',
+    pxLive: (t, n) => `Live prices from ${t}.` + (n ? ` ${n} already started, so ${n === 1 ? 'it keeps' : 'they keep'} the old price.` : ''),
+    pxSaved: t => `Could not get live prices. Showing saved prices from ${t}.`,
     title: 'Today\'s picks',
     updated: (slate, when) => `Games on ${slate} · Updated ${when}`,
     // Day switcher above the picks (more than one slate in picks.json)

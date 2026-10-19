@@ -923,6 +923,9 @@
       el.innerHTML = `<h2>${esc(STR.picks.title)}</h2><p class="error">${esc(STR.picks.loadError)}</p>`;
       return;
     }
+    // "Refresh prices" result (js/live-picks.js) wins over the file it was
+    // made from, so live prices survive re-renders (day/sport chips).
+    if (livePx && livePx.base === picksData.updated_at) picksData = livePx.doc;
     const d = picksData, sec = d.sections || {};
     gamePreds = [...(sec.predictions || []), ...((predFile && predFile.predictions) || [])];
     // Day switcher (Today / Tomorrow): picks.json may hold more than one
@@ -942,6 +945,8 @@
     const title = !days.length || picksDay === todayCT() ? STR.picks.title : picksDay === tomorrowCT() ? STR.picks.titleTomorrow : STR.picks.titleDay;
     let html = `<h2>${esc(title)}</h2>
       <div class="updated">${esc(STR.picks.updated(dayWords(picksDay || d.slate_date || ''), fmtTime(d.updated_at)))}</div>
+      <div class="px-refresh"><button type="button" class="btn btn-sm" id="picks-refresh">${esc(STR.calc.refresh)}</button>
+        <span id="picks-px-status" class="muted small">${livePx && livePx.base === d.updated_at ? esc(livePx.msg) : ''}</span></div>
       ${days.length > 1 ? `<div class="chips pick-days" role="group" aria-label="${esc(STR.picks.dayGroup)}">${days.map(day =>
         `<button type="button" class="chip ${day === picksDay ? 'on' : ''}" data-pick-day="${esc(day)}" aria-pressed="${day === picksDay}">${esc(dayWords(day, true))} <span class="muted small">(${countOnDay(d, day)})</span></button>`).join('')}</div>` : ''}
       ${daySports.length > 1 ? `<div class="chips pick-sports" role="group" aria-label="${esc(STR.picks.sportGroup)}">${['', ...daySports].map(s =>
@@ -959,8 +964,32 @@
     el.innerHTML = html;
     el.querySelectorAll('[data-load-pick]').forEach(b => (b.onclick = () => loadPickIntoCalc(b.dataset.loadPick, b.dataset.cat)));
     el.querySelectorAll('[data-play-pick]').forEach(b => (b.onclick = () => playPick(b.dataset.playPick)));
+    $('#picks-refresh').onclick = refreshPickPrices;
     el.querySelectorAll('[data-pick-day]').forEach(b => (b.onclick = () => { picksDay = b.dataset.pickDay; renderPicks(); }));
     el.querySelectorAll('[data-pick-sport]').forEach(b => (b.onclick = () => { picksSport = b.dataset.pickSport; renderPicks(); }));
+  }
+
+  // ------------------------------------------------- Picks "Refresh prices" (HANDOFF §37)
+  /** Last live re-price: {base: picks.json updated_at it came from, doc, msg}. */
+  let livePx = null;
+
+  /**
+   * Re-price the pick cards with live Polymarket US prices, straight from the
+   * public gateway in the browser (CORS-open, no key). If no price comes back
+   * (network/CORS), fall back to re-loading the latest committed picks.json
+   * and say when that was last updated. Vegas lines stay from committed data.
+   */
+  async function refreshPickPrices() {
+    const btn = $('#picks-refresh'), st = $('#picks-px-status'), P = STR.picks;
+    if (btn) btn.disabled = true;
+    if (st) st.textContent = P.pxLoading;
+    let fresh;
+    try { fresh = await fetchData('data/picks.json'); } catch (e) { fresh = picksData; }
+    const r = await window.LivePicks.reprice(fresh, (id, side) => window.Picker.livePrice(id, side)).catch(() => null);
+    if (r && r.ok) livePx = { base: fresh.updated_at, doc: r.doc, msg: P.pxLive(fmtTime(r.at), r.skipped) };
+    else livePx = { base: fresh.updated_at, doc: fresh, msg: P.pxSaved(fmtTime(fresh.updated_at)) };
+    toast(r && r.ok ? STR.calc.refreshed : STR.calc.refreshFail);
+    renderTodayPicks();
   }
 
   // ------------------------------------------------- picks day switcher
