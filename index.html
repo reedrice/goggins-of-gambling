@@ -9,12 +9,13 @@
 
   BRANDING
     No brand strings are hardcoded here. Elements with data-brand="appName"
-    / "tagline" / "onboardingPitch" are filled from window.APP_CONFIG
-    (config.js), and document.title is set at runtime. Rename in config.js.
+    / "tagline" are filled from window.APP_CONFIG (config.js), and
+    document.title is set at runtime. Rename in config.js. Every other
+    user-facing word comes from js/strings.js.
 
-  SCRIPT ORDER
-    config.js -> js/calc.js -> js/storage.js -> js/github-log.js -> js/app.js
-    (plain classic scripts, no bundler; each attaches one global namespace).
+  SCRIPT ORDER (plain classic scripts, no bundler; each attaches one global)
+    config.js -> strings.js -> calc.js -> storage.js -> teams.js ->
+    markets-core.js -> picker.js -> github-log.js -> app.js
 -->
 <html lang="en">
 <head>
@@ -27,41 +28,8 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- FIRST-RUN ONBOARDING: shown full-screen when no profile exists; blocks everything else. -->
-  <div id="onboarding" class="onboarding" hidden>
-    <form id="onboarding-form" class="onboard-card" autocomplete="off" novalidate>
-      <div class="onboard-brand">
-        <h1 class="brand-name" data-brand="appName"></h1>
-        <p class="brand-tag" data-brand="tagline"></p>
-      </div>
-      <p class="onboard-pitch" data-brand="onboardingPitch"></p>
-      <div class="onboard-step">STEP 1 OF 1 — SET UP YOUR BANKROLL</div>
-      <p class="onboard-private">🔒 Everything you enter here stays on <b>this device only</b>. It is never uploaded.</p>
-
-      <label class="field">
-        <span>Your display name</span>
-        <input id="ob-name" name="name" type="text" maxlength="40" placeholder="e.g. Reed" required>
-      </label>
-      <label class="field big">
-        <span>Starting bankroll ($)</span>
-        <input id="ob-bankroll" name="bankroll" type="number" inputmode="decimal" min="1" step="0.01" placeholder="e.g. 500" required>
-      </label>
-      <label class="field">
-        <span>Unit size ($) <em>default = 2% of bankroll</em></span>
-        <input id="ob-unit" name="unit" type="number" inputmode="decimal" min="0.01" step="0.01" placeholder="auto">
-      </label>
-      <label class="field">
-        <span>Max per slip ($) <em>default = 5% of bankroll</em></span>
-        <input id="ob-max" name="max" type="number" inputmode="decimal" min="0.01" step="0.01" placeholder="auto">
-      </label>
-      <label class="field">
-        <span>Bankroll window ends <em>optional</em></span>
-        <input id="ob-end" name="end" type="date">
-      </label>
-      <p id="ob-error" class="error" role="alert"></p>
-      <button type="submit" class="btn btn-primary btn-xl">LOCK IN MY BANKROLL</button>
-    </form>
-  </div>
+  <!-- FIRST-RUN ONBOARDING: filled by app.js (text from js/strings.js) when no profile exists; blocks everything else. -->
+  <div id="onboarding" class="onboarding" hidden></div>
 
   <div id="app" class="app" hidden>
     <header class="topbar">
@@ -70,10 +38,12 @@
         <div class="brand-tag small" id="slogan" data-brand="tagline"></div>
       </div>
       <div class="topbar-bank">
-        <div class="label">Bankroll</div>
+        <div class="label" id="hdr-bank-label"></div>
         <div id="hdr-bankroll" class="value">—</div>
       </div>
     </header>
+    <!-- "I bet on" toggle: same localStorage value as onboarding + Settings -->
+    <div id="plat-toggle" class="plat-bar"></div>
 
     <main>
       <section id="tab-picks" class="tab" data-tab="picks"></section>
@@ -84,19 +54,26 @@
     </main>
 
     <nav class="tabbar" aria-label="Sections">
-      <button data-go="picks" class="active"><span>🎯</span>Picks</button>
-      <button data-go="calc"><span>🧮</span>Calc</button>
-      <button data-go="bets"><span>💰</span>Bets</button>
-      <button data-go="record"><span>📈</span>Record</button>
-      <button data-go="settings"><span>⚙️</span>Settings</button>
+      <!-- labels come from STR.tabs -->
+      <button data-go="picks" class="active"><span>🎯</span><b class="tl"></b></button>
+      <button data-go="calc"><span>🧮</span><b class="tl"></b></button>
+      <button data-go="bets"><span>💰</span><b class="tl"></b></button>
+      <button data-go="record"><span>📈</span><b class="tl"></b></button>
+      <button data-go="settings"><span>⚙️</span><b class="tl"></b></button>
     </nav>
   </div>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <!-- tooltip bubble for (i) buttons -->
+  <div id="tip-pop" class="tip-pop" role="tooltip" hidden></div>
 
   <script src="config.js"></script>
+  <script src="js/strings.js"></script>
   <script src="js/calc.js"></script>
   <script src="js/storage.js"></script>
+  <script src="js/teams.js"></script>
+  <script src="js/markets-core.js"></script>
+  <script src="js/picker.js"></script>
   <script src="js/github-log.js"></script>
   <script src="js/app.js"></script>
 </body>
