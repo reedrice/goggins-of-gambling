@@ -6,7 +6,7 @@ import assert from 'node:assert';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { american, pays, quote, liquid, findMoves, appendAlerts, gameOver, selectMarkets, sportOf, tagOf, lineInfo, describe, tierOf, buildLive, openFromPublished } from '../scripts/live-watch.mjs';
+import { american, pays, quote, liquid, findMoves, appendAlerts, gameOver, selectMarkets, sportOf, tagOf, lineInfo, describe, tierOf, buildLive, openFromPublished, mergeOpen } from '../scripts/live-watch.mjs';
 
 const F = JSON.parse(fs.readFileSync(new URL('./fixtures/live-watch-sample.json', import.meta.url), 'utf8'));
 
@@ -135,4 +135,13 @@ test('buildLive stores game_context and classifies every edge (unverified when E
   const j = buildLive(open, F.event, null, '2026-10-19T20:00:00Z', { available: false, error: 'test' });
   assert.strictEqual(j.game_context.available, false);
   for (const e of j.edges) { assert.strictEqual(e.class, 'unverified'); assert.ok(e.context); }
+});
+
+test('mergeOpen never overwrites an opening price and stamps each market', () => {
+  const old = [{ id: 'a', kind: 'old', mid: 40, yesBuy: 41, noBuy: 61, taken_at: 'T1' }, { id: 'gone', mid: 30, yesBuy: 31, noBuy: 71 }];
+  const fresh = [{ id: 'a', kind: 'Moneyline', group: 'game', mid: 55, yesBuy: 56, noBuy: 46 }, { id: 'b', kind: 'Alt total', group: 'game', mid: 20, yesBuy: 21, noBuy: 81 }];
+  const m = Object.fromEntries(mergeOpen(old, fresh, 'T2', 'T0').map(x => [x.id, x]));
+  assert.deepStrictEqual([m.a.yesBuy, m.a.taken_at, m.a.kind], [41, 'T1', 'Moneyline']);   // price kept, label refreshed
+  assert.deepStrictEqual([m.b.yesBuy, m.b.taken_at], [21, 'T2']);                         // new market stamped now
+  assert.deepStrictEqual([m.gone.yesBuy, m.gone.taken_at], [31, 'T0']);                   // old-only kept
 });

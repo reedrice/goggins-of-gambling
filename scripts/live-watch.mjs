@@ -243,14 +243,41 @@ export function findMoves(open, last, ev, cfg = {}) {
   return { mids, alerts, watched, skipped };
 }
 
+/**
+ * Merge a fresh market list into existing opening prices WITHOUT overwriting
+ * any opening price already taken (Oct 19 rule: the open is the open).
+ *  - market already in `old`: keep its prices and taken_at; refresh only the
+ *    descriptive fields (kind, group, sides, teams...) from the new list.
+ *  - new market: add it with taken_at = nowIso.
+ *  - market only in `old` (e.g. now thin/closed): kept as is.
+ * Every market ends up with its own `taken_at`.
+ */
+export function mergeOpen(old, fresh, nowIso, oldTakenAt = null) {
+  const byId = new Map((old || []).map(m => [m.id, m]));
+  const out = [];
+  for (const m of fresh) {
+    const o = byId.get(m.id);
+    if (o) { out.push({ ...m, mid: o.mid, yesBuy: o.yesBuy, noBuy: o.noBuy, taken_at: o.taken_at || oldTakenAt }); byId.delete(m.id); }
+    else out.push({ ...m, taken_at: nowIso });
+  }
+  for (const o of byId.values()) out.push({ ...o, taken_at: o.taken_at || oldTakenAt });
+  return out;
+}
+
+/** Take (or extend) the opening snapshot. Existing opening prices are never overwritten. */
 async function snapshot() {
   const ev = await fetchEvent();
-  const picks = selectMarkets(ev);
+  const now = new Date().toISOString();
   fs.mkdirSync(DIR, { recursive: true });
-  const data = { slug: SLUG, title: ev.title, start_time: ev.startTime, taken_at: new Date().toISOString(), url: marketUrl(), markets: picks };
+  // Existing open: the local file, else the one inside the published site file.
+  const pub = path.join(ALERTS_DIR, `${SLUG}.json`);
+  const prev = fs.existsSync(OPEN_FILE) ? JSON.parse(fs.readFileSync(OPEN_FILE, 'utf8'))
+    : fs.existsSync(pub) ? openFromPublished(JSON.parse(fs.readFileSync(pub, 'utf8'))) : null;
+  const markets = mergeOpen(prev?.markets, selectMarkets(ev), now, prev?.taken_at);
+  const added = markets.filter(m => m.taken_at === now).length;
+  const data = { slug: SLUG, title: ev.title, start_time: ev.startTime, taken_at: prev?.taken_at || now, url: marketUrl(), markets };
   fs.writeFileSync(OPEN_FILE, JSON.stringify(data, null, 1));
-  const kinds = picks.reduce((a, p) => ((a[p.kind] = (a[p.kind] || 0) + 1), a), {});
-  console.log(`Saved opening prices for ${picks.length} markets (${Object.entries(kinds).map(([k, v]) => `${v} ${k}`).join(', ')}) -> ${OPEN_FILE}`);
+  console.log(`Opening prices: ${markets.length} markets (${added} new at ${now}, ${markets.length - added} kept) -> ${OPEN_FILE}`);
 }
 
 async function check() {
@@ -347,7 +374,8 @@ export function buildLive(open, ev, prev, nowIso = new Date().toISOString(), ctx
     game_context: ctx || { available: false, error: 'not fetched' },
     updated: nowIso, open_taken_at: open.taken_at, thresholds: { big: BIG_EDGE, slight: SLIGHT_EDGE },
     open: open.markets.map(o => ({ market_id: o.id, market: o.kind, group: o.group, mtype: o.mtype, period: o.period, line: o.line,
-      question: o.question, sides: o.sides, teams: o.teams, player: o.player, mid: o.mid, yes_buy: o.yesBuy, no_buy: o.noBuy })),
+      question: o.question, sides: o.sides, teams: o.teams, player: o.player, mid: o.mid, yes_buy: o.yesBuy, no_buy: o.noBuy,
+      taken_at: o.taken_at || open.taken_at })),
     edges,
   };
 }
@@ -355,7 +383,8 @@ export function buildLive(open, ev, prev, nowIso = new Date().toISOString(), ctx
 /** Rebuild an opening snapshot from a published data/live/<slug>.json. */
 export const openFromPublished = p => ({ slug: p.slug, title: p.game, url: p.url, start_time: p.start_time, taken_at: p.open_taken_at,
   markets: p.open.map(o => ({ id: o.market_id, kind: o.market, group: o.group, mtype: o.mtype, period: o.period, line: o.line,
-    question: o.question, sides: o.sides, teams: o.teams, player: o.player, mid: o.mid, yesBuy: o.yes_buy, noBuy: o.no_buy })) });
+    question: o.question, sides: o.sides, teams: o.teams, player: o.player, mid: o.mid, yesBuy: o.yes_buy, noBuy: o.no_buy,
+    taken_at: o.taken_at || p.open_taken_at })) });
 
 /** Write data/live/<slug>.json (snapshot first if there is no opening file). */
 async function publish() {
