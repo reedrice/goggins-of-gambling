@@ -6,7 +6,7 @@ import assert from 'node:assert';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { american, pays, quote, liquid, findMoves, appendAlerts, gameOver, selectMarkets, sportOf, tagOf, lineInfo, describe, tierOf, buildLive, openFromPublished, mergeOpen, liveAlerts, ALERT_CAP } from '../scripts/live-watch.mjs';
+import { american, pays, quote, liquid, findMoves, appendAlerts, gameOver, selectMarkets, sportOf, tagOf, lineInfo, describe, tierOf, buildLive, openFromPublished, mergeOpen, liveAlerts, ALERT_CAP, ODDS_LIMIT, MIN_CHANCE, MAX_CHANCE, withinOddsLimit } from '../scripts/live-watch.mjs';
 
 const F = JSON.parse(fs.readFileSync(new URL('./fixtures/live-watch-sample.json', import.meta.url), 'utf8'));
 
@@ -166,4 +166,23 @@ test('alerts: new edge, tier up, gone, news, injury removal; deduped, newest fir
   // Cap.
   const many = Array.from({ length: 60 }, (_, i) => E('m' + i));
   assert.strictEqual(liveAlerts(null, many, 'live', 'T5', 'https://x').alerts.length, ALERT_CAP);
+});
+
+test('odds limit: +500 / -500 is the edge of what we track', () => {
+  assert.strictEqual(ODDS_LIMIT, 500);
+  assert.strictEqual(american(MIN_CHANCE), '+500'); assert.strictEqual(american(MAX_CHANCE), '-500');
+  assert.ok(withinOddsLimit(MIN_CHANCE) && withinOddsLimit(MAX_CHANCE) && withinOddsLimit(50));
+  assert.ok(!withinOddsLimit(16.6) && !withinOddsLimit(83.4));
+});
+
+test('odds limit: long/short sides never become edges; crossing it drops quietly (no gone, alert removed)', () => {
+  // TEST DATA: one market whose Yes side is now 14-15 (about +600): Yes cheaper by 30+, but out of limit.
+  const ev = { markets: [{ id: 'far', active: true, closed: false, status: 'MARKET_STATUS_OPEN', bestBidQuote: { value: '0.14' }, bestAskQuote: { value: '0.15' } }] };
+  const open = { slug: 's', title: 't', url: 'https://polymarket.us/x', start_time: '2000-01-01T00:00:00Z',
+    markets: [{ id: 'far', kind: 'Moneyline', group: 'game', sides: ['A win', 'B win'], teams: [null, null], mid: 50, yesBuy: 51, noBuy: 51 }] };
+  const prev = { edges: [{ key: 'far:0', side: 'A win', market: 'Moneyline', class: 'edge', tier: 'big', edge: 12, status: 'open', first_seen: 'T0', now_chance: 39 }],
+    alerts: [{ id: 'new_edge:far:0:big', key: 'far:0', at: 'T0', type: 'new_edge', now_chance: 39, text: 'x' }], alert_seen: ['new_edge:far:0:big'] };
+  const j = buildLive(open, ev, prev, '2026-10-20T01:00:00Z', { available: false });
+  assert.deepStrictEqual(j.edges, []);          // not an edge, not "gone"
+  assert.deepStrictEqual(j.alerts, []);         // earlier alert removed, no new "gone" alert
 });

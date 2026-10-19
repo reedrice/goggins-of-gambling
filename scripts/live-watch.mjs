@@ -328,6 +328,18 @@ async function watch() {
 // Edge = how many points CHEAPER a side's live buy price is than its opening
 // buy price. Big = 10+, slight = 4-9. Thin/extreme markets never count.
 export const BIG_EDGE = 10, SLIGHT_EDGE = 4;
+
+/**
+ * ODDS LIMIT (Richie, Oct 19, 2026): never track a side whose CURRENT live
+ * price is longer than +500 or shorter than -500. In chance terms that's
+ * outside 16.7%..83.3% (100/(500+100) and 500/(500+100)). Such sides never
+ * become edges, alerts or "Moved for a reason" items, and anything already
+ * listed or alerted that crosses the limit is dropped quietly (no "gone" alert).
+ */
+export const ODDS_LIMIT = 500;
+export const MIN_CHANCE = 100 * 100 / (ODDS_LIMIT + 100);        // 16.67 = +500
+export const MAX_CHANCE = 100 * ODDS_LIMIT / (ODDS_LIMIT + 100); // 83.33 = -500
+export const withinOddsLimit = p => p >= MIN_CHANCE && p <= MAX_CHANCE;
 export const tierOf = e => (e >= BIG_EDGE ? 'big' : e >= SLIGHT_EDGE ? 'slight' : null);
 
 /**
@@ -339,7 +351,7 @@ export const tierOf = e => (e >= BIG_EDGE ? 'big' : e >= SLIGHT_EDGE ? 'slight' 
 export function buildLive(open, ev, prev, nowIso = new Date().toISOString(), ctx = null) {
   const byId = Object.fromEntries((ev.markets || []).map(m => [m.id, m]));
   const prevEdges = Object.fromEntries(((prev && prev.edges) || []).map(e => [e.key, e]));
-  const edges = [], seen = new Set();
+  const edges = [], seen = new Set(), outOfLimit = new Set();
   for (const o of open.markets) {
     const m = byId[o.id], q = m && quote(m);
     if (!m || !isOpen(m) || !liquid(q)) continue;   // gone, paused, wide gap or extreme
@@ -349,6 +361,8 @@ export function buildLive(open, ev, prev, nowIso = new Date().toISOString(), ctx
       { i: 1, now: 100 - q.bid, open: o.noBuy ?? 100 - o.mid },
     ];
     for (const sd of both) {
+      // Past +500 / -500 right now: not tracked at all, dropped quietly.
+      if (!withinOddsLimit(sd.now)) { outOfLimit.add(`${o.id}:${sd.i}`); continue; }
       const edge = +(sd.open - sd.now).toFixed(1);
       if (!tierOf(edge)) continue;
       // Why did it move? score / injury / likely news / real edge (live-context.mjs).
@@ -363,11 +377,13 @@ export function buildLive(open, ev, prev, nowIso = new Date().toISOString(), ctx
     }
   }
   // Edges from the last publish that no longer qualify stay listed as "gone".
-  for (const e of Object.values(prevEdges)) if (!seen.has(e.key)) edges.push({ ...e, status: 'gone' });
+  // Edges from the last publish that no longer qualify stay listed as "gone",
+  // except ones that crossed the odds limit: those just disappear.
+  for (const e of Object.values(prevEdges)) if (!seen.has(e.key) && !outOfLimit.has(e.key)) edges.push({ ...e, status: 'gone' });
   edges.sort((a, b) => (a.status === 'gone') - (b.status === 'gone') || b.edge - a.edge);
   const started = open.start_time && Date.parse(nowIso) >= Date.parse(open.start_time);
   const status = gameOver(ev) ? 'final' : started ? 'live' : 'pregame';
-  const al = liveAlerts(prev, edges, status, nowIso, open.url);
+  const al = liveAlerts(prev, edges, status, nowIso, open.url, outOfLimit);
   return {
     _note: 'Real Polymarket US prices (gateway.polymarket.us). Chances in points (0-100). No dollar amounts.',
     slug: open.slug, game: open.title, url: open.url, start_time: open.start_time,
@@ -398,15 +414,17 @@ const SHOWN = c => c === 'edge' || c === 'unverified';
  *   removed   a shown edge is now explained by injury (dropped; no injury text) id removed:<key>
  * Text is plain and has no dollar figures; the page adds "$10 pays $X".
  */
-export function liveAlerts(prev, edges, status, nowIso, url) {
-  const old = (prev && prev.alerts) || [], seen = new Set((prev && prev.alert_seen) || []);
+export function liveAlerts(prev, edges, status, nowIso, url, outOfLimit = new Set()) {
+  // Alerts for sides now past the odds limit are removed quietly.
+  const old = ((prev && prev.alerts) || []).filter(a => !outOfLimit.has(a.key) && (a.now_chance == null || withinOddsLimit(a.now_chance) || a.type === 'gone' || a.type === 'removed'));
+  const seen = new Set((prev && prev.alert_seen) || []);
   if (status === 'pregame') return { alerts: old, seen: [...seen] };
   const prevBy = Object.fromEntries(((prev && prev.edges) || []).map(e => [e.key, e]));
   const fresh = [];
   const add = (id, type, e, text) => {
     if (seen.has(id)) return;
     seen.add(id);
-    fresh.push({ id, at: nowIso, type, tier: e.tier, side: e.side, market: e.market,
+    fresh.push({ id, key: e.key, at: nowIso, type, tier: e.tier, side: e.side, market: e.market,
       now_odds: e.now_odds, now_chance: e.now_chance, edge: e.edge, text, url });
   };
   for (const e of edges) {
