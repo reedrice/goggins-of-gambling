@@ -12,9 +12,12 @@
  *     The auto-refresh stops as soon as root leaves the page (!root.isConnected).
  *
  * DATA: data/live/<slug>.json, written by `node scripts/live-watch.mjs publish`.
- * Edges = sides whose live Polymarket US buy price is cheaper than the pregame
- * open (big = 10+ points, slight = 4-9). The file has chances (0-100) and
- * American odds only; "$10 pays $X" is worked out here. Never cents, never stakes.
+ * Each edge has class: 'edge' (real), 'unverified' (ESPN context missing),
+ * or a reason it moved ('score', 'injury', 'news'). Real/unverified edges show
+ * in two groups, Game lines and Player props, each sorted big to small and
+ * capped at CAP cards with "Show more" so neither type swamps the list. The
+ * rest go in a collapsed "Moved for a reason" section.
+ * Odds are American; "$10 pays $X" is whole dollars, worked out here. No cents, no stakes.
  *
  * SAFETY: all data text goes in via textContent; links must be https:.
  */
@@ -26,6 +29,8 @@
   'use strict';
   const SLUG = 'nfl-was-sf-2026-10-19';           // tonight's game (WAS @ SF)
   const REFRESH_MS = 60 * 1000;                   // about once a minute
+  const CAP = 5;                                  // cards per group before "Show more"
+  const REASON_CLASSES = ['score', 'injury', 'news'];
 
   /** What a $10 bet returns (stake + winnings) at chance p (0-100), in whole
    *  dollars rounded down (no cents): 40 -> "25", 30 -> "33". */
@@ -40,10 +45,38 @@
   /** Open edges first (biggest first), then gone ones. */
   const sortEdges = edges => (edges || []).slice().sort((a, b) =>
     (a.status === 'gone') - (b.status === 'gone') || b.edge - a.edge);
-  /** Header line for the game status. */
-  const statusText = d => d.status === 'final' ? 'Game over'
-    : d.status === 'live' ? 'Game is live'
-    : `Pregame · kickoff ${clock(d.start_time)}`;
+  /** Which group an edge belongs to (older files have no `group`). */
+  const groupOf = e => e.group || (e.market === 'Player prop' ? 'prop' : 'game');
+
+  /**
+   * Split edges for display (pure, tested):
+   *   game / prop: real + unverified edges, sorted, first `cap` in shown, rest in more.
+   *   reasons: score / injury / news moves, sorted.
+   */
+  function groupEdges(edges, cap = CAP) {
+    const main = [], reasons = [];
+    for (const e of edges || []) (REASON_CLASSES.includes(e.class) ? reasons : main).push(e);
+    const split = g => { const all = sortEdges(main.filter(e => groupOf(e) === g)); return { shown: all.slice(0, cap), more: all.slice(cap), total: all.length }; };
+    return { game: split('game'), prop: split('prop'), reasons: sortEdges(reasons) };
+  }
+
+  /** Header lines from the ESPN context: score line + status line. */
+  function scoreboard(d) {
+    const c = d.game_context || {};
+    if (!c.available) {
+      return { score: d.game || 'Live game', status: d.status === 'pregame' ? `Pregame · kickoff ${clock(d.start_time)} · game info unavailable` : 'Game info unavailable (ESPN), edges not checked' };
+    }
+    const a = c.away || {}, h = c.home || {};
+    const score = a.score == null ? `${a.abbr} @ ${h.abbr}` : `${a.abbr} ${a.score} – ${h.abbr} ${h.score}`;
+    let status;
+    if (c.game_state === 'pre') status = `Pregame · kickoff ${clock(d.start_time)}`;
+    else if (c.game_state === 'post') status = 'Final';
+    else if (c.espn_status === 'STATUS_HALFTIME') status = 'Halftime';
+    else status = `${c.period > 4 ? 'OT' : 'Q' + c.period} ${c.clock || ''}`.trim() + (c.possession ? ` · ${c.possession} ball` : '');
+    return { score, status };
+  }
+  /** Back-compat helper (tests): status line only. */
+  const statusText = d => scoreboard(d).status;
 
   /** Tiny DOM helper: element with class and text (text via textContent). */
   function el(tag, cls, text) {
@@ -53,17 +86,24 @@
     return n;
   }
 
-  /** One edge row. */
+  const TIER_LABEL = { big: 'Big edge', slight: 'Slight edge' };
+  const CLASS_LABEL = { score: 'Explained by score', injury: 'Explained by injury', news: 'Big move, likely news' };
+
+  /** One edge card. */
   function edgeRow(e, link) {
-    const li = el('li', `lb-edge lb-${e.tier === 'big' ? 'big' : 'slight'}${e.status === 'gone' ? ' lb-gone' : ''}`);
+    const gone = e.status === 'gone', why = REASON_CLASSES.includes(e.class);
+    const cls = why ? `lb-why lb-${e.class}` : `lb-${e.tier === 'big' ? 'big' : 'slight'}`;
+    const li = el('li', `lb-edge ${cls}${gone ? ' lb-gone' : ''}`);
     const top = el('div', 'lb-top');
-    top.append(el('span', 'lb-tier', e.status === 'gone' ? 'Gone' : e.tier === 'big' ? 'Big edge' : 'Slight edge'),
-      el('span', 'lb-pts', `${Math.round(e.edge)} pts cheaper`));
+    const label = gone ? 'Gone' : why ? CLASS_LABEL[e.class] : TIER_LABEL[e.tier] + (e.class === 'unverified' ? ' · unverified' : '');
+    top.append(el('span', 'lb-tier', label), el('span', 'lb-pts', `${Math.round(e.edge)} pts cheaper`));
     li.append(top, el('div', 'lb-side', e.side), el('div', 'lb-market', e.market));
     const pay = pays10(e.now_chance);
     li.append(el('div', 'lb-odds', `${e.now_odds}${pay ? ` · $10 pays $${pay}` : ''}`),
       el('div', 'lb-meta', `Opened ${e.open_odds} · first seen ${clock(e.first_seen)}`));
-    if (link && e.status !== 'gone') {
+    if (why && e.reason) li.append(el('div', 'lb-reason', e.reason));
+    if (e.context) li.append(el('div', 'lb-context', e.context));
+    if (link && !gone && !why) {
       const a = el('a', 'lb-link', 'Open on Polymarket ↗');
       a.href = link; a.target = '_blank'; a.rel = 'noopener';
       li.append(a);
@@ -71,37 +111,68 @@
     return li;
   }
 
-  /** Draw the whole view from data `d` into `box`. */
-  function draw(box, d) {
+  /** One group (Game lines / Player props) with its own "Show more". */
+  function groupBox(title, g, link, ui, key) {
+    const box = el('section', 'lb-group');
+    box.append(el('h3', 'lb-group-title', `${title} (${g.total})`));
+    if (!g.total) { box.append(el('div', 'lb-none', 'No edges right now.')); return box; }
+    const ul = el('ul', 'lb-list');
+    g.shown.forEach(e => ul.append(edgeRow(e, link)));
+    if (ui[key]) g.more.forEach(e => ul.append(edgeRow(e, link)));
+    box.append(ul);
+    if (g.more.length) {
+      const b = el('button', 'lb-more', ui[key] ? 'Show less' : `Show ${g.more.length} more`);
+      b.type = 'button';
+      b.onclick = () => { ui[key] = !ui[key]; ui.redraw(); };
+      box.append(b);
+    }
+    return box;
+  }
+
+  /** Draw the whole view from data `d` into `box`. `ui` keeps open/closed state across refreshes. */
+  function draw(box, d, ui) {
     box.replaceChildren();
+    const sb = scoreboard(d);
     const head = el('div', 'lb-head');
-    head.append(el('div', 'lb-game', d.game || 'Live game'), el('div', 'lb-status', statusText(d)),
-      el('div', 'lb-updated', `Updated ${clock(d.updated)} · checks every minute`));
+    head.append(el('div', 'lb-game', d.game || 'Live game'), el('div', 'lb-score', sb.score),
+      el('div', 'lb-status', sb.status), el('div', 'lb-updated', `Updated ${clock(d.updated)} · checks every minute`));
     box.append(head);
-    const edges = sortEdges(d.edges), link = safeUrl(d.url);
-    if (!edges.length) {
+    const g = groupEdges(d.edges), link = safeUrl(d.url);
+    if (!g.game.total && !g.prop.total) {
       const empty = el('div', 'live-bets-empty');
       empty.append(el('div', 'live-bets-dot', '🔴'), el('p', null, 'No edges yet'),
         el('div', 'lb-sub', d.status === 'pregame'
-          ? 'The game hasn\'t started. Bets show up here when a live price gets 4+ points cheaper than its pregame price.'
-          : 'No live price is 4+ points cheaper than its pregame price right now.'));
+          ? 'The game hasn\'t started. Bets show up here when a live price gets 4+ points cheaper than its pregame price for no clear reason.'
+          : 'No live price is 4+ points cheaper than its pregame price without a clear reason right now.'));
       box.append(empty);
-      return;
+    } else {
+      const groups = el('div', 'lb-groups');
+      groups.append(groupBox('Game lines', g.game, link, ui, 'game'), groupBox('Player props', g.prop, link, ui, 'prop'));
+      box.append(groups);
     }
-    const ul = el('ul', 'lb-list');
-    edges.forEach(e => ul.append(edgeRow(e, link)));
-    box.append(ul, el('div', 'lb-foot', 'Big edge = 10+ points cheaper than the pregame price. Slight = 4 to 9.'));
+    if (g.reasons.length) {
+      const det = el('details', 'lb-reasons');
+      det.open = !!ui.reasons;
+      det.addEventListener('toggle', () => { ui.reasons = det.open; });
+      det.append(el('summary', null, `Moved for a reason (${g.reasons.length})`));
+      const ul = el('ul', 'lb-list');
+      g.reasons.forEach(e => ul.append(edgeRow(e, link)));
+      det.append(ul);
+      box.append(det);
+    }
+    box.append(el('div', 'lb-foot', 'Edges are measured against the pregame Polymarket price. Big edge = 10-24 points cheaper, slight = 4-9, with no score or injury reason found. Score, clock and injuries are from ESPN.'));
   }
 
   /** Entry point (called by app.js). Fetch now, then about every 60s. */
   function render(rootEl) {
     rootEl.replaceChildren(el('div', 'live-bets-empty', 'Loading live bets…'));
-    let timer = null;
+    let timer = null, last = null;
+    const ui = { game: false, prop: false, reasons: false, redraw: () => last && draw(rootEl, last, ui) };
     const load = () => {
       if (!rootEl.isConnected && timer) { clearInterval(timer); return; }   // view closed
       fetch(`data/live/${SLUG}.json?ts=${Date.now()}`)
         .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-        .then(d => draw(rootEl, d))
+        .then(d => { last = d; draw(rootEl, d, ui); })
         .catch(() => { if (!rootEl.querySelector('.lb-head')) {
           rootEl.replaceChildren(el('div', 'live-bets-empty', 'Live bets aren\'t available yet. Try again in a minute.')); } });
     };
@@ -109,5 +180,5 @@
     timer = setInterval(load, REFRESH_MS);
   }
 
-  return { render, pays10, safeUrl, sortEdges, statusText, SLUG };
+  return { render, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, SLUG, CAP };
 });
