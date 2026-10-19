@@ -694,6 +694,7 @@ pregame open (free API, no Odds API credits).
   - **Last seen:** js/live-bets.js stores the `at` of the newest alert the viewer has seen in `localStorage['liveBets.alertsSeen.' + LiveBets.SLUG]` (today `liveBets.alertsSeen.nfl-was-sf-2026-10-19`). It updates when the Live Bets view draws. New count = `alerts.filter(a => !lastSeen || a.at > lastSeen).length`. With no stored value, either show all or none (the Live Bets view itself highlights none on a first visit). Opening Live Bets clears the badge, because the view writes the new last-seen. Treat the key as read-only, and for "dismiss" on the toast keep your own key (e.g. the dismissed alert `id`).
   - **Polling:** about every 60 s, while the page is visible (`document.visibilityState === 'visible'`). The data file updates about every 2 minutes during the game, plus a GitHub Pages build delay.
   - Site rules: American odds only, "$10 pays $X" in whole dollars worked out in the browser (`Math.floor(1000 / now_chance)`), set text with textContent, and only allow https links.
+- ✅ **For Pablo (Oct 19, 2026, Reed's bot):** the all-time graded record of live alerts is done, without touching your files. **Read `data/live-record.json`** (ours, outside data/live/). It has one entry per alert, kept for good, graded on the real Polymarket US settlement, plus totals per tier. It is built by `scripts/grade-live-alerts.mjs`, which only *reads* data/live/*.json. It shows under your `#live-bets-root` in the Live Bets view (§35).
 
 ## 32. Live Bets: Richie's area (Oct 19, 2026)
 
@@ -815,3 +816,34 @@ A routine runs around **noon and 4 PM CT** to check confirmed lineups, starting 
 - `node tests/play.test.js` (math).
 - `node tests/play-leaderboard.test.mjs` (builder on made-up issues, stubbed results).
 - `CH=<chromium> NODE_PATH=<puppeteer-core> node tests/play.smoke.js <url>` (phone-width flow; settles a real finished game: Packers beat Cowboys on Oct 18).
+
+## 35. Live Bets record (all-time graded live alerts, Oct 19, 2026)
+
+**Rule (Reed): the Live Bets record lives ONLY inside the Live Bets view.**
+- It is drawn by our js/app.js into `<section id="live-record-root">`, placed right below Pablo's `#live-bets-root` on Picks → "Live Bets 🔴".
+- It is **not on the Record tab**, and it is fully separate from it.
+- **Never add new bottom tabs.** Keep exactly: Picks, Build a Bet, My Bets, Record, Fade Trent, Settings.
+
+**Files (ours):**
+- `scripts/grade-live-alerts.mjs`
+- `data/live-record.json`
+- app.js `liveRecordHtml`, `STR.record.live`, `STR.tips.liveRecord`, css/style.css §24
+- tests: `tests/grade-live-alerts.test.mjs`, `tests/live-record.smoke.js`
+
+The script only **reads** Pablo's `data/live/*.json`. It never writes there.
+
+**Logging:**
+- Every bet alert (`type: "new_edge"`, or the older watcher format with no type) becomes one entry: id, time CT, game, market, side (+ side index), tier (big / slight), odds at alert, opening odds, edge, link.
+- Entries are **never deleted or rewritten** once logged, even after Pablo's file drops them (it keeps only the newest 50). Losses stay.
+
+**Grading (real results only):**
+- The script reads Polymarket US settlement from the public gateway (`/v1/events/slug/<game>`, market matched by its id).
+- A closed market with the side priced "1" = win, "0" = loss. A middle price = push. Archived with no price = void.
+- Not settled, or the side can't be told, = pending. Nothing is guessed.
+
+**Totals** (all / big / slight):
+- W-L-P, hit rate (pushes left out), and expected rate (the average chance implied by the odds at alert time).
+- Units at a flat 1u per alert (a win pays the alert's American odds), ROI, and sample size (graded count).
+- The page carries a note that small samples are noisy.
+
+**Routine step:** `node scripts/grade-live-alerts.mjs --commit`. Run it after games finish, e.g. in the Play Money Leaderboard Update routine. It commits `data/live-record.json` only when something changed (pull --rebase, never force).
