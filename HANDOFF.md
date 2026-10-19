@@ -71,6 +71,7 @@ data/positions.json   player positions per league from ESPN rosters (written dai
 data/vegas-lines.json best sportsbook American price per market side, all games' full-game lines (written by fetch-book-odds.mjs, §26)
 data/book-odds.json   automatic per-app price comparisons (The Odds API, written daily by fetch-book-odds.mjs, §17)
 tests/calc.test.js        node: math (incl. payout explainer: payout / slipPays)
+tests/ingest-vegas.test.mjs node: exact-line matching of hand-read odds (scripts/ingest-vegas.mjs, §27)
 tests/vegas.test.js       node: cents -> American conversion, Vegas lookup rules (js/vegas.js, §26)
 tests/plain.test.js       node: 2nd-grade wording helpers (js/plain.js, §25)
 tests/gametime.test.js    node: start-time format (CT/ET), hints, lookup, leg order
@@ -607,3 +608,21 @@ Reed wanted the +/- number next to the cents, e.g. `44¢ (+127)`, and real sport
 **How the file is made:** `scripts/fetch-book-odds.mjs` (same daily run, same `--max-credits 12` cap, same key rules). After the pick lines are planned it **widens each sport's one `/odds` call to all 3 game-line markets** (h2h, spreads, totals; sports with the most games first, only while it fits the cap) and matches **every full-game moneyline/spread/total** of every game in the snapshot (`FULL_GAME` regex; period, half, quarter, first-5 and team-total markets are skipped because the books' featured markets are full-game only). That runs BEFORE player props, so a tight cap now trims props first (pick prop Vegas numbers and Record prop rows only appear when they fit; rows from earlier runs the same day are kept for markets not re-priced). Cost: 3 credits per sport per run (NFL, MLB, NHL, NBA = 12; WNBA is skipped by the cap). The Odds API only posts the main puck line / spread / total, so alt lines show cents + American but no Vegas line.
 
 **ⓘ tip** `STR.tips.americanOdds` ("+127 means a $100 bet wins $127. −150 means you bet $150 to win $100...") sits in the Build a Bet results and game headers, on single cards, the first leg of each combo, and the slip leg price line. CSS §19.
+
+## 27. Hand-read sportsbook odds (Bovada props): data/vegas-manual.json
+
+The Odds API run (§26) spends its 12 credits on game lines, so most player props have no "Vegas" number. Fill the gap by reading odds by hand and ingesting them:
+
+1. **Daily routine step (after fetch-markets + update-picks):** open bovada.lv, and for the games with picks, read the props that match Polymarket markets: player, stat, line, both sides where shown. Write them to `data/manual-odds/<date>-bovada.json`:
+   ```json
+   { "book": "bovada", "read_at": "2026-10-19T17:40:00Z", "source": "bovada-manual",
+     "entries": [
+       { "game": "nfl-was-sf-2026-10-19", "player": "Brock Purdy", "stat": "football_player_interceptions_thrown", "ou": 0.5, "over": "+110", "under": "-145" },
+       { "game": "nhl-sj-tor-2026-10-19", "player": "Auston Matthews", "stat": "hockey_player_goals", "plus": 1, "yes": "+115" } ] }
+   ```
+   `game` = snapshot event slug, `stat` = the snapshot `smt`. Use `ou` for an over/under line (X.5) and `plus` for "N+" / anytime markets.
+2. **Ingest:** `node scripts/ingest-vegas.mjs data/manual-odds/<date>-bovada.json [--dry-run] [--commit]`. It writes `data/vegas-manual.json`: same shape as vegas-lines.json plus per-entry `at` and `src: "bovada-manual"`.
+3. **Exact matches only.** Polymarket "N+" = Over N−0.5, so o0.5 matches 1+, o252.5 matches only a 253+ market (none exist: Polymarket's passing yards are in 25s, so most Bovada yardage lines and alts don't match and are reported "unmatched"). Alt lines are separate entries and match when Polymarket has that exact line. Over → Yes side, under → No side. **Yes-only** markets (anytime TD/goal, one-way "1+ points") get no No price. Names ignore accents. Bad odds or a non-.5 o/u line are skipped. Nothing is ever guessed.
+4. **In the app:** js/vegas.js loads both files. Each entry is hidden after 36h (by its own `at`), and when both files price a side the bigger payout is shown, e.g. "Vegas: +110 (Bovada)". Re-ingesting replaces the same keys and drops entries older than 36h.
+
+Tests: tests/ingest-vegas.test.mjs (matching), tests/vegas.test.js (two-file lookup). Oct 19, 2026 first read: 60 entries, 37 sides matched (NHL points/assists/goal, Purdy/Daniels INT and pass TDs, Purdy 20+ rush yds, McCaffrey 5+ receptions, anytime TDs, Ramírez/Caminero hits/HR/RBI/total bases).

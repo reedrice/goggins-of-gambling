@@ -22,4 +22,12 @@ test('lookup: found, missing, wrong side, stale, bad entries', () => {
   assert.strictEqual(V.lookup('aec-x', 'yes', now + 40 * 3600e3), null, 'older than 36h is hidden');
   V.set(null); assert.strictEqual(V.lookup('aec-x', 'yes', now), null);
 });
+test('lookup: hand-read file (per-entry time) + bigger payout wins', () => {
+  const now = Date.parse('2026-10-19T18:00:00Z');
+  V.set([{ updated_at: '2026-10-19T12:00:00Z', lines: { 'm|yes': { p: '+100', b: 'draftkings', n: 4 } } },
+    { updated_at: '2026-10-19T17:45:00Z', lines: { 'm|yes': { p: '+110', b: 'bovada', n: 1, at: '2026-10-19T17:40:00Z' }, 'old|yes': { p: '+200', b: 'bovada', at: '2026-10-17T10:00:00Z' } } }]);
+  assert.deepStrictEqual(V.lookup('m', 'yes', now), { p: '+110', book: 'bovada', n: 1 });
+  assert.strictEqual(V.lookup('old', 'yes', now), null, 'entry time, not file time, decides staleness');
+  assert.strictEqual(V.lookup('m', 'no', now), null, 'Yes-only: no No price');
+});
 process.exit(fails ? 1 : 0);
