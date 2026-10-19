@@ -847,3 +847,40 @@ The script only **reads** Pablo's `data/live/*.json`. It never writes there.
 - The page carries a note that small samples are noisy.
 
 **Routine step:** `node scripts/grade-live-alerts.mjs --commit`. Run it after games finish, e.g. in the Play Money Leaderboard Update routine. It commits `data/live-record.json` only when something changed (pull --rebase, never force).
+
+## 36. Self-learning loop: closing-line value, calibration, trust (Oct 19, 2026)
+
+**Files (ours; Pablo's files untouched, no new tabs):**
+- `scripts/capture-closing.mjs` writes `data/pick-history.json`.
+- `scripts/learn.mjs` writes `data/learning.json`.
+- The "How we're learning" card is on the **Record tab** (app.js `learningCardHtml`, `STR.record.learn`, css/style.css §25).
+- Tests: `tests/learn.test.mjs`, `tests/learning.smoke.js`.
+
+**1. Pick history + closing prices** (`node scripts/capture-closing.mjs --commit`). Each run does three things:
+- (a) **log:** adds every new pick from data/picks.json, with its **publish price** (the picks.json `price`, per leg), hit_prob, stake, sport, type and prop stat. Picks are never removed.
+- (b) **close:** for legs whose game starts within 20 min (`--window`) and hasn't started, it saves the live Polymarket US buy price as the **closing price**, once. After the start, nothing is back-filled.
+- (c) **grade:** reads the real Polymarket US settlement (closed market; the winning side is priced 1).
+- CLV = close − publish, in chance points. Positive = the market moved toward our pick.
+
+**2. Learning** (`node scripts/learn.mjs --commit`). It uses graded pick history, `data/predictions.json` and the store CSV `predictions.csv`; rows with the same date + game as predictions.json are not counted twice. It writes:
+- `calibration.picks` / `calibration.predictions`: 10-point buckets of our stated chance → n, average said, actual, `adjustment_pts` = (actual − said) × n/(n+100).
+- `market_shrink.weight` w: a least-squares fit of the outcome on our hit_prob vs the market price, pulled toward 1.
+- `categories[]` (sport · bet type · prop stat): W-L, hit rate, flat-1u units, ROI, avg CLV, and `trust` = clamp(1 + ROI × n/(n+100), 0.5, 1.25).
+- `clv`: average and beat-the-close %.
+- **Gate:** every adjustment is 0, w = 1 and trust = 1 until that bucket or category has **30 graded** (`status: "collecting data"`).
+
+**3. How the daily digest MUST apply data/learning.json** (when building picks, before `update-picks.mjs picks`):
+1. Start from your raw chance `h` and the Polymarket US price `m` (for combos, the product of the leg prices).
+2. `h1 = m + w × (h − m)`, with w = `market_shrink.weight` (1 while collecting data).
+3. `h2 = h1 + adjustment_pts` of the `calibration.picks` bucket that `h1` falls in (0 if that bucket is still collecting data). For game predictions, use `calibration.predictions` on `win_prob` the same way. Clamp to 1-99.
+4. Write `h2` as `hit_prob`, and judge the edge with `h2` (`fair` stays the book number).
+5. Stake: `stake_units × trust` for the pick's category key `<SPORT> · <type> · <stat>` (e.g. "NHL · prop · pts"). Fall back to "<SPORT> · <type>", then 1. Round to the nearest 0.25u and never go above the usual max for that pick type.
+6. Mention any applied change in the digest ("calibration −0.8, trust ×1.06"). While everything says "collecting data", change nothing.
+
+**Routine commands:**
+- After publishing picks, every ~10 min from about 30 min before the first game until the last start, and the next morning: `node scripts/capture-closing.mjs --commit`
+- Next morning, after that run and after grading predictions: `node scripts/learn.mjs --commit`
+
+Both commit only their own file, and only when it changed (pull --rebase, never force).
+
+Started Oct 19, 2026 with 20 picks logged, 0 graded. Picks published before then have no history.
