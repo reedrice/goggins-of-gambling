@@ -260,7 +260,8 @@
    *   Browse games: game cards for the filtered day/sport/team -> one game.
    *
    * @param {HTMLElement} root
-   * @param {{onAdd:(leg:object)=>void, fmt:(cents:number)=>string}} opts
+   * @param {{onAdd:(leg:object)=>void, fmt:(cents:number)=>string, pay?:(cents:number)=>string}} opts
+   *   pay: compact payout text for a price ("$10 pays $11.63", app.js payShort)
    * @returns {{destroy:()=>void}}
    */
   function create(root, opts) {
@@ -554,7 +555,7 @@
     /** Whole results box: count + Expand all / Collapse all + game cards. */
     function drawTree() {
       const t = state.tree;
-      results.innerHTML = `<div class="pres-head"><span>${esc(F.matchGames(t.total, t.games.length))}</span>
+      results.innerHTML = `<div class="pres-head"><span>${esc(F.matchGames(t.total, t.games.length))} ${tipBtn('howPrices')}</span>
           <span class="pres-tools"><button type="button" class="btn btn-sm" data-expand="all">${esc(F.expandAll)}</button><button type="button" class="btn btn-sm" data-expand="none">${esc(F.collapseAll)}</button></span></div>` +
         t.games.map(nodeHtml).join('');
     }
@@ -668,7 +669,7 @@
           <button type="button" class="btn btn-sm pback">${esc(STR.calc.back)}</button>
           <div class="ghead-main">${window.Teams.badges(teamsOf(ev), 34)}<div><b>${esc(shortTitle(ev))}</b>
             <div class="muted small">${esc(ev.sport)} · ${esc(when(ev.start_time, true))}</div></div></div>
-          <div class="muted small">${esc(state.gameStatus)} ${tipBtn('snapshot')}</div>
+          <div class="muted small">${esc(state.gameStatus)} ${tipBtn('snapshot')} ${tipBtn('howPrices')}</div>
         </div>
         <h4>${esc(STR.calc.gameLines)}</h4>
         ${lines.map(m => marketRow(ev, m)).join('') || `<div class="muted small">${esc(STR.none)}</div>`}
@@ -694,7 +695,7 @@
         const lab = side === 'yes' ? m.side_yes_label : m.side_no_label;
         const k = m.kalshi && (side === 'yes' ? m.kalshi.yes : m.kalshi.no);
         return `<button type="button" class="pbtn" ${c == null ? 'disabled' : ''} data-add="${esc(ev.slug)}|${esc(m.id)}|${side}">
-          <span class="pbtn-lab">${esc(lab)}</span><b>${c == null ? '—' : esc(opts.fmt(c))}</b>${k ? `<span class="kpx">Kalshi ${esc(opts.fmt(k))}</span>` : ''}</button>`;
+          <span class="pbtn-lab">${esc(lab)}</span><b>${c == null ? '—' : esc(opts.fmt(c))}</b>${c != null && opts.pay ? `<span class="pbtn-pay">${esc(opts.pay(c))}</span>` : ''}${k ? `<span class="kpx">Kalshi ${esc(opts.fmt(k))}</span>` : ''}</button>`;
       };
       const logos = m.player ? window.Teams.badge(Object.assign({ league: ev.league }, (ev.teams || []).find(t => t.abbr === m.team) || {}), 22) : withGame ? window.Teams.badges(teamsOf(ev), 20) : '';
       return `<div class="mrow">

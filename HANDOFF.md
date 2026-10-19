@@ -46,7 +46,7 @@ The scripts load in this order (classic `<script>` tags; each one sets a single 
 ```
 index.html            DOM skeleton (empty onboarding container, header, "I bet on" bar, 5 tab sections, tab bar, tooltip bubble)
 config.js             brand + repo config + platforms[] (one ordered list used everywhere)
-css/style.css         dark mobile-first theme (sections 1-15; 13 = leg start times, 14 = grouped results, 15 = position badges; 9 = picker/logos/toggle/tooltips, 10 = Record compare table, 11 = pick evaluation box, 12 = Build-a-bet filter panel)
+css/style.css         dark mobile-first theme (sections 1-16; 16 = payout explainer; 13 = leg start times, 14 = grouped results, 15 = position badges; 9 = picker/logos/toggle/tooltips, 10 = Record compare table, 11 = pick evaluation box, 12 = Build-a-bet filter panel)
 js/strings.js         all UI text (plain-language rules in its header)
 js/calc.js            odds and parlay math (pure)
 js/evaluate.js        per-pick hit chance, risk label, "My take" verdict, prediction lookup (browser + Node, §18)
@@ -67,7 +67,7 @@ data/predictions.json game predictions and grades (appended by the job)
 data/bet-log.json     shared calibration log (written by the app with users' tokens)
 data/positions.json   player positions per league from ESPN rosters (written daily by fetch-positions.mjs, §21)
 data/book-odds.json   automatic per-app price comparisons (The Odds API, written daily by fetch-book-odds.mjs, §17)
-tests/calc.test.js        node: math
+tests/calc.test.js        node: math (incl. payout explainer: payout / slipPays)
 tests/gametime.test.js    node: start-time format (CT/ET), hints, lookup, leg order
 tests/evaluate.test.js    node: hit chance / risk / verdict defaults (js/evaluate.js)
 tests/picker-filters.test.js node: filter tree rules (js/picker-filters.js)
@@ -475,3 +475,31 @@ Anything else gets **no badge**. It's never guessed, and it's listed in `positio
 **Refresh:** automatic inside `node scripts/fetch-markets.mjs` (skip with `--no-positions`). It covers every player with a prop in the snapshot, and its counts are in the commit body. Standalone: `node scripts/fetch-positions.mjs [--commit] [--no-push] [--force]`. ESPN responses are cached in `.cache/espn/` (git-ignored) for 20 hours, so a second run the same day is instant. `--force` ignores the cache.
 
 **Match rate on 2026-10-19:** 100% in every league with props: NFL 34/34, NBA 27/27, NHL 71/71, MLB 14/14, WNBA 13/13, soccer (EPL 1, La Liga 3, Serie A 5).
+
+## 22. Payout explainer next to every price ("41¢ · $10 pays $24.39 · 41% chance")
+
+Reed didn't know what "Kalshi 41¢" meant, so every price now has a small second line in plain words.
+
+**Math** (`BetCalc.payout(cents, stake)` and `slipPays(stake, multiple)` in js/calc.js, tested in tests/calc.test.js):
+- A share costs the price and pays $1 if it wins, so stake ÷ (cents ÷ 100) shares pay that many dollars back (the stake is included).
+- The chance is the price read as a percent.
+- A slip pays stake × multiple.
+
+**Example stake:** the user's own standard bet (`betdash_profile.unit`), or $10 when it isn't set. It is computed in the browser only (`exStake()` in app.js) and never written to any repo file.
+
+**Formats:**
+- `STR.pay.line` "41¢ · $10 pays $24.39 · 41% chance": pick cards (single bets), parlay legs on pick cards, slip leg hints (plus the 1.18x), saved-bet legs.
+- `STR.pay.short` "$10 pays $24.39": Build-a-bet Yes/No buttons, Kalshi prices, the "Other apps" line (both prices).
+- `STR.pay.slip` "Your $X pays $Y if all legs hit". It appears:
+  - on combo pick cards, using the app's quoted payout, else our estimate marked "(at these prices)"
+  - under the slip calculator, using the typed stake (else the standard bet) × the typed quote (else the estimate)
+  - on open multi-leg bets
+
+The price itself follows the user's chosen display format (cents, American or decimal); the payout and chance are the same in every format.
+
+**"How prices work" (i)** (`STR.tips.howPrices`): shown once per screen. It's in the Picks tab legend row, the Build-a-bet results header and game header, the slip total and the Record compare title.
+
+**Record compare table:** its cells are cent *differences*, not prices, so instead of payout lines it gets a one-line `STR.pay.diffNote` ("+3¢ means that app charges 3¢ more for the same $1 share…") plus the (i).
+
+CSS: §16 `.payx` (12px muted second line), `.slip-pay`, `.pbtn-pay`. Checked at 390px with no sideways scroll.
+

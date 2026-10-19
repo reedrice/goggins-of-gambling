@@ -25,6 +25,17 @@ window.STR = {
   cancel: 'Cancel',
   close: 'Close',
   tipButton: 'What does this mean?',
+  // Plain-language payout next to every price (app.js payText / picker.js):
+  // '41¢ · $10 pays $24.39 · 41% chance'. The stake is the user's own
+  // standard bet from their local profile ($10 if not set), never stored in the repo.
+  pay: {
+    line: (price, stake, pays, chance) => `${price} · ${stake} pays ${pays} · ${chance}% chance`,
+    short: (stake, pays) => `${stake} pays ${pays}`,          // compact: Build-a-bet buttons, Kalshi/other-app prices
+    slip: (stake, pays) => `Your ${stake} pays ${pays} if all legs hit`,
+    slipNote: 'at these prices',
+    howTitle: 'How prices work',
+    diffNote: '+3¢ means that app charges 3¢ more for the same $1 share, so it pays a little less. − means it pays more.'
+  },
   // Player position badge tooltip (js/positions.js): 'QB = Quarterback'
   posTip: (abbr, name) => `${abbr} = ${name}`,
 
@@ -360,6 +371,7 @@ window.STR = {
 
   // ---------------------------------------------------------------- tooltips (i)
   tips: {
+    howPrices: 'Each share costs the price in cents and pays $1 if it wins. 41¢ = about a 41% chance; $10 buys ~24 shares and pays ~$24.39.',
     price: 'What it costs to buy one share. A share pays $1 if you win. Example: at 40¢, a $10 bet buys 25 shares and pays $25.',
     fair: 'What this bet should cost based on the big sportsbooks, after taking out their fee. Example: fair 47¢ means it wins about 47 times in 100.',
     advantage: 'How much cheaper the price is than the fair price. Example: price 44¢ and fair 48¢ means you\'re getting it 4¢ cheap. Bigger is better.',

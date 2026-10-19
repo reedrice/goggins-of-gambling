@@ -86,6 +86,41 @@
   /** Price (cents) in the user's chosen display format. */
   const fmtP = c => C.formatPrice(c, S.getPrefs().priceFormat);
 
+  // ------------------------------------------------- payout explainer
+  // Next to every price: "41¢ · $10 pays $24.39 · 41% chance". The example
+  // stake is the user's own standard bet from their local profile ($10 when
+  // not set). It is computed here in the browser only and never written to
+  // the repo. Math: BetCalc.payout / slipPays (tested in tests/calc.test.js).
+
+  /** Example stake in dollars: the user's standard bet, else $10. */
+  const exStake = () => { const u = Number((S.getProfile() || {}).unit); return u > 0 && isFinite(u) ? u : 10; };
+
+  /** Dollars without a trailing ".00": "$10", "$24.39". */
+  const cash = n => (Math.round(n * 100) % 100 === 0 ? '$' + Math.round(n).toLocaleString('en-US') : money(n));
+
+  /** Full text: "41¢ · $10 pays $24.39 · 41% chance" ('' for a bad price). @param {number} c cents */
+  function payText(c) {
+    const p = C.payout(c, exStake());
+    return p ? STR.pay.line(fmtP(c), cash(exStake()), cash(p.pays), p.chance) : '';
+  }
+
+  /** Compact text: "$10 pays $24.39" ('' for a bad price). @param {number} c cents */
+  function payShort(c) {
+    const p = C.payout(c, exStake());
+    return p ? STR.pay.short(cash(exStake()), cash(p.pays)) : '';
+  }
+
+  /**
+   * Whole slip: "Your $10 pays $34.40 if all legs hit" (+ "at these prices"
+   * when the multiple is our estimate rather than the app's quote).
+   * withTip adds the one "How prices work" (i) (used once per screen).
+   * @returns {string} HTML ('' on bad input)
+   */
+  function slipPayLine(stake, multiple, estimated, withTip) {
+    const y = C.slipPays(stake, multiple);
+    return y === null ? '' : `<div class="payx slip-pay">${esc(STR.pay.slip(cash(stake), cash(y)))}${estimated ? ` <span class="muted">(${esc(STR.pay.slipNote)})</span>` : ''}${withTip ? ' ' + tip('howPrices') : ''}</div>`;
+  }
+
   /** "Oct 19, 12:55 AM CDT" in America/Chicago. */
   function fmtTime(iso) {
     const d = new Date(iso);
@@ -377,8 +412,8 @@
     const best = rows.reduce((a, b) => (b.book_chance < a.book_chance ? b : a));
     const name = (platformById(best.book) || { name: best.book }).name;
     // Show cents (or the user's format) plus the app's own American odds.
-    const price = esc(fmtP(best.book_chance)) + (S.getPrefs().priceFormat === 'cents' && best.book_price ? ` (${esc(best.book_price)})` : '');
-    const pm = esc(fmtP(best.polymarket_price));
+    const price = esc(fmtP(best.book_chance)) + (S.getPrefs().priceFormat === 'cents' && best.book_price ? ` (${esc(best.book_price)}; ${esc(payShort(best.book_chance))})` : ` (${esc(payShort(best.book_chance))})`);
+    const pm = esc(fmtP(best.polymarket_price)) + `; ${esc(payShort(best.polymarket_price))}`;
     const P = STR.picks;
     const text = best.book_chance < best.polymarket_price
       ? P.otherCheaper(esc(name), price, esc(String(Math.round((best.polymarket_price - best.book_chance) * 10) / 10)), pm)
@@ -389,7 +424,8 @@
   /** Color legend for the risk labels, shown once above the picks. */
   function riskLegend() {
     const E = STR.eval;
-    return `<div class="risk-legend small"><span class="muted">${esc(E.legendTitle)}</span>
+    // + the one "How prices work" (i) for the whole Picks tab
+    return `<div class="risk-legend small"><span class="muted">${esc(STR.pay.howTitle)} ${tip('howPrices')}</span><span class="muted">${esc(E.legendTitle)}</span>
       ${window.PickEval.RISK_KEYS.map(k => `<span class="risk risk-${k}">${esc(E.risk[k])} <span class="rl">${esc(E.legend[k])}</span></span>`).join('')}</div>`;
   }
 
@@ -456,9 +492,11 @@
       </div>
       ${evalBlock(pk, sec || 'singles')}
       <div class="pick-stats">${stats}</div>
-      ${!isMulti && typeof pk.kalshi_price === 'number' ? `<div class="muted small">${esc(P.kalshiPrice(fmtP(pk.kalshi_price)))}</div>` : ''}
+      ${!isMulti && typeof pk.price === 'number' ? `<div class="payx">${esc(payText(pk.price))}</div>` : ''}
+      ${!isMulti && typeof pk.kalshi_price === 'number' ? `<div class="muted small">${esc(P.kalshiPrice(fmtP(pk.kalshi_price)))} · ${esc(payShort(pk.kalshi_price))}</div>` : ''}
       ${isMulti ? '' : otherAppsLine(pk)}
-      ${isMulti ? `<ul class="legs">${pk.legs.map(l => `<li>${l.team ? T.badge(teamRef(l.team), 20) : ''}<span>${posText(l.desc, l)}${typeof l.price === 'number' ? ` <span class="muted">${esc(fmtP(l.price))}</span>` : ''}${typeof l.kalshi_price === 'number' ? ` <span class="kpx">Kalshi ${esc(fmtP(l.kalshi_price))}</span>` : ''}</span></li>`).join('')}</ul>` : ''}
+      ${isMulti ? `<ul class="legs">${pk.legs.map(l => `<li>${l.team ? T.badge(teamRef(l.team), 20) : ''}<span>${posText(l.desc, l)}${typeof l.price === 'number' ? ` <span class="muted">${esc(fmtP(l.price))}</span>` : ''}${typeof l.kalshi_price === 'number' ? ` <span class="kpx">Kalshi ${esc(fmtP(l.kalshi_price))}</span>` : ''}${typeof l.price === 'number' ? `<span class="payx">${esc(payText(l.price))}</span>` : ''}</span></li>`).join('')}</ul>
+        ${slipPayLine(exStake(), pk.quoted_multiple || pk.est_multiple, !pk.quoted_multiple)}` : ''}
       <div><b>${esc(P.bet)}:</b> ${esc(stakeText(pk))} ${tip('unit')}</div>
       ${pk.pending_news ? `<div class="news">⏳ <b>${esc(P.news)}</b> ${esc(pk.pending_news)}</div>` : ''}
       ${pk.verify_note ? `<div class="verify">⚠️ ${esc(pk.verify_note)}</div>` : ''}
@@ -610,7 +648,7 @@
       <p id="c-warn" class="error"></p>
       <button class="btn btn-primary btn-xl" id="c-save">${esc(K.saveBet)}</button>
       <button class="btn btn-sm" id="c-clear" style="margin-top:10px">${esc(K.clear)}</button>`;
-    picker = window.Picker.create($('#picker-root'), { onAdd: addPickedLeg, fmt: fmtP });
+    picker = window.Picker.create($('#picker-root'), { onAdd: addPickedLeg, fmt: fmtP, pay: payShort });
     $('#add-manual').onclick = () => {
       calc.legs.push({ desc: '', platform: myPlatform().name, price: '', manual: true });
       renderSlip();
@@ -725,7 +763,7 @@
           <input class="l-price" inputmode="text" placeholder="${esc(K.legPricePh)}" value="${esc(l.price)}" aria-label="${esc(K.legPrice)}">
         </div>
         <div class="leg-hint"></div>
-        ${typeof l.kalshiPrice === 'number' ? `<div class="kpx">Kalshi ${esc(fmtP(l.kalshiPrice))}</div>` : ''}
+        ${typeof l.kalshiPrice === 'number' ? `<div class="kpx">Kalshi ${esc(fmtP(l.kalshiPrice))} · ${esc(payShort(l.kalshiPrice))}</div>` : ''}
         ${related ? `<div class="related-flag">⚠️ ${esc(K.related)} ${tip('related')}</div>` : ''}
       </div>`;
     }).join('') + `<p class="muted small">${esc(K.priceHint)}</p>`;
@@ -752,12 +790,16 @@
       const h = $('.leg-hint', div);
       const l = calc.legs[i];
       const ok = r.parsed[i];
-      h.textContent = l.price ? (ok ? `${fmtP(ok.p * 100)} · ${(1 / ok.p).toFixed(2)}x` : K.cantRead) : '';
+      // "85¢ · $10 pays $11.76 · 85% chance · 1.18x"
+      h.textContent = l.price ? (ok ? `${payText(ok.p * 100) || fmtP(ok.p * 100)} · ${(1 / ok.p).toFixed(2)}x` : K.cantRead) : '';
       h.className = 'leg-hint' + (l.price && !ok ? ' error' : '');
     });
     const kpi = (k, v, cls = '', tipKey = '') => `<div class="kpi"><div class="k">${esc(k)} ${tipKey ? tip(tipKey) : ''}</div><div class="v ${cls}">${v}</div></div>`;
     if (!$('#calc-out')) return;
-    $('#calc-out').innerHTML = kpi(K.outPayout, mult(r.est), '', 'ourPayout') + kpi(K.outChance, pct(r.hit), '', 'chance');
+    // Whole-slip line: the stake typed below (else the standard bet) × the app's
+    // quoted payout when typed, else our estimate from the leg prices.
+    $('#calc-out').innerHTML = kpi(K.outPayout, mult(r.est), '', 'ourPayout') + kpi(K.outChance, pct(r.hit), '', 'chance') +
+      (r.est ? slipPayLine(r.stake || exStake(), r.quoted || r.est, !r.quoted, true) : '');
     const unit = S.getProfile().unit;
     $('#calc-out2').innerHTML =
       kpi(K.outGap, r.gap === null ? STR.none : (r.gap > 0 ? '+' : '') + pct(r.gap, 1), sign(r.gap), 'gap') +
@@ -846,7 +888,7 @@
    * @param {object} b Bet @param {boolean} [withHint] countdown (open bets)
    */
   function legsHtml(b, withHint) {
-    return GT.sortLegs(b.legs, legStart).map(l => `<div class="bleg">${l.teams && l.teams.length ? T.badges(l.teams, 20) : platformBadge(l.platform)}<span class="bleg-txt">${legText(l)}${legWhen(l, withHint)}</span></div>`).join('');
+    return GT.sortLegs(b.legs, legStart).map(l => `<div class="bleg">${l.teams && l.teams.length ? T.badges(l.teams, 20) : platformBadge(l.platform)}<span class="bleg-txt">${legText(l)}${typeof l.p === 'number' && l.p > 0 && l.p < 1 ? `<span class="payx">${esc(payText(l.p * 100))}</span>` : ''}${legWhen(l, withHint)}</span></div>`).join('');
   }
 
   /**
@@ -890,6 +932,7 @@
         <div class="pick-stats">
           ${stat(B.amount, money(b.stake))}${stat(B.appPays, mult(b.quotedMultiple), 'payout')}${stat(B.ourEst, mult(b.estMultiple), 'ourPayout')}${stat(B.toWin, `<span class="pos">${money(b.stake * b.quotedMultiple)}</span>`)}
         </div>
+        ${b.legs.length > 1 ? slipPayLine(b.stake, b.quotedMultiple, false) : ''}
         <div class="pick-actions">
           <button class="btn btn-sm btn-primary" data-settle="won" data-id="${b.id}">${esc(B.won)}</button>
           <button class="btn btn-sm btn-danger" data-settle="lost" data-id="${b.id}">${esc(B.lost)}</button>
@@ -993,7 +1036,7 @@
    */
   function renderPlatformCompare(log, odds) {
     const R = STR.record;
-    let html = `<h3>${esc(R.platTitle)}</h3><p class="muted small">${esc(R.platNote)}</p>`;
+    let html = `<h3>${esc(R.platTitle)} ${tip('howPrices')}</h3><p class="muted small">${esc(R.platNote)} ${esc(STR.pay.diffNote)}</p>`;
     if (!log) html += `<p class="error">${esc(R.logError)}</p>`;
     const recs = (log && log.records) || [];
     const feedOn = !!(odds && odds.status === 'active');

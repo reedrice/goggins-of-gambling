@@ -367,3 +367,11 @@ canvas.chart { width: 100%; height: 190px; display: block; background: var(--car
 .pos-badge { display: inline-block; font: 700 10.5px/1 system-ui, sans-serif; letter-spacing: .02em; padding: 3px 5px; margin: 0 3px; border-radius: 6px; border: 1px solid var(--muted); background: none; color: var(--muted); vertical-align: 1px; cursor: help; white-space: nowrap; }
 .pos-badge:hover, .pos-badge:focus-visible { color: inherit; border-color: currentColor; }
 .pg-pname { display: inline-flex; align-self: flex-start; align-items: center; flex-wrap: wrap; gap: 2px; }   /* name + badge on one line in group headers */
+
+/* 16. Payout explainer: "41¢ · $10 pays $24.39 · 41% chance" (app.js payText) ---
+   A small second line under prices so phones stay compact. */
+.payx { display: block; font-size: 12px; color: var(--muted); margin-top: 2px; line-height: 1.35; }
+.payx .tip { width: 17px; height: 17px; font-size: 10.5px; }
+.slip-pay { grid-column: 1 / -1; color: var(--text); font-size: 13px; }
+.pbtn .pbtn-pay { font-size: 10.5px; color: var(--muted); white-space: nowrap; }
+.pbtn.added .pbtn-pay { color: #000; }

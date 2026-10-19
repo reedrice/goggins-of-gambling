@@ -47,3 +47,17 @@ a(near(C.parsePrice('63.5c').p, .635) && near(C.parsePrice(String(C.toAmerican(6
   a(s.other.n === 1 && near(s.other.avgGap, 0.1), 'unlisted platforms -> Other');
   a(C.platformSummary(null, null, plats).rows.length === 3, 'tolerates missing data');
 }
+
+// Payout explainer ("41¢ · $10 pays $24.39 · 41% chance"), js/calc.js payout / slipPays
+{
+  const p = C.payout(41, 10);
+  a(p && p.pays === 24.39 && p.chance === 41 && near(p.shares, 24.390, 1e-3) && p.profit === 14.39, 'payout 41¢ $10 -> $24.39, 41%');
+  a(C.payout(50, 10).pays === 20 && C.payout(50, 10).profit === 10, 'payout 50¢ doubles');
+  a(C.payout(85, 10).pays === 11.76, 'payout 85¢ $10 -> $11.76');
+  a(C.payout(48.1, 25).pays === 51.98 && C.payout(48.1, 25).chance === 48, 'payout decimal cents + custom stake');
+  a(C.payout(1, 10).pays === 1000, 'payout 1¢ long shot');
+  a([0, 100, -5, NaN, null, '41'].every(c => C.payout(c, 10) === null), 'payout rejects bad prices');
+  a(C.payout(41, 0) === null && C.payout(41, -10) === null && C.payout(41, Infinity) === null, 'payout rejects bad stakes');
+  a(C.slipPays(10, 3.44) === 34.4 && C.slipPays(5, 24.94) === 124.7, 'slipPays stake × multiple');
+  a(C.slipPays(0, 3) === null && C.slipPays(10, 0.5) === null && C.slipPays(10, null) === null, 'slipPays rejects bad input');
+}

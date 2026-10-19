@@ -45,6 +45,8 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await cards[9].screenshot({ path: SHOT + '/2c-card-parlay.png' });
   await p.addStyleTag({ content: '.topbar,.tabbar,.plat-bar{visibility:visible}' });
   console.log('other-apps lines:', await p.$$eval('#tab-picks .other-apps', x => x.length), '| first:', await p.$eval('#tab-picks .other-apps', e => e.innerText).catch(() => 'none'));
+  // Payout explainer: "48¢ · $10 pays $20.83 · 48% chance" on cards, combo totals, one (i).
+  console.log('pay lines:', await p.$$eval('#tab-picks .payx', x => x.length + ' | ' + x[0].textContent.trim()), '| combo total:', await p.$eval('#tab-picks .slip-pay', e => e.textContent.replace(/\s+/g, ' ').trim()).catch(() => 'none'), '| how-prices tips:', await p.$$eval('#tab-picks [data-tip="howPrices"]', x => x.length));
   // Player position badges on pick cards + their tap tooltip.
   console.log('pick-card positions:', await p.$$eval('#tab-picks .pos-badge', x => x.map(e => (e.closest('.pick-sub, li') || e.parentElement).className + ': ' + (e.closest('.pick-sub, li') || e.parentElement).textContent.replace(/\s+/g, ' ').trim().slice(0, 40)).join(' | ')));
   if (await p.$('#tab-picks .pos-badge')) { await tap('#tab-picks .pos-badge'); await wait(200); console.log('position tooltip:', await p.$eval('#tip-pop', e => (e.hidden ? 'HIDDEN' : e.textContent))); await p.mouse.click(5, 300); }
@@ -135,6 +137,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await p.$$eval('#slip [data-rm]', x => x[x.length - 1].click()); await wait(300);
   console.log('related flags:', await p.$$eval('#slip .related-flag', x => x.length), '| as-of:', await p.$eval('#slip-asof', e => e.textContent));
   console.log('calc:', await p.$eval('#calc-out', e => e.innerText.replace(/\n/g, ' ')));
+  console.log('slip leg pay hints:', await p.$$eval('#slip .leg-hint', x => x.map(e => e.textContent).join(' | ')));
   await p.type('#c-quoted', '4.5'); await p.type('#c-stake', '5');
   console.log('calc2:', await p.$eval('#calc-out2', e => e.innerText.replace(/\n/g, ' ')));
   // tooltip

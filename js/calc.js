@@ -183,6 +183,33 @@
   }
 
   /**
+   * Plain-language payout for one price (the "41¢ · $10 pays $24.39 · 41%
+   * chance" line). A share costs `cents` and pays $1 if it wins, so a stake
+   * buys stake / (cents/100) shares and a win pays that many dollars back
+   * (stake included).
+   * @param {number} cents price, 0 < cents < 100
+   * @param {number} stake example stake in dollars (the user's own unit, computed in the browser only)
+   * @returns {{shares:number, pays:number, profit:number, chance:number}|null}
+   *   pays/profit rounded to cents; chance = the price read as a % (rounded); null on bad input
+   */
+  function payout(cents, stake) {
+    if (typeof cents !== 'number' || !(cents > 0 && cents < 100) || !(stake > 0) || !isFinite(stake)) return null;
+    const shares = stake * 100 / cents;
+    const r2 = x => Math.round(x * 100) / 100;
+    return { shares, pays: r2(shares), profit: r2(shares - stake), chance: Math.round(cents) };
+  }
+
+  /**
+   * What a whole slip pays back if every leg hits: stake × multiple.
+   * @param {number} stake dollars @param {number} multiple e.g. 3.44
+   * @returns {number|null} rounded to cents
+   */
+  function slipPays(stake, multiple) {
+    if (!(stake > 0) || !(multiple >= 1) || !isFinite(stake * multiple)) return null;
+    return Math.round(stake * multiple * 100) / 100;
+  }
+
+  /**
    * Per-platform numbers for the Record tab's "How each app's prices compare"
    * table. Pure, so it's unit-tested in Node.
    *
@@ -216,5 +243,5 @@
     return { rows, other: avg(other, 'avgGap') };
   }
 
-  return { parsePrice, describe, parlay, gap, expectedValue, profit, edgePts, toAmerican, formatPrice, platformSummary };
+  return { parsePrice, describe, parlay, gap, expectedValue, profit, edgePts, toAmerican, formatPrice, payout, slipPays, platformSummary };
 });
