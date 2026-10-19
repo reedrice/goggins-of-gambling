@@ -6,7 +6,7 @@ import assert from 'node:assert';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { american, pays, quote, liquid, findMoves, appendAlerts, gameOver, selectMarkets, sportOf, tagOf } from '../scripts/live-watch.mjs';
+import { american, pays, quote, liquid, findMoves, appendAlerts, gameOver, selectMarkets, sportOf, tagOf, tierOf, buildLive, openFromPublished } from '../scripts/live-watch.mjs';
 
 const F = JSON.parse(fs.readFileSync(new URL('./fixtures/live-watch-sample.json', import.meta.url), 'utf8'));
 
@@ -80,4 +80,31 @@ test('per-sport market types pick ML, main spread/total and named-player props',
   const got = selectMarkets(ev, sportOf('nhl-aaa-bbb-2099-01-01'), ['test player']);
   assert.deepStrictEqual(got.map(m => m.id), [1, 2, 4]);
   assert.deepStrictEqual(got[1].sides, ['Over 5.5', 'Under 5.5']);
+});
+
+test('edge tiers: 10+ big, 4-9 slight, under 4 none', () => {
+  assert.strictEqual(tierOf(10), 'big'); assert.strictEqual(tierOf(9.9), 'slight');
+  assert.strictEqual(tierOf(4), 'slight'); assert.strictEqual(tierOf(3.9), null); assert.strictEqual(tierOf(-12), null);
+});
+
+test('buildLive JSON shape, sorting, first_seen and gone', () => {
+  const open = { ...F.open, start_time: '2099-01-01T00:00:00Z', taken_at: 'T0',
+    markets: F.open.markets.map(m => ({ ...m, yesBuy: 51, noBuy: 51 })) };
+  const prev = { edges: [{ key: 'old:0', side: 'X', edge: 5, tier: 'slight', first_seen: 'T-1', status: 'open' }] };
+  const j = buildLive(open, F.event, prev, '2026-10-19T20:00:00Z');
+  for (const k of ['slug', 'game', 'url', 'updated', 'status', 'open', 'edges']) assert.ok(k in j, k);
+  assert.strictEqual(j.status, 'pregame');
+  const live = j.edges.filter(e => e.status === 'open');
+  // AAA win: 51 -> 40 (11 cheaper, big). Under: 51 -> 39 (12, big). Thin skipped. Calm: no edge.
+  assert.deepStrictEqual(live.map(e => [e.side, e.edge, e.tier]), [['Under 40.5 points', 12, 'big'], ['AAA win', 11, 'big']]);
+  for (const e of live) { assert.match(e.now_odds, /^[+-]\d+$/); assert.ok(e.first_seen); }
+  assert.strictEqual(j.edges.at(-1).status, 'gone');
+  assert.strictEqual(j.edges.at(-1).first_seen, 'T-1');
+  assert.doesNotMatch(JSON.stringify(j), /\$|¢/);
+});
+
+test('published file round-trips back to the same opening prices', () => {
+  const open = { ...F.open, start_time: '2099-01-01T00:00:00Z', taken_at: 'T0', markets: F.open.markets.map(m => ({ ...m, yesBuy: 51, noBuy: 51 })) };
+  const j = buildLive(open, F.event, null, '2026-10-19T20:00:00Z');
+  assert.deepStrictEqual(buildLive(openFromPublished(j), F.event, null, '2026-10-19T20:00:00Z'), j);
 });

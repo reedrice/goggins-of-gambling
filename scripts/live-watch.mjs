@@ -20,6 +20,11 @@
  *       Run "check" every N seconds until the game ends (or max checks) and
  *       append alerts to data/live/<slug>-alerts.json (prices only).
  *
+ *   node scripts/live-watch.mjs publish [--slug ...]
+ *       Build the site file data/live/<slug>.json for the Live Bets view
+ *       (js/live-bets.js): open prices + current edges vs open. Takes the
+ *       opening snapshot first if none exists. Prices only.
+ *
  * Options: --dir (default /workspace/live), --players "Purdy,Daniels,..."
  *
  * PRIVACY: files hold only public market prices — never dollar amounts,
@@ -227,9 +232,75 @@ async function watch() {
   }
 }
 
+// ------------------------------------------------------------ publish (§33)
+// Edge = how many points CHEAPER a side's live buy price is than its opening
+// buy price. Big = 10+, slight = 4-9. Thin/extreme markets never count.
+export const BIG_EDGE = 10, SLIGHT_EDGE = 4;
+export const tierOf = e => (e >= BIG_EDGE ? 'big' : e >= SLIGHT_EDGE ? 'slight' : null);
+
+/**
+ * Pure: build the site JSON. open = snapshot, ev = live event payload,
+ * prev = last published file (keeps first_seen, marks dropped edges "gone").
+ * Stores chances (prob points) and American odds only; the browser works out
+ * "$10 pays $X" (HANDOFF §32), so no dollar figures are committed.
+ */
+export function buildLive(open, ev, prev, nowIso = new Date().toISOString()) {
+  const byId = Object.fromEntries((ev.markets || []).map(m => [m.id, m]));
+  const prevEdges = Object.fromEntries(((prev && prev.edges) || []).map(e => [e.key, e]));
+  const edges = [], seen = new Set();
+  for (const o of open.markets) {
+    const m = byId[o.id], q = m && quote(m);
+    if (!m || !isOpen(m) || !liquid(q)) continue;   // gone, paused, wide gap or extreme
+    // Each side's buy price now vs at open (old snapshots fall back to the mid).
+    const both = [
+      { i: 0, now: q.ask, open: o.yesBuy ?? o.mid },
+      { i: 1, now: 100 - q.bid, open: o.noBuy ?? 100 - o.mid },
+    ];
+    for (const sd of both) {
+      const edge = +(sd.open - sd.now).toFixed(1), tier = tierOf(edge);
+      if (!tier) continue;
+      const key = `${o.id}:${sd.i}`; seen.add(key);
+      edges.push({ key, market_id: o.id, market: o.kind, question: o.question, side: o.sides[sd.i],
+        open_chance: +sd.open.toFixed(1), now_chance: +sd.now.toFixed(1),
+        open_odds: american(sd.open), now_odds: american(sd.now), edge, tier,
+        first_seen: prevEdges[key]?.first_seen || nowIso, status: 'open' });
+    }
+  }
+  // Edges from the last publish that no longer qualify stay listed as "gone".
+  for (const e of Object.values(prevEdges)) if (!seen.has(e.key)) edges.push({ ...e, status: 'gone' });
+  edges.sort((a, b) => (a.status === 'gone') - (b.status === 'gone') || b.edge - a.edge);
+  const started = open.start_time && Date.parse(nowIso) >= Date.parse(open.start_time);
+  return {
+    _note: 'Real Polymarket US prices (gateway.polymarket.us). Chances in points (0-100). No dollar amounts.',
+    slug: open.slug, game: open.title, url: open.url, start_time: open.start_time,
+    status: gameOver(ev) ? 'final' : started ? 'live' : 'pregame',
+    updated: nowIso, open_taken_at: open.taken_at, thresholds: { big: BIG_EDGE, slight: SLIGHT_EDGE },
+    open: open.markets.map(o => ({ market_id: o.id, market: o.kind, question: o.question, sides: o.sides, mid: o.mid, yes_buy: o.yesBuy, no_buy: o.noBuy })),
+    edges,
+  };
+}
+
+/** Rebuild an opening snapshot from a published data/live/<slug>.json. */
+export const openFromPublished = p => ({ slug: p.slug, title: p.game, url: p.url, start_time: p.start_time, taken_at: p.open_taken_at,
+  markets: p.open.map(o => ({ id: o.market_id, kind: o.market, question: o.question, sides: o.sides, mid: o.mid, yesBuy: o.yes_buy, noBuy: o.no_buy })) });
+
+/** Write data/live/<slug>.json (snapshot first if there is no opening file). */
+async function publish() {
+  const file = path.join(ALERTS_DIR, `${SLUG}.json`);
+  const prev = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : null;
+  // Opening prices: the local snapshot, else the ones already published in the
+  // repo (so any machine/runner keeps the SAME open), else take one now.
+  if (!fs.existsSync(OPEN_FILE) && !prev) await snapshot();
+  const open = fs.existsSync(OPEN_FILE) ? JSON.parse(fs.readFileSync(OPEN_FILE, 'utf8')) : openFromPublished(prev);
+  const out = buildLive(open, await fetchEvent(), prev);
+  fs.mkdirSync(ALERTS_DIR, { recursive: true });
+  fs.writeFileSync(file, JSON.stringify(out, null, 1));
+  console.log(`Published ${out.edges.filter(e => e.status === 'open').length} edge(s), status ${out.status} -> ${file}`);
+}
+
 // Only run the CLI when executed directly (tests import the functions above).
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
-  const run = { snapshot, check, watch }[cmd];
-  if (!run) { console.log('Usage: node scripts/live-watch.mjs snapshot|check|watch [--slug ...]'); process.exit(1); }
+  const run = { snapshot, check, watch, publish }[cmd];
+  if (!run) { console.log('Usage: node scripts/live-watch.mjs snapshot|check|watch|publish [--slug ...]'); process.exit(1); }
   run().catch(e => { console.error('live-watch error:', e.message); process.exit(1); });
 }

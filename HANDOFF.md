@@ -716,3 +716,8 @@ The Picks tab has a two-option toggle at the top: **"Today's Picks" | "Live Bets
 - "$10 pays $X" is worked out in the browser.
 - No dollar amounts, stakes, bankrolls or keys in committed files.
 - 2nd-grade wording, phone-friendly at 390px (no sideways scroll).
+
+## 33. Live Bets data: edges vs open (Richie, Oct 19, 2026)
+- `node scripts/live-watch.mjs publish [--slug nfl-was-sf-2026-10-19]` writes `data/live/<slug>.json` for the Live Bets view. An **edge** is a side whose live buy price is cheaper than its opening buy price: **big** = 10+ points cheaper, **slight** = 4-9. Wide-gap (> 6 pts) and extreme (< 4% / > 96%) markets are skipped.
+- File: `slug, game, url, start_time, status (pregame|live|final), updated, open_taken_at, thresholds, open[] (opening buy prices per market), edges[]`. Each edge has `side, market, question, open_odds, now_odds` (American), `open_chance, now_chance` (points), `edge, tier, first_seen` and `status` (`open`, or `gone` once it drops below 4 points). There are no dollar figures in the file; the page works out "$10 pays $X" from `now_chance`.
+- The opening prices are kept inside the published file, so later `publish` runs on any machine reuse the same open (no local snapshot needed). Opening snapshot for WAS @ SF: real gateway prices taken Oct 19, 2026, 2:57 PM CT, pregame (kickoff 7:15 PM CT), 119 markets.
