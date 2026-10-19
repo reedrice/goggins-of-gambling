@@ -1301,7 +1301,8 @@
         <div class="small">${[p.units ? X.unitsShown(p.units) : '', p.odds ? X.odds(p.odds) : ''].filter(Boolean).map(esc).join(' ')}${f ? ` <span class="fade-${esc(f)}">· ${esc(X.fadeWould(f))}</span>` : ''}</div>
         ${p.final_score ? `<div class="small muted">${esc(X.final(p.final_score))} ${link(p.graded_from, X.source)}</div>` : ''}
         ${p.note ? `<div class="small muted">${esc(p.note)}</div>` : ''}
-        <div class="small">${link(p.url, X.post)}</div>
+        ${/* Big tappable button to the exact tweet (x.com links open the X app on phones). */
+          safeUrl(p.url) ? `<a class="btn x-btn" href="${esc(safeUrl(p.url))}" target="_blank" rel="noopener noreferrer">${esc(X.post)}</a>` : ''}
       </div>`;
     };
     const leagues = Object.entries(s.byLeague).filter(([, v]) => v.w + v.l + v.p);

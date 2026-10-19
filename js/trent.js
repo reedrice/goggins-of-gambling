@@ -92,6 +92,7 @@
       const at = `picks[${i}] (${p && p.id})`;
       if (!p || typeof p.id !== 'string' || !p.id) return errs.push(at + ': id missing');
       if (ids.has(p.id)) errs.push(at + ': duplicate id'); ids.add(p.id);
+      if (!/^\d{10,}$/.test(p.post_id || '') || p.url !== postUrl(p.post_id)) errs.push(at + ': post_id must be the real X post id and url must be ' + postUrl(p.post_id || '<id>'));
       if (!/^https:\/\/x\.com\/[A-Za-z0-9_]+\/status\/\d+$/.test(p.url || '')) errs.push(at + ': url must be an x.com status link');
       if (!isFinite(Date.parse(p.posted_at))) errs.push(at + ': posted_at must be a date');
       if (!p.league || !p.pick || !p.game) errs.push(at + ': league, game and pick are required');
@@ -104,5 +105,8 @@
     return errs;
   }
 
-  return { RESULTS, winPerUnit, counts, unitsFor, fadeResult, fadeUnitsFor, summary, validate };
+  /** The exact tweet link for a real X post id (opens the X app on phones). */
+  function postUrl(id) { return 'https://x.com/BookitWithTrent/status/' + id; }
+
+  return { RESULTS, postUrl, winPerUnit, counts, unitsFor, fadeResult, fadeUnitsFor, summary, validate };
 });

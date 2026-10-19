@@ -85,7 +85,7 @@ window.STR = {
     picksTitle: 'His picks', pending: n => `${n} waiting on the game`, unclear: n => `${n} unclear (not counted)`,
     result: { win: 'Won', loss: 'Lost', push: 'Push', pending: 'Waiting', unclear: 'Unclear' },
     fadeWould: r => ({ win: 'Fade would have won', loss: 'Fade would have lost', push: 'Fade: push' })[r] || '',
-    unitsShown: u => `${u}u`, odds: o => `at ${o}`, final: s => `Final: ${s}`, post: 'See post ↗', source: 'Score ↗',
+    unitsShown: u => `${u}u`, odds: o => `at ${o}`, final: s => `Final: ${s}`, post: 'View on X ↗', source: 'Score ↗',
     read: (from, to) => `Posts read from ${from} to ${to}.`,
     none: '—'
   },

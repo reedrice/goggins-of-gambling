@@ -40,3 +40,12 @@ test('data/trent-picks.json is valid', () => {
   assert.deepStrictEqual(T.validate(doc), []);
 });
 process.exit(fails ? 1 : 0);
+
+// Every pick links to its exact tweet, built from the real post id.
+{
+  const assert = require('node:assert');
+  const T2 = require('../js/trent.js');
+  assert.strictEqual(T2.postUrl('2112235983144198591'), 'https://x.com/BookitWithTrent/status/2112235983144198591');
+  for (const p of require('../data/trent-picks.json').picks) assert.strictEqual(p.url, T2.postUrl(p.post_id), p.id);
+  console.log('ok every pick has its tweet link');
+}

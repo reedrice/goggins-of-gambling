@@ -643,6 +643,8 @@ Tracks the betting picks @BookitWithTrent (X user id **66287704**) posts, graded
 4. For finished games, look up the **real final** (ESPN / MLB.com / AP) and run `node scripts/trent-picks.mjs grade <id> win|loss|push --score "Packers 23, Cowboys 13" --source <url>`. Postponed = push, note "no action". Grade on the final even if his own ✅/❌ post disagrees (Broncos +2.5 on Oct 15 is an example), and say so in `note`.
 5. `node scripts/trent-picks.mjs summary`, then commit (`--commit`). `validate` runs on every save.
 
+**Tweet links ("View on X" button, Oct 19, 2026):** every pick stores `post_id` (the real X post id from the x tools, never made up) and `url` = `https://x.com/BookitWithTrent/status/<post_id>` (`Trent.postUrl`). `add` always builds the link itself from `post_id`, the row id (`<postid>` or `<postid>-tb`) or a given url, and skips any row with no real id. `validate` and tests/trent.test.js fail if a link doesn't match its id. Each card shows a full-width "View on X ↗" button (x.com links open the X app on phones).
+
 **Math (js/trent.js, tests/trent.test.js):** "5u" = 5 units risked. Wins at his stated odds; spreads/totals with no odds use the standard -110 (counted in "assumed"); moneylines with no odds get no unit result. Win % leaves pushes out. Fade = flipped result; fade units only for spreads/totals at -110 (a moneyline's other-side price isn't known).
 
 **First read (Oct 19, 2026, posts Oct 14–19):** 11 picks found (8 graded, 1 pending, 2 unclear). His record 5-2-1 (71.4%), +7.91u. Fading him: 2-5-1.

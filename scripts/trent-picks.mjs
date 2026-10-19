@@ -60,6 +60,12 @@ else if (cmd === 'add') {
   const list = Array.isArray(incoming) ? incoming : incoming.picks;
   let added = 0, updated = 0;
   for (const p of list) {
+    // Always store the tweet link, built from the REAL post id (from the x tools: the
+    // post's "id"). post_id may be given, or it is read from the row id ("<postid>" or
+    // "<postid>-tb") or an existing url. No real id -> refuse (never invent a link).
+    const pid = String(p.post_id || (String(p.url || '').match(/status\/(\d+)/) || [])[1] || (String(p.id || '').match(/^(\d{10,})/) || [])[1] || '');
+    if (!/^\d{10,}$/.test(pid)) { console.error(`Pick ${p.id}: no real X post id; skipped`); continue; }
+    p.post_id = pid; p.url = T.postUrl(pid);
     const i = doc.picks.findIndex(x => x.id === p.id);
     if (i < 0) { doc.picks.push(Object.assign({ unclear: false, note: null, final_score: null, graded_from: null, result: 'pending' }, p)); added++; }
     else if (doc.picks[i].result === 'pending') { doc.picks[i] = Object.assign(doc.picks[i], p); updated++; }   // graded rows are kept
