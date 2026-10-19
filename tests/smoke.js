@@ -4,7 +4,8 @@
  *   npm i --no-save puppeteer-core && python3 -m http.server 8765 &
  *   CHROME=/usr/bin/google-chrome node tests/smoke.js http://localhost:8765/
  * Covers: onboarding (incl. platform step) -> picks (logos, Open links) ->
- * builder search ("purdy") + browse (game -> spread) -> related-picks flag ->
+ * builder search ("purdy") + filters ("San" + Player props -> 49ers props,
+ * team + player dropdowns, remembered, reset) + browse (game -> spread) -> related-picks flag ->
  * live price refresh -> save -> settle -> record (10 platform rows) ->
  * settings (platform + price format stay in sync). Prints key numbers and any
  * console errors. Screenshots go to $SHOT_DIR (default /tmp).
@@ -52,10 +53,41 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   console.log('search "purdy":', (await p.$$eval('.presults .mlabel', x => x.slice(0, 5).map(e => e.textContent.trim().replace(/\s+/g, ' ')))).join(' | '));
   await p.screenshot({ path: SHOT + '/3-search.png' });
   await tap('.presults .pbtn:not([disabled])'); await wait(1500);
+  // Filters: "San" + Player props only must list 49ers player props (the old bug: only game bets).
+  const setQ = async q => { await p.$eval('.psearch', (e, v) => { e.value = v; e.dispatchEvent(new Event('input')); }, q); await wait(900); };
+  const heads = () => p.$$eval('.presults .pres-h', x => x.map(e => e.textContent.replace(/\s+/g, ' ').trim()).join(' | '));
+  await setQ('San');
+  console.log('search "San" (all bets):', await heads());
+  await tap('[data-kind="team"]'); await wait(900);
+  const sfPlayers = await p.evaluate(async () => (await Picker.loadIndex()).events.filter(e => e.slug.startsWith('nfl-') && e.teams.some(t => t.abbr === 'sf')).flatMap(e => e.players.filter(x => x[1] === 'sf').map(x => x[0])));
+  const propLabels = await p.$$eval('.presults .mlabel', x => x.map(e => e.textContent.trim().replace(/\s+/g, ' ')));
+  const sfRows = propLabels.filter(l => sfPlayers.some(n => l.includes(n)));
+  // Every page of results: also count all 49ers rows (Show more until done).
+  while (await p.$('.presults [data-more="prop"]')) { await tap('.presults [data-more="prop"]'); await wait(150); }
+  const allLabels = await p.$$eval('.presults .mlabel', x => x.map(e => e.textContent.trim().replace(/\s+/g, ' ')));
+  console.log('  all pages:', allLabels.length, '| 49ers player rows:', allLabels.filter(l => sfPlayers.some(n => l.includes(n))).length, '| other teams:', [...new Set(allLabels.filter(l => !sfPlayers.some(n => l.includes(n))).map(l => l.split(' · ')[1].split(',')[0]))].join(', '));
+  console.log('search "San" + Player props only:', await heads(), '| shown:', propLabels.length, '| 49ers player rows:', sfRows.length, '| e.g.', sfRows.slice(0, 3).join(' / '));
+  console.log('filter count:', await p.$eval('.pf-count', e => e.textContent), '| prop types:', await p.$$eval('.pf-types [data-sub^="prop:"]', x => x.map(e => e.parentElement.textContent.trim().replace(/\s+/g, ' ')).join(', ')));
+  await setQ('');
+  await tap('.pf-teambtn'); await wait(200);
+  console.log('team list:', await p.$$eval('.pf-teamopt', x => x.length + ' options, logos ' + x.filter(e => e.querySelector('.tlogo')).length));
+  await tap('.pf-teamopt[data-team="nfl:sf"]'); await wait(900);
+  console.log('player step visible:', await p.$eval('.pf-player-step', e => !e.hidden), '| players:', await p.$$eval('.pf-player option', x => x.length - 1), '| count:', await p.$eval('.pf-count', e => e.textContent));
+  await p.select('.pf-player', 'Brock Purdy'); await wait(900);
+  console.log('Purdy only:', await p.$eval('.pf-count', e => e.textContent), '| first:', await p.$eval('.presults .mlabel', e => e.textContent.trim()));
+  console.log('summary:', await p.$eval('.pf-sum', e => e.textContent));
+  await p.addStyleTag({ content: '.topbar,.tabbar,.plat-bar{visibility:hidden}' });
+  await (await p.$('.pfilters')).screenshot({ path: SHOT + '/3b-filters.png' });
+  await p.addStyleTag({ content: '.topbar,.tabbar,.plat-bar{visibility:visible}' });
+  console.log('builder fits phone (no sideways scroll):', await p.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth));
+  await p.reload({ waitUntil: 'networkidle0' }); await p.click('[data-go="calc"]'); await wait(1500);
+  console.log('remembered after reload:', await p.$eval('.pf-sum', e => e.textContent));
+  await tap('.pf-reset'); await wait(900);
+  console.log('after reset:', await p.$eval('.pf-sum', e => e.textContent), '|', await p.$eval('.pf-count', e => e.textContent), '| results hidden:', await p.$eval('.presults', e => e.hidden));
   // Browse -> first game containing WAS-SF, add a spread
   await p.$eval('.psearch', e => { e.value = ''; e.dispatchEvent(new Event('input')); });
   await tap('.pbrowse'); await p.waitForSelector('.gcard');
-  console.log('date chips:', await p.$$eval('.pdates .chip', x => x.map(e => e.textContent).join(',')), '| games:', await p.$$eval('.gcard', x => x.length));
+  console.log('day chips:', await p.$$eval('.pf-days .chip', x => x.map(e => e.textContent).join(',')), '| games:', await p.$$eval('.gcard', x => x.length));
   await tap('.gcard[data-game="nfl-was-sf-2026-10-19"]').catch(() => tap('.gcard'));
   await p.waitForSelector('.ghead'); await wait(2500);
   console.log('game status:', await p.$eval('.ghead', e => e.innerText.replace(/\n/g, ' ')));

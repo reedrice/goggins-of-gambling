@@ -46,14 +46,15 @@ The scripts load in this order (classic `<script>` tags; each one sets a single 
 ```
 index.html            DOM skeleton (empty onboarding container, header, "I bet on" bar, 5 tab sections, tab bar, tooltip bubble)
 config.js             brand + repo config + platforms[] (one ordered list used everywhere)
-css/style.css         dark mobile-first theme (sections 1-11; 9 = picker/logos/toggle/tooltips, 10 = Record compare table, 11 = pick evaluation box)
+css/style.css         dark mobile-first theme (sections 1-12; 9 = picker/logos/toggle/tooltips, 10 = Record compare table, 11 = pick evaluation box, 12 = Build-a-bet filter panel)
 js/strings.js         all UI text (plain-language rules in its header)
 js/calc.js            odds and parlay math (pure)
 js/evaluate.js        per-pick hit chance, risk label, "My take" verdict, prediction lookup (browser + Node, §18)
 js/storage.js         localStorage schema and access
 js/teams.js           team logos: Polymarket logo -> ESPN CDN -> colored circle; ESPN abbreviation fixes
 js/markets-core.js    Polymarket US event/market compaction + labels (browser + Node)
-js/picker.js          market picker UI + live Polymarket US fetches
+js/picker-filters.js  Build-a-bet filter rules: day/sport, bet types + sub-types, team, player (browser + Node, §19)
+js/picker.js          market picker UI (filter panel, search, browse) + live Polymarket US fetches
 js/github-log.js      shared log writer (GitHub REST contents API)
 js/app.js             UI controller
 data/markets/index.json         snapshot: list of upcoming games (small, loaded first)
@@ -64,6 +65,7 @@ data/bet-log.json     shared calibration log (written by the app with users' tok
 data/book-odds.json   automatic per-app price comparisons (The Odds API, written daily by fetch-book-odds.mjs, §17)
 tests/calc.test.js        node: math
 tests/evaluate.test.js    node: hit chance / risk / verdict defaults (js/evaluate.js)
+tests/picker-filters.test.js node: filter tree rules (js/picker-filters.js)
 tests/github-log.test.js  node: log writer against a mocked API
 tests/smoke.js            headless Chrome UI walk-through (puppeteer-core, --no-save)
 scripts/update-picks.mjs  daily-job CLI: validate, write, commit, and push picks/predictions
@@ -148,6 +150,7 @@ All keys use the neutral `betdash_` prefix. **Never put the brand in a key**, be
 | `betdash_settings` | `{shareByDefault}` |
 | `betdash_gh_token` | the user's fine-grained token. Local only and **excluded from exports** |
 | `betdash_gh_login` | cached GitHub login |
+| `betdash_picker_filters` | **sessionStorage**, not localStorage: Build-a-bet filters `{f:{day, sport, team, player, teamOn, propOn, teamOff[], propOff[]}, panelOpen}` (§19). Gone when the tab closes |
 | `betdash_prefs` | `{platform:'polymarket_us'|'kalshi', priceFormat:'cents'|'american'|'decimal'}`. Defaults: Polymarket US, cents. **One value** drives the onboarding step, the "I bet on" bar under the header and Settings |
 
 Backups (`Export JSON`) use the format `{format:"betdash-backup", version:1, exportedAt, profile, bets, settings, prefs}`.
@@ -216,7 +219,7 @@ Fallback works through one capture-phase `error` listener (`Teams.install()`), s
 
 ## 13. Market picker and data/markets
 
-**What users see (Build a bet):** a search box (fuzzy, instant: "purdy", "leafs ml", "under 6.5") and **Browse games**: date chips (multi-select, default today + tomorrow), sport chips, game cards. A game opens into *Main bets* (who wins, spread with each team's line, totals), *Player bets* grouped by player, and *Other*. Every market has big Yes/No buttons with prices; tapping adds a leg to the slip. **Type a bet yourself** adds a manual leg for any other app. Slip legs have a remove ×, a "Picks that affect each other" flag when two legs are from the same game, and "Prices as of …".
+**What users see (Build a bet):** a **Filters** panel (day, sport, bet types, team, player; see §19), a search box (fuzzy, instant: "purdy", "leafs ml", "under 6.5", "san") that works on top of the filters, and **Browse games**: game cards for the filtered day/sport/team. A game opens into *Main bets* (who wins, spread with each team's line, totals), *Player bets* grouped by player, and *Other*. Every market has big Yes/No buttons with prices; tapping adds a leg to the slip. **Type a bet yourself** adds a manual leg for any other app. Slip legs have a remove ×, a "Picks that affect each other" flag when two legs are from the same game, and "Prices as of …".
 
 **Live vs snapshot:**
 - The **game list and search** use the daily snapshot in `data/markets/` (listing every game live would be tens of MB).
@@ -364,3 +367,32 @@ Box contents:
 
 ### Validation and backfill
 `update-picks.mjs` validates the fields: hit_prob 0-100, risk enum, verdict string ≤120, same_game boolean, prediction_id string. `picks` fills missing values with `PickEval.fillDefaults` (never overwrites explicit ones) and validates again before writing. `fill` does the same on the existing data/picks.json. The browser also computes defaults at render time, so an unfilled file still shows a full box.
+
+## 19. Build-a-bet filters (js/picker-filters.js + js/picker.js)
+
+A step-by-step panel above the search box. It's a `<details>`, so it folds away on phones; the summary line keeps showing the active filters ("Today · 49ers · Brock Purdy · Player props").
+
+1. **Pick a day:** one chip per snapshot day from today on, plus *All days*. Then sport chips (*All sports*, NFL, MLB, …), listing only sports that play that day.
+2. **What kind of bet?** Two checkboxes, each with sub-checkboxes and live counts:
+   - **Team bets:** *Who wins* (full-game moneyline), *Spread*, *Total score* (full-game `group: lines`), and *Other game bets* (halves, quarters, periods, innings, first to score, team totals…).
+   - **Player props:** buckets built from each prop's `smt` (`football_player_receiving_yards` → `receiving_yards`), first match in `PROP_BUCKETS` wins. The buckets are Yards, Catches, Touchdowns, Passes/carries/interceptions, Fantasy points, Hits/bases/RBIs, Home runs, Strikeouts & pitching, Goals, Assists, Points, Rebounds, 3-pointers, Blocks & steals, Shots & saves, and Other. Only buckets that exist for the chosen day/sport/team are shown. **Add a regex there when Polymarket adds a new stat**; until then it lands in "Other player bets".
+3. **Pick a team:** a custom dropdown (logos come from `Teams.badge`) listing every team playing that day (and sport). Team keys look like `nfl:sf`, because the same abbreviation exists in several leagues.
+4. **Pick a player:** shown only when Player props is on and a team is picked. It lists that team's players with props that day, using the index's `players: [[name, abbr]]`, so no game file is needed.
+
+**Matching (all must pass):**
+- Day and sport.
+- Team: the game includes that team. All team bets of that game pass (a total belongs to both teams), but player props pass only for that team's players.
+- Player: only that player's props pass, and team bets are hidden.
+- Bet type: kind on, and its sub-type not unticked.
+
+Unticked sub-types are stored as a list of *off* keys, so a new bucket is on by default.
+
+**Results:** whenever anything is narrowed, or there's search text, the list shows "N bets match" with two groups, *Game bets* and *Player props*, each with its own count and 20 rows at a time plus "Show N more". With nothing narrowed and no search, it only shows "N bets for Today…". **Reset filters** goes back to today, all sports, all bets, any team, and clears the search.
+
+**Search fix ("San" showed only game bets):** search rows used to carry both teams' names on every market, so "San" scored all ~700 49ers-game bets the same, main bets got a bonus, and only the top 30 were shown, so no props made the cut. Now a player prop carries only its **own team's** words (nickname, full name with city, abbreviations) plus its stat in plain words and its bucket label. Game bets carry both teams. Results are grouped so props can't be crowded out. Verified: "San" + Player props on 2026-10-19 → 148 props, all 49ers players.
+
+**Props in the snapshot:** `fetch-markets.mjs` keeps every open prop that has a price. Dropped props are closed, or have no ask and no bid (nothing to buy). Games 2+ days out often have **no props yet** (Polymarket US posts them about a day before), and the panel says so instead of showing empty boxes.
+
+**Memory:** sessionStorage `betdash_picker_filters` (see §7), cleaned with `PickerFilters.sanitize`. A saved day that's no longer in the snapshot falls back to today.
+
+**Tests:** `node tests/picker-filters.test.js`. tests/smoke.js covers "San" with all bets, then with Player props only (every row must be a 49ers player), plus the team list, the player dropdown, the remembered state after reload, Reset, and no sideways scroll at 390px.

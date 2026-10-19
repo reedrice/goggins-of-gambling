@@ -105,7 +105,46 @@ window.STR = {
   // ---------------------------------------------------------------- calculator
   calc: {
     title: 'Build a bet',
-    searchPh: 'Search a team, player or bet (e.g. "purdy")',
+    searchPh: 'Search a team, city, player or bet (e.g. "purdy")',
+    /** Build-a-bet filter panel (js/picker.js + js/picker-filters.js). */
+    f: {
+      title: 'Filters',
+      step1: '1. Pick a day',
+      step2: '2. What kind of bet?',
+      step3: '3. Pick a team',
+      step4: '4. Pick a player',
+      allDays: 'All days',
+      anySport: 'All sports',
+      teamBets: 'Team bets',
+      playerProps: 'Player props',
+      allBets: 'All bets',
+      noBets: 'No bet type picked',
+      teamSubs: {
+        moneyline: 'Who wins',
+        spread: 'Spread (win or lose by)',
+        total: 'Total score (over/under)',
+        other: 'Other game bets (halves, quarters, first to score…)'
+      },
+      propSubs: {
+        yards: 'Yards', receptions: 'Catches', tds: 'Touchdowns',
+        passing: 'Passes, carries & interceptions', fantasy: 'Fantasy points',
+        hits: 'Hits, bases & RBIs', homers: 'Home runs', pitching: 'Strikeouts & pitching',
+        goals: 'Goals', assists: 'Assists', points: 'Points', rebounds: 'Rebounds',
+        threes: '3-pointers', defense: 'Blocks & steals', shots: 'Shots & saves',
+        other: 'Other player bets'
+      },
+      anyTeam: 'Any team',
+      anyPlayer: 'Any player',
+      noPlayers: 'No player bets for this team yet',
+      reset: 'Reset filters',
+      loading: 'Loading bets…',
+      match: n => `${n} bet${n === 1 ? '' : 's'} match`,
+      dayTotal: (n, day) => `${n} bets for ${day}. Tick a bet type, pick a team or search to see them.`,
+      gameBets: 'Game bets',
+      propBets: 'Player props',
+      noProps: 'No player bets posted for these games yet. Polymarket US usually adds them about a day before the game.',
+      noMatch: 'Nothing matches these filters. Try Reset filters.'
+    },
     browse: 'Browse games',
     hideBrowse: 'Hide games',
     manual: '+ Type a bet yourself',

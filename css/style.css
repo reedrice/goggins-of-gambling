@@ -288,3 +288,38 @@ canvas.chart { width: 100%; height: 190px; display: block; background: var(--car
 .take { margin-top: 6px; line-height: 1.4; }
 .eval-note { margin-top: 2px; line-height: 1.35; }
 .pred { margin-top: 6px; color: var(--text); }
+
+/* 12. Build-a-bet filter panel (js/picker.js, js/picker-filters.js) ------
+   A <details> so phones can fold it away; the summary line still shows the
+   active filters. Everything wraps (no sideways scroll at 390px). */
+.pfilters { background: var(--card); border: 1px solid var(--line); border-radius: 12px; margin: 0 0 10px; }
+.pfilters > summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; padding: 12px; min-height: 48px; cursor: pointer; list-style: none; }
+.pfilters > summary::-webkit-details-marker { display: none; }
+.pfilters > summary::after { content: '▾'; margin-left: auto; color: var(--muted); }
+.pfilters[open] > summary::after { content: '▴'; }
+.pf-title { font-family: var(--font-head); text-transform: uppercase; letter-spacing: .04em; color: var(--accent); }
+.pf-sum { font-size: 13px; color: var(--muted); min-width: 0; overflow-wrap: anywhere; }
+.pf-body { padding: 0 12px 12px; }
+.pf-step { border-top: 1px solid var(--line); padding: 10px 0; }
+.pf-lab { display: block; font-weight: 800; font-size: 14px; margin-bottom: 6px; }
+.pf-days, .pf-sports { flex-wrap: wrap; overflow-x: visible; }
+.pf-kind { margin: 4px 0 8px; }
+.pf-check { display: flex; align-items: center; gap: 8px; min-height: 40px; font-size: 15px; font-weight: 700; cursor: pointer; }
+.pf-check input { width: 22px; height: 22px; flex: none; accent-color: var(--accent); margin: 0; }
+.pf-check.off { opacity: .45; }
+.pf-subs { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0 10px; padding-left: 30px; }
+.pf-subs .pf-check { font-weight: 500; font-size: 14px; min-height: 36px; }
+.pf-note { padding: 4px 0; }
+.pf-teamsel { position: relative; }
+.pf-teambtn { display: flex; align-items: center; gap: 8px; width: 100%; min-height: 48px; padding: 8px 12px; background: var(--card-2); border: 1px solid var(--line); border-radius: 10px; color: var(--text); font: inherit; text-align: left; }
+.pf-caret { margin-left: auto; color: var(--muted); }
+.pf-teamlist { position: absolute; left: 0; right: 0; top: calc(100% + 4px); z-index: 30; max-height: 50vh; overflow-y: auto; background: var(--bg-2); border: 1px solid var(--accent); border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,.6); }
+.pf-teamopt { display: flex; align-items: center; gap: 8px; width: 100%; min-height: 46px; padding: 6px 12px; background: none; border: 0; border-bottom: 1px solid var(--line); color: var(--text); font: inherit; text-align: left; }
+.pf-teamopt .muted { margin-left: auto; }
+.pf-teamopt.on { background: var(--card-2); font-weight: 800; }
+.pf-player { width: 100%; min-height: 48px; font-size: 16px; }
+.pf-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; border-top: 1px solid var(--line); padding-top: 10px; }
+.pf-count { font-size: 14px; font-weight: 700; flex: 1 1 180px; }
+.pres-head { padding: 10px; font-weight: 800; border-bottom: 1px solid var(--line); }
+.pres-h { margin: 10px 10px 4px; font-family: var(--font-head); text-transform: uppercase; letter-spacing: .04em; color: var(--accent); }
+.pres-more { margin: 8px 10px 12px; }
