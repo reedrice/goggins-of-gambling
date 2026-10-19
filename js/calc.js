@@ -19,7 +19,8 @@
  *   gap                    quoted / estimated - 1. Negative = the platform pays
  *                          less than the sum of its parts (typical for same-
  *                          game parlays where it prices correlation or adds
- *                          extra vig). Example: 2.97 / 3.31 - 1 = -10.3%.
+ *                          extra vig). Example: legs 64c+49c -> 1/(.64*.49) = 3.19x;
+ *                          quoted 2.97 -> 2.97 / 3.19 - 1 = -6.9%.
  *   EV                     stake * (quoted * hitChance - 1): expected profit
  *                          if our hit chance is right. Uses the user-supplied
  *                          fair probabilities when given, else market prices.
@@ -107,7 +108,7 @@
   /**
    * Gap between what the platform actually quotes and our estimate.
    * @param {number} quoted platform's quoted multiple (e.g. 2.97)
-   * @param {number} estimated our product-of-1/p estimate (e.g. 3.31)
+   * @param {number} estimated our product-of-1/p estimate (e.g. 3.19)
    * @returns {number|null} quoted/estimated - 1 (e.g. -0.103), null if invalid
    */
   function gap(quoted, estimated) {

@@ -19,6 +19,8 @@ const pl = C.parlay([.63, .48]);
 a(near(pl.estMultiple, 3.3069), 'est 3.31 from 63/48: ' + pl.estMultiple.toFixed(4));
 a(near(pl.hitChance, .3024), 'hit');
 a(near(C.gap(2.97, 3.31), -0.1027), 'gap -10.3%');
+const slip = C.parlay([C.parsePrice('64').p, C.parsePrice('49').p]);
+a(near(slip.estMultiple, 3.1888) && near(C.gap(2.97, slip.estMultiple), -0.0686), 'Reed slip 64/49: est 3.19x, gap -6.9%');
 a(near(C.expectedValue(5, 2.97, .645*.497), 5*(2.97*.645*.497-1)), 'ev');
 a(near(C.parlay([.33,.43]).estMultiple, 7.047), 'flyers+sharks 7.05');
 a(near(C.profit(5, 2.97, 'won'), 9.85) && C.profit(5,3,'lost') === -5 && C.profit(5,3,'push') === 0, 'profit');

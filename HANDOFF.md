@@ -62,7 +62,7 @@ README.md             user-facing overview and the picks.json schema
 - **Price → probability `p`:** cents `63` → 0.63 (bare integers 1–99 are always cents). Probability `0.63` → 0.63. American `-150` → 150/250 = 0.60, `+120` → 100/220 = 0.4545. Decimal `2.5` or `2.5x` → 0.40. Add a `c`/`%` suffix to force cents and an `x` suffix to force decimal.
 - **Estimated multiple** = Π(1/pᵢ). This is the payout if each leg were priced independently at its market price. Polymarket pays $1 per share, so a single at 40¢ is 2.5x.
 - **Independent hit chance** = Πpᵢ = 1 / estimated multiple.
-- **Gap** = quoted / estimated − 1. Example: 2.97 / 3.31 − 1 = −10.3%, meaning the platform shaved about 10% off the same-game parlay for correlation or vig. Collecting gaps per platform sharpens the `skip_below` thresholds.
+- **Gap** = quoted / estimated − 1. Example (Reed's Polymarket US slip, legs 64¢ and 49¢): 1/(0.64 × 0.49) = 3.19x estimated, quoted 2.97x, so 2.97 / 3.19 − 1 ≈ −6.9%. The platform shaved about 7% off the same-game parlay for correlation or vig. Collecting gaps per platform sharpens the `skip_below` thresholds.
 - **EV** = stake × (quoted × hit − 1). Without the user's own hit-chance override, EV = stake × gap, the market-implied EV.
 - **P/L:** won = stake × (multiple − 1), lost = −stake, push = 0. **Bankroll** = start + Σ settled P/L. It is derived, never stored.
 
@@ -103,9 +103,9 @@ The Record tab computes win-pick accuracy and **calibration** in 5-point buckets
     "platform": "Polymarket US",    // or "A + B" if legs differ
     "category": "parlay",           // single|prop|parlay|longshot|nonsports
     "legs": [{ "desc": "Under 6.5", "price": "48" }],  // price as typed
-    "estimated_multiple": 3.31,
+    "estimated_multiple": 3.19,
     "quoted_multiple": 2.97,
-    "gap": -0.1027,
+    "gap": -0.0686,
     "result": "pending"             // pending|won|lost|push
   }]
 }

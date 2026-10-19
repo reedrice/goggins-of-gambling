@@ -83,7 +83,7 @@
   }
   /** @param {number} x fraction @param {number} [d] @returns {string} "12.3%" */
   const pct = (x, d = 1) => (typeof x === 'number' && isFinite(x) ? (x * 100).toFixed(d) + '%' : '—');
-  /** @param {number} x @returns {string} "3.31x" */
+  /** @param {number} x @returns {string} "3.19x" */
   const mult = x => (typeof x === 'number' && isFinite(x) ? x.toFixed(2) + 'x' : '—');
   /** @returns {string} short random id, e.g. "b_lq3k9a_x7f2" */
   const uid = () => 'b_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 6);
