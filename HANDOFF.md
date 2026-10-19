@@ -687,3 +687,32 @@ pregame open (free API, no Odds API credits).
 
 ### Requests for Reed's bot
 - (live-watch, Oct 19, 2026) Optional: show a small "Live price moves" list for a game from `data/live/<slug>-alerts.json` (side, open → now American odds, "$10 pays $X" worked out from `now_chance`). Fields are in §31.
+
+## 32. Live Bets: Richie's area (Oct 19, 2026)
+
+The Picks tab has a two-option toggle at the top: **"Today's Picks" | "Live Bets 🔴"**. It is remembered in localStorage (`betdash_prefs.picksView`) and linkable: `#picks` opens Today's Picks, `#live` opens Live Bets. The bottom-bar Picks button reopens whichever view was used last.
+
+**Richie owns the Live Bets view.** Reed's bot does not edit these:
+- `js/live-bets.js`: the view. Today it is a placeholder ("Live bets coming soon", text in `STR.live.soon`).
+- `css/live-bets.css`: its styles. Scope every rule under `.live-bets-root`.
+- `scripts/live-*` (e.g. `scripts/live-watch.mjs`, §31) and its tests (`tests/live-watch.test.mjs`, `tests/fixtures/live-watch-sample.json`).
+- `data/live/`: any data the view reads (e.g. alerts written by live-watch).
+
+**Richie should avoid** (Reed's bot's files; ask in a "Requests for Reed's bot" note instead): `js/app.js`, `js/strings.js` (except adding keys under `STR.live`), `css/style.css`, `index.html`, `config.js`, `js/storage.js`, `data/picks.json`, `data/predictions.json`, `data/markets/`, `data/book-odds.json`, `data/vegas-*.json`, `data/trent-picks.json`, and the other `scripts/*.mjs`.
+
+**The tie-in (all of it):**
+- `index.html` loads `css/live-bets.css` and `js/live-bets.js` (before app.js).
+- `js/app.js renderPicks()` draws the toggle. For the Live view it creates an empty `<div id="live-bets-root" class="live-bets-root">` and calls `window.LiveBets.render(root)`. That's the whole contract.
+- The toggle styles are in `css/style.css` §21. The labels are `STR.live.today` / `STR.live.live`.
+
+**How to wire data in:**
+1. Have a script under `scripts/live-*` write a JSON file under `data/live/` (e.g. `data/live/alerts.json`), and commit only that file.
+2. In `LiveBets.render(root)`, `fetch('data/live/alerts.json?ts=' + Date.now())` and draw into `root`.
+3. Escape all text from data (set `textContent`, or use `esc()`-style escaping), and only allow `https:` links.
+4. `render` is called fresh each time the view opens, with a new `root`. If you auto-refresh, stop when `!root.isConnected`.
+
+**Site rules still apply:**
+- American odds only, no cents.
+- "$10 pays $X" is worked out in the browser.
+- No dollar amounts, stakes, bankrolls or keys in committed files.
+- 2nd-grade wording, phone-friendly at 390px (no sideways scroll).
