@@ -75,6 +75,10 @@ window.STR = {
   picks: {
     title: 'Today\'s picks',
     updated: (slate, when) => `Games on ${slate} · Updated ${when}`,
+    // Day switcher above the picks (more than one slate in picks.json)
+    dayGroup: 'Which day',
+    dayToday: words => `Today, ${words}`,
+    dayTomorrow: words => `Tomorrow, ${words}`,
     loadError: 'Couldn\'t load today\'s picks. Pull down to try again.',
     empty: 'Nothing here today.',
     sections: {

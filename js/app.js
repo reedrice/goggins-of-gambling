@@ -442,7 +442,7 @@
     const pctTxt = ev.pct === null ? STR.none : (Math.round(ev.pct * 10) / 10) + '%';
     const width = ev.pct === null ? 0 : Math.max(2, Math.min(100, ev.pct));   // numeric only, safe in style
     const note = ev.sameGame === true ? (ev.source === 'given' ? E.sameGameGiven : E.sameGameLegs) : ev.sameGame === false ? E.diffGames : '';
-    const preds = window.PickEval.findPredictions(pk, gamePreds, picksData && picksData.slate_date);
+    const preds = window.PickEval.findPredictions(pk, gamePreds, picksData && pickDayOf(pk, picksData))   // pick's own day (next-day picks);
     return `<div class="eval">
       <div class="eval-top">
         <span class="eval-k">${esc(E.hitChance)} ${tip('hitChance')}</span>
@@ -495,7 +495,7 @@
       ${!isMulti && typeof pk.price === 'number' ? `<div class="payx">${esc(payText(pk.price))}</div>` : ''}
       ${!isMulti && typeof pk.kalshi_price === 'number' ? `<div class="muted small">${esc(P.kalshiPrice(fmtP(pk.kalshi_price)))} · ${esc(payShort(pk.kalshi_price))}</div>` : ''}
       ${isMulti ? '' : otherAppsLine(pk)}
-      ${isMulti ? `<ul class="legs">${pk.legs.map(l => `<li>${l.team ? T.badge(teamRef(l.team), 20) : ''}<span>${posText(l.desc, l)}${typeof l.price === 'number' ? ` <span class="muted">${esc(fmtP(l.price))}</span>` : ''}${typeof l.kalshi_price === 'number' ? ` <span class="kpx">Kalshi ${esc(fmtP(l.kalshi_price))}</span>` : ''}${typeof l.price === 'number' ? `<span class="payx">${esc(payText(l.price))}</span>` : ''}</span></li>`).join('')}</ul>
+      ${isMulti ? `<ul class="legs">${pk.legs.map(l => `<li>${l.team ? T.badge(teamRef(l.team), 20) : ''}<span>${posText(l.desc, l)}${typeof l.price === 'number' ? ` <span class="muted">${esc(fmtP(l.price))}</span>` : ''}${typeof l.kalshi_price === 'number' ? ` <span class="kpx">Kalshi ${esc(fmtP(l.kalshi_price))}</span>` : ''}${typeof l.price === 'number' ? `<span class="payx">${esc(payText(l.price))}</span>` : ''}${GT.valid(l.start_time) ? `<span class="payx">🕒 ${esc(GT.format(l.start_time))}</span>` : ''}</span></li>`).join('')}</ul>
         ${slipPayLine(exStake(), pk.quoted_multiple || pk.est_multiple, !pk.quoted_multiple)}` : ''}
       <div><b>${esc(P.bet)}:</b> ${esc(stakeText(pk))} ${tip('unit')}</div>
       ${pk.pending_news ? `<div class="news">⏳ <b>${esc(P.news)}</b> ${esc(pk.pending_news)}</div>` : ''}
@@ -538,18 +538,67 @@
     }
     const d = picksData, sec = d.sections || {};
     gamePreds = [...(sec.predictions || []), ...((predFile && predFile.predictions) || [])];
+    // Day switcher (Today / Tomorrow): picks.json may hold more than one
+    // slate. A pick's day is its own slate_date, else the file's slate_date.
+    const days = pickDays(d);
+    if (!days.includes(picksDay)) picksDay = defaultPickDay(days);
+    const onDay = it => !days.length || pickDayOf(it, d) === picksDay;
     let html = `<h2>${esc(STR.picks.title)}</h2>
-      <div class="updated">${esc(STR.picks.updated(d.slate_date || '', fmtTime(d.updated_at)))}</div>
+      <div class="updated">${esc(STR.picks.updated(dayWords(picksDay || d.slate_date || ''), fmtTime(d.updated_at)))}</div>
+      ${days.length > 1 ? `<div class="chips pick-days" role="group" aria-label="${esc(STR.picks.dayGroup)}">${days.map(day =>
+        `<button type="button" class="chip ${day === picksDay ? 'on' : ''}" data-pick-day="${esc(day)}" aria-pressed="${day === picksDay}">${esc(dayWords(day))} <span class="muted small">(${countOnDay(d, day)})</span></button>`).join('')}</div>` : ''}
       ${(d.notes || []).map(n => `<div class="verify">${esc(n)}</div>`).join('')}
       ${riskLegend()}`;
     for (const [key, cat] of PICK_SECTIONS) {
-      const items = sec[key] || [];
+      const items = (sec[key] || []).filter(onDay);
       html += `<h3>${esc(STR.picks.sections[key])}</h3>`;
       if (!items.length) { html += `<div class="section-empty">${esc(STR.picks.empty)}</div>`; continue; }
       html += items.map(it => (key === 'predictions' ? predictionCard(it) : pickCard(it, cat, key))).join('');
     }
     el.innerHTML = html;
     el.querySelectorAll('[data-load-pick]').forEach(b => (b.onclick = () => loadPickIntoCalc(b.dataset.loadPick, b.dataset.cat)));
+    el.querySelectorAll('[data-pick-day]').forEach(b => (b.onclick = () => { picksDay = b.dataset.pickDay; renderPicks(); }));
+  }
+
+  // ------------------------------------------------- picks day switcher
+  // picks.json can carry tomorrow's picks next to today's (each with its own
+  // slate_date, see HANDOFF §23). The Picks tab shows one day at a time.
+
+  /** Selected day on the Picks tab (YYYY-MM-DD), kept while the page is open. */
+  let picksDay = null;
+
+  /** Today's date in Central time, YYYY-MM-DD. */
+  const todayCT = () => new Date().toLocaleDateString('en-CA', { timeZone: 'America/Chicago' });
+
+  /** A pick's day: its own slate_date, else the file's. */
+  const pickDayOf = (it, doc) => (it && /^\d{4}-\d{2}-\d{2}$/.test(it.slate_date || '') ? it.slate_date : doc.slate_date);
+
+  /** Sorted distinct days in the file ([] when there's no slate_date at all). */
+  function pickDays(doc) {
+    const set = new Set();
+    Object.values(doc.sections || {}).forEach(list => (list || []).forEach(it => { const day = pickDayOf(it, doc); if (day) set.add(day); }));
+    if (!set.size && doc.slate_date) set.add(doc.slate_date);
+    return [...set].sort();
+  }
+
+  /** Default day: today if it has picks, else the next day that does, else the latest. */
+  function defaultPickDay(days) {
+    const t = todayCT();
+    return days.includes(t) ? t : days.find(x => x > t) || days[days.length - 1] || null;
+  }
+
+  /** Number of pick cards (all sections) on a day. */
+  const countOnDay = (doc, day) => Object.values(doc.sections || {}).reduce((n, list) => n + (list || []).filter(it => pickDayOf(it, doc) === day).length, 0);
+
+  /** "Today", "Tomorrow" or "Tue, Oct 20" for a YYYY-MM-DD day. */
+  function dayWords(day) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(day || '')) return day || '';
+    const t = todayCT();
+    const tm = new Date(t + 'T12:00:00Z'); tm.setUTCDate(tm.getUTCDate() + 1);
+    const words = new Date(day + 'T12:00:00Z').toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'UTC' });
+    if (day === t) return STR.picks.dayToday(words);
+    if (day === tm.toISOString().slice(0, 10)) return STR.picks.dayTomorrow(words);
+    return words;
   }
 
   /**

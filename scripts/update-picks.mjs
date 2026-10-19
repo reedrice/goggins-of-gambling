@@ -13,13 +13,30 @@
  * USAGE (run from anywhere inside the repo)
  *   node scripts/update-picks.mjs validate [picks.json]          # default: data/picks.json (also predictions.json, book-odds.json)
  *   node scripts/update-picks.mjs picks <new-picks.json>         # fill hit_prob/risk/verdict, validate, replace, commit, push
+ *                                                                # (keeps not-yet-played later-day picks; see "NEXT-DAY PICKS")
+ *   node scripts/update-picks.mjs add-picks <extra.json>         # add picks (e.g. tomorrow's) to data/picks.json without replacing it
+ *   node scripts/update-picks.mjs list [--date YYYY-MM-DD]       # print pick ids, days and sides (check before writing a new slate)
  *   node scripts/update-picks.mjs fill                           # fill missing hit_prob/risk/verdict/same_game in data/picks.json, commit, push
  *   node scripts/update-picks.mjs add-predictions <preds.json>   # file = array of Prediction objects
  *   node scripts/update-picks.mjs grade <grades.json>            # file = [{id, result, final_score?}]
  *   node scripts/update-picks.mjs grade <id> <win|loss|push> ["final score"]
  *
  *   Flags: --no-push (commit only), --dry-run (validate + print, write nothing),
- *          -m "extra commit body line" (repeatable).
+ *          -m "extra commit body line" (repeatable),
+ *          --drop <id> (picks: don't carry this existing pick over; repeatable),
+ *          --replace-all (picks: carry nothing over, old behaviour).
+ *
+ * NEXT-DAY PICKS
+ *   A pick may carry its own "slate_date" (YYYY-MM-DD, Central-time game
+ *   day). Without it the pick belongs to the file's slate_date. The Picks tab
+ *   shows a Today / Tomorrow switcher when the file holds more than one day.
+ *   `picks <file>` replaces the file but CARRIES OVER existing picks whose
+ *   day is on or after the new file's slate_date, unless the new file already
+ *   has a pick with the same id (the new one wins), the id is listed with
+ *   --drop, or --replace-all is given. Earlier days are dropped as before.
+ *   So: re-use an existing id to update a carried pick, --drop it to remove
+ *   it, and run `list` first so the new slate doesn't duplicate it under
+ *   another id.
  *
  * GIT BEHAVIOUR
  *   Commits straight to main (owner's preference: no branches/PRs) with a
@@ -58,7 +75,7 @@ const FORBIDDEN_TEXT = [/\$\s?\d/, /\bUSD\s?\d/i, /\b(ghp|gho|ghu|ghs|github_pat
 /**
  * Parse CLI args into positionals + flags.
  * @param {string[]} argv process.argv.slice(2)
- * @returns {{pos:string[], noPush:boolean, dryRun:boolean, notes:string[]}}
+ * @returns {{pos:string[], noPush:boolean, dryRun:boolean, notes:string[], drop?:string[], replaceAll?:boolean, date?:string}}
  */
 function parseArgs(argv) {
   const out = { pos: [], noPush: false, dryRun: false, notes: [] };
@@ -67,6 +84,9 @@ function parseArgs(argv) {
     if (a === '--no-push') out.noPush = true;
     else if (a === '--dry-run') out.dryRun = true;
     else if (a === '-m') out.notes.push(argv[++i] || '');
+    else if (a === '--drop') (out.drop = out.drop || []).push(argv[++i] || '');
+    else if (a === '--replace-all') out.replaceAll = true;
+    else if (a === '--date') out.date = argv[++i] || '';
     else out.pos.push(a);
   }
   return out;
@@ -159,6 +179,9 @@ function validatePick(pk, sec, where, errs) {
   if (pk.verdict !== undefined && !(isStr(pk.verdict) && pk.verdict.length <= 120)) errs.push(`${where}.verdict: non-empty string, at most 120 characters`);
   if (pk.same_game !== undefined && typeof pk.same_game !== 'boolean') errs.push(`${where}.same_game: true or false`);
   if (pk.prediction_id !== undefined && !isStr(pk.prediction_id)) errs.push(`${where}.prediction_id: string`);
+  // Next-day picks: own game day (Central time) and start time.
+  if (pk.slate_date !== undefined && !isDate(pk.slate_date)) errs.push(`${where}.slate_date: YYYY-MM-DD expected`);
+  if (pk.start_time !== undefined && !isISO(pk.start_time)) errs.push(`${where}.start_time: ISO 8601 expected`);
   const multi = MULTI_SECTIONS.includes(sec);
   if (multi || pk.legs !== undefined) {
     if (!Array.isArray(pk.legs) || pk.legs.length < (multi ? 2 : 1)) errs.push(`${where}.legs: ${multi ? 'at least 2 legs' : 'array'} required`);
@@ -166,6 +189,7 @@ function validatePick(pk, sec, where, errs) {
       if (!isStr(l && l.desc)) errs.push(`${where}.legs[${i}].desc: required string`);
       if (l && l.price !== undefined) range(errs, `${where}.legs[${i}].price`, l.price, 0, 100);
       if (l && l.fair !== undefined) range(errs, `${where}.legs[${i}].fair`, l.fair, 0, 100);
+      if (l && l.start_time !== undefined && !isISO(l.start_time)) errs.push(`${where}.legs[${i}].start_time: ISO 8601 expected`);
     });
     range(errs, `${where}.est_multiple`, pk.est_multiple, 1, 100000, multi);
     range(errs, `${where}.quoted_multiple`, pk.quoted_multiple, 1, 100000);
@@ -304,11 +328,44 @@ function cmdValidate(file = PICKS) {
   console.log(`✓ ${file} is valid.`);
 }
 
-/** `picks <file>`: validate, replace data/picks.json, commit + push. */
+/** A pick's game day: its own slate_date, else the file's. */
+const dayOf = (pk, doc) => (pk && isDate(pk.slate_date) ? pk.slate_date : doc.slate_date);
+
+/** Pick sections (everything but predictions). */
+const PICK_SECS = SECTIONS.filter(s => s !== 'predictions');
+
+/**
+ * Existing picks to keep when a new slate replaces the file: day on/after
+ * the new slate_date, id not in the new file, not --drop'ed. Each kept pick
+ * gets an explicit slate_date so it stays on its own day.
+ * Exported for tests. @returns {{sec:string, pick:object}[]}
+ */
+export function carryOver(oldDoc, newDoc, drop = []) {
+  if (!oldDoc || !oldDoc.sections) return [];
+  const ids = new Set();
+  Object.values(newDoc.sections || {}).forEach(l => (l || []).forEach(p => p && ids.add(p.id)));
+  const out = [];
+  for (const sec of PICK_SECS) {
+    for (const pk of oldDoc.sections[sec] || []) {
+      const day = dayOf(pk, oldDoc);
+      if (!day || day < newDoc.slate_date || ids.has(pk.id) || drop.includes(pk.id)) continue;
+      out.push({ sec, pick: Object.assign({}, pk, { slate_date: day }) });
+    }
+  }
+  return out;
+}
+
+/** `picks <file>`: validate, replace data/picks.json (carrying over later-day picks), commit + push. */
 function cmdPicks(file, o) {
   if (!file) usage('picks needs a file');
   const d = readJSON(file);
   failIf(validatePicks(d), file);
+  // Keep not-yet-played picks for this day or later that the new file doesn't replace.
+  const kept = o.replaceAll || !fs.existsSync(PICKS) ? [] : carryOver(readJSON(PICKS), d, o.drop || []);
+  kept.forEach(({ sec, pick }) => { d.sections[sec] = d.sections[sec] || []; d.sections[sec].push(pick); });
+  if (kept.length) o.notes = [...o.notes, `Carried over ${kept.length} later-day pick(s): ${kept.map(k => `${k.pick.id} (${k.pick.slate_date})`).join(', ')}.`];
+  if (o.drop && o.drop.length) o.notes = [...o.notes, `Dropped on request: ${o.drop.join(', ')}.`];
+  failIf(validatePicks(d), file + ' (with carried-over picks)');
   const filled = PickEval.fillDefaults(d, STR);   // hit_prob / risk / verdict / same_game when missing
   failIf(validatePicks(d), file + ' (after filling defaults)');
   if (filled) o.notes = [...o.notes, `Filled hit chance / risk / verdict defaults on ${filled} pick(s).`];
@@ -317,6 +374,46 @@ function cmdPicks(file, o) {
   if (o.dryRun) return console.log('[dry-run] would commit:\n' + subject + '\n\n' + body.join('\n'));
   writeJSON(PICKS, d);
   commitAndPush([PICKS], subject, body, o);
+}
+
+/**
+ * `add-picks <file>`: add picks to data/picks.json without replacing it
+ * (e.g. tomorrow's slips next to tonight's). File = {sections:{parlays:[...], ...}};
+ * set slate_date on each pick for another day. Ids must be new.
+ */
+function cmdAddPicks(file, o) {
+  if (!file) usage('add-picks needs a file');
+  const inc = readJSON(file);
+  const doc = readJSON(PICKS);
+  const errs = [];
+  if (!inc || typeof inc.sections !== 'object') usage('file must look like {"sections": {"parlays": [ ... ]}}');
+  const added = [];
+  for (const [sec, list] of Object.entries(inc.sections)) {
+    if (!PICK_SECS.includes(sec)) { errs.push(`sections.${sec}: add-picks takes ${PICK_SECS.join(', ')}`); continue; }
+    if (!Array.isArray(list)) { errs.push(`sections.${sec}: must be an array`); continue; }
+    doc.sections[sec] = doc.sections[sec] || [];
+    for (const pk of list) { doc.sections[sec].push(pk); added.push({ sec, pk }); }
+  }
+  failIf(errs, file);
+  const filled = PickEval.fillDefaults(doc, STR);
+  failIf(validatePicks(doc), PICKS + ' (with added picks)');   // catches duplicate ids too
+  doc.updated_at = new Date().toISOString();
+  const days = [...new Set(added.map(a => dayOf(a.pk, doc)))].join(', ');
+  const subject = `Add ${added.length} pick(s) for ${days} to the Picks page`;
+  const body = [...added.map(a => `- ${a.sec}: ${a.pk.id} (${dayOf(a.pk, doc)}) ${a.pk.side}, ${a.pk.stake_units}u`),
+    `Existing picks kept as they were (slate ${doc.slate_date}).`, ...(filled ? [`Filled evaluation defaults on ${filled} pick(s).`] : []), ...o.notes];
+  if (o.dryRun) return console.log('[dry-run] would commit:\n' + subject + '\n\n' + body.join('\n'));
+  writeJSON(PICKS, doc);
+  commitAndPush([PICKS], subject, body, o);
+}
+
+/** `list [--date D]`: print every pick's day, section, id and side (read-only). */
+function cmdList(o) {
+  const doc = readJSON(PICKS);
+  for (const sec of PICK_SECS) for (const pk of doc.sections[sec] || []) {
+    const day = dayOf(pk, doc);
+    if (!o.date || o.date === day) console.log(`${day}  ${sec.padEnd(9)}  ${pk.id}  ${pk.side}`);
+  }
 }
 
 /** `fill`: add missing hit_prob / risk / verdict / same_game to data/picks.json. */
@@ -405,6 +502,8 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     if (cmd === 'validate') cmdValidate(rest[0] ? path.resolve(rest[0]) : PICKS);
     else if (cmd === 'picks') cmdPicks(rest[0], o);
     else if (cmd === 'fill') cmdFill(o);
+    else if (cmd === 'add-picks') cmdAddPicks(rest[0], o);
+    else if (cmd === 'list') cmdList(o);
     else if (cmd === 'add-predictions') cmdAddPredictions(rest[0], o);
     else if (cmd === 'grade') cmdGrade(rest, o);
     else usage(cmd ? `unknown command "${cmd}"` : '');
