@@ -48,6 +48,8 @@
 
   let calc = freshCalc();
   let picksData = null;
+  /** data/book-odds.json (other apps' prices); optional, loaded with the picks. */
+  let bookOdds = null;
   let picker = null;
 
   // ---------------------------------------------------------------- utils
@@ -353,6 +355,32 @@
   /** Normalise picks.json team refs ({league|sport, abbr}) for Teams.badge. */
   const teamRef = t => t && { league: String(t.league || t.sport || '').toLowerCase(), abbr: t.abbr };
 
+  /**
+   * "Other apps" line for a single-bet card: the cheapest app price for this
+   * exact bet from today's data/book-odds.json rows (refs with leg null),
+   * compared with Polymarket US at the same moment. '' when there's no data,
+   * the feed is off, or the rows are for a different slate.
+   * @param {object} pk pick
+   * @returns {string} HTML
+   */
+  function otherAppsLine(pk) {
+    const bo = bookOdds;
+    if (!bo || bo.status !== 'active' || !Array.isArray(bo.comparisons) || !picksData) return '';
+    const rows = bo.comparisons.filter(r => r.date === picksData.slate_date && Array.isArray(r.refs) &&
+      r.refs.some(x => x.pick_id === pk.id && x.leg === null) && typeof r.book_chance === 'number');
+    if (!rows.length) return '';
+    const best = rows.reduce((a, b) => (b.book_chance < a.book_chance ? b : a));
+    const name = (platformById(best.book) || { name: best.book }).name;
+    // Show cents (or the user's format) plus the app's own American odds.
+    const price = esc(fmtP(best.book_chance)) + (S.getPrefs().priceFormat === 'cents' && best.book_price ? ` (${esc(best.book_price)})` : '');
+    const pm = esc(fmtP(best.polymarket_price));
+    const P = STR.picks;
+    const text = best.book_chance < best.polymarket_price
+      ? P.otherCheaper(esc(name), price, esc(String(Math.round((best.polymarket_price - best.book_chance) * 10) / 10)), pm)
+      : P.otherNone(pm, esc(name), price);
+    return `<div class="other-apps small">${text} <span class="muted">${esc(P.otherAsOf(fmtTime(best.fetched_at)))}</span> ${tip('otherApps')}</div>`;
+  }
+
   /** One pick card. @param {object} pk @param {string} cat */
   function pickCard(pk, cat) {
     const P = STR.picks;
@@ -376,6 +404,7 @@
       </div>
       <div class="pick-stats">${stats}</div>
       ${!isMulti && typeof pk.kalshi_price === 'number' ? `<div class="muted small">${esc(P.kalshiPrice(fmtP(pk.kalshi_price)))}</div>` : ''}
+      ${isMulti ? '' : otherAppsLine(pk)}
       ${isMulti ? `<ul class="legs">${pk.legs.map(l => `<li>${l.team ? T.badge(teamRef(l.team), 20) : ''}<span>${esc(l.desc)}${typeof l.price === 'number' ? ` <span class="muted">${esc(fmtP(l.price))}</span>` : ''}${typeof l.kalshi_price === 'number' ? ` <span class="kpx">Kalshi ${esc(fmtP(l.kalshi_price))}</span>` : ''}</span></li>`).join('')}</ul>` : ''}
       <div><b>${esc(P.bet)}:</b> ${esc(stakeText(pk))} ${tip('unit')}</div>
       ${pk.pending_news ? `<div class="news">⏳ <b>${esc(P.news)}</b> ${esc(pk.pending_news)}</div>` : ''}
@@ -404,7 +433,11 @@
     const el = $('#tab-picks');
     el.innerHTML = `<h2>${esc(STR.picks.title)}</h2><p class="muted">${esc(STR.loading)}</p>`;
     try {
-      [picksData] = await Promise.all([fetchData('data/picks.json'), Promise.race([window.Picker.loadIndex().catch(() => {}), new Promise(r => setTimeout(r, 1500))])]);
+      [picksData, bookOdds] = await Promise.all([
+        fetchData('data/picks.json'),
+        fetchData(CFG.bookOddsPath || 'data/book-odds.json').catch(() => null),   // optional
+        Promise.race([window.Picker.loadIndex().catch(() => {}), new Promise(r => setTimeout(r, 1500))])
+      ]);
     } catch (e) {
       el.innerHTML = `<h2>${esc(STR.picks.title)}</h2><p class="error">${esc(STR.picks.loadError)}</p>`;
       return;
@@ -847,7 +880,7 @@
       if (p.id === (odds && odds.baseline || 'polymarket_us')) return `<span class="muted">${esc(R.feedBaseline)}</span>`;
       if (!p.oddsApi) return `<span class="muted">${esc(R.feedMissing)}</span>`;
       if (!feedOn) return `<span class="muted">${esc(R.feedSoon)}</span>`;
-      if (!f.n) return `<span class="muted">${esc(R.noneYet)}</span>`;
+      if (!f.n) return `<span class="muted">${esc(p.oddsApiPaid ? R.feedPaid : R.noneYet)}</span>`;
       const d = Math.round(f.avgDiff * 10) / 10;
       // book costs MORE than Polymarket = worse for the bettor = red
       return `<b>${esc(R.feedCount(f.n))}</b><span class="${d > 0 ? 'neg' : d < 0 ? 'pos' : ''}">${esc(d === 0 ? R.feedSame : R.feedDiff(Math.abs(d), d > 0))}</span>`;

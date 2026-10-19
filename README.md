@@ -6,7 +6,7 @@ A mobile-first static dashboard for daily picks, a private bankroll tracker, a b
 
 > **Brand:** the app name, tagline, and slogans live in [`config.js`](config.js) (`appName`, `tagline`, ...). The page title, header, and onboarding all read from it. To rename the app, edit `config.js` only. See [HANDOFF.md](HANDOFF.md#renaming-the-brand).
 
-If you're an AI agent or a new maintainer, start with **[HANDOFF.md](HANDOFF.md)**. All UI text is in [`js/strings.js`](js/strings.js); the platform list is in `config.js`; market data refreshes with `node scripts/fetch-markets.mjs --commit`.
+If you're an AI agent or a new maintainer, start with **[HANDOFF.md](HANDOFF.md)**. All UI text is in [`js/strings.js`](js/strings.js); the platform list is in `config.js`; market data refreshes with `node scripts/fetch-markets.mjs --commit`, and other apps' prices with `node scripts/fetch-book-odds.mjs --commit` (needs `ODDS_API_KEY`).
 
 ## Features
 
@@ -17,7 +17,7 @@ If you're an AI agent or a new maintainer, start with **[HANDOFF.md](HANDOFF.md)
 | **Picks** | Renders `data/picks.json`: game predictions, single bets, player props, parlays, long shots, and non-sports markets. Stakes are stored in **units** and converted to dollars with *your* unit size. |
 | **Build a bet** | A **market picker**: search ("purdy") or browse by date, sport and game, then tap Yes/No to add a pick at its Polymarket US price (live when you open a game; daily snapshot otherwise). Team logos everywhere; picks from the same game get flagged. **Type a bet yourself** for any other app (prices as `63`, `0.63`, `-150`, `+120`, or `2.5`). Shows the payout, chance to win, how the app's payout compares to ours, and expected profit per $10. **Save bet** adds the slip to your tracker. |
 | **Bets** | Current bankroll, a bankroll-over-time chart, open bets with settle won/lost/push, settled P/L, and W-L-P and ROI for singles, props, parlays, long shots, and non-sports. Export and import JSON backups. |
-| **Record** | Win-pick accuracy and a calibration table (5-point buckets) from `data/predictions.json`, plus how each of 10 apps pays on combo bets vs. our estimate (from the shared log). |
+| **Record** | Win-pick accuracy and a calibration table (5-point buckets) from `data/predictions.json`, plus how each of 10 apps compares: combo bets people logged, prices pulled daily from The Odds API vs. Polymarket US, and the total. |
 | **Settings** | Edit or reset your profile, choose your app and price format (cents default, American or decimal), manage your GitHub token, set the share default, and re-sync failed shares. |
 
 ## Privacy: who sees what

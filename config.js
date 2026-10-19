@@ -55,6 +55,8 @@ window.APP_CONFIG = Object.freeze({
    *   2026-10-19). null = not in the feed. Caesars (williamhill_us) and
    *   Fanatics need a paid plan; ESPN Bet is listed as "theScore Bet";
    *   bet365 has no US feed. Polymarket US is the baseline we compare to.
+   *   `oddsApiPaid: true` = only on a paid Odds API plan (the free plan
+   *   returns nothing for it; the Record tab says so).
    */
   platforms: [
     { id: 'polymarket_us', name: 'Polymarket US', short: 'PM', color: '#2e5bff', oddsApi: 'polymarket_us' },
@@ -63,9 +65,9 @@ window.APP_CONFIG = Object.freeze({
     { id: 'fanduel', name: 'FanDuel', short: 'FD', color: '#1493ff', oddsApi: 'fanduel' },
     { id: 'draftkings', name: 'DraftKings', short: 'DK', color: '#53a318', oddsApi: 'draftkings' },
     { id: 'betmgm', name: 'BetMGM', short: 'MGM', color: '#b8975a', oddsApi: 'betmgm' },
-    { id: 'caesars', name: 'Caesars', short: 'CZR', color: '#0f4d3a', oddsApi: 'williamhill_us' },
+    { id: 'caesars', name: 'Caesars', short: 'CZR', color: '#0f4d3a', oddsApi: 'williamhill_us', oddsApiPaid: true },
     { id: 'espnbet', name: 'ESPN Bet', short: 'ESPN', color: '#e4002b', oddsApi: 'espnbet' },
-    { id: 'fanatics', name: 'Fanatics', short: 'FAN', color: '#0b2a5b', oddsApi: 'fanatics' },
+    { id: 'fanatics', name: 'Fanatics', short: 'FAN', color: '#0b2a5b', oddsApi: 'fanatics', oddsApiPaid: true },
     { id: 'bet365', name: 'bet365', short: '365', color: '#027b5b', oddsApi: null }
   ],
   /** Extra dropdown choice for anything not listed above. */

@@ -60,12 +60,13 @@ data/markets/events/<slug>.json snapshot: every market of one game (lazy-loaded)
 data/picks.json       today's picks (overwritten daily by the job)
 data/predictions.json game predictions and grades (appended by the job)
 data/bet-log.json     shared calibration log (written by the app with users' tokens)
-data/book-odds.json   automatic per-app price comparisons (The Odds API; empty until the feed is set up, §17)
+data/book-odds.json   automatic per-app price comparisons (The Odds API, written daily by fetch-book-odds.mjs, §17)
 tests/calc.test.js        node: math
 tests/github-log.test.js  node: log writer against a mocked API
 tests/smoke.js            headless Chrome UI walk-through (puppeteer-core, --no-save)
 scripts/update-picks.mjs  daily-job CLI: validate, write, commit, and push picks/predictions
 scripts/fetch-markets.mjs daily-job CLI: refresh data/markets from Polymarket US + match Kalshi, enrich picks.json
+scripts/fetch-book-odds.mjs daily-job CLI: other apps' prices for today's picks (The Odds API, ODDS_API_KEY) -> data/book-odds.json
 .nojekyll             tells Pages to serve files as-is
 README.md             user-facing overview and the picks.json schema
 ```
@@ -179,6 +180,7 @@ Daily routine:
 3. `add-predictions` today's game predictions (`result` defaults to `pending`; ids like `2026-10-20-was-sf`).
 4. `picks` the new slate. Pages redeploys in about a minute, and the app cache-busts its fetches.
 5. `node scripts/fetch-markets.mjs --commit` (see §13). Run it **after** step 4 so the new picks get Polymarket/Kalshi links and Kalshi prices.
+5b. `node scripts/fetch-book-odds.mjs --commit` (see §17). Run it **after** step 5: it prices today's picks at the other apps through The Odds API (needs `ODDS_API_KEY` in the environment; about 6-12 of the 500 monthly credits).
 6. Read `data/bet-log.json` to compare quoted vs. estimated multiples per platform and tune `skip_below`.
 
 ## 9. Renaming the brand
@@ -271,32 +273,49 @@ One block per app (in `APP_CONFIG.platforms` order, plus "Other" only if someone
 
 The numbers come from `BetCalc.platformSummary(records, comparisons, platforms)`, which is pure and tested in `tests/calc.test.js`. All labels and the three (i) tooltips are in `STR.record` / `STR.tips` (`colLogged`, `colFeed`, `colTotal`).
 
-**data/book-odds.json** (dollar-free; check it with `node scripts/update-picks.mjs validate data/book-odds.json`):
+**data/book-odds.json** is written by `scripts/fetch-book-odds.mjs` (dollar-free; check it with `node scripts/update-picks.mjs validate data/book-odds.json`):
 ```jsonc
 {
   "schema_version": 1,
-  "status": "waiting_for_feed",     // set to "active" once the job fills comparisons; the UI ignores rows until then
-  "updated_at": null,               // ISO 8601 of the last feed run
-  "source": "The Odds API (https://the-odds-api.com), regions us,us2,us_ex",
-  "baseline": "polymarket_us",      // platform id everything is compared against
-  "comparisons": [{                 // one row per (pick or leg) x (app) per day
-    "date": "2026-10-20",           // slate date
-    "pick_id": "s-phi-ml",          // id in picks.json
-    "leg": null,                    // leg index for parlays/long shots, else null
-    "market_id": "aec-nhl-col-phi-2026-10-19",  // Polymarket US market slug
+  "status": "active",               // "waiting_for_feed" = UI shows "Coming soon"; "active" = UI uses the rows
+  "updated_at": "ISO 8601",         // last run
+  "source": "The Odds API (https://the-odds-api.com) + live Polymarket US prices",
+  "baseline": "polymarket_us",      // what every diff is measured against
+  "last_run": {                     // for humans/agents; the UI doesn't need it
+    "at": "ISO", "slate_date": "2026-10-19", "sports": ["mlb","nhl","nfl"],
+    "books_requested": ["bovada","fanduel",...], "books_returned": ["betmgm","bovada",...],
+    "priced_today": 13, "targets": 13, "rows_today": 64,
+    "props": "included" | "skipped: …",
+    "credits_used": 11, "credits_remaining": 489
+  },
+  "books": { "fanduel": { "priced": 12, "avg_diff": 3.21 } },   // all kept history, per app
+  "comparisons": [{                 // one row per distinct (market, side) x app x day; history kept 60 days
+    "date": "2026-10-19",           // picks.json slate_date
+    "market_id": "tsc-mlb-cle-tb-2026-10-19-6pt5",   // Polymarket US market slug
     "side": "no",                   // our side of that market
-    "book": "fanduel",              // platform id from APP_CONFIG.platforms
-    "odds_api_key": "fanduel",      // bookmaker key in the feed
-    "book_price": "+190",           // as the app lists it (American)
-    "book_chance": 34.5,            // that price as cents (0-100)
-    "polymarket_price": 33,         // Polymarket US cost in cents at the same time
-    "diff": 1.5,                    // book_chance - polymarket_price. Positive = that app charges more
-    "fetched_at": "2026-10-20T14:00:00Z"
+    "label": "Under 6.5",           // human-readable side
+    "refs": [{ "pick_id": "s-cle-tb-under65", "leg": null }, { "pick_id": "x-cle-plus15-under", "leg": 1 }],
+    "book": "kalshi",               // platform id from APP_CONFIG.platforms (never polymarket_us)
+    "odds_api_key": "kalshi",
+    "book_price": "+108",           // the app's American odds
+    "book_chance": 48.1,            // the same price in cents
+    "polymarket_price": 49,         // live Polymarket US cost of the same side, fetched right after
+    "diff": -0.9,                   // book_chance - polymarket_price. Positive = that app charges more (pays less)
+    "fetched_at": "ISO"
   }]
 }
 ```
 
-**Turning the feed on later** (needs an API key; it's not set up yet, so nothing calls the API today):
-1. Get a key at the-odds-api.com and keep it **out of the repo** (an environment variable in the daily job, e.g. `ODDS_API_KEY`). Never commit it.
-2. In the daily job, for each pick/leg with a `market_id`, call `GET https://api.the-odds-api.com/v4/sports/{sport}/odds?regions=us,us2,us_ex&markets=h2h,spreads,totals&oddsFormat=american&apiKey=…` (player props need the per-event endpoint `/v4/sports/{sport}/events/{id}/odds`). Match by team and line, convert American to cents (`BetCalc.parsePrice`), and append one row per app using the `oddsApi` keys in `config.js`. Caesars (`williamhill_us`) and Fanatics need a paid plan. ESPN Bet appears as `espnbet` ("theScore Bet"). bet365 isn't in the US feed.
-3. Set `status: "active"` and `updated_at`, validate, commit and push. The Record tab picks it up on the next load.
+**Running it** (daily, after `fetch-markets`):
+```bash
+node scripts/fetch-book-odds.mjs --commit       # price today's picks, write data/book-odds.json, commit + push
+#   --dry-run          print the plan and its credit cost; no paid calls
+#   --max-credits 12   most one run may spend; player props are dropped first if over (default 12)
+#   --floor 50         stop cleanly instead of going below 50 remaining credits (default 50)
+#   --no-props         game lines only
+```
+- **Key:** read only from `process.env.ODDS_API_KEY`. The script never prints, logs, writes or commits it: URLs are logged without their query, and errors are scrubbed. Don't add it to any file.
+- **Budget:** free plan, 500 credits/month. One `/odds` call costs (markets requested) × (regions). We send `bookmakers=` with 8 keys, which counts as one region, and we request only the market types today's picks use (e.g. MLB h2h+spreads+totals = 3, NHL h2h = 1, NFL h2h+totals = 2). Player props cost 1 credit per prop market per game (`/events/{id}/odds`) and are fetched only for games with a prop pick, if the run stays within `--max-credits`. `/sports` and `/sports/{sport}/events` are free. The first run (2026-10-19) cost **11 credits** (6 lines + 5 props), leaving 489. At the 12-credit cap, the worst case is about 370 a month.
+- **Books on the free plan (first run):** FanDuel, DraftKings, BetMGM, Bovada, ESPN Bet (`espnbet`, "theScore Bet") and Kalshi (`us_ex`). Caesars (`williamhill_us`) and Fanatics returned nothing; they're paid-plan only (`oddsApiPaid: true` in config, shown as "Needs a paid odds plan"). bet365 isn't in the US feed. Polymarket US is the baseline, so it isn't requested.
+- **Matching** is documented in the script header: game by both team names within 36h; h2h by team; spreads by team + signed line from the side label; totals by Over/Under + line; props by player name, with Polymarket "N+" = Over N−0.5 and anytime TD/goal = "Yes". Prop types are mapped in `PROP_MARKETS`, and sports in `SPORT_KEYS` (NBA/WNBA are ready, but only called when a pick needs them).
+- **UI:** the Record tab's "From odds feed" column shows each app's count and average difference; "Total" adds the logged bets. Single-bet pick cards show an "Other apps" line: "cheapest is Kalshi at 48.1¢ (+108), 0.9¢ less than Polymarket US (49¢)" or "none cheaper…". It uses today's rows whose `refs` point at that pick.

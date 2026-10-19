@@ -90,6 +90,10 @@ window.STR = {
     notOnKalshi: 'Not on Kalshi',
     kalshiEventOnly: 'Kalshi game page',
     kalshiPrice: c => `Kalshi: ${c}`,
+    // "Other apps" line on single-bet cards (from data/book-odds.json).
+    otherCheaper: (app, price, less, pm) => `Other apps: cheapest is ${app} at ${price}, ${less}¢ less than Polymarket US (${pm}).`,
+    otherNone: (pm, app, price) => `Other apps: none cheaper than Polymarket US (${pm}). Closest: ${app} at ${price}.`,
+    otherAsOf: when => `Checked ${when}.`,
     toCalc: 'Use in bet builder',
     loaded: 'Added to the bet builder. Now type what the app says it pays.'
   },
@@ -213,11 +217,12 @@ window.STR = {
     loggedCount: n => `${n} bet${n === 1 ? '' : 's'}`,
     loggedGap: g => `pays ${g} vs. our estimate`,           // g like "-6.9%"
     feedCount: n => `${n} price${n === 1 ? '' : 's'}`,
-    feedDiff: (c, more) => `${c}¢ ${more ? 'more' : 'less'} than Polymarket US`,
+    feedDiff: (c, more) => `on average ${c}¢ ${more ? 'more' : 'less'} than Polymarket US`,
     feedSame: 'same as Polymarket US',
     feedSoon: 'Coming soon, waiting on odds feed',
     feedBaseline: 'We compare other apps to this one',
     feedMissing: 'Not in the odds feed',
+    feedPaid: 'Needs a paid odds plan',
     noneYet: 'None yet',
     platNone: 'No bets logged yet',
     platOther: 'Other apps',
@@ -279,6 +284,7 @@ window.STR = {
     myPlatform: 'Tapping "Open in app" takes you to this app\'s page for the bet. If the bet isn\'t on Kalshi, we\'ll say so and open a search.',
     colLogged: 'Combo bets you or your friends saved with "Share" on. We compare what the app paid with what the picks multiply out to. Example: −7% means the app paid 7% less.',
     colFeed: 'Each day we\'ll look up the same picks on other apps and compare the price with Polymarket US. Example: "2¢ more" means that app charges a bit more for the same bet, so you\'d win a bit less.',
+    otherApps: 'Each morning we look up the same bet on other apps (FanDuel, DraftKings, BetMGM, Bovada, ESPN Bet, Kalshi) and show the cheapest. A cheaper price means a bigger payout. Prices move, so check before you bet.',
     colTotal: 'How many comparisons we have for this app so far, from both sources. More means the numbers are more reliable.',
     priceFormat: 'Only changes how prices look. You can still type prices any way you like.'
   },

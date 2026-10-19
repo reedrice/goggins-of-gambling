@@ -35,6 +35,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   console.log('pick cards:', await p.$$eval('#tab-picks .card', x => x.length), 'logos:', await p.$$eval('#tab-picks .tlogo', x => x.length));
   console.log('first open link (kalshi):', await p.$eval('#tab-picks .pick-actions a', a => a.href));
   console.log('not-on-kalshi badges:', await p.$$eval('#tab-picks .badge.skip', x => x.filter(e => /Kalshi/.test(e.textContent)).length));
+  console.log('other-apps lines:', await p.$$eval('#tab-picks .other-apps', x => x.length), '| first:', await p.$eval('#tab-picks .other-apps', e => e.innerText).catch(() => 'none'));
   await p.click('#plat-toggle [data-plat="polymarket_us"]'); await wait(300);
   console.log('first open link (PM US):', await p.$eval('#tab-picks .pick-actions a', a => a.href));
   await p.screenshot({ path: SHOT + '/2-picks.png' });
