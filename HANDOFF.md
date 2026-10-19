@@ -31,22 +31,32 @@ The scripts load in this order (classic `<script>` tags; each one sets a single 
 
 | file | global | role |
 |---|---|---|
-| `config.js` | `APP_CONFIG` | brand text and repo wiring. **The only place the brand lives.** |
-| `js/calc.js` | `BetCalc` | pure math: price parsing, parlay multiple, hit chance, gap, EV, P/L. Also loads in Node (`module.exports`). |
+| `config.js` | `APP_CONFIG` | brand text, repo wiring, and the **platform list**. **The only place the brand lives.** |
+| `js/strings.js` | `STR` | **every** user-facing sentence, button label and (i) tooltip. |
+| `js/calc.js` | `BetCalc` | pure math: price parsing, parlay multiple, hit chance, gap, EV, P/L, cents↔American/decimal display. Also loads in Node. |
 | `js/storage.js` | `Store` | the **only** code that touches localStorage. Handles export and import. |
+| `js/teams.js` | `Teams` | team logo markup with a 3-step fallback (see §12). |
+| `js/markets-core.js` | `MarketsCore` | Polymarket US parsing shared by the browser and `scripts/fetch-markets.mjs` (UMD). |
+| `js/picker.js` | `Picker` | the market picker in Build a bet: search, browse, live prices. |
 | `js/github-log.js` | `GitHubLog` | builds dollar-free records and upserts them into `data/bet-log.json` via the contents API. |
-| `js/app.js` | `BetDash` (debug) | UI: onboarding, hash router, the five tabs, event wiring. |
+| `js/app.js` | `BetDash` (debug) | UI: onboarding, hash router, the five tabs, platform toggle, event wiring. |
 
 ## 3. File map
 
 ```
-index.html            DOM skeleton (onboarding overlay, header, 5 tab sections, tab bar)
-config.js             brand + repo config
-css/style.css         dark mobile-first theme
+index.html            DOM skeleton (empty onboarding container, header, "I bet on" bar, 5 tab sections, tab bar, tooltip bubble)
+config.js             brand + repo config + platforms[] (one ordered list used everywhere)
+css/style.css         dark mobile-first theme (sections 1-9; 9 = picker/logos/toggle/tooltips)
+js/strings.js         all UI text (plain-language rules in its header)
 js/calc.js            odds and parlay math (pure)
 js/storage.js         localStorage schema and access
+js/teams.js           team logos: Polymarket logo -> ESPN CDN -> colored circle; ESPN abbreviation fixes
+js/markets-core.js    Polymarket US event/market compaction + labels (browser + Node)
+js/picker.js          market picker UI + live Polymarket US fetches
 js/github-log.js      shared log writer (GitHub REST contents API)
 js/app.js             UI controller
+data/markets/index.json         snapshot: list of upcoming games (small, loaded first)
+data/markets/events/<slug>.json snapshot: every market of one game (lazy-loaded)
 data/picks.json       today's picks (overwritten daily by the job)
 data/predictions.json game predictions and grades (appended by the job)
 data/bet-log.json     shared calibration log (written by the app with users' tokens)
@@ -54,6 +64,7 @@ tests/calc.test.js        node: math
 tests/github-log.test.js  node: log writer against a mocked API
 tests/smoke.js            headless Chrome UI walk-through (puppeteer-core, --no-save)
 scripts/update-picks.mjs  daily-job CLI: validate, write, commit, and push picks/predictions
+scripts/fetch-markets.mjs daily-job CLI: refresh data/markets from Polymarket US + match Kalshi, enrich picks.json
 .nojekyll             tells Pages to serve files as-is
 README.md             user-facing overview and the picks.json schema
 ```
@@ -133,8 +144,9 @@ All keys use the neutral `betdash_` prefix. **Never put the brand in a key**, be
 | `betdash_settings` | `{shareByDefault}` |
 | `betdash_gh_token` | the user's fine-grained token. Local only and **excluded from exports** |
 | `betdash_gh_login` | cached GitHub login |
+| `betdash_prefs` | `{platform:'polymarket_us'|'kalshi', priceFormat:'cents'|'american'|'decimal'}`. Defaults: Polymarket US, cents. **One value** drives the onboarding step, the "I bet on" bar under the header and Settings |
 
-Backups (`Export JSON`) use the format `{format:"betdash-backup", version:1, exportedAt, profile, bets, settings}`.
+Backups (`Export JSON`) use the format `{format:"betdash-backup", version:1, exportedAt, profile, bets, settings, prefs}`.
 
 ## 8. How the daily job updates picks
 
@@ -165,7 +177,8 @@ Daily routine:
 2. `grade` yesterday's predictions.
 3. `add-predictions` today's game predictions (`result` defaults to `pending`; ids like `2026-10-20-was-sf`).
 4. `picks` the new slate. Pages redeploys in about a minute, and the app cache-busts its fetches.
-5. Read `data/bet-log.json` to compare quoted vs. estimated multiples per platform and tune `skip_below`.
+5. `node scripts/fetch-markets.mjs --commit` (see §13). Run it **after** step 4 so the new picks get Polymarket/Kalshi links and Kalshi prices.
+6. Read `data/bet-log.json` to compare quoted vs. estimated multiples per platform and tune `skip_below`.
 
 ## 9. Renaming the brand
 
@@ -184,3 +197,55 @@ If you also rename the GitHub repo, update `repoName` in `config.js` and the URL
 - Push to `main`. Pages builds from `main` at `/` (root). Check progress with `gh api repos/reedrice/goggins-of-gambling/pages/builds/latest`.
 - Verify with `curl -sI https://reedrice.github.io/goggins-of-gambling/`, which should return 200, and the same for `/data/picks.json`.
 - Before pushing, run `node tests/calc.test.js && node tests/github-log.test.js && node scripts/update-picks.mjs validate`, plus `tests/smoke.js` if you changed the UI.
+
+## 12. Team logos (js/teams.js)
+
+`Teams.badge(team, size)` returns a lazy-loaded logo (24-32px in the UI) used on pick cards, picker game cards, search results, slip legs and saved bets. Player props show the **player's team** logo. Sources, in order, each tried only if the previous image fails to load:
+
+1. `team.logo` from the Polymarket US API (copied into the snapshot).
+2. ESPN CDN `https://a.espncdn.com/i/teamlogos/{league}/500/{abbr}.png`. Leagues: nfl, mlb, nhl, nba, wnba (soccer has no ESPN mapping and skips this step). Where Polymarket's code differs from ESPN's (e.g. `WAS`→`wsh` in the NFL), fix it in **`ESPN_ALIASES`** in `js/teams.js`, the only mapping table.
+3. A colored circle with the abbreviation (`team.color` if Polymarket provides one).
+
+Fallback works through one capture-phase `error` listener (`Teams.install()`), so no inline `onerror` is needed. In `picks.json`, give a pick or leg `team:{league, abbr}` (or `teams:[...]` for a game) and the logo appears; `Teams.registerFromIndex()` fills in Polymarket logo URLs from the market snapshot.
+
+## 13. Market picker and data/markets
+
+**What users see (Build a bet):** a search box (fuzzy, instant: "purdy", "leafs ml", "under 6.5") and **Browse games**: date chips (multi-select, default today + tomorrow), sport chips, game cards. A game opens into *Main bets* (who wins, spread with each team's line, totals), *Player bets* grouped by player, and *Other*. Every market has big Yes/No buttons with prices; tapping adds a leg to the slip. **Type a bet yourself** adds a manual leg for any other app. Slip legs have a remove ×, a "Picks that affect each other" flag when two legs are from the same game, and "Prices as of …".
+
+**Live vs snapshot:**
+- The **game list and search** use the daily snapshot in `data/markets/` (listing every game live would be tens of MB).
+- **Opening a game** re-fetches that game live from `https://gateway.polymarket.us/v1/events/slug/{slug}` (CORS is `*`). The header says "Live prices as of …" or falls back to the snapshot time.
+- **Each slip leg** gets a live price from `/v1/markets/{slug}/bbo` on add and on **Refresh prices**.
+- **Kalshi** has no CORS, so Kalshi prices and links come **only** from the snapshot.
+
+**Pricing rule (Polymarket US):** the market side with `long:true` is "Yes" and its quote is the best ask. The No cost is `100 − bestBid`. Spreads are listed under the favorite's slug (e.g. "TB −1.5"); the long side may be the underdog +1.5, so labels come from each side's own team and line (`MarketsCore.fmtLine`). Totals: long = Over.
+
+**Snapshot schema:**
+- `data/markets/index.json`: `{schema_version, updated_at, source, dates[], events:[{id, slug, sport, league, title, start_time, date (CT), url, polymarket_url, kalshi_url, teams:[{abbr, display, name, short, logo, color}], market_count, players:[[name, teamAbbr]], file}]}`.
+- `data/markets/events/<slug>.json`: the same event plus `markets:[{id (market slug), type (moneyline|spread|total|prop|other), group (lines|props|other), smt, label, line, side_yes_label, side_no_label, yes_ask, yes_bid, no_cost (cents), player?, team?, kalshi?:{ticker, yes, no}}]`.
+
+**Refreshing it:**
+```bash
+node scripts/fetch-markets.mjs --commit          # next 4 days, match Kalshi, enrich picks.json, commit + push
+#   --days N   --no-kalshi   --no-push   (no --commit = write files only)
+```
+Takes 30-60s. It covers NFL, MLB, NHL, NBA, WNBA and the main soccer leagues (`MarketsCore.LEAGUES`), deletes event files for games that dropped out, and never writes dollars. Run it daily after the picks update; running it again later in the day just makes the snapshot fresher.
+
+## 14. "I bet on" platform and Kalshi links
+
+`betdash_prefs.platform` decides where every **Open** button goes:
+- **Polymarket US:** `polymarket_url` (`https://polymarket.us/sports/{league}/{event slug}`).
+- **Kalshi:** `fetch-markets.mjs` matches each game through the public API `https://api.elections.kalshi.com/trade-api/v2` (event tickers like `KXNFLGAME-26OCT19WASSF`; MLB adds the start time, `KXMLBGAME-26OCT192008CLETB`; sibling series such as `KXNFLSPREAD`, `KXNFLTOTAL`, `KXNFLPASSINT` share the suffix). Markets match by team code (who wins), favorite + `floor_strike` (spreads), `floor_strike` (totals), and player name + `floor_strike = line − 0.5` (props). Series and team-code tables are `KALSHI_SERIES` and `KALSHI_ALIASES` in the script.
+- On picks it writes `kalshi_url`, `kalshi_match` (`market` | `event` | `none`) and `kalshi_price`. Fallbacks: no exact market → the game's event page; no event at all → Kalshi search (`https://kalshi.com/search?query=…`) and a **"Not on Kalshi"** badge.
+- Web URL format used: `https://kalshi.com/markets/<series>/<event ticker>` (lowercase). **Unverified:** kalshi.com blocked automated checks (HTTP 429). If Kalshi links break, fix `kalshiUrlFromTicker` in `js/picker.js` and the matching helper in the script.
+- Known gaps: some prop series return no markets for some games (e.g. any-time TD, NHL goals/points), so those legs fall back to the game page.
+
+## 15. Plain language and strings (js/strings.js)
+
+All UI text lives in `js/strings.js`, grouped by screen and commented. Rules (also in its header): no jargon (EV, implied probability, vig, no-vig, correlation, edge, units, multiple, independent). Use "Chance to win", "Fair price", "Your price advantage", "Payout (how many times your money)", "Picks that affect each other", "Expected profit per $10 bet, on average over time". Anything that needs more explanation gets an (i) button: add the text to `STR.tips` and render `tip('key')`. Sizes show as dollars ("$5.00 (half your standard bet)"); `units` stay in `picks.json` only. Pick text in `picks.json` (reasoning, notes) should follow the same rules.
+
+## 16. Platforms and price display
+
+`APP_CONFIG.platforms` is the single ordered list: Polymarket US, Kalshi, Bovada, FanDuel, DraftKings, BetMGM, Caesars, ESPN Bet, Fanatics, bet365 (`{id, name, short, color}`), plus `otherPlatform`. It feeds the leg dropdown in Build a bet (with **Other**) and the Record tab's "How each app pays on combo bets" table, which shows every platform with a colored badge, "No bets logged yet" when empty, and Other only if it has data. `myPlatforms` lists the ones that can be the "I bet on" choice.
+
+Prices show as **cents by default** (Polymarket style). Settings → Price format can switch display to American (63¢ → −170, 48¢ → +108, 50¢ → +100) or decimal (`BetCalc.formatPrice`). Price inputs accept any format regardless of the setting. Picker legs store fractional cents as `"63.5c"` so they don't parse as decimal odds.

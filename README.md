@@ -6,18 +6,19 @@ A mobile-first static dashboard for daily picks, a private bankroll tracker, a b
 
 > **Brand:** the app name, tagline, and slogans live in [`config.js`](config.js) (`appName`, `tagline`, ...). The page title, header, and onboarding all read from it. To rename the app, edit `config.js` only. See [HANDOFF.md](HANDOFF.md#renaming-the-brand).
 
-If you're an AI agent or a new maintainer, start with **[HANDOFF.md](HANDOFF.md)**.
+If you're an AI agent or a new maintainer, start with **[HANDOFF.md](HANDOFF.md)**. All UI text is in [`js/strings.js`](js/strings.js); the platform list is in `config.js`; market data refreshes with `node scripts/fetch-markets.mjs --commit`.
 
 ## Features
 
 | Tab | What it does |
 |---|---|
-| **Onboarding** | On first visit, a full-screen setup asks for display name, starting bankroll, unit (default 2%), max per slip (default 5%), and an optional window end date. Nothing else shows until it's done. |
+| **Onboarding** | On first visit, a full-screen setup asks for display name, starting money, standard bet size (default 2%), most per bet (default 5%), an optional end date, and **which app you bet on** (Polymarket US or Kalshi). Nothing else shows until it's done. |
+| **"I bet on" bar** | Under the header. Picks Polymarket US or Kalshi; every **Open** button deep-links there. Same setting as onboarding and Settings. |
 | **Picks** | Renders `data/picks.json`: game predictions, single bets, player props, parlays, long shots, and non-sports markets. Stakes are stored in **units** and converted to dollars with *your* unit size. |
-| **Calc** | Unlimited legs, each with a platform and price (`63`, `0.63`, `-150`, `+120`, or `2.5`). Shows the estimated multiple (product of 1/p), the independent hit chance, the **gap** (quoted ÷ estimated − 1), EV, and payout. **Save bet** adds the slip to your tracker. |
+| **Build a bet** | A **market picker**: search ("purdy") or browse by date, sport and game, then tap Yes/No to add a pick at its Polymarket US price (live when you open a game; daily snapshot otherwise). Team logos everywhere; picks from the same game get flagged. **Type a bet yourself** for any other app (prices as `63`, `0.63`, `-150`, `+120`, or `2.5`). Shows the payout, chance to win, how the app's payout compares to ours, and expected profit per $10. **Save bet** adds the slip to your tracker. |
 | **Bets** | Current bankroll, a bankroll-over-time chart, open bets with settle won/lost/push, settled P/L, and W-L-P and ROI for singles, props, parlays, long shots, and non-sports. Export and import JSON backups. |
-| **Record** | Win-pick accuracy and a calibration table (5-point buckets) from `data/predictions.json`, plus the average pricing gap per platform from the shared log. |
-| **Settings** | Edit or reset your profile, manage your GitHub token, set the share default, and re-sync failed shares. |
+| **Record** | Win-pick accuracy and a calibration table (5-point buckets) from `data/predictions.json`, plus how each of 10 apps pays on combo bets vs. our estimate (from the shared log). |
+| **Settings** | Edit or reset your profile, choose your app and price format (cents default, American or decimal), manage your GitHub token, set the share default, and re-sync failed shares. |
 
 ## Privacy: who sees what
 
@@ -75,12 +76,16 @@ A daily job overwrites this whole file. All fields are optional unless marked **
 | `link` | string | market URL (http/https; a bare host is OK) |
 | `pending_news` | string/null | e.g. `Starting goalies not confirmed`. Shown as a yellow flag |
 | `verify_note` | string | e.g. a warning that the price came from another platform |
+| `market_id` | string | Polymarket US market slug (from `data/markets`), e.g. `aec-nfl-was-sf`. Lets the app pull a live price and build links |
+| `market_side` | `"yes"`/`"no"` | which side of `market_id` the pick is |
+| `team` / `teams` | `{league, abbr}` / `[{league, abbr}]` | shows team logos (`league` = nfl, mlb, nhl, nba, wnba) |
+| `polymarket_url`, `kalshi_url`, `kalshi_match`, `kalshi_price` | written by `scripts/fetch-markets.mjs` | per-platform Open links; `kalshi_match` is `market`, `event` or `none` |
 
 **MultiPick** (parlays, long shots) has the Pick fields plus:
 
 | field | type | notes |
 |---|---|---|
-| `legs` | `[{desc, price?, fair?, platform?}]`, **required** | `price` in cents. Omit it if unknown |
+| `legs` | `[{desc, price?, fair?, platform?, market_id?, market_side?, team?}]`, **required** | `price` in cents. Omit it if unknown. Legs get the same link fields as picks |
 | `est_multiple` | number | product of 1/price across legs |
 | `quoted_multiple` | number/null | what the platform actually quoted, if known |
 | `hit_prob` | number | estimated hit chance in % (0–100) |
