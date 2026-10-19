@@ -1,7 +1,7 @@
 /**
  * config.js — single source of truth for branding and repo wiring.
  *
- * PURPOSE
+ * PURPOSE (working title: the name is expected to change)
  *   Every user-visible brand string (app name, tagline, slogans) lives here and
  *   ONLY here. index.html, the onboarding screen, the header and the page
  *   <title> all read from window.APP_CONFIG at runtime. To rename the product,
@@ -15,11 +15,11 @@
  */
 window.APP_CONFIG = Object.freeze({
   /** Product name shown in the header, page title and onboarding. */
-  appName: 'Goggins of Gambling',
+  appName: 'Men in Black',
   /** Short slogan shown under the name. */
   tagline: 'Stay Hard',
-  /** Short label for the browser tab / home-screen icon. */
-  shortName: 'GoG',
+  /** Short label reserved for a future web manifest / home-screen icon (currently unused). */
+  shortName: 'MIB',
   /** One-line pitch shown on the onboarding screen. */
   onboardingPitch: 'No soft bets. No guessing. Set your bankroll and earn every unit.',
   /** Small rotating motivational lines shown in the header. */
