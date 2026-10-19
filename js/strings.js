@@ -49,6 +49,8 @@ window.STR = {
     // combo of k picks (2 = "Both win …", 3+ = "All 3 win …")
     allChance: { of10: (k, n) => `${k === 2 ? 'Both' : 'All ' + k} win about ${n} out of 10 times`, oneIn: (k, n) => `${k === 2 ? 'Both' : 'All ' + k} win about 1 in ${n} times`, almost: k => `${k === 2 ? 'Both' : 'All ' + k} win almost every time` },
     priceOn: (app, c) => `Price on ${app}: ${c}`,
+    // Cents + American ("Vegas") odds on the small line: "44¢ (+127)". The ⓘ explains the number.
+    vegas: (num, book) => `Vegas: ${num}${book ? ` (${book})` : ''}`,
     cheaperOn: (app, c) => `Cheaper on ${app} (${c})`,
     tap: what => `Tap: ${what}`,
     ifAllWin: (k, stake, back) => `If ${k === 2 ? 'both' : 'all ' + k} win: your ${stake} turns into ${back}`,
@@ -410,6 +412,7 @@ window.STR = {
 
   // ---------------------------------------------------------------- tooltips (i)
   tips: {
+    americanOdds: '+127 means a $100 bet wins $127. −150 means you bet $150 to win $100. These are the numbers sportsbooks like DraftKings show. The number next to the ¢ price is the same price, just said the Vegas way. "Vegas" is the best number we found at the big sportsbooks for the same bet.',
     howPrices: 'The price is like the cost of a ticket. If you\'re right, every ticket turns into $1. Cheaper tickets win less often but pay more. A 63¢ ticket wins about 6 out of 10 times.',
     price: 'What one ticket costs. If you\'re right, the ticket turns into $1. At 40¢, $10 buys 25 tickets, so you get $25 back if you win.',
     fair: 'What the ticket should cost, going by the big sportsbooks. A fair price of 47¢ means it wins about 47 times out of 100.',

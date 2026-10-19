@@ -158,10 +158,22 @@
   }
 
   /** "Price on Polymarket US: 63.5¢ · Cheaper on Kalshi (61¢)". @returns {string} HTML ('' when no price) */
-  function priceLineHtml(o, extra) {
+  /**
+   * Vegas line for a pick/leg/slip leg: "Vegas: +120 (DraftKings)" from the
+   * sportsbook lookup (js/vegas.js); '' when no real price exists. Never guessed.
+   * @param {string} marketId @param {string} side 'yes'|'no' @returns {string} plain text
+   */
+  function vegasText(marketId, side) {
+    const v = window.Vegas.lookup(marketId, side);
+    return v ? STR.plain.vegas(v.p, (platformById(v.book) || { name: v.book }).name) : '';
+  }
+
+  function priceLineHtml(o, extra, withTip) {
     const { mine, cheaper } = appPrices(o, extra);
     if (!mine) return '';
-    return `<div class="price-on small muted">${esc(STR.plain.priceOn(mine.name, fmtP(mine.c)))}${cheaper ? ` · <span class="cheaper">${esc(STR.plain.cheaperOn(cheaper.name, fmtP(cheaper.c)))}</span>` : ''}</div>`;
+    // Cents ALWAYS come with their American odds: "63.5¢ (-174)"; then the real Vegas number when we have one.
+    const vg = vegasText(o.market_id, o.market_side);
+    return `<div class="price-on small muted">${esc(STR.plain.priceOn(mine.name, window.Vegas.centsText(mine.c) || fmtP(mine.c)))}${vg ? ` · <span class="vegas-line">${esc(vg)}</span>` : ''}${withTip ? ' ' + tip('americanOdds') : ''}${cheaper ? ` · <span class="cheaper">${esc(STR.plain.cheaperOn(cheaper.name, fmtP(cheaper.c)))}</span>` : ''}</div>`;
   }
 
   /** "+1.5 = they win, or lose by just 1 run" for a spread text. @returns {string} HTML */
@@ -188,14 +200,14 @@
    *   🕒 Mon Oct 19 · 7:08 PM CT
    * @param {object} l picks.json leg @returns {string} HTML
    */
-  function plainLegHtml(l) {
+  function plainLegHtml(l, tipFirstLeg) {
     const sp = PL.splitTap(l.desc);
     const { mine } = appPrices(l);
     const p = isC(l.fair) ? l.fair / 100 : mine ? mine.c / 100 : null;
     return `<span class="leg-body"><span class="leg-title">${posText(sp.title, l)}</span>
       ${mine ? `<span class="pay-big">${esc(betGetText(mine.c))}</span>` : ''}
       ${p ? `<span class="chance-line">${chanceHtml(p)}</span>` : ''}
-      ${tapHtml(sp)}${spreadHtml(sp.title + ' ' + (sp.tap || ''), l)}${priceLineHtml(l)}
+      ${tapHtml(sp)}${spreadHtml(sp.title + ' ' + (sp.tap || ''), l)}${priceLineHtml(l, null, tipFirstLeg)}
       ${GT.valid(l.start_time) ? `<span class="leg-when small muted">🕒 ${esc(GT.format(l.start_time))}</span>` : ''}</span>`;
   }
 
@@ -569,7 +581,7 @@
       : `${isC(pk.price) ? `<div class="pay-big">${esc(betGetText(appPrices(pk, bookPrices(pk)).mine.c))} ${tip('payout')}</div>` : ''}
          ${tapHtml(sp)}${spreadHtml((pk.side || '') + ' ' + (pk.market || ''), pk)}
          ${deal ? `<div class="deal deal-${deal} small">${esc(STR.plain.deal[deal])} ${tip('advantage')}</div>` : ''}
-         ${priceLineHtml(pk, bookPrices(pk))}`;
+         ${priceLineHtml(pk, bookPrices(pk), true)}`;
     const teams = (pk.teams || []).map(teamRef);
     return `<div class="card ${action === 'skip' ? 'skip' : ''}">
       <div class="pick-head">
@@ -582,7 +594,7 @@
       </div>
       ${evalBlock(pk, sec || 'singles')}
       ${moneyHtml}
-      ${isMulti ? `<ul class="legs">${pk.legs.map(l => `<li>${l.team ? T.badge(teamRef(l.team), 20) : ''}${plainLegHtml(l)}</li>`).join('')}</ul>` : ''}
+      ${isMulti ? `<ul class="legs">${pk.legs.map((l, i) => `<li>${l.team ? T.badge(teamRef(l.team), 20) : ''}${plainLegHtml(l, i === 0)}</li>`).join('')}</ul>` : ''}
       <div><b>${esc(P.bet)}:</b> ${esc(stakeText(pk))} ${tip('unit')}</div>
       ${pk.pending_news ? `<div class="news">⏳ <b>${esc(P.news)}</b> ${esc(pk.pending_news)}</div>` : ''}
       ${pk.verify_note ? `<div class="verify">⚠️ ${esc(pk.verify_note)}</div>` : ''}
@@ -910,6 +922,7 @@
           <input class="l-price" inputmode="text" placeholder="${esc(K.legPricePh)}" value="${esc(l.price)}" aria-label="${esc(K.legPrice)}">
         </div>
         <div class="leg-hint"></div>
+        <div class="leg-am small muted" hidden><span class="am-t"></span> ${tip('americanOdds')}</div>
         <div class="leg-cheaper small"></div>
         ${related ? `<div class="related-flag">⚠️ ${esc(K.related)} ${tip('related')}</div>` : ''}
       </div>`;
@@ -940,6 +953,12 @@
       // Plain: "Bet $10 → get $11.76 back · Wins about 8 out of 10 times" (no "x", no %).
       h.textContent = l.price ? (ok ? `${betGetText(ok.p * 100) || fmtP(ok.p * 100)} · ${chanceText(ok.p)}` : K.cantRead) : '';
       h.className = 'leg-hint' + (l.price && !ok ? ' error' : '');
+      // Small price line: "63¢ (-170) · Vegas: -174 (BetMGM)" (only when the typed price is readable).
+      const am = $('.leg-am', div);
+      if (am) {
+        am.hidden = !ok;
+        if (ok) $('.am-t', am).textContent = (window.Vegas.centsText(ok.p * 100) || '') + (vegasText(l.marketId, l.side) ? ' · ' + vegasText(l.marketId, l.side) : '');
+      }
       // Kalshi only when it's cheaper than the price typed for this leg.
       const ch = $('.leg-cheaper', div);
       if (ch) ch.textContent = ok && l.platform !== 'Kalshi' && isC(l.kalshiPrice) && l.kalshiPrice < ok.p * 100 ? STR.plain.cheaperOn('Kalshi', fmtP(l.kalshiPrice)) : '';

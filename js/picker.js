@@ -47,6 +47,7 @@
     cache.index = await r.json();
     window.Teams.registerFromIndex(cache.index);
     await window.Positions.load();   // position badges (no file = no badges)
+    await window.Vegas.load();       // sportsbook "Vegas" odds (no file = none shown)
     return cache.index;
   }
 
@@ -555,7 +556,7 @@
     /** Whole results box: count + Expand all / Collapse all + game cards. */
     function drawTree() {
       const t = state.tree;
-      results.innerHTML = `<div class="pres-head"><span>${esc(F.matchGames(t.total, t.games.length))} ${tipBtn('howPrices')}</span>
+      results.innerHTML = `<div class="pres-head"><span>${esc(F.matchGames(t.total, t.games.length))} ${tipBtn('howPrices')} ${tipBtn('americanOdds')}</span>
           <span class="pres-tools"><button type="button" class="btn btn-sm" data-expand="all">${esc(F.expandAll)}</button><button type="button" class="btn btn-sm" data-expand="none">${esc(F.collapseAll)}</button></span></div>` +
         t.games.map(nodeHtml).join('');
     }
@@ -669,7 +670,7 @@
           <button type="button" class="btn btn-sm pback">${esc(STR.calc.back)}</button>
           <div class="ghead-main">${window.Teams.badges(teamsOf(ev), 34)}<div><b>${esc(shortTitle(ev))}</b>
             <div class="muted small">${esc(ev.sport)} · ${esc(when(ev.start_time, true))}</div></div></div>
-          <div class="muted small">${esc(state.gameStatus)} ${tipBtn('snapshot')} ${tipBtn('howPrices')}</div>
+          <div class="muted small">${esc(state.gameStatus)} ${tipBtn('snapshot')} ${tipBtn('howPrices')} ${tipBtn('americanOdds')}</div>
         </div>
         <h4>${esc(STR.calc.gameLines)}</h4>
         ${lines.map(m => marketRow(ev, m)).join('') || `<div class="muted small">${esc(STR.none)}</div>`}
@@ -685,6 +686,13 @@
       }));
     }
 
+    /** "Vegas: +120 (DraftKings)" for one side, only when a real sportsbook price exists (js/vegas.js). */
+    function vegasSpan(m, side) {
+      const v = window.Vegas.lookup(m.id, side);
+      return v ? `<span class="vegas">${esc(STR.plain.vegas(v.p, platformName(v.book)))}</span>` : '';
+    }
+    const platformName = id => ((window.APP_CONFIG && APP_CONFIG.platforms.find(p => p.id === id)) || { name: id }).name;
+
     /**
      * One market with two tappable sides.
      * @param {boolean} [withGame] also show the game (search results)
@@ -695,7 +703,7 @@
         const lab = side === 'yes' ? m.side_yes_label : m.side_no_label;
         const k = m.kalshi && (side === 'yes' ? m.kalshi.yes : m.kalshi.no);
         return `<button type="button" class="pbtn" ${c == null ? 'disabled' : ''} data-add="${esc(ev.slug)}|${esc(m.id)}|${side}">
-          <span class="pbtn-lab">${esc(lab)}</span>${/* dollars first ("$10 → $15.75"), the cents price small under it */ ''}<b>${c == null ? '—' : esc(opts.pay ? opts.pay(c) : opts.fmt(c))}</b>${c != null && opts.pay ? `<span class="pbtn-pay">${esc(opts.fmt(c))}</span>` : ''}${/* Kalshi only when it's cheaper */ ''}${k && (c == null || k < c) ? `<span class="kpx">${esc(window.STR && STR.plain ? STR.plain.cheaperOn('Kalshi', opts.fmt(k)) : 'Kalshi ' + opts.fmt(k))}</span>` : ''}</button>`;
+          <span class="pbtn-lab">${esc(lab)}</span>${/* dollars first ("$10 → $15.75"), the cents price small under it */ ''}<b>${c == null ? '—' : esc(opts.pay ? opts.pay(c) : opts.fmt(c))}</b>${c != null ? `<span class="pbtn-pay">${esc(window.Vegas.centsText(c) || opts.fmt(c))}</span>` : ''}${vegasSpan(m, side)}${/* Kalshi only when it's cheaper */ ''}${k && (c == null || k < c) ? `<span class="kpx">${esc(window.STR && STR.plain ? STR.plain.cheaperOn('Kalshi', opts.fmt(k)) : 'Kalshi ' + opts.fmt(k))}</span>` : ''}</button>`;
       };
       const logos = m.player ? window.Teams.badge(Object.assign({ league: ev.league }, (ev.teams || []).find(t => t.abbr === m.team) || {}), 22) : withGame ? window.Teams.badges(teamsOf(ev), 20) : '';
       return `<div class="mrow">

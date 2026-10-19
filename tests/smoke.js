@@ -118,6 +118,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   console.log('game status:', await p.$eval('.ghead', e => e.innerText.replace(/\n/g, ' ')));
   const spreadBtn = await p.$$eval('.pgames .mrow', rows => rows.findIndex(r => /wins by over/.test(r.textContent)));
   const rows = await p.$$('.pgames .mrow');
+  console.log('vegas lines on game bets:', await p.$$eval('.pgames .vegas', x => x.length + ' | ' + (x[0] ? x[0].textContent : 'none')), '| cents (american):', await p.$$eval('.pgames .pbtn-pay', x => x.slice(0, 2).map(e => e.textContent).join(' / ')));
   console.log('spread row:', await rows[spreadBtn].evaluate(r => r.innerText.replace(/\n/g, ' ')));
   const sb = (await rows[spreadBtn].$$('.pbtn'))[1];
   await sb.evaluate(e => e.scrollIntoView({ block: 'center' })); await sb.click(); await wait(1500);
