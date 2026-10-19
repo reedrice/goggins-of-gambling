@@ -363,6 +363,20 @@ window.STR = {
 
   // ---------------------------------------------------------------- record
   record: {
+    /** "Live Bets record" (app.js liveRecordHtml, data/live-record.json, HANDOFF §35). */
+    live: {
+      title: 'Live Bets record',
+      intro: 'Every live alert, kept for good (wins and losses) and graded on the real final result. Each one counts as a flat 1 unit bet at the odds when the alert went out.',
+      none: 'No live alerts graded yet.', empty: 'No live alerts yet. They start once games are live.',
+      wlp: 'W-L-P', hit: 'Hit rate', expected: 'Expected', units: 'Units', roi: 'ROI', sample: 'Graded',
+      all: 'All', big: 'Big', slight: 'Slight', untiered: 'No tier',
+      tiers: { big: 'Big edge', slight: 'Slight edge', untiered: 'No tier' },
+      result: { win: 'Won', loss: 'Lost', push: 'Push', void: 'Void', pending: 'Waiting' },
+      odds: (at, open) => `At alert ${at} · opened ${open}`,
+      counts: (n, pending) => `${n} alerts logged, ${pending} waiting for a result.`,
+      noisy: 'Small samples are noisy: a few games can swing these numbers a lot.',
+      link: 'Market ↗'
+    },
     title: 'How our picks are doing',
     updated: when => `Updated ${when}`,
     loadError: 'Couldn\'t load the record.',
@@ -462,6 +476,7 @@ window.STR = {
 
   // ---------------------------------------------------------------- tooltips (i)
   tips: {
+    liveRecord: '"Hit rate" is how often the alerts won. "Expected" is how often they should win going by their own odds at alert time. Beating Expected over many alerts is what counts. Units: each alert = 1 unit bet.',
     fadeTrent: 'Trent\'s picks come straight from his X posts. Only picks he wrote out in words count; picks only in a picture or with an unclear bet are skipped or marked unclear. Each one is checked against the real final score. "Fade" is the other side of his bet: if he lost, fading him won.',
     americanOdds: '+127 means a $100 bet wins $127. −150 means you bet $150 to win $100. Plus numbers win more than you bet; minus numbers win less. "Vegas" is the best number we found at the big sportsbooks for the same bet.',
     howPrices: 'Every bet shows what you get back: "$10 → $22.73" means bet $10 and get $22.73 back if you win. The small number is the same price the Vegas way: +127 means a $100 bet wins $127, −150 means you bet $150 to win $100. Bigger plus numbers win less often but pay more.',

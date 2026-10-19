@@ -461,3 +461,10 @@ a.btn-play { display: block; text-align: center; text-decoration: none; margin-t
 .play-board th:nth-child(2), .play-board td:nth-child(2) { text-align: left; width: 32%; }
 .play-board th { color: var(--muted); font-weight: 600; font-size: 12px; }
 .play-board tr.me td { color: #9be3a8; font-weight: 700; }
+
+/* 24. Live Bets view: our "Live Bets record" under #live-bets-root (app.js liveRecordHtml, HANDOFF §35). */
+.live-rec th, .live-rec td { padding: 6px 4px; font-size: 13px; }
+.live-rec-item .lr-top { display: flex; justify-content: space-between; gap: 8px; align-items: flex-start; }
+.live-rec-item .lr-top b { overflow-wrap: anywhere; }
+.lr-tier { font-weight: 700; } .lr-big { color: var(--accent); } .lr-slight { color: var(--muted); }
+.live-record-root { margin-top: 18px; }

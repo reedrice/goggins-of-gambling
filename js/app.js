@@ -895,7 +895,10 @@
     tab.querySelectorAll('[data-picks-view]').forEach(b => (b.onclick = () => go(b.dataset.picksView)));
     if (picksView === 'live') {
       // Richie's container. Keep this tie-in tiny: one div + one call.
-      $('#picks-view').innerHTML = '<div id="live-bets-root" class="live-bets-root"></div>';
+      // Below Richie's container: OUR "Live Bets record" (Reed: it lives here, never on
+      // the Record tab, and never as a new bottom tab). Pablo's files stay untouched.
+      $('#picks-view').innerHTML = '<div id="live-bets-root" class="live-bets-root"></div><section id="live-record-root" class="live-record-root"></section>';
+      fetchData('data/live-record.json').catch(() => null).then(rec => { const box = $('#live-record-root'); if (box) box.innerHTML = liveRecordHtml(rec); });
       if (window.LiveBets && typeof LiveBets.render === 'function') LiveBets.render($('#live-bets-root'));
       [0, 1500, 4000].forEach(ms => setTimeout(() => { paintLiveBadges(); paintLiveToast(); }, ms));   // Richie's view updates its seen key -> badge clears
       return;
@@ -1666,6 +1669,32 @@
     }
     html += renderPlatformCompare(log, odds);
     el.innerHTML = html;
+  }
+
+  /**
+   * "Live Bets record" (shown in the Live Bets view under #live-bets-root, NOT on the Record tab): every live alert, logged for good and graded on real
+   * results (data/live-record.json, written by scripts/grade-live-alerts.mjs,
+   * HANDOFF §35). Flat 1 unit per alert. American odds only; no cents/dollars.
+   * Data text is untrusted: esc() everything, safeUrl() links.
+   */
+  function liveRecordHtml(rec) {
+    const X = STR.record.live;
+    let h = `<h3>${esc(X.title)} ${tip('liveRecord')}</h3>`;
+    if (!rec || !Array.isArray(rec.entries)) return h + `<div class="section-empty">${esc(X.none)}</div>`;
+    const T = rec.totals || {}, rate = v => (v == null ? '–' : `${v}%`), u = v => `${v > 0 ? '+' : ''}${Number(v || 0).toFixed(2)}u`;
+    const row = (label, t) => (t ? `<tr><td>${esc(label)}</td><td class="num">${t.w}-${t.l}-${t.p}</td><td class="num">${esc(rate(t.hit_rate))}</td><td class="num">${esc(rate(t.expected_rate))}</td><td class="num ${sign(t.units)}">${esc(u(t.units))}</td><td class="num ${t.roi == null ? '' : sign(t.roi)}">${esc(rate(t.roi))}</td><td class="num">${t.graded}</td></tr>` : '');
+    const all = T.all || { n: 0, pending: 0 };
+    h += `<p class="muted small">${esc(X.intro)}</p>
+      <div class="table-wrap"><table class="live-rec"><tr><th></th><th class="num">${esc(X.wlp)}</th><th class="num">${esc(X.hit)}</th><th class="num">${esc(X.expected)}</th><th class="num">${esc(X.units)}</th><th class="num">${esc(X.roi)}</th><th class="num">${esc(X.sample)}</th></tr>
+      ${row(X.all, T.all)}${row(X.big, T.big)}${row(X.slight, T.slight)}${row(X.untiered, T.untiered)}</table></div>
+      <p class="muted small">${esc(X.counts(all.n, all.pending))} ${esc(X.noisy)}</p>`;
+    const list = rec.entries.slice().sort((a, b) => String(b.at).localeCompare(String(a.at))).slice(0, 30);
+    if (!list.length) return h + `<div class="section-empty">${esc(X.empty)}</div>`;
+    const badge = r => `<span class="badge ${r === 'win' ? 'won' : r === 'loss' ? 'lost' : r === 'pending' ? 'open' : 'push'}">${esc(X.result[r] || r)}</span>`;
+    return h + `<div class="live-rec-list">${list.map(e => `<div class="card live-rec-item">
+        <div class="lr-top"><div><b>${esc(e.side || '')}</b><div class="muted small">${esc(e.market || '')} · ${esc(e.game || '')}</div></div>${badge(e.result)}</div>
+        <div class="small">${esc(X.odds(e.odds_at_alert || '–', e.opening_odds || '–'))} · <span class="lr-tier lr-${esc(e.tier)}">${esc(X.tiers[e.tier] || e.tier)}</span></div>
+        <div class="small muted">${esc(e.time_ct || '')}${safeUrl(e.link) ? ` · <a href="${esc(safeUrl(e.link))}" target="_blank" rel="noopener">${esc(X.link)}</a>` : ''}</div></div>`).join('')}</div>`;
   }
 
   // ---------------------------------------------------------------- settings
