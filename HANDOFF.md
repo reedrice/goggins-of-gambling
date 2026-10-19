@@ -175,6 +175,7 @@ Use **`scripts/update-picks.mjs`**. It's plain Node 18+ with no dependencies. It
 node scripts/update-picks.mjs validate [file]              # check only (picks.json, or predictions.json by filename)
 node scripts/update-picks.mjs picks /tmp/new-picks.json    # replace data/picks.json (auto-fills hit_prob/risk/verdict/same_game, §18), commit, push
 node scripts/update-picks.mjs add-picks /tmp/extra.json   # ADD picks (e.g. tomorrow's, with slate_date) without replacing the file (§23)
+node scripts/update-picks.mjs add-picks /tmp/v2.json --replace --drop <old-id>   # rebuild: same id = update in place, --drop removes
 node scripts/update-picks.mjs list [--date 2026-10-20]     # read-only: day, section, id, side of every pick
 node scripts/update-picks.mjs fill                         # backfill missing hit_prob/risk/verdict/same_game in data/picks.json, commit, push
 node scripts/update-picks.mjs add-predictions /tmp/p.json  # append [{id,date,sport,game,pick,win_prob,projected_score?,...}]
@@ -202,6 +203,7 @@ Daily routine:
    - **Remove it:** pass `--drop <id>` to `picks`.
    - The commit body lists every carried-over id; check it.
    - Clear `pending_news` once the news is in (e.g. "Embiid and LeBron are both playing").
+0b. **Follow Reed's pick-building rules (§24):** merit only, never skip a pick because it's in an open slip; mix sports in slips freely.
 1. Build the new slate in the `picks.json` schema. Use **units, not dollars**, and the platform's actual ask prices (Reed's app is **Polymarket US**, a different exchange from polymarket.com). Set `verify_note` whenever a price came from somewhere else. Set `updated_at` to now (UTC is fine; the UI shows CT).
 2. `grade` yesterday's predictions.
 3. `add-predictions` today's game predictions (`result` defaults to `pending`; ids like `2026-10-20-was-sf`).
@@ -552,3 +554,14 @@ Since Oct 19, 2026, `data/picks.json` can hold **more than one game day**. Reed 
 - **Oct 20, 2026 example:** ids `2026-10-20-x-safer-nyk-sa-duren`, `2026-10-20-x-balanced-det-cade-wemby` (parlays) and `2026-10-20-l-embiid-lebron-cade-wemby` (longshots).
   - The Oct 20 7 AM run carries them over. It should update them by id with fresh prices, or `--drop` them, and never re-add the same slips under new ids.
   - Pending news to clear: Embiid/LeBron playing (76ers report before 6 PM CT) and Chet Holmgren (quad, day-to-day).
+
+## 24. Reed's standing rules for building picks and slips (Oct 19, 2026)
+
+These apply to every singles, props, parlay and long-shot pick: the daily routine, ad-hoc slip research, and anything written to `data/picks.json`.
+
+1. **Merit only. Overlap with open bets is never a reason to skip.** Don't drop or down-stake a player, prop or game because it's already in Reed's (or anyone's) open slip. Pick legs purely on price vs. sportsbook no-vig, stats and news. Overlap gets **one short FYI line** in the reasoning ("FYI: also in your open 7-pick combo"), nothing more.
+   - This replaced an earlier habit: `p-white-td` had been set to skip for overlap alone. It was re-scored on merit (41¢ vs 44%) and is now a small bet.
+   - Still leave a player out when the **price** is bad (e.g. Daniels 175+ passing yards, Avalanche ML on Oct 19), and say why.
+2. **Mix sports freely.** A slip can combine MLB + NFL + NHL + NBA/WNBA legs whenever that makes the best combination. Don't keep a slip to one sport. Set `sport` to the mix (e.g. `"NFL + MLB"`); `same_game` is false once legs span games.
+3. **Rebuilding a slip:** use `add-picks <file> --replace --drop <old-id>` (§8) so the old version is updated or removed, never duplicated. Tonight's slips use stable ids (`x-tonight-safer`, `x-tonight-balanced`, `l-tonight-longshot`); reuse them for later rebuilds the same day.
+

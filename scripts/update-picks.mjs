@@ -15,6 +15,7 @@
  *   node scripts/update-picks.mjs picks <new-picks.json>         # fill hit_prob/risk/verdict, validate, replace, commit, push
  *                                                                # (keeps not-yet-played later-day picks; see "NEXT-DAY PICKS")
  *   node scripts/update-picks.mjs add-picks <extra.json>         # add picks (e.g. tomorrow's) to data/picks.json without replacing it
+ *        [--replace] [--drop <id>]                               #   --replace: same id = update in place; --drop: remove that pick first
  *   node scripts/update-picks.mjs list [--date YYYY-MM-DD]       # print pick ids, days and sides (check before writing a new slate)
  *   node scripts/update-picks.mjs fill                           # fill missing hit_prob/risk/verdict/same_game in data/picks.json, commit, push
  *   node scripts/update-picks.mjs add-predictions <preds.json>   # file = array of Prediction objects
@@ -23,7 +24,9 @@
  *
  *   Flags: --no-push (commit only), --dry-run (validate + print, write nothing),
  *          -m "extra commit body line" (repeatable),
- *          --drop <id> (picks: don't carry this existing pick over; repeatable),
+ *          --drop <id> (picks: don't carry this existing pick over; add-picks:
+ *                       remove this pick; repeatable),
+ *          --replace (add-picks: a pick whose id already exists replaces it in place),
  *          --replace-all (picks: carry nothing over, old behaviour).
  *
  * NEXT-DAY PICKS
@@ -86,6 +89,7 @@ function parseArgs(argv) {
     else if (a === '-m') out.notes.push(argv[++i] || '');
     else if (a === '--drop') (out.drop = out.drop || []).push(argv[++i] || '');
     else if (a === '--replace-all') out.replaceAll = true;
+    else if (a === '--replace') out.replace = true;
     else if (a === '--date') out.date = argv[++i] || '';
     else out.pos.push(a);
   }
@@ -388,20 +392,38 @@ function cmdAddPicks(file, o) {
   const doc = readJSON(PICKS);
   const errs = [];
   if (!inc || typeof inc.sections !== 'object') usage('file must look like {"sections": {"parlays": [ ... ]}}');
-  const added = [];
+  const added = [], replaced = [], dropped = [];
+  // --drop <id>: take these picks off the page first (e.g. earlier slips being rebuilt).
+  for (const id of o.drop || []) {
+    let hit = false;
+    for (const sec of PICK_SECS) {
+      const list = doc.sections[sec] || [], i = list.findIndex(p => p && p.id === id);
+      if (i >= 0) { list.splice(i, 1); hit = true; dropped.push(`${sec}: ${id}`); }
+    }
+    if (!hit) errs.push(`--drop ${id}: no such pick`);
+  }
   for (const [sec, list] of Object.entries(inc.sections)) {
     if (!PICK_SECS.includes(sec)) { errs.push(`sections.${sec}: add-picks takes ${PICK_SECS.join(', ')}`); continue; }
     if (!Array.isArray(list)) { errs.push(`sections.${sec}: must be an array`); continue; }
     doc.sections[sec] = doc.sections[sec] || [];
-    for (const pk of list) { doc.sections[sec].push(pk); added.push({ sec, pk }); }
+    for (const pk of list) {
+      // --replace: an existing id is updated where it is (same section only).
+      const i = o.replace && pk ? doc.sections[sec].findIndex(p => p && p.id === pk.id) : -1;
+      if (i >= 0) { doc.sections[sec][i] = pk; replaced.push({ sec, pk }); }
+      else { doc.sections[sec].push(pk); added.push({ sec, pk }); }
+    }
   }
   failIf(errs, file);
   const filled = PickEval.fillDefaults(doc, STR);
   failIf(validatePicks(doc), PICKS + ' (with added picks)');   // catches duplicate ids too
   doc.updated_at = new Date().toISOString();
-  const days = [...new Set(added.map(a => dayOf(a.pk, doc)))].join(', ');
-  const subject = `Add ${added.length} pick(s) for ${days} to the Picks page`;
-  const body = [...added.map(a => `- ${a.sec}: ${a.pk.id} (${dayOf(a.pk, doc)}) ${a.pk.side}, ${a.pk.stake_units}u`),
+  const days = [...new Set([...added, ...replaced].map(a => dayOf(a.pk, doc)))].join(', ');
+  const line = a => `- ${a.sec}: ${a.pk.id} (${dayOf(a.pk, doc)}) ${a.pk.side}, ${a.pk.stake_units}u`;
+  const subject = replaced.length || dropped.length
+    ? `Update picks for ${days}: ${added.length} added, ${replaced.length} updated, ${dropped.length} removed`
+    : `Add ${added.length} pick(s) for ${days} to the Picks page`;
+  const body = [...(added.length ? ['Added:', ...added.map(line)] : []), ...(replaced.length ? ['Updated (same id):', ...replaced.map(line)] : []),
+    ...(dropped.length ? ['Removed:', ...dropped.map(d => '- ' + d)] : []),
     `Existing picks kept as they were (slate ${doc.slate_date}).`, ...(filled ? [`Filled evaluation defaults on ${filled} pick(s).`] : []), ...o.notes];
   if (o.dryRun) return console.log('[dry-run] would commit:\n' + subject + '\n\n' + body.join('\n'));
   writeJSON(PICKS, doc);
