@@ -6,7 +6,7 @@ import assert from 'node:assert';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { american, pays, quote, liquid, findMoves, appendAlerts, gameOver } from '../scripts/live-watch.mjs';
+import { american, pays, quote, liquid, findMoves, appendAlerts, gameOver, selectMarkets, sportOf, tagOf } from '../scripts/live-watch.mjs';
 
 const F = JSON.parse(fs.readFileSync(new URL('./fixtures/live-watch-sample.json', import.meta.url), 'utf8'));
 
@@ -62,4 +62,22 @@ test('appendAlerts saves prices only (no $) and appends across checks', () => {
 test('gameOver', () => {
   assert.strictEqual(gameOver(F.event), false);
   assert.strictEqual(gameOver({ markets: [{ closed: true }] }), true);
+});
+
+test('snapshot file tag keeps the date', () => assert.strictEqual(tagOf('nfl-was-sf-2026-10-19'), 'was-sf-2026-10-19'));
+
+test('per-sport market types pick ML, main spread/total and named-player props', () => {
+  assert.throws(() => sportOf('xyz-a-b-2099-01-01'));
+  const q = (b, a) => ({ active: true, closed: false, status: 'MARKET_STATUS_OPEN', bestBidQuote: { value: b }, bestAskQuote: { value: a } });
+  // TEST DATA: made-up NHL event (type names match the real API).
+  const ev = { markets: [
+    { id: 1, sportsMarketType: 'hockey_team_full_game_winner', marketSides: [], ...q('0.55', '0.57') },
+    { id: 2, sportsMarketType: 'hockey_team_full_game_total', line: 5.5, ...q('0.48', '0.50') },
+    { id: 3, sportsMarketType: 'hockey_team_full_game_total', line: 6.5, ...q('0.30', '0.32') },
+    { id: 4, sportsMarketType: 'hockey_player_goals', question: 'Will Test Player score?', ...q('0.30', '0.33') },
+    { id: 5, sportsMarketType: 'football_team_full_game_winner', ...q('0.50', '0.52') },
+  ] };
+  const got = selectMarkets(ev, sportOf('nhl-aaa-bbb-2099-01-01'), ['test player']);
+  assert.deepStrictEqual(got.map(m => m.id), [1, 2, 4]);
+  assert.deepStrictEqual(got[1].sides, ['Over 5.5', 'Under 5.5']);
 });

@@ -40,17 +40,39 @@ const cmd = args[0];
 const opt = (k, d) => { const i = args.indexOf('--' + k); return i > 0 ? args[i + 1] : d; };
 const SLUG = opt('slug', 'nfl-was-sf-2026-10-19');
 const DIR = opt('dir', '/workspace/live');
-// "nfl-was-sf-2026-10-19" -> "was-sf"
-const TAG = SLUG.split('-').slice(1, 3).join('-');
+// "nfl-was-sf-2026-10-19" -> "was-sf-2026-10-19". The date is kept (Oct 19)
+// so a rematch later in the season doesn't overwrite this game's snapshot.
+export const tagOf = slug => slug.split('-').slice(1).join('-');
+const TAG = tagOf(SLUG);
 const OPEN_FILE = path.join(DIR, `${TAG}-open.json`);
 const LAST_FILE = path.join(DIR, `${TAG}-last.json`);
 const OPEN_MOVE = Number(opt('open-move', 10));   // pts of implied prob vs open
 const STEP_MOVE = Number(opt('step-move', 6));    // pts vs previous check
 const MAX_WIDTH = 6;
 const ALERTS_DIR = opt('alerts-dir', path.join(path.dirname(new URL(import.meta.url).pathname), '..', 'data', 'live'));                              // max bid/ask gap in pts
-const PLAYERS = opt('players', 'Purdy,Daniels,McCaffrey,Kittle,Evans,Samuel,McLaurin,Aiyuk,Pearsall,Croskey-Merritt,Ertz,Jennings')
-  .split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
-const PROP_TYPES = /player_(passing_yards|rushing_yards|receiving_yards|receptions|touchdowns|passing_touchdowns|interceptions_thrown)$/;
+// Default player list is only for the WAS @ SF trial; other games watch props
+// only for players named with --players.
+const DEFAULT_PLAYERS = SLUG === 'nfl-was-sf-2026-10-19' ? 'Purdy,Daniels,McCaffrey,Kittle,Evans,Samuel,McLaurin,Aiyuk,Pearsall,Croskey-Merritt,Ertz,Jennings' : '';
+const PLAYERS = opt('players', DEFAULT_PLAYERS).split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+
+/**
+ * Per-sport market types, keyed by the slug's league prefix. Names were checked
+ * against real gateway.polymarket.us events on Oct 19, 2026 (nfl-was-sf, nba-bos-det,
+ * wnba-atl-gsv, nhl-col-phi, mlb-cle-tb). Moneyline/spread/total are
+ * `<prefix>_team_full_game_{winner,spread,total}`; props match `props`.
+ */
+export const SPORTS = {
+  nfl:  { prefix: 'football',   props: /^football_player_(passing_yards|rushing_yards|receiving_yards|receptions|touchdowns|passing_touchdowns|interceptions_thrown)$/ },
+  nba:  { prefix: 'basketball', props: /^basketball_player_(points|rebounds|assists|threes)$/ },
+  wnba: { prefix: 'basketball', props: /^basketball_player_(points|rebounds|assists|threes)$/ },
+  nhl:  { prefix: 'hockey',     props: /^hockey_player_(points|goals|assists)$/ },
+  mlb:  { prefix: 'baseball',   props: /^baseball_player_(hits|home_runs|total_bases|rbis|strikeouts)$/ },
+};
+export const sportOf = slug => {
+  const sp = SPORTS[slug.split('-')[0]];
+  if (!sp) throw new Error(`Unknown league in slug "${slug}". Known: ${Object.keys(SPORTS).join(', ')}`);
+  return { ...sp, winner: `${sp.prefix}_team_full_game_winner`, spread: `${sp.prefix}_team_full_game_spread`, total: `${sp.prefix}_team_full_game_total` };
+};
 
 /** Fetch the whole event (all markets + quotes) in one call. */
 async function fetchEvent() {
@@ -75,24 +97,24 @@ export function sides(m) {
   const tn = s => s?.team?.alias || s?.team?.name;
   if (/winner$/.test(m.sportsMarketType)) return [`${tn(yes)} win`, `${tn(no)} win`];
   if (/spread$/.test(m.sportsMarketType)) return [`${tn(yes) || 'Away'} ${yes?.description}`, `${tn(no) || 'Home'} ${no?.description}`];
-  if (/total$/.test(m.sportsMarketType)) return [`Over ${m.line} points`, `Under ${m.line} points`];
+  if (/total$/.test(m.sportsMarketType)) return [`Over ${m.line}`, `Under ${m.line}`]   // points, goals or runs;
   const q = String(m.question).replace(/^Will /, '').replace(/\?$/, '');
   return [`Yes: ${q}`, `No: ${q}`];
 }
 
 /** Pick the markets worth watching: ML, main spread, main total, key props. */
-export function selectMarkets(ev) {
+export function selectMarkets(ev, sp = sportOf(SLUG), players = PLAYERS) {
   const ms = ev.markets.filter(isOpen).map(m => ({ m, q: quote(m) })).filter(x => liquid(x.q));
   const near50 = t => ms.filter(x => x.m.sportsMarketType === t).sort((a, b) => Math.abs(a.q.mid - 50) - Math.abs(b.q.mid - 50))[0];
   const out = [];
-  const ml = ms.find(x => x.m.sportsMarketType === 'football_team_full_game_winner');
+  const ml = ms.find(x => x.m.sportsMarketType === sp.winner);
   if (ml) out.push(['Moneyline', ml]);
-  const sp = near50('football_team_full_game_spread'); if (sp) out.push(['Main spread', sp]);
-  const tot = near50('football_team_full_game_total'); if (tot) out.push(['Main total', tot]);
+  const spr = near50(sp.spread); if (spr) out.push(['Main spread', spr]);
+  const tot = near50(sp.total); if (tot) out.push(['Main total', tot]);
   for (const x of ms) {
-    if (!PROP_TYPES.test(x.m.sportsMarketType)) continue;
+    if (!sp.props.test(x.m.sportsMarketType)) continue;
     const ql = x.m.question.toLowerCase();
-    if (PLAYERS.some(p => ql.includes(p))) out.push(['Player prop', x]);
+    if (players.some(p => ql.includes(p))) out.push(['Player prop', x]);
   }
   return out.map(([kind, { m, q }]) => ({ id: m.id, slug: m.slug, kind, type: m.sportsMarketType, question: m.question, sides: sides(m), mid: +q.mid.toFixed(1),
     // Buy prices (prob pts) of each side at open, so open and now are measured the same way.
