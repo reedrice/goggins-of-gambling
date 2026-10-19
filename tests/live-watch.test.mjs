@@ -6,7 +6,7 @@ import assert from 'node:assert';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { american, pays, quote, liquid, findMoves, appendAlerts, gameOver, selectMarkets, sportOf, tagOf, tierOf, buildLive, openFromPublished } from '../scripts/live-watch.mjs';
+import { american, pays, quote, liquid, findMoves, appendAlerts, gameOver, selectMarkets, sportOf, tagOf, lineInfo, describe, tierOf, buildLive, openFromPublished } from '../scripts/live-watch.mjs';
 
 const F = JSON.parse(fs.readFileSync(new URL('./fixtures/live-watch-sample.json', import.meta.url), 'utf8'));
 
@@ -80,8 +80,11 @@ test('per-sport market types pick ML, main spread/total and named-player props',
     { id: 5, sportsMarketType: 'football_team_full_game_winner', ...q('0.50', '0.52') },
   ] };
   const got = selectMarkets(ev, sportOf('nhl-aaa-bbb-2099-01-01'), ['test player']);
-  assert.deepStrictEqual(got.map(m => m.id), [1, 2, 4]);
+  assert.deepStrictEqual(got.map(m => m.id), [1, 2, 3, 4]);          // alt total 6.5 is a game line too
+  assert.deepStrictEqual(got.map(m => m.kind), ['Moneyline', 'Main total', 'Alt total', 'Player prop']);
+  assert.deepStrictEqual(got.map(m => m.group), ['game', 'game', 'game', 'prop']);
   assert.deepStrictEqual(got[1].sides, ['Over 5.5', 'Under 5.5']);
+  assert.strictEqual(got[3].player, 'Test Player');
 });
 
 test('edge tiers: 10+ big, 4-9 slight, under 4 none', () => {
@@ -109,4 +112,20 @@ test('published file round-trips back to the same opening prices', () => {
   const open = { ...F.open, start_time: '2099-01-01T00:00:00Z', taken_at: 'T0', markets: F.open.markets.map(m => ({ ...m, yesBuy: 51, noBuy: 51 })) };
   const j = buildLive(open, F.event, null, '2026-10-19T20:00:00Z');
   assert.deepStrictEqual(buildLive(openFromPublished(j), F.event, null, '2026-10-19T20:00:00Z'), j);
+});
+
+test('game-line types: periods, team totals, and side names (shapes from the real gateway)', () => {
+  assert.deepStrictEqual(lineInfo('football_team_first_half_spread', 'football'), { mtype: 'spread', period: 'first_half', periodLabel: '1st half' });
+  assert.strictEqual(lineInfo('football_game_fourth_quarter_total', 'football').period, 'fourth_quarter');
+  assert.strictEqual(lineInfo('football_team_points_full_game_total', 'football').mtype, 'team_total');
+  assert.strictEqual(lineInfo('football_game_exact_margin', 'football'), null);
+  assert.strictEqual(lineInfo('football_player_receptions', 'football'), null);
+  // TEST DATA shaped like real markets.
+  const S = (alias, desc, long) => ({ long, description: desc, team: alias ? { alias } : undefined });
+  const half = { sportsMarketType: 'football_team_first_half_winner', question: 'Will San Francisco 49ers win the first half?', marketSides: [S('49ers', 'Yes', true), S('49ers', 'No', false)] };
+  assert.deepStrictEqual(describe(half, lineInfo(half.sportsMarketType, 'football')).sides, ['Yes: San Francisco 49ers win the first half', 'No: San Francisco 49ers win the first half']);
+  const tt = { sportsMarketType: 'football_team_points_full_game_total', line: 13.5, marketSides: [S('Commanders', 'Over', true), S('Commanders', 'Under', false)] };
+  assert.deepStrictEqual(describe(tt, lineInfo(tt.sportsMarketType, 'football')), { sides: ['Commanders Over 13.5 points', 'Commanders Under 13.5 points'], teams: ['Commanders', 'Commanders'] });
+  const q1 = { sportsMarketType: 'football_team_first_quarter_spread', marketSides: [S('Commanders', '+1.50', true), S('49ers', '-1.50', false)] };
+  assert.deepStrictEqual(describe(q1, lineInfo(q1.sportsMarketType, 'football')).sides, ['Commanders +1.50 (Q1)', '49ers -1.50 (Q1)']);
 });

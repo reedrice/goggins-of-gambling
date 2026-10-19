@@ -96,34 +96,96 @@ export function quote(m) {
 export const isOpen = m => m.active && !m.closed && m.status === 'MARKET_STATUS_OPEN';
 export const liquid = q => q && q.width <= MAX_WIDTH && q.mid >= 4 && q.mid <= 96;
 
-/** Plain-English name of the "Yes" and "No" sides of a market. */
-export function sides(m) {
-  const yes = m.marketSides?.find(s => s.long), no = m.marketSides?.find(s => !s.long);
-  const tn = s => s?.team?.alias || s?.team?.name;
-  if (/winner$/.test(m.sportsMarketType)) return [`${tn(yes)} win`, `${tn(no)} win`];
-  if (/spread$/.test(m.sportsMarketType)) return [`${tn(yes) || 'Away'} ${yes?.description}`, `${tn(no) || 'Home'} ${no?.description}`];
-  if (/total$/.test(m.sportsMarketType)) return [`Over ${m.line}`, `Under ${m.line}`]   // points, goals or runs;
-  const q = String(m.question).replace(/^Will /, '').replace(/\?$/, '');
-  return [`Yes: ${q}`, `No: ${q}`];
+// ------------------------------------------------------------ game lines
+// Periods we watch for game lines, from the real gateway type names
+// (`<prefix>_(team|game)_<period>_(winner|spread|total)`, checked Oct 19, 2026).
+const PERIODS = { full_game: 'Full game', first_half: '1st half', second_half: '2nd half',
+  first_quarter: 'Q1', second_quarter: 'Q2', third_quarter: 'Q3', fourth_quarter: 'Q4' };
+// Team-total types per sport prefix (football: points_full_game_total; basketball: total_points).
+const TEAM_TOTAL = { football: /^football_team_points_full_game_total$/, basketball: /^basketball_team_total_points$/ };
+
+/**
+ * What kind of game line a market is, or null if it isn't one we watch.
+ * Returns { mtype: winner|spread|total|team_total, period, periodLabel }.
+ */
+export function lineInfo(type, prefix) {
+  if (TEAM_TOTAL[prefix]?.test(type)) return { mtype: 'team_total', period: 'full_game', periodLabel: PERIODS.full_game };
+  const m = new RegExp(`^${prefix}_(?:team|game)_(${Object.keys(PERIODS).join('|')})_(winner|spread|total)$`).exec(type);
+  return m ? { mtype: m[2], period: m[1], periodLabel: PERIODS[m[1]] } : null;
 }
 
-/** Pick the markets worth watching: ML, main spread, main total, key props. */
+/** Team alias of a market side ("Commanders"), or null for game-wide sides. */
+const teamOf = s => s?.team?.alias || s?.team?.name || null;
+
+/**
+ * Plain-English names of the "Yes" and "No" sides, plus the team each side is
+ * FOR (used by the score/injury checks in live-context.mjs).
+ * Returns { sides: [yes, no], teams: [yesTeam|null, noTeam|null] }.
+ */
+export function describe(m, info) {
+  const yes = m.marketSides?.find(s => s.long), no = m.marketSides?.find(s => !s.long);
+  const per = info && info.period !== 'full_game' ? ` (${info.periodLabel})` : '';
+  const q = String(m.question).replace(/^Will /, '').replace(/\?$/, '');
+  const ty = teamOf(yes), tn = teamOf(no);
+  const t = info?.mtype || (/winner$/.test(m.sportsMarketType) ? 'winner' : /spread$/.test(m.sportsMarketType) ? 'spread' : /total$/.test(m.sportsMarketType) ? 'total' : 'prop');
+  if (t === 'winner') {
+    // Moneyline: two different teams. Period winner ("Will SF win the 1st half?")
+    // and "ends tied" markets have one team or none, so they read as Yes/No.
+    if (ty && tn && ty !== tn) return { sides: [`${ty} win${per}`, `${tn} win${per}`], teams: [ty, tn] };
+    return { sides: [`Yes: ${q}`, `No: ${q}`], teams: [ty, null] };
+  }
+  if (t === 'spread') return { sides: [`${ty || 'Away'} ${yes?.description}${per}`, `${tn || 'Home'} ${no?.description}${per}`], teams: [ty, tn] };
+  if (t === 'team_total') return { sides: [`${ty} Over ${m.line} points`, `${ty} Under ${m.line} points`], teams: [ty, ty] };
+  if (t === 'total') {
+    // Game totals have no team; per-team half totals carry the team on both sides.
+    const who = ty && ty === tn ? `${ty} ` : '';
+    return { sides: [`${who}Over ${m.line}${per}`, `${who}Under ${m.line}${per}`], teams: who ? [ty, ty] : [null, null] };
+  }
+  return { sides: [`Yes: ${q}`, `No: ${q}`], teams: [ty, ty] };
+}
+/** Back-compat: just the two side names. */
+export const sides = m => describe(m).sides;
+
+/** Player name from a prop question: "Will Brock Purdy throw 1+ ..." -> "Brock Purdy". */
+export const playerOf = question => String(question).replace(/^Will /, '').split(/ (?:record|throw|score|have|catch|rush|get|make)\b/)[0].trim();
+
+/**
+ * Pick the markets worth watching:
+ *  - GAME LINES (group "game"): moneyline, every liquid full-game spread and
+ *    total (the one nearest 50% is "Main", the rest "Alt"), team totals, and
+ *    half/quarter winners, spreads and totals. Added Oct 19 so the list isn't
+ *    all props (the first snapshot was 117 props vs 3 game lines).
+ *  - PLAYER PROPS (group "prop"): liquid props for the --players list.
+ * Thin (> 6 pt gap) and extreme (< 4% / > 96%) markets are left out.
+ */
 export function selectMarkets(ev, sp = sportOf(SLUG), players = PLAYERS) {
   const ms = ev.markets.filter(isOpen).map(m => ({ m, q: quote(m) })).filter(x => liquid(x.q));
   const near50 = t => ms.filter(x => x.m.sportsMarketType === t).sort((a, b) => Math.abs(a.q.mid - 50) - Math.abs(b.q.mid - 50))[0];
+  const main = new Set([near50(sp.spread)?.m.id, near50(sp.total)?.m.id]);
   const out = [];
-  const ml = ms.find(x => x.m.sportsMarketType === sp.winner);
-  if (ml) out.push(['Moneyline', ml]);
-  const spr = near50(sp.spread); if (spr) out.push(['Main spread', spr]);
-  const tot = near50(sp.total); if (tot) out.push(['Main total', tot]);
   for (const x of ms) {
-    if (!sp.props.test(x.m.sportsMarketType)) continue;
-    const ql = x.m.question.toLowerCase();
-    if (players.some(p => ql.includes(p))) out.push(['Player prop', x]);
+    const info = lineInfo(x.m.sportsMarketType, sp.prefix);
+    if (info) {
+      const label = info.mtype === 'team_total' ? 'Team total'
+        : info.period === 'full_game' ? (info.mtype === 'winner' ? 'Moneyline' : `${main.has(x.m.id) ? 'Main' : 'Alt'} ${info.mtype}`)
+        : `${info.periodLabel} ${info.mtype === 'winner' ? 'winner' : info.mtype}`;
+      out.push({ x, kind: label, group: 'game', info });
+    } else if (sp.props.test(x.m.sportsMarketType)) {
+      const ql = x.m.question.toLowerCase();
+      if (players.some(p => ql.includes(p))) out.push({ x, kind: 'Player prop', group: 'prop', info: null });
+    }
   }
-  return out.map(([kind, { m, q }]) => ({ id: m.id, slug: m.slug, kind, type: m.sportsMarketType, question: m.question, sides: sides(m), mid: +q.mid.toFixed(1),
-    // Buy prices (prob pts) of each side at open, so open and now are measured the same way.
-    yesBuy: +q.ask.toFixed(1), noBuy: +(100 - q.bid).toFixed(1) }));
+  // Order: moneyline, main lines, alt lines, team totals, periods, then props.
+  const rank = o => o.group === 'prop' ? 9 : o.kind === 'Moneyline' ? 0 : o.kind.startsWith('Main') ? 1 : o.kind.startsWith('Alt') ? 2 : o.kind === 'Team total' ? 3 : 4;
+  out.sort((a, b) => rank(a) - rank(b));
+  return out.map(({ x: { m, q }, kind, group, info }) => {
+    const d = describe(m, info);
+    return { id: m.id, slug: m.slug, kind, group, mtype: info?.mtype || 'prop', period: info?.period || 'full_game',
+      line: m.line ?? null, type: m.sportsMarketType, question: m.question, sides: d.sides, teams: d.teams,
+      player: group === 'prop' ? playerOf(m.question) : null, mid: +q.mid.toFixed(1),
+      // Buy prices (prob pts) of each side at open, so open and now are measured the same way.
+      yesBuy: +q.ask.toFixed(1), noBuy: +(100 - q.bid).toFixed(1) };
+  });
 }
 
 /** Probability points -> American odds string, e.g. 40 -> "+150". */
@@ -262,7 +324,8 @@ export function buildLive(open, ev, prev, nowIso = new Date().toISOString()) {
       const edge = +(sd.open - sd.now).toFixed(1), tier = tierOf(edge);
       if (!tier) continue;
       const key = `${o.id}:${sd.i}`; seen.add(key);
-      edges.push({ key, market_id: o.id, market: o.kind, question: o.question, side: o.sides[sd.i],
+      edges.push({ key, market_id: o.id, market: o.kind, group: o.group || (o.kind === 'Player prop' ? 'prop' : 'game'),
+        question: o.question, side: o.sides[sd.i],
         open_chance: +sd.open.toFixed(1), now_chance: +sd.now.toFixed(1),
         open_odds: american(sd.open), now_odds: american(sd.now), edge, tier,
         first_seen: prevEdges[key]?.first_seen || nowIso, status: 'open' });
@@ -277,14 +340,16 @@ export function buildLive(open, ev, prev, nowIso = new Date().toISOString()) {
     slug: open.slug, game: open.title, url: open.url, start_time: open.start_time,
     status: gameOver(ev) ? 'final' : started ? 'live' : 'pregame',
     updated: nowIso, open_taken_at: open.taken_at, thresholds: { big: BIG_EDGE, slight: SLIGHT_EDGE },
-    open: open.markets.map(o => ({ market_id: o.id, market: o.kind, question: o.question, sides: o.sides, mid: o.mid, yes_buy: o.yesBuy, no_buy: o.noBuy })),
+    open: open.markets.map(o => ({ market_id: o.id, market: o.kind, group: o.group, mtype: o.mtype, period: o.period, line: o.line,
+      question: o.question, sides: o.sides, teams: o.teams, player: o.player, mid: o.mid, yes_buy: o.yesBuy, no_buy: o.noBuy })),
     edges,
   };
 }
 
 /** Rebuild an opening snapshot from a published data/live/<slug>.json. */
 export const openFromPublished = p => ({ slug: p.slug, title: p.game, url: p.url, start_time: p.start_time, taken_at: p.open_taken_at,
-  markets: p.open.map(o => ({ id: o.market_id, kind: o.market, question: o.question, sides: o.sides, mid: o.mid, yesBuy: o.yes_buy, noBuy: o.no_buy })) });
+  markets: p.open.map(o => ({ id: o.market_id, kind: o.market, group: o.group, mtype: o.mtype, period: o.period, line: o.line,
+    question: o.question, sides: o.sides, teams: o.teams, player: o.player, mid: o.mid, yesBuy: o.yes_buy, noBuy: o.no_buy })) });
 
 /** Write data/live/<slug>.json (snapshot first if there is no opening file). */
 async function publish() {
