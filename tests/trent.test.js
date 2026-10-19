@@ -3,7 +3,7 @@ const assert = require('assert');
 const T = require('../js/trent.js');
 let fails = 0;
 function test(n, f) { try { f(); console.log('ok', n); } catch (e) { fails++; console.log('FAIL', n, '-', e.message); } }
-const pk = o => Object.assign({ id: 'x', league: 'NFL', game: 'g', pick: 'p', url: 'https://x.com/a/status/1', posted_at: '2026-10-19T00:00:00Z', unclear: false }, o);
+const pk = o => Object.assign({ id: 'x', league: 'NFL', game: 'g', pick: 'p', post_id: '1234567890123', url: 'https://x.com/BookitWithTrent/status/1234567890123', posted_at: '2026-10-19T00:00:00Z', unclear: false }, o);
 
 test('winPerUnit', () => { assert.strictEqual(T.winPerUnit('+150'), 1.5); assert.ok(Math.abs(T.winPerUnit('-130') - 0.769) < 0.001); assert.strictEqual(T.winPerUnit('+99'), null); });
 test('unitsFor: stated odds, assumed -110 for spreads, unknown ML', () => {
