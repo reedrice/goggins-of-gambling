@@ -644,13 +644,23 @@
     // slate. A pick's day is its own slate_date, else the file's slate_date.
     const days = pickDays(d);
     if (!days.includes(picksDay)) picksDay = defaultPickDay(days);
-    const onDay = it => !days.length || pickDayOf(it, d) === picksDay;
+    // Sport chips (our sports from config.js, only those with picks that day).
+    // A combo's sport is "NBA + NFL", so it shows under each of its sports.
+    const sportsOf = it => String(it.sport || '').split('+').map(x => x.trim()).filter(Boolean);
+    const inDay = it => !days.length || pickDayOf(it, d) === picksDay;
+    const order = (window.APP_CONFIG && APP_CONFIG.sports) || [];
+    const daySports = [...new Set(Object.values(sec).flatMap(l => (l || []).filter(inDay).flatMap(sportsOf)))]
+      .sort((a, b) => (order.indexOf(a) + 1 || 99) - (order.indexOf(b) + 1 || 99));
+    if (picksSport && !daySports.includes(picksSport)) picksSport = '';
+    const onDay = it => inDay(it) && (!picksSport || sportsOf(it).includes(picksSport));
     const isFileDay = !days.length || picksDay === d.slate_date;   // notes are written for the file's own slate
     const title = !days.length || picksDay === todayCT() ? STR.picks.title : picksDay === tomorrowCT() ? STR.picks.titleTomorrow : STR.picks.titleDay;
     let html = `<h2>${esc(title)}</h2>
       <div class="updated">${esc(STR.picks.updated(dayWords(picksDay || d.slate_date || ''), fmtTime(d.updated_at)))}</div>
       ${days.length > 1 ? `<div class="chips pick-days" role="group" aria-label="${esc(STR.picks.dayGroup)}">${days.map(day =>
         `<button type="button" class="chip ${day === picksDay ? 'on' : ''}" data-pick-day="${esc(day)}" aria-pressed="${day === picksDay}">${esc(dayWords(day, true))} <span class="muted small">(${countOnDay(d, day)})</span></button>`).join('')}</div>` : ''}
+      ${daySports.length > 1 ? `<div class="chips pick-sports" role="group" aria-label="${esc(STR.picks.sportGroup)}">${['', ...daySports].map(s =>
+        `<button type="button" class="chip ${s === picksSport ? 'on' : ''}" data-pick-sport="${esc(s)}" aria-pressed="${s === picksSport}">${esc(s || STR.picks.allSports)}</button>`).join('')}</div>` : ''}
       ${isFileDay ? (d.notes || []).map(n => `<div class="verify">${esc(PL.noCents(n))}</div>`).join('') : ''}
       ${riskLegend()}`;
     for (const [key, cat] of PICK_SECTIONS) {
@@ -664,6 +674,7 @@
     el.innerHTML = html;
     el.querySelectorAll('[data-load-pick]').forEach(b => (b.onclick = () => loadPickIntoCalc(b.dataset.loadPick, b.dataset.cat)));
     el.querySelectorAll('[data-pick-day]').forEach(b => (b.onclick = () => { picksDay = b.dataset.pickDay; renderPicks(); }));
+    el.querySelectorAll('[data-pick-sport]').forEach(b => (b.onclick = () => { picksSport = b.dataset.pickSport; renderPicks(); }));
   }
 
   // ------------------------------------------------- picks day switcher
@@ -672,6 +683,8 @@
 
   /** Selected day on the Picks tab (YYYY-MM-DD), kept while the page is open. */
   let picksDay = null;
+  /** Selected sport chip on the Picks tab ('' = all sports). */
+  let picksSport = '';
 
   /** Today's date in Central time, YYYY-MM-DD. */
   const todayCT = () => new Date().toLocaleDateString('en-CA', { timeZone: 'America/Chicago' });

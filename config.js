@@ -22,6 +22,15 @@ window.APP_CONFIG = Object.freeze({
   shortName: 'MIB',
   /** One-line pitch shown on the onboarding screen. */
   onboardingPitch: 'No soft bets. No guessing. Set your bankroll and earn every unit.',
+  /**
+   * OUR SPORTS, in display order (sport chips on Picks and Build a Bet).
+   * Every one is first-class: Polymarket US markets (MarketsCore.LEAGUES),
+   * Kalshi series (fetch-markets.mjs), Vegas odds (fetch-book-odds.mjs
+   * SPORT_KEYS), team logos (teams.js) and positions (fetch-positions.mjs).
+   * tests/sports.test.mjs fails if a sport here is missing from any of them.
+   * NBA added as first-class Oct 19, 2026.
+   */
+  sports: ['NFL', 'MLB', 'NHL', 'NBA', 'WNBA', 'Soccer'],
   /** Small rotating motivational lines shown in the header. */
   slogans: [
     'Stay hard.',

@@ -125,6 +125,8 @@ window.STR = {
     updated: (slate, when) => `Games on ${slate} · Updated ${when}`,
     // Day switcher above the picks (more than one slate in picks.json)
     dayGroup: 'Which day',
+    sportGroup: 'Which sport',
+    allSports: 'All sports',
     titleTomorrow: 'Tomorrow\'s picks',
     titleDay: 'Picks for that day',
     dayToday: words => `Today, ${words}`,

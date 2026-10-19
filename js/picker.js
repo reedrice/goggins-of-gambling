@@ -455,7 +455,7 @@
       if (!idx || !f) return;
       const chip = (kind, val, label, on) => `<button type="button" class="chip ${on ? 'on' : ''}" data-chip="${kind}" data-val="${esc(val)}" aria-pressed="${on}">${esc(label)}</button>`;
       $('.pf-days').innerHTML = days().map(d => chip('day', d, dateLabel(d), f.day === d)).join('') + chip('day', '*', F.allDays, f.day === '*');
-      const order = ['NFL', 'MLB', 'NHL', 'NBA', 'WNBA', 'Soccer'];
+      const order = (window.APP_CONFIG && APP_CONFIG.sports) || ['NFL', 'MLB', 'NHL', 'NBA', 'WNBA', 'Soccer'];   // our sports, config.js
       const sports = [...new Set(eventsIn(Object.assign({}, f, { sport: '', team: '' })).map(e => e.sport))].sort((a, b) => order.indexOf(a) - order.indexOf(b));
       $('.pf-sports').innerHTML = chip('sport', '', F.anySport, !f.sport) + sports.map(s => chip('sport', s, s, f.sport === s)).join('');
 
