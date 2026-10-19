@@ -71,7 +71,9 @@ const KALSHI_SERIES = {
   nhl: { game: 'KXNHLGAME', spread: 'KXNHLSPREAD', total: 'KXNHLTOTAL',
     props: { hockey_player_goals: 'KXNHLGOAL', hockey_player_points: 'KXNHLPTS', hockey_player_assists: 'KXNHLAST' } },
   nba: { game: 'KXNBAGAME', spread: 'KXNBASPREAD', total: 'KXNBATOTAL',
-    props: { basketball_player_points: 'KXNBAPTS', basketball_player_rebounds: 'KXNBAREB', basketball_player_assists: 'KXNBAAST', basketball_player_threes: 'KXNBA3PT', basketball_player_three_pointers_made: 'KXNBA3PT' } },
+    props: { basketball_player_points: 'KXNBAPTS', basketball_player_rebounds: 'KXNBAREB', basketball_player_assists: 'KXNBAAST', basketball_player_threes: 'KXNBA3PT', basketball_player_three_pointers_made: 'KXNBA3PT',
+      // verified open on Kalshi for opening night 2026-10-20 (KXNBASTL/KXNBABLK/KXNBAPRA-26OCT20PHINYK)
+      basketball_player_steals: 'KXNBASTL', basketball_player_blocks: 'KXNBABLK', basketball_player_points_rebounds_assists: 'KXNBAPRA' } },
   wnba: { game: 'KXWNBAGAME', spread: 'KXWNBASPREAD', total: 'KXWNBATOTAL',
     props: { basketball_player_points: 'KXWNBAPTS', basketball_player_rebounds: 'KXWNBAREB', basketball_player_assists: 'KXWNBAAST' } },
   epl: { game: 'KXEPLGAME' }, ucl: { game: 'KXUCLGAME' }, uel: { game: 'KXUELGAME' }, uecl: { game: 'KXUECLGAME' },

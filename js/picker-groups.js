@@ -42,15 +42,24 @@
   const BUCKET_ORDER = PF.PROP_BUCKETS.map(b => b.key).concat('other');
 
   /**
-   * Familiar order for the prop category dropdowns (most-bet first per
-   * sport). Stats not listed come after, by bucket then name.
+   * Familiar order for the prop category dropdowns, per sport (the part of
+   * Polymarket's type before "_player_", e.g. "basketball"). Most-bet first.
+   * A sport not listed here (or a stat not listed) still works: it falls
+   * back to the bucket order, then A-Z, so a new sport needs no code.
    */
-  const STAT_ORDER = ['passing_yards', 'rushing_yards', 'receiving_yards', 'scrimmage_yards', 'receptions',
-    'touchdowns', 'passing_touchdowns', 'first_touchdown', 'team_first_touchdown', 'interceptions_thrown',
-    'passing_attempts', 'passing_completions', 'rushing_attempts', 'longest_reception', 'most_passing_yards', 'fantasy_points_ppr',
-    'hits', 'total_bases', 'hits_runs_rbis', 'rbis', 'home_runs', 'strikeouts', 'outs', 'hits_allowed', 'earned_runs_allowed', 'walks_allowed',
-    'goals', 'assists', 'points', 'shots', 'shots_on_goal', 'saves', 'rebounds', 'threes', 'blocks', 'steals'];
-  const statRank = n => { const i = STAT_ORDER.indexOf(n.key); return i < 0 ? STAT_ORDER.length + BUCKET_ORDER.indexOf(n.bucket) : i; };
+  const STAT_ORDER = {
+    football: ['passing_yards', 'rushing_yards', 'receiving_yards', 'scrimmage_yards', 'receptions',
+      'touchdowns', 'passing_touchdowns', 'first_touchdown', 'team_first_touchdown', 'interceptions_thrown',
+      'passing_attempts', 'passing_completions', 'rushing_attempts', 'longest_reception', 'most_passing_yards', 'fantasy_points_ppr'],
+    baseball: ['hits', 'total_bases', 'hits_runs_rbis', 'rbis', 'home_runs', 'strikeouts', 'outs', 'hits_allowed', 'earned_runs_allowed', 'walks_allowed'],
+    hockey: ['goals', 'assists', 'points', 'shots', 'shots_on_goal', 'saves'],
+    basketball: ['points', 'rebounds', 'assists', 'threes', 'three_pointers_made', 'points_rebounds_assists', 'points_rebounds',
+      'points_assists', 'rebounds_assists', 'double_double', 'triple_double', 'blocks', 'steals'],
+    soccer: ['goals', 'assists', 'shots', 'shots_on_target']
+  };
+  /** "basketball_player_points" -> "basketball" */
+  const sportOf = m => (/^([a-z]+)_player_/.exec(String(m.smt || '')) || [])[1] || '';
+  const statRank = n => { const o = STAT_ORDER[n.sport] || [], i = o.indexOf(n.key); return i < 0 ? 100 + BUCKET_ORDER.indexOf(n.bucket) : i; };
 
   /**
    * Markets in a leaf: by line, low to high (spreads by size of the line),
@@ -89,7 +98,7 @@
       let leaf;
       if (prop) {
         const st = statKey(m);
-        const cat = child(sec, `${sec.id}|${st}`, { level: 2, kind: 'stat', key: st, bucket: PF.propBucket(m), ev });
+        const cat = child(sec, `${sec.id}|${st}`, { level: 2, kind: 'stat', key: st, bucket: PF.propBucket(m), sport: sportOf(m), ev });
         leaf = child(cat, `${cat.id}|${m.player}`, { level: 3, kind: 'player', key: m.player, player: m.player, team: m.team, ev, items: [] });
         cat.count++; cat.best = Math.max(cat.best, s);
       } else {

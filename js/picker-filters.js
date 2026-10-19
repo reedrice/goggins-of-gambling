@@ -58,6 +58,8 @@
     { key: 'hits', re: /^(hits|total_bases|hits_runs_rbis|rbis|runs|singles|doubles|stolen_bases)$/ },
     { key: 'homers', re: /home_runs/ },
     { key: 'pitching', re: /strikeouts|^outs$|_allowed$/ },                // pitcher stats
+    // basketball combos (points + rebounds + assists = "PRA", double-double…); before goals/assists/points
+    { key: 'combos', re: /^(points|rebounds|assists)_(rebounds|assists)|_and_|double_double|triple_double|^pra$/ },
     { key: 'goals', re: /goals/ },
     { key: 'assists', re: /assists/ },
     { key: 'points', re: /^points$/ },

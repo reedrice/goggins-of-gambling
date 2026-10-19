@@ -138,7 +138,7 @@ window.STR = {
         passing: 'Passes, carries & interceptions', fantasy: 'Fantasy points',
         hits: 'Hits, bases & RBIs', homers: 'Home runs', pitching: 'Strikeouts & pitching',
         goals: 'Goals', assists: 'Assists', points: 'Points', rebounds: 'Rebounds',
-        threes: '3-pointers', defense: 'Blocks & steals', shots: 'Shots & saves',
+        threes: '3-pointers', combos: 'Combos (PRA, double-double)', defense: 'Blocks & steals', shots: 'Shots & saves',
         other: 'Other player bets'
       },
       anyTeam: 'Any team',
@@ -168,7 +168,10 @@ window.STR = {
         strikeouts: 'Strikeouts', outs: 'Outs pitched', hits_allowed: 'Hits allowed', earned_runs_allowed: 'Earned runs allowed',
         walks_allowed: 'Walks allowed',
         goals: 'Goals scored', assists: 'Assists', points: 'Points', shots: 'Shots', shots_on_goal: 'Shots on goal', saves: 'Saves',
-        rebounds: 'Rebounds', threes: '3-pointers made', blocks: 'Blocks', steals: 'Steals'
+        rebounds: 'Rebounds', threes: '3-pointers made', blocks: 'Blocks', steals: 'Steals',
+        three_pointers_made: '3-pointers made', points_rebounds_assists: 'Points + rebounds + assists (PRA)',
+        points_rebounds: 'Points + rebounds', points_assists: 'Points + assists', rebounds_assists: 'Rebounds + assists',
+        double_double: 'Double-double', triple_double: 'Triple-double', shots_on_target: 'Shots on target'
       }
     },
     browse: 'Browse games',

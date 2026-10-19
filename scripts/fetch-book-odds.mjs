@@ -105,7 +105,10 @@ const PROP_MARKETS = {
   basketball_player_points: 'player_points',
   basketball_player_rebounds: 'player_rebounds',
   basketball_player_assists: 'player_assists',
-  basketball_player_threes: 'player_threes'
+  basketball_player_threes: 'player_threes',
+  basketball_player_blocks: 'player_blocks',
+  basketball_player_steals: 'player_steals',
+  basketball_player_points_rebounds_assists: 'player_points_rebounds_assists'
 };
 const YES_ONLY = new Set(['player_anytime_td', 'player_goal_scorer_anytime']);
 
@@ -265,11 +268,32 @@ for (const t of targets) {
   if (t.m.type === 'prop') { if (!p.props.has(t.ev.slug)) p.props.set(t.ev.slug, new Set()); p.props.get(t.ev.slug).add(mk); }
   else p.lines.add(mk);
 }
-const lineCost = Object.values(plan).reduce((s, p) => s + p.lines.size, 0);
-const propCost = Object.values(plan).reduce((s, p) => s + [...p.props.values()].reduce((a, x) => a + x.size, 0), 0);
-let withProps = !flag('--no-props') && propCost > 0;
-let propsNote = flag('--no-props') ? 'skipped (--no-props)' : propCost ? '' : 'none needed';
-if (withProps && lineCost + propCost > MAX_CREDITS) { withProps = false; propsNote = `skipped: ${lineCost + propCost} credits would exceed --max-credits ${MAX_CREDITS}`; }
+// BUDGET, by priority. Sports with the most picks/legs today come first
+// (e.g. an NBA-heavy slate puts basketball_nba ahead of NHL). Game lines are
+// taken sport by sport while they fit --max-credits; then player props game
+// by game (games with the most prop picks first) while they still fit. So
+// a busy day trims the least-used sport/props instead of skipping all props.
+const pickCount = lg => targets.filter(t => t.ev.league === lg && t.mkey).length;
+const order = Object.keys(plan).sort((a, b) => pickCount(b) - pickCount(a) || a.localeCompare(b));
+let lineCost = 0, propCost = 0;
+const dropped = [];
+for (const lg of order) {
+  const p = plan[lg];
+  if (lineCost + p.lines.size <= MAX_CREDITS) lineCost += p.lines.size;
+  else { dropped.push(`${lg} game lines`); p.lines = new Set(); }
+}
+let withProps = !flag('--no-props');
+let propsNote = flag('--no-props') ? 'skipped (--no-props)' : '';
+const propGames = [];
+for (const lg of order) for (const [slug, mk] of plan[lg].props) propGames.push({ lg, slug, mk, n: targets.filter(t => t.ev.slug === slug && t.m.type === 'prop').length });
+propGames.sort((a, b) => b.n - a.n || a.slug.localeCompare(b.slug));
+for (const g of propGames) {
+  if (withProps && lineCost + propCost + g.mk.size <= MAX_CREDITS) propCost += g.mk.size;
+  else { if (withProps) dropped.push(`${g.slug} props`); plan[g.lg].props.delete(g.slug); }
+}
+if (!propGames.length && !propsNote) propsNote = 'none needed';
+if (dropped.length) propsNote = (propsNote ? propsNote + '; ' : '') + `over --max-credits ${MAX_CREDITS}, skipped: ${dropped.join(', ')}`;
+console.log(`Priority (most picks first): ${order.map(lg => `${lg} ${pickCount(lg)}`).join(', ') || 'none'}`);
 const planned = lineCost + (withProps ? propCost : 0);
 console.log(`Slate ${slate}: ${targets.length} distinct picks/legs to price (${unpriceable.length} without an Odds API market).`);
 for (const [lg, p] of Object.entries(plan)) console.log(`  ${lg}: lines [${[...p.lines].join(', ') || '-'}], prop games ${p.props.size} [${[...p.props.values()].map(s => [...s].join('+')).join('; ') || '-'}]`);

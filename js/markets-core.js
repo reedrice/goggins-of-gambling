@@ -48,7 +48,7 @@
 
   /** Two-word team nicknames that the "last word" heuristic would break. */
   const TWO_WORD = ['maple leafs', 'red sox', 'white sox', 'blue jays', 'red wings', 'blue jackets',
-    'golden knights', 'trail blazers', 'red bulls'];
+    'golden knights', 'trail blazers', 'red bulls', 'golden state'];
 
   /**
    * Short team nickname for labels ("Guardians", "Maple Leafs", "Commanders").
@@ -77,15 +77,27 @@
 
   /**
    * Full team name WITH the city, for search ("san" -> San Jose Sharks).
-   * NHL/NBA put only the nickname in `name` ("Sharks") and the city version
-   * in safeName ("San Jose Sharks"); the NFL does the opposite ("San
-   * Francisco 49ers" / "SF 49ers"). So take the longest of name, safeName
-   * and alias.
+   * NHL puts only the nickname in `name` ("Sharks") and the full name in
+   * safeName ("San Jose Sharks"); the NFL does the opposite ("San
+   * Francisco 49ers" / "SF 49ers"); the NBA splits it ("76ers" +
+   * "Philadelphia"). So: join city + nickname when neither contains the
+   * other, else take the longer of name and safeName (alias only if both are empty).
    * @param {object} t raw API team @returns {string}
    */
   function fullName(t) {
-    return [t && t.name, t && t.safeName, t && t.alias].filter(x => typeof x === 'string' && x.trim())
-      .sort((a, b) => b.length - a.length)[0] || '';
+    if (!t) return '';
+    const str = x => (typeof x === 'string' ? x.trim() : '');
+    const name = str(t.name), safe = str(t.safeName), alias = str(t.alias);
+    const ab = String(t.displayAbbreviation || t.abbreviation || '').toUpperCase();
+    // NBA/WNBA: name is the nickname ("76ers"), safeName only the city
+    // ("Philadelphia", or "Los Angeles L" for the Lakers). Join them:
+    // "Philadelphia 76ers", "Los Angeles Lakers".
+    const lc = s => s.toLowerCase();
+    if (name && safe && !lc(safe).includes(lc(name)) && !lc(name).includes(lc(safe)) && !(ab && safe.toUpperCase().startsWith(ab + ' '))) {
+      return `${safe.replace(/\s[A-Z]$/, '')} ${name}`;
+    }
+    // Longest real name; the alias is a last resort (Parma's alias is "Crociati (Crusaders)").
+    return [name, safe].filter(Boolean).sort((a, b) => b.length - a.length)[0] || alias;
   }
 
   /** @param {string|number|null} v dollars string @returns {number|null} cents, 1 decimal */
