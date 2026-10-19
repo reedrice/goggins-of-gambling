@@ -543,14 +543,18 @@
     const days = pickDays(d);
     if (!days.includes(picksDay)) picksDay = defaultPickDay(days);
     const onDay = it => !days.length || pickDayOf(it, d) === picksDay;
-    let html = `<h2>${esc(STR.picks.title)}</h2>
+    const isFileDay = !days.length || picksDay === d.slate_date;   // notes are written for the file's own slate
+    const title = !days.length || picksDay === todayCT() ? STR.picks.title : picksDay === tomorrowCT() ? STR.picks.titleTomorrow : STR.picks.titleDay;
+    let html = `<h2>${esc(title)}</h2>
       <div class="updated">${esc(STR.picks.updated(dayWords(picksDay || d.slate_date || ''), fmtTime(d.updated_at)))}</div>
       ${days.length > 1 ? `<div class="chips pick-days" role="group" aria-label="${esc(STR.picks.dayGroup)}">${days.map(day =>
-        `<button type="button" class="chip ${day === picksDay ? 'on' : ''}" data-pick-day="${esc(day)}" aria-pressed="${day === picksDay}">${esc(dayWords(day))} <span class="muted small">(${countOnDay(d, day)})</span></button>`).join('')}</div>` : ''}
-      ${(d.notes || []).map(n => `<div class="verify">${esc(n)}</div>`).join('')}
+        `<button type="button" class="chip ${day === picksDay ? 'on' : ''}" data-pick-day="${esc(day)}" aria-pressed="${day === picksDay}">${esc(dayWords(day, true))} <span class="muted small">(${countOnDay(d, day)})</span></button>`).join('')}</div>` : ''}
+      ${isFileDay ? (d.notes || []).map(n => `<div class="verify">${esc(n)}</div>`).join('') : ''}
       ${riskLegend()}`;
     for (const [key, cat] of PICK_SECTIONS) {
       const items = (sec[key] || []).filter(onDay);
+      // Another day with nothing in this section: skip it (keeps the phone view short).
+      if (!items.length && days.length > 1 && !isFileDay) continue;
       html += `<h3>${esc(STR.picks.sections[key])}</h3>`;
       if (!items.length) { html += `<div class="section-empty">${esc(STR.picks.empty)}</div>`; continue; }
       html += items.map(it => (key === 'predictions' ? predictionCard(it) : pickCard(it, cat, key))).join('');
@@ -590,14 +594,22 @@
   /** Number of pick cards (all sections) on a day. */
   const countOnDay = (doc, day) => Object.values(doc.sections || {}).reduce((n, list) => n + (list || []).filter(it => pickDayOf(it, doc) === day).length, 0);
 
-  /** "Today", "Tomorrow" or "Tue, Oct 20" for a YYYY-MM-DD day. */
-  function dayWords(day) {
+  /** Tomorrow's date in Central time, YYYY-MM-DD. */
+  function tomorrowCT() {
+    const tm = new Date(todayCT() + 'T12:00:00Z'); tm.setUTCDate(tm.getUTCDate() + 1);
+    return tm.toISOString().slice(0, 10);
+  }
+
+  /**
+   * "Today, Mon, Oct 19" / "Tomorrow, Tue, Oct 20" / "Wed, Oct 21" for a
+   * YYYY-MM-DD day. short = no weekday ("Today, Oct 19"), for the chips.
+   */
+  function dayWords(day, short) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(day || '')) return day || '';
-    const t = todayCT();
-    const tm = new Date(t + 'T12:00:00Z'); tm.setUTCDate(tm.getUTCDate() + 1);
-    const words = new Date(day + 'T12:00:00Z').toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'UTC' });
-    if (day === t) return STR.picks.dayToday(words);
-    if (day === tm.toISOString().slice(0, 10)) return STR.picks.dayTomorrow(words);
+    const opts = short ? { month: 'short', day: 'numeric', timeZone: 'UTC' } : { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'UTC' };
+    const words = new Date(day + 'T12:00:00Z').toLocaleDateString('en-US', opts);
+    if (day === todayCT()) return STR.picks.dayToday(words);
+    if (day === tomorrowCT()) return STR.picks.dayTomorrow(words);
     return words;
   }
 
