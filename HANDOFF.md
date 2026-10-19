@@ -522,7 +522,8 @@ Since Oct 19, 2026, `data/picks.json` can hold **more than one game day**. Reed 
   - With more than one day in the file, chips appear above the picks, e.g. "Today, Mon, Oct 19 (7)" and "Tomorrow, Tue, Oct 20 (3)". Every section shows only the selected day.
   - Default: today (CT) if it has picks, else the next day with picks, else the latest.
   - The selection lasts while the page is open.
-  - Strings: `STR.picks.dayGroup` / `dayToday` / `dayTomorrow`. CSS reuses `.chips` / `.chip`.
+  - Strings: `STR.picks.dayGroup` / `dayToday` / `dayTomorrow` / `titleTomorrow` / `titleDay`. CSS: `.chips` / `.chip` plus §17 `.pick-days` (wraps, so both days show on a phone).
+  - On a day other than the file's own slate, the top `notes` are hidden (they describe that slate) and empty sections are skipped.
   - Pick-card legs with a `start_time` show "🕒 Tue 6:00 PM CT".
 - **Writing:**
   - `add-picks <file>` (`{"sections":{"parlays":[...]}}`) appends to the current file. It fills the §18 defaults, validates (including duplicate ids), and commits.
