@@ -185,9 +185,10 @@
     const plat = myPlatform();
     if (plat.id === 'kalshi') {
       const match = o.kalshi_match || o.kalshiMatch || (o.kalshi_url || o.kalshiUrl ? 'event' : 'none');
-      const url = safeUrl(o.kalshi_url || o.kalshiUrl);
+      // fixKalshiUrl upgrades links saved before the app-deep-link fix.
+      const url = safeUrl(window.Picker.fixKalshiUrl(o.kalshi_url || o.kalshiUrl));
       if (match !== 'none' && url) return { url, label: STR.picks.openPlatform('Kalshi'), badge: '' };
-      return { url: 'https://kalshi.com/search?query=' + encodeURIComponent(searchText || ''), label: STR.picks.openPlatform('Kalshi'), badge: STR.picks.notOnKalshi };
+      return { url: window.MarketsCore.kalshiSearchUrl(searchText), label: STR.picks.openPlatform('Kalshi'), badge: STR.picks.notOnKalshi };
     }
     return { url: safeUrl(o.polymarket_url || o.link), label: STR.picks.openPlatform(plat.name), badge: '' };
   }

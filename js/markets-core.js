@@ -192,5 +192,78 @@
     return { yes_ask: ask, yes_bid: bid, no_cost: bid === null ? null : Math.round((100 - bid) * 10) / 10 };
   }
 
-  return { GATEWAY, LEAGUES, nickname, cents, fmtLine, classify, compactMarket, compactEvent, ctDate, bboPrices };
+  // ---------------------------------------------------------------- Kalshi links
+  //
+  // WHY THIS EXISTS: links of the form kalshi.com/markets/<series>/<event>
+  // (no middle segment) redirect fine in a desktop browser, but the Kalshi
+  // phone app (which claims every kalshi.com/markets/* link) opened its
+  // generic "For you" home page instead of the game. Kalshi's own Share
+  // button produces this 3-part form, which is what we build now:
+  //
+  //   https://kalshi.com/markets/<series>/<series-slug>/<event>
+  //       ?op_market_ticker=<MARKET TICKER>&op_order_side=yes|no
+  //
+  //   series       lower-case series ticker            kxnflspread
+  //   series-slug  the series *title* slugified        pro-football-spread
+  //                ("Pro Football Spread"; from GET /series/{ticker})
+  //   event        lower-case event ticker             kxnflspread-26oct19wassf
+  //   op_*         optional: pre-selects the exact line and Yes/No in the
+  //                order ticket (checked on kalshi.com: SF7 + no opened
+  //                "49ers win by over 6.5 points" with NO selected)
+  //
+  // Real shared links with this shape: kalshi.com/markets/kxnflgame/nfl-game/
+  // kxnflgame-26oct25sfatl?op_market_ticker=KXNFLGAME-26OCT25SFATL-SF&op_order_side=yes
+  // Slugs come from the series title, which Kalshi can rename (KXNFLGAME was
+  // "professional-football-game" last season, "nfl-game" now; the web
+  // redirects old slugs). fetch-markets.mjs refreshes them daily into
+  // index.json -> kalshi_series_slugs.
+
+  /** "Pro Football Spread" -> "pro-football-spread". @param {string} title */
+  function kalshiSlug(title) {
+    return String(title || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  }
+
+  /**
+   * Event (game page) URL for a Kalshi event or market ticker.
+   * @param {string} ticker event ticker (KXNFLGAME-26OCT19WASSF) or market ticker (…-SF)
+   * @param {Object<string,string>} slugs series ticker (upper-case) -> slug
+   * @returns {string|null} 3-part URL; if the slug is unknown, the series page
+   *   is not knowable either, so we return the 2-part form (works on the web,
+   *   may open the app's home page) rather than nothing.
+   */
+  function kalshiEventUrl(ticker, slugs) {
+    if (!ticker) return null;
+    const parts = String(ticker).toUpperCase().split('-');
+    if (parts.length < 2) return null;
+    const series = parts[0], event = parts[0] + '-' + parts[1];
+    const slug = slugs && slugs[series];
+    return 'https://kalshi.com/markets/' + series.toLowerCase() + '/' + (slug ? slug + '/' : '') + event.toLowerCase();
+  }
+
+  /**
+   * Exact-market URL for one of OUR sides of a matched market.
+   * @param {{ticker:string, flip?:boolean, no_ticker?:string}} k market.kalshi
+   *   from the snapshot. flip = Kalshi's YES is our NO (e.g. Under, or the +
+   *   side of a spread). no_ticker = moneyline: the other team's market,
+   *   whose YES is our NO.
+   * @param {'yes'|'no'} side our (Polymarket) side
+   * @param {Object<string,string>} slugs see kalshiEventUrl
+   */
+  function kalshiMarketUrl(k, side, slugs) {
+    if (!k || !k.ticker) return null;
+    let ticker = k.ticker, kside = side === 'no' ? 'no' : 'yes';
+    if (side === 'no' && k.no_ticker) { ticker = k.no_ticker; kside = 'yes'; }
+    else if (k.flip) kside = kside === 'yes' ? 'no' : 'yes';
+    const base = kalshiEventUrl(ticker, slugs);
+    return base && base + '?op_market_ticker=' + encodeURIComponent(ticker) + '&op_order_side=' + kside;
+  }
+
+  /** Kalshi search page (used when a game isn't on Kalshi). @param {string} q */
+  function kalshiSearchUrl(q) {
+    return 'https://kalshi.com/search?query=' + encodeURIComponent(q || '');
+  }
+
+  return { GATEWAY, LEAGUES, nickname, cents, fmtLine, classify, compactMarket, compactEvent, ctDate, bboPrices,
+    kalshiSlug, kalshiEventUrl, kalshiMarketUrl, kalshiSearchUrl };
 });

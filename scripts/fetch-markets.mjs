@@ -222,14 +222,19 @@ async function matchKalshi(events) {
     stats.matched++;
     const suffix = hit.event_ticker.split('-')[1];
     ev.kalshi_event = hit.event_ticker;
-    ev.kalshi_url = kalshiUrl(hit.event_ticker);
+    ev.kalshi_url = Core.kalshiEventUrl(hit.event_ticker, SLUGS);
     // Fill missing team codes from the suffix (title-matched events).
     if (!codeOf[A.abbr]) { const t = suffix.slice(7).replace(/^\d+/, ''); codeOf[A.abbr] = ca.find(c => t.startsWith(c) || t.endsWith(c)) || ca[0]; codeOf[B.abbr] = cb.find(c => t.startsWith(c) || t.endsWith(c)) || cb[0]; }
 
     const fetchMk = async series => ((await getJSON(`${KALSHI}/markets?event_ticker=${series}-${suffix}&limit=500`)) || {}).markets || [];
     const kc = m => (m.ticker.split('-').pop() || '').replace(/\d+$/, '');   // "SF21" -> "SF"
     const px = v => { const n = parseFloat(v); return isFinite(n) && n > 0 && n < 1 ? Math.round(n * 1000) / 10 : null; };
-    const set = (m, k, flip) => { m.kalshi = { ticker: k.ticker, yes: px(flip ? k.no_ask_dollars : k.yes_ask_dollars), no: px(flip ? k.yes_ask_dollars : k.no_ask_dollars) }; stats.markets++; };
+    // flip = Kalshi YES is our NO; kept so links can pre-select the right side.
+    const set = (m, k, flip) => {
+      m.kalshi = { ticker: k.ticker, yes: px(flip ? k.no_ask_dollars : k.yes_ask_dollars), no: px(flip ? k.yes_ask_dollars : k.no_ask_dollars) };
+      if (flip) m.kalshi.flip = true;
+      stats.markets++;
+    };
 
     // Moneyline
     const game = await fetchMk(cfg.game);
@@ -239,6 +244,7 @@ async function matchKalshi(events) {
       if (!k) continue;
       const other = m.no_team && game.find(g => kc(g) === codeOf[m.no_team]);
       m.kalshi = { ticker: k.ticker, yes: px(k.yes_ask_dollars), no: px(other ? other.yes_ask_dollars : k.no_ask_dollars) };
+      if (other) m.kalshi.no_ticker = other.ticker;   // our NO = the other team's YES
       stats.markets++;
     }
     // Spreads
@@ -277,13 +283,27 @@ async function matchKalshi(events) {
 }
 
 /**
- * Kalshi web URL for an event ticker (format requested by the owner:
- * kalshi.com/markets/<series>/<event>, lower-case).
- * @param {string} eventTicker e.g. KXNFLGAME-26OCT19WASSF
+ * Series ticker -> URL slug (slugified series title), filled by loadSlugs().
+ * Needed because the Kalshi app only deep-links the 3-part URL
+ * /markets/<series>/<slug>/<event>; see the long comment in
+ * js/markets-core.js. Written to index.json as kalshi_series_slugs.
  */
-function kalshiUrl(eventTicker) {
-  const series = eventTicker.split('-')[0];
-  return `https://kalshi.com/markets/${series.toLowerCase()}/${eventTicker.toLowerCase()}`;
+const SLUGS = {};
+
+/** Fetch titles for every series we might link to. Unknown ones are skipped. */
+async function loadSlugs(leagues) {
+  const want = new Set();
+  for (const lg of leagues) {
+    const c = KALSHI_SERIES[lg];
+    if (!c) continue;
+    [c.game, c.spread, c.total, ...Object.values(c.props || {})].filter(Boolean).forEach(t => want.add(t));
+  }
+  await pool([...want], 4, async t => {
+    const d = await getJSON(`${KALSHI}/series/${t}`).catch(() => null);
+    const title = d && d.series && d.series.title;
+    if (title) SLUGS[t] = Core.kalshiSlug(title);
+  });
+  return SLUGS;
 }
 
 // ------------------------------------------------------------------ outputs
@@ -308,6 +328,9 @@ function writeOutputs(events, dates) {
   const index = {
     schema_version: 1, updated_at: now, source: 'Polymarket US public API (gateway.polymarket.us) + Kalshi public API',
     dates,
+    // Kalshi series ticker -> URL slug; the browser uses this to build
+    // app-friendly links (js/picker.js -> MarketsCore.kalshiMarketUrl).
+    kalshi_series_slugs: SLUGS,
     events: events.map(ev => {
       const players = {};
       ev.markets.forEach(m => { if (m.player && !players[m.player]) players[m.player] = m.team || ''; });
@@ -345,7 +368,8 @@ function enrichPicks(events) {
     const before = JSON.stringify(obj);
     obj.polymarket_url = /polymarket\.us/.test(obj.link || '') ? obj.link : ev.polymarket_url;
     const kt = mk && mk.m.kalshi ? mk.m.kalshi.ticker : null;
-    obj.kalshi_url = kt ? kalshiUrl(kt.split('-').slice(0, 2).join('-')) : (ev.kalshi_url || null);
+    // Exact market (pre-selects line + side) -> game page -> null (UI shows search + "Not on Kalshi").
+    obj.kalshi_url = kt ? Core.kalshiMarketUrl(mk.m.kalshi, obj.market_side === 'no' ? 'no' : 'yes', SLUGS) : (ev.kalshi_url || null);
     // kalshi_match tells the UI how good the link is: exact market, event page, or nothing.
     obj.kalshi_match = kt ? 'market' : ev.kalshi_url ? 'event' : 'none';
     if (mk && mk.m.kalshi) obj.kalshi_price = obj.market_side === 'no' ? mk.m.kalshi.no : mk.m.kalshi.yes;
@@ -364,7 +388,7 @@ const dates = Array.from({ length: DAYS }, (_, i) => addDays(today, i));
 const events = await fetchPolymarket(dates);
 let ks = { events: 0, matched: 0, markets: 0 };
 if (!flag('--no-kalshi')) {
-  try { ks = await matchKalshi(events); } catch (e) { console.warn('Kalshi matching failed (snapshot still written):', e.message); }
+  try { await loadSlugs(new Set(events.map(e => e.league))); ks = await matchKalshi(events); } catch (e) { console.warn('Kalshi matching failed (snapshot still written):', e.message); }
 }
 const { bytes, indexBytes } = writeOutputs(events, dates);
 const enriched = enrichPicks(events);

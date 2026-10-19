@@ -68,6 +68,9 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await p.$eval('#slip', e => e.scrollIntoView({ block: 'start' })); await wait(300);
   await p.screenshot({ path: SHOT + '/5-slip.png' });
   await tap('#c-save'); await p.waitForSelector('[data-settle]');
+  // Kalshi links must be the app-friendly 3-part form (series/slug/event[?op_market_ticker=…]).
+  console.log('saved leg kalshi links:', await p.evaluate(() => JSON.parse(localStorage.betdash_bets)[0].legs.map(l => l.kalshiUrl)));
+  console.log('old link upgraded:', await p.evaluate(() => Picker.fixKalshiUrl('https://kalshi.com/markets/kxnflgame/kxnflgame-26oct19wassf')));
   console.log('bet logos:', await p.$$eval('#tab-bets .tlogo', x => x.length));
   await tap('[data-settle="won"]'); await wait(300);
   console.log('money after win:', await p.$eval('#hdr-bankroll', e => e.textContent));

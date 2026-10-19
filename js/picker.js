@@ -82,10 +82,19 @@
     return side === 'no' ? p.no_cost : p.yes_ask;
   }
 
-  /** Kalshi event URL from a market ticker (KXNFLGAME-26OCT19WASSF-SF -> …/kxnflgame/kxnflgame-26oct19wassf). */
-  function kalshiUrlFromTicker(t) {
-    const ev = String(t).split('-').slice(0, 2).join('-');
-    return `https://kalshi.com/markets/${ev.split('-')[0].toLowerCase()}/${ev.toLowerCase()}`;
+  /**
+   * Kalshi link for a market ticker. Uses the app-friendly 3-part format
+   * /markets/<series>/<series-slug>/<event> (see the comment above
+   * MarketsCore.kalshiSlug for why). Slugs come from index.json
+   * (kalshi_series_slugs), written daily by scripts/fetch-markets.mjs.
+   * @param {string} t market or event ticker
+   * @param {'yes'|'no'} [side] our side; with a side the link also pre-selects
+   *   the exact line and Yes/No in Kalshi's order ticket
+   * @param {object} [k] full market.kalshi object (for flip / no_ticker)
+   */
+  function kalshiUrlFromTicker(t, side, k) {
+    const slugs = (cache.index && cache.index.kalshi_series_slugs) || {};
+    return side ? MC.kalshiMarketUrl(k || { ticker: t }, side, slugs) : MC.kalshiEventUrl(t, slugs);
   }
 
   // ---------------------------------------------------------------- helpers
@@ -148,7 +157,8 @@
       platform: 'Polymarket US',
       price: c == null ? '' : Number.isInteger(c) ? String(c) : c + 'c',
       link: ev.polymarket_url || ev.url,
-      kalshiUrl: m.kalshi ? kalshiUrlFromTicker(m.kalshi.ticker) : ev.kalshi_url || null,
+      // exact market + side when matched, else the game page, else null (UI falls back to search)
+      kalshiUrl: m.kalshi ? kalshiUrlFromTicker(m.kalshi.ticker, side, m.kalshi) : ev.kalshi_url || null,
       kalshiMatch: m.kalshi ? 'market' : ev.kalshi_url ? 'event' : 'none',
       kalshiPrice: m.kalshi ? (side === 'yes' ? m.kalshi.yes : m.kalshi.no) : null,
       marketId: m.id, side, eventSlug: ev.slug, eventTitle: shortTitle(ev),
@@ -422,5 +432,19 @@
     return { destroy() { root.innerHTML = ''; } };
   }
 
-  window.Picker = { create, loadIndex, loadEvent, liveEvent, livePrice, kalshiUrlFromTicker };
+  /**
+   * Upgrade an old 2-part Kalshi link (kalshi.com/markets/<series>/<event>,
+   * which the Kalshi app opened on its "For you" page) to the 3-part form.
+   * Used for bets saved in localStorage before the fix. Returns the URL
+   * unchanged if it isn't the old form or the slug isn't known yet.
+   * @param {string} url
+   */
+  function fixKalshiUrl(url) {
+    const m = /^https:\/\/kalshi\.com\/markets\/([a-z0-9]+)\/(\1-[a-z0-9]+)\/?$/i.exec(String(url || ''));
+    if (!m) return url;
+    const slugs = (cache.index && cache.index.kalshi_series_slugs) || {};
+    return slugs[m[1].toUpperCase()] ? MC.kalshiEventUrl(m[2], slugs) : url;
+  }
+
+  window.Picker = { create, loadIndex, loadEvent, liveEvent, livePrice, kalshiUrlFromTicker, fixKalshiUrl };
 })();
