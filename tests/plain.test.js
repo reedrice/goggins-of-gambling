@@ -62,3 +62,8 @@ test('noCents turns cents in text into American odds', () => {
   assert.strictEqual(P.noCents(null), '');
 });
 process.exit(fails ? 1 : 0);
+
+{ const P = require('../js/plain.js'); const assert = require('assert');
+  assert.strictEqual(P.dollars(6.67), '$7'); assert.strictEqual(P.dollars(0.5), 'under $1'); assert.strictEqual(P.dollars(0), '$0');
+  assert.strictEqual(P.dollars(1234.5), '$1,235'); assert.strictEqual(P.dollars(-5), '-$5'); assert.strictEqual(P.dollars(-0.4), '-under $1');
+  console.log('dollars ok'); }

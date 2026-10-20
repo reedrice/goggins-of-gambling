@@ -74,10 +74,10 @@
     try { const url = new URL(s); return /^https?:$/.test(url.protocol) ? url.href : null; } catch (e) { return null; }
   }
 
-  /** @param {number} n @returns {string} "$1,234.56" / "-$5.00" */
+  /** @param {number} n @returns {string} "$1,235" / "-$5" / "under $1" (no cents) */
   function money(n) {
     if (typeof n !== 'number' || !isFinite(n)) return STR.none;
-    return (n < 0 ? '-$' : '$') + Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    return window.Plain.dollars(n);   // whole dollars, no cents (HANDOFF §52)
   }
   const pct = (x, d = 0) => (typeof x === 'number' && isFinite(x) ? (x * 100).toFixed(d) + '%' : STR.none);
   const uid = () => 'b_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 6);
@@ -97,7 +97,7 @@
   const exStake = () => { const u = Number((S.getProfile() || {}).unit); return u > 0 && isFinite(u) ? u : 10; };
 
   /** Dollars without a trailing ".00": "$10", "$24.39". */
-  const cash = n => (Math.round(n * 100) % 100 === 0 ? '$' + Math.round(n).toLocaleString('en-US') : money(n));
+  const cash = n => window.Plain.dollars(n);   // whole dollars, no cents (HANDOFF §52)
 
   /** Compact text for Build-a-bet buttons: "$10 → $24.39" ('' for a bad price). @param {number} c cents */
   function payShort(c) {

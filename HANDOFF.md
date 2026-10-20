@@ -1066,3 +1066,11 @@ they open in a pop-up when you tap a pick card (Picks tab) or a Live Bets card.
   end of style.css): the open-in-app link is a full-width row, the other buttons share an equal-width row under it
   (one button alone spans full width). My Bets settle buttons (`settle-actions`) are 3 equal columns. All 44px tall,
   12px radius, 8px gaps. Functions unchanged. The Record slip pop-up only has the Share pill (unchanged).
+
+## 52. No cents anywhere: one money formatter (Oct 20, 2026)
+- `Plain.dollars(n)` in `js/plain.js` is THE money formatter: whole dollars, rounded ("$6.67" → "$7", "$1,235"),
+  anything between 0 and $1 shows "under $1" (never "$0"), exactly 0 is "$0".
+- `money()` and `cash()` in app.js now just call it, so every stake, payout, bankroll and P/L line follows it
+  ("Bet $2 → get $7 back", "Suggested bet: under $1", header "$123"). The Record slip "pays" string (strings.js) uses it too.
+- Checked all 6 tabs in a browser with a $123.45 bankroll: no "$x.yz" anywhere. Input boxes (stake/unit fields) still
+  accept cents when typed; only display is rounded. Use `Plain.dollars` for any new money text.

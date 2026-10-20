@@ -128,5 +128,17 @@
     });
   }
 
-  return { chanceWords, dots, splitTap, spreadNote, leagueOf, dealWord, noCents };
+  /**
+   * THE money formatter (Reed's rule: no cents anywhere, Oct 20 2026, HANDOFF §52).
+   * Whole dollars, rounded: 6.67 -> "$7", 1234.5 -> "$1,235", -5 -> "-$5".
+   * Anything between 0 and $1 shows "under $1" (never "$0"); exactly 0 is "$0".
+   */
+  function dollars(n) {
+    if (typeof n !== 'number' || !isFinite(n)) return '–';
+    const a = Math.abs(n);
+    if (a > 0 && a < 0.995) return (n < 0 ? '-' : '') + 'under $1';
+    return (n < 0 ? '-$' : '$') + Math.round(a).toLocaleString('en-US');
+  }
+
+  return { dollars, chanceWords, dots, splitTap, spreadNote, leagueOf, dealWord, noCents };
 });

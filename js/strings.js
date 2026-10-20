@@ -429,7 +429,7 @@ window.STR = {
     slip: {
       open: t => `Open the slip for ${t}`, picked: t => `We picked: ${t} to win`,
       chance: 'Our chance', fair: a => `fair odds ${a}`, price: 'Polymarket price', vegas: 'Vegas line',
-      pays: (st, p) => `$${+st.toFixed(2)} → $${p.toFixed(2)} if it wins`,
+      pays: (st, p) => `${window.Plain.dollars(st)} → ${window.Plain.dollars(p)} if it wins`,
       priceNote: 'Price is the last one we saved, so it may have moved since the pick.',
       noPrice: 'No saved Polymarket price for this game.', score: 'We guessed', players: 'Players',
       poly: 'Open on Polymarket', close: 'Close'
