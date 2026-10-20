@@ -60,7 +60,7 @@
   const sortEdges = edges => (edges || []).slice().sort((a, b) =>
     (a.status === 'gone') - (b.status === 'gone') || b.edge - a.edge);
   /** Which group an edge belongs to (older files have no `group`). */
-  const groupOf = e => e.group || (e.market === 'Player prop' ? 'prop' : 'game');
+  const groupOf = e => e.group || (e.market === 'Player prop' | 'prop' : 'game');
 
   /**
    * Split edges for display (pure, tested):
@@ -124,7 +124,7 @@
       status: active.some(d => d.status === 'live') ? 'live' : 'pregame',
       stale: active.some(d => freshness(d).stale),
       edges: active.flatMap(d => (d.edges || []).map(e => ({...e, event_slug:d.slug, event_game:d.game, event_url:d.url, event_status:scoreboard(d).status}))),
-      alerts: active.flatMap(d => (d.alerts || []).map(a => ({...a, text:d.game + ' ? ' + a.text}))).sort((a,b) => String(b.at).localeCompare(String(a.at)))
+      alerts: active.flatMap(d => (d.alerts || []).map(a => ({...a, text:d.game + ' | ' + a.text}))).sort((a,b) => String(b.at).localeCompare(String(a.at)))
     };
   }
   const liveText = () => root.STR.liveBets;
@@ -202,13 +202,13 @@
     link = safeUrl(e.event_url) || link;
     const eventSlug = e.event_slug || curSlug, eventGame = e.event_game || curGame;
     const gone = e.status === 'gone', why = REASON_CLASSES.includes(e.class);
-    const cls = why ? `lb-why lb-${e.class}` : `lb-${e.tier === 'big' ? 'big' : 'slight'}`;
+    const cls = why ? `lb-why lb-${e.class}` : `lb-${e.tier === 'big' | 'big' : 'slight'}`;
     const li = el('li', `lb-edge ${cls}${gone ? ' lb-gone' : ''}`);
     const top = el('div', 'lb-top');
-    const label = gone ? 'Gone' : why ? CLASS_LABEL[e.class] : TIER_LABEL[e.tier] + (e.class === 'unverified' ? ' · unverified' : '');
+    const label = gone ? 'Gone' : why ? CLASS_LABEL[e.class] : TIER_LABEL[e.tier] + (e.class === 'unverified' | ' · unverified' : '');
     top.append(el('span', 'lb-tier', label), el('span', 'lb-pts', `${Math.round(e.edge)} pts cheaper`));
     li.append(top, el('div', 'lb-side', e.side), el('div', 'lb-market', e.market), platRow(e));
-    if (e.event_game) li.append(el('div', 'lb-meta', e.event_game + ' ? ' + e.event_status));
+    if (e.event_game) li.append(el('div', 'lb-meta', e.event_game + ' | ' + e.event_status));
     const pay = pays10(e.now_chance);
     li.append(el('div', 'lb-odds', `${e.now_odds}${pay ? ` · $10 pays $${pay}` : ''}`),
       el('div', 'lb-meta', `Opened ${e.open_odds} · first seen ${clock(e.first_seen)}`));
@@ -228,7 +228,7 @@
       li.classList.add('lb-tap');
       li.addEventListener('click', ev => {
         if (ev.target.closest('a')) return;
-        root.Viz.open({ title: e.side, sub: `${e.market} · ${curGame}`, legs: [{ text: e.side, question: e.question,
+        root.Viz.open({ title: e.side, sub: `${e.market} · ${eventGame}`, legs: [{ text: e.side, question: e.question,
           eventSlug, marketId: e.market_id, side: Number(String(e.key).split(':')[1]) || 0 }] });
       });
     }
