@@ -135,10 +135,10 @@
   const getJSON = url => (cache[url] = cache[url] || fetch(url).then(r => (r.ok ? r.json() : null)).catch(() => null));
 
   // ------------------------------------------------------------ zoomable chart (§55)
-  const MIN_SPAN = 60e3, MAX_SPAN = 24 * 3600e3;
+  const MIN_SPAN = 60e3;
   /** Pure: visible window {a, b} for data [tMin, tMax] and view state {span, end, live}. */
   function viewWindow(tMin, tMax, v) {
-    const full = Math.max(MIN_SPAN, Math.min(MAX_SPAN, tMax - tMin)); // zoom-out cap: 24 h
+    const full = Math.max(MIN_SPAN, tMax - tMin); // max zoom-out = All, like Polymarket
     const span = Math.min(full, Math.max(MIN_SPAN, v.span || full));
     let end = v.live ? tMax : Math.min(tMax, Math.max(tMin + span, v.end || tMax));
     return { a: end - span, b: end, span };
@@ -163,7 +163,7 @@
    * zoom, drag to pan, tap or long-press to read a point, double-tap or Reset to snap back.
    * The y-axis fits what's in view. While "live", new points keep the right edge at now;
    * panning away shows "Back to live". The view state lives on the box, so the 1.5 s live
-   * refreshes don't undo a zoom. Default view: fully zoomed out = last 24 h (or all data if less); zoom-out stops at 24 h.
+   * refreshes don't undo a zoom. Default view: fully zoomed out = all history, matching Polymarket US's default "All" window.
    */
   function drawChart(box, points, marks) {
     box._pts = points; box._marks = marks || [];
@@ -295,8 +295,8 @@
   const PM = 'https://gateway.polymarket.us';
   /**
    * Price chart section for one leg (§53). Points, best first:
-   *  1. Polymarket US public price history (/v1/price-history, free, CORS open): last day at
-   *     5-minute steps + last hour at 1-minute steps. Buy prices (what you'd pay).
+   *  1. Polymarket US public price history (/v1/price-history, free, CORS open): full history (INTERVAL_ALL,
+   *     3-hour steps) + last day at 5-minute steps + last hour at 1-minute steps. Buy prices (what you'd pay).
    *  2. else our live-tick history (data/live/<slug>-history.json) + saved snapshot points
    *     (leg.extraPoints: pick price / closing price).
    *  3. + live points from the pop-up's poller (BBO every ~1.5 s while open).
@@ -317,12 +317,14 @@
     };
     const loadApi = async slug => {
       const g = gen;
-      const [d, h] = await Promise.all([
+      const [all, d, h] = await Promise.all([
+        getJSON(`${PM}/v1/price-history?symbol=${encodeURIComponent(slug)}&fixedInterval=INTERVAL_ALL&fidelity=180&_=${Math.floor(Date.now() / 300000)}`),
         getJSON(`${PM}/v1/price-history?symbol=${encodeURIComponent(slug)}&fixedInterval=INTERVAL_1D&fidelity=5&_=${Math.floor(Date.now() / 30000)}`),
         getJSON(`${PM}/v1/price-history?symbol=${encodeURIComponent(slug)}&fixedInterval=INTERVAL_1H&fidelity=1&_=${Math.floor(Date.now() / 30000)}`)]);
       if (g !== gen) return;
       const hr = pmHistory(h, side), cut = hr.length ? hr[0].t : Infinity;
-      api = pmHistory(d, side).filter(p => p.t < cut).concat(hr);
+      const dy = pmHistory(d, side).filter(p => p.t < cut), dcut = dy.length ? dy[0].t : cut;
+      api = pmHistory(all, side).filter(p => p.t < dcut).concat(dy, hr);   // All (3 h steps) + day (5 min) + hour (1 min)
       draw();
     };
     sec.slug = () => cur.slug || null;
