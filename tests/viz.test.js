@@ -63,3 +63,15 @@ console.log('viz ok');
   const g = [{ value: 1, opp: 'a' }, { value: 2, opp: 'b', last: true }, { value: 3, opp: 'c', last: true }];
   assert.strictEqual(V.pickGames(g, 'Season').length, 1); assert.strictEqual(V.pickGames(g, 'L10').length, 1); assert.strictEqual(V.pickGames(g, 'Last').length, 2);
   console.log('viz current-season ok'); }
+
+// Never blank (DESIGN.md): empty states name the source and time; blankVisuals flags empty containers.
+{
+  const assert = require('assert'), Viz = require('../js/viz.js');
+  const t = Viz.noteText('ESPN', 'not enough games yet to chart', Date.parse('2026-10-20T11:17:00Z'));
+  assert.strictEqual(t, 'Checked ESPN · not enough games yet to chart · 6:17 AM CT');
+  assert.ok(/^Couldn't reach Polymarket · retrying · /.test(Viz.noteText('', "Couldn't reach Polymarket · retrying")));
+  const node = (txt, kids = []) => ({ hidden: false, textContent: txt, closest: () => null, querySelector: sel => kids.find(k => sel.includes(k)) || null });
+  const root = { querySelectorAll: () => [node(''), node('Checked ESPN · x'), node('', ['svg']), Object.assign(node(''), { hidden: true })] };
+  assert.strictEqual(Viz.blankVisuals(root).length, 1, 'one empty visual container must be flagged');
+  console.log('never-blank ok');
+}

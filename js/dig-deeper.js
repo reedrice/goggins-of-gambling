@@ -93,7 +93,7 @@
 
   // ---------------------------------------------------------------- browser
   const cache = new Map();
-  const getJSON = u => cache.get(u) || (cache.set(u, fetch(u).then(r => (r.ok ? r.json() : null)).catch(() => null)), cache.get(u));
+  const getJSON = u => cache.get(u) || (cache.set(u, fetch(u).then(r => (r.ok ? r.json() : null)).catch(() => null).then(j => { if (j == null) cache.delete(u); return j; })), cache.get(u));
   const el = (t, c, txt) => { const e = document.createElement(t); if (c) e.className = c; if (txt != null) e.textContent = txt; return e; };
   const SVGNS = 'http://www.w3.org/2000/svg';
   function donut(items, me) {
@@ -136,7 +136,7 @@
   let live = null;
   function liveFor(spec) {
     if (live) return live.el;
-    const V = globalThis.Viz; if (!V || !V.liveChart || !spec.marketId) return el('div', 'dd-none', 'No games yet this season');
+    const V = globalThis.Viz; if (!V || !V.liveChart || !spec.marketId) return (globalThis.Viz && globalThis.Viz.note ? globalThis.Viz.note('Polymarket', 'no market linked to chart', 'dd-none') : el('div', 'dd-none', 'no market linked to chart'));
     live = V.liveChart({ marketId: spec.marketId, marketSlug: spec.marketId, eventSlug: spec.eventSlug || null, side: spec.side === 'no' || spec.side === 1 ? 1 : 0, text: spec.text, question: spec.question, player: spec.player || null });
     return live.el;
   }
@@ -147,12 +147,12 @@
     const V = globalThis.Viz; let p = V && V.parseProp({ question: spec.question, text: spec.text, player: spec.player, marketSlug: spec.marketId });
     if (!p && !spec.player) return false;
     if (!p) p = { player: spec.player, league: (s && V.ESPN_PATH[s.league]) ? s.league : '', n: 0, stat: { key: 'any', names: [], label: '' } };   // stat Viz can't parse (e.g. saves)
-    const got = await V.loadGames(p); if (!got || !got.log) { body.append(el('div', 'dd-none', 'No games found.')); return true; }
+    const got = await V.loadGames(p); if (!got || !got.log) { body.append((globalThis.Viz && globalThis.Viz.note ? globalThis.Viz.note(got ? 'ESPN' : '', got ? 'no games found' : "Couldn't reach ESPN · try again", 'dd-none') : el('div', 'dd-none', got ? 'no games found' : "Couldn't reach ESPN · try again"))); return true; }
     const path = V.ESPN_PATH[got.league];
     const ath = await getJSON(`https://site.web.api.espn.com/apis/common/v3/sports/${path}/athletes/${got.id}`);
     const pos = ath && ath.athlete && ath.athlete.position && ath.athlete.position.abbreviation;
     const list = statsFor(got.league, pos, got.log.names || []);
-    if (!list.length) { body.append(el('div', 'dd-none', 'No stats for this position.')); return true; }
+    if (!list.length) { body.append((globalThis.Viz && globalThis.Viz.note ? globalThis.Viz.note('ESPN', 'no stats for this position', 'dd-none') : el('div', 'dd-none', 'no stats for this position'))); return true; }
     const myTeam = V.espnAbbr(got.team), opp = s ? [s.away, s.home].map(V.espnAbbr).find(a => a && a !== myTeam) : null;
     let key = (list.find(x => S[x.key][1] === (p.stat.names || [])[0]) || list[0]).key, mode = 'L10', line = p.n || null;
     const head = el('div', 'dd-sub', [p.player, pos].filter(Boolean).join(' · '));
@@ -174,7 +174,7 @@
         el('div', 'dd-big', gs.length ? `${hits} of ${gs.length}` : '—'),
         el('div', 'dd-cap', gs.length ? `${line}+ ${S[key][0].toLowerCase()} · avg ${avg(gs)}` : eff === 'Last' ? 'No games last season' : 'No games yet this season'),
         stepper(line, key === 'svp' ? 0.01 : 1, v => { line = Math.max(0, v); draw(); }));
-      if (gs.length) area.append(bars(gs, line));
+      if (gs.length) area.append(bars(gs, line)); else area.append((globalThis.Viz && globalThis.Viz.note ? globalThis.Viz.note('ESPN', mode === 'Last' ? 'no games last season' : 'not enough games yet to chart', 'dd-none') : el('div', 'dd-none', mode === 'Last' ? 'no games last season' : 'not enough games yet to chart')));
     };
     draw();
     if (got.league === 'nfl' && SHARE.includes(posGroup('nfl', pos))) {
@@ -198,7 +198,7 @@
         const leg = el('div', 'dd-legend'); sh.forEach(x => leg.append(el('div', x.name === me.name ? 'dd-me-t' : '', `${x.name} ${Math.round(x.share * 100)}%`)));
         row.append(leg); sec.append(row);
         if (tm.pass + tm.rush) sec.append(el('div', 'dd-cap', `Team pass rate ${Math.round(100 * tm.pass / (tm.pass + tm.rush))}% · last ${ids.length}`));
-      } else sec.append(el('div', 'dd-none', 'No target data.'));
+      } else sec.append((globalThis.Viz && globalThis.Viz.note ? globalThis.Viz.note('ESPN box scores', 'no target data yet', 'dd-none') : el('div', 'dd-none', 'no target data yet')));
     }
     return true;
   }
@@ -230,6 +230,7 @@
         el('div', 'dd-big', rs.length ? `${hits} of ${rs.length}` : '—'),
         el('div', 'dd-cap', !rs.length ? (eff === 'Last' ? 'No games last season' : 'No games yet this season') : `${capWord} · ${team === 'home' ? 'Home' : 'Away'} ${team === 'home' ? `${sum.homeW}-${sum.homeN - sum.homeW}` : `${sum.awayW}-${sum.awayN - sum.awayW}`} · ${sum.w}-${sum.l}`),
         stepper(line, 1, v => { line = v; draw(); }));
+      if (!rs.length) area.append((globalThis.Viz && globalThis.Viz.note ? globalThis.Viz.note('ESPN', mode === 'Last' ? 'no games last season' : 'not enough games yet to chart', 'dd-none') : el('div', 'dd-none', mode === 'Last' ? 'no games last season' : 'not enough games yet to chart')));
       if (rs.length) {
         area.append(bars(rs, kind === 'margin' ? null : line));
         if (kind === 'margin') area.lastChild.querySelectorAll('.dd-bar').forEach((b, i) => b.classList.add(rs[rs.length - 1 - i].value >= line ? 'dd-hit' : 'dd-miss'));
@@ -258,8 +259,10 @@
     if (spec.marketId) { const lc = el('div', 'dd-sec dd-chart'); lc.append(liveFor(spec)); body.append(lc); }
     const s = globalThis.OurChance && globalThis.OurChance.parseSlug(spec.marketId);
     const sec = el('div', 'dd-sec'); body.append(sec);   // history bars + stats: secondary, below (scroll)
-    try { if (!(s && s.kind !== 'prop' ? (await teamView(sec, s, spec), true) : await playerView(sec, spec, s))) sec.append(el('div', 'dd-none', 'No stats for this bet.')); }
-    catch (e) { if (typeof console !== 'undefined') console.warn('dig deeper', e); sec.append(el('div', 'dd-none', 'Couldn\'t load stats.')); }
+    const loading = el('div', 'dd-none', 'Loading stats…'); sec.append(loading);
+    const drop = () => loading.remove(); new MutationObserver((m, o) => { if (sec.children.length > 1) { drop(); o.disconnect(); } }).observe(sec, { childList: true });
+    try { if (!(s && s.kind !== 'prop' ? (await teamView(sec, s, spec), true) : await playerView(sec, spec, s))) sec.append((globalThis.Viz && globalThis.Viz.note ? globalThis.Viz.note('ESPN', 'no stats for this bet', 'dd-none') : el('div', 'dd-none', 'no stats for this bet'))); }
+    catch (e) { if (typeof console !== 'undefined') console.warn('dig deeper', e); sec.replaceChildren((globalThis.Viz && globalThis.Viz.note ? globalThis.Viz.note('', "Couldn't reach ESPN · try again", 'dd-none') : el('div', 'dd-none', "Couldn't reach ESPN · try again"))); }
   }
   return { open, close, teamRows, POSITION_STATS, STATS: S, posGroup, statsFor, rows, split, shares };
 });

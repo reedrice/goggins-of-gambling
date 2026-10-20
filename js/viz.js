@@ -145,8 +145,15 @@
   const SVGNS = 'http://www.w3.org/2000/svg';
   const sv = (tag, attrs) => { const n = document.createElementNS(SVGNS, tag); for (const k in attrs) n.setAttribute(k, attrs[k]); return n; };
   const clock = t => new Date(t).toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit' });
+  /** Pure: the short "we tried" line every empty visual shows (DESIGN.md: never blank). */
+  const noteText = (source, text, t = Date.now()) => `${source ? `Checked ${source} · ` : ''}${text} · ${clock(t)} CT`;
+  /** A minimal empty/loading/error state element. */
+  const note = (source, text, cls = 'viz-none') => el('div', cls, noteText(source, text));
+  /** Pure-ish: visual containers with nothing in them (test hook; also used by tests/no-blank.smoke.js). */
+  const VISUALS = '.viz-chart, .viz-bars-wrap, .viz-sec, .dd-sec, .dd-chart, .dd-live, .dd-share';
+  const blankVisuals = root => [...root.querySelectorAll(VISUALS)].filter(n => !n.hidden && !n.closest('[hidden]') && !(n.textContent || '').trim() && !n.querySelector('svg, canvas, img'));
   const cache = {};
-  const getJSON = url => (cache[url] = cache[url] || fetch(url).then(r => (r.ok ? r.json() : null)).catch(() => null));
+  const getJSON = url => (cache[url] = cache[url] || fetch(url).then(r => (r.ok ? r.json() : null)).catch(() => null).then(j => { if (j == null) delete cache[url]; return j; }));   // failures aren't cached, so retries refetch
 
   // ------------------------------------------------------------ zoomable chart (§55)
   const MIN_SPAN = 60e3;
@@ -223,7 +230,8 @@
     box._gk = gk; box._game = game || null;
     if (points.length < 2) {
       box._ui = null;
-      box.replaceChildren(el('div', 'viz-none', points.length ? `Only one price so far: ${american(points[0].chance)} (${Math.round(points[0].chance)}% chance). The line grows while this is open.` : 'No price history yet.'));
+      box.replaceChildren(points.length ? el('div', 'viz-none', `Only one price so far: ${american(points[0].chance)} (${Math.round(points[0].chance)}% chance). The line grows while this is open.`)
+        : box._err ? note('', "Couldn't reach Polymarket · retrying") : box._loading ? el('div', 'viz-none', 'Loading prices…') : note('Polymarket', 'no price history yet'));
       return;
     }
     if (!box._ui) buildChart(box);
@@ -365,7 +373,7 @@
     const draw = () => {
       const basePts = api.length ? api : tick.points.concat(extra);
       const pts = basePts.concat(live).sort((x, y) => x.t - y.t);
-      if (!pts.length && !leg.eventSlug && !cur.slug) { sec.hidden = true; return; }
+      if (!pts.length && !leg.eventSlug && !cur.slug) { box._loading = false; box.replaceChildren(note('Polymarket', 'no market linked to chart')); return; }
       sec.hidden = false;
       if (globalThis.OurChance && pts.length && (cur.slug || leg.marketSlug) && ocEl.dataset.slug !== (cur.slug || leg.marketSlug)) {
         ocEl.dataset.slug = cur.slug || leg.marketSlug; ocEl.removeAttribute('data-oc-done'); ocEl.hidden = false;
@@ -381,6 +389,8 @@
         getJSON(`${PM}/v1/price-history?symbol=${encodeURIComponent(slug)}&fixedInterval=INTERVAL_1D&fidelity=1&_=${Math.floor(Date.now() / 30000)}`),
         getJSON(`${PM}/v1/price-history?symbol=${encodeURIComponent(slug)}&fixedInterval=INTERVAL_1H&fidelity=1&_=${Math.floor(Date.now() / 30000)}`)]);
       if (g !== gen) return;
+      box._loading = false; box._err = !all && !d && !h;   // every request failed: say so, retry in 15 s
+      if (box._err) setTimeout(() => { if (g === gen && !api.length) loadApi(slug); }, 15000);
       const hr = pmHistory(h, side), cut = hr.length ? hr[0].t : Infinity;
       const dy = pmHistory(d, side).filter(p => p.t < cut), dcut = dy.length ? dy[0].t : cut;
       api = pmHistory(all, side).filter(p => p.t < dcut).concat(dy, hr);   // All (3 h steps) + day (5 min) + hour (1 min)
@@ -389,7 +399,7 @@
     sec.slug = () => cur.slug || null;
     sec.showMarket = (marketId, marketSlug) => {
       if (marketId === cur.id && marketSlug === cur.slug && gen) return;
-      gen++; cur = { id: marketId, slug: marketSlug }; api = []; live = []; box._ui = null;   // new market: fresh view
+      gen++; cur = { id: marketId, slug: marketSlug }; api = []; live = []; box._ui = null; box._loading = !!(marketSlug || leg.eventSlug); box._err = false;   // new market: fresh view
       const own = (marketSlug && marketSlug === leg.marketSlug) || (marketId != null && marketId === leg.marketId);
       extra = own ? (leg.extraPoints || []).filter(x => x && x.chance > 0 && x.chance < 100).map(x => ({ t: Date.parse(x.t), chance: +x.chance })).filter(x => x.t) : [];
       tick = { points: [], marks: [] };
@@ -399,7 +409,7 @@
           if (g !== gen) return;
           if (!cur.slug && h && h.ids && cur.id != null) cur.slug = Object.keys(h.ids).find(k => String(h.ids[k]) === String(cur.id)) || null;
           tick = seriesFor(h, { marketId: cur.id, marketSlug: cur.slug }, side);
-          if (cur.slug && !api.length) loadApi(cur.slug); else draw();
+          if (cur.slug && !api.length) loadApi(cur.slug); else { if (!cur.slug) box._loading = false; draw(); }
         });
       }
       if (marketSlug) loadApi(marketSlug); else draw();
@@ -479,11 +489,12 @@
     const tabs = el('div', 'viz-tabs'), body = el('div', 'viz-bars-wrap'); body.append(el('div', 'viz-none', 'Loading games…'));
     sec.append(tabs, body);
     const base = 'https://site.web.api.espn.com/apis';
-    (async () => {
-      const sr = await getJSON(`${base}/search/v2?query=${encodeURIComponent(p.player)}&limit=10&type=player`);
+    const load = () => (async () => {
+      const sr = await getJSON(`${base}/search/v2?query=${encodeURIComponent(p.player)}&limit=10&type=player&_=${Date.now() % 1e6}`);
       const hit = ((sr && sr.results) || []).flatMap(r => r.contents || []).find(c => (p.league ? c.defaultLeagueSlug === p.league : !!ESPN_PATH[c.defaultLeagueSlug]) && /a:(\d+)/.test(c.uid || ''));
       if (hit && !p.league) p.league = hit.defaultLeagueSlug;
-      if (!hit) { body.replaceChildren(el('div', 'viz-none', `Couldn't find ${p.player}'s games on ESPN.`)); return; }
+      if (!sr) { body.replaceChildren(note('', "Couldn't reach ESPN · retrying")); setTimeout(load, 15000); return; }
+      if (!hit) { body.replaceChildren(note('ESPN', `no games found for ${p.player}`)); return; }
       const id = /a:(\d+)/.exec(hit.uid)[1], url = `${base}/common/v3/sports/${ESPN_PATH[p.league]}/athletes/${id}/gamelog`;
       const log = await getJSON(url);
       let all = gamesFromLog(log, p.stat);
@@ -492,7 +503,8 @@
       all = all.concat(gamesFromLog(prevLog, p.stat).map(g => Object.assign(g, { last: true })));   // tagged, never mixed into current-season views
       const seen = new Set(); all = all.filter(g => !seen.has(g.id) && seen.add(g.id)).sort((a, b) => b.date.localeCompare(a.date));
       tagSeason(all, p.league);
-      if (!all.length) { body.replaceChildren(el('div', 'viz-none', `No ${p.stat.label} games found for ${p.player} yet.`)); return; }
+      if (!log) { body.replaceChildren(note('', "Couldn't reach ESPN · retrying")); setTimeout(load, 15000); return; }
+      if (!all.length) { body.replaceChildren(note('ESPN', `no ${p.stat.label} games yet to chart`)); return; }
       const myTeam = espnAbbr(all[0].team), opp = [p.away, p.home].map(espnAbbr).find(a => a && a !== myTeam) || null;
       let mode = 'L10';
       const draw = () => {
@@ -503,7 +515,7 @@
         }
         const gs = pickGames(all, mode, opp).slice().reverse();   // oldest on the left
         body.replaceChildren();
-        if (!gs.length) { body.append(el('div', 'viz-none', mode === 'H2H' ? 'No games against this team this season.' : mode === 'Last' ? 'No games last season.' : 'No games yet this season.')); return; }
+        if (!gs.length) { body.append(note('ESPN', mode === 'H2H' ? 'no games vs this team this season' : mode === 'Last' ? 'no games last season' : 'not enough games yet to chart')); return; }
         const s = summary(gs, n);
         const seasons = [...new Set(gs.map(g => String(g.season).replace(/ Regular Season/, '')))].join(', ');
         body.append(el('div', 'viz-hit', `Hit in ${s.hits} of ${s.total} games · Average ${s.avg} ${p.stat.label}`), el('div', 'viz-season', seasons));
@@ -527,7 +539,8 @@
       };
       redraw = draw;
       draw();
-    })().catch(() => body.replaceChildren(el('div', 'viz-none', 'Couldn\'t load games right now. Try again later.')));
+    })().catch(() => { body.replaceChildren(note('', "Couldn't reach ESPN · retrying")); setTimeout(load, 15000); });
+    load();
     return sec;
   }
 
@@ -658,5 +671,5 @@
   /** Event slug from a Polymarket US event URL. */
   const slugFromUrl = u => { const m = /\/([a-z]+-[a-z0-9]+-[a-z0-9]+-\d{4}-\d{2}-\d{2})(?:[/?#]|$)/.exec(u || ''); return m ? m[1] : null; };
 
-  return { liveChart, seasonStart, tagSeason, loadGames, ESPN_PATH, espnAbbr, open, close, chartBtn, pmHistory, viewWindow, prepSeries, nearestIdx, defaultView, gameInfo, fitY, rangeLabel, parseProp, siblingLines, gamesFromLog, summary, pickGames, seriesFor, american, slugFromUrl, statOf };
+  return { note, noteText, blankVisuals, VISUALS, liveChart, seasonStart, tagSeason, loadGames, ESPN_PATH, espnAbbr, open, close, chartBtn, pmHistory, viewWindow, prepSeries, nearestIdx, defaultView, gameInfo, fitY, rangeLabel, parseProp, siblingLines, gamesFromLog, summary, pickGames, seriesFor, american, slugFromUrl, statOf };
 });
