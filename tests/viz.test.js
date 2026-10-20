@@ -43,3 +43,19 @@ console.log('viz ok');
   const y = V.fitY([50, 60]); assert.ok(y.lo < 50 && y.hi > 60 && y.hi - y.lo < 15);
   assert.match(V.rangeLabel(Date.parse('2026-10-20T09:20:00Z'), Date.parse('2026-10-20T09:37:00Z')), /4:20 AM – 4:37 AM CT/);
   console.log('zoom ok'); }
+
+// §55: merged series read-out + Polymarket default windows
+{
+  const assert = require('assert'), V = require('../js/viz.js');
+  const s = V.prepSeries([{ t: 30, chance: 3 }, { t: 10, chance: 1 }, { t: 20, chance: 2 }, { t: 10, chance: 9 }]);
+  assert.deepStrictEqual(s.map(p => p.t), [10, 20, 30]);
+  assert.strictEqual(V.nearestIdx(s, 0), 0); assert.strictEqual(V.nearestIdx(s, 19), 1); assert.strictEqual(V.nearestIdx(s, 26), 2); assert.strictEqual(V.nearestIdx(s, 99), 2);
+  assert.deepStrictEqual(V.defaultView(null), { span: null, end: null, live: true });
+  const lv = V.defaultView({ status: 'live', start: 5000e3 }); const w = V.viewWindow(0, 9000e3, lv);
+  assert.deepStrictEqual([w.a, w.b], [5000e3, 9000e3]);
+  const fv = V.defaultView({ status: 'finished', start: 5000e3, end: 8000e3 }); const w2 = V.viewWindow(0, 9000e3, fv);
+  assert.deepStrictEqual([w2.a, w2.b], [5000e3, 8000e3]);
+  assert.strictEqual(V.gameInfo({ startTime: '2026-10-20T00:00:00Z' }, null, Date.parse('2026-10-19T00:00:00Z')).status, 'pregame');
+  assert.strictEqual(V.gameInfo({ event: { startTime: '2026-10-20T00:00:00Z', ended: true } }).status, 'finished');
+  console.log('viz §55 read-out/default-window ok');
+}

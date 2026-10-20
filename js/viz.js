@@ -139,9 +139,46 @@
   /** Pure: visible window {a, b} for data [tMin, tMax] and view state {span, end, live}. */
   function viewWindow(tMin, tMax, v) {
     const full = Math.max(MIN_SPAN, tMax - tMin); // max zoom-out = All, like Polymarket
-    const span = Math.min(full, Math.max(MIN_SPAN, v.span || full));
+    // v.from (Polymarket "Game" window): start at game start; the span grows with live data.
+    const want = v.span || (v.from != null ? (v.live ? tMax : Math.min(tMax, v.end || tMax)) - v.from : full);
+    const span = Math.min(full, Math.max(MIN_SPAN, want));
     let end = v.live ? tMax : Math.min(tMax, Math.max(tMin + span, v.end || tMax));
     return { a: end - span, b: end, span };
+  }
+  /** Pure: sorted, deduped (one point per timestamp, last source wins) copy of a series. */
+  function prepSeries(points) {
+    const s = (points || []).filter(p => p && isFinite(p.t) && isFinite(p.chance)).slice().sort((x, y) => x.t - y.t), out = [];
+    for (const p of s) { if (out.length && out[out.length - 1].t === p.t) out[out.length - 1] = p; else out.push(p); }
+    return out;
+  }
+  /** Pure: index of the point nearest time t in a sorted series (binary search). */
+  function nearestIdx(pts, t) {
+    let lo = 0, hi = pts.length - 1;
+    while (lo < hi) { const m = (lo + hi) >> 1; if (pts[m].t < t) lo = m + 1; else hi = m; }
+    return lo > 0 && Math.abs(pts[lo - 1].t - t) <= Math.abs(pts[lo].t - t) ? lo - 1 : lo;
+  }
+  /**
+   * Pure: default view, copied from Polymarket US (defaultSportsChartWindow): before the game
+   * "All"; live -> "Game" (game start to now); finished -> game start to game end.
+   */
+  function defaultView(game) {
+    const st = game && game.status, from = game && game.start;
+    if ((st === 'live' || st === 'finished') && isFinite(from)) return st === 'live' ? { span: null, end: null, from, live: true } : { span: null, from, end: isFinite(game.end) ? game.end : null, live: !isFinite(game.end) };
+    return { span: null, end: null, live: true };
+  }
+  /** Pure: game {status, start, end} from a Polymarket US event payload (+ fallback start). */
+  function gameInfo(ev, fallbackStart, now = Date.now()) {
+    const e = (ev && ev.event) || ev || {};
+    const start = Date.parse(e.startTime || e.startDate || fallbackStart || '');
+    const endT = Date.parse(e.endTime || e.finishedTime || e.closedTime || '');
+    const done = !!(e.ended || e.closed || e.finished || /final|finished|ended|closed/i.test(String(e.gameStatus || e.status || e.period || '')));
+    if (!isFinite(start)) return null;
+    if (done) return { status: 'finished', start, end: isFinite(endT) ? endT : null };
+    return { status: e.live || now >= start ? 'live' : 'pregame', start, end: null };
+  }
+  /** User's standard bet (whole dollars) from Settings, else $10. */
+  function myUnit() {
+    try { const u = Math.round(Number(JSON.parse(globalThis.localStorage.getItem('betdash_profile') || '{}').unit)); return u > 0 ? u : 10; } catch (e) { return 10; }
   }
   /** Pure: y range (chance points) that fits the visible points with a little padding. */
   function fitY(vals) {
@@ -165,8 +202,11 @@
    * panning away shows "Back to live". The view state lives on the box, so the 1.5 s live
    * refreshes don't undo a zoom. Default view: fully zoomed out = all history, matching Polymarket US's default "All" window.
    */
-  function drawChart(box, points, marks) {
-    box._pts = points; box._marks = marks || [];
+  function drawChart(box, points, marks, game) {
+    box._pts = points = prepSeries(points); box._marks = (marks || []).slice().sort((a, b) => a.t - b.t);
+    const gk = game ? game.status + ':' + game.start + ':' + game.end : '';
+    if (box._ui && gk !== box._gk && !box._ui.touched) box._ui.v = defaultView(game);   // game went live / finished
+    box._gk = gk; box._game = game || null;
     if (points.length < 2) {
       box._ui = null;
       box.replaceChildren(el('div', 'viz-none', points.length ? `Only one price so far: ${american(points[0].chance)} (${Math.round(points[0].chance)}% chance). The line grows while this is open.` : 'No price history yet.'));
@@ -185,9 +225,9 @@
     const svg = sv('svg', { viewBox: `0 0 ${W} ${H}`, class: 'viz-svg', role: 'img', 'aria-label': 'Price over time. Pinch or scroll to zoom, drag to move.' });
     const read = el('div', 'viz-read');
     box.replaceChildren(ctl, svg, read);
-        const ui = box._ui = { svg, read, range, live, reset, v: { span: null, end: null, live: true }, sel: null };
-    const def = () => ({ span: null, end: null, live: true }); // full history, grows as points arrive
-    reset.onclick = () => { ui.v = def(); ui.sel = null; renderChart(box); };
+    const ui = box._ui = { svg, read, range, live, reset, v: defaultView(box._game), sel: null, touched: false };
+    const def = () => defaultView(box._game);   // Polymarket default: All / Game; zoom-out still reaches All
+    reset.onclick = () => { ui.touched = false; ui.v = def(); ui.sel = null; renderChart(box); };
     live.onclick = () => { ui.v.live = true; ui.sel = null; renderChart(box); };
     const xOf = ev => { const r = svg.getBoundingClientRect(); return (ev.clientX - r.left) * W / r.width; };
     const tAt = px => { const w = ui.win; return w.a + (w.b - w.a) * Math.min(1, Math.max(0, (px - L) / (W - L - R))); };
@@ -196,7 +236,7 @@
       const span = Math.min(Math.max(MIN_SPAN, tMax - tMin), Math.max(MIN_SPAN, w.span * factor));
       const frac = (pivot - w.a) / (w.b - w.a || 1);
       const end = Math.min(tMax, Math.max(tMin + span, pivot + (1 - frac) * span));
-      ui.v = { span, end, live: ui.v.live && end >= tMax - 1 };
+      ui.v = { span, end, live: ui.v.live && end >= tMax - 1 }; ui.touched = true;
       renderChart(box);
     };
     svg.addEventListener('wheel', e => { e.preventDefault(); zoom(e.deltaY > 0 ? 1.25 : 0.8, xOf(e)); }, { passive: false });
@@ -223,7 +263,7 @@
       const p = box._pts, tMin = p[0].t, tMax = p[p.length - 1].t, w = ui.win;
       const dt = -dx * (w.b - w.a) / (W - L - R);
       const end = Math.min(tMax, Math.max(tMin + w.span, drag.end + dt));
-      ui.v = { span: w.span, end, live: end >= tMax - 1 };
+      ui.v = { span: w.span, end, live: end >= tMax - 1 }; ui.touched = true;
       renderChart(box);
     });
     const up = e => {
@@ -231,7 +271,7 @@
       if (ptrs.size < 2) pinch = null;
       if (drag && !drag.moved && e.type === 'pointerup') {
         const now = Date.now();
-        if (now - lastTap < 300) { ui.v = def(); ui.sel = null; } else ui.sel = tAt(drag.x);   // double-tap resets, tap reads
+        if (now - lastTap < 300) { ui.touched = false; ui.v = def(); ui.sel = null; } else ui.sel = tAt(drag.x);   // double-tap resets, tap reads
         lastTap = now; renderChart(box);
       }
       drag = null;
@@ -274,14 +314,13 @@
       : span < 10 * 60e3 ? new Date(t).toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit', second: '2-digit' }) : clock(t);
     [[win.a, 'start'], [(win.a + win.b) / 2, 'middle'], [win.b, 'end']].forEach(([t, an]) => { const tx = sv('text', { x: x(t), y: H - 6, class: 'viz-xlab', 'text-anchor': an }); tx.textContent = fmt(t); svg.append(tx); });
     // Read-out: selected point (tap / long-press / mouse hover), else the latest.
-    const pick = t => { let best = pts[0]; for (const p of pts) if (Math.abs(p.t - t) < Math.abs(best.t - t)) best = p; return best; };
-    const p = ui.sel != null ? pick(ui.sel) : pts[pts.length - 1];
+    const p = ui.sel != null ? pts[nearestIdx(pts, ui.sel)] : pts[pts.length - 1];
     if (p.t >= win.a - 1 && p.t <= win.b + 1) {
       if (ui.sel != null) svg.append(sv('line', { x1: x(p.t), x2: x(p.t), y1: T, y2: H - B, class: 'viz-cross' }));
       svg.append(sv('circle', { r: 4, class: 'viz-dot', cx: x(p.t), cy: y(p.chance) }));
     }
-    const mk = marks.filter(m => m.t <= p.t).pop();
-    ui.read.textContent = `${clock(p.t)} CT · ${american(p.chance)} · ${Math.round(p.chance)}% chance · $10 pays $${Math.floor(1000 / p.chance)}${mk ? ' · ' + mk.label : ''}`;
+    const mk = marks.filter(m => m.t <= p.t).pop(), u = myUnit();
+    ui.read.textContent = `${clock(p.t)} CT · ${american(p.chance)} · ${Math.round(p.chance)}% chance · $${u} → $${Math.round(u * 100 / p.chance)}${mk ? ' · ' + mk.label : ''}`;
     ui.range.textContent = rangeLabel(win.a, win.b);
     const zoomed = !!ui.v.span && ui.v.span < tMax - tMin;
     ui.live.hidden = ui.v.live; ui.reset.hidden = !(zoomed || !ui.v.live);   // only when zoomed or panned
@@ -296,7 +335,7 @@
   /**
    * Price chart section for one leg (§53). Points, best first:
    *  1. Polymarket US public price history (/v1/price-history, free, CORS open): full history (INTERVAL_ALL,
-   *     3-hour steps) + last day at 5-minute steps + last hour at 1-minute steps. Buy prices (what you'd pay).
+   *     3-hour steps) + last day at 1-minute steps (Polymarket's Game window) + last hour at 1-minute steps. Buy prices (what you'd pay).
    *  2. else our live-tick history (data/live/<slug>-history.json) + saved snapshot points
    *     (leg.extraPoints: pick price / closing price).
    *  3. + live points from the pop-up's poller (BBO every ~1.5 s while open).
@@ -306,20 +345,20 @@
     const sec = el('section', 'viz-sec');
     sec.append(el('h4', 'viz-h', '📈 Price over time'));
     const box = el('div', 'viz-chart'); box.append(el('div', 'viz-none', 'Loading…')); sec.append(box);
-    let cur = {}, api = [], tick = { points: [], marks: [] }, extra = [], live = [], gen = 0;
+    let game = gameInfo(null, leg.start_time || leg.startTime), cur = {}, api = [], tick = { points: [], marks: [] }, extra = [], live = [], gen = 0;
     const side = leg.side === 1 ? 1 : 0;
     const draw = () => {
       const basePts = api.length ? api : tick.points.concat(extra);
       const pts = basePts.concat(live).sort((x, y) => x.t - y.t);
       if (!pts.length && !leg.eventSlug && !cur.slug) { sec.hidden = true; return; }
       sec.hidden = false;
-      drawChart(box, pts, tick.marks);
+      drawChart(box, pts, tick.marks, game);
     };
     const loadApi = async slug => {
       const g = gen;
       const [all, d, h] = await Promise.all([
         getJSON(`${PM}/v1/price-history?symbol=${encodeURIComponent(slug)}&fixedInterval=INTERVAL_ALL&fidelity=180&_=${Math.floor(Date.now() / 300000)}`),
-        getJSON(`${PM}/v1/price-history?symbol=${encodeURIComponent(slug)}&fixedInterval=INTERVAL_1D&fidelity=5&_=${Math.floor(Date.now() / 30000)}`),
+        getJSON(`${PM}/v1/price-history?symbol=${encodeURIComponent(slug)}&fixedInterval=INTERVAL_1D&fidelity=1&_=${Math.floor(Date.now() / 30000)}`),
         getJSON(`${PM}/v1/price-history?symbol=${encodeURIComponent(slug)}&fixedInterval=INTERVAL_1H&fidelity=1&_=${Math.floor(Date.now() / 30000)}`)]);
       if (g !== gen) return;
       const hr = pmHistory(h, side), cut = hr.length ? hr[0].t : Infinity;
@@ -347,6 +386,8 @@
     };
     /** Event payload (poll): learn the slug for Live Bets cards that only know the id. */
     sec.fromEvent = ev => {
+      const gi = gameInfo(ev, leg.start_time || leg.startTime);
+      if (gi && (!game || gi.status !== game.status || gi.end !== game.end)) { game = gi; draw(); }
       if (cur.slug) return;
       const m = ((ev && ev.markets) || []).find(x => cur.id != null && String(x.id) === String(cur.id));
       if (m && m.slug) { cur.slug = m.slug; loadApi(m.slug); }
@@ -561,5 +602,5 @@
   /** Event slug from a Polymarket US event URL. */
   const slugFromUrl = u => { const m = /\/([a-z]+-[a-z0-9]+-[a-z0-9]+-\d{4}-\d{2}-\d{2})(?:[/?#]|$)/.exec(u || ''); return m ? m[1] : null; };
 
-  return { open, close, chartBtn, pmHistory, viewWindow, fitY, rangeLabel, parseProp, siblingLines, gamesFromLog, summary, pickGames, seriesFor, american, slugFromUrl, statOf };
+  return { open, close, chartBtn, pmHistory, viewWindow, prepSeries, nearestIdx, defaultView, gameInfo, fitY, rangeLabel, parseProp, siblingLines, gamesFromLog, summary, pickGames, seriesFor, american, slugFromUrl, statOf };
 });
