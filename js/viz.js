@@ -329,7 +329,7 @@
   /** Pure: Polymarket US /v1/price-history rows -> [{t, chance}] for a side (Yes = longPrice, No = shortPrice). */
   function pmHistory(j, side = 0) {
     return ((j && j.history) || []).map(r => ({ t: r.timestamp * 1000, chance: 100 * Number(side ? r.shortPrice : r.longPrice) }))
-      .filter(p => p.t && p.chance > 2 && p.chance < 98);   // drop empty-book extremes (99% spikes)
+      .filter(p => p.t && p.chance > 0 && p.chance < 100);   // same points Polymarket's chart plots (only 0/100, which have no odds, dropped)
   }
   const PM = 'https://gateway.polymarket.us';
   /**
@@ -401,8 +401,10 @@
     /** BBO payload (poll): add a live point. */
     sec.fromBbo = md => {
       if (!md || md.marketSlug !== cur.slug) return;
+      // Same field as Polymarket's chart history: longQuote (Yes) / shortQuote (No); else BBO ask / 1 - bid.
+      const q = Number((side ? md.shortQuote : md.longQuote) && (side ? md.shortQuote : md.longQuote).value);
       const b = Number(md.bestBid && md.bestBid.value), a = Number(md.bestAsk && md.bestAsk.value);
-      const c = side ? (b > 0 ? 100 - b * 100 : null) : (a > 0 ? a * 100 : null);
+      const c = q > 0 && q < 1 ? q * 100 : side ? (b > 0 ? 100 - b * 100 : null) : (a > 0 ? a * 100 : null);
       if (!(c > 0 && c < 100)) return;
       const last = live[live.length - 1];
       if (last && Date.now() - last.t < 60000 && Math.abs(last.chance - c) < 0.05) { last.t = Date.now(); } else live.push({ t: Date.now(), chance: c });
@@ -534,11 +536,11 @@
   }
 
   // LIVE (§53): while the pop-up is open and the tab is visible, poll Polymarket US's
-  // public BBO for each chart's market as fast as allowed (~1.5 s; public limit is
+  // public BBO for each chart's market as fast as allowed (~1 s since Oct 20; public limit is
   // 20 requests/s per IP), plus the event every ~8 s for line-chip prices. On a 429
   // the delay doubles (max 30 s) and eases back after successes. Browser only, free.
   // (Their WebSocket needs an API key, so it can't be used from the page.)
-  const LIVE_MIN_MS = 1500, LIVE_MAX_MS = 30000, EVENT_EVERY_MS = 8000;
+  const LIVE_MIN_MS = 1000, LIVE_MAX_MS = 30000, EVENT_EVERY_MS = 8000;
   let liveStop = null;
   function close() {
     if (liveStop) { liveStop(); liveStop = null; }
