@@ -1007,3 +1007,35 @@ event request, so props add zero extra calls. Thin markets (bid/ask gap > 6 pts,
 "Show more" per group is unchanged. `--dry` prints counts; at 3:31 AM CT tonight's BOS@DET showed
 39 game lines + 80 props (14 players), NHL games 6-23 props each. If you want Discord, run `live-discord.mjs --slug X` per game after
 the tick yourself (DISCORD_WEBHOOK_URL env).
+
+## 48. Tap a bet → price chart + prop bet bars pop-up (Oct 20, 2026)
+Reed asked for two charts (inspired by Outlier's bars and Polymarket's price chart). No new tabs:
+they open in a pop-up when you tap a pick card (Picks tab) or a Live Bets card.
+- **NEW `js/viz.js`** (`window.Viz`), loaded before app.js. Plain SVG/divs, no library.
+  - **Price over time:** the side's chance over time from `data/live/<slug>-history.json`, y-axis in
+    American odds, dashed marks at period changes with the ESPN score, touch/drag to read a point
+    ("2:39 PM CT · -160 · 62% chance · $10 pays $16 · Q2 · BOS 28–DET 25"). Polymarket US has NO free
+    public price-history endpoint (Oct 20: prices-history/price-history/timeseries/candles all 404),
+    so the line only exists for games our live tick tracked, from the first tick on.
+  - **Prop bet history:** ESPN search (`site.web.api.espn.com/apis/search/v2`) finds the player, then
+    the athlete gamelog (`/apis/common/v3/sports/<sport>/<league>/athletes/<id>/gamelog`) — both free
+    with open CORS, fetched in the browser, cached per page load. Green = hit "N+", red = missed,
+    dashed line at N, "Hit in 7 of 10 games · Average 24.3". Toggles L5 / L10 / vs OPP / Season.
+    Pads with last season when this season has fewer than 10 games; preseason is skipped.
+    Reads props from the Polymarket question, the pick leg text ("LeBron James 8+ rebounds") or the
+    market slug (`astatc-…-reb-lebjam-gte8`). Stats: NBA/WNBA points, rebounds, assists, threes,
+    steals, blocks, PRA; NHL goals, assists, points; NFL passing/rushing/receiving yards, catches,
+    passing TDs, INTs; MLB hits, HR, RBIs, strikeouts. Anything else just shows the price chart.
+- `js/app.js`: `vizSpec(pk)` + a card click handler in `afterPicksRender` (buttons/links still work).
+- `css/style.css`: `.viz-*` styles at the bottom. Tests: `tests/viz.test.js`, + history test in live-watch tests.
+- Cache stamp → `?v=20261020-0400`.
+
+**For Pablo (your files, Reed OK'd):**
+- `scripts/live-watch.mjs`: new pure `appendHistory()`; `publish` now also writes
+  `data/live/<slug>-history.json` = `{ t0, ids:{marketSlug:id}, marks:[[min,label]], m:{id:[[min,yesMid]]} }`.
+  A point is stored only when the Yes mid moves 0.5+ pts or 30 min passed; max 300 points/market;
+  one line per market so git diffs stay small (~9 KB per game after the first tick). Prices only.
+  The tick's `--push` already picks it up (it's in data/live/); index.json ignores it.
+- `js/live-bets.js`: edge cards get class `lb-tap` and open `Viz.open(...)` on tap (the
+  "Open on Polymarket" link still works). Two module vars `curSlug/curGame` set in `draw()`.
+  Nothing else in your design changed.

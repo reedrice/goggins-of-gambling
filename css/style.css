@@ -512,3 +512,36 @@ a.btn-play { display: block; text-align: center; text-decoration: none; margin-t
 .share-ov-in { text-align: center; max-height: 100%; overflow: auto; color: var(--text); }
 .share-ov-in img { max-width: 100%; max-height: 70vh; border-radius: 12px; display: block; margin: 12px auto; }
 .card.pick-hl { outline: 3px solid var(--accent); box-shadow: 0 0 0 6px rgba(255,90,31,.3); transition: outline .3s; }
+
+/* ---- Tap-a-bet charts pop-up (js/viz.js, HANDOFF §48) ---- */
+.card[data-pick-id], .lb-tap { cursor: pointer; }
+.viz-sheet { padding-top: 14px; }
+.viz-title { font-weight: 700; font-size: 1.1em; padding-right: 40px; }
+.viz-subtitle, .viz-sub { color: var(--muted, #9aa); font-size: .85em; }
+.viz-leg { border-top: 1px solid rgba(255,255,255,.08); margin-top: 10px; padding-top: 8px; }
+.viz-legname { font-weight: 600; }
+.viz-sec { margin: 10px 0; }
+.viz-h { margin: 0 0 4px; font-size: .95em; }
+.viz-none { color: var(--muted, #9aa); font-size: .85em; padding: 8px 0; }
+.viz-svg { width: 100%; height: auto; touch-action: none; display: block; }
+.viz-grid { stroke: rgba(255,255,255,.1); stroke-width: 1; }
+.viz-ylab, .viz-xlab, .viz-mlab { fill: #9aa; font-size: 10px; }
+.viz-mark { stroke: #888; stroke-dasharray: 3 3; }
+.viz-line { fill: none; stroke-width: 2.2; stroke-linejoin: round; }
+.viz-up { stroke: #2ecc71; } .viz-down { stroke: #ff5c5c; }
+.viz-dot { fill: #fff; stroke: #111; stroke-width: 1.5; }
+.viz-read { font-size: .85em; margin-top: 4px; min-height: 1.2em; }
+.viz-tabs { display: flex; gap: 6px; margin: 6px 0; flex-wrap: wrap; }
+.viz-tab { font: inherit; font-size: .8em; padding: 4px 10px; border-radius: 14px; border: 1px solid #555; background: transparent; color: inherit; }
+.viz-tab.on { background: #2b6cff; border-color: #2b6cff; color: #fff; }
+.viz-hit { font-weight: 600; font-size: .9em; margin-bottom: 6px; }
+.viz-bars { position: relative; height: 140px; display: flex; align-items: flex-end; gap: 4px; border-bottom: 1px solid #444; }
+.viz-col { flex: 1; height: 100%; display: flex; align-items: flex-end; min-width: 0; }
+.viz-bar { width: 100%; border-radius: 4px 4px 0 0; position: relative; }
+.viz-hitbar { background: #2ecc71; } .viz-miss { background: #ff5c5c; }
+.viz-val { position: absolute; top: -15px; left: 0; right: 0; text-align: center; font-size: 10px; }
+.viz-line-dash { position: absolute; left: 0; right: 0; border-top: 2px dashed #fff; opacity: .8; z-index: 1; pointer-events: none; }
+.viz-line-lab { position: absolute; right: 0; top: -16px; font-size: 10px; background: #222; padding: 0 3px; border-radius: 3px; }
+.viz-xlabs { display: flex; gap: 4px; }
+.viz-xl { flex: 1; min-width: 0; text-align: center; font-size: 9px; color: #9aa; overflow: hidden; }
+.viz-foot { color: var(--muted, #9aa); font-size: .75em; margin-top: 10px; }

@@ -454,6 +454,40 @@ export const openFromPublished = p => ({ slug: p.slug, title: p.game, url: p.url
     question: o.question, sides: o.sides, teams: o.teams, player: o.player, mid: o.mid, yesBuy: o.yes_buy, noBuy: o.no_buy,
     taken_at: o.taken_at || p.open_taken_at })) });
 
+// ------------------------------------------------------------ price history (§48)
+export const HIST_STEP = 0.5, HIST_GAP_MIN = 30, HIST_CAP = 300;
+const periodWord = slug => ({ nhl: 'P', mlb: 'Inn ' }[slug.split('-')[0]] || 'Q');
+/**
+ * Pure: add one tick to the compact price history used by the pop-up chart
+ * (js/viz.js). Shape: { slug, t0, ids: {marketSlug: id}, marks: [[min, label]],
+ * m: { marketId: [[min, yesMid], ...] } }. min = minutes since t0.
+ * A point is added only when the Yes mid moved HIST_STEP+ points or the last
+ * point is HIST_GAP_MIN+ minutes old, capped at HIST_CAP points per market.
+ * A mark ("Q2 · BOS 40–38") is added when the ESPN period changes.
+ * Prices only, no dollars.
+ */
+export function appendHistory(hist, open, ev, ctx, nowIso, slug = open.slug) {
+  const h = hist && hist.m ? hist : { _note: 'Yes-side chance (0-100) over time for the Live Bets chart. No dollar amounts.', slug, t0: nowIso, ids: {}, marks: [], m: {} };
+  const min = Math.round((Date.parse(nowIso) - Date.parse(h.t0)) / 60e3);
+  const byId = Object.fromEntries((ev.markets || []).map(m => [m.id, m]));
+  for (const o of open.markets) {
+    const m = byId[o.id], q = m && quote(m);
+    if (!m || !isOpen(m) || !q) continue;
+    if (m.slug) h.ids[m.slug] = o.id;
+    const mid = +q.mid.toFixed(1), arr = h.m[o.id] || (h.m[o.id] = []), last = arr[arr.length - 1];
+    if (!last || Math.abs(mid - last[1]) >= HIST_STEP || min - last[0] >= HIST_GAP_MIN) arr.push([min, mid]);
+    if (arr.length > HIST_CAP) arr.splice(0, arr.length - HIST_CAP);
+  }
+  if (ctx && ctx.available && ctx.game_state !== 'pre') {
+    const a = ctx.away || {}, hm = ctx.home || {};
+    const per = ctx.game_state === 'post' ? 'Final' : `${periodWord(slug)}${ctx.period || ''}`;
+    const label = `${per} · ${a.abbr} ${a.score ?? ''}–${hm.abbr} ${hm.score ?? ''}`.trim();
+    const lastMark = h.marks[h.marks.length - 1];
+    if (!lastMark || lastMark[1].split(' · ')[0] !== per) h.marks.push([min, label]);
+  }
+  return h;
+}
+
 /** Write data/live/<slug>.json (snapshot first if there is no opening file). */
 async function publish() {
   const file = path.join(ALERTS_DIR, `${SLUG}.json`);
@@ -467,6 +501,12 @@ async function publish() {
   const out = buildLive(open, ev, prev, new Date().toISOString(), ctx);
   fs.mkdirSync(ALERTS_DIR, { recursive: true });
   fs.writeFileSync(file, JSON.stringify(out, null, 1));
+  // Compact price history for the pop-up chart (HANDOFF §48), one line per market.
+  const hfile = path.join(ALERTS_DIR, `${SLUG}-history.json`);
+  const hist = appendHistory(fs.existsSync(hfile) ? JSON.parse(fs.readFileSync(hfile, 'utf8')) : null, open, ev, ctx, out.updated, SLUG);
+  fs.writeFileSync(hfile, '{' + Object.entries(hist).map(([k, v]) => k === 'm'
+    ? `"m":{\n${Object.entries(v).map(([id, a]) => JSON.stringify(id) + ':' + JSON.stringify(a)).join(',\n')}\n}`
+    : JSON.stringify(k) + ':' + JSON.stringify(v)).join(',\n') + '}\n');
   console.log(`Published ${out.edges.filter(e => e.status === 'open').length} edge(s), status ${out.status} -> ${file}`);
 }
 

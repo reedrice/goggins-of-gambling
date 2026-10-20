@@ -868,12 +868,26 @@
       legs: (h.legs || []).map(l => ({ sport: legSport(l, h), text: legName(l.desc), am: shareAm(l.publish) })),
       combinedAm: m ? multAm(m) : '', pay10: m ? Math.round(10 * m).toLocaleString('en-US') : '', chance: chanceLine(h.hit_prob) };
   }
+  /** Pick -> Viz.open spec (one leg per combo leg). */
+  function vizSpec(pk) {
+    const leg = (l, text) => ({ text, player: l.player || null, league: (l.league || (l.team && l.team.league) || (pk.sport || '').split('+')[0] || '').toLowerCase(),
+      marketSlug: l.market_id || null, eventSlug: window.Viz.slugFromUrl(l.polymarket_url || l.link || pk.polymarket_url || pk.link), side: l.market_side === 'no' ? 1 : 0,
+      question: l.question || null });
+    const multi = Array.isArray(pk.legs) && pk.legs.length > 0;
+    return { title: multi ? (pk.market || pk.side) : (legName(pk.side) || pk.market), sub: pk.event || '',
+      legs: multi ? pk.legs.map(l => leg(l, legName(l.desc))) : [leg(pk, legName(pk.side) || pk.market)] };
+  }
   const shareBtn = id => `<button type="button" class="share-btn" data-share="${esc(id)}" aria-haspopup="menu" aria-label="Share">⤴ Share</button>`;
   /** After the Picks list renders: wire Share buttons and handle a ?pick=<id> deep link. */
   let shareAll = {};
   async function afterPicksRender(el, all) {
     shareAll = all;
     el.querySelectorAll('[data-share]').forEach(b => (b.onclick = e => { e.stopPropagation(); const pk = all[b.dataset.share]; if (pk) window.Share.menu(shareInfoPick(pk), b); }));
+    // Tap a pick card (not a button/link) -> price chart + prop bet bars pop-up (HANDOFF §48).
+    el.querySelectorAll('.card[data-pick-id]').forEach(c => c.addEventListener('click', e => {
+      if (e.target.closest('button, a, input, select, details, summary, .tip') || !window.Viz) return;
+      const pk = all[c.dataset.pickId]; if (pk) window.Viz.open(vizSpec(pk));
+    }));
     if (!pendingPick) return;
     const id = pendingPick;
     const pk = all[id];

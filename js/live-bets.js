@@ -181,6 +181,15 @@
       a.href = link; a.target = '_blank'; a.rel = 'noopener';
       li.append(a);
     }
+    // Tap a card -> price chart + prop bet bars pop-up (js/viz.js, HANDOFF §48).
+    if (root.Viz && curSlug) {
+      li.classList.add('lb-tap');
+      li.addEventListener('click', ev => {
+        if (ev.target.closest('a')) return;
+        root.Viz.open({ title: e.side, sub: `${e.market} · ${curGame}`, legs: [{ text: e.side, question: e.question,
+          eventSlug: curSlug, marketId: e.market_id, side: Number(String(e.key).split(':')[1]) || 0 }] });
+      });
+    }
     return li;
   }
 
@@ -229,7 +238,9 @@
   }
 
   /** Draw the whole view from data `d` into `box`. `ui` keeps open/closed state across refreshes. */
+  let curSlug = null, curGame = '';                // for the tap-to-chart pop-up
   function draw(box, d, ui) {
+    curSlug = d.slug || null; curGame = d.game || '';
     box.replaceChildren();
     box.append(alertsBox(d, ui));                 // Alerts feed sits at the very top
     const sb = scoreboard(d);

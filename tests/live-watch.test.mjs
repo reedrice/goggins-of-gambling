@@ -203,3 +203,15 @@ test('players "all" keeps every liquid prop', () => {
   assert.strictEqual(selectMarkets(ev, sportOf('nba-a-b-2026-10-20'), ['all']).length, 2);
   assert.strictEqual(selectMarkets(ev, sportOf('nba-a-b-2026-10-20'), []).length, 0);
 });
+
+test('appendHistory: change-only points + period marks', async () => {
+  const { appendHistory } = await import('../scripts/live-watch.mjs');
+  const mk = b => ({ markets: [{ id: 'a', slug: 'sa', active: true, closed: false, status: 'MARKET_STATUS_OPEN', bestBidQuote: { value: String(b) }, bestAskQuote: { value: String(b + 0.02) } }] });
+  const open = { slug: 'nba-x-y-2026-10-20', markets: [{ id: 'a' }] };
+  let h = appendHistory(null, open, mk(0.40), null, '2026-10-20T18:00:00Z');
+  h = appendHistory(h, open, mk(0.401), { available: true, game_state: 'in', period: 1, away: { abbr: 'X', score: 2 }, home: { abbr: 'Y', score: 0 } }, '2026-10-20T18:10:00Z');
+  h = appendHistory(h, open, mk(0.45), { available: true, game_state: 'in', period: 1, away: { abbr: 'X', score: 4 }, home: { abbr: 'Y', score: 0 } }, '2026-10-20T18:20:00Z');
+  assert.deepStrictEqual(h.m.a, [[0, 41], [20, 46]]);
+  assert.strictEqual(h.marks.length, 1);
+  assert.strictEqual(h.ids.sa, 'a');
+});
