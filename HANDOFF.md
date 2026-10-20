@@ -1192,3 +1192,18 @@ This is for unclear Trent bets (ambiguous leg, line, side, odds or result). It i
   3. Give the bot the Client ID + the Worker URL. The site then adds "Sign in with GitHub": show the user code → poll → token in localStorage, using the same `isDev` gate. Scope: `read:user` (+ `public_repo` only if devs should vote/comment from the site).
 
 **§60 update (Oct 20, 2026): GitHub sign-in wired.** OAuth App Client ID `Ov23li16KIAkVHvjd1mq` (public) is in `config.js` (`githubClientId`). `js/gh-auth.js` runs the device flow through the Worker in `workers/` (`goggins-gh-auth.js`, deploy steps in `workers/README.md`). Tokens expire, so the refresh token + expiry live in `betdash_gh_oauth` and `GhAuth.ensureFresh()` runs before the dev check. The "Sign in with GitHub" button in Settings stays hidden until `config.js` → `githubAuthWorker` is set to the Worker URL. The client secret lives only in the Worker's env (used for refresh).
+
+## For Pablo (Richie's bot) — Oct 20, 2026
+
+Tonight's changes, in plain words:
+
+- **Charts match Polymarket.** The pop-up plots every point from Polymarket's `/v1/price-history` (All, then the Game window once live) and polls live about every 1 s using the same field as Polymarket's chart (`longQuote` / `shortQuote`). Spikes that are in Polymarket's own history stay (§55).
+- **Analytics pill.** Every bet type (props, moneylines, spreads, totals) shows one button, "Analytics X% · Market Y% ›". It opens the full-screen stats sheet (code name Dig deeper, `js/dig-deeper.js`). "Dig deeper" and "Our chance" never appear in the UI. It shows **current-season games only** by default, with last season behind a "Last season" chip (§56/§57, DESIGN.md). Live Bets cards in `js/live-bets.js` got the same pill (Reed-approved override of Richie's file, see the §57 note).
+- **Fade Trent dev clarification (§58, AGENTS.md).** Only when a Trent bet is unclear, it gets `needs_clarification` + `question`. `node scripts/trent-picks.mjs ask <id> --question "..." --issue` opens a `trent-clarify` GitHub issue that @mentions every collaborator (fetched fresh each time). Devs vote with 👍 on option comments. `tally <id>` counts the votes, and reedrice breaks ties. `clarify <id> --set k=v --answer "..." --commit` writes `data/trent-overrides.json` and closes the issue. Open now: #1 and #2.
+- **Data archive (§59).** `scripts/archive.mjs` writes append-only gzip NDJSON under `data/archive/` (picks, analytics, results, vegas, trent, prices, espn). Re-running it is safe, and stakes, money and secrets are stripped. Schema: `data/archive/README.md`.
+- **GitHub sign-in (§60).** Settings → "Sign in with GitHub" (device flow) goes through the Worker `https://goggins-gh-auth.reedrice9.workers.dev` (code in `workers/`). Dev tools show only for repo collaborators. There's no CLIENT_SECRET yet, so expired tokens can't refresh: the user just signs in again.
+
+**What Pablo should do:**
+1. Keep running the live tick as before.
+2. Run `node scripts/archive.mjs` after each capture-closing run (it runs automatically after `capture-closing.mjs --commit`), and commit `data/archive/` if it changed.
+3. Check open `trent-clarify` issues (`gh issue list -l trent-clarify`). When one @mentions Richie (@rgarzz), tell Richie the question and link. Do **not** vote or comment for him; only he votes.
