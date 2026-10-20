@@ -127,12 +127,20 @@
     m.onclick = () => on(Math.round((val - step) * 10) / 10); pl.onclick = () => on(Math.round((val + step) * 10) / 10);
     w.append(m, v, pl); return w;
   }
-  function chips(opts, cur, on) {
+  function chips(opts, cur, on, off) {
     const w = el('div', 'dd-chips');
-    for (const o of opts) { const b = el('button', 'dd-chip' + (o.v === cur ? ' on' : ''), o.l); b.type = 'button'; b.onclick = () => on(o.v); w.append(b); }
+    for (const o of opts) { const dis = off && off.includes(o.v), b = el('button', 'dd-chip' + (o.v === cur ? ' on' : '') + (dis ? ' dd-off' : ''), o.l); b.type = 'button'; b.disabled = !!dis; b.onclick = () => on(o.v); w.append(b); }
     return w;
   }
-  function close() { document.querySelectorAll('.dd-back').forEach(n => n.remove()); document.removeEventListener('keydown', onKey); document.documentElement.classList.remove('dd-open'); }
+  // The bet's live Polymarket chart, top of every sheet (one instance per sheet, ~1 s polling).
+  let live = null;
+  function liveFor(spec) {
+    if (live) return live.el;
+    const V = globalThis.Viz; if (!V || !V.liveChart || !spec.marketId) return el('div', 'dd-none', 'No games yet this season');
+    live = V.liveChart({ marketId: spec.marketId, marketSlug: spec.marketId, eventSlug: spec.eventSlug || null, side: spec.side === 'no' || spec.side === 1 ? 1 : 0, text: spec.text, question: spec.question, player: spec.player || null });
+    return live.el;
+  }
+  function close() { if (live) { live.stop(); live = null; } document.querySelectorAll('.dd-back').forEach(n => n.remove()); document.removeEventListener('keydown', onKey); document.documentElement.classList.remove('dd-open'); }
   const onKey = e => { if (e.key === 'Escape') close(); };
 
   async function playerView(body, spec, s) {
@@ -151,14 +159,20 @@
     const area = el('div');
     body.append(head, area);
     const draw = () => {
-      const all = rows(got.log, key), gs = mode === 'Last' ? rows(got.prevLog, key) : split(all, mode, opp);
-      if (line == null) line = Math.max(1, Math.round(avg(all.length ? all : rows(got.prevLog, key))));
+      // Current season by date (ESPN's default log can still be last season); none yet -> show last season, labeled.
+      const st0 = V.seasonStart(got.league), both = rows(got.log, key).concat(rows(got.prevLog, key)), seen = new Set();
+      const uniq = both.filter(g => !seen.has(g.id) && seen.add(g.id)).sort((a, b) => b.date.localeCompare(a.date));
+      const last0 = (u, st) => (u.find(g => g.date.slice(0, 10) < st) || {}).season;
+      const all = uniq.filter(g => g.date.slice(0, 10) >= st0), last = uniq.filter(g => g.date.slice(0, 10) < st0 && (!last0 || g.season === last0(uniq, st0)));
+      const eff = mode;
+      const gs = eff === 'Last' ? last : split(all, mode, opp);
+      if (line == null) line = Math.max(1, Math.round(avg(all.length ? all : last)));
       const hits = gs.filter(g => g.value >= line).length;
       area.replaceChildren(
         chips(list.map(x => ({ v: x.key, l: x.label })), key, v => { key = v; line = null; draw(); }),
-        chips([{ v: 'L5', l: 'L5' }, { v: 'L10', l: 'L10' }, { v: 'Season', l: 'Season' }].concat(opp ? [{ v: 'Opp', l: 'vs ' + opp.toUpperCase() }] : [], [{ v: 'Last', l: 'Last season' }]), mode, v => { mode = v; draw(); }),
+        chips([{ v: 'L5', l: 'L5' }, { v: 'L10', l: 'L10' }, { v: 'Season', l: 'Season' }].concat(opp ? [{ v: 'Opp', l: 'vs ' + opp.toUpperCase() }] : [], [{ v: 'Last', l: 'Last season' }]), eff, v => { mode = v; draw(); }),
         el('div', 'dd-big', gs.length ? `${hits} of ${gs.length}` : '—'),
-        el('div', 'dd-cap', gs.length ? `${line}+ ${S[key][0].toLowerCase()} · avg ${avg(gs)}` : mode === 'Last' ? 'No games last season' : 'No games yet this season'),
+        el('div', 'dd-cap', gs.length ? `${line}+ ${S[key][0].toLowerCase()} · avg ${avg(gs)}` : eff === 'Last' ? 'No games last season' : 'No games yet this season'),
         stepper(line, key === 'svp' ? 0.01 : 1, v => { line = Math.max(0, v); draw(); }));
       if (gs.length) area.append(bars(gs, line));
     };
@@ -203,7 +217,8 @@
     const draw = () => {
       const gsAll = team === 'away' ? A : H, abbr = team === 'away' ? s.away : s.home, oppAbbr = team === 'away' ? s.home : s.away;
       const cur = gsAll.filter(g => !g.last);   // current season only; last season behind its chip
-      const gs = mode === 'Last' ? gsAll.filter(g => g.last) : mode === 'L5' ? cur.slice(0, 5) : mode === 'L10' ? cur.slice(0, 10) : mode === 'Opp' ? cur.filter(g => g.opp === oppAbbr) : cur;
+      const eff = mode;
+      const gs = eff === 'Last' ? gsAll.filter(g => g.last) : mode === 'L5' ? cur.slice(0, 5) : mode === 'L10' ? cur.slice(0, 10) : mode === 'Opp' ? cur.filter(g => g.opp === oppAbbr) : cur;
       const rs = teamRows(gs, kind);
       if (line == null) line = Math.round(avg(teamRows((cur.length ? cur : gsAll).slice(0, 10), kind))) + 0.5;
       const sum = OC.teamSummary(gs), hits = rs.filter(g => g.value >= line).length;
@@ -211,9 +226,9 @@
       area.replaceChildren(
         chips([{ v: 'away', l: s.away.toUpperCase() }, { v: 'home', l: s.home.toUpperCase() }], team, v => { team = v; if (kind !== 'total') line = baseLine(); draw(); }),
         chips([{ v: 'total', l: 'Total' }, { v: 'margin', l: 'Margin' }], kind, v => { kind = v; line = kind === 'total' && s.kind === 'total' ? s.line : kind === 'margin' ? baseLine() : null; draw(); }),
-        chips([{ v: 'L5', l: 'L5' }, { v: 'L10', l: 'L10' }, { v: 'Season', l: 'Season' }, { v: 'Opp', l: 'vs ' + oppAbbr.toUpperCase() }, { v: 'Last', l: 'Last season' }], mode, v => { mode = v; draw(); }),
+        chips([{ v: 'L5', l: 'L5' }, { v: 'L10', l: 'L10' }, { v: 'Season', l: 'Season' }, { v: 'Opp', l: 'vs ' + oppAbbr.toUpperCase() }, { v: 'Last', l: 'Last season' }], eff, v => { mode = v; draw(); }),
         el('div', 'dd-big', rs.length ? `${hits} of ${rs.length}` : '—'),
-        el('div', 'dd-cap', !rs.length ? (mode === 'Last' ? 'No games last season' : 'No games yet this season') : `${capWord} · ${team === 'home' ? 'Home' : 'Away'} ${team === 'home' ? `${sum.homeW}-${sum.homeN - sum.homeW}` : `${sum.awayW}-${sum.awayN - sum.awayW}`} · ${sum.w}-${sum.l}`),
+        el('div', 'dd-cap', !rs.length ? (eff === 'Last' ? 'No games last season' : 'No games yet this season') : `${capWord} · ${team === 'home' ? 'Home' : 'Away'} ${team === 'home' ? `${sum.homeW}-${sum.homeN - sum.homeW}` : `${sum.awayW}-${sum.awayN - sum.awayW}`} · ${sum.w}-${sum.l}`),
         stepper(line, 1, v => { line = v; draw(); }));
       if (rs.length) {
         area.append(bars(rs, kind === 'margin' ? null : line));
@@ -239,8 +254,10 @@
     sheet.append(top, body); back.append(sheet); document.body.append(back);
     document.documentElement.classList.add('dd-open');
     back.addEventListener('click', e => { if (e.target === back) close(); }); document.addEventListener('keydown', onKey);
+    // Primary view (Reed): the bet's live Polymarket price chart, ~1 s polling, same data as the main chart.
+    if (spec.marketId) { const lc = el('div', 'dd-sec dd-chart'); lc.append(liveFor(spec)); body.append(lc); }
     const s = globalThis.OurChance && globalThis.OurChance.parseSlug(spec.marketId);
-    const sec = el('div', 'dd-sec'); body.append(sec);
+    const sec = el('div', 'dd-sec'); body.append(sec);   // history bars + stats: secondary, below (scroll)
     try { if (!(s && s.kind !== 'prop' ? (await teamView(sec, s, spec), true) : await playerView(sec, spec, s))) sec.append(el('div', 'dd-none', 'No stats for this bet.')); }
     catch (e) { if (typeof console !== 'undefined') console.warn('dig deeper', e); sec.append(el('div', 'dd-none', 'Couldn\'t load stats.')); }
   }

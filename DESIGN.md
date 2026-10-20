@@ -20,3 +20,5 @@ Linked from [AGENTS.md](AGENTS.md). Detail and history are in [HANDOFF.md](HANDO
   - **Game bets** show **one team at a time** (tap the team chip to switch, never side by side). Totals = each game's combined total vs the line; Margin = win/cover margin. Same stepper and L5 / L10 / Season / vs-opp chips.
   - Minimal: chips, one big number, bars, one quiet footer line.
 - **Current season by default, everywhere.** Prop bars, team bars and the Analytics History part use only this season's games (preseason excluded). If there are only a few, show what exists ("Hit in 1 of 2"), never padded with last season. Last season is tucked into a "Last season" chip at the end of the chips.
+
+- **Analytics sheet opens on the live price chart.** Every bet's sheet leads with its live Polymarket price chart (same data + ~1 s polling as the main chart). History bars and stats are secondary, below it (scroll). If the current season has no games yet, the bars say so; never auto-show last season (the "Last season" chip stays). Never leave anything blank.

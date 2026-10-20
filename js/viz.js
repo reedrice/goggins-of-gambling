@@ -637,6 +637,14 @@
     x.focus();
   }
 
+  /** A standalone live price chart for one bet (same history + ~1 s polling as the pop-up). Returns { el, stop }. */
+  function liveChart(leg) {
+    const chart = priceSection(leg), st = el('div', 'viz-live'), wrap = el('div', 'viz-sheet dd-live');
+    wrap.append(st, chart);
+    const stop = startLive(leg.eventSlug ? [{ slug: leg.eventSlug, fn: ev => chart.fromEvent(ev) }] : [], [chart], st);
+    return { el: wrap, stop };
+  }
+
   /** HTML for a "📊 Chart" button that opens this spec (any renderer can drop it in). */
   const escA = t => String(t).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   const chartBtn = (spec, label = '📊 Chart') => `<button type="button" class="chart-btn" data-viz="${escA(JSON.stringify(spec))}">${escA(label)}</button>`;
@@ -650,5 +658,5 @@
   /** Event slug from a Polymarket US event URL. */
   const slugFromUrl = u => { const m = /\/([a-z]+-[a-z0-9]+-[a-z0-9]+-\d{4}-\d{2}-\d{2})(?:[/?#]|$)/.exec(u || ''); return m ? m[1] : null; };
 
-  return { seasonStart, tagSeason, loadGames, ESPN_PATH, espnAbbr, open, close, chartBtn, pmHistory, viewWindow, prepSeries, nearestIdx, defaultView, gameInfo, fitY, rangeLabel, parseProp, siblingLines, gamesFromLog, summary, pickGames, seriesFor, american, slugFromUrl, statOf };
+  return { liveChart, seasonStart, tagSeason, loadGames, ESPN_PATH, espnAbbr, open, close, chartBtn, pmHistory, viewWindow, prepSeries, nearestIdx, defaultView, gameInfo, fitY, rangeLabel, parseProp, siblingLines, gamesFromLog, summary, pickGames, seriesFor, american, slugFromUrl, statOf };
 });
