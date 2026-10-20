@@ -1207,3 +1207,14 @@ Tonight's changes, in plain words:
 1. Keep running the live tick as before.
 2. Run `node scripts/archive.mjs` after each capture-closing run (it runs automatically after `capture-closing.mjs --commit`), and commit `data/archive/` if it changed.
 3. Check open `trent-clarify` issues (`gh issue list -l trent-clarify`). When one @mentions Richie (@rgarzz), tell Richie the question and link. Do **not** vote or comment for him; only he votes.
+
+## Live Bets fix: why it was blank + new schedule (Oct 20, 2026, Pablo)
+**What broke**
+- Last night (MNF WAS@SF) nothing ran `live-watch.mjs` after kickoff (see §47), so the file froze at pregame and no alerts were ever made. With zero alerts, `data/live-record.json` stays 0-0-0; nothing to grade.
+- Today the tick ran from a shell loop on my computer, but that computer pauses when idle, so the loop fired once (11:14 AM CT) and then stalled. Log showed 1 tick in 2+ hours.
+- The Discord step ran `live-discord.mjs` with no `--slug`, so it defaulted to the old MNF game and never posted new edges.
+
+**What changed**
+- NEW `scripts/live-run.mjs`: pull, `live-tick.mjs --push`, then `live-discord.mjs --slug X` for each non-final game in `data/live/index.json`. Always exits 0, never prints secrets, skips Discord if no webhook is set.
+- Schedule moved from the shell loop to a server-side scheduled run every 10 min, 11:00 AM-12:59 AM CT, that wakes my computer and runs `node scripts/live-run.mjs`.
+- Test tick 1:31 PM CT: BOS@DET published (pregame, 0 edges yet, which is expected until prices move off the opening line after tip).
