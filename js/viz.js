@@ -101,6 +101,20 @@
     return { hits, total: games.length, avg: Math.round(avg * 10) / 10 };
   }
 
+
+  /** Pure: start of the league's current season (ESPN's default gamelog can still be last season early on). */
+  function seasonStart(league, now = new Date()) {
+    const y = now.getFullYear(), m = now.getMonth(), L = String(league || '').toLowerCase();
+    const at = (yy, mm) => new Date(Date.UTC(yy, mm, 1)).toISOString().slice(0, 10);
+    const from = mm => (m >= mm ? at(y, mm) : at(y - 1, mm));
+    if (/mlb|baseball/.test(L)) return from(1);          // Feb (spring)
+    if (/wnba/.test(L)) return from(3);                  // Apr
+    if (/nba|nhl|basketball|hockey/.test(L)) return from(8); // Sep
+    return from(7);                                       // NFL / football: Aug
+  }
+  /** Tag games before the current season's start as last season (g.last). */
+  function tagSeason(all, league, now) { const s = seasonStart(league, now); (all || []).forEach(g => { if (g.date && String(g.date).slice(0, 10) < s) g.last = true; }); return all; }
+
   /** Pure: which games a toggle shows. */
   // Current season only by default (Reed); last season only behind the "Last season" chip.
   function pickGames(all, mode, oppAbbr) {
@@ -477,6 +491,7 @@
       const prevLog = season && season.value ? await getJSON(`${url}?season=${season.value - 1}`) : null;
       all = all.concat(gamesFromLog(prevLog, p.stat).map(g => Object.assign(g, { last: true })));   // tagged, never mixed into current-season views
       const seen = new Set(); all = all.filter(g => !seen.has(g.id) && seen.add(g.id)).sort((a, b) => b.date.localeCompare(a.date));
+      tagSeason(all, p.league);
       if (!all.length) { body.replaceChildren(el('div', 'viz-none', `No ${p.stat.label} games found for ${p.player} yet.`)); return; }
       const myTeam = espnAbbr(all[0].team), opp = [p.away, p.home].map(espnAbbr).find(a => a && a !== myTeam) || null;
       let mode = 'L10';
@@ -533,6 +548,7 @@
       const prevLog = season && season.value ? await getJSON(`${url}?season=${season.value - 1}`) : null;
       all = all.concat(gamesFromLog(prevLog, p.stat).map(g => Object.assign(g, { last: true })));   // tagged, never mixed into current-season views
       const seen = new Set(); all = all.filter(g => !seen.has(g.id) && seen.add(g.id)).sort((a, b) => b.date.localeCompare(a.date));
+      tagSeason(all, league);
       return { games: all, team: all[0] ? all[0].team : null, id, league, log, prevLog };
     })().catch(() => null);
     gamesCache.set(k, job); return job;
@@ -634,5 +650,5 @@
   /** Event slug from a Polymarket US event URL. */
   const slugFromUrl = u => { const m = /\/([a-z]+-[a-z0-9]+-[a-z0-9]+-\d{4}-\d{2}-\d{2})(?:[/?#]|$)/.exec(u || ''); return m ? m[1] : null; };
 
-  return { loadGames, ESPN_PATH, espnAbbr, open, close, chartBtn, pmHistory, viewWindow, prepSeries, nearestIdx, defaultView, gameInfo, fitY, rangeLabel, parseProp, siblingLines, gamesFromLog, summary, pickGames, seriesFor, american, slugFromUrl, statOf };
+  return { seasonStart, tagSeason, loadGames, ESPN_PATH, espnAbbr, open, close, chartBtn, pmHistory, viewWindow, prepSeries, nearestIdx, defaultView, gameInfo, fitY, rangeLabel, parseProp, siblingLines, gamesFromLog, summary, pickGames, seriesFor, american, slugFromUrl, statOf };
 });

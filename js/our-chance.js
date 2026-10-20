@@ -173,6 +173,7 @@
     const d = await getJSON(u); let gs = read(d);
     // Last season is tagged (g.last) and only used behind "Last season" chips, never in Analytics.
     if (d && d.season && d.season.year) gs = gs.concat(read(await getJSON(`${u}?season=${d.season.year - 1}`)).map(g => Object.assign(g, { last: true })));
+    if (globalThis.Viz && globalThis.Viz.tagSeason) globalThis.Viz.tagSeason(gs, league);   // early season: ESPN default can be last year
     return gs.filter(g => isFinite(g.pf) && isFinite(g.pa)).sort((a, b) => String(b.date).localeCompare(String(a.date)));
   }
   /** Vegas no-vig for a market side via window.Vegas (both sides when we have them). */

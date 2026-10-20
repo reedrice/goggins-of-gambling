@@ -40,3 +40,9 @@ console.log('our-chance ok');
   const ui = src.split('\n').filter(l => !/^\s*(\*|\/\/|\/\*)/.test(l) && /textContent|innerHTML|aria-label/.test(l)).join('\n');
   assert.ok(!/Dig deeper|Our chance/.test(ui), 'UI text must say Analytics'); assert.ok(/Analytics \$\{res\.pct\}%/.test(ui));
   console.log('our-chance labels ok'); }
+// Current season by date (ESPN's default log can still be last season in October)
+{ const Viz = require('../js/viz.js'); const now = new Date('2026-10-20T12:00:00Z');
+  assert.strictEqual(Viz.seasonStart('nba', now), '2026-09-01'); assert.strictEqual(Viz.seasonStart('nfl', now), '2026-08-01'); assert.strictEqual(Viz.seasonStart('mlb', new Date('2026-01-10')), '2025-02-01');
+  const gs = Viz.tagSeason([{ date: '2026-05-12' }, { date: '2026-10-19' }], 'nba', now);
+  assert.ok(gs[0].last && !gs[1].last); assert.strictEqual(Viz.pickGames(gs, 'L10').length, 1); assert.strictEqual(Viz.pickGames(gs, 'Last').length, 1);
+  console.log('season tagging ok'); }
