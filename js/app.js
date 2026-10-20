@@ -477,6 +477,39 @@
     window.Picker.loadIndex().catch(() => {});
     go(location.hash ? location.hash.slice(1) : savedView());
     startLiveAlerts();
+    seedBets();
+  }
+
+  /**
+   * Copy bets placed outside the app (data/seed-bets.json, committed, dollar-free)
+   * into this browser's My Bets list (localStorage) once each.
+   * - stake = stake_units x profile.unit (dollars only ever live in localStorage).
+   * - ids already seeded are kept in prefs.seededBets, so a bet the user deletes
+   *   or settles is never re-added or overwritten.
+   * Side effects: localStorage (bets + prefs); re-renders My Bets if it is open.
+   */
+  async function seedBets() {
+    let data;
+    try { data = await fetchData('data/seed-bets.json'); } catch (e) { return; }
+    const p = S.getProfile(); if (!p || !Array.isArray(data.bets)) return;
+    const done = new Set(S.getPrefs().seededBets || []);
+    const have = new Set(S.getBets().map(b => b.id));
+    let added = 0;
+    for (const s of data.bets) {
+      if (done.has(s.id)) continue;
+      done.add(s.id);
+      if (have.has(s.id)) continue;
+      S.upsertBet({
+        id: s.id, createdAt: s.createdAt, settledAt: null, category: s.category || 'parlay', platform: s.platform,
+        legs: s.legs.map(d => ({ desc: d, price: '', platform: s.platform, p: null, startTime: null })),
+        estMultiple: s.quoted_multiple, quotedMultiple: s.quoted_multiple, hitChance: null,
+        stake: Math.round(s.stake_units * (p.unit || 10) * 100) / 100,
+        status: 'open', share: false, shared: false, pickId: null, seeded: true
+      });
+      added++;
+    }
+    S.setPrefs({ seededBets: [...done] });
+    if (added) { renderHeader(); if (!$('#tab-bets').hidden) renderBets(); }
   }
 
   // ------------------------------------------- PLAY MONEY (points, just for fun)

@@ -901,3 +901,7 @@ Started Oct 19, 2026 with 20 picks logged, 0 graded. Picks published before then
   - Each changed leg keeps `price_morning`, and each pick got `price_checked_at`.
   - Picks with no edge left, and combos with a leg that already started, were set to `action: "skip"` with a plain verdict.
   - `data/pick-history.json` keeps the original publish prices (mergeHistory never replaces), so CLV is still measured from the morning price.
+
+## 38. Seeded bets: off-app slips in My Bets (Oct 19, 2026)
+
+My Bets lives in localStorage (`betdash_bets`), so bets placed straight on Polymarket (from screenshots) are added via **`data/seed-bets.json`** (committed, **no dollars**: `stake_units` + `quoted_multiple` = total return / stake). On start, `seedBets()` in `js/app.js` copies each new id into localStorage with `stake = stake_units × profile.unit`, then remembers the id in `prefs.seededBets` so deletes/settles stick and nothing is re-added. Seeded bets are `share:false` (not pushed to `data/bet-log.json`). To add more: append to `bets[]` with a new unique id. First batch: Reed's 6 open combos from 10/19 (4-leg, 2× 2-leg, 3-leg, 9-leg WAS@SF SGP, 7-leg NHL week + CLE@TB). No tabs added.
