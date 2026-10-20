@@ -1091,7 +1091,7 @@
     el.innerHTML = html;
     el.querySelectorAll('[data-load-pick]').forEach(b => (b.onclick = () => loadPickIntoCalc(b.dataset.loadPick, b.dataset.cat)));
     el.querySelectorAll('[data-play-pick]').forEach(b => (b.onclick = () => playPick(b.dataset.playPick)));
-    $('#picks-refresh').onclick = refreshPickPrices;
+    { const rf = $('#picks-refresh'); if (rf) rf.onclick = refreshPickPrices; }   // absent on the Live view
     el.querySelectorAll('[data-pick-day]').forEach(b => (b.onclick = () => { picksDay = b.dataset.pickDay; renderPicks(); }));
     el.querySelectorAll('[data-pick-sport]').forEach(b => (b.onclick = () => { picksSport = b.dataset.pickSport; renderPicks(); }));
     const all = {};
