@@ -1240,3 +1240,13 @@ Pablo, this is a Reed-approved change to your files. Reed saw "take No" on Ausar
   - **The 7 AM digest must only pick buyable sides.** Run `fetch-markets.mjs` before writing picks so the snapshot has the flags.
   - Today's lottery tickets (lotto-7/10/14/19) already had NBA "No" legs that can't be bought (SGA 8+ assists, Brunson 30+ points, and others). Those were written before this check.
 - **Tests:** `tests/buyable.test.mjs`.
+
+## Lottery tickets: swapped legs you can't buy (Oct 20, 2026, 3:15 PM CT)
+Reed's call. In `2026-10-20-lotto-7`, `-10`, `-14` and `-19`, every NBA "No" leg the app won't sell (`tradable:false`) was swapped for a Yes leg you can buy, at about the same price (fresh Polymarket US asks; the fair price is the mid). The swaps were done with `add-picks --replace`, which now checks that each side can be bought.
+- SGA 8+ assists NO → SGA 1+ steals YES
+- Brunson 30+ points NO → Josh Hart 1+ threes YES
+- Maxey 25+ points NO → Maxey 1+ steals YES
+- Brunson 8+ assists NO → OG Anunoby 15+ points YES
+- Vassell 15+ points NO → De'Aaron Fox 1+ steals YES
+
+No new legs come from games that already started, and none bet against Reed's open bets or the other picks. Watch out: lotto-14 and lotto-19 still have the BOS@DET Celtics +4.5 leg (that game has started) and are over the 10-leg combo limit, so they can't be placed as written.
