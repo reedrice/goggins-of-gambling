@@ -1139,3 +1139,14 @@ One number per bet that doesn't rely only on the market price. The logic lives i
 - **UI.** Any `[data-oc]` element is filled automatically ("Our chance X% · Market Y%" + "History 7 of 10 · Vegas 58% · Market 49%"). It appears on single pick cards (`evalBlock`), Build a Bet rows (Yes side), Live Bets edge cards and the chart pop-up. It is information only, with no instructions.
 - **Digest.** `update-picks picks` runs `scripts/our-chance.mjs` on the new file first (never fatal; `NO_OUR_CHANCE=1` skips it). It writes `our_chance`, `market_chance`, `our_chance_why` and sets `hit_prob` = our chance (multi-leg from different games: product of the legs). `capture-closing` logs `our_chance` + `market_chance` to pick-history for calibration (`learn.mjs`).
 - **Limits.** No minutes/role or injury data yet. Team ratings ignore opponent strength and rest. The home edge and SDs are rough per-sport constants. Prop history needs the ESPN search to find the player. Totals with no stats show just Vegas + Market.
+
+**§56 update (Oct 20, 2026): UI label is "Analytics", one line.** The UI never says "Our chance" (Reed); code names stay `our_chance` / `OurChance`. Cards, Build a Bet rows (Yes), Live Bets and the chart pop-up show one compact tappable line: "Analytics 58% · Market 49% ›". The History / Vegas / Market breakdown lives only inside the Dig deeper sheet. ESPN team schedules now use `site.web.api.espn.com`, because `site.api.espn.com` intermittently failed to fetch in Chrome.
+
+## 57. Dig deeper sheet (Oct 20, 2026)
+
+Tap the Analytics line → full-screen sheet (`js/dig-deeper.js`, `window.DigDeeper.open(spec, res)`). It is not a new tab; the app still has 6 tabs. Esc, ✕ or tapping the backdrop closes it. Top: the big Analytics % · Market and the History / Vegas / Market breakdown. Below that:
+- **Players.** The ESPN athlete position decides the stat picker. The one shared map is `POSITION_STATS` + `posGroup`, filtered to what the gamelog has. NFL: QB passing + rushing; RB rushing + receiving; WR/TE targets, receptions, yards, TDs; K kicking; DEF tackles/sacks/INTs. NBA: G/F/C with role-first order (minutes, usage proxy = FGA + 0.44·FTA + TOV, shot attempts…). NHL: skaters never see goalie stats and goalies only see saves / SV% / GA / SA. MLB: hitters (H, TB, HR, RBI, AB…) vs pitchers (K, outs, H/ER/BB allowed, pitches). Splits L5 / L10 / Season / vs opp, average + bars.
+- **NFL RB/WR/TE.** A target share donut vs teammates (last 5 ESPN box scores) + team pass rate.
+- **Game bets.** Both teams: last-10 form, record, home/away, points for/against, pace (PF+PA), with L5/L10/Season/H2H.
+- **Not yet.** Snap share, batting-order spot and PP time on ice (not in the free gamelogs).
+- **Design.** Chip pickers, no (i) icons or helper text, labels of a word or two. Tests: `tests/dig-deeper.test.js`.

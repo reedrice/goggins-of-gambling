@@ -587,12 +587,43 @@ a.btn-play { display: block; text-align: center; text-decoration: none; margin-t
 .viz-ylab, .viz-xlab { fill: #7d828a; font-size: 9.5px; }
 .viz-line { stroke-width: 2; stroke-linecap: round; }
 
-/* Our chance (HANDOFF §56): information, not advice */
-.oc { margin: 6px 0; font-size: .92em; }
+/* Our chance (HANDOFF §56), UI label "Analytics": one quiet line, information not advice */
+.oc { margin: 8px 0; font-size: .92em; }
 .oc:empty { display: none; }
-.oc-top b { font-weight: 650; }
+.oc-line { display: inline; white-space: nowrap; background: none; border: 0; padding: 2px 0; color: inherit; font: inherit; cursor: pointer; text-align: left; }
+.oc-line b { font-weight: 600; }
 .oc-mkt { color: var(--muted, #8e8e93); }
-.oc-why { color: var(--muted, #8e8e93); font-size: .85em; margin-top: 1px; }
-.oc-lab { color: var(--muted, #8e8e93); }
+.oc-chev { color: var(--muted, #8e8e93); margin-left: 6px; }
 .oc-sm { font-size: .85em; }
-.oc-dig { background: none; border: 0; padding: 2px 0; color: var(--accent, #0a84ff); font: inherit; font-size: .85em; cursor: pointer; }
+
+/* Dig deeper sheet (HANDOFF §57): full-screen, quiet, Apple-like */
+.dd-open, .dd-open body { overflow: hidden; }
+.dd-back { position: fixed; inset: 0; z-index: 10000; background: rgba(0,0,0,.5); display: flex; justify-content: center; }
+.dd-sheet { background: var(--bg, #000); color: var(--text, #f5f5f7); width: 100%; max-width: 640px; height: 100%; overflow-y: auto; animation: dd-up .22s ease-out; }
+@keyframes dd-up { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+.dd-top { position: sticky; top: 0; display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; background: inherit; }
+.dd-title { font-weight: 600; font-size: 1.05em; }
+.dd-x { background: rgba(127,127,127,.18); border: 0; color: inherit; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; }
+.dd-body { padding: 4px 20px 40px; }
+.dd-sec { padding: 18px 0; border-top: 1px solid rgba(127,127,127,.15); }
+.dd-sec:first-child { border-top: 0; }
+.dd-big { font-size: 2.6em; font-weight: 650; letter-spacing: -.02em; line-height: 1.1; margin-top: 10px; }
+.dd-cap, .dd-sub, .dd-why, .dd-none { color: var(--muted, #8e8e93); font-size: .9em; margin-top: 4px; }
+.dd-why { margin-top: 10px; }
+.dd-h { font-weight: 600; margin-bottom: 8px; }
+.dd-chips { display: flex; gap: 8px; overflow-x: auto; padding: 10px 0 2px; scrollbar-width: none; }
+.dd-chip { flex: none; border: 0; border-radius: 999px; padding: 7px 14px; background: rgba(127,127,127,.16); color: inherit; font: inherit; font-size: .88em; cursor: pointer; }
+.dd-chip.on { background: var(--text, #f5f5f7); color: var(--bg, #000); }
+.dd-bars { display: flex; align-items: flex-end; gap: 6px; height: 120px; margin-top: 16px; }
+.dd-col { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; align-items: center; }
+.dd-bar { width: 100%; border-radius: 4px 4px 0 0; background: var(--accent, #0a84ff); }
+.dd-xl { font-size: .7em; color: var(--muted, #8e8e93); margin-top: 4px; }
+.dd-share { display: flex; gap: 20px; align-items: center; }
+.dd-donut { width: 120px; height: 120px; flex: none; }
+.dd-seg { fill: none; stroke: var(--muted, #8e8e93); stroke-width: 16; }
+.dd-seg.dd-me { stroke: var(--accent, #0a84ff); }
+.dd-legend { font-size: .88em; line-height: 1.7; color: var(--muted, #8e8e93); }
+.dd-me-t { color: var(--text, #f5f5f7); font-weight: 600; }
+.dd-teams { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 14px; }
+.dd-form { letter-spacing: .08em; font-size: .85em; margin-bottom: 8px; }
+.dd-kv { font-size: .9em; color: var(--muted, #8e8e93); line-height: 1.7; }

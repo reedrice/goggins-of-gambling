@@ -1,0 +1,218 @@
+/**
+ * js/dig-deeper.js — "Dig deeper" sheet (HANDOFF §57). Tap the Analytics line on any bet ->
+ * full-screen sheet (not a tab): the Analytics breakdown (History · Vegas · Market), then a
+ * stat picker that offers ONLY stats that fit the player's ESPN position, with splits
+ * L5 / L10 / Season / vs opp. Teams: form, home/away, points for/against, pace.
+ * NFL receivers/backs: target share donut vs teammates (last 5 box scores) + team pass rate.
+ * Free ESPN data, client-side. Browser: window.DigDeeper; Node: module.exports (pure parts).
+ */
+(function (root, factory) {
+  if (typeof module === 'object' && module.exports) module.exports = factory();
+  else root.DigDeeper = factory();
+})(typeof self !== 'undefined' ? self : this, function () {
+  'use strict';
+  // ---------------------------------------------------------------- position -> stats (one place)
+  // Stat: [label, gamelog name] ("a-b:1" = 2nd part of "a-b"; fn = derived from a row reader r(name)).
+  const S = {
+    passYd: ['Pass yards', 'passingYards'], passTd: ['Pass TDs', 'passingTouchdowns'], int: ['INTs', 'interceptions'],
+    cmp: ['Completions', 'completions'], att: ['Pass attempts', 'passingAttempts'],
+    rushAtt: ['Rush attempts', 'rushingAttempts'], rushYd: ['Rush yards', 'rushingYards'], rushTd: ['Rush TDs', 'rushingTouchdowns'],
+    tgt: ['Targets', 'receivingTargets'], rec: ['Receptions', 'receptions'], recYd: ['Receiving yards', 'receivingYards'], recTd: ['Receiving TDs', 'receivingTouchdowns'],
+    fgm: ['Field goals', 'fieldGoalsMade-fieldGoalAttempts:0'], kpts: ['Kicking points', 'totalKickingPoints'],
+    tkl: ['Tackles', 'totalTackles'], sacks: ['Sacks', 'sacks'],
+    min: ['Minutes', 'minutes'], pts: ['Points', 'points'], reb: ['Rebounds', 'totalRebounds'], ast: ['Assists', 'assists'],
+    threes: ['Threes', 'threePointFieldGoalsMade-threePointFieldGoalsAttempted:0'], tpa: ['3PT attempts', 'threePointFieldGoalsMade-threePointFieldGoalsAttempted:1'],
+    fga: ['Shot attempts', 'fieldGoalsMade-fieldGoalsAttempted:1'], blk: ['Blocks', 'blocks'], stl: ['Steals', 'steals'], tov: ['Turnovers', 'turnovers'],
+    usage: ['Usage', r => r('fieldGoalsMade-fieldGoalsAttempted:1') + 0.44 * r('freeThrowsMade-freeThrowsAttempted:1') + r('turnovers')],
+    goals: ['Goals', 'goals'], nhlAst: ['Assists', 'assists'], nhlPts: ['Points', 'points'], shots: ['Shots', 'shotsTotal'],
+    toi: ['Time on ice', 'timeOnIcePerGame'], ppp: ['PP points', r => r('powerPlayGoals') + r('powerPlayAssists')],
+    saves: ['Saves', 'saves'], svp: ['Save %', 'savePct'], ga: ['Goals against', 'goalsAgainst'], sa: ['Shots against', 'shotsAgainst'],
+    ab: ['At bats', 'atBats'], hits: ['Hits', 'hits'], tb: ['Total bases', r => r('hits') + r('doubles') + 2 * r('triples') + 3 * r('homeRuns')],
+    hr: ['Home runs', 'homeRuns'], rbi: ['RBIs', 'RBIs'], runs: ['Runs', 'runs'], bb: ['Walks', 'walks'], hk: ['Strikeouts', 'strikeouts'],
+    pk: ['Strikeouts', 'strikeouts'], outs: ['Outs', r => { const v = r('innings'); return Math.floor(v) * 3 + Math.round((v % 1) * 10); }],
+    ha: ['Hits allowed', 'hits'], er: ['Earned runs', 'earnedRuns'], pbb: ['Walks', 'walks'], pitches: ['Pitches', 'pitches']
+  };
+  const POSITION_STATS = {
+    nfl: { QB: ['passYd', 'passTd', 'cmp', 'att', 'int', 'rushYd', 'rushAtt'], RB: ['rushYd', 'rushAtt', 'rushTd', 'rec', 'tgt', 'recYd'],
+      WR: ['tgt', 'rec', 'recYd', 'recTd'], TE: ['tgt', 'rec', 'recYd', 'recTd'], K: ['fgm', 'kpts'], DEF: ['tkl', 'sacks', 'int'] },
+    nba: { G: ['pts', 'ast', 'threes', 'tpa', 'fga', 'min', 'usage', 'reb', 'stl', 'tov'], F: ['pts', 'reb', 'ast', 'threes', 'fga', 'min', 'usage', 'stl', 'blk'],
+      C: ['reb', 'pts', 'blk', 'fga', 'min', 'usage', 'ast'] },
+    wnba: null,
+    nhl: { SK: ['nhlPts', 'goals', 'nhlAst', 'shots', 'toi', 'ppp'], G: ['saves', 'svp', 'ga', 'sa'] },
+    mlb: { H: ['hits', 'tb', 'hr', 'rbi', 'runs', 'ab', 'bb', 'hk'], P: ['pk', 'outs', 'ha', 'er', 'pbb', 'pitches'] }
+  };
+  POSITION_STATS.wnba = POSITION_STATS.nba;
+  const SHARE = ['RB', 'WR', 'TE'];   // NFL: target share donut + team pass rate
+  /** ESPN position abbreviation -> group key for POSITION_STATS. */
+  function posGroup(league, pos) {
+    pos = String(pos || '').toUpperCase();
+    if (league === 'nfl') return pos === 'QB' ? 'QB' : /^(RB|FB|HB)$/.test(pos) ? 'RB' : pos === 'WR' ? 'WR' : pos === 'TE' ? 'TE' : /^(K|PK|P)$/.test(pos) ? 'K' : 'DEF';
+    if (league === 'nba' || league === 'wnba') return /G/.test(pos) && !/F/.test(pos) ? 'G' : pos === 'C' ? 'C' : 'F';
+    if (league === 'nhl') return pos === 'G' ? 'G' : 'SK';
+    if (league === 'mlb') return /^(SP|RP|P|CP)$/.test(pos) ? 'P' : 'H';
+    return null;
+  }
+  /** Stats offered for a position, limited to what this gamelog actually has. */
+  function statsFor(league, pos, names) {
+    const g = posGroup(league, pos), list = ((POSITION_STATS[league] || {})[g]) || [];
+    const has = n => names.includes(String(n).split(':')[0]);
+    return list.filter(k => { const f = S[k][1]; return typeof f === 'function' ? true : has(f); }).map(k => ({ key: k, label: S[k][0] }));
+  }
+  /** Pure: per-game rows [{date, opp, home, value}] for one stat from an ESPN gamelog (newest first). */
+  function rows(log, key) {
+    if (!log || !Array.isArray(log.names)) return [];
+    const num = v => { v = String(v == null ? '' : v); if (/^\d+:\d\d$/.test(v)) { const [m, s] = v.split(':'); return +m + s / 60; } return parseFloat(v) || 0; };
+    const out = [], f = S[key][1], seen = new Set();
+    for (const st of log.seasonTypes || []) {
+      if (/preseason/i.test(st.displayName || '')) continue;
+      for (const c of st.categories || []) for (const e of c.events || []) {
+        if (seen.has(e.eventId)) continue; seen.add(e.eventId);
+        const r = nm => { const [n, part] = String(nm).split(':'), i = log.names.indexOf(n); if (i < 0) return 0; const raw = String(e.stats[i]); return part != null ? num(raw.split(/[-/]/)[+part]) : num(raw); };
+        const m = (log.events || {})[e.eventId] || {};
+        out.push({ id: e.eventId, date: m.gameDate || '', opp: (m.opponent && m.opponent.abbreviation) || '', home: m.atVs ? m.atVs !== '@' : null, season: String(st.displayName || '').split(' ')[0], value: Math.round((typeof f === 'function' ? f(r) : r(f)) * 10) / 10 });
+      }
+    }
+    return out.sort((a, b) => b.date.localeCompare(a.date));
+  }
+  /** Pure: split a row list. */
+  function split(all, mode, opp) {
+    if (mode === 'L5') return all.slice(0, 5);
+    if (mode === 'L10') return all.slice(0, 10);
+    if (mode === 'Opp') return all.filter(g => opp && String(g.opp).toLowerCase() === String(opp).toLowerCase());
+    return all.filter(g => all[0] && g.season === all[0].season);
+  }
+  const avg = gs => gs.length ? Math.round(gs.reduce((s, g) => s + g.value, 0) / gs.length * 10) / 10 : 0;
+  /** Pure: target shares from box scores [{name, targets}] -> sorted [{name, share}] (top 5 + Others). */
+  function shares(list) {
+    const m = new Map(); for (const x of list) m.set(x.name, (m.get(x.name) || 0) + x.targets);
+    const tot = [...m.values()].reduce((a, b) => a + b, 0); if (!tot) return [];
+    const s = [...m].map(([name, t]) => ({ name, share: t / tot })).sort((a, b) => b.share - a.share);
+    const top = s.slice(0, 5), rest = s.slice(5).reduce((a, x) => a + x.share, 0);
+    return rest > 0 ? top.concat([{ name: 'Others', share: rest }]) : top;
+  }
+
+  // ---------------------------------------------------------------- browser
+  const cache = new Map();
+  const getJSON = u => cache.get(u) || (cache.set(u, fetch(u).then(r => (r.ok ? r.json() : null)).catch(() => null)), cache.get(u));
+  const el = (t, c, txt) => { const e = document.createElement(t); if (c) e.className = c; if (txt != null) e.textContent = txt; return e; };
+  const SVGNS = 'http://www.w3.org/2000/svg';
+  function donut(items, me) {
+    const svg = document.createElementNS(SVGNS, 'svg'); svg.setAttribute('viewBox', '0 0 120 120'); svg.setAttribute('class', 'dd-donut');
+    let a = -Math.PI / 2;
+    items.forEach((x, i) => {
+      const b = a + x.share * 2 * Math.PI, big = b - a > Math.PI ? 1 : 0, r = 50;
+      const p = document.createElementNS(SVGNS, 'path');
+      p.setAttribute('d', `M${60 + r * Math.cos(a)} ${60 + r * Math.sin(a)} A${r} ${r} 0 ${big} 1 ${60 + r * Math.cos(b)} ${60 + r * Math.sin(b)}`);
+      p.setAttribute('class', 'dd-seg' + (x.name === me ? ' dd-me' : '')); p.style.opacity = x.name === me ? 1 : 0.25 + 0.12 * (5 - Math.min(5, i));
+      svg.append(p); a = b;
+    });
+    return svg;
+  }
+  function bars(gs) {
+    const wrap = el('div', 'dd-bars'), max = Math.max(1, ...gs.map(g => g.value));
+    gs.slice().reverse().forEach(g => { const c = el('div', 'dd-col'); const b = el('div', 'dd-bar'); b.style.height = `${Math.max(2, 100 * g.value / max)}%`; b.title = `${g.opp} ${g.value}`; c.append(b, el('div', 'dd-xl', g.opp)); wrap.append(c); });
+    return wrap;
+  }
+  function chips(opts, cur, on) {
+    const w = el('div', 'dd-chips');
+    for (const o of opts) { const b = el('button', 'dd-chip' + (o.v === cur ? ' on' : ''), o.l); b.type = 'button'; b.onclick = () => on(o.v); w.append(b); }
+    return w;
+  }
+  function close() { document.querySelectorAll('.dd-back').forEach(n => n.remove()); document.removeEventListener('keydown', onKey); document.documentElement.classList.remove('dd-open'); }
+  const onKey = e => { if (e.key === 'Escape') close(); };
+
+  async function playerView(body, spec, s) {
+    const V = globalThis.Viz; let p = V && V.parseProp({ question: spec.question, text: spec.text, player: spec.player, marketSlug: spec.marketId });
+    if (!p && !spec.player) return false;
+    if (!p) p = { player: spec.player, league: (s && V.ESPN_PATH[s.league]) ? s.league : '', n: 0, stat: { key: 'any', names: [], label: '' } };   // stat Viz can't parse (e.g. saves)
+    const got = await V.loadGames(p); if (!got || !got.log) { body.append(el('div', 'dd-none', 'No games found.')); return true; }
+    const path = V.ESPN_PATH[got.league];
+    const ath = await getJSON(`https://site.web.api.espn.com/apis/common/v3/sports/${path}/athletes/${got.id}`);
+    const pos = ath && ath.athlete && ath.athlete.position && ath.athlete.position.abbreviation;
+    const list = statsFor(got.league, pos, got.log.names || []);
+    if (!list.length) { body.append(el('div', 'dd-none', 'No stats for this position.')); return true; }
+    const myTeam = V.espnAbbr(got.team), opp = s ? [s.away, s.home].map(V.espnAbbr).find(a => a && a !== myTeam) : null;
+    let key = (list.find(x => S[x.key][1] === (p.stat.names || [])[0]) || list[0]).key, mode = 'L10';
+    const head = el('div', 'dd-sub', [p.player, pos].filter(Boolean).join(' · '));
+    const area = el('div');
+    body.append(head, area);
+    const draw = () => {
+      const all = rows(got.log, key), gs = split(all, mode, opp);
+      area.replaceChildren(
+        chips(list.map(x => ({ v: x.key, l: x.label })), key, v => { key = v; draw(); }),
+        chips([{ v: 'L5', l: 'L5' }, { v: 'L10', l: 'L10' }, { v: 'Season', l: 'Season' }].concat(opp ? [{ v: 'Opp', l: 'vs ' + opp.toUpperCase() }] : []), mode, v => { mode = v; draw(); }),
+        el('div', 'dd-big', gs.length ? String(avg(gs)) : '—'), el('div', 'dd-cap', gs.length ? `${S[key][0]} · ${gs.length} games` : 'No games'));
+      if (gs.length) area.append(bars(gs));
+    };
+    draw();
+    if (got.league === 'nfl' && SHARE.includes(posGroup('nfl', pos))) {
+      const sec = el('div', 'dd-sec'); sec.append(el('div', 'dd-h', 'Target share')); body.append(sec);
+      const ids = rows(got.log, 'rec').slice(0, 5).map(g => g.id);
+      const box = await Promise.all(ids.map(id => getJSON(`https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=${id}`)));
+      const tg = [], tm = { pass: 0, rush: 0 };
+      for (const d of box) {
+        const nm = ath && ath.athlete && ath.athlete.displayName, pl = (d && d.boxscore && d.boxscore.players) || [];
+        const t = pl.find(x => (x.statistics || []).some(st => (st.athletes || []).some(a => a.athlete && a.athlete.displayName === nm))) || pl.find(x => V.espnAbbr(x.team && x.team.abbreviation) === myTeam); if (!t) continue;
+        const tAbbr = V.espnAbbr(t.team && t.team.abbreviation);
+        const rc = (t.statistics || []).find(x => x.name === 'receiving'), i = rc ? (rc.keys || []).indexOf('receivingTargets') : -1;
+        if (rc && i >= 0) for (const a of rc.athletes || []) tg.push({ name: a.athlete.displayName, targets: +a.stats[i] || 0 });
+        const ts = ((d.boxscore.teams || []).find(x => V.espnAbbr(x.team && x.team.abbreviation) === tAbbr) || {}).statistics || [];
+        const g = n => (ts.find(x => x.name === n) || {}).displayValue || '';
+        tm.pass += +String(g('completionAttempts')).split('/')[1] || 0; tm.rush += +g('rushingAttempts') || 0;
+      }
+      const sh = shares(tg), me = (sh.find(x => x.name === (ath && ath.athlete && ath.athlete.displayName)) || {});
+      if (sh.length) {
+        const row = el('div', 'dd-share'); row.append(donut(sh, me.name));
+        const leg = el('div', 'dd-legend'); sh.forEach(x => leg.append(el('div', x.name === me.name ? 'dd-me-t' : '', `${x.name} ${Math.round(x.share * 100)}%`)));
+        row.append(leg); sec.append(row);
+        if (tm.pass + tm.rush) sec.append(el('div', 'dd-cap', `Team pass rate ${Math.round(100 * tm.pass / (tm.pass + tm.rush))}% · last ${ids.length}`));
+      } else sec.append(el('div', 'dd-none', 'No target data.'));
+    }
+    return true;
+  }
+  async function teamView(body, s) {
+    const OC = globalThis.OurChance; if (!OC || !s) return;
+    const [A, H] = await Promise.all([OC.teamGames(s.league, s.away), OC.teamGames(s.league, s.home)]);
+    let mode = 'L10';
+    const area = el('div'); body.append(area);
+    const card = (abbr, gs, home) => {
+      const sum = OC.teamSummary(gs), c = el('div', 'dd-team');
+      const r1 = n => Math.round(n * 10) / 10;
+      c.append(el('div', 'dd-h', abbr.toUpperCase()),
+        el('div', 'dd-form', gs.slice(0, 10).map(g => (g.pf > g.pa ? 'W' : 'L')).join(' ')),
+        el('div', 'dd-kv', `Record ${sum.w}-${sum.l}`),
+        el('div', 'dd-kv', home ? `Home ${sum.homeW}-${sum.homeN - sum.homeW}` : `Away ${sum.awayW}-${sum.awayN - sum.awayW}`),
+        el('div', 'dd-kv', `For ${r1(sum.pf)} · Against ${r1(sum.pa)}`),
+        el('div', 'dd-kv', `Pace ${r1(sum.pf + sum.pa)}`));
+      return c;
+    };
+    const draw = () => {
+      const pick = gs => mode === 'L5' ? gs.slice(0, 5) : mode === 'L10' ? gs.slice(0, 10) : mode === 'Opp' ? gs.filter(g => g.opp === s.home || g.opp === s.away) : gs;
+      const row = el('div', 'dd-teams'); row.append(card(s.away, pick(A), false), card(s.home, pick(H), true));
+      area.replaceChildren(chips([{ v: 'L5', l: 'L5' }, { v: 'L10', l: 'L10' }, { v: 'Season', l: 'Season' }, { v: 'Opp', l: 'H2H' }], mode, v => { mode = v; draw(); }), row);
+    };
+    draw();
+  }
+  /** Open the sheet for a bet spec (same spec as [data-oc]); res = the Analytics estimate. */
+  async function open(spec, res) {
+    close();
+    const back = el('div', 'dd-back'), sheet = el('div', 'dd-sheet'); sheet.setAttribute('role', 'dialog'); sheet.setAttribute('aria-modal', 'true');
+    const top = el('div', 'dd-top'), x = el('button', 'dd-x', '✕'); x.type = 'button'; x.setAttribute('aria-label', 'Close'); x.onclick = close;
+    top.append(el('div', 'dd-title', spec.label || spec.text || ''), x);
+    const body = el('div', 'dd-body');
+    if (res) {
+      const a = el('div', 'dd-sec');
+      a.append(el('div', 'dd-big', `${res.pct}%`), el('div', 'dd-cap', `Analytics${res.market != null ? ` · Market ${res.market}%` : ''}`));
+      if (res.line) a.append(el('div', 'dd-why', res.line));
+      body.append(a);
+    }
+    sheet.append(top, body); back.append(sheet); document.body.append(back);
+    document.documentElement.classList.add('dd-open');
+    back.addEventListener('click', e => { if (e.target === back) close(); }); document.addEventListener('keydown', onKey);
+    const s = globalThis.OurChance && globalThis.OurChance.parseSlug(spec.marketId);
+    const sec = el('div', 'dd-sec'); body.append(sec);
+    try { if (!(s && s.kind !== 'prop' ? (await teamView(sec, s), true) : await playerView(sec, spec, s))) sec.append(el('div', 'dd-none', 'No stats for this bet.')); }
+    catch (e) { if (typeof console !== 'undefined') console.warn('dig deeper', e); sec.append(el('div', 'dd-none', 'Couldn\'t load stats.')); }
+  }
+  return { open, close, POSITION_STATS, STATS: S, posGroup, statsFor, rows, split, shares };
+});
