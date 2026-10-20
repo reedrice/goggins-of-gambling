@@ -135,10 +135,10 @@
   const getJSON = url => (cache[url] = cache[url] || fetch(url).then(r => (r.ok ? r.json() : null)).catch(() => null));
 
   // ------------------------------------------------------------ zoomable chart (§55)
-  const DEFAULT_SPAN = 3600e3, MIN_SPAN = 60e3;
+  const MIN_SPAN = 60e3, MAX_SPAN = 24 * 3600e3;
   /** Pure: visible window {a, b} for data [tMin, tMax] and view state {span, end, live}. */
   function viewWindow(tMin, tMax, v) {
-    const full = Math.max(MIN_SPAN, tMax - tMin);
+    const full = Math.max(MIN_SPAN, Math.min(MAX_SPAN, tMax - tMin)); // zoom-out cap: 24 h
     const span = Math.min(full, Math.max(MIN_SPAN, v.span || full));
     let end = v.live ? tMax : Math.min(tMax, Math.max(tMin + span, v.end || tMax));
     return { a: end - span, b: end, span };
@@ -163,7 +163,7 @@
    * zoom, drag to pan, tap or long-press to read a point, double-tap or Reset to snap back.
    * The y-axis fits what's in view. While "live", new points keep the right edge at now;
    * panning away shows "Back to live". The view state lives on the box, so the 1.5 s live
-   * refreshes don't undo a zoom. Default view: the last hour when there's more than that.
+   * refreshes don't undo a zoom. Default view: fully zoomed out = last 24 h (or all data if less); zoom-out stops at 24 h.
    */
   function drawChart(box, points, marks) {
     box._pts = points; box._marks = marks || [];
@@ -185,9 +185,8 @@
     const svg = sv('svg', { viewBox: `0 0 ${W} ${H}`, class: 'viz-svg', role: 'img', 'aria-label': 'Price over time. Pinch or scroll to zoom, drag to move.' });
     const read = el('div', 'viz-read');
     box.replaceChildren(ctl, svg, read);
-    const pts0 = box._pts, full0 = pts0[pts0.length - 1].t - pts0[0].t;
-    const ui = box._ui = { svg, read, range, live, reset, v: { span: full0 > DEFAULT_SPAN * 1.5 ? DEFAULT_SPAN : null, end: null, live: true }, sel: null };
-    const def = () => { const p = box._pts, f = p[p.length - 1].t - p[0].t; return { span: f > DEFAULT_SPAN * 1.5 ? DEFAULT_SPAN : null, end: null, live: true }; };
+        const ui = box._ui = { svg, read, range, live, reset, v: { span: null, end: null, live: true }, sel: null };
+    const def = () => ({ span: null, end: null, live: true }); // full history, grows as points arrive
     reset.onclick = () => { ui.v = def(); ui.sel = null; renderChart(box); };
     live.onclick = () => { ui.v.live = true; ui.sel = null; renderChart(box); };
     const xOf = ev => { const r = svg.getBoundingClientRect(); return (ev.clientX - r.left) * W / r.width; };

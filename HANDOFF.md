@@ -1123,3 +1123,5 @@ they open in a pop-up when you tap a pick card (Picks tab) or a Live Bets card.
 - The view state lives on the chart box, so live refreshes don't undo a zoom; switching line chips starts a fresh view.
   Repaints are throttled with requestAnimationFrame. `touch-action: none` stops page scroll/zoom while gesturing.
 - Pure helpers `viewWindow`, `fitY`, `rangeLabel` are tested in tests/viz.test.js. Styles: "§55" block in style.css.
+
+**§55 update (Oct 20, 2026): default view is fully zoomed out.** The chart now opens (and Reset/double-tap returns) fully zoomed out (`v.span = null`): the last 24 hours, or all data if there's less, instead of the last hour. Zooming out is capped at 24 h (`MAX_SPAN` in `viewWindow`). While live at full view the window keeps all new points (growing up to 24 h, then sliding). Pinch/scroll still zooms in; polling, data and gestures unchanged.
