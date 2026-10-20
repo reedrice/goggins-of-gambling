@@ -1291,3 +1291,7 @@ Reed signed into X in-app (@w0densday) and asked for full catch-up. Reviewed Pos
 Reed requested upcoming games in Live Bets. Default ticks now capture all supported two-team games scheduled today in America/Chicago, including late games after UTC midnight, plus unfinished games from the last 24 hours. Explicit --lead N retains a narrower window. Discovery requires exactly two event teams, excluding leader/futures markets. The old NBA points-leader file is preserved with is_game:false and excluded from the index. Initial captures establish real opening prices; edges require later price movement. Existing chatgpt-owned ten-minute heartbeat refreshes the full slate. No UI change or version bump. Opening prices/history are preserved. Tests cover late games, next-day exclusion, DST and synthetic markets.
 
 Publisher also includes new untracked data/live files, so each new daily slate is published rather than only previously tracked games.
+
+## 64. Fade Trent polling reduced (Oct 20, 2026)
+
+At Reed?s request, changed the active Codex Fade Trent heartbeat from every five minutes to every two hours. Updated owner schedule and operating notes. Live feed remains on its existing ten-minute schedule.

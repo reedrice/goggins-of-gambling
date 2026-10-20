@@ -5,7 +5,7 @@ Reed requested new picks to appear when @BookitWithTrent posts. Previously this 
 ## Current operation
 
 - Owner: `trent-post-check` in owners.json is `chatgpt`. This is independent of the Grok daily digest; stable ids prevent duplicate imports.
-- Codex thread heartbeat every five minutes, requiring this computer and Codex to remain available. This is polling, not an instant webhook; GitHub Pages adds publishing delay.
+- Codex thread heartbeat every two hours, requiring this computer and Codex to remain available. This is polling, not an instant webhook; GitHub Pages adds publishing delay.
 - Use the browser tools to read `https://x.com/BookitWithTrent`. No X API token is configured. Reed signed into the in-app browser as @w0densday on Oct 20. Use that signed-in session to scroll the full Posts and Replies timelines back to the previous watermark. If the session expires, record partial coverage and request sign-in; never use a login page as proof of a complete check.
 - Read posts since the last successful scan, including original posts quoted by recent posts. Follow real source links to verify exact text and posting time. Ignore pinned old posts, reposts and commentary. A result recap is not a new pick. Never invent a market, odds or line from a recap or image.
 - If the timeline reaches the prior successful scan boundary, use coverage `complete`; otherwise use `partial`. Partial imports do not advance `read_through`. Keep unresolved backlog visible to maintainers and notify Reed if login/full timeline access is needed. Never convert a fetch error or login screen into a successful empty scan.
