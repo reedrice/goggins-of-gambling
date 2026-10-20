@@ -345,7 +345,7 @@
     const sec = el('section', 'viz-sec');
     sec.append(el('h4', 'viz-h', '📈 Price over time'));
     const ocEl = el('div', 'oc oc-viz'); ocEl.hidden = true;   // Our chance (§56), set once a price is known
-    const box = el('div', 'viz-chart'); box.append(el('div', 'viz-none', 'Loading…')); sec.append(ocEl, box);
+    const box = el('div', 'viz-chart'); box.append(el('div', 'viz-none', 'Loading…')); sec.append(box); sec.ocEl = ocEl;
     let game = gameInfo(null, leg.start_time || leg.startTime), cur = {}, api = [], tick = { points: [], marks: [] }, extra = [], live = [], gen = 0;
     const side = leg.side === 1 ? 1 : 0;
     const draw = () => {
@@ -356,7 +356,7 @@
       if (globalThis.OurChance && pts.length && (cur.slug || leg.marketSlug) && ocEl.dataset.slug !== (cur.slug || leg.marketSlug)) {
         ocEl.dataset.slug = cur.slug || leg.marketSlug; ocEl.removeAttribute('data-oc-done'); ocEl.hidden = false;
         ocEl.setAttribute('data-oc', JSON.stringify({ marketId: ocEl.dataset.slug, side: side ? 'no' : 'yes', market: pts[pts.length - 1].chance, text: leg.text, question: leg.question, player: leg.player || null }));
-        globalThis.OurChance.hydrate(sec);
+        globalThis.OurChance.hydrate(ocEl.parentNode || sec);
       }
       drawChart(box, pts, tick.marks, game);
     };
@@ -489,7 +489,8 @@
         body.replaceChildren();
         if (!gs.length) { body.append(el('div', 'viz-none', mode === 'H2H' ? 'No recent games against this team.' : 'No games here yet.')); return; }
         const s = summary(gs, n);
-        body.append(el('div', 'viz-hit', `Hit in ${s.hits} of ${s.total} games · Average ${s.avg} ${p.stat.label}`));
+        const seasons = [...new Set(gs.map(g => String(g.season).replace(/ Regular Season/, '')))].join(', ');
+        body.append(el('div', 'viz-hit', `Hit in ${s.hits} of ${s.total} games · Average ${s.avg} ${p.stat.label}`), el('div', 'viz-season', seasons));
         const max = Math.max(n * 1.4, ...gs.map(g => g.value), 1);
         const bars = el('div', 'viz-bars');
         const line = el('div', 'viz-line-dash'); line.style.bottom = `calc(${(100 * n / max).toFixed(1)}% )`;
@@ -602,6 +603,7 @@
       if (legs.length > 1) wrap.append(el('div', 'viz-legname', leg.text || leg.question || ''));
       const p = parseProp(leg), chart = priceSection(leg);
       let ps = null;
+      if (chart.ocEl) wrap.append(chart.ocEl);   // Analytics + Dig deeper first, no scrolling (§57)
       if (p) { ps = propSection(p, leg, chart); wrap.append(ps); }
       wrap.append(chart);
       charts.push(chart);
@@ -609,7 +611,6 @@
       sheet.append(wrap);
     }
     if ((spec.legs || []).length > MAX_LEGS) sheet.append(el('div', 'viz-none', `Showing the first ${MAX_LEGS} picks.`));
-    sheet.append(el('div', 'viz-foot', 'Price line: Polymarket US buy price over time, live while this is open. Bars: past games from ESPN. Past games don\'t promise the next one.'));
     if (subs.length || charts.some(c => c.slug())) { sheet.insertBefore(liveEl, sheet.children[spec.sub ? 3 : 2] || null); liveStop = startLive(subs, charts, liveEl); }
     back.append(sheet);
     back.addEventListener('click', e => { if (e.target === back) close(); });

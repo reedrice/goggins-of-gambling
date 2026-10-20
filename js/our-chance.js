@@ -228,10 +228,14 @@
         if (!res) { elm.hidden = true; return; }
         // One compact line only (Reed): "Analytics 58% · Market 49%". Tap -> Dig deeper sheet (breakdown lives there).
         elm.innerHTML = '';
-        const b = document.createElement(globalThis.DigDeeper ? 'button' : 'div'); b.className = 'oc-line';
-        if (b.tagName === 'BUTTON') { b.type = 'button'; b.addEventListener('click', ev => { ev.stopPropagation(); globalThis.DigDeeper.open(spec, res); }); b.setAttribute('aria-label', 'Dig deeper'); }
+        const b = document.createElement('div'); b.className = 'oc-line';
         const lab = spec.label ? String(spec.label).replace(/[&<>"]/g, '') + ' · ' : '';
-        b.innerHTML = `${lab}<b>Analytics ${res.pct}%</b>${res.market != null ? `<span class="oc-mkt">&nbsp;· Market ${res.market}%</span>` : ''}${b.tagName === 'BUTTON' ? '<span class="oc-chev" aria-hidden="true">&nbsp;›</span>' : ''}`;
+        b.innerHTML = `${lab}<b>Analytics ${res.pct}%</b>${res.market != null ? `<span class="oc-mkt">&nbsp;· Market ${res.market}%</span>` : ''}`;
+        if (globalThis.DigDeeper) {   // a clear button, not just a chevron (Reed)
+          const d = document.createElement('button'); d.type = 'button'; d.className = 'oc-dig'; d.textContent = 'Dig deeper ›';
+          b.addEventListener('click', ev => { ev.stopPropagation(); globalThis.DigDeeper.open(spec, res); });
+          b.append(d);
+        }
         elm.append(b);
         elm.dataset.ocPct = res.pct;
       });
