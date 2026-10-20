@@ -493,3 +493,10 @@ a.btn-play { display: block; text-align: center; text-decoration: none; margin-t
 /* §28 Record: 5 stat boxes (HANDOFF §41). Phone: 2 per row, Units box spans the full last row. Wide: 5 in one row. */
 .kpis-5 .kpi-wide { grid-column: 1 / -1; }
 @media (min-width: 700px) { .kpis.kpis-5 { grid-template-columns: repeat(5, 1fr); } .kpis-5 .kpi-wide { grid-column: auto; } }
+
+/* §44 Lottery tickets */
+.card.lotto { border: 2px dashed #d4a017; }
+.card.lotto .logos { flex-wrap: wrap; max-width: 100%; }
+.lotto-line { background: #fff7d6; color: #5a4300; border-radius: 8px; padding: 6px 8px; margin: 6px 0; font-size: 0.95em; }
+.card.lotto .pick-id { flex-direction: column; align-items: flex-start; gap: 6px; }
+.card.lotto .logos { display: flex; gap: 4px; }

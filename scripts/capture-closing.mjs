@@ -37,7 +37,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const HIST = path.join(ROOT, 'data/pick-history.json');
 const GATEWAY = 'https://gateway.polymarket.us';
-const SECTIONS = { singles: 'single', props: 'prop', parlays: 'parlay', longshots: 'longshot', nonsports: 'nonsports' };
+const SECTIONS = { singles: 'single', props: 'prop', parlays: 'parlay', longshots: 'longshot', lottery: 'longshot', nonsports: 'nonsports' };
 
 /** Game/event slug: from the Polymarket US link, else from the market id. */
 export function slugOf(o, pk = {}) {

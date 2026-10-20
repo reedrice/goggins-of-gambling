@@ -70,8 +70,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PICKS = path.join(ROOT, 'data/picks.json');
 const PREDS = path.join(ROOT, 'data/predictions.json');
 
-const SECTIONS = ['predictions', 'singles', 'props', 'parlays', 'longshots', 'nonsports'];
-const MULTI_SECTIONS = ['parlays', 'longshots'];
+const SECTIONS = ['predictions', 'singles', 'props', 'parlays', 'longshots', 'lottery', 'nonsports'];
+const MULTI_SECTIONS = ['parlays', 'longshots', 'lottery'];
 /** Pick evaluation (hit chance / risk / verdict), shared with the app. */
 const PickEval = createRequire(import.meta.url)(path.join(ROOT, 'js/evaluate.js'));
 /** UI strings (verdict wording) from js/strings.js, a browser script run in a sandbox. */

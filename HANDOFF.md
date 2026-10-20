@@ -221,6 +221,7 @@ Daily routine:
 4. `picks` the new slate. Fill in `hit_prob` (your real estimated chance, especially for same-game parlays), and `verdict`/`prediction_id` when you have something better than the defaults; anything missing is computed and written for you (§18). Pages redeploys in about a minute, and the app cache-busts its fetches.
 5. `node scripts/fetch-markets.mjs --commit` (see §13). Run it **after** step 4 so the new picks get Polymarket/Kalshi links and Kalshi prices. It also refreshes player positions (`data/positions.json`, §21).
 5b. `node scripts/fetch-book-odds.mjs --commit` (see §17). Run it **after** step 5: it prices today's picks at the other apps through The Odds API (needs `ODDS_API_KEY` in the environment; about 6-12 of the 500 monthly credits).
+4b. **Lottery tickets (§44):** optionally fill `sections.lottery` with 3-4 huge combos (about 7, 10, 14 and 19 legs) from the most likely, fair-or-better legs (65%+ preferred, favorites' moneylines, unders, props), mixing sports, with no conflicting legs and nothing that works against another pick on the page. `market` = "Lottery ticket · N picks", `stake_units` 0.1 max, `risk` long_shot, `hit_prob` = product of leg fair %. Polymarket US combos max out at 10 legs, so say to split bigger tickets.
 6. Read `data/bet-log.json` to compare quoted vs. estimated multiples per platform and tune `skip_below`.
 
 ## 9. Renaming the brand
@@ -946,3 +947,13 @@ My Bets lives in localStorage (`betdash_bets`), so bets placed straight on Polym
 
 ## 43. Expanded next-day board (Oct 19, 2026, late)
 Reed wanted many more options for Tue 10/20. Added by new ids via `add-picks --replace` (no duplicates): 9 more singles (moneylines/totals/spreads, every one labeled "Strong edge" (3+ points vs no-vig Vegas), "Slight edge" (0.5-3) or "Fair, no edge" in `reasoning`/`verdict`, with the Polymarket US and best-Vegas American prices in the text), 7 more NBA props, 6 cross-sport combos (2-3 legs, every leg 55%+), and 1 labeled long shot. Game-winner predictions for all 14 NBA+NHL games live in data/predictions.json. No NHL point props: none had 3+ points of edge (rule §24/new rules). Picks page has no card cap, so no UI change. Avoided conflicts: no single on a side whose opponent is a combo leg (e.g. no Canucks/Sharks/Kings singles because Hurricanes/Canadiens/Capitals are combo legs). Prop edges come from single-book alt lines, so they're thin. Re-price by id at the 7 AM run.
+
+## 44. Lottery tickets section (Oct 20, 2026)
+Reed wanted huge "lottery ticket" combos (7 to about 20 legs) inside the Picks page (no new tab).
+- **Data:** new `sections.lottery[]` in picks.json, same MultiPick schema as `longshots` (legs[], est_multiple, hit_prob, skip_below, stake_units ≤ 0.1). Allowed by `update-picks.mjs` (SECTIONS/MULTI_SECTIONS), `js/evaluate.js` (MULTI, long-shot verdicts), `scripts/capture-closing.mjs` (category `longshot`).
+- **UI:** `PICK_SECTIONS` adds `['lottery','longshot']`, so it renders after Big payout combos with the same day and sport chips (a ticket's `sport` is "NBA + NHL", so it shows under each). Title `STR.picks.sections.lottery`. `pickCard` adds a yellow `.lotto-line`: "$1 → $X · $10 → $Y · +American" plus "Just for fun" (`STR.picks.lottoFun`). The hit chance ("about 1 in N") comes from the normal eval box. CSS: `.card.lotto` (dashed gold border, logos on their own row). Cache stamp `?v=20261020-0020`.
+- **Build a Bet / My Bets:** "Load into calculator" works as for long shots; the saved category is `longshot`.
+- **Record:** no separate block. Tickets have 2+ legs, so §42's leg-count split puts them under **Combos**.
+- **Leg cap:** Polymarket US's app allows **2-10 legs per combo** (docs.polymarket.us Combos FAQ; the API allows 2-50). Tickets over 10 legs say to split them into two combos.
+- **Oct 20 tickets:** ids `2026-10-20-lotto-7/-10/-14/-19`. The 7- and 10-leg tickets are all Vegas-checked legs. The 14- and 19-leg ones add NHL "Under 7.5 goals" legs that have no Vegas line (fair = the Polymarket price).
+- Screenshot: /workspace/shots/lottery.png (390px phone, headless Chrome, after onboarding).

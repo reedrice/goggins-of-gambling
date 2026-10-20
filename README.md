@@ -51,6 +51,7 @@ A daily job overwrites this whole file. All fields are optional unless marked **
     "props":       [ Pick ],
     "parlays":     [ MultiPick ],
     "longshots":   [ MultiPick ],
+    "lottery":     [ MultiPick ],   // 7-20 leg "lottery tickets", 0.1u max (HANDOFF §44)
     "nonsports":   [ Pick ]
   }
 }

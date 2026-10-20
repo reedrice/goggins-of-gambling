@@ -41,7 +41,7 @@
     { key: 'long_shot', min: 0 }
   ];
   const RISK_KEYS = RISK_LEVELS.map(r => r.key);
-  const MULTI = ['parlays', 'longshots'];
+  const MULTI = ['parlays', 'longshots', 'lottery'];
   const isNum = v => typeof v === 'number' && isFinite(v);
   const round1 = v => Math.round(v * 10) / 10;
 
@@ -108,8 +108,8 @@
     }
     const q = pk.quoted_multiple, s = pk.skip_below;
     if (isNum(q) && isNum(s)) return q < s ? V.tooLow : q / s - 1 < 0.05 ? V.barely : V.goodCombo;
-    if (isNum(s)) return sec === 'longshots' ? V.longshotCheck(s) : V.payCheck(s);
-    return sec === 'longshots' ? V.longshot : V.fair;
+    if (isNum(s)) return (sec === 'longshots' || sec === 'lottery') ? V.longshotCheck(s) : V.payCheck(s);
+    return (sec === 'longshots' || sec === 'lottery') ? V.longshot : V.fair;
   }
 
   /**

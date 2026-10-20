@@ -150,8 +150,10 @@ window.STR = {
       props: 'Player bets',
       parlays: 'Combo bets',
       longshots: 'Big payout combos (hard to hit)',
+      lottery: '🎟️ Lottery tickets (just for fun, almost never hit)',
       nonsports: 'Not sports'
     },
+    lottoFun: 'Just for fun. Bet pocket change only (0.1 unit max).',
     price: 'Price',
     fair: 'Fair price',
     advantage: 'Your price advantage',

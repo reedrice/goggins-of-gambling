@@ -46,7 +46,7 @@
   /** Bet category keys (stored on bets and in the shared log). */
   const CAT_KEYS = ['single', 'prop', 'parlay', 'longshot', 'nonsports'];
   /** picks.json section key -> category used when a pick is loaded into the builder. */
-  const PICK_SECTIONS = [['predictions', null], ['singles', 'single'], ['props', 'prop'], ['parlays', 'parlay'], ['longshots', 'longshot'], ['nonsports', 'nonsports']];
+  const PICK_SECTIONS = [['predictions', null], ['singles', 'single'], ['props', 'prop'], ['parlays', 'parlay'], ['longshots', 'longshot'], ['lottery', 'longshot'], ['nonsports', 'nonsports']];
 
   let calc = freshCalc();
   let picksData = null;
@@ -849,15 +849,19 @@
     const multX = pk.quoted_multiple || pk.est_multiple;
     const sp = PL.splitTap(pk.side || '');
     const deal = PL.dealWord(edge);
-    const moneyHtml = isMulti
+    // Lottery tickets (HANDOFF §44): extra "$1 → $X · $10 → $Y", combined American odds and "1 in N".
+    const lotto = sec === 'lottery' && multX > 0
+      ? `<div class="lotto-line"><b>${esc(cash(1))} → ${esc(cash(multX))}</b> · ${esc(cash(10))} → ${esc(cash(10 * multX))} · <b>+${Math.round((multX - 1) * 100).toLocaleString('en-US')}</b><div class="small muted">${esc(STR.picks.lottoFun)}</div></div>`
+      : '';
+    const moneyHtml = lotto + (isMulti
       ? `${multX > 0 ? `<div class="pay-big">${esc(STR.plain.ifAllWin(pk.legs.length, cash(st), cash(st * multX)))} ${tip('ourPayout')}</div>` : ''}
          ${pk.skip_below > 0 ? `<div class="only-if">${esc(STR.plain.onlyIf(cash(st), cash(st * pk.skip_below)))} ${tip('skipBelow')}</div>` : ''}`
       : `${isC(pk.price) ? `<div class="pay-big">${esc(betGetText(appPrices(pk, bookPrices(pk)).mine.c))} ${tip('payout')}</div>` : ''}
          ${tapHtml(sp)}${spreadHtml((pk.side || '') + ' ' + (pk.market || ''), pk)}
          ${deal ? `<div class="deal deal-${deal} small">${esc(STR.plain.deal[deal])} ${tip('advantage')}</div>` : ''}
-         ${priceLineHtml(pk, bookPrices(pk), true)}`;
+         ${priceLineHtml(pk, bookPrices(pk), true)}`);
     const teams = (pk.teams || []).map(teamRef);
-    return `<div class="card ${action === 'skip' ? 'skip' : ''}">
+    return `<div class="card ${action === 'skip' ? 'skip' : ''} ${sec === 'lottery' ? 'lotto' : ''}">
       <div class="pick-head">
         <div class="pick-id">${teams.length ? `<span class="logos">${T.badges(teams, 30)}</span>` : ''}<div>
           ${/* Combos: the tier name ("Small payout · 3 picks") is the title; the legs list below says what's in it. */ ''}
