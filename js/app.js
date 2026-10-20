@@ -1770,9 +1770,9 @@
     const TR = window.Trent;
     let ov = null; try { ov = await fetchData('data/trent-overrides.json'); } catch (e) { /* none yet */ }
     const picks = TR.applyOverrides(Array.isArray(doc.picks) ? doc.picks : [], ov);   // dev answers (§58)
-    // Dev-only (?dev=1): open clarification questions. Read-only, never shown to normal users.
-    const devQs = /[?&]dev=1\b/.test(location.search) ? TR.openQuestions(picks) : [];
-    const devHtml = devQs.length ? `<div class="card dev-qs"><b>Dev: open questions (${devQs.length})</b>${devQs.map(q => `<div class="small"><code>${esc(q.id)}</code> ${esc(q.pick)}<br>${esc(q.question)}${q.issue ? ` · #${esc(String(q.issue))}` : ''}</div>`).join('')}<div class="small muted">Answer: node scripts/trent-picks.mjs clarify &lt;id&gt; --set key=value --answer "…" --commit</div></div>` : '';
+    // Dev-only (signed-in collaborators, §60): open clarification questions. Read-only, never shown to normal users.
+    const devQs = window.GitHubLog && await window.GitHubLog.isDev(S.getToken()) ? TR.openQuestions(picks) : [];   // collaborators only (§60)
+    const devHtml = devQs.length ? `<div class="card dev-qs"><b>Dev: open questions (${devQs.length})</b>${devQs.map(q => `<div class="small"><code>${esc(q.id)}</code> ${esc(q.pick)}<br>${esc(q.question)}${q.issue ? ` · #${esc(String(q.issue))}` : ''}</div>`).join('')}<div class="small muted">Answer: node scripts/trent-picks.mjs clarify &lt;id&gt; --set key=value --answer "…" --commit · <a href="https://github.com/${esc(window.APP_CONFIG.repoOwner)}/${esc(window.APP_CONFIG.repoName)}/issues?q=is%3Aopen+label%3Atrent-clarify" target="_blank" rel="noopener">Votes</a></div></div>` : '';
     const s = TR.summary(picks), a = s.all;
     const rec = x => `${x.w}-${x.l}-${x.p}`;
     const u = n => `<span class="${sign(n)}">${n > 0 ? '+' : ''}${esc(String(n))}u</span>`;

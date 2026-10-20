@@ -1182,3 +1182,11 @@ This is for unclear Trent bets (ambiguous leg, line, side, odds or result). It i
 ## 59. Data archive for self-learning (Oct 20, 2026)
 
 `scripts/archive.mjs` writes `data/archive/<kind>/<YYYY-MM>/<day>.ndjson.gz`. The kinds are picks, analytics (inputs/outputs per leg), results, vegas, trent, prices (raw Polymarket history once per closed market) and espn (team results). It is idempotent (dedupe by `key`, unchanged records untouched, `.done` markers for one-time fetches) and cheap (local files + a few public GETs). It runs after `capture-closing.mjs --commit` (`--no-archive` skips). Schema and join keys: `data/archive/README.md`. Privacy: stakes, money and secrets are stripped. Size: ≈ 2–7 MB/month.
+
+## 60. Dev accounts: GitHub sign-in, dev = collaborator (Oct 20, 2026)
+
+- **Today (no new infrastructure).** A dev pastes their own GitHub token in Settings (the existing token field, stored only in their localStorage). `GitHubLog.isDev(token)` calls `GET /repos/reedrice/goggins-of-gambling/collaborators/{login}`: 204 = dev, cached per tab. Only then does Fade Trent show the "Dev: open questions" card with a link to the `trent-clarify` vote issues. Non-collaborators and visitors without a token see nothing. No secrets in the repo.
+- **Planned one-tap "Sign in with GitHub" (OAuth device flow).** GitHub's device-flow endpoints (`github.com/login/device/code`, `/login/oauth/access_token`) don't send CORS headers, so a static page needs a tiny proxy. Steps for Reed:
+  1. GitHub → Settings → Developer settings → OAuth Apps → New OAuth App. Name "Goggins dev sign-in". Homepage `https://reedrice.github.io/goggins-of-gambling/`. Callback URL: the same. Tick **Enable Device Flow**, then copy the **Client ID**. A client secret isn't needed for device flow; if one is ever used, it goes only in the Worker env.
+  2. Create a free Cloudflare account → Workers → Create Worker `goggins-gh-auth`. It forwards only POSTs to those two GitHub URLs, adds `Access-Control-Allow-Origin: https://reedrice.github.io`, and stores nothing.
+  3. Give the bot the Client ID + the Worker URL. The site then adds "Sign in with GitHub": show the user code → poll → token in localStorage, using the same `isDev` gate. Scope: `read:user` (+ `public_repo` only if devs should vote/comment from the site).

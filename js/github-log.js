@@ -190,5 +190,23 @@
     throw new Error('Shared log kept conflicting; try again.');
   }
 
-  window.GitHubLog = { whoAmI, checkToken, buildRecord, fetchLog, upsertRecord, _b64encode: b64encode, _b64decode: b64decode };
+  /**
+   * Dev gate (HANDOFF §60): true only when the user's own GitHub token belongs to a
+   * collaborator of the repo (GET /repos/{o}/{r}/collaborators/{login} -> 204).
+   * Cached per tab (sessionStorage). No token -> false. Nothing is ever sent anywhere else.
+   */
+  async function isDev(token) {
+    if (!token) return false;
+    try { const c = sessionStorage.getItem('betdash_isDev'); if (c) return c === '1'; } catch (e) { /* storage blocked */ }
+    let ok = false;
+    try {
+      const login = await whoAmI(token), cfg = window.APP_CONFIG;
+      const r = await gh(`/repos/${cfg.repoOwner}/${cfg.repoName}/collaborators/${encodeURIComponent(login)}`, token);
+      ok = r.status === 204;
+    } catch (e) { ok = false; }
+    try { sessionStorage.setItem('betdash_isDev', ok ? '1' : '0'); } catch (e) { /* ignore */ }
+    return ok;
+  }
+
+  window.GitHubLog = { isDev, whoAmI, checkToken, buildRecord, fetchLog, upsertRecord, _b64encode: b64encode, _b64decode: b64decode };
 })();
