@@ -800,6 +800,10 @@
    * @param {object} pk @param {string} sec section key (singles, parlays, ...)
    * @returns {string} HTML
    */
+  /** Analytics line (§56) for any bet with a Polymarket US market id; filled by js/our-chance.js. */
+  function ocDiv(marketId, side, price, text, player) {
+    return marketId && window.OurChance && price > 0 && price < 100 ? `<div class="oc oc-sm" data-oc="${window.OurChance.attr({ marketId, side: side || 'yes', market: price, text: text || '', player: player || null })}"></div>` : '';
+  }
   function evalBlock(pk, sec) {
     const E = STR.eval;
     const ev = window.PickEval.evaluate(pk, sec, STR);
@@ -959,7 +963,7 @@
       </div>
       ${evalBlock(pk, sec || 'singles')}
       ${moneyHtml}
-      ${isMulti ? `<ul class="legs">${pk.legs.map((l, i) => `<li>${l.team ? T.badge(teamRef(l.team), 20) : ''}${plainLegHtml(l, i === 0)}${vizOn() ? legChartBtn(vizSpec({ ...pk, legs: [l] }).legs[0], pk.event) : ''}</li>`).join('')}</ul>` : ''}
+      ${isMulti ? `<ul class="legs">${pk.legs.map((l, i) => `<li>${l.team ? T.badge(teamRef(l.team), 20) : ''}${plainLegHtml(l, i === 0)}${vizOn() ? legChartBtn(vizSpec({ ...pk, legs: [l] }).legs[0], pk.event) : ''}${ocDiv(l.market_id, l.market_side, l.price, l.desc, l.player)}</li>`).join('')}</ul>` : ''}
       ${/* PL.noCents: any "41¢" the daily job wrote shows as American odds */ ''}
       ${lineupHtml(pk.lineup_note)}
       ${pk.pending_news ? `<div class="news">⏳ <b>${esc(P.news)}</b> ${esc(PL.neutral(PL.noCents(pk.pending_news)))}</div>` : ''}
@@ -1991,7 +1995,7 @@
     const H = STR.record.hist, X = STR.record.slip, stake = exStake(), m = histMultiple(h);
     const legs = (h.legs || []).map(l => {
       const am = l.publish > 0 && l.publish < 100 ? C.formatPrice(l.publish, 'american') : '';
-      return `<div class="slip-row"><span>${esc(legName(l.desc))}${am ? ` <span class="muted small">${esc(am)}</span>` : ''}</span><span>${legChartBtn(histVizLeg(h, l))}${resBadge(l.result)}</span></div>`;
+      return `<div class="slip-row"><span>${esc(legName(l.desc))}${am ? ` <span class="muted small">${esc(am)}</span>` : ''}</span><span>${legChartBtn(histVizLeg(h, l))}${resBadge(l.result)}</span></div>${ocDiv(l.market_id, l.side, l.publish, l.desc, null)}`;
     }).join('');
     const total = m ? C.formatPrice(100 / m, 'american') : '';
     const u = histUnits(h);

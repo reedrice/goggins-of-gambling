@@ -108,10 +108,24 @@
     });
     return svg;
   }
-  function bars(gs) {
-    const wrap = el('div', 'dd-bars'), max = Math.max(1, ...gs.map(g => g.value));
-    gs.slice().reverse().forEach(g => { const c = el('div', 'dd-col'); const b = el('div', 'dd-bar'); b.style.height = `${Math.max(2, 100 * g.value / max)}%`; b.title = `${g.opp} ${g.value}`; c.append(b, el('div', 'dd-xl', g.opp)); wrap.append(c); });
-    return wrap;
+  /** Game bars vs a line: green = hit (value >= line), red = miss. Oldest on the left. */
+  function bars(gs, line) {
+    const out = el('div', 'dd-chart'), plot = el('div', 'dd-bars'), labs = el('div', 'dd-labs');
+    const max = Math.max(1, line || 0, ...gs.map(g => Math.abs(g.value)));
+    if (line != null && line > 0) { const l = el('div', 'dd-line'); l.style.bottom = `${(100 * line / max).toFixed(1)}%`; plot.append(l); }
+    gs.slice().reverse().forEach(g => {
+      const c = el('div', 'dd-col'), b = el('div', 'dd-bar' + (line == null ? '' : g.value >= line ? ' dd-hit' : ' dd-miss'));
+      b.style.height = `${Math.max(2, 100 * Math.abs(g.value) / max)}%`; b.title = `${g.opp} ${g.value}`; b.append(el('span', 'dd-v', String(g.value)));
+      c.append(b); plot.append(c); labs.append(el('div', 'dd-xl', g.opp));
+    });
+    out.append(plot, labs); return out;
+  }
+  /** − line + stepper. */
+  function stepper(val, step, on) {
+    const w = el('div', 'dd-step'), m = el('button', 'dd-sb', '−'), v = el('span', 'dd-sv', String(val)), pl = el('button', 'dd-sb', '+');
+    m.type = pl.type = 'button'; m.setAttribute('aria-label', 'Lower'); pl.setAttribute('aria-label', 'Higher');
+    m.onclick = () => on(Math.round((val - step) * 10) / 10); pl.onclick = () => on(Math.round((val + step) * 10) / 10);
+    w.append(m, v, pl); return w;
   }
   function chips(opts, cur, on) {
     const w = el('div', 'dd-chips');
@@ -132,17 +146,21 @@
     const list = statsFor(got.league, pos, got.log.names || []);
     if (!list.length) { body.append(el('div', 'dd-none', 'No stats for this position.')); return true; }
     const myTeam = V.espnAbbr(got.team), opp = s ? [s.away, s.home].map(V.espnAbbr).find(a => a && a !== myTeam) : null;
-    let key = (list.find(x => S[x.key][1] === (p.stat.names || [])[0]) || list[0]).key, mode = 'L10';
+    let key = (list.find(x => S[x.key][1] === (p.stat.names || [])[0]) || list[0]).key, mode = 'L10', line = p.n || null;
     const head = el('div', 'dd-sub', [p.player, pos].filter(Boolean).join(' · '));
     const area = el('div');
     body.append(head, area);
     const draw = () => {
       const all = rows(got.log, key), gs = split(all, mode, opp);
+      if (line == null) line = Math.max(1, Math.round(avg(split(all, 'Season'))));
+      const hits = gs.filter(g => g.value >= line).length;
       area.replaceChildren(
-        chips(list.map(x => ({ v: x.key, l: x.label })), key, v => { key = v; draw(); }),
+        chips(list.map(x => ({ v: x.key, l: x.label })), key, v => { key = v; line = null; draw(); }),
         chips([{ v: 'L5', l: 'L5' }, { v: 'L10', l: 'L10' }, { v: 'Season', l: 'Season' }].concat(opp ? [{ v: 'Opp', l: 'vs ' + opp.toUpperCase() }] : []), mode, v => { mode = v; draw(); }),
-        el('div', 'dd-big', gs.length ? String(avg(gs)) : '—'), el('div', 'dd-cap', gs.length ? `${S[key][0]} · ${gs.length} games` : 'No games'));
-      if (gs.length) area.append(bars(gs));
+        el('div', 'dd-big', gs.length ? `${hits} of ${gs.length}` : '—'),
+        el('div', 'dd-cap', gs.length ? `${line}+ ${S[key][0].toLowerCase()} · avg ${avg(gs)}` : 'No games'),
+        stepper(line, key === 'svp' ? 0.01 : 1, v => { line = Math.max(0, v); draw(); }));
+      if (gs.length) area.append(bars(gs, line));
     };
     draw();
     if (got.league === 'nfl' && SHARE.includes(posGroup('nfl', pos))) {
@@ -170,26 +188,37 @@
     }
     return true;
   }
-  async function teamView(body, s) {
+  /** Pure: a team's games as bar rows for a game bet: total = combined points, else margin (pf - pa). */
+  function teamRows(gs, kind) { return gs.map(g => ({ date: g.date, opp: String(g.opp || '').toUpperCase(), home: g.home, value: kind === 'total' ? g.pf + g.pa : g.pf - g.pa })); }
+  async function teamView(body, s, spec) {
     const OC = globalThis.OurChance; if (!OC || !s) return;
     const [A, H] = await Promise.all([OC.teamGames(s.league, s.away), OC.teamGames(s.league, s.home)]);
-    let mode = 'L10';
+    const side = spec && (spec.side === 'no' || spec.side === 1) ? 'no' : 'yes';
+    let team = side === 'no' && s.kind !== 'total' ? 'home' : 'away', mode = 'L10', kind = s.kind === 'total' ? 'total' : 'margin';
+    // Line: totals use the total; spreads the team's spread (away line, flipped for home); moneyline 0.5 (win).
+    const baseLine = () => kind === 'total' ? (s.kind === 'total' ? s.line : null) : s.kind === 'spread' ? (team === 'away' ? -s.line : s.line) + 0.5 * 0 : 0.5;
+    let line = baseLine();
     const area = el('div'); body.append(area);
-    const card = (abbr, gs, home) => {
-      const sum = OC.teamSummary(gs), c = el('div', 'dd-team');
-      const r1 = n => Math.round(n * 10) / 10;
-      c.append(el('div', 'dd-h', abbr.toUpperCase()),
-        el('div', 'dd-form', gs.slice(0, 10).map(g => (g.pf > g.pa ? 'W' : 'L')).join(' ')),
-        el('div', 'dd-kv', `Record ${sum.w}-${sum.l}`),
-        el('div', 'dd-kv', home ? `Home ${sum.homeW}-${sum.homeN - sum.homeW}` : `Away ${sum.awayW}-${sum.awayN - sum.awayW}`),
-        el('div', 'dd-kv', `For ${r1(sum.pf)} · Against ${r1(sum.pa)}`),
-        el('div', 'dd-kv', `Pace ${r1(sum.pf + sum.pa)}`));
-      return c;
-    };
+    const r1 = n => Math.round(n * 10) / 10;
     const draw = () => {
-      const pick = gs => mode === 'L5' ? gs.slice(0, 5) : mode === 'L10' ? gs.slice(0, 10) : mode === 'Opp' ? gs.filter(g => g.opp === s.home || g.opp === s.away) : gs;
-      const row = el('div', 'dd-teams'); row.append(card(s.away, pick(A), false), card(s.home, pick(H), true));
-      area.replaceChildren(chips([{ v: 'L5', l: 'L5' }, { v: 'L10', l: 'L10' }, { v: 'Season', l: 'Season' }, { v: 'Opp', l: 'H2H' }], mode, v => { mode = v; draw(); }), row);
+      const gsAll = team === 'away' ? A : H, abbr = team === 'away' ? s.away : s.home, oppAbbr = team === 'away' ? s.home : s.away;
+      const gs = mode === 'L5' ? gsAll.slice(0, 5) : mode === 'L10' ? gsAll.slice(0, 10) : mode === 'Opp' ? gsAll.filter(g => g.opp === oppAbbr) : gsAll;
+      const rs = teamRows(gs, kind);
+      if (line == null) line = Math.round(avg(teamRows(gsAll.slice(0, 10), kind))) + 0.5;
+      const sum = OC.teamSummary(gs), hits = rs.filter(g => g.value >= line).length;
+      const capWord = kind === 'total' ? `Over ${line}` : line === 0.5 ? 'Wins' : `Margin ${line > 0 ? '+' : ''}${line}`;
+      area.replaceChildren(
+        chips([{ v: 'away', l: s.away.toUpperCase() }, { v: 'home', l: s.home.toUpperCase() }], team, v => { team = v; if (kind !== 'total') line = baseLine(); draw(); }),
+        chips([{ v: 'total', l: 'Total' }, { v: 'margin', l: 'Margin' }], kind, v => { kind = v; line = kind === 'total' && s.kind === 'total' ? s.line : kind === 'margin' ? baseLine() : null; draw(); }),
+        chips([{ v: 'L5', l: 'L5' }, { v: 'L10', l: 'L10' }, { v: 'Season', l: 'Season' }, { v: 'Opp', l: 'vs ' + oppAbbr.toUpperCase() }], mode, v => { mode = v; draw(); }),
+        el('div', 'dd-big', rs.length ? `${hits} of ${rs.length}` : '—'),
+        el('div', 'dd-cap', rs.length ? `${capWord} · ${team === 'home' ? 'Home' : 'Away'} ${team === 'home' ? `${sum.homeW}-${sum.homeN - sum.homeW}` : `${sum.awayW}-${sum.awayN - sum.awayW}`} · ${sum.w}-${sum.l}` : 'No games'),
+        stepper(line, 1, v => { line = v; draw(); }));
+      if (rs.length) {
+        area.append(bars(rs, kind === 'margin' ? null : line));
+        if (kind === 'margin') area.lastChild.querySelectorAll('.dd-bar').forEach((b, i) => b.classList.add(rs[rs.length - 1 - i].value >= line ? 'dd-hit' : 'dd-miss'));
+        area.append(el('div', 'dd-cap dd-foot', `For ${r1(sum.pf)} · Against ${r1(sum.pa)} · Pace ${r1(sum.pf + sum.pa)}`));
+      }
     };
     draw();
   }
@@ -211,8 +240,8 @@
     back.addEventListener('click', e => { if (e.target === back) close(); }); document.addEventListener('keydown', onKey);
     const s = globalThis.OurChance && globalThis.OurChance.parseSlug(spec.marketId);
     const sec = el('div', 'dd-sec'); body.append(sec);
-    try { if (!(s && s.kind !== 'prop' ? (await teamView(sec, s), true) : await playerView(sec, spec, s))) sec.append(el('div', 'dd-none', 'No stats for this bet.')); }
+    try { if (!(s && s.kind !== 'prop' ? (await teamView(sec, s, spec), true) : await playerView(sec, spec, s))) sec.append(el('div', 'dd-none', 'No stats for this bet.')); }
     catch (e) { if (typeof console !== 'undefined') console.warn('dig deeper', e); sec.append(el('div', 'dd-none', 'Couldn\'t load stats.')); }
   }
-  return { open, close, POSITION_STATS, STATS: S, posGroup, statsFor, rows, split, shares };
+  return { open, close, teamRows, POSITION_STATS, STATS: S, posGroup, statsFor, rows, split, shares };
 });
