@@ -21,7 +21,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   const t = await p.$eval('.sheet', e => e.innerText);
   console.log(t);
   ok(!/¢/.test(t), 'no cents in the slip');
-  ok(/We picked/.test(t) && /Our chance/.test(t), 'pick + chance shown');
+  ok(/We picked/.test(t) && /Analytics/.test(t), 'pick + Analytics shown');
   await p.screenshot({ path: SHOT });
   await p.click('.sheet-x'); ok(!(await p.$('.sheet-back')), 'X closes');
   await open(); await p.mouse.click(195, 40); await wait(200); ok(!(await p.$('.sheet-back')), 'backdrop tap closes');

@@ -308,7 +308,7 @@
     reset.onclick = () => { ui.touched = false; ui.v = def(); ui.sel = null; renderChart(box); };
     live.onclick = () => { ui.v.live = true; ui.sel = null; renderChart(box); };
     const xOf = ev => { const r = svg.getBoundingClientRect(); return (ev.clientX - r.left) * W / r.width; };
-    const tAt = px => { const w = ui.win; return w.a + (w.b - w.a) * Math.min(1, Math.max(0, (px - L) / (W - L - rOf(box)))); };
+    const tAt = px => { const w = ui.win; return w.a + (w.b - w.a) * Math.min(1, Math.max(0, (px - lOf(box)) / (W - lOf(box) - rOf(box)))); };
     const zoom = (factor, px) => {
       const p = box._pts, tMin = p[0].t, tMax = p[p.length - 1].t, w = ui.win, pivot = tAt(px);
       const span = Math.min(Math.max(MIN_SPAN, tMax - tMin), Math.max(MIN_SPAN, w.span * factor));
@@ -339,7 +339,7 @@
       if (!drag.moved) return;
       if (ui.sel != null && e.pointerType !== 'mouse') { ui.sel = tAt(xOf(e)); renderChart(box); return; }   // after long-press: scrub
       const p = box._pts, tMin = p[0].t, tMax = p[p.length - 1].t, w = ui.win;
-      const dt = -dx * (w.b - w.a) / (W - L - rOf(box));
+      const dt = -dx * (w.b - w.a) / (W - lOf(box) - rOf(box));
       const end = Math.min(tMax, Math.max(tMin + w.span, drag.end + dt));
       ui.v = { span: w.span, end, live: end >= tMax - 1 }; ui.touched = true;
       renderChart(box);
@@ -356,6 +356,7 @@
     };
     svg.addEventListener('pointerup', up); svg.addEventListener('pointercancel', up);
   }
+  const lOf = box => (box._pair ? 6 : L);
   const rOf = box => (box._pair ? box._pair.R : R);
   function renderChart(box) {
     if (!box._ui) return;
@@ -364,7 +365,7 @@
     if (typeof requestAnimationFrame === 'function') box._raf = requestAnimationFrame(run); else run();
   }
   function paint(box) {
-    const ui = box._ui, pts = box._pts, marks = box._marks, svg = ui.svg, pr = box._pair, R = rOf(box);
+    const ui = box._ui, pts = box._pts, marks = box._marks, svg = ui.svg, pr = box._pair, R = rOf(box), L = lOf(box);   // no y-axis strip in two-line mode
     const tMin = pts[0].t, tMax = pts[pts.length - 1].t;
     const win = ui.win = viewWindow(tMin, tMax, ui.v);
     // Visible points + one on each side so the line reaches the edges.
@@ -416,7 +417,7 @@
         const pc = sv('text', { x: W - R + 8, y: yy + 5, class: 'viz-endpct', fill: sd.color }); pc.textContent = `${Math.round(v)}%`;
         svg.append(nm, pc);
       });
-      ui.read.textContent = `${clock(tq)} CT · ` + pr.sides.map((sd, i) => vals[i] == null ? null : `${sd.name} ${Math.round(vals[i])}% (${american(vals[i])})`).filter(Boolean).join(' · ') + (mk ? ' · ' + mk.label : '');
+      ui.read.textContent = `${clock(tq)} CT · ` + pr.sides.map((sd, i) => vals[i] == null ? null : `${sd.name} ${Math.round(vals[i])}% (${american(vals[i])})`).filter(Boolean).join(' · ') + (mk && ui.sel != null ? ' · ' + String(mk.label).split(' · ')[0] : '');   // period only: its saved score is from the period's start and would contradict the header
     } else {
       if (p.t >= win.a - 1 && p.t <= win.b + 1) {
         if (ui.sel != null) svg.append(sv('line', { x1: x(p.t), x2: x(p.t), y1: T, y2: H - B, class: 'viz-cross' }));
@@ -476,6 +477,7 @@
         globalThis.OurChance.hydrate(ocEl.parentNode || sec);
       }
       let pair = null;
+      const hd = sec.querySelector('.viz-h'); if (hd) hd.hidden = !!(meta && meta.pair);   // Polymarket-style game chart: no heading
       if (meta && meta.pair && pts.length) {
         // Each side's own Polymarket price (history shortPrice/longPrice, live short/longQuote). Only when the other
         // side has no data of its own (our live-tick file / saved points) do we fall back to 100 - x.

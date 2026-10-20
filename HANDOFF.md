@@ -1259,3 +1259,8 @@ Reed wanted live charts to look like Polymarket's game charts. In `js/viz.js` `p
 - **Score header** (BOS 58 · Live / End Q2 · 45 DET) comes from the Polymarket US event (`score`, `period`, `live`, `teams`), the same feed Polymarket shows, refreshed every ~8 s.
 - **Props** keep one Yes line (that's what Polymarket shows), now also stepped.
 - Zoom, range label, 1 s live, never-blank states unchanged. Pure helpers exported and tested in `tests/viz.test.js`.
+
+## Two-line chart polish (Oct 20, 2026, Reed's bot)
+- Two-line game charts drop the empty y-axis strip on the left (`lOf`) and the "📈 Price over time" heading.
+- The tap read-out shows only the period name. The saved period mark's score was from the start of that period and contradicted the live header, so it's no longer shown.
+- tests/record-slip.smoke.js now expects "Analytics" (renamed from "Our chance"). The old check was a stale test, not a bug.
