@@ -102,14 +102,14 @@
   }
 
   /** Pure: which games a toggle shows. */
+  // Current season only by default (Reed); last season only behind the "Last season" chip.
   function pickGames(all, mode, oppAbbr) {
-    if (mode === 'L5') return all.slice(0, 5);
-    if (mode === 'L10') return all.slice(0, 10);
-    if (mode === 'H2H') return all.filter(g => oppAbbr && espnAbbr(g.opp) === espnAbbr(oppAbbr)).slice(0, 10);
-    // "2025-26 Postseason" and "2025-26 Regular Season" are the same season.
-    const yr = g => String(g.season).split(' ')[0];
-    const season = all[0] && yr(all[0]);
-    return all.filter(g => yr(g) === season);
+    if (mode === 'Last') return all.filter(g => g.last);
+    const cur = all.filter(g => !g.last);
+    if (mode === 'L5') return cur.slice(0, 5);
+    if (mode === 'L10') return cur.slice(0, 10);
+    if (mode === 'H2H') return cur.filter(g => oppAbbr && espnAbbr(g.opp) === espnAbbr(oppAbbr)).slice(0, 10);
+    return cur;
   }
 
   /** Probability points -> American odds. */
@@ -474,20 +474,21 @@
       const log = await getJSON(url);
       let all = gamesFromLog(log, p.stat);
       const season = log && (log.filters || []).find(f => f.name === 'season');
-      if (all.length < 10 && season && season.value) all = all.concat(gamesFromLog(await getJSON(`${url}?season=${season.value - 1}`), p.stat));
+      const prevLog = season && season.value ? await getJSON(`${url}?season=${season.value - 1}`) : null;
+      all = all.concat(gamesFromLog(prevLog, p.stat).map(g => Object.assign(g, { last: true })));   // tagged, never mixed into current-season views
       const seen = new Set(); all = all.filter(g => !seen.has(g.id) && seen.add(g.id)).sort((a, b) => b.date.localeCompare(a.date));
       if (!all.length) { body.replaceChildren(el('div', 'viz-none', `No ${p.stat.label} games found for ${p.player} yet.`)); return; }
       const myTeam = espnAbbr(all[0].team), opp = [p.away, p.home].map(espnAbbr).find(a => a && a !== myTeam) || null;
       let mode = 'L10';
       const draw = () => {
         tabs.replaceChildren();
-        for (const m of ['L5', 'L10', 'H2H', 'Season']) {
-          const b = el('button', 'viz-tab' + (m === mode ? ' on' : ''), m === 'H2H' && opp ? `vs ${opp.toUpperCase()}` : m); b.type = 'button';
+        for (const m of ['L5', 'L10', 'H2H', 'Season', 'Last']) {
+          const b = el('button', 'viz-tab' + (m === mode ? ' on' : ''), m === 'H2H' && opp ? `vs ${opp.toUpperCase()}` : m === 'Last' ? 'Last season' : m); b.type = 'button';
           b.onclick = () => { mode = m; draw(); }; tabs.append(b);
         }
         const gs = pickGames(all, mode, opp).slice().reverse();   // oldest on the left
         body.replaceChildren();
-        if (!gs.length) { body.append(el('div', 'viz-none', mode === 'H2H' ? 'No recent games against this team.' : 'No games here yet.')); return; }
+        if (!gs.length) { body.append(el('div', 'viz-none', mode === 'H2H' ? 'No games against this team this season.' : mode === 'Last' ? 'No games last season.' : 'No games yet this season.')); return; }
         const s = summary(gs, n);
         const seasons = [...new Set(gs.map(g => String(g.season).replace(/ Regular Season/, '')))].join(', ');
         body.append(el('div', 'viz-hit', `Hit in ${s.hits} of ${s.total} games · Average ${s.avg} ${p.stat.label}`), el('div', 'viz-season', seasons));
@@ -529,9 +530,10 @@
       const log = await getJSON(url);
       let all = gamesFromLog(log, p.stat);
       const season = log && (log.filters || []).find(f => f.name === 'season');
-      if (all.length < 10 && season && season.value) all = all.concat(gamesFromLog(await getJSON(`${url}?season=${season.value - 1}`), p.stat));
+      const prevLog = season && season.value ? await getJSON(`${url}?season=${season.value - 1}`) : null;
+      all = all.concat(gamesFromLog(prevLog, p.stat).map(g => Object.assign(g, { last: true })));   // tagged, never mixed into current-season views
       const seen = new Set(); all = all.filter(g => !seen.has(g.id) && seen.add(g.id)).sort((a, b) => b.date.localeCompare(a.date));
-      return { games: all, team: all[0] ? all[0].team : null, id, league, log };
+      return { games: all, team: all[0] ? all[0].team : null, id, league, log, prevLog };
     })().catch(() => null);
     gamesCache.set(k, job); return job;
   }

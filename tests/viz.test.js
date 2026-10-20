@@ -59,3 +59,7 @@ console.log('viz ok');
   assert.strictEqual(V.gameInfo({ event: { startTime: '2026-10-20T00:00:00Z', ended: true } }).status, 'finished');
   console.log('viz §55 read-out/default-window ok');
 }
+{ const V = require('../js/viz.js'), assert = require('assert');
+  const g = [{ value: 1, opp: 'a' }, { value: 2, opp: 'b', last: true }, { value: 3, opp: 'c', last: true }];
+  assert.strictEqual(V.pickGames(g, 'Season').length, 1); assert.strictEqual(V.pickGames(g, 'L10').length, 1); assert.strictEqual(V.pickGames(g, 'Last').length, 2);
+  console.log('viz current-season ok'); }

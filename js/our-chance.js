@@ -171,7 +171,8 @@
       return [{ date: e.date, pf: sc(me), pa: sc(op), home: me.homeAway === 'home', opp: ea(op.team && op.team.abbreviation) }];
     });
     const d = await getJSON(u); let gs = read(d);
-    if (gs.length < 10 && d && d.season && d.season.year) gs = gs.concat(read(await getJSON(`${u}?season=${d.season.year - 1}`)));
+    // Last season is tagged (g.last) and only used behind "Last season" chips, never in Analytics.
+    if (d && d.season && d.season.year) gs = gs.concat(read(await getJSON(`${u}?season=${d.season.year - 1}`)).map(g => Object.assign(g, { last: true })));
     return gs.filter(g => isFinite(g.pf) && isFinite(g.pa)).sort((a, b) => String(b.date).localeCompare(String(a.date)));
   }
   /** Vegas no-vig for a market side via window.Vegas (both sides when we have them). */
@@ -196,15 +197,16 @@
         if (s && s.kind === 'prop' && globalThis.Viz && globalThis.Viz.loadGames) {
           const p = globalThis.Viz.parseProp({ question: spec.question, text: spec.text, player: spec.player, marketSlug: spec.marketId });
           const all = p ? await globalThis.Viz.loadGames(p) : null;
-          if (all && all.games.length) {
+          const curG = all ? all.games.filter(g => !g.last) : [];
+          if (curG.length) {
             const opp = [s.away, s.home].map(ea).find(a => a && a !== ea(all.team)) || null;
             const home = all.team ? ea(all.team) === ea(s.home) : null;
-            const st = propStats(all.games, p.n, { opp, home });
+            const st = propStats(curG, p.n, { opp, home });
             if (st) { stats = side === 'no' ? Object.assign({}, st, { p: 1 - st.p }) : st; hist = side === 'no' ? `${st.n10 - st.hits10} of ${st.n10}` : `${st.hits10} of ${st.n10}`; }
           }
         } else if (s && s.kind !== 'prop') {
           const [A, H] = await Promise.all([teamGames(s.league, s.away), teamGames(s.league, s.home)]);
-          const st = gameStats(s.kind, s.league, A, H, { line: s.line, awayAbbr: ea(s.away), homeAbbr: ea(s.home) });
+          const st = gameStats(s.kind, s.league, A.filter(g => !g.last), H.filter(g => !g.last), { line: s.line, awayAbbr: ea(s.away), homeAbbr: ea(s.home) });
           if (st) {
             stats = side === 'no' ? Object.assign({}, st, { p: 1 - st.p }) : st;
             const me = s.kind === 'total' ? null : side === 'no' ? st.h : st.a;

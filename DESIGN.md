@@ -18,3 +18,4 @@ Linked from [AGENTS.md](AGENTS.md). Detail and history are in [HANDOFF.md](HANDO
   - **Stat chips** stay on the same player and switch to his other position-appropriate prop bets.
   - **Game bets** show **one team at a time** (tap the team chip to switch, never side by side). Totals = each game's combined total vs the line; Margin = win/cover margin. Same stepper and L5 / L10 / Season / vs-opp chips.
   - Minimal: chips, one big number, bars, one quiet footer line.
+- **Current season by default, everywhere.** Prop bars, team bars and the Analytics History part use only this season's games (preseason excluded). If there are only a few, show what exists ("Hit in 1 of 2"), never padded with last season. Last season is tucked into a "Last season" chip at the end of the chips.

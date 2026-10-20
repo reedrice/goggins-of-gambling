@@ -151,14 +151,14 @@
     const area = el('div');
     body.append(head, area);
     const draw = () => {
-      const all = rows(got.log, key), gs = split(all, mode, opp);
-      if (line == null) line = Math.max(1, Math.round(avg(split(all, 'Season'))));
+      const all = rows(got.log, key), gs = mode === 'Last' ? rows(got.prevLog, key) : split(all, mode, opp);
+      if (line == null) line = Math.max(1, Math.round(avg(all.length ? all : rows(got.prevLog, key))));
       const hits = gs.filter(g => g.value >= line).length;
       area.replaceChildren(
         chips(list.map(x => ({ v: x.key, l: x.label })), key, v => { key = v; line = null; draw(); }),
-        chips([{ v: 'L5', l: 'L5' }, { v: 'L10', l: 'L10' }, { v: 'Season', l: 'Season' }].concat(opp ? [{ v: 'Opp', l: 'vs ' + opp.toUpperCase() }] : []), mode, v => { mode = v; draw(); }),
+        chips([{ v: 'L5', l: 'L5' }, { v: 'L10', l: 'L10' }, { v: 'Season', l: 'Season' }].concat(opp ? [{ v: 'Opp', l: 'vs ' + opp.toUpperCase() }] : [], [{ v: 'Last', l: 'Last season' }]), mode, v => { mode = v; draw(); }),
         el('div', 'dd-big', gs.length ? `${hits} of ${gs.length}` : '—'),
-        el('div', 'dd-cap', gs.length ? `${line}+ ${S[key][0].toLowerCase()} · avg ${avg(gs)}` : 'No games'),
+        el('div', 'dd-cap', gs.length ? `${line}+ ${S[key][0].toLowerCase()} · avg ${avg(gs)}` : mode === 'Last' ? 'No games last season' : 'No games yet this season'),
         stepper(line, key === 'svp' ? 0.01 : 1, v => { line = Math.max(0, v); draw(); }));
       if (gs.length) area.append(bars(gs, line));
     };
@@ -202,17 +202,18 @@
     const r1 = n => Math.round(n * 10) / 10;
     const draw = () => {
       const gsAll = team === 'away' ? A : H, abbr = team === 'away' ? s.away : s.home, oppAbbr = team === 'away' ? s.home : s.away;
-      const gs = mode === 'L5' ? gsAll.slice(0, 5) : mode === 'L10' ? gsAll.slice(0, 10) : mode === 'Opp' ? gsAll.filter(g => g.opp === oppAbbr) : gsAll;
+      const cur = gsAll.filter(g => !g.last);   // current season only; last season behind its chip
+      const gs = mode === 'Last' ? gsAll.filter(g => g.last) : mode === 'L5' ? cur.slice(0, 5) : mode === 'L10' ? cur.slice(0, 10) : mode === 'Opp' ? cur.filter(g => g.opp === oppAbbr) : cur;
       const rs = teamRows(gs, kind);
-      if (line == null) line = Math.round(avg(teamRows(gsAll.slice(0, 10), kind))) + 0.5;
+      if (line == null) line = Math.round(avg(teamRows((cur.length ? cur : gsAll).slice(0, 10), kind))) + 0.5;
       const sum = OC.teamSummary(gs), hits = rs.filter(g => g.value >= line).length;
       const capWord = kind === 'total' ? `Over ${line}` : line === 0.5 ? 'Wins' : `Margin ${line > 0 ? '+' : ''}${line}`;
       area.replaceChildren(
         chips([{ v: 'away', l: s.away.toUpperCase() }, { v: 'home', l: s.home.toUpperCase() }], team, v => { team = v; if (kind !== 'total') line = baseLine(); draw(); }),
         chips([{ v: 'total', l: 'Total' }, { v: 'margin', l: 'Margin' }], kind, v => { kind = v; line = kind === 'total' && s.kind === 'total' ? s.line : kind === 'margin' ? baseLine() : null; draw(); }),
-        chips([{ v: 'L5', l: 'L5' }, { v: 'L10', l: 'L10' }, { v: 'Season', l: 'Season' }, { v: 'Opp', l: 'vs ' + oppAbbr.toUpperCase() }], mode, v => { mode = v; draw(); }),
+        chips([{ v: 'L5', l: 'L5' }, { v: 'L10', l: 'L10' }, { v: 'Season', l: 'Season' }, { v: 'Opp', l: 'vs ' + oppAbbr.toUpperCase() }, { v: 'Last', l: 'Last season' }], mode, v => { mode = v; draw(); }),
         el('div', 'dd-big', rs.length ? `${hits} of ${rs.length}` : '—'),
-        el('div', 'dd-cap', rs.length ? `${capWord} · ${team === 'home' ? 'Home' : 'Away'} ${team === 'home' ? `${sum.homeW}-${sum.homeN - sum.homeW}` : `${sum.awayW}-${sum.awayN - sum.awayW}`} · ${sum.w}-${sum.l}` : 'No games'),
+        el('div', 'dd-cap', !rs.length ? (mode === 'Last' ? 'No games last season' : 'No games yet this season') : `${capWord} · ${team === 'home' ? 'Home' : 'Away'} ${team === 'home' ? `${sum.homeW}-${sum.homeN - sum.homeW}` : `${sum.awayW}-${sum.awayN - sum.awayW}`} · ${sum.w}-${sum.l}`),
         stepper(line, 1, v => { line = v; draw(); }));
       if (rs.length) {
         area.append(bars(rs, kind === 'margin' ? null : line));
