@@ -9,12 +9,12 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892540",
-  "fetched_at": "2026-10-20T23:43:54.674Z",
+  "fetched_at": "2026-10-20T23:53:53.540Z",
   "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "espn_status": "STATUS_END_PERIOD",
   "period": 1,
-  "clock": "1:02",
-  "regulation_secs_left": 2762,
+  "clock": "0:00",
+  "regulation_secs_left": 2700,
   "home": {
    "abbr": "NJ",
    "alias": "Devils",
@@ -114,7 +114,7 @@
    }
   ]
  },
- "updated": "2026-10-20T23:43:54.675Z",
+ "updated": "2026-10-20T23:53:53.541Z",
  "open_taken_at": "2026-10-20T22:26:49.358Z",
  "thresholds": {
   "big": 10,
@@ -2412,6 +2412,26 @@
  ],
  "edges": [
   {
+   "key": "1601281:0",
+   "market_id": "1601281",
+   "market": "Player prop",
+   "group": "prop",
+   "question": "Will Nathan MacKinnon record at least 1 goals in COL vs NJD?",
+   "side": "Yes: Nathan MacKinnon record at least 1 goals in COL vs NJD",
+   "open_chance": 42,
+   "now_chance": 34,
+   "open_odds": "+138",
+   "now_odds": "+194",
+   "edge": 8,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "COL tied, End of Q1",
+   "first_seen": "2026-10-20T23:53:53.541Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
    "key": "1480744:1",
    "market_id": "1480744",
    "market": "Alt total",
@@ -2419,14 +2439,14 @@
    "question": "Will the total in COL vs NJD be more than 5.5?",
    "side": "Under 5.5",
    "open_chance": 41,
-   "now_chance": 32,
+   "now_chance": 35,
    "open_odds": "+144",
-   "now_odds": "+213",
-   "edge": 9,
+   "now_odds": "+186",
+   "edge": 6,
    "tier": "slight",
    "class": "score",
    "reason": "Explained by score: scoring above pace (2 pts, pace 1)",
-   "context": "COL 1, NJ 1, Q1 1:02",
+   "context": "COL 1, NJ 1, End of Q1",
    "first_seen": "2026-10-20T23:43:54.675Z",
    "status": "open",
    "kalshi": true
@@ -2439,14 +2459,14 @@
    "question": "Will the total in COL vs NJD be more than 6.5?",
    "side": "Under 6.5",
    "open_chance": 52,
-   "now_chance": 44,
+   "now_chance": 47,
    "open_odds": "-108",
-   "now_odds": "+127",
-   "edge": 8,
+   "now_odds": "+113",
+   "edge": 5,
    "tier": "slight",
    "class": "score",
    "reason": "Explained by score: scoring above pace (2 pts, pace 2)",
-   "context": "COL 1, NJ 1, Q1 1:02",
+   "context": "COL 1, NJ 1, End of Q1",
    "first_seen": "2026-10-20T23:43:54.675Z",
    "status": "open",
    "kalshi": true
@@ -2466,7 +2486,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "COL tied, Q1 1:02",
+   "context": "COL tied, End of Q1",
    "first_seen": "2026-10-20T23:43:54.675Z",
    "status": "open",
    "kalshi": true
@@ -2614,6 +2634,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1601281:0:slight",
+   "key": "1601281:0",
+   "at": "2026-10-20T23:53:53.541Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Yes: Nathan MacKinnon record at least 1 goals in COL vs NJD",
+   "market": "Player prop",
+   "now_odds": "+194",
+   "now_chance": 34,
+   "edge": 8,
+   "text": "New slight edge: Yes: Nathan MacKinnon record at least 1 goals in COL vs NJD (Player prop), 8 points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-col-nj-2026-10-20"
+  },
+  {
    "id": "new_edge:1601298:0:slight",
    "key": "1601298:0",
    "at": "2026-10-20T23:43:54.675Z",
@@ -2689,10 +2723,11 @@
   "new_edge:1480736:0:big",
   "new_edge:1601298:0:slight",
   "gone:1480734:0:2026-10-20T23:33:52.335Z",
-  "gone:1480736:0:2026-10-20T23:33:52.335Z"
+  "gone:1480736:0:2026-10-20T23:33:52.335Z",
+  "new_edge:1601281:0:slight"
  ],
  "kalshi_checked": {
-  "at": "2026-10-20T23:43:54.909Z",
+  "at": "2026-10-20T23:53:53.556Z",
   "event": "26OCT20COLNJ"
  }
 }
