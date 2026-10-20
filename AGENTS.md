@@ -36,6 +36,7 @@ GitHub Pages serves `main`. **Push to main = deploy** (it's live in about a minu
 - `scripts/update-picks.mjs picks <file>`: validates, runs `scripts/our-chance.mjs` (hit_prob = Analytics), fills risk/verdict, commits. Also `fill`, `grade`, `lineup`, `list`.
 - `scripts/fetch-markets.mjs` → `data/markets/`. `scripts/fetch-book-odds.mjs` → `data/vegas-lines.json`, `data/book-odds.json` (needs `ODDS_API_KEY`). `scripts/ingest-vegas.mjs` → `data/vegas-manual.json`.
 - `scripts/capture-closing.mjs` → `data/pick-history.json` (logs hit_prob, our_chance, market_chance). `scripts/learn.mjs` → `data/learning.json` (calibration).
+- `scripts/archive.mjs` → `data/archive/` (append-only gzip NDJSON for backtests/weight-tuning; schema in `data/archive/README.md`, HANDOFF §59). It runs after capture-closing.
 - `scripts/trent-picks.mjs`, `scripts/play-leaderboard.mjs`, `scripts/fetch-positions.mjs`.
 
 ## Fade Trent clarifications (dev-only, HANDOFF §58)

@@ -1178,3 +1178,7 @@ This is for unclear Trent bets (ambiguous leg, line, side, odds or result). It i
   - `clarify <id> --set key=value ... --answer "..."`: direct answer without a vote (closes the issue if any).
 - **Dev view.** `?dev=1` on the site shows a read-only "Dev: open questions" card on Fade Trent (ids, questions, issue numbers; no secrets, no money).
 - **Issue content.** Pick text, game, X post link, quote and the question only. Never money, keys or tokens.
+
+## 59. Data archive for self-learning (Oct 20, 2026)
+
+`scripts/archive.mjs` writes `data/archive/<kind>/<YYYY-MM>/<day>.ndjson.gz`. The kinds are picks, analytics (inputs/outputs per leg), results, vegas, trent, prices (raw Polymarket history once per closed market) and espn (team results). It is idempotent (dedupe by `key`, unchanged records untouched, `.done` markers for one-time fetches) and cheap (local files + a few public GETs). It runs after `capture-closing.mjs --commit` (`--no-archive` skips). Schema and join keys: `data/archive/README.md`. Privacy: stakes, money and secrets are stripped. Size: ≈ 2–7 MB/month.

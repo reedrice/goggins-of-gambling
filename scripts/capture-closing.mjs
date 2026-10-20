@@ -154,6 +154,11 @@ async function main() {
     git('commit', '-q', '-m', `Pick history: ${added} new, ${closed} closing prices, ${graded} graded`);
     git('pull', '-q', '--rebase'); git('push', '-q', 'origin', 'HEAD:main');
   }
+  // Archive (HANDOFF §59): idempotent, cheap; never fatal. --no-archive skips.
+  if (args.includes('--commit') && !args.includes('--no-archive')) {
+    try { execFileSync(process.execPath, [path.join(ROOT, 'scripts/archive.mjs'), '--commit'], { cwd: ROOT, stdio: 'inherit', timeout: 180000 }); }
+    catch (e) { console.error('archive skipped: ' + String(e.message).split('\n')[0]); }
+  }
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main().catch(e => { console.error('capture-closing:', e.message); process.exit(1); });
