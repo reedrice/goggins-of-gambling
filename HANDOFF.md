@@ -1295,3 +1295,7 @@ Publisher also includes new untracked data/live files, so each new daily slate i
 ## 64. Fade Trent polling reduced (Oct 20, 2026)
 
 At Reed?s request, changed the active Codex Fade Trent heartbeat from every five minutes to every two hours. Updated owner schedule and operating notes. Live feed remains on its existing ten-minute schedule.
+
+## 65. Live Bets: All games filter (Oct 20, 2026)
+
+Reed explicitly requested combined edges across every game, authorizing this edit in Richie?s view. All games is now the default with individual game chips retained. Fetches all nonfinal feeds, combines/sorts edges and alerts, keeps original event URLs and chart targets on every card, and labels each card with its game/status. Partial fetch failures are visible; request sequencing prevents an older refresh overriding a newer filter selection. Existing grouping/show-more and odds/injury filters remain. No feed writer changes. Tests cover source attribution, overlapping keys, ordering, final exclusion and partial results.

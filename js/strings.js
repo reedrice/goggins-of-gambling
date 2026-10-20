@@ -575,3 +575,11 @@ function unitWords(u) {
   return words[u] || `${u}× your standard bet`;
 }
 window.STR.unitWords = unitWords;
+
+window.STR.liveBets = {
+ noAlerts: 'No alerts across these games yet.',
+ all: 'All games', games: n => n + ' games', failed: n => n + ' game feeds unavailable ? retrying',
+ stale: 'Some prices may be old. The feed is waiting for an update.',
+ empty: 'No qualifying price movements across these games right now.',
+ unavailable: 'Live bets are unavailable. Retrying in a minute.'
+};

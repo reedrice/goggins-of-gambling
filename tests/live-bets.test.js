@@ -77,3 +77,18 @@ console.log('ok live-bets helpers + data shape + grouping/cap + alerts + odds li
   assert.strictEqual(LB.freshness({ status: 'final', updated: '2026-10-19T20:39:00Z' }, now).stale, false);
   assert.strictEqual(LB.pickGame([{ slug: 'x', status: 'final', start_time: '2' }, { slug: 'y', status: 'live', start_time: '1' }]), 'y');
   console.log('live-bets freshness/pickGame ok'); }
+
+// Aggregation keeps overlapping market keys attached to the right game and URL.
+{
+ const first={slug:'nba-a-b',game:'A vs B',url:'https://example.com/a',status:'pregame',start_time:'2099-01-01T00:00:00Z',updated:'2026-10-20T22:00:00Z',edges:[{key:'same',group:'game',edge:5}],alerts:[{at:'2026-10-20T22:00:00Z',text:'First'}]};
+ const second={...first,slug:'nhl-c-d',game:'C vs D',url:'https://example.com/b',updated:'2026-10-20T22:10:00Z',edges:[{key:'same',group:'game',edge:10}],alerts:[{at:'2026-10-20T22:10:00Z',text:'Second'}]};
+ const combined=LB.combineGames([first,second,{...first,status:'final'}],1);
+ assert.strictEqual(combined.game_count,2);
+ assert.strictEqual(combined.failed,1);
+ assert.strictEqual(combined.updated,first.updated);
+ assert.deepStrictEqual(LB.groupEdges(combined.edges).game.shown.map(e=>[e.event_slug,e.event_url]),[['nhl-c-d',second.url],['nba-a-b',first.url]]);
+ assert.strictEqual(combined.alerts[0].text,'C vs D ? Second');
+ assert.strictEqual(first.edges[0].event_slug,undefined);
+ assert.strictEqual(LB.combineGames([]).game_count,0);
+ console.log('all-games source attribution, sorting, partial failures and final exclusion ok');
+}

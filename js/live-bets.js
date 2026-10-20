@@ -115,6 +115,19 @@
     if (pre) return pre.slug;
     return g.sort((a, b) => String(b.start_time).localeCompare(String(a.start_time)))[0]?.slug || SLUG;
   }
+  /** Combine game feeds without losing each card's source or chart target. */
+  function combineGames(feeds, failed = 0) {
+    const active = feeds.filter(d => d.status !== 'final');
+    return {
+      all_games: true, game_count: active.length, failed,
+      updated: active.map(d => d.updated).filter(Boolean).sort()[0],
+      status: active.some(d => d.status === 'live') ? 'live' : 'pregame',
+      stale: active.some(d => freshness(d).stale),
+      edges: active.flatMap(d => (d.edges || []).map(e => ({...e, event_slug:d.slug, event_game:d.game, event_url:d.url, event_status:scoreboard(d).status}))),
+      alerts: active.flatMap(d => (d.alerts || []).map(a => ({...a, text:d.game + ' ? ' + a.text}))).sort((a,b) => String(b.at).localeCompare(String(a.at)))
+    };
+  }
+  const liveText = () => root.STR.liveBets;
   /** Back-compat helper (tests): status line only. */
   const statusText = d => scoreboard(d).status;
 
@@ -186,6 +199,8 @@
 
   /** One edge card. */
   function edgeRow(e, link) {
+    link = safeUrl(e.event_url) || link;
+    const eventSlug = e.event_slug || curSlug, eventGame = e.event_game || curGame;
     const gone = e.status === 'gone', why = REASON_CLASSES.includes(e.class);
     const cls = why ? `lb-why lb-${e.class}` : `lb-${e.tier === 'big' ? 'big' : 'slight'}`;
     const li = el('li', `lb-edge ${cls}${gone ? ' lb-gone' : ''}`);
@@ -193,6 +208,7 @@
     const label = gone ? 'Gone' : why ? CLASS_LABEL[e.class] : TIER_LABEL[e.tier] + (e.class === 'unverified' ? ' · unverified' : '');
     top.append(el('span', 'lb-tier', label), el('span', 'lb-pts', `${Math.round(e.edge)} pts cheaper`));
     li.append(top, el('div', 'lb-side', e.side), el('div', 'lb-market', e.market), platRow(e));
+    if (e.event_game) li.append(el('div', 'lb-meta', e.event_game + ' ? ' + e.event_status));
     const pay = pays10(e.now_chance);
     li.append(el('div', 'lb-odds', `${e.now_odds}${pay ? ` · $10 pays $${pay}` : ''}`),
       el('div', 'lb-meta', `Opened ${e.open_odds} · first seen ${clock(e.first_seen)}`));
@@ -208,12 +224,12 @@
       li.append(a);
     }
     // Tap a card -> price chart + prop bet bars pop-up (js/viz.js, HANDOFF §48).
-    if (root.Viz && curSlug) {
+    if (root.Viz && eventSlug) {
       li.classList.add('lb-tap');
       li.addEventListener('click', ev => {
         if (ev.target.closest('a')) return;
         root.Viz.open({ title: e.side, sub: `${e.market} · ${curGame}`, legs: [{ text: e.side, question: e.question,
-          eventSlug: curSlug, marketId: e.market_id, side: Number(String(e.key).split(':')[1]) || 0 }] });
+          eventSlug, marketId: e.market_id, side: Number(String(e.key).split(':')[1]) || 0 }] });
       });
     }
     return li;
@@ -224,7 +240,7 @@
     const box = el('section', 'lb-alerts');
     const list = (d.alerts || []).filter(a => inLimit(a.now_chance));   // odds limit
     box.append(el('h3', 'lb-group-title', `Alerts${list.length ? ` (${list.length})` : ''}`));
-    if (!list.length) { box.append(el('div', 'lb-none', 'No alerts yet. They\'ll show up here once the game starts.')); return box; }
+    if (!list.length) { box.append(el('div', 'lb-none', d.all_games ? liveText().noAlerts : 'No alerts yet. They\'ll show up here once the game starts.')); return box; }
     // Highlight what's new since the previous refresh, then remember the newest.
     if (ui.seenBase === undefined) ui.seenBase = readSeen();
     const isNew = markNew(list, ui.seenBase);
@@ -269,24 +285,31 @@
     curSlug = d.slug || null; curGame = d.game || '';
     box.replaceChildren();
     box.append(alertsBox(d, ui));                 // Alerts feed sits at the very top
-    const sb = scoreboard(d);
     const head = el('div', 'lb-head');
-    head.append(el('div', 'lb-game', d.game || 'Live game'), el('div', 'lb-score', sb.score),
-      el('div', 'lb-status', sb.status), el('div', 'lb-updated', freshness(d).text));
+    if (d.all_games) {
+      head.append(el('div','lb-game',liveText().all),el('div','lb-status',liveText().games(d.game_count)),el('div','lb-updated',freshness(d).text));
+      if (d.failed) head.append(el('div','lb-stale',liveText().failed(d.failed)));
+    } else {
+      const sb = scoreboard(d);
+      head.append(el('div','lb-game',d.game || 'Live game'),el('div','lb-score',sb.score),el('div','lb-status',sb.status),el('div','lb-updated',freshness(d).text));
+    }
     box.append(head);
-    if (freshness(d).stale) box.append(el('div', 'lb-stale', `⚠️ Feed is stale: no update in over ${STALE_MIN} minutes, so these prices may be old.`));
+    if (d.stale || freshness(d).stale) box.append(el('div','lb-stale',liveText().stale));
     const games = (ui.games || []).filter(x => x.status !== 'final' || x.slug === ui.slug);
-    if (games.length > 1) {
-      const bar = el('div', 'lb-games');
-      games.forEach(x => { const b = el('button', 'lb-game-btn' + (x.slug === ui.slug ? ' lb-on' : ''), x.game || x.slug);
-        b.type = 'button'; b.onclick = () => { ui.slug = x.slug; ui.pinned = true; ui.load(); }; bar.append(b); });
+    if (games.length) {
+      const bar = el('div','lb-games');
+      [{slug:'all',game:liveText().all},...games].forEach(x => {
+        const b = el('button','lb-game-btn' + (x.slug === ui.slug ? ' lb-on' : ''),x.game || x.slug);
+        b.type='button'; b.setAttribute('aria-pressed',String(x.slug === ui.slug));
+        b.onclick=()=>{ui.slug=x.slug;ui.game=false;ui.prop=false;ui.load();};bar.append(b);
+      });
       box.append(bar);
     }
     const g = groupEdges(d.edges), link = safeUrl(d.url);
     if (!g.game.total && !g.prop.total) {
       const empty = el('div', 'live-bets-empty');
       empty.append(el('div', 'live-bets-dot', '🔴'), el('p', null, 'No edges yet'),
-        el('div', 'lb-sub', d.status === 'pregame'
+        el('div', 'lb-sub', d.all_games ? liveText().empty : d.status === 'pregame'
           ? 'The game hasn\'t started. Bets show up here when a live price gets 4+ points cheaper than its pregame price for no clear reason.'
           : 'No live price is 4+ points cheaper than its pregame price without a clear reason right now.'));
       box.append(empty);
@@ -312,21 +335,37 @@
   function render(rootEl) {
     rootEl.replaceChildren(el('div', 'live-bets-empty', 'Loading live bets…'));
     let timer = null, last = null;
-    const ui = { game: false, prop: false, reasons: false, redraw: () => { if (!last) return; const b = ui.seenBase; ui.seenBase = ui.prevBase; draw(rootEl, last, ui); ui.seenBase = b; } };
+    const ui = { slug: 'all', game: false, prop: false, reasons: false, redraw: () => { if (!last) return; const b = ui.seenBase; ui.seenBase = ui.prevBase; draw(rootEl, last, ui); ui.seenBase = b; } };
     // Which game: data/live/index.json (written by live-tick.mjs), else SLUG.
-    const load = ui.load = () => {
-      if (!rootEl.isConnected && timer) { clearInterval(timer); return; }   // view closed
-      fetch(`data/live/index.json?ts=${Date.now()}`)
-        .then(r => (r.ok ? r.json() : null)).catch(() => null)
-        .then(ix => { ui.games = (ix && ix.games) || []; if (!ui.pinned) ui.slug = pickGame(ui.games); return fetch(`data/live/${ui.slug || SLUG}.json?ts=${Date.now()}`); })
-        .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-        .then(d => { last = d; ui.prevBase = ui.seenBase; draw(rootEl, d, ui); })
-        .catch(() => { if (!rootEl.querySelector('.lb-head')) {
-          rootEl.replaceChildren(el('div', 'live-bets-empty', 'Live bets aren\'t available yet. Try again in a minute.')); } });
+    let request = 0;
+    const load = ui.load = async () => {
+      if (!rootEl.isConnected && timer) { clearInterval(timer); return; }
+      const current = ++request;
+      try {
+        const ix = await fetch('data/live/index.json?ts=' + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null);
+        const games = (ix && ix.games) || [];
+        const selected = ui.slug;
+        const targets = selected === 'all' ? games.filter(g => g.status !== 'final') : [{slug:selected || SLUG}];
+        if (!ix && selected === 'all') throw new Error('index unavailable');
+        const results = await Promise.allSettled(targets.map(async g => {
+          const r = await fetch('data/live/' + g.slug + '.json?ts=' + Date.now());
+          if (!r.ok) throw new Error(r.status);
+          return r.json();
+        }));
+        if (current !== request || !rootEl.isConnected) return;
+        const feeds = results.filter(r => r.status === 'fulfilled').map(r => r.value);
+        if (targets.length && !feeds.length) throw new Error('feeds unavailable');
+        ui.games = games;
+        const d = selected === 'all' ? combineGames(feeds,results.length-feeds.length) : feeds[0];
+        last=d; ui.prevBase=ui.seenBase; draw(rootEl,d,ui);
+      } catch (e) {
+        if (current !== request) return;
+        rootEl.replaceChildren(el('div','live-bets-empty',liveText().unavailable));
+      }
     };
     load();
     timer = setInterval(load, REFRESH_MS);
   }
 
-  return { render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
+  return { combineGames, render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
 });
