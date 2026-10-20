@@ -177,7 +177,8 @@ export function selectMarkets(ev, sp = sportOf(SLUG), players = PLAYERS) {
       out.push({ x, kind: label, group: 'game', info });
     } else if (sp.props.test(x.m.sportsMarketType)) {
       const ql = x.m.question.toLowerCase();
-      if (players.some(p => ql.includes(p))) out.push({ x, kind: 'Player prop', group: 'prop', info: null });
+      // "all" (Oct 20, used by live-tick): every liquid prop Polymarket lists for the game.
+      if (players.includes('all') || players.some(p => ql.includes(p))) out.push({ x, kind: 'Player prop', group: 'prop', info: null });
     }
   }
   // Order: moneyline, main lines, alt lines, team totals, periods, then props.

@@ -196,3 +196,10 @@ test('tick: shouldTick + buildIndex', async () => {
   assert.strictEqual(shouldTick({ start: '2026-10-20T18:00:00Z', status: 'final' }, now), false);
   assert.strictEqual(buildIndex([{ slug: 'a', start_time: '1' }, { slug: 'b', start_time: '2' }]).games[0].slug, 'b');
 });
+
+test('players "all" keeps every liquid prop', () => {
+  const ev = { markets: [1, 2].map(i => ({ id: 'p' + i, active: true, closed: false, status: 'MARKET_STATUS_OPEN', sportsMarketType: 'basketball_player_points',
+    question: `Will Player ${i} score 20+ points?`, bestBidQuote: { value: '0.48' }, bestAskQuote: { value: '0.50' }, marketSides: [] })) };
+  assert.strictEqual(selectMarkets(ev, sportOf('nba-a-b-2026-10-20'), ['all']).length, 2);
+  assert.strictEqual(selectMarkets(ev, sportOf('nba-a-b-2026-10-20'), []).length, 0);
+});

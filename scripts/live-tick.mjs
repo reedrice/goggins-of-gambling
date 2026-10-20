@@ -17,7 +17,9 @@
  *      minutes (default 30) or started up to 8 h ago, in the leagues
  *      live-watch.mjs knows (nfl, nba, wnba, nhl, mlb). Also re-checks any
  *      data/live/<slug>.json from the last 24 h that isn't "final" yet.
- *   2. For each game not already "final": runs `live-watch.mjs publish --slug X`
+ *   2. For each game not already "final": runs `live-watch.mjs publish --slug X --players all`
+ *      (every liquid player prop Polymarket lists for the game, no hand-picked list;
+ *      all markets come from the ONE event request, so props cost no extra calls)
  *      (takes the opening snapshot if missing, edges, alerts, ESPN context,
  *      status pregame/live/final). Final games are never touched again.
  *   3. Rewrites data/live/index.json (list of games for the view).
@@ -75,6 +77,17 @@ async function listGames(nowMs, leadMin) {
     .map(e => ({ slug: e.slug, start: e.startTime || e.startDate }));
 }
 
+/** --dry helper: how many game lines / props the publish would watch (one free request). */
+async function propCount(slug) {
+  try {
+    const { selectMarkets, sportOf } = await import('./live-watch.mjs');
+    const r = await fetch(`${GATEWAY}/v1/events/slug/${slug}`); const j = await r.json();
+    const ms = selectMarkets(j.event || j, sportOf(slug), ['all']);
+    const props = ms.filter(m => m.group === 'prop');
+    return `(${ms.length - props.length} game lines, ${props.length} props, ${new Set(props.map(m => m.player)).size} players)`;
+  } catch (e) { return `(count failed: ${e.message})`; }
+}
+
 export async function tick() {
   const now = Date.now(), lead = Number(opt('lead', 30));
   fs.mkdirSync(LIVE, { recursive: true });
@@ -87,9 +100,9 @@ export async function tick() {
   console.log(`tick ${new Date(now).toISOString()}: ${cands.size} candidate game(s), ${todo.length} to update`);
   let ok = 0;
   for (const g of todo) {
-    if (flag('dry')) { console.log('  would publish', g.slug); continue; }
+    if (flag('dry')) { console.log('  would publish', g.slug, await propCount(g.slug)); continue; }
     try {
-      const o = execFileSync(process.execPath, [path.join(HERE, 'live-watch.mjs'), 'publish', '--slug', g.slug],
+      const o = execFileSync(process.execPath, [path.join(HERE, 'live-watch.mjs'), 'publish', '--slug', g.slug, '--players', 'all'],
         { cwd: REPO, timeout: 90e3, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
       console.log(`  ${g.slug}: ${o.trim().split('\n').pop()}`); ok++;
     } catch (e) { console.error(`  ${g.slug}: publish failed: ${String(e.stderr || e.message).trim().split('\n').pop()}`); }

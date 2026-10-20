@@ -989,7 +989,7 @@ also gave no sign the feed was dead ("Updated 3:39 PM CT · checks every minute"
   `data/live/index.json` (live → soonest pregame → latest), falls back to the old SLUG; a small
   game-switcher row appears when 2+ non-final games are listed. SEEN_KEY unchanged (badge safe).
 - `css/live-bets.css`: `.lb-stale`, `.lb-games`, `.lb-game-btn` appended at the bottom.
-- Tests added in `tests/live-watch.test.mjs` and `tests/live-bets.test.js`. Cache stamp → `?v=20261020-0330`.
+- Tests added in `tests/live-watch.test.mjs` and `tests/live-bets.test.js`. Cache stamp → `?v=20261020-0335`.
 - Ran a tick: WAS@SF is now marked final (WSH 17 – SF 23).
 
 **Your schedule (you own it, Reed's side won't run it):**
@@ -1000,6 +1000,10 @@ Every 10 min (5 is fine too; it's free) from about 11:00 AM to 11:59 PM CT, plus
 for late West-coast games. Cron (CT box): `*/10 11-23,0 * * *`. One tick takes a few seconds per
 game. Needs git push rights to main. Opening snapshots live in /workspace/live (`--dir`), else
 they're rebuilt from the published file, so any machine keeps the same open.
-Notes: auto-found games have no player list, so they track game lines only (props need
-`--players`, like WAS@SF had). If you want Discord, run `live-discord.mjs --slug X` per game after
+Player props (update, Oct 20 3:35 AM CT): the tick passes `--players all`, so every player prop
+Polymarket lists for the game is watched, no hand-picked list. They all come in the same single
+event request, so props add zero extra calls. Thin markets (bid/ask gap > 6 pts, under 4% / over
+96%) are skipped at snapshot, and the +500/-500 limit still filters edges. The view's top 5 +
+"Show more" per group is unchanged. `--dry` prints counts; at 3:31 AM CT tonight's BOS@DET showed
+39 game lines + 80 props (14 players), NHL games 6-23 props each. If you want Discord, run `live-discord.mjs --slug X` per game after
 the tick yourself (DISCORD_WEBHOOK_URL env).
