@@ -16,10 +16,10 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await p.waitForSelector('#tab-picks .card');
   await p.evaluate(() => { location.hash = '#record'; }); await p.waitForSelector('tr[data-hist]');
   const page = await p.$eval('#tab-record', e => e.textContent);
-  ok(/Props & Combos/.test(page) && /Game Winner Picks/.test(page), 'both sections, clearly labeled');
-  ok(!/¢/.test(page) && !/\$\d/.test(page.split('Props & Combos')[1].split('How')[0]), 'no cents, no dollars in the list');
+  ok(/Single Bets/.test(page) && /Combos/.test(page) && /Game Winners/.test(page), 'both sections, clearly labeled');
+  ok(!/¢/.test(page) && !/\$\d/.test(page.split('Single Bets')[1].split('How')[0]), 'no cents, no dollars in the list');
   // Screenshot 1 (list): scroll the section into view.
-  await p.evaluate(() => [...document.querySelectorAll('#tab-record h3')].find(h => /Props/.test(h.textContent)).scrollIntoView());
+  await p.evaluate(() => [...document.querySelectorAll('#tab-record h3')].find(h => /Combos/.test(h.textContent)).scrollIntoView());
   await wait(300); await p.screenshot({ path: SHOT.replace('.png', '-list-only.png') });
   // Open a combo slip (one with several legs).
   const id = await p.$$eval('tr[data-hist]', rs => (rs.find(r => /combo/.test(r.innerText)) || rs[0]).dataset.hist);

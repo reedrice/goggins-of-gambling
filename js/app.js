@@ -1865,13 +1865,21 @@
 
   /** "Our Picks-page picks" section: W-L summary (units only) + recent rows. */
   function pickHistoryHtml(doc) {
-    const H = STR.record.hist, picks = (doc && doc.picks) || [];
-    if (!picks.length) return `<h3>${esc(H.title)}</h3><div class="section-empty">${esc(H.none)}</div>`;
+    // Split by LEG COUNT, not the category label (HANDOFF §42): 1 leg = single, 2+ legs = combo.
+    const picks = (doc && doc.picks) || [];
+    const singles = picks.filter(h => (h.legs || []).length <= 1), combos = picks.filter(h => (h.legs || []).length > 1);
+    const H = STR.record.hist;
+    return histSectionHtml(H.singlesTitle, H.singlesIntro, singles) + histSectionHtml(H.combosTitle, H.combosIntro, combos);
+  }
+
+  /** One Record section (Single Bets or Combos): 5 stat boxes + tappable rows. */
+  function histSectionHtml(title, intro, picks) {
+    const H = STR.record.hist;
+    if (!picks.length) return `<h3>${esc(title)}</h3><div class="section-empty">${esc(H.none)}</div>`;
     const w = picks.filter(h => h.result === 'win').length, l = picks.filter(h => h.result === 'loss').length;
     const u = Math.round(picks.reduce((a, h) => a + histUnits(h), 0) * 100) / 100;
-    const kpi = (k, v) => `<div class="kpi"><div class="k">${esc(k)}</div><div class="v">${v}</div></div>`;
     const rows = picks.slice().sort((a, b) => String(b.slate_date).localeCompare(String(a.slate_date))).slice(0, 40);
-    return `<h3>${esc(H.title)}</h3><p class="muted small">${esc(H.intro)}</p>
+    return `<h3>${esc(title)}</h3><p class="muted small">${esc(intro)}</p>
       ${statBoxes(w, l, picks.length - w - l, picks.length, u)}
       <div class="table-wrap"><table><tr><th>${esc(STR.record.date)}</th><th>${esc(STR.record.pick)}</th><th class="num">${esc(STR.record.chance)}</th><th>${esc(STR.record.result)}</th></tr>
       ${rows.map(h => `<tr class="tap-row" data-hist="${esc(h.id)}" tabindex="0" role="button" aria-label="${esc(STR.record.slip.open(histName(h)))}"><td>${esc(h.slate_date)}</td><td>${esc(histName(h))}<div class="muted small">${esc(h.sport)} · ${esc(H.cat[h.category] || h.category)}</div></td><td class="num">${esc(Math.round(h.hit_prob) + '%')}</td><td>${resBadge(h.result)}</td></tr>`).join('')}</table></div>

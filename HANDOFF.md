@@ -932,4 +932,12 @@ My Bets lives in localStorage (`betdash_bets`), so bets placed straight on Polym
 - The old top summary moved under the "Game Winner Picks" header. The "When we say X%…" calibration table sits under the game-winner rows, since it's about game winners.
 - **Game-winner units:** 1u flat on every pick. A loss is −1u and a win is +(100/price − 1)u. `data/predictions.json` has no stored price, so `predPrice()` reads the saved game-winner market (`aec-…`) in `data/markets/events/<slug>.json` and uses the last saved price. That price may differ from the price at pick time. A win with no saved price counts as 0u, and the note under the boxes says how many wins that was. Pending picks count 0u.
 - Phone layout: 2 boxes per row, and the Units box spans the full last row (`.kpis-5 .kpi-wide`). At 700px and wider, all 5 sit in one row.
-- Smoke test: `tests/record-unified.smoke.js` (the §39 and §40 tests still pass).
+- Smoke test: `tests/record-unified.smoke.js` (renamed to `tests/record-split.smoke.js` in §42) (the §39 and §40 tests still pass).
+
+## 42. Record tab: Game Winners / Single Bets / Combos + cache-busting (Oct 19, 2026)
+
+- The Record tab now has three sections: **Game Winners**, **Single Bets** and **Combos**. "Props & Combos" was misleading because it held single bets.
+- The Picks-screen picks (`data/pick-history.json`) are split by **leg count, not the category label**: 1 leg means Single Bets (single, prop, nonsports), and 2+ legs means Combos (parlay, longshot). See `pickHistoryHtml()` and `histSectionHtml()` in `js/app.js`. Words are in `STR.record.hist.singlesTitle/combosTitle`.
+- Each section has the same 5 boxes (`statBoxes()`, §41), its own rows, and tap-to-open slips (§39/§40). Units only.
+- **Cache-busting:** every CSS/JS include in `index.html` now ends in `?v=20261019-2300`, so iPhone Safari loads the new files. **Bump this version whenever css/ or js/ changes**, e.g. `sed -i 's/?v=[0-9-]*"/?v=NEW"/g' index.html`. This only changes the include lines; Richie's files (`live-bets.*`) are untouched.
+- Smoke tests: `tests/record-split.smoke.js` (was record-unified; it checks 3 sections, the same boxes, 1-leg-only singles, multi-leg-only combos and `?v=`) and `tests/record-picks-list.smoke.js` (labels updated).
