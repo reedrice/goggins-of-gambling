@@ -9,24 +9,24 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892539",
-  "fetched_at": "2026-10-20T23:03:56.235Z",
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 0,
-  "clock": null,
-  "regulation_secs_left": 3600,
+  "fetched_at": "2026-10-20T23:13:56.765Z",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
+  "period": 1,
+  "clock": "17:55",
+  "regulation_secs_left": 3775,
   "home": {
    "abbr": "MTL",
    "alias": "Canadiens",
    "name": "Montreal Canadiens",
-   "score": null,
+   "score": 0,
    "id": "10"
   },
   "away": {
    "abbr": "SJ",
    "alias": "Sharks",
    "name": "San Jose Sharks",
-   "score": null,
+   "score": 0,
    "id": "18"
   },
   "possession": null,
@@ -89,46 +89,9 @@
    }
   ],
   "in_game_injuries": [],
-  "leaders": [
-   {
-    "team": "MTL",
-    "player": "Cole Caufield",
-    "short": "C. Caufield",
-    "pos": "RW"
-   },
-   {
-    "team": "MTL",
-    "player": "Nick Suzuki",
-    "short": "N. Suzuki",
-    "pos": "C"
-   },
-   {
-    "team": "MTL",
-    "player": "Nick Suzuki",
-    "short": "N. Suzuki",
-    "pos": "C"
-   },
-   {
-    "team": "SJ",
-    "player": "Macklin Celebrini",
-    "short": "M. Celebrini",
-    "pos": "C"
-   },
-   {
-    "team": "SJ",
-    "player": "Macklin Celebrini",
-    "short": "M. Celebrini",
-    "pos": "C"
-   },
-   {
-    "team": "SJ",
-    "player": "Macklin Celebrini",
-    "short": "M. Celebrini",
-    "pos": "C"
-   }
-  ]
+  "leaders": []
  },
- "updated": "2026-10-20T23:03:56.236Z",
+ "updated": "2026-10-20T23:13:56.766Z",
  "open_taken_at": "2026-10-20T22:26:53.426Z",
  "thresholds": {
   "big": 10,
@@ -2358,11 +2321,49 @@
    "taken_at": "2026-10-20T22:26:53.426Z"
   }
  ],
- "edges": [],
- "alerts": [],
- "alert_seen": [],
+ "edges": [
+  {
+   "key": "1480928:0",
+   "market_id": "1480928",
+   "market": "Alt spread",
+   "group": "game",
+   "question": "Will the SJS Sharks cover 2.5 vs the MTL Canadiens in SJS vs MTL?",
+   "side": "Sharks +2.50",
+   "open_chance": 68,
+   "now_chance": 61,
+   "open_odds": "-213",
+   "now_odds": "-156",
+   "edge": 7,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "SJ tied, Q1 17:55",
+   "first_seen": "2026-10-20T23:13:56.766Z",
+   "status": "open",
+   "kalshi": true
+  }
+ ],
+ "alerts": [
+  {
+   "id": "new_edge:1480928:0:slight",
+   "key": "1480928:0",
+   "at": "2026-10-20T23:13:56.766Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Sharks +2.50",
+   "market": "Alt spread",
+   "now_odds": "-156",
+   "now_chance": 61,
+   "edge": 7,
+   "text": "New slight edge: Sharks +2.50 (Alt spread), 7 points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-sj-mon-2026-10-20"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:1480928:0:slight"
+ ],
  "kalshi_checked": {
-  "at": "2026-10-20T23:03:56.249Z",
+  "at": "2026-10-20T23:13:57.061Z",
   "event": "26OCT20SJMTL"
  }
 }

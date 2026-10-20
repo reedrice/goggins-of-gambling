@@ -9,24 +9,24 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892541",
-  "fetched_at": "2026-10-20T23:03:55.257Z",
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 0,
-  "clock": null,
-  "regulation_secs_left": 3600,
+  "fetched_at": "2026-10-20T23:13:55.405Z",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
+  "period": 1,
+  "clock": "15:58",
+  "regulation_secs_left": 3658,
   "home": {
    "abbr": "NYI",
    "alias": "Islanders",
    "name": "New York Islanders",
-   "score": null,
+   "score": 0,
    "id": "12"
   },
   "away": {
    "abbr": "ANA",
    "alias": "Ducks",
    "name": "Anaheim Ducks",
-   "score": null,
+   "score": 0,
    "id": "25"
   },
   "possession": null,
@@ -89,46 +89,9 @@
    }
   ],
   "in_game_injuries": [],
-  "leaders": [
-   {
-    "team": "NYI",
-    "player": "Bo Horvat",
-    "short": "B. Horvat",
-    "pos": "C"
-   },
-   {
-    "team": "NYI",
-    "player": "Matthew Schaefer",
-    "short": "M. Schaefer",
-    "pos": "D"
-   },
-   {
-    "team": "NYI",
-    "player": "Bo Horvat",
-    "short": "B. Horvat",
-    "pos": "C"
-   },
-   {
-    "team": "ANA",
-    "player": "Beckett Sennecke",
-    "short": "B. Sennecke",
-    "pos": "RW"
-   },
-   {
-    "team": "ANA",
-    "player": "Leo Carlsson",
-    "short": "L. Carlsson",
-    "pos": "C"
-   },
-   {
-    "team": "ANA",
-    "player": "Leo Carlsson",
-    "short": "L. Carlsson",
-    "pos": "C"
-   }
-  ]
+  "leaders": []
  },
- "updated": "2026-10-20T23:03:55.258Z",
+ "updated": "2026-10-20T23:13:55.407Z",
  "open_taken_at": "2026-10-20T22:26:52.094Z",
  "thresholds": {
   "big": 10,
@@ -2248,11 +2211,49 @@
    "taken_at": "2026-10-20T22:26:52.094Z"
   }
  ],
- "edges": [],
- "alerts": [],
- "alert_seen": [],
+ "edges": [
+  {
+   "key": "1480871:0",
+   "market_id": "1480871",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in ANA vs NYI be more than 6.5?",
+   "side": "Over 6.5",
+   "open_chance": 44,
+   "now_chance": 40,
+   "open_odds": "+127",
+   "now_odds": "+150",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "ANA 0, NYI 0, Q1 15:58",
+   "first_seen": "2026-10-20T23:13:55.407Z",
+   "status": "open",
+   "kalshi": true
+  }
+ ],
+ "alerts": [
+  {
+   "id": "new_edge:1480871:0:slight",
+   "key": "1480871:0",
+   "at": "2026-10-20T23:13:55.407Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 6.5",
+   "market": "Alt total",
+   "now_odds": "+150",
+   "now_chance": 40,
+   "edge": 4,
+   "text": "New slight edge: Over 6.5 (Alt total), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-ana-nyi-2026-10-20"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:1480871:0:slight"
+ ],
  "kalshi_checked": {
-  "at": "2026-10-20T23:03:55.270Z",
+  "at": "2026-10-20T23:13:55.603Z",
   "event": "26OCT20ANANYI"
  }
 }

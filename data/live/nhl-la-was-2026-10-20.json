@@ -9,24 +9,24 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892542",
-  "fetched_at": "2026-10-20T23:03:54.236Z",
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 0,
-  "clock": null,
-  "regulation_secs_left": 3600,
+  "fetched_at": "2026-10-20T23:13:54.026Z",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
+  "period": 1,
+  "clock": "16:12",
+  "regulation_secs_left": 3672,
   "home": {
    "abbr": "WSH",
    "alias": "Capitals",
    "name": "Washington Capitals",
-   "score": null,
+   "score": 0,
    "id": "23"
   },
   "away": {
    "abbr": "LA",
    "alias": "Kings",
    "name": "Los Angeles Kings",
-   "score": null,
+   "score": 0,
    "id": "8"
   },
   "possession": null,
@@ -89,46 +89,9 @@
    }
   ],
   "in_game_injuries": [],
-  "leaders": [
-   {
-    "team": "WSH",
-    "player": "Alex Tuch",
-    "short": "A. Tuch",
-    "pos": "RW"
-   },
-   {
-    "team": "WSH",
-    "player": "Dylan Strome",
-    "short": "D. Strome",
-    "pos": "C"
-   },
-   {
-    "team": "WSH",
-    "player": "Alex Tuch",
-    "short": "A. Tuch",
-    "pos": "RW"
-   },
-   {
-    "team": "LA",
-    "player": "Artemi Panarin",
-    "short": "A. Panarin",
-    "pos": "LW"
-   },
-   {
-    "team": "LA",
-    "player": "Brandt Clarke",
-    "short": "B. Clarke",
-    "pos": "D"
-   },
-   {
-    "team": "LA",
-    "player": "Brandt Clarke",
-    "short": "B. Clarke",
-    "pos": "D"
-   }
-  ]
+  "leaders": []
  },
- "updated": "2026-10-20T23:03:54.238Z",
+ "updated": "2026-10-20T23:13:54.027Z",
  "open_taken_at": "2026-10-20T22:26:50.673Z",
  "thresholds": {
   "big": 10,
@@ -2248,11 +2211,154 @@
    "taken_at": "2026-10-20T22:26:50.673Z"
   }
  ],
- "edges": [],
- "alerts": [],
- "alert_seen": [],
+ "edges": [
+  {
+   "key": "1480807:0",
+   "market_id": "1480807",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in LAK vs WSH be more than 5.5?",
+   "side": "Over 5.5",
+   "open_chance": 54,
+   "now_chance": 47,
+   "open_odds": "-117",
+   "now_odds": "+113",
+   "edge": 7,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "LA 0, WSH 0, Q1 16:12",
+   "first_seen": "2026-10-20T23:13:54.027Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "1480805:0",
+   "market_id": "1480805",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in LAK vs WSH be more than 3.5?",
+   "side": "Over 3.5",
+   "open_chance": 86,
+   "now_chance": 79,
+   "open_odds": "-614",
+   "now_odds": "-376",
+   "edge": 7,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "LA 0, WSH 0, Q1 16:12",
+   "first_seen": "2026-10-20T23:13:54.027Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "1480806:0",
+   "market_id": "1480806",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in LAK vs WSH be more than 4.5?",
+   "side": "Over 4.5",
+   "open_chance": 77,
+   "now_chance": 72,
+   "open_odds": "-335",
+   "now_odds": "-257",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "LA 0, WSH 0, Q1 16:12",
+   "first_seen": "2026-10-20T23:13:54.027Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "1480808:0",
+   "market_id": "1480808",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in LAK vs WSH be more than 6.5?",
+   "side": "Over 6.5",
+   "open_chance": 42,
+   "now_chance": 37,
+   "open_odds": "+138",
+   "now_odds": "+170",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "LA 0, WSH 0, Q1 16:12",
+   "first_seen": "2026-10-20T23:13:54.027Z",
+   "status": "open",
+   "kalshi": true
+  }
+ ],
+ "alerts": [
+  {
+   "id": "new_edge:1480807:0:slight",
+   "key": "1480807:0",
+   "at": "2026-10-20T23:13:54.027Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 5.5",
+   "market": "Main total",
+   "now_odds": "+113",
+   "now_chance": 47,
+   "edge": 7,
+   "text": "New slight edge: Over 5.5 (Main total), 7 points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-la-was-2026-10-20"
+  },
+  {
+   "id": "new_edge:1480805:0:slight",
+   "key": "1480805:0",
+   "at": "2026-10-20T23:13:54.027Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 3.5",
+   "market": "Alt total",
+   "now_odds": "-376",
+   "now_chance": 79,
+   "edge": 7,
+   "text": "New slight edge: Over 3.5 (Alt total), 7 points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-la-was-2026-10-20"
+  },
+  {
+   "id": "new_edge:1480806:0:slight",
+   "key": "1480806:0",
+   "at": "2026-10-20T23:13:54.027Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 4.5",
+   "market": "Alt total",
+   "now_odds": "-257",
+   "now_chance": 72,
+   "edge": 5,
+   "text": "New slight edge: Over 4.5 (Alt total), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-la-was-2026-10-20"
+  },
+  {
+   "id": "new_edge:1480808:0:slight",
+   "key": "1480808:0",
+   "at": "2026-10-20T23:13:54.027Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 6.5",
+   "market": "Alt total",
+   "now_odds": "+170",
+   "now_chance": 37,
+   "edge": 5,
+   "text": "New slight edge: Over 6.5 (Alt total), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-la-was-2026-10-20"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:1480807:0:slight",
+  "new_edge:1480805:0:slight",
+  "new_edge:1480806:0:slight",
+  "new_edge:1480808:0:slight"
+ ],
  "kalshi_checked": {
-  "at": "2026-10-20T23:03:54.249Z",
+  "at": "2026-10-20T23:13:54.365Z",
   "event": "26OCT20LAWSH"
  }
 }
