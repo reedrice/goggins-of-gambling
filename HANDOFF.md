@@ -908,6 +908,8 @@ My Bets lives in localStorage (`betdash_bets`), so bets placed straight on Polym
 
 **§38 update (Oct 19, 2026, late):** added a 7th seed, `seed-2026-10-19-2leg-tennis-dong-jeong` (ITF M15 Shenzhen Dong + ITF M15 Singapore Jeong, 1u, 3.857x). seedBets() tracks seeded ids one by one in prefs.seededBets, so browsers that already seeded the first 6 pick up only the new id; fetchData uses no-store, so no cache bump is needed.
 
+**§38 update (Oct 19, 2026, night):** added 3 seeds for 10/20 games: `seed-2026-10-19-single-bos-det-under-221-5` (0.25u, 2.964x), `seed-2026-10-19-single-spurs-ml-vs-okc` (0.5u, 2.932x), and `seed-2026-10-19-3leg-knicks-lebron-islanders` (Knicks ML + LeBron 6+ reb + Islanders ML, 0.5u, 4.10x). Units only.
+
 ## 39. Record tab: tap a "Recent picks" row to see its slip (Oct 19, 2026)
 
 - Each row in Record → "Recent picks" (from `data/predictions.json`) can be tapped (or focused + Enter). It opens a bottom sheet (centered card on wide screens) — `openPredSlip()` / `openSheet()` in `js/app.js`, styles in `css/style.css` §27, words in `STR.record.slip`.

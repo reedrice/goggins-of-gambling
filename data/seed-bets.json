@@ -2,19 +2,139 @@
   "_comment": "Bets placed outside the app (Polymarket US screenshots) that My Bets should show. NO DOLLARS: stake is in units (stake_units x your profile unit), payout is a multiplier (total return / stake). js/app.js seedBets() copies each id into localStorage once; ids are remembered in prefs.seededBets so deleting a bet in the app sticks.",
   "schema_version": 1,
   "bets": [
-    { "id": "seed-2026-10-19-4leg-ramirez-caminero-cmc-daniels", "createdAt": "2026-10-20T00:00:00Z", "category": "parlay", "platform": "Polymarket US", "stake_units": 0.5, "quoted_multiple": 8.096,
-      "legs": ["José Ramírez 1+ hits (CLE@TB G6)", "Junior Caminero 1+ hits (CLE@TB G6)", "Christian McCaffrey 1+ TD (WAS@SF) ✅ hit", "Jayden Daniels 2+ passing TDs (WAS@SF)"] },
-    { "id": "seed-2026-10-19-2leg-guardians-kwan", "createdAt": "2026-10-20T00:01:00Z", "category": "parlay", "platform": "Polymarket US", "stake_units": 0.5, "quoted_multiple": 3.964,
-      "legs": ["Guardians to win (G6 @ TB)", "Steven Kwan 2+ total bases"] },
-    { "id": "seed-2026-10-19-2leg-celebrini-rays", "createdAt": "2026-10-20T00:02:00Z", "category": "parlay", "platform": "Polymarket US", "stake_units": 0.5, "quoted_multiple": 2.222,
-      "legs": ["Macklin Celebrini 1+ point (SJ vs TOR)", "Rays to win (G6 vs CLE)"] },
-    { "id": "seed-2026-10-19-3leg-purdy-cmc", "createdAt": "2026-10-20T00:03:00Z", "category": "parlay", "platform": "Polymarket US", "stake_units": 0.5, "quoted_multiple": 5.612,
-      "legs": ["Brock Purdy 250+ passing yards", "Christian McCaffrey 70+ rushing yards", "Christian McCaffrey 2+ TDs"] },
-    { "id": "seed-2026-10-19-9leg-was-sf-sgp", "createdAt": "2026-10-20T00:04:00Z", "category": "parlay", "platform": "Polymarket US", "stake_units": 0.5, "quoted_multiple": 39.206,
-      "legs": ["Brock Purdy 200+ passing yards", "Brock Purdy 10+ rushing yards", "Jayden Daniels 175+ passing yards", "Jayden Daniels 30+ rushing yards", "Christian McCaffrey 50+ rushing yards", "Christian McCaffrey 1+ TD ✅ hit", "Rachaad White 30+ rushing yards", "Mike Evans 1+ TD", "Rachaad White 1+ TD"] },
-    { "id": "seed-2026-10-19-7leg-nhl-week-ramirez-caminero", "createdAt": "2026-10-20T00:05:00Z", "category": "parlay", "platform": "Polymarket US", "stake_units": 1, "quoted_multiple": 31.519,
-      "legs": ["Avalanche to win vs PHI (10/19)", "Avalanche to win vs NJD (10/20)", "Capitals to win vs LAK (10/20)", "Panthers to win vs OTT (10/21)", "Sharks to win vs OTT (10/22)", "José Ramírez 1+ hits (CLE@TB G6, 10/19)", "Junior Caminero 1+ hits (CLE@TB G6, 10/19)"] },
-    { "id": "seed-2026-10-19-2leg-tennis-dong-jeong", "createdAt": "2026-10-20T03:25:00Z", "category": "parlay", "platform": "Polymarket US", "stake_units": 1, "quoted_multiple": 3.857,
-      "legs": ["Zhenxiong Dong to win vs Haolong He (ITF Men's M15 Shenzhen)", "Yeongseok Jeong to win vs Jaden Dewandaka Tan (ITF Men's M15 Singapore)"] }
+    {
+      "id": "seed-2026-10-19-4leg-ramirez-caminero-cmc-daniels",
+      "createdAt": "2026-10-20T00:00:00Z",
+      "category": "parlay",
+      "platform": "Polymarket US",
+      "stake_units": 0.5,
+      "quoted_multiple": 8.096,
+      "legs": [
+        "José Ramírez 1+ hits (CLE@TB G6)",
+        "Junior Caminero 1+ hits (CLE@TB G6)",
+        "Christian McCaffrey 1+ TD (WAS@SF) ✅ hit",
+        "Jayden Daniels 2+ passing TDs (WAS@SF)"
+      ]
+    },
+    {
+      "id": "seed-2026-10-19-2leg-guardians-kwan",
+      "createdAt": "2026-10-20T00:01:00Z",
+      "category": "parlay",
+      "platform": "Polymarket US",
+      "stake_units": 0.5,
+      "quoted_multiple": 3.964,
+      "legs": [
+        "Guardians to win (G6 @ TB)",
+        "Steven Kwan 2+ total bases"
+      ]
+    },
+    {
+      "id": "seed-2026-10-19-2leg-celebrini-rays",
+      "createdAt": "2026-10-20T00:02:00Z",
+      "category": "parlay",
+      "platform": "Polymarket US",
+      "stake_units": 0.5,
+      "quoted_multiple": 2.222,
+      "legs": [
+        "Macklin Celebrini 1+ point (SJ vs TOR)",
+        "Rays to win (G6 vs CLE)"
+      ]
+    },
+    {
+      "id": "seed-2026-10-19-3leg-purdy-cmc",
+      "createdAt": "2026-10-20T00:03:00Z",
+      "category": "parlay",
+      "platform": "Polymarket US",
+      "stake_units": 0.5,
+      "quoted_multiple": 5.612,
+      "legs": [
+        "Brock Purdy 250+ passing yards",
+        "Christian McCaffrey 70+ rushing yards",
+        "Christian McCaffrey 2+ TDs"
+      ]
+    },
+    {
+      "id": "seed-2026-10-19-9leg-was-sf-sgp",
+      "createdAt": "2026-10-20T00:04:00Z",
+      "category": "parlay",
+      "platform": "Polymarket US",
+      "stake_units": 0.5,
+      "quoted_multiple": 39.206,
+      "legs": [
+        "Brock Purdy 200+ passing yards",
+        "Brock Purdy 10+ rushing yards",
+        "Jayden Daniels 175+ passing yards",
+        "Jayden Daniels 30+ rushing yards",
+        "Christian McCaffrey 50+ rushing yards",
+        "Christian McCaffrey 1+ TD ✅ hit",
+        "Rachaad White 30+ rushing yards",
+        "Mike Evans 1+ TD",
+        "Rachaad White 1+ TD"
+      ]
+    },
+    {
+      "id": "seed-2026-10-19-7leg-nhl-week-ramirez-caminero",
+      "createdAt": "2026-10-20T00:05:00Z",
+      "category": "parlay",
+      "platform": "Polymarket US",
+      "stake_units": 1,
+      "quoted_multiple": 31.519,
+      "legs": [
+        "Avalanche to win vs PHI (10/19)",
+        "Avalanche to win vs NJD (10/20)",
+        "Capitals to win vs LAK (10/20)",
+        "Panthers to win vs OTT (10/21)",
+        "Sharks to win vs OTT (10/22)",
+        "José Ramírez 1+ hits (CLE@TB G6, 10/19)",
+        "Junior Caminero 1+ hits (CLE@TB G6, 10/19)"
+      ]
+    },
+    {
+      "id": "seed-2026-10-19-2leg-tennis-dong-jeong",
+      "createdAt": "2026-10-20T03:25:00Z",
+      "category": "parlay",
+      "platform": "Polymarket US",
+      "stake_units": 1,
+      "quoted_multiple": 3.857,
+      "legs": [
+        "Zhenxiong Dong to win vs Haolong He (ITF Men's M15 Shenzhen)",
+        "Yeongseok Jeong to win vs Jaden Dewandaka Tan (ITF Men's M15 Singapore)"
+      ]
+    },
+    {
+      "id": "seed-2026-10-19-single-bos-det-under-221-5",
+      "createdAt": "2026-10-20T04:10:00Z",
+      "category": "single",
+      "platform": "Polymarket US",
+      "stake_units": 0.25,
+      "quoted_multiple": 2.964,
+      "legs": [
+        "Celtics @ Pistons Under 221.5 (No on Over 221.5) (10/20)"
+      ]
+    },
+    {
+      "id": "seed-2026-10-19-single-spurs-ml-vs-okc",
+      "createdAt": "2026-10-20T04:10:00Z",
+      "category": "single",
+      "platform": "Polymarket US",
+      "stake_units": 0.5,
+      "quoted_multiple": 2.932,
+      "legs": [
+        "Spurs to win vs Thunder (10/20)"
+      ]
+    },
+    {
+      "id": "seed-2026-10-19-3leg-knicks-lebron-islanders",
+      "createdAt": "2026-10-20T04:10:00Z",
+      "category": "parlay",
+      "platform": "Polymarket US",
+      "stake_units": 0.5,
+      "quoted_multiple": 4.1,
+      "legs": [
+        "Knicks to win vs 76ers (10/20)",
+        "LeBron James 6+ rebounds (10/20)",
+        "Islanders to win vs Ducks (10/20)"
+      ]
+    }
   ]
 }
