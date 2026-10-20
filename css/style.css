@@ -489,3 +489,7 @@ a.btn-play { display: block; text-align: center; text-decoration: none; margin-t
 .slip-pay { margin: 10px 0 2px; font-size: 18px; font-weight: 700; color: var(--accent); }
 .sheet .btn { display: block; text-align: center; text-decoration: none; margin-top: 12px; }
 @media (min-width: 700px) { .sheet-back { align-items: center; } .sheet { border-radius: 16px; } }
+
+/* §28 Record: 5 stat boxes (HANDOFF §41). Phone: 2 per row, Units box spans the full last row. Wide: 5 in one row. */
+.kpis-5 .kpi-wide { grid-column: 1 / -1; }
+@media (min-width: 700px) { .kpis.kpis-5 { grid-template-columns: repeat(5, 1fr); } .kpis-5 .kpi-wide { grid-column: auto; } }

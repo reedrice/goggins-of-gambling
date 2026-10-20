@@ -924,3 +924,12 @@ My Bets lives in localStorage (`betdash_bets`), so bets placed straight on Polym
 - Rows (newest first, up to 40): date, pick name (the leg text minus the "— tap…" hints, or "3-leg combo: A + B + C"), sport · category, our chance, and the result badge.
 - Tap or Enter on a row runs `openHistSlip()`, which opens the same bottom sheet as §39 (`openSheet()`). It shows every leg with its American odds and won/lost/not-finished badge, odds if all legs win, the units we said to bet, units won/lost, and "$unit → $X if it wins". No cents anywhere.
 - Smoke test: `tests/record-picks-list.smoke.js`. Still 6 tabs, no Pablo files touched.
+
+## 41. Record tab: same 5 stat boxes for both sections (Oct 19, 2026)
+
+- "Our Picks-page picks" is renamed **Props & Combos**, with the subtitle "Every play from the Picks screen. Tap one to see its slip." The game-winner section is titled **Game Winner Picks**.
+- Both sections use `statBoxes()` in `js/app.js`, which shows the same boxes in the same order: Picks that won (%), Won-Lost, Not finished, Total picks, Units won/lost. Units only, never dollars.
+- The old top summary moved under the "Game Winner Picks" header. The "When we say X%…" calibration table sits under the game-winner rows, since it's about game winners.
+- **Game-winner units:** 1u flat on every pick. A loss is −1u and a win is +(100/price − 1)u. `data/predictions.json` has no stored price, so `predPrice()` reads the saved game-winner market (`aec-…`) in `data/markets/events/<slug>.json` and uses the last saved price. That price may differ from the price at pick time. A win with no saved price counts as 0u, and the note under the boxes says how many wins that was. Pending picks count 0u.
+- Phone layout: 2 boxes per row, and the Units box spans the full last row (`.kpis-5 .kpi-wide`). At 700px and wider, all 5 sit in one row.
+- Smoke test: `tests/record-unified.smoke.js` (the §39 and §40 tests still pass).

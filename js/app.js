@@ -1724,14 +1724,23 @@
       const list = preds.predictions || [];
       const cal = calibration(list);
       const kpi = (k, v) => `<div class="kpi"><div class="k">${esc(k)}</div><div class="v">${v}</div></div>`;
+      // Units for game winners: 1u flat at the saved Polymarket price (HANDOFF §41).
+      const prices = await Promise.all(list.map(p => (p.result === 'win' ? predPrice(p).then(x => x && x.price).catch(() => null) : Promise.resolve(null))));
+      let units = 0, noPrice = 0;
+      list.forEach((p, i) => {
+        if (p.result === 'loss') units -= 1;
+        else if (p.result === 'win') { const c = prices[i]; if (c > 0 && c < 100) units += 100 / c - 1; else noPrice++; }
+      });
       html += `<div class="updated">${esc(R.updated(fmtTime(preds.updated_at)))}</div>
-        <div class="kpis">${kpi(R.accuracy, cal.graded ? pct(cal.wins / cal.graded) : STR.none)}${kpi(R.graded, `${cal.wins}-${cal.graded - cal.wins}`)}${kpi(R.pending, list.filter(p => p.result === 'pending').length)}${kpi(R.total, list.length)}</div>
-        <h3>${esc(R.calTitle)} ${tip('calibration')}</h3>
+        <h3>${esc(R.gameTitle)}</h3>
+        ${statBoxes(cal.wins, cal.graded - cal.wins, list.filter(p => p.result === 'pending').length, list.length, units)}
+        <p class="muted small">${esc(R.gameUnitsNote)}${noPrice ? ' ' + esc(R.noPriceNote(noPrice)) : ''}</p>
+        ${list.length ? `<div class="table-wrap"><table><tr><th>${esc(R.date)}</th><th>${esc(R.pick)}</th><th class="num">${esc(R.chance)}</th><th>${esc(R.result)}</th></tr>
+          ${list.slice().sort((a, b) => String(b.date).localeCompare(String(a.date))).slice(0, 30).map(p => `<tr class="tap-row" data-pred="${esc(p.id)}" tabindex="0" role="button" aria-label="${esc(R.slip.open(p.pick))}"><td>${esc(p.date)}</td><td>${esc(p.pick)}<div class="muted small">${esc(p.game)}</div></td><td class="num">${esc(p.win_prob)}%</td><td><span class="badge ${p.result === 'win' ? 'won' : p.result === 'loss' ? 'lost' : 'open'}">${esc(R.resultWords[p.result] || p.result)}</span></td></tr>`).join('')}</table></div>` : ''}
+        <h4>${esc(R.calTitle)} ${tip('calibration')}</h4>
         ${cal.buckets.length ? `<div class="table-wrap"><table><tr><th>${esc(R.calSaid)}</th><th class="num">${esc(R.calPicks)}</th><th class="num">${esc(R.calAvg)}</th><th class="num">${esc(R.calActual)}</th><th class="num">${esc(R.calOff)}</th></tr>
           ${cal.buckets.map(b => { const avg = b.probSum / b.n / 100, act = b.wins / b.n; return `<tr><td>${b.lo}–${b.lo + 5}%</td><td class="num">${b.n}</td><td class="num">${pct(avg)}</td><td class="num">${pct(act)}</td><td class="num ${sign(act - avg)}">${esc(R.pts(((act - avg) * 100).toFixed(1)))}</td></tr>`; }).join('')}</table></div>`
-          : `<div class="section-empty">${esc(R.calEmpty)}</div>`}
-        ${list.length ? `<h3>${esc(R.gameTitle)}</h3><div class="table-wrap"><table><tr><th>${esc(R.date)}</th><th>${esc(R.pick)}</th><th class="num">${esc(R.chance)}</th><th>${esc(R.result)}</th></tr>
-          ${list.slice().sort((a, b) => String(b.date).localeCompare(String(a.date))).slice(0, 30).map(p => `<tr class="tap-row" data-pred="${esc(p.id)}" tabindex="0" role="button" aria-label="${esc(R.slip.open(p.pick))}"><td>${esc(p.date)}</td><td>${esc(p.pick)}<div class="muted small">${esc(p.game)}</div></td><td class="num">${esc(p.win_prob)}%</td><td><span class="badge ${p.result === 'win' ? 'won' : p.result === 'loss' ? 'lost' : 'open'}">${esc(R.resultWords[p.result] || p.result)}</span></td></tr>`).join('')}</table></div>` : ''}`;
+          : `<div class="section-empty">${esc(R.calEmpty)}</div>`}`;
     }
     html += pickHistoryHtml(hist);
     html += learningCardHtml(learnDoc);
@@ -1753,6 +1762,32 @@
       tr.addEventListener('click', go);
       tr.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
     });
+  }
+
+  /**
+   * Shared stat boxes for both Record sections (HANDOFF §41), same order:
+   * Picks That Won (%), Won-Lost, Not Finished, Total Picks, Units Won/Lost.
+   * Units only, never dollars.
+   */
+  function statBoxes(w, l, open, total, units) {
+    const R = STR.record, u = Math.round(units * 100) / 100;
+    const kpi = (k, v, cls) => `<div class="kpi${cls ? ' ' + cls : ''}"><div class="k">${esc(k)}</div><div class="v">${v}</div></div>`;
+    return `<div class="kpis kpis-5">${kpi(R.accuracy, w + l ? pct(w / (w + l)) : STR.none)}${kpi(R.graded, `${w}-${l}`)}${kpi(R.pending, open)}${kpi(R.total, total)}${kpi(R.unitsBox, `<span class="${sign(u)}">${esc((u > 0 ? '+' : '') + u + 'u')}</span>`, 'kpi-wide')}</div>`;
+  }
+
+  /**
+   * Saved Polymarket game-winner price (cents, for math only) for one prediction.
+   * id "2026-10-19-col-phi" + sport "NHL" -> data/markets/events/nhl-col-phi-2026-10-19.json,
+   * market id starting "aec-". Returns {ev, ml, side, price} or null.
+   */
+  async function predPrice(p) {
+    const slug = `${String(p.sport || '').toLowerCase()}-${String(p.id).slice(11)}-${p.date}`;
+    const ev = await fetchData(`data/markets/events/${slug}.json`);
+    const ab = String(p.pick || '').toLowerCase();
+    const ml = ev && (ev.markets || []).find(m => /^aec-/.test(m.id) && (m.yes_team === ab || m.no_team === ab));
+    if (!ml) return null;
+    const side = ml.yes_team === ab ? 'yes' : 'no';
+    return { ev, ml, side, price: side === 'yes' ? ml.yes_ask : ml.no_cost };
   }
 
   /**
@@ -1837,7 +1872,7 @@
     const kpi = (k, v) => `<div class="kpi"><div class="k">${esc(k)}</div><div class="v">${v}</div></div>`;
     const rows = picks.slice().sort((a, b) => String(b.slate_date).localeCompare(String(a.slate_date))).slice(0, 40);
     return `<h3>${esc(H.title)}</h3><p class="muted small">${esc(H.intro)}</p>
-      <div class="kpis">${kpi(H.won, w)}${kpi(H.lost, l)}${kpi(H.open, picks.length - w - l)}${kpi(H.units, `<span class="${sign(u)}">${esc((u > 0 ? '+' : '') + u + 'u')}</span>`)}</div>
+      ${statBoxes(w, l, picks.length - w - l, picks.length, u)}
       <div class="table-wrap"><table><tr><th>${esc(STR.record.date)}</th><th>${esc(STR.record.pick)}</th><th class="num">${esc(STR.record.chance)}</th><th>${esc(STR.record.result)}</th></tr>
       ${rows.map(h => `<tr class="tap-row" data-hist="${esc(h.id)}" tabindex="0" role="button" aria-label="${esc(STR.record.slip.open(histName(h)))}"><td>${esc(h.slate_date)}</td><td>${esc(histName(h))}<div class="muted small">${esc(h.sport)} · ${esc(H.cat[h.category] || h.category)}</div></td><td class="num">${esc(Math.round(h.hit_prob) + '%')}</td><td>${resBadge(h.result)}</td></tr>`).join('')}</table></div>
       <p class="muted small">${esc(H.unitsNote)}</p>`;
