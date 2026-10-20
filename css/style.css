@@ -502,7 +502,7 @@ a.btn-play { display: block; text-align: center; text-decoration: none; margin-t
 .card.lotto .logos { display: flex; gap: 4px; }
 
 /* §46 Share */
-.pick-actions { display: inline-flex; flex-direction: column; align-items: flex-end; gap: 6px; flex: none; }
+.pick-head .pick-actions { display: inline-flex; flex-direction: column; align-items: flex-end; gap: 6px; flex: none; }
 .share-btn { background: transparent; color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 4px 10px; font-size: 0.8em; font-weight: 700; cursor: pointer; }
 .sheet-share { position: absolute; top: 12px; right: 56px; }
 .share-menu { position: absolute; z-index: 1000; width: 220px; background: var(--card-2); border: 1px solid #333; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,.6); overflow: hidden; }
@@ -552,3 +552,14 @@ a.btn-play { display: block; text-align: center; text-decoration: none; margin-t
 .viz-price { font-size: .9em; margin: 2px 0 4px; }
 .viz-price-main { font-weight: 600; }
 .viz-onpm { color: var(--muted, #9aa); font-size: .85em; }
+
+/* §51 Balanced action buttons (pick cards, My Bets). Open-in-app link = full-width row;
+   the other buttons share an equal-width row under it. Same height (44px), radius, spacing. */
+.card-actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 8px; margin-top: 10px; width: 100%; }
+.card-actions > .btn { min-height: 44px; display: flex; align-items: center; justify-content: center; text-align: center; margin: 0;
+  padding: 8px 10px; border-radius: 12px; font-size: 13px; line-height: 1.15; box-sizing: border-box; width: 100%; }
+.card-actions > a.btn { grid-column: 1 / -1; }
+.card-actions > .badge { grid-column: 1 / -1; justify-self: center; }
+.card[data-pick-id] .card-actions { grid-template-columns: 1fr 1fr; }
+.card[data-pick-id] .card-actions > button.btn:only-of-type { grid-column: 1 / -1; }
+.settle-actions { grid-template-columns: repeat(3, 1fr); }

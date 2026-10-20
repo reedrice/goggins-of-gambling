@@ -947,7 +947,7 @@
       ${pk.pending_news ? `<div class="news">⏳ <b>${esc(P.news)}</b> ${esc(PL.noCents(pk.pending_news))}</div>` : ''}
       ${pk.verify_note ? `<div class="verify">⚠️ ${esc(PL.noCents(pk.verify_note))}</div>` : ''}
       ${pk.reasoning ? `<div class="reason">${esc(PL.noCents(pk.reasoning))}</div>` : ''}
-      <div class="pick-actions">
+      <div class="pick-actions card-actions">
         ${openButton(pk, pk.side || pk.event)}
         <button class="btn btn-sm btn-primary" data-load-pick="${esc(pk.id)}" data-cat="${esc(cat)}">${esc(P.toCalc)}</button>
         ${playable(pk) ? `<button class="btn btn-sm btn-play" data-play-pick="${esc(pk.id)}">${esc(STR.play.cardBtn)}</button>` : ''}
@@ -1572,7 +1572,7 @@
         <!-- Plain: "If all 3 win: your $5 turns into $23.40" + chance (no "x" multiples) -->
         <div class="pay-big">${esc(b.legs.length > 1 ? STR.plain.ifAllWin(b.legs.length, cash(b.stake), cash(b.stake * b.quotedMultiple)) : STR.plain.ifWins(cash(b.stake), cash(b.stake * b.quotedMultiple)))}</div>
         ${typeof b.hitChance === 'number' ? `<div class="chance-line">${chanceHtml(b.hitChance, b.legs.length)}</div>` : ''}
-        <div class="pick-actions">
+        <div class="pick-actions card-actions settle-actions">
           <button class="btn btn-sm btn-primary" data-settle="won" data-id="${b.id}">${esc(B.won)}</button>
           <button class="btn btn-sm btn-danger" data-settle="lost" data-id="${b.id}">${esc(B.lost)}</button>
           <button class="btn btn-sm" data-settle="push" data-id="${b.id}">${esc(B.push)}</button>

@@ -1057,3 +1057,12 @@ they open in a pop-up when you tap a pick card (Picks tab) or a Live Bets card.
   No/under bet the No buy price, shown as "Under N"), and points the price-over-time chart at that line's market. The
   chosen line stays when switching L5 / L10 / vs OPP / Season.
 - CSS `.viz-chip*`, `.viz-price`, `.viz-onpm` at the end of style.css. Test in `tests/viz.test.js`. Version bumped with bump-version.mjs.
+
+## 51. Balanced action buttons (Oct 20, 2026)
+- Cause: the §46 Share rule `.pick-actions { flex-direction: column; align-items: flex-end }` was meant for the card
+  header (BET badge + Share) but also hit the bottom button group, so "Open in Polymarket US ↗", "Use in Bet Builder"
+  and "🎮 Play" stacked right-aligned with uneven widths (and My Bets' Won / Lost / Push did the same).
+- Fix: that rule is now scoped to `.pick-head .pick-actions`. The bottom groups get `card-actions` (CSS grid, §51 at the
+  end of style.css): the open-in-app link is a full-width row, the other buttons share an equal-width row under it
+  (one button alone spans full width). My Bets settle buttons (`settle-actions`) are 3 equal columns. All 44px tall,
+  12px radius, 8px gaps. Functions unchanged. The Record slip pop-up only has the Share pill (unchanged).
