@@ -186,3 +186,13 @@ test('odds limit: long/short sides never become edges; crossing it drops quietly
   assert.deepStrictEqual(j.edges, []);          // not an edge, not "gone"
   assert.deepStrictEqual(j.alerts, []);         // earlier alert removed, no new "gone" alert
 });
+
+test('tick: shouldTick + buildIndex', async () => {
+  const { shouldTick, buildIndex } = await import('../scripts/live-tick.mjs');
+  const now = Date.parse('2026-10-20T20:00:00Z');
+  assert.strictEqual(shouldTick({ start: '2026-10-20T20:20:00Z' }, now), true);
+  assert.strictEqual(shouldTick({ start: '2026-10-20T21:00:00Z' }, now), false);
+  assert.strictEqual(shouldTick({ start: '2026-10-20T18:00:00Z', status: 'live' }, now), true);
+  assert.strictEqual(shouldTick({ start: '2026-10-20T18:00:00Z', status: 'final' }, now), false);
+  assert.strictEqual(buildIndex([{ slug: 'a', start_time: '1' }, { slug: 'b', start_time: '2' }]).games[0].slug, 'b');
+});

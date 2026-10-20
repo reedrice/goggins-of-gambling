@@ -68,3 +68,12 @@ assert.strictEqual(LB.seedSeen(st, now + 3600e3), '2026-10-20T01:00:00.000Z');  
 assert.deepStrictEqual(LB.markNew([{ at: '2026-10-20T01:20:00.000Z' }, { at: '2026-10-20T00:50:00.000Z' }], st.m[LB.SEEN_KEY]), [true, false]);
 assert.strictEqual(LB.seedSeen({ getItem: () => { throw new Error('blocked'); } }, now), null);
 console.log('ok live-bets helpers + data shape + grouping/cap + alerts + odds limit + first-visit seed');
+
+{ const LB = require('../js/live-bets.js'); const assert = require('assert');
+  const now = Date.parse('2026-10-20T01:00:00Z');
+  assert.strictEqual(LB.freshness({ status: 'live', updated: '2026-10-20T00:30:00Z' }, now).stale, true);
+  assert.strictEqual(LB.freshness({ status: 'live', updated: '2026-10-20T00:50:00Z' }, now).stale, false);
+  assert.strictEqual(LB.freshness({ status: 'pregame', start_time: '2026-10-20T00:15:00Z', updated: '2026-10-19T20:39:00Z' }, now).stale, true);
+  assert.strictEqual(LB.freshness({ status: 'final', updated: '2026-10-19T20:39:00Z' }, now).stale, false);
+  assert.strictEqual(LB.pickGame([{ slug: 'x', status: 'final', start_time: '2' }, { slug: 'y', status: 'live', start_time: '1' }]), 'y');
+  console.log('live-bets freshness/pickGame ok'); }

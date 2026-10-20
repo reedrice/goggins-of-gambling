@@ -32,7 +32,8 @@
   }
 })(typeof self !== 'undefined' ? self : this, function (root) {
   'use strict';
-  const SLUG = 'nfl-was-sf-2026-10-19';           // tonight's game (WAS @ SF)
+  const SLUG = 'nfl-was-sf-2026-10-19';           // fallback game if data/live/index.json is missing
+  const STALE_MIN = 20;                           // live feed older than this = "Feed is stale" (Oct 20)
   const REFRESH_MS = 60 * 1000;                   // about once a minute
   const CAP = 5;                                  // cards per group before "Show more"
   // Shown in "Moved for a reason". 'injury' edges are DROPPED entirely: injury
@@ -91,6 +92,28 @@
     else if (c.espn_status === 'STATUS_HALFTIME') status = 'Halftime';
     else status = `${c.period > 4 ? 'OT' : 'Q' + c.period} ${c.clock || ''}`.trim() + (c.possession ? ` · ${c.possession} ball` : '');
     return { score, status };
+  }
+  /**
+   * "Updated X min ago" + stale flag (pure, tested). Stale = updated more than
+   * STALE_MIN minutes ago while the game is live or should have started
+   * (Oct 20 fix: the MNF feed sat at "pregame" all game and nothing showed it).
+   */
+  function freshness(d, now = Date.now()) {
+    const u = Date.parse(d.updated);
+    if (isNaN(u)) return { text: 'Updated time unknown', stale: d.status !== 'final' };
+    const min = Math.max(0, Math.floor((now - u) / 60000));
+    const ago = min < 1 ? 'just now' : min < 60 ? `${min} min ago` : `${Math.floor(min / 60)} hr ${min % 60} min ago`;
+    const shouldBeLive = d.status === 'live' || (d.status === 'pregame' && Date.parse(d.start_time) <= now);
+    return { text: `Updated ${ago} (${clock(d.updated)})`, stale: d.status !== 'final' && shouldBeLive && min > STALE_MIN, min };
+  }
+  /** Pick the game to show from index.json games: live, then soonest pregame, then latest. */
+  function pickGame(games) {
+    const g = (games || []).filter(x => x && x.slug);
+    const live = g.find(x => x.status === 'live');
+    if (live) return live.slug;
+    const pre = g.filter(x => x.status === 'pregame').sort((a, b) => String(a.start_time).localeCompare(String(b.start_time)))[0];
+    if (pre) return pre.slug;
+    return g.sort((a, b) => String(b.start_time).localeCompare(String(a.start_time)))[0]?.slug || SLUG;
   }
   /** Back-compat helper (tests): status line only. */
   const statusText = d => scoreboard(d).status;
@@ -212,8 +235,16 @@
     const sb = scoreboard(d);
     const head = el('div', 'lb-head');
     head.append(el('div', 'lb-game', d.game || 'Live game'), el('div', 'lb-score', sb.score),
-      el('div', 'lb-status', sb.status), el('div', 'lb-updated', `Updated ${clock(d.updated)} · checks every minute`));
+      el('div', 'lb-status', sb.status), el('div', 'lb-updated', freshness(d).text));
     box.append(head);
+    if (freshness(d).stale) box.append(el('div', 'lb-stale', `⚠️ Feed is stale: no update in over ${STALE_MIN} minutes, so these prices may be old.`));
+    const games = (ui.games || []).filter(x => x.status !== 'final' || x.slug === ui.slug);
+    if (games.length > 1) {
+      const bar = el('div', 'lb-games');
+      games.forEach(x => { const b = el('button', 'lb-game-btn' + (x.slug === ui.slug ? ' lb-on' : ''), x.game || x.slug);
+        b.type = 'button'; b.onclick = () => { ui.slug = x.slug; ui.pinned = true; ui.load(); }; bar.append(b); });
+      box.append(bar);
+    }
     const g = groupEdges(d.edges), link = safeUrl(d.url);
     if (!g.game.total && !g.prop.total) {
       const empty = el('div', 'live-bets-empty');
@@ -245,9 +276,12 @@
     rootEl.replaceChildren(el('div', 'live-bets-empty', 'Loading live bets…'));
     let timer = null, last = null;
     const ui = { game: false, prop: false, reasons: false, redraw: () => { if (!last) return; const b = ui.seenBase; ui.seenBase = ui.prevBase; draw(rootEl, last, ui); ui.seenBase = b; } };
-    const load = () => {
+    // Which game: data/live/index.json (written by live-tick.mjs), else SLUG.
+    const load = ui.load = () => {
       if (!rootEl.isConnected && timer) { clearInterval(timer); return; }   // view closed
-      fetch(`data/live/${SLUG}.json?ts=${Date.now()}`)
+      fetch(`data/live/index.json?ts=${Date.now()}`)
+        .then(r => (r.ok ? r.json() : null)).catch(() => null)
+        .then(ix => { ui.games = (ix && ix.games) || []; if (!ui.pinned) ui.slug = pickGame(ui.games); return fetch(`data/live/${ui.slug || SLUG}.json?ts=${Date.now()}`); })
         .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
         .then(d => { last = d; ui.prevBase = ui.seenBase; draw(rootEl, d, ui); })
         .catch(() => { if (!rootEl.querySelector('.lb-head')) {
@@ -257,5 +291,5 @@
     timer = setInterval(load, REFRESH_MS);
   }
 
-  return { render, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
+  return { render, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
 });

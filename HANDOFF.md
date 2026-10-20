@@ -964,3 +964,42 @@ Reed wanted huge "lottery ticket" combos (7 to about 20 legs) inside the Picks p
 - **Save as picture:** pure canvas text (no logos or remote images, so the canvas is never tainted; no library). 1080 wide by 1350 tall, growing up to 1920 for big tickets (the font shrinks after that), drawn at 2x. It has the wordmark (APP_CONFIG), date, title, every leg (sport, text, American odds), combined odds, "$10 → $X" (a fixed example, never the user's stake), the hit chance in words and a "just for fun" footer. No cents, units or bankroll. Order of tries: `navigator.canShare({files})` → share sheet ("Save Image" on iPhone) → on desktop a download → on touch devices an overlay saying "press and hold to save".
 - **Test:** `tests/share.smoke.js` (Share on every card, the menu, an untainted export, no cents/stake words, deep-link highlight, old pick → slip). Shots: /workspace/shots/share-menu.png, share-example.png, share-slip.png.
 - Richie's/Pablo's live-bets files are untouched; the 6 tabs are unchanged.
+
+## 47. For Pablo: Live Bets feed went dead during MNF + scheduled tick (Oct 20, 2026)
+Written by Reed's bot. Reed OK'd editing your live files this one time.
+
+**What was wrong:** during MNF WAS@SF the view only ever showed one McCaffrey edge.
+`data/live/nfl-was-sf-2026-10-19.json` was last published 3:39 PM CT (status "pregame")
+and nothing ran `live-watch.mjs` after kickoff, so the file never changed. The view
+also gave no sign the feed was dead ("Updated 3:39 PM CT · checks every minute").
+
+**What changed**
+- NEW `scripts/live-tick.mjs` (also `node scripts/live-watch.mjs tick`): one fast pass, then exits.
+  Lists Polymarket US events (free, no key) in nfl/nba/wnba/nhl/mlb that start within 30 min
+  (`--lead N`) or started up to 8 h ago, plus any data/live game from the last 24 h not yet final.
+  For each non-final game it runs your existing `live-watch.mjs publish --slug X` (snapshot if
+  missing, edges, alerts, ESPN context). Final games are skipped forever. Rewrites
+  `data/live/index.json`. `--push` commits+pushes data/live/ only if git sees a change; without
+  it, git is never touched. `--dry` lists what it would do. Always exits 0 (errors are logged).
+  No Odds API, no Discord posts, prices only.
+- `scripts/live-watch.mjs`: `tick` command added; `buildLive` status is also "final" when ESPN
+  says `post` (markets can stay open after the game). Nothing else changed.
+- `js/live-bets.js`: shows "Updated X min ago (h:mm CT)"; a red "Feed is stale" box when
+  updated is >20 min old and the game is live or past start time. Picks the game from
+  `data/live/index.json` (live → soonest pregame → latest), falls back to the old SLUG; a small
+  game-switcher row appears when 2+ non-final games are listed. SEEN_KEY unchanged (badge safe).
+- `css/live-bets.css`: `.lb-stale`, `.lb-games`, `.lb-game-btn` appended at the bottom.
+- Tests added in `tests/live-watch.test.mjs` and `tests/live-bets.test.js`. Cache stamp → `?v=20261020-0330`.
+- Ran a tick: WAS@SF is now marked final (WSH 17 – SF 23).
+
+**Your schedule (you own it, Reed's side won't run it):**
+```
+cd /path/to/goggins-of-gambling && git pull -q --rebase origin main && node scripts/live-tick.mjs --push
+```
+Every 10 min (5 is fine too; it's free) from about 11:00 AM to 11:59 PM CT, plus 12:00–1:30 AM CT
+for late West-coast games. Cron (CT box): `*/10 11-23,0 * * *`. One tick takes a few seconds per
+game. Needs git push rights to main. Opening snapshots live in /workspace/live (`--dir`), else
+they're rebuilt from the published file, so any machine keeps the same open.
+Notes: auto-found games have no player list, so they track game lines only (props need
+`--players`, like WAS@SF had). If you want Discord, run `live-discord.mjs --slug X` per game after
+the tick yourself (DISCORD_WEBHOOK_URL env).

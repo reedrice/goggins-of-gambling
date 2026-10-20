@@ -20,6 +20,10 @@
  *       Run "check" every N seconds until the game ends (or max checks) and
  *       append alerts to data/live/<slug>-alerts.json (prices only).
  *
+ *   node scripts/live-watch.mjs tick [--push]
+ *       One pass over every game starting soon or live (scripts/live-tick.mjs).
+ *       Run it every ~10 min from a scheduler during game hours (Oct 20, 2026).
+ *
  *   node scripts/live-watch.mjs publish [--slug ...]
  *       Build the site file data/live/<slug>.json for the Live Bets view
  *       (js/live-bets.js): open prices + current edges vs open. Takes the
@@ -382,7 +386,8 @@ export function buildLive(open, ev, prev, nowIso = new Date().toISOString(), ctx
   for (const e of Object.values(prevEdges)) if (!seen.has(e.key) && !outOfLimit.has(e.key)) edges.push({ ...e, status: 'gone' });
   edges.sort((a, b) => (a.status === 'gone') - (b.status === 'gone') || b.edge - a.edge);
   const started = open.start_time && Date.parse(nowIso) >= Date.parse(open.start_time);
-  const status = gameOver(ev) ? 'final' : started ? 'live' : 'pregame';
+  // ESPN "post" also counts as final (Oct 20: markets can stay open a while after the game).
+  const status = gameOver(ev) || ctx?.game_state === 'post' ? 'final' : started ? 'live' : 'pregame';
   const al = liveAlerts(prev, edges, status, nowIso, open.url, outOfLimit);
   return {
     _note: 'Real Polymarket US prices (gateway.polymarket.us). Chances in points (0-100). No dollar amounts.',
@@ -466,7 +471,8 @@ async function publish() {
 
 // Only run the CLI when executed directly (tests import the functions above).
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
-  const run = { snapshot, check, watch, publish }[cmd];
-  if (!run) { console.log('Usage: node scripts/live-watch.mjs snapshot|check|watch|publish [--slug ...]'); process.exit(1); }
+  const tick = async () => (await import('./live-tick.mjs')).tick();
+  const run = { snapshot, check, watch, publish, tick }[cmd];
+  if (!run) { console.log('Usage: node scripts/live-watch.mjs snapshot|check|watch|publish|tick [--slug ...]'); process.exit(1); }
   run().catch(e => { console.error('live-watch error:', e.message); process.exit(1); });
 }
