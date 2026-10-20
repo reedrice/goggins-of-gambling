@@ -12,7 +12,8 @@ Linked from [AGENTS.md](AGENTS.md). Detail and history are in [HANDOFF.md](HANDO
 - **Hover/tap readout:** the nearest real point shows time CT · American odds · chance % · "$unit → $payout" (the user's standard bet, whole dollars) · score/period when known, with a dot on the line.
 - **Money:** whole dollars, American odds, no cents. Examples only, never instructions.
 - **Mock-ups first** for the redesign: 2–3 styles from Reed's screenshots, then build.
-- **Dig deeper** (one tap on the Analytics line, any bet type, every surface):
+- **Analytics button.** ONE control on every bet: a pill "Analytics 58% · Market 49% ›" (`.oc-btn`). No separate "Dig deeper" button; the UI never says "Dig deeper" or "Our chance" (code names stay).
+- **Analytics sheet** (internally Dig deeper; one tap on the Analytics pill, any bet type, every surface):
   - **Prop bets** open on that player's history for *that* prop: game bars vs the line, green = hit, red = miss, plus "8 of 10".
   - **Line stepper** (− / +): the bars recolor live.
   - **Stat chips** stay on the same player and switch to his other position-appropriate prop bets.

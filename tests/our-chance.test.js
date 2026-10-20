@@ -35,3 +35,8 @@ assert.strictEqual(OC.parseSlug('aec-nfl-was-sf-2026-10-19').away, 'was');
 assert.strictEqual(OC.parseSlug('astatc-nba-bos-det-2026-10-20-pts-jaytat-gte15').n, 15);
 assert.strictEqual(OC.breakdown(b, '7 of 10'), 'History 7 of 10 · Vegas 58% · Market 49%');
 console.log('our-chance ok');
+// UI labels: one Analytics control, never "Dig deeper" / "Our chance" on screen
+{ const src = require('fs').readFileSync(require('path').join(__dirname, '../js/our-chance.js'), 'utf8');
+  const ui = src.split('\n').filter(l => !/^\s*(\*|\/\/|\/\*)/.test(l) && /textContent|innerHTML|aria-label/.test(l)).join('\n');
+  assert.ok(!/Dig deeper|Our chance/.test(ui), 'UI text must say Analytics'); assert.ok(/Analytics \$\{res\.pct\}%/.test(ui));
+  console.log('our-chance labels ok'); }
