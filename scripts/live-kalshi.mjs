@@ -50,7 +50,7 @@ export const norm = s => String(s || '').toLowerCase().normalize('NFD').replace(
 export function parseProp(q) {
   const m = /Will (.+?) (?:record|score|have|get) at least (\d+) (.+?) in /i.exec(q || '');
   if (!m) return null;
-  const w = m[3].toLowerCase();
+  const w = m[3].toLowerCase().replace(/^total (?!bases)/, '');
   const stat = /point.*rebound.*assist/.test(w) ? 'pra' : /three|3-point/.test(w) ? 'threes'
     : /^(points?|rebounds?|assists?|steals?|blocks?|goals?|receptions?|hits?|strikeouts?)$/.test(w) ? w.replace(/s?$/, 's')
     : /home run/.test(w) ? 'home runs' : /total bases/.test(w) ? 'total bases' : null;

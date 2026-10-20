@@ -16,6 +16,7 @@ const P = (q) => matchOne({ mtype: 'prop', period: 'full_game' }, q, k, team);
 test('parseProp', () => {
   assert.deepStrictEqual(parseProp('Will Jalen Duren record at least 20 points in BOS Celtics vs. DET Pistons?'), { player: 'Jalen Duren', stat: 'points', n: 20 });
   assert.strictEqual(parseProp('Will X record at least 2 three-point field goals made in A vs. B?').stat, 'threes');
+  assert.strictEqual(parseProp('Will X record at least 8 total rebounds in A vs. B?').stat, 'rebounds');
   assert.strictEqual(parseProp('Who will win?'), null);
 });
 test('props: same player + stat + threshold only', () => {
