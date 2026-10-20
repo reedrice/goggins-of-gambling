@@ -1268,3 +1268,13 @@ Reed wanted live charts to look like Polymarket's game charts. In `js/viz.js` `p
 
 ## Routines handoff (Oct 20, 2026)
 Reed's 5 routines can be run by any bot (grok, chatgpt, pablo). Only the owner in `routines/owners.json` runs each one. See [routines/README.md](routines/README.md). Every run starts with `node scripts/routine-gate.mjs check <id> <me>` and ends with `stamp`.
+
+
+## 61. ChatGPT temporary live-feed takeover (Oct 20, 2026)
+
+Reed authorized ChatGPT/Codex to maintain Pablo's Live Bets and live feed while Pablo is usage-limited, and requested shared notes. The owner is now `routines/owners.json` -> `live-feed-update: chatgpt`. Full operation, schedule, limitations and handback: [routines/LIVE-FEED.md](routines/LIVE-FEED.md).
+
+Fixed Windows file URL handling and the Linux-only scratch path in live-watch; a real tick now refreshes both tracked events. live-tick now returns nonzero on discovery/publish/push failure. live-run checks the owner (old Pablo wrapper calls skip), supports `--owner chatgpt --no-push` for connector publication, and stamps only after a successful tick. A local Codex heartbeat runs every 10 minutes; it requires Codex/computer availability. No other Grok routines or Discord schedules were transferred. External direct tick schedules cannot be disabled here and must be paused or gated by their owner. Existing openings, filters, history and Live Bets UI are preserved. Tests: live-watch 23, live-context 11, live-kalshi 5, routine-gate 4, calc, github-log and picks validation passed.
+
+### Section 61 publishing follow-up
+Reed reauthorized local gh CLI. Connector writes returned 403; Git Bash credential helpers cannot run in this Windows sandbox. Use `live-run.mjs --owner chatgpt --no-push` then `publish-live-api.mjs` (gh API credentials stay managed by gh). Publisher verifies latest main and uses a fast-forward-only ref update. Check remote publication rather than trusting a local run stamp.

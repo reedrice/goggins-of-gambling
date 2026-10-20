@@ -25,7 +25,7 @@
  *   3. Rewrites data/live/index.json (list of games for the view).
  *   4. With --push: commits data/live/ and pushes to main, ONLY if git sees a
  *      change there. Without --push it never touches git.
- * Exits 0 even when one game fails (logged), so a scheduler won't spam errors.
+ * Exits nonzero on discovery, publish or push failure so the scheduler can report it.
  *
  * PRIVACY: prices only. No Odds API calls (no ODDS_API_KEY use), no dollar
  * amounts, no keys. Discord is NOT posted from here.
@@ -93,8 +93,9 @@ export async function tick() {
   fs.mkdirSync(LIVE, { recursive: true });
   const pub = Object.fromEntries(readPublished().map(d => [d.slug, d]));
   const cands = new Map();
+  let failures = 0;
   try { for (const g of await listGames(now, lead)) cands.set(g.slug, g); }
-  catch (e) { console.error('tick: could not list games:', e.message); }
+  catch (e) { failures++; console.error('tick: could not list games:', e.message); }
   for (const d of Object.values(pub)) if (!cands.has(d.slug)) cands.set(d.slug, { slug: d.slug, start: d.start_time });
   const todo = [...cands.values()].filter(g => shouldTick({ start: g.start, status: pub[g.slug]?.status }, now, lead));
   console.log(`tick ${new Date(now).toISOString()}: ${cands.size} candidate game(s), ${todo.length} to update`);
@@ -109,7 +110,7 @@ export async function tick() {
       try { const { annotateGame } = await import('./live-kalshi.mjs'); const n = await annotateGame(path.join(LIVE, g.slug + '.json'));
         console.log(`  ${g.slug}: Kalshi has ${n.yes}, not on Kalshi ${n.no}, unchecked ${n.unchecked}`); }
       catch (e) { console.error(`  ${g.slug}: Kalshi check skipped: ${e.message}`); }
-    } catch (e) { console.error(`  ${g.slug}: publish failed: ${String(e.stderr || e.message).trim().split('\n').pop()}`); }
+    } catch (e) { failures++; console.error(`  ${g.slug}: publish failed: ${String(e.stderr || e.message).trim().split('\n').pop()}`); }
   }
   if (!flag('dry')) {
     const idx = buildIndex(readPublished());
@@ -117,6 +118,8 @@ export async function tick() {
     if (!fs.existsSync(file) || fs.readFileSync(file, 'utf8') !== txt) fs.writeFileSync(file, txt);
   }
   if (flag('push') && !flag('dry')) push(ok);
+  if (failures) throw new Error(`${failures} live-feed operation(s) failed; inspect this run before marking it successful`);
+  return { updated: ok, candidates: todo.length };
 }
 
 function push(n) {
@@ -125,9 +128,9 @@ function push(n) {
   git('add', '--', 'data/live');
   git('commit', '-q', '-m', `live: tick update (${n} game(s)) ${new Date().toISOString().slice(0, 16)}Z`);
   try { git('pull', '-q', '--rebase', '--autostash', 'origin', 'main'); git('push', '-q', 'origin', 'HEAD:main'); console.log('tick: pushed'); }
-  catch (e) { console.error('tick: push failed (commit kept locally, next tick retries):', String(e.stderr || e.message).trim().split('\n').pop()); }
+  catch (e) { throw new Error('tick: push failed (commit kept locally)'); }
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
-  tick().catch(e => { console.error('live-tick error:', e.message); process.exit(0); });
+  tick().catch(e => { console.error('live-tick error:', e.message); process.exitCode = 1; });
 }

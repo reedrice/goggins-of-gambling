@@ -26,3 +26,6 @@ See [AGENTS.md](AGENTS.md), [DESIGN.md](DESIGN.md) and [HANDOFF.md](HANDOFF.md) 
 - [ ] **Live-tick scheduling**: Pablo's (scripts/live-*, data/live/).
 - [ ] Analytics gaps: minutes/role/injuries, opponent strength/rest, stats Viz can't parse yet (e.g. saves), calibration of blend weights once graded history builds up (`learn.mjs`).
 - [ ] Dig deeper gaps: snap share, batting-order spot, PP time on ice (not in the free gamelogs).
+
+## Live feed takeover (Oct 20, 2026)
+ChatGPT temporarily owns `live-feed-update` with Reed's permission. Windows path fixes, failure reporting and a gated runner are in place. Local Codex heartbeat: every 10 minutes; requires Codex/computer availability. Other routines remain Grok-owned. See `routines/LIVE-FEED.md` and HANDOFF section 61 for operation and handback.

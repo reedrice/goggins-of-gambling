@@ -46,6 +46,9 @@ Unclear Trent bets are flagged `needs_clarification` + `question` and stay pendi
 - **See open questions:** `questions`, or the site with `?dev=1`.
 
 ## File ownership
+
+**Oct 20, 2026 override authorized by Reed:** ChatGPT temporarily maintains the Live Bets feed and live files while Pablo is usage-limited. See `routines/LIVE-FEED.md` and `routines/owners.json` (`live-feed-update`). The ownership restrictions below apply again after handback. Do not run an independent feed scheduler during this takeover.
+
 - **Pablo's live system** (read-only for everyone else): `data/live/`, `scripts/live-*.mjs` (live-tick, live-watch, live-context, live-discord) and their tests/fixtures. Live-tick scheduling is Pablo's. Read his files; never write them. Leave requests in HANDOFF ("Requests for …").
 - **Richie's Live Bets view**: `js/live-bets.js`, `css/live-bets.css` (§32). Don't edit; ask in HANDOFF.
 - Everything else belongs to Reed's bot.

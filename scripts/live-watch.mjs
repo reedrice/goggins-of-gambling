@@ -29,7 +29,7 @@
  *       (js/live-bets.js): open prices + current edges vs open. Takes the
  *       opening snapshot first if none exists. Prices only.
  *
- * Options: --dir (default /workspace/live), --players "Purdy,Daniels,..."
+ * Options: --dir (default .cache/live), --players "Purdy,Daniels,..."
  *
  * PRIVACY: files hold only public market prices — never dollar amounts,
  * bankrolls, stakes or keys. The working files live outside the repo.
@@ -41,7 +41,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { classify, fetchContext } from './live-context.mjs';
 
 const GATEWAY = 'https://gateway.polymarket.us';
@@ -49,7 +49,8 @@ const args = process.argv.slice(2);
 const cmd = args[0];
 const opt = (k, d) => { const i = args.indexOf('--' + k); return i > 0 ? args[i + 1] : d; };
 const SLUG = opt('slug', 'nfl-was-sf-2026-10-19');
-const DIR = opt('dir', '/workspace/live');
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const DIR = opt('dir', path.join(ROOT, '.cache', 'live'));
 // "nfl-was-sf-2026-10-19" -> "was-sf-2026-10-19". The date is kept (Oct 19)
 // so a rematch later in the season doesn't overwrite this game's snapshot.
 export const tagOf = slug => slug.split('-').slice(1).join('-');
@@ -59,7 +60,7 @@ const LAST_FILE = path.join(DIR, `${TAG}-last.json`);
 const OPEN_MOVE = Number(opt('open-move', 10));   // pts of implied prob vs open
 const STEP_MOVE = Number(opt('step-move', 6));    // pts vs previous check
 const MAX_WIDTH = 6;
-const ALERTS_DIR = opt('alerts-dir', path.join(path.dirname(new URL(import.meta.url).pathname), '..', 'data', 'live'));                              // max bid/ask gap in pts
+const ALERTS_DIR = opt('alerts-dir', path.join(ROOT, 'data', 'live'));
 // Default player list is only for the WAS @ SF trial; other games watch props
 // only for players named with --players.
 const DEFAULT_PLAYERS = SLUG === 'nfl-was-sf-2026-10-19' ? 'Purdy,Daniels,McCaffrey,Kittle,Evans,Samuel,McLaurin,Aiyuk,Pearsall,Croskey-Merritt,Ertz,Jennings' : '';

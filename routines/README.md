@@ -138,3 +138,6 @@ In the reedrice/goggins-of-gambling repo (your clone), git pull, then run in ord
 Weekly self-learning review for Reed's betting picks. In the reedrice/goggins-of-gambling repo, git pull, run `node scripts/capture-closing.mjs --commit` and `node scripts/learn.mjs --commit` (HANDOFF §36), then read data/learning.json. Send Reed a short, plain-language note (5 to 8 lines, American odds, no cents): graded sample size, how accurate our chances were (our 60% bets hit X%), closing-line value (did prices move our way), the best and worst bet types, and what changes the digest will now apply. Say clearly if it's still "collecting data" (under 30 graded in a group). Never invent numbers.
 
 **Final step:** `node scripts/routine-gate.mjs stamp weekly-learning-review <your-name>`.
+
+## Live Bets feed update (`live-feed-update`, Oct 20 takeover)
+This sixth routine is temporarily owned by ChatGPT at Reed's request; the five routines above stay with Grok. Read [LIVE-FEED.md](LIVE-FEED.md). Use `node scripts/live-run.mjs --owner chatgpt --no-push` then publish through the connector, or the gated runner with git push authentication. Do not run an independent direct live-tick schedule during takeover.
