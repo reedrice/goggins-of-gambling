@@ -1,5 +1,7 @@
 # HANDOFF: guide for maintainers and AI agents
 
+> Agents: start with [AGENTS.md](AGENTS.md) (rules, run/test/deploy), [DESIGN.md](DESIGN.md) and [STATUS.md](STATUS.md). This file is the detailed log.
+
 > Product direction, tiers and the legal checklist: see [ROADMAP.md](ROADMAP.md).
 
 Read this before you change anything. It covers the whole system.
@@ -1136,7 +1138,7 @@ One number per bet that doesn't rely only on the market price. The logic lives i
 - **Vegas no-vig.** Both sides: `p/(p+q)`. One side only: `implied/1.045`.
 - **Market.** The Polymarket price.
 - **Final.** Weighted log-odds average: Vegas .45, Market .30, History .25·q, where `q = min(1, games/15)`. Without Vegas: Market .55, History .45·q. Missing parts are dropped. Clamped to 3–97%.
-- **UI.** Any `[data-oc]` element is filled automatically ("Our chance X% · Market Y%" + "History 7 of 10 · Vegas 58% · Market 49%"). It appears on single pick cards (`evalBlock`), Build a Bet rows (Yes side), Live Bets edge cards and the chart pop-up. It is information only, with no instructions.
+- **UI.** Any `[data-oc]` element is filled automatically ("Our chance X% · Market Y%" + "History 7 of 10 · Vegas 58% · Market 49%"). It appears on single pick cards (`evalBlock`), Build a Bet rows (Yes side), and the chart pop-up. Live Bets cards: not wired. That's Richie's file; the edit was reverted, see STATUS.md. It is information only, with no instructions.
 - **Digest.** `update-picks picks` runs `scripts/our-chance.mjs` on the new file first (never fatal; `NO_OUR_CHANCE=1` skips it). It writes `our_chance`, `market_chance`, `our_chance_why` and sets `hit_prob` = our chance (multi-leg from different games: product of the legs). `capture-closing` logs `our_chance` + `market_chance` to pick-history for calibration (`learn.mjs`).
 - **Limits.** No minutes/role or injury data yet. Team ratings ignore opponent strength and rest. The home edge and SDs are rough per-sport constants. Prop history needs the ESPN search to find the player. Totals with no stats show just Vegas + Market.
 

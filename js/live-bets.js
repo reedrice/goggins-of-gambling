@@ -174,10 +174,6 @@
     const pay = pays10(e.now_chance);
     li.append(el('div', 'lb-odds', `${e.now_odds}${pay ? ` · $10 pays $${pay}` : ''}`),
       el('div', 'lb-meta', `Opened ${e.open_odds} · first seen ${clock(e.first_seen)}`));
-    if (root.OurChance && e.market_id && !gone) {   // Our chance (§56), filled client-side
-      const oc = el('div', 'oc oc-sm'); oc.setAttribute('data-oc', JSON.stringify({ marketId: e.market_id, side: Number(String(e.key).split(':')[1]) ? 'no' : 'yes', market: e.now_chance, text: e.side, question: e.question }));
-      li.append(oc);
-    }
     if (why && e.reason) li.append(el('div', 'lb-reason', e.reason));
     if (e.context) li.append(el('div', 'lb-context', e.context));
     if (link && !gone && !why) {
