@@ -189,7 +189,7 @@
   /** "Tap: Guardians +1.5" / "Tap: No (4 or fewer)". @returns {string} HTML */
   function tapHtml(split) {
     if (!split.tap) return '';
-    return `<div class="tap small">👉 ${esc(STR.plain.tap(split.tap + (split.note ? ` (${split.note})` : '')))}</div>`;
+    return '';   // §54: no "Tap: Yes/No" instructions (analyzer, not pick seller)
   }
 
   /**
@@ -745,7 +745,7 @@
 
   // ---------------------------------------------------------------- picks
 
-  /** "Suggested bet" text using THIS user's standard bet size. */
+  /** Size text using THIS user's standard bet size (not shown on cards since §54). */
   function stakeText(pick) {
     const u = S.getProfile().unit;
     const lo = pick.stake_units, hi = pick.stake_units_max;
@@ -816,7 +816,7 @@
       </div>
       <div class="hitbar" role="img" aria-label="${esc(E.hitChance + ' ' + pctTxt)}"><span class="risk-bg-${esc(ev.risk || 'none')}" style="width:${width}%"></span></div>
       ${note ? `<div class="eval-note small muted">${esc(note)}</div>` : ''}
-      <div class="take"><b>${esc(E.take)}</b> ${esc(ev.verdict)} ${tip('take')}</div>
+      <div class="take"><b>${esc(E.take)}</b> ${esc(PL.neutral(ev.verdict) || STR.eval.verdicts.neutral)} ${tip('take')}</div>
       ${preds.map(g => `<div class="pred small">🔮 ${esc(E.prediction(g.pick, g.projected_score, g.win_prob))}</div>`).join('')}
     </div>`;
   }
@@ -927,10 +927,10 @@
     const action = pk.action || (pk.stake_units > 0 ? 'bet' : 'skip');
     const edge = typeof pk.edge === 'number' ? pk.edge : (typeof pk.fair === 'number' && typeof pk.price === 'number' ? C.edgePts(pk.fair, pk.price) : null);
     // Plain money lines (no tiles). Combo: "If all 3 win: your $5 turns into
-    // $23.40" + "Only bet if the app says your $5 pays at least $21.30".
+    // $23" (frame of reference only; the minimum-payout line was removed in §54).
     // Single: "Bet $10 → get $25 back", tap line, spread note, deal word,
     // "Vegas +150 (Bovada)" or "Polymarket US price: +150" · "Cheaper on Kalshi (+156)".
-    const st = pickStake(pk);
+    const st = exStake();   // §54: frame of reference with the user's own standard bet, not a suggested size
     const multX = pk.quoted_multiple || pk.est_multiple;
     const sp = PL.splitTap(pk.side || '');
     const deal = PL.dealWord(edge);
@@ -940,7 +940,7 @@
       : '';
     const moneyHtml = lotto + (isMulti
       ? `${multX > 0 ? `<div class="pay-big">${esc(STR.plain.ifAllWin(pk.legs.length, cash(st), cash(st * multX)))} ${tip('ourPayout')}</div>` : ''}
-         ${pk.skip_below > 0 ? `<div class="only-if">${esc(STR.plain.onlyIf(cash(st), cash(st * pk.skip_below)))} ${tip('skipBelow')}</div>` : ''}`
+         `
       : `${isC(pk.price) ? `<div class="pay-big">${esc(betGetText(appPrices(pk, bookPrices(pk)).mine.c))} ${tip('payout')}</div>` : ''}
          ${tapHtml(sp)}${spreadHtml((pk.side || '') + ' ' + (pk.market || ''), pk)}
          ${deal ? `<div class="deal deal-${deal} small">${esc(STR.plain.deal[deal])} ${tip('advantage')}</div>` : ''}
@@ -953,17 +953,16 @@
           <div class="pick-title">${esc(isMulti ? pk.market || pk.side : sp.title || pk.market)}</div>
           <div class="pick-sub">${!isMulti && pk.market && pk.side ? posText(pk.market, pk) + ' · ' : ''}${esc(pk.event || '')}</div>
         </div></div>
-        <span class="pick-actions"><span class="badge ${esc(action)}">${esc(P.badge[action] || action)}</span>${pk.id ? shareBtn(pk.id) : ''}${vizOn() ? chartBtnFor(vizSpec(pk)) : ''}</span>
+        <span class="pick-actions">${P.badge[action] ? `<span class="badge ${esc(action)}">${esc(P.badge[action])}</span>` : ''}${pk.id ? shareBtn(pk.id) : ''}${vizOn() ? chartBtnFor(vizSpec(pk)) : ''}</span>
       </div>
       ${evalBlock(pk, sec || 'singles')}
       ${moneyHtml}
       ${isMulti ? `<ul class="legs">${pk.legs.map((l, i) => `<li>${l.team ? T.badge(teamRef(l.team), 20) : ''}${plainLegHtml(l, i === 0)}${vizOn() ? legChartBtn(vizSpec({ ...pk, legs: [l] }).legs[0], pk.event) : ''}</li>`).join('')}</ul>` : ''}
-      <div><b>${esc(P.bet)}:</b> ${esc(stakeText(pk))} ${tip('unit')}</div>
       ${/* PL.noCents: any "41¢" the daily job wrote shows as American odds */ ''}
       ${lineupHtml(pk.lineup_note)}
-      ${pk.pending_news ? `<div class="news">⏳ <b>${esc(P.news)}</b> ${esc(PL.noCents(pk.pending_news))}</div>` : ''}
-      ${pk.verify_note ? `<div class="verify">⚠️ ${esc(PL.noCents(pk.verify_note))}</div>` : ''}
-      ${pk.reasoning ? `<div class="reason">${esc(PL.noCents(pk.reasoning))}</div>` : ''}
+      ${pk.pending_news ? `<div class="news">⏳ <b>${esc(P.news)}</b> ${esc(PL.neutral(PL.noCents(pk.pending_news)))}</div>` : ''}
+      ${pk.verify_note ? `<div class="verify">⚠️ ${esc(PL.neutral(PL.noCents(pk.verify_note)))}</div>` : ''}
+      ${pk.reasoning ? `<div class="reason">${esc(PL.neutral(PL.noCents(pk.reasoning)))}</div>` : ''}
       <div class="pick-actions card-actions">
         ${openButton(pk, pk.side || pk.event)}
         <button class="btn btn-sm btn-primary" data-load-pick="${esc(pk.id)}" data-cat="${esc(cat)}">${esc(P.toCalc)}</button>
@@ -1199,7 +1198,7 @@
     calc = Object.assign(freshCalc(), {
       legs, category: cat, catTouched: true, pickId: pk.id,
       quoted: pk.quoted_multiple ? String(pk.quoted_multiple) : (legs.length === 1 && pk.price ? (100 / pk.price).toFixed(2) : ''),
-      stake: pk.stake_units > 0 ? (pk.stake_units * unit).toFixed(2) : ''
+      stake: ''   // §54: no suggested stake; the user types their own
     });
     calc.legs = GT.sortLegs(calc.legs, legStart);
     go('calc');
@@ -1999,7 +1998,6 @@
         <div class="pick-sub">${esc(h.sport)} · ${esc(H.cat[h.category] || h.category)} · ${esc(h.slate_date)}</div></div>${resBadge(h.result)}</div>
       ${row2(X.chance, esc(Math.round(h.hit_prob) + '%'))}
       ${total && (h.legs || []).length > 1 ? row2(H.allOdds, esc(total)) : ''}
-      ${row2(H.stake, esc(h.stake_units + 'u'))}
       ${h.result === 'win' || h.result === 'loss' ? row2(H.unitsRes, `<span class="${sign(u)}">${esc((u > 0 ? '+' : '') + (Math.round(u * 100) / 100) + 'u')}</span>`) : ''}
       <h4>${esc(H.legs((h.legs || []).length))}</h4>${legs}
       ${(h.legs || []).length ? `<div class="chart-row">${chartBtnFor({ title: histName(h), sub: h.sport || '', legs: h.legs.map(l => histVizLeg(h, l)) }, '📊 Charts for this slip')}</div>` : ''}

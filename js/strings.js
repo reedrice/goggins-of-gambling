@@ -62,7 +62,7 @@ window.STR = {
     tap: what => `Tap: ${what}`,
     ifAllWin: (k, stake, back) => `If ${k === 2 ? 'both' : 'all ' + k} win: your ${stake} turns into ${back}`,
     ifWins: (stake, back) => `If it wins: your ${stake} turns into ${back}`,
-    onlyIf: (stake, min) => `Only bet if the app says your ${stake} pays at least ${min}`,
+    onlyIf: (stake, min) => `Fair payout: about ${min} for ${stake}`,   // §54: information, not an instruction (unused on cards)
     appSaid: (stake, pays) => `Your app said: your ${stake} pays ${pays}`,
     deal: { good: 'Good deal: cheaper than it should be', fair: 'Fair price', pricey: 'A bit pricey' },
     // Spreads: '+1.5 = they win, or lose by just 1 run'
@@ -153,7 +153,7 @@ window.STR = {
       lottery: '🎟️ Lottery tickets (just for fun, almost never hit)',
       nonsports: 'Not sports'
     },
-    lottoFun: 'Just for fun. Bet pocket change only (0.1 unit max).',
+    lottoFun: 'Just for fun: a very long shot.',
     price: 'Price',
     fair: 'Fair price',
     advantage: 'Your price advantage',
@@ -162,9 +162,9 @@ window.STR = {
     appPayout: 'What your app says it pays (type it in)',
     chance: 'Chance to win',
     skipBelow: 'Skip if under',
-    bet: 'Suggested bet',
+    bet: 'Size',
     skip: 'Skip this one',
-    badge: { bet: 'Bet', wait: 'Wait', skip: 'Skip' },
+    badge: { wait: 'News pending', skip: 'No edge' },   // §54: no 'Bet' badge
     news: 'Waiting on news:',
     projected: 'Projected score:',
     open: 'Open in app ↗',
@@ -177,7 +177,7 @@ window.STR = {
     loaded: 'Added to the bet builder. Now type what your app says it pays.'
   },
 
-  /** "Suggested bet" text: dollars first, then how it compares to their standard bet. */
+  /** Size text (units vs the user's standard bet). Not shown as advice on cards (§54). */
   stake: (dollars, units) => `${dollars} (${unitWords(units)})`,
   stakeRange: (lo, hi, ulo, uhi) => `${lo}–${hi} (${unitWords(ulo)} to ${unitWords(uhi)})`,
 
@@ -419,9 +419,9 @@ window.STR = {
       singlesTitle: 'Single Bets', singlesIntro: 'One-bet plays from the Picks screen. Tap one to see its slip.',
       combosTitle: 'Combos', combosIntro: 'Multi-leg plays from the Picks screen. Tap one to see every leg.',
       none: 'No Picks-page picks saved yet.', won: 'Won', lost: 'Lost', open: 'Not finished', units: 'Units won/lost',
-      unitsNote: 'Units use the price when we posted the pick and the units we said to bet.',
+      unitsNote: 'Units use the price when the pick was posted and the size it was tracked at.',
       cat: { single: 'Single', prop: 'Player prop', parlay: 'Combo', longshot: 'Longshot', nonsports: 'Non-sports' },
-      combo: (n, t) => `${n}-leg combo: ${t}`, allOdds: 'Odds if all win', stake: 'We said to bet',
+      combo: (n, t) => `${n}-leg combo: ${t}`, allOdds: 'Odds if all win', stake: 'Size',
       unitsRes: 'Units', legs: n => (n === 1 ? 'The bet' : `The ${n} legs`),
       priceNote: 'Uses the price when we posted the pick.'
     },
@@ -493,7 +493,7 @@ window.STR = {
   // "My hit chance", risk level and "My take" on every pick card (js/evaluate.js).
   eval: {
     hitChance: 'How often it wins',
-    take: 'My take:',
+    take: 'The read:',
     // Risk levels; thresholds live in js/evaluate.js (RISK_LEVELS). Keys stay
     // safer/coin_flip/risky/long_shot in picks.json; only the words changed.
     risk: { safer: 'Good chance', coin_flip: 'Coin flip', risky: 'Hard to hit', long_shot: 'Very hard to hit' },
@@ -505,19 +505,21 @@ window.STR = {
     prediction: (pick, score, pct) => `My prediction: ${pick} win${score ? ', ' + score : ''}${pct ? ` (${pct}% sure)` : ''}`,
     // Default "My take" sentences (picked by PickEval.verdictFor).
     verdicts: {
-      skip: 'Skip. Not worth it today.',
-      wait: 'Wait for the news, then play it small.',
-      good: 'Good price, I\'d play it.',
-      fair: 'Fair price, small play only.',
-      thin: 'Thin price, tiny play or skip.',
-      tooLow: 'The app pays too little. Skip.',
-      barely: 'Barely worth it, small play only.',
-      goodCombo: 'Good payout, I\'d play it small.',
-      // No numbers here: the card's "Only bet if the app says your $5 pays at
-      // least $21.30" line gives the amount in dollars (x kept for callers).
-      payCheck: x => 'Small bet, only if your app pays enough (see the "Only bet if" line).',
-      longshotCheck: x => 'Hard to hit. Tiny bet, only if your app pays enough (see the "Only bet if" line).',
-      longshot: 'Hard to hit. Tiny bet only.'
+      // §54: information only, never what or how much to bet.
+      neutral: 'Price is close to fair.',
+      skip: 'No edge at this price today.',
+      wait: 'Waiting on news, so the read could change.',
+      good: 'Good price compared with what it should be.',
+      fair: 'Price looks fair.',
+      thin: 'Only a thin edge.',
+      tooLow: 'The app pays less than fair.',
+      barely: 'Barely better than fair.',
+      goodCombo: 'Good payout for the chance.',
+      // No numbers here (the card's old minimum-payout line was removed in §54;
+      // x kept for callers).
+      payCheck: x => 'Worth it only if your app pays close to our estimate.',
+      longshotCheck: x => 'Hard to hit. Worth it only if your app pays close to our estimate.',
+      longshot: 'Hard to hit.'
     }
   },
 
@@ -552,7 +554,7 @@ window.STR = {
     colFeed: 'How many of our picks we found on this app in the daily price check.',
     hitChance: 'My best guess at how often this bet wins, going by the big sportsbooks. "1 in 4" means you\'d win about once every 4 tries.',
     risk: 'Good chance = wins 6 or more times out of 10. Coin flip = about half the time. Hard to hit = 3 or 4 out of 10. Very hard to hit = less than 1 in 4. Harder bets should be smaller bets.',
-    take: 'My short answer: is this a good bet, and how big should it be?',
+    take: 'A short read on the price: fair, cheap or pricey compared with what it should be.',
     otherApps: 'Every morning we check the same bet on other apps. If one is cheaper than your app, we show it. Cheaper ticket = more money back if you win.',
     colTotal: 'How many comparisons we have for this app so far, from both sources. More means the numbers are more reliable.',
     priceFormat: 'Only changes how prices look. You can still type prices any way you like.'

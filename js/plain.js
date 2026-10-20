@@ -59,6 +59,9 @@
   function splitTap(desc) {
     let title = String(desc || '');
     let tap = null, note = null;
+    // Analyzer, not pick seller (§54): any " — tap ..." instruction is cut from titles.
+    const instr = title.match(/\s+[—–-]\s+tap\b.*$/i);
+    if (instr) title = title.slice(0, instr.index);
     const t = title.match(/\s*\(tap\s+["“]([^"”]+)["”]\)/i);
     if (t) { tap = t[1].trim(); title = title.replace(t[0], ''); }
     const yn = title.match(/\s+[—–-]\s+(YES|NO)\b\s*(?:\(([^)]*)\))?\s*$/i);
@@ -133,6 +136,17 @@
    * Whole dollars, rounded: 6.67 -> "$7", 1234.5 -> "$1,235", -5 -> "-$5".
    * Anything between 0 and $1 shows "under $1" (never "$0"); exactly 0 is "$0".
    */
+  /**
+   * Analyzer, not pick seller (§54): drop sentences that tell people what or how much to bet
+   * ("Tiny bet.", "Skip.", "I'd play it small.", "Bet it.", "small play only"), and any
+   * 'tap "Yes"/"No"' instruction. Neutral insight (chance, fair/edge read) is kept.
+   */
+  const ADVICE = /\b(tiny|small|smaller|big|bigger|half|quarter)[- ](bet|play|stake|size|unit)s?\b|\bskip(\b|ped)|\b(play|bet) (it|this|small|smaller|light|big)\b|\bonly bet\b|\bI(?:'|’)?d (play|bet|take)\b|\bsuggested bet\b|\bpass on\b|\b(play|bet) only\b|\bpocket change\b|\bsprinkle\b|\btap\s+["“](yes|no)/i;
+  function neutral(text) {
+    const parts = String(text == null ? '' : text).split(/(?<=[.!?])\s+/);
+    return parts.filter(sn => !ADVICE.test(sn)).join(' ').trim();
+  }
+
   function dollars(n) {
     if (typeof n !== 'number' || !isFinite(n)) return '–';
     const a = Math.abs(n);
@@ -140,5 +154,5 @@
     return (n < 0 ? '-$' : '$') + Math.round(a).toLocaleString('en-US');
   }
 
-  return { dollars, chanceWords, dots, splitTap, spreadNote, leagueOf, dealWord, noCents };
+  return { dollars, neutral, chanceWords, dots, splitTap, spreadNote, leagueOf, dealWord, noCents };
 });

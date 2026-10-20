@@ -84,6 +84,8 @@ const LINEUP_STATUSES = ['confirmed', 'at_risk', 'out'];
 const FORBIDDEN_KEYS = /^(stake|stake_usd|stake_dollars|bankroll|payout|payout_usd|profit|pl|balance|token|auth|password)$/i;
 /** "$5", "$ 12.50", "USD 10" or token-looking strings in any text value. */
 const FORBIDDEN_TEXT = [/\$\s?\d/, /\bUSD\s?\d/i, /\b(ghp|gho|ghu|ghs|github_pat)_[A-Za-z0-9_]{10,}/];
+/** Analyzer, not pick seller (HANDOFF §54): no bet instructions or suggested sizes in any text. */
+export const INSTRUCTION_TEXT = [/\btap\s+["“](yes|no)\b/i, /\s[—–-]\s+tap\b/i, /\(tap\s/i, /\bsuggested bet\b/i, /\b(tiny|small) (bet|play)\b/i, /\bplay only\b/i, /\bbet (it|this)\b/i, /\bI(?:'|’)?d (play|bet)\b/i];
 
 // ------------------------------------------------------------------ helpers
 
@@ -129,6 +131,7 @@ const isISO = v => typeof v === 'string' && /^\d{4}-\d{2}-\d{2}T/.test(v) && !is
 function scanPrivacy(v, where, errs) {
   if (typeof v === 'string') {
     for (const re of FORBIDDEN_TEXT) if (re.test(v)) errs.push(`${where}: looks like a dollar amount or token ("${v.slice(0, 40)}") — use units, never $`);
+    for (const re of INSTRUCTION_TEXT) if (re.test(v)) errs.push(`${where}: bet instruction/suggested size ("${v.slice(0, 50)}") — state information only (HANDOFF §54)`);
   } else if (Array.isArray(v)) v.forEach((x, i) => scanPrivacy(x, `${where}[${i}]`, errs));
   else if (v && typeof v === 'object') {
     for (const [k, x] of Object.entries(v)) {

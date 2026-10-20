@@ -243,7 +243,7 @@ export function findMoves(open, last, ev, cfg = {}) {
       `• ${side} (${o.kind})\n` +
       `  Opened ${american(openP)} → now ${american(nowP)}. $10 pays $${pays(nowP)} now (was about $${pays(openP)}).\n` +
       `  Chance of this side ${sgn(sideOpen)} pts from open` + (dLast ? `, ${sgn(sideLast)} since last check` : '') + `.\n` +
-      `  Bet it: ${open.url}` });
+      `  Market: ${open.url}` });
   }
   return { mids, alerts, watched, skipped };
 }

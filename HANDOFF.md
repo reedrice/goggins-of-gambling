@@ -208,6 +208,7 @@ The validator rejects:
 - **any** key named like `stake`/`bankroll`/`payout`/`token`, or any text that looks like `$5`, `USD 10`, or a GitHub token
 
 Daily routine:
+- **Analyzer, not pick seller (Reed, Oct 20, §54):** never write instructions or sizes in any text: no `tap "Yes"/"No"`, no `— tap …`, no "Suggested bet", no "tiny/small bet", "play it small", "bet it", "skip it", "I'd play". Write information: the chance, and the price read ("Price looks fair vs Vegas", "Good price compared with what it should be", "No edge now"). `stake_units` stays as an internal field for Record units, but it's never shown as advice. The validator rejects instruction text.
 0. **Check for picks already on the board for today:** `node scripts/update-picks.mjs list --date <today>`. The day before, extra slips may have been added for today with `add-picks` (each carries `"slate_date": "<today>"`). `picks` (step 4) **keeps them automatically** (carry-over, §23). Don't add a second copy under a new id:
    - **Keep as is:** do nothing; it stays on the page.
    - **Update it** (new prices, injury news, hit_prob): put a pick with the **same id** in the new file; the new one replaces it.
@@ -590,7 +591,7 @@ Reed: the ¢ values and explanations were still too technical, so make them simp
 - **Dollars first:** "Bet $10 → get $15.75 back". The amount is the user's standard bet (`exStake()`, else $10), worked out in the browser only.
 - **Chance in words, no %:** `chanceWords(p)`. From 30% up it's "Wins about 6 out of 10 times"; below that it's "about 1 in 4" (and from 1 in 10, rounded to 5s: "1 in 20", "1 in 30"); 95%+ is "almost every time". Combos say "All 3 win about 1 in 4 times" / "Both win …". Ten dots (`●●●●●●○○○○`) show it at a glance.
 - **No cents on screen (updated Oct 19, 2026, §29).** ~~Cents once, small: "Price on <My platform>: 63.5¢".~~ Another app shows only when it's cheaper: "Cheaper on Kalshi (63¢)" (`appPrices`: pick/leg `price` = Polymarket US, `kalshi_price` = Kalshi, plus book-odds rows for singles). With Kalshi as My platform, the Kalshi price leads.
-- **No "tap" in titles:** `splitTap()` cuts `(tap "Guardians +1.5")` and `— YES` / `— NO (4 or fewer)` off the title. The card then shows a separate "👉 Tap: Guardians +1.5" / "Tap: No (4 or fewer)" line. Keep writing leg `desc` with those markers; the app does the split.
+- **No "tap" in titles (updated by §54):** `splitTap()` cuts `— YES` / `— NO (4 or fewer)` off the title (still write those markers so the side is clear). The "👉 Tap:" line is gone and `(tap "…")` / `— tap …` instructions are now REJECTED by the validator.
 - **Spreads explained:** `spreadNote()` gives "+1.5 = they win, or lose by just 1 run" (MLB runs, NHL goals, otherwise points) and "-1.5 = they must win by 2 runs or more". It ignores "1+ hits" props.
 - **Combo cards (no tiles):** "If all 3 win: your $5 turns into $23.40" (suggested stake = `stake_units` × the user's standard bet, × the app quote, else our estimate), then "Only bet if the app says your $5 pays at least $21.30" (stake × `skip_below`).
 - **Single cards:** "Bet $10 → get $X back", then a deal word from the edge (≥1¢ "Good deal", over −1¢ "Fair price", else "A bit pricey"), then the price line.
@@ -1094,3 +1095,19 @@ they open in a pop-up when you tap a pick card (Picks tab) or a Live Bets card.
   Zero server/bot cost: all in Reed's browser.
 - Prop bet parsing works without a league (ESPN search picks the player's league), so plain-text legs like
   "LeBron James 6+ rebounds (10/20)" in My Bets get bars too.
+
+## 54. Analyzer, not pick seller: no bet instructions or suggested stakes (Oct 20, 2026)
+- **Gone from the UI:** "Suggested bet: …" line, "Only bet if …" line, "👉 Tap: Yes/No" lines (cards + Build a Bet slip),
+  the Record slip "We said to bet 0.5u" row, the stake pre-fill when a pick is loaded into Build a Bet, "Bet pocket
+  change only" on Lottery cards. The card badge is information only: "News pending" / "No edge" (no "Bet" badge). Money lines use the user's own standard bet as the example stake, not the pick's size.
+  "My take:" is now "The read:" and the verdict sentences in strings.js are neutral ("Price looks fair.", "No edge at this
+  price today.", "Good payout for the chance.", "Hard to hit.").
+- **Kept:** chance to win, fair/edge reads, "Bet $10 → get $20 back"-style frames of reference, the user's own unit calculator.
+- **Data text:** `Plain.neutral(text)` (js/plain.js) drops whole sentences that tell people what/how much to bet; it's
+  applied when showing reasoning, verdict, pending news and verify notes. `Plain.splitTap` also cuts any `— tap …`.
+  Existing data/picks.json and data/pick-history.json were cleaned (titles + advice sentences; 5 verdicts that were only
+  advice became "Price is close to fair.").
+- **Future picks:** `update-picks.mjs` rejects instruction text (`INSTRUCTION_TEXT`), and the daily routine (§8) says so.
+  `live-watch.mjs check` prints "Market:" instead of "Bet it:".
+- **Guard:** `tests/no-instructions.test.mjs` fails if `tap "No"`, `tap "Yes"`, `— tap` or "Suggested bet" appears in any
+  data/*.json or in the user-facing strings (strings.js), and checks `Plain.neutral` / `splitTap`.

@@ -12,7 +12,7 @@
  *              parlays/long shots -> product of the legs' fair (or price).
  *   risk       'safer' | 'coin_flip' | 'risky' | 'long_shot'
  *              Default: from hit_prob with RISK_LEVELS below.
- *   verdict    short plain sentence ("Good price, I'd play it.").
+ *   verdict    short plain read ("Good price compared with what it should be."), never what or how much to bet (§54).
  *              Default: from action, edge and (for combos) quoted_multiple
  *              vs skip_below; wording lives in STR.eval.verdicts.
  *   same_game  boolean, combos only: all legs from one game (they can affect
