@@ -1299,3 +1299,7 @@ At Reed?s request, changed the active Codex Fade Trent heartbeat from every five
 ## 65. Live Bets: All games filter (Oct 20, 2026)
 
 Reed explicitly requested combined edges across every game, authorizing this edit in Richie?s view. All games is now the default with individual game chips retained. Fetches all nonfinal feeds, combines/sorts edges and alerts, keeps original event URLs and chart targets on every card, and labels each card with its game/status. Partial fetch failures are visible; request sequencing prevents an older refresh overriding a newer filter selection. Existing grouping/show-more and odds/injury filters remain. No feed writer changes. Tests cover source attribution, overlapping keys, ordering, final exclusion and partial results.
+
+## 66. Brandon Picks sandbox (branch only)
+
+Reed requested an isolated clone for Brandon to simplify Today's Picks without affecting production. Branch sandbox/brandon-picks starts at 8077f93 and adds only sandbox tooling/documentation and branch-specific instructions. Run node sandbox/serve.mjs at 127.0.0.1:8877. Production HTML/assets remain unchanged; the local server injects an early write guard and banner. Local origin isolates browser storage; fetch/XHR mutations, beacons and form submissions are blocked to reduce accidental shared writes. No new scheduler/deployment. Read sandbox/README.md; use PR review before any production merge.

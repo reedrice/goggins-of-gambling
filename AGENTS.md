@@ -1,3 +1,7 @@
+# Sandbox branch instructions
+
+On sandbox/brandon-picks or a branch derived from it, read sandbox/README.md before any work. Brandon is experimenting with Today's Picks layout. Use node sandbox/serve.mjs for previews. Do not run production routines, publish to main, change Pages settings or modify other owners' areas. Keep the sandbox write guard enabled. A finished design requires Reed's review through a pull request.
+
 # AGENTS.md: start here (any AI agent or new maintainer)
 
 This file is for Claude, ChatGPT/Codex, Cursor or any other agent. `CLAUDE.md` points here.
