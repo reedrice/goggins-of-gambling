@@ -1,0 +1,50 @@
+{
+  "_note": "Who runs each of Reed's routines. Only the owner runs it; others SKIP. Change with: node scripts/routine-gate.mjs set <id> <owner>. Owners: grok (Goggins Of Gambling on Grok Bot), chatgpt, pablo, off. Times are America/Chicago. No secrets or dollar amounts here.",
+  "routines": {
+    "daily-slate-odds-digest": {
+      "name": "Daily slate & odds digest",
+      "owner": "grok",
+      "enabled": true,
+      "schedule_ct": "0 7 * * *",
+      "last_run_by": null,
+      "last_run_at": null,
+      "notes": "Morning digest. Time from the HANDOFF (\"7 AM digest\")."
+    },
+    "lineup-goalie-check": {
+      "name": "Lineup & goalie check",
+      "owner": "grok",
+      "enabled": true,
+      "schedule_ct": null,
+      "last_run_by": null,
+      "last_run_at": null,
+      "notes": "Schedule not exported yet. Confirm with Reed and fill schedule_ct."
+    },
+    "late-scratch-check": {
+      "name": "Late-scratch check",
+      "owner": "grok",
+      "enabled": true,
+      "schedule_ct": "45 17 * * *",
+      "last_run_by": null,
+      "last_run_at": null,
+      "notes": "Right after NFL inactives (~5:45 PM CT). Confirm exact cron with Reed."
+    },
+    "play-money-leaderboard-update": {
+      "name": "Play-money leaderboard update",
+      "owner": "grok",
+      "enabled": true,
+      "schedule_ct": null,
+      "last_run_by": null,
+      "last_run_at": null,
+      "notes": "Runs several times a day (one run at 12 PM also runs learn.mjs). Exact cron not exported; confirm with Reed."
+    },
+    "weekly-learning-review": {
+      "name": "Weekly learning review",
+      "owner": "grok",
+      "enabled": true,
+      "schedule_ct": null,
+      "last_run_by": null,
+      "last_run_at": null,
+      "notes": "Weekly. Day/time not exported; confirm with Reed."
+    }
+  }
+}

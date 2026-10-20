@@ -61,3 +61,7 @@ Unclear Trent bets are flagged `needs_clarification` + `question` and stay pendi
 8. **Position-aware stats:** stat pickers offer only stats that fit the player's ESPN position (`POSITION_STATS` in `js/dig-deeper.js`). Goalies only see goalie stats, skaters never do, and so on.
 9. Set user-visible text through `js/strings.js` / textContent. Allow only https links.
 10. Follow [DESIGN.md](DESIGN.md).
+
+
+## Routines handoff (Oct 20, 2026)
+Reed's 5 routines can be run by any bot (grok, chatgpt, pablo). Only the owner in `routines/owners.json` runs each one. See [routines/README.md](routines/README.md). Every run starts with `node scripts/routine-gate.mjs check <id> <me>` and ends with `stamp`.

@@ -1264,3 +1264,7 @@ Reed wanted live charts to look like Polymarket's game charts. In `js/viz.js` `p
 - Two-line game charts drop the empty y-axis strip on the left (`lOf`) and the "📈 Price over time" heading.
 - The tap read-out shows only the period name. The saved period mark's score was from the start of that period and contradicted the live header, so it's no longer shown.
 - tests/record-slip.smoke.js now expects "Analytics" (renamed from "Our chance"). The old check was a stale test, not a bug.
+
+
+## Routines handoff (Oct 20, 2026)
+Reed's 5 routines can be run by any bot (grok, chatgpt, pablo). Only the owner in `routines/owners.json` runs each one. See [routines/README.md](routines/README.md). Every run starts with `node scripts/routine-gate.mjs check <id> <me>` and ends with `stamp`.

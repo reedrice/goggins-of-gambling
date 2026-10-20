@@ -2134,6 +2134,7 @@
       <label class="toggle"><input type="checkbox" id="share-def" ${set.shareByDefault ? 'checked' : ''}><span>${esc(X.shareDefault)}</span></label>
       ${unsynced ? `<button class="btn" id="resync">${esc(X.resync(unsynced))}</button>` : ''}
 
+      <div id="dev-routines"></div>
       <h3>${esc(STR.bets.backup)}</h3>
       <div class="row"><button class="btn" id="exp">${esc(STR.bets.export)}</button><button class="btn" id="imp">${esc(STR.bets.import)}</button></div>
       <input type="file" id="imp-file" accept="application/json,.json" hidden>
@@ -2182,6 +2183,12 @@
       renderSettings();
     };
     wireBackup(el);
+    // Dev-only (repo collaborators, §60): who runs each routine (routines/owners.json, routines/README.md).
+    if (token && window.GitHubLog) GitHubLog.isDev(token).then(dev => dev && fetch(`routines/owners.json?ts=${Date.now()}`)).then(r => r && r.ok ? r.json() : null).then(o => {
+      const box = $('#dev-routines'); if (!o || !box || !o.routines) return;
+      box.innerHTML = `<h3>Routines (devs only)</h3><ul class="muted small">${Object.entries(o.routines).map(([id, r]) =>
+        `<li>${esc(r.name || id)}: <b>${esc(r.enabled ? r.owner : 'off')}</b>${r.last_run_at ? ` · last ${esc(r.last_run_by || '?')} ${esc(new Date(r.last_run_at).toLocaleString('en-US', { timeZone: 'America/Chicago', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }))} CT` : ''}</li>`).join('')}</ul>`;
+    }).catch(() => {});
     $('#reset').onclick = () => {
       if (!confirm(X.resetConfirm)) return;
       S.resetAll();

@@ -15,6 +15,8 @@ See [AGENTS.md](AGENTS.md), [DESIGN.md](DESIGN.md) and [HANDOFF.md](HANDOFF.md) 
 
 - Live Bets and new picks skip sides Polymarket US won't sell (`marketSides[].tradable:false`; most NBA props are Yes-only).
 
+- Routines can move between bots: `routines/owners.json` + `scripts/routine-gate.mjs` ([routines/README.md](routines/README.md)). Schedules for lineup check, leaderboard and weekly review still need confirming.
+
 ## Open to-dos
 - [ ] **Apple redesign**: 2–3 mock-up styles from Reed's app screenshots, then build.
 - [ ] **Remove the ⓘ icons** across the site (explanations behind one tap).
