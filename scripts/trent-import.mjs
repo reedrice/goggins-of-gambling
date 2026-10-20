@@ -29,9 +29,14 @@ export function importPosts(doc, batch, now = new Date().toISOString()) {
   const errors = T.validate(out);
   if (errors.length) throw new Error(errors.join('\n'));
   out.picks.sort((a,b) => a.posted_at.localeCompare(b.posted_at));
-  out.monitor = {checked_at:now,coverage:batch.coverage,source:'X public profile via browser',latest_post_id:batch.posts.reduce((id,p)=>!id || BigInt(p.id)>BigInt(id)?p.id:id,null)};
+  const source = batch.signed_in ? 'X signed-in timeline via browser' : 'X public profile via browser';
+  const latestId = batch.posts.reduce((id,p)=>!id || BigInt(p.id)>BigInt(id)?p.id:id, doc.monitor?.latest_post_id || null);
+  out.monitor = {checked_at:now,coverage:batch.coverage,source,latest_post_id:latestId,reviewed_post_ids:batch.posts.map(p=>p.id),coverage_from:doc.read_through || null,replies_checked:batch.replies_checked === true};
   // Partial public timelines must never advance the complete-read watermark.
-  if (batch.coverage === 'complete' && batch.posts.length) out.read_through = batch.posts.map(p=>p.posted_at).sort().at(-1);
+  if (batch.coverage === 'complete' && batch.posts.length) {
+    const latest = Math.max(...batch.posts.map(p=>Date.parse(p.posted_at)), Date.parse(doc.read_through || '') || 0);
+    out.read_through = new Date(latest).toISOString();
+  }
   out.updated_at = now;
   return {doc:out,added};
 }

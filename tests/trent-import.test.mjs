@@ -9,6 +9,11 @@ test('multiple picks have stable ids; repeat import preserves grades',()=>{
  assert.equal(b.doc.read_through,'2026-10-20T04:22:05Z');assert.equal(b.doc.monitor.coverage,'partial');
 });
 test('complete read advances watermark; invalid source fails without mutation',()=>{
- const b=batch();b.coverage='complete';const d={picks:[]};assert.equal(importPosts(d,b).doc.read_through,b.posts[0].posted_at);
+ const b=batch();b.coverage='complete';const d={picks:[]};assert.equal(importPosts(d,b).doc.read_through,new Date(b.posts[0].posted_at).toISOString());
  b.posts[0].author='Other';assert.throws(()=>importPosts(d,b),/author/);assert.deepEqual(d,{picks:[]});
+});
+test('older backfill cannot roll back cursor; signed-in audit records replies review',()=>{
+ const b=batch();b.coverage='complete';b.signed_in=true;b.replies_checked=true;
+ const d={picks:[],read_through:'2026-10-20T21:23:14.000Z',monitor:{latest_post_id:'2112655907280535614'}};
+ const r=importPosts(d,b).doc;assert.equal(r.read_through,d.read_through);assert.equal(r.monitor.latest_post_id,d.monitor.latest_post_id);assert.equal(r.monitor.replies_checked,true);assert.match(r.monitor.source,/signed-in/);
 });
