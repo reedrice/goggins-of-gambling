@@ -868,11 +868,28 @@
       legs: (h.legs || []).map(l => ({ sport: legSport(l, h), text: legName(l.desc), am: shareAm(l.publish) })),
       combinedAm: m ? multAm(m) : '', pay10: m ? Math.round(10 * m).toLocaleString('en-US') : '', chance: chanceLine(h.hit_prob) };
   }
+  // ---- Charts everywhere (HANDOFF §53): one spec shape for every place a bet shows.
+  const vizOn = () => !!window.Viz;
+  const vizSlugOf = l => l.eventSlug || (window.Play && window.Play.gameSlug ? window.Play.gameSlug(l.marketId || l.market_id || '') : null);
+  /** Stored/builder leg ({desc, marketId, side, eventSlug, league, player}) or a plain text leg -> Viz leg. */
+  function vizLeg(l) {
+    if (typeof l === 'string') return { text: l.replace(/\s*\(\d+\/\d+\)\s*$/, '') };
+    return { text: legName(PL.splitTap(l.desc || '').title || l.desc || ''), player: l.player || null, league: (l.league || '').toLowerCase(),
+      marketSlug: l.marketId || l.market_id || null, eventSlug: vizSlugOf(l), side: l.side === 'no' || l.market_side === 'no' ? 1 : 0,
+      extraPoints: l.extraPoints || null };
+  }
+  /** Small "📊 Chart" button for one spec ('' if the page has no Viz). */
+  const chartBtnFor = (spec, label) => (vizOn() && spec && (spec.legs || []).length ? window.Viz.chartBtn(spec, label) : '');
+  /** Per-leg mini chart button for combo legs. */
+  const legChartBtn = (leg, sub) => chartBtnFor({ title: leg.text, sub: sub || '', legs: [leg] }, '📊');
+
   /** Pick -> Viz.open spec (one leg per combo leg). */
   function vizSpec(pk) {
     const leg = (l, text) => ({ text, player: l.player || null, league: (l.league || (l.team && l.team.league) || (pk.sport || '').split('+')[0] || '').toLowerCase(),
       marketSlug: l.market_id || null, eventSlug: window.Viz.slugFromUrl(l.polymarket_url || l.link || pk.polymarket_url || pk.link), side: l.market_side === 'no' ? 1 : 0,
-      question: l.question || null });
+      question: l.question || null,
+      // Snapshot point: the price when the pick was posted (§53), so the chart has something even without live history.
+      extraPoints: l.price > 0 && picksData && picksData.updated_at ? [{ t: picksData.updated_at, chance: l.price }] : null });
     const multi = Array.isArray(pk.legs) && pk.legs.length > 0;
     return { title: multi ? (pk.market || pk.side) : (legName(pk.side) || pk.market), sub: pk.event || '',
       legs: multi ? pk.legs.map(l => leg(l, legName(l.desc))) : [leg(pk, legName(pk.side) || pk.market)] };
@@ -936,11 +953,11 @@
           <div class="pick-title">${esc(isMulti ? pk.market || pk.side : sp.title || pk.market)}</div>
           <div class="pick-sub">${!isMulti && pk.market && pk.side ? posText(pk.market, pk) + ' · ' : ''}${esc(pk.event || '')}</div>
         </div></div>
-        <span class="pick-actions"><span class="badge ${esc(action)}">${esc(P.badge[action] || action)}</span>${pk.id ? shareBtn(pk.id) : ''}</span>
+        <span class="pick-actions"><span class="badge ${esc(action)}">${esc(P.badge[action] || action)}</span>${pk.id ? shareBtn(pk.id) : ''}${vizOn() ? chartBtnFor(vizSpec(pk)) : ''}</span>
       </div>
       ${evalBlock(pk, sec || 'singles')}
       ${moneyHtml}
-      ${isMulti ? `<ul class="legs">${pk.legs.map((l, i) => `<li>${l.team ? T.badge(teamRef(l.team), 20) : ''}${plainLegHtml(l, i === 0)}</li>`).join('')}</ul>` : ''}
+      ${isMulti ? `<ul class="legs">${pk.legs.map((l, i) => `<li>${l.team ? T.badge(teamRef(l.team), 20) : ''}${plainLegHtml(l, i === 0)}${vizOn() ? legChartBtn(vizSpec({ ...pk, legs: [l] }).legs[0], pk.event) : ''}</li>`).join('')}</ul>` : ''}
       <div><b>${esc(P.bet)}:</b> ${esc(stakeText(pk))} ${tip('unit')}</div>
       ${/* PL.noCents: any "41¢" the daily job wrote shows as American odds */ ''}
       ${lineupHtml(pk.lineup_note)}
@@ -1361,7 +1378,7 @@
       const related = l.eventSlug && counts[l.eventSlug] > 1;
       const known = PLATFORMS.some(p => p.name === l.platform);
       return `<div class="leg ${related ? 'related' : ''}" data-i="${i}">
-        <button class="btn btn-sm btn-danger remove" data-rm="${i}" aria-label="${esc(K.remove)}">✕</button>
+        <button class="btn btn-sm btn-danger remove" data-rm="${i}" aria-label="${esc(K.remove)}">✕</button>${l.manual ? '' : legChartBtn(vizLeg(l))}
         <div class="leg-top">${l.teams && l.teams.length ? `<span class="logos">${T.badges(l.teams, 28)}</span>` : platformBadge(l.platform)}
           ${l.manual ? `<input class="l-desc" placeholder="${esc(K.legDescPh)}" value="${esc(l.desc)}" aria-label="${esc(K.legDesc)}">` : `<div class="leg-desc"><b>${legText(l)}</b>${tapHtml(PL.splitTap(l.desc))}${spreadHtml(PL.splitTap(l.desc).title, l)}${l.eventTitle ? `<div class="muted small">${esc(l.eventTitle)}</div>` : ''}${legWhen(l, true)}</div>`}
         </div>
@@ -1514,7 +1531,7 @@
    * @param {object} b Bet @param {boolean} [withHint] countdown (open bets)
    */
   function legsHtml(b, withHint) {
-    return GT.sortLegs(b.legs, legStart).map(l => `<div class="bleg">${l.teams && l.teams.length ? T.badges(l.teams, 20) : platformBadge(l.platform)}<span class="bleg-txt">${legText(l)}${typeof l.p === 'number' && l.p > 0 && l.p < 1 ? `<span class="payx">${esc(betGetText(l.p * 100))} · ${esc(chanceText(l.p))}</span>` : ''}${legWhen(l, withHint)}</span></div>`).join('');
+    return GT.sortLegs(b.legs, legStart).map(l => `<div class="bleg">${legChartBtn(vizLeg(l))}${l.teams && l.teams.length ? T.badges(l.teams, 20) : platformBadge(l.platform)}<span class="bleg-txt">${legText(l)}${typeof l.p === 'number' && l.p > 0 && l.p < 1 ? `<span class="payx">${esc(betGetText(l.p * 100))} · ${esc(chanceText(l.p))}</span>` : ''}${legWhen(l, withHint)}</span></div>`).join('');
   }
 
   /**
@@ -1755,7 +1772,7 @@
     const card = p => {
       const r = p.unclear ? 'unclear' : p.result, f = TR.fadeResult(p);
       return `<div class="card trent-pick ${p.unclear ? 'unclear' : ''}">
-        <div class="tp-top"><div><div class="tp-pick">${esc(p.pick)}</div>
+        <div class="tp-top"><div><div class="tp-pick">${esc(p.pick)} ${vizOn() && window.Viz.parseProp({ text: p.pick, league: (p.league || '').toLowerCase() }) ? legChartBtn({ text: p.pick, league: (p.league || '').toLowerCase() }, p.game) : ''}</div>
           <div class="pick-sub">${esc(p.league)} · ${esc(p.game)} · ${esc(day(p.posted_at))}</div></div>
           <span class="badge ${r === 'win' ? 'won' : r === 'loss' ? 'lost' : 'push'}">${esc(X.result[r] || r)}</span></div>
         <div class="small">${[p.units ? X.unitsShown(p.units) : '', p.odds ? X.odds(p.odds) : ''].filter(Boolean).map(esc).join(' ')}${f ? ` <span class="fade-${esc(f)}">· ${esc(X.fadeWould(f))}</span>` : ''}</div>
@@ -1962,11 +1979,18 @@
   }
 
   /** Slip pop-up for one Picks-page pick: every leg with its result + odds. */
+  /** Record leg -> Viz leg with snapshot points: price when posted + closing price (§53). */
+  function histVizLeg(h, l) {
+    const pts = [];
+    if (l.publish > 0 && h.published_at) pts.push({ t: h.published_at, chance: l.publish });
+    if (l.close > 0 && l.close_at) pts.push({ t: l.close_at, chance: l.close });
+    return { ...vizLeg({ desc: l.desc, marketId: l.market_id, side: l.side, eventSlug: l.slug, league: (h.sport || '').toLowerCase() }), extraPoints: pts };
+  }
   function openHistSlip(h) {
     const H = STR.record.hist, X = STR.record.slip, stake = exStake(), m = histMultiple(h);
     const legs = (h.legs || []).map(l => {
       const am = l.publish > 0 && l.publish < 100 ? C.formatPrice(l.publish, 'american') : '';
-      return `<div class="slip-row"><span>${esc(legName(l.desc))}${am ? ` <span class="muted small">${esc(am)}</span>` : ''}</span>${resBadge(l.result)}</div>`;
+      return `<div class="slip-row"><span>${esc(legName(l.desc))}${am ? ` <span class="muted small">${esc(am)}</span>` : ''}</span><span>${legChartBtn(histVizLeg(h, l))}${resBadge(l.result)}</span></div>`;
     }).join('');
     const total = m ? C.formatPrice(100 / m, 'american') : '';
     const u = histUnits(h);
@@ -1978,6 +2002,7 @@
       ${row2(H.stake, esc(h.stake_units + 'u'))}
       ${h.result === 'win' || h.result === 'loss' ? row2(H.unitsRes, `<span class="${sign(u)}">${esc((u > 0 ? '+' : '') + (Math.round(u * 100) / 100) + 'u')}</span>`) : ''}
       <h4>${esc(H.legs((h.legs || []).length))}</h4>${legs}
+      ${(h.legs || []).length ? `<div class="chart-row">${chartBtnFor({ title: histName(h), sub: h.sport || '', legs: h.legs.map(l => histVizLeg(h, l)) }, '📊 Charts for this slip')}</div>` : ''}
       ${m ? `<div class="slip-pay">${esc(X.pays(stake, Math.round(stake * m * 100) / 100))}</div><p class="muted small">${esc(H.priceNote)}</p>` : ''}`);
   }
   const row2 = (k, v) => `<div class="slip-row"><span class="muted">${esc(k)}</span><b>${v}</b></div>`;

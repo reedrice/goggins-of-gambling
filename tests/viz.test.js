@@ -31,3 +31,8 @@ console.log('viz ok');
   assert.deepStrictEqual(L.map(x => x.n), [25, 30]);            // same player + stat only, sorted
   assert.strictEqual(Math.round(L[1].yesBuy), 38); assert.strictEqual(Math.round(L[1].noBuy), 65);
   console.log('viz lines ok'); }
+{ const V = require('../js/viz.js'); const assert = require('assert');
+  const j = { history: [{ timestamp: 100, longPrice: 0.61, shortPrice: 0.41 }, { timestamp: 200, longPrice: 0, shortPrice: 1 }] };
+  assert.deepStrictEqual(V.pmHistory(j, 0), [{ t: 100000, chance: 61 }]);
+  assert.strictEqual(Math.round(V.pmHistory(j, 1)[0].chance), 41);
+  console.log('pmHistory ok'); }

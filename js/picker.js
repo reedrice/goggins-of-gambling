@@ -707,7 +707,7 @@
       };
       const logos = m.player ? window.Teams.badge(Object.assign({ league: ev.league }, (ev.teams || []).find(t => t.abbr === m.team) || {}), 22) : withGame ? window.Teams.badges(teamsOf(ev), 20) : '';
       return `<div class="mrow">
-        <div class="mlabel">${logos}<span>${m.player ? window.Positions.inText(m.label, ev.league, m.team, m.player) : esc(m.label)}${withGame ? `<span class="muted small"> · ${esc(shortTitle(ev))}, ${esc(when(ev.start_time, true))}</span>` : ''}</span></div>
+        <div class="mlabel">${logos}${window.Viz ? window.Viz.chartBtn({ title: m.label, sub: shortTitle(ev), legs: [{ text: m.label, player: m.player || null, league: ev.league, eventSlug: ev.slug, marketSlug: m.id, side: 0 }] }, '📊') : ''}<span>${m.player ? window.Positions.inText(m.label, ev.league, m.team, m.player) : esc(m.label)}${withGame ? `<span class="muted small"> · ${esc(shortTitle(ev))}, ${esc(when(ev.start_time, true))}</span>` : ''}</span></div>
         <div class="mbtns">${btn('yes')}${btn('no')}</div>
       </div>`;
     }

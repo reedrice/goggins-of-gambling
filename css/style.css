@@ -563,3 +563,12 @@ a.btn-play { display: block; text-align: center; text-decoration: none; margin-t
 .card[data-pick-id] .card-actions { grid-template-columns: 1fr 1fr; }
 .card[data-pick-id] .card-actions > button.btn:only-of-type { grid-column: 1 / -1; }
 .settle-actions { grid-template-columns: repeat(3, 1fr); }
+/* §53 Charts everywhere: small "📊 Chart" pill (same look as Share) + live line in the pop-up */
+.chart-btn { background: transparent; color: #2ecc71; border: 1px solid #2ecc71; border-radius: 999px; padding: 4px 10px; font-size: 0.8em; font-weight: 700; cursor: pointer; min-height: 32px; min-width: 44px; margin-left: 6px; vertical-align: middle; }
+.legs li .chart-btn, .bleg .chart-btn, .slip-row .chart-btn, .mlabel .chart-btn, .tp-pick .chart-btn, .leg > .chart-btn { padding: 2px 8px; min-height: 32px; font-size: 0.75em; }
+.bleg .chart-btn, .mlabel .chart-btn { order: 9; margin-left: auto; flex: none; }
+.leg > .chart-btn { position: absolute; top: 8px; right: 52px; }
+.leg { position: relative; }
+.chart-row { margin: 10px 0 4px; }
+.chart-row .chart-btn { margin: 0; width: 100%; min-height: 44px; border-radius: 12px; }
+.viz-live { font-size: .8em; color: #7ddc9d; margin: 4px 0 2px; }

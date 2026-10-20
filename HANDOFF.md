@@ -1074,3 +1074,23 @@ they open in a pop-up when you tap a pick card (Picks tab) or a Live Bets card.
   ("Bet $2 → get $7 back", "Suggested bet: under $1", header "$123"). The Record slip "pays" string (strings.js) uses it too.
 - Checked all 6 tabs in a browser with a $123.45 bankroll: no "$x.yz" anywhere. Input boxes (stake/unit fields) still
   accept cents when typed; only display is rounded. Use `Plain.dollars` for any new money text.
+
+## 53. Charts everywhere + live Polymarket prices in the pop-up (Oct 20, 2026)
+- **Where:** a small green "📊 Chart" pill opens the §48/§50 pop-up (`Viz.chartBtn(spec)`; one delegated click
+  handler in viz.js reads `data-viz`). Picks: every card header (singles, prop bets, combos, long shots, Lottery) +
+  a "📊" per combo/lottery leg (card tap still works). Build a Bet: every market row in the list and every slip leg.
+  My Bets: every leg (open + settled). Record: per leg in the slip pop-up + a full-width "📊 Charts for this slip".
+  Fade Trent: only picks that read as a prop bet (no market ids, so bars only). Live Bets cards: tap (as before).
+  Bottom button rows untouched (§51). App helpers: `vizLeg`, `histVizLeg`, `chartBtnFor`, `legChartBtn` in app.js.
+- **Price history:** Polymarket US DOES have a free public endpoint (my §48 note was wrong — it's
+  `GET gateway.polymarket.us/v1/price-history?symbol=<marketSlug>&fixedInterval=INTERVAL_1D&fidelity=5`, CORS open).
+  The chart loads the last day (5-min) + last hour (1-min), Yes = `longPrice`, No = `shortPrice` (buy prices),
+  dropping empty-book spikes (<2% / >98%). Fallback when it has nothing: live-tick history + saved snapshot points
+  (pick price at posting, Record publish/closing prices). Nothing at all → the price section hides.
+- **Live:** while the pop-up is open and the tab is visible, the browser polls `GET /v1/markets/<slug>/bbo` every
+  ~1.5 s (public limit 20 req/s/IP) and the event every 8 s (line-chip prices). 429 → delay doubles (max 30 s), then
+  eases back. Stops on close / hidden tab, resumes when visible. A status line says "🟢 Live from Polymarket · time ·
+  checks every 1.5s" or that live prices aren't reachable. Their Markets WebSocket needs an API key, so it isn't used.
+  Zero server/bot cost: all in Reed's browser.
+- Prop bet parsing works without a league (ESPN search picks the player's league), so plain-text legs like
+  "LeBron James 6+ rebounds (10/20)" in My Bets get bars too.
