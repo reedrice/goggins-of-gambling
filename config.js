@@ -48,6 +48,13 @@ window.APP_CONFIG = Object.freeze({
   repoOwner: 'reedrice',
   repoName: 'goggins-of-gambling',
   repoBranch: 'main',
+  /**
+   * GitHub sign-in (OAuth device flow) for dev tools. The Client ID is public.
+   * githubAuthWorker = URL of the Cloudflare Worker in workers/goggins-gh-auth
+   * (GitHub's device endpoints have no CORS). Empty = the sign-in button stays hidden.
+   */
+  githubClientId: 'Ov23li16KIAkVHvjd1mq',
+  githubAuthWorker: '',
   /** Repo-relative path of the shared, dollar-free bet log. */
   betLogPath: 'data/bet-log.json',
   /** Automatic per-app price comparisons (The Odds API); see HANDOFF.md. */

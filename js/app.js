@@ -1771,6 +1771,7 @@
     let ov = null; try { ov = await fetchData('data/trent-overrides.json'); } catch (e) { /* none yet */ }
     const picks = TR.applyOverrides(Array.isArray(doc.picks) ? doc.picks : [], ov);   // dev answers (§58)
     // Dev-only (signed-in collaborators, §60): open clarification questions. Read-only, never shown to normal users.
+    if (window.GhAuth) await GhAuth.ensureFresh();   // expiring OAuth tokens
     const devQs = window.GitHubLog && await window.GitHubLog.isDev(S.getToken()) ? TR.openQuestions(picks) : [];   // collaborators only (§60)
     const devHtml = devQs.length ? `<div class="card dev-qs"><b>Dev: open questions (${devQs.length})</b>${devQs.map(q => `<div class="small"><code>${esc(q.id)}</code> ${esc(q.pick)}<br>${esc(q.question)}${q.issue ? ` · #${esc(String(q.issue))}` : ''}</div>`).join('')}<div class="small muted">Answer: node scripts/trent-picks.mjs clarify &lt;id&gt; --set key=value --answer "…" --commit · <a href="https://github.com/${esc(window.APP_CONFIG.repoOwner)}/${esc(window.APP_CONFIG.repoName)}/issues?q=is%3Aopen+label%3Atrent-clarify" target="_blank" rel="noopener">Votes</a></div></div>` : '';
     const s = TR.summary(picks), a = s.all;
@@ -2128,6 +2129,7 @@
       <details class="howto"><summary>${esc(X.tokenHow)}</summary><p class="small">${esc(X.tokenSteps)} <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com ↗</a></p></details>
       <p>${token ? esc(X.tokenSaved(login)) : `<span class="error">${esc(X.tokenNone)}</span>`}</p>
       <label class="field"><span>${esc(X.tokenLabel)}</span><input id="tk" type="password" autocomplete="off" placeholder="${esc(token ? X.tokenSavedPh : X.tokenPh)}"></label>
+      ${window.GhAuth && GhAuth.enabled() ? `<div class="row"><button class="btn btn-primary" id="gh-signin" type="button">Sign in with GitHub</button></div><p class="muted small" id="gh-code" hidden></p>` : ''}
       <div class="row"><button class="btn btn-primary" id="tk-save">${esc(X.tokenSave)}</button>${token ? `<button class="btn btn-danger" id="tk-del">${esc(X.tokenRemove)}</button>` : ''}</div>
       <label class="toggle"><input type="checkbox" id="share-def" ${set.shareByDefault ? 'checked' : ''}><span>${esc(X.shareDefault)}</span></label>
       ${unsynced ? `<button class="btn" id="resync">${esc(X.resync(unsynced))}</button>` : ''}
@@ -2162,7 +2164,18 @@
       } catch (e) { toast(e.message, 4000); }
       renderSettings();
     };
-    if ($('#tk-del')) $('#tk-del').onclick = () => { S.setToken(''); toast(X.tokenRemoved); renderSettings(); };
+    if ($('#gh-signin')) $('#gh-signin').onclick = async () => {
+      try {
+        const f = await GhAuth.start(), c = $('#gh-code');
+        c.hidden = false; c.innerHTML = `Enter <b>${esc(f.user_code)}</b> at <a href="${esc(f.verification_uri)}" target="_blank" rel="noopener">github.com/login/device ↗</a>`;
+        try { await navigator.clipboard.writeText(f.user_code); } catch (e) { /* ignore */ }
+        window.open(f.verification_uri, '_blank', 'noopener');
+        if (!(await f.done)) return toast('Sign-in didn\u2019t finish', 4000);
+        const r = await G.checkToken(S.getToken()); S.setLogin(r.login); toast(X.tokenOk(r.login), 4000);
+      } catch (e) { toast(e.message, 4000); }
+      renderSettings();
+    };
+    if ($('#tk-del')) $('#tk-del').onclick = () => { if (window.GhAuth) GhAuth.signOut(); S.setToken(''); toast(X.tokenRemoved); renderSettings(); };
     $('#share-def').onchange = e => S.setSettings({ shareByDefault: e.target.checked });
     if ($('#resync')) $('#resync').onclick = async () => {
       for (const b of S.getBets().filter(x => x.share && !x.shared)) await syncBet(b);
