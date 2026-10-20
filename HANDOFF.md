@@ -1045,3 +1045,15 @@ they open in a pop-up when you tap a pick card (Picks tab) or a Live Bets card.
 - **How:** a tiny inline script at the top of `index.html` `<head>` fetches `version.json?t=<now>` with `cache:'no-store'` on load, when the tab becomes visible again (`visibilitychange`) and on back/forward-cache restores (`pageshow` persisted). If `version.json` differs from `window.APP_VERSION`, it reloads ONCE via `location.replace(...?fresh=<version>)` (a new URL, so Safari fetches a fresh index.html and the new `?v=` files). Loop guard: `sessionStorage.betdash_reloadedFor = <version>`; if storage is blocked it never reloads. The `fresh` param is removed from the address bar after load. Free: one tiny static file, no APIs.
 - Also added `Cache-Control/Pragma/Expires` no-cache meta tags (GitHub Pages ignores them for its own headers, so the check is the real fix).
 - **One-step bumps:** `node scripts/bump-version.mjs [stamp]` (default = now in CT) updates all `?v=`, `APP_VERSION` and `version.json` together. `--check` exits 1 if they disagree (run by `tests/version.test.mjs`). Digest routine step 7 (§8) and §42 point here.
+
+## 50. Prop bet pop-up: changeable line chips (Oct 20, 2026)
+- In the prop bet history (§48), a row of chips like `15+ 20+ 25+ 30+` sits under "Line:". The chips come ONLY from the
+  lines Polymarket US lists for the same player + same stat in the same game: `js/viz.js` fetches
+  `gateway.polymarket.us/v1/events/slug/<event>` in the browser (free, CORS open, the same source as pick cards and the
+  live tick) and `siblingLines(ev, prop)` keeps open `*_player_*` markets whose question parses to the same player and stat.
+  No typed or made-up lines. Only one listed → one chip. Nothing listed → the bet's own line as a single chip.
+- Default = the bet's own line (if it's no longer listed, the nearest listed line). Tapping a chip moves the dashed line,
+  recolors the bars, updates "Hit in X of N", the price "30+: +170 · $10 pays $27 on Polymarket" (Yes buy price; for a
+  No/under bet the No buy price, shown as "Under N"), and points the price-over-time chart at that line's market. The
+  chosen line stays when switching L5 / L10 / vs OPP / Season.
+- CSS `.viz-chip*`, `.viz-price`, `.viz-onpm` at the end of style.css. Test in `tests/viz.test.js`. Version bumped with bump-version.mjs.

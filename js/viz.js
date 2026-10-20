@@ -175,23 +175,68 @@
     box.append(svg, read);
   }
 
-  /** Price chart section for one leg. */
+  /** Price chart section for one leg. Returns the section; sec.showMarket(id, slug) re-points it (line chips). */
   function priceSection(leg) {
     const sec = el('section', 'viz-sec');
     sec.append(el('h4', 'viz-h', '📈 Price over time'));
     const box = el('div', 'viz-chart'); box.append(el('div', 'viz-none', 'Loading…')); sec.append(box);
-    if (!leg.eventSlug) { box.replaceChildren(el('div', 'viz-none', 'No price history for this one.')); return sec; }
-    getJSON(`data/live/${leg.eventSlug}-history.json?ts=${Math.floor(Date.now() / 60000)}`).then(h => {
-      const s = seriesFor(h, leg, leg.side || 0);
-      drawChart(box, s.points, s.marks);
-    });
+    sec.showMarket = (marketId, marketSlug) => {
+      if (!leg.eventSlug) { box.replaceChildren(el('div', 'viz-none', 'No price history for this one.')); return; }
+      getJSON(`data/live/${leg.eventSlug}-history.json?ts=${Math.floor(Date.now() / 60000)}`).then(h => {
+        const s = seriesFor(h, { marketId, marketSlug }, leg.side || 0);
+        drawChart(box, s.points, s.marks);
+      });
+    };
+    sec.showMarket(leg.marketId, leg.marketSlug);
     return sec;
   }
 
+  /**
+   * Pure: the lines Polymarket US lists for the same player + stat in this
+   * event (sibling markets), e.g. Tatum 15+ / 20+ / 25+ / 30+ points.
+   * Returns [{ n, id, slug, yesBuy, noBuy }] sorted by n (buy prices in chance points or null).
+   */
+  function siblingLines(ev, p) {
+    const out = new Map(), who = p.player.toLowerCase();
+    for (const m of (ev && ev.markets) || []) {
+      if (!/_player_/.test(m.sportsMarketType || '') || m.closed || m.active === false) continue;
+      const q = parseProp({ question: m.question, league: p.league });
+      if (!q || q.player.toLowerCase() !== who || q.stat.key !== p.stat.key || out.has(q.n)) continue;
+      const b = Number(m.bestBidQuote && m.bestBidQuote.value), a = Number(m.bestAskQuote && m.bestAskQuote.value);
+      out.set(q.n, { n: q.n, id: String(m.id), slug: m.slug, yesBuy: a > 0 ? a * 100 : null, noBuy: b > 0 ? 100 - b * 100 : null });
+    }
+    return [...out.values()].sort((x, y) => x.n - y.n);
+  }
+
   /** Bars section for one prop bet. */
-  function propSection(p) {
+  function propSection(p, leg = {}, chart = null) {
     const sec = el('section', 'viz-sec');
-    sec.append(el('h4', 'viz-h', `📊 Prop bet history: ${p.player}`), el('div', 'viz-sub', `Line: ${p.n}+ ${p.stat.label}`));
+    const sub = el('div', 'viz-sub', `Line: ${p.n}+ ${p.stat.label}`);
+    const chips = el('div', 'viz-chips'), price = el('div', 'viz-price');
+    sec.append(el('h4', 'viz-h', `📊 Prop bet history: ${p.player}`), sub, chips, price);
+    // Line chips: ONLY lines Polymarket US lists for this player + stat in this game.
+    let lines = [], n = p.n, redraw = () => {};
+    const no = leg.side === 1;
+    const drawChips = () => {
+      chips.replaceChildren();
+      const list = lines.length ? lines : [{ n: p.n }];
+      for (const L of list) {
+        const b = el('button', 'viz-chip' + (L.n === n ? ' on' : ''), `${L.n}+`); b.type = 'button';
+        b.onclick = () => { n = L.n; drawChips(); redraw(); }; chips.append(b);
+      }
+      const cur = lines.find(L => L.n === n);
+      sub.textContent = `Line: ${no ? 'under ' + n : n + '+'} ${p.stat.label}`;
+      const c = cur && (no ? cur.noBuy : cur.yesBuy);
+      price.replaceChildren(el('span', 'viz-price-main', c > 0 && c < 100 ? `${no ? 'Under ' + n : n + '+'}: ${american(c)} · $10 pays $${Math.floor(1000 / c)}` : 'No price right now'),
+        el('span', 'viz-onpm', ' on Polymarket'));
+      if (chart && cur) chart.showMarket(cur.id, cur.slug);
+    };
+    drawChips();
+    if (leg.eventSlug) getJSON(`https://gateway.polymarket.us/v1/events/slug/${leg.eventSlug}`).then(j => {
+      lines = siblingLines(j && (j.event || j), p);
+      if (lines.length && !lines.some(L => L.n === p.n)) n = lines.reduce((a, L) => Math.abs(L.n - p.n) < Math.abs(a.n - p.n) ? L : a).n;
+      drawChips(); redraw();
+    });
     const tabs = el('div', 'viz-tabs'), body = el('div', 'viz-bars-wrap'); body.append(el('div', 'viz-none', 'Loading games…'));
     sec.append(tabs, body);
     const base = 'https://site.web.api.espn.com/apis';
@@ -217,15 +262,15 @@
         const gs = pickGames(all, mode, opp).slice().reverse();   // oldest on the left
         body.replaceChildren();
         if (!gs.length) { body.append(el('div', 'viz-none', mode === 'H2H' ? 'No recent games against this team.' : 'No games here yet.')); return; }
-        const s = summary(gs, p.n);
+        const s = summary(gs, n);
         body.append(el('div', 'viz-hit', `Hit in ${s.hits} of ${s.total} games · Average ${s.avg} ${p.stat.label}`));
-        const max = Math.max(p.n * 1.4, ...gs.map(g => g.value), 1);
+        const max = Math.max(n * 1.4, ...gs.map(g => g.value), 1);
         const bars = el('div', 'viz-bars');
-        const line = el('div', 'viz-line-dash'); line.style.bottom = `calc(${(100 * p.n / max).toFixed(1)}% )`;
-        const lab = el('span', 'viz-line-lab', `${p.n}+`); line.append(lab); bars.append(line);
+        const line = el('div', 'viz-line-dash'); line.style.bottom = `calc(${(100 * n / max).toFixed(1)}% )`;
+        const lab = el('span', 'viz-line-lab', `${n}+`); line.append(lab); bars.append(line);
         for (const g of gs) {
           const col = el('div', 'viz-col');
-          const bar = el('div', 'viz-bar ' + (g.value >= p.n ? 'viz-hitbar' : 'viz-miss'));
+          const bar = el('div', 'viz-bar ' + (g.value >= n ? 'viz-hitbar' : 'viz-miss'));
           bar.style.height = `${Math.max(2, 100 * g.value / max).toFixed(1)}%`;
           bar.append(el('span', 'viz-val', String(g.value)));
           const d = g.date ? new Date(g.date) : null;
@@ -237,6 +282,7 @@
         for (const g of gs) { const d = g.date ? new Date(g.date) : null; const c = el('div', 'viz-xl'); c.append(el('div', null, g.opp), el('div', 'viz-xd', d ? `${d.getUTCMonth() + 1}/${d.getUTCDate()}` : '')); labs.append(c); }
         body.append(bars, labs);
       };
+      redraw = draw;
       draw();
     })().catch(() => body.replaceChildren(el('div', 'viz-none', 'Couldn\'t load games right now. Try again later.')));
     return sec;
@@ -261,9 +307,9 @@
     for (const leg of legs) {
       const wrap = el('div', 'viz-leg');
       if (legs.length > 1) wrap.append(el('div', 'viz-legname', leg.text || leg.question || ''));
-      const p = parseProp(leg);
-      if (p) wrap.append(propSection(p));
-      wrap.append(priceSection(leg));
+      const p = parseProp(leg), chart = priceSection(leg);
+      if (p) wrap.append(propSection(p, leg, chart));
+      wrap.append(chart);
       sheet.append(wrap);
     }
     if ((spec.legs || []).length > MAX_LEGS) sheet.append(el('div', 'viz-none', `Showing the first ${MAX_LEGS} picks.`));
@@ -278,5 +324,5 @@
   /** Event slug from a Polymarket US event URL. */
   const slugFromUrl = u => { const m = /\/([a-z]+-[a-z0-9]+-[a-z0-9]+-\d{4}-\d{2}-\d{2})(?:[/?#]|$)/.exec(u || ''); return m ? m[1] : null; };
 
-  return { open, close, parseProp, gamesFromLog, summary, pickGames, seriesFor, american, slugFromUrl, statOf };
+  return { open, close, parseProp, siblingLines, gamesFromLog, summary, pickGames, seriesFor, american, slugFromUrl, statOf };
 });

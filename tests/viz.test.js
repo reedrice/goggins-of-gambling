@@ -22,3 +22,12 @@ assert.strictEqual(s.marks.length, 1);
 assert.strictEqual(V.american(40), '+150');
 assert.strictEqual(V.slugFromUrl('https://polymarket.us/sports/nba/nba-bos-det-2026-10-20'), 'nba-bos-det-2026-10-20');
 console.log('viz ok');
+{ const p = V.parseProp({ question: 'Will Jayson Tatum record at least 25 points in A?', eventSlug: 'nba-bos-det-2026-10-20' });
+  const mk = (id, q, b, a, t = 'basketball_player_points') => ({ id, slug: 's' + id, sportsMarketType: t, active: true, closed: false, question: q, bestBidQuote: { value: b }, bestAskQuote: { value: a } });
+  const ev = { markets: [mk(1, 'Will Jayson Tatum record at least 30 points in A?', '0.35', '0.38'), mk(2, 'Will Jayson Tatum record at least 25 points in A?', '0.6', '0.62'),
+    mk(3, 'Will Jayson Tatum record at least 8 total rebounds in A?', '0.6', '0.62', 'basketball_player_rebounds'), mk(4, 'Will Jaylen Brown record at least 25 points in A?', '0.5', '0.52'),
+    mk(5, 'Will Jayson Tatum record at least 30 combined points, rebounds and assists in A?', '0.7', '0.72', 'basketball_player_points_rebounds_assists')] };
+  const L = V.siblingLines(ev, p);
+  assert.deepStrictEqual(L.map(x => x.n), [25, 30]);            // same player + stat only, sorted
+  assert.strictEqual(Math.round(L[1].yesBuy), 38); assert.strictEqual(Math.round(L[1].noBuy), 65);
+  console.log('viz lines ok'); }
