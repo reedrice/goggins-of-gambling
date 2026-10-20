@@ -1227,3 +1227,16 @@ Pablo, Reed asked for this and OK'd touching your Live Bets files. All changes a
 - **UI:** `js/live-bets.js` `platRow()` and `platBadges()` add "Polymarket ✓" on every card, "Kalshi ✓" when the value is true and a dim "Kalshi —" when it's false. Nothing extra shows for null. Tapping a badge shows a one-line note. The styles are at the end of `css/live-bets.css`.
 - **If you run publish without tick**, the field is missing and the cards just show Polymarket ✓.
 - **Tests:** `tests/live-kalshi.test.mjs`.
+
+## For Pablo: no edges on sides the app won't sell (Oct 20, 2026, Reed's bot)
+Pablo, this is a Reed-approved change to your files. Reed saw "take No" on Ausar Thompson rebounds, but the Polymarket US app only offers Yes on that prop.
+- **The real reason:** the gateway's `markets[].marketSides[]` entries each carry a `tradable` flag. For BOS@DET, 282 of 299 props have `No: tradable:false`. All game lines (spreads, totals, moneyline) and 17 props are tradable on both sides. NHL props checked today were tradable on both sides. A side with `tradable:false` may still have a `price`/`quote`, so a price is not proof you can buy it.
+- **`scripts/live-watch.mjs`:**
+  - New `sideBuyable(m, i)`.
+  - `buildLive` skips a side whose `tradable` is false and adds it to `outOfLimit`, so it drops quietly with no "gone" card. The same handling covers edges listed before this change.
+- **`js/markets-core.js`:** `compactMarket` writes `yes_buyable:false` / `no_buyable:false`, only when false, into the data/markets snapshot.
+- **`scripts/update-picks.mjs`:**
+  - `picks` and `add-picks` now REJECT incoming picks or legs on a side the snapshot marks unbuyable (`unbuyableLegs`).
+  - **The 7 AM digest must only pick buyable sides.** Run `fetch-markets.mjs` before writing picks so the snapshot has the flags.
+  - Today's lottery tickets (lotto-7/10/14/19) already had NBA "No" legs that can't be bought (SGA 8+ assists, Brunson 30+ points, and others). Those were written before this check.
+- **Tests:** `tests/buyable.test.mjs`.

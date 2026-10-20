@@ -13,6 +13,8 @@ See [AGENTS.md](AGENTS.md), [DESIGN.md](DESIGN.md) and [HANDOFF.md](HANDOFF.md) 
 
 - Live Bets cards now show Polymarket ✓ / Kalshi ✓ badges. Kalshi is checked each tick (scripts/live-kalshi.mjs).
 
+- Live Bets and new picks skip sides Polymarket US won't sell (`marketSides[].tradable:false`; most NBA props are Yes-only).
+
 ## Open to-dos
 - [ ] **Apple redesign**: 2–3 mock-up styles from Reed's app screenshots, then build.
 - [ ] **Remove the ⓘ icons** across the site (explanations behind one tap).

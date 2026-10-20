@@ -165,6 +165,10 @@
       no_cost: cents(no.quote && no.quote.value)
     };
     if (out.yes_ask === null && out.no_cost === null) return null; // dead book: nothing to buy
+    // Oct 20 2026: gateway marks a side the app won't sell with tradable:false
+    // (most NBA props are Yes-only). Only written when false, to keep files small.
+    if (yes.tradable === false) out.yes_buyable = false;
+    if (no.tradable === false) out.no_buyable = false;
     if (md.playerName) { out.player = md.playerName; out.team = teamById[md.teamId] || null; }
     if (yes.team) out.yes_team = yes.team.abbreviation;
     if (no.team) out.no_team = no.team.abbreviation;

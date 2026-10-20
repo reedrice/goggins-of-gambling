@@ -99,6 +99,16 @@ export function quote(m) {
   return { bid: b * 100, ask: a * 100, mid: (a + b) * 50, width: (a - b) * 100 };
 }
 export const isOpen = m => m.active && !m.closed && m.status === 'MARKET_STATUS_OPEN';
+/**
+ * Can this side be bought in the Polymarket US app? (Oct 20 2026, Reed's bot,
+ * Reed's OK.) The gateway marks each marketSides[] entry with `tradable`;
+ * most props have the No side `tradable: false` (the app shows only "Yes").
+ * i = 0 Yes/long side, 1 No side. Missing flag = assume buyable (old data).
+ */
+export function sideBuyable(m, i) {
+  const s = (m?.marketSides || []).find(x => !!x.long === (i === 0));
+  return !s || s.tradable !== false;
+}
 export const liquid = q => q && q.width <= MAX_WIDTH && q.mid >= 4 && q.mid <= 96;
 
 // ------------------------------------------------------------ game lines
@@ -368,6 +378,8 @@ export function buildLive(open, ev, prev, nowIso = new Date().toISOString(), ctx
     for (const sd of both) {
       // Past +500 / -500 right now: not tracked at all, dropped quietly.
       if (!withinOddsLimit(sd.now)) { outOfLimit.add(`${o.id}:${sd.i}`); continue; }
+      // Side the app won't let you buy (tradable:false): never an edge, dropped quietly.
+      if (!sideBuyable(m, sd.i)) { outOfLimit.add(`${o.id}:${sd.i}`); continue; }
       const edge = +(sd.open - sd.now).toFixed(1);
       if (!tierOf(edge)) continue;
       // Why did it move? score / injury / likely news / real edge (live-context.mjs).

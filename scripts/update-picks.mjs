@@ -308,6 +308,40 @@ export function validateBookOdds(d) {
   return errs;
 }
 
+// ------------------------------------------------------------------ buyable sides
+
+/**
+ * Pure (Oct 20 2026, Reed's OK): picks/legs whose market_side the Polymarket US
+ * app won't sell. lookup(market_id) -> compact market (data/markets snapshot)
+ * or undefined. A market with no_buyable:false / yes_buyable:false means the
+ * gateway sent marketSides[].tradable === false for that side.
+ * @returns {string[]} errors like 'sections.lottery[0].legs[2]: ... No side can't be bought'
+ */
+export function unbuyableLegs(sections, lookup) {
+  const errs = [];
+  for (const [sec, list] of Object.entries(sections || {})) (Array.isArray(list) ? list : []).forEach((pk, i) => {
+    const legs = Array.isArray(pk && pk.legs) ? pk.legs.map((l, j) => [l, `.legs[${j}]`]) : [[pk, '']];
+    for (const [l, w] of legs) {
+      const m = l && l.market_id && lookup(l.market_id);
+      if (!m) continue;
+      if ((l.market_side === 'no' && m.no_buyable === false) || (l.market_side === 'yes' && m.yes_buyable === false))
+        errs.push(`sections.${sec}[${i}]${w}: ${l.market_id} ${l.market_side.toUpperCase()} side can't be bought in the Polymarket US app (tradable:false). Pick the other side or drop it.`);
+    }
+  });
+  return errs;
+}
+
+let SNAP = null;
+/** market_id -> compact market from data/markets/events/*.json (read once). */
+function snapshotLookup(id) {
+  if (!SNAP) {
+    SNAP = {};
+    const dir = path.join(ROOT, 'data/markets/events');
+    try { for (const f of fs.readdirSync(dir)) { try { for (const m of JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')).markets || []) SNAP[m.id] = m; } catch {} } } catch {}
+  }
+  return SNAP[id];
+}
+
 // ------------------------------------------------------------------ git
 
 /** Run git in the repo root. @returns {string} stdout @throws on non-zero exit */
@@ -395,6 +429,7 @@ function cmdPicks(file, o) {
   if (!file) usage('picks needs a file');
   const d = readJSON(file);
   failIf(validatePicks(d), file);
+  failIf(unbuyableLegs(d.sections, snapshotLookup), file + ' (sides you can\'t buy)');
   // Keep not-yet-played picks for this day or later that the new file doesn't replace.
   const kept = o.replaceAll || !fs.existsSync(PICKS) ? [] : carryOver(readJSON(PICKS), d, o.drop || []);
   kept.forEach(({ sec, pick }) => { d.sections[sec] = d.sections[sec] || []; d.sections[sec].push(pick); });
@@ -443,6 +478,7 @@ function cmdAddPicks(file, o) {
       else { doc.sections[sec].push(pk); added.push({ sec, pk }); }
     }
   }
+  errs.push(...unbuyableLegs(inc.sections, snapshotLookup));
   failIf(errs, file);
   const filled = PickEval.fillDefaults(doc, STR);
   failIf(validatePicks(doc), PICKS + ' (with added picks)');   // catches duplicate ids too
