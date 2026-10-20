@@ -35,9 +35,9 @@
   /** Refresh the token if it expires within 10 minutes. */
   async function ensureFresh() {
     const m = meta(); if (!enabled() || !m || !m.refresh || !m.exp || m.exp - Date.now() > 6e5) return;
-    if (m.rexp && m.rexp < Date.now()) return localStorage.removeItem(K);
+    if (m.rexp && m.rexp < Date.now()) { localStorage.removeItem(K); if (m.exp < Date.now()) window.Store.setToken(''); return; }
     const t = await post('/oauth/access_token', { grant_type: 'refresh_token', refresh_token: m.refresh }).catch(() => null);
-    save(t);
+    if (!save(t) && m.exp < Date.now()) { localStorage.removeItem(K); window.Store.setToken(''); }   // refresh failed and token expired: sign in again
   }
   const signOut = () => localStorage.removeItem(K);
   window.GhAuth = { enabled, start, ensureFresh, signOut };

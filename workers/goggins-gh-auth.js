@@ -14,20 +14,21 @@ const json = (o, status = 200) => new Response(JSON.stringify(o), { status, head
 
 export default {
   async fetch(req, env) {
-    const url = new URL(req.url), target = ROUTES[url.pathname];
+    const url = new URL(req.url), path = url.pathname.replace(/^\/login(?=\/)/, ''), target = ROUTES[path];   // /login/... accepted too
     if (req.headers.get('Origin') !== ORIGIN) return new Response('Forbidden', { status: 403 });
     if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors });
     if (req.method !== 'POST' || !target) return json({ error: 'not_found' }, 404);
     let inb = {};
     try { inb = /json/.test(req.headers.get('Content-Type') || '') ? await req.json() : Object.fromEntries(new URLSearchParams(await req.text())); } catch (e) { return json({ error: 'bad_request' }, 400); }
     const out = new URLSearchParams({ client_id: env.CLIENT_ID });
-    if (url.pathname === '/device/code') {
+    if (path === '/device/code') {
       if (inb.scope) out.set('scope', String(inb.scope).slice(0, 200));
     } else {
       if (!GRANTS.has(inb.grant_type)) return json({ error: 'unsupported_grant_type' }, 400);
       out.set('grant_type', inb.grant_type);
       if (inb.grant_type === 'refresh_token') {
-        if (!inb.refresh_token || !env.CLIENT_SECRET) return json({ error: 'bad_request' }, 400);
+        if (!env.CLIENT_SECRET) return json({ error: 'refresh_unavailable' }, 400);   // no secret yet: the site signs in again
+        if (!inb.refresh_token) return json({ error: 'bad_request' }, 400);
         out.set('refresh_token', inb.refresh_token); out.set('client_secret', env.CLIENT_SECRET);
       } else {
         if (!inb.device_code) return json({ error: 'bad_request' }, 400);
