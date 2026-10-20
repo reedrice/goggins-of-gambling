@@ -9,24 +9,24 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892539",
-  "fetched_at": "2026-10-20T23:33:55.415Z",
+  "fetched_at": "2026-10-20T23:43:58.410Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "6:47",
-  "regulation_secs_left": 3107,
+  "clock": "2:38",
+  "regulation_secs_left": 2858,
   "home": {
    "abbr": "MTL",
    "alias": "Canadiens",
    "name": "Montreal Canadiens",
-   "score": 0,
+   "score": 1,
    "id": "10"
   },
   "away": {
    "abbr": "SJ",
    "alias": "Sharks",
    "name": "San Jose Sharks",
-   "score": 0,
+   "score": 1,
    "id": "18"
   },
   "possession": null,
@@ -89,9 +89,40 @@
    }
   ],
   "in_game_injuries": [],
-  "leaders": []
+  "leaders": [
+   {
+    "team": "MTL",
+    "player": "Nick Suzuki",
+    "short": "N. Suzuki",
+    "pos": "C"
+   },
+   {
+    "team": "MTL",
+    "player": "Juraj Slafkovsky",
+    "short": "J. Slafkovsky",
+    "pos": "LW"
+   },
+   {
+    "team": "MTL",
+    "player": "Nick Suzuki",
+    "short": "N. Suzuki",
+    "pos": "C"
+   },
+   {
+    "team": "SJ",
+    "player": "Macklin Celebrini",
+    "short": "M. Celebrini",
+    "pos": "C"
+   },
+   {
+    "team": "SJ",
+    "player": "Macklin Celebrini",
+    "short": "M. Celebrini",
+    "pos": "C"
+   }
+  ]
  },
- "updated": "2026-10-20T23:33:55.416Z",
+ "updated": "2026-10-20T23:43:58.412Z",
  "open_taken_at": "2026-10-20T22:26:53.426Z",
  "thresholds": {
   "big": 10,
@@ -2323,6 +2354,86 @@
  ],
  "edges": [
   {
+   "key": "1480933:1",
+   "market_id": "1480933",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in SJS vs MTL be more than 5.5?",
+   "side": "Under 5.5",
+   "open_chance": 36,
+   "now_chance": 28,
+   "open_odds": "+178",
+   "now_odds": "+257",
+   "edge": 8,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: scoring above pace (2 pts, pace 1)",
+   "context": "SJ 1, MTL 1, Q1 2:38",
+   "first_seen": "2026-10-20T23:43:58.412Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "1480934:1",
+   "market_id": "1480934",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in SJS vs MTL be more than 6.5?",
+   "side": "Under 6.5",
+   "open_chance": 47,
+   "now_chance": 40,
+   "open_odds": "+113",
+   "now_odds": "+150",
+   "edge": 7,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: scoring above pace (2 pts, pace 1)",
+   "context": "SJ 1, MTL 1, Q1 2:38",
+   "first_seen": "2026-10-20T23:43:58.412Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "1480928:1",
+   "market_id": "1480928",
+   "market": "Alt spread",
+   "group": "game",
+   "question": "Will the SJS Sharks cover 2.5 vs the MTL Canadiens in SJS vs MTL?",
+   "side": "Canadiens -2.50",
+   "open_chance": 33,
+   "now_chance": 26,
+   "open_odds": "+203",
+   "now_odds": "+285",
+   "edge": 7,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: MTL not covering -2.5 right now",
+   "context": "MTL tied, Q1 2:38",
+   "first_seen": "2026-10-20T23:43:58.412Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "1480927:1",
+   "market_id": "1480927",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will the SJS Sharks cover 1.5 vs the MTL Canadiens in SJS vs MTL?",
+   "side": "Canadiens -1.50",
+   "open_chance": 45,
+   "now_chance": 39,
+   "open_odds": "+122",
+   "now_odds": "+156",
+   "edge": 6,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: MTL not covering -1.5 right now",
+   "context": "MTL tied, Q1 2:38",
+   "first_seen": "2026-10-20T23:43:58.412Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
    "key": "1480934:0",
    "market_id": "1480934",
    "market": "Main total",
@@ -2339,7 +2450,7 @@
    "reason": "Explained by score: scoring below pace (0 pts, pace 1)",
    "context": "SJ 0, MTL 0, Q1 6:47",
    "first_seen": "2026-10-20T23:23:57.538Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": true
   },
   {
@@ -2359,27 +2470,7 @@
    "reason": "Explained by score: scoring below pace (0 pts, pace 1)",
    "context": "SJ 0, MTL 0, Q1 6:47",
    "first_seen": "2026-10-20T23:23:57.538Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1480932:0",
-   "market_id": "1480932",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in SJS vs MTL be more than 4.5?",
-   "side": "Over 4.5",
-   "open_chance": 85,
-   "now_chance": 71,
-   "open_odds": "-567",
-   "now_odds": "-245",
-   "edge": 14,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: scoring below pace (0 pts, pace 1)",
-   "context": "SJ 0, MTL 0, Q1 6:47",
-   "first_seen": "2026-10-20T23:23:57.538Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": true
   },
   {
@@ -2399,27 +2490,7 @@
    "reason": "Explained by score: scoring below pace (0 pts, pace 1)",
    "context": "SJ 0, MTL 0, Q1 6:47",
    "first_seen": "2026-10-20T23:23:57.538Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1480931:0",
-   "market_id": "1480931",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in SJS vs MTL be more than 3.5?",
-   "side": "Over 3.5",
-   "open_chance": 90,
-   "now_chance": 83,
-   "open_odds": "-900",
-   "now_odds": "-488",
-   "edge": 7,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: scoring below pace (0 pts, pace 0)",
-   "context": "SJ 0, MTL 0, Q1 6:47",
-   "first_seen": "2026-10-20T23:23:57.538Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": true
   },
   {
@@ -2498,7 +2569,7 @@
   "gone:1480928:0:2026-10-20T23:13:56.766Z"
  ],
  "kalshi_checked": {
-  "at": "2026-10-20T23:33:55.432Z",
+  "at": "2026-10-20T23:43:58.723Z",
   "event": "26OCT20SJMTL"
  }
 }
