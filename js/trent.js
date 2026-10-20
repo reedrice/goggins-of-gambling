@@ -101,6 +101,7 @@
       if (p.units != null && !(p.units > 0)) errs.push(at + ': units must be > 0 or null');
       if (['win', 'loss'].includes(p.result) && !p.unclear && !(p.final_score && p.graded_from)) errs.push(at + ': graded picks need final_score + graded_from (real result)');
       if (p.unclear && p.result !== 'pending') errs.push(at + ': unclear picks stay pending (not graded)');
+      if (p.needs_clarification && !p.question) errs.push(at + ': needs_clarification needs a question');
     });
     return errs;
   }
@@ -108,5 +109,21 @@
   /** The exact tweet link for a real X post id (opens the X app on phones). */
   function postUrl(id) { return 'https://x.com/BookitWithTrent/status/' + id; }
 
-  return { RESULTS, postUrl, winPerUnit, counts, unitsFor, fadeResult, fadeUnitsFor, summary, validate };
+  // ---- Dev clarifications (HANDOFF §58). Unclear picks carry needs_clarification + question;
+  // a dev answers in data/trent-overrides.json (scripts/trent-picks.mjs clarify), applied on render.
+  const OVERRIDE_KEYS = ['pick', 'type', 'odds', 'units', 'result', 'final_score', 'graded_from', 'unclear', 'note', 'league', 'game'];
+  /** Pure: picks with dev overrides applied (only whitelisted keys). Answered picks lose needs_clarification. */
+  function applyOverrides(picks, ov) {
+    const map = (ov && ov.overrides) || {};
+    return (picks || []).map(p => {
+      const o = map[p.id]; if (!o || !o.set) return p;
+      const q = Object.assign({}, p);
+      for (const k of OVERRIDE_KEYS) if (Object.prototype.hasOwnProperty.call(o.set, k)) q[k] = o.set[k];
+      q.needs_clarification = false; q.clarified = { answer: o.answer || '', at: o.answered_at || null };
+      return q;
+    });
+  }
+  /** Pure: open dev questions [{id, pick, question, url}]. */
+  const openQuestions = picks => (picks || []).filter(p => p.needs_clarification).map(p => ({ id: p.id, pick: p.pick, game: p.game || '', question: p.question || '', url: postUrl(p.post_id), issue: p.issue || null }));
+  return { OVERRIDE_KEYS, applyOverrides, openQuestions, RESULTS, postUrl, winPerUnit, counts, unitsFor, fadeResult, fadeUnitsFor, summary, validate };
 });

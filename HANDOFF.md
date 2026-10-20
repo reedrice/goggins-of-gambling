@@ -1165,3 +1165,16 @@ Tap the Analytics line → full-screen sheet (`js/dig-deeper.js`, `window.DigDee
 **§57 update (Oct 20, 2026): Dig deeper is a visible button.** Every Analytics line now ends in a clear "Dig deeper ›" pill (`.oc-dig`). The whole line is tappable too. In the chart pop-up the Analytics line + button sit at the top of each bet (above the prop bars and chart), so they're visible without scrolling. The pop-up's fine-print footer was removed (minimal rule). Prop bars show which season the games are from (`.viz-season`, e.g. "2025-26 Postseason" before a new season has games). The Josh Hart 15+ spike around 1:50 AM CT on Oct 20 (95% Yes) is in Polymarket's own `/v1/price-history` (INTERVAL_1D, fidelity 1), so it stays (§55 rule: match Polymarket).
 
 **§56/§57 update (Oct 20, 2026): current season only by default.** Last-season games are fetched but tagged `last: true`: `Viz.loadGames` (+ `prevLog`), the pop-up's prop bars, and `OurChance.teamGames`. `pickGames`, Dig deeper and the Analytics estimate use only current-season games. A current season with no games means no History part; Analytics is then Vegas + Market. Last season appears only behind a "Last season" chip at the end of the chips.
+
+## 58. Fade Trent: dev clarifications + dev vote (Oct 20, 2026)
+
+This is for unclear Trent bets (ambiguous leg, line, side, odds or result). It is dev-only; normal users never see it.
+- **Flag.** A pick in `data/trent-picks.json` gets `needs_clarification: true` + `question` (+ `options`, `issue`). It stays `unclear` / `pending` (not counted) until decided. `js/trent.js validate` requires a question.
+- **Answers.** Answers live in `data/trent-overrides.json` (`overrides[id] = {set:{whitelisted keys}, answer, answered_at}`). `Trent.applyOverrides` applies them on render (the Fade Trent tab) and in scripts. Only the `Trent.OVERRIDE_KEYS` are honoured.
+- **CLI** (`scripts/trent-picks.mjs`, add `--commit` to write + push):
+  - `questions`: list open questions.
+  - `ask <id> --question "..." [--issue] [--option "Label|key=value,key=value" ...]`: flag + ask. With `--issue`: a GitHub issue labelled `trent-clarify` (needs an authenticated `gh`) whose body @mentions **every current collaborator** (fetched live via `gh api repos/{owner}/{repo}/collaborators`; Reed's standing permission, unclear bets only). Each option is posted as its own comment (Option A, B, C...). Devs vote with 👍 on the comment.
+  - `tally <id|issue>`: counts 👍 per option. The most votes wins. On a tie, the option reedrice 👍'd wins; otherwise it comments "@reedrice decides" and stays open. The winner is written as the override, then the script comments the result, closes the issue and commits.
+  - `clarify <id> --set key=value ... --answer "..."`: direct answer without a vote (closes the issue if any).
+- **Dev view.** `?dev=1` on the site shows a read-only "Dev: open questions" card on Fade Trent (ids, questions, issue numbers; no secrets, no money).
+- **Issue content.** Pick text, game, X post link, quote and the question only. Never money, keys or tokens.

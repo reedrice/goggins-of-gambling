@@ -1767,7 +1767,12 @@
     el.innerHTML = `<h2>${esc(X.title)}</h2><p class="muted">${esc(STR.loading)}</p>`;
     let doc;
     try { doc = await fetchData('data/trent-picks.json'); } catch (e) { el.innerHTML = `<h2>${esc(X.title)}</h2><p class="error">${esc(X.loadError)}</p>`; return; }
-    const TR = window.Trent, picks = Array.isArray(doc.picks) ? doc.picks : [];
+    const TR = window.Trent;
+    let ov = null; try { ov = await fetchData('data/trent-overrides.json'); } catch (e) { /* none yet */ }
+    const picks = TR.applyOverrides(Array.isArray(doc.picks) ? doc.picks : [], ov);   // dev answers (§58)
+    // Dev-only (?dev=1): open clarification questions. Read-only, never shown to normal users.
+    const devQs = /[?&]dev=1\b/.test(location.search) ? TR.openQuestions(picks) : [];
+    const devHtml = devQs.length ? `<div class="card dev-qs"><b>Dev: open questions (${devQs.length})</b>${devQs.map(q => `<div class="small"><code>${esc(q.id)}</code> ${esc(q.pick)}<br>${esc(q.question)}${q.issue ? ` · #${esc(String(q.issue))}` : ''}</div>`).join('')}<div class="small muted">Answer: node scripts/trent-picks.mjs clarify &lt;id&gt; --set key=value --answer "…" --commit</div></div>` : '';
     const s = TR.summary(picks), a = s.all;
     const rec = x => `${x.w}-${x.l}-${x.p}`;
     const u = n => `<span class="${sign(n)}">${n > 0 ? '+' : ''}${esc(String(n))}u</span>`;
@@ -1788,7 +1793,7 @@
       </div>`;
     };
     const leagues = Object.entries(s.byLeague).filter(([, v]) => v.w + v.l + v.p);
-    el.innerHTML = `<h2>${esc(X.title)} ${tip('fadeTrent')}</h2>
+    el.innerHTML = `<h2>${esc(X.title)} ${tip('fadeTrent')}</h2>${devHtml}
       <p class="muted small">${esc(X.intro(doc.account || 'BookitWithTrent'))}</p>
       <div class="kpis">${kpi(X.record, rec(a))}${kpi(X.winPct, a.winPct === null ? X.none : esc(a.winPct + '%'))}${kpi(X.units, u(a.units))}${kpi(X.fade, rec({ w: a.fw, l: a.fl, p: a.fp }))}</div>
       <p class="muted small">${esc(X.unitsNote(a.unitsN, a.assumed))} ${a.fadeN ? esc(X.fadeUnitsNote((a.fadeUnits > 0 ? '+' : '') + a.fadeUnits + 'u', a.fadeN)) : ''}</p>

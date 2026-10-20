@@ -38,6 +38,12 @@ GitHub Pages serves `main`. **Push to main = deploy** (it's live in about a minu
 - `scripts/capture-closing.mjs` → `data/pick-history.json` (logs hit_prob, our_chance, market_chance). `scripts/learn.mjs` → `data/learning.json` (calibration).
 - `scripts/trent-picks.mjs`, `scripts/play-leaderboard.mjs`, `scripts/fetch-positions.mjs`.
 
+## Fade Trent clarifications (dev-only, HANDOFF §58)
+Unclear Trent bets are flagged `needs_clarification` + `question` and stay pending.
+- **Answer directly:** `node scripts/trent-picks.mjs clarify <id> --set key=value --answer "..." --commit`.
+- **Dev vote:** `ask <id> --question ".." --issue --option "A label|k=v" --option "B label|k=v"` opens a `trent-clarify` issue. It @mentions all current collaborators (fetched live; Reed's standing permission, unclear bets only), with one comment per option; devs 👍 to vote. Then run `tally <id> --commit` (tie: reedrice decides).
+- **See open questions:** `questions`, or the site with `?dev=1`.
+
 ## File ownership
 - **Pablo's live system** (read-only for everyone else): `data/live/`, `scripts/live-*.mjs` (live-tick, live-watch, live-context, live-discord) and their tests/fixtures. Live-tick scheduling is Pablo's. Read his files; never write them. Leave requests in HANDOFF ("Requests for …").
 - **Richie's Live Bets view**: `js/live-bets.js`, `css/live-bets.css` (§32). Don't edit; ask in HANDOFF.

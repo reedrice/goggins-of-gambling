@@ -49,3 +49,10 @@ process.exit(fails ? 1 : 0);
   for (const p of require('../data/trent-picks.json').picks) assert.strictEqual(p.url, T2.postUrl(p.post_id), p.id);
   console.log('ok every pick has its tweet link');
 }
+{ const T = require('../js/trent.js'), assert = require('assert');
+  const ps = [{ id: '1', pick: 'X +1600', needs_clarification: true, question: 'Which bet?', unclear: true, result: 'pending', post_id: '1' }, { id: '2', pick: 'Y' }];
+  assert.strictEqual(T.openQuestions(ps).length, 1);
+  const out = T.applyOverrides(ps, { overrides: { 1: { set: { pick: 'X anytime TD +1600', type: 'prop', evil: 1 }, answer: 'B' } } });
+  assert.strictEqual(out[0].pick, 'X anytime TD +1600'); assert.strictEqual(out[0].evil, undefined); assert.strictEqual(out[0].needs_clarification, false);
+  assert.strictEqual(T.openQuestions(out).length, 0); assert.strictEqual(ps[0].pick, 'X +1600');
+  console.log('trent clarify ok'); }
