@@ -1250,3 +1250,12 @@ Reed's call. In `2026-10-20-lotto-7`, `-10`, `-14` and `-19`, every NBA "No" leg
 - Vassell 15+ points NO → De'Aaron Fox 1+ steals YES
 
 No new legs come from games that already started, and none bet against Reed's open bets or the other picks. Watch out: lotto-14 and lotto-19 still have the BOS@DET Celtics +4.5 leg (that game has started) and are over the 10-leg combo limit, so they can't be placed as written.
+
+## Two-line game charts, Polymarket look (Oct 20, 2026, Reed's bot)
+Reed wanted live charts to look like Polymarket's game charts. In `js/viz.js` `priceSection` / `drawChart` / `paint`:
+- **Game markets** (moneyline, spread, game/team totals; anything in the event whose `marketType` isn't `props`) draw **two stepped lines**, one per side, long side first (away team / Over). Names + colors come from the Polymarket US event's `marketSides` (`team.safeName`, `team.colorPrimary`), lifted if too dark (`legible`), else the `TEAM_COLORS` map (NBA/NHL/NFL/MLB), else green/blue. Over/Under are green/blue.
+- Each side uses **its own Polymarket price**: history `longPrice`/`shortPrice` (same All + 1D + 1H windows), live BBO `longQuote`/`shortQuote` every ~1 s. Only when the other side has no data of its own (our live-tick file / saved points) does it fall back to `100 - x` (`complement`).
+- A dot at each line end with the name + big whole % beside it (labels nudge apart when close). No y-axis or grid in this mode. Tap / hover reads both sides at that time.
+- **Score header** (BOS 58 · Live / End Q2 · 45 DET) comes from the Polymarket US event (`score`, `period`, `live`, `teams`), the same feed Polymarket shows, refreshed every ~8 s.
+- **Props** keep one Yes line (that's what Polymarket shows), now also stepped.
+- Zoom, range label, 1 s live, never-blank states unchanged. Pure helpers exported and tested in `tests/viz.test.js`.

@@ -75,3 +75,26 @@ console.log('viz ok');
   assert.strictEqual(Viz.blankVisuals(root).length, 1, 'one empty visual container must be flagged');
   console.log('never-blank ok');
 }
+// Two-line game charts (Polymarket look)
+{ const ev = { teams: [{ abbreviation: 'bos' }, { abbreviation: 'det' }], score: '58-45', period: 'End Q2', live: true, ended: false,
+    markets: [{ id: 1, slug: 'aec-nba-bos-det-2026-10-20', marketType: 'moneyline', sportsMarketType: 'basketball_team_full_game_winner',
+      marketSides: [{ description: 'Pistons', long: false, team: { abbreviation: 'det', league: 'nba', safeName: 'Detroit', colorPrimary: '#006bcc' } },
+                    { description: 'Celtics', long: true, team: { abbreviation: 'bos', league: 'nba', safeName: 'Boston', colorPrimary: '#009941' } }] },
+      { id: 2, slug: 'tot', marketType: 'totals', sportsMarketType: 'basketball_team_full_game_total', marketSides: [{ description: 'Over', long: true }, { description: 'Under', long: false }] },
+      { id: 3, slug: 'pp', marketType: 'props', sportsMarketType: 'basketball_player_points', marketSides: [{ description: 'Yes', long: true }, { description: 'No' }] }] };
+  const ml = V.pairSides(ev, { slug: 'aec-nba-bos-det-2026-10-20' });
+  assert.deepStrictEqual(ml.sides.map(x => x.name), ['Boston', 'Detroit']);       // long (away) first
+  assert.strictEqual(ml.sides[0].color, '#009941');
+  assert.deepStrictEqual(V.pairSides(ev, { id: 2 }).sides.map(x => x.name), ['Over', 'Under']);
+  assert.strictEqual(V.pairSides(ev, { slug: 'pp' }).pair, false);                 // props stay one Yes line
+  assert.strictEqual(V.pairSides(ev, { slug: 'nope' }), null);
+  assert.deepStrictEqual(V.scoreHeader(ev), { away: 'BOS', home: 'DET', as: 58, hs: 45, live: true, ended: false, period: 'End Q2' });
+  assert.notStrictEqual(V.legible('#000033', 'x'), '#000033');                      // too dark gets lifted
+  assert.strictEqual(V.legible('#009941', 'x'), '#009941');
+  assert.strictEqual(V.legible('bad', 'fb'), 'fb');
+  assert.strictEqual(V.teamColor('nhl', 'ana', null, 'fb'), '#fc4c02');
+  const st = V.stepPoints([{ t: 0, chance: 40 }, { t: 1, chance: 60 }], t => t * 10, c => c);
+  assert.strictEqual(st, '0.0,40.0 10.0,40.0 10.0,60.0');                         // step-after
+  assert.deepStrictEqual(V.complement([{ t: 1, chance: 30 }]), [{ t: 1, chance: 70 }]);
+  assert.strictEqual(V.valueAt([{ t: 0, chance: 40 }, { t: 5, chance: 60 }], 4), 40);
+  console.log('viz two-line ok'); }

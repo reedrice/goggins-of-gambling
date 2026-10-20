@@ -216,6 +216,60 @@
     return `${withDay ? day(a) + ' ' : ''}${clock(a)} – ${withDay ? day(b) + ' ' : ''}${clock(b)} CT`;
   }
 
+
+  // ------------------------------------------------------------ two-line game charts (Polymarket look, Oct 20)
+  /** Small fallback team colors (primary, by league:abbr) for when the Polymarket event has none. */
+  const TEAM_COLORS = {
+    nba: { atl: '#e03a3e', bos: '#009941', bkn: '#ffffff', cha: '#1d9bb2', chi: '#ce1141', cle: '#a3243b', dal: '#0064b1', den: '#fec524', det: '#006bcc', gs: '#ffc72c', hou: '#ce1141', ind: '#fdbb30', lac: '#c8102e', lal: '#fdb927', mem: '#5d76a9', mia: '#98002e', mil: '#00a651', min: '#78be20', no: '#c8a45c', ny: '#f58426', okc: '#007ac1', orl: '#0077c0', phi: '#006bb6', phx: '#e56020', por: '#e03a3e', sac: '#5a2d81', sa: '#c4ced4', tor: '#ce1141', utah: '#7c4dff', wsh: '#e31837' },
+    nhl: { ana: '#fc4c02', bos: '#fcb514', buf: '#2d6dd2', cgy: '#d2001c', car: '#ce1126', chi: '#cf0a2c', col: '#a6192e', cbj: '#2f6bd8', dal: '#00a862', det: '#ce1126', edm: '#ff4c00', fla: '#c8102e', la: '#a2aaad', min: '#1f9a5a', mtl: '#af1e2d', nsh: '#ffb81c', nj: '#ce1126', nyi: '#f47d30', nyr: '#2f6bd8', ott: '#da1a32', phi: '#f74902', pit: '#fcb514', sj: '#00a3b4', sea: '#99d9d9', stl: '#2f6bd8', tb: '#2f6bd8', tor: '#2f6bd8', utah: '#71afe5', van: '#2f6bd8', vgk: '#b4975a', wpg: '#5b8fd8', wsh: '#c8102e' },
+    nfl: { ari: '#97233f', atl: '#a71930', bal: '#7a5cc6', buf: '#00338d', car: '#0085ca', chi: '#c83803', cin: '#fb4f14', cle: '#ff3c00', dal: '#4a7fd8', den: '#fb4f14', det: '#0076b6', gb: '#ffb612', hou: '#a71930', ind: '#2f6bd8', jax: '#d7a22a', kc: '#e31837', lv: '#a5acaf', lac: '#0080c6', lar: '#ffa300', mia: '#008e97', min: '#7a4fc0', ne: '#c60c30', no: '#d3bc8d', nyg: '#2f6bd8', nyj: '#18a058', phi: '#1a8a8f', pit: '#ffb612', sf: '#aa0000', sea: '#69be28', tb: '#d50a0a', ten: '#4b92db', wsh: '#ffb612' },
+    mlb: { ari: '#a71930', atl: '#ce1141', bal: '#df4601', bos: '#bd3039', chc: '#2f6bd8', chw: '#c4ced4', cin: '#c6011f', cle: '#e50022', col: '#8a6fc8', det: '#fa4616', hou: '#eb6e1f', kc: '#2f7fd8', laa: '#ba0021', lad: '#2f7fd8', mia: '#00a3e0', mil: '#ffc52f', min: '#d31145', nym: '#ff5910', nyy: '#8fa3c8', oak: '#00a35a', phi: '#e81828', pit: '#fdb827', sd: '#ffc425', sf: '#fd5a1e', sea: '#00a3a3', stl: '#c41e3a', tb: '#8fbce6', tex: '#2f6bd8', tor: '#2f7fd8', wsh: '#ab0003' },
+  };
+  const PAIR_FALLBACK = ['#3fb950', '#4c8dff'];   // green / blue, like Polymarket
+  /** Pure: a hex color made legible on the dark background (too-dark colors are lifted toward white). */
+  function legible(hex, fb) {
+    const m = /^#?([0-9a-f]{6})$/i.exec(String(hex || '')); if (!m) return fb;
+    let [r, g, b] = [0, 2, 4].map(i => parseInt(m[1].slice(i, i + 2), 16));
+    const lum = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+    if (lum < 0.32) { const k = (0.32 - lum) / (1 - lum) + 0.15; [r, g, b] = [r, g, b].map(v => Math.round(v + (255 - v) * k)); }
+    return '#' + [r, g, b].map(v => v.toString(16).padStart(2, '0')).join('');
+  }
+  /** Pure: color for a team (Polymarket colorPrimary first, else our map, else fallback). */
+  const teamColor = (league, abbr, primary, fb) => legible(primary || ((TEAM_COLORS[String(league || '').toLowerCase()] || {})[espnAbbr(abbr)]), fb);
+  /** Pure: the two sides of a game market from a Polymarket US event: { pair, sides: [{name, short, color}] (long side first) }. Props -> pair false. */
+  function pairSides(ev, m) {
+    const e = (ev && ev.event) || ev || {};
+    const mk = ((e.markets) || []).find(x => m && ((m.slug && x.slug === m.slug) || (m.id != null && String(x.id) === String(m.id))));
+    if (!mk) return null;
+    if (mk.marketType === 'props' || /_player_/.test(mk.sportsMarketType || '')) return { pair: false };
+    const ss = (mk.marketSides || []).slice().sort((a, b) => (b.long ? 1 : 0) - (a.long ? 1 : 0));
+    if (ss.length !== 2) return { pair: false };
+    const win = /winner|moneyline/.test(mk.sportsMarketType || '') || mk.marketType === 'moneyline';
+    const sides = ss.map((sd, i) => { const t = sd.team || {};
+      const name = win ? (t.safeName || sd.description) : (sd.description || (i ? 'No' : 'Yes'));
+      return { name, short: String(t.abbreviation || name).toUpperCase(), color: win || mk.marketType === 'spreads' ? teamColor(t.league, t.abbreviation, t.colorPrimary, PAIR_FALLBACK[i]) : PAIR_FALLBACK[i] }; });
+    if (!win && mk.marketType === 'spreads' && sides[0].color === sides[1].color) sides[1].color = PAIR_FALLBACK[1];
+    return { pair: true, sides };
+  }
+  /** Pure: score header {away, home, as, hs, live, period} from a Polymarket US event (teams are away, home). */
+  function scoreHeader(ev) {
+    const e = (ev && ev.event) || ev || {}, t = e.teams || [];
+    if (t.length < 2) return null;
+    const sc = /^(\d+)\s*-\s*(\d+)$/.exec(String(e.score || ''));
+    return { away: String(t[0].abbreviation || '').toUpperCase(), home: String(t[1].abbreviation || '').toUpperCase(),
+      as: sc ? +sc[1] : null, hs: sc ? +sc[2] : null, live: !!e.live && !e.ended, ended: !!e.ended, period: String(e.period || '') };
+  }
+  /** Pure: step-after points string (flat until the next price, then straight up/down — how Polymarket draws). */
+  function stepPoints(pts, x, y) {
+    const out = [];
+    pts.forEach((p, i) => { if (i) out.push(`${x(p.t).toFixed(1)},${y(pts[i - 1].chance).toFixed(1)}`); out.push(`${x(p.t).toFixed(1)},${y(p.chance).toFixed(1)}`); });
+    return out.join(' ');
+  }
+  /** Pure: 100 - x for each point (only used when the other side has no own price data). */
+  const complement = pts => pts.map(p => ({ t: p.t, chance: 100 - p.chance }));
+  /** Pure: value of a sorted series at time t (last point at or before t; step-after). */
+  function valueAt(pts, t) { let v = null; for (const p of pts) { if (p.t <= t) v = p.chance; else break; } return v; }
+
   /**
    * Draw (or refresh) the price line in box. Stock-app style (§55): pinch / mouse wheel to
    * zoom, drag to pan, tap or long-press to read a point, double-tap or Reset to snap back.
@@ -223,8 +277,10 @@
    * panning away shows "Back to live". The view state lives on the box, so the 1.5 s live
    * refreshes don't undo a zoom. Default view: fully zoomed out = all history, matching Polymarket US's default "All" window.
    */
-  function drawChart(box, points, marks, game) {
-    box._pts = points = prepSeries(points); box._marks = (marks || []).slice().sort((a, b) => a.t - b.t);
+  function drawChart(box, points, marks, game, pair) {
+    box._pts = points = prepSeries(points);
+    box._pair = pair && pair.sides && pair.b ? { sides: pair.sides, b: prepSeries(pair.b), head: pair.head || null } : null;
+    if (box._pair) box._pair.R = 80; box._marks = (marks || []).slice().sort((a, b) => a.t - b.t);
     const gk = game ? game.status + ':' + game.start + ':' + game.end : '';
     if (box._ui && gk !== box._gk && !box._ui.touched) box._ui.v = defaultView(game);   // game went live / finished
     box._gk = gk; box._game = game || null;
@@ -245,14 +301,14 @@
     live.type = reset.type = 'button';
     ctl.append(range, live, reset);
     const svg = sv('svg', { viewBox: `0 0 ${W} ${H}`, class: 'viz-svg', role: 'img', 'aria-label': 'Price over time. Pinch or scroll to zoom, drag to move.' });
-    const read = el('div', 'viz-read');
-    box.replaceChildren(ctl, svg, read);
-    const ui = box._ui = { svg, read, range, live, reset, v: defaultView(box._game), sel: null, touched: false };
+    const read = el('div', 'viz-read'), head = el('div', 'viz-head');
+    box.replaceChildren(head, ctl, svg, read);
+    const ui = box._ui = { svg, read, head, range, live, reset, v: defaultView(box._game), sel: null, touched: false };
     const def = () => defaultView(box._game);   // Polymarket default: All / Game; zoom-out still reaches All
     reset.onclick = () => { ui.touched = false; ui.v = def(); ui.sel = null; renderChart(box); };
     live.onclick = () => { ui.v.live = true; ui.sel = null; renderChart(box); };
     const xOf = ev => { const r = svg.getBoundingClientRect(); return (ev.clientX - r.left) * W / r.width; };
-    const tAt = px => { const w = ui.win; return w.a + (w.b - w.a) * Math.min(1, Math.max(0, (px - L) / (W - L - R))); };
+    const tAt = px => { const w = ui.win; return w.a + (w.b - w.a) * Math.min(1, Math.max(0, (px - L) / (W - L - rOf(box)))); };
     const zoom = (factor, px) => {
       const p = box._pts, tMin = p[0].t, tMax = p[p.length - 1].t, w = ui.win, pivot = tAt(px);
       const span = Math.min(Math.max(MIN_SPAN, tMax - tMin), Math.max(MIN_SPAN, w.span * factor));
@@ -283,7 +339,7 @@
       if (!drag.moved) return;
       if (ui.sel != null && e.pointerType !== 'mouse') { ui.sel = tAt(xOf(e)); renderChart(box); return; }   // after long-press: scrub
       const p = box._pts, tMin = p[0].t, tMax = p[p.length - 1].t, w = ui.win;
-      const dt = -dx * (w.b - w.a) / (W - L - R);
+      const dt = -dx * (w.b - w.a) / (W - L - rOf(box));
       const end = Math.min(tMax, Math.max(tMin + w.span, drag.end + dt));
       ui.v = { span: w.span, end, live: end >= tMax - 1 }; ui.touched = true;
       renderChart(box);
@@ -300,6 +356,7 @@
     };
     svg.addEventListener('pointerup', up); svg.addEventListener('pointercancel', up);
   }
+  const rOf = box => (box._pair ? box._pair.R : R);
   function renderChart(box) {
     if (!box._ui) return;
     if (box._raf) return;
@@ -307,19 +364,22 @@
     if (typeof requestAnimationFrame === 'function') box._raf = requestAnimationFrame(run); else run();
   }
   function paint(box) {
-    const ui = box._ui, pts = box._pts, marks = box._marks, svg = ui.svg;
+    const ui = box._ui, pts = box._pts, marks = box._marks, svg = ui.svg, pr = box._pair, R = rOf(box);
     const tMin = pts[0].t, tMax = pts[pts.length - 1].t;
     const win = ui.win = viewWindow(tMin, tMax, ui.v);
     // Visible points + one on each side so the line reaches the edges.
-    let i0 = pts.findIndex(p => p.t >= win.a); if (i0 < 0) i0 = pts.length - 1;
-    let i1 = pts.length - 1; while (i1 > 0 && pts[i1].t > win.b) i1--;
-    const vis = pts.slice(Math.max(0, i0 - 1), Math.min(pts.length, i1 + 2));
-    const { lo, hi } = fitY(pts.slice(i0, i1 + 1).map(p => p.chance).concat(vis.length ? [] : []));
+    const visOf = s => {
+      let i0 = s.findIndex(p => p.t >= win.a); if (i0 < 0) i0 = s.length - 1;
+      let i1 = s.length - 1; while (i1 > 0 && s[i1].t > win.b) i1--;
+      return { vis: s.slice(Math.max(0, i0 - 1), Math.min(s.length, i1 + 2)), inView: s.slice(i0, i1 + 1) };
+    };
+    const A = visOf(pts), Bv = pr ? visOf(pr.b) : null, vis = A.vis;
+    const { lo, hi } = fitY(A.inView.map(p => p.chance).concat(Bv ? Bv.inView.map(p => p.chance) : []));
     const x = t => L + (W - L - R) * (t - win.a) / Math.max(1, win.b - win.a), y = c => T + (H - T - B) * (hi - c) / (hi - lo);
     svg.replaceChildren();
     const defs = sv('defs', {}), clip = sv('clipPath', { id: 'vzclip' + (box._cid || (box._cid = Math.random().toString(36).slice(2, 7))) });
     clip.append(sv('rect', { x: L, y: 0, width: W - L - R, height: H - B })); defs.append(clip); svg.append(defs);
-    for (const c of [hi - (hi - lo) * 0.08, (hi + lo) / 2, lo + (hi - lo) * 0.08]) {
+    if (!pr) for (const c of [hi - (hi - lo) * 0.08, (hi + lo) / 2, lo + (hi - lo) * 0.08]) {
       svg.append(sv('line', { x1: L, x2: W - R, y1: y(c), y2: y(c), class: 'viz-grid' }));
       const tx = sv('text', { x: L - 4, y: y(c) + 4, class: 'viz-ylab', 'text-anchor': 'end' }); tx.textContent = american(c); svg.append(tx);
     }
@@ -328,8 +388,12 @@
       g.append(sv('line', { x1: x(m.t), x2: x(m.t), y1: T, y2: H - B, class: 'viz-mark' }));
       const tx = sv('text', { x: x(m.t) + 2, y: T + 9, class: 'viz-mlab' }); tx.textContent = String(m.label).split(' · ')[0]; g.append(tx);
     }
-    const up = vis.length > 1 && vis[vis.length - 1].chance >= vis[0].chance;
-    g.append(sv('polyline', { points: vis.map(p => `${x(p.t).toFixed(1)},${y(p.chance).toFixed(1)}`).join(' '), class: 'viz-line ' + (up ? 'viz-up' : 'viz-down') }));
+    if (pr) {
+      [[vis, pr.sides[0]], [Bv.vis, pr.sides[1]]].forEach(([v, sd]) => { if (v.length) g.append(sv('polyline', { points: stepPoints(v, x, y), class: 'viz-line viz-pairline', stroke: sd.color })); });
+    } else {
+      const up = vis.length > 1 && vis[vis.length - 1].chance >= vis[0].chance;
+      g.append(sv('polyline', { points: stepPoints(vis, x, y), class: 'viz-line ' + (up ? 'viz-up' : 'viz-down') }));
+    }
     svg.append(g);
     // Time ticks adapt to the zoom: 3 labels (start, middle, end of view).
     const span = win.b - win.a, fmt = t => span > 36 * 3600e3 ? new Date(t).toLocaleDateString('en-US', { timeZone: 'America/Chicago', weekday: 'short', hour: 'numeric' })
@@ -337,15 +401,44 @@
     [[win.a, 'start'], [(win.a + win.b) / 2, 'middle'], [win.b, 'end']].forEach(([t, an]) => { const tx = sv('text', { x: x(t), y: H - 6, class: 'viz-xlab', 'text-anchor': an }); tx.textContent = fmt(t); svg.append(tx); });
     // Read-out: selected point (tap / long-press / mouse hover), else the latest.
     const p = ui.sel != null ? pts[nearestIdx(pts, ui.sel)] : pts[pts.length - 1];
-    if (p.t >= win.a - 1 && p.t <= win.b + 1) {
-      if (ui.sel != null) svg.append(sv('line', { x1: x(p.t), x2: x(p.t), y1: T, y2: H - B, class: 'viz-cross' }));
-      svg.append(sv('circle', { r: 4, class: 'viz-dot', cx: x(p.t), cy: y(p.chance) }));
-    }
     const mk = marks.filter(m => m.t <= p.t).pop(), u = myUnit();
-    ui.read.textContent = `${clock(p.t)} CT · ${american(p.chance)} · ${Math.round(p.chance)}% chance · $${u} → $${Math.round(u * 100 / p.chance)}${mk ? ' · ' + mk.label : ''}`;
+    if (pr) {
+      // Polymarket look: a dot at each line's end (or the tapped time) with the side's name + big whole %.
+      const tq = ui.sel != null ? p.t : win.b, vals = [valueAt(pts, tq), valueAt(pr.b, tq)];
+      if (ui.sel != null) svg.append(sv('line', { x1: x(p.t), x2: x(p.t), y1: T, y2: H - B, class: 'viz-cross' }));
+      const ly = vals.map(v => (v == null ? null : y(v)));
+      if (ly[0] != null && ly[1] != null && Math.abs(ly[0] - ly[1]) < 30) { const m = (ly[0] + ly[1]) / 2, s = ly[0] <= ly[1] ? -1 : 1; ly[0] = m + s * 15; ly[1] = m - s * 15; }
+      vals.forEach((v, i) => {
+        if (v == null) return; const sd = pr.sides[i], cx = Math.min(x(tq), W - R);
+        svg.append(sv('circle', { r: 3.5, class: 'viz-pairdot', cx, cy: y(v), fill: sd.color }));
+        const yy = Math.max(T + 14, Math.min(H - B - 2, ly[i] + 4));
+        const nm = sv('text', { x: W - R + 8, y: yy - 13, class: 'viz-endname', fill: sd.color }); nm.textContent = sd.name;
+        const pc = sv('text', { x: W - R + 8, y: yy + 5, class: 'viz-endpct', fill: sd.color }); pc.textContent = `${Math.round(v)}%`;
+        svg.append(nm, pc);
+      });
+      ui.read.textContent = `${clock(tq)} CT · ` + pr.sides.map((sd, i) => vals[i] == null ? null : `${sd.name} ${Math.round(vals[i])}% (${american(vals[i])})`).filter(Boolean).join(' · ') + (mk ? ' · ' + mk.label : '');
+    } else {
+      if (p.t >= win.a - 1 && p.t <= win.b + 1) {
+        if (ui.sel != null) svg.append(sv('line', { x1: x(p.t), x2: x(p.t), y1: T, y2: H - B, class: 'viz-cross' }));
+        svg.append(sv('circle', { r: 4, class: 'viz-dot', cx: x(p.t), cy: y(p.chance) }));
+      }
+      ui.read.textContent = `${clock(p.t)} CT · ${american(p.chance)} · ${Math.round(p.chance)}% chance · $${u} → $${Math.round(u * 100 / p.chance)}${mk ? ' · ' + mk.label : ''}`;
+    }
+    paintHead(ui.head, pr && pr.head, pr && pr.sides);
     ui.range.textContent = rangeLabel(win.a, win.b);
     const zoomed = !!ui.v.span && ui.v.span < tMax - tMin;
     ui.live.hidden = ui.v.live; ui.reset.hidden = !(zoomed || !ui.v.live);   // only when zoomed or panned
+  }
+  /** Score header above a game chart: "BOS 58   Live · End Q2   45 DET" (Polymarket US event score). */
+  function paintHead(head, h, sides) {
+    if (!head) return;
+    if (!h) { head.hidden = true; head.replaceChildren(); return; }
+    const k = JSON.stringify(h); if (head.dataset.k === k && !head.hidden) return; head.dataset.k = k; head.hidden = false;
+    const team = (ab, sc, right) => { const d = el('div', 'viz-hteam' + (right ? ' viz-hr' : '')); const a = el('span', 'viz-habbr', ab), s = el('span', 'viz-hscore', sc == null ? '' : String(sc)); d.append(...(right ? [s, a] : [a, s])); return d; };
+    const mid = el('div', 'viz-hmid');
+    mid.append(el('div', h.live ? 'viz-hlive' : 'viz-hstat', h.live ? 'Live' : h.ended ? 'Final' : 'Not started'));
+    if (h.period && !h.ended) mid.append(el('div', 'viz-hper', h.period));
+    head.replaceChildren(team(h.away, h.as, false), mid, team(h.home, h.hs, true));
   }
 
   /** Pure: Polymarket US /v1/price-history rows -> [{t, chance}] for a side (Yes = longPrice, No = shortPrice). */
@@ -369,6 +462,8 @@
     const ocEl = el('div', 'oc oc-viz'); ocEl.hidden = true;   // Our chance (§56), set once a price is known
     const box = el('div', 'viz-chart'); box.append(el('div', 'viz-none', 'Loading…')); sec.append(box); sec.ocEl = ocEl;
     let game = gameInfo(null, leg.start_time || leg.startTime), cur = {}, api = [], tick = { points: [], marks: [] }, extra = [], live = [], gen = 0;
+    // Game markets (moneyline / spread / total): the OTHER side's own prices too, for Polymarket's two-line look.
+    let api2 = [], live2 = [], meta = null, head = null;
     const side = leg.side === 1 ? 1 : 0;
     const draw = () => {
       const basePts = api.length ? api : tick.points.concat(extra);
@@ -379,6 +474,15 @@
         ocEl.dataset.slug = cur.slug || leg.marketSlug; ocEl.removeAttribute('data-oc-done'); ocEl.hidden = false;
         ocEl.setAttribute('data-oc', JSON.stringify({ marketId: ocEl.dataset.slug, side: side ? 'no' : 'yes', market: pts[pts.length - 1].chance, text: leg.text, question: leg.question, player: leg.player || null }));
         globalThis.OurChance.hydrate(ocEl.parentNode || sec);
+      }
+      let pair = null;
+      if (meta && meta.pair && pts.length) {
+        // Each side's own Polymarket price (history shortPrice/longPrice, live short/longQuote). Only when the other
+        // side has no data of its own (our live-tick file / saved points) do we fall back to 100 - x.
+        const other = (api.length && api2.length ? api2 : complement(basePts)).concat(live2.length ? live2 : complement(live)).sort((x, y) => x.t - y.t);
+        const [a, b] = side ? [other, pts] : [pts, other];   // long side (away team / Over) first
+        pair = { sides: meta.sides, b, head };
+        drawChart(box, a, tick.marks, game, pair); return;
       }
       drawChart(box, pts, tick.marks, game);
     };
@@ -394,12 +498,14 @@
       const hr = pmHistory(h, side), cut = hr.length ? hr[0].t : Infinity;
       const dy = pmHistory(d, side).filter(p => p.t < cut), dcut = dy.length ? dy[0].t : cut;
       api = pmHistory(all, side).filter(p => p.t < dcut).concat(dy, hr);   // All (3 h steps) + day (5 min) + hour (1 min)
+      const hr2 = pmHistory(h, 1 - side), c2 = hr2.length ? hr2[0].t : Infinity, dy2 = pmHistory(d, 1 - side).filter(p => p.t < c2), d2 = dy2.length ? dy2[0].t : c2;
+      api2 = pmHistory(all, 1 - side).filter(p => p.t < d2).concat(dy2, hr2);   // other side, same windows
       draw();
     };
     sec.slug = () => cur.slug || null;
     sec.showMarket = (marketId, marketSlug) => {
       if (marketId === cur.id && marketSlug === cur.slug && gen) return;
-      gen++; cur = { id: marketId, slug: marketSlug }; api = []; live = []; box._ui = null; box._loading = !!(marketSlug || leg.eventSlug); box._err = false;   // new market: fresh view
+      gen++; cur = { id: marketId, slug: marketSlug }; api = []; live = []; api2 = []; live2 = []; meta = null; box._ui = null; box._loading = !!(marketSlug || leg.eventSlug); box._err = false;   // new market: fresh view
       const own = (marketSlug && marketSlug === leg.marketSlug) || (marketId != null && marketId === leg.marketId);
       extra = own ? (leg.extraPoints || []).filter(x => x && x.chance > 0 && x.chance < 100).map(x => ({ t: Date.parse(x.t), chance: +x.chance })).filter(x => x.t) : [];
       tick = { points: [], marks: [] };
@@ -417,7 +523,9 @@
     /** Event payload (poll): learn the slug for Live Bets cards that only know the id. */
     sec.fromEvent = ev => {
       const gi = gameInfo(ev, leg.start_time || leg.startTime);
-      if (gi && (!game || gi.status !== game.status || gi.end !== game.end)) { game = gi; draw(); }
+      const ps = pairSides(ev, cur), hd = scoreHeader(ev);
+      const chg = JSON.stringify([ps, hd]) !== JSON.stringify([meta, head]); if (ps) meta = ps; head = hd;
+      if (gi && (!game || gi.status !== game.status || gi.end !== game.end)) { game = gi; draw(); } else if (chg) draw();
       if (cur.slug) return;
       const m = ((ev && ev.markets) || []).find(x => cur.id != null && String(x.id) === String(cur.id));
       if (m && m.slug) { cur.slug = m.slug; loadApi(m.slug); }
@@ -430,9 +538,12 @@
       const b = Number(md.bestBid && md.bestBid.value), a = Number(md.bestAsk && md.bestAsk.value);
       const c = q > 0 && q < 1 ? q * 100 : side ? (b > 0 ? 100 - b * 100 : null) : (a > 0 ? a * 100 : null);
       if (!(c > 0 && c < 100)) return;
-      const last = live[live.length - 1];
-      if (last && Date.now() - last.t < 60000 && Math.abs(last.chance - c) < 0.05) { last.t = Date.now(); } else live.push({ t: Date.now(), chance: c });
-      if (live.length > 2000) live.shift();
+      const add = (arr, v) => { const last = arr[arr.length - 1];
+        if (last && Date.now() - last.t < 60000 && Math.abs(last.chance - v) < 0.05) { last.t = Date.now(); } else arr.push({ t: Date.now(), chance: v });
+        if (arr.length > 2000) arr.shift(); };
+      add(live, c);
+      const q2 = Number((side ? md.longQuote : md.shortQuote) && (side ? md.longQuote : md.shortQuote).value);   // other side's own quote
+      if (q2 > 0 && q2 < 1) add(live2, q2 * 100);
       draw();
     };
     sec.showMarket(leg.marketId, leg.marketSlug);
@@ -671,5 +782,5 @@
   /** Event slug from a Polymarket US event URL. */
   const slugFromUrl = u => { const m = /\/([a-z]+-[a-z0-9]+-[a-z0-9]+-\d{4}-\d{2}-\d{2})(?:[/?#]|$)/.exec(u || ''); return m ? m[1] : null; };
 
-  return { note, noteText, blankVisuals, VISUALS, liveChart, seasonStart, tagSeason, loadGames, ESPN_PATH, espnAbbr, open, close, chartBtn, pmHistory, viewWindow, prepSeries, nearestIdx, defaultView, gameInfo, fitY, rangeLabel, parseProp, siblingLines, gamesFromLog, summary, pickGames, seriesFor, american, slugFromUrl, statOf };
+  return { TEAM_COLORS, legible, teamColor, pairSides, scoreHeader, stepPoints, complement, valueAt, note, noteText, blankVisuals, VISUALS, liveChart, seasonStart, tagSeason, loadGames, ESPN_PATH, espnAbbr, open, close, chartBtn, pmHistory, viewWindow, prepSeries, nearestIdx, defaultView, gameInfo, fitY, rangeLabel, parseProp, siblingLines, gamesFromLog, summary, pickGames, seriesFor, american, slugFromUrl, statOf };
 });

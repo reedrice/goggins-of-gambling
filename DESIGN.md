@@ -23,3 +23,6 @@ Linked from [AGENTS.md](AGENTS.md). Detail and history are in [HANDOFF.md](HANDO
 
 - **Analytics sheet opens on the live price chart.** Every bet's sheet leads with its live Polymarket price chart (same data + ~1 s polling as the main chart). History bars and stats are secondary, below it (scroll). If the current season has no games yet, the bars say so; never auto-show last season (the "Last season" chip stays). Never leave anything blank.
 - **Never blank.** Every chart, bar set, donut, pop-up and sheet shows something: "Loading…" while fetching, then data, or a one-line note naming the source and the time we checked ("Checked ESPN · not enough games yet to chart · 6:17 AM CT", "Checked Polymarket · no price history yet · …"). Fetch errors say so and retry ("Couldn't reach Polymarket · retrying"). `Viz.note()` makes these; `tests/no-blank.smoke.js` fails on an empty visual container.
+
+## Game price charts look like Polymarket (Oct 20, 2026)
+Game markets draw two stepped lines, one per side, in team colors (fallback green / blue), with a dot at the end and the side's name above a big whole %. There's a score header above (abbr, big score, red "Live" and the period). No y-axis or grid. Props stay one stepped Yes line. Every line is step-after, like Polymarket.
