@@ -36,3 +36,10 @@ console.log('viz ok');
   assert.deepStrictEqual(V.pmHistory(j, 0), [{ t: 100000, chance: 61 }]);
   assert.strictEqual(Math.round(V.pmHistory(j, 1)[0].chance), 41);
   console.log('pmHistory ok'); }
+{ const V = require('../js/viz.js'); const assert = require('assert');
+  const w = V.viewWindow(0, 7200e3, { span: 3600e3, live: true }); assert.deepStrictEqual([w.a, w.b], [3600e3, 7200e3]);
+  const w2 = V.viewWindow(0, 7200e3, { span: 3600e3, end: 1000, live: false }); assert.deepStrictEqual([w2.a, w2.b], [0, 3600e3]);   // clamped
+  const w3 = V.viewWindow(0, 600e3, { span: null, live: true }); assert.deepStrictEqual([w3.a, w3.b], [0, 600e3]);
+  const y = V.fitY([50, 60]); assert.ok(y.lo < 50 && y.hi > 60 && y.hi - y.lo < 15);
+  assert.match(V.rangeLabel(Date.parse('2026-10-20T09:20:00Z'), Date.parse('2026-10-20T09:37:00Z')), /4:20 AM – 4:37 AM CT/);
+  console.log('zoom ok'); }

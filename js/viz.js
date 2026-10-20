@@ -134,47 +134,158 @@
   const cache = {};
   const getJSON = url => (cache[url] = cache[url] || fetch(url).then(r => (r.ok ? r.json() : null)).catch(() => null));
 
-  /** Draw the price line into box. */
+  // ------------------------------------------------------------ zoomable chart (§55)
+  const DEFAULT_SPAN = 3600e3, MIN_SPAN = 60e3;
+  /** Pure: visible window {a, b} for data [tMin, tMax] and view state {span, end, live}. */
+  function viewWindow(tMin, tMax, v) {
+    const full = Math.max(MIN_SPAN, tMax - tMin);
+    const span = Math.min(full, Math.max(MIN_SPAN, v.span || full));
+    let end = v.live ? tMax : Math.min(tMax, Math.max(tMin + span, v.end || tMax));
+    return { a: end - span, b: end, span };
+  }
+  /** Pure: y range (chance points) that fits the visible points with a little padding. */
+  function fitY(vals) {
+    if (!vals.length) return { lo: 40, hi: 60 };
+    let lo = Math.min(...vals), hi = Math.max(...vals);
+    const pad = Math.max(0.5, (hi - lo) * 0.12);
+    if (hi - lo < 2) { const m = (hi + lo) / 2; lo = m - 1; hi = m + 1; }
+    return { lo: Math.max(0.5, lo - pad), hi: Math.min(99.5, hi + pad) };
+  }
+  /** Pure: "4:20 AM – 4:37 AM CT" (weekday added when the window is long or crosses days). */
+  function rangeLabel(a, b) {
+    const day = t => new Date(t).toLocaleDateString('en-US', { timeZone: 'America/Chicago', weekday: 'short' });
+    const withDay = b - a > 12 * 3600e3 || day(a) !== day(b);
+    return `${withDay ? day(a) + ' ' : ''}${clock(a)} – ${withDay ? day(b) + ' ' : ''}${clock(b)} CT`;
+  }
+
+  /**
+   * Draw (or refresh) the price line in box. Stock-app style (§55): pinch / mouse wheel to
+   * zoom, drag to pan, tap or long-press to read a point, double-tap or Reset to snap back.
+   * The y-axis fits what's in view. While "live", new points keep the right edge at now;
+   * panning away shows "Back to live". The view state lives on the box, so the 1.5 s live
+   * refreshes don't undo a zoom. Default view: the last hour when there's more than that.
+   */
   function drawChart(box, points, marks) {
-    box.replaceChildren();
+    box._pts = points; box._marks = marks || [];
     if (points.length < 2) {
-      box.append(el('div', 'viz-none', points.length ? `Only one price so far: ${american(points[0].chance)} (${Math.round(points[0].chance)}% chance). The line grows while the game is tracked.` : 'No price history yet. The line starts when our live tracker checks this game.'));
+      box._ui = null;
+      box.replaceChildren(el('div', 'viz-none', points.length ? `Only one price so far: ${american(points[0].chance)} (${Math.round(points[0].chance)}% chance). The line grows while this is open.` : 'No price history yet.'));
       return;
     }
-    const W = 340, H = 170, L = 44, R = 8, T = 10, B = 22;
-    const t0 = points[0].t, t1 = points[points.length - 1].t;
-    let lo = Math.min(...points.map(p => p.chance)), hi = Math.max(...points.map(p => p.chance));
-    if (hi - lo < 6) { const m = (hi + lo) / 2; lo = m - 3; hi = m + 3; }
-    lo = Math.max(1, lo - 2); hi = Math.min(99, hi + 2);
-    const x = t => L + (W - L - R) * (t - t0) / Math.max(1, t1 - t0), y = c => T + (H - T - B) * (hi - c) / (hi - lo);
-    const svg = sv('svg', { viewBox: `0 0 ${W} ${H}`, class: 'viz-svg', role: 'img', 'aria-label': 'Price over time' });
-    for (const c of [hi, (hi + lo) / 2, lo]) {
+    if (!box._ui) buildChart(box);
+    renderChart(box);
+  }
+  const W = 340, H = 180, L = 46, R = 8, T = 10, B = 22;
+  function buildChart(box) {
+    const range = el('div', 'viz-range'), ctl = el('div', 'viz-ctl');
+    const live = el('button', 'viz-mini viz-golive', '● Live'), reset = el('button', 'viz-mini viz-reset', '↺');
+    live.setAttribute('aria-label', 'Back to live'); reset.setAttribute('aria-label', 'Reset zoom'); reset.title = 'Reset';
+    live.type = reset.type = 'button';
+    ctl.append(range, live, reset);
+    const svg = sv('svg', { viewBox: `0 0 ${W} ${H}`, class: 'viz-svg', role: 'img', 'aria-label': 'Price over time. Pinch or scroll to zoom, drag to move.' });
+    const read = el('div', 'viz-read');
+    box.replaceChildren(ctl, svg, read);
+    const pts0 = box._pts, full0 = pts0[pts0.length - 1].t - pts0[0].t;
+    const ui = box._ui = { svg, read, range, live, reset, v: { span: full0 > DEFAULT_SPAN * 1.5 ? DEFAULT_SPAN : null, end: null, live: true }, sel: null };
+    const def = () => { const p = box._pts, f = p[p.length - 1].t - p[0].t; return { span: f > DEFAULT_SPAN * 1.5 ? DEFAULT_SPAN : null, end: null, live: true }; };
+    reset.onclick = () => { ui.v = def(); ui.sel = null; renderChart(box); };
+    live.onclick = () => { ui.v.live = true; ui.sel = null; renderChart(box); };
+    const xOf = ev => { const r = svg.getBoundingClientRect(); return (ev.clientX - r.left) * W / r.width; };
+    const tAt = px => { const w = ui.win; return w.a + (w.b - w.a) * Math.min(1, Math.max(0, (px - L) / (W - L - R))); };
+    const zoom = (factor, px) => {
+      const p = box._pts, tMin = p[0].t, tMax = p[p.length - 1].t, w = ui.win, pivot = tAt(px);
+      const span = Math.min(Math.max(MIN_SPAN, tMax - tMin), Math.max(MIN_SPAN, w.span * factor));
+      const frac = (pivot - w.a) / (w.b - w.a || 1);
+      const end = Math.min(tMax, Math.max(tMin + span, pivot + (1 - frac) * span));
+      ui.v = { span, end, live: ui.v.live && end >= tMax - 1 };
+      renderChart(box);
+    };
+    svg.addEventListener('wheel', e => { e.preventDefault(); zoom(e.deltaY > 0 ? 1.25 : 0.8, xOf(e)); }, { passive: false });
+    const ptrs = new Map(); let drag = null, pinch = null, lastTap = 0, pressTimer = null;
+    svg.addEventListener('pointerdown', e => {
+      svg.setPointerCapture(e.pointerId); ptrs.set(e.pointerId, xOf(e));
+      if (ptrs.size === 2) { const [x1, x2] = [...ptrs.values()]; pinch = { d: Math.abs(x1 - x2) || 1, span: ui.win.span }; drag = null; clearTimeout(pressTimer); return; }
+      drag = { x: xOf(e), end: ui.win.b, moved: false };
+      pressTimer = setTimeout(() => { if (drag && !drag.moved) { ui.sel = tAt(drag.x); renderChart(box); } }, 350);   // long-press reads
+    });
+    svg.addEventListener('pointermove', e => {
+      if (!ptrs.has(e.pointerId)) { if (e.pointerType === 'mouse' && !drag) { ui.sel = tAt(xOf(e)); renderChart(box); } return; }
+      ptrs.set(e.pointerId, xOf(e));
+      if (pinch && ptrs.size === 2) {
+        const [x1, x2] = [...ptrs.values()], d = Math.abs(x1 - x2) || 1;
+        const target = pinch.span * pinch.d / d;
+        zoom(target / ui.win.span, (x1 + x2) / 2); return;
+      }
+      if (!drag) return;
+      const dx = xOf(e) - drag.x;
+      if (Math.abs(dx) > 6) drag.moved = true;
+      if (!drag.moved) return;
+      if (ui.sel != null && e.pointerType !== 'mouse') { ui.sel = tAt(xOf(e)); renderChart(box); return; }   // after long-press: scrub
+      const p = box._pts, tMin = p[0].t, tMax = p[p.length - 1].t, w = ui.win;
+      const dt = -dx * (w.b - w.a) / (W - L - R);
+      const end = Math.min(tMax, Math.max(tMin + w.span, drag.end + dt));
+      ui.v = { span: w.span, end, live: end >= tMax - 1 };
+      renderChart(box);
+    });
+    const up = e => {
+      ptrs.delete(e.pointerId); clearTimeout(pressTimer);
+      if (ptrs.size < 2) pinch = null;
+      if (drag && !drag.moved && e.type === 'pointerup') {
+        const now = Date.now();
+        if (now - lastTap < 300) { ui.v = def(); ui.sel = null; } else ui.sel = tAt(drag.x);   // double-tap resets, tap reads
+        lastTap = now; renderChart(box);
+      }
+      drag = null;
+    };
+    svg.addEventListener('pointerup', up); svg.addEventListener('pointercancel', up);
+  }
+  function renderChart(box) {
+    if (!box._ui) return;
+    if (box._raf) return;
+    const run = () => { box._raf = 0; paint(box); };
+    if (typeof requestAnimationFrame === 'function') box._raf = requestAnimationFrame(run); else run();
+  }
+  function paint(box) {
+    const ui = box._ui, pts = box._pts, marks = box._marks, svg = ui.svg;
+    const tMin = pts[0].t, tMax = pts[pts.length - 1].t;
+    const win = ui.win = viewWindow(tMin, tMax, ui.v);
+    // Visible points + one on each side so the line reaches the edges.
+    let i0 = pts.findIndex(p => p.t >= win.a); if (i0 < 0) i0 = pts.length - 1;
+    let i1 = pts.length - 1; while (i1 > 0 && pts[i1].t > win.b) i1--;
+    const vis = pts.slice(Math.max(0, i0 - 1), Math.min(pts.length, i1 + 2));
+    const { lo, hi } = fitY(pts.slice(i0, i1 + 1).map(p => p.chance).concat(vis.length ? [] : []));
+    const x = t => L + (W - L - R) * (t - win.a) / Math.max(1, win.b - win.a), y = c => T + (H - T - B) * (hi - c) / (hi - lo);
+    svg.replaceChildren();
+    const defs = sv('defs', {}), clip = sv('clipPath', { id: 'vzclip' + (box._cid || (box._cid = Math.random().toString(36).slice(2, 7))) });
+    clip.append(sv('rect', { x: L, y: 0, width: W - L - R, height: H - B })); defs.append(clip); svg.append(defs);
+    for (const c of [hi - (hi - lo) * 0.08, (hi + lo) / 2, lo + (hi - lo) * 0.08]) {
       svg.append(sv('line', { x1: L, x2: W - R, y1: y(c), y2: y(c), class: 'viz-grid' }));
       const tx = sv('text', { x: L - 4, y: y(c) + 4, class: 'viz-ylab', 'text-anchor': 'end' }); tx.textContent = american(c); svg.append(tx);
     }
-    for (const m of marks) if (m.t >= t0 && m.t <= t1) {
-      svg.append(sv('line', { x1: x(m.t), x2: x(m.t), y1: T, y2: H - B, class: 'viz-mark' }));
-      const tx = sv('text', { x: x(m.t) + 2, y: T + 9, class: 'viz-mlab' }); tx.textContent = String(m.label).split(' · ')[0]; svg.append(tx);
+    const g = sv('g', { 'clip-path': `url(#vzclip${box._cid})` });
+    for (const m of marks) if (m.t >= win.a && m.t <= win.b) {
+      g.append(sv('line', { x1: x(m.t), x2: x(m.t), y1: T, y2: H - B, class: 'viz-mark' }));
+      const tx = sv('text', { x: x(m.t) + 2, y: T + 9, class: 'viz-mlab' }); tx.textContent = String(m.label).split(' · ')[0]; g.append(tx);
     }
-    const up = points[points.length - 1].chance >= points[0].chance;
-    svg.append(sv('polyline', { points: points.map(p => `${x(p.t).toFixed(1)},${y(p.chance).toFixed(1)}`).join(' '), class: 'viz-line ' + (up ? 'viz-up' : 'viz-down') }));
-    const day = t => new Date(t).toLocaleDateString('en-US', { timeZone: 'America/Chicago', weekday: 'short' });
-    for (const [t, a] of [[t0, 'start'], [t1, 'end']]) { const tx = sv('text', { x: x(t), y: H - 6, class: 'viz-xlab', 'text-anchor': a }); tx.textContent = (t1 - t0 > 12 * 3600e3 ? day(t) + ' ' : '') + clock(t); svg.append(tx); }
-    const dot = sv('circle', { r: 4, class: 'viz-dot', cx: x(t1), cy: y(points[points.length - 1].chance) }); svg.append(dot);
-    const read = el('div', 'viz-read');
-    const show = p => {
-      dot.setAttribute('cx', x(p.t)); dot.setAttribute('cy', y(p.chance));
-      const mk = marks.filter(m => m.t <= p.t).pop();
-      read.textContent = `${clock(p.t)} CT · ${american(p.chance)} · ${Math.round(p.chance)}% chance · $10 pays $${Math.floor(1000 / p.chance)}${mk ? ' · ' + mk.label : ''}`;
-    };
-    const near = ev => {
-      const r = svg.getBoundingClientRect(), cx = ((ev.touches ? ev.touches[0].clientX : ev.clientX) - r.left) * W / r.width;
-      let best = points[0]; for (const p of points) if (Math.abs(x(p.t) - cx) < Math.abs(x(best.t) - cx)) best = p; show(best);
-    };
-    svg.addEventListener('pointermove', near); svg.addEventListener('pointerdown', near);
-    svg.addEventListener('touchmove', e => { near(e); e.preventDefault(); }, { passive: false });
-    show(points[points.length - 1]);
-    box.append(svg, read);
+    const up = vis.length > 1 && vis[vis.length - 1].chance >= vis[0].chance;
+    g.append(sv('polyline', { points: vis.map(p => `${x(p.t).toFixed(1)},${y(p.chance).toFixed(1)}`).join(' '), class: 'viz-line ' + (up ? 'viz-up' : 'viz-down') }));
+    svg.append(g);
+    // Time ticks adapt to the zoom: 3 labels (start, middle, end of view).
+    const span = win.b - win.a, fmt = t => span > 36 * 3600e3 ? new Date(t).toLocaleDateString('en-US', { timeZone: 'America/Chicago', weekday: 'short', hour: 'numeric' })
+      : span < 10 * 60e3 ? new Date(t).toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit', second: '2-digit' }) : clock(t);
+    [[win.a, 'start'], [(win.a + win.b) / 2, 'middle'], [win.b, 'end']].forEach(([t, an]) => { const tx = sv('text', { x: x(t), y: H - 6, class: 'viz-xlab', 'text-anchor': an }); tx.textContent = fmt(t); svg.append(tx); });
+    // Read-out: selected point (tap / long-press / mouse hover), else the latest.
+    const pick = t => { let best = pts[0]; for (const p of pts) if (Math.abs(p.t - t) < Math.abs(best.t - t)) best = p; return best; };
+    const p = ui.sel != null ? pick(ui.sel) : pts[pts.length - 1];
+    if (p.t >= win.a - 1 && p.t <= win.b + 1) {
+      if (ui.sel != null) svg.append(sv('line', { x1: x(p.t), x2: x(p.t), y1: T, y2: H - B, class: 'viz-cross' }));
+      svg.append(sv('circle', { r: 4, class: 'viz-dot', cx: x(p.t), cy: y(p.chance) }));
+    }
+    const mk = marks.filter(m => m.t <= p.t).pop();
+    ui.read.textContent = `${clock(p.t)} CT · ${american(p.chance)} · ${Math.round(p.chance)}% chance · $10 pays $${Math.floor(1000 / p.chance)}${mk ? ' · ' + mk.label : ''}`;
+    ui.range.textContent = rangeLabel(win.a, win.b);
+    const zoomed = !!ui.v.span && ui.v.span < tMax - tMin;
+    ui.live.hidden = ui.v.live; ui.reset.hidden = !(zoomed || !ui.v.live);   // only when zoomed or panned
   }
 
   /** Pure: Polymarket US /v1/price-history rows -> [{t, chance}] for a side (Yes = longPrice, No = shortPrice). */
@@ -218,7 +329,7 @@
     sec.slug = () => cur.slug || null;
     sec.showMarket = (marketId, marketSlug) => {
       if (marketId === cur.id && marketSlug === cur.slug && gen) return;
-      gen++; cur = { id: marketId, slug: marketSlug }; api = []; live = [];
+      gen++; cur = { id: marketId, slug: marketSlug }; api = []; live = []; box._ui = null;   // new market: fresh view
       const own = (marketSlug && marketSlug === leg.marketSlug) || (marketId != null && marketId === leg.marketId);
       extra = own ? (leg.extraPoints || []).filter(x => x && x.chance > 0 && x.chance < 100).map(x => ({ t: Date.parse(x.t), chance: +x.chance })).filter(x => x.t) : [];
       tick = { points: [], marks: [] };
@@ -449,5 +560,5 @@
   /** Event slug from a Polymarket US event URL. */
   const slugFromUrl = u => { const m = /\/([a-z]+-[a-z0-9]+-[a-z0-9]+-\d{4}-\d{2}-\d{2})(?:[/?#]|$)/.exec(u || ''); return m ? m[1] : null; };
 
-  return { open, close, chartBtn, pmHistory, parseProp, siblingLines, gamesFromLog, summary, pickGames, seriesFor, american, slugFromUrl, statOf };
+  return { open, close, chartBtn, pmHistory, viewWindow, fitY, rangeLabel, parseProp, siblingLines, gamesFromLog, summary, pickGames, seriesFor, american, slugFromUrl, statOf };
 });

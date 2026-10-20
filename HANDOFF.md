@@ -1111,3 +1111,15 @@ they open in a pop-up when you tap a pick card (Picks tab) or a Live Bets card.
   `live-watch.mjs check` prints "Market:" instead of "Bet it:".
 - **Guard:** `tests/no-instructions.test.mjs` fails if `tap "No"`, `tap "Yes"`, `— tap` or "Suggested bet" appears in any
   data/*.json or in the user-facing strings (strings.js), and checks `Plain.neutral` / `splitTap`.
+
+## 55. Zoomable price chart, Apple-like (Oct 20, 2026)
+- `drawChart` in js/viz.js is now a stock-app chart. No range buttons (Reed): pinch (touch) or mouse wheel to zoom,
+  drag to pan, tap or long-press to read a point (long-press then drag scrubs), mouse hover reads on desktop,
+  double-tap resets. Default view = last hour when there's more than ~1.5 h of data, else everything.
+- Y-axis fits only what's in view (+12% padding) so small moves aren't flattened. Time labels adapt (seconds when
+  under 10 min, weekday + hour when over 36 h). A quiet label shows the window, e.g. "4:20 AM – 4:37 AM CT".
+- Live: the view stays pinned to now as new points arrive (1.5 s polling unchanged) unless you pan away; then a small
+  "● Live" pill appears to snap back. A small "↺" reset pill appears only when zoomed or panned.
+- The view state lives on the chart box, so live refreshes don't undo a zoom; switching line chips starts a fresh view.
+  Repaints are throttled with requestAnimationFrame. `touch-action: none` stops page scroll/zoom while gesturing.
+- Pure helpers `viewWindow`, `fitY`, `rangeLabel` are tested in tests/viz.test.js. Styles: "§55" block in style.css.
