@@ -475,7 +475,7 @@
     renderHeader();
     renderPlatformToggle();
     window.Picker.loadIndex().catch(() => {});
-    go(location.hash ? location.hash.slice(1) : savedView());
+    go(pendingPick ? 'picks' : location.hash ? location.hash.slice(1) : savedView());
     startLiveAlerts();
     seedBets();
   }
@@ -836,6 +836,60 @@
   const legText = l => { const t = PL.splitTap(l.desc).title; return l.player ? window.Positions.inText(t, l.league, l.playerTeam, l.player) : esc(t); };
 
   /** One pick card. @param {object} pk @param {string} cat category @param {string} sec section key */
+
+  // ------------------------------------------------- Share a pick (HANDOFF §46)
+  let pendingPick = new URLSearchParams(location.search).get('pick');
+  const shareAm = c => (c > 0 && c < 100 ? C.formatPrice(c, 'american') : '');
+  const multAm = m => (m >= 2 ? '+' + Math.round((m - 1) * 100).toLocaleString('en-US') : m > 1 ? '-' + Math.round(100 / (m - 1)) : '');
+  function chanceLine(pct) {
+    const w = PL.chanceWords(pct / 100);
+    if (!w) return '';
+    return w.kind === 'almost' ? 'Wins almost every time' : w.kind === 'of10' ? `Wins about ${w.n} out of 10 times` : `Hits about 1 in ${w.n.toLocaleString('en-US')} times`;
+  }
+  function shareDate(day) {
+    const d = /^\d{4}-\d{2}-\d{2}$/.test(day || '') ? new Date(day + 'T12:00:00') : null;
+    return d ? d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }) : '';
+  }
+  const legSport = (l, pk) => String((l.team && l.team.league) || l.league || (pk.sport || '').split('+')[0] || '').trim().toUpperCase();
+  /** Card pick -> Share info (no stakes, no cents). */
+  function shareInfoPick(pk) {
+    const multi = Array.isArray(pk.legs) && pk.legs.length > 0;
+    const legs = multi ? pk.legs.map(l => ({ sport: legSport(l, pk), text: legName(l.desc), am: shareAm(l.price) }))
+      : [{ sport: legSport(pk, pk), text: legName(pk.side) || pk.market, am: shareAm(pk.price) }];
+    const m = multi ? (pk.quoted_multiple || pk.est_multiple) : (pk.price > 0 ? 100 / pk.price : 0);
+    const hp = typeof pk.hit_prob === 'number' ? pk.hit_prob : (!multi && pk.price) || 0;
+    return { id: pk.id, multi, title: multi ? (pk.market || pk.side) : (legName(pk.side) || pk.market), sub: pk.event || '', date: shareDate(picksData && pickDayOf(pk, picksData)), legs,
+      combinedAm: m ? multAm(m) : '', pay10: m ? Math.round(10 * m).toLocaleString('en-US') : '', chance: chanceLine(hp) };
+  }
+  /** Record pick-history entry -> Share info. */
+  function shareInfoHist(h) {
+    const m = histMultiple(h), multi = (h.legs || []).length > 1;
+    return { id: h.id, multi, title: histName(h), sub: h.sport || '', date: shareDate(h.slate_date),
+      legs: (h.legs || []).map(l => ({ sport: legSport(l, h), text: legName(l.desc), am: shareAm(l.publish) })),
+      combinedAm: m ? multAm(m) : '', pay10: m ? Math.round(10 * m).toLocaleString('en-US') : '', chance: chanceLine(h.hit_prob) };
+  }
+  const shareBtn = id => `<button type="button" class="share-btn" data-share="${esc(id)}" aria-haspopup="menu" aria-label="Share">⤴ Share</button>`;
+  /** After the Picks list renders: wire Share buttons and handle a ?pick=<id> deep link. */
+  let shareAll = {};
+  async function afterPicksRender(el, all) {
+    shareAll = all;
+    el.querySelectorAll('[data-share]').forEach(b => (b.onclick = e => { e.stopPropagation(); const pk = all[b.dataset.share]; if (pk) window.Share.menu(shareInfoPick(pk), b); }));
+    if (!pendingPick) return;
+    const id = pendingPick;
+    const pk = all[id];
+    if (pk) {
+      const day = pickDayOf(pk, picksData);
+      if (picksDay !== day || picksSport) { picksDay = day; picksSport = ''; renderPicks(); return; }
+      pendingPick = null;
+      const card = el.querySelector(`[data-pick-id="${CSS.escape(id)}"]`);
+      if (card) { card.scrollIntoView({ block: 'center' }); card.classList.add('pick-hl'); setTimeout(() => card.classList.remove('pick-hl'), 4000); }
+    } else {
+      pendingPick = null;
+      try { const hist = await fetchData('data/pick-history.json'); const h = ((hist && hist.picks) || []).find(x => x.id === id); if (h) openHistSlip(h); else toast('That pick is no longer on the board.'); } catch (e) { /* ignore */ }
+    }
+    history.replaceState(null, '', location.pathname + location.hash);
+  }
+
   function pickCard(pk, cat, sec) {
     const P = STR.picks;
     const isMulti = Array.isArray(pk.legs) && pk.legs.length > 0;
@@ -861,14 +915,14 @@
          ${deal ? `<div class="deal deal-${deal} small">${esc(STR.plain.deal[deal])} ${tip('advantage')}</div>` : ''}
          ${priceLineHtml(pk, bookPrices(pk), true)}`);
     const teams = (pk.teams || []).map(teamRef);
-    return `<div class="card ${action === 'skip' ? 'skip' : ''} ${sec === 'lottery' ? 'lotto' : ''}">
+    return `<div class="card ${action === 'skip' ? 'skip' : ''} ${sec === 'lottery' ? 'lotto' : ''}" data-pick-id="${esc(pk.id || '')}">
       <div class="pick-head">
         <div class="pick-id">${teams.length ? `<span class="logos">${T.badges(teams, 30)}</span>` : ''}<div>
           ${/* Combos: the tier name ("Small payout · 3 picks") is the title; the legs list below says what's in it. */ ''}
           <div class="pick-title">${esc(isMulti ? pk.market || pk.side : sp.title || pk.market)}</div>
           <div class="pick-sub">${!isMulti && pk.market && pk.side ? posText(pk.market, pk) + ' · ' : ''}${esc(pk.event || '')}</div>
         </div></div>
-        <span class="badge ${esc(action)}">${esc(P.badge[action] || action)}</span>
+        <span class="pick-actions"><span class="badge ${esc(action)}">${esc(P.badge[action] || action)}</span>${pk.id ? shareBtn(pk.id) : ''}</span>
       </div>
       ${evalBlock(pk, sec || 'singles')}
       ${moneyHtml}
@@ -1004,6 +1058,9 @@
     $('#picks-refresh').onclick = refreshPickPrices;
     el.querySelectorAll('[data-pick-day]').forEach(b => (b.onclick = () => { picksDay = b.dataset.pickDay; renderPicks(); }));
     el.querySelectorAll('[data-pick-sport]').forEach(b => (b.onclick = () => { picksSport = b.dataset.pickSport; renderPicks(); }));
+    const all = {};
+    for (const [key] of PICK_SECTIONS) if (key !== 'predictions') (sec[key] || []).forEach(it => it && it.id && (all[it.id] = it));
+    afterPicksRender(el, all);
   }
 
   // ------------------------------------------------- Picks "Refresh prices" (HANDOFF §37)
@@ -1899,7 +1956,8 @@
     }).join('');
     const total = m ? C.formatPrice(100 / m, 'american') : '';
     const u = histUnits(h);
-    openSheet(`<div class="tp-top"><div><div class="tp-pick">${esc(histName(h))}</div>
+    setTimeout(() => { const b = document.querySelector('.sheet [data-share-hist]'); if (b) b.onclick = e => { e.stopPropagation(); window.Share.menu(shareInfoHist(h), b); }; }, 0);
+    openSheet(`<button type="button" class="share-btn sheet-share" data-share-hist="1" aria-haspopup="menu">⤴ Share</button><div class="tp-top"><div><div class="tp-pick">${esc(histName(h))}</div>
         <div class="pick-sub">${esc(h.sport)} · ${esc(H.cat[h.category] || h.category)} · ${esc(h.slate_date)}</div></div>${resBadge(h.result)}</div>
       ${row2(X.chance, esc(Math.round(h.hit_prob) + '%'))}
       ${total && (h.legs || []).length > 1 ? row2(H.allOdds, esc(total)) : ''}
@@ -2083,6 +2141,6 @@
     if (!S.getProfile()) showOnboarding(); else startApp();
   }
 
-  window.BetDash = { computeCalc, calibration, bankrollStats, recordByCategory, openTarget, getCalc: () => calc };
+  window.BetDash = { shareInfo: id => shareAll[id] && shareInfoPick(shareAll[id]), computeCalc, calibration, bankrollStats, recordByCategory, openTarget, getCalc: () => calc };
   boot();
 })();
