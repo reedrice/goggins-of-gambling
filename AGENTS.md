@@ -68,3 +68,9 @@ Unclear Trent bets are flagged `needs_clarification` + `question` and stay pendi
 
 ## Routines handoff (Oct 20, 2026)
 Reed's 5 routines can be run by any bot (grok, chatgpt, pablo). Only the owner in `routines/owners.json` runs each one. See [routines/README.md](routines/README.md). Every run starts with `node scripts/routine-gate.mjs check <id> <me>` and ends with `stamp`.
+
+## Brandon sandbox release gate (Reed, Oct 20, 2026)
+
+Reed must explicitly approve the specific sandbox version and changes before anything is moved to the live site. Reed's existing ChatGPT/Codex agent must review the diff, select only approved UI changes, run relevant functionality and mobile checks, and prepare a rollback point before deployment. Brandon and his agent may update the sandbox only; they must not merge, push, publish, or automatically sync sandbox changes into production. Sandbox completion, a passing test, or approval from another contributor does not replace Reed's approval and that review. Approval applies only to the reviewed changes; later edits require a fresh review.
+
+Sandbox repository: https://github.com/reedrice/goggins-picks-sandbox . Preview: https://reedrice.github.io/goggins-picks-sandbox/#picks . Sandbox tooling and storage guards must not be copied into production.

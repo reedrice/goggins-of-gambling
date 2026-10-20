@@ -1299,3 +1299,11 @@ At Reed?s request, changed the active Codex Fade Trent heartbeat from every five
 ## 65. Live Bets: All games filter (Oct 20, 2026)
 
 Reed explicitly requested combined edges across every game, authorizing this edit in Richie?s view. All games is now the default with individual game chips retained. Fetches all nonfinal feeds, combines/sorts edges and alerts, keeps original event URLs and chart targets on every card, and labels each card with its game/status. Partial fetch failures are visible; request sequencing prevents an older refresh overriding a newer filter selection. Existing grouping/show-more and odds/injury filters remain. No feed writer changes. Tests cover source attribution, overlapping keys, ordering, final exclusion and partial results.
+
+## 66. Brandon sandbox and required production review (Oct 20, 2026)
+
+Brandon (apexlegend883-pixel) is experimenting with a less cluttered Picks screen in the separate reedrice/goggins-picks-sandbox repository and Pages preview. Production is maintained independently; there is no automatic promotion.
+
+Reed must explicitly approve the specific sandbox version and changes before anything is moved to the live site. Reed's existing ChatGPT/Codex agent must review the diff, select only approved UI changes, run relevant functionality and mobile checks, and prepare a rollback point before deployment. Brandon and his agent may update the sandbox only; they must not merge, push, publish, or automatically sync sandbox changes into production. Sandbox completion, a passing test, or approval from another contributor does not replace Reed's approval and that review. Approval applies only to the reviewed changes; later edits require a fresh review.
+
+Bring across only approved changes after checking Picks filters, refresh, charts, Analytics, sharing, builder links, Play and other tabs. Preserve production data, routines and browser storage; exclude sandbox tooling. Follow version-bump and deployment verification rules.
