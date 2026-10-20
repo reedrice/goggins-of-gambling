@@ -391,6 +391,7 @@ export function carryOver(oldDoc, newDoc, drop = []) {
 
 /** `picks <file>`: validate, replace data/picks.json (carrying over later-day picks), commit + push. */
 function cmdPicks(file, o) {
+  ourChance(file, o);
   if (!file) usage('picks needs a file');
   const d = readJSON(file);
   failIf(validatePicks(d), file);
@@ -466,6 +467,13 @@ function cmdList(o) {
     const day = dayOf(pk, doc);
     if (!o.date || o.date === day) console.log(`${day}  ${sec.padEnd(9)}  ${pk.id}  ${pk.side}`);
   }
+}
+
+/** Our chance (§56): hit_prob from the History + Vegas + Market blend (scripts/our-chance.mjs). Never fatal. */
+function ourChance(file, o) {
+  if (o.dryRun || process.env.NO_OUR_CHANCE) return;
+  try { console.log(execFileSync(process.execPath, [path.join(ROOT, 'scripts/our-chance.mjs'), path.resolve(file)], { encoding: 'utf8', timeout: 120000 }).trim()); o.notes = [...o.notes, 'hit_prob from the Our chance blend (§56).']; }
+  catch (e) { console.error('Our chance skipped: ' + e.message.split('\n')[0]); }
 }
 
 /** `fill`: add missing hit_prob / risk / verdict / same_game to data/picks.json. */

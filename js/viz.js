@@ -87,7 +87,7 @@
       for (const c of st.categories || []) for (const e of c.events || []) {
         const meta = (log.events || {})[e.eventId] || {};
         const v = idx.reduce((sum, i) => sum + (parseFloat(String(e.stats[i]).split('-')[0]) || 0), 0);
-        out.push({ id: e.eventId, date: meta.gameDate || '', opp: (meta.opponent && meta.opponent.abbreviation) || '', team: (meta.team && meta.team.abbreviation) || '', season: st.displayName || '', value: v });
+        out.push({ id: e.eventId, date: meta.gameDate || '', opp: (meta.opponent && meta.opponent.abbreviation) || '', team: (meta.team && meta.team.abbreviation) || '', home: meta.atVs ? meta.atVs !== '@' : null, season: st.displayName || '', value: v });
       }
     }
     const seen = new Set();
@@ -344,7 +344,8 @@
   function priceSection(leg) {
     const sec = el('section', 'viz-sec');
     sec.append(el('h4', 'viz-h', '📈 Price over time'));
-    const box = el('div', 'viz-chart'); box.append(el('div', 'viz-none', 'Loading…')); sec.append(box);
+    const ocEl = el('div', 'oc oc-viz'); ocEl.hidden = true;   // Our chance (§56), set once a price is known
+    const box = el('div', 'viz-chart'); box.append(el('div', 'viz-none', 'Loading…')); sec.append(ocEl, box);
     let game = gameInfo(null, leg.start_time || leg.startTime), cur = {}, api = [], tick = { points: [], marks: [] }, extra = [], live = [], gen = 0;
     const side = leg.side === 1 ? 1 : 0;
     const draw = () => {
@@ -352,6 +353,11 @@
       const pts = basePts.concat(live).sort((x, y) => x.t - y.t);
       if (!pts.length && !leg.eventSlug && !cur.slug) { sec.hidden = true; return; }
       sec.hidden = false;
+      if (globalThis.OurChance && pts.length && (cur.slug || leg.marketSlug) && ocEl.dataset.slug !== (cur.slug || leg.marketSlug)) {
+        ocEl.dataset.slug = cur.slug || leg.marketSlug; ocEl.removeAttribute('data-oc-done'); ocEl.hidden = false;
+        ocEl.setAttribute('data-oc', JSON.stringify({ marketId: ocEl.dataset.slug, side: side ? 'no' : 'yes', market: pts[pts.length - 1].chance, text: leg.text, question: leg.question, player: leg.player || null }));
+        globalThis.OurChance.hydrate(sec);
+      }
       drawChart(box, pts, tick.marks, game);
     };
     const loadApi = async slug => {
@@ -506,6 +512,27 @@
     return sec;
   }
 
+  /** Our chance (§56): a player's games for a parsed prop (ESPN search + gamelog, + last season if short), cached. */
+  const gamesCache = new Map();
+  function loadGames(p) {
+    const k = p.player + '|' + p.league + '|' + p.stat.key;
+    if (gamesCache.has(k)) return gamesCache.get(k);
+    const base = 'https://site.web.api.espn.com/apis';
+    const job = (async () => {
+      const sr = await getJSON(`${base}/search/v2?query=${encodeURIComponent(p.player)}&limit=10&type=player`);
+      const hit = ((sr && sr.results) || []).flatMap(r => r.contents || []).find(c => (p.league ? c.defaultLeagueSlug === p.league : !!ESPN_PATH[c.defaultLeagueSlug]) && /a:(\d+)/.test(c.uid || ''));
+      if (!hit) return null;
+      const league = p.league || hit.defaultLeagueSlug, id = /a:(\d+)/.exec(hit.uid)[1], url = `${base}/common/v3/sports/${ESPN_PATH[league]}/athletes/${id}/gamelog`;
+      const log = await getJSON(url);
+      let all = gamesFromLog(log, p.stat);
+      const season = log && (log.filters || []).find(f => f.name === 'season');
+      if (all.length < 10 && season && season.value) all = all.concat(gamesFromLog(await getJSON(`${url}?season=${season.value - 1}`), p.stat));
+      const seen = new Set(); all = all.filter(g => !seen.has(g.id) && seen.add(g.id)).sort((a, b) => b.date.localeCompare(a.date));
+      return { games: all, team: all[0] ? all[0].team : null, id, league, log };
+    })().catch(() => null);
+    gamesCache.set(k, job); return job;
+  }
+
   // LIVE (§53): while the pop-up is open and the tab is visible, poll Polymarket US's
   // public BBO for each chart's market as fast as allowed (~1.5 s; public limit is
   // 20 requests/s per IP), plus the event every ~8 s for line-chip prices. On a 429
@@ -602,5 +629,5 @@
   /** Event slug from a Polymarket US event URL. */
   const slugFromUrl = u => { const m = /\/([a-z]+-[a-z0-9]+-[a-z0-9]+-\d{4}-\d{2}-\d{2})(?:[/?#]|$)/.exec(u || ''); return m ? m[1] : null; };
 
-  return { open, close, chartBtn, pmHistory, viewWindow, prepSeries, nearestIdx, defaultView, gameInfo, fitY, rangeLabel, parseProp, siblingLines, gamesFromLog, summary, pickGames, seriesFor, american, slugFromUrl, statOf };
+  return { loadGames, ESPN_PATH, espnAbbr, open, close, chartBtn, pmHistory, viewWindow, prepSeries, nearestIdx, defaultView, gameInfo, fitY, rangeLabel, parseProp, siblingLines, gamesFromLog, summary, pickGames, seriesFor, american, slugFromUrl, statOf };
 });

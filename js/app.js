@@ -809,7 +809,9 @@
     const width = ev.pct === null ? 0 : Math.max(2, Math.min(100, ev.pct));   // numeric only, safe in style
     const note = ev.sameGame === true ? (ev.source === 'given' ? E.sameGameGiven : E.sameGameLegs) : ev.sameGame === false ? E.diffGames : '';
     const preds = window.PickEval.findPredictions(pk, gamePreds, picksData && pickDayOf(pk, picksData))   // pick's own day (next-day picks);
-    return `<div class="eval">
+    const multi = Array.isArray(pk.legs) && pk.legs.length > 0;
+    const oc = !multi && pk.market_id && window.OurChance ? `<div class="oc" data-oc="${window.OurChance.attr({ marketId: pk.market_id, side: pk.market_side || 'yes', market: pk.price, text: pk.side, player: pk.player || null })}"></div>` : '';
+    return `<div class="eval">${oc}
       <div class="eval-top">
         <b class="eval-pct">${esc(pctTxt)}</b> ${tip('hitChance')}
         ${ev.risk ? `<span class="risk risk-${esc(ev.risk)}">${esc(E.risk[ev.risk] || ev.risk)}</span>${tip('risk')}` : ''}

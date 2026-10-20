@@ -709,6 +709,7 @@
       return `<div class="mrow">
         <div class="mlabel">${logos}${window.Viz ? window.Viz.chartBtn({ title: m.label, sub: shortTitle(ev), legs: [{ text: m.label, player: m.player || null, league: ev.league, eventSlug: ev.slug, marketSlug: m.id, side: 0 }] }, '📊') : ''}<span>${m.player ? window.Positions.inText(m.label, ev.league, m.team, m.player) : esc(m.label)}${withGame ? `<span class="muted small"> · ${esc(shortTitle(ev))}, ${esc(when(ev.start_time, true))}</span>` : ''}</span></div>
         <div class="mbtns">${btn('yes')}${btn('no')}</div>
+        ${window.OurChance && costOf(m, 'yes') != null ? `<div class="oc oc-sm" data-oc="${window.OurChance.attr({ marketId: m.id, side: 'yes', market: costOf(m, 'yes'), text: m.label, player: m.player || null, label: m.side_yes_label })}"></div>` : ''}
       </div>`;
     }
 

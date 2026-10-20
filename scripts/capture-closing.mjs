@@ -68,11 +68,11 @@ export function entriesFromPicks(doc) {
     for (const pk of (doc.sections || {})[sec] || []) {
       const raw = Array.isArray(pk.legs) && pk.legs.length ? pk.legs : [pk];
       const legs = raw.map(l => ({ market_id: l.market_id || null, side: l.market_side || null, slug: slugOf(l, pk), desc: String(l.desc || pk.side || '').slice(0, 120),
-        start_time: l.start_time || pk.start_time || null, ...kindOf(l.market_id), publish: typeof l.price === 'number' ? l.price : null, close: null, close_at: null, result: null }));
+        start_time: l.start_time || pk.start_time || null, ...kindOf(l.market_id), publish: typeof l.price === 'number' ? l.price : null, our_chance: typeof l.our_chance === 'number' ? l.our_chance : null, close: null, close_at: null, result: null }));
       if (!legs.every(l => l.market_id && (l.side === 'yes' || l.side === 'no') && l.slug && l.publish > 0)) continue;
       out.push({ id: pk.id, slate_date: pk.slate_date || doc.slate_date, sport: pk.sport || null, category: cat,
         type: legs.length > 1 ? 'parlay' : legs[0].type, stat: legs.length > 1 ? null : legs[0].stat,
-        hit_prob: typeof pk.hit_prob === 'number' ? pk.hit_prob : null, stake_units: typeof pk.stake_units === 'number' ? pk.stake_units : null,
+        hit_prob: typeof pk.hit_prob === 'number' ? pk.hit_prob : null, our_chance: typeof pk.our_chance === 'number' ? pk.our_chance : null, market_chance: typeof pk.market_chance === 'number' ? pk.market_chance : (typeof pk.price === 'number' ? pk.price : null), stake_units: typeof pk.stake_units === 'number' ? pk.stake_units : null,
         published_at: doc.updated_at || null, legs, result: 'pending', graded_at: null });
     }
   }
