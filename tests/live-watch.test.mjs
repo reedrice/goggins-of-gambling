@@ -191,7 +191,7 @@ test('tick: shouldTick + buildIndex', async () => {
   const { shouldTick, buildIndex } = await import('../scripts/live-tick.mjs');
   const now = Date.parse('2026-10-20T20:00:00Z');
   assert.strictEqual(shouldTick({ start: '2026-10-20T20:20:00Z' }, now), true);
-  assert.strictEqual(shouldTick({ start: '2026-10-20T21:00:00Z' }, now), false);
+  assert.strictEqual(shouldTick({ start: '2026-10-20T21:00:00Z' }, now, 30), false);
   assert.strictEqual(shouldTick({ start: '2026-10-20T18:00:00Z', status: 'live' }, now), true);
   assert.strictEqual(shouldTick({ start: '2026-10-20T18:00:00Z', status: 'final' }, now), false);
   assert.strictEqual(buildIndex([{ slug: 'a', start_time: '1' }, { slug: 'b', start_time: '2' }]).games[0].slug, 'b');
@@ -214,4 +214,16 @@ test('appendHistory: change-only points + period marks', async () => {
   assert.deepStrictEqual(h.m.a, [[0, 41], [20, 46]]);
   assert.strictEqual(h.marks.length, 1);
   assert.strictEqual(h.ids.sa, 'a');
+});
+
+test('tick: Chicago slate, DST and real two-team games', async () => {
+ const {shouldTick,isTeamGame,buildIndex}=await import('../scripts/live-tick.mjs');
+ const now=Date.parse('2026-10-20T22:00:00Z');
+ assert.strictEqual(shouldTick({start:'2026-10-21T02:30:00Z'},now),true);
+ assert.strictEqual(shouldTick({start:'2026-10-21T05:00:00Z'},now),false);
+ assert.strictEqual(shouldTick({start:'2026-11-02T05:30:00Z'},Date.parse('2026-11-01T20:00:00Z')),true);
+ assert.strictEqual(shouldTick({start:'2026-11-02T06:00:00Z'},Date.parse('2026-11-01T20:00:00Z')),false);
+ assert.strictEqual(isTeamGame({slug:'nba-phi-ny-2026-10-20',teams:[{},{}]}),true);
+ assert.strictEqual(isTeamGame({slug:'nba-lead-pts-2026-10-20',teams:[]}),false);
+ assert.strictEqual(buildIndex([{slug:'leader',is_game:false},{slug:'game'}]).games.length,1);
 });

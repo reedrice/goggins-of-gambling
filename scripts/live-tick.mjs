@@ -14,7 +14,7 @@
  *
  * WHAT ONE TICK DOES
  *   1. Lists Polymarket US events (free, no key) that start within --lead
- *      minutes (default 30) or started up to 8 h ago, in the leagues
+ *      minutes when explicitly set; otherwise all of today (America/Chicago) or started up to 8 h ago, in the leagues
  *      live-watch.mjs knows (nfl, nba, wnba, nhl, mlb). Also re-checks any
  *      data/live/<slug>.json from the last 24 h that isn't "final" yet.
  *   2. For each game not already "final": runs `live-watch.mjs publish --slug X --players all`
@@ -46,16 +46,22 @@ const flag = k => args.includes('--' + k);
 const opt = (k, d) => { const i = args.indexOf('--' + k); return i >= 0 && args[i + 1] ? args[i + 1] : d; };
 
 /** Pure: should this game get a publish now? (tested) */
-export function shouldTick({ start, status }, nowMs, leadMin = 30) {
+const chicagoDay = ms => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Chicago', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(ms));
+export function isTeamGame(e) {
+  const m = GAME.exec(e.slug || '');
+  return Boolean(m && LEAGUES.includes(m[1]) && e.teams?.length === 2);
+}
+export function shouldTick({ start, status }, nowMs, leadMin = null) {
   if (status === 'final') return false;
   const s = Date.parse(start);
   if (isNaN(s)) return false;
-  return s - nowMs <= leadMin * 60e3 && nowMs - s <= 24 * 3600e3;
+  const withinWindow = leadMin == null ? (s <= nowMs || chicagoDay(s) === chicagoDay(nowMs)) : s - nowMs <= leadMin * 60e3;
+  return withinWindow && nowMs - s <= 24 * 3600e3;
 }
 
 /** Pure: build index.json from published game files. */
 export function buildIndex(files) {
-  const games = files.map(d => ({ slug: d.slug, game: d.game, status: d.status, start_time: d.start_time, updated: d.updated }))
+  const games = files.filter(d => d.is_game !== false).map(d => ({ slug: d.slug, game: d.game, status: d.status, start_time: d.start_time, updated: d.updated }))
     .filter(g => g.slug).sort((a, b) => String(b.start_time).localeCompare(String(a.start_time)));
   return { _note: 'Games published by scripts/live-tick.mjs. Prices live in <slug>.json. No dollar amounts.', games };
 }
@@ -64,7 +70,7 @@ const readPublished = () => fs.readdirSync(LIVE).filter(f => GAME.test(f.replace
   .map(f => { try { return JSON.parse(fs.readFileSync(path.join(LIVE, f), 'utf8')); } catch { return null; } }).filter(Boolean);
 
 async function listGames(nowMs, leadMin) {
-  const min = new Date(nowMs - 8 * 3600e3).toISOString(), max = new Date(nowMs + leadMin * 60e3).toISOString();
+  const min = new Date(nowMs - 8 * 3600e3).toISOString(), max = new Date(nowMs + (leadMin == null ? 36 * 3600e3 : leadMin * 60e3)).toISOString();
   const out = [];
   for (let off = 0; off < 2000; off += 200) {
     const r = await fetch(`${GATEWAY}/v1/events?limit=200&offset=${off}&active=true&closed=false&startDateMin=${min}&startDateMax=${max}`);
@@ -73,7 +79,7 @@ async function listGames(nowMs, leadMin) {
     out.push(...page);
     if (page.length < 200) break;
   }
-  return out.filter(e => { const m = GAME.exec(e.slug || ''); return m && LEAGUES.includes(m[1]); })
+  return out.filter(isTeamGame)
     .map(e => ({ slug: e.slug, start: e.startTime || e.startDate }));
 }
 
@@ -89,14 +95,14 @@ async function propCount(slug) {
 }
 
 export async function tick() {
-  const now = Date.now(), lead = Number(opt('lead', 30));
+  const now = Date.now(), lead = flag('lead') ? Number(opt('lead', 30)) : null;
   fs.mkdirSync(LIVE, { recursive: true });
   const pub = Object.fromEntries(readPublished().map(d => [d.slug, d]));
   const cands = new Map();
   let failures = 0;
   try { for (const g of await listGames(now, lead)) cands.set(g.slug, g); }
   catch (e) { failures++; console.error('tick: could not list games:', e.message); }
-  for (const d of Object.values(pub)) if (!cands.has(d.slug)) cands.set(d.slug, { slug: d.slug, start: d.start_time });
+  for (const d of Object.values(pub)) if (d.is_game !== false && !cands.has(d.slug)) cands.set(d.slug, { slug: d.slug, start: d.start_time });
   const todo = [...cands.values()].filter(g => shouldTick({ start: g.start, status: pub[g.slug]?.status }, now, lead));
   console.log(`tick ${new Date(now).toISOString()}: ${cands.size} candidate game(s), ${todo.length} to update`);
   let ok = 0;

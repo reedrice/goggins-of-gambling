@@ -12,7 +12,7 @@ try {
   const parent = git('rev-parse', 'origin/main');
   const head = api(repo + '/git/ref/heads/main').object.sha;
   if (head !== parent) throw new Error('Main changed. Fetch, reconcile and regenerate before publishing.');
-  const paths = git('diff', 'origin/main', '--name-only').split(/\r?\n/).filter(Boolean);
+  const paths = [...new Set([git('diff', 'origin/main', '--name-only'), git('ls-files', '--others', '--exclude-standard', '--', 'data/live')].flatMap(s => s.split(/\r?\n/)).filter(Boolean))];
   if (!paths.length) { console.log('No changes to publish.'); process.exit(0); }
   // Maintenance code must already be committed locally for a reviewable record.
   const allowed = new Set(git('diff', 'origin/main', 'HEAD', '--name-only').split(/\r?\n/));

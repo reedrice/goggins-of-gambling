@@ -1285,3 +1285,9 @@ Reed reported missing new picks and asked for automatic updates. Root cause: onl
 
 ### Section 62: signed-in catch-up (Oct 20, ChatGPT)
 Reed signed into X in-app (@w0densday) and asked for full catch-up. Reviewed Posts and Replies back to the previous 04:22:05 UTC cutoff. No additional clear game picks beyond the three already imported. Added season-long lineup 2112584568998068608 as unclear/pending, excluded from record. No exact image-only lines or odds invented. Monitor now records signed-in source, reviewed ids, replies review and a complete watermark; cursor cannot regress on backfill. Five-minute watcher updated to use the signed-in session and both timelines.
+
+## 63. ChatGPT: full upcoming Live Bets slate (Oct 20, 2026)
+
+Reed requested upcoming games in Live Bets. Default ticks now capture all supported two-team games scheduled today in America/Chicago, including late games after UTC midnight, plus unfinished games from the last 24 hours. Explicit --lead N retains a narrower window. Discovery requires exactly two event teams, excluding leader/futures markets. The old NBA points-leader file is preserved with is_game:false and excluded from the index. Initial captures establish real opening prices; edges require later price movement. Existing chatgpt-owned ten-minute heartbeat refreshes the full slate. No UI change or version bump. Opening prices/history are preserved. Tests cover late games, next-day exclusion, DST and synthetic markets.
+
+Publisher also includes new untracked data/live files, so each new daily slate is published rather than only previously tracked games.

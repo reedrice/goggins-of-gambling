@@ -31,3 +31,7 @@ Reed explicitly authorized ChatGPT/Codex to maintain Pablo's live feed and Live 
 ## Pablo / other bots
 
 Do not start another feed writer during this takeover. Old direct `live-tick.mjs --push` or `live-watch.mjs publish` commands bypass the wrapper gate: pause them, or use the gated `live-run.mjs` entry point. We cannot disable a scheduler on Pablo's computer from this chat. On return, coordinate with Reed, change `live-feed-update` owner to `pablo`, pause this Codex heartbeat, and use `node scripts/live-run.mjs --owner pablo`. Read the latest HANDOFF and preserve all existing opening prices and alert/history state.
+
+## Full daily slate (Oct 20 follow-up)
+
+Default ticks now capture all supported two-team games scheduled today in America/Chicago, including late games after UTC midnight, plus unfinished games from the last 24 hours. Explicit --lead N retains a narrower window. Discovery requires exactly two event teams, excluding leader/futures markets. The old NBA points-leader file is preserved with is_game:false and excluded from the index. Initial captures establish real opening prices; edges require later price movement. Existing chatgpt-owned ten-minute heartbeat refreshes the full slate. No UI change or version bump. Opening prices/history are preserved. Tests cover late games, next-day exclusion, DST and synthetic markets.
