@@ -223,6 +223,7 @@ Daily routine:
 5b. `node scripts/fetch-book-odds.mjs --commit` (see §17). Run it **after** step 5: it prices today's picks at the other apps through The Odds API (needs `ODDS_API_KEY` in the environment; about 6-12 of the 500 monthly credits).
 4b. **Lottery tickets (§44):** optionally fill `sections.lottery` with 3-4 huge combos (about 7, 10, 14 and 19 legs) from the most likely, fair-or-better legs (65%+ preferred, favorites' moneylines, unders, props), mixing sports, with no conflicting legs and nothing that works against another pick on the page. `market` = "Lottery ticket · N picks", `stake_units` 0.1 max, `risk` long_shot, `hit_prob` = product of leg fair %. Polymarket US combos max out at 10 legs, so say to split bigger tickets.
 6. Read `data/bet-log.json` to compare quoted vs. estimated multiples per platform and tune `skip_below`.
+7. **If you changed anything in css/ or js/ (or index.html), run `node scripts/bump-version.mjs` before committing** (§49). Data-only commits (data/*.json) don't need it.
 
 ## 9. Renaming the brand
 
@@ -942,7 +943,7 @@ My Bets lives in localStorage (`betdash_bets`), so bets placed straight on Polym
 - The Record tab now has three sections: **Game Winners**, **Single Bets** and **Combos**. "Props & Combos" was misleading because it held single bets.
 - The Picks-screen picks (`data/pick-history.json`) are split by **leg count, not the category label**: 1 leg means Single Bets (single, prop, nonsports), and 2+ legs means Combos (parlay, longshot). See `pickHistoryHtml()` and `histSectionHtml()` in `js/app.js`. Words are in `STR.record.hist.singlesTitle/combosTitle`.
 - Each section has the same 5 boxes (`statBoxes()`, §41), its own rows, and tap-to-open slips (§39/§40). Units only.
-- **Cache-busting:** every CSS/JS include in `index.html` now ends in `?v=20261019-2300`, so iPhone Safari loads the new files. **Bump this version whenever css/ or js/ changes**, e.g. `sed -i 's/?v=[0-9-]*"/?v=NEW"/g' index.html`. This only changes the include lines; Richie's files (`live-bets.*`) are untouched.
+- **Cache-busting (updated Oct 20, §49):** every CSS/JS include in `index.html` ends in `?v=<stamp>`. **Whenever css/, js/ or index.html changes, run `node scripts/bump-version.mjs`** — it sets the same stamp on every `?v=`, on `window.APP_VERSION` in index.html and in `version.json`, so phones auto-reload. `node scripts/bump-version.mjs --check` verifies they match. Don't hand-edit with sed any more.
 - Smoke tests: `tests/record-split.smoke.js` (was record-unified; it checks 3 sections, the same boxes, 1-leg-only singles, multi-leg-only combos and `?v=`) and `tests/record-picks-list.smoke.js` (labels updated).
 
 ## 43. Expanded next-day board (Oct 19, 2026, late)
@@ -1039,3 +1040,8 @@ they open in a pop-up when you tap a pick card (Picks tab) or a Live Bets card.
 - `js/live-bets.js`: edge cards get class `lb-tap` and open `Viz.open(...)` on tap (the
   "Open on Polymarket" link still works). Two module vars `curSlug/curGame` set in `draw()`.
   Nothing else in your design changed.
+
+## 49. Auto update check: phones never keep a stale site (Oct 20, 2026)
+- **How:** a tiny inline script at the top of `index.html` `<head>` fetches `version.json?t=<now>` with `cache:'no-store'` on load, when the tab becomes visible again (`visibilitychange`) and on back/forward-cache restores (`pageshow` persisted). If `version.json` differs from `window.APP_VERSION`, it reloads ONCE via `location.replace(...?fresh=<version>)` (a new URL, so Safari fetches a fresh index.html and the new `?v=` files). Loop guard: `sessionStorage.betdash_reloadedFor = <version>`; if storage is blocked it never reloads. The `fresh` param is removed from the address bar after load. Free: one tiny static file, no APIs.
+- Also added `Cache-Control/Pragma/Expires` no-cache meta tags (GitHub Pages ignores them for its own headers, so the check is the real fix).
+- **One-step bumps:** `node scripts/bump-version.mjs [stamp]` (default = now in CT) updates all `?v=`, `APP_VERSION` and `version.json` together. `--check` exits 1 if they disagree (run by `tests/version.test.mjs`). Digest routine step 7 (§8) and §42 point here.

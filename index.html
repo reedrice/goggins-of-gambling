@@ -23,10 +23,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b0b0c">
   <meta name="robots" content="noindex">
+  <!-- Don't keep a stale copy of this page (helps; the real fix is the version check below, HANDOFF §49). -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <!-- AUTO UPDATE CHECK (HANDOFF §49). APP_VERSION must equal version.json and every ?v= below.
+       Bump all three with ONE command: node scripts/bump-version.mjs -->
+  <script>
+    window.APP_VERSION = '20261020-0357';
+    (function () {
+      var KEY = 'betdash_reloadedFor';
+      function check() {
+        if (!window.fetch) return;
+        fetch('version.json?t=' + Date.now(), { cache: 'no-store' })
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (j) {
+            var v = j && j.version;
+            if (!v || v === window.APP_VERSION) return;
+            var done = null; try { done = sessionStorage.getItem(KEY); } catch (e) {}
+            if (done === v) return;                       // already reloaded once for this version: no loop
+            try { sessionStorage.setItem(KEY, v); } catch (e) { return; }  // no storage = no reload (loop-safe)
+            var u = new URL(location.href); u.searchParams.set('fresh', v);
+            location.replace(u.toString());               // new URL = fresh index.html + new ?v= assets
+          }).catch(function () {});
+      }
+      try { var cu = new URL(location.href); if (cu.searchParams.has('fresh')) { cu.searchParams.delete('fresh'); history.replaceState(history.state, '', cu.toString()); } } catch (e) {}
+      check();
+      document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'visible') check(); });
+      window.addEventListener('pageshow', function (e) { if (e.persisted) check(); });   // back/forward cache
+    })();
+  </script>
   <title>Loading…</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%94%A5%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="css/style.css?v=20261020-0400">
-  <link rel="stylesheet" href="css/live-bets.css?v=20261020-0400">  <!-- Richie's area, HANDOFF §32 -->
+  <link rel="stylesheet" href="css/style.css?v=20261020-0357">
+  <link rel="stylesheet" href="css/live-bets.css?v=20261020-0357">  <!-- Richie's area, HANDOFF §32 -->
 </head>
 <body>
   <!-- FIRST-RUN ONBOARDING: filled by app.js (text from js/strings.js) when no profile exists; blocks everything else. -->
@@ -70,27 +100,27 @@
   <!-- tooltip bubble for (i) buttons -->
   <div id="tip-pop" class="tip-pop" role="tooltip" hidden></div>
 
-  <script src="config.js?v=20261020-0400"></script>
-  <script src="js/strings.js?v=20261020-0400"></script>
-  <script src="js/calc.js?v=20261020-0400"></script>
-  <script src="js/plain.js?v=20261020-0400"></script>
-  <script src="js/vegas.js?v=20261020-0400"></script>
-  <script src="js/trent.js?v=20261020-0400"></script>
-  <script src="js/play.js?v=20261020-0400"></script>  <!-- play money (points), HANDOFF §34 -->
-  <script src="js/live-bets.js?v=20261020-0400"></script>  <!-- Richie's area, HANDOFF §32 -->
-  <script src="js/storage.js?v=20261020-0400"></script>
-  <script src="js/gametime.js?v=20261020-0400"></script>
-  <script src="js/evaluate.js?v=20261020-0400"></script>
-  <script src="js/teams.js?v=20261020-0400"></script>
-  <script src="js/positions.js?v=20261020-0400"></script>
-  <script src="js/markets-core.js?v=20261020-0400"></script>
-  <script src="js/picker-filters.js?v=20261020-0400"></script>
-  <script src="js/picker-groups.js?v=20261020-0400"></script>
-  <script src="js/picker.js?v=20261020-0400"></script>
-  <script src="js/share.js?v=20261020-0400"></script>  <!-- Share a pick, HANDOFF §46 -->
-  <script src="js/live-picks.js?v=20261020-0400"></script>  <!-- Picks "Refresh prices", HANDOFF §37 -->
-  <script src="js/github-log.js?v=20261020-0400"></script>
-  <script src="js/viz.js?v=20261020-0400"></script>  <!-- Tap-a-bet charts, HANDOFF §48 -->
-  <script src="js/app.js?v=20261020-0400"></script>
+  <script src="config.js?v=20261020-0357"></script>
+  <script src="js/strings.js?v=20261020-0357"></script>
+  <script src="js/calc.js?v=20261020-0357"></script>
+  <script src="js/plain.js?v=20261020-0357"></script>
+  <script src="js/vegas.js?v=20261020-0357"></script>
+  <script src="js/trent.js?v=20261020-0357"></script>
+  <script src="js/play.js?v=20261020-0357"></script>  <!-- play money (points), HANDOFF §34 -->
+  <script src="js/live-bets.js?v=20261020-0357"></script>  <!-- Richie's area, HANDOFF §32 -->
+  <script src="js/storage.js?v=20261020-0357"></script>
+  <script src="js/gametime.js?v=20261020-0357"></script>
+  <script src="js/evaluate.js?v=20261020-0357"></script>
+  <script src="js/teams.js?v=20261020-0357"></script>
+  <script src="js/positions.js?v=20261020-0357"></script>
+  <script src="js/markets-core.js?v=20261020-0357"></script>
+  <script src="js/picker-filters.js?v=20261020-0357"></script>
+  <script src="js/picker-groups.js?v=20261020-0357"></script>
+  <script src="js/picker.js?v=20261020-0357"></script>
+  <script src="js/share.js?v=20261020-0357"></script>  <!-- Share a pick, HANDOFF §46 -->
+  <script src="js/live-picks.js?v=20261020-0357"></script>  <!-- Picks "Refresh prices", HANDOFF §37 -->
+  <script src="js/github-log.js?v=20261020-0357"></script>
+  <script src="js/viz.js?v=20261020-0357"></script>  <!-- Tap-a-bet charts, HANDOFF §48 -->
+  <script src="js/app.js?v=20261020-0357"></script>
 </body>
 </html>
