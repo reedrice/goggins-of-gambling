@@ -87,7 +87,7 @@ console.log('ok live-bets helpers + data shape + grouping/cap + alerts + odds li
  assert.strictEqual(combined.failed,1);
  assert.strictEqual(combined.updated,first.updated);
  assert.deepStrictEqual(LB.groupEdges(combined.edges).game.shown.map(e=>[e.event_slug,e.event_url]),[['nhl-c-d',second.url],['nba-a-b',first.url]]);
- assert.strictEqual(combined.alerts[0].text,'C vs D ? Second');
+ assert.strictEqual(combined.alerts[0].text,'C vs D | Second');
  assert.strictEqual(first.edges[0].event_slug,undefined);
  assert.strictEqual(LB.combineGames([]).game_count,0);
  console.log('all-games source attribution, sorting, partial failures and final exclusion ok');

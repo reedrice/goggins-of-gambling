@@ -60,7 +60,7 @@
   const sortEdges = edges => (edges || []).slice().sort((a, b) =>
     (a.status === 'gone') - (b.status === 'gone') || b.edge - a.edge);
   /** Which group an edge belongs to (older files have no `group`). */
-  const groupOf = e => e.group || (e.market === 'Player prop' | 'prop' : 'game');
+  const groupOf = e => e.group || (e.market === 'Player prop' ? 'prop' : 'game');
 
   /**
    * Split edges for display (pure, tested):
@@ -202,10 +202,10 @@
     link = safeUrl(e.event_url) || link;
     const eventSlug = e.event_slug || curSlug, eventGame = e.event_game || curGame;
     const gone = e.status === 'gone', why = REASON_CLASSES.includes(e.class);
-    const cls = why ? `lb-why lb-${e.class}` : `lb-${e.tier === 'big' | 'big' : 'slight'}`;
+    const cls = why ? `lb-why lb-${e.class}` : `lb-${e.tier === 'big' ? 'big' : 'slight'}`;
     const li = el('li', `lb-edge ${cls}${gone ? ' lb-gone' : ''}`);
     const top = el('div', 'lb-top');
-    const label = gone ? 'Gone' : why ? CLASS_LABEL[e.class] : TIER_LABEL[e.tier] + (e.class === 'unverified' | ' · unverified' : '');
+    const label = gone ? 'Gone' : why ? CLASS_LABEL[e.class] : TIER_LABEL[e.tier] + (e.class === 'unverified' ? ' · unverified' : '');
     top.append(el('span', 'lb-tier', label), el('span', 'lb-pts', `${Math.round(e.edge)} pts cheaper`));
     li.append(top, el('div', 'lb-side', e.side), el('div', 'lb-market', e.market), platRow(e));
     if (e.event_game) li.append(el('div', 'lb-meta', e.event_game + ' | ' + e.event_status));
