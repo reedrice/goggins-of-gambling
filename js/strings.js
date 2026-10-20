@@ -428,7 +428,7 @@ window.STR = {
     // Slip pop-up when you tap a Recent picks row (HANDOFF §39).
     slip: {
       open: t => `Open the slip for ${t}`, picked: t => `We picked: ${t} to win`,
-      chance: 'Our chance', fair: a => `fair odds ${a}`, price: 'Polymarket price', vegas: 'Vegas line',
+      chance: 'Analytics', fair: a => `fair odds ${a}`, price: 'Polymarket price', vegas: 'Vegas line',
       pays: (st, p) => `${window.Plain.dollars(st)} → ${window.Plain.dollars(p)} if it wins`,
       priceNote: 'Price is the last one we saved, so it may have moved since the pick.',
       noPrice: 'No saved Polymarket price for this game.', score: 'We guessed', players: 'Players',

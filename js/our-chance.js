@@ -161,7 +161,7 @@
   /** ESPN team schedule -> [{pf, pa, home, opp, date}] newest first (this + last season if short). */
   async function teamGames(league, abbr) {
     if (!ESPN[league]) return [];
-    const u = `https://site.api.espn.com/apis/site/v2/sports/${ESPN[league]}/teams/${ea(abbr)}/schedule`;
+    const u = `https://site.web.api.espn.com/apis/site/v2/sports/${ESPN[league]}/teams/${ea(abbr)}/schedule`;
     const read = d => ((d && d.events) || []).flatMap(e => {
       const c = e.competitions && e.competitions[0]; if (!c || !c.status || !c.status.type || !c.status.type.completed) return [];
       if (/pre/i.test(String((e.seasonType && e.seasonType.name) || ''))) return [];
@@ -218,7 +218,7 @@
     cache.set(key, job);
     return job;
   }
-  /** Fill every [data-oc] element under node: "Our chance 62% · Market 55%" + breakdown. */
+  /** Fill every [data-oc] element under node: one line "Analytics 62% · Market 55%" (UI label is Analytics, Reed). */
   function hydrate(node) {
     if (!node || !node.querySelectorAll) return;
     node.querySelectorAll('[data-oc]:not([data-oc-done])').forEach(elm => {
@@ -226,16 +226,13 @@
       let spec; try { spec = JSON.parse(elm.getAttribute('data-oc')); } catch (e) { return; }
       estimate(spec).then(res => {
         if (!res) { elm.hidden = true; return; }
+        // One compact line only (Reed): "Analytics 58% · Market 49%". Tap -> Dig deeper sheet (breakdown lives there).
         elm.innerHTML = '';
-        const top = document.createElement('div'); top.className = 'oc-top';
-        top.innerHTML = `${spec.label ? `<span class="oc-lab">${String(spec.label).replace(/[&<>"]/g, '')}</span> ` : ''}<b>Our chance ${res.pct}%</b>${res.market != null ? ` <span class="oc-mkt">· Market ${res.market}%</span>` : ''}`;
-        const why = document.createElement('div'); why.className = 'oc-why'; why.textContent = res.line;
-        elm.append(top, why);
-        if (globalThis.DigDeeper) {
-          const b = document.createElement('button'); b.type = 'button'; b.className = 'oc-dig'; b.textContent = 'Dig deeper ›';
-          b.addEventListener('click', ev => { ev.stopPropagation(); globalThis.DigDeeper.open(spec); });
-          elm.append(b);
-        }
+        const b = document.createElement(globalThis.DigDeeper ? 'button' : 'div'); b.className = 'oc-line';
+        if (b.tagName === 'BUTTON') { b.type = 'button'; b.addEventListener('click', ev => { ev.stopPropagation(); globalThis.DigDeeper.open(spec, res); }); b.setAttribute('aria-label', 'Dig deeper'); }
+        const lab = spec.label ? String(spec.label).replace(/[&<>"]/g, '') + ' · ' : '';
+        b.innerHTML = `${lab}<b>Analytics ${res.pct}%</b>${res.market != null ? `<span class="oc-mkt">&nbsp;· Market ${res.market}%</span>` : ''}${b.tagName === 'BUTTON' ? '<span class="oc-chev" aria-hidden="true">›</span>' : ''}`;
+        elm.append(b);
         elm.dataset.ocPct = res.pct;
       });
     });
