@@ -81,6 +81,8 @@ window.STR = {
   // ---------------------------------------------------------------- Fade Trent tab (app.js renderTrent, js/trent.js, HANDOFF §28)
   trent: {
     title: 'Fade Trent',
+    checked: (time, partial) => `Checked ${time} CT${partial ? ' ? Recent posts only' : ''}`,
+    notChecking: 'Post checks have not started.',
     intro: handle => `Picks @${handle} posted on X, checked against the real final scores. "Fade" means betting the other side.`,
     loadError: 'Couldn\'t load Trent\'s picks. Try again later.',
     record: 'His record', winPct: 'He wins', units: 'His units', fade: 'Fade record',

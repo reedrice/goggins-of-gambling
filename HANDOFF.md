@@ -1278,3 +1278,7 @@ Fixed Windows file URL handling and the Linux-only scratch path in live-watch; a
 
 ### Section 61 publishing follow-up
 Reed reauthorized local gh CLI. Connector writes returned 403; Git Bash credential helpers cannot run in this Windows sandbox. Use `live-run.mjs --owner chatgpt --no-push` then `publish-live-api.mjs` (gh API credentials stay managed by gh). Publisher verifies latest main and uses a fast-forward-only ref update. Check remote publication rather than trusting a local run stamp.
+
+
+## 62. Fade Trent new-post watcher (Oct 20, 2026, ChatGPT)
+Reed reported missing new picks and asked for automatic updates. Root cause: only Grok's daily digest imported X posts; no dedicated watcher. Added `trent-post-check` owned by chatgpt and a five-minute Codex heartbeat. Operation and access limitations: `routines/FADE-TRENT.md`. Browser verified NBA post 2112579730297983307; imported three picks without inventing odds and graded Celtics ML loss using ESPN final DET 121?BOS 113. Partial public access is recorded honestly; the full-read watermark stays unchanged. New trent-import validates source/id/timestamp, stable per-pick ids, repeat-import deduplication and preserves grades. Fade Trent now refreshes every minute while visible and on return, with last-check/coverage text. No new tab. API publisher accepts an optional --message for accurate commit descriptions.

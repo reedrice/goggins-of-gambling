@@ -466,6 +466,8 @@
     const want = '#' + (name === 'picks' ? picksView || savedView() : name === 'bets' ? betsView || savedBetsView() : name);
     if (location.hash !== want) history.replaceState(null, '', want);
     ({ picks: renderPicks, calc: renderCalc, bets: renderBets, record: renderRecord, trent: renderTrent, settings: renderSettings })[name]();
+    clearInterval(trentTimer);
+    if (name === 'trent') trentTimer = setInterval(() => { if (!document.hidden) renderTrent(true); }, 60000);
     window.scrollTo(0, 0);
   }
 
@@ -1761,12 +1763,18 @@
    * graded on real final scores (HANDOFF §28). Math in js/trent.js. All text
    * from the file goes through esc(); links through safeUrl().
    */
-  async function renderTrent() {
+  document.addEventListener('visibilitychange', () => { if (!document.hidden && location.hash === '#trent') renderTrent(true); });
+  let trentTimer = null;
+  let trentBusy = false;
+  async function renderTrent(quiet = false) {
+    if (trentBusy) return;
+    trentBusy = true;
+    try {
     const X = STR.trent;
     const el = $('#tab-trent');
-    el.innerHTML = `<h2>${esc(X.title)}</h2><p class="muted">${esc(STR.loading)}</p>`;
+    if (!quiet) el.innerHTML = `<h2>${esc(X.title)}</h2><p class="muted">${esc(STR.loading)}</p>`;
     let doc;
-    try { doc = await fetchData('data/trent-picks.json'); } catch (e) { el.innerHTML = `<h2>${esc(X.title)}</h2><p class="error">${esc(X.loadError)}</p>`; return; }
+    try { doc = await fetchData('data/trent-picks.json'); } catch (e) { if (!quiet) el.innerHTML = `<h2>${esc(X.title)}</h2><p class="error">${esc(X.loadError)}</p>`; return; }
     const TR = window.Trent;
     let ov = null; try { ov = await fetchData('data/trent-overrides.json'); } catch (e) { /* none yet */ }
     const picks = TR.applyOverrides(Array.isArray(doc.picks) ? doc.picks : [], ov);   // dev answers (§58)
@@ -1794,8 +1802,11 @@
       </div>`;
     };
     const leagues = Object.entries(s.byLeague).filter(([, v]) => v.w + v.l + v.p);
+    const checked = doc.monitor && doc.monitor.checked_at;
+    const checkedText = checked ? X.checked(new Date(checked).toLocaleString('en-US', {timeZone:'America/Chicago',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}), doc.monitor.coverage === 'partial') : X.notChecking;
     el.innerHTML = `<h2>${esc(X.title)} ${tip('fadeTrent')}</h2>${devHtml}
       <p class="muted small">${esc(X.intro(doc.account || 'BookitWithTrent'))}</p>
+      <p class="muted small" role="status">${esc(checkedText)}</p>
       <div class="kpis">${kpi(X.record, rec(a))}${kpi(X.winPct, a.winPct === null ? X.none : esc(a.winPct + '%'))}${kpi(X.units, u(a.units))}${kpi(X.fade, rec({ w: a.fw, l: a.fl, p: a.fp }))}</div>
       <p class="muted small">${esc(X.unitsNote(a.unitsN, a.assumed))} ${a.fadeN ? esc(X.fadeUnitsNote((a.fadeUnits > 0 ? '+' : '') + a.fadeUnits + 'u', a.fadeN)) : ''}</p>
       <h3>${esc(X.bySport)}</h3>
@@ -1804,6 +1815,7 @@
       <h3>${esc(X.picksTitle)}</h3>
       <p class="muted small">${esc(X.pending(a.pending))} · ${esc(X.unclear(a.unclear))}${doc.read_from && doc.read_through ? ' · ' + esc(X.read(day(doc.read_from), day(doc.read_through))) : ''}</p>
       ${picks.slice().sort((x, y) => String(y.posted_at).localeCompare(String(x.posted_at))).map(card).join('')}`;
+    } finally { trentBusy = false; }
   }
 
   async function renderRecord() {

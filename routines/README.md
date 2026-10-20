@@ -141,3 +141,6 @@ Weekly self-learning review for Reed's betting picks. In the reedrice/goggins-of
 
 ## Live Bets feed update (`live-feed-update`, Oct 20 takeover)
 This sixth routine is temporarily owned by ChatGPT at Reed's request; the five routines above stay with Grok. Read [LIVE-FEED.md](LIVE-FEED.md). Use `node scripts/live-run.mjs --owner chatgpt --no-push` then publish through the connector, or the gated runner with git push authentication. Do not run an independent direct live-tick schedule during takeover.
+
+## Fade Trent new-post check (`trent-post-check`)
+ChatGPT checks every five minutes independently of the daily Grok digest. See [FADE-TRENT.md](FADE-TRENT.md) for verified browser ingestion, coverage, publishing and access limitations.
