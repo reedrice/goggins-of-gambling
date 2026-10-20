@@ -9,24 +9,24 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401909088",
-  "fetched_at": "2026-10-20T21:29:45.430Z",
+  "fetched_at": "2026-10-20T21:35:10.356Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 4,
-  "clock": "41.0",
-  "regulation_secs_left": 2460,
+  "clock": "6.7",
+  "regulation_secs_left": 402,
   "home": {
    "abbr": "DET",
    "alias": "Pistons",
    "name": "Detroit Pistons",
-   "score": 116,
+   "score": 119,
    "id": "8"
   },
   "away": {
    "abbr": "BOS",
    "alias": "Celtics",
    "name": "Boston Celtics",
-   "score": 110,
+   "score": 113,
    "id": "2"
   },
   "possession": null,
@@ -86,7 +86,7 @@
    }
   ]
  },
- "updated": "2026-10-20T21:29:45.430Z",
+ "updated": "2026-10-20T21:35:10.356Z",
  "open_taken_at": "2026-10-20T18:31:05.950Z",
  "thresholds": {
   "big": 10,
@@ -5420,26 +5420,6 @@
  ],
  "edges": [
   {
-   "key": "1578635:0",
-   "market_id": "1578635",
-   "market": "Team total",
-   "group": "game",
-   "question": "Will BOS Celtics score more than 115.5 points in BOS Celtics vs. DET Pistons?",
-   "side": "Celtics Over 115.5 points",
-   "open_chance": 36,
-   "now_chance": 18,
-   "open_odds": "+178",
-   "now_odds": "+456",
-   "edge": 18,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "BOS down 6, Q4 41.0",
-   "first_seen": "2026-10-20T19:30:46.902Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1579745:0",
    "market_id": "1579745",
    "market": "Player prop",
@@ -5454,7 +5434,7 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "DET up 6, Q4 41.0",
+   "context": "DET up 6, Q4 6.7",
    "first_seen": "2026-10-20T20:41:42.015Z",
    "status": "open",
    "kalshi": true
@@ -5474,10 +5454,30 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "DET up 6, Q4 41.0",
+   "context": "DET up 6, Q4 6.7",
    "first_seen": "2026-10-20T19:34:38.419Z",
    "status": "open",
    "kalshi": false
+  },
+  {
+   "key": "1578689:1",
+   "market_id": "1578689",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in BOS Celtics vs. DET Pistons be more than 232.5?",
+   "side": "Under 232.5",
+   "open_chance": 74,
+   "now_chance": 63,
+   "open_odds": "-285",
+   "now_odds": "-170",
+   "edge": 11,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: scoring above pace (232 pts, pace 207)",
+   "context": "BOS 113, DET 119, Q4 6.7",
+   "first_seen": "2026-10-20T21:19:47.116Z",
+   "status": "open",
+   "kalshi": true
   },
   {
    "key": "1578612:1",
@@ -5820,26 +5820,6 @@
    "kalshi": true
   },
   {
-   "key": "1578677:0",
-   "market_id": "1578677",
-   "market": "Alt spread",
-   "group": "game",
-   "question": "Will the BOS Celtics cover 6.5 vs the DET Pistons in BOS Celtics vs. DET Pistons?",
-   "side": "Celtics +6.50",
-   "open_chance": 70,
-   "now_chance": 49,
-   "open_odds": "-233",
-   "now_odds": "+104",
-   "edge": 21,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: BOS not covering +6.5 right now",
-   "context": "BOS down 8, Q4 5:10",
-   "first_seen": "2026-10-20T21:19:47.116Z",
-   "status": "gone",
-   "kalshi": true
-  },
-  {
    "key": "1578684:1",
    "market_id": "1578684",
    "market": "Alt total",
@@ -6140,26 +6120,6 @@
    "kalshi": null
   },
   {
-   "key": "1578689:1",
-   "market_id": "1578689",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in BOS Celtics vs. DET Pistons be more than 232.5?",
-   "side": "Under 232.5",
-   "open_chance": 74,
-   "now_chance": 60,
-   "open_odds": "-285",
-   "now_odds": "-150",
-   "edge": 14,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "BOS 99, DET 107, Q4 5:10",
-   "first_seen": "2026-10-20T21:19:47.116Z",
-   "status": "gone",
-   "kalshi": true
-  },
-  {
    "key": "1578300:1",
    "market_id": "1578300",
    "market": "2nd half spread",
@@ -6238,26 +6198,6 @@
    "first_seen": "2026-10-20T19:23:19.343Z",
    "status": "gone",
    "kalshi": true
-  },
-  {
-   "key": "1578635:1",
-   "market_id": "1578635",
-   "market": "Team total",
-   "group": "game",
-   "question": "Will BOS Celtics score more than 115.5 points in BOS Celtics vs. DET Pistons?",
-   "side": "Celtics Under 115.5 points",
-   "open_chance": 65,
-   "now_chance": 53,
-   "open_odds": "-186",
-   "now_odds": "-113",
-   "edge": 12,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: scoring above pace (78 pts, pace 77)",
-   "context": "BOS up 14, Q3 5:09",
-   "first_seen": "2026-10-20T20:35:08.832Z",
-   "status": "gone",
-   "kalshi": null
   },
   {
    "key": "1578300:0",
@@ -6456,26 +6396,6 @@
    "reason": null,
    "context": "BOS up 13, Halftime",
    "first_seen": "2026-10-20T20:03:33.087Z",
-   "status": "gone",
-   "kalshi": true
-  },
-  {
-   "key": "1579742:0",
-   "market_id": "1579742",
-   "market": "Player prop",
-   "group": "prop",
-   "question": "Will John Collins record at least 6 total rebounds in BOS Celtics vs. DET Pistons?",
-   "side": "Yes: John Collins record at least 6 total rebounds in BOS Celtics vs. DET Pistons",
-   "open_chance": 43,
-   "now_chance": 34,
-   "open_odds": "+133",
-   "now_odds": "+194",
-   "edge": 9,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "DET down 10, Q4 9:41",
-   "first_seen": "2026-10-20T20:58:57.940Z",
    "status": "gone",
    "kalshi": true
   },
@@ -7418,20 +7338,6 @@
    "url": "https://polymarket.us/sports/nba/nba-bos-det-2026-10-20"
   },
   {
-   "id": "gone:1579742:0:2026-10-20T20:58:57.940Z",
-   "key": "1579742:0",
-   "at": "2026-10-20T21:19:47.116Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Yes: John Collins record at least 6 total rebounds in BOS Celtics vs. DET Pistons",
-   "market": "Player prop",
-   "now_odds": "+194",
-   "now_chance": 34,
-   "edge": 9,
-   "text": "Edge gone: Yes: John Collins record at least 6 total rebounds in BOS Celtics vs. DET Pistons (Player prop) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/nba/nba-bos-det-2026-10-20"
-  },
-  {
    "id": "gone:1579703:0:2026-10-20T20:58:57.940Z",
    "key": "1579703:0",
    "at": "2026-10-20T21:19:47.116Z",
@@ -8269,7 +8175,7 @@
   "gone:1609597:0:2026-10-20T20:41:42.015Z"
  ],
  "kalshi_checked": {
-  "at": "2026-10-20T21:29:45.459Z",
+  "at": "2026-10-20T21:35:10.944Z",
   "event": "26OCT20BOSDET"
  }
 }
