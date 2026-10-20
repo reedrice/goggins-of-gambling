@@ -1716,6 +1716,8 @@
     try { odds = await fetchData(CFG.bookOddsPath || 'data/book-odds.json'); } catch (e) { /* optional */ }
     let learnDoc = null;
     try { learnDoc = await fetchData('data/learning.json'); } catch (e) { /* optional: learning loop not run yet */ }
+    let hist = null;
+    try { hist = await fetchData('data/pick-history.json'); } catch (e) { /* optional: Picks-page history (HANDOFF §40) */ }
     let html = `<h2>${esc(R.title)}</h2>`;
     if (!preds) html += `<p class="error">${esc(R.loadError)}</p>`;
     else {
@@ -1728,12 +1730,21 @@
         ${cal.buckets.length ? `<div class="table-wrap"><table><tr><th>${esc(R.calSaid)}</th><th class="num">${esc(R.calPicks)}</th><th class="num">${esc(R.calAvg)}</th><th class="num">${esc(R.calActual)}</th><th class="num">${esc(R.calOff)}</th></tr>
           ${cal.buckets.map(b => { const avg = b.probSum / b.n / 100, act = b.wins / b.n; return `<tr><td>${b.lo}–${b.lo + 5}%</td><td class="num">${b.n}</td><td class="num">${pct(avg)}</td><td class="num">${pct(act)}</td><td class="num ${sign(act - avg)}">${esc(R.pts(((act - avg) * 100).toFixed(1)))}</td></tr>`; }).join('')}</table></div>`
           : `<div class="section-empty">${esc(R.calEmpty)}</div>`}
-        ${list.length ? `<h3>${esc(R.recent)}</h3><div class="table-wrap"><table><tr><th>${esc(R.date)}</th><th>${esc(R.pick)}</th><th class="num">${esc(R.chance)}</th><th>${esc(R.result)}</th></tr>
+        ${list.length ? `<h3>${esc(R.gameTitle)}</h3><div class="table-wrap"><table><tr><th>${esc(R.date)}</th><th>${esc(R.pick)}</th><th class="num">${esc(R.chance)}</th><th>${esc(R.result)}</th></tr>
           ${list.slice().sort((a, b) => String(b.date).localeCompare(String(a.date))).slice(0, 30).map(p => `<tr class="tap-row" data-pred="${esc(p.id)}" tabindex="0" role="button" aria-label="${esc(R.slip.open(p.pick))}"><td>${esc(p.date)}</td><td>${esc(p.pick)}<div class="muted small">${esc(p.game)}</div></td><td class="num">${esc(p.win_prob)}%</td><td><span class="badge ${p.result === 'win' ? 'won' : p.result === 'loss' ? 'lost' : 'open'}">${esc(R.resultWords[p.result] || p.result)}</span></td></tr>`).join('')}</table></div>` : ''}`;
     }
+    html += pickHistoryHtml(hist);
     html += learningCardHtml(learnDoc);
     html += renderPlatformCompare(log, odds);
     el.innerHTML = html;
+    // Tap a Picks-page row -> full slip with every leg (HANDOFF §40).
+    const hById = {};
+    ((hist && hist.picks) || []).forEach(h => (hById[h.id] = h));
+    el.querySelectorAll('tr[data-hist]').forEach(tr => {
+      const go = () => { const h = hById[tr.dataset.hist]; if (h) openHistSlip(h); };
+      tr.addEventListener('click', go);
+      tr.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+    });
     // Tap (or Enter on) a "Recent picks" row -> open that pick's slip (HANDOFF §39).
     const byId = {};
     ((preds && preds.predictions) || []).forEach(p => (byId[p.id] = p));
@@ -1787,6 +1798,70 @@
       ${p.reasoning ? `<p class="small">${esc(p.reasoning)}</p>` : ''}
       ${link ? `<a class="btn" href="${esc(link)}" target="_blank" rel="noopener noreferrer">${esc(X.poly)}</a>` : ''}`);
   }
+
+  /* ---------- Picks-page picks on the Record tab (HANDOFF §40) ----------
+   * data/pick-history.json = every pick we put on the Picks screen (singles,
+   * props, combos, longshots, non-sports), each with legs[]. A leg's
+   * `publish` is the price (cents, 0-100) of the side we picked when we
+   * posted it; we only use it for math and show American odds, never cents.
+   */
+  /** Leg text without the "— tap ..." / "— YES" helper bits. */
+  const legName = d => String(d || '').split(' — ')[0].replace(/\s*\(tap[^)]*\)/i, '').trim();
+  /** Pick name: the single leg, or "3-leg combo: A + B + C". */
+  function histName(h) {
+    const legs = h.legs || [];
+    if (legs.length <= 1) return legName(legs[0] && legs[0].desc);
+    return STR.record.hist.combo(legs.length, legs.map(l => legName(l.desc)).join(' + '));
+  }
+  /** Payout multiple if every leg wins = product of 100/price. null if a price is missing. */
+  function histMultiple(h) {
+    let m = 1;
+    for (const l of h.legs || []) { if (!(l.publish > 0 && l.publish < 100)) return null; m *= 100 / l.publish; }
+    return m;
+  }
+  /** Units won/lost for one graded pick: win = stake × (multiple − 1), loss = −stake. */
+  function histUnits(h) {
+    const st = Number(h.stake_units) || 0, m = histMultiple(h);
+    if (h.result === 'win' && m) return st * (m - 1);
+    if (h.result === 'loss') return -st;
+    return 0;
+  }
+  const resBadge = r => `<span class="badge ${r === 'win' ? 'won' : r === 'loss' ? 'lost' : 'open'}">${esc(STR.record.resultWords[r || 'pending'] || r)}</span>`;
+
+  /** "Our Picks-page picks" section: W-L summary (units only) + recent rows. */
+  function pickHistoryHtml(doc) {
+    const H = STR.record.hist, picks = (doc && doc.picks) || [];
+    if (!picks.length) return `<h3>${esc(H.title)}</h3><div class="section-empty">${esc(H.none)}</div>`;
+    const w = picks.filter(h => h.result === 'win').length, l = picks.filter(h => h.result === 'loss').length;
+    const u = Math.round(picks.reduce((a, h) => a + histUnits(h), 0) * 100) / 100;
+    const kpi = (k, v) => `<div class="kpi"><div class="k">${esc(k)}</div><div class="v">${v}</div></div>`;
+    const rows = picks.slice().sort((a, b) => String(b.slate_date).localeCompare(String(a.slate_date))).slice(0, 40);
+    return `<h3>${esc(H.title)}</h3><p class="muted small">${esc(H.intro)}</p>
+      <div class="kpis">${kpi(H.won, w)}${kpi(H.lost, l)}${kpi(H.open, picks.length - w - l)}${kpi(H.units, `<span class="${sign(u)}">${esc((u > 0 ? '+' : '') + u + 'u')}</span>`)}</div>
+      <div class="table-wrap"><table><tr><th>${esc(STR.record.date)}</th><th>${esc(STR.record.pick)}</th><th class="num">${esc(STR.record.chance)}</th><th>${esc(STR.record.result)}</th></tr>
+      ${rows.map(h => `<tr class="tap-row" data-hist="${esc(h.id)}" tabindex="0" role="button" aria-label="${esc(STR.record.slip.open(histName(h)))}"><td>${esc(h.slate_date)}</td><td>${esc(histName(h))}<div class="muted small">${esc(h.sport)} · ${esc(H.cat[h.category] || h.category)}</div></td><td class="num">${esc(Math.round(h.hit_prob) + '%')}</td><td>${resBadge(h.result)}</td></tr>`).join('')}</table></div>
+      <p class="muted small">${esc(H.unitsNote)}</p>`;
+  }
+
+  /** Slip pop-up for one Picks-page pick: every leg with its result + odds. */
+  function openHistSlip(h) {
+    const H = STR.record.hist, X = STR.record.slip, stake = exStake(), m = histMultiple(h);
+    const legs = (h.legs || []).map(l => {
+      const am = l.publish > 0 && l.publish < 100 ? C.formatPrice(l.publish, 'american') : '';
+      return `<div class="slip-row"><span>${esc(legName(l.desc))}${am ? ` <span class="muted small">${esc(am)}</span>` : ''}</span>${resBadge(l.result)}</div>`;
+    }).join('');
+    const total = m ? C.formatPrice(100 / m, 'american') : '';
+    const u = histUnits(h);
+    openSheet(`<div class="tp-top"><div><div class="tp-pick">${esc(histName(h))}</div>
+        <div class="pick-sub">${esc(h.sport)} · ${esc(H.cat[h.category] || h.category)} · ${esc(h.slate_date)}</div></div>${resBadge(h.result)}</div>
+      ${row2(X.chance, esc(Math.round(h.hit_prob) + '%'))}
+      ${total && (h.legs || []).length > 1 ? row2(H.allOdds, esc(total)) : ''}
+      ${row2(H.stake, esc(h.stake_units + 'u'))}
+      ${h.result === 'win' || h.result === 'loss' ? row2(H.unitsRes, `<span class="${sign(u)}">${esc((u > 0 ? '+' : '') + (Math.round(u * 100) / 100) + 'u')}</span>`) : ''}
+      <h4>${esc(H.legs((h.legs || []).length))}</h4>${legs}
+      ${m ? `<div class="slip-pay">${esc(X.pays(stake, Math.round(stake * m * 100) / 100))}</div><p class="muted small">${esc(H.priceNote)}</p>` : ''}`);
+  }
+  const row2 = (k, v) => `<div class="slip-row"><span class="muted">${esc(k)}</span><b>${v}</b></div>`;
 
   /**
    * Bottom sheet pop-up (slides up on phones, centered card on desktop).

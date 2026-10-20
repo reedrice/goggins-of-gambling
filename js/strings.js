@@ -409,6 +409,17 @@ window.STR = {
     pts: n => `${n} pts`,
     recent: 'Recent picks', date: 'Date', pick: 'Pick', chance: 'Chance', result: 'Result',
     resultWords: { win: 'won', loss: 'lost', pending: 'not finished', push: 'refund' },
+    gameTitle: 'Game winner picks',
+    // "Our Picks-page picks" section (HANDOFF §40). Units only, never dollars.
+    hist: {
+      title: 'Our Picks-page picks', intro: 'Every pick we put on the Picks screen. Tap one to see its slip.',
+      none: 'No Picks-page picks saved yet.', won: 'Won', lost: 'Lost', open: 'Not finished', units: 'Units won/lost',
+      unitsNote: 'Units use the price when we posted the pick and the units we said to bet.',
+      cat: { single: 'Single', prop: 'Player prop', parlay: 'Combo', longshot: 'Longshot', nonsports: 'Non-sports' },
+      combo: (n, t) => `${n}-leg combo: ${t}`, allOdds: 'Odds if all win', stake: 'We said to bet',
+      unitsRes: 'Units', legs: n => (n === 1 ? 'The bet' : `The ${n} legs`),
+      priceNote: 'Uses the price when we posted the pick.'
+    },
     // Slip pop-up when you tap a Recent picks row (HANDOFF §39).
     slip: {
       open: t => `Open the slip for ${t}`, picked: t => `We picked: ${t} to win`,

@@ -916,3 +916,11 @@ My Bets lives in localStorage (`betdash_bets`), so bets placed straight on Polym
 - Closes with the × button, a backdrop tap, or Esc. Still 6 bottom tabs.
 - The Record tab doesn't list `data/pick-history.json` picks anywhere yet, so there's nothing to hook up there; `openSheet()` is generic if we add that list later.
 - Smoke test: `tests/record-slip.smoke.js` (screenshot to /workspace/shots/record-slip.png).
+
+## 40. Record tab: "Our Picks-page picks" list + full slips (Oct 19, 2026)
+
+- New section on the Record tab, below the game-winner list (now titled "Game winner picks"): "Our Picks-page picks", built from `data/pick-history.json` by `pickHistoryHtml()` in `js/app.js`. Words live in `STR.record.hist`.
+- Summary boxes: Won, Lost, Not finished, Units won/lost. **Units only, never dollars.** Units = stake_units × (multiple − 1) on a win, −stake_units on a loss. The multiple is the product of 100/`publish` over the legs, i.e. the price when we posted the pick.
+- Rows (newest first, up to 40): date, pick name (the leg text minus the "— tap…" hints, or "3-leg combo: A + B + C"), sport · category, our chance, and the result badge.
+- Tap or Enter on a row runs `openHistSlip()`, which opens the same bottom sheet as §39 (`openSheet()`). It shows every leg with its American odds and won/lost/not-finished badge, odds if all legs win, the units we said to bet, units won/lost, and "$unit → $X if it wins". No cents anywhere.
+- Smoke test: `tests/record-picks-list.smoke.js`. Still 6 tabs, no Pablo files touched.
