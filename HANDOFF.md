@@ -214,7 +214,6 @@ Daily routine:
    - **Remove it:** pass `--drop <id>` to `picks`.
    - The commit body lists every carried-over id; check it.
    - Clear `pending_news` once the news is in (e.g. "Embiid and LeBron are both playing").
-0a. **Combo legs on player props are Yes-side only (§45).**
 0b. **Follow Reed's pick-building rules (§24):** merit only, never skip a pick because it's in an open slip; mix sports in slips freely; title the three slips "Small payout · 3 picks" / "Medium payout · 3 picks" / "Big payout · 4 picks"; write reasoning in 2nd-grade words (no ¢, %, "x"); **the digest/report to Reed uses dollar payouts ("10 dollars → 22.73 back" (money sign in the UI)) and American odds ("+127", "Vegas +133 (Bovada)"), never cents (§29)**; update the Fade Trent tab (§28).
 1. Build the new slate in the `picks.json` schema. Use **units, not dollars**, and the platform's actual ask prices (Reed's app is **Polymarket US**, a different exchange from polymarket.com). Set `verify_note` whenever a price came from somewhere else. Set `updated_at` to now (UTC is fine; the UI shows CT).
 2. `grade` yesterday's predictions.
@@ -958,8 +957,3 @@ Reed wanted huge "lottery ticket" combos (7 to about 20 legs) inside the Picks p
 - **Leg cap:** Polymarket US's app allows **2-10 legs per combo** (docs.polymarket.us Combos FAQ; the API allows 2-50). Tickets over 10 legs say to split them into two combos.
 - **Oct 20 tickets:** ids `2026-10-20-lotto-7/-10/-14/-19`. The 7- and 10-leg tickets are all Vegas-checked legs. The 14- and 19-leg ones add NHL "Under 7.5 goals" legs that have no Vegas line (fair = the Polymarket price).
 - Screenshot: /workspace/shots/lottery.png (390px phone, headless Chrome, after onboarding).
-
-## 45. Player-prop combo legs must be Yes-side (Oct 20, 2026)
-Reed found the Polymarket US app's combo builder only lets you pick **Yes** on many player props (e.g. "No on Paul George 20+" was not offered). The gateway API doesn't show this: prop markets list both Yes and No `marketSides` and `comboEnabled: true`, and there's no per-side combo flag. So:
-- **Rule:** combo/long-shot/lottery legs on player props (`astatc-…`) must use `market_side: "yes"` unless someone has checked the No side is offered in the app's combo builder. Game totals Under (No on Over) are confirmed to work (Reed placed one). Single prop bets on the No side are fine to list, but flag them.
-- Oct 20 fix: the PG under 20, Cason Wallace under 5 reb, Duren under 12 reb and Duren under 20 legs in the 4 lottery tickets were replaced with Blue Jackets win, Islanders win, Oilers win and Jayson Tatum 25+ points (Yes).
