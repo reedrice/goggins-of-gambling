@@ -105,6 +105,10 @@ export async function tick() {
       const o = execFileSync(process.execPath, [path.join(HERE, 'live-watch.mjs'), 'publish', '--slug', g.slug, '--players', 'all'],
         { cwd: REPO, timeout: 90e3, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
       console.log(`  ${g.slug}: ${o.trim().split('\n').pop()}`); ok++;
+      // Oct 20 2026 (Reed's bot, Reed's OK): Kalshi ✓ per edge. Additive; never fails the tick.
+      try { const { annotateGame } = await import('./live-kalshi.mjs'); const n = await annotateGame(path.join(LIVE, g.slug + '.json'));
+        console.log(`  ${g.slug}: Kalshi has ${n.yes}, not on Kalshi ${n.no}, unchecked ${n.unchecked}`); }
+      catch (e) { console.error(`  ${g.slug}: Kalshi check skipped: ${e.message}`); }
     } catch (e) { console.error(`  ${g.slug}: publish failed: ${String(e.stderr || e.message).trim().split('\n').pop()}`); }
   }
   if (!flag('dry')) {

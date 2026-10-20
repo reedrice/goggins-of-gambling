@@ -76,3 +76,11 @@
 .lb-games { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
 .lb-game-btn { font: inherit; font-size: 0.8em; padding: 4px 8px; border-radius: 12px; border: 1px solid #555; background: transparent; color: inherit; }
 .lb-game-btn.lb-on { background: #333; border-color: #888; }
+
+/* Oct 20, 2026 (Reed's bot, with Reed's OK): which-app badges on each card. Tap = one-line note. */
+.live-bets-root .lb-plat { display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; }
+.live-bets-root .lb-plat-b { font: inherit; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px;
+  border: 1px solid var(--card-2); background: transparent; color: var(--text); cursor: pointer; }
+.live-bets-root .lb-plat-on { background: var(--card-2); }
+.live-bets-root .lb-plat-off { color: var(--muted); opacity: .6; }
+.live-bets-root .lb-plat-why { font-size: 12px; color: var(--muted); margin-top: 4px; }

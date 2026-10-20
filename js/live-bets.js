@@ -162,6 +162,28 @@
   const TIER_LABEL = { big: 'Big edge', slight: 'Slight edge' };
   const CLASS_LABEL = { score: 'Explained by score', news: 'Big move, likely news' };
 
+  /**
+   * Which apps have this bet (Oct 20 2026, Reed's bot, Reed's OK). Polymarket
+   * always (all prices here come from Polymarket US). Kalshi from e.kalshi set
+   * by scripts/live-kalshi.mjs: true = ✓, false = dim dash, null/missing = no badge.
+   */
+  function platBadges(e) {
+    const out = [{ cls: 'lb-plat-on', text: 'Polymarket ✓', why: 'This bet and its price come from Polymarket US.' }];
+    if (e.kalshi === true) out.push({ cls: 'lb-plat-on', text: 'Kalshi ✓', why: 'Kalshi has this same bet too. Its price can be different.' });
+    else if (e.kalshi === false) out.push({ cls: 'lb-plat-off', text: 'Kalshi —', why: 'We checked Kalshi. It does not have this bet right now.' });
+    return out;
+  }
+  function platRow(e) {
+    const row = el('div', 'lb-plat'), note = el('div', 'lb-plat-why');
+    note.hidden = true;
+    for (const b of platBadges(e)) {
+      const btn = el('button', `lb-plat-b ${b.cls}`, b.text); btn.type = 'button';
+      btn.addEventListener('click', ev => { ev.stopPropagation(); const same = !note.hidden && note.textContent === b.why; note.textContent = b.why; note.hidden = same; });
+      row.append(btn);
+    }
+    const wrap = el('div'); wrap.append(row, note); return wrap;
+  }
+
   /** One edge card. */
   function edgeRow(e, link) {
     const gone = e.status === 'gone', why = REASON_CLASSES.includes(e.class);
@@ -170,7 +192,7 @@
     const top = el('div', 'lb-top');
     const label = gone ? 'Gone' : why ? CLASS_LABEL[e.class] : TIER_LABEL[e.tier] + (e.class === 'unverified' ? ' · unverified' : '');
     top.append(el('span', 'lb-tier', label), el('span', 'lb-pts', `${Math.round(e.edge)} pts cheaper`));
-    li.append(top, el('div', 'lb-side', e.side), el('div', 'lb-market', e.market));
+    li.append(top, el('div', 'lb-side', e.side), el('div', 'lb-market', e.market), platRow(e));
     const pay = pays10(e.now_chance);
     li.append(el('div', 'lb-odds', `${e.now_odds}${pay ? ` · $10 pays $${pay}` : ''}`),
       el('div', 'lb-meta', `Opened ${e.open_odds} · first seen ${clock(e.first_seen)}`));
@@ -306,5 +328,5 @@
     timer = setInterval(load, REFRESH_MS);
   }
 
-  return { render, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
+  return { render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
 });

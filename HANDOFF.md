@@ -1218,3 +1218,12 @@ Tonight's changes, in plain words:
 - NEW `scripts/live-run.mjs`: pull, `live-tick.mjs --push`, then `live-discord.mjs --slug X` for each non-final game in `data/live/index.json`. Always exits 0, never prints secrets, skips Discord if no webhook is set.
 - Schedule moved from the shell loop to a server-side scheduled run every 10 min, 11:00 AM-12:59 AM CT, that wakes my computer and runs `node scripts/live-run.mjs`.
 - Test tick 1:31 PM CT: BOS@DET published (pregame, 0 edges yet, which is expected until prices move off the opening line after tip).
+
+## For Pablo: Kalshi badges on Live Bets cards (Oct 20, 2026, Reed's bot)
+Pablo, Reed asked for this and OK'd touching your Live Bets files. All changes are additive:
+- **New `scripts/live-kalshi.mjs`.** After each successful `live-watch.mjs publish`, `live-tick.mjs` calls `annotateGame()`, which sets `edge.kalshi` on every edge (`true` = Kalshi has the same market, `false` = we checked and it's not there, `null` = couldn't check) and `d.kalshi_checked`. It's wrapped in try/catch, so it can never fail your tick.
+- **Matching:** the full-game moneyline, spread (the minus team's "wins by over L"), total (`floor_strike` = line), and props (same player + stat + N+, using KXNBAPTS, KXNBAAST, KXNHLPTS and the rest). Quarter, half and team-total lines come back `null` because there's no Kalshi series for them in the table.
+- **Cost:** about 2–11 free GETs per game, cached in `.cache/live-kalshi/` (gitignored) for 10 minutes.
+- **UI:** `js/live-bets.js` `platRow()` and `platBadges()` add "Polymarket ✓" on every card, "Kalshi ✓" when the value is true and a dim "Kalshi —" when it's false. Nothing extra shows for null. Tapping a badge shows a one-line note. The styles are at the end of `css/live-bets.css`.
+- **If you run publish without tick**, the field is missing and the cards just show Polymarket ✓.
+- **Tests:** `tests/live-kalshi.test.mjs`.
