@@ -409,6 +409,15 @@ window.STR = {
     pts: n => `${n} pts`,
     recent: 'Recent picks', date: 'Date', pick: 'Pick', chance: 'Chance', result: 'Result',
     resultWords: { win: 'won', loss: 'lost', pending: 'not finished', push: 'refund' },
+    // Slip pop-up when you tap a Recent picks row (HANDOFF §39).
+    slip: {
+      open: t => `Open the slip for ${t}`, picked: t => `We picked: ${t} to win`,
+      chance: 'Our chance', fair: a => `fair odds ${a}`, price: 'Polymarket price', vegas: 'Vegas line',
+      pays: (st, p) => `$${+st.toFixed(2)} → $${p.toFixed(2)} if it wins`,
+      priceNote: 'Price is the last one we saved, so it may have moved since the pick.',
+      noPrice: 'No saved Polymarket price for this game.', score: 'We guessed', players: 'Players',
+      poly: 'Open on Polymarket', close: 'Close'
+    },
     // "How each app's prices compare": one block per app, three columns.
     platTitle: 'How each app\'s prices compare',
     platNote: 'Which apps pay more or less for the same bet. Two sources: combo bets people logged here, and (soon) prices we pull in automatically.',

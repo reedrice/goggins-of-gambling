@@ -907,3 +907,12 @@ Started Oct 19, 2026 with 20 picks logged, 0 graded. Picks published before then
 My Bets lives in localStorage (`betdash_bets`), so bets placed straight on Polymarket (from screenshots) are added via **`data/seed-bets.json`** (committed, **no dollars**: `stake_units` + `quoted_multiple` = total return / stake). On start, `seedBets()` in `js/app.js` copies each new id into localStorage with `stake = stake_units × profile.unit`, then remembers the id in `prefs.seededBets` so deletes/settles stick and nothing is re-added. Seeded bets are `share:false` (not pushed to `data/bet-log.json`). To add more: append to `bets[]` with a new unique id. First batch: Reed's 6 open combos from 10/19 (4-leg, 2× 2-leg, 3-leg, 9-leg WAS@SF SGP, 7-leg NHL week + CLE@TB). No tabs added.
 
 **§38 update (Oct 19, 2026, late):** added a 7th seed, `seed-2026-10-19-2leg-tennis-dong-jeong` (ITF M15 Shenzhen Dong + ITF M15 Singapore Jeong, 1u, 3.857x). seedBets() tracks seeded ids one by one in prefs.seededBets, so browsers that already seeded the first 6 pick up only the new id; fetchData uses no-store, so no cache bump is needed.
+
+## 39. Record tab: tap a "Recent picks" row to see its slip (Oct 19, 2026)
+
+- Each row in Record → "Recent picks" (from `data/predictions.json`) can be tapped (or focused + Enter). It opens a bottom sheet (centered card on wide screens) — `openPredSlip()` / `openSheet()` in `js/app.js`, styles in `css/style.css` §27, words in `STR.record.slip`.
+- The sheet shows: who we picked + matchup, result badge, our chance (with fair odds), Polymarket price as American odds (never cents), the Vegas line via `Vegas.lookup()` when it's fresh, "$unit → $X if it wins" (user's own unit, browser only), our guessed score, players, reasoning, and an "Open on Polymarket" button.
+- Price comes from `data/markets/events/<sport>-<teams>-<date>.json`, game-winner market (`aec-` id). It's the last saved price, not the price at pick time — the sheet says so. No file = no price lines.
+- Closes with the × button, a backdrop tap, or Esc. Still 6 bottom tabs.
+- The Record tab doesn't list `data/pick-history.json` picks anywhere yet, so there's nothing to hook up there; `openSheet()` is generic if we add that list later.
+- Smoke test: `tests/record-slip.smoke.js` (screenshot to /workspace/shots/record-slip.png).

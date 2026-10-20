@@ -477,3 +477,15 @@ a.btn-play { display: block; text-align: center; text-decoration: none; margin-t
 
 /* §26 Picks "Refresh prices" row (HANDOFF §37) */
 .px-refresh { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 6px 0 10px; }
+
+/* §27 Record tab: tappable Recent picks rows + slip bottom sheet (HANDOFF §39) */
+.tap-row { cursor: pointer; } .tap-row:hover, .tap-row:focus { background: var(--card-2); outline: none; }
+.sheet-back { position: fixed; inset: 0; z-index: 80; background: rgba(0,0,0,.6); display: flex; align-items: flex-end; justify-content: center; }
+.sheet { position: relative; width: 100%; max-width: 520px; max-height: 85vh; overflow-y: auto; margin: 0; box-sizing: border-box;
+  border-radius: 16px 16px 0 0; padding: 18px 16px calc(18px + env(safe-area-inset-bottom, 0px)); }
+.sheet .tp-top { padding-right: 40px; }
+.sheet-x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: var(--text); font-size: 26px; cursor: pointer; }
+.slip-row { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--card-2); }
+.slip-pay { margin: 10px 0 2px; font-size: 18px; font-weight: 700; color: var(--accent); }
+.sheet .btn { display: block; text-align: center; text-decoration: none; margin-top: 12px; }
+@media (min-width: 700px) { .sheet-back { align-items: center; } .sheet { border-radius: 16px; } }

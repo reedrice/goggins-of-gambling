@@ -1729,11 +1729,86 @@
           ${cal.buckets.map(b => { const avg = b.probSum / b.n / 100, act = b.wins / b.n; return `<tr><td>${b.lo}–${b.lo + 5}%</td><td class="num">${b.n}</td><td class="num">${pct(avg)}</td><td class="num">${pct(act)}</td><td class="num ${sign(act - avg)}">${esc(R.pts(((act - avg) * 100).toFixed(1)))}</td></tr>`; }).join('')}</table></div>`
           : `<div class="section-empty">${esc(R.calEmpty)}</div>`}
         ${list.length ? `<h3>${esc(R.recent)}</h3><div class="table-wrap"><table><tr><th>${esc(R.date)}</th><th>${esc(R.pick)}</th><th class="num">${esc(R.chance)}</th><th>${esc(R.result)}</th></tr>
-          ${list.slice().sort((a, b) => String(b.date).localeCompare(String(a.date))).slice(0, 30).map(p => `<tr><td>${esc(p.date)}</td><td>${esc(p.pick)}<div class="muted small">${esc(p.game)}</div></td><td class="num">${esc(p.win_prob)}%</td><td><span class="badge ${p.result === 'win' ? 'won' : p.result === 'loss' ? 'lost' : 'open'}">${esc(R.resultWords[p.result] || p.result)}</span></td></tr>`).join('')}</table></div>` : ''}`;
+          ${list.slice().sort((a, b) => String(b.date).localeCompare(String(a.date))).slice(0, 30).map(p => `<tr class="tap-row" data-pred="${esc(p.id)}" tabindex="0" role="button" aria-label="${esc(R.slip.open(p.pick))}"><td>${esc(p.date)}</td><td>${esc(p.pick)}<div class="muted small">${esc(p.game)}</div></td><td class="num">${esc(p.win_prob)}%</td><td><span class="badge ${p.result === 'win' ? 'won' : p.result === 'loss' ? 'lost' : 'open'}">${esc(R.resultWords[p.result] || p.result)}</span></td></tr>`).join('')}</table></div>` : ''}`;
     }
     html += learningCardHtml(learnDoc);
     html += renderPlatformCompare(log, odds);
     el.innerHTML = html;
+    // Tap (or Enter on) a "Recent picks" row -> open that pick's slip (HANDOFF §39).
+    const byId = {};
+    ((preds && preds.predictions) || []).forEach(p => (byId[p.id] = p));
+    el.querySelectorAll('tr[data-pred]').forEach(tr => {
+      const go = () => { const p = byId[tr.dataset.pred]; if (p) openPredSlip(p); };
+      tr.addEventListener('click', go);
+      tr.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+    });
+  }
+
+  /**
+   * Record tab: slip pop-up for one game-winner prediction (HANDOFF §39).
+   * Shows matchup, side, our chance, the Polymarket price as American odds
+   * (never cents), the Vegas line when we have one, "$10 → $X" using the
+   * user's own unit (computed here in the browser, never saved to the repo),
+   * the result badge, and a Polymarket link.
+   * The price comes from the saved market file data/markets/events/<slug>.json
+   * (the game-winner market, ids start with "aec-"). That's the last price we
+   * saved, not necessarily the price when the pick was made, so we say so.
+   */
+  async function openPredSlip(p) {
+    const X = STR.record.slip;
+    // id "2026-10-19-col-phi" + sport "NHL" -> slug "nhl-col-phi-2026-10-19"
+    const slug = `${String(p.sport || '').toLowerCase()}-${String(p.id).slice(11)}-${p.date}`;
+    let ev = null;
+    try { ev = await fetchData(`data/markets/events/${slug}.json`); } catch (e) { /* no saved market: just skip price lines */ }
+    const pickAbbr = String(p.pick || '').toLowerCase();
+    const ml = ev && (ev.markets || []).find(m => /^aec-/.test(m.id) && (m.yes_team === pickAbbr || m.no_team === pickAbbr));
+    const side = ml ? (ml.yes_team === pickAbbr ? 'yes' : 'no') : null;
+    const price = ml ? (side === 'yes' ? ml.yes_ask : ml.no_cost) : null;   // cents, used only for math
+    const am = typeof price === 'number' ? C.formatPrice(price, 'american') : null;
+    try { if (window.Vegas) await window.Vegas.load(); } catch (e) { /* optional */ }
+    const vg = ml && window.Vegas ? window.Vegas.lookup(ml.id, side) : null;
+    const stake = exStake();
+    const pay = typeof price === 'number' ? C.payout(price, stake) : null;
+    const team = ev && (ev.teams || []).find(t => String(t.abbr).toLowerCase() === pickAbbr);
+    const link = safeUrl((ev && (ev.polymarket_url || ev.url)) || '');
+    const fair = C.formatPrice(Number(p.win_prob), 'american');
+    const rWord = STR.record.resultWords[p.result] || p.result;
+    const badgeCls = p.result === 'win' ? 'won' : p.result === 'loss' ? 'lost' : 'open';
+    const row = (k, v) => (v ? `<div class="slip-row"><span class="muted">${esc(k)}</span><b>${v}</b></div>` : '');
+    openSheet(`<div class="tp-top"><div><div class="tp-pick">${esc(X.picked(team ? team.full || team.name : p.pick))}</div>
+        <div class="pick-sub">${esc(p.sport)} · ${esc(p.game)} · ${esc(p.date)}</div></div>
+        <span class="badge ${badgeCls}">${esc(rWord)}</span></div>
+      ${row(X.chance, esc(p.win_prob + '%') + (fair !== '—' ? ` <span class="muted small">(${esc(X.fair(fair))})</span>` : ''))}
+      ${row(X.price, am ? esc(am) : '')}
+      ${row(X.vegas, vg ? esc(`${vg.p}${vg.book ? ` (${vg.book})` : ''}`) : '')}
+      ${pay ? `<div class="slip-pay">${esc(X.pays(stake, pay.pays))}</div><p class="muted small">${esc(X.priceNote)}</p>` : `<p class="muted small">${esc(X.noPrice)}</p>`}
+      ${p.projected_score ? row(X.score, esc(p.projected_score)) : ''}
+      ${(p.player_projections || []).length ? `<div class="small muted">${esc(X.players)}: ${esc(p.player_projections.join(' · '))}</div>` : ''}
+      ${p.reasoning ? `<p class="small">${esc(p.reasoning)}</p>` : ''}
+      ${link ? `<a class="btn" href="${esc(link)}" target="_blank" rel="noopener noreferrer">${esc(X.poly)}</a>` : ''}`);
+  }
+
+  /**
+   * Bottom sheet pop-up (slides up on phones, centered card on desktop).
+   * Closes with the X button, a tap on the dark backdrop, or Esc. Only one
+   * open at a time. `inner` must already be escaped HTML.
+   */
+  function openSheet(inner) {
+    closeSheet();
+    const wrap = document.createElement('div');
+    wrap.className = 'sheet-back';
+    wrap.innerHTML = `<div class="sheet card trent-pick" role="dialog" aria-modal="true">
+      <button class="sheet-x" type="button" aria-label="${esc(STR.record.slip.close)}">×</button>${inner}</div>`;
+    wrap.addEventListener('click', e => { if (e.target === wrap) closeSheet(); });
+    wrap.querySelector('.sheet-x').addEventListener('click', closeSheet);
+    document.addEventListener('keydown', sheetEsc);
+    document.body.appendChild(wrap);
+    wrap.querySelector('.sheet-x').focus();
+  }
+  function sheetEsc(e) { if (e.key === 'Escape') closeSheet(); }
+  function closeSheet() {
+    document.querySelectorAll('.sheet-back').forEach(n => n.remove());
+    document.removeEventListener('keydown', sheetEsc);
   }
 
   /**
