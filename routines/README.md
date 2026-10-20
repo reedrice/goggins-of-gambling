@@ -102,7 +102,7 @@ Check for newly confirmed lineups, starting goalies, starting pitchers and injur
 
 ## Late-scratch check (`late-scratch-check`)
 
-- **Schedule (CT):** `45 17 * * *`
+- **Schedule (CT):** `50 17 * * *`
 - **Notes:** Right after NFL inactives (~5:45 PM CT). Confirm exact cron with Reed.
 
 **Step 0:** Run `node scripts/routine-gate.mjs check late-scratch-check <your-name>`. Stop silently on SKIP.

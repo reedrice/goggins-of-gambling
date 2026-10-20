@@ -14,16 +14,16 @@
       "name": "Lineup & goalie check",
       "owner": "grok",
       "enabled": true,
-      "schedule_ct": null,
+      "schedule_ct": "0 12,16 * * *",
       "last_run_by": null,
       "last_run_at": null,
-      "notes": "Schedule not exported yet. Confirm with Reed and fill schedule_ct."
+      "notes": "Schedule not exported yet.  and fill schedule_ct."
     },
     "late-scratch-check": {
       "name": "Late-scratch check",
       "owner": "grok",
       "enabled": true,
-      "schedule_ct": "45 17 * * *",
+      "schedule_ct": "50 17 * * *",
       "last_run_by": null,
       "last_run_at": null,
       "notes": "Right after NFL inactives (~5:45 PM CT). Confirm exact cron with Reed."
@@ -32,19 +32,19 @@
       "name": "Play-money leaderboard update",
       "owner": "grok",
       "enabled": true,
-      "schedule_ct": null,
+      "schedule_ct": "0 12,15,17-23 * * *",
       "last_run_by": null,
       "last_run_at": null,
-      "notes": "Runs several times a day (one run at 12 PM also runs learn.mjs). Exact cron not exported; confirm with Reed."
+      "notes": "Runs several times a day (one run at 12 PM also runs learn.mjs). Exact cron not exported;"
     },
     "weekly-learning-review": {
       "name": "Weekly learning review",
       "owner": "grok",
       "enabled": true,
-      "schedule_ct": null,
+      "schedule_ct": "0 10 * * 0",
       "last_run_by": null,
       "last_run_at": null,
-      "notes": "Weekly. Day/time not exported; confirm with Reed."
+      "notes": "Weekly. Day/time not exported;"
     }
   }
 }
