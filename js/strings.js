@@ -674,7 +674,7 @@ window.STR.pmSync = {
  totalInvested:'Total invested · Open positions', totalPotentialPayout:'Total payout · If all win',
  openTotalsNote:'Open positions only. Payout includes the investment and assumes every position wins; opposing positions may make that impossible. This is not profit or an available cash-out amount.',
  openCostsMissing:n=>'Total invested unavailable: '+n+' open position(s) have an unavailable or ambiguous cost basis.',
- invested:'Amount invested', payoutIfWins:'Payout if it wins',
+ positionDetails:'Position details', invested:'Amount invested', payoutIfWins:'Payout if it wins',
  positionAmountsNote:'Remaining position only. Payout is the gross contract return, not profit or an early cash-out quote. Unavailable costs stay blank; fees are not inferred.',
  positionInfo:(quantity,cost,value)=>'Reported cost basis '+cost+' · Unrealized P/L '+value,
  progressUnavailable:'Live progress unavailable for this market.', activity:'Recent trading activity', noActivity:'No trading activity reported.',

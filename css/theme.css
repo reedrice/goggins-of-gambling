@@ -247,3 +247,15 @@ input[type="checkbox"], input[type="radio"] { accent-color: var(--accent); }
 .slate-tennis-ball::before, .slate-tennis-ball::after { content: ''; position: absolute; top: -3px; width: 12px; height: 20px; border: 1.5px solid #fff; border-radius: 50%; }
 .slate-tennis-ball::before { left: -9px; }
 .slate-tennis-ball::after { right: -9px; }
+
+/* Compact private positions: shared panel geometry and palette remain authoritative. */
+#tab-bets .pm-position { padding: var(--space-3, 12px) var(--space-4, 16px); margin: 8px 0; }
+#tab-bets .pm-position > strong { font-size: 14px; line-height: 1.3; }
+#tab-bets .pm-position-metrics { display:flex; flex-wrap:wrap; gap:8px 24px; margin:6px 0; }
+#tab-bets .pm-position-amount { display:flex; align-items:baseline; gap:8px; }
+#tab-bets .pm-position-amount .k { color:var(--text-secondary); font-size:11px; }
+#tab-bets .pm-position-amount .v { color:var(--text-primary); font-size:16px; }
+#tab-bets .pm-position-details { margin:4px 0; padding:0; border:0; background:transparent; }
+#tab-bets .pm-position-details summary { font-size:11px; color:var(--text-secondary); min-height:44px; }
+#tab-bets .pm-position .pm-leg-label { margin-top:6px; font-size:14px; line-height:1.35; }
+#tab-bets .pm-position .bp-host { padding:6px 0 0; margin-top:4px; font-size:11px; }

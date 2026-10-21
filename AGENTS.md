@@ -129,3 +129,5 @@ Reed authorized a non-AI Cloudflare watchdog in watchdog/. This is an exception 
 
 ### Private account currency precision (Reed, Oct 21)
 Reed explicitly overrides the whole-dollar display rule for the private Polymarket account section: show USD amounts with exactly two decimal places, including invested cost, winning payout, settlement gains/losses and P/L. Keep this preference scoped to private account amounts.
+
+Historical model source: data/espn/history.json, generated daily within the existing ESPN status job by scripts/espn-history.mjs. Keep completed-only identity matching, sample minimums, source provenance, 365-day window, bounded request budget and sport-specific abstentions. Never replace missing tennis/golf/college/soccer evidence with an NBA/default model. No new AI routines.

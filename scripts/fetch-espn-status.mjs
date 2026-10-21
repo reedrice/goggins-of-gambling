@@ -35,7 +35,7 @@ async function main(){const now=Date.now(),at=new Date(now).toISOString(),today=
    const doc={schema_version:1,league,query_date:date,source_url:source,fetched_at:at,events:rows};write(file,doc);success++;manifest.snapshots.push({league,date,file,available:true,fetched_at:at,events:rows.length,details:rows.filter(x=>x.details_available).length});
   }catch(e){manifest.snapshots.push({league,date,file,available:false,last_success_at:old?.fetched_at||null,error:e.message});console.error('::warning::ESPN '+league+' '+date+' unavailable; prior snapshot preserved.');}
  });
- manifest.snapshots.sort((a,b)=>(a.league+a.date).localeCompare(b.league+b.date));manifest.summary_requests=32-remaining;manifest.partial=success!==jobs.length;write('data/espn/index.json',manifest);console.log('ESPN status: '+success+'/'+jobs.length+' scoreboard snapshots; '+manifest.summary_requests+' bounded event summaries.');if(!success)throw Error('All ESPN scoreboards unavailable');
+ manifest.snapshots.sort((a,b)=>(a.league+a.date).localeCompare(b.league+b.date));manifest.summary_requests=32-remaining;manifest.partial=success!==jobs.length;write('data/espn/index.json',manifest);console.log('ESPN status: '+success+'/'+jobs.length+' scoreboard snapshots; '+manifest.summary_requests+' bounded event summaries.');if(!success)throw Error('All ESPN scoreboards unavailable');await (await import('./espn-history.mjs')).refreshHistory();
 }
 if(process.argv[1]&&pathToFileURL(path.resolve(process.argv[1])).href===import.meta.url)main().catch(e=>{console.error('ESPN status: '+e.message);process.exitCode=1;});
 
