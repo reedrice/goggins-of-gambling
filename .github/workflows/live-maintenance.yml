@@ -53,6 +53,9 @@ jobs:
           path: .cache/pages
   deploy:
     needs: refresh
+    concurrency:
+      group: production-pages-deploy
+      cancel-in-progress: false
     if: needs.refresh.outputs.updated == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -61,9 +64,17 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.retry.outputs.page_url }}
     steps:
       - name: Deploy refreshed site
         id: deployment
+        continue-on-error: true
         uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
 
+      - name: Wait before one deployment retry
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 30
+      - name: Retry Pages deployment once
+        id: retry
+        if: steps.deployment.outcome == 'failure'
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4

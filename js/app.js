@@ -476,6 +476,7 @@
   /** Reveal the app; load the market index in the background (team logos). */
   function startApp() {
     $('#app').hidden = false;
+    if(window.PicksScores)window.PicksScores.mount($('#picks-score-ticker'));
     renderHeader();
     renderPlatformToggle();
     window.Picker.loadIndex().catch(() => {});

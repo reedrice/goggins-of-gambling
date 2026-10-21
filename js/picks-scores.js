@@ -145,6 +145,7 @@
       state.loading = true;
       const controller = state.controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 12000);
+      try {
       const dayRange = dates();
       const results = await Promise.allSettled(SOURCES.map(async ([label, path]) => {
         // ESPN's scoreboard date ranges return 400 for some leagues; query each day explicitly.
@@ -157,18 +158,24 @@
         }));
         return { live: boards.flatMap(board => liveGames(board, label)), upcoming: boards.flatMap(board => liveGames(board, label, 'upcoming')) };
       }));
-      clearTimeout(timeout); state.loading = false;
       if (active !== state) return;
       const fulfilled = results.filter(r => r.status === 'fulfilled').map(r => r.value);
       const live = groupGames(fulfilled.map(r => r.live));
       cache = { at: Date.now(), upcoming: !live.length, groups: live.length ? live : groupGames(fulfilled.map(r => r.upcoming)), failures: results.flatMap((r, i) => r.status === 'rejected' ? [S.leagues[SOURCES[i][0]] || S.soccer] : []) };
-      render(cache); state.timer = setTimeout(refresh, REFRESH);
+      render(cache);
+      } catch {
+        if(active===state){meta.textContent=S.unavailable;if(!viewport.querySelector('.pst-game'))viewport.replaceChildren(node('div','pst-empty',S.unavailable));}
+      } finally {
+        clearTimeout(timeout);state.loading=false;
+        if(active===state)state.timer=setTimeout(refresh,REFRESH);
+      }
     }
     refresh();
     state.redraw = () => { if (cache) render(cache); };
     state.wake = () => { if (!document.hidden) { clearTimeout(state.timer); refresh(); } };
   }
   if (typeof window !== 'undefined') window.addEventListener('resize', () => active?.redraw?.());
+  if (typeof window !== 'undefined') for(const event of ['focus','online'])window.addEventListener(event,()=>active?.wake?.());
   if (typeof document !== 'undefined') document.addEventListener('visibilitychange', () => active?.wake?.());
   return { SOURCES, dates, liveGames, groupGames, mount, stop };
 });

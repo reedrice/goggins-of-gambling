@@ -60,6 +60,10 @@ export function shouldTick({ start, status }, nowMs, leadMin = null) {
   const withinWindow = leadMin == null ? (s <= nowMs || chicagoDay(s) <= new Date(Date.parse(chicagoDay(nowMs)+'T12:00:00Z')+86400000).toISOString().slice(0,10)) : s - nowMs <= leadMin * 60e3;
   return withinWindow && nowMs - s <= 24 * 3600e3;
 }
+// Rescheduled events must refresh their old published schedule even if discovery moved them out of the window.
+export function needsTick(game,published,now,lead=null){
+ return shouldTick({start:game.start,status:published?.status},now,lead)||!!published&&shouldTick({start:published.start_time,status:published.status},now,lead);
+}
 
 /** Pure: build index.json from published game files. */
 export function buildIndex(files) {
@@ -105,7 +109,7 @@ export async function tick() {
   try { for (const g of await listGames(now, lead)) cands.set(g.slug, g); }
   catch (e) { failures++; console.error('tick: could not list games:', e.message); }
   for (const d of Object.values(pub)) if (d.is_game !== false && !cands.has(d.slug)) cands.set(d.slug, { slug: d.slug, start: d.start_time });
-  const todo = [...cands.values()].filter(g => shouldTick({ start: g.start, status: pub[g.slug]?.status }, now, lead));
+  const todo = [...cands.values()].filter(g => needsTick(g,pub[g.slug],now,lead));
   console.log(`tick ${new Date(now).toISOString()}: ${cands.size} candidate game(s), ${todo.length} to update`);
   let ok = 0;
   const queue = [...todo];

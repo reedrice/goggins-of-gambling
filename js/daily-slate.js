@@ -1,5 +1,5 @@
 /* Public versioned ESPN snapshots only. No betting advice, keys, AI or new ingestion. */
-(function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else{root.DailySlate=api;api.mount(document.getElementById('daily-slate'));if(root.PicksScores)root.PicksScores.mount(document.getElementById('picks-score-ticker'));}})(typeof window!=='undefined'?window:globalThis,function(){
+(function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else{root.DailySlate=api;api.mount(document.getElementById('daily-slate'));}})(typeof window!=='undefined'?window:globalThis,function(){
  'use strict';
  const GROUPS=[['nba',['nba'],'🏀'],['nhl',['nhl'],'🏒'],['tennis',['atp','wta'],''],['nfl',['nfl'],'🏈'],['cfb',['cfb'],'🏈'],['wnba',['wnba'],'🏀'],['cbb',['cbb'],'🏀'],['wcbb',['wcbb'],'🏀'],['mlb',['mlb'],'⚾'],['soccer',['epl','bun','eflch','fl1','lal','lmx','mls','sea','ucl','uecl','uel'],'⚽'],['golf',['pga','lpga','dpwt'],'⛳']];
  const day=t=>new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(t));
