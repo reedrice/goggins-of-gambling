@@ -1,15 +1,17 @@
 (function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else root.AthleteFlags=api;})(typeof self!=='undefined'?self:this,function(){
  'use strict';
- function names(a){const full=a.fullName||a.displayName||'',words=full.trim().split(/\s+/),surname=words.slice(1).join(' ');return [a.displayName,a.shortName,a.fullName,...(surname?[surname,surname+' '+words[0][0],words[0][0]+'. '+surname]:[])].filter(Boolean);}
+ function names(a){const full=a.fullName||a.displayName||'',words=full.trim().split(/\s+/),surname=words.slice(1).join(' ');return [a.displayName,a.shortName,a.fullName,...(words.length===2?[words.slice().reverse().join(' ')]:[]),...(surname?[surname,surname+' '+words[0][0],words[0][0]+'. '+surname]:[])].filter(Boolean);}
  const key=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
  function flag(a){const f=a?.flag;return f&&/^https:\/\/a\.espncdn\.com\/i\/teamlogos\/countries\/[^?#]+\.png$/.test(f.href)&&f.alt?{href:f.href,country:f.alt}:null;}
  function index(docs){const out=new Map();for(const d of docs)for(const e of d.events||[])for(const c of e.competitions||[])for(const p of c.competitors||[])for(const a of [p.athlete,...(p.roster?.athletes||[])].filter(Boolean)){const f=flag(a);if(!f)continue;for(const n of names(a)){const k=d.league+':'+key(n);const old=out.get(k);out.set(k,old===null||old&&old.country!==f.country?null:f);}}return out;}
- let countries=new Map(),pending;
+ let countries=new Map(),history=new Map(),pending;
+ async function loadHistory(){try{const r=await fetch('data/espn/athlete-flags.json',{cache:'no-store',signal:AbortSignal.timeout(12000)});if(!r.ok)return;const d=await r.json();history=index((d.profiles||[]).map(p=>({league:p.league,events:[{competitions:[{competitors:[{athlete:p.athlete}]}]}]})));}catch{}}
  async function load(){if(pending)return pending;pending=(async()=>{try{const r=await fetch('data/espn/index.json',{cache:'no-store',signal:AbortSignal.timeout(12000)});if(!r.ok)return;const ix=await r.json();const files=(ix.snapshots||[]).filter(s=>s.available&&/^(atp|wta|pga|lpga|dpwt)$/.test(s.league)&&/^data\/espn\/[a-z]+-\d{4}-\d{2}-\d{2}\.json$/.test(s.file));const results=await Promise.allSettled(files.map(async s=>{const r=await fetch(s.file+'?updated='+encodeURIComponent(s.fetched_at||ix.updated_at),{cache:'no-store',signal:AbortSignal.timeout(12000)});if(!r.ok)throw Error('snapshot');return r.json();}));countries=index(results.filter(r=>r.status==='fulfilled').map(r=>r.value));}catch{} })();return pending;}
- function lookup(name,sport){const leagues=sport==='tennis'?['atp','wta']:sport==='golf'?['pga','lpga','dpwt']:[];const found=leagues.map(l=>countries.get(l+':'+key(name))).filter(Boolean);return found.length&&found.every(f=>f.country===found[0].country)?found[0]:null;}
+ function lookup(name,sport){const leagues=sport==='tennis'?['atp','wta']:sport==='golf'?['pga','lpga','dpwt']:[];const found=leagues.flatMap(l=>[countries.get(l+':'+key(name)),history.get(l+':'+key(name))]).filter(Boolean);return found.length&&found.every(f=>f.country===found[0].country)?found[0]:null;}
  function decorate(row,text,sport){if(!/^(tennis|golf)$/.test(sport)){row.textContent=text;return;}for(const part of String(text).split(/(\s+vs\s+|\s*vs\.\s*|\s+\/\s+)/i)){if(/^\s*(?:vs\.?|\/)\s*$/i.test(part)){row.append(document.createTextNode(part.includes('/')?' / ':' vs. '));continue;}const person=document.createElement('span');person.className='lb-athlete';const f=lookup(part,sport);if(f){const img=document.createElement('img');img.src=f.href;img.alt=f.country;img.title=f.country;img.className='lb-country-flag';img.width=20;img.height=14;img.loading='lazy';img.addEventListener('error',()=>img.remove(),{once:true});person.append(img);}person.append(document.createTextNode(part));row.append(person);}}
- return {index,key,flag,load,lookup,decorate};
+ return {index,key,flag,load:()=>Promise.all([load(),loadHistory()]),lookup,decorate};
 });
+
 
 
 

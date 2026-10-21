@@ -24,7 +24,7 @@ function main(){
    run(['scripts/record-closeout.mjs']);
    // Persist the feed stamp for the source-backed routine runner, still in this unpublished CI tree.
    fs.writeFileSync('routines/owners.json',JSON.stringify(stamp(owners,'live-feed-update','github-actions'),null,2)+'\n');
-   run(['scripts/fetch-espn-status.mjs']);run(['scripts/scheduled-routines.mjs']);run(['tests/no-instructions.test.mjs']);run(['tests/no-ai-runtime.test.mjs']);
+   run(['scripts/fetch-espn-status.mjs']);run(['scripts/fetch-espn-flags.mjs']);run(['scripts/scheduled-routines.mjs']);run(['tests/no-instructions.test.mjs']);run(['tests/no-ai-runtime.test.mjs']);
    const tracked=git('diff','--name-only').split('\n').filter(Boolean),untracked=git('ls-files','--others','--exclude-standard').split('\n').filter(Boolean);
    if([...tracked,...untracked].some(p=>!allowed(p)))throw Error('Refuse changes outside public maintenance allowlist');
    git('add','--',...[...tracked,...untracked].filter(allowed));
@@ -35,4 +35,5 @@ function main(){
  throw Error('Main advanced on every retry; no stale data overwritten');
 }
 if(process.argv[1]?.endsWith('actions-maintenance.mjs'))try{main();}catch(e){console.error(e.message?.split('\n')[0]);process.exitCode=1;}
+
 

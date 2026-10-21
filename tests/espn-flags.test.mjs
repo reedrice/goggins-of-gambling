@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {athletes} from '../scripts/fetch-espn-flags.mjs';
+test('country catalog extracts published singles, doubles and golf flags only',()=>{const a={displayName:'Test Player',flag:{href:'https://a.espncdn.com/i/teamlogos/countries/500/chn.png',alt:'China'}};assert.equal(athletes({events:[{groupings:[{competitions:[{competitors:[{athlete:a},{roster:{athletes:[a,{displayName:'Unknown'}]}}]}]}]}]}).length,2);assert.equal(athletes({events:[{competitions:[{competitors:[{athlete:a}]}]}]}).length,1);});
