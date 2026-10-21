@@ -16,3 +16,8 @@ test('slate filters map to existing Picks sport categories',()=>{
  assert.equal(Slate.sportFor('atp'),'Tennis');assert.equal(Slate.sportFor('wta'),'Tennis');
  assert.equal(Slate.sportFor('cfb'),'NCAAF');assert.equal(Slate.sportFor('wcbb'),'WNCAAB');assert.equal(Slate.sportFor('nba'),'NBA');assert.equal(Slate.sportFor(''), '');
 });
+
+test('one Tennis group combines ATP and WTA under the existing Tennis filter',()=>{
+ const tennis=Slate.GROUPS.filter(([key])=>key==='tennis');assert.equal(tennis.length,1);assert.deepEqual(tennis[0][1],['atp','wta']);assert.equal(Slate.sportFor('tennis'),'Tennis');
+ assert.ok(!Slate.GROUPS.some(([key])=>key==='atp'||key==='wta'));
+});

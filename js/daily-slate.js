@@ -1,9 +1,9 @@
 /* Public versioned ESPN snapshots only. No betting advice, keys, AI or new ingestion. */
 (function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else{root.DailySlate=api;api.mount(document.getElementById('daily-slate'));if(root.PicksScores)root.PicksScores.mount(document.getElementById('picks-score-ticker'));}})(typeof window!=='undefined'?window:globalThis,function(){
  'use strict';
- const GROUPS=[['nba',['nba'],'🏀'],['nhl',['nhl'],'🏒'],['atp',['atp'],'🎾'],['wta',['wta'],'🎾'],['nfl',['nfl'],'🏈'],['cfb',['cfb'],'🏈'],['wnba',['wnba'],'🏀'],['cbb',['cbb'],'🏀'],['wcbb',['wcbb'],'🏀'],['mlb',['mlb'],'⚾'],['soccer',['epl','bun','eflch','fl1','lal','lmx','mls','sea','ucl','uecl','uel'],'⚽'],['golf',['pga','lpga','dpwt'],'⛳']];
+ const GROUPS=[['nba',['nba'],'🏀'],['nhl',['nhl'],'🏒'],['tennis',['atp','wta'],''],['nfl',['nfl'],'🏈'],['cfb',['cfb'],'🏈'],['wnba',['wnba'],'🏀'],['cbb',['cbb'],'🏀'],['wcbb',['wcbb'],'🏀'],['mlb',['mlb'],'⚾'],['soccer',['epl','bun','eflch','fl1','lal','lmx','mls','sea','ucl','uecl','uel'],'⚽'],['golf',['pga','lpga','dpwt'],'⛳']];
  const day=t=>new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(t));
- const sportFor=key=>({nba:'NBA',nhl:'NHL',atp:'Tennis',wta:'Tennis',nfl:'NFL',cfb:'NCAAF',wnba:'WNBA',cbb:'NCAAB',wcbb:'WNCAAB',mlb:'MLB',soccer:'Soccer',golf:'Golf'})[key]||'';
+ const sportFor=key=>({nba:'NBA',nhl:'NHL',tennis:'Tennis',atp:'Tennis',wta:'Tennis',nfl:'NFL',cfb:'NCAAF',wnba:'WNBA',cbb:'NCAAB',wcbb:'WNCAAB',mlb:'MLB',soccer:'Soccer',golf:'Golf'})[key]||'';
  function activeEvents(docs,leagues,now=Date.now()){
   const seen=new Set(),today=day(now);
   for(const doc of docs.filter(d=>leagues.includes(d.league)))for(const e of doc.events||[])for(const c of e.competitions?.length?e.competitions:[e]){
@@ -35,11 +35,13 @@
     row.replaceChildren(all,...GROUPS.map(([key,leagues,icon])=>{
      const relevant=entries.map((s,i)=>({s,d:results[i]})).filter(x=>leagues.includes(x.s.league));
      const complete=leagues.every(l=>relevant.some(x=>x.s.league===l))&&relevant.every(x=>x.d&&Date.now()-Date.parse(x.d.fetched_at)<30*60000);
-     const count=activeEvents(docs,leagues),pill=button(sportFor(key));pill.className='slate-pill'+(count?'':' slate-empty');
-     const label=S.names[key],kind=['atp','wta'].includes(key)?'matches':key==='golf'?'events':'games',unit=(count===1?S.singular:S.units)[kind];
-     pill.textContent=`${icon} ${label} (${complete?count:count?count+'+':'—'}${complete||count?' '+unit:''})`;
+     const count=activeEvents(docs,leagues);incomplete=incomplete||!complete;if(!count)return null;
+     const pill=button(sportFor(key));pill.className='slate-pill';
+     const label=S.names[key],kind=key==='tennis'?'matches':key==='golf'?'events':'games',unit=(count===1?S.singular:S.units)[kind];
+     pill.textContent=`${icon?icon+' ':''}${label} (${complete?count:count+'+'} ${unit})`;
+     if(key==='tennis'){const ball=document.createElement('span');ball.className='slate-tennis-ball';ball.setAttribute('aria-hidden','true');pill.prepend(ball);}
      pill.title=complete?S.detail:S.partial;incomplete=incomplete||!complete;return pill;
-    }));
+    }).filter(Boolean));
     sync();
     status.textContent=incomplete?S.partial:'';
    }catch{status.textContent=S.unavailable;if(!row.children.length)row.textContent=S.loadingFailed;}
