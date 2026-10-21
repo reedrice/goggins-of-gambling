@@ -4,12 +4,12 @@
  "game": "Paul / Vocel vs. Gonzalez / Jebens",
  "url": "https://polymarket.us/sports/atpdb/atpdb-paulvocel-gonzaljebens-2026-10-19",
  "start_time": "2026-10-21T11:55:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185119",
-  "fetched_at": "2026-10-21T12:54:32.293Z",
+  "fetched_at": "2026-10-21T14:57:57.410Z",
   "tennis": true,
   "tennis_match": {
    "id": "185119",
@@ -17,17 +17,17 @@
    "date": "2026-10-21T12:00Z",
    "startDate": "2026-10-21T12:00Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Jakub Paul (SUI) & Matej Vocel (CZE) is tied with Santiago Gonzalez (MEX) & Hendrik Jebens (GER) 6-7 (2-7) 1-0",
+     "text": "Santiago Gonzalez (MEX) & Hendrik Jebens (GER) bt Jakub Paul (SUI) & Matej Vocel (CZE) 7-6 (7-2) 3-6 1-0 (12-10)",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "winner": true,
      "linescores": [
       {
        "value": 7,
@@ -63,7 +63,13 @@
        "winner": true
       },
       {
-       "value": 0
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 1,
+       "tiebreak": 12,
+       "winner": true
       }
      ],
      "roster": {
@@ -138,7 +144,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "winner": false,
      "linescores": [
       {
        "value": 6,
@@ -146,7 +152,13 @@
        "winner": false
       },
       {
-       "value": 1
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0,
+       "tiebreak": 10,
+       "winner": false
       }
      ],
      "roster": {
@@ -216,11 +228,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 110,
    "type": {
     "id": "3",
@@ -237,28 +244,28 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Santiago Gonzalez / Hendrik Jebens",
    "alias": "Santiago Gonzalez / Hendrik Jebens",
    "name": "Santiago Gonzalez / Hendrik Jebens",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Jakub Paul / Matej Vocel",
    "alias": "Jakub Paul / Matej Vocel",
    "name": "Jakub Paul / Matej Vocel",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-21T12:54:32.293Z",
+ "updated": "2026-10-21T14:57:57.410Z",
  "open_taken_at": "2026-10-21T05:15:05.684Z",
  "thresholds": {
   "big": 10,
@@ -306,7 +313,7 @@
    "reason": "Big move (33 pts), likely news",
    "context": "Santiago Gonzalez / Hendrik Jebens 7, 0 · Jakub Paul / Matej Vocel 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-21T12:54:32.293Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],

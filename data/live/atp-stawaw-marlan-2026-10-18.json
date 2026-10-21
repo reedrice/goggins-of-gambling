@@ -4,12 +4,12 @@
  "game": "Stan Wawrinka vs. Martin Landaluce",
  "url": "https://polymarket.us/sports/atp/atp-stawaw-marlan-2026-10-18",
  "start_time": "2026-10-21T12:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185104",
-  "fetched_at": "2026-10-21T12:54:29.672Z",
+  "fetched_at": "2026-10-21T14:57:45.170Z",
   "tennis": true,
   "tennis_match": {
    "id": "185104",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "detail": "3rd Set",
+     "shortDetail": "3rd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Martin Landaluce (ESP) is tied with Stan Wawrinka (SUI) 3-6 2-1",
+     "text": "Stan Wawrinka (SUI) leads Martin Landaluce (ESP) 6-3 6-7 (2-7) 6-6 (6-5)",
      "type": "event"
     }
    ],
@@ -61,7 +61,13 @@
        "winner": false
       },
       {
-       "value": 2
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "tiebreak": 5
       }
      ],
      "athlete": {
@@ -107,7 +113,13 @@
        "winner": true
       },
       {
-       "value": 1
+       "value": 6,
+       "tiebreak": 2,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "tiebreak": 6
       }
      ],
      "athlete": {
@@ -160,14 +172,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "period": 3,
+  "clock": "3rd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Martin Landaluce",
    "alias": "Martin Landaluce",
    "name": "Martin Landaluce",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Stan Wawrinka",
@@ -179,7 +191,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-21T12:54:29.672Z",
+ "updated": "2026-10-21T14:57:45.170Z",
  "open_taken_at": "2026-10-21T05:14:51.602Z",
  "thresholds": {
   "big": 10,
@@ -337,7 +349,7 @@
    "reason": "Explained by score: Martin Landaluce not above the games spread right now",
    "context": "Martin Landaluce 3, 2 · Stan Wawrinka 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-21T12:54:29.672Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -357,7 +369,7 @@
    "reason": "Explained by score: Martin Landaluce trailing in sets",
    "context": "Martin Landaluce 3, 2 · Stan Wawrinka 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-21T12:54:29.672Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -377,7 +389,7 @@
    "reason": "Explained by score: Martin Landaluce not above the games spread right now",
    "context": "Martin Landaluce 3, 2 · Stan Wawrinka 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-21T12:54:29.672Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -397,7 +409,7 @@
    "reason": null,
    "context": "Martin Landaluce 3, 2 · Stan Wawrinka 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-21T12:54:29.672Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -417,11 +429,25 @@
    "reason": "Explained by score: Stan Wawrinka not above the games spread right now",
    "context": "Martin Landaluce 3, 2 · Stan Wawrinka 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-21T12:54:29.672Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1529585:1:2026-10-21T12:54:29.672Z",
+   "key": "1529585:1",
+   "at": "2026-10-21T14:57:45.170Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-127",
+   "now_chance": 56,
+   "edge": 15,
+   "text": "Edge gone: Under 27.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-stawaw-marlan-2026-10-18"
+  },
   {
    "id": "new_edge:1529585:1:big",
    "key": "1529585:1",
@@ -438,7 +464,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1529585:1:big"
+  "new_edge:1529585:1:big",
+  "gone:1529585:1:2026-10-21T12:54:29.672Z"
  ],
  "kalshi_checked": null
 }

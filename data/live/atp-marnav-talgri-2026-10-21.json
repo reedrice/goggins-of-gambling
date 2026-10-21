@@ -4,12 +4,12 @@
  "game": "Mariano Navone vs. Tallon Griekspoor",
  "url": "https://polymarket.us/sports/atp/atp-marnav-talgri-2026-10-21",
  "start_time": "2026-10-21T11:25:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185053",
-  "fetched_at": "2026-10-21T12:54:35.955Z",
+  "fetched_at": "2026-10-21T14:57:57.178Z",
   "tennis": true,
   "tennis_match": {
    "id": "185053",
@@ -17,17 +17,17 @@
    "date": "2026-10-21T11:30Z",
    "startDate": "2026-10-21T11:30Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(8) Mariano Navone (ARG) is tied with Tallon Griekspoor (NED) 6-7 (4-7) 3-2",
+     "text": "Tallon Griekspoor (NED) bt (8) Mariano Navone (ARG) 7-6 (7-4) 7-5",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "winner": true,
      "linescores": [
       {
        "value": 7,
@@ -63,7 +63,8 @@
        "winner": true
       },
       {
-       "value": 2
+       "value": 7,
+       "winner": true
       }
      ],
      "athlete": {
@@ -103,7 +104,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "winner": false,
      "curatedRank": {
       "current": 8
      },
@@ -114,7 +115,8 @@
        "winner": false
       },
       {
-       "value": 3
+       "value": 5,
+       "winner": false
       }
      ],
      "athlete": {
@@ -149,11 +151,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 440,
    "type": {
     "id": "1",
@@ -170,16 +167,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Tallon Griekspoor",
    "alias": "Tallon Griekspoor",
    "name": "Tallon Griekspoor",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Mariano Navone",
@@ -191,7 +188,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-21T12:54:35.955Z",
+ "updated": "2026-10-21T14:57:57.179Z",
  "open_taken_at": "2026-10-21T05:15:41.579Z",
  "thresholds": {
   "big": 10,
@@ -305,7 +302,7 @@
    "reason": null,
    "context": "Tallon Griekspoor 7, 2 · Mariano Navone 6, 3 · 2nd Set (games by set)",
    "first_seen": "2026-10-21T12:54:35.955Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -330,6 +327,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1617205:1:2026-10-21T12:54:35.955Z",
+   "key": "1617205:1",
+   "at": "2026-10-21T14:57:57.179Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Tallon Griekspoor win",
+   "market": "Moneyline",
+   "now_odds": "-117",
+   "now_chance": 54,
+   "edge": 8,
+   "text": "Edge gone: Tallon Griekspoor win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-marnav-talgri-2026-10-21"
+  },
   {
    "id": "new_edge:1617205:1:slight",
    "key": "1617205:1",
@@ -361,7 +372,8 @@
  ],
  "alert_seen": [
   "new_edge:1618089:1:slight",
-  "new_edge:1617205:1:slight"
+  "new_edge:1617205:1:slight",
+  "gone:1617205:1:2026-10-21T12:54:35.955Z"
  ],
  "kalshi_checked": null
 }

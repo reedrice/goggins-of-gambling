@@ -4,12 +4,12 @@
  "game": "Balaji / King vs. Chandrasekar / Ho",
  "url": "https://polymarket.us/sports/atpdb/atpdb-balkin-chandrho-2026-10-18",
  "start_time": "2026-10-21T12:25:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185026",
-  "fetched_at": "2026-10-21T12:54:28.666Z",
+  "fetched_at": "2026-10-21T14:57:57.095Z",
   "tennis": true,
   "tennis_match": {
    "id": "185026",
@@ -17,17 +17,17 @@
    "date": "2026-10-21T12:30Z",
    "startDate": "2026-10-21T12:30Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(3) N.Sriram Balaji (IND) & Evan King (USA) leads Anirudh Chandrasekar (IND) & Ray Ho (TPO) 3-3",
+     "text": "(3) N.Sriram Balaji (IND) & Evan King (USA) bt Anirudh Chandrasekar (IND) & Ray Ho (TPO) 6-4 7-6 (7-4)",
      "type": "event"
     }
    ],
@@ -55,10 +55,16 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "winner": false,
      "linescores": [
       {
-       "value": 3
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "tiebreak": 4,
+       "winner": false
       }
      ],
      "roster": {
@@ -133,13 +139,19 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "winner": true,
      "curatedRank": {
       "current": 3
      },
      "linescores": [
       {
-       "value": 3
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
       }
      ],
      "roster": {
@@ -209,11 +221,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 708,
    "type": {
     "id": "3",
@@ -230,10 +237,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Anirudh Chandrasekar / Ray Ho",
@@ -245,13 +252,13 @@
    "abbr": "N.Sriram Balaji / Evan King",
    "alias": "N.Sriram Balaji / Evan King",
    "name": "N.Sriram Balaji / Evan King",
-   "score": 0
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-21T12:54:28.667Z",
+ "updated": "2026-10-21T14:57:57.095Z",
  "open_taken_at": "2026-10-21T05:14:40.743Z",
  "thresholds": {
   "big": 10,

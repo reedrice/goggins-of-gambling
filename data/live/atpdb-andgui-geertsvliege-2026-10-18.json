@@ -4,12 +4,12 @@
  "game": "Andreozzi / Guinard vs. Geerts / Vliegen",
  "url": "https://polymarket.us/sports/atpdb/atpdb-andgui-geertsvliege-2026-10-18",
  "start_time": "2026-10-21T12:30:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185070",
-  "fetched_at": "2026-10-21T12:54:29.410Z",
+  "fetched_at": "2026-10-21T14:57:57.069Z",
   "tennis": true,
   "tennis_match": {
    "id": "185070",
@@ -17,17 +17,17 @@
    "date": "2026-10-21T12:35Z",
    "startDate": "2026-10-21T12:35Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Guido Andreozzi (ARG) & Manuel Guinard (FRA) leads Michael Geerts (BEL) & Joran Vliegen (BEL) 2-2",
+     "text": "(1) Guido Andreozzi (ARG) & Manuel Guinard (FRA) bt Michael Geerts (BEL) & Joran Vliegen (BEL) 6-4 6-4",
      "type": "event"
     }
    ],
@@ -55,10 +55,15 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "winner": false,
      "linescores": [
       {
-       "value": 2
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 4,
+       "winner": false
       }
      ],
      "roster": {
@@ -133,13 +138,18 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "winner": true,
      "curatedRank": {
       "current": 1
      },
      "linescores": [
       {
-       "value": 2
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
       }
      ],
      "roster": {
@@ -209,11 +219,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 440,
    "type": {
     "id": "3",
@@ -230,10 +235,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Michael Geerts / Joran Vliegen",
@@ -245,13 +250,13 @@
    "abbr": "Guido Andreozzi / Manuel Guinard",
    "alias": "Guido Andreozzi / Manuel Guinard",
    "name": "Guido Andreozzi / Manuel Guinard",
-   "score": 0
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-21T12:54:29.411Z",
+ "updated": "2026-10-21T14:57:57.069Z",
  "open_taken_at": "2026-10-21T05:14:47.334Z",
  "thresholds": {
   "big": 10,
@@ -299,11 +304,25 @@
    "reason": null,
    "context": "Michael Geerts / Joran Vliegen 2 · Guido Andreozzi / Manuel Guinard 2 · 1st Set (games by set)",
    "first_seen": "2026-10-21T12:54:29.411Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1519642:0:2026-10-21T12:54:29.411Z",
+   "key": "1519642:0",
+   "at": "2026-10-21T14:57:57.069Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Andreozzi / Guinard win",
+   "market": "Moneyline",
+   "now_odds": "-138",
+   "now_chance": 58,
+   "edge": 12,
+   "text": "Edge gone: Andreozzi / Guinard win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-andgui-geertsvliege-2026-10-18"
+  },
   {
    "id": "new_edge:1519642:0:big",
    "key": "1519642:0",
@@ -320,7 +339,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1519642:0:big"
+  "new_edge:1519642:0:big",
+  "gone:1519642:0:2026-10-21T12:54:29.411Z"
  ],
  "kalshi_checked": null
 }

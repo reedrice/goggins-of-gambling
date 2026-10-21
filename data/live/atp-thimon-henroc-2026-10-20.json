@@ -4,14 +4,14 @@
  "game": "Thiago Monteiro vs. Henrique Rocha",
  "url": "https://polymarket.us/sports/atp/atp-thimon-henroc-2026-10-20",
  "start_time": "2026-10-21T12:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-21T12:54:34.090Z"
+  "fetched_at": "2026-10-21T14:57:56.800Z"
  },
- "updated": "2026-10-21T12:54:34.091Z",
+ "updated": "2026-10-21T14:57:56.800Z",
  "open_taken_at": "2026-10-21T05:15:22.019Z",
  "thresholds": {
   "big": 10,
@@ -147,11 +147,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-21T12:54:34.091Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1589582:0:2026-10-21T12:54:34.091Z",
+   "key": "1589582:0",
+   "at": "2026-10-21T14:57:56.800Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Thiago Monteiro win",
+   "market": "Moneyline",
+   "now_odds": "+355",
+   "now_chance": 22,
+   "edge": 12,
+   "text": "Edge gone: Thiago Monteiro win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-thimon-henroc-2026-10-20"
+  },
   {
    "id": "new_edge:1589582:0:big",
    "key": "1589582:0",
@@ -168,7 +182,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1589582:0:big"
+  "new_edge:1589582:0:big",
+  "gone:1589582:0:2026-10-21T12:54:34.091Z"
  ],
  "kalshi_checked": null
 }
