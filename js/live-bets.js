@@ -251,7 +251,10 @@
     const label = gone ? P.gone : why ? CLASS_LABEL[e.class] : P.tiers[e.tier] || P.edge;
     top.append(el('span', 'lb-tier', label), el('span', 'lb-pts', P.cheaper(Math.round(e.edge))));
     li.append(top, el('div', 'lb-side', edgeTitle(e)));
-    li.append(el('div', 'lb-matchup', eventGame));
+    const matchup=el('div','lb-matchup');
+    if(root.AthleteFlags)root.AthleteFlags.decorate(matchup,eventGame,sportOf({slug:eventSlug}));
+    else matchup.textContent=eventGame;
+    li.append(matchup);
     if (e.class === 'unverified') li.append(el('div', 'lb-unverified', P.unverified));
     li.append(el('div', 'lb-odds', e.now_odds));
     if (root.BetProgress) {
@@ -451,6 +454,7 @@
     refresh.onclick=()=>{if(!loading)load(true);};
     load();
     rootEl._lbStop=autoRefresh(rootEl,()=>load(),()=>loading);
+    if(root.AthleteFlags)root.AthleteFlags.load().then(()=>{if(rootEl.isConnected)ui.redraw();});
   }
 
   return { autoRefresh, timeGames, sportOf, sportGames, edgeTitle, edgeSelection, combineGames, render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
