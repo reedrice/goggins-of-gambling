@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185121",
-  "fetched_at": "2026-10-21T10:13:26.739Z",
+  "fetched_at": "2026-10-21T10:19:29.854Z",
   "tennis": true,
   "tennis_match": {
    "id": "185121",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Wed, October 21st at 6:10 AM EDT",
-     "shortDetail": "10/21 - 6:10 AM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(2) Theo Arribage (FRA) & Albano Olivetti (FRA) leads Titouan Droguet (FRA) & Kyrian Jacquet (FRA) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,15 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 2
      },
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "roster": {
       "displayName": "Theo Arribage / Albano Olivetti",
       "shortDisplayName": "T. Arribage / A. Olivetti",
@@ -125,6 +136,12 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "roster": {
       "displayName": "Titouan Droguet / Kyrian Jacquet",
       "shortDisplayName": "T. Droguet / K. Jacquet",
@@ -192,6 +209,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 110,
    "type": {
     "id": "3",
@@ -208,10 +230,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Wed, October 21st at 6:10 AM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Theo Arribage / Albano Olivetti",
@@ -229,7 +251,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-21T10:13:26.739Z",
+ "updated": "2026-10-21T10:19:29.854Z",
  "open_taken_at": "2026-10-21T05:15:06.225Z",
  "thresholds": {
   "big": 10,
@@ -259,8 +281,46 @@
    "taken_at": "2026-10-21T05:15:06.225Z"
   }
  ],
- "edges": [],
- "alerts": [],
- "alert_seen": [],
+ "edges": [
+  {
+   "key": "1550284:0",
+   "market_id": "1550284",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atpdb event Droguet / Jacquet vs Arribage / Olivetti scheduled for October 19, 2026 at 9:00 AM UTC?",
+   "side": "Droguet T / Jacquet K win",
+   "open_chance": 32,
+   "now_chance": 23,
+   "open_odds": "+213",
+   "now_odds": "+335",
+   "edge": 9,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Theo Arribage / Albano Olivetti 1 · Titouan Droguet / Kyrian Jacquet 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-21T10:19:29.854Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
+ "alerts": [
+  {
+   "id": "new_edge:1550284:0:slight",
+   "key": "1550284:0",
+   "at": "2026-10-21T10:19:29.854Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Droguet T / Jacquet K win",
+   "market": "Moneyline",
+   "now_odds": "+335",
+   "now_chance": 23,
+   "edge": 9,
+   "text": "New slight edge: Droguet T / Jacquet K win (Moneyline), 9 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-droguejacque-arribaolivet-2026-10-19"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:1550284:0:slight"
+ ],
  "kalshi_checked": null
 }
