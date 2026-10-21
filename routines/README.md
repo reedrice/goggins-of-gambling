@@ -1,5 +1,9 @@
 # ROUTINES HANDOFF
 
+## Oct 21 rules-based migration
+
+Reed authorized moving the five former Grok jobs to GitHub Actions without scheduled AI. See [ACTIONS.md](ACTIONS.md) for schedules, source coverage and differences from the historical prompts below. Only owners.json determines execution. After successful hosted takeover, bots must skip these five and disable external schedules; even a no-op AI gate check can consume usage. The prompts below are historical requirements, not instructions to schedule bots or send messages. Fade Trent new-post ingestion remains paused without a separate source.
+
 Reed has 5 routines (scheduled jobs). Any bot can run them: Goggins Of Gambling on Grok Bot (`grok`), ChatGPT/Codex (`chatgpt`), Richie's Pablo (`pablo`). **Only one bot runs each routine.** The switch lives in [`owners.json`](owners.json).
 
 ## How the switch works

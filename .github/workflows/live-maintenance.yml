@@ -8,6 +8,10 @@ on:
         description: 'Transfer the ChatGPT feed owner after a successful run'
         type: boolean
         default: false
+      routines_takeover:
+        description: 'Transfer and test the five former Grok routines'
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
@@ -35,7 +39,9 @@ jobs:
         id: refresh
         env:
           GH_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ github.token }}
           ACTIONS_TAKEOVER: ${{ github.event_name == 'workflow_dispatch' && inputs.takeover }}
+          ACTIONS_ROUTINES_TAKEOVER: ${{ github.event_name == 'workflow_dispatch' && inputs.routines_takeover }}
         run: node scripts/actions-maintenance.mjs
       - name: Prepare static site
         if: steps.refresh.outputs.updated == 'true'
