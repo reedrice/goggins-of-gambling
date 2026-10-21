@@ -1115,8 +1115,6 @@
         <span id="picks-px-status" class="muted small">${livePx && livePx.base === d.updated_at ? esc(livePx.msg) : ''}</span></div>
       ${days.length > 1 ? `<div class="chips pick-days" role="group" aria-label="${esc(STR.picks.dayGroup)}">${days.map(day =>
         `<button type="button" class="chip ${day === picksDay ? 'on' : ''}" data-pick-day="${esc(day)}" aria-pressed="${day === picksDay}">${esc(dayWords(day, true))} <span class="muted small">(${countOnDay(d, day)})</span></button>`).join('')}</div>` : ''}
-      ${daySports.length > 1 ? `<div class="chips pick-sports" role="group" aria-label="${esc(STR.picks.sportGroup)}">${['', ...daySports].map(s =>
-        `<button type="button" class="chip ${s === picksSport ? 'on' : ''}" data-pick-sport="${esc(s)}" aria-pressed="${s === picksSport}">${esc(s ? STR.picks.sportNames[s] || s : STR.picks.allSports)}</button>`).join('')}</div>` : ''}
       <details class="pick-context"><summary>${esc(STR.picks.slateDetails)}</summary>
       ${isFileDay ? (d.notes || []).map(n => `<div class="verify">${esc(PL.noCents(n))}</div>`).join('') : ''}
       ${riskLegend()}</details>`;
@@ -1133,7 +1131,6 @@
     el.querySelectorAll('[data-play-pick]').forEach(b => (b.onclick = () => playPick(b.dataset.playPick)));
     { const rf = $('#picks-refresh'); if (rf) rf.onclick = refreshPickPrices; }   // absent on the Live view
     el.querySelectorAll('[data-pick-day]').forEach(b => (b.onclick = () => { picksDay = b.dataset.pickDay; renderPicks(); }));
-    el.querySelectorAll('[data-pick-sport]').forEach(b => (b.onclick = () => { picksSport = b.dataset.pickSport; renderPicks(); }));
     const all = {};
     for (const [key] of PICK_SECTIONS) if (key !== 'predictions') (sec[key] || []).forEach(it => it && it.id && (all[it.id] = it));
     afterPicksRender(el, all);
