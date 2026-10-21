@@ -248,7 +248,8 @@
     const sides = ss.map((sd, i) => { const t = sd.team || {};
       const name = win ? (t.safeName || sd.description) : (sd.description || (i ? 'No' : 'Yes'));
       return { name, short: String(t.abbreviation || name).toUpperCase(), color: win || mk.marketType === 'spreads' ? teamColor(t.league, t.abbreviation, t.colorPrimary, PAIR_FALLBACK[i]) : PAIR_FALLBACK[i] }; });
-    if (!win && mk.marketType === 'spreads' && sides[0].color === sides[1].color) sides[1].color = PAIR_FALLBACK[1];
+    // Tennis participants often share the provider's default blue. Keep every pair distinguishable.
+    if (sides[0].color === sides[1].color) sides[1].color = sides[0].color === PAIR_FALLBACK[1] ? PAIR_FALLBACK[0] : PAIR_FALLBACK[1];
     return { pair: true, sides };
   }
   /** Pure: score header {away, home, as, hs, live, period} from a Polymarket US event (teams are away, home). */
