@@ -9,17 +9,17 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892543",
-  "fetched_at": "2026-10-21T01:14:03.650Z",
+  "fetched_at": "2026-10-21T01:24:09.059Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 3,
-  "clock": "15:47",
-  "regulation_secs_left": 1847,
+  "clock": "9:54",
+  "regulation_secs_left": 1494,
   "home": {
    "abbr": "CBJ",
    "alias": "Blue Jackets",
    "name": "Columbus Blue Jackets",
-   "score": 1,
+   "score": 2,
    "id": "29"
   },
   "away": {
@@ -31,6 +31,13 @@
   },
   "possession": null,
   "injuries": [
+   {
+    "team": "TOR",
+    "player": "Jake McCabe",
+    "short": "J. McCabe",
+    "pos": "D",
+    "status": "Day-To-Day"
+   },
    {
     "team": "TOR",
     "player": "John Tavares",
@@ -58,34 +65,27 @@
     "short": "C. Tanev",
     "pos": "D",
     "status": "Injured Reserve"
-   },
-   {
-    "team": "TOR",
-    "player": "Max Domi",
-    "short": "M. Domi",
-    "pos": "C",
-    "status": "Injured Reserve"
    }
   ],
   "in_game_injuries": [],
   "leaders": [
    {
     "team": "CBJ",
-    "player": "Jake Christiansen",
-    "short": "J. Christiansen",
+    "player": "Charlie Coyle",
+    "short": "C. Coyle",
+    "pos": "C"
+   },
+   {
+    "team": "CBJ",
+    "player": "Damon Severson",
+    "short": "D. Severson",
     "pos": "D"
    },
    {
     "team": "CBJ",
-    "player": "Dmitri Voronkov",
-    "short": "D. Voronkov",
-    "pos": "LW"
-   },
-   {
-    "team": "CBJ",
-    "player": "Jake Christiansen",
-    "short": "J. Christiansen",
-    "pos": "D"
+    "player": "Charlie Coyle",
+    "short": "C. Coyle",
+    "pos": "C"
    },
    {
     "team": "TOR",
@@ -107,7 +107,7 @@
    }
   ]
  },
- "updated": "2026-10-21T01:14:03.652Z",
+ "updated": "2026-10-21T01:24:09.060Z",
  "open_taken_at": "2026-10-20T22:26:54.849Z",
  "thresholds": {
   "big": 10,
@@ -2383,6 +2383,86 @@
  ],
  "edges": [
   {
+   "key": "1480988:1",
+   "market_id": "1480988",
+   "market": "Alt spread",
+   "group": "game",
+   "question": "Will the TOR Maple Leafs cover -2.5 vs the CBJ Blue Jackets in TOR vs CBJ?",
+   "side": "Blue Jackets +2.50",
+   "open_chance": 87,
+   "now_chance": 20,
+   "open_odds": "-669",
+   "now_odds": "+400",
+   "edge": 67,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: CBJ not covering +2.5 right now",
+   "context": "CBJ down 3, Q3 9:54",
+   "first_seen": "2026-10-21T01:24:09.060Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "1481004:1",
+   "market_id": "1481004",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in TOR vs CBJ be more than 7.5?",
+   "side": "Under 7.5",
+   "open_chance": 72,
+   "now_chance": 26,
+   "open_odds": "-257",
+   "now_odds": "+285",
+   "edge": 46,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: scoring above pace (7 pts, pace 4)",
+   "context": "TOR 5, CBJ 2, Q3 9:54",
+   "first_seen": "2026-10-20T23:13:58.174Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "1480987:1",
+   "market_id": "1480987",
+   "market": "Alt spread",
+   "group": "game",
+   "question": "Will the TOR Maple Leafs cover -3.5 vs the CBJ Blue Jackets in TOR vs CBJ?",
+   "side": "Blue Jackets +3.50",
+   "open_chance": 97,
+   "now_chance": 66,
+   "open_odds": "-3233",
+   "now_odds": "-194",
+   "edge": 31,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (31 pts), likely news",
+   "context": "CBJ down 3, Q3 9:54",
+   "first_seen": "2026-10-21T00:44:43.525Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "1481005:1",
+   "market_id": "1481005",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in TOR vs CBJ be more than 8.5?",
+   "side": "Under 8.5",
+   "open_chance": 79,
+   "now_chance": 60,
+   "open_odds": "-376",
+   "now_odds": "-150",
+   "edge": 19,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: scoring above pace (7 pts, pace 5)",
+   "context": "TOR 5, CBJ 2, Q3 9:54",
+   "first_seen": "2026-10-20T23:13:58.174Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
    "key": "1609203:0",
    "market_id": "1609203",
    "market": "Player prop",
@@ -2397,7 +2477,7 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "CBJ down 4, Q3 15:47",
+   "context": "CBJ down 3, Q3 9:54",
    "first_seen": "2026-10-21T00:34:03.008Z",
    "status": "open",
    "kalshi": true
@@ -2417,49 +2497,9 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "CBJ down 4, Q3 15:47",
+   "context": "CBJ down 3, Q3 9:54",
    "first_seen": "2026-10-21T00:34:03.008Z",
    "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1480987:1",
-   "market_id": "1480987",
-   "market": "Alt spread",
-   "group": "game",
-   "question": "Will the TOR Maple Leafs cover -3.5 vs the CBJ Blue Jackets in TOR vs CBJ?",
-   "side": "Blue Jackets +3.50",
-   "open_chance": 97,
-   "now_chance": 39,
-   "open_odds": "-3233",
-   "now_odds": "+156",
-   "edge": 58,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: CBJ not covering +3.5 right now",
-   "context": "CBJ down 4, End of Q2",
-   "first_seen": "2026-10-21T00:44:43.525Z",
-   "status": "gone",
-   "kalshi": true
-  },
-  {
-   "key": "1481004:1",
-   "market_id": "1481004",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in TOR vs CBJ be more than 7.5?",
-   "side": "Under 7.5",
-   "open_chance": 72,
-   "now_chance": 35,
-   "open_odds": "-257",
-   "now_odds": "+186",
-   "edge": 37,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: scoring above pace (6 pts, pace 4)",
-   "context": "TOR 5, CBJ 1, End of Q2",
-   "first_seen": "2026-10-20T23:13:58.174Z",
-   "status": "gone",
    "kalshi": true
   },
   {
@@ -2481,29 +2521,23 @@
    "first_seen": "2026-10-21T01:04:06.417Z",
    "status": "gone",
    "kalshi": true
-  },
-  {
-   "key": "1481005:1",
-   "market_id": "1481005",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in TOR vs CBJ be more than 8.5?",
-   "side": "Under 8.5",
-   "open_chance": 79,
-   "now_chance": 61,
-   "open_odds": "-376",
-   "now_odds": "-156",
-   "edge": 18,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: scoring above pace (6 pts, pace 4)",
-   "context": "TOR 5, CBJ 1, End of Q2",
-   "first_seen": "2026-10-20T23:13:58.174Z",
-   "status": "gone",
-   "kalshi": true
   }
  ],
  "alerts": [
+  {
+   "id": "news:1480987:1",
+   "key": "1480987:1",
+   "at": "2026-10-21T01:24:09.060Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Blue Jackets +3.50",
+   "market": "Alt spread",
+   "now_odds": "-194",
+   "now_chance": 66,
+   "edge": 31,
+   "text": "Big move, likely news: Blue Jackets +3.50 (Alt spread) is 31 points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-tor-cbj-2026-10-20"
+  },
   {
    "id": "news:1609191:0",
    "key": "1609191:0",
@@ -2555,10 +2589,11 @@
   "gone:1480993:0:2026-10-20T23:13:58.174Z",
   "new_edge:1609199:0:big",
   "new_edge:1609203:0:big",
-  "news:1609191:0"
+  "news:1609191:0",
+  "news:1480987:1"
  ],
  "kalshi_checked": {
-  "at": "2026-10-21T01:14:03.666Z",
+  "at": "2026-10-21T01:24:09.313Z",
   "event": "26OCT20TORCBJ"
  }
 }

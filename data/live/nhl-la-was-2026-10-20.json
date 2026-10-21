@@ -9,12 +9,12 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892542",
-  "fetched_at": "2026-10-21T01:14:00.428Z",
+  "fetched_at": "2026-10-21T01:24:04.712Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 3,
-  "clock": "11:10",
-  "regulation_secs_left": 1570,
+  "clock": "6:44",
+  "regulation_secs_left": 1304,
   "home": {
    "abbr": "WSH",
    "alias": "Capitals",
@@ -26,7 +26,7 @@
    "abbr": "LA",
    "alias": "Kings",
    "name": "Los Angeles Kings",
-   "score": 3,
+   "score": 4,
    "id": "8"
   },
   "possession": null,
@@ -105,9 +105,9 @@
    },
    {
     "team": "WSH",
-    "player": "Jakob Chychrun",
-    "short": "J. Chychrun",
-    "pos": "D"
+    "player": "Jonny Brodzinski",
+    "short": "J. Brodzinski",
+    "pos": "C"
    },
    {
     "team": "WSH",
@@ -117,9 +117,9 @@
    },
    {
     "team": "LA",
-    "player": "Artemi Panarin",
-    "short": "A. Panarin",
-    "pos": "LW"
+    "player": "Adrian Kempe",
+    "short": "A. Kempe",
+    "pos": "RW"
    },
    {
     "team": "LA",
@@ -135,7 +135,7 @@
    }
   ]
  },
- "updated": "2026-10-21T01:14:00.429Z",
+ "updated": "2026-10-21T01:24:04.714Z",
  "open_taken_at": "2026-10-20T22:26:50.673Z",
  "thresholds": {
   "big": 10,
@@ -2257,24 +2257,84 @@
  ],
  "edges": [
   {
-   "key": "1480797:1",
-   "market_id": "1480797",
-   "market": "Moneyline",
+   "key": "1480800:1",
+   "market_id": "1480800",
+   "market": "Alt spread",
    "group": "game",
-   "question": "Who will win in the upcoming hockey event LAK Kings vs WSH Capitals scheduled for October 20, 2026 at 11:00 PM UTC?",
-   "side": "Capitals win",
-   "open_chance": 60,
-   "now_chance": 23,
-   "open_odds": "-150",
-   "now_odds": "+335",
-   "edge": 37,
+   "question": "Will the LAK Kings cover -1.5 vs the WSH Capitals in LAK vs WSH?",
+   "side": "Capitals +1.50",
+   "open_chance": 79,
+   "now_chance": 22,
+   "open_odds": "-376",
+   "now_odds": "+355",
+   "edge": 57,
    "tier": "big",
    "class": "score",
-   "reason": "Explained by score: WSH trailing by 1",
-   "context": "WSH down 1, Q3 11:10",
-   "first_seen": "2026-10-21T00:03:55.296Z",
+   "reason": "Explained by score: WSH not covering +1.5 right now",
+   "context": "WSH down 2, Q3 6:44",
+   "first_seen": "2026-10-21T01:14:00.429Z",
    "status": "open",
    "kalshi": false
+  },
+  {
+   "key": "1480808:1",
+   "market_id": "1480808",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in LAK vs WSH be more than 6.5?",
+   "side": "Under 6.5",
+   "open_chance": 59,
+   "now_chance": 19,
+   "open_odds": "-144",
+   "now_odds": "+426",
+   "edge": 40,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: scoring above pace (6 pts, pace 4)",
+   "context": "LA 4, WSH 2, Q3 6:44",
+   "first_seen": "2026-10-21T00:13:53.642Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "1480799:1",
+   "market_id": "1480799",
+   "market": "Alt spread",
+   "group": "game",
+   "question": "Will the LAK Kings cover -2.5 vs the WSH Capitals in LAK vs WSH?",
+   "side": "Capitals +2.50",
+   "open_chance": 87,
+   "now_chance": 53,
+   "open_odds": "-669",
+   "now_odds": "-113",
+   "edge": 34,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (34 pts), likely news",
+   "context": "WSH down 2, Q3 6:44",
+   "first_seen": "2026-10-21T01:24:04.714Z",
+   "status": "open",
+   "kalshi": false
+  },
+  {
+   "key": "1480809:1",
+   "market_id": "1480809",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in LAK vs WSH be more than 7.5?",
+   "side": "Under 7.5",
+   "open_chance": 79,
+   "now_chance": 69,
+   "open_odds": "-376",
+   "now_odds": "-223",
+   "edge": 10,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: scoring above pace (6 pts, pace 5)",
+   "context": "LA 4, WSH 2, Q3 6:44",
+   "first_seen": "2026-10-21T01:24:04.714Z",
+   "status": "open",
+   "kalshi": true
   },
   {
    "key": "1480807:1",
@@ -2293,48 +2353,8 @@
    "reason": "Explained by score: scoring above pace (5 pts, pace 3)",
    "context": "LA 3, WSH 2, Q3 11:10",
    "first_seen": "2026-10-21T00:33:58.822Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": true
-  },
-  {
-   "key": "1480808:1",
-   "market_id": "1480808",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in LAK vs WSH be more than 6.5?",
-   "side": "Under 6.5",
-   "open_chance": 59,
-   "now_chance": 40,
-   "open_odds": "-144",
-   "now_odds": "+150",
-   "edge": 19,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: scoring above pace (5 pts, pace 4)",
-   "context": "LA 3, WSH 2, Q3 11:10",
-   "first_seen": "2026-10-21T00:13:53.642Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1480800:1",
-   "market_id": "1480800",
-   "market": "Alt spread",
-   "group": "game",
-   "question": "Will the LAK Kings cover -1.5 vs the WSH Capitals in LAK vs WSH?",
-   "side": "Capitals +1.50",
-   "open_chance": 79,
-   "now_chance": 63,
-   "open_odds": "-376",
-   "now_odds": "-170",
-   "edge": 16,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "WSH down 1, Q3 11:10",
-   "first_seen": "2026-10-21T01:14:00.429Z",
-   "status": "open",
-   "kalshi": false
   },
   {
    "key": "1480801:0",
@@ -2375,26 +2395,6 @@
    "first_seen": "2026-10-20T23:53:54.793Z",
    "status": "gone",
    "kalshi": true
-  },
-  {
-   "key": "1480797:0",
-   "market_id": "1480797",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming hockey event LAK Kings vs WSH Capitals scheduled for October 20, 2026 at 11:00 PM UTC?",
-   "side": "Kings win",
-   "open_chance": 41,
-   "now_chance": 26,
-   "open_odds": "+144",
-   "now_odds": "+285",
-   "edge": 15,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: LA trailing by 1",
-   "context": "LA down 1, Q1 0:15",
-   "first_seen": "2026-10-20T23:23:54.761Z",
-   "status": "gone",
-   "kalshi": false
   },
   {
    "key": "1601410:0",
@@ -2459,6 +2459,20 @@
  ],
  "alerts": [
   {
+   "id": "news:1480799:1",
+   "key": "1480799:1",
+   "at": "2026-10-21T01:24:04.714Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Capitals +2.50",
+   "market": "Alt spread",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 34,
+   "text": "Big move, likely news: Capitals +2.50 (Alt spread) is 34 points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-la-was-2026-10-20"
+  },
+  {
    "id": "new_edge:1480800:1:big",
    "key": "1480800:1",
    "at": "2026-10-21T01:14:00.429Z",
@@ -2501,20 +2515,6 @@
    "url": "https://polymarket.us/sports/nhl/nhl-la-was-2026-10-20"
   },
   {
-   "id": "gone:1480797:1:2026-10-21T00:03:55.296Z",
-   "key": "1480797:1",
-   "at": "2026-10-21T00:23:56.968Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Capitals win",
-   "market": "Moneyline",
-   "now_odds": "-127",
-   "now_chance": 56,
-   "edge": 4,
-   "text": "Edge gone: Capitals win (Moneyline) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/nhl/nhl-la-was-2026-10-20"
-  },
-  {
    "id": "new_edge:1601410:0:slight",
    "key": "1601410:0",
    "at": "2026-10-21T00:13:53.642Z",
@@ -2526,20 +2526,6 @@
    "now_chance": 21,
    "edge": 9,
    "text": "New slight edge: Yes: Alex Tuch record at least 1 goals in LAK vs WSH (Player prop), 9 points cheaper than open.",
-   "url": "https://polymarket.us/sports/nhl/nhl-la-was-2026-10-20"
-  },
-  {
-   "id": "new_edge:1480797:1:slight",
-   "key": "1480797:1",
-   "at": "2026-10-21T00:03:55.296Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Capitals win",
-   "market": "Moneyline",
-   "now_odds": "-127",
-   "now_chance": 56,
-   "edge": 4,
-   "text": "New slight edge: Capitals win (Moneyline), 4 points cheaper than open.",
    "url": "https://polymarket.us/sports/nhl/nhl-la-was-2026-10-20"
   },
   {
@@ -2637,10 +2623,11 @@
   "new_edge:1601407:0:big",
   "gone:1480797:1:2026-10-21T00:03:55.296Z",
   "new_edge:1480800:1:big",
-  "gone:1601410:0:2026-10-21T00:13:53.642Z"
+  "gone:1601410:0:2026-10-21T00:13:53.642Z",
+  "news:1480799:1"
  ],
  "kalshi_checked": {
-  "at": "2026-10-21T01:14:00.444Z",
+  "at": "2026-10-21T01:24:05.084Z",
   "event": "26OCT20LAWSH"
  }
 }
