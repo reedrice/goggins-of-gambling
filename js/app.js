@@ -1878,44 +1878,10 @@
     const R = STR.record;
     const el = $('#tab-record');
     el.innerHTML = `<h2>${esc(R.title)}</h2><p class="muted">${esc(STR.loading)}</p>`;
-    let preds = null, log = null;
-    try { preds = await fetchData('data/predictions.json'); } catch (e) { /* shown below */ }
-    try { log = await fetchData(CFG.betLogPath); } catch (e) { /* shown below */ }
-    // data/book-odds.json: automatic price comparisons (The Odds API). Missing
-    // or status "waiting_for_feed" -> the middle column says "Coming soon".
-    let odds = null;
-    try { odds = await fetchData(CFG.bookOddsPath || 'data/book-odds.json'); } catch (e) { /* optional */ }
-    let learnDoc = null;
-    try { learnDoc = await fetchData('data/learning.json'); } catch (e) { /* optional: learning loop not run yet */ }
-    let hist = null;
-    try { hist = await fetchData('data/pick-history.json'); } catch (e) { /* optional: Picks-page history (HANDOFF §40) */ }
-    let html = `<h2>${esc(R.title)}</h2>`;
-    if (!preds) html += `<p class="error">${esc(R.loadError)}</p>`;
-    else {
-      const list = preds.predictions || [];
-      const cal = calibration(list);
-      const kpi = (k, v) => `<div class="kpi"><div class="k">${esc(k)}</div><div class="v">${v}</div></div>`;
-      // Units for game winners: 1u flat at the saved Polymarket price (HANDOFF §41).
-      const prices = await Promise.all(list.map(p => (p.result === 'win' ? predPrice(p).then(x => x && x.price).catch(() => null) : Promise.resolve(null))));
-      let units = 0, noPrice = 0;
-      list.forEach((p, i) => {
-        if (p.result === 'loss') units -= 1;
-        else if (p.result === 'win') { const c = prices[i]; if (c > 0 && c < 100) units += 100 / c - 1; else noPrice++; }
-      });
-      html += `<div class="updated">${esc(R.updated(fmtTime(preds.updated_at)))}</div>
-        <h3>${esc(R.gameTitle)}</h3>
-        ${statBoxes(cal.wins, cal.graded - cal.wins, list.filter(p => p.result === 'pending').length, list.length, units)}
-        <p class="muted small">${esc(R.gameUnitsNote)}${noPrice ? ' ' + esc(R.noPriceNote(noPrice)) : ''}</p>
-        ${list.length ? `<div class="table-wrap"><table><tr><th>${esc(R.date)}</th><th>${esc(R.pick)}</th><th class="num">${esc(R.chance)}</th><th>${esc(R.result)}</th></tr>
-          ${list.slice().sort((a, b) => String(b.date).localeCompare(String(a.date))).slice(0, 30).map(p => `<tr class="tap-row" data-pred="${esc(p.id)}" tabindex="0" role="button" aria-label="${esc(R.slip.open(p.pick))}"><td>${esc(p.date)}</td><td>${esc(p.pick)}<div class="muted small">${esc(p.game)}</div></td><td class="num">${esc(p.win_prob)}%</td><td><span class="badge ${p.result === 'win' ? 'won' : p.result === 'loss' ? 'lost' : 'open'}">${esc(R.resultWords[p.result] || p.result)}</span></td></tr>`).join('')}</table></div>` : ''}
-        <h4>${esc(R.calTitle)} ${tip('calibration')}</h4>
-        ${cal.buckets.length ? `<div class="table-wrap"><table><tr><th>${esc(R.calSaid)}</th><th class="num">${esc(R.calPicks)}</th><th class="num">${esc(R.calAvg)}</th><th class="num">${esc(R.calActual)}</th><th class="num">${esc(R.calOff)}</th></tr>
-          ${cal.buckets.map(b => { const avg = b.probSum / b.n / 100, act = b.wins / b.n; return `<tr><td>${b.lo}–${b.lo + 5}%</td><td class="num">${b.n}</td><td class="num">${pct(avg)}</td><td class="num">${pct(act)}</td><td class="num ${sign(act - avg)}">${esc(R.pts(((act - avg) * 100).toFixed(1)))}</td></tr>`; }).join('')}</table></div>`
-          : `<div class="section-empty">${esc(R.calEmpty)}</div>`}`;
-    }
-    html += pickHistoryHtml(hist);
-    html += learningCardHtml(learnDoc);
-    html += renderPlatformCompare(log, odds);
+    let hist=null;
+    try { hist=await fetchData('data/pick-history.json'); } catch(e) { el.innerHTML=`<h2>${esc(R.title)}</h2><p class="error">${esc(R.loadError)}</p>`;return; }
+    let html=`<h2>${esc(R.title)}</h2><p class="muted small">${esc(R.hist.logIntro)}</p>${hist.updated_at?`<div class="updated">${esc(R.updated(fmtTime(hist.updated_at)))}</div>`:''}`;
+    html+=pickHistoryHtml(hist);
     el.innerHTML = html;
     // Tap a Picks-page row -> full slip with every leg (HANDOFF §40).
     const hById = {};
@@ -1925,14 +1891,7 @@
       tr.addEventListener('click', go);
       tr.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
     });
-    // Tap (or Enter on) a "Recent picks" row -> open that pick's slip (HANDOFF §39).
-    const byId = {};
-    ((preds && preds.predictions) || []).forEach(p => (byId[p.id] = p));
-    el.querySelectorAll('tr[data-pred]').forEach(tr => {
-      const go = () => { const p = byId[tr.dataset.pred]; if (p) openPredSlip(p); };
-      tr.addEventListener('click', go);
-      tr.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
-    });
+
   }
 
   /**
@@ -2038,9 +1997,9 @@
   function pickHistoryHtml(doc) {
     // Split by LEG COUNT, not the category label (HANDOFF §42): 1 leg = single, 2+ legs = combo.
     const picks = (doc && doc.picks) || [];
-    const singles = picks.filter(h => (h.legs || []).length <= 1), combos = picks.filter(h => (h.legs || []).length > 1);
+    const {lines,singles,combos}=window.RecordLog.group(picks);
     const H = STR.record.hist;
-    return histSectionHtml(H.singlesTitle, H.singlesIntro, singles) + histSectionHtml(H.combosTitle, H.combosIntro, combos);
+    return histSectionHtml(H.linesTitle,H.linesIntro,lines) + histSectionHtml(H.singlesTitle, H.singlesIntro, singles) + histSectionHtml(H.combosTitle, H.combosIntro, combos);
   }
 
   /** One Record section (Single Bets or Combos): 5 stat boxes + tappable rows. */
@@ -2049,9 +2008,9 @@
     if (!picks.length) return `<h3>${esc(title)}</h3><div class="section-empty">${esc(H.none)}</div>`;
     const w = picks.filter(h => h.result === 'win').length, l = picks.filter(h => h.result === 'loss').length;
     const u = Math.round(picks.reduce((a, h) => a + histUnits(h), 0) * 100) / 100;
-    const rows = picks.slice().sort((a, b) => String(b.slate_date).localeCompare(String(a.slate_date))).slice(0, 40);
+    const rows = picks.slice().sort((a, b) => String(b.slate_date).localeCompare(String(a.slate_date)));
     return `<h3>${esc(title)}</h3><p class="muted small">${esc(intro)}</p>
-      ${statBoxes(w, l, picks.length - w - l, picks.length, u)}
+      ${statBoxes(w, l, picks.filter(p=>!p.result||p.result==='pending').length, picks.length, u)}
       <div class="table-wrap"><table><tr><th>${esc(STR.record.date)}</th><th>${esc(STR.record.pick)}</th><th class="num">${esc(STR.record.chance)}</th><th>${esc(STR.record.result)}</th></tr>
       ${rows.map(h => `<tr class="tap-row" data-hist="${esc(h.id)}" tabindex="0" role="button" aria-label="${esc(STR.record.slip.open(histName(h)))}"><td>${esc(h.slate_date)}</td><td>${esc(histName(h))}<div class="muted small">${esc(h.sport)} · ${esc(H.cat[h.category] || h.category)}</div></td><td class="num">${esc(Math.round(h.hit_prob) + '%')}</td><td>${resBadge(h.result)}</td></tr>`).join('')}</table></div>
       <p class="muted small">${esc(H.unitsNote)}</p>`;
@@ -2280,3 +2239,4 @@
   window.BetDash = { shareInfo: id => shareAll[id] && shareInfoPick(shareAll[id]), computeCalc, calibration, bankrollStats, recordByCategory, openTarget, getCalc: () => calc };
   boot();
 })();
+

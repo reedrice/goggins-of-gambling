@@ -432,11 +432,13 @@ window.STR = {
     pts: n => `${n} pts`,
     recent: 'Recent picks', date: 'Date', pick: 'Pick', chance: 'Chance', result: 'Result',
     resultWords: { win: 'won', loss: 'lost', pending: 'not finished', push: 'refund' },
-    gameTitle: 'Game Winners', unitsBox: 'Units won/lost',
+    gameTitle: 'Game lines', unitsBox: 'Units won/lost',
     gameUnitsNote: 'Units: as if we bet 1u on every pick, at the last Polymarket price we saved. Tap a pick to see its slip.',
     noPriceNote: n => `${n} win${n === 1 ? '' : 's'} had no saved price, so ${n === 1 ? 'it counts' : 'they count'} as 0u.`,
     // "Our Picks-page picks" section (HANDOFF §40). Units only, never dollars.
     hist: {
+      linesTitle:'Game lines', linesIntro:'Published moneylines, spreads and totals from the Picks screen.',
+      logIntro:'The site’s published picks and their results. Your personal bets are tracked in My Bets.',
       singlesTitle: 'Single Bets', singlesIntro: 'One-bet plays from the Picks screen. Tap one to see its slip.',
       combosTitle: 'Combos', combosIntro: 'Multi-leg plays from the Picks screen. Tap one to see every leg.',
       none: 'No Picks-page picks saved yet.', won: 'Won', lost: 'Lost', open: 'Not finished', units: 'Units won/lost',
