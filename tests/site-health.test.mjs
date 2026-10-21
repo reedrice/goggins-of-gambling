@@ -15,3 +15,10 @@ test('recovery never duplicates active work or loops within an hour',()=>{
  assert.equal(recoveryDecision([{status:'completed',event:'workflow_dispatch',created_at:old}],now),'dispatch');
  assert.equal(recoveryDecision([],now),'dispatch');
 });
+
+test('detect before the UI warning; successful manual refresh must not suppress the next recovery',()=>{
+ const at16=new Date(now-16*60000).toISOString();
+ assert.ok(problems({games:[{status:'live',start_time:old,updated:at16}]},{snapshots:[],updated_at:fresh},fresh,now).length);
+ assert.equal(recoveryDecision([{status:'completed',event:'workflow_dispatch',conclusion:'success',created_at:at16}],now),'dispatch');
+ assert.equal(recoveryDecision([{status:'completed',event:'workflow_dispatch',conclusion:'failure',created_at:at16}],now),'cooldown');
+});
