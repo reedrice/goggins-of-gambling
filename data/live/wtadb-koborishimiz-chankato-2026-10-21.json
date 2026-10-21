@@ -4,12 +4,12 @@
  "game": "Kobori / Shimizu vs. Chan / Kato",
  "url": "https://polymarket.us/sports/wtadb/wtadb-koborishimiz-chankato-2026-10-21",
  "start_time": "2026-10-21T06:20:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185595",
-  "fetched_at": "2026-10-21T07:55:53.656Z",
+  "fetched_at": "2026-10-21T08:05:59.206Z",
   "tennis": true,
   "tennis_match": {
    "id": "185595",
@@ -17,17 +17,17 @@
    "date": "2026-10-21T07:25Z",
    "startDate": "2026-10-21T07:25Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 1,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
+     "id": "8",
+     "name": "STATUS_SUSPENDED",
+     "state": "post",
      "completed": false,
-     "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "description": "Suspended",
+     "detail": "Suspended",
+     "shortDetail": "Suspended"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Momoko Kobori (JPN) & Ayano Shimizu (JPN) leads (2) Hao-Ching Chan (TPO) & Miyu Kato (JPN) 3-3",
+     "text": "Momoko Kobori (JPN) & Ayano Shimizu (JPN) bt (2) Hao-Ching Chan (TPO) & Miyu Kato (JPN) 3-3",
      "type": "event"
     }
    ],
@@ -60,7 +60,8 @@
      },
      "linescores": [
       {
-       "value": 3
+       "value": 3,
+       "winner": false
       }
      ],
      "roster": {
@@ -137,7 +138,8 @@
      "homeAway": "home",
      "linescores": [
       {
-       "value": 3
+       "value": 3,
+       "winner": false
       }
      ],
      "roster": {
@@ -223,10 +225,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_SUSPENDED",
   "period": 1,
-  "clock": "1st Set",
+  "clock": "Suspended",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Hao-Ching Chan / Miyu Kato",
@@ -244,7 +246,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-21T07:55:53.658Z",
+ "updated": "2026-10-21T08:05:59.208Z",
  "open_taken_at": "2026-10-21T05:15:43.462Z",
  "thresholds": {
   "big": 10,
@@ -283,14 +285,14 @@
    "question": "Who will win in the upcoming wtadb event Kobori / Shimizu vs Chan / Kato scheduled for October 21, 2026 at 6:20 AM UTC?",
    "side": "Chan H / Kato M win",
    "open_chance": 66,
-   "now_chance": 59,
+   "now_chance": 53,
    "open_odds": "-194",
-   "now_odds": "-144",
-   "edge": 7,
-   "tier": "slight",
+   "now_odds": "-113",
+   "edge": 13,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Hao-Ching Chan / Miyu Kato 3 · Momoko Kobori / Ayano Shimizu 3 · 1st Set (games by set)",
+   "context": "Hao-Ching Chan / Miyu Kato 3 · Momoko Kobori / Ayano Shimizu 3 · Suspended (games by set)",
    "first_seen": "2026-10-21T07:45:56.886Z",
    "status": "open",
    "kalshi": null
@@ -317,6 +319,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1617285:1:big",
+   "key": "1617285:1",
+   "at": "2026-10-21T08:05:59.208Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Chan H / Kato M win",
+   "market": "Moneyline",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 13,
+   "text": "New big edge: Chan H / Kato M win (Moneyline), 13 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-koborishimiz-chankato-2026-10-21"
+  },
   {
    "id": "new_edge:1617285:1:slight",
    "key": "1617285:1",
@@ -363,7 +379,8 @@
  "alert_seen": [
   "new_edge:1617285:0:slight",
   "new_edge:1617285:1:slight",
-  "gone:1617285:0:2026-10-21T07:35:56.124Z"
+  "gone:1617285:0:2026-10-21T07:35:56.124Z",
+  "new_edge:1617285:1:big"
  ],
  "kalshi_checked": null
 }
