@@ -125,6 +125,7 @@
       return { score: d.game || 'Live game', status: d.status === 'pregame' ? `Pregame · kickoff ${clock(d.start_time)} · game info unavailable` : 'Game info unavailable (ESPN), edges not checked' };
     }
     const a = c.away || {}, h = c.home || {};
+    if(c.tennis)return {score:`${a.name} ${a.score} – ${h.name} ${h.score} ${root.STR?.progress?.stats?.sets||'sets'}`,status:c.clock||''};
     const score = a.score == null ? `${a.abbr} @ ${h.abbr}` : `${a.abbr} ${a.score} – ${h.abbr} ${h.score}`;
     let status;
     if (c.game_state === 'pre') status = `Pregame · kickoff ${clock(d.start_time)}`;

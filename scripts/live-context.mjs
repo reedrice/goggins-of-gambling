@@ -36,6 +36,8 @@
  *   - Team side: that team's QB is Out / Doubtful / IR, or a QB/stat leader of that team got hurt in-game.
  */
 
+import {createRequire} from 'node:module';
+const Tennis=createRequire(import.meta.url)('../js/tennis-scores.js');
 const ESPN = 'https://site.api.espn.com/apis/site/v2/sports';
 const LEAGUE_PATH = { cfb:'football/college-football', ncaaf:'football/college-football', cbb:'basketball/mens-college-basketball', ncaab:'basketball/mens-college-basketball', ncaaw:'basketball/womens-college-basketball', nfl: 'football/nfl', nba: 'basketball/nba', wnba: 'basketball/wnba', nhl: 'hockey/nhl', mlb: 'baseball/mlb' };
 export const NEWS_MOVE = 25;                  // 25+ unexplained points = probably news
@@ -97,8 +99,14 @@ export function parseSummary(sum, eventId, fetchedAt = new Date().toISOString())
 }
 
 /** Fetch live context for a Polymarket slug + title. Never throws: failure -> { available: false }. */
-export async function fetchContext(slug, title) {
+export async function fetchContext(slug, title, startTime) {
   try {
+    if(Tennis.isTennis(slug)){
+      const date=(startTime||slug.slice(-10)).slice(0,10).replaceAll('-',''),board=await getJson(`${ESPN}/tennis/${Tennis.tour(slug)}/scoreboard?dates=${date}&limit=1000`),match=Tennis.find(board,title,slug,startTime);
+      if(!match)throw Error('tennis match not uniquely found on ESPN');
+      const game=Tennis.adapt(match),cs=game.competitors,team=c=>({abbr:c.team.name,alias:c.team.name,name:c.team.name,score:c.score});
+      return {available:true,source:'ESPN site.api.espn.com',event_id:match.id,fetched_at:new Date().toISOString(),tennis:true,tennis_match:match,game_state:match.status?.type?.state,espn_status:match.status?.type?.name,period:match.status?.period,clock:match.status?.type?.detail||null,regulation_secs_left:null,away:team(cs.find(c=>c.homeAway==='away')||cs[0]),home:team(cs.find(c=>c.homeAway==='home')||cs[1]),injuries:[],in_game_injuries:[],leaders:[]};
+    }
     const [league, , , y, mo, d] = slug.split('-');
     const lp = LEAGUE_PATH[league]; if (!lp) throw new Error(`no ESPN league for ${league}`);
     const id = findEspnEvent(await getJson(`${ESPN}/${lp}/scoreboard?dates=${y}${mo}${d}`), title);
@@ -124,6 +132,7 @@ const PERIOD_START = { full_game: 1, first_half: 1, first_quarter: 1, second_qua
 
 /** "Q2 9:14", "Halftime", "Final", "Pregame". */
 export function clockText(ctx) {
+  if(ctx.tennis)return ctx.clock||'Match status unavailable';
   if (ctx.game_state === 'pre') return 'Pregame';
   if (ctx.game_state === 'post') return 'Final';
   if (ctx.espn_status === 'STATUS_HALFTIME') return 'Halftime';
@@ -155,6 +164,13 @@ export function injuryReason(ctx, market, i) {
 /** Score / game-state explanation for a market side, or null (rules in the header). */
 export function scoreReason(ctx, market, i) {
   if (ctx.game_state === 'pre' || ctx.home?.score == null) return null;
+  if(ctx.tennis){
+    const match=ctx.tennis_match,r=Tennis.evaluate({text:market.sides?.[i],market:market.period,side:'yes'},match);
+    if(r.kind==='margin'&&r.margin<=0)return `${r.team} not above the ${r.unit} spread right now`;
+    if(market.mtype==='winner'&&market.period==='full_game'){const t=teamFor(ctx,market.teams?.[i]);if(t&&t.score<other(ctx,t).score)return `${t.name} trailing in sets`;}
+    // Tennis has no regulation clock: never apply points-per-minute pace rules.
+    return null;
+  }
   const T = ctx.regulation_secs_left / 3600;
   if (market.group === 'prop') return null;
   if (market.period && market.period !== 'full_game') {
@@ -182,6 +198,7 @@ export function scoreReason(ctx, market, i) {
 /** One-line score context for a card, e.g. "WSH down 7, Q2 9:14" (no injury text). */
 export function contextLine(ctx, market, i, injury) {
   if (!ctx.available) return 'Game info unavailable, not checked';
+  if(ctx.tennis)return ctx.game_state==='pre'?'Pregame':ctx.tennis_match.competitors.map(c=>`${Tennis.name(c)} ${(c.linescores||[]).map(s=>s.value).join(', ')}`).join(' · ')+` · ${clockText(ctx)} (games by set)`;
   const t = teamFor(ctx, market.teams?.[i]);
   let score;
   if (ctx.game_state === 'pre') score = 'Pregame';

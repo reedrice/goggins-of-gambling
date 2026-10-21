@@ -14,7 +14,7 @@
  function spec(o, fallback = {}) {
   return {text:o.desc || o.pick || (['yes','no'].includes(o.side)?'':o.side) || '',question:o.question || '',market:o.market || '',player:o.player || '',team:o.player_team || o.team?.abbr || '',
    eventSlug:o.event_slug || o.eventSlug || slugOf(o.polymarket_url || o.link || o.event_url || o.market_id) || fallback.eventSlug || '',
-   marketSlug:o.market_id || o.marketId || o.marketSlug || '',resolveMarket:!!(o.market_id||o.marketId||o.marketSlug),side:o.market_side || (['yes','no'].includes(o.side)?o.side:'') || (o.key ? Number(String(o.key).split(':')[1]) ? 'no':'yes' : ''),game:o.event || o.event_game || fallback.game || ''};
+   marketSlug:o.market_id || o.marketId || o.marketSlug || '',resolveMarket:!!(o.market_id||o.marketId||o.marketSlug),side:o.market_side || (['yes','no'].includes(o.side)?o.side:'') || (o.key ? Number(String(o.key).split(':')[1]) ? 'no':'yes' : ''),game:o.event || o.event_game || fallback.game || '',startTime:o.startTime||o.start_time||fallback.startTime||''};
  }
  function html(value) { return `<div class="bp-host" data-bp="${esc(JSON.stringify(value))}"></div>`; }
  function findEvent(board, slug) {
@@ -123,12 +123,12 @@
   const chosen=(m.marketSides||[]).find(x=>x.long===(s.side==='yes'));if(!chosen)return s;
   const type=m.sportsMarketType||'', team=chosen.team;
   let text=m.title||m.question||'',side=s.side;
-  if(/spread$/.test(type)&&team){text=(team.name||team.abbreviation)+' '+chosen.description;side='yes';}
-  else if(/total$/.test(type)&&/^(over|under)$/i.test(chosen.description||'')&&Number.isFinite(m.line)){text=chosen.description+' '+Math.abs(m.line);side='yes';}
+  if((/spread$/.test(type)||/^tennis_match_(games|sets)_spread$/.test(type))&&team){text=(team.name||team.abbreviation)+' '+chosen.description;side='yes';}
+  else if((/total$/.test(type)||/^tennis_match_total_(games|sets)$/.test(type))&&/^(over|under)$/i.test(chosen.description||'')&&Number.isFinite(m.line)){text=chosen.description+' '+Math.abs(m.line);side='yes';}
   else if(/winner$/.test(type)&&team){text=(team.name||team.abbreviation)+' to win';side='yes';}
   const segment=/-sh-/.test(m.slug)?' (H2)':/-fh-/.test(m.slug)?' (H1)':(/-q([1-4])-/.exec(m.slug)||[])[1];
   if(segment)text+=typeof segment==='string'&&segment.startsWith(' ')?segment:' (Q'+segment+')';
-  return {...s,resolvedMarket:true,marketSlug:m.slug,text,question:m.title||m.question||'',market:type,player:m.metadata?.playerName||'',team:team?.abbreviation||s.team,side};
+  return {...s,resolvedMarket:true,marketSlug:m.slug,text,question:m.title||m.question||'',market:type,player:m.metadata?.playerName||'',team:team?.abbreviation||s.team,side,game:event.title||s.game,startTime:event.startDate||s.startTime};
  }
  const marketCache=new Map();
  async function enrich(s){
@@ -196,6 +196,7 @@
  }
  function marginText(r,S){
   const team=r.team||S.yourTeam;
+  if(r.unit)return r.line!==undefined?S.tenniSpread(team,r.margin,r.unit,r.final):S.tenniLead(team,r.margin,r.final);
   if(r.line!==undefined)return r.margin>0?S.covering(team,r.margin,r.final):S.needsCover(team,Math.floor(-r.margin)+1,r.final);
   return r.margin>0?S.ahead(team,r.margin,r.final):r.margin<0?S.behind(team,-r.margin,r.final):S.tied(team,r.final);
  }
@@ -210,10 +211,10 @@
   if(game) {
    const competitors=[...(game.competitors || [])].sort((a,b)=>(a.homeAway==='home')-(b.homeAway==='home'));
    const matchup=host.closest('.lb-edge')?.querySelector('.lb-matchup');
-   if(matchup){matchup.replaceChildren();competitors.forEach((c,i)=>{if(i)matchup.append(node('span','bp-at','@'));matchup.append(teamName(c));});}
+   if(matchup){matchup.replaceChildren();competitors.forEach((c,i)=>{if(i)matchup.append(node('span','bp-at',game.tennis?'vs.':'@'));matchup.append(teamName(c));});}
    const score=node('div','bp-scoreline');
    if(game.status?.type?.state==='pre')score.textContent=S.starts(new Date(game.date || '').toLocaleTimeString('en-US',{timeZone:'America/Chicago',hour:'numeric',minute:'2-digit'}));
-   else {score.append(node('b','',competitors.map(c=>(c.team?.abbreviation || '')+' '+(c.score ?? S.dash)).join(' · ')),node('span','bp-clock',clockText(game.status,S)));}
+   else {const text=competitors.map(c=>(c.team?.abbreviation || '')+' '+(game.tennis?(c.linescores||[]).map(s=>s.value).join(', '):(c.score ?? S.dash))).join(' · ');score.append(node('b','',game.tennis?S.tenniScores(text):text),node('span','bp-clock',clockText(game.status,S)));}
    rows.push(score);
   }
   if(result.reason)rows.push(node('div','bp-note',S[result.reason] || S.noStat));
@@ -241,6 +242,11 @@
    try{s=await enrich(s);}catch(e){/* Scores remain available; never guess missing contract details. */}
    const label=host.previousElementSibling;if(s.resolveMarket&&label?.classList.contains('pm-leg-label'))label.textContent=s.text;
    const parts=s.eventSlug.split('-'),path=PATHS[parts[0]];
+   if(root.TennisScores?.isTennis(s.eventSlug)){
+    const T=root.TennisScores,date=(s.startTime||parts.slice(3).join('-')).slice(0,10).replaceAll('-',''),board=await get('https://site.api.espn.com/apis/site/v2/sports/tennis/'+T.tour(s.eventSlug)+'/scoreboard?dates='+date+'&limit=1000'),match=T.find(board,s.game,s.eventSlug,s.startTime);
+    const result=!match?{reason:'noGame'}:s.resolveMarket&&!s.resolvedMarket?{reason:'noStat',game:T.adapt(match)}:T.evaluate(s,match);
+    if(host.isConnected)render(host,s,result);return;
+   }
    if(!path){render(host,s,{reason:'noGame'});return;}
    const board=await get('https://site.api.espn.com/apis/site/v2/sports/'+path+'/scoreboard?dates='+parts.slice(3).join('')+'&limit=1000');
    const event=findEvent(board,s.eventSlug);

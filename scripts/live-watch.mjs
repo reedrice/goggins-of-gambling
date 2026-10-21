@@ -519,7 +519,7 @@ async function publish() {
   if (!fs.existsSync(OPEN_FILE) && !prev) await snapshot();
   const open = fs.existsSync(OPEN_FILE) ? JSON.parse(fs.readFileSync(OPEN_FILE, 'utf8')) : openFromPublished(prev);
   const ev = await fetchEvent();
-  const ctx = await fetchContext(SLUG, ev.title || open.title);   // never throws
+  const ctx = await fetchContext(SLUG, ev.title || open.title, ev.startDate);   // never throws
   const out = buildLive(open, ev, prev, new Date().toISOString(), ctx);
   fs.mkdirSync(ALERTS_DIR, { recursive: true });
   fs.writeFileSync(file, JSON.stringify(out, null, 1));
