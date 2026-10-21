@@ -787,3 +787,24 @@ a.btn-play { display: block; text-align: center; text-decoration: none; margin-t
 @media(max-width:480px){.viz-surface{padding:12px 8px 8px;}.viz-quote{padding:10px;}.viz-quote-name{font-size:.72rem;}}
 
 .kalshi-private-frame{display:block;width:100%;height:780px;border:1px solid #2a364c;border-radius:16px;margin-top:16px;background:#10141c;color-scheme:dark}#kalshi-account input[type="url"]{display:block;width:100%;padding:12px;margin:8px 0;box-sizing:border-box}#kalshi-account .kalshi-owner-check{display:flex;gap:8px;align-items:flex-start;margin:12px 0}#kalshi-account li{margin:8px 0}
+/* Guided private connection setup. */
+#kalshi-account .kalshi-setup{display:grid;gap:14px;margin-top:22px}
+#kalshi-account .kalshi-step{padding:20px;border:1px solid #33343b;border-radius:16px;background:rgba(255,255,255,.018);min-width:0}
+#kalshi-account .kalshi-step-heading{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+#kalshi-account .kalshi-step-heading h4{margin:0;font:600 18px/1.35 system-ui,sans-serif}
+#kalshi-account .kalshi-step-number{display:grid;place-items:center;flex:0 0 30px;height:30px;border-radius:50%;background:rgba(255,91,22,.13);color:#ff773f;font-weight:700}
+#kalshi-account .kalshi-step p{margin:8px 0 16px;line-height:1.55}
+#kalshi-account .kalshi-setup-actions{display:flex;gap:10px;flex-wrap:wrap}
+#kalshi-account .kalshi-step .btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;white-space:normal;min-height:44px;padding:10px 16px;box-sizing:border-box}
+#kalshi-account .kalshi-step details{margin-top:18px;padding-top:14px;border-top:1px solid #303036}
+#kalshi-account .kalshi-step summary{cursor:pointer;color:#c6cbd5;font-size:14px;line-height:1.5}
+#kalshi-account .kalshi-step ol{padding-left:22px;font-size:14px;line-height:1.6;color:#bfc5d0}
+#kalshi-account .kalshi-step li{padding-left:4px;margin:12px 0}
+#kalshi-account .kalshi-step form{display:grid;gap:14px;margin-top:18px}
+#kalshi-account .kalshi-owner-check{display:flex!important;justify-content:flex-start;gap:10px;align-items:flex-start;margin:0;font-size:14px;line-height:1.5}
+#kalshi-account .kalshi-owner-check input[type=checkbox]{width:18px!important;min-width:18px;max-width:18px;height:18px;flex:0 0 18px;margin:2px 0 0;padding:0}
+#kalshi-account .kalshi-owner-check span{flex:1;min-width:0}
+#kalshi-account .kalshi-step input[type=url]{font-size:16px;min-width:0;margin-bottom:0}
+#kalshi-account .kalshi-step form>button{justify-self:start}
+#kalshi-account .kalshi-step form [role=status]:empty{display:none}
+@media(max-width:520px){#kalshi-account .kalshi-step{padding:16px}#kalshi-account .kalshi-setup-actions{display:grid}#kalshi-account .kalshi-step form>button{width:100%}}
