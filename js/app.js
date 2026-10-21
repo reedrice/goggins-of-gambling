@@ -1253,6 +1253,7 @@
     const share = calc.share === null ? S.getSettings().shareByDefault : calc.share;
     const hasToken = !!S.getToken();
     el.innerHTML = `<h2>${esc(K.title)}</h2>
+      <div id="combo-lab-root"></div>
       <div id="picker-root"></div>
       <div class="slip-head"><h3>${esc(K.slip)}</h3><span id="slip-asof" class="muted small"></span></div>
       <div id="slip"></div>
@@ -1278,6 +1279,12 @@
         <div id="p-line" class="small"></div>
         <button class="btn btn-play btn-xl" id="p-bet"></button>
       </div>`;
+    window.ComboLab.mount($('#combo-lab-root'), {onUse: legs => {
+      if (calc.legs.length && !confirm(STR.comboLab.replace)) return false;
+      calc.legs = []; calc.category = 'longshot'; calc.catTouched = true;
+      $('#c-cat').value = 'longshot';
+      legs.forEach(addPickedLeg);
+    }});
     picker = window.Picker.create($('#picker-root'), { onAdd: addPickedLeg, fmt: fmtP, pay: payShort });
     $('#add-manual').onclick = () => {
       calc.legs.push({ desc: '', platform: myPlatform().name, price: '', manual: true });

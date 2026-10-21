@@ -744,5 +744,5 @@
    */
   function startTimeFor(leg) { return window.GameTime.lookup(leg, cache.index); }
 
-  window.Picker = { create, loadIndex, loadEvent, liveEvent, livePrice, kalshiUrlFromTicker, fixKalshiUrl, startTimeFor };
+  window.Picker = { makeLeg, create, loadIndex, loadEvent, liveEvent, livePrice, kalshiUrlFromTicker, fixKalshiUrl, startTimeFor };
 })();
