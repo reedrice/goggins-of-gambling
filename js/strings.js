@@ -598,7 +598,7 @@ function unitWords(u) {
 window.STR.unitWords = unitWords;
 
 window.STR.liveBets = {
- sport:'Sport', allSports:'All sports', teamGame:'Team / game',
+ when:'When', windows:{today:'Now & today',tomorrow:'Tomorrow',all:'Today & tomorrow'}, sport:'Sport', allSports:'All sports', teamGame:'Team / game',
  sports:{nba:'NBA',wnba:'WNBA',nfl:'NFL',ncaaf:'College football',ncaab:'College basketball',wncaab:'Women’s college basketball',nhl:'NHL',mlb:'MLB',soccer:'Soccer',tennis:'Tennis',golf:'Golf'},
  refresh:'Check for new edges', checking:'Checking…',
  refreshHelp:'Reload the latest published feed. Market scans run on the scheduled bot.',
@@ -619,9 +619,9 @@ window.STR.liveBets = {
    about: 'About edges', explanation: 'Compared with the opening Polymarket price: big = 10–24 points lower, slight = 4–9. Game context comes from ESPN. Alerts show prices at detection; current cards may differ.'
  },
  noAlerts: 'No alerts across these games yet.',
- all: 'All games', games: n => n + ' games · Today & tomorrow', failed: n => n + ' game feeds unavailable; retrying',
+ all: 'All games', games: n => n + ' games', failed: n => n + ' game feeds unavailable; retrying',
  stale: 'Some prices may be old. The feed is waiting for an update.',
- empty: 'No qualifying price movements across these games right now.',
+ noGames:'No active or upcoming games in this selection.', empty: 'Markets checked. No qualifying price movements right now; new markets are being watched from their first captured price.',
  unavailable: 'Live bets are unavailable. Retrying in a minute.'
 };
 

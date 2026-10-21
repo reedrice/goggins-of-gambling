@@ -123,3 +123,10 @@ console.log('ok live-bets helpers + data shape + grouping/cap + alerts + odds li
  assert.strictEqual(LB.sportGames(games,'nhl','nba-a-b').length,1);
  console.log('Sport grouping, soccer leagues, all sports, empty sports and selected-final handling passed');
 }
+
+const windowNow=Date.parse('2026-10-21T05:20:00Z');
+const windowGames=[{slug:'live',start_time:'2026-10-21T04:00:00Z',status:'live'},{slug:'today',start_time:'2026-10-22T04:30:00Z',status:'pregame'},{slug:'tomorrow',start_time:'2026-10-22T05:00:00Z',status:'pregame'}];
+assert.deepEqual(LB.timeGames(windowGames,'today',windowNow).map(g=>g.slug),['live','today']);
+assert.deepEqual(LB.timeGames(windowGames,'tomorrow',windowNow).map(g=>g.slug),['tomorrow']);
+assert.equal(LB.freshness(LB.combineGames([])).stale,false);
+console.log('Now/today keeps overnight live games, uses Chicago boundaries; empty feed is not stale');
