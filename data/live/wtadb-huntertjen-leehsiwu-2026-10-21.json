@@ -4,12 +4,12 @@
  "game": "Hunter / Tjen vs. Lee Y-Hsi / Wu",
  "url": "https://polymarket.us/sports/wtadb/wtadb-huntertjen-leehsiwu-2026-10-21",
  "start_time": "2026-10-21T05:10:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185599",
-  "fetched_at": "2026-10-21T07:35:53.073Z",
+  "fetched_at": "2026-10-21T07:45:53.490Z",
   "tennis": true,
   "tennis_match": {
    "id": "185599",
@@ -17,17 +17,17 @@
    "date": "2026-10-21T06:25Z",
    "startDate": "2026-10-21T06:25Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Storm Hunter (AUS) & Janice Tjen (INA) leads Ya Hsin Lee () & Fang-Hsien Wu (TPO) 4-6 6-3 0-0",
+     "text": "(1) Storm Hunter (AUS) & Janice Tjen (INA) bt Ya Hsin Lee () & Fang-Hsien Wu (TPO) 4-6 6-3 1-0 (10-6)",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
      "linescores": [
       {
        "value": 6,
@@ -65,7 +66,9 @@
        "winner": false
       },
       {
-       "value": 0
+       "value": 0,
+       "tiebreak": 6,
+       "winner": false
       }
      ],
      "roster": {
@@ -133,6 +136,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
      "curatedRank": {
       "current": 1
      },
@@ -146,7 +150,9 @@
        "winner": true
       },
       {
-       "value": 0
+       "value": 1,
+       "tiebreak": 10,
+       "winner": true
       }
      ],
      "roster": {
@@ -232,10 +238,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Ya Hsin Lee / Fang-Hsien Wu",
@@ -247,13 +253,13 @@
    "abbr": "Storm Hunter / Janice Tjen",
    "alias": "Storm Hunter / Janice Tjen",
    "name": "Storm Hunter / Janice Tjen",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-21T07:35:53.074Z",
+ "updated": "2026-10-21T07:45:53.493Z",
  "open_taken_at": "2026-10-21T05:15:40.354Z",
  "thresholds": {
   "big": 10,
@@ -301,7 +307,7 @@
    "reason": "Big move (25 pts), likely news",
    "context": "Ya Hsin Lee / Fang-Hsien Wu 6, 3, 0 · Storm Hunter / Janice Tjen 4, 6, 0 · 3rd Set (games by set)",
    "first_seen": "2026-10-21T06:42:49.743Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],

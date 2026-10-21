@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "184998",
-  "fetched_at": "2026-10-21T07:35:33.818Z",
+  "fetched_at": "2026-10-21T07:45:33.418Z",
   "tennis": true,
   "tennis_match": {
    "id": "184998",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "James Duckworth (AUS) leads (2) Luciano Darderi (ITA) 7-5 2-1",
+     "text": "James Duckworth (AUS) leads (2) Luciano Darderi (ITA) 7-5 3-2",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 2
      },
@@ -64,7 +65,7 @@
        "winner": false
       },
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -104,13 +105,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 7,
        "winner": true
       },
       {
-       "value": 2
+       "value": 3
       }
      ],
      "athlete": {
@@ -145,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 708,
    "type": {
     "id": "1",
@@ -182,7 +189,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-21T07:35:33.820Z",
+ "updated": "2026-10-21T07:45:33.420Z",
  "open_taken_at": "2026-10-21T05:15:17.891Z",
  "thresholds": {
   "big": 10,
@@ -360,7 +367,7 @@
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Luciano Darderi not above the games spread right now",
-   "context": "Luciano Darderi 5, 1 · James Duckworth 7, 2 · 2nd Set (games by set)",
+   "context": "Luciano Darderi 5, 2 · James Duckworth 7, 3 · 2nd Set (games by set)",
    "first_seen": "2026-10-21T06:55:43.417Z",
    "status": "open",
    "kalshi": null
@@ -380,7 +387,7 @@
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Luciano Darderi trailing in sets",
-   "context": "Luciano Darderi 5, 1 · James Duckworth 7, 2 · 2nd Set (games by set)",
+   "context": "Luciano Darderi 5, 2 · James Duckworth 7, 3 · 2nd Set (games by set)",
    "first_seen": "2026-10-21T06:55:43.417Z",
    "status": "open",
    "kalshi": null
@@ -400,7 +407,7 @@
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Luciano Darderi not above the games spread right now",
-   "context": "Luciano Darderi 5, 1 · James Duckworth 7, 2 · 2nd Set (games by set)",
+   "context": "Luciano Darderi 5, 2 · James Duckworth 7, 3 · 2nd Set (games by set)",
    "first_seen": "2026-10-21T07:25:27.515Z",
    "status": "open",
    "kalshi": null
@@ -422,7 +429,7 @@
    "reason": null,
    "context": "Luciano Darderi 5, 1 · James Duckworth 7, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-21T07:05:31.953Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -442,7 +449,7 @@
    "reason": null,
    "context": "Luciano Darderi 5, 1 · James Duckworth 7, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-21T06:42:29.344Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -467,6 +474,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1585091:1:2026-10-21T07:05:31.953Z",
+   "key": "1585091:1",
+   "at": "2026-10-21T07:45:33.420Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+233",
+   "now_chance": 30,
+   "edge": 16,
+   "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-jamduc-lucdar-2026-10-20"
+  },
   {
    "id": "new_edge:1585074:1:big",
    "key": "1585074:1",
@@ -618,7 +639,8 @@
   "new_edge:1585091:1:big",
   "gone:1585074:1:2026-10-21T06:42:29.344Z",
   "gone:1585111:1:2026-10-21T06:55:43.417Z",
-  "new_edge:1585074:1:big"
+  "new_edge:1585074:1:big",
+  "gone:1585091:1:2026-10-21T07:05:31.953Z"
  ],
  "kalshi_checked": null
 }
