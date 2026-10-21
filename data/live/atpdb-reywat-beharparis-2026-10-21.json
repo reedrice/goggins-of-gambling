@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185115",
-  "fetched_at": "2026-10-21T15:12:10.008Z",
+  "fetched_at": "2026-10-21T16:20:28.918Z",
   "tennis": true,
   "tennis_match": {
    "id": "185115",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Wed, October 21st at 11:15 AM EDT",
-     "shortDetail": "10/21 - 11:15 AM EDT"
+     "description": "In Progress",
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Finn Reynolds (NZL) & James Watt (NZL) is tied with Ariel Behar (URU) & Joshua Paris (GBR) 6-7 (8-10) 3-2",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,17 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 7,
+       "tiebreak": 10,
+       "winner": true
+      },
+      {
+       "value": 2
+      }
+     ],
      "roster": {
       "displayName": "Ariel Behar / Joshua Paris",
       "shortDisplayName": "A. Behar / J. Paris",
@@ -122,6 +138,17 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 6,
+       "tiebreak": 8,
+       "winner": false
+      },
+      {
+       "value": 3
+      }
+     ],
      "roster": {
       "displayName": "Finn Reynolds / James Watt",
       "shortDisplayName": "F. Reynolds / J. Watt",
@@ -189,6 +216,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 110,
    "type": {
     "id": "3",
@@ -205,16 +237,16 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Wed, October 21st at 11:15 AM EDT",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Ariel Behar / Joshua Paris",
    "alias": "Ariel Behar / Joshua Paris",
    "name": "Ariel Behar / Joshua Paris",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Finn Reynolds / James Watt",
@@ -226,7 +258,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-21T15:12:10.009Z",
+ "updated": "2026-10-21T16:20:28.918Z",
  "open_taken_at": "2026-10-21T05:15:42.942Z",
  "thresholds": {
   "big": 10,

@@ -4,12 +4,12 @@
  "game": "Clement Chidekh vs. Jacob Fearnley",
  "url": "https://polymarket.us/sports/atp/atp-clechi-jacfea-2026-10-21",
  "start_time": "2026-10-21T13:30:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185048",
-  "fetched_at": "2026-10-21T15:12:11.182Z",
+  "fetched_at": "2026-10-21T16:20:34.307Z",
   "tennis": true,
   "tennis_match": {
    "id": "185048",
@@ -17,17 +17,17 @@
    "date": "2026-10-21T13:40Z",
    "startDate": "2026-10-21T13:40Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Clement Chidekh (FRA) leads Jacob Fearnley (GBR) 7-6 (7-4) 3-1",
+     "text": "Clement Chidekh (FRA) bt Jacob Fearnley (GBR) 7-6 (7-4) 6-2",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "winner": false,
      "linescores": [
       {
        "value": 6,
@@ -63,7 +63,8 @@
        "winner": false
       },
       {
-       "value": 1
+       "value": 2,
+       "winner": false
       }
      ],
      "athlete": {
@@ -103,7 +104,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "winner": true,
      "linescores": [
       {
        "value": 7,
@@ -111,7 +112,8 @@
        "winner": true
       },
       {
-       "value": 3
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -146,11 +148,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 440,
    "type": {
     "id": "1",
@@ -167,10 +164,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Jacob Fearnley",
@@ -182,13 +179,13 @@
    "abbr": "Clement Chidekh",
    "alias": "Clement Chidekh",
    "name": "Clement Chidekh",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-21T15:12:11.182Z",
+ "updated": "2026-10-21T16:20:34.307Z",
  "open_taken_at": "2026-10-21T05:15:52.608Z",
  "thresholds": {
   "big": 10,
@@ -368,11 +365,25 @@
    "reason": null,
    "context": "Jacob Fearnley 6, 1 · Clement Chidekh 7, 3 · 2nd Set (games by set)",
    "first_seen": "2026-10-21T14:57:52.430Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1622064:1:2026-10-21T14:57:52.430Z",
+   "key": "1622064:1",
+   "at": "2026-10-21T16:20:34.307Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+122",
+   "now_chance": 45,
+   "edge": 5,
+   "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-clechi-jacfea-2026-10-21"
+  },
   {
    "id": "new_edge:1622064:1:big",
    "key": "1622064:1",
@@ -405,7 +416,8 @@
  "alert_seen": [
   "news:1622056:1",
   "new_edge:1622064:1:slight",
-  "new_edge:1622064:1:big"
+  "new_edge:1622064:1:big",
+  "gone:1622064:1:2026-10-21T14:57:52.430Z"
  ],
  "kalshi_checked": null
 }
