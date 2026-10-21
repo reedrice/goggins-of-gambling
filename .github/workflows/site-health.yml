@@ -1,0 +1,32 @@
+name: Site health and recovery
+on:
+  schedule:
+    - cron: '8,18,28,38,48,58 * * * *'
+  workflow_run:
+    workflows: ['Live feed and grading', 'Deploy site']
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: production-health
+  cancel-in-progress: false
+jobs:
+  check:
+    if: github.repository == 'reedrice/goggins-of-gambling' && github.ref == 'refs/heads/main' && (github.event_name != 'workflow_run' || github.event.workflow_run.head_repository.full_name == github.repository)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - name: Verify public data and recover once if needed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/site-health.mjs
