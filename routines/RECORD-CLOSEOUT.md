@@ -1,5 +1,7 @@
 # Public Record closeout
 
+Oct 21 handoff: production GitHub Actions live-maintenance.yml now invokes this job after each successful feed pass, with the built-in token and an explicit public-data allowlist. It publishes and deploys Pages itself. The Codex heartbeat is paused; Codex/computer availability is no longer required. GitHub scheduled starts can be delayed. Existing settlement and no-guessed-grade rules below remain in force.
+
 Authorized by Reed Oct 20, 2026. Reuses the chatgpt-owned keep-live-bets-feed-updating heartbeat after each feed pass; no separate feed writer or change to the other five Grok routines.
 
 Run `node scripts/record-closeout.mjs` after a successful feed refresh. It groups tracked games by slate date from their IDs, so games finishing after midnight remain in their original slate. A date is ready when every indexed game for it is final. Pending predictions for ready dates are matched unambiguously by sport, date, away/home abbreviations and selected team to official ESPN finals. Unknown sports, missing splits, ambiguous matches and draws remain pending. No guesses from live clocks. Other public pick/live-alert records refresh from real exchange settlements using capture-closing.mjs and grade-live-alerts.mjs; learn.mjs refreshes calibration. These jobs are idempotent; historical completed slates allow pending settlements to retry on subsequent checks. They may update already-settled individual history entries before the current slate closes.

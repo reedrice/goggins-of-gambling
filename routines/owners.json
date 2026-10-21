@@ -1,5 +1,5 @@
 {
-  "_note": "Who runs each of Reed's routines. Only the owner runs it; others SKIP. Change with: node scripts/routine-gate.mjs set <id> <owner>. Owners: grok (Goggins Of Gambling on Grok Bot), chatgpt, pablo, off. Times are America/Chicago. No secrets or dollar amounts here.",
+  "_note": "Who runs each of Reed's routines. Only the owner runs it; others SKIP. Change with: node scripts/routine-gate.mjs set <id> <owner>. Owners: grok (Goggins Of Gambling on Grok Bot), chatgpt, pablo, github-actions, off. Times are America/Chicago. No secrets or dollar amounts here.",
   "routines": {
     "daily-slate-odds-digest": {
       "name": "Daily slate & odds digest",
@@ -50,7 +50,7 @@
       "name": "Live Bets feed update",
       "owner": "github-actions",
       "enabled": true,
-      "schedule_ct": "*/10 * * * *",
+      "schedule_ct": "3,13,23,33,43,53 * * * *",
       "last_run_by": "github-actions",
       "last_run_at": "2026-10-21T08:31:38.941Z",
       "notes": "GitHub Actions live-maintenance.yml: feed, grading, feedback and Pages deployment. No LLM or local computer required. Other bots skip. Scheduled starts may be delayed by GitHub.",
@@ -61,12 +61,12 @@
     },
     "trent-post-check": {
       "name": "Fade Trent new-post check",
-      "owner": "chatgpt",
-      "enabled": true,
+      "owner": "off",
+      "enabled": false,
       "schedule_ct": "0 */2 * * *",
       "last_run_by": "chatgpt",
       "last_run_at": "2026-10-21T06:48:10.305Z",
-      "notes": "Browser reads of @BookitWithTrent; see routines/FADE-TRENT.md. Two-hour polling plus Pages deployment delay, not instant X webhooks."
+      "notes": "Codex automation paused by Reed request after GitHub Actions feed migration. Browser-only X ingestion has no hosted replacement yet; new post checks paused. Preserve prior read cursor and all records; no claim of missed checks. Separate non-AI source or explicit manual check required."
     }
   }
 }

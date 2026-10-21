@@ -47,6 +47,8 @@ Unclear Trent bets are flagged `needs_clarification` + `question` and stay pendi
 
 ## File ownership
 
+**Oct 21, 2026 production handoff authorized by Reed:** GitHub Actions now owns `live-feed-update`. `.github/workflows/live-maintenance.yml` refreshes the public feed, grading and feedback and deploys Pages about every ten minutes, without an LLM or local computer. Other bots must skip feed scheduling; check owners.json. Both Codex site automations are paused after a successful hosted run and public-data verification. Fade Trent new-post browser checks are paused pending a separate non-AI source; saved records remain intact. The five Grok routines retain their existing owners. This supersedes the temporary ChatGPT feed takeover below. Never enable these workflows in the sandbox.
+
 **Oct 20, 2026 override authorized by Reed:** ChatGPT temporarily maintains the Live Bets feed and live files while Pablo is usage-limited. See `routines/LIVE-FEED.md` and `routines/owners.json` (`live-feed-update`). The ownership restrictions below apply again after handback. Do not run an independent feed scheduler during this takeover.
 
 - **Pablo's live system** (read-only for everyone else): `data/live/`, `scripts/live-*.mjs` (live-tick, live-watch, live-context, live-discord) and their tests/fixtures. Live-tick scheduling is Pablo's. Read his files; never write them. Leave requests in HANDOFF ("Requests for …").
