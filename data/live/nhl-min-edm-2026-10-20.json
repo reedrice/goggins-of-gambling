@@ -9,24 +9,24 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892546",
-  "fetched_at": "2026-10-21T01:04:10.417Z",
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 0,
-  "clock": null,
-  "regulation_secs_left": 3600,
+  "fetched_at": "2026-10-21T01:14:06.935Z",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
+  "period": 1,
+  "clock": "16:34",
+  "regulation_secs_left": 3694,
   "home": {
    "abbr": "EDM",
    "alias": "Oilers",
    "name": "Edmonton Oilers",
-   "score": null,
+   "score": 0,
    "id": "6"
   },
   "away": {
    "abbr": "MIN",
    "alias": "Wild",
    "name": "Minnesota Wild",
-   "score": null,
+   "score": 0,
    "id": "30"
   },
   "possession": null,
@@ -103,46 +103,9 @@
    }
   ],
   "in_game_injuries": [],
-  "leaders": [
-   {
-    "team": "EDM",
-    "player": "Vasily Podkolzin",
-    "short": "V. Podkolzin",
-    "pos": "RW"
-   },
-   {
-    "team": "EDM",
-    "player": "Connor McDavid",
-    "short": "C. McDavid",
-    "pos": "C"
-   },
-   {
-    "team": "EDM",
-    "player": "Connor McDavid",
-    "short": "C. McDavid",
-    "pos": "C"
-   },
-   {
-    "team": "MIN",
-    "player": "Kirill Kaprizov",
-    "short": "K. Kaprizov",
-    "pos": "LW"
-   },
-   {
-    "team": "MIN",
-    "player": "Quinn Hughes",
-    "short": "Q. Hughes",
-    "pos": "D"
-   },
-   {
-    "team": "MIN",
-    "player": "Kirill Kaprizov",
-    "short": "K. Kaprizov",
-    "pos": "LW"
-   }
-  ]
+  "leaders": []
  },
- "updated": "2026-10-21T01:04:10.418Z",
+ "updated": "2026-10-21T01:14:06.937Z",
  "open_taken_at": "2026-10-20T22:26:58.888Z",
  "thresholds": {
   "big": 10,
@@ -2572,6 +2535,26 @@
  ],
  "edges": [
   {
+   "key": "1481185:1",
+   "market_id": "1481185",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will the MIN Wild cover 1.5 vs the EDM Oilers in MIN vs EDM?",
+   "side": "Oilers -1.50",
+   "open_chance": 33,
+   "now_chance": 25,
+   "open_odds": "+203",
+   "now_odds": "+300",
+   "edge": 8,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: EDM not covering -1.5 right now",
+   "context": "EDM tied, Q1 16:34",
+   "first_seen": "2026-10-21T01:14:06.937Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
    "key": "1604118:1",
    "market_id": "1604118",
    "market": "Player prop",
@@ -2586,8 +2569,48 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "MIN tied, Q1 16:34",
    "first_seen": "2026-10-20T23:54:02.095Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "1481181:1",
+   "market_id": "1481181",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming hockey event MIN Wild vs EDM Oilers scheduled for October 21, 2026 at 1:00 AM UTC?",
+   "side": "Oilers win",
+   "open_chance": 55,
+   "now_chance": 50,
+   "open_odds": "-122",
+   "now_odds": "+100",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "EDM tied, Q1 16:34",
+   "first_seen": "2026-10-21T01:14:06.937Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "1481192:1",
+   "market_id": "1481192",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in MIN vs EDM be more than 6.5?",
+   "side": "Under 6.5",
+   "open_chance": 54,
+   "now_chance": 49,
+   "open_odds": "-117",
+   "now_odds": "+104",
+   "edge": 5,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: scoring above pace (0 pts, pace -0)",
+   "context": "MIN 0, EDM 0, Q1 16:34",
+   "first_seen": "2026-10-21T01:14:06.937Z",
    "status": "open",
    "kalshi": true
   },
@@ -2606,13 +2629,27 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "EDM tied, Q1 16:34",
    "first_seen": "2026-10-21T01:04:10.418Z",
    "status": "open",
    "kalshi": true
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1481181:1:slight",
+   "key": "1481181:1",
+   "at": "2026-10-21T01:14:06.937Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Oilers win",
+   "market": "Moneyline",
+   "now_odds": "+100",
+   "now_chance": 50,
+   "edge": 5,
+   "text": "New slight edge: Oilers win (Moneyline), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-min-edm-2026-10-20"
+  },
   {
    "id": "new_edge:1604118:1:slight",
    "key": "1604118:1",
@@ -2644,10 +2681,11 @@
  ],
  "alert_seen": [
   "new_edge:1604118:1:slight",
-  "new_edge:1613587:0:slight"
+  "new_edge:1613587:0:slight",
+  "new_edge:1481181:1:slight"
  ],
  "kalshi_checked": {
-  "at": "2026-10-21T01:04:10.732Z",
+  "at": "2026-10-21T01:14:06.951Z",
   "event": "26OCT20MINEDM"
  }
 }
