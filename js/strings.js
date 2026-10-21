@@ -718,3 +718,4 @@ tenniScores:text=>`Games by set · ${text}`
 });
 
 window.STR.theme={title:'Appearance',scheme:'Color scheme',schemes:{ocean:'Ocean blue',violet:'Soft violet',teal:'Deep teal',custom:'Custom'},canvas:'Canvas',accent:'Accent'};
+window.STR.chartDisplay={smoothed:'Smoothed overview',explanation:'Line uses time-bucket averages. Quotes and hover readouts use actual prices.'};

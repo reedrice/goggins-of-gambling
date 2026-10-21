@@ -289,6 +289,23 @@
     }
     return d;
   }
+  // Presentation only: average dense time buckets at overview scales. Raw quotes stay untouched.
+  function displaySeries(points,a,b,budget=60) {
+    if(points.length<4||!(b>a))return {points,smoothed:false};
+    const width=(b-a)/Math.max(1,budget),out=[points[0]],groups=new Map();
+    for(const p of points.slice(1,-1)){
+      const key=Math.floor((p.t-a)/width);
+      if(!groups.has(key))groups.set(key,[]);
+      groups.get(key).push(p);
+    }
+    let smoothed=false;
+    for(const group of groups.values()){
+      if(group.length===1)out.push(group[0]);
+      else {smoothed=true;out.push({t:group.reduce((n,p)=>n+p.t,0)/group.length,chance:group.reduce((n,p)=>n+p.chance,0)/group.length});}
+    }
+    out.push(points[points.length-1]);
+    return {points:out,smoothed};
+  }
   function drawChart(box, points, marks, game, pair) {
     box._pts = points = prepSeries(points);
     box._pair = pair && pair.sides && pair.b ? { sides: pair.sides, b: prepSeries(pair.b), head: pair.head || null } : null;
@@ -402,7 +419,10 @@
       g.append(sv('line', { x1: x(m.t), x2: x(m.t), y1: T, y2: H - B, class: 'viz-mark' }));
       const tx = sv('text', { x: x(m.t) + 2, y: T + 9, class: 'viz-mlab' }); tx.textContent = String(m.label).split(' · ')[0]; g.append(tx);
     }
-    const drawSeries=(v,color,i)=>{
+    let smoothed=false;
+    const drawSeries=(raw,color,i)=>{
+      const display=displaySeries(raw,win.a,win.b,Math.max(32,Math.min(100,Math.round((svg.clientWidth||340)/10))));
+      const v=display.points;smoothed=smoothed||display.smoothed;
       if(!v.length)return;
       const d=curvePath(v,x,y),id='vzfill'+box._cid+i;
       const grad=sv('linearGradient',{id,x1:'0',y1:'0',x2:'0',y2:'1'});
@@ -411,7 +431,7 @@
       g.append(sv('path',{d,stroke:color,class:'viz-glow'}),sv('path',{d,stroke:color,class:'viz-line viz-pairline'}));
     };
     if(pr){drawSeries(vis,pr.sides[0].color,0);drawSeries(Bv.vis,pr.sides[1].color,1);}
-    else drawSeries(vis,vis[vis.length-1].chance>=vis[0].chance?'#5ce3c0':'#ff778c',0);
+    else drawSeries(vis,'var(--accent, #8ab4ff)',0);
     svg.append(g);
     // Time ticks adapt to the zoom: 3 labels (start, middle, end of view).
     const span = win.b - win.a, fmt = t => span > 36 * 3600e3 ? new Date(t).toLocaleDateString('en-US', { timeZone: 'America/Chicago', weekday: 'short', hour: 'numeric' })
@@ -441,12 +461,13 @@
       ui.quotes.hidden=true;
       if (p.t >= win.a - 1 && p.t <= win.b + 1) {
         if (ui.sel != null) svg.append(sv('line', { x1: x(p.t), x2: x(p.t), y1: T, y2: H - B, class: 'viz-cross' }));
-        svg.append(sv('circle', { r: 4, class: 'viz-dot', cx: x(p.t), cy: y(p.chance) }));
+        svg.append(sv('circle', { r: 4, class: 'viz-dot', fill:'var(--accent, #8ab4ff)', cx: x(p.t), cy: y(p.chance) }));
       }
       ui.read.textContent = `${clock(p.t)} CT · ${american(p.chance)} · ${Math.round(p.chance)}% chance · $${u} → $${Math.round(u * 100 / p.chance)}${mk ? ' · ' + mk.label : ''}`;
     }
     paintHead(ui.head, pr && pr.head, pr && pr.sides);
-    ui.range.textContent = rangeLabel(win.a, win.b);
+    ui.range.textContent = rangeLabel(win.a, win.b) + (smoothed ? ' · '+(globalThis.STR?.chartDisplay?.smoothed||'Smoothed overview') : '');
+    ui.range.title = smoothed ? (globalThis.STR?.chartDisplay?.explanation||'Line uses time-bucket averages. Quotes and hover readouts use actual prices.') : '';
     const zoomed = !!ui.v.span && ui.v.span < tMax - tMin;
     ui.live.hidden = ui.v.live && ui.sel == null; ui.reset.hidden = !(zoomed || !ui.v.live);
   }
@@ -810,5 +831,5 @@
   /** Event slug from a Polymarket US event URL. */
   const slugFromUrl = u => { const m = /\/([a-z]+-[a-z0-9]+-[a-z0-9]+-\d{4}-\d{2}-\d{2})(?:[/?#]|$)/.exec(u || ''); return m ? m[1] : null; };
 
-  return { startLive, TEAM_COLORS, legible, teamColor, pairSides, scoreHeader, curvePath, stepPoints, complement, valueAt, note, noteText, blankVisuals, VISUALS, liveChart, seasonStart, tagSeason, loadGames, ESPN_PATH, espnAbbr, open, close, chartBtn, pmHistory, viewWindow, prepSeries, nearestIdx, defaultView, gameInfo, fitY, rangeLabel, parseProp, siblingLines, gamesFromLog, summary, pickGames, seriesFor, american, slugFromUrl, statOf };
+  return { displaySeries, startLive, TEAM_COLORS, legible, teamColor, pairSides, scoreHeader, curvePath, stepPoints, complement, valueAt, note, noteText, blankVisuals, VISUALS, liveChart, seasonStart, tagSeason, loadGames, ESPN_PATH, espnAbbr, open, close, chartBtn, pmHistory, viewWindow, prepSeries, nearestIdx, defaultView, gameInfo, fitY, rangeLabel, parseProp, siblingLines, gamesFromLog, summary, pickGames, seriesFor, american, slugFromUrl, statOf };
 });
