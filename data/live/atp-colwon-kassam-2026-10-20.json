@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-21T08:34:17.019Z"
+  "fetched_at": "2026-10-21T08:42:13.862Z"
  },
- "updated": "2026-10-21T08:34:17.019Z",
+ "updated": "2026-10-21T08:42:13.862Z",
  "open_taken_at": "2026-10-21T05:15:29.934Z",
  "thresholds": {
   "big": 10,
@@ -87,6 +87,26 @@
  ],
  "edges": [
   {
+   "key": "1613477:0",
+   "market_id": "1613477",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Coleman Wong vs Kasidit Samrej scheduled for October 21, 2026 at 2:00 AM UTC?",
+   "side": "Coleman Wong win",
+   "open_chance": 92,
+   "now_chance": 78,
+   "open_odds": "-1150",
+   "now_odds": "-355",
+   "edge": 14,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-21T07:35:42.823Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1613636:1",
    "market_id": "1613636",
    "market": "Games total",
@@ -103,47 +123,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-21T07:25:36.073Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1613477:0",
-   "market_id": "1613477",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Coleman Wong vs Kasidit Samrej scheduled for October 21, 2026 at 2:00 AM UTC?",
-   "side": "Coleman Wong win",
-   "open_chance": 92,
-   "now_chance": 50,
-   "open_odds": "-1150",
-   "now_odds": "+100",
-   "edge": 42,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-21T07:35:42.823Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1613643:0",
-   "market_id": "1613643",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Coleman Wong cover -4.5 vs the Kasidit Samrej in Coleman Wong vs. Kasidit Samrej?",
-   "side": "Coleman Wong -4.50 (Games)",
-   "open_chance": 53,
-   "now_chance": 17,
-   "open_odds": "-113",
-   "now_odds": "+488",
-   "edge": 36,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-21T08:15:41.662Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -168,6 +148,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1613636:1:2026-10-21T07:25:36.073Z",
+   "key": "1613636:1",
+   "at": "2026-10-21T08:42:13.862Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+355",
+   "now_chance": 22,
+   "edge": 43,
+   "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-colwon-kassam-2026-10-20"
+  },
   {
    "id": "new_edge:1613477:0:big",
    "key": "1613477:0",
@@ -231,7 +225,8 @@
   "new_edge:1613643:0:slight",
   "gone:1613636:0:2026-10-21T07:15:41.774Z",
   "new_edge:1613643:0:big",
-  "new_edge:1613477:0:big"
+  "new_edge:1613477:0:big",
+  "gone:1613636:1:2026-10-21T07:25:36.073Z"
  ],
  "kalshi_checked": null
 }

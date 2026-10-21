@@ -3,48 +3,68 @@
   "routines": {
     "daily-slate-odds-digest": {
       "name": "Daily slate & odds digest",
-      "owner": "grok",
+      "owner": "github-actions",
       "enabled": true,
       "schedule_ct": "0 7 * * *",
-      "last_run_by": null,
-      "last_run_at": null,
-      "notes": "Morning digest. Time from the HANDOFF (\"7 AM digest\")."
+      "last_run_by": "github-actions",
+      "last_run_at": "2026-10-21T08:44:26.300Z",
+      "notes": "Rules-based GitHub Actions replacement; see routines/ACTIONS.md. No scheduled AI or private messages.",
+      "previous_run": {
+        "by": null,
+        "at": null
+      }
     },
     "lineup-goalie-check": {
       "name": "Lineup & goalie check",
-      "owner": "grok",
+      "owner": "github-actions",
       "enabled": true,
       "schedule_ct": "0 12,16 * * *",
-      "last_run_by": "grok",
-      "last_run_at": "2026-10-20T21:05:22.538Z",
-      "notes": "Schedule not exported yet.  and fill schedule_ct."
+      "last_run_by": "github-actions",
+      "last_run_at": "2026-10-21T08:44:26.415Z",
+      "notes": "Rules-based GitHub Actions replacement; see routines/ACTIONS.md. No scheduled AI or private messages.",
+      "previous_run": {
+        "by": "grok",
+        "at": "2026-10-20T21:05:22.538Z"
+      }
     },
     "late-scratch-check": {
       "name": "Late-scratch check",
-      "owner": "grok",
+      "owner": "github-actions",
       "enabled": true,
       "schedule_ct": "50 17 * * *",
-      "last_run_by": "grok",
-      "last_run_at": "2026-10-20T22:56:10.514Z",
-      "notes": "Right after NFL inactives (~5:45 PM CT). Confirm exact cron with Reed."
+      "last_run_by": "github-actions",
+      "last_run_at": "2026-10-21T08:44:26.457Z",
+      "notes": "Rules-based GitHub Actions replacement; see routines/ACTIONS.md. No scheduled AI or private messages.",
+      "previous_run": {
+        "by": "grok",
+        "at": "2026-10-20T22:56:10.514Z"
+      }
     },
     "play-money-leaderboard-update": {
       "name": "Play-money leaderboard update",
-      "owner": "grok",
+      "owner": "github-actions",
       "enabled": true,
       "schedule_ct": "0 12,15,17-23 * * *",
-      "last_run_by": "grok",
-      "last_run_at": "2026-10-21T04:02:22.889Z",
-      "notes": "Runs several times a day (one run at 12 PM also runs learn.mjs). Exact cron not exported;"
+      "last_run_by": "github-actions",
+      "last_run_at": "2026-10-21T08:44:27.429Z",
+      "notes": "Rules-based GitHub Actions replacement; see routines/ACTIONS.md. No scheduled AI or private messages.",
+      "previous_run": {
+        "by": "grok",
+        "at": "2026-10-21T04:02:22.889Z"
+      }
     },
     "weekly-learning-review": {
       "name": "Weekly learning review",
-      "owner": "grok",
+      "owner": "github-actions",
       "enabled": true,
       "schedule_ct": "0 10 * * 0",
-      "last_run_by": null,
-      "last_run_at": null,
-      "notes": "Weekly. Day/time not exported;"
+      "last_run_by": "github-actions",
+      "last_run_at": "2026-10-21T08:44:27.526Z",
+      "notes": "Rules-based GitHub Actions replacement; see routines/ACTIONS.md. No scheduled AI or private messages.",
+      "previous_run": {
+        "by": null,
+        "at": null
+      }
     },
     "live-feed-update": {
       "name": "Live Bets feed update",
@@ -52,7 +72,7 @@
       "enabled": true,
       "schedule_ct": "3,13,23,33,43,53 * * * *",
       "last_run_by": "github-actions",
-      "last_run_at": "2026-10-21T08:34:23.992Z",
+      "last_run_at": "2026-10-21T08:42:21.026Z",
       "notes": "GitHub Actions live-maintenance.yml: feed, grading, feedback and Pages deployment. No LLM or local computer required. Other bots skip. Scheduled starts may be delayed by GitHub.",
       "previous_run": {
         "by": "chatgpt",
