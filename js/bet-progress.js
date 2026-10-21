@@ -74,11 +74,11 @@
   if(found.length===1)return found[0];
   return s.team ? competitors.find(c=>abbr(c.team?.abbreviation)===abbr(s.team)) : null;
  }
- function scoresFor(c,segment,league) {
+ function scoresFor(c,segment,league,currentPeriod) {
   if(!segment)return numeric(c.score);
   const periods=segment.quarter?[segment.quarter]:Array.from({length:segment.half===2?Math.max(2,(c.linescores||[]).length-2):2},(_,i)=>(segment.half-1)*2+i+1);
   if(!['nba','wnba','nfl'].includes(league))return null;
-  const scores=periods.map(p=>{const row=(c.linescores || [])[p-1];return row?numeric(row.value ?? row.displayValue):null;});
+  const scores=periods.map(p=>{const row=(c.linescores || [])[p-1];return row?numeric(row.value ?? row.displayValue):(currentPeriod && p>currentPeriod?0:null);});
   return scores.some(v=>v===null)?null:scores.reduce((a,b)=>a+b,0);
  }
  function gameElapsed(status,league) {
@@ -104,12 +104,12 @@
   }
   const selected=selectedTeam(competitors,s);
   if(bet.kind==='total') {
-   const values=bet.teamTotal?(selected?[scoresFor(selected,bet.segment,league)]:[]):competitors.map(c=>scoresFor(c,bet.segment,league));
+   const values=bet.teamTotal?(selected?[scoresFor(selected,bet.segment,league,status.period)]:[]):competitors.map(c=>scoresFor(c,bet.segment,league,status.period));
    if(!values.length||values.some(v=>v===null))return {reason:'noStat',game};
    return {kind:'threshold',value:values.reduce((a,b)=>a+b,0),target:bet.target,under:bet.under,stat:league==='mlb'?'runs':league==='nhl'||PATHS[league]?.startsWith('soccer/')?'goals':'pts',strict:true,final,game};
   }
   if((bet.kind==='winner'||bet.kind==='spread')&&selected&&competitors.length===2) {
-   const own=scoresFor(selected,bet.segment,league),opp=scoresFor(competitors.find(c=>c!==selected),bet.segment,league);
+   const own=scoresFor(selected,bet.segment,league,status.period),opp=scoresFor(competitors.find(c=>c!==selected),bet.segment,league,status.period);
    if(own===null||opp===null)return {reason:'noStat',game};
    const margin=own-opp+(bet.line||0);
    return {kind:'margin',margin:s.side==='no'?-margin:margin,line:bet.line,elapsed:gameElapsed(status,league),final,game};
@@ -204,3 +204,4 @@
  }
  return {spec,html,findEvent,athleteStat,parseBet,selectedTeam,scoresFor,gameElapsed,evaluateBet,resolveMarket};
 });
+
