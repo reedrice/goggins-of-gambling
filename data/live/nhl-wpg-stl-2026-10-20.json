@@ -9,12 +9,12 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892544",
-  "fetched_at": "2026-10-21T02:20:02.325Z",
+  "fetched_at": "2026-10-21T02:31:03.440Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 3,
-  "clock": "7:00",
-  "regulation_secs_left": 1320,
+  "clock": "0:38",
+  "regulation_secs_left": 938,
   "home": {
    "abbr": "STL",
    "alias": "Blues",
@@ -123,9 +123,9 @@
    },
    {
     "team": "WPG",
-    "player": "Neal Pionk",
-    "short": "N. Pionk",
-    "pos": "D"
+    "player": "Gabriel Vilardi",
+    "short": "G. Vilardi",
+    "pos": "C"
    },
    {
     "team": "WPG",
@@ -135,7 +135,7 @@
    }
   ]
  },
- "updated": "2026-10-21T02:20:02.327Z",
+ "updated": "2026-10-21T02:31:03.441Z",
  "open_taken_at": "2026-10-20T22:26:57.565Z",
  "thresholds": {
   "big": 10,
@@ -2301,66 +2301,6 @@
  ],
  "edges": [
   {
-   "key": "1481118:0",
-   "market_id": "1481118",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming hockey event WPG Jets vs STL Blues scheduled for October 21, 2026 at 12:00 AM UTC?",
-   "side": "Jets win",
-   "open_chance": 45,
-   "now_chance": 17,
-   "open_odds": "+122",
-   "now_odds": "+488",
-   "edge": 28,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: WPG trailing by 1",
-   "context": "WPG down 1, Q3 7:00",
-   "first_seen": "2026-10-21T00:34:05.570Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1481122:0",
-   "market_id": "1481122",
-   "market": "Main spread",
-   "group": "game",
-   "question": "Will the WPG Jets cover 1.5 vs the STL Blues in WPG vs STL?",
-   "side": "Jets +1.50",
-   "open_chance": 67,
-   "now_chance": 56,
-   "open_odds": "-203",
-   "now_odds": "-127",
-   "edge": 11,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "WPG down 1, Q3 7:00",
-   "first_seen": "2026-10-21T02:20:02.327Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1481126:0",
-   "market_id": "1481126",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in WPG vs STL be more than 3.5?",
-   "side": "Over 3.5",
-   "open_chance": 86,
-   "now_chance": 78,
-   "open_odds": "-614",
-   "now_odds": "-355",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "WPG 1, STL 2, Q3 7:00",
-   "first_seen": "2026-10-21T00:44:46.125Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
    "key": "1481127:0",
    "market_id": "1481127",
    "market": "Alt total",
@@ -2399,9 +2339,77 @@
    "first_seen": "2026-10-21T01:24:11.778Z",
    "status": "gone",
    "kalshi": true
+  },
+  {
+   "key": "1481122:0",
+   "market_id": "1481122",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will the WPG Jets cover 1.5 vs the STL Blues in WPG vs STL?",
+   "side": "Jets +1.50",
+   "open_chance": 67,
+   "now_chance": 56,
+   "open_odds": "-203",
+   "now_odds": "-127",
+   "edge": 11,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "WPG down 1, Q3 7:00",
+   "first_seen": "2026-10-21T02:20:02.327Z",
+   "status": "gone",
+   "kalshi": true
+  },
+  {
+   "key": "1481126:0",
+   "market_id": "1481126",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in WPG vs STL be more than 3.5?",
+   "side": "Over 3.5",
+   "open_chance": 86,
+   "now_chance": 78,
+   "open_odds": "-614",
+   "now_odds": "-355",
+   "edge": 8,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "WPG 1, STL 2, Q3 7:00",
+   "first_seen": "2026-10-21T00:44:46.125Z",
+   "status": "gone",
+   "kalshi": true
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1481122:0:2026-10-21T02:20:02.327Z",
+   "key": "1481122:0",
+   "at": "2026-10-21T02:31:03.441Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Jets +1.50",
+   "market": "Main spread",
+   "now_odds": "-127",
+   "now_chance": 56,
+   "edge": 11,
+   "text": "Edge gone: Jets +1.50 (Main spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-wpg-stl-2026-10-20"
+  },
+  {
+   "id": "gone:1481126:0:2026-10-21T00:44:46.125Z",
+   "key": "1481126:0",
+   "at": "2026-10-21T02:31:03.441Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 3.5",
+   "market": "Alt total",
+   "now_odds": "-355",
+   "now_chance": 78,
+   "edge": 8,
+   "text": "Edge gone: Over 3.5 (Alt total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-wpg-stl-2026-10-20"
+  },
   {
    "id": "gone:1602490:0:2026-10-21T01:24:11.778Z",
    "key": "1602490:0",
@@ -2484,10 +2492,12 @@
   "new_edge:1481122:0:slight",
   "gone:1481123:0:2026-10-21T00:34:05.570Z",
   "news:1481126:0",
-  "gone:1602490:0:2026-10-21T01:24:11.778Z"
+  "gone:1602490:0:2026-10-21T01:24:11.778Z",
+  "gone:1481122:0:2026-10-21T02:20:02.327Z",
+  "gone:1481126:0:2026-10-21T00:44:46.125Z"
  ],
  "kalshi_checked": {
-  "at": "2026-10-21T02:20:02.341Z",
+  "at": "2026-10-21T02:31:03.697Z",
   "event": "26OCT20WPGSTL"
  }
 }

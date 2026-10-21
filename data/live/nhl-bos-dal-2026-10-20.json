@@ -9,17 +9,17 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892545",
-  "fetched_at": "2026-10-21T02:20:01.130Z",
+  "fetched_at": "2026-10-21T02:31:02.140Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 3,
-  "clock": "9:24",
-  "regulation_secs_left": 1464,
+  "clock": "4:20",
+  "regulation_secs_left": 1160,
   "home": {
    "abbr": "DAL",
    "alias": "Stars",
    "name": "Dallas Stars",
-   "score": 1,
+   "score": 2,
    "id": "9"
   },
   "away": {
@@ -107,7 +107,7 @@
    }
   ]
  },
- "updated": "2026-10-21T02:20:01.131Z",
+ "updated": "2026-10-21T02:31:02.141Z",
  "open_taken_at": "2026-10-20T22:26:56.152Z",
  "thresholds": {
   "big": 10,
@@ -2346,14 +2346,14 @@
    "question": "Who will win in the upcoming hockey event BOS Bruins vs DAL Stars scheduled for October 21, 2026 at 12:00 AM UTC?",
    "side": "Stars win",
    "open_chance": 60,
-   "now_chance": 23,
+   "now_chance": 54,
    "open_odds": "-150",
-   "now_odds": "+335",
-   "edge": 37,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: DAL trailing by 1",
-   "context": "DAL down 1, Q3 9:24",
+   "now_odds": "-117",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "DAL tied, Q3 4:20",
    "first_seen": "2026-10-21T00:13:58.233Z",
    "status": "open",
    "kalshi": true
@@ -2375,46 +2375,6 @@
    "reason": null,
    "context": "BOS 2, DAL 1, Q3 9:24",
    "first_seen": "2026-10-21T02:10:12.472Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1481058:1",
-   "market_id": "1481058",
-   "market": "Alt spread",
-   "group": "game",
-   "question": "Will the BOS Bruins cover -1.5 vs the DAL Stars in BOS vs DAL?",
-   "side": "Stars +1.50",
-   "open_chance": 78,
-   "now_chance": 65,
-   "open_odds": "-355",
-   "now_odds": "-186",
-   "edge": 13,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "DAL down 1, Q3 9:24",
-   "first_seen": "2026-10-21T00:13:58.233Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1602471:0",
-   "market_id": "1602471",
-   "market": "Player prop",
-   "group": "prop",
-   "question": "Will Jason Robertson record at least 1 goals in BOS vs DAL?",
-   "side": "Yes: Jason Robertson record at least 1 goals in BOS vs DAL",
-   "open_chance": 40,
-   "now_chance": 23,
-   "open_odds": "+150",
-   "now_odds": "+335",
-   "edge": 17,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "DAL down 1, Q2 3:31",
-   "first_seen": "2026-10-21T01:24:10.377Z",
    "status": "gone",
    "kalshi": true
   },
@@ -2481,6 +2441,34 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1481055:1:slight",
+   "key": "1481055:1",
+   "at": "2026-10-21T02:31:02.141Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Stars win",
+   "market": "Moneyline",
+   "now_odds": "-117",
+   "now_chance": 54,
+   "edge": 6,
+   "text": "New slight edge: Stars win (Moneyline), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-bos-dal-2026-10-20"
+  },
+  {
+   "id": "gone:1481064:0:2026-10-21T02:10:12.472Z",
+   "key": "1481064:0",
+   "at": "2026-10-21T02:31:02.141Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 4.5",
+   "market": "Alt total",
+   "now_odds": "-163",
+   "now_chance": 62,
+   "edge": 14,
+   "text": "Edge gone: Over 4.5 (Alt total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-bos-dal-2026-10-20"
+  },
+  {
    "id": "new_edge:1481064:0:big",
    "key": "1481064:0",
    "at": "2026-10-21T02:20:01.131Z",
@@ -2492,48 +2480,6 @@
    "now_chance": 62,
    "edge": 14,
    "text": "New big edge: Over 4.5 (Alt total), 14 points cheaper than open.",
-   "url": "https://polymarket.us/sports/nhl/nhl-bos-dal-2026-10-20"
-  },
-  {
-   "id": "gone:1602471:0:2026-10-21T01:24:10.377Z",
-   "key": "1602471:0",
-   "at": "2026-10-21T01:46:13.285Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Yes: Jason Robertson record at least 1 goals in BOS vs DAL",
-   "market": "Player prop",
-   "now_odds": "+335",
-   "now_chance": 23,
-   "edge": 17,
-   "text": "Edge gone: Yes: Jason Robertson record at least 1 goals in BOS vs DAL (Player prop) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/nhl/nhl-bos-dal-2026-10-20"
-  },
-  {
-   "id": "new_edge:1602471:0:big",
-   "key": "1602471:0",
-   "at": "2026-10-21T01:24:10.377Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Yes: Jason Robertson record at least 1 goals in BOS vs DAL",
-   "market": "Player prop",
-   "now_odds": "+285",
-   "now_chance": 26,
-   "edge": 14,
-   "text": "New big edge: Yes: Jason Robertson record at least 1 goals in BOS vs DAL (Player prop), 14 points cheaper than open.",
-   "url": "https://polymarket.us/sports/nhl/nhl-bos-dal-2026-10-20"
-  },
-  {
-   "id": "gone:1481058:1:2026-10-21T00:13:58.233Z",
-   "key": "1481058:1",
-   "at": "2026-10-21T01:14:04.795Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Stars +1.50",
-   "market": "Alt spread",
-   "now_odds": "-203",
-   "now_chance": 67,
-   "edge": 11,
-   "text": "Edge gone: Stars +1.50 (Alt spread) is no longer 4+ points cheaper than open.",
    "url": "https://polymarket.us/sports/nhl/nhl-bos-dal-2026-10-20"
   },
   {
@@ -2562,20 +2508,6 @@
    "now_chance": 61,
    "edge": 6,
    "text": "New slight edge: Yes: Mikko Rantanen record at least 1 points in BOS vs DAL (Player prop), 6 points cheaper than open.",
-   "url": "https://polymarket.us/sports/nhl/nhl-bos-dal-2026-10-20"
-  },
-  {
-   "id": "new_edge:1481058:1:big",
-   "key": "1481058:1",
-   "at": "2026-10-21T00:13:58.233Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Stars +1.50",
-   "market": "Alt spread",
-   "now_odds": "-203",
-   "now_chance": 67,
-   "edge": 11,
-   "text": "New big edge: Stars +1.50 (Alt spread), 11 points cheaper than open.",
    "url": "https://polymarket.us/sports/nhl/nhl-bos-dal-2026-10-20"
   },
   {
@@ -2624,10 +2556,12 @@
   "new_edge:1481066:0:slight",
   "gone:1602471:0:2026-10-21T01:24:10.377Z",
   "news:1481065:0",
-  "new_edge:1481064:0:big"
+  "new_edge:1481064:0:big",
+  "new_edge:1481055:1:slight",
+  "gone:1481064:0:2026-10-21T02:10:12.472Z"
  ],
  "kalshi_checked": {
-  "at": "2026-10-21T02:20:01.148Z",
+  "at": "2026-10-21T02:31:02.400Z",
   "event": "26OCT20BOSDAL"
  }
 }
