@@ -98,3 +98,10 @@ console.log('viz ok');
   assert.deepStrictEqual(V.complement([{ t: 1, chance: 30 }]), [{ t: 1, chance: 70 }]);
   assert.strictEqual(V.valueAt([{ t: 0, chance: 40 }, { t: 5, chance: 60 }], 4), 40);
   console.log('viz two-line ok'); }
+
+{const pts=[{t:0,chance:20},{t:3,chance:80},{t:6,chance:40}],saved=JSON.stringify(pts);
+ const path=V.curvePath(pts,t=>t,c=>c);
+ assert.equal(path,'M0.00,20.00 C1.00,20.00 2.00,80.00 3.00,80.00 C4.00,80.00 5.00,40.00 6.00,40.00');
+ assert.equal(JSON.stringify(pts),saved);
+ assert.equal(V.curvePath([],t=>t,c=>c),'');
+ console.log('Display curves retain every sampled endpoint and bounded control values');}

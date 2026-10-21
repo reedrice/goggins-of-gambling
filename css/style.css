@@ -763,3 +763,25 @@ a.btn-play { display: block; text-align: center; text-decoration: none; margin-t
 #tab-picks .lf-form textarea { display:block; width:100%; box-sizing:border-box; background:#131316; color:#eee; border:1px solid #333; border-radius:8px; padding:10px; margin:6px 0 10px; font:inherit; resize:vertical; }
 #tab-picks .lf-controls button.on { border-color:#ff5a1f; background:#ff5a1f1c; }
 #tab-picks .lf-controls [role="status"]:empty { display:none; }
+
+/* Refined live charts: data points are unchanged; curves are display interpolation. */
+.viz-sheet { background:radial-gradient(ellipse at 100% 0,rgba(79,112,167,.1),transparent 45%),#10141c; border:1px solid rgba(174,198,235,.12); border-radius:26px 26px 0 0; }
+.viz-surface { padding:16px 12px 10px; border:1px solid rgba(174,198,235,.09); border-radius:20px; background:linear-gradient(160deg,rgba(32,44,65,.42),rgba(12,17,26,.7)); margin:12px 0; overflow:hidden; }
+.viz-quotes { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0 18px; }
+.viz-quotes[hidden] { display:none; }
+.viz-quote { min-width:0;padding:12px 14px;border:1px solid rgba(174,198,235,.1);border-radius:14px;background:rgba(255,255,255,.025); }
+.viz-quote-name { color:#a9b7c9;font-size:.76rem;line-height:1.45;overflow-wrap:anywhere;min-height:2.9em; }
+.viz-quote-name::before { content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--series);margin-right:7px;vertical-align:middle; }
+.viz-quote-value { color:var(--series);font:600 clamp(24px,5vw,34px)/1.2 system-ui,sans-serif;letter-spacing:-1px;font-variant-numeric:tabular-nums;margin-top:4px; }
+.viz-surface .viz-svg { overflow:visible; }
+.viz-surface .viz-line { fill:none;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round; }
+.viz-glow { fill:none;stroke-width:5;stroke-linecap:round;opacity:.07;pointer-events:none; }
+.viz-area { pointer-events:none; }
+.viz-surface .viz-pairdot { stroke:#121923;stroke-width:1.5; }
+.viz-surface .viz-cross { stroke:rgba(184,207,237,.3);stroke-dasharray:2 4; }
+.viz-surface .viz-grid { stroke:rgba(184,207,237,.045);stroke-dasharray:2 5; }
+.viz-surface .viz-ctl { margin:2px 4px 12px; }
+.viz-surface .viz-range { color:#8394ac;font-size:.7rem; }
+.viz-surface .viz-read { color:#a9b7c9;font:400 .73rem/1.6 system-ui,sans-serif;padding:12px 4px 0;border-top:1px solid rgba(174,198,235,.08);margin-top:4px; }
+.viz-surface .viz-head { padding:0 4px 12px;border-bottom:1px solid rgba(174,198,235,.08); }
+@media(max-width:480px){.viz-surface{padding:12px 8px 8px;}.viz-quote{padding:10px;}.viz-quote-name{font-size:.72rem;}}

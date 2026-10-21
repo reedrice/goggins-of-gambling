@@ -26,3 +26,6 @@ Linked from [AGENTS.md](AGENTS.md). Detail and history are in [HANDOFF.md](HANDO
 
 ## Game price charts look like Polymarket (Oct 20, 2026)
 Game markets draw two stepped lines, one per side, in team colors (fallback green / blue), with a dot at the end and the side's name above a big whole %. There's a score header above (abbr, big score, red "Live" and the period). No y-axis or grid. Props stay one stepped Yes line. Every line is step-after, like Polymarket.
+
+## Modern chart override (Reed, Oct 21, 2026)
+Reed explicitly replaced the stepped Polymarket-style chart above with a smoother modern visual. Use bounded cubic display curves through actual recorded samples, restrained glow and gradient fills, and separate responsive quote cards for full side names/percentages. Original prices, nearest-sample readouts, colors, zoom/pan, polling and settlement meaning remain unchanged. This supersedes the stepped-line styling requirement. Two directions (Aurora and Precision) were prepared locally; the restrained Aurora direction was implemented.

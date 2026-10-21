@@ -277,10 +277,20 @@
    * panning away shows "Back to live". The view state lives on the box, so the 1.5 s live
    * refreshes don't undo a zoom. Default view: fully zoomed out = all history, matching Polymarket US's default "All" window.
    */
+  // Shape-preserving display curves: every segment stays between its real endpoints.
+  function curvePath(pts,x,y) {
+    if(!pts.length)return '';
+    let d='M'+x(pts[0].t).toFixed(2)+','+y(pts[0].chance).toFixed(2);
+    for(let i=1;i<pts.length;i++){
+      const a=pts[i-1],b=pts[i],dx=(x(b.t)-x(a.t))/3;
+      d+=' C'+(x(a.t)+dx).toFixed(2)+','+y(a.chance).toFixed(2)+' '+(x(b.t)-dx).toFixed(2)+','+y(b.chance).toFixed(2)+' '+x(b.t).toFixed(2)+','+y(b.chance).toFixed(2);
+    }
+    return d;
+  }
   function drawChart(box, points, marks, game, pair) {
     box._pts = points = prepSeries(points);
     box._pair = pair && pair.sides && pair.b ? { sides: pair.sides, b: prepSeries(pair.b), head: pair.head || null } : null;
-    if (box._pair) box._pair.R = 80; box._marks = (marks || []).slice().sort((a, b) => a.t - b.t);
+    if (box._pair) box._pair.R = 10; box._marks = (marks || []).slice().sort((a, b) => a.t - b.t);
     const gk = game ? game.status + ':' + game.start + ':' + game.end : '';
     if (box._ui && gk !== box._gk && !box._ui.touched) box._ui.v = defaultView(game);   // game went live / finished
     box._gk = gk; box._game = game || null;
@@ -301,9 +311,9 @@
     live.type = reset.type = 'button';
     ctl.append(range, live, reset);
     const svg = sv('svg', { viewBox: `0 0 ${W} ${H}`, class: 'viz-svg', role: 'img', 'aria-label': 'Price over time. Pinch or scroll to zoom, drag to move.' });
-    const read = el('div', 'viz-read'), head = el('div', 'viz-head');
-    box.replaceChildren(head, ctl, svg, read);
-    const ui = box._ui = { svg, read, head, range, live, reset, v: defaultView(box._game), sel: null, touched: false };
+    const read = el('div', 'viz-read'), head = el('div', 'viz-head'), quotes = el('div','viz-quotes');
+    box.classList.add('viz-surface'); box.replaceChildren(head, quotes, ctl, svg, read);
+    const ui = box._ui = { svg, read, head, quotes, range, live, reset, v: defaultView(box._game), sel: null, touched: false };
     const def = () => defaultView(box._game);   // Polymarket default: All / Game; zoom-out still reaches All
     reset.onclick = () => { ui.touched = false; ui.v = def(); ui.sel = null; renderChart(box); };
     live.onclick = () => { ui.v.live = true; ui.sel = null; renderChart(box); };
@@ -356,7 +366,7 @@
     };
     svg.addEventListener('pointerup', up); svg.addEventListener('pointercancel', up);
   }
-  const lOf = box => (box._pair ? 6 : L);
+  const lOf = box => (box._pair ? 10 : L);
   const rOf = box => (box._pair ? box._pair.R : R);
   function renderChart(box) {
     if (!box._ui) return;
@@ -389,12 +399,16 @@
       g.append(sv('line', { x1: x(m.t), x2: x(m.t), y1: T, y2: H - B, class: 'viz-mark' }));
       const tx = sv('text', { x: x(m.t) + 2, y: T + 9, class: 'viz-mlab' }); tx.textContent = String(m.label).split(' · ')[0]; g.append(tx);
     }
-    if (pr) {
-      [[vis, pr.sides[0]], [Bv.vis, pr.sides[1]]].forEach(([v, sd]) => { if (v.length) g.append(sv('polyline', { points: stepPoints(v, x, y), class: 'viz-line viz-pairline', stroke: sd.color })); });
-    } else {
-      const up = vis.length > 1 && vis[vis.length - 1].chance >= vis[0].chance;
-      g.append(sv('polyline', { points: stepPoints(vis, x, y), class: 'viz-line ' + (up ? 'viz-up' : 'viz-down') }));
-    }
+    const drawSeries=(v,color,i)=>{
+      if(!v.length)return;
+      const d=curvePath(v,x,y),id='vzfill'+box._cid+i;
+      const grad=sv('linearGradient',{id,x1:'0',y1:'0',x2:'0',y2:'1'});
+      grad.append(sv('stop',{offset:'0%','stop-color':color,'stop-opacity':'.16'}),sv('stop',{offset:'100%','stop-color':color,'stop-opacity':'0'}));defs.append(grad);
+      g.append(sv('path',{d:d+' L'+x(v[v.length-1].t).toFixed(2)+','+(H-B)+' L'+x(v[0].t).toFixed(2)+','+(H-B)+' Z',fill:'url(#'+id+')',class:'viz-area'}));
+      g.append(sv('path',{d,stroke:color,class:'viz-glow'}),sv('path',{d,stroke:color,class:'viz-line viz-pairline'}));
+    };
+    if(pr){drawSeries(vis,pr.sides[0].color,0);drawSeries(Bv.vis,pr.sides[1].color,1);}
+    else drawSeries(vis,vis[vis.length-1].chance>=vis[0].chance?'#5ce3c0':'#ff778c',0);
     svg.append(g);
     // Time ticks adapt to the zoom: 3 labels (start, middle, end of view).
     const span = win.b - win.a, fmt = t => span > 36 * 3600e3 ? new Date(t).toLocaleDateString('en-US', { timeZone: 'America/Chicago', weekday: 'short', hour: 'numeric' })
@@ -409,16 +423,19 @@
       if (ui.sel != null) svg.append(sv('line', { x1: x(p.t), x2: x(p.t), y1: T, y2: H - B, class: 'viz-cross' }));
       const ly = vals.map(v => (v == null ? null : y(v)));
       if (ly[0] != null && ly[1] != null && Math.abs(ly[0] - ly[1]) < 30) { const m = (ly[0] + ly[1]) / 2, s = ly[0] <= ly[1] ? -1 : 1; ly[0] = m + s * 15; ly[1] = m - s * 15; }
+      ui.quotes.hidden=false;
+      ui.quotes.replaceChildren(...pr.sides.map((sd,i)=>{
+        const card=el('div','viz-quote'),label=el('div','viz-quote-name',sd.name),value=el('div','viz-quote-value',vals[i]==null?'—':Math.round(vals[i])+'%');
+        card.style.setProperty('--series',sd.color);card.append(label,value);return card;
+      }));
       vals.forEach((v, i) => {
         if (v == null) return; const sd = pr.sides[i], cx = Math.min(x(tq), W - R);
         svg.append(sv('circle', { r: 3.5, class: 'viz-pairdot', cx, cy: y(v), fill: sd.color }));
-        const yy = Math.max(T + 14, Math.min(H - B - 2, ly[i] + 4));
-        const nm = sv('text', { x: W - R + 8, y: yy - 13, class: 'viz-endname', fill: sd.color }); nm.textContent = sd.name;
-        const pc = sv('text', { x: W - R + 8, y: yy + 5, class: 'viz-endpct', fill: sd.color }); pc.textContent = `${Math.round(v)}%`;
-        svg.append(nm, pc);
+        svg.append(sv('circle',{r:7.5,cx,cy:y(v),fill:sd.color,opacity:'.12'}));
       });
       ui.read.textContent = `${clock(tq)} CT · ` + pr.sides.map((sd, i) => vals[i] == null ? null : `${sd.name} ${Math.round(vals[i])}% (${american(vals[i])})`).filter(Boolean).join(' · ') + (mk && ui.sel != null ? ' · ' + String(mk.label).split(' · ')[0] : '');   // period only: its saved score is from the period's start and would contradict the header
     } else {
+      ui.quotes.hidden=true;
       if (p.t >= win.a - 1 && p.t <= win.b + 1) {
         if (ui.sel != null) svg.append(sv('line', { x1: x(p.t), x2: x(p.t), y1: T, y2: H - B, class: 'viz-cross' }));
         svg.append(sv('circle', { r: 4, class: 'viz-dot', cx: x(p.t), cy: y(p.chance) }));
@@ -784,5 +801,5 @@
   /** Event slug from a Polymarket US event URL. */
   const slugFromUrl = u => { const m = /\/([a-z]+-[a-z0-9]+-[a-z0-9]+-\d{4}-\d{2}-\d{2})(?:[/?#]|$)/.exec(u || ''); return m ? m[1] : null; };
 
-  return { TEAM_COLORS, legible, teamColor, pairSides, scoreHeader, stepPoints, complement, valueAt, note, noteText, blankVisuals, VISUALS, liveChart, seasonStart, tagSeason, loadGames, ESPN_PATH, espnAbbr, open, close, chartBtn, pmHistory, viewWindow, prepSeries, nearestIdx, defaultView, gameInfo, fitY, rangeLabel, parseProp, siblingLines, gamesFromLog, summary, pickGames, seriesFor, american, slugFromUrl, statOf };
+  return { TEAM_COLORS, legible, teamColor, pairSides, scoreHeader, curvePath, stepPoints, complement, valueAt, note, noteText, blankVisuals, VISUALS, liveChart, seasonStart, tagSeason, loadGames, ESPN_PATH, espnAbbr, open, close, chartBtn, pmHistory, viewWindow, prepSeries, nearestIdx, defaultView, gameInfo, fitY, rangeLabel, parseProp, siblingLines, gamesFromLog, summary, pickGames, seriesFor, american, slugFromUrl, statOf };
 });
