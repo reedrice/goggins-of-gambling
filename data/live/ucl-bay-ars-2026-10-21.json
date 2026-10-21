@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for ucl",
-  "fetched_at": "2026-10-21T20:18:15.453Z"
+  "fetched_at": "2026-10-21T20:24:10.147Z"
  },
- "updated": "2026-10-21T20:18:15.453Z",
+ "updated": "2026-10-21T20:24:10.147Z",
  "open_taken_at": "2026-10-21T05:14:06.559Z",
  "thresholds": {
   "big": 10,
@@ -439,6 +439,26 @@
  ],
  "edges": [
   {
+   "key": "1380048:1",
+   "market_id": "1380048",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in BAY vs ARS be more than 3.5?",
+   "side": "Under 3.5",
+   "open_chance": 61,
+   "now_chance": 33,
+   "open_odds": "-156",
+   "now_odds": "+203",
+   "edge": 28,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-21T19:44:09.677Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1379633:1",
    "market_id": "1379633",
    "market": "Moneyline",
@@ -446,15 +466,35 @@
    "question": "Will FC Bayern Munchen win against Arsenal FC in the UEFA Champions League match scheduled for Oct 21, 2026?",
    "side": "No: FC Bayern Munchen win against Arsenal FC in the UEFA Champions League match scheduled for Oct 21, 2026",
    "open_chance": 54,
-   "now_chance": 39,
+   "now_chance": 28,
    "open_odds": "-117",
-   "now_odds": "+156",
-   "edge": 15,
+   "now_odds": "+257",
+   "edge": 26,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-21T20:18:15.453Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1380042:1",
+   "market_id": "1380042",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will the FC Bayern Munchen cover -1.5 vs the Arsenal FC in BAY vs ARS?",
+   "side": "The Gunners +1.50",
+   "open_chance": 75,
+   "now_chance": 71,
+   "open_odds": "-300",
+   "now_odds": "-245",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-21T20:24:10.147Z",
    "status": "open",
    "kalshi": null
   },
@@ -495,26 +535,6 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-21T19:07:09.502Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1380048:1",
-   "market_id": "1380048",
-   "market": "Main total",
-   "group": "game",
-   "question": "Will the total in BAY vs ARS be more than 3.5?",
-   "side": "Under 3.5",
-   "open_chance": 61,
-   "now_chance": 46,
-   "open_odds": "-156",
-   "now_odds": "+117",
-   "edge": 15,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-21T19:44:09.677Z",
    "status": "gone",
    "kalshi": null
   },
@@ -600,6 +620,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1380042:1:slight",
+   "key": "1380042:1",
+   "at": "2026-10-21T20:24:10.147Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "The Gunners +1.50",
+   "market": "Main spread",
+   "now_odds": "-245",
+   "now_chance": 71,
+   "edge": 4,
+   "text": "New slight edge: The Gunners +1.50 (Main spread), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/ucl/ucl-bay-ars-2026-10-21"
+  },
   {
    "id": "new_edge:1379633:1:big",
    "key": "1379633:1",
@@ -917,7 +951,8 @@
   "new_edge:1379633:1:big",
   "gone:1380048:1:2026-10-21T19:44:09.677Z",
   "gone:1379633:0:2026-10-21T17:52:10.030Z",
-  "gone:1379634:1:2026-10-21T19:38:09.638Z"
+  "gone:1379634:1:2026-10-21T19:38:09.638Z",
+  "new_edge:1380042:1:slight"
  ],
  "kalshi_checked": null
 }
