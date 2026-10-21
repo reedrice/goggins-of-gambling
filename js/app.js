@@ -1669,8 +1669,13 @@
       <h3>${esc(B.backup)}</h3>
       <div class="row"><button class="btn" id="exp">${esc(B.export)}</button><button class="btn" id="imp">${esc(B.import)}</button></div>
       <input type="file" id="imp-file" accept="application/json,.json" hidden>`;
-    if(window.PolymarketSync)window.PolymarketSync.mount($('#pm-account'));
-    if(window.KalshiSync)window.KalshiSync.mount($('#kalshi-account'));
+    for(const [id,platform,title,api] of [['pm-account','polymarket_us',STR.pmSync.title,window.PolymarketSync],['kalshi-account','kalshi',STR.kalshiPrivate.title,window.KalshiSync]]){
+      const body=$('#'+id),panel=document.createElement('details'),summary=document.createElement('summary'),prefs=S.getPrefs();
+      panel.className='card account-panel';summary.textContent=title;panel.open=typeof prefs.accountPanels?.[platform]==='boolean'?prefs.accountPanels[platform]:prefs.platform===platform;
+      body.before(panel);panel.append(summary,body);body.hidden=!panel.open;
+      if(panel.open&&api)api.mount(body);
+      panel.ontoggle=()=>{body.hidden=!panel.open;const latest=S.getPrefs();S.setPrefs({accountPanels:{...latest.accountPanels,[platform]:panel.open}});if(panel.open&&api)api.mount(body);else if(platform==='kalshi')body.replaceChildren();};
+    }
     drawChart($('#bk-chart'), st.series);
     el.querySelectorAll('[data-settle]').forEach(b => (b.onclick = () => settleBet(b.dataset.id, b.dataset.settle)));
     el.querySelectorAll('[data-reopen]').forEach(b => (b.onclick = () => settleBet(b.dataset.reopen, 'open')));

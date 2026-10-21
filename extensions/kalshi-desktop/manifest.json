@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Private Kalshi Tracker — local prototype",
+  "version": "0.1.0",
+  "description": "Read-only Kalshi tracking on this PC. No website access or shared relay.",
+  "host_permissions": ["https://external-api.kalshi.com/*"],
+  "action": {"default_title": "Open private Kalshi tracker"},
+  "background": {"service_worker": "background.js"},
+  "content_security_policy": {"extension_pages": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src https://external-api.kalshi.com; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'"}
+}
