@@ -249,7 +249,8 @@
       const name = win ? (t.safeName || sd.description) : (sd.description || (i ? 'No' : 'Yes'));
       return { name, short: String(t.abbreviation || name).toUpperCase(), color: win || mk.marketType === 'spreads' ? teamColor(t.league, t.abbreviation, t.colorPrimary, PAIR_FALLBACK[i]) : PAIR_FALLBACK[i] }; });
     // Tennis participants often share the provider's default blue. Keep every pair distinguishable.
-    if (sides[0].color === sides[1].color) sides[1].color = sides[0].color === PAIR_FALLBACK[1] ? PAIR_FALLBACK[0] : PAIR_FALLBACK[1];
+    const distance = (a,b) => [1,3,5].reduce((sum,i)=>sum+(parseInt(a.slice(i,i+2),16)-parseInt(b.slice(i,i+2),16))**2,0);
+    if (distance(sides[0].color,sides[1].color) < 120**2) sides[1].color = PAIR_FALLBACK.slice().sort((a,b)=>distance(sides[0].color,b)-distance(sides[0].color,a))[0];
     return { pair: true, sides };
   }
   /** Pure: score header {away, home, as, hs, live, period} from a Polymarket US event (teams are away, home). */

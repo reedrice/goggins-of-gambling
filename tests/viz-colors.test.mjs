@@ -9,3 +9,7 @@ test('distinct provider colors remain unchanged',()=>{
  const ev={markets:[{slug:'pair',marketType:'moneyline',sportsMarketType:'winner',marketSides:[{long:true,team:{colorPrimary:'#3fb950'}},{long:false,team:{colorPrimary:'#4c8dff'}}]}]};
  assert.deepEqual(V.pairSides(ev,{slug:'pair'}).sides.map(s=>s.color),['#3fb950','#4c8dff']);
 });
+test('the reported tennis pair uses visibly contrasting colors rather than two slightly different blues',()=>{
+ const ev={markets:[{slug:'pair',marketType:'moneyline',sportsMarketType:'winner',marketSides:[{long:true,team:{colorPrimary:'#2e5cff'}},{long:false,team:{colorPrimary:'#4c8dff'}}]}]};
+ assert.deepEqual(V.pairSides(ev,{slug:'pair'}).sides.map(s=>s.color),['#2e5cff','#3fb950']);
+});

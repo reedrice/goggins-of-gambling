@@ -1498,3 +1498,4 @@ Reed reported charts seeming frozen until reopened. Price polling already existe
 
 ## 109. Distinct paired-chart colors (Oct 21)
 Reed observed both tennis lines blue. pairSides previously handled matching colors only for spreads, and even that fallback could remain blue on blue. Every paired market now replaces the second identical normalized color with green/blue chosen to differ from the first. Existing distinct team/provider colors remain intact. Shared side metadata drives paths, dots and quote legends consistently. Regression checks cover tennis moneyline, spreads, duplicate fallback blue/green and preserved distinct colors; live polling and existing chart tests pass. No price/data changes.
+§109 follow-up: the real tennis provider payload used two slightly different blues (#2e5cff/#4c8dff). Guard now handles near-matching RGB colors as well as identical values and chooses the more contrasting green/blue fallback. Real-payload regression added.
