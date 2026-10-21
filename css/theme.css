@@ -259,3 +259,12 @@ input[type="checkbox"], input[type="radio"] { accent-color: var(--accent); }
 #tab-bets .pm-position-details summary { font-size:11px; color:var(--text-secondary); min-height:44px; }
 #tab-bets .pm-position .pm-leg-label { margin-top:6px; font-size:14px; line-height:1.35; }
 #tab-bets .pm-position .bp-host { padding:6px 0 0; margin-top:4px; font-size:11px; }
+
+.pm-position-grid { display:grid; grid-template-columns:minmax(0,1fr); gap:12px; align-items:start; }
+#tab-bets .pm-position-grid .pm-position { min-width:0; margin:0; padding:12px; }
+#tab-bets .pm-position-grid .pm-position-metrics { gap:6px 16px; }
+#tab-bets .pm-position-grid .pm-position-amount { flex-wrap:wrap; gap:2px 6px; }
+#tab-bets .pm-position-grid .pm-leg-label { overflow-wrap:anywhere; }
+#tab-bets .pm-position-grid .bp-host { min-width:0; }
+@media(min-width:640px){.pm-position-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }}
+@media(min-width:1100px){.pm-position-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }}

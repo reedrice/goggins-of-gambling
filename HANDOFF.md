@@ -1590,3 +1590,5 @@ Added scripts/espn-history.mjs within existing ESPN status ingestion, producing 
 
 ## 135. Compact private open positions (Oct 21)
 Reduced card padding, replaced oversized nested investment/payout tiles with a compact inline row, and moved repeated explanation/cost/P&L into expandable Position details. Matchup, every combo leg, warnings and live progress remain visible. Shared tokens and cents precision preserved. No private account data inspected or published.
+
+Compact-card follow-up: open positions now render in a responsive grid: one column below 640px, two at 640–1099px, three from 1100px. Reduced internal padding and monetary-row gaps, retained every BetProgress host and combo leg, with wrapping and min-width guards.
