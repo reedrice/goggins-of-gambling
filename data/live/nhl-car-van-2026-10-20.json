@@ -9,24 +9,24 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892548",
-  "fetched_at": "2026-10-21T04:03:08.690Z",
+  "fetched_at": "2026-10-21T04:14:10.567Z",
   "game_state": "in",
-  "espn_status": "STATUS_END_PERIOD",
-  "period": 2,
-  "clock": "0:00",
-  "regulation_secs_left": 1800,
+  "espn_status": "STATUS_IN_PROGRESS",
+  "period": 3,
+  "clock": "14:12",
+  "regulation_secs_left": 1752,
   "home": {
    "abbr": "VAN",
    "alias": "Canucks",
    "name": "Vancouver Canucks",
-   "score": 2,
+   "score": 3,
    "id": "22"
   },
   "away": {
    "abbr": "CAR",
    "alias": "Hurricanes",
    "name": "Carolina Hurricanes",
-   "score": 3,
+   "score": 4,
    "id": "7"
   },
   "possession": null,
@@ -124,9 +124,9 @@
    },
    {
     "team": "CAR",
-    "player": "Logan Stankoven",
-    "short": "L. Stankoven",
-    "pos": "C"
+    "player": "Nicolas Deslauriers",
+    "short": "N. Deslauriers",
+    "pos": "LW"
    },
    {
     "team": "CAR",
@@ -136,13 +136,13 @@
    },
    {
     "team": "CAR",
-    "player": "Logan Stankoven",
-    "short": "L. Stankoven",
-    "pos": "C"
+    "player": "Nicolas Deslauriers",
+    "short": "N. Deslauriers",
+    "pos": "LW"
    }
   ]
  },
- "updated": "2026-10-21T04:03:08.691Z",
+ "updated": "2026-10-21T04:14:10.568Z",
  "open_taken_at": "2026-10-20T22:27:01.727Z",
  "thresholds": {
   "big": 10,
@@ -2264,26 +2264,6 @@
  ],
  "edges": [
   {
-   "key": "1481370:1",
-   "market_id": "1481370",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in CAR vs VAN be more than 7.5?",
-   "side": "Under 7.5",
-   "open_chance": 72,
-   "now_chance": 29,
-   "open_odds": "-257",
-   "now_odds": "+245",
-   "edge": 43,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: scoring above pace (5 pts, pace 4)",
-   "context": "CAR 3, VAN 2, End of Q2",
-   "first_seen": "2026-10-21T02:20:05.268Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
    "key": "1481372:1",
    "market_id": "1481372",
    "market": "Alt total",
@@ -2291,15 +2271,55 @@
    "question": "Will the total in CAR vs VAN be more than 8.5?",
    "side": "Under 8.5",
    "open_chance": 79,
-   "now_chance": 46,
+   "now_chance": 27,
    "open_odds": "-376",
-   "now_odds": "+117",
-   "edge": 33,
+   "now_odds": "+270",
+   "edge": 52,
    "tier": "big",
    "class": "score",
-   "reason": "Explained by score: scoring above pace (5 pts, pace 4)",
-   "context": "CAR 3, VAN 2, End of Q2",
+   "reason": "Explained by score: scoring above pace (7 pts, pace 4)",
+   "context": "CAR 4, VAN 3, Q3 14:12",
    "first_seen": "2026-10-21T02:31:07.684Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "1481374:1",
+   "market_id": "1481374",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in CAR vs VAN be more than 9.5?",
+   "side": "Under 9.5",
+   "open_chance": 92,
+   "now_chance": 74,
+   "open_odds": "-1150",
+   "now_odds": "-285",
+   "edge": 18,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: scoring above pace (7 pts, pace 5)",
+   "context": "CAR 4, VAN 3, Q3 14:12",
+   "first_seen": "2026-10-21T02:41:09.869Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "1481350:0",
+   "market_id": "1481350",
+   "market": "Alt spread",
+   "group": "game",
+   "question": "Will the CAR Hurricanes cover -2.5 vs the VAN Canucks in CAR vs VAN?",
+   "side": "Hurricanes -2.50",
+   "open_chance": 39,
+   "now_chance": 31,
+   "open_odds": "+156",
+   "now_odds": "+223",
+   "edge": 8,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: CAR not covering -2.5 right now",
+   "context": "CAR up 1, Q3 14:12",
+   "first_seen": "2026-10-21T04:14:10.568Z",
    "status": "open",
    "kalshi": true
   },
@@ -2320,47 +2340,7 @@
    "reason": "Explained by score: CAR not covering -1.5 right now",
    "context": "CAR up 1, End of Q2",
    "first_seen": "2026-10-21T02:51:05.347Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1481346:0",
-   "market_id": "1481346",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming hockey event CAR Hurricanes vs VAN Canucks scheduled for October 21, 2026 at 2:00 AM UTC?",
-   "side": "Hurricanes win",
-   "open_chance": 74,
-   "now_chance": 63,
-   "open_odds": "-285",
-   "now_odds": "-170",
-   "edge": 11,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "CAR up 1, End of Q2",
-   "first_seen": "2026-10-21T02:31:07.684Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1481374:1",
-   "market_id": "1481374",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in CAR vs VAN be more than 9.5?",
-   "side": "Under 9.5",
-   "open_chance": 92,
-   "now_chance": 81,
-   "open_odds": "-1150",
-   "now_odds": "-426",
-   "edge": 11,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: scoring above pace (5 pts, pace 5)",
-   "context": "CAR 3, VAN 2, End of Q2",
-   "first_seen": "2026-10-21T02:41:09.869Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": true
   },
   {
@@ -2380,26 +2360,6 @@
    "reason": null,
    "context": "CAR tied, End of Q1",
    "first_seen": "2026-10-21T03:01:04.557Z",
-   "status": "gone",
-   "kalshi": true
-  },
-  {
-   "key": "1481346:1",
-   "market_id": "1481346",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming hockey event CAR Hurricanes vs VAN Canucks scheduled for October 21, 2026 at 2:00 AM UTC?",
-   "side": "Canucks win",
-   "open_chance": 27,
-   "now_chance": 18,
-   "open_odds": "+270",
-   "now_odds": "+456",
-   "edge": 9,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: VAN trailing by 1",
-   "context": "VAN down 1, Q2 9:12",
-   "first_seen": "2026-10-21T02:20:05.268Z",
    "status": "gone",
    "kalshi": true
   },
@@ -2445,20 +2405,6 @@
   }
  ],
  "alerts": [
-  {
-   "id": "new_edge:1481346:0:big",
-   "key": "1481346:0",
-   "at": "2026-10-21T03:53:06.320Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Hurricanes win",
-   "market": "Moneyline",
-   "now_odds": "-170",
-   "now_chance": 63,
-   "edge": 11,
-   "text": "New big edge: Hurricanes win (Moneyline), 11 points cheaper than open.",
-   "url": "https://polymarket.us/sports/nhl/nhl-car-van-2026-10-20"
-  },
   {
    "id": "new_edge:1481352:1:slight",
    "key": "1481352:1",
@@ -2530,34 +2476,6 @@
    "url": "https://polymarket.us/sports/nhl/nhl-car-van-2026-10-20"
   },
   {
-   "id": "gone:1481346:0:2026-10-21T02:31:07.684Z",
-   "key": "1481346:0",
-   "at": "2026-10-21T02:41:09.869Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Hurricanes win",
-   "market": "Moneyline",
-   "now_odds": "-233",
-   "now_chance": 70,
-   "edge": 4,
-   "text": "Edge gone: Hurricanes win (Moneyline) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/nhl/nhl-car-van-2026-10-20"
-  },
-  {
-   "id": "new_edge:1481346:0:slight",
-   "key": "1481346:0",
-   "at": "2026-10-21T02:31:07.684Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Hurricanes win",
-   "market": "Moneyline",
-   "now_odds": "-233",
-   "now_chance": 70,
-   "edge": 4,
-   "text": "New slight edge: Hurricanes win (Moneyline), 4 points cheaper than open.",
-   "url": "https://polymarket.us/sports/nhl/nhl-car-van-2026-10-20"
-  },
-  {
    "id": "gone:1481352:1:2026-10-21T02:20:05.268Z",
    "key": "1481352:1",
    "at": "2026-10-21T02:31:07.684Z",
@@ -2603,7 +2521,7 @@
   "new_edge:1481346:0:big"
  ],
  "kalshi_checked": {
-  "at": "2026-10-21T04:03:08.959Z",
+  "at": "2026-10-21T04:14:11.105Z",
   "event": "26OCT20CARVAN"
  }
 }
