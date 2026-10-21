@@ -1,5 +1,7 @@
 # Fade Trent post watcher (Oct 20, 2026)
 
+**Oct 21 current override:** Reed explicitly retained this two-hour ChatGPT/Codex browser routine, after the sports-data jobs moved to GitHub Actions. It is the one AI automation exception and still requires Codex/computer/X availability and consumes AI usage. trent-post-check is enabled/chatgpt-owned; the feed automation remains paused. No new source was connected and no missed checks are implied. Do not use this exception to restart Underdog/X sports-data scraping. Existing verification and no-post/no-message rules below still apply.
+
 Reed requested new picks to appear when @BookitWithTrent posts. Previously this depended on Grok's daily digest manually reading X; `trent-picks.mjs` itself cannot fetch posts. Last complete read had stopped at Oct 20 04:22 UTC.
 
 ## Current operation

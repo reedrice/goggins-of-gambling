@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Deterministic CI job. No LLM calls. Regenerate against latest main after a push race.
 import fs from 'node:fs';import {execFileSync} from 'node:child_process';import {decide,stamp} from './routine-gate.mjs';import {shouldTick} from './live-tick.mjs';
-export const ALLOWED=['data/live/','routines/owners.json','data/predictions.json','data/pick-history.json','data/live-record.json','data/learning.json','data/live-feedback.json','data/play/leaderboard.json','data/routines/','data/picks.json','data/markets/','data/positions.json'];
+export const ALLOWED=['data/live/','routines/owners.json','data/predictions.json','data/pick-history.json','data/live-record.json','data/learning.json','data/live-feedback.json','data/play/leaderboard.json','data/routines/','data/picks.json','data/markets/','data/positions.json','data/espn/'];
 export const allowed=p=>ALLOWED.some(a=>a.endsWith('/')?p.startsWith(a):p===a);
 export function checkFresh(games,started){const due=games.filter(g=>g.status!=='final'&&shouldTick({start:g.start_time,status:g.status},started));const stale=due.filter(g=>!Number.isFinite(Date.parse(g.updated))||Date.parse(g.updated)<started-30000);if(stale.length)throw Error('Due games were not refreshed: '+stale.map(g=>g.slug).join(', '));console.log('Fresh due games: '+due.length);}
 function main(){
@@ -24,7 +24,7 @@ function main(){
    run(['scripts/record-closeout.mjs']);
    // Persist the feed stamp for the source-backed routine runner, still in this unpublished CI tree.
    fs.writeFileSync('routines/owners.json',JSON.stringify(stamp(owners,'live-feed-update','github-actions'),null,2)+'\n');
-   run(['scripts/scheduled-routines.mjs']);run(['tests/no-instructions.test.mjs']);
+   run(['scripts/fetch-espn-status.mjs']);run(['scripts/scheduled-routines.mjs']);run(['tests/no-instructions.test.mjs']);
    const tracked=git('diff','--name-only').split('\n').filter(Boolean),untracked=git('ls-files','--others','--exclude-standard').split('\n').filter(Boolean);
    if([...tracked,...untracked].some(p=>!allowed(p)))throw Error('Refuse changes outside public maintenance allowlist');
    git('add','--',...[...tracked,...untracked].filter(allowed));

@@ -1,5 +1,7 @@
 # AGENTS.md: start here (any AI agent or new maintainer)
 
+**Latest Oct 21 operating rule (HANDOFF §99):** all scheduled sports-data ingestion uses GitHub Actions and ESPN JSON via scripts/fetch-espn-status.mjs. Underdog/Twitter/X and browser sports-data scraping are deprecated. Use data/espn/index.json for source freshness/coverage; never infer confirmed starters/goalies from depth charts, probable lists or missing injuries. Reed explicitly retained the two-hour ChatGPT Fade Trent browser routine as the only AI scheduling exception; it reads Trent's own picks, not general sports news. Earlier statements below that Trent is off are superseded by this exception. All other Codex site automations stay paused; external duplicate schedules have been disabled by Reed.
+
 This file is for Claude, ChatGPT/Codex, Cursor or any other agent. `CLAUDE.md` points here.
 Read in this order:
 1. **This file**: the project, how to run it, the hard rules.
