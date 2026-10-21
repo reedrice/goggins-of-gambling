@@ -1332,3 +1332,6 @@ Request for daily-slate-odds-digest owner (Grok): expand verified daily slate/pi
 
 ## 70. Picks sport filters wrap (Oct 20, ChatGPT)
 Reed reported the expanded sports row clipping off-screen. Scoped Today's Picks filters now wrap onto additional rows instead of inheriting the generic single-row strip with a hidden scrollbar. Long labels can wrap within the available width. Other chip groups unchanged. CSS-only fix; no new test logic or data changes.
+
+## 71. Manual Live Bets feed refresh (Oct 20, ChatGPT)
+Reed requested a manual new-edge check, authorizing Live Bets UI edits. Persistent Check for new edges button immediately reloads the published index and game JSON using cache bypass and 15-second request timeouts. Disables during a request, reports unchanged/new published data or failure, retains last good cards on failure, and preserves current game/tier/Details state. Automatic refresh skips an in-flight request; existing request sequence guard handles game changes. This is a client feed refresh, not a server-side scan trigger: the existing ten-minute ChatGPT market scan remains unchanged. No secrets, GitHub credentials or background writer added to the browser.

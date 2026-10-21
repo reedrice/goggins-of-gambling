@@ -387,22 +387,27 @@
 
   /** Entry point (called by app.js). Fetch now, then about every 60s. */
   function render(rootEl) {
-    rootEl.replaceChildren(el('div', 'live-bets-empty', 'Loading live bets…'));
+    const toolbar=el('div','lb-refresh-row'), refresh=el('button','lb-review',liveText().refresh), status=el('span','lb-refresh-status');
+    refresh.type='button';refresh.title=liveText().refreshHelp;status.setAttribute('role','status');
+    toolbar.append(refresh,status);const content=el('div');rootEl.replaceChildren(toolbar,content);
+    content.append(el('div', 'live-bets-empty', 'Loading live bets…'));
+    let loading=false;
     let timer = null, last = null;
-    const ui = { slug: 'all', filter: 'all', visitBase: readSeen(), details: new Set(), game: false, prop: false, reasons: false, redraw: () => { if (last) draw(rootEl, last, ui); } };
+    const ui = { slug: 'all', filter: 'all', visitBase: readSeen(), details: new Set(), game: false, prop: false, reasons: false, redraw: () => { if (last) draw(content, last, ui); } };
     // Which game: data/live/index.json (written by live-tick.mjs), else SLUG.
     let request = 0;
-    const load = ui.load = async () => {
+    const load = ui.load = async (manual=false) => {
       if (!rootEl.isConnected && timer) { clearInterval(timer); return; }
-      const current = ++request;
+      const current = ++request;loading=true;refresh.disabled=true;refresh.textContent=liveText().checking;
+      if(manual)status.textContent=liveText().checking;
       try {
-        const ix = await fetch('data/live/index.json?ts=' + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null);
+        const ix = await fetch('data/live/index.json?ts=' + Date.now(),{cache:'no-store',signal:AbortSignal.timeout(15000)}).then(r => r.ok ? r.json() : null).catch(() => null);
         const games = (ix && ix.games) || [];
         const selected = ui.slug;
         const targets = selected === 'all' ? games.filter(g => g.status !== 'final') : [{slug:selected || SLUG}];
         if (!ix && selected === 'all') throw new Error('index unavailable');
         const results = await Promise.allSettled(targets.map(async g => {
-          const r = await fetch('data/live/' + g.slug + '.json?ts=' + Date.now());
+          const r = await fetch('data/live/' + g.slug + '.json?ts=' + Date.now(),{cache:'no-store',signal:AbortSignal.timeout(15000)});
           if (!r.ok) throw new Error(r.status);
           return r.json();
         }));
@@ -411,14 +416,17 @@
         if (targets.length && !feeds.length) throw new Error('feeds unavailable');
         ui.games = games;
         const d = selected === 'all' ? combineGames(feeds,results.length-feeds.length) : feeds[0];
-        last=d; draw(rootEl,d,ui);
+        if(manual)status.textContent=last&&JSON.stringify(last)===JSON.stringify(d)?liveText().noNewFeed:liveText().feedLoaded;
+        last=d; draw(content,d,ui);
       } catch (e) {
         if (current !== request) return;
-        rootEl.replaceChildren(el('div','live-bets-empty',liveText().unavailable));
-      }
+        status.textContent=liveText().refreshFailed;
+        if(!last)content.replaceChildren(el('div','live-bets-empty',liveText().unavailable));
+      } finally { if(current===request){loading=false;refresh.disabled=false;refresh.textContent=liveText().refresh;} }
     };
+    refresh.onclick=()=>{if(!loading)load(true);};
     load();
-    timer = setInterval(load, REFRESH_MS);
+    timer = setInterval(()=>{if(!loading)load();}, REFRESH_MS);
   }
 
   return { edgeTitle, edgeSelection, combineGames, render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };

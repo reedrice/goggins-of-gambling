@@ -596,6 +596,10 @@ function unitWords(u) {
 window.STR.unitWords = unitWords;
 
 window.STR.liveBets = {
+ refresh:'Check for new edges', checking:'Checking…',
+ refreshHelp:'Reload the latest published feed. Market scans run on the scheduled bot.',
+ feedLoaded:'Latest published feed loaded.', noNewFeed:'No newer published feed yet.',
+ refreshFailed:'Could not refresh. Try again; the last loaded feed is retained.',
  design: {
    filters: { all: 'All', big: 'Big edge', slight: 'Slight edge', new: 'New' },
    tiers: { big: 'Big edge', slight: 'Slight edge' }, edge: 'Edge', gone: 'No longer active',
