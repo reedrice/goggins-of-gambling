@@ -1,0 +1,33 @@
+// Independent operational watchdog. Public JSON only; no sports ingestion or AI.
+export const REPO='reedrice/goggins-of-gambling';
+export const BASE='https://reedrice.github.io/goggins-of-gambling/';
+export const WORKFLOW='live-maintenance.yml';
+export const MARKER='<!-- mib-independent-watchdog -->';
+const MIN=60000, FRESH=5*MIN, RECOVERY=10*MIN, ACTIVE_LIMIT=30*MIN, COOLDOWN=60*MIN;
+const ct=t=>new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).format(t);
+export function due(g,now){const s=Date.parse(g.start_time);return g.status!=='final'&&Number.isFinite(s)&&now-s<=86400000&&(s<=now||ct(s)<=new Date(Date.parse(ct(now)+'T12:00:00Z')+86400000).toISOString().slice(0,10));}
+export function age(t,now){const n=Date.parse(t);return Number.isFinite(n)&&n<=now+MIN?now-n:Infinity;}
+export function inspect(index,espn,now){const errors=[];if(!Array.isArray(index?.games))errors.push('Live index unavailable');else {const stale=index.games.filter(g=>due(g,now)&&age(g.updated,now)>FRESH);if(stale.length)errors.push(stale.length+' due games stale');}if(!Array.isArray(espn?.snapshots)||age(espn.updated_at,now)>FRESH)errors.push('ESPN index stale or unavailable');return errors;}
+export function decide(state,runs,now){if(!state.outage_since)return 'observe';if(state.attempted_at){if(now-state.attempted_at<RECOVERY)return 'wait';return 'alert';}if(runs.some(r=>r.status!=='completed'&&age(r.created_at,now)<ACTIVE_LIMIT))return now-state.outage_since<ACTIVE_LIMIT?'wait':'alert';if(now-(state.last_attempt_at||0)<COOLDOWN)return 'alert';return 'dispatch';}
+async function json(url,options={}){const r=await fetch(url,{...options,signal:AbortSignal.timeout(10000)});if(!r.ok)throw Error('HTTP '+r.status);return r.status===204?null:r.json();}
+export async function publicHealth(now){const [ix,espn]=await Promise.all(['data/live/index.json','data/espn/index.json'].map(p=>json(BASE+p+'?watchdog='+now,{cache:'no-store'})));const errors=inspect(ix,espn,now);const sample=(ix.games||[]).filter(g=>due(g,now)&&/^[a-z0-9-]+$/.test(g.slug)).sort((a,b)=>String(a.updated).localeCompare(String(b.updated))).slice(0,3);await Promise.all(sample.map(async g=>{try{const d=await json(BASE+'data/live/'+g.slug+'.json?watchdog='+now,{cache:'no-store'});if(d.slug!==g.slug||age(d.updated,now)>FRESH)errors.push('Served game stale: '+g.slug);}catch{errors.push('Served game unavailable: '+g.slug);}}));return errors;}
+export class FeedMonitor {
+ constructor(ctx,env){this.ctx=ctx;this.env=env;this.running=null;}
+ async api(path,method='GET',body){if(!this.env.GITHUB_TOKEN)throw Error('GitHub credential not configured');return json('https://api.github.com/repos/'+REPO+'/'+path,{method,headers:{Authorization:'Bearer '+this.env.GITHUB_TOKEN,Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','User-Agent':'Men-in-Black-independent-watchdog','Content-Type':'application/json'},...(body?{body:JSON.stringify(body)}:{})});}
+ async incident(state,now){if(state.notified)return;const issues=await this.api('issues?state=open&creator=reedrice&per_page=100');let issue=issues.find(i=>!i.pull_request&&i.body?.includes(MARKER));if(!issue)issue=await this.api('issues','POST',{title:'Independent watchdog: feed recovery needs attention',assignees:['reedrice'],body:MARKER+'\n@reedrice The public feed is still stale after independent recovery, or recovery could not be started.\n\nObserved: '+new Date(now).toISOString()+'\n'+state.problems.join('\n')+'\n\n[Maintenance runs](https://github.com/'+REPO+'/actions/workflows/'+WORKFLOW+')\nNo AI or private account data was used.'});state.notified=true;state.issue=issue.number;}
+ async tick(){const now=Date.now(),state=await this.ctx.storage.get('state')||{};let errors;try{errors=await publicHealth(now);}catch{errors=['Public feed could not be verified'];}state.checked_at=new Date(now).toISOString();state.problems=errors;
+ if(!errors.length){if(state.issue)try{await this.api('issues/'+state.issue,'PATCH',{state:'closed',state_reason:'completed'});}catch{state.close_pending=state.issue;}if(state.close_pending)try{await this.api('issues/'+state.close_pending,'PATCH',{state:'closed',state_reason:'completed'});delete state.close_pending;}catch{}const healthy={checked_at:state.checked_at,phase:'healthy',problems:[],last_attempt_at:state.last_attempt_at||0,...(state.close_pending?{close_pending:state.close_pending}:{})};await this.ctx.storage.put('state',healthy);return healthy;}
+ state.outage_since ||= now;state.phase='stale';await this.ctx.storage.put('state',state);
+ try{const owners=await json('https://raw.githubusercontent.com/'+REPO+'/main/routines/owners.json?watchdog='+now,{cache:'no-store'}),gate=owners.routines?.['live-feed-update'];if(!gate?.enabled||gate.owner!=='github-actions'){state.phase='disabled';state.outage_since=null;await this.ctx.storage.put('state',state);return state;}
+ const runs=(await this.api('actions/workflows/'+WORKFLOW+'/runs?per_page=20')).workflow_runs||[];const action=decide(state,runs,now);
+ if(action==='dispatch'){state.attempted_at=now;state.last_attempt_at=now;state.phase='recovering';await this.ctx.storage.put('state',state);await this.api('actions/workflows/'+WORKFLOW+'/dispatches','POST',{ref:'main'});}
+ else if(action==='alert'){state.phase='needs_attention';await this.incident(state,now);}else state.phase='recovering';
+ }catch{state.phase='recovery_error';state.problems=[...errors,'Recovery API unavailable or not configured'];try{await this.incident(state,now);}catch{state.notification_failed=true;/* retry next cron; no secret or provider response is logged */}}
+ await this.ctx.storage.put('state',state);return state;
+ }
+ async fetch(request){if(new URL(request.url).pathname==='/status')return Response.json({...await this.ctx.storage.get('state')||{phase:'not_checked'},recovery_configured:!!this.env.GITHUB_TOKEN});if(request.method!=='POST')return new Response('Not found',{status:404});if(!this.running)this.running=this.tick().finally(()=>{this.running=null;});await this.running;return new Response('Checked');}
+}
+export default {
+ async scheduled(event,env,ctx){ctx.waitUntil(env.MONITOR.get(env.MONITOR.idFromName('production')).fetch('https://monitor/tick',{method:'POST'}));},
+ async fetch(request,env){const url=new URL(request.url);if(request.method!=='GET'||url.pathname!=='/status')return new Response('Not found',{status:404});return env.MONITOR.get(env.MONITOR.idFromName('production')).fetch('https://monitor/status');}
+};

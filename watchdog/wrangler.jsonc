@@ -1,0 +1,10 @@
+{
+ "name":"mib-feed-watchdog",
+ "main":"worker.mjs",
+ "compatibility_date":"2026-10-21",
+ "workers_dev":true,
+ "triggers":{"crons":["* * * * *"]},
+ "durable_objects":{"bindings":[{"name":"MONITOR","class_name":"FeedMonitor"}]},
+ "migrations":[{"tag":"v1","new_sqlite_classes":["FeedMonitor"]}],
+ "observability":{"enabled":false}
+}
