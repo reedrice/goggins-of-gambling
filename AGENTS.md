@@ -100,3 +100,17 @@ Reed's team records Juicy / Bad alert reviews in GitHub issues via the site. Whe
 
 ## Kalshi private ownership requirement (Reed, Oct 21)
 Reed does not use Kalshi and must not receive other users’ Kalshi keys, positions or results. Main-site js/kalshi-sync.js is only a launcher for an isolated cross-origin personal panel. Never add credential fields, portfolio fetches, parent messages carrying account data, shared relays or aggregate Kalshi financial data to the main site. The kalshi-private-relay template is deployed by each account holder into their own Cloudflare/GitHub accounts. Keys/cache stay encrypted on that personal browser origin; signed read requests travel only through that user’s Worker to Kalshi. Existing Polymarket/manual ledgers remain separate. Do not reactivate the earlier shared relay proposal.
+
+## Global UI Design Tokens (Men in Black, Reed Oct 21)
+
+All new or updated layouts must consume css/theme.css, the centralized master theme loaded LAST after style.css and live-bets.css. Plain CSS custom properties are the source of truth; do not add Tailwind/build tooling, a competing theme or component-specific palette/radius overrides. Applies to every main-site screen, navigation bar, secondary workflow, profile, history grid, account setup, settings layer and sheet.
+
+- Universal canvas: --canvas: #0A0E17. Body background is fixed to this value, with no texture/gradient layer.
+- Geometry: --radius-panel: 24px for content cards, data panels and sheets; --radius-control: 16px for inputs, buttons, filters and pills. Never invent a third panel/control radius. Circular avatars/team logos and chart data marks retain their semantic geometry.
+- Glass elevation for all secondary content containers: --surface-glass: rgba(255, 255, 255, 0.03); --surface-blur: 12px; --surface-border: rgba(255, 255, 255, 0.05). Use background: var(--surface-glass), backdrop-filter: blur(var(--surface-blur)) plus -webkit-backdrop-filter, and border: 1px solid var(--surface-border). No solid local panel fills or bespoke gradients. Native OS option popups use the canvas for legibility.
+- Typography: --font-ui is the native Apple/system sans-serif stack; --text-primary: #FFFFFF for headers and choices; --text-secondary: #8E9AA8 for supporting telemetry, dates, odds and labels. Use shared type/weight tokens. Outcome/warning colors and chart/team series remain semantic; do not erase win/loss distinctions.
+- Spacing: --module-gap and --panel-padding are 24px; shared spacing scale is 4/8/12/16/24/32px. --page-gutter scales 16–32px. Header, platform nav and bottom tabs use the same glass, colors and control geometry; preserve safe-area padding and six reachable tabs.
+- Existing component aliases (--bg, --card, --text, --muted, --radius, --font-head/body) resolve to this master file. Use .mib-panel/.mib-control for future generic surfaces or existing themed component classes. The limited important declarations are migration adapters for legacy ID/inline styling, not a pattern to copy into new components.
+- Maintain visible keyboard focus, native input semantics, 44px touch actions, responsive layouts and reduced-motion support. Main-site CSS must never inspect or reach into another user's isolated private account origin. Independently deployed personal panels retain their own deployment boundary.
+
+The backend GitOps/ESPN architecture remains frozen; visual changes must not add AI monitors, data stores, polling loops or alter calculation/settlement meaning.

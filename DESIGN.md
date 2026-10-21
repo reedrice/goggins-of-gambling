@@ -1,5 +1,9 @@
 # DESIGN.md: Reed's design rules
 
+## Global token override (Reed, Oct 21)
+
+`css/theme.css` is the master design system and loads after all component CSS. Follow the Global UI Design Tokens section at the bottom of AGENTS.md: canvas #0A0E17; panels 24px; controls 16px; shared 3% white glass, 12px blur and 5% white border; primary white and secondary #8E9AA8; 24px module/panel spacing. This explicitly authorized implementation supersedes the historical gritty palette/Impact headings and component-specific radii. Existing functional controls, six tabs, private-account boundaries, chart data and semantic outcome colors remain intact. No Tailwind/build dependency is needed for this plain-CSS app.
+
 Linked from [AGENTS.md](AGENTS.md). Detail and history are in [HANDOFF.md](HANDOFF.md).
 
 - **Apple-like.** Sleek, simple, intuitive, easy for any age. Fewer buttons; things just work when touched.

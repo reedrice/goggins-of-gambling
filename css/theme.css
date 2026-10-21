@@ -1,0 +1,175 @@
+/* Men in Black: authoritative global tokens and legacy component adapters.
+ * Load LAST. New components consume these variables; never invent local surfaces.
+ * Important declarations below only enforce the requested shared geometry/glass
+ * against existing ID-scoped and inline presentation rules. Data/state colors stay semantic.
+ */
+:root {
+  color-scheme: dark;
+  --canvas: #0A0E17;
+  --surface-glass: rgba(255, 255, 255, 0.03);
+  --surface-border: rgba(255, 255, 255, 0.05);
+  --surface-blur: 12px;
+  --radius-panel: 24px;
+  --radius-control: 16px;
+  --text-primary: #FFFFFF;
+  --text-secondary: #8E9AA8;
+  --font-ui: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --weight-heading: 600;
+  --weight-body: 400;
+  --type-body: 16px;
+  --type-control: 14px;
+  --type-label: 12px;
+  --type-card-title: 18px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --module-gap: var(--space-6);
+  --panel-padding: var(--space-6);
+  --page-gutter: clamp(16px, 4vw, 32px);
+  --content-width: 960px;
+  --nav-clearance: 104px;
+  --focus-ring: #FF8A58;
+  --action-fill: #AE3C16;
+  --selection-fill: rgba(255, 90, 31, 0.12);
+  --scrim: rgba(10, 14, 23, 0.76);
+  --track: rgba(255, 255, 255, 0.1);
+  /* Existing components use these aliases; values have one source of truth. */
+  --bg: var(--canvas);
+  --bg-2: var(--surface-glass);
+  --card: var(--surface-glass);
+  --card-2: var(--surface-glass);
+  --line: var(--surface-border);
+  --text: var(--text-primary);
+  --muted: var(--text-secondary);
+  --radius: var(--radius-panel);
+  --font-head: var(--font-ui);
+  --font-body: var(--font-ui);
+  --accent: #FF5A1F;
+  --accent-2: #F07878;
+  --good: #40C69B;
+  --warn: #E9BD62;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+html, body { background: var(--canvas); color: var(--text-primary); }
+body { background-image: none; font-family: var(--font-ui); font-size: var(--type-body); font-weight: var(--weight-body); line-height: 1.55; }
+main { max-width: var(--content-width); padding: var(--space-6) var(--page-gutter) calc(var(--nav-clearance) + var(--safe-bottom)); }
+main > section { min-width: 0; }
+:is(h1, h2, h3, h4, .brand-name, .brand-tag, .picker h4) {
+  font-family: var(--font-ui); color: var(--text-primary); text-transform: none; letter-spacing: -0.025em; font-weight: var(--weight-heading); text-shadow: none;
+}
+h2 { margin: var(--space-8) 0 var(--space-4); font-size: clamp(24px, 4vw, 30px); }
+h3 { margin: var(--space-6) 0 var(--space-4); font-size: 20px; }
+.brand-name, .brand-name.small { text-shadow: none; line-height: 1.2; font-weight: var(--weight-heading); }
+.brand-name.small { font-size: 22px; }
+.brand-tag, .brand-tag.small { color: var(--text-secondary); letter-spacing: 0.02em; }
+
+/* All content panels, including secondary workflows, history and account setup. */
+:is(.card, .kpi, .stat, .leg, .gcard, .ghead, .presults, .pfilters,
+    .pg-game, .pg-team, .pg-prop, .sheet, .dd-sheet, .viz-sheet, .viz-surface,
+    .viz-quote, .share-menu, .share-ov-in, .tip-pop, .toast, .live-toast,
+    .live-bets-empty, .lb-edge, .lb-alert, .lb-none, .lb-notice, .lb-stale,
+    .table-wrap, .onboard-private, .kalshi-step, .account-panel,
+    .pf-teamlist, .calc-out > div, .viz-games, .play-tag, .lotto-line,
+    canvas.chart, .kalshi-private-frame, .mib-panel) {
+  background: var(--surface-glass) !important;
+  border: 1px solid var(--surface-border) !important;
+  border-radius: var(--radius-panel) !important;
+  -webkit-backdrop-filter: blur(var(--surface-blur));
+  backdrop-filter: blur(var(--surface-blur));
+  box-shadow: none;
+  min-width: 0;
+}
+:is(.card, .lb-edge, .live-bets-empty, .kalshi-step, .sheet, .account-panel, .mib-panel) {
+  padding: var(--panel-padding) !important;
+}
+:is(.card, .account-panel, .pfilters, .live-record-root, .table-wrap, .lb-notice) { margin-block: var(--module-gap); }
+:is(.stat, .kpi, .leg, .viz-quote, .lb-alert, .ghead, .gcard, .lb-none, .lb-stale) { padding: var(--space-4); }
+:is(.kpis, .pick-stats, .calc-out, .row, .mbtns, .viz-quotes) { gap: var(--space-3); }
+.live-bets-root .lb-list { gap: var(--module-gap); }
+.table-wrap { padding: var(--space-4); }
+.account-panel > div.card { background: transparent !important; border: 0 !important; padding: 0 !important; margin-top: var(--space-6); backdrop-filter: none; }
+
+/* Native controls and every existing choice/filter family share one geometry. */
+:is(button, .btn, input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+    select, textarea, .chip, .seg, .view-toggle, .share-btn, .chart-btn,
+    .oc-btn, .oc-dig, .dd-chip, .dd-x, .dd-sb, .viz-chip, .viz-tab, .viz-mini,
+    .lb-link, .lb-more, .lb-filter, .lb-game-select, .lb-game-btn, .lb-plat-b,
+    .pf-teambtn, .pf-teamopt, .pbtn, .badge, .risk, .pos-badge, .onboard-step,
+    .trent-pick .x-btn, .mib-control) { border-radius: var(--radius-control) !important; }
+:is(button, .btn, input, select, textarea) { font-family: var(--font-ui); }
+:is(button, .btn) { text-transform: none; letter-spacing: normal; }
+:is(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), select, textarea) {
+  background: var(--surface-glass) !important; border: 1px solid var(--surface-border) !important;
+  color: var(--text-primary); padding: var(--space-3) var(--space-4);
+  -webkit-backdrop-filter: blur(var(--surface-blur)); backdrop-filter: blur(var(--surface-blur));
+}
+/* Platform-native option popups require a legible canvas in browsers without glass. */
+option { background: var(--canvas); color: var(--text-primary); }
+input::placeholder, textarea::placeholder { color: var(--text-secondary); opacity: 1; }
+:is(.btn, .chip, .pbtn, .seg button, .view-toggle button, .oc-btn, .oc-dig,
+    .dd-chip, .viz-tab, .viz-chip, .lb-filter, .lb-link, .lb-more, .pf-teambtn,
+    .chart-btn, .share-btn, .trent-pick .x-btn, .viz-mini) {
+  background: var(--surface-glass); border-color: var(--surface-border); color: var(--text-primary);
+  font-size: var(--type-control); font-weight: var(--weight-heading); min-height: 44px;
+}
+.onboard-step { background: var(--surface-glass); color: var(--text-primary); border: 1px solid var(--surface-border); }
+.gcard { border-radius: var(--radius-panel) !important; }
+:is(.oc-btn:hover, .oc-dig:hover, .viz-mini:active, .trent-pick .x-btn:active) { background: var(--surface-glass); }
+:is(.btn-primary, .btn-play) { background: var(--action-fill); border-color: var(--action-fill); color: var(--text-primary); }
+:is(.chip.on, .seg button.on, .view-toggle button.on, .dd-chip.on, .viz-tab.on, .viz-chip.on, .pbtn.added,
+    .live-bets-root .lb-filter.lb-on, .lb-game-btn.lb-on, .lf-controls button.on) {
+  background: var(--selection-fill); color: var(--text-primary); border-color: var(--accent);
+}
+:is(.btn-danger, .error, .lb-stale) { color: var(--accent-2); }
+:is(button, input, select, textarea, summary, a, [role="button"]):focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
+input[type="checkbox"], input[type="radio"] { accent-color: var(--accent); }
+
+/* Shared header/platform/bottom navigation and secondary sheet chrome. */
+:is(.topbar, .plat-bar, .tabbar, .dd-top, .pg-game > summary) {
+  background: var(--surface-glass); border-color: var(--surface-border);
+  -webkit-backdrop-filter: blur(var(--surface-blur)); backdrop-filter: blur(var(--surface-blur));
+}
+.topbar { padding: var(--space-4) var(--page-gutter); border-bottom: 1px solid var(--surface-border); gap: var(--space-4); }
+.plat-bar { padding: var(--space-3) var(--page-gutter); gap: var(--space-3); }
+.tabbar { padding: var(--space-2) var(--space-2) calc(var(--space-2) + var(--safe-bottom)); gap: var(--space-1); }
+.tabbar button { min-height: 56px; padding: var(--space-2) 2px; font-size: 11px; font-weight: var(--weight-heading); color: var(--text-secondary); text-transform: none; letter-spacing: normal; }
+.tabbar button.active { color: var(--text-primary); background: var(--selection-fill); box-shadow: none; }
+.topbar-bank .label { font-size: 11px; }
+:is(.onboarding, .dd-sheet) { background-image: none; }
+.onboarding { background: var(--canvas); padding: var(--space-8) var(--page-gutter); }
+:is(.sheet-back, .dd-back, .share-overlay) { background: var(--scrim); }
+.sheet { margin: var(--space-2); max-width: min(640px, calc(100vw - 16px)); }
+.dd-sheet { padding: 0 var(--space-4); }
+.dd-top { margin-inline: calc(-1 * var(--space-4)); padding: var(--space-4) var(--space-6); }
+.dd-top h2 { margin: 0; }
+.viz-surface { padding: var(--space-4); }
+
+/* Main choices white; supporting telemetry is always the same slate-steel. */
+:is(.pick-title, .leg-title, .gmain, .pg-title b, .dd-chip, .pbtn, .account-panel > summary,
+    .live-bets-root .lb-game, .live-bets-root .lb-side, .live-bets-root .lb-group-title) { color: var(--text-primary); }
+:is(.muted, .pick-sub, .small.muted, .stat .k, .kpi .k, .topbar-bank .label,
+    .field > span, .field em, label, th, .plain-odds, .price-on, .spread-note,
+    .leg-when, .payx, .pbtn-lab, .pbtn-pay, .kpx, .chance-line,
+    .bp-clock, .bp-note, .bp-checked, .bp-combo > summary, .bp-values > span,
+    .lb-updated, .lb-market, .lb-meta, .lb-pts, .lb-foot, .lb-context, .lb-alert-top,
+    .lb-odds, .lb-alert-odds, .viz-read, .viz-range, .viz-quote-name,
+    .pst-clock, .pst-at, .pst-empty, .lr-top + .small, .lotto-line) { color: var(--text-secondary) !important; }
+.pick-title { font-size: var(--type-card-title); font-weight: var(--weight-heading); }
+.stat .v, .kpi .v, .topbar-bank .value { font-family: var(--font-ui); font-weight: var(--weight-heading); letter-spacing: -0.03em; }
+.viz-quote-value { color: var(--text-primary); }
+:is(.bp-bar, .hitbar) { background: var(--track); }
+.bp-bar, .bp-fill, .hitbar, .hitbar > span { border-radius: var(--radius-control); }
+/* Chart marks, team colors, outcome labels and circular avatars are semantic exceptions. */
+@media (max-width: 480px) {
+  .pick-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pick-actions { gap: var(--space-3); }
+  .row > *, .pick-head > *, .pick-actions > * { min-width: 0; }
+  .btn, .chip { white-space: normal; overflow-wrap: anywhere; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sheet, .dd-sheet { animation: none; }
+}

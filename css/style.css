@@ -2,9 +2,9 @@
  * css/style.css — visual theme for the dashboard.
  *
  * PURPOSE
- *   Mobile-first dark theme with a bold, gritty look: near-black background,
- *   heavy condensed uppercase headings, safety-orange / blood-red accents and a
- *   subtle noise texture. Desktop just widens the content column.
+ *   Mobile-first component structure. Authoritative colors, system typography,
+ *   geometry, glass surfaces and spacing live in css/theme.css, loaded last.
+ *   Historical component declarations below are adapted by that master theme.
  *
  * STRUCTURE
  *   1. Tokens (CSS custom properties)   2. Base / layout
@@ -14,23 +14,7 @@
  */
 
 /* 1. Tokens ------------------------------------------------------------ */
-:root {
-  --bg: #0b0b0c;
-  --bg-2: #141416;
-  --card: #18181b;
-  --card-2: #202024;
-  --line: #2c2c31;
-  --text: #ececec;
-  --muted: #9a9aa2;
-  --accent: #ff5a1f;      /* safety orange: primary actions, brand */
-  --accent-2: #d7261e;    /* blood red: losses, warnings */
-  --good: #34d27b;        /* wins, positive edge */
-  --warn: #f5b301;        /* pending news, caution */
-  --radius: 12px;
-  --font-head: Impact, "Haettenschweiler", "Arial Narrow Bold", "Oswald", sans-serif;
-  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --safe-bottom: env(safe-area-inset-bottom, 0px);
-}
+/* All global tokens now live in css/theme.css, loaded after component styles. */
 
 /* 2. Base / layout ----------------------------------------------------- */
 * { box-sizing: border-box; }
