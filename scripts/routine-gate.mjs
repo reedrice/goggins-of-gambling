@@ -16,7 +16,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const REPO = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const FILE = path.join(REPO, 'routines', 'owners.json');
-export const OWNERS = ['grok', 'chatgpt', 'pablo', 'off'];
+export const OWNERS = ['grok', 'chatgpt', 'pablo', 'github-actions', 'off'];
 export const STALE_MIN = 30;
 
 /** Pure: should `me` run routine `id` now? -> {run, reason} */
