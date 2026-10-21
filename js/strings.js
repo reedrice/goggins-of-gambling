@@ -694,3 +694,12 @@ window.STR.liveFeedback={title:'Alert quality',juicy:'Juicy',bad:'Bad alert',not
  invalid:'Use a note of 500 characters or less, without money amounts or credentials.',
  continue:'Finish submitting on GitHub. It is not saved until you submit there. ',github:'Continue on GitHub',
  saved:'Feedback saved on GitHub. Shared counts update after the next scheduled review.'};
+window.STR.liveFeedback.connectNote='Connect once to share feedback with the team. GitHub will ask for public-repository access; feedback stays on this site after authorization. ';
+window.STR.liveFeedback.connect='Connect feedback';
+window.STR.liveFeedback.authorize='Authorize connection';
+window.STR.liveFeedback.authCode=code=>'One-time authorization code: '+code+' ';
+window.STR.liveFeedback.authFailed='Connection was not completed. Your vote has not been saved.';
+window.STR.liveFeedback.unavailable='Feedback connection is unavailable right now.';
+window.STR.liveFeedback.saving='Saving…';
+window.STR.liveFeedback.failed='Could not save feedback. Your vote has not been saved; try again.';
+window.STR.liveFeedback.savedDirect='Saved. Your team feedback will be included in the next review.';

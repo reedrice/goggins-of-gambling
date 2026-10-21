@@ -17,8 +17,8 @@
     return true;
   }
   /** Start: returns { user_code, verification_uri, done: Promise<boolean> }. */
-  async function start() {
-    const d = await post('/device/code', { scope: 'read:user' });
+  async function start({feedback=false}={}) {
+    const d = await post('/device/code', { scope: feedback?'read:user public_repo':'read:user' });
     if (!d || !d.device_code) throw new Error('GitHub sign-in is unavailable right now.');
     let wait = (d.interval || 5) * 1000; const until = Date.now() + (d.expires_in || 900) * 1000;
     const done = (async () => {
