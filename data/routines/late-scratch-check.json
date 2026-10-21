@@ -1,16 +1,33 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-21T08:42:21.066Z",
-  "source": "ESPN scoreboard and event summary",
-  "coverage": "Published injury reports only. X, Daily Faceoff, official inactive feeds and starter/goalie confirmation are not connected. Unverified never means confirmed.",
+  "updated_at": "2026-10-21T22:51:28.335Z",
+  "source": "data/espn snapshots from ESPN JSON",
+  "coverage": "Published injury reports and explicit starter flags only. Probable goalies remain probable. Hockey line combinations and unsupported status feeds remain unavailable. Unverified never means confirmed.",
   "checks": [
     {
       "pick_id": "auto-2026-10-21-tsc-nhl-phi-buf-2026-10-21-6pt5-no",
       "market_id": "tsc-nhl-phi-buf-2026-10-21-6pt5",
       "source": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/summary?event=401892550",
-      "checked_at": "2026-10-21T08:42:21.066Z",
+      "checked_at": "2026-10-21T22:51:28.335Z",
       "status": "unverified",
       "injuries": [],
+      "starters": [],
+      "probables": [
+        {
+          "player": "Ukko-Pekka Luukkonen",
+          "position": "probableStartingGoalie",
+          "team": "BUF",
+          "status": "probable",
+          "confirmed": false
+        },
+        {
+          "player": "Dan Vladar",
+          "position": "probableStartingGoalie",
+          "team": "PHI",
+          "status": "probable",
+          "confirmed": false
+        }
+      ],
       "reason": "No verified starter/goalie or inactive confirmation; absence from an injury list is not confirmation"
     }
   ]
