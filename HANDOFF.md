@@ -1559,3 +1559,5 @@ Deployment update: Cloudflare Worker mib-feed-watchdog.reedrice9.workers.dev dep
 
 ## 126. Today’s Picks refresh cadence (Oct 21)
 Reed reported the 7:54 AM slate still showing at noon. The digest was intentionally once daily at 7 AM; changed its existing native Actions slot to hourly 7 AM–11 PM Chicago, without another workflow or AI. Existing model/qualification rules, source evidence and human-authored entries remain intact. The visible Today’s Picks screen checks published JSON every minute and on focus/online, rendering only a new snapshot while preserving sport/day selection. Live Bets retains its separate 30-second published-feed checks. GitHub starts and publication can still delay these cadences.
+
+Cadence follow-up: Reed requested the fastest existing native cadence. Daily slate regeneration now participates once per five-minute maintenance slot around the clock, rather than hourly; visible Picks polls published JSON every 30 seconds. No new scheduler, AI or paid data source. Source calculations still require evidence and each run publishes only after validation. GitHub scheduling, processing and Pages latency remain real limits.

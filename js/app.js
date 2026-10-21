@@ -1176,7 +1176,7 @@
     } catch (_) { /* retain the last verified snapshot; retry on the next visible check */ }
     finally { picksCheckBusy = false; }
   }
-  setInterval(checkPublishedPicks, 60000);
+  setInterval(checkPublishedPicks, 30000);
   document.addEventListener('visibilitychange', checkPublishedPicks);
   window.addEventListener('focus', checkPublishedPicks);
   window.addEventListener('online', checkPublishedPicks);
