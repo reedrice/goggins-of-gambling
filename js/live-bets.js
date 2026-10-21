@@ -34,7 +34,7 @@
   'use strict';
   const SLUG = 'nfl-was-sf-2026-10-19';           // fallback game if data/live/index.json is missing
   const STALE_MIN = 20;                           // live feed older than this = "Feed is stale" (Oct 20)
-  const REFRESH_MS = 60 * 1000;                   // about once a minute
+  const REFRESH_MS = 30 * 1000;
   const CAP = 5;                                  // cards per group before "Show more"
   // Shown in "Moved for a reason". 'injury' edges are DROPPED entirely: injury
   // data only decides whether an edge is real and is never shown (Oct 19 rule).
@@ -418,19 +418,28 @@
     if (newest && (!readSeen() || newest > readSeen())) writeSeen(newest);
   }
 
-  /** Entry point (called by app.js). Fetch now, then about every 60s. */
+  function autoRefresh(root, run, busy) {
+    let stopped=false;
+    const stop=()=>{stopped=true;clearInterval(timer);document.removeEventListener('visibilitychange',resume);window.removeEventListener('focus',resume);window.removeEventListener('online',resume);};
+    const resume=()=>{if(stopped)return;if(!root.isConnected){stop();return;}if(document.visibilityState==='visible'&&!busy()&&root.getClientRects().length)run();};
+    const timer=setInterval(resume,REFRESH_MS);
+    document.addEventListener('visibilitychange',resume);window.addEventListener('focus',resume);window.addEventListener('online',resume);
+    return stop;
+  }
+  /** Entry point: refresh automatically, including after sleep/tab return/network recovery. */
   function render(rootEl) {
+    if(rootEl._lbStop)rootEl._lbStop();
     const toolbar=el('div','lb-refresh-row'), refresh=el('button','lb-review',liveText().refresh), status=el('span','lb-refresh-status');
     refresh.type='button';refresh.title=liveText().refreshHelp;status.setAttribute('role','status');
     toolbar.append(refresh,status);const content=el('div');rootEl.replaceChildren(toolbar,content);
     content.append(el('div', 'live-bets-empty', 'Loading live bets…'));
     let loading=false;
-    let timer = null, last = null;
+    let last = null;
     const ui = { slug: 'all', when:'today', sport:'', filter: 'all', visitBase: readSeen(), details: new Set(), game: false, prop: false, reasons: false, redraw: () => { if (last) draw(content, last, ui); } };
     // Which game: data/live/index.json (written by live-tick.mjs), else SLUG.
     let request = 0;
     const load = ui.load = async (manual=false) => {
-      if (!rootEl.isConnected && timer) { clearInterval(timer); return; }
+      if (!rootEl.isConnected) return;
       const current = ++request;loading=true;refresh.disabled=true;refresh.textContent=liveText().checking;
       if(manual)status.textContent=liveText().checking;
       try {
@@ -451,7 +460,7 @@
         if (targets.length && !feeds.length) throw new Error('feeds unavailable');
         ui.games = games;
         const d = selected === 'all' ? combineGames(feeds,results.length-feeds.length) : feeds[0];
-        if(manual)status.textContent=last&&JSON.stringify(last)===JSON.stringify(d)?liveText().noNewFeed:liveText().feedLoaded;
+        status.textContent=manual?(last&&JSON.stringify(last)===JSON.stringify(d)?liveText().noNewFeed:liveText().feedLoaded):liveText().autoRefresh;
         last=d; draw(content,d,ui);
       } catch (e) {
         if (current !== request) return;
@@ -461,8 +470,8 @@
     };
     refresh.onclick=()=>{if(!loading)load(true);};
     load();
-    timer = setInterval(()=>{if(!loading)load();}, REFRESH_MS);
+    rootEl._lbStop=autoRefresh(rootEl,()=>load(),()=>loading);
   }
 
-  return { timeGames, sportOf, sportGames, edgeTitle, edgeSelection, combineGames, render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
+  return { autoRefresh, timeGames, sportOf, sportGames, edgeTitle, edgeSelection, combineGames, render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
 });

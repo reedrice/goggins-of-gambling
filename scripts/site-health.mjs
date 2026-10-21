@@ -30,6 +30,9 @@ async function main(){
   try{
    const [index,espn]=await Promise.all(['data/live/index.json','data/espn/index.json'].map(read));
    errors=problems(index,espn,gate.last_run_at);
+   // Verify actual served game files too, not just a fresh index or repository stamp.
+   const now=Date.now(),sample=(index.games||[]).filter(g=>g.status!=='final'&&Date.parse(g.start_time)<=now&&now-Date.parse(g.start_time)<86400000).sort((a,b)=>String(a.updated).localeCompare(String(b.updated))).slice(0,5);
+   await Promise.all(sample.map(async g=>{try{const d=await read(`data/live/${g.slug}.json`);if(d.slug!==g.slug||age(d.updated,now)>5*60000)errors.push(`Public game file stale or mismatched: ${g.slug}`);}catch(e){errors.push(e.message);}}));
   }catch(e){
    errors=[e.message];
   }

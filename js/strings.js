@@ -602,7 +602,7 @@ window.STR.liveBets = {
  sports:{nba:'NBA',wnba:'WNBA',nfl:'NFL',ncaaf:'College football',ncaab:'College basketball',wncaab:'Women’s college basketball',nhl:'NHL',mlb:'MLB',soccer:'Soccer',tennis:'Tennis',golf:'Golf'},
  refresh:'Check for new edges', checking:'Checking…',
  refreshHelp:'Reload the latest published feed. Market scans run on the scheduled bot.',
- feedLoaded:'Latest published feed loaded.', noNewFeed:'No newer published feed yet.',
+ feedLoaded:'Latest published feed loaded.', noNewFeed:'No newer published feed yet.', autoRefresh:'Automatically checks for published updates every 30 seconds.',
  refreshFailed:'Could not refresh. Try again; the last loaded feed is retained.',
  design: {
    filters: { all: 'All', big: 'Big edge', slight: 'Slight edge', new: 'New' },
