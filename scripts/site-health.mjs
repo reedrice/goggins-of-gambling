@@ -7,10 +7,10 @@ const REPO='reedrice/goggins-of-gambling', WORKFLOW='live-maintenance.yml';
 export function age(time,now){const t=Date.parse(time);return Number.isFinite(t)&&t<=now+60000?now-t:Infinity;}
 export function problems(index,espn,stamp,now=Date.now()){
  const errors=[];
- if(age(stamp,now)>15*60000)errors.push('Public maintenance stamp is older than 15 minutes or invalid');
+ if(age(stamp,now)>5*60000)errors.push('Public maintenance stamp is older than 5 minutes or invalid');
  if(!Array.isArray(index?.games))errors.push('Live index has no games array');
- else {const stale=index.games.filter(g=>shouldTick({start:g.start_time,status:g.status},now)&&age(g.updated,now)>15*60000);if(stale.length)errors.push(`${stale.length} due games have stale or invalid timestamps`);}
- if(!Array.isArray(espn?.snapshots)||age(espn?.updated_at,now)>15*60000)errors.push('ESPN snapshot index is missing or stale');
+ else {const stale=index.games.filter(g=>shouldTick({start:g.start_time,status:g.status},now)&&age(g.updated,now)>5*60000);if(stale.length)errors.push(`${stale.length} due games have stale or invalid timestamps`);}
+ if(!Array.isArray(espn?.snapshots)||age(espn?.updated_at,now)>5*60000)errors.push('ESPN snapshot index is missing or stale');
  return errors;
 }
 export function recoveryDecision(runs,now=Date.now()){

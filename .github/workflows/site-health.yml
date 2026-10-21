@@ -1,7 +1,7 @@
 name: Site health and recovery
 on:
   schedule:
-    - cron: '8,18,28,38,48,58 * * * *'
+    - cron: '3-58/5 * * * *'
   workflow_run:
     workflows: ['Live feed and grading', 'Deploy site']
     types: [completed]

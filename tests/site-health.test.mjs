@@ -22,3 +22,10 @@ test('detect before the UI warning; successful manual refresh must not suppress 
  assert.equal(recoveryDecision([{status:'completed',event:'workflow_dispatch',conclusion:'success',created_at:at16}],now),'dispatch');
  assert.equal(recoveryDecision([{status:'completed',event:'workflow_dispatch',conclusion:'failure',created_at:at16}],now),'cooldown');
 });
+
+test('five-minute freshness threshold detects a six-minute gap',()=>{
+ const at6=new Date(now-6*60000).toISOString();
+ assert.ok(problems({games:[]},{snapshots:[],updated_at:fresh},at6,now).length);
+ const at4=new Date(now-4*60000).toISOString();
+ assert.deepEqual(problems({games:[]},{snapshots:[],updated_at:at4},at4,now),[]);
+});
