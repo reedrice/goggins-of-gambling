@@ -1,5 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {ct,due,slot,injuryNotes,eligible,weeklyReport} from '../scripts/scheduled-routines.mjs';
+import {ct,due,slot,injuryNotes,eligible,weeklyReport,selectMarkets,manualGame} from '../scripts/scheduled-routines.mjs';
+test('partial-game lines cannot crowd out a valid full-game line',()=>{const full={id:'full',type:'total',smt:'basketball_full_game_total',yes_ask:55,no_cost:47},half={...full,id:'half',smt:'basketball_first_half_total',yes_ask:50};assert.deepEqual(selectMarkets([half,full]).map(x=>x.id),['full']);});
+test('manual single/combo markets reserve their game against generated conflicting suggestions',()=>{const old={slate_date:'2026-10-21',sections:{parlays:[{legs:[{market_id:'aec-nba-atl-orl-2026-10-21'}]}]}};assert.ok(manualGame(old,'nba-atl-orl-2026-10-21','2026-10-21'));assert.ok(!manualGame(old,'nba-okc-sa-2026-10-21','2026-10-21'));});
 test('Chicago schedules follow daylight saving and do not run twice per slot',()=>{
  assert.equal(ct(Date.parse('2026-10-21T12:00:00Z')).minute,420);
  assert.equal(ct(Date.parse('2026-12-21T13:00:00Z')).minute,420);

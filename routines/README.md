@@ -20,7 +20,7 @@ Reed has 5 routines (scheduled jobs). Any bot can run them: Goggins Of Gambling 
 
 1. `node scripts/routine-gate.mjs set <routine-id> <new-owner>`. Owners: `grok`, `chatgpt`, `pablo`, `off`. Add `--off` to keep the new owner but pause it. This commits and pushes `routines/owners.json`.
 2. Give the new bot the schedule below and the paste-in prompt. Its own scheduler fires at `schedule_ct` (cron, America/Chicago).
-3. The old bot can keep its schedule. Its gate check will SKIP from now on. To turn a routine off everywhere: `set <id> off`.
+3. The old bot must disable its duplicate schedule after handoff to GitHub Actions. A no-op AI gate check can still consume usage. To turn a routine off everywhere: `set <id> off`.
 
 ## What a new bot needs
 
