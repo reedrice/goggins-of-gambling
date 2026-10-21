@@ -51,3 +51,19 @@ assert.strictEqual(rec.totals.big.w, 1); assert.strictEqual(rec.totals.slight.l,
 assert.deepStrictEqual(totals([]).hit_rate, null);
 assert.doesNotMatch(JSON.stringify(rec), /[$¢]/);
 console.log('ok live alerts record: log forever, grade from real settlement, totals per tier');
+
+const grouped=summarize({entries:[
+ {slug:'nba-a-b-2026-10-20',result:'win',odds_at_alert:'+150'},
+ {slug:'nhl-a-b-2026-10-20',result:'loss',odds_at_alert:'-200'},
+ {slug:'atp-a-b-2026-10-20',result:'pending',odds_at_alert:'+100'},
+ {slug:'wta-a-b-2026-10-20',result:'push',odds_at_alert:'+100'},
+ {slug:'ucl-a-b-2026-10-20',result:'void',odds_at_alert:'+100'}]});
+assert.equal(grouped.by_sport.nba.units,1.5);
+assert.equal(grouped.by_sport.nhl.units,-1);
+assert.equal(grouped.by_sport.tennis.pending,1);
+assert.equal(grouped.by_sport.tennis.p,1);
+assert.equal(grouped.by_sport.tennis.hit_rate,null);
+assert.equal(grouped.by_sport.soccer.void,1);
+assert.equal(grouped.by_sport.golf.graded,0);
+assert.equal(Object.values(grouped.by_sport).reduce((n,t)=>n+t.n,0),grouped.totals.all.n);
+console.log('Sport records partition alerts and retain identical settlement/unit math');

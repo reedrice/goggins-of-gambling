@@ -104,8 +104,8 @@
     if(['cfb','ncaaf'].includes(league))return 'ncaaf';
     if(['cbb','ncaab','ncaam'].includes(league))return 'ncaab';
     if(['ncaaw','wncaab'].includes(league))return 'wncaab';
-    if(['atp','wta','tennis'].includes(league))return 'tennis';
-    if(['pga','lpga','golf'].includes(league))return 'golf';
+    if(['atp','wta','atpdb','wtadb','utr','itfme','itfwo','sixkings','tennis'].includes(league))return 'tennis';
+    if(['pga','lpga','dpwt','pgatc','golf'].includes(league))return 'golf';
     return league;
   }
   function sportGames(games,sport='',slug='all') {

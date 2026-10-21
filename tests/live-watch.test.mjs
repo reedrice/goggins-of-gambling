@@ -220,10 +220,23 @@ test('tick: Chicago slate, DST and real two-team games', async () => {
  const {shouldTick,isTeamGame,buildIndex}=await import('../scripts/live-tick.mjs');
  const now=Date.parse('2026-10-20T22:00:00Z');
  assert.strictEqual(shouldTick({start:'2026-10-21T02:30:00Z'},now),true);
- assert.strictEqual(shouldTick({start:'2026-10-21T05:00:00Z'},now),false);
+ assert.strictEqual(shouldTick({start:'2026-10-21T05:00:00Z'},now),true);
  assert.strictEqual(shouldTick({start:'2026-11-02T05:30:00Z'},Date.parse('2026-11-01T20:00:00Z')),true);
- assert.strictEqual(shouldTick({start:'2026-11-02T06:00:00Z'},Date.parse('2026-11-01T20:00:00Z')),false);
+ assert.strictEqual(shouldTick({start:'2026-11-02T06:00:00Z'},Date.parse('2026-11-01T20:00:00Z')),true);
  assert.strictEqual(isTeamGame({slug:'nba-phi-ny-2026-10-20',teams:[{},{}]}),true);
  assert.strictEqual(isTeamGame({slug:'nba-lead-pts-2026-10-20',teams:[]}),false);
  assert.strictEqual(buildIndex([{slug:'leader',is_game:false},{slug:'game'}]).games.length,1);
 });
+
+ test('expanded slate: tomorrow included, day after excluded, tennis and soccer market types distinct', async()=>{
+ const {shouldTick,isTeamGame}=await import('../scripts/live-tick.mjs');
+ const now=Date.parse('2026-10-21T05:00:00Z');
+ assert.equal(shouldTick({start:'2026-10-23T04:59:00Z'},now),true);
+ assert.equal(shouldTick({start:'2026-10-23T05:00:00Z'},now),false);
+ for(const league of ['atp','wta','cfb','cbb','ucl'])assert.equal(isTeamGame({slug:league+'-a-b-2026-10-21',teams:[{},{}]}),true);
+ assert.equal(isTeamGame({slug:'pga-future-2026-10-21',teams:[]}),false);
+ assert.equal(lineInfo('tennis_match_winner','tennis').mtype,'winner');
+ assert.equal(lineInfo('tennis_match_games_spread','tennis').periodLabel,'Games');
+ assert.equal(lineInfo('tennis_match_sets_spread','tennis').periodLabel,'Sets');
+ assert.equal(lineInfo('soccer_team_full_time_winner','soccer').mtype,'winner');
+ });

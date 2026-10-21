@@ -14,7 +14,7 @@
  *
  * WHAT ONE TICK DOES
  *   1. Lists Polymarket US events (free, no key) that start within --lead
- *      minutes when explicitly set; otherwise all of today (America/Chicago) or started up to 8 h ago, in the leagues
+ *      minutes when explicitly set; otherwise today and tomorrow (America/Chicago) or started up to 8 h ago, in the leagues
  *      live-watch.mjs knows (nfl, nba, wnba, nhl, mlb). Also re-checks any
  *      data/live/<slug>.json from the last 24 h that isn't "final" yet.
  *   2. For each game not already "final": runs `live-watch.mjs publish --slug X --players all`
@@ -32,14 +32,15 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { execFileSync } from 'node:child_process';
+import { execFileSync, execFile } from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.join(HERE, '..');
 const LIVE = path.join(REPO, 'data', 'live');
 const GATEWAY = 'https://gateway.polymarket.us';
-const LEAGUES = ['nfl', 'nba', 'wnba', 'nhl', 'mlb'];
+import { sportOf } from './live-watch.mjs';
+const runPublish = args => new Promise((resolve,reject)=>execFile(process.execPath,args,{cwd:REPO,timeout:90000,maxBuffer:4*1024*1024},(err,stdout,stderr)=>err?reject(new Error(stderr || err.message)):resolve(stdout)));
 const GAME = /^([a-z0-9]+)-([a-z0-9]+)-([a-z0-9]+)-(\d{4}-\d{2}-\d{2})$/;
 const args = process.argv.slice(2);
 const flag = k => args.includes('--' + k);
@@ -49,13 +50,14 @@ const opt = (k, d) => { const i = args.indexOf('--' + k); return i >= 0 && args[
 const chicagoDay = ms => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Chicago', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(ms));
 export function isTeamGame(e) {
   const m = GAME.exec(e.slug || '');
-  return Boolean(m && LEAGUES.includes(m[1]) && e.teams?.length === 2);
+  if (!m || e.teams?.length !== 2) return false;
+  try { sportOf(e.slug); return true; } catch { return false; }
 }
 export function shouldTick({ start, status }, nowMs, leadMin = null) {
   if (status === 'final') return false;
   const s = Date.parse(start);
   if (isNaN(s)) return false;
-  const withinWindow = leadMin == null ? (s <= nowMs || chicagoDay(s) === chicagoDay(nowMs)) : s - nowMs <= leadMin * 60e3;
+  const withinWindow = leadMin == null ? (s <= nowMs || chicagoDay(s) <= new Date(Date.parse(chicagoDay(nowMs)+'T12:00:00Z')+86400000).toISOString().slice(0,10)) : s - nowMs <= leadMin * 60e3;
   return withinWindow && nowMs - s <= 24 * 3600e3;
 }
 
@@ -70,9 +72,9 @@ const readPublished = () => fs.readdirSync(LIVE).filter(f => GAME.test(f.replace
   .map(f => { try { return JSON.parse(fs.readFileSync(path.join(LIVE, f), 'utf8')); } catch { return null; } }).filter(Boolean);
 
 async function listGames(nowMs, leadMin) {
-  const min = new Date(nowMs - 8 * 3600e3).toISOString(), max = new Date(nowMs + (leadMin == null ? 36 * 3600e3 : leadMin * 60e3)).toISOString();
+  const min = new Date(nowMs - 8 * 3600e3).toISOString(), max = new Date(nowMs + (leadMin == null ? 49 * 3600e3 : leadMin * 60e3)).toISOString();
   const out = [];
-  for (let off = 0; off < 2000; off += 200) {
+  for (let off = 0; off < 10000; off += 200) {
     const r = await fetch(`${GATEWAY}/v1/events?limit=200&offset=${off}&active=true&closed=false&startDateMin=${min}&startDateMax=${max}`);
     if (!r.ok) throw new Error(`Polymarket US list returned ${r.status}`);
     const page = (await r.json()).events || [];
@@ -106,11 +108,12 @@ export async function tick() {
   const todo = [...cands.values()].filter(g => shouldTick({ start: g.start, status: pub[g.slug]?.status }, now, lead));
   console.log(`tick ${new Date(now).toISOString()}: ${cands.size} candidate game(s), ${todo.length} to update`);
   let ok = 0;
-  for (const g of todo) {
-    if (flag('dry')) { console.log('  would publish', g.slug, await propCount(g.slug)); continue; }
+  const queue = [...todo];
+  await Promise.all(Array.from({length:4},async()=>{ while(queue.length) await update(queue.shift()); }));
+  async function update(g) {
+    if (flag('dry')) { console.log('  would publish', g.slug, await propCount(g.slug)); return; }
     try {
-      const o = execFileSync(process.execPath, [path.join(HERE, 'live-watch.mjs'), 'publish', '--slug', g.slug, '--players', 'all'],
-        { cwd: REPO, timeout: 90e3, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
+      const o = await runPublish( [path.join(HERE, 'live-watch.mjs'), 'publish', '--slug', g.slug, '--players', 'all']);
       console.log(`  ${g.slug}: ${o.trim().split('\n').pop()}`); ok++;
       // Oct 20 2026 (Reed's bot, Reed's OK): Kalshi ✓ per edge. Additive; never fails the tick.
       try { const { annotateGame } = await import('./live-kalshi.mjs'); const n = await annotateGame(path.join(LIVE, g.slug + '.json'));
@@ -140,3 +143,4 @@ function push(n) {
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   tick().catch(e => { console.error('live-tick error:', e.message); process.exitCode = 1; });
 }
+

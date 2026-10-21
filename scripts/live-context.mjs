@@ -37,7 +37,7 @@
  */
 
 const ESPN = 'https://site.api.espn.com/apis/site/v2/sports';
-const LEAGUE_PATH = { nfl: 'football/nfl', nba: 'basketball/nba', wnba: 'basketball/wnba', nhl: 'hockey/nhl', mlb: 'baseball/mlb' };
+const LEAGUE_PATH = { cfb:'football/college-football', ncaaf:'football/college-football', cbb:'basketball/mens-college-basketball', ncaab:'basketball/mens-college-basketball', ncaaw:'basketball/womens-college-basketball', nfl: 'football/nfl', nba: 'basketball/nba', wnba: 'basketball/wnba', nhl: 'hockey/nhl', mlb: 'baseball/mlb' };
 export const NEWS_MOVE = 25;                  // 25+ unexplained points = probably news
 const BAD = /^(out|doubtful|questionable|injured reserve)$/i;
 const QB_BAD = /^(out|doubtful|injured reserve)$/i;

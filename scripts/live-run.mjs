@@ -10,7 +10,7 @@ const args = process.argv.slice(2);
 const owner = args.includes('--owner') ? args[args.indexOf('--owner') + 1] : 'pablo';
 const noPush = args.includes('--no-push');
 const ownersFile = path.join(ROOT, 'routines', 'owners.json');
-const run = (cmd, a) => execFileSync(cmd, a, { cwd: ROOT, stdio: 'inherit', timeout: 240000 });
+const run = (cmd, a) => execFileSync(cmd, a, { cwd: ROOT, stdio: 'inherit', timeout: 900000 });
 try {
   run('git', ['pull', '-q', '--rebase', 'origin', 'main']);
   const owners = JSON.parse(fs.readFileSync(ownersFile, 'utf8'));

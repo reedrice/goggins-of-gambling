@@ -80,7 +80,10 @@ export const SPORTS = {
   mlb:  { prefix: 'baseball',   props: /^baseball_player_(hits|home_runs|total_bases|rbis|strikeouts)$/ },
 };
 export const sportOf = slug => {
-  const sp = SPORTS[slug.split('-')[0]];
+  const league = slug.split('-')[0];
+  const prefix = /^(cfb|ncaaf)$/.test(league) ? 'football' : /^(cbb|ncaab|ncaam|ncaaw|wncaab)$/.test(league) ? 'basketball' : /^(atp|wta|atpdb|wtadb|sixkings|tennis)$/.test(league) ? 'tennis' : /^(pga|lpga|dpwt|pgatc|golf)$/.test(league) ? 'golf' : null;
+  const soccer = ['epl','ucl','uel','uecl','lal','sea','bun','bl1','fl1','lig1','mls','lmx','eflch'];
+  const sp = SPORTS[league] || (prefix ? { prefix, props: prefix === 'football' ? SPORTS.nfl.props : prefix === 'basketball' ? SPORTS.nba.props : /a^/ } : soccer.includes(league) ? {prefix:'soccer',props:/^soccer_player_(goals|assists|shots|shots_on_target)$/} : null);
   if (!sp) throw new Error(`Unknown league in slug "${slug}". Known: ${Object.keys(SPORTS).join(', ')}`);
   return { ...sp, winner: `${sp.prefix}_team_full_game_winner`, spread: `${sp.prefix}_team_full_game_spread`, total: `${sp.prefix}_team_full_game_total` };
 };
@@ -125,6 +128,12 @@ const TEAM_TOTAL = { football: /^football_team_points_full_game_total$/, basketb
  * Returns { mtype: winner|spread|total|team_total, period, periodLabel }.
  */
 export function lineInfo(type, prefix) {
+  if (prefix === 'soccer' && /^soccer_team_full_time_(winner|spread|total)$/.test(type)) return {mtype:type.split('_').pop(),period:'full_game',periodLabel:PERIODS.full_game};
+  if (prefix === 'tennis') {
+    const kinds = {tennis_match_winner:['winner','Match'],tennis_match_sets_spread:['spread','Sets'],tennis_match_games_spread:['spread','Games'],tennis_match_total_games:['total','Games'],tennis_match_total_sets:['total','Sets'],tennis_set_1_winner:['winner','Set 1'],tennis_set_2_winner:['winner','Set 2']};
+    const k=kinds[type];
+    return k ? {mtype:k[0],period:type==='tennis_match_winner'?'full_game':type,periodLabel:k[1]} : null;
+  }
   if (TEAM_TOTAL[prefix]?.test(type)) return { mtype: 'team_total', period: 'full_game', periodLabel: PERIODS.full_game };
   const m = new RegExp(`^${prefix}_(?:team|game)_(${Object.keys(PERIODS).join('|')})_(winner|spread|total)$`).exec(type);
   return m ? { mtype: m[2], period: m[1], periodLabel: PERIODS[m[1]] } : null;
@@ -291,7 +300,7 @@ async function snapshot() {
     : fs.existsSync(pub) ? openFromPublished(JSON.parse(fs.readFileSync(pub, 'utf8'))) : null;
   const markets = mergeOpen(prev?.markets, selectMarkets(ev), now, prev?.taken_at);
   const added = markets.filter(m => m.taken_at === now).length;
-  const data = { slug: SLUG, title: ev.title, start_time: ev.startTime, taken_at: prev?.taken_at || now, url: marketUrl(), markets };
+  const data = { slug: SLUG, title: ev.title, start_time: ev.startTime || ev.startDate, taken_at: prev?.taken_at || now, url: marketUrl(), markets };
   fs.writeFileSync(OPEN_FILE, JSON.stringify(data, null, 1));
   console.log(`Opening prices: ${markets.length} markets (${added} new at ${now}, ${markets.length - added} kept) -> ${OPEN_FILE}`);
 }

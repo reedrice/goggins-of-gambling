@@ -137,10 +137,24 @@ export function totals(list) {
     expected_rate: expN ? +(expSum / expN).toFixed(1) : null };
 }
 
+export function sportCategory(entry) {
+ const league=String(entry.slug || '').split('-')[0].toLowerCase();
+ if(['cfb','ncaaf'].includes(league))return 'ncaaf';
+ if(['cbb','ncaab','ncaam'].includes(league))return 'ncaab';
+ if(['ncaaw','wncaab'].includes(league))return 'wncaab';
+ if(['atp','wta','atpdb','wtadb','sixkings','tennis'].includes(league))return 'tennis';
+ if(['epl','ucl','uel','uecl','lal','sea','bun','bl1','fl1','lig1','mls','lmx','eflch'].includes(league))return 'soccer';
+ if(['pga','lpga','dpwt','pgatc','golf'].includes(league))return 'golf';
+ return ['nba','wnba','nfl','nhl','mlb'].includes(league) ? league : 'other';
+}
 export function summarize(record) {
   const by = t => record.entries.filter(e => e.tier === t);
   record.totals = { all: totals(record.entries), big: totals(by('big')), slight: totals(by('slight')) };
   if (by('untiered').length) record.totals.untiered = totals(by('untiered'));
+  const categories=['nba','wnba','nfl','ncaaf','ncaab','wncaab','nhl','mlb','soccer','tennis','golf'];
+  const grouped=new Map(categories.map(k=>[k,[]]));
+  for(const e of record.entries){const k=sportCategory(e);if(!grouped.has(k))grouped.set(k,[]);grouped.get(k).push(e);}
+  record.by_sport=Object.fromEntries([...grouped].map(([key,entries])=>[key,totals(entries)]));
   return record;
 }
 

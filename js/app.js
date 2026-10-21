@@ -2113,6 +2113,7 @@
       <div class="table-wrap"><table class="live-rec"><tr><th></th><th class="num">${esc(X.wlp)}</th><th class="num">${esc(X.hit)}</th><th class="num">${esc(X.expected)}</th><th class="num">${esc(X.units)}</th><th class="num">${esc(X.roi)}</th><th class="num">${esc(X.sample)}</th></tr>
       ${row(X.all, T.all)}${row(X.big, T.big)}${row(X.slight, T.slight)}${row(X.untiered, T.untiered)}</table></div>
       <p class="muted small">${esc(X.counts(all.n, all.pending))} ${esc(X.noisy)}</p>`;
+    if(rec.by_sport) h += '<h4>'+esc(X.bySport)+'</h4><div class="table-wrap"><table class="live-rec"><tr><th>'+esc(X.sport)+'</th>'+[X.wlp,X.hit,X.expected,X.units,X.roi,X.sample].map(label=>'<th class="num">'+esc(label)+'</th>').join('')+'</tr>'+Object.entries(rec.by_sport).map(([key,t])=>row(STR.liveBets.sports[key] || X.other,t)).join('')+'</table></div>';
     const list = rec.entries.slice().sort((a, b) => String(b.at).localeCompare(String(a.at))).slice(0, 30);
     if (!list.length) return h + `<div class="section-empty">${esc(X.empty)}</div>`;
     const badge = r => `<span class="badge ${r === 'win' ? 'won' : r === 'loss' ? 'lost' : r === 'pending' ? 'open' : 'push'}">${esc(X.result[r] || r)}</span>`;

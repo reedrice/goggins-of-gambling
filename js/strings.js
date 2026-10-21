@@ -410,7 +410,7 @@ window.STR = {
     },
     /** "Live Bets record" (app.js liveRecordHtml, data/live-record.json, HANDOFF §35). */
     live: {
-      title: 'Live Bets record',
+      title: 'Live Bets record', bySport:'By sport', sport:'Sport', other:'Other',
       intro: 'Every live alert, kept for good (wins and losses) and graded on the real final result. Each one counts as a flat 1 unit bet at the odds when the alert went out.',
       none: 'No live alerts graded yet.', empty: 'No live alerts yet. They start once games are live.',
       wlp: 'W-L-P', hit: 'Hit rate', expected: 'Expected', units: 'Units', roi: 'ROI', sample: 'Graded',
@@ -619,7 +619,7 @@ window.STR.liveBets = {
    about: 'About edges', explanation: 'Compared with the opening Polymarket price: big = 10–24 points lower, slight = 4–9. Game context comes from ESPN. Alerts show prices at detection; current cards may differ.'
  },
  noAlerts: 'No alerts across these games yet.',
- all: 'All games', games: n => n + ' games', failed: n => n + ' game feeds unavailable; retrying',
+ all: 'All games', games: n => n + ' games · Today & tomorrow', failed: n => n + ' game feeds unavailable; retrying',
  stale: 'Some prices may be old. The feed is waiting for an update.',
  empty: 'No qualifying price movements across these games right now.',
  unavailable: 'Live bets are unavailable. Retrying in a minute.'

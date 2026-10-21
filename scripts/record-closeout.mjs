@@ -9,7 +9,7 @@ const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const PATHS={NBA:'basketball/nba',WNBA:'basketball/wnba',NHL:'hockey/nhl',NFL:'football/nfl',MLB:'baseball/mlb',NCAAF:'football/college-football',NCAAB:'basketball/mens-college-basketball',WNCAAB:'basketball/womens-college-basketball'};
 export function closedDays(games){
  const groups=new Map();
- for(const g of games||[]){const day=/\d{4}-\d{2}-\d{2}/.exec(g.slug||'')?.[0];if(day){if(!groups.has(day))groups.set(day,[]);groups.get(day).push(g);}}
+ for(const g of games||[]){const start=Date.parse(g.start_time), day=Number.isFinite(start)?new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(start)):/\d{4}-\d{2}-\d{2}/.exec(g.slug||'')?.[0];if(day){if(!groups.has(day))groups.set(day,[]);groups.get(day).push(g);}}
  return [...groups].filter(([,rows])=>rows.length&&rows.every(g=>g.status==='final')).map(([day])=>day);
 }
 export function predictionResult(p,board){
