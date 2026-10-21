@@ -545,7 +545,7 @@
   /** Validate + store a new play bet. legs: [{marketId, side, c, desc, eventSlug}]. */
   function placePlay(stake, legs) {
     const safety=window.ComboSafety.check(legs);
-    if(safety.conflict||safety.duplicate||safety.sameGame||safety.unknown){toast(window.ComboSafety.message(legs,STR.comboSafety),6000);return false;}
+    if(safety.conflict||safety.duplicate){toast(window.ComboSafety.message(legs,STR.comboSafety),6000);return false;}
     const X = STR.play, st = S.getPlay();
     if (!PY.validName(st.name)) { toast(X.err.name, 4000); go('play'); return false; }
     const err = PY.checkNew(st.bets, stake, legs);
@@ -1518,7 +1518,6 @@
     const K = STR.calc;
     const safety=window.ComboSafety.check(calc.legs);
     if(safety.conflict||safety.duplicate)return toast(window.ComboSafety.message(calc.legs,STR.comboSafety),6000);
-    if((safety.sameGame||safety.unknown)&&!confirm(window.ComboSafety.message(calc.legs,STR.comboSafety)+'\n'+STR.comboSafety.recordOnly))return;
     const r = computeCalc(calc);
     if (!r.ok) return toast(K.errLegs);
     if (!r.quoted) return toast(K.errQuoted);

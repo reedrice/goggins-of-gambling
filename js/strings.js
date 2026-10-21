@@ -679,7 +679,7 @@ window.STR.pmSync = {
 };
 
 window.STR.comboSafety={
- conflict:'Conflicting legs: opposite sides of the same market cannot both win. Remove one leg.',
+ conflict:'Conflicting legs: these outcomes cannot both win. Remove one leg.',
  duplicate:'Duplicate market: this is the same outcome twice. Remove the repeated leg.',
  sameGame:'Compatibility warning: these legs share a game and may conflict. Full-game and half/quarter bets count different scores. Compatibility has not been verified.',
  unknown:'Compatibility could not be checked because some legs lack a verified game or market.',
