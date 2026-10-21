@@ -4,12 +4,12 @@
  "game": "Sorana Cirstea vs. Sara Bejlek",
  "url": "https://polymarket.us/sports/wta/wta-sorcir-sarbej-2026-10-21",
  "start_time": "2026-10-21T10:35:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185540",
-  "fetched_at": "2026-10-21T10:59:24.211Z",
+  "fetched_at": "2026-10-21T12:54:34.668Z",
   "tennis": true,
   "tennis_match": {
    "id": "185540",
@@ -17,17 +17,17 @@
    "date": "2026-10-21T10:40Z",
    "startDate": "2026-10-21T10:40Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(8) Sorana Cirstea (ROM) leads Sara Bejlek (CZE) 2-1",
+     "text": "Sara Bejlek (CZE) bt (8) Sorana Cirstea (ROM) 7-6 (7-3) 6-4",
      "type": "event"
     }
    ],
@@ -55,10 +55,16 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "winner": true,
      "linescores": [
       {
-       "value": 1
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -98,13 +104,19 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "winner": false,
      "curatedRank": {
       "current": 8
      },
      "linescores": [
       {
-       "value": 2
+       "value": 6,
+       "tiebreak": 3,
+       "winner": false
+      },
+      {
+       "value": 4,
+       "winner": false
       }
      ],
      "athlete": {
@@ -139,11 +151,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 963,
    "type": {
     "id": "2",
@@ -160,16 +167,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Sara Bejlek",
    "alias": "Sara Bejlek",
    "name": "Sara Bejlek",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Sorana Cirstea",
@@ -181,7 +188,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-21T10:59:24.211Z",
+ "updated": "2026-10-21T12:54:34.670Z",
  "open_taken_at": "2026-10-21T05:15:30.530Z",
  "thresholds": {
   "big": 10,
@@ -257,6 +264,26 @@
  ],
  "edges": [
   {
+   "key": "1614559:0",
+   "market_id": "1614559",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Sorana Cirstea cover -4.5 vs the Sara Bejlek in Sorana Cirstea vs. Sara Bejlek?",
+   "side": "Sorana Cirstea -4.50 (Games)",
+   "open_chance": 45,
+   "now_chance": 35,
+   "open_odds": "+122",
+   "now_odds": "+186",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-10-21T08:34:17.066Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1614524:1",
    "market_id": "1614524",
    "market": "Set 1 winner",
@@ -273,7 +300,7 @@
    "reason": null,
    "context": "Sara Bejlek 1 · Sorana Cirstea 2 · 1st Set (games by set)",
    "first_seen": "2026-10-21T10:59:24.211Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -293,26 +320,6 @@
    "reason": null,
    "context": "Sara Bejlek 1 · Sorana Cirstea 2 · 1st Set (games by set)",
    "first_seen": "2026-10-21T08:54:48.822Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1614559:0",
-   "market_id": "1614559",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Sorana Cirstea cover -4.5 vs the Sara Bejlek in Sorana Cirstea vs. Sara Bejlek?",
-   "side": "Sorana Cirstea -4.50 (Games)",
-   "open_chance": 45,
-   "now_chance": 35,
-   "open_odds": "+122",
-   "now_odds": "+186",
-   "edge": 10,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-10-21T08:34:17.066Z",
    "status": "gone",
    "kalshi": null
   },
@@ -338,6 +345,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1614524:1:2026-10-21T10:59:24.211Z",
+   "key": "1614524:1",
+   "at": "2026-10-21T12:54:34.670Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "No: Sorana Cirstea win set 1 against Sara Bejlek",
+   "market": "Set 1 winner",
+   "now_odds": "+213",
+   "now_chance": 32,
+   "edge": 6,
+   "text": "Edge gone: No: Sorana Cirstea win set 1 against Sara Bejlek (Set 1 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-sorcir-sarbej-2026-10-21"
+  },
   {
    "id": "new_edge:1614524:1:slight",
    "key": "1614524:1",
@@ -444,7 +465,8 @@
   "gone:1614559:1:2026-10-21T08:54:48.822Z",
   "new_edge:1613620:0:slight",
   "new_edge:1614524:1:slight",
-  "gone:1613620:0:2026-10-21T10:46:47.532Z"
+  "gone:1613620:0:2026-10-21T10:46:47.532Z",
+  "gone:1614524:1:2026-10-21T10:59:24.211Z"
  ],
  "kalshi_checked": null
 }

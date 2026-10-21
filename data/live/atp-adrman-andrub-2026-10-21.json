@@ -4,12 +4,12 @@
  "game": "Adrian Mannarino vs. Andrey Rublev",
  "url": "https://polymarket.us/sports/atp/atp-adrman-andrub-2026-10-21",
  "start_time": "2026-10-21T09:55:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "184993",
-  "fetched_at": "2026-10-21T10:59:23.466Z",
+  "fetched_at": "2026-10-21T12:54:41.465Z",
   "tennis": true,
   "tennis_match": {
    "id": "184993",
@@ -17,17 +17,17 @@
    "date": "2026-10-21T10:05Z",
    "startDate": "2026-10-21T10:05Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Adrian Mannarino (FRA) leads (4) Andrey Rublev (RUS) 6-4",
+     "text": "Adrian Mannarino (FRA) bt (4) Andrey Rublev (RUS) 6-4 3-6 6-3",
      "type": "event"
     }
    ],
@@ -55,12 +55,22 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
      "curatedRank": {
       "current": 4
      },
      "linescores": [
       {
-       "value": 4
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 3,
+       "winner": false
       }
      ],
      "athlete": {
@@ -100,9 +110,19 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -153,28 +173,28 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Andrey Rublev",
    "alias": "Andrey Rublev",
    "name": "Andrey Rublev",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Adrian Mannarino",
    "alias": "Adrian Mannarino",
    "name": "Adrian Mannarino",
-   "score": 0
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-21T10:59:23.467Z",
+ "updated": "2026-10-21T12:54:41.466Z",
  "open_taken_at": "2026-10-21T05:15:19.586Z",
  "thresholds": {
   "big": 10,
@@ -310,7 +330,7 @@
    "reason": "Big move (26 pts), likely news",
    "context": "Andrey Rublev 4 · Adrian Mannarino 6 · 1st Set (games by set)",
    "first_seen": "2026-10-21T10:13:29.005Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -330,7 +350,7 @@
    "reason": "Big move (26 pts), likely news",
    "context": "Andrey Rublev 4 · Adrian Mannarino 6 · 1st Set (games by set)",
    "first_seen": "2026-10-21T08:54:47.755Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -350,7 +370,7 @@
    "reason": "Big move (25 pts), likely news",
    "context": "Andrey Rublev 4 · Adrian Mannarino 6 · 1st Set (games by set)",
    "first_seen": "2026-10-21T10:13:29.005Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -370,7 +390,7 @@
    "reason": "Explained by score: Andrey Rublev not above the games spread right now",
    "context": "Andrey Rublev 4 · Adrian Mannarino 6 · 1st Set (games by set)",
    "first_seen": "2026-10-21T10:19:31.741Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
