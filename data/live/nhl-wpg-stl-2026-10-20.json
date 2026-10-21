@@ -9,12 +9,12 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892544",
-  "fetched_at": "2026-10-21T01:46:14.742Z",
+  "fetched_at": "2026-10-21T02:10:13.804Z",
   "game_state": "in",
-  "espn_status": "STATUS_END_PERIOD",
-  "period": 2,
-  "clock": "0:00",
-  "regulation_secs_left": 1800,
+  "espn_status": "STATUS_IN_PROGRESS",
+  "period": 3,
+  "clock": "11:35",
+  "regulation_secs_left": 1595,
   "home": {
    "abbr": "STL",
    "alias": "Blues",
@@ -26,7 +26,7 @@
    "abbr": "WPG",
    "alias": "Jets",
    "name": "Winnipeg Jets",
-   "score": 0,
+   "score": 1,
    "id": "28"
   },
   "possession": null,
@@ -105,19 +105,37 @@
    },
    {
     "team": "STL",
-    "player": "Philip Broberg",
-    "short": "P. Broberg",
-    "pos": "D"
+    "player": "Dylan Holloway",
+    "short": "D. Holloway",
+    "pos": "LW"
    },
    {
     "team": "STL",
     "player": "Jimmy Snuggerud",
     "short": "J. Snuggerud",
     "pos": "RW"
+   },
+   {
+    "team": "WPG",
+    "player": "Cole Perfetti",
+    "short": "C. Perfetti",
+    "pos": "C"
+   },
+   {
+    "team": "WPG",
+    "player": "Neal Pionk",
+    "short": "N. Pionk",
+    "pos": "D"
+   },
+   {
+    "team": "WPG",
+    "player": "Cole Perfetti",
+    "short": "C. Perfetti",
+    "pos": "C"
    }
   ]
  },
- "updated": "2026-10-21T01:46:14.744Z",
+ "updated": "2026-10-21T02:10:13.805Z",
  "open_taken_at": "2026-10-20T22:26:57.565Z",
  "thresholds": {
   "big": 10,
@@ -2290,14 +2308,14 @@
    "question": "Will the total in WPG vs STL be more than 4.5?",
    "side": "Over 4.5",
    "open_chance": 77,
-   "now_chance": 24,
+   "now_chance": 30,
    "open_odds": "-335",
-   "now_odds": "+317",
-   "edge": 53,
+   "now_odds": "+233",
+   "edge": 47,
    "tier": "big",
    "class": "score",
-   "reason": "Explained by score: scoring below pace (1 pts, pace 2)",
-   "context": "WPG 0, STL 1, End of Q2",
+   "reason": "Explained by score: scoring below pace (2 pts, pace 3)",
+   "context": "WPG 1, STL 1, Q3 11:35",
    "first_seen": "2026-10-21T00:24:03.522Z",
    "status": "open",
    "kalshi": true
@@ -2310,14 +2328,14 @@
    "question": "Will the total in WPG vs STL be more than 3.5?",
    "side": "Over 3.5",
    "open_chance": 86,
-   "now_chance": 37,
+   "now_chance": 43,
    "open_odds": "-614",
-   "now_odds": "+170",
-   "edge": 49,
+   "now_odds": "+133",
+   "edge": 43,
    "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: scoring below pace (1 pts, pace 2)",
-   "context": "WPG 0, STL 1, End of Q2",
+   "class": "news",
+   "reason": "Big move (43 pts), likely news",
+   "context": "WPG 1, STL 1, Q3 11:35",
    "first_seen": "2026-10-21T00:44:46.125Z",
    "status": "open",
    "kalshi": true
@@ -2330,14 +2348,14 @@
    "question": "Will Kyle Connor record at least 1 goals in WPG vs STL?",
    "side": "Yes: Kyle Connor record at least 1 goals in WPG vs STL",
    "open_chance": 40,
-   "now_chance": 19,
+   "now_chance": 18,
    "open_odds": "+150",
-   "now_odds": "+426",
-   "edge": 21,
+   "now_odds": "+456",
+   "edge": 22,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "WPG down 1, End of Q2",
+   "context": "WPG tied, Q3 11:35",
    "first_seen": "2026-10-21T01:24:11.778Z",
    "status": "open",
    "kalshi": true
@@ -2359,27 +2377,7 @@
    "reason": "Explained by score: WPG trailing by 1",
    "context": "WPG down 1, End of Q2",
    "first_seen": "2026-10-21T00:34:05.570Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1481122:0",
-   "market_id": "1481122",
-   "market": "Main spread",
-   "group": "game",
-   "question": "Will the WPG Jets cover 1.5 vs the STL Blues in WPG vs STL?",
-   "side": "Jets +1.50",
-   "open_chance": 67,
-   "now_chance": 59,
-   "open_odds": "-203",
-   "now_odds": "-144",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "WPG down 1, End of Q2",
-   "first_seen": "2026-10-21T00:34:05.570Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": true
   },
   {
@@ -2405,17 +2403,17 @@
  ],
  "alerts": [
   {
-   "id": "new_edge:1481122:0:slight",
-   "key": "1481122:0",
-   "at": "2026-10-21T01:46:14.744Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Jets +1.50",
-   "market": "Main spread",
-   "now_odds": "-144",
-   "now_chance": 59,
-   "edge": 8,
-   "text": "New slight edge: Jets +1.50 (Main spread), 8 points cheaper than open.",
+   "id": "news:1481126:0",
+   "key": "1481126:0",
+   "at": "2026-10-21T02:10:13.805Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Over 3.5",
+   "market": "Alt total",
+   "now_odds": "+133",
+   "now_chance": 43,
+   "edge": 43,
+   "text": "Big move, likely news: Over 3.5 (Alt total) is 43 points cheaper than open.",
    "url": "https://polymarket.us/sports/nhl/nhl-wpg-stl-2026-10-20"
   },
   {
@@ -2489,20 +2487,6 @@
    "url": "https://polymarket.us/sports/nhl/nhl-wpg-stl-2026-10-20"
   },
   {
-   "id": "new_edge:1481122:0:big",
-   "key": "1481122:0",
-   "at": "2026-10-21T00:34:05.570Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Jets +1.50",
-   "market": "Main spread",
-   "now_odds": "-117",
-   "now_chance": 54,
-   "edge": 13,
-   "text": "New big edge: Jets +1.50 (Main spread), 13 points cheaper than open.",
-   "url": "https://polymarket.us/sports/nhl/nhl-wpg-stl-2026-10-20"
-  },
-  {
    "id": "new_edge:1481123:0:big",
    "key": "1481123:0",
    "at": "2026-10-21T00:34:05.570Z",
@@ -2526,10 +2510,11 @@
   "new_edge:1481123:0:slight",
   "new_edge:1602490:0:big",
   "new_edge:1481122:0:slight",
-  "gone:1481123:0:2026-10-21T00:34:05.570Z"
+  "gone:1481123:0:2026-10-21T00:34:05.570Z",
+  "news:1481126:0"
  ],
  "kalshi_checked": {
-  "at": "2026-10-21T01:46:15.018Z",
+  "at": "2026-10-21T02:10:14.050Z",
   "event": "26OCT20WPGSTL"
  }
 }
