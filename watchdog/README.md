@@ -6,7 +6,7 @@ Cloudflare Worker + one-minute Cron Trigger, separate from GitHub's scheduler. S
 
 - Check live index, ESPN freshness and up to three oldest due game files every minute. More than five minutes old is stale. Final games and events outside the existing Chicago today/tomorrow window are exempt.
 - Respect `live-feed-update` enabled/github-actions ownership in the public repository. Skip recovery when ownership is intentionally disabled/transferred.
-- Avoid duplicating queued/running work. Request at most one recovery per outage, with a one-hour cross-outage cooldown. Never cancel a run or force-push.
+- Avoid duplicating queued/running work. Request at most one recovery per outage, with a five-minute minimum dispatch gap; verified recovery clears the outage cooldown. Never cancel a run or force-push.
 - Verify served JSON, rather than assuming a successful workflow means publication succeeded. Alert after ten minutes following a recovery request; an existing stuck run is allowed at most thirty minutes from first detection.
 - Open one incident assigned to and mentioning reedrice. GitHub Mobile mentions/assignments use the notification settings Reed already tested. Close the incident after the public feed is verified healthy. Retry notification failures without printing API responses or secrets.
 - Durable Object state contains only check times, recovery timestamps, public diagnostics and incident number. It is operational state, not a sports database or private financial data. A single object serializes overlapping cron calls.
@@ -34,3 +34,5 @@ To pause: remove/disable this Worker's cron. Repository owner gate prevents reco
 
 ## Verified deployment (October 21, 2026)
 Worker: https://mib-feed-watchdog.reedrice9.workers.dev/status . One-minute cron and private GitHub secret verified. A genuine stale-feed recovery dispatched run 39639780024 at 16:59:51 UTC; it passed and the Worker verified healthy public JSON at 17:03:48 UTC. Alert/resolve behavior passed native mocks; this was not a new live notification test. Renew the private fine-grained credential before November 20, 2026.
+
+Cloudflare also paces the existing workflow every five minutes when no recent or active run exists, independently of GitHub cron. Healthy recovery clears the previous outage cooldown. Failed outages retain bounded recovery and incident deduplication. This targets start cadence, not a guarantee that collection plus Pages publication finishes within five minutes.
