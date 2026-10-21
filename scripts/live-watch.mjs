@@ -408,13 +408,16 @@ export function buildLive(open, ev, prev, nowIso = new Date().toISOString(), ctx
   // except ones that crossed the odds limit: those just disappear.
   for (const e of Object.values(prevEdges)) if (!seen.has(e.key) && !outOfLimit.has(e.key)) edges.push({ ...e, status: 'gone' });
   edges.sort((a, b) => (a.status === 'gone') - (b.status === 'gone') || b.edge - a.edge);
-  const started = open.start_time && Date.parse(nowIso) >= Date.parse(open.start_time);
+  // Keep the price baseline, but reconcile schedule changes from the current event.
+  const eventStart = ev.startTime || ev.startDate;
+  const startTime = Number.isFinite(Date.parse(eventStart)) ? eventStart : open.start_time;
+  const started = startTime && Date.parse(nowIso) >= Date.parse(startTime);
   // ESPN "post" also counts as final (Oct 20: markets can stay open a while after the game).
   const status = gameOver(ev) || ctx?.game_state === 'post' ? 'final' : started ? 'live' : 'pregame';
   const al = liveAlerts(prev, edges, status, nowIso, open.url, outOfLimit);
   return {
     _note: 'Real Polymarket US prices (gateway.polymarket.us). Chances in points (0-100). No dollar amounts.',
-    slug: open.slug, game: open.title, url: open.url, start_time: open.start_time,
+    slug: open.slug, game: open.title, url: open.url, start_time: startTime,
     status,
     // Live game context from ESPN (score, clock, injuries) or { available: false }.
     game_context: ctx || { available: false, error: 'not fetched' },
