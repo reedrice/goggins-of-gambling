@@ -9,24 +9,24 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892544",
-  "fetched_at": "2026-10-21T00:04:01.921Z",
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 0,
-  "clock": null,
-  "regulation_secs_left": 3600,
+  "fetched_at": "2026-10-21T00:13:59.375Z",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
+  "period": 1,
+  "clock": "17:17",
+  "regulation_secs_left": 3737,
   "home": {
    "abbr": "STL",
    "alias": "Blues",
    "name": "St. Louis Blues",
-   "score": null,
+   "score": 0,
    "id": "19"
   },
   "away": {
    "abbr": "WPG",
    "alias": "Jets",
    "name": "Winnipeg Jets",
-   "score": null,
+   "score": 0,
    "id": "28"
   },
   "possession": null,
@@ -96,46 +96,9 @@
    }
   ],
   "in_game_injuries": [],
-  "leaders": [
-   {
-    "team": "STL",
-    "player": "Mason McTavish",
-    "short": "M. McTavish",
-    "pos": "C"
-   },
-   {
-    "team": "STL",
-    "player": "Dylan Holloway",
-    "short": "D. Holloway",
-    "pos": "LW"
-   },
-   {
-    "team": "STL",
-    "player": "Mason McTavish",
-    "short": "M. McTavish",
-    "pos": "C"
-   },
-   {
-    "team": "WPG",
-    "player": "Kyle Connor",
-    "short": "K. Connor",
-    "pos": "LW"
-   },
-   {
-    "team": "WPG",
-    "player": "Mark Scheifele",
-    "short": "M. Scheifele",
-    "pos": "C"
-   },
-   {
-    "team": "WPG",
-    "player": "Kyle Connor",
-    "short": "K. Connor",
-    "pos": "LW"
-   }
-  ]
+  "leaders": []
  },
- "updated": "2026-10-21T00:04:01.922Z",
+ "updated": "2026-10-21T00:13:59.376Z",
  "open_taken_at": "2026-10-20T22:26:57.565Z",
  "thresholds": {
   "big": 10,
@@ -2299,11 +2262,49 @@
    "taken_at": "2026-10-20T22:26:57.565Z"
   }
  ],
- "edges": [],
- "alerts": [],
- "alert_seen": [],
+ "edges": [
+  {
+   "key": "1481130:0",
+   "market_id": "1481130",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in WPG vs STL be more than 7.5?",
+   "side": "Over 7.5",
+   "open_chance": 24,
+   "now_chance": 19,
+   "open_odds": "+317",
+   "now_odds": "+426",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "WPG 0, STL 0, Q1 17:17",
+   "first_seen": "2026-10-21T00:13:59.376Z",
+   "status": "open",
+   "kalshi": true
+  }
+ ],
+ "alerts": [
+  {
+   "id": "new_edge:1481130:0:slight",
+   "key": "1481130:0",
+   "at": "2026-10-21T00:13:59.376Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 7.5",
+   "market": "Alt total",
+   "now_odds": "+426",
+   "now_chance": 19,
+   "edge": 5,
+   "text": "New slight edge: Over 7.5 (Alt total), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-wpg-stl-2026-10-20"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:1481130:0:slight"
+ ],
  "kalshi_checked": {
-  "at": "2026-10-21T00:04:02.154Z",
+  "at": "2026-10-21T00:13:59.391Z",
   "event": "26OCT20WPGSTL"
  }
 }
