@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185101",
-  "fetched_at": "2026-10-21T21:01:21.071Z",
+  "fetched_at": "2026-10-21T21:04:18.341Z",
   "tennis": true,
   "tennis_match": {
    "id": "185101",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(4) Tommy Paul (USA) leads Benjamin Bonzi (FRA) 6-4 6-7 (4-7) 1-0",
+     "text": "Benjamin Bonzi (FRA) leads (4) Tommy Paul (USA) 4-6 7-6 (7-4) 1-1",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 4
      },
@@ -109,6 +110,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 4,
@@ -120,7 +122,7 @@
        "winner": true
       },
       {
-       "value": 0
+       "value": 1
       }
      ],
      "athlete": {
@@ -155,6 +157,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 110,
    "type": {
     "id": "1",
@@ -192,7 +199,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-21T21:01:21.072Z",
+ "updated": "2026-10-21T21:04:18.341Z",
  "open_taken_at": "2026-10-21T05:15:58.759Z",
  "thresholds": {
   "big": 10,
@@ -284,16 +291,32 @@
    "reason": null,
    "context": "Tommy Paul 6, 6, 1 · Benjamin Bonzi 4, 7, 0 · 3rd Set (games by set)",
    "first_seen": "2026-10-21T20:54:19.021Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
+ "alerts": [
+  {
+   "id": "gone:1624692:1:2026-10-21T20:54:19.021Z",
+   "key": "1624692:1",
+   "at": "2026-10-21T21:04:18.341Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Tommy Paul win",
+   "market": "Moneyline",
+   "now_odds": "-203",
+   "now_chance": 67,
+   "edge": 7,
+   "text": "Edge gone: Tommy Paul win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-benbon-tompau-2026-10-21"
+  }
+ ],
  "alert_seen": [
   "new_edge:1626842:1:slight",
   "new_edge:1624692:1:slight",
   "new_edge:1624692:0:slight",
-  "gone:1624692:1:2026-10-21T19:26:16.130Z"
+  "gone:1624692:1:2026-10-21T19:26:16.130Z",
+  "gone:1624692:1:2026-10-21T20:54:19.021Z"
  ],
  "kalshi_checked": null
 }
