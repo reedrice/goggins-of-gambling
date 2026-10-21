@@ -1062,7 +1062,8 @@
       // the Record tab, and never as a new bottom tab). Pablo's files stay untouched.
       $('#picks-view').innerHTML = '<div id="live-bets-root" class="live-bets-root"></div><section id="live-record-root" class="live-record-root"></section>';
       Promise.all([fetchData('data/live-record.json').catch(()=>null),fetchData('data/live-feedback.json').catch(()=>null)]).then(([rec,feedback])=>{const box=$('#live-record-root');if(box){box.innerHTML=liveRecordHtml(rec);if(rec&&window.LiveFeedback)window.LiveFeedback.mount(box,rec.entries||[],feedback);}});
-      if (window.LiveBets && typeof LiveBets.render === 'function') LiveBets.render($('#live-bets-root'));
+      if (window.LiveBets && typeof LiveBets.render === 'function') LiveBets.render($('#live-bets-root'),liveSlateSport.toLowerCase());
+      window.dispatchEvent(new CustomEvent('picks:sport-change',{detail:{sport:liveSlateSport}}));
       [0, 1500, 4000].forEach(ms => setTimeout(() => { paintLiveBadges(); paintLiveToast(); }, ms));   // Richie's view updates its seen key -> badge clears
       return;
     }
@@ -1167,9 +1168,22 @@
   let picksDay = null;
   /** Selected sport chip on the Picks tab ('' = all sports). */
   let picksSport = '';
+  let liveSlateSport = '';
+  const slateSports=['','NFL','NCAAF','NBA','WNBA','NCAAB','WNCAAB','MLB','NHL','Soccer','Tennis','Golf'];
+  window.addEventListener('live:sport-change',e=>{
+    const sport=slateSports.find(s=>s.toLowerCase()===e.detail?.sport);
+    if(sport===undefined)return;
+    liveSlateSport=sport;
+    if(location.hash==='#live')window.dispatchEvent(new CustomEvent('picks:sport-change',{detail:{sport}}));
+  });
   window.addEventListener('slate:select',e=>{
     const sport=e.detail?.sport;
-    if(!['','NFL','NCAAF','NBA','WNBA','NCAAB','WNCAAB','MLB','NHL','Soccer','Tennis','Golf'].includes(sport))return;
+    if(!slateSports.includes(sport))return;
+    if(location.hash==='#live'){
+      liveSlateSport=sport;
+      $('#live-bets-root')?._lbSetSport?.(sport.toLowerCase());
+      return;
+    }
     picksDay=todayCT();picksSport=sport;go('picks');
   });
 

@@ -362,7 +362,7 @@
     sportSelect.setAttribute('aria-label',liveText().sport);
     const sportKeys=[...new Set([...Object.keys(liveText().sports),...(ui.games || []).map(sportOf)])];
     ['',...sportKeys].forEach(key=>{const option=el('option',null,key ? liveText().sports[key] || key.toUpperCase() : liveText().allSports);option.value=key;option.selected=key===ui.sport;sportSelect.append(option);});
-    sportSelect.onchange=()=>{ui.sport=sportSelect.value;ui.slug='all';ui.game=ui.prop=false;ui.load();};
+    sportSelect.onchange=()=>{ui.sport=sportSelect.value;ui.slug='all';ui.game=ui.prop=false;window.dispatchEvent(new CustomEvent('live:sport-change',{detail:{sport:ui.sport}}));ui.load();};
     sportLabel.append(sportSelect);controls.append(sportLabel);
     const whenLabel=el('label','lb-game-label',liveText().when),whenSelect=el('select','lb-game-select');
     whenSelect.setAttribute('aria-label',liveText().when);
@@ -427,7 +427,7 @@
     return stop;
   }
   /** Entry point: refresh automatically, including after sleep/tab return/network recovery. */
-  function render(rootEl) {
+  function render(rootEl, initialSport='') {
     if(rootEl._lbStop)rootEl._lbStop();
     const toolbar=el('div','lb-refresh-row'), refresh=el('button','lb-review',liveText().refresh), status=el('span','lb-refresh-status');
     refresh.type='button';refresh.title=liveText().refreshHelp;status.setAttribute('role','status');
@@ -435,7 +435,8 @@
     content.append(el('div', 'live-bets-empty', 'Loading live bets…'));
     let loading=false;
     let last = null;
-    const ui = { slug: 'all', when:'today', sport:'', filter: 'all', visitBase: readSeen(), details: new Set(), game: false, prop: false, reasons: false, redraw: () => { if (last) draw(content, last, ui); } };
+    const ui = { slug: 'all', when:'today', sport:initialSport, filter: 'all', visitBase: readSeen(), details: new Set(), game: false, prop: false, reasons: false, redraw: () => { if (last) draw(content, last, ui); } };
+    rootEl._lbSetSport=sport=>{ui.sport=sport;ui.slug='all';window.dispatchEvent(new CustomEvent('live:sport-change',{detail:{sport}}));ui.load();};
     // Which game: data/live/index.json (written by live-tick.mjs), else SLUG.
     let request = 0;
     const load = ui.load = async (manual=false) => {
