@@ -754,3 +754,6 @@ a.btn-play { display: block; text-align: center; text-decoration: none; margin-t
 :is(#tab-picks, #tab-bets) meter.bp-bar::-webkit-meter-bar { background:#303039; border:0; }
 :is(#tab-picks, #tab-bets) meter.bp-bar::-webkit-meter-optimum-value { background:#40c69b; }
 :is(#tab-picks, #tab-bets) meter.bp-bar::-webkit-meter-suboptimum-value { background:#eab95a; }
+:is(#tab-picks, #tab-bets) .bp-margin-track {position:relative;}
+:is(#tab-picks, #tab-bets) .bp-margin-track::after {content:'';position:absolute;left:50%;top:0;height:8px;width:2px;background:#fff;pointer-events:none;}
+:is(#tab-picks, #tab-bets) .bp-note {display:block;}

@@ -112,7 +112,8 @@
    const own=scoresFor(selected,bet.segment,league,status.period),opp=scoresFor(competitors.find(c=>c!==selected),bet.segment,league,status.period);
    if(own===null||opp===null)return {reason:'noStat',game};
    const margin=own-opp+(bet.line||0);
-   return {kind:'margin',margin:s.side==='no'?-margin:margin,line:bet.line,elapsed:gameElapsed(status,league),final,game};
+   const subject=s.side==='no'?competitors.find(c=>c!==selected):selected;
+   return {kind:'margin',margin:s.side==='no'?-margin:margin,line:bet.line,team:subject.team?.name||subject.team?.shortDisplayName||subject.team?.abbreviation,elapsed:gameElapsed(status,league),final,game};
   }
   return {reason:'noStat',game};
  }
@@ -147,6 +148,21 @@
  function node(tag,cls,text) {const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;}
  function image(url) {if(!/^https:\/\//i.test(url || ''))return null;const img=node('img','bp-logo');img.src=url;img.width=22;img.height=22;img.alt='';img.decoding='async';img.onerror=()=>img.remove();return img;}
  function teamName(c) {const label=node('span','bp-team');const logo=image(c.team?.logo || c.team?.logos?.[0]?.href);if(logo)label.append(logo);label.append(node('strong','',c.team?.shortDisplayName || c.team?.name || c.team?.abbreviation || ''));return label;}
+ function clockText(status,S){
+  if(status?.type?.completed)return S.clockFinal;
+  const detail=status?.type?.detail||status?.type?.shortDetail||'';
+  if(status?.type?.state!=='in')return detail||S.clockUnavailable;
+  if(/HALFTIME|END_PERIOD|INTERMISSION/.test(status.type?.name||''))return detail||S.clockUpdating;
+  const clock=String(status.displayClock||'');
+  if(!clock)return detail||S.clockUnavailable;
+  if(/^(?:0+:)?0+(?:\.0+)?$/.test(clock))return S.clockUpdating;
+  return detail||S.clockLive(clock);
+ }
+ function marginText(r,S){
+  const team=r.team||S.yourTeam;
+  if(r.line!==undefined)return r.margin>0?S.covering(team,r.margin,r.final):S.needsCover(team,Math.floor(-r.margin)+1,r.final);
+  return r.margin>0?S.ahead(team,r.margin,r.final):r.margin<0?S.behind(team,-r.margin,r.final):S.tied(team,r.final);
+ }
  function render(host,s,result) {
   const S=root.STR.progress;host.title=S.explanation;const rows=[];const game=result.game;
   if(game) {
@@ -155,7 +171,7 @@
    if(matchup){matchup.replaceChildren();competitors.forEach((c,i)=>{if(i)matchup.append(node('span','bp-at','@'));matchup.append(teamName(c));});}
    const score=node('div','bp-scoreline');
    if(game.status?.type?.state==='pre')score.textContent=S.starts(new Date(game.date || '').toLocaleTimeString('en-US',{timeZone:'America/Chicago',hour:'numeric',minute:'2-digit'}));
-   else {score.append(node('b','',competitors.map(c=>(c.team?.abbreviation || '')+' '+(c.score ?? S.dash)).join(' · ')),node('span','bp-clock',game.status?.type?.shortDetail || game.status?.type?.detail || S.clockUnavailable));}
+   else {score.append(node('b','',competitors.map(c=>(c.team?.abbreviation || '')+' '+(c.score ?? S.dash)).join(' · ')),node('span','bp-clock',clockText(game.status,S)));}
    rows.push(score);
   }
   if(result.reason)rows.push(node('div','bp-note',S[result.reason] || S.noStat));
@@ -163,14 +179,13 @@
    const limit=result.target,value=result.value;
    const row=node('div','bp-values');row.append(node('b','',S.count(value,limit,S.stats[result.stat] || S.stats.score)));
    let note;
-   if(result.under)note=value<limit?S.below(limit):value===limit&&result.strict?S.atLine:S.limitReached;
+   if(result.under)note=value<limit?S.stayUnder(limit,result.final):value===limit&&result.strict?S.atLine:S.overLimit;
    else {const remaining=Math.max(0,(result.strict?Math.floor(limit)+1:limit)-value);note=remaining?(result.final?S.notReached:S.needs(remaining)):S.reached;}
    row.append(node('span','',note));rows.push(row);
    const bar=node('progress','bp-bar');bar.max=limit>0?limit:1;bar.value=Math.max(0,Math.min(value,bar.max));bar.setAttribute('aria-label',S.count(value,limit,S.stats[result.stat] || S.stats.score));if(result.under)bar.classList.add('bp-limit');rows.push(bar);
   } else if(result.kind==='margin') {
-   rows.push(node('div','bp-values',result.line!==undefined?S.adjusted(result.margin):S.margin(result.margin)));
-   const margin=node('meter','bp-bar');const range=Math.max(10,Math.abs(result.margin)*1.25);margin.min=-range;margin.max=range;margin.low=0;margin.high=0;margin.optimum=range;margin.value=result.margin;margin.setAttribute('aria-label',S.marginScale);rows.push(margin,node('span','bp-note',S.marginScale));
-   if(result.elapsed!==null) {const label=node('span','bp-note',S.gameElapsed);const bar=node('progress','bp-bar');bar.max=100;bar.value=result.elapsed;bar.setAttribute('aria-label',S.gameElapsed);rows.push(label,bar);}
+   const caption=marginText(result,S);rows.push(node('div','bp-values',caption));
+   const track=node('div','bp-margin-track');const margin=node('meter','bp-bar');const range=Math.max(10,Math.abs(result.margin)*1.25);margin.min=-range;margin.max=range;margin.low=0;margin.high=0;margin.optimum=range;margin.value=result.margin;margin.setAttribute('aria-label',caption);track.append(margin);rows.push(track,node('div','bp-note',S.marginGuide));
   }
   if(game?.status?.type?.completed)rows.push(node('span','bp-note',S.final));
   rows.push(node('span','bp-checked',S.checked(new Date().toLocaleTimeString('en-US',{timeZone:'America/Chicago',hour:'numeric',minute:'2-digit'}))));
@@ -189,6 +204,9 @@
    if(!event){render(host,s,{reason:'noGame'});return;}
    let summary={header:{competitions:event.competitions}};
    if(event.status?.type?.state!=='pre')summary=await get('https://site.web.api.espn.com/apis/site/v2/sports/'+path+'/summary?event='+event.id);
+   // Keep score, splits and clock together from one scoreboard snapshot. Summary
+   // box scores can lag or temporarily report a zero clock at period transitions.
+   summary={...summary,header:{...summary.header,competitions:[{...event.competitions[0],status:event.status||event.competitions[0].status}]}};
    if(host.isConnected)render(host,s,evaluateBet(s,summary,root.Viz?.parseProp));
   } catch(error) {if(host.isConnected)render(host,{}, {reason:'unavailable'});} finally {host._bpBusy=false;}
  }
@@ -202,6 +220,6 @@
   document.addEventListener('toggle',schedule,true);document.addEventListener('visibilitychange',schedule);
   setInterval(scan,15000);
  }
- return {spec,html,findEvent,athleteStat,parseBet,selectedTeam,scoresFor,gameElapsed,evaluateBet,resolveMarket};
+ return {spec,html,findEvent,athleteStat,parseBet,selectedTeam,scoresFor,gameElapsed,evaluateBet,resolveMarket,clockText,marginText};
 });
 
