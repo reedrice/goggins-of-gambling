@@ -724,16 +724,10 @@ a.btn-play { display: block; text-align: center; text-decoration: none; margin-t
 
 /* Live statistical progress: only the Picks tab, including its Live Bets view. */
 :is(#tab-picks, #tab-bets) .bp-host { padding: 10px 0; margin-top: 8px; border-top: 1px solid #ffffff15; font: 12px/1.5 system-ui; }
-:is(#tab-picks, #tab-bets) .bp-scoreline, #tab-picks .bp-values { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 12px; color: #e1e1e8; }
-:is(#tab-picks, #tab-bets) .bp-clock, #tab-picks .bp-note { color: #b0b0ba; font-size: 11px; }
+:is(#tab-picks, #tab-bets) .bp-scoreline, :is(#tab-picks, #tab-bets) .bp-values { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 12px; color: #e1e1e8; }
+:is(#tab-picks, #tab-bets) .bp-clock, :is(#tab-picks, #tab-bets) .bp-note { color: #b0b0ba; font-size: 11px; }
 :is(#tab-picks, #tab-bets) .bp-values { margin-top: 6px; }
-:is(#tab-picks, #tab-bets) .bp-bar { display: block; width: 100%; height: 8px; margin: 7px 0 4px; border: 0; border-radius: 8px; overflow: hidden; background: #303039; accent-color: #40c69b; }
-:is(#tab-picks, #tab-bets) .bp-bar::-webkit-progress-bar { background: #303039; border-radius: 8px; }
-:is(#tab-picks, #tab-bets) .bp-bar::-webkit-progress-value { background: #40c69b; border-radius: 8px; }
-:is(#tab-picks, #tab-bets) .bp-bar::-moz-progress-bar { background: #40c69b; border-radius: 8px; }
-:is(#tab-picks, #tab-bets) .bp-bar.bp-limit { accent-color: #eab95a; }
-:is(#tab-picks, #tab-bets) .bp-bar.bp-limit::-webkit-progress-value { background: #eab95a; }
-:is(#tab-picks, #tab-bets) .bp-bar.bp-limit::-moz-progress-bar { background: #eab95a; }
+:is(#tab-picks, #tab-bets) .bp-bar { display: block; width: 100%; height: 10px; margin: 10px 0 8px; position: relative; border: 0; border-radius: 8px; overflow: hidden; background: #303039; accent-color: #40c69b; }
 :is(#tab-picks, #tab-bets) .bp-checked { display: block; color: #8f8f9c; font-size: 10px; margin-top: 4px; }
 :is(#tab-picks, #tab-bets) .bp-combo { margin: 8px 0; }
 :is(#tab-picks, #tab-bets) .bp-combo > summary { min-height: 44px; padding: 10px 0; cursor: pointer; font-size: 13px; color: #bbb; }
@@ -751,9 +745,13 @@ a.btn-play { display: block; text-align: center; text-decoration: none; margin-t
 #tab-bets .pm-sync label { display:block; margin:12px 0; }
 #tab-bets .pm-sync input { display:block; width:100%; box-sizing:border-box; margin-top:6px; }
 #tab-bets .pm-sync .card { margin:12px 0; }
-:is(#tab-picks, #tab-bets) meter.bp-bar::-webkit-meter-bar { background:#303039; border:0; }
-:is(#tab-picks, #tab-bets) meter.bp-bar::-webkit-meter-optimum-value { background:#40c69b; }
-:is(#tab-picks, #tab-bets) meter.bp-bar::-webkit-meter-suboptimum-value { background:#eab95a; }
-:is(#tab-picks, #tab-bets) .bp-margin-track {position:relative;}
-:is(#tab-picks, #tab-bets) .bp-margin-track::after {content:'';position:absolute;left:50%;top:0;height:8px;width:2px;background:#fff;pointer-events:none;}
 :is(#tab-picks, #tab-bets) .bp-note {display:block;}
+
+/* One consistent track for target, spread and winner progress on every card. */
+:is(#tab-picks, #tab-bets) .bp-values { min-height:20px; gap:6px 16px; }
+:is(#tab-picks, #tab-bets) .bp-values > b { font-size:12px; font-weight:600; }
+:is(#tab-picks, #tab-bets) .bp-values > span { font-size:11px; color:#b0b0ba; }
+:is(#tab-picks, #tab-bets) .bp-fill { display:block; height:100%; border-radius:inherit; background:#75aaff; }
+:is(#tab-picks, #tab-bets) .bp-positive .bp-fill { background:#40c69b; }
+:is(#tab-picks, #tab-bets) .bp-negative .bp-fill { background:#ed7777; }
+:is(#tab-picks, #tab-bets) .bp-marker { position:absolute; left:50%; top:0; bottom:0; width:2px; background:#ffffffc0; }

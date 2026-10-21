@@ -654,7 +654,7 @@ window.STR.progress = {
  covering:(team,n,final)=>final?`${team} finished ${n} above the spread`:`${team} covering the spread by ${n} — must hold it`,
  needsCover:(team,n,final)=>final?`${team} did not finish above the spread`:`${team} need ${n} more in score margin to cover`,
  stayUnder:(n,final)=>final?`Finished below ${n}`:`Still below ${n} — must stay below until the end`, overLimit:'At or above the limit',
- marginGuide:'Behind ← | line to beat | → Ahead',
+ marginGuide:'Behind ← | line to beat | → Ahead', centerTie:'Center = tied', centerLine:'Center = spread',
  gameElapsed: 'Game elapsed · regulation', marginScale:'Score margin · center is the line to beat', segmentPending:'This part of the game has not started yet.', legs: n => `Live progress · ${n} legs`,
  explanation: 'Game statistics, not a win probability. Live scores do not refresh the saved betting prices. Final settlement may follow different market rules.',
  stats: { reb:'rebounds', ast:'assists', pts:'points', goals:'goals', stl:'steals', blk:'blocks', saves:'saves', threes:'threes', pra:'points + rebounds + assists', passyd:'passing yards', rushyd:'rushing yards', recyd:'receiving yards', rec:'receptions', ptd:'passing touchdowns', int:'interceptions', hits:'hits', hr:'home runs', rbi:'RBIs', k:'strikeouts', runs:'runs', score:'points / goals' }

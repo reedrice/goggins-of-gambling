@@ -14,7 +14,7 @@
  function spec(o, fallback = {}) {
   return {text:o.desc || o.pick || (['yes','no'].includes(o.side)?'':o.side) || '',question:o.question || '',market:o.market || '',player:o.player || '',team:o.player_team || o.team?.abbr || '',
    eventSlug:o.event_slug || o.eventSlug || slugOf(o.polymarket_url || o.link || o.event_url || o.market_id) || fallback.eventSlug || '',
-   marketSlug:o.market_id || o.marketId || o.marketSlug || '',side:o.market_side || (['yes','no'].includes(o.side)?o.side:'') || (o.key ? Number(String(o.key).split(':')[1]) ? 'no':'yes' : ''),game:o.event || o.event_game || fallback.game || ''};
+   marketSlug:o.market_id || o.marketId || o.marketSlug || '',resolveMarket:!!(o.market_id||o.marketId||o.marketSlug),side:o.market_side || (['yes','no'].includes(o.side)?o.side:'') || (o.key ? Number(String(o.key).split(':')[1]) ? 'no':'yes' : ''),game:o.event || o.event_game || fallback.game || ''};
  }
  function html(value) { return `<div class="bp-host" data-bp="${esc(JSON.stringify(value))}"></div>`; }
  function findEvent(board, slug) {
@@ -128,7 +128,7 @@
   else if(/winner$/.test(type)&&team){text=(team.name||team.abbreviation)+' to win';side='yes';}
   const segment=/-sh-/.test(m.slug)?' (H2)':/-fh-/.test(m.slug)?' (H1)':(/-q([1-4])-/.exec(m.slug)||[])[1];
   if(segment)text+=typeof segment==='string'&&segment.startsWith(' ')?segment:' (Q'+segment+')';
-  return {...s,marketSlug:m.slug,text,question:m.title||m.question||'',market:type,player:m.metadata?.playerName||'',team:team?.abbreviation||s.team,side};
+  return {...s,resolvedMarket:true,marketSlug:m.slug,text,question:m.title||m.question||'',market:type,player:m.metadata?.playerName||'',team:team?.abbreviation||s.team,side};
  }
  const marketCache=new Map();
  async function enrich(s){
@@ -199,6 +199,12 @@
   if(r.line!==undefined)return r.margin>0?S.covering(team,r.margin,r.final):S.needsCover(team,Math.floor(-r.margin)+1,r.final);
   return r.margin>0?S.ahead(team,r.margin,r.final):r.margin<0?S.behind(team,-r.margin,r.final):S.tied(team,r.final);
  }
+ function progressTrack(value,min,max,label,state,marker=false){
+  const track=node('div','bp-bar bp-'+state);track.setAttribute('role',marker?'meter':'progressbar');
+  track.setAttribute('aria-valuemin',min);track.setAttribute('aria-valuemax',max);track.setAttribute('aria-valuenow',Math.max(min,Math.min(value,max)));track.setAttribute('aria-label',label);
+  const fill=node('span','bp-fill');fill.style.width=Math.max(0,Math.min(100,(value-min)/(max-min)*100))+'%';track.append(fill);
+  if(marker)track.append(node('span','bp-marker'));return track;
+ }
  function render(host,s,result) {
   const S=root.STR.progress;host.title=S.explanation;const rows=[];const game=result.game;
   if(game) {
@@ -218,13 +224,14 @@
    if(result.under)note=value<limit?S.stayUnder(limit,result.final):value===limit&&result.strict?S.atLine:S.overLimit;
    else {const remaining=Math.max(0,(result.strict?Math.floor(limit)+1:limit)-value);note=remaining?(result.final?S.notReached:S.needs(remaining)):S.reached;}
    row.append(node('span','',note));rows.push(row);
-   const bar=node('progress','bp-bar');bar.max=limit>0?limit:1;bar.value=Math.max(0,Math.min(value,bar.max));bar.setAttribute('aria-label',S.count(value,limit,S.stats[result.stat] || S.stats.score));if(result.under)bar.classList.add('bp-limit');rows.push(bar);
+   const met=result.under?value<limit:value>limit||(!result.strict&&value===limit);
+   const state=met?'positive':result.final||result.under?'negative':'neutral';
+   rows.push(progressTrack(value,0,limit>0?limit:1,S.count(value,limit,S.stats[result.stat] || S.stats.score),state));
   } else if(result.kind==='margin') {
-   const caption=marginText(result,S);rows.push(node('div','bp-values',caption));
-   const track=node('div','bp-margin-track');const margin=node('meter','bp-bar');const range=Math.max(10,Math.abs(result.margin)*1.25);margin.min=-range;margin.max=range;margin.low=0;margin.high=0;margin.optimum=range;margin.value=result.margin;margin.setAttribute('aria-label',caption);track.append(margin);rows.push(track,node('div','bp-note',S.marginGuide));
+   const caption=marginText(result,S),row=node('div','bp-values');row.append(node('b','',caption),node('span','',result.line===undefined?S.centerTie:S.centerLine));rows.push(row);
+   const range=Math.max(10,Math.abs(result.margin)*1.25);rows.push(progressTrack(result.margin,-range,range,caption,result.margin>0?'positive':result.margin<0?'negative':'neutral',true));
   }
-  if(game?.status?.type?.completed)rows.push(node('span','bp-note',S.final));
-  rows.push(node('span','bp-checked',S.checked(new Date().toLocaleTimeString('en-US',{timeZone:'America/Chicago',hour:'numeric',minute:'2-digit'}))));
+  rows.push(node('span','bp-checked',(game?.status?.type?.completed?S.final+' · ':'')+S.checked(new Date().toLocaleTimeString('en-US',{timeZone:'America/Chicago',hour:'numeric',minute:'2-digit'}))));
   host.replaceChildren(...rows);
  }
  async function hydrate(host) {
@@ -243,7 +250,7 @@
    // Keep score, splits and clock together from one scoreboard snapshot. Summary
    // box scores can lag or temporarily report a zero clock at period transitions.
    summary={...summary,header:{...summary.header,competitions:[{...event.competitions[0],status:event.status||event.competitions[0].status}]}};
-   if(host.isConnected){const result=evaluateBet(s,summary,root.Viz?.parseProp);host._bpVerified={spec:s,game:result.game};render(host,s,result);refreshComboWarning(host.closest('.pm-position'));}
+   if(host.isConnected){const result=s.resolveMarket&&!s.resolvedMarket?{reason:'noStat',game:summary.header?.competitions?.[0]}:evaluateBet(s,summary,root.Viz?.parseProp);host._bpVerified={spec:s,game:result.game};render(host,s,result);refreshComboWarning(host.closest('.pm-position'));}
   } catch(error) {if(host.isConnected)render(host,{}, {reason:'unavailable'});} finally {host._bpBusy=false;}
  }
  function scan() {
