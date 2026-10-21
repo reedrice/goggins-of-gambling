@@ -8,6 +8,8 @@
   --canvas: #0A0E17;
   --surface-glass: rgba(255, 255, 255, 0.03);
   --surface-border: rgba(255, 255, 255, 0.05);
+  --surface-panel: rgba(255, 255, 255, 0.07);
+  --panel-border: rgba(255, 255, 255, 0.11);
   --surface-blur: 12px;
   --radius-panel: 24px;
   --radius-control: 16px;
@@ -93,8 +95,8 @@ h3 { margin: var(--space-6) 0 var(--space-4); font-size: 20px; }
     .table-wrap, .onboard-private, .kalshi-step, .account-panel,
     .pf-teamlist, .calc-out > div, .viz-games, .play-tag, .lotto-line,
     canvas.chart, .kalshi-private-frame, .mib-panel) {
-  background: var(--surface-glass) !important;
-  border: 1px solid var(--surface-border) !important;
+  background: var(--surface-panel) !important;
+  border: 1px solid var(--panel-border) !important;
   border-radius: var(--radius-panel) !important;
   -webkit-backdrop-filter: blur(var(--surface-blur));
   backdrop-filter: blur(var(--surface-blur));
@@ -185,6 +187,36 @@ input[type="checkbox"], input[type="radio"] { accent-color: var(--accent); }
 :is(.bp-bar, .hitbar) { background: var(--track); }
 .bp-bar, .bp-fill, .hitbar, .hitbar > span { border-radius: var(--radius-control); }
 /* Chart marks, team colors, outcome labels and circular avatars are semantic exceptions. */
+/* Existing classifications only: these tints never determine the edge calculation. */
+.live-bets-root .lb-edge.lb-big { --edge-color: var(--good); }
+.live-bets-root .lb-edge.lb-slight { --edge-color: var(--warn); }
+.live-bets-root .lb-edge.lb-why { --edge-color: var(--accent-2); }
+.live-bets-root .lb-edge:is(.lb-big, .lb-slight, .lb-why) {
+  background: linear-gradient(110deg, color-mix(in srgb, var(--edge-color) 9%, transparent), transparent 75%), var(--surface-panel) !important;
+  border-color: color-mix(in srgb, var(--edge-color) 30%, var(--panel-border)) !important;
+  box-shadow: inset 3px 0 0 var(--edge-color);
+}
+.live-bets-root .lb-why .lb-tier { color: var(--accent-2); }
+.live-bets-root .lb-edge.lb-gone { box-shadow: none; }
+#tab-picks .picks-score-ticker { background: var(--surface-panel); border-color: var(--panel-border); border-radius: var(--radius-panel); min-width: 0; }
+#tab-picks .pst-title { color: var(--accent); }
+#tab-picks .pst-score { color: var(--text-primary); }
+@media (max-width: 767px) {
+  :root { --radius-panel: 16px; --panel-padding: 16px; --module-gap: 16px; --nav-clearance: 88px; }
+  .tabbar { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 2px; padding: 6px 4px calc(6px + var(--safe-bottom)); }
+  .tabbar button { min-width: 0; min-height: 52px; padding: 6px 1px; font-size: 9px; line-height: 1.2; gap: 4px; overflow-wrap: normal; }
+  .tabbar button span { font-size: 17px; line-height: 1; }
+  .topbar { gap: 8px; }
+  .brand-name.small { font-size: 19px; }
+  .topbar-bank .value { font-size: 20px; }
+  .row > *, .pick-head > *, .pick-actions > * { min-width: 0; }
+  .table-wrap { max-width: 100%; overflow-x: auto; }
+  #tab-picks .pst-viewport { overflow-x: auto; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }
+  #tab-picks .pst-track { animation: none; transform: none; display: flex; flex-flow: row nowrap; }
+  #tab-picks .pst-lane { min-width: 0; flex: 0 0 auto; }
+  #tab-picks .pst-lane[aria-hidden] { display: none; }
+  #tab-picks .pst-game { flex: 0 0 auto; }
+}
 @media (max-width: 480px) {
   .pick-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pick-actions { gap: var(--space-3); }

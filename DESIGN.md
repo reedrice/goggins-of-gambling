@@ -36,3 +36,7 @@ Reed explicitly replaced the stepped Polymarket-style chart above with a smoothe
 
 ## Flexible colorway override (Reed, Oct 21)
 Palette is user-selectable in Settings → Appearance, including custom canvas/accent. Ocean blue replaces the prior orange default. Geometry, glass blur and spacing remain fixed; components follow semantic role tokens. User-selected custom light palettes use contrasting dark text. The fixed default canvas is not a restriction on future palette choices.
+
+### Card contrast and mobile override (Reed, Oct 21)
+Content panels use --surface-panel (7% contrasting glass) and --panel-border (11%); navigation and controls retain the quieter 3%/5% glass. Custom light palettes use black rather than white glass. Existing Live Bets big/slight categories use restrained green/amber tints; score/news-explained moves use the existing warning red, without changing classification or claiming these are new risk grades.
+Below 768px, --radius-panel, --panel-padding and --module-gap become 16px. Controls remain 16px. The six-tab dock uses 9px labels and 17px icons with 52px targets and safe-area clearance. The score ticker becomes a manual horizontal flex scroller; duplicate marquee content is hidden. This explicitly supersedes the earlier fixed 24px mobile geometry and identical glass on every surface. Preserve these responsive role tokens in future layouts.
