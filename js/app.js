@@ -1094,12 +1094,13 @@
     // slate. A pick's day is its own slate_date, else the file's slate_date.
     const days = pickDays(d);
     if (!days.includes(picksDay)) picksDay = defaultPickDay(days);
-    // Sport chips (our sports from config.js, only those with picks that day).
+    // Keep every supported sport available even when this slate has no picks for it.
     // A combo's sport is "NBA + NFL", so it shows under each of its sports.
-    const sportsOf = it => String(it.sport || '').split('+').map(x => x.trim()).filter(Boolean);
+    const sportKey = value => { const key=String(value).trim(); return STR.picks.sportAliases[key.toLowerCase()] || key; };
+    const sportsOf = it => String(it.sport || '').split('+').map(sportKey).filter(Boolean);
     const inDay = it => !days.length || pickDayOf(it, d) === picksDay;
     const order = (window.APP_CONFIG && APP_CONFIG.sports) || [];
-    const daySports = [...new Set(Object.values(sec).flatMap(l => (l || []).filter(inDay).flatMap(sportsOf)))]
+    const daySports = [...new Set([...order, ...Object.values(sec).flatMap(l => (l || []).filter(inDay).flatMap(sportsOf))])]
       .sort((a, b) => (order.indexOf(a) + 1 || 99) - (order.indexOf(b) + 1 || 99));
     if (picksSport && !daySports.includes(picksSport)) picksSport = '';
     const onDay = it => inDay(it) && (!picksSport || sportsOf(it).includes(picksSport));
@@ -1112,11 +1113,11 @@
       ${days.length > 1 ? `<div class="chips pick-days" role="group" aria-label="${esc(STR.picks.dayGroup)}">${days.map(day =>
         `<button type="button" class="chip ${day === picksDay ? 'on' : ''}" data-pick-day="${esc(day)}" aria-pressed="${day === picksDay}">${esc(dayWords(day, true))} <span class="muted small">(${countOnDay(d, day)})</span></button>`).join('')}</div>` : ''}
       ${daySports.length > 1 ? `<div class="chips pick-sports" role="group" aria-label="${esc(STR.picks.sportGroup)}">${['', ...daySports].map(s =>
-        `<button type="button" class="chip ${s === picksSport ? 'on' : ''}" data-pick-sport="${esc(s)}" aria-pressed="${s === picksSport}">${esc(s || STR.picks.allSports)}</button>`).join('')}</div>` : ''}
+        `<button type="button" class="chip ${s === picksSport ? 'on' : ''}" data-pick-sport="${esc(s)}" aria-pressed="${s === picksSport}">${esc(s ? STR.picks.sportNames[s] || s : STR.picks.allSports)}</button>`).join('')}</div>` : ''}
       <details class="pick-context"><summary>${esc(STR.picks.slateDetails)}</summary>
       ${isFileDay ? (d.notes || []).map(n => `<div class="verify">${esc(PL.noCents(n))}</div>`).join('') : ''}
       ${riskLegend()}</details>`;
-    if (!PICK_SECTIONS.some(([key]) => (sec[key] || []).some(onDay))) html += `<div class="section-empty">${esc(STR.picks.empty)}</div>`;
+    if (!PICK_SECTIONS.some(([key]) => (sec[key] || []).some(onDay))) html += `<div class="section-empty">${esc(picksSport ? STR.picks.emptySport(STR.picks.sportNames[picksSport] || picksSport) : STR.picks.empty)}</div>`;
     for (const [key, cat] of PICK_SECTIONS) {
       const items = (sec[key] || []).filter(onDay);
       // Empty categories add no useful content to the compact list.

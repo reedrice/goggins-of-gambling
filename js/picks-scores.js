@@ -7,7 +7,9 @@
   'use strict';
   const SOURCES = [
     ['NBA', 'basketball/nba'], ['NHL', 'hockey/nhl'], ['NFL', 'football/nfl'],
-    ['MLB', 'baseball/mlb'], ['WNBA', 'basketball/wnba'], ['Soccer', 'soccer/all']
+    ['MLB', 'baseball/mlb'], ['WNBA', 'basketball/wnba'], ['Soccer', 'soccer/all'],
+    ['NCAAF','football/college-football'], ['NCAAB','basketball/mens-college-basketball'], ['WNCAAB','basketball/womens-college-basketball'],
+    ['ATP','tennis/atp'], ['WTA','tennis/wta'], ['PGA','golf/pga'], ['LPGA','golf/lpga']
   ];
   const REFRESH = 60000;
   let active = null, cache = null;
@@ -22,15 +24,26 @@
   }
   function liveGames(board, source, mode = 'live', now = new Date()) {
     const seen = new Set();
-    return (board.events || []).flatMap(event => {
+    const events = (board.events || []).flatMap(event => source==='ATP'||source==='WTA' ? (event.groupings || []).flatMap(g=>(g.competitions || []).map(c=>({...event,id:event.id+':'+c.id,date:c.date,competitions:[c]}))) : [event]);
+    return events.flatMap(event => {
       const game = (event.competitions || [])[0];
       const status = (game && game.status) || event.status || {};
       if (!game || !status.type || status.type.completed || seen.has(event.id)) return [];
       if (mode === 'live' && status.type.state !== 'in') return [];
       if (mode === 'upcoming' && (status.type.state !== 'pre' || /postpon|cancel|suspend|delay/i.test((status.type.name || '') + (status.type.description || '')) || !event.date || Date.parse(event.date) < now.getTime() || dates(new Date(event.date))[1] !== dates(now)[1])) return [];
+      if(source==='PGA'||source==='LPGA') {
+        seen.add(event.id);
+        return [{id:String(event.id),league:source,tournament:true,away:event.name,home:'',awayLogo:null,homeLogo:null,awayScore:null,homeScore:null,detail:mode==='upcoming'?event.date:status.type.shortDetail || status.type.detail || status.type.description || ''}];
+      }
       const away = (game.competitors || []).find(t => t.homeAway === 'away');
       const home = (game.competitors || []).find(t => t.homeAway === 'home');
-      if (!away || !home || !away.team || !home.team) return [];
+      if (!away || !home) return [];
+      if(source==='ATP'||source==='WTA') {
+        if(!away.athlete || !home.athlete)return [];
+        const setScore=c=>(c.linescores || []).every(x=>Number.isFinite(x.value)) ? (c.linescores || []).map(x=>x.value).join(', ') : '';
+        seen.add(event.id);return [{id:String(event.id),league:source,away:away.athlete.shortName || away.athlete.displayName,home:home.athlete.shortName || home.athlete.displayName,awayLogo:null,homeLogo:null,awayScore:setScore(away),homeScore:setScore(home),detail:mode==='upcoming'?event.date:status.type.shortDetail || status.type.detail || ''}];
+      }
+      if(!away.team || !home.team)return [];
       const score = team => /^\d+$/.test(String(team.score)) ? String(team.score) : null;
       if (mode === 'live' && (score(away) === null || score(home) === null)) return [];
       seen.add(event.id);
@@ -105,9 +118,9 @@
         group.games.forEach(game => {
           const item = node('span', 'pst-game');
           item.append(team(game.away, game.awayLogo));
-          if (!snapshot.upcoming) item.append(node('b', 'pst-score', game.awayScore));
-          item.append(node('span', 'pst-at', S.at), team(game.home, game.homeLogo));
-          if (!snapshot.upcoming) item.append(node('b', 'pst-score', game.homeScore));
+          if (!snapshot.upcoming && game.awayScore!==null) item.append(node('b', 'pst-score', game.awayScore));
+          if(!game.tournament)item.append(node('span', 'pst-at', S.at), team(game.home, game.homeLogo));
+          if (!snapshot.upcoming && game.homeScore!==null) item.append(node('b', 'pst-score', game.homeScore));
           const detail = snapshot.upcoming ? new Date(game.detail).toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit' }) + ' CT' : game.detail;
           item.append(node('span', 'pst-clock', detail));
           block.append(item);

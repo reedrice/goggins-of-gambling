@@ -41,3 +41,7 @@ test('uses scoreboard team logos and accepts only HTTPS images',()=>{
  assert.equal(game.awayLogo,away.team.logo);assert.equal(game.homeLogo,home.team.logos[0].href);
  home.team.logos=[];assert.equal(liveGames({events:[e]},'NBA')[0].homeLogo,null);
 });
+
+ test('college sports use the same verified team score handling',()=>assert.equal(liveGames({events:[event('cfb')]},'NCAAF')[0].league,'NCAAF'));
+ test('tennis reads individual matches and set games, not the tournament status',()=>{const match={id:'match',date:'2026-10-21T01:00:00Z',status:{type:{state:'in',completed:false,shortDetail:'2nd set'}},competitors:[{homeAway:'away',athlete:{shortName:'A. Player'},linescores:[{value:6},{value:2}]},{homeAway:'home',athlete:{shortName:'B. Player'},linescores:[{value:4},{value:3}]}]};const board={events:[{id:'tournament',status:{type:{state:'post',completed:true}},groupings:[{competitions:[match]}]}]};const rows=liveGames(board,'ATP');assert.equal(rows.length,1);assert.equal(rows[0].awayScore,'6, 2');assert.equal(rows[0].home,'B. Player');match.status.type.state='post';match.status.type.completed=true;assert.equal(liveGames(board,'ATP').length,0);});
+ test('golf shows tournament status without fabricated head-to-head scores',()=>{const e=event('golf');e.name='Test Championship';e.competitions[0].competitors=[];const r=liveGames({events:[e]},'PGA')[0];assert.equal(r.tournament,true);assert.equal(r.away,'Test Championship');assert.equal(r.awayScore,null);});

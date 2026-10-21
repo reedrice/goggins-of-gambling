@@ -30,7 +30,7 @@ window.APP_CONFIG = Object.freeze({
    * tests/sports.test.mjs fails if a sport here is missing from any of them.
    * NBA added as first-class Oct 19, 2026.
    */
-  sports: ['NFL', 'MLB', 'NHL', 'NBA', 'WNBA', 'Soccer'],
+  sports: ['NFL', 'NCAAF', 'NBA', 'WNBA', 'NCAAB', 'WNCAAB', 'MLB', 'NHL', 'Soccer', 'Tennis', 'Golf'],
   /** Small rotating motivational lines shown in the header. */
   slogans: [
     'Stay hard.',
