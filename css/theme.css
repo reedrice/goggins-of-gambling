@@ -238,3 +238,7 @@ input[type="checkbox"], input[type="radio"] { accent-color: var(--accent); }
 .slate-status { display: block; font-size: var(--type-label); }
 .slate-status:empty { display: none; }
 .slate-row:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.slate-pill { cursor: pointer; min-height: 44px; font-family: var(--font-ui); }
+.slate-pill:hover { border-color: var(--accent); }
+.slate-pill.slate-selected { background: var(--selection-fill); border-color: var(--accent); color: var(--text-primary); }
+.slate-pill:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }

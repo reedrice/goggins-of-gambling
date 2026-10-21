@@ -11,3 +11,8 @@ test('count tennis matches rather than tournament wrappers; golf retains ongoing
  assert.equal(Slate.activeEvents([tennis],['atp'],now),2);
  assert.equal(Slate.activeEvents([{league:'pga',events:[event('tour','2026-10-19T14:00Z','in')]}],['pga'],now),1);
 });
+
+test('slate filters map to existing Picks sport categories',()=>{
+ assert.equal(Slate.sportFor('atp'),'Tennis');assert.equal(Slate.sportFor('wta'),'Tennis');
+ assert.equal(Slate.sportFor('cfb'),'NCAAF');assert.equal(Slate.sportFor('wcbb'),'WNCAAB');assert.equal(Slate.sportFor('nba'),'NBA');assert.equal(Slate.sportFor(''), '');
+});

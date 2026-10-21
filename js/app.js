@@ -456,7 +456,7 @@
 
   /** Show one tab and render it (hash-based). */
   function go(name) {
-    if (window.PicksScores) window.PicksScores.stop();
+    // The score ticker now lives in the shared header and survives tab navigation.
     // #live and #picks are the two views of the Picks tab (renderPicks).
     if (name === 'live' || name === 'picks') { picksView = name; S.setPrefs({ picksView: name }); }
     if (name === 'live') name = 'picks';
@@ -1105,6 +1105,7 @@
     const daySports = [...new Set([...order, ...Object.values(sec).flatMap(l => (l || []).filter(inDay).flatMap(sportsOf))])]
       .sort((a, b) => (order.indexOf(a) + 1 || 99) - (order.indexOf(b) + 1 || 99));
     if (picksSport && !daySports.includes(picksSport)) picksSport = '';
+    window.dispatchEvent(new CustomEvent('picks:sport-change',{detail:{sport:picksSport}}));
     const onDay = it => inDay(it) && (!picksSport || sportsOf(it).includes(picksSport));
     const isFileDay = !days.length || picksDay === d.slate_date;   // notes are written for the file's own slate
     const title = !days.length || picksDay === todayCT() ? STR.picks.title : picksDay === tomorrowCT() ? STR.picks.titleTomorrow : STR.picks.titleDay;
@@ -1169,6 +1170,11 @@
   let picksDay = null;
   /** Selected sport chip on the Picks tab ('' = all sports). */
   let picksSport = '';
+  window.addEventListener('slate:select',e=>{
+    const sport=e.detail?.sport;
+    if(!['','NFL','NCAAF','NBA','WNBA','NCAAB','WNCAAB','MLB','NHL','Soccer','Tennis','Golf'].includes(sport))return;
+    picksDay=todayCT();picksSport=sport;go('picks');
+  });
 
   /** Today's date in Central time, YYYY-MM-DD. */
   const todayCT = () => new Date().toLocaleDateString('en-CA', { timeZone: 'America/Chicago' });
