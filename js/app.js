@@ -2186,7 +2186,7 @@
       <p class="muted small" style="margin-top:24px">${esc(CFG.appName)} · ${esc(CFG.tagline)}</p>`;
 
     $('#set-plat').querySelectorAll('[data-plat]').forEach(b => (b.onclick = () => setPlatform(b.dataset.plat)));
-    $('#set-theme').onchange=e=>{S.setPrefs({colorScheme:e.target.value,customCanvas:$('#theme-canvas').value,customAccent:$('#theme-accent').value});MibTheme.apply(S,document);renderSettings();};
+    $('#set-theme').onchange=e=>{S.setPrefs({colorScheme:e.target.value,customCanvas:$('#theme-canvas').value,customAccent:$('#theme-accent').value});MibTheme.apply(S,document);$('#theme-custom').hidden=e.target.value!=='custom';};
     ['theme-canvas','theme-accent'].forEach(id=>{$('#'+id).oninput=()=>{S.setPrefs({colorScheme:'custom',customCanvas:$('#theme-canvas').value,customAccent:$('#theme-accent').value});MibTheme.apply(S,document);};});
     $('#set-fmt').onchange = e => { S.setPrefs({ priceFormat: e.target.value }); toast(X.profileSaved); };
     $('#pf').onsubmit = e => {

@@ -179,6 +179,9 @@ input[type="checkbox"], input[type="radio"] { accent-color: var(--accent); }
 .pick-title { font-size: var(--type-card-title); font-weight: var(--weight-heading); }
 .stat .v, .kpi .v, .topbar-bank .value { font-family: var(--font-ui); font-weight: var(--weight-heading); letter-spacing: -0.03em; }
 .viz-quote-value { color: var(--text-primary); }
+:is(#tab-picks, #tab-bets) :is(.bp-scoreline, .bp-values) { color: var(--text-primary); }
+:is(.viz-svg, .dd-sheet svg) text { fill: var(--text-secondary) !important; }
+:is(#tab-picks, #tab-bets) .bp-bar { background: var(--track); }
 :is(.bp-bar, .hitbar) { background: var(--track); }
 .bp-bar, .bp-fill, .hitbar, .hitbar > span { border-radius: var(--radius-control); }
 /* Chart marks, team colors, outcome labels and circular avatars are semantic exceptions. */
