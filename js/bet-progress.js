@@ -57,9 +57,9 @@
   if(prop && (/points\s*(?:,|\+)\s*rebounds\s*(?:,?\s*and|\+)\s*assists/i.test(text+' '+s.question) || /-pra-/.test(s.marketSlug))) prop.stat={key:'pra'};
   const context=text+' '+s.market+' '+s.question+' '+s.marketSlug;
   // Do not substitute full-game statistics for an unrecognized period contract.
-  const segment=/\bQ([1-4])\b/i.exec(context);
-  if(!segment && /(?:\bperiod\b|\bquarter\b|\bhalf\b|-(?:p[1-3]|q[1-4]|fh|sh)-)/i.test(context) && !/\bH[12]\b/i.test(context))return {kind:'unknown'};
-  const half=/\bH([12])\b/i.exec(context);
+  const segment=/\bQ([1-4])\b/i.exec(context)||/-q([1-4])-/.exec(s.marketSlug);
+  const half=/\bH([12])\b/i.exec(context)||(/-fh-/.test(s.marketSlug)?['',1]:/-sh-/.test(s.marketSlug)?['',2]:null);
+  if(!segment && !half && /(?:\bperiod\b|\bquarter\b|\bhalf\b|-(?:p[1-3]|q[1-4]|fh|sh)-)/i.test(context))return {kind:'unknown'};
   if(prop) return {kind:'prop',player:prop.player,stat:prop.stat.key,target:prop.n,under:s.side==='no'||/^No:/i.test(text)||/[—–]\s*NO\b/i.test(text),segment:!!(segment||half)};
   const total=/\b(Over|Under)\s+(\d+(?:\.\d+)?)/i.exec(text);
   if(total)return {kind:'total',target:+total[2],under:total[1].toLowerCase()==='under',teamTotal:/team total/i.test(s.market)||!/^\s*(?:Yes:|No:)?\s*(?:Over|Under)\b/i.test(text),segment:segment?{quarter:+segment[1]}:half?{half:+half[1]}:null};
@@ -76,7 +76,7 @@
  }
  function scoresFor(c,segment,league) {
   if(!segment)return numeric(c.score);
-  const periods=segment.quarter?[segment.quarter]:Array.from({length:2},(_,i)=>(segment.half-1)*2+i+1);
+  const periods=segment.quarter?[segment.quarter]:Array.from({length:segment.half===2?Math.max(2,(c.linescores||[]).length-2):2},(_,i)=>(segment.half-1)*2+i+1);
   if(!['nba','wnba','nfl'].includes(league))return null;
   const scores=periods.map(p=>{const row=(c.linescores || [])[p-1];return row?numeric(row.value ?? row.displayValue):null;});
   return scores.some(v=>v===null)?null:scores.reduce((a,b)=>a+b,0);
@@ -84,7 +84,7 @@
  function gameElapsed(status,league) {
   const lengths={nba:[4,12],wnba:[4,10],nhl:[3,20],nfl:[4,15]};const config=lengths[league];
   if(status.type?.completed)return 100;
-  const clock=/^(\d+):(\d+)(?:\.\d+)?$/.exec(status.displayClock || '');
+  const clock=/^(\d+):(\d+)(?:\.\d+)?$/.exec(status.displayClock || '')||(/^\d+(?:\.\d+)?$/.test(status.displayClock||'')?['',0,Number(status.displayClock)]:null);
   if(!config||!clock||!status.period)return null;
   if(status.period>config[0])return 100;
   const remaining=(config[0]-status.period)*config[1]*60+(+clock[1]*60 + +clock[2]);
@@ -96,6 +96,7 @@
   if(status.type?.state==='pre')return {reason:'pregame',game};
   if(!['in','post'].includes(status.type?.state))return {reason:'noStat',game};
   const bet=parseBet(s,parser);const final=!!status.type?.completed;
+  if(bet.segment&&typeof bet.segment==='object'&&status.period<(bet.segment.quarter||((bet.segment.half-1)*2+1)))return {reason:'segmentPending',game};
   if(bet.kind==='prop') {
    if(bet.segment)return {reason:'noStat',game};
    const value=athleteStat(summary,bet.player,bet.stat,s.team);
@@ -114,6 +115,27 @@
    return {kind:'margin',margin:s.side==='no'?-margin:margin,line:bet.line,elapsed:gameElapsed(status,league),final,game};
   }
   return {reason:'noStat',game};
+ }
+ function resolveMarket(s,event){
+  const m=(event.markets||[]).find(m=>m.slug===s.marketSlug);
+  if(!m||!['yes','no'].includes(s.side))return s;
+  const chosen=(m.marketSides||[]).find(x=>x.long===(s.side==='yes'));if(!chosen)return s;
+  const type=m.sportsMarketType||'', team=chosen.team;
+  let text=m.title||m.question||'',side=s.side;
+  if(/spread$/.test(type)&&team){text=(team.name||team.abbreviation)+' '+chosen.description;side='yes';}
+  else if(/total$/.test(type)&&/^(over|under)$/i.test(chosen.description||'')&&Number.isFinite(m.line)){text=chosen.description+' '+Math.abs(m.line);side='yes';}
+  else if(/winner$/.test(type)&&team){text=(team.name||team.abbreviation)+' to win';side='yes';}
+  const segment=/-sh-/.test(m.slug)?' (H2)':/-fh-/.test(m.slug)?' (H1)':(/-q([1-4])-/.exec(m.slug)||[])[1];
+  if(segment)text+=typeof segment==='string'&&segment.startsWith(' ')?segment:' (Q'+segment+')';
+  return {...s,text,question:m.title||m.question||'',market:type,player:m.metadata?.playerName||'',team:team?.abbreviation||s.team,side};
+ }
+ const marketCache=new Map();
+ async function enrich(s){
+  if(!s.resolveMarket)return s;
+  const slug=s.eventSlug;if(!/^[a-z0-9]+-[a-z0-9]+-[a-z0-9]+-\d{4}-\d{2}-\d{2}$/.test(slug))return s;
+  let row=marketCache.get(slug);
+  if(!row||Date.now()-row.at>600000){row={at:Date.now(),promise:fetch('https://gateway.polymarket.us/v1/events/slug/'+encodeURIComponent(slug),{credentials:'omit',signal:AbortSignal.timeout(12000)}).then(r=>{if(!r.ok)throw Error('market unavailable');return r.json();}).then(d=>d.event).catch(e=>{marketCache.delete(slug);throw e;})};marketCache.set(slug,row);}
+  return resolveMarket(s,await row.promise);
  }
  const cache=new Map();
  async function get(url) {
@@ -147,6 +169,7 @@
    const bar=node('progress','bp-bar');bar.max=limit>0?limit:1;bar.value=Math.max(0,Math.min(value,bar.max));bar.setAttribute('aria-label',S.count(value,limit,S.stats[result.stat] || S.stats.score));if(result.under)bar.classList.add('bp-limit');rows.push(bar);
   } else if(result.kind==='margin') {
    rows.push(node('div','bp-values',result.line!==undefined?S.adjusted(result.margin):S.margin(result.margin)));
+   const margin=node('meter','bp-bar');const range=Math.max(10,Math.abs(result.margin)*1.25);margin.min=-range;margin.max=range;margin.low=0;margin.high=0;margin.optimum=range;margin.value=result.margin;margin.setAttribute('aria-label',S.marginScale);rows.push(margin,node('span','bp-note',S.marginScale));
    if(result.elapsed!==null) {const label=node('span','bp-note',S.gameElapsed);const bar=node('progress','bp-bar');bar.max=100;bar.value=result.elapsed;bar.setAttribute('aria-label',S.gameElapsed);rows.push(label,bar);}
   }
   if(game?.status?.type?.completed)rows.push(node('span','bp-note',S.final));
@@ -156,7 +179,9 @@
  async function hydrate(host) {
   if(host._bpBusy)return;host._bpBusy=true;
   try {
-   const s=JSON.parse(host.dataset.bp);if(!host.children.length)host.append(node('div','bp-note',root.STR.progress.loading));
+   let s=JSON.parse(host.dataset.bp);if(!host.children.length)host.append(node('div','bp-note',root.STR.progress.loading));
+   try{s=await enrich(s);}catch(e){/* Scores remain available; never guess missing contract details. */}
+   const label=host.previousElementSibling;if(s.resolveMarket&&label?.classList.contains('pm-leg-label'))label.textContent=s.text;
    const parts=s.eventSlug.split('-'),path=PATHS[parts[0]];
    if(!path){render(host,s,{reason:'noGame'});return;}
    const board=await get('https://site.api.espn.com/apis/site/v2/sports/'+path+'/scoreboard?dates='+parts.slice(3).join('')+'&limit=1000');
@@ -177,5 +202,5 @@
   document.addEventListener('toggle',schedule,true);document.addEventListener('visibilitychange',schedule);
   setInterval(scan,15000);
  }
- return {spec,html,findEvent,athleteStat,parseBet,selectedTeam,scoresFor,gameElapsed,evaluateBet};
+ return {spec,html,findEvent,athleteStat,parseBet,selectedTeam,scoresFor,gameElapsed,evaluateBet,resolveMarket};
 });
