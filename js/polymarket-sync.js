@@ -44,6 +44,12 @@
  }
  const quantity=p=>number(p.netPositionDecimal??p.netPosition);
  function rows(positions){return Object.entries(positions||{}).map(([slug,p])=>({slug,...p,quantity:quantity(p)})).filter(p=>p.quantity!==null);}
+ function positionAmounts(p){
+  const q=quantity(p),cost=usd(p.cost);
+  // Cost basis is reported for the remaining position, not lifetime trade spending.
+  // Short-side cost/margin semantics are not inferred from turnover or absolute cost.
+  return {invested:q!==null&&q>0&&cost!==null&&cost>=0?cost:null,payout:q!==null?Math.abs(q):null,unrealized:usd(p.cashValue)};
+ }
  function settlements(activities){
   const unique=new Map();for(const a of activities||[]){const r=a.positionResolution;if(a.type!=='ACTIVITY_TYPE_POSITION_RESOLUTION'||!r?.marketSlug)continue;
    const id=r.tradeId||r.marketSlug+':'+(r.updateTime||r.afterPosition?.updateTime||'');unique.set(id,r);
@@ -111,7 +117,7 @@
   if(totals.unclassified)host.append(node('p',S.unclassified(totals.unclassified),'muted small'));
   const positions=rows(snapshot.positions).filter(p=>p.quantity!==0&&!p.expired);host.append(node('h3',S.positions(positions.length)));
   if(!positions.length)host.append(node('p',S.noPositions,'muted'));
-  for(const p of positions){const card=node('div',undefined,'card pm-position');const title=p.comboLegDetails?.length?S.comboTitle(p.comboLegDetails.length):activityLabel(p.slug,snapshot.positions,S);card.append(node('strong',title),node('p',S.positionInfo(p.quantity,money(usd(p.cost)),money(usd(p.cashValue))),'muted small'));
+  for(const p of positions){const card=node('div',undefined,'card pm-position');const title=p.comboLegDetails?.length?S.comboTitle(p.comboLegDetails.length):activityLabel(p.slug,snapshot.positions,S);card.append(node('strong',title));const amounts=positionAmounts(p),metrics=node('div',undefined,'kpis');for(const [label,value] of [[S.invested,money(amounts.invested)],[S.payoutIfWins,money(amounts.payout)]]){const cell=node('div',undefined,'kpi');cell.append(node('div',label,'k'),node('div',value,'v'));metrics.append(cell);}card.append(metrics,node('p',S.positionAmountsNote,'muted small'),node('p',S.positionInfo(p.quantity,money(usd(p.cost)),money(amounts.unrealized)),'muted small'));
    const specs=progressSpecs(p),warning=root.ComboSafety?.message(specs,root.STR.comboSafety);if(warning){const alert=node('p',warning,'error');alert.setAttribute('role','alert');card.append(alert);}
    for(const spec of specs){card.append(node('div',spec.desc,'pm-leg-label'));if(root.BetProgress&&!spec.unsupported){const box=node('div','', 'bp-host');box.dataset.bp=JSON.stringify({...root.BetProgress.spec(spec),resolveMarket:true});card.append(box);}else card.append(node('p',S.progressUnavailable,'muted small'));}host.append(card);
   }
@@ -120,5 +126,5 @@
  }
  function mount(element){host=element;clearTimeout(timer);paint();if(current)sync();}
  if(typeof document!=='undefined')document.addEventListener('visibilitychange',()=>{if(!document.hidden&&current){clearTimeout(timer);sync();}});
- return {mount,lock,headers,passwordKey,seal,unlock,pages,rows,stats,progressSpecs,activityLabel,validate};
+ return {mount,lock,headers,passwordKey,seal,unlock,pages,rows,positionAmounts,stats,progressSpecs,activityLabel,validate};
 });
