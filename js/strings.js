@@ -624,11 +624,12 @@ window.STR.liveBets = {
 };
 
 window.STR.comboLab = {
+ separateGames:'One leg per game. Same-game generation is disabled to avoid conflicting legs.',
  sameGame: 'Allow same-game legs', correlated: 'Same-game legs can be correlated. Multiplying their prices does not give the true combined chance or an executable payout.',
  title: 'Longshot combo', legs: 'Number of legs', markets: 'Market types', legCount: n => n + ' legs',
  mixed: 'Mixed', lines: 'Game lines', props: 'Player prop bets', generate: 'Generate combo', chart: 'Chart', use: 'Use in builder',
  loading: "Checking today's live and upcoming markets...",
- note: 'Random market selection, not a prediction or an edge rating. One leg per game unless same-game legs are enabled. Multiplied prices are an illustration assuming independence; the platform may not offer this combo or this payout. Every leg must win.',
+ note: 'Random market selection, not a prediction or an edge rating. One leg per game. Multiplied prices are an illustration assuming independence; the platform may not offer this combo or this payout. Every leg must win.',
  price: (odds,pay) => 'Illustrative combined odds ' + odds + ' | $10 returns $' + pay.toLocaleString('en-US') + ' if all win, before fees.',
  checked: (time,n) => 'Prices checked ' + time + ' CT' + (n ? ' | ' + n + ' game feeds unavailable' : ''),
  insufficient: (n,failed) => 'Not enough eligible games for ' + n + ' legs. Try fewer legs or another market type.' + (failed ? ' Some game feeds were unavailable.' : ''),
@@ -675,4 +676,12 @@ window.STR.pmSync = {
  pollNote:'Updates automatically while this page is open and unlocked. Reloading locks the connection.',
  manual:'Manually tracked bets',
  errors:{storage:'Could not save the encrypted account on this device. Check browser storage space.',keys:'Check the Key ID and Base64 secret key.',password:'Choose a local password with at least 12 characters.',unlock:'Could not unlock. Check your local password.',vault:'Saved connection format is unsupported.',auth:'Polymarket rejected the key. Verify it belongs to your Apple-linked account.',rate:'Polymarket rate limit reached. Retrying shortly.',network:'Could not reach Polymarket. Last synced data are retained.',schema:'Polymarket returned an unsupported account format.',pagination:'Full account history could not be loaded. Totals were not replaced.'}
+};
+
+window.STR.comboSafety={
+ conflict:'Conflicting legs: opposite sides of the same market cannot both win. Remove one leg.',
+ duplicate:'Duplicate market: this is the same outcome twice. Remove the repeated leg.',
+ sameGame:'Compatibility warning: these legs share a game and may conflict. Full-game and half/quarter bets count different scores. Compatibility has not been verified.',
+ unknown:'Compatibility could not be checked because some legs lack a verified game or market.',
+ recordOnly:'Save this only as a record of an existing bet? This does not verify that the legs can win together.'
 };

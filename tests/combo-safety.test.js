@@ -1,0 +1,5 @@
+const test=require('node:test'),assert=require('node:assert/strict'),C=require('../js/combo-safety.js');
+const l=(market,side,event='nba-okc-sa-2026-10-20')=>({marketId:market,side,eventSlug:event});
+test('opposite outcomes and duplicate markets are detected without price inference',()=>{assert.equal(C.check([l('same','yes'),l('same','no')]).conflict,true);assert.equal(C.check([l('same','yes'),l('same','yes')]).duplicate,true);});
+test('full game plus second half is flagged even with distinct market ids',()=>{const r=C.check([l('asc-nba-okc-sa-2026-10-20-neg-11pt5','no'),l('asc-nba-okc-sa-2026-10-20-sh-neg-1pt5','yes')]);assert.equal(r.sameGame,true);assert.equal(r.conflict,false);});
+test('distinct games pass; missing attribution is never reported verified',()=>{assert.deepEqual(C.check([l('one','yes'),l('two','no','nba-phi-ny-2026-10-20')]),{sameGame:false,unknown:false,conflict:false,duplicate:false});assert.equal(C.check([{desc:'manual'},{desc:'other'}]).unknown,true);assert.equal(C.check([{market_id:'tsc-nhl-ana-nyi-2026-10-20-6pt5',market_side:'yes'},{market_id:'tsc-nhl-ana-nyi-2026-10-20-6pt5',market_side:'no'}]).conflict,true);});

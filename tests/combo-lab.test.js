@@ -26,10 +26,11 @@ for(const n of [3,6,10,15,19,20])assert.equal(C.choose(many,{count:n,now}).lengt
 const multi=[ev('one'),ev('two'),ev('three')];
 for(const e of multi)e.markets=[{...m},...Array.from({length:8},(_,i)=>({...m,id:'prop'+i,type:'prop',player:'Player '+i,team:'a'}))];
 const large=C.choose(multi,{count:19,now,allowSameGame:true,random:()=>0.2});
-assert.equal(large.length,19);
-assert.equal(new Set(large.map(p=>p.ev.slug+':'+(p.prop?p.m.player:'game-line'))).size,19);
+assert.equal(large.length,0);
+assert.equal(new Set(large.map(p=>p.ev.slug)).size,0);
 assert.equal(C.choose(multi,{count:19,now}).length,0);
 console.log('3-20 legs and explicit same-game option: exact count, unique players and one game line per event passed');
 
 assert.equal(C.candidates({...ev('period'),markets:[{...m,type:'total',group:'other',label:'Over 1.5 total goals in 1st period'}]}).length,0);
 assert.equal(C.candidates({...ev('unknown-period'),markets:[{...m,group:undefined}]}).length,0);
+

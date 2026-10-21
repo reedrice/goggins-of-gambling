@@ -544,6 +544,8 @@
 
   /** Validate + store a new play bet. legs: [{marketId, side, c, desc, eventSlug}]. */
   function placePlay(stake, legs) {
+    const safety=window.ComboSafety.check(legs);
+    if(safety.conflict||safety.duplicate||safety.sameGame||safety.unknown){toast(window.ComboSafety.message(legs,STR.comboSafety),6000);return false;}
     const X = STR.play, st = S.getPlay();
     if (!PY.validName(st.name)) { toast(X.err.name, 4000); go('play'); return false; }
     const err = PY.checkNew(st.bets, stake, legs);
@@ -980,6 +982,7 @@
     const overviewPct = window.PickEval.evaluate(pk, sec || 'singles', STR).pct;
     const overview = overviewPct === null ? STR.none : chanceText(overviewPct / 100, isMulti ? pk.legs.length : 1) || STR.none;
     return `<div class="card ${action === 'skip' ? 'skip' : ''} ${sec === 'lottery' ? 'lotto' : ''}" data-pick-id="${esc(pk.id || '')}">
+      ${isMulti && window.ComboSafety.message(pk.legs,STR.comboSafety) ? `<p class="error" role="alert">${esc(window.ComboSafety.message(pk.legs,STR.comboSafety))}</p>` : ''}
       <div class="pick-head">
         <div class="pick-id"><div>
           ${/* Combos: the tier name ("Small payout · 3 picks") is the title; the legs list below says what's in it. */ ''}
@@ -1447,7 +1450,7 @@
     wrap.querySelectorAll('.leg').forEach(div => {
       const i = +div.dataset.i;
       const d = $('.l-desc', div);
-      if (d) d.oninput = e => (calc.legs[i].desc = e.target.value);
+      if (d) d.oninput = e => {calc.legs[i].desc = e.target.value;updateCalcOut();};
       $('.l-plat', div).onchange = e => (calc.legs[i].platform = e.target.value);
       $('.l-price', div).oninput = e => { calc.legs[i].price = e.target.value; calc.legs[i].live = false; updateCalcOut(); };
     });
@@ -1494,12 +1497,17 @@
          <div class="chance-line">${chanceHtml(r.hit, n)} ${tip('chance')}</div>`
       : '';
     if (calc.generated && r.est) $('#calc-out').insertAdjacentHTML('beforeend', '<p class="muted small">' + esc(STR.comboLab.note) + '</p>');
+    const safety=window.ComboSafety.check(calc.legs),warning=window.ComboSafety.message(calc.legs,STR.comboSafety);
+    if(warning)$('#calc-out').insertAdjacentHTML('afterbegin','<p class="error" role="alert">'+esc(warning)+'</p>');
+    if(safety.conflict||safety.duplicate){$('#calc-out').querySelector('.pay-big')?.remove();$('#calc-out').querySelector('.chance-line')?.remove();}
     const unit = S.getProfile().unit;
     $('#calc-out2').innerHTML =
       kpi(K.outGap, r.gap === null ? STR.none : (r.gap > 0 ? '+' : '') + pct(r.gap, 1), sign(r.gap), 'gap') +
       kpi(K.outProfit, r.ev10 === null ? STR.none : money(r.ev10), sign(r.ev10), 'profit') +
       kpi(K.outReturn, money(r.payout)) +
       kpi(K.outSize, r.stake ? `${money(r.stake)} <span class="small muted">(${esc(STR.unitWords(+(r.stake / unit).toFixed(2)))})</span>` : STR.none, '', 'unit');
+    if(safety.conflict||safety.duplicate)$('#calc-out2').replaceChildren();
+    if($('#c-save'))$('#c-save').disabled=safety.conflict||safety.duplicate;
     updatePlayLine();
     const w = $('#c-warn');
     if (w) w.textContent = r.stake && r.stake > S.getProfile().maxPerSlip ? K.overMax(money(S.getProfile().maxPerSlip)) : '';
@@ -1508,6 +1516,9 @@
   /** Validate and save as an open bet; optionally share. */
   async function saveCalcBet() {
     const K = STR.calc;
+    const safety=window.ComboSafety.check(calc.legs);
+    if(safety.conflict||safety.duplicate)return toast(window.ComboSafety.message(calc.legs,STR.comboSafety),6000);
+    if((safety.sameGame||safety.unknown)&&!confirm(window.ComboSafety.message(calc.legs,STR.comboSafety)+'\n'+STR.comboSafety.recordOnly))return;
     const r = computeCalc(calc);
     if (!r.ok) return toast(K.errLegs);
     if (!r.quoted) return toast(K.errQuoted);

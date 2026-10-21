@@ -30,7 +30,7 @@
    for(const rows of groups){
     if(selected.length===count)break;
     const event=rows[0].ev.slug;
-    if(!allowSameGame&&used.has(event))continue;
+    if(used.has(event))continue; // Unverified same-game combinations are never generated.
     const family=p=>event+':'+(p.prop?'player:'+String(p.m.player).toLowerCase():'game-line');
     const available=rows.filter(p=>!families.has(family(p)));
     const desired=mode==='mixed'?available.filter(x=>x.prop===(selected.length%2===1)):available;
@@ -51,13 +51,13 @@
   const count=el('select');count.setAttribute('aria-label',S.legs);for(const n of Array.from({length:18},(_,i)=>i+3)){const o=el('option',S.legCount(n));o.value=n;o.selected=n===4;count.append(o);}
   const mode=el('select');mode.setAttribute('aria-label',S.markets);for(const k of ['mixed','lines','props']){const o=el('option',S[k]);o.value=k;mode.append(o);}
   const generate=el('button',S.generate);generate.type='button';generate.className='btn btn-primary';controls.append(count,mode,generate);panel.append(controls);
-  const same=el('input');same.type='checkbox';const sameLabel=el('label');sameLabel.className='toggle';sameLabel.append(same,el('span',S.sameGame));panel.append(sameLabel);
+  panel.append(el('p',S.separateGames));
   const status=el('p'),output=el('div');status.setAttribute('role','status');panel.append(status,output,el('p',S.note));
   let serial=0;
   const json=async url=>{const r=await fetch(url,{signal:AbortSignal.timeout(15000)});if(!r.ok)throw Error('Unavailable');return r.json();};
   generate.onclick=async()=>{
    const run=++serial;generate.disabled=true;output.replaceChildren();status.textContent=S.loading;
-   const wanted=Number(count.value),kind=mode.value,allowSameGame=same.checked;
+   const wanted=Number(count.value),kind=mode.value,allowSameGame=false;
    try{
     const ix=await json('data/markets/index.json?t='+Date.now());
     const live=await json('data/live/index.json?t='+Date.now());
