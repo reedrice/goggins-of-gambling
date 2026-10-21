@@ -138,6 +138,42 @@
   if(!row||Date.now()-row.at>600000){row={at:Date.now(),promise:fetch('https://gateway.polymarket.us/v1/events/slug/'+encodeURIComponent(slug),{credentials:'omit',signal:AbortSignal.timeout(12000)}).then(r=>{if(!r.ok)throw Error('market unavailable');return r.json();}).then(d=>d.event).catch(e=>{marketCache.delete(slug);throw e;})};marketCache.set(slug,row);}
   return resolveMarket(s,await row.promise);
  }
+ function periodConflict(entries){
+  const bounds=new Map();
+  for(const {spec:s,game} of entries){
+   if(!game||!s?.eventSlug)continue;
+   const league=s.eventSlug.split('-')[0];if(!['nba','wnba','nfl'].includes(league))continue;
+   const bet=parseBet(s);if(!['spread','winner'].includes(bet.kind))continue;
+   if(bet.segment&&!(bet.segment.half===2))continue;
+   const teams=game.competitors||[];if(teams.length!==2)continue;
+   const away=teams.find(c=>c.homeAway==='away'),home=teams.find(c=>c.homeAway==='home'),selected=selectedTeam(teams,s);
+   if(!away||!home||!selected)continue;
+   let halfMargin=0;
+   if(bet.segment){
+    if(game.status?.period<3)continue;
+    const a=scoresFor(away,{half:1},league),h=scoresFor(home,{half:1},league);
+    if(a===null||h===null)continue;halfMargin=a-h;
+   }
+   // D is final away-minus-home score. H2 away margin is D minus
+   // halftime margin; each selected outcome gives a strict bound on D.
+   const direction=(selected===away?1:-1)*(s.side==='no'?-1:1);
+   const boundary=halfMargin-(selected===away?1:-1)*(bet.line||0);
+   const key=s.eventSlug;const b=bounds.get(key)||{lower:-Infinity,upper:Infinity};
+   if(direction>0)b.lower=Math.max(b.lower,boundary);else b.upper=Math.min(b.upper,boundary);
+   bounds.set(key,b);
+   // Scores are integers; even two strict bounds less than one point
+   // apart can exclude every possible final margin.
+   if(Math.floor(b.lower)+1>=b.upper)return true;
+  }
+  return false;
+ }
+ function refreshComboWarning(card){
+  if(!card)return;
+  const entries=Array.from(card.querySelectorAll('.bp-host')).map(h=>h._bpVerified).filter(Boolean);
+  const conflict=periodConflict(entries);let warning=card.querySelector('.pm-period-conflict');
+  if(!conflict){warning?.remove();return;}
+  if(!warning){warning=node('p','error pm-period-conflict',root.STR.comboSafety.periodConflict);warning.setAttribute('role','alert');card.prepend(warning);}
+ }
  const cache=new Map();
  async function get(url) {
   const cached=cache.get(url);if(cached&&Date.now()-cached.at<15000)return cached.promise;
@@ -207,7 +243,7 @@
    // Keep score, splits and clock together from one scoreboard snapshot. Summary
    // box scores can lag or temporarily report a zero clock at period transitions.
    summary={...summary,header:{...summary.header,competitions:[{...event.competitions[0],status:event.status||event.competitions[0].status}]}};
-   if(host.isConnected)render(host,s,evaluateBet(s,summary,root.Viz?.parseProp));
+   if(host.isConnected){const result=evaluateBet(s,summary,root.Viz?.parseProp);host._bpVerified={spec:s,game:result.game};render(host,s,result);refreshComboWarning(host.closest('.pm-position'));}
   } catch(error) {if(host.isConnected)render(host,{}, {reason:'unavailable'});} finally {host._bpBusy=false;}
  }
  function scan() {
@@ -220,6 +256,6 @@
   document.addEventListener('toggle',schedule,true);document.addEventListener('visibilitychange',schedule);
   setInterval(scan,15000);
  }
- return {spec,html,findEvent,athleteStat,parseBet,selectedTeam,scoresFor,gameElapsed,evaluateBet,resolveMarket,clockText,marginText};
+ return {spec,html,findEvent,athleteStat,parseBet,selectedTeam,scoresFor,gameElapsed,evaluateBet,resolveMarket,clockText,marginText,periodConflict};
 });
 

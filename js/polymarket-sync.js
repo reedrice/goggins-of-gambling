@@ -111,7 +111,7 @@
   if(totals.unclassified)host.append(node('p',S.unclassified(totals.unclassified),'muted small'));
   const positions=rows(snapshot.positions).filter(p=>p.quantity!==0&&!p.expired);host.append(node('h3',S.positions(positions.length)));
   if(!positions.length)host.append(node('p',S.noPositions,'muted'));
-  for(const p of positions){const card=node('div',undefined,'card');const title=p.comboLegDetails?.length?S.comboTitle(p.comboLegDetails.length):activityLabel(p.slug,snapshot.positions,S);card.append(node('strong',title),node('p',S.positionInfo(p.quantity,money(usd(p.cost)),money(usd(p.cashValue))),'muted small'));
+  for(const p of positions){const card=node('div',undefined,'card pm-position');const title=p.comboLegDetails?.length?S.comboTitle(p.comboLegDetails.length):activityLabel(p.slug,snapshot.positions,S);card.append(node('strong',title),node('p',S.positionInfo(p.quantity,money(usd(p.cost)),money(usd(p.cashValue))),'muted small'));
    const specs=progressSpecs(p),warning=root.ComboSafety?.message(specs,root.STR.comboSafety);if(warning){const alert=node('p',warning,'error');alert.setAttribute('role','alert');card.append(alert);}
    for(const spec of specs){card.append(node('div',spec.desc,'pm-leg-label'));if(root.BetProgress&&!spec.unsupported){const box=node('div','', 'bp-host');box.dataset.bp=JSON.stringify({...root.BetProgress.spec(spec),resolveMarket:true});card.append(box);}else card.append(node('p',S.progressUnavailable,'muted small'));}host.append(card);
   }

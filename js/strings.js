@@ -679,6 +679,7 @@ window.STR.pmSync = {
 };
 
 window.STR.comboSafety={
+ periodConflict:'Conflicting legs: with the verified halftime score, these full-game and second-half outcomes cannot both win.',
  conflict:'Conflicting legs: these outcomes cannot both win. Remove one leg.',
  duplicate:'Duplicate market: this is the same outcome twice. Remove the repeated leg.',
  sameGame:'Compatibility warning: these legs share a game and may conflict. Full-game and half/quarter bets count different scores. Compatibility has not been verified.',
