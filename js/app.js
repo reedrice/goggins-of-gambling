@@ -1061,7 +1061,7 @@
       // Below Richie's container: OUR "Live Bets record" (Reed: it lives here, never on
       // the Record tab, and never as a new bottom tab). Pablo's files stay untouched.
       $('#picks-view').innerHTML = '<div id="live-bets-root" class="live-bets-root"></div><section id="live-record-root" class="live-record-root"></section>';
-      fetchData('data/live-record.json').catch(() => null).then(rec => { const box = $('#live-record-root'); if (box) box.innerHTML = liveRecordHtml(rec); });
+      Promise.all([fetchData('data/live-record.json').catch(()=>null),fetchData('data/live-feedback.json').catch(()=>null)]).then(([rec,feedback])=>{const box=$('#live-record-root');if(box){box.innerHTML=liveRecordHtml(rec);if(rec&&window.LiveFeedback)window.LiveFeedback.mount(box,rec.entries||[],feedback);}});
       if (window.LiveBets && typeof LiveBets.render === 'function') LiveBets.render($('#live-bets-root'));
       [0, 1500, 4000].forEach(ms => setTimeout(() => { paintLiveBadges(); paintLiveToast(); }, ms));   // Richie's view updates its seen key -> badge clears
       return;
@@ -2116,7 +2116,7 @@
     const list = rec.entries.slice().sort((a, b) => String(b.at).localeCompare(String(a.at))).slice(0, 30);
     if (!list.length) return h + `<div class="section-empty">${esc(X.empty)}</div>`;
     const badge = r => `<span class="badge ${r === 'win' ? 'won' : r === 'loss' ? 'lost' : r === 'pending' ? 'open' : 'push'}">${esc(X.result[r] || r)}</span>`;
-    return h + `<div class="live-rec-list">${list.map(e => `<div class="card live-rec-item">
+    return h + `<div class="live-rec-list">${list.map(e => `<div class="card live-rec-item" data-live-alert="${esc(e.id)}">
         <div class="lr-top"><div><b>${esc(e.side || '')}</b><div class="muted small">${esc(e.market || '')} · ${esc(e.game || '')}</div></div>${badge(e.result)}</div>
         <div class="small">${esc(X.odds(e.odds_at_alert || '–', e.opening_odds || '–'))} · <span class="lr-tier lr-${esc(e.tier)}">${esc(X.tiers[e.tier] || e.tier)}</span></div>
         ${window.BetProgress && [0,1].includes(e.side_index) ? window.BetProgress.html({...window.BetProgress.spec({desc:e.side,market:e.market,eventSlug:e.slug,market_id:e.market_id,market_side:e.side_index===0?'yes':'no'}),resolveMarket:true}) : `<p class="muted small">${esc(STR.progress.noStat)}</p>`}

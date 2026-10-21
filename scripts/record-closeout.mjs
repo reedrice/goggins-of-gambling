@@ -27,6 +27,7 @@ export function predictionResult(p,board){
 }
 async function main(){
  const read=f=>JSON.parse(fs.readFileSync(path.join(ROOT,f),'utf8'));
+ execFileSync(process.execPath,[path.join(ROOT,'scripts/sync-live-feedback.mjs')],{cwd:ROOT,stdio:'inherit',timeout:60000});
  const days=new Set(closedDays(read('data/live/index.json').games));
  if(!days.size){console.log('Record closeout: waiting for a complete tracked slate.');return;}
  const doc=read('data/predictions.json'),cache=new Map();let changed=0;

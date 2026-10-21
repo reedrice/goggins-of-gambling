@@ -688,3 +688,9 @@ window.STR.comboSafety={
  unknown:'Compatibility could not be checked because some legs lack a verified game or market.',
  recordOnly:'Save this only as a record of an existing bet? This does not verify that the legs can win together.'
 };
+
+window.STR.liveFeedback={title:'Alert quality',juicy:'Juicy',bad:'Bad alert',notes:'Team notes',note:'Optional note',submit:'Share feedback',
+ publicNote:'Shared publicly on GitHub for bot review. No stakes, account details or credentials. Your review is separate from whether the bet won.',
+ invalid:'Use a note of 500 characters or less, without money amounts or credentials.',
+ continue:'Finish submitting on GitHub. It is not saved until you submit there. ',github:'Continue on GitHub',
+ saved:'Feedback saved on GitHub. Shared counts update after the next scheduled review.'};
