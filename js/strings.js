@@ -716,3 +716,5 @@ tenniSpread:(team,n,unit,final)=>final?`${team}: final adjusted ${unit} margin $
 tenniLead:(team,n,final)=>`${team}: ${n>0?'+':''}${n} games${final?' · set finished':''}`,
 tenniScores:text=>`Games by set · ${text}`
 });
+
+window.STR.theme={title:'Appearance',scheme:'Color scheme',schemes:{ocean:'Ocean blue',violet:'Soft violet',teal:'Deep teal',custom:'Custom'},canvas:'Canvas',accent:'Accent'};

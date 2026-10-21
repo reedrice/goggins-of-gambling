@@ -31,9 +31,9 @@
   --page-gutter: clamp(16px, 4vw, 32px);
   --content-width: 960px;
   --nav-clearance: 104px;
-  --focus-ring: #FF8A58;
-  --action-fill: #AE3C16;
-  --selection-fill: rgba(255, 90, 31, 0.12);
+  --focus-ring: #ADCFFF;
+  --action-fill: #254E86;
+  --selection-fill: rgba(138, 180, 255, 0.14);
   --scrim: rgba(10, 14, 23, 0.76);
   --track: rgba(255, 255, 255, 0.1);
   /* Existing components use these aliases; values have one source of truth. */
@@ -47,12 +47,30 @@
   --radius: var(--radius-panel);
   --font-head: var(--font-ui);
   --font-body: var(--font-ui);
-  --accent: #FF5A1F;
+  --accent: #8AB4FF;
   --accent-2: #F07878;
   --good: #40C69B;
   --warn: #E9BD62;
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 }
+
+/* Colorways are interchangeable; geometry, glass blur and spacing never change. */
+:root[data-color-scheme="violet"] {
+  --canvas: #141426; --accent: #B5A2FF; --focus-ring: #D0C4FF;
+  --action-fill: #51418B; --selection-fill: rgba(181, 162, 255, 0.14);
+  --scrim: rgba(20, 20, 38, 0.76);
+}
+:root[data-color-scheme="teal"] {
+  --canvas: #0B1A1F; --accent: #72D6CD; --focus-ring: #A8E8E2;
+  --action-fill: #185B56; --selection-fill: rgba(114, 214, 205, 0.14);
+  --scrim: rgba(11, 26, 31, 0.76);
+}
+.theme-custom { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); }
+.theme-custom input[type="color"] { height: 48px; padding: var(--space-1); }
+#tab-picks .pst-league { color: var(--text-secondary); }
+#tab-picks .lf-controls button.on { background: var(--selection-fill); border-color: var(--accent); }
+#kalshi-account .kalshi-step-number { background: var(--selection-fill); color: var(--accent); }
+.risk-risky, .risk-bg-risky { background: var(--warn); }
 
 html, body { background: var(--canvas); color: var(--text-primary); }
 body { background-image: none; font-family: var(--font-ui); font-size: var(--type-body); font-weight: var(--weight-body); line-height: 1.55; }
@@ -119,7 +137,7 @@ input::placeholder, textarea::placeholder { color: var(--text-secondary); opacit
 .onboard-step { background: var(--surface-glass); color: var(--text-primary); border: 1px solid var(--surface-border); }
 .gcard { border-radius: var(--radius-panel) !important; }
 :is(.oc-btn:hover, .oc-dig:hover, .viz-mini:active, .trent-pick .x-btn:active) { background: var(--surface-glass); }
-:is(.btn-primary, .btn-play) { background: var(--action-fill); border-color: var(--action-fill); color: var(--text-primary); }
+:is(.btn-primary, .btn-play) { background: var(--action-fill); border-color: var(--action-fill); color: var(--action-text, var(--text-primary)); }
 :is(.chip.on, .seg button.on, .view-toggle button.on, .dd-chip.on, .viz-tab.on, .viz-chip.on, .pbtn.added,
     .live-bets-root .lb-filter.lb-on, .lb-game-btn.lb-on, .lf-controls button.on) {
   background: var(--selection-fill); color: var(--text-primary); border-color: var(--accent);
