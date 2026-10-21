@@ -1054,7 +1054,7 @@
     const tab = $('#tab-picks');
     if (!picksView) picksView = savedView();
     const btn = (v, label) => `<button type="button" class="${picksView === v ? 'on' : ''}" data-picks-view="${v}" aria-pressed="${picksView === v}">${esc(label)}</button>`;
-    tab.innerHTML = `${picksView === 'picks' ? '<div id="picks-score-ticker"></div>' : ''}<div class="view-toggle" role="group" aria-label="${esc(STR.live.group)}">${btn('picks', STR.live.today)}${btn('live', STR.live.live)}</div><div id="picks-view"></div>`;
+    tab.innerHTML = `<div class="view-toggle" role="group" aria-label="${esc(STR.live.group)}">${btn('picks', STR.live.today)}${btn('live', STR.live.live)}</div><div id="picks-view"></div>`;
     tab.querySelectorAll('[data-picks-view]').forEach(b => (b.onclick = () => go(b.dataset.picksView)));
     if (picksView === 'live') {
       // Richie's container. Keep this tie-in tiny: one div + one call.
@@ -1067,7 +1067,6 @@
       return;
     }
     paintLiveBadges(); paintLiveToast();
-    if (window.PicksScores) window.PicksScores.mount($('#picks-score-ticker'));
     return renderTodayPicks();
   }
 

@@ -69,7 +69,7 @@
 }
 .theme-custom { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); }
 .theme-custom input[type="color"] { height: 48px; padding: var(--space-1); }
-#tab-picks .pst-league { color: var(--text-secondary); }
+#picks-score-ticker .pst-league { color: var(--text-secondary); }
 #tab-picks .lf-controls button.on { background: var(--selection-fill); border-color: var(--accent); }
 #kalshi-account .kalshi-step-number { background: var(--selection-fill); color: var(--accent); }
 .risk-risky, .risk-bg-risky { background: var(--warn); }
@@ -198,9 +198,9 @@ input[type="checkbox"], input[type="radio"] { accent-color: var(--accent); }
 }
 .live-bets-root .lb-why .lb-tier { color: var(--accent-2); }
 .live-bets-root .lb-edge.lb-gone { box-shadow: none; }
-#tab-picks .picks-score-ticker { background: var(--surface-panel); border-color: var(--panel-border); border-radius: var(--radius-panel); min-width: 0; }
-#tab-picks .pst-title { color: var(--accent); }
-#tab-picks .pst-score { color: var(--text-primary); }
+.picks-score-ticker { background: var(--surface-panel); border-color: var(--panel-border); border-radius: var(--radius-panel); min-width: 0; }
+#picks-score-ticker .pst-title { color: var(--accent); }
+#picks-score-ticker .pst-score { color: var(--text-primary); }
 @media (width < 768px) {
   :root { --radius-panel: 16px; --panel-padding: 16px; --module-gap: 16px; --nav-clearance: 88px; }
   .tabbar { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 2px; padding: 6px 4px calc(6px + var(--safe-bottom)); }
@@ -212,11 +212,11 @@ input[type="checkbox"], input[type="radio"] { accent-color: var(--accent); }
   .row > *, .pick-head > *, .pick-actions > * { min-width: 0; }
   main :is(.card, .lb-edge, .lb-alert, .account-panel, .mib-panel) { overflow-wrap: anywhere; }
   .table-wrap { max-width: 100%; overflow-x: auto; }
-  #tab-picks .pst-viewport { overflow-x: auto; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }
-  #tab-picks .pst-track { animation: none; transform: none; display: flex; flex-flow: row nowrap; }
-  #tab-picks .pst-lane { min-width: 0; flex: 0 0 auto; }
-  #tab-picks .pst-lane[aria-hidden] { display: none; }
-  #tab-picks .pst-game { flex: 0 0 auto; }
+  #picks-score-ticker .pst-viewport { overflow-x: auto; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }
+  #picks-score-ticker .pst-track { animation: none; transform: none; display: flex; flex-flow: row nowrap; }
+  #picks-score-ticker .pst-lane { min-width: 0; flex: 0 0 auto; }
+  #picks-score-ticker .pst-lane[aria-hidden] { display: none; }
+  #picks-score-ticker .pst-game { flex: 0 0 auto; }
 }
 @media (max-width: 480px) {
   .pick-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -227,3 +227,14 @@ input[type="checkbox"], input[type="radio"] { accent-color: var(--accent); }
 @media (prefers-reduced-motion: reduce) {
   .sheet, .dd-sheet { animation: none; }
 }
+
+/* Shared header slate: quiet glass counters on every tab, no extra navigation. */
+.header-data { min-width: 0; margin-bottom: var(--module-gap); }
+#daily-slate { min-width: 0; }
+.slate-heading { color: var(--text-secondary); font-size: var(--type-label); margin: 12px 0 8px; font-weight: var(--weight-heading); }
+.slate-row { display: flex; flex-flow: row nowrap; gap: 8px; overflow-x: auto; overscroll-behavior-x: contain; padding: 3px 2px 10px; scrollbar-width: thin; }
+.slate-pill { flex: 0 0 auto; padding: 10px 14px; background: var(--surface-glass); border: 1px solid var(--surface-border); border-radius: var(--radius-control); backdrop-filter: blur(var(--surface-blur)); -webkit-backdrop-filter: blur(var(--surface-blur)); color: var(--text-primary); font-size: 13px; font-weight: var(--weight-heading); white-space: nowrap; }
+.slate-empty, .slate-status { color: var(--text-secondary); }
+.slate-status { display: block; font-size: var(--type-label); }
+.slate-status:empty { display: none; }
+.slate-row:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }

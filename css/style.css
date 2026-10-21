@@ -681,30 +681,30 @@ a.btn-play { display: block; text-align: center; text-decoration: none; margin-t
 #picks-view.today-picks .pick-matchup .tlogo { flex-shrink: 0; }
 
 /* Browser score ticker: only Today's Picks, independent of the filtered cards. */
-#tab-picks .picks-score-ticker { margin: 0 0 16px; padding: 10px 0 0; border: 1px solid #ffffff20; background: #101114; border-radius: 12px; overflow: hidden; }
-#tab-picks .pst-header { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 0 12px 8px; }
-#tab-picks .pst-title { font: 700 12px system-ui; color: #ff7848; text-transform: uppercase; letter-spacing: .06em; }
-#tab-picks .pst-meta { flex: 1; font-size: 10px; color: #a9a9b3; }
-#tab-picks .pst-pause { min-height: 32px; padding: 3px 8px; border: 1px solid #ffffff28; border-radius: 6px; background: transparent; color: #ddd; font: 12px system-ui; cursor: pointer; }
-#tab-picks .pst-viewport { overflow: hidden; padding: 8px 0; border-top: 1px solid #ffffff12; }
-#tab-picks .pst-track { display: flex; width: max-content; animation: picks-scores-scroll var(--pst-duration, 45s) linear infinite; }
-#tab-picks .pst-lane { display: flex; width: max-content; min-width: var(--pst-lane-width, 0px); box-sizing: border-box; }
-#tab-picks .pst-group { display: flex; align-items: center; gap: 22px; padding: 0 22px; white-space: nowrap; }
-#tab-picks .pst-league { color: #ff7848; font: 800 12px system-ui; }
-#tab-picks .pst-game { display: inline-flex; align-items: center; gap: 7px; font: 600 13px system-ui; }
-#tab-picks .pst-score { color: #fff; font-size: 16px; font-variant-numeric: tabular-nums; }
-#tab-picks .pst-at, #tab-picks .pst-clock { color: #a9a9b3; font-size: 11px; }
-#tab-picks .pst-empty { padding: 2px 12px; font-size: 13px; color: #b9b9c2; }
-#tab-picks .picks-score-ticker:hover .pst-track, #tab-picks .picks-score-ticker:focus-within .pst-track, #tab-picks .pst-paused .pst-track { animation-play-state: paused; }
+.picks-score-ticker { margin: 0 0 16px; padding: 10px 0 0; border: 1px solid #ffffff20; background: #101114; border-radius: 12px; overflow: hidden; }
+#picks-score-ticker .pst-header { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 0 12px 8px; }
+#picks-score-ticker .pst-title { font: 700 12px system-ui; color: #ff7848; text-transform: uppercase; letter-spacing: .06em; }
+#picks-score-ticker .pst-meta { flex: 1; font-size: 10px; color: #a9a9b3; }
+#picks-score-ticker .pst-pause { min-height: 32px; padding: 3px 8px; border: 1px solid #ffffff28; border-radius: 6px; background: transparent; color: #ddd; font: 12px system-ui; cursor: pointer; }
+#picks-score-ticker .pst-viewport { overflow: hidden; padding: 8px 0; border-top: 1px solid #ffffff12; }
+#picks-score-ticker .pst-track { display: flex; width: max-content; animation: picks-scores-scroll var(--pst-duration, 45s) linear infinite; }
+#picks-score-ticker .pst-lane { display: flex; width: max-content; min-width: var(--pst-lane-width, 0px); box-sizing: border-box; }
+#picks-score-ticker .pst-group { display: flex; align-items: center; gap: 22px; padding: 0 22px; white-space: nowrap; }
+#picks-score-ticker .pst-league { color: #ff7848; font: 800 12px system-ui; }
+#picks-score-ticker .pst-game { display: inline-flex; align-items: center; gap: 7px; font: 600 13px system-ui; }
+#picks-score-ticker .pst-score { color: #fff; font-size: 16px; font-variant-numeric: tabular-nums; }
+#picks-score-ticker .pst-at, #picks-score-ticker .pst-clock { color: #a9a9b3; font-size: 11px; }
+#picks-score-ticker .pst-empty { padding: 2px 12px; font-size: 13px; color: #b9b9c2; }
+.picks-score-ticker:hover .pst-track, .picks-score-ticker:focus-within .pst-track, #picks-score-ticker .pst-paused .pst-track { animation-play-state: paused; }
 @keyframes picks-scores-scroll { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) {
- #tab-picks .pst-track { animation: none; }
- #tab-picks .pst-viewport { overflow-x: auto; }
- #tab-picks .pst-lane[aria-hidden] { display: none; }
+ #picks-score-ticker .pst-track { animation: none; }
+ #picks-score-ticker .pst-viewport { overflow-x: auto; }
+ #picks-score-ticker .pst-lane[aria-hidden] { display: none; }
 }
 
-#tab-picks .pst-team { display: inline-flex; align-items: center; gap: 5px; }
-#tab-picks .pst-logo { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
+#picks-score-ticker .pst-team { display: inline-flex; align-items: center; gap: 5px; }
+#picks-score-ticker .pst-logo { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
 
 /* Live statistical progress: only the Picks tab, including its Live Bets view. */
 :is(#tab-picks, #tab-bets) .bp-host { padding: 10px 0; margin-top: 8px; border-top: 1px solid #ffffff15; font: 12px/1.5 system-ui; }
