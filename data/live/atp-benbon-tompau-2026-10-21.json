@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185101",
-  "fetched_at": "2026-10-21T19:44:21.215Z",
+  "fetched_at": "2026-10-21T20:18:24.158Z",
   "tennis": true,
   "tennis_match": {
    "id": "185101",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(4) Tommy Paul (USA) leads Benjamin Bonzi (FRA) 3-2",
+     "text": "Benjamin Bonzi (FRA) is tied with (4) Tommy Paul (USA) 4-6 2-1",
      "type": "event"
     }
    ],
@@ -61,7 +61,11 @@
      },
      "linescores": [
       {
-       "value": 3
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -103,6 +107,10 @@
      "homeAway": "home",
      "possession": false,
      "linescores": [
+      {
+       "value": 4,
+       "winner": false
+      },
       {
        "value": 2
       }
@@ -162,14 +170,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Tommy Paul",
    "alias": "Tommy Paul",
    "name": "Tommy Paul",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Benjamin Bonzi",
@@ -181,7 +189,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-21T19:44:21.215Z",
+ "updated": "2026-10-21T20:18:24.159Z",
  "open_taken_at": "2026-10-21T05:15:58.759Z",
  "thresholds": {
   "big": 10,
@@ -255,28 +263,7 @@
    "taken_at": "2026-10-21T05:15:58.759Z"
   }
  ],
- "edges": [
-  {
-   "key": "1626826:0",
-   "market_id": "1626826",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Benjamin Bonzi cover -1.5 vs the Tommy Paul in Benjamin Bonzi vs. Tommy Paul?",
-   "side": "Benjamin Bonzi -1.50 (Games)",
-   "open_chance": 25,
-   "now_chance": 17,
-   "open_odds": "+300",
-   "now_odds": "+488",
-   "edge": 8,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Benjamin Bonzi not above the games spread right now",
-   "context": "Tommy Paul 3 · Benjamin Bonzi 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-21T19:44:21.215Z",
-   "status": "open",
-   "kalshi": null
-  }
- ],
+ "edges": [],
  "alerts": [],
  "alert_seen": [
   "new_edge:1626842:1:slight",
