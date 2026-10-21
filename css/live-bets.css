@@ -84,3 +84,31 @@
 .live-bets-root .lb-plat-on { background: var(--card-2); }
 .live-bets-root .lb-plat-off { color: var(--muted); opacity: .6; }
 .live-bets-root .lb-plat-why { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+/* Brandon's sandbox Option 1: compact navigation and activity. */
+.live-bets-root .lb-controls { margin: 14px 0 10px; }
+.live-bets-root .lb-game-label { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 13px; }
+.live-bets-root .lb-game-select { flex: 1; min-width: 0; min-height: 44px; border: 1px solid #ffffff26; border-radius: 10px; padding: 8px 10px; background: var(--card); color: var(--text); font: inherit; }
+.live-bets-root .lb-edge-filters { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 5px; margin-top: 12px; }
+.live-bets-root .lb-filter { min-height: 44px; border: 1px solid #ffffff22; background: var(--card); color: var(--muted); font: 600 12px system-ui; border-radius: 10px; cursor: pointer; }
+.live-bets-root .lb-filter.lb-on { color: var(--text); background: #ff652928; border-color: var(--accent); }
+.live-bets-root .lb-notice { display: flex; align-items: center; gap: 10px; justify-content: space-between; padding: 12px; background: #ffffff07; border-radius: 10px; margin: 12px 0 18px; font-size: 13px; color: var(--muted); }
+.live-bets-root .lb-review, .live-bets-root .lb-chart { min-height: 44px; border: 1px solid #ffffff25; background: transparent; color: var(--text); border-radius: 8px; padding: 8px 12px; font: 600 13px system-ui; cursor: pointer; }
+.live-bets-root .lb-matchup { font-size: 13px; font-weight: 650; margin-top: 5px; color: var(--muted); }
+.live-bets-root .lb-unverified { color: var(--warn); font-size: 12px; margin-top: 4px; }
+.live-bets-root .lb-card-details { margin-top: 8px; border-top: 1px solid #ffffff12; }
+.live-bets-root .lb-card-details > summary, .live-bets-root .lb-alert-details > summary { cursor: pointer; padding: 12px 0; font: 12px system-ui; color: var(--muted); }
+.live-bets-root .lb-card-actions { display: flex; align-items: stretch; gap: 8px; margin-top: 4px; }
+.live-bets-root .lb-card-actions .lb-link { flex: 1; margin: 0; font-size: 13px; }
+.live-bets-root .lb-activity, .live-bets-root .lb-about { margin-top: 20px; border-top: 1px solid #ffffff20; }
+.live-bets-root .lb-activity > summary, .live-bets-root .lb-about > summary { padding: 14px 0; font: 600 14px system-ui; cursor: pointer; color: var(--muted); }
+.live-bets-root .lb-activity .lb-alert-list { max-height: none; }
+.live-bets-root .lb-activity .lb-new { box-shadow: none; border-left-color: var(--accent); }
+.live-bets-root .lb-foot { text-align: left; padding-bottom: 12px; }
+@media (max-width: 480px) { .live-bets-root .lb-pts { font-size: 10px; max-width: 50%; text-align: right; } }
+
+.live-bets-root .lb-groups.lb-single-group { grid-template-columns: 1fr; }
+
+.live-bets-root .lb-filter { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; padding: 8px 3px; }
+.live-bets-root .lb-filter-label { white-space: nowrap; font-size: 11px; }
+.live-bets-root .lb-filter-count { font-size: 16px; font-variant-numeric: tabular-nums; }

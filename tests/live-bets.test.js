@@ -92,3 +92,22 @@ console.log('ok live-bets helpers + data shape + grouping/cap + alerts + odds li
  assert.strictEqual(LB.combineGames([]).game_count,0);
  console.log('all-games source attribution, sorting, partial failures and final exclusion ok');
 }
+
+// Sandbox Option 1 navigation preserves eligibility and per-game identity.
+{
+ const since='2026-10-20T20:00:00Z';
+ const edge=(key,tier,first_seen,status='open',cls='edge',group='game')=>({key,tier,first_seen,status,class:cls,group,edge:tier==='big'?12:6,now_chance:50});
+ const rows=[edge('old','big','2026-10-20T19:00:00Z'),edge('new','slight','2026-10-20T21:00:00Z'),edge('gone','big','2026-10-20T21:00:00Z','gone'),edge('reason','big','2026-10-20T21:00:00Z','open','score'),edge('injury','big','2026-10-20T21:00:00Z','open','injury'),{...edge('limit','big','2026-10-20T21:00:00Z'),now_chance:1}];
+ const selection=LB.edgeSelection(rows,'all',since);
+ assert.deepStrictEqual(selection.counts,{all:2,big:1,slight:1,new:1});
+ assert.deepStrictEqual(LB.edgeSelection(rows,'new',since).edges.map(e=>e.key),['new']);
+ assert.deepStrictEqual(LB.edgeSelection(rows,'big',since).edges.map(e=>e.key),['old']);
+ assert.deepStrictEqual(selection.past.map(e=>e.key),['gone']);assert.strictEqual(selection.reasons.length,1);
+ assert.strictEqual(LB.edgeSelection(rows,'new',null).counts.new,0);
+ assert.strictEqual(LB.edgeSelection([{...rows[1],first_seen:since}],'new',since).edges.length,0);
+ const repeated=[{...rows[1],event_slug:'one'},{...rows[1],event_slug:'two'}];
+ assert.deepStrictEqual(LB.edgeSelection(repeated,'new',since).edges.map(e=>e.event_slug),['one','two']);
+ assert.strictEqual(LB.edgeTitle({group:'prop',side:'No: Joel Embiid record at least 10 total rebounds in PHI 76ers vs. NY Knicks'}),'No: Joel Embiid 10+ rebounds');
+ assert.strictEqual(LB.edgeTitle({group:'game',side:'Under 108.5'}),'Under 108.5');
+ console.log('Option 1 edge filters, New boundary, safety exclusions, identity and compact titles ok');
+}

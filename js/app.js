@@ -50,6 +50,7 @@
 
   let calc = freshCalc();
   let picksData = null;
+  let picksMarketIndex = null;
   /** data/book-odds.json (other apps' prices); optional, loaded with the picks. */
   let bookOdds = null;
   /** Game predictions for the "My prediction" line: picks.sections.predictions + data/predictions.json. */
@@ -455,6 +456,7 @@
 
   /** Show one tab and render it (hash-based). */
   function go(name) {
+    if (window.PicksScores) window.PicksScores.stop();
     // #live and #picks are the two views of the Picks tab (renderPicks).
     if (name === 'live' || name === 'picks') { picksView = name; S.setPrefs({ picksView: name }); }
     if (name === 'live') name = 'picks';
@@ -815,9 +817,7 @@
     const width = ev.pct === null ? 0 : Math.max(2, Math.min(100, ev.pct));   // numeric only, safe in style
     const note = ev.sameGame === true ? (ev.source === 'given' ? E.sameGameGiven : E.sameGameLegs) : ev.sameGame === false ? E.diffGames : '';
     const preds = window.PickEval.findPredictions(pk, gamePreds, picksData && pickDayOf(pk, picksData))   // pick's own day (next-day picks);
-    const multi = Array.isArray(pk.legs) && pk.legs.length > 0;
-    const oc = !multi && pk.market_id && window.OurChance ? `<div class="oc" data-oc="${window.OurChance.attr({ marketId: pk.market_id, side: pk.market_side || 'yes', market: pk.price, text: pk.side, player: pk.player || null })}"></div>` : '';
-    return `<div class="eval">${oc}
+    return `<div class="eval">
       <div class="eval-top">
         <b class="eval-pct">${esc(pctTxt)}</b> ${tip('hitChance')}
         ${ev.risk ? `<span class="risk risk-${esc(ev.risk)}">${esc(E.risk[ev.risk] || ev.risk)}</span>${tip('risk')}` : ''}
@@ -929,6 +929,29 @@
     history.replaceState(null, '', location.pathname + location.hash);
   }
 
+  // Picks-only matchup row. Match both names within one snapshot event so logos
+  // never come from a similarly named team in another sport or another game.
+  function pickMatchupHtml(pk) {
+    const normalize = value => String(value || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const matches = (team, label) => ['name', 'short', 'full', 'abbr', 'display']
+      .some(key => team[key] && normalize(team[key]) === normalize(label));
+    return String(pk.event || '').split(/\s+\+\s+/).map(game => {
+      const names = game.split(/\s+@\s+/);
+      const events = ((picksMarketIndex && picksMarketIndex.events) || []).filter(ev =>
+        (!pk.sport || String(pk.sport).split('+').map(s => s.trim().toLowerCase()).includes(String(ev.sport).toLowerCase())) &&
+        (!picksData || ev.date === (pk.slate_date || picksData.slate_date)));
+      const event = names.length === 2 && events.find(ev => ev.teams && ev.teams.length === 2 &&
+        names.every(name => ev.teams.some(team => matches(team, name))));
+      if (!event) return `<div class="pick-matchup"><strong>${esc(game)}</strong></div>`;
+      const teamHtml = name => {
+        const team = event.teams.find(team => matches(team, name));
+        // Use the existing logo renderer, including its image-error fallback.
+        return `<span class="pick-matchup-team">${T.badge({ ...team, league: event.league, logo: T.espnUrl(event.league, team.abbr) || team.logo }, 24)}<strong>${esc(name)}</strong></span>`;
+      };
+      return `<div class="pick-matchup">${teamHtml(names[0])}<span class="pick-matchup-at">@</span>${teamHtml(names[1])}</div>`;
+    }).join('');
+  }
+
   function pickCard(pk, cat, sec) {
     const P = STR.picks;
     const isMulti = Array.isArray(pk.legs) && pk.legs.length > 0;
@@ -953,24 +976,32 @@
          ${tapHtml(sp)}${spreadHtml((pk.side || '') + ' ' + (pk.market || ''), pk)}
          ${deal ? `<div class="deal deal-${deal} small">${esc(STR.plain.deal[deal])} ${tip('advantage')}</div>` : ''}
          ${priceLineHtml(pk, bookPrices(pk), true)}`);
-    const teams = (pk.teams || []).map(teamRef);
+    const analytics = !isMulti ? ocDiv(pk.market_id, pk.market_side, pk.price, pk.side, pk.player) : '';
+    const overviewPct = window.PickEval.evaluate(pk, sec || 'singles', STR).pct;
+    const overview = overviewPct === null ? STR.none : chanceText(overviewPct / 100, isMulti ? pk.legs.length : 1) || STR.none;
     return `<div class="card ${action === 'skip' ? 'skip' : ''} ${sec === 'lottery' ? 'lotto' : ''}" data-pick-id="${esc(pk.id || '')}">
       <div class="pick-head">
-        <div class="pick-id">${teams.length ? `<span class="logos">${T.badges(teams, 30)}</span>` : ''}<div>
+        <div class="pick-id"><div>
           ${/* Combos: the tier name ("Small payout · 3 picks") is the title; the legs list below says what's in it. */ ''}
           <div class="pick-title">${esc(isMulti ? pk.market || pk.side : sp.title || pk.market)}</div>
-          <div class="pick-sub">${!isMulti && pk.market && pk.side ? posText(pk.market, pk) + ' · ' : ''}${esc(pk.event || '')}</div>
+          ${!isMulti && pk.market && pk.side ? `<div class="pick-sub">${posText(pk.market, pk)}</div>` : ''}
+          ${pickMatchupHtml(pk)}
         </div></div>
         <span class="pick-actions">${P.badge[action] ? `<span class="badge ${esc(action)}">${esc(P.badge[action])}</span>` : ''}${pk.id ? shareBtn(pk.id) : ''}${vizOn() ? chartBtnFor(vizSpec(pk)) : ''}</span>
       </div>
+      ${analytics || `<div class="pick-overview muted small">${esc(overview)}</div>`}
+      ${window.BetProgress ? (isMulti ? `<details class="bp-combo"><summary>${esc(STR.progress.legs(pk.legs.length))}</summary>${pk.legs.map(leg => `<div class="bp-leg"><div class="bp-leg-title">${esc(leg.desc)}</div>${window.BetProgress.html(window.BetProgress.spec(leg))}</div>`).join('')}</details>` : window.BetProgress.html(window.BetProgress.spec(pk))) : ''}
+      ${pk.pending_news ? `<div class="news">⏳ <b>${esc(P.news)}</b> ${esc(PL.neutral(PL.noCents(pk.pending_news)))}</div>` : ''}
+      ${pk.verify_note ? `<div class="verify">⚠️ ${esc(PL.neutral(PL.noCents(pk.verify_note)))}</div>` : ''}
+      ${pk.lineup_note && pk.lineup_note.status !== 'confirmed' ? lineupHtml(pk.lineup_note) : ''}
+      <details class="pick-details"><summary>${esc(P.details)}</summary>
       ${evalBlock(pk, sec || 'singles')}
       ${moneyHtml}
       ${isMulti ? `<ul class="legs">${pk.legs.map((l, i) => `<li>${l.team ? T.badge(teamRef(l.team), 20) : ''}${plainLegHtml(l, i === 0)}${vizOn() ? legChartBtn(vizSpec({ ...pk, legs: [l] }).legs[0], pk.event) : ''}${ocDiv(l.market_id, l.market_side, l.price, l.desc, l.player)}</li>`).join('')}</ul>` : ''}
       ${/* PL.noCents: any "41¢" the daily job wrote shows as American odds */ ''}
-      ${lineupHtml(pk.lineup_note)}
-      ${pk.pending_news ? `<div class="news">⏳ <b>${esc(P.news)}</b> ${esc(PL.neutral(PL.noCents(pk.pending_news)))}</div>` : ''}
-      ${pk.verify_note ? `<div class="verify">⚠️ ${esc(PL.neutral(PL.noCents(pk.verify_note)))}</div>` : ''}
+      ${pk.lineup_note && pk.lineup_note.status === 'confirmed' ? lineupHtml(pk.lineup_note) : ''}
       ${pk.reasoning ? `<div class="reason">${esc(PL.neutral(PL.noCents(pk.reasoning)))}</div>` : ''}
+      </details>
       <div class="pick-actions card-actions">
         ${openButton(pk, pk.side || pk.event)}
         <button class="btn btn-sm btn-primary" data-load-pick="${esc(pk.id)}" data-cat="${esc(cat)}">${esc(P.toCalc)}</button>
@@ -1020,7 +1051,7 @@
     const tab = $('#tab-picks');
     if (!picksView) picksView = savedView();
     const btn = (v, label) => `<button type="button" class="${picksView === v ? 'on' : ''}" data-picks-view="${v}" aria-pressed="${picksView === v}">${esc(label)}</button>`;
-    tab.innerHTML = `<div class="view-toggle" role="group" aria-label="${esc(STR.live.group)}">${btn('picks', STR.live.today)}${btn('live', STR.live.live)}</div><div id="picks-view"></div>`;
+    tab.innerHTML = `${picksView === 'picks' ? '<div id="picks-score-ticker"></div>' : ''}<div class="view-toggle" role="group" aria-label="${esc(STR.live.group)}">${btn('picks', STR.live.today)}${btn('live', STR.live.live)}</div><div id="picks-view"></div>`;
     tab.querySelectorAll('[data-picks-view]').forEach(b => (b.onclick = () => go(b.dataset.picksView)));
     if (picksView === 'live') {
       // Richie's container. Keep this tie-in tiny: one div + one call.
@@ -1033,11 +1064,13 @@
       return;
     }
     paintLiveBadges(); paintLiveToast();
+    if (window.PicksScores) window.PicksScores.mount($('#picks-score-ticker'));
     return renderTodayPicks();
   }
 
   async function renderTodayPicks() {
     const el = $('#picks-view');
+    el.classList.add('today-picks');
     el.innerHTML = `<h2>${esc(STR.picks.title)}</h2><p class="muted">${esc(STR.loading)}</p>`;
     let predFile = null;
     try {
@@ -1046,7 +1079,7 @@
         fetchData(CFG.bookOddsPath || 'data/book-odds.json').catch(() => null),   // optional
         fetchData('data/predictions.json').catch(() => null),                     // optional
         window.Positions.load(),                                                   // optional: player position badges
-        Promise.race([window.Picker.loadIndex().catch(() => {}), new Promise(r => setTimeout(r, 1500))])
+        Promise.race([window.Picker.loadIndex().then(index => { picksMarketIndex = index; }).catch(() => {}), new Promise(r => setTimeout(r, 1500))])
       ]);
     } catch (e) {
       el.innerHTML = `<h2>${esc(STR.picks.title)}</h2><p class="error">${esc(STR.picks.loadError)}</p>`;
@@ -1080,14 +1113,15 @@
         `<button type="button" class="chip ${day === picksDay ? 'on' : ''}" data-pick-day="${esc(day)}" aria-pressed="${day === picksDay}">${esc(dayWords(day, true))} <span class="muted small">(${countOnDay(d, day)})</span></button>`).join('')}</div>` : ''}
       ${daySports.length > 1 ? `<div class="chips pick-sports" role="group" aria-label="${esc(STR.picks.sportGroup)}">${['', ...daySports].map(s =>
         `<button type="button" class="chip ${s === picksSport ? 'on' : ''}" data-pick-sport="${esc(s)}" aria-pressed="${s === picksSport}">${esc(s || STR.picks.allSports)}</button>`).join('')}</div>` : ''}
+      <details class="pick-context"><summary>${esc(STR.picks.slateDetails)}</summary>
       ${isFileDay ? (d.notes || []).map(n => `<div class="verify">${esc(PL.noCents(n))}</div>`).join('') : ''}
-      ${riskLegend()}`;
+      ${riskLegend()}</details>`;
+    if (!PICK_SECTIONS.some(([key]) => (sec[key] || []).some(onDay))) html += `<div class="section-empty">${esc(STR.picks.empty)}</div>`;
     for (const [key, cat] of PICK_SECTIONS) {
       const items = (sec[key] || []).filter(onDay);
-      // Another day with nothing in this section: skip it (keeps the phone view short).
-      if (!items.length && days.length > 1 && !isFileDay) continue;
+      // Empty categories add no useful content to the compact list.
+      if (!items.length) continue;
       html += `<h3>${esc(STR.picks.sections[key])}</h3>`;
-      if (!items.length) { html += `<div class="section-empty">${esc(STR.picks.empty)}</div>`; continue; }
       html += items.map(it => (key === 'predictions' ? predictionCard(it) : pickCard(it, cat, key))).join('');
     }
     el.innerHTML = html;

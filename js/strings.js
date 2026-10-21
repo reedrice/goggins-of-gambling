@@ -130,6 +130,22 @@ window.STR = {
   /** Picks tab toggle. The Live Bets view itself is Richie's (js/live-bets.js, HANDOFF §32). */
   live: { group: 'Which view', today: "Today's Picks", live: 'Live Bets 🔴', soon: 'Live bets coming soon' },
   picks: {
+    scores: {
+      title: 'Live scores', upcoming: 'Upcoming today', loading: 'Checking ESPN…', pause: 'Pause', resume: 'Resume', at: '@', soccer: 'Soccer',
+      empty: 'No more games scheduled today.', unavailable: 'Scores are unavailable. Retrying shortly.',
+      checked: time => `ESPN · ${time} CT`,
+      partial: (leagues, time) => `ESPN · ${time} CT · Unavailable: ${leagues}`,
+      coverage: 'All live games reported by ESPN for NBA, NHL, NFL, MLB, WNBA and soccer. When none are live, shows today’s upcoming games. Refreshes every minute.',
+      leagues: { NBA: 'NBA', NHL: 'NHL', NFL: 'NFL', MLB: 'MLB', WNBA: 'WNBA',
+        'uefa.champions': 'Champions League', 'uefa.europa': 'Europa League', 'uefa.europa.conf': 'Conference League',
+        'eng.1': 'Premier League', 'eng.2': 'Championship', 'esp.1': 'La Liga', 'ita.1': 'Serie A',
+        'ger.1': 'Bundesliga', 'fra.1': 'Ligue 1', 'usa.1': 'MLS', 'mex.1': 'Liga MX',
+        'col.1': 'Colombian Primera A', 'conmebol.sudamericana': 'Copa Sudamericana',
+        'conmebol.libertadores': 'Copa Libertadores', 'bra.1': 'Brasileirão', 'arg.1': 'Argentine Primera División',
+        'ned.1': 'Eredivisie', 'por.1': 'Primeira Liga', 'usa.ncaa.1': 'College soccer' }
+    },
+    details: 'Details',
+    slateDetails: 'About this slate',
     // "Refresh prices" on the Picks tab (js/live-picks.js, HANDOFF §37)
     pxLoading: 'Getting live prices…',
     pxLive: (t, n) => `Live prices from ${t}.` + (n ? ` ${n} already started, so ${n === 1 ? 'it keeps' : 'they keep'} the old price.` : ''),
@@ -577,6 +593,20 @@ function unitWords(u) {
 window.STR.unitWords = unitWords;
 
 window.STR.liveBets = {
+ design: {
+   filters: { all: 'All', big: 'Big edge', slight: 'Slight edge', new: 'New' },
+   tiers: { big: 'Big edge', slight: 'Slight edge' }, edge: 'Edge', gone: 'No longer active',
+   filterLabel: 'Filter edges', game: 'Game', gameLines: 'Game lines', propBets: 'Prop bets',
+   details: 'Details', market: 'Market ↗', chart: 'Chart', review: 'Review', update: 'Update',
+   unverified: 'Game context unverified', cheaper: n => `${n} pts below opening price`,
+   payout: n => `$10 returns $${n}`, opened: (odds, time) => `Opened ${odds} · First seen ${time}`,
+   newCount: n => `${n} new active edge${n === 1 ? '' : 's'} since your last visit`,
+   caughtUp: 'No new active edges since your last visit.', noMatching: 'No active edges match this filter.',
+   activity: n => `Activity (${n})`, priceHistory: n => `Past edges & price moves (${n})`,
+   alertTypes: { new_edge: 'Edge detected', gone: 'Edge ended', removed: 'Removed', news: 'Price move' },
+   atAlert: odds => `At alert: ${odds}`, less: 'Show less', more: n => `Show ${n} more`,
+   about: 'About edges', explanation: 'Compared with the opening Polymarket price: big = 10–24 points lower, slight = 4–9. Game context comes from ESPN. Alerts show prices at detection; current cards may differ.'
+ },
  noAlerts: 'No alerts across these games yet.',
  all: 'All games', games: n => n + ' games', failed: n => n + ' game feeds unavailable; retrying',
  stale: 'Some prices may be old. The feed is waiting for an update.',
@@ -595,4 +625,17 @@ window.STR.comboLab = {
  insufficient: (n,failed) => 'Not enough eligible games for ' + n + ' legs. Try fewer legs or another market type.' + (failed ? ' Some game feeds were unavailable.' : ''),
  failed: 'Could not check current markets. Try again.', expired: 'These prices are over two minutes old. Generate a fresh combo.',
  replace: 'Replace the current builder legs with this combo?'
+};
+
+window.STR.progress = {
+ loading: 'Checking live progress…', unavailable: 'ESPN is unavailable. Retrying shortly.',
+ noGame: 'No verified game match for live progress.', noStat: 'Live progress is unavailable for this market.',
+ pregame: 'Waiting for the game to start.', clockUnavailable: 'Game clock unavailable', dash: '—',
+ starts: time => `Starts ${time} CT`, checked: time => `Checked ESPN · ${time} CT`, final: 'Final statistics',
+ count: (value,target,stat) => `${value} / ${target} ${stat}`, needs: n => `${n} more needed`, reached: 'Target reached', notReached: 'Target not reached',
+ below: n => `Below ${n}`, atLine: 'At the line', limitReached: 'Limit reached',
+ adjusted: n => `Adjusted margin ${n > 0 ? '+' : ''}${n}`, margin: n => n > 0 ? `Leading by ${n}` : n < 0 ? `Trailing by ${-n}` : 'Tied',
+ gameElapsed: 'Game elapsed · regulation', legs: n => `Live progress · ${n} legs`,
+ explanation: 'Game statistics, not a win probability. Live scores do not refresh the saved betting prices. Final settlement may follow different market rules.',
+ stats: { reb:'rebounds', ast:'assists', pts:'points', goals:'goals', stl:'steals', blk:'blocks', saves:'saves', threes:'threes', pra:'points + rebounds + assists', passyd:'passing yards', rushyd:'rushing yards', recyd:'receiving yards', rec:'receptions', ptd:'passing touchdowns', int:'interceptions', hits:'hits', hr:'home runs', rbi:'RBIs', k:'strikeouts', runs:'runs', score:'points / goals' }
 };

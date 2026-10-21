@@ -78,6 +78,26 @@
     return { game: split('game'), prop: split('prop'), reasons: sortEdges(reasons) };
   }
 
+  function edgeTitle(edge) {
+    if (groupOf(edge) !== 'prop') return edge.side;
+    return String(edge.side || '').replace(/\s+in\s+.+?\s+vs\.?\s+.+$/i, '')
+      .replace(/\brecord at least\s+(\d+(?:\.\d+)?)/i, '$1+')
+      .replace(/\btotal\s+(?=rebounds|points|assists)/i, '');
+  }
+
+  /** Active, eligible edges for the four navigation filters; no feed math changes. */
+  function edgeSelection(edges, filter = 'all', since = null) {
+    const grouped = groupEdges(edges, Number.MAX_SAFE_INTEGER);
+    const main = [...grouped.game.shown, ...grouped.prop.shown];
+    const active = main.filter(e => e.status !== 'gone');
+    const isNew = e => !!since && !!e.first_seen && e.first_seen > since;
+    const counts = { all: active.length, big: active.filter(e => e.tier === 'big').length,
+      slight: active.filter(e => e.tier === 'slight').length, new: active.filter(isNew).length };
+    return { counts, edges: active.filter(e => filter === 'all' || (filter === 'new' ? isNew(e) : e.tier === filter)),
+      past: main.filter(e => e.status === 'gone'), reasons: grouped.reasons };
+  }
+  const designText = () => liveText().design;
+
   /** Header lines from the ESPN context: score line + status line. */
   function scoreboard(d) {
     const c = d.game_context || {};
@@ -124,7 +144,7 @@
       status: active.some(d => d.status === 'live') ? 'live' : 'pregame',
       stale: active.some(d => freshness(d).stale),
       edges: active.flatMap(d => (d.edges || []).map(e => ({...e, event_slug:d.slug, event_game:d.game, event_url:d.url, event_status:scoreboard(d).status}))),
-      alerts: active.flatMap(d => (d.alerts || []).map(a => ({...a, text:d.game + ' | ' + a.text}))).sort((a,b) => String(b.at).localeCompare(String(a.at)))
+      alerts: active.flatMap(d => (d.alerts || []).map(a => ({...a, event_slug:d.slug, event_game:d.game, text:d.game + ' | ' + a.text}))).sort((a,b) => String(b.at).localeCompare(String(a.at)))
     };
   }
   const liveText = () => root.STR.liveBets;
@@ -198,66 +218,83 @@
   }
 
   /** One edge card. */
-  function edgeRow(e, link) {
+  function edgeRow(e, link, ui) {
+    const P = designText();
     link = safeUrl(e.event_url) || link;
     const eventSlug = e.event_slug || curSlug, eventGame = e.event_game || curGame;
     const gone = e.status === 'gone', why = REASON_CLASSES.includes(e.class);
     const cls = why ? `lb-why lb-${e.class}` : `lb-${e.tier === 'big' ? 'big' : 'slight'}`;
     const li = el('li', `lb-edge ${cls}${gone ? ' lb-gone' : ''}`);
     const top = el('div', 'lb-top');
-    const label = gone ? 'Gone' : why ? CLASS_LABEL[e.class] : TIER_LABEL[e.tier] + (e.class === 'unverified' ? ' · unverified' : '');
-    top.append(el('span', 'lb-tier', label), el('span', 'lb-pts', `${Math.round(e.edge)} pts cheaper`));
-    li.append(top, el('div', 'lb-side', e.side), el('div', 'lb-market', e.market), platRow(e));
-    if (e.event_game) li.append(el('div', 'lb-meta', e.event_game + ' | ' + e.event_status));
-    const pay = pays10(e.now_chance);
-    li.append(el('div', 'lb-odds', `${e.now_odds}${pay ? ` · $10 pays $${pay}` : ''}`),
-      el('div', 'lb-meta', `Opened ${e.open_odds} · first seen ${clock(e.first_seen)}`));
-    if (root.OurChance && e.market_id && !gone) {   // Our chance (§56), filled client-side
+    const label = gone ? P.gone : why ? CLASS_LABEL[e.class] : P.tiers[e.tier] || P.edge;
+    top.append(el('span', 'lb-tier', label), el('span', 'lb-pts', P.cheaper(Math.round(e.edge))));
+    li.append(top, el('div', 'lb-side', edgeTitle(e)));
+    li.append(el('div', 'lb-matchup', eventGame));
+    if (e.class === 'unverified') li.append(el('div', 'lb-unverified', P.unverified));
+    li.append(el('div', 'lb-odds', e.now_odds));
+    if (root.BetProgress) {
+      const progress = el('div', 'bp-host'); progress.dataset.bp = JSON.stringify(root.BetProgress.spec({...e,event_slug:eventSlug,event:eventGame})); li.append(progress);
+    }
+    if (root.OurChance && e.market_id && !gone) {
       const oc = el('div', 'oc oc-sm'); oc.setAttribute('data-oc', JSON.stringify({ marketId: e.market_id, side: Number(String(e.key).split(':')[1]) ? 'no' : 'yes', market: e.now_chance, text: e.side, question: e.question }));
       li.append(oc);
     }
-    if (why && e.reason) li.append(el('div', 'lb-reason', e.reason));
-    if (e.context) li.append(el('div', 'lb-context', e.context));
+    const details = el('details', 'lb-card-details');
+    const detailKey = (eventSlug || '') + ':' + e.key;
+    details.open = !!(ui && ui.details.has(detailKey));
+    details.addEventListener('toggle', () => { if (ui) details.open ? ui.details.add(detailKey) : ui.details.delete(detailKey); });
+    details.append(el('summary', null, P.details), el('div', 'lb-market', e.market), platRow(e));
+    if (edgeTitle(e) !== e.side) details.append(el('div', 'lb-meta', e.side));
+    const pay = pays10(e.now_chance);
+    if (pay) details.append(el('div', 'lb-meta', P.payout(pay)));
+    details.append(el('div', 'lb-meta', P.opened(e.open_odds, clock(e.first_seen))));
+    if (e.event_status) details.append(el('div', 'lb-meta', e.event_status));
+    if (why && e.reason) details.append(el('div', 'lb-reason', e.reason));
+    if (e.context) details.append(el('div', 'lb-context', e.context));
+    li.append(details);
+    const actions = el('div', 'lb-card-actions');
     if (link && !gone && !why) {
-      const a = el('a', 'lb-link', 'Open on Polymarket ↗');
-      a.href = link; a.target = '_blank'; a.rel = 'noopener';
-      li.append(a);
+      const a = el('a', 'lb-link', P.market); a.href = link; a.target = '_blank'; a.rel = 'noopener'; actions.append(a);
     }
-    // Tap a card -> price chart + prop bet bars pop-up (js/viz.js, HANDOFF §48).
     if (root.Viz && eventSlug) {
+      const openChart = () => root.Viz.open({ title: e.side, sub: `${e.market} · ${eventGame}`, legs: [{ text: e.side, question: e.question,
+        eventSlug, marketId: e.market_id, side: Number(String(e.key).split(':')[1]) || 0 }] });
+      const chart = el('button', 'lb-chart', P.chart); chart.type = 'button'; chart.onclick = openChart; actions.append(chart);
       li.classList.add('lb-tap');
-      li.addEventListener('click', ev => {
-        if (ev.target.closest('a')) return;
-        root.Viz.open({ title: e.side, sub: `${e.market} · ${eventGame}`, legs: [{ text: e.side, question: e.question,
-          eventSlug, marketId: e.market_id, side: Number(String(e.key).split(':')[1]) || 0 }] });
-      });
+      li.addEventListener('click', ev => { if (!ev.target.closest('a, button, details, summary, .oc')) openChart(); });
     }
+    li.append(actions);
     return li;
   }
 
   /** The Alerts box (top of the view). */
   function alertsBox(d, ui) {
-    const box = el('section', 'lb-alerts');
-    const list = (d.alerts || []).filter(a => inLimit(a.now_chance));   // odds limit
-    box.append(el('h3', 'lb-group-title', `Alerts${list.length ? ` (${list.length})` : ''}`));
-    if (!list.length) { box.append(el('div', 'lb-none', d.all_games ? liveText().noAlerts : 'No alerts yet. They\'ll show up here once the game starts.')); return box; }
-    // Highlight what's new since the previous refresh, then remember the newest.
-    if (ui.seenBase === undefined) ui.seenBase = readSeen();
-    const isNew = markNew(list, ui.seenBase);
-    ui.seenBase = list[0].at; writeSeen(list[0].at);
+    const P = designText(), box = el('details', 'lb-alerts lb-activity');
+    const list = (d.alerts || []).filter(a => inLimit(a.now_chance));
+    box.open = !!ui.activity;
+    box.addEventListener('toggle', () => { ui.activity = box.open; });
+    box.append(el('summary', null, P.activity(list.length)));
+    if (!list.length) { box.append(el('div', 'lb-none', liveText().noAlerts)); return box; }
+    const isNew = markNew(list, ui.visitBase);
     const ul = el('ul', 'lb-alert-list');
-    list.forEach((a, i) => {
-      const li = el('li', `lb-alert lb-a-${a.type}${a.tier ? ' lb-a-' + a.tier : ''}${isNew[i] ? ' lb-new' : ''}`);
+    (ui.alertMore ? list : list.slice(0, 5)).forEach((a, i) => {
+      const li = el('li', `lb-alert lb-a-${a.type}${isNew[i] ? ' lb-new' : ''}`);
       const top = el('div', 'lb-alert-top');
-      top.append(el('span', 'lb-alert-kind', (isNew[i] ? 'NEW · ' : '') + (ALERT_LABEL[a.type] || 'Alert')), el('span', 'lb-alert-time', clock(a.at)));
-      li.append(top, el('div', 'lb-alert-text', a.text));
-      const pay = a.type === 'gone' || a.type === 'removed' ? null : pays10(a.now_chance);
-      if (a.now_odds && pay) li.append(el('div', 'lb-alert-odds', `${a.now_odds} · $10 pays $${pay}`));
+      const kind = (P.alertTypes[a.type] || P.update) + (a.type === 'new_edge' && P.tiers[a.tier] ? ' · ' + P.tiers[a.tier] : '');
+      top.append(el('span', 'lb-alert-kind', kind), el('span', 'lb-alert-time', clock(a.at)));
+      li.append(top, el('div', 'lb-alert-text', a.side || a.text));
+      if (a.event_game) li.append(el('div', 'lb-meta', a.event_game));
+      if (a.now_odds) li.append(el('div', 'lb-alert-odds', P.atAlert(a.now_odds)));
+      const detail = el('details', 'lb-alert-details'); detail.append(el('summary', null, P.details), el('div', 'lb-meta', a.text)); li.append(detail);
       const link = safeUrl(a.url);
-      if (link) { const l = el('a', 'lb-alert-link', 'Open ↗'); l.href = link; l.target = '_blank'; l.rel = 'noopener'; li.append(l); }
+      if (link) { const l = el('a', 'lb-alert-link', P.market); l.href = link; l.target = '_blank'; l.rel = 'noopener'; li.append(l); }
       ul.append(li);
     });
     box.append(ul);
+    if (list.length > 5) {
+      const more = el('button', 'lb-more', ui.alertMore ? P.less : P.more(list.length - 5)); more.type = 'button';
+      more.onclick = () => { ui.alertMore = !ui.alertMore; ui.redraw(); }; box.append(more);
+    }
     return box;
   }
 
@@ -265,13 +302,13 @@
   function groupBox(title, g, link, ui, key) {
     const box = el('section', 'lb-group');
     box.append(el('h3', 'lb-group-title', `${title} (${g.total})`));
-    if (!g.total) { box.append(el('div', 'lb-none', 'No edges right now.')); return box; }
+    if (!g.total) { box.append(el('div', 'lb-none', designText().noMatching)); return box; }
     const ul = el('ul', 'lb-list');
-    g.shown.forEach(e => ul.append(edgeRow(e, link)));
-    if (ui[key]) g.more.forEach(e => ul.append(edgeRow(e, link)));
+    g.shown.forEach(e => ul.append(edgeRow(e, link, ui)));
+    if (ui[key]) g.more.forEach(e => ul.append(edgeRow(e, link, ui)));
     box.append(ul);
     if (g.more.length) {
-      const b = el('button', 'lb-more', ui[key] ? 'Show less' : `Show ${g.more.length} more`);
+      const b = el('button', 'lb-more', ui[key] ? designText().less : designText().more(g.more.length));
       b.type = 'button';
       b.onclick = () => { ui[key] = !ui[key]; ui.redraw(); };
       box.append(b);
@@ -284,7 +321,8 @@
   function draw(box, d, ui) {
     curSlug = d.slug || null; curGame = d.game || '';
     box.replaceChildren();
-    box.append(alertsBox(d, ui));                 // Alerts feed sits at the very top
+    const P = designText();
+    const selection = edgeSelection(d.edges, ui.filter, ui.visitBase);
     const head = el('div', 'lb-head');
     if (d.all_games) {
       head.append(el('div','lb-game',liveText().all),el('div','lb-status',liveText().games(d.game_count)),el('div','lb-updated',freshness(d).text));
@@ -295,47 +333,63 @@
     }
     box.append(head);
     if (d.stale || freshness(d).stale) box.append(el('div','lb-stale',liveText().stale));
+    const controls = el('div', 'lb-controls');
     const games = (ui.games || []).filter(x => x.status !== 'final' || x.slug === ui.slug);
     if (games.length) {
-      const bar = el('div','lb-games');
+      const label = el('label', 'lb-game-label', P.game);
+      const select = el('select', 'lb-game-select');
       [{slug:'all',game:liveText().all},...games].forEach(x => {
-        const b = el('button','lb-game-btn' + (x.slug === ui.slug ? ' lb-on' : ''),x.game || x.slug);
-        b.type='button'; b.setAttribute('aria-pressed',String(x.slug === ui.slug));
-        b.onclick=()=>{ui.slug=x.slug;ui.game=false;ui.prop=false;ui.load();};bar.append(b);
+        const option = el('option', null, x.game || x.slug); option.value = x.slug; option.selected = x.slug === ui.slug; select.append(option);
       });
-      box.append(bar);
+      select.onchange = () => { ui.slug = select.value; ui.game = ui.prop = false; ui.load(); };
+      label.append(select); controls.append(label);
     }
-    const g = groupEdges(d.edges), link = safeUrl(d.url);
+    const filters = el('div', 'lb-edge-filters'); filters.setAttribute('role', 'group'); filters.setAttribute('aria-label', P.filterLabel);
+    ['all', 'big', 'slight', 'new'].forEach(key => {
+      const button = el('button', 'lb-filter' + (ui.filter === key ? ' lb-on' : ''));
+      button.append(el('span', 'lb-filter-label', P.filters[key]), el('b', 'lb-filter-count', selection.counts[key]));
+      button.type = 'button'; button.setAttribute('aria-label', P.filters[key] + ' ' + selection.counts[key]); button.setAttribute('aria-pressed', String(ui.filter === key));
+      button.onclick = () => { ui.filter = key; ui.game = ui.prop = false; ui.redraw(); box.querySelector('.lb-filter.lb-on').focus(); }; filters.append(button);
+    });
+    controls.append(filters); box.append(controls);
+    const notice = el('div', 'lb-notice');
+    notice.append(el('span', null, selection.counts.new ? P.newCount(selection.counts.new) : P.caughtUp));
+    if (selection.counts.new) {
+      const review = el('button', 'lb-review', P.review); review.type = 'button';
+      review.onclick = () => { ui.filter = 'new'; ui.game = ui.prop = false; ui.redraw(); box.querySelector('.lb-filter.lb-on').focus(); }; notice.append(review);
+    }
+    box.append(notice);
+    const g = groupEdges(selection.edges), link = safeUrl(d.url);
     if (!g.game.total && !g.prop.total) {
-      const empty = el('div', 'live-bets-empty');
-      empty.append(el('div', 'live-bets-dot', '🔴'), el('p', null, 'No edges yet'),
-        el('div', 'lb-sub', d.all_games ? liveText().empty : d.status === 'pregame'
-          ? 'The game hasn\'t started. Bets show up here when a live price gets 4+ points cheaper than its pregame price for no clear reason.'
-          : 'No live price is 4+ points cheaper than its pregame price without a clear reason right now.'));
-      box.append(empty);
+      box.append(el('div', 'lb-none', selection.counts.all ? P.noMatching : liveText().empty));
     } else {
       const groups = el('div', 'lb-groups');
-      groups.append(groupBox('Game lines', g.game, link, ui, 'game'), groupBox('Player props', g.prop, link, ui, 'prop'));
+      if (g.game.total) groups.append(groupBox(P.gameLines, g.game, link, ui, 'game'));
+      if (g.prop.total) groups.append(groupBox(P.propBets, g.prop, link, ui, 'prop'));
+      if (!g.game.total || !g.prop.total) groups.classList.add('lb-single-group');
       box.append(groups);
     }
-    if (g.reasons.length) {
+    box.append(alertsBox(d, ui));
+    if (selection.past.length || selection.reasons.length) {
       const det = el('details', 'lb-reasons');
       det.open = !!ui.reasons;
       det.addEventListener('toggle', () => { ui.reasons = det.open; });
-      det.append(el('summary', null, `Moved for a reason (${g.reasons.length})`));
+      det.append(el('summary', null, P.priceHistory(selection.past.length + selection.reasons.length)));
       const ul = el('ul', 'lb-list');
-      g.reasons.forEach(e => ul.append(edgeRow(e, link)));
+      [...selection.past, ...selection.reasons].forEach(e => ul.append(edgeRow(e, link, ui)));
       det.append(ul);
       box.append(det);
     }
-    box.append(el('div', 'lb-foot', 'Edges are measured against the pregame Polymarket price. Big edge = 10-24 points cheaper, slight = 4-9, with no score reason found. Score and clock are from ESPN.'));
+    const about = el('details', 'lb-about'); about.append(el('summary', null, P.about), el('div', 'lb-foot', P.explanation)); box.append(about);
+    const newest = [d.updated, ...(d.alerts || []).map(a => a.at), ...(d.edges || []).map(e => e.first_seen)].filter(Boolean).sort().pop();
+    if (newest && (!readSeen() || newest > readSeen())) writeSeen(newest);
   }
 
   /** Entry point (called by app.js). Fetch now, then about every 60s. */
   function render(rootEl) {
     rootEl.replaceChildren(el('div', 'live-bets-empty', 'Loading live bets…'));
     let timer = null, last = null;
-    const ui = { slug: 'all', game: false, prop: false, reasons: false, redraw: () => { if (!last) return; const b = ui.seenBase; ui.seenBase = ui.prevBase; draw(rootEl, last, ui); ui.seenBase = b; } };
+    const ui = { slug: 'all', filter: 'all', visitBase: readSeen(), details: new Set(), game: false, prop: false, reasons: false, redraw: () => { if (last) draw(rootEl, last, ui); } };
     // Which game: data/live/index.json (written by live-tick.mjs), else SLUG.
     let request = 0;
     const load = ui.load = async () => {
@@ -357,7 +411,7 @@
         if (targets.length && !feeds.length) throw new Error('feeds unavailable');
         ui.games = games;
         const d = selected === 'all' ? combineGames(feeds,results.length-feeds.length) : feeds[0];
-        last=d; ui.prevBase=ui.seenBase; draw(rootEl,d,ui);
+        last=d; draw(rootEl,d,ui);
       } catch (e) {
         if (current !== request) return;
         rootEl.replaceChildren(el('div','live-bets-empty',liveText().unavailable));
@@ -367,5 +421,5 @@
     timer = setInterval(load, REFRESH_MS);
   }
 
-  return { combineGames, render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
+  return { edgeTitle, edgeSelection, combineGames, render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
 });

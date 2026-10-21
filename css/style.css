@@ -667,3 +667,79 @@ a.btn-play { display: block; text-align: center; text-decoration: none; margin-t
 .viz-hmid { text-align: center; font-size: .82em; line-height: 1.3; }
 .viz-hlive { color: #ff453a; font-weight: 600; }
 .viz-hstat { opacity: .7; } .viz-hper { opacity: .7; }
+
+/* Brandon sandbox: compact Today's Picks only; Live Bets and other tabs retain their styles. */
+#picks-view.today-picks .pick-details,
+#picks-view.today-picks .pick-context { margin: 12px 0; border-top: 1px solid #ffffff18; }
+#picks-view.today-picks summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; gap: 8px; color: #b9b9bf; font-size: 13px; }
+#picks-view.today-picks summary::before { content: '+'; font-size: 18px; }
+#picks-view.today-picks details[open] > summary::before { content: '−'; }
+#picks-view.today-picks summary::-webkit-details-marker { display: none; }
+#picks-view.today-picks summary:focus-visible { outline: 2px solid #ff6935; outline-offset: 2px; border-radius: 6px; }
+#picks-view.today-picks .pick-head { gap: 12px; }
+#picks-view.today-picks .pick-id { min-width: 0; }
+#picks-view.today-picks .pick-title { font-size: 18px; line-height: 1.35; }
+#picks-view.today-picks .pick-sub { margin-top: 4px; line-height: 1.5; }
+#picks-view.today-picks .pick-head .pick-actions { flex-direction: row; flex-wrap: wrap; justify-content: flex-end; flex-shrink: 0; }
+#picks-view.today-picks .card { margin-bottom: 16px; }
+#picks-view.today-picks .card-actions { margin-top: 8px; }
+@media (max-width: 480px) {
+ #picks-view.today-picks .pick-head { flex-wrap: wrap; }
+ #picks-view.today-picks .pick-head .pick-actions { justify-content: flex-start; }
+ #picks-view.today-picks .card { padding: 16px; }
+}
+
+/* Picks matchup names and the logo belonging to each team. */
+#picks-view.today-picks .pick-matchup { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin-top: 10px; color: #f2f2f5; font-size: 15px; line-height: 1.45; }
+#picks-view.today-picks .pick-matchup-team { display: inline-flex; align-items: center; gap: 6px; min-width: 0; }
+#picks-view.today-picks .pick-matchup strong { font-weight: 700; overflow-wrap: anywhere; }
+#picks-view.today-picks .pick-matchup-at { color: #a3a3ad; font-size: 13px; }
+#picks-view.today-picks .pick-matchup .tlogo { flex-shrink: 0; }
+
+/* Browser score ticker: only Today's Picks, independent of the filtered cards. */
+#tab-picks .picks-score-ticker { margin: 0 0 16px; padding: 10px 0 0; border: 1px solid #ffffff20; background: #101114; border-radius: 12px; overflow: hidden; }
+#tab-picks .pst-header { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 0 12px 8px; }
+#tab-picks .pst-title { font: 700 12px system-ui; color: #ff7848; text-transform: uppercase; letter-spacing: .06em; }
+#tab-picks .pst-meta { flex: 1; font-size: 10px; color: #a9a9b3; }
+#tab-picks .pst-pause { min-height: 32px; padding: 3px 8px; border: 1px solid #ffffff28; border-radius: 6px; background: transparent; color: #ddd; font: 12px system-ui; cursor: pointer; }
+#tab-picks .pst-viewport { overflow: hidden; padding: 8px 0; border-top: 1px solid #ffffff12; }
+#tab-picks .pst-track { display: flex; width: max-content; animation: picks-scores-scroll var(--pst-duration, 45s) linear infinite; }
+#tab-picks .pst-lane { display: flex; width: max-content; min-width: var(--pst-lane-width, 0px); box-sizing: border-box; }
+#tab-picks .pst-group { display: flex; align-items: center; gap: 22px; padding: 0 22px; white-space: nowrap; }
+#tab-picks .pst-league { color: #ff7848; font: 800 12px system-ui; }
+#tab-picks .pst-game { display: inline-flex; align-items: center; gap: 7px; font: 600 13px system-ui; }
+#tab-picks .pst-score { color: #fff; font-size: 16px; font-variant-numeric: tabular-nums; }
+#tab-picks .pst-at, #tab-picks .pst-clock { color: #a9a9b3; font-size: 11px; }
+#tab-picks .pst-empty { padding: 2px 12px; font-size: 13px; color: #b9b9c2; }
+#tab-picks .picks-score-ticker:hover .pst-track, #tab-picks .picks-score-ticker:focus-within .pst-track, #tab-picks .pst-paused .pst-track { animation-play-state: paused; }
+@keyframes picks-scores-scroll { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+ #tab-picks .pst-track { animation: none; }
+ #tab-picks .pst-viewport { overflow-x: auto; }
+ #tab-picks .pst-lane[aria-hidden] { display: none; }
+}
+
+#tab-picks .pst-team { display: inline-flex; align-items: center; gap: 5px; }
+#tab-picks .pst-logo { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
+
+/* Live statistical progress: only the Picks tab, including its Live Bets view. */
+#tab-picks .bp-host { padding: 10px 0; margin-top: 8px; border-top: 1px solid #ffffff15; font: 12px/1.5 system-ui; }
+#tab-picks .bp-scoreline, #tab-picks .bp-values { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 12px; color: #e1e1e8; }
+#tab-picks .bp-clock, #tab-picks .bp-note { color: #b0b0ba; font-size: 11px; }
+#tab-picks .bp-values { margin-top: 6px; }
+#tab-picks .bp-bar { display: block; width: 100%; height: 8px; margin: 7px 0 4px; border: 0; border-radius: 8px; overflow: hidden; background: #303039; accent-color: #40c69b; }
+#tab-picks .bp-bar::-webkit-progress-bar { background: #303039; border-radius: 8px; }
+#tab-picks .bp-bar::-webkit-progress-value { background: #40c69b; border-radius: 8px; }
+#tab-picks .bp-bar::-moz-progress-bar { background: #40c69b; border-radius: 8px; }
+#tab-picks .bp-bar.bp-limit { accent-color: #eab95a; }
+#tab-picks .bp-bar.bp-limit::-webkit-progress-value { background: #eab95a; }
+#tab-picks .bp-bar.bp-limit::-moz-progress-bar { background: #eab95a; }
+#tab-picks .bp-checked { display: block; color: #8f8f9c; font-size: 10px; margin-top: 4px; }
+#tab-picks .bp-combo { margin: 8px 0; }
+#tab-picks .bp-combo > summary { min-height: 44px; padding: 10px 0; cursor: pointer; font-size: 13px; color: #bbb; }
+#tab-picks .bp-leg { padding: 8px 0; border-top: 1px solid #ffffff18; }
+#tab-picks .bp-leg-title { font-size: 13px; font-weight: 600; }
+#tab-picks .bp-leg .bp-host { border: 0; margin: 0; }
+#tab-picks .bp-team { display: inline-flex; align-items: center; gap: 5px; }
+#tab-picks .bp-logo { object-fit: contain; flex-shrink: 0; }
+#tab-picks .lb-matchup { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }

@@ -1318,3 +1318,9 @@ Section 67 follow-up: Reed requested 10, 15 and 19 legs too. Selector now offers
 
 ### Longshot full-game market correction (Oct 20, ChatGPT)
 Reed caught ambiguous totals while trying to reproduce a generated combo. Period/half totals were losing period context in Picker side descriptions. Longshot generation now restricts non-player markets to the normalized full-game lines group; period/half/team markets are excluded. Regenerate older previews; they cannot safely be mapped from the shortened labels. Regression checks cover period and unknown-group exclusion. Existing manual picker behavior unchanged.
+
+## 68. Brandon sandbox UI promoted with Reed approval (Oct 20, ChatGPT)
+
+Reed explicitly approved all current sandbox changes at 3f8b382. Ported compact Picks disclosures, matchup names/logos, league score ticker, Live Bets edge/game filters and activity, and ESPN game/player progress. Applied only UI/modules/tests to current production; preserved combo generator, market snapshots, live feed/history, Trent, routines and private storage. Excluded sandbox guards, publisher and old index/version. Rollback base 652bf6bd26325c6f517f3d3408d343d528f60e46; revert the release code only, preserving later data updates.
+
+Review corrected No-side game margins and refuses unrecognized period/half contracts rather than using full-game stats. No settlement grades or feed jobs are written by browser progress. All 35 unit test files passed; 18 progress cases passed after corrections. Local preview connection timed out, so browser preflight used the approved hosted sandbox: Details and real progress checked at desktop/mobile, with final integrated production checks after publication. Version bumped. New sandbox work after this reviewed SHA still requires fresh approval.
