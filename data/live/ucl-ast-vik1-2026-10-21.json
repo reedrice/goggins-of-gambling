@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for ucl",
-  "fetched_at": "2026-10-21T19:01:09.204Z"
+  "fetched_at": "2026-10-21T19:07:09.207Z"
  },
- "updated": "2026-10-21T19:01:09.204Z",
+ "updated": "2026-10-21T19:07:09.210Z",
  "open_taken_at": "2026-10-21T05:14:05.391Z",
  "thresholds": {
   "big": 10,
@@ -389,7 +389,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-21T18:04:08.269Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -409,11 +409,39 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-21T18:56:34.617Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1379828:1:2026-10-21T18:04:08.269Z",
+   "key": "1379828:1",
+   "at": "2026-10-21T19:07:09.210Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 1.5 (1st half)",
+   "market": "1st half total",
+   "now_odds": "+133",
+   "now_chance": 43,
+   "edge": 5,
+   "text": "Edge gone: Under 1.5 (1st half) (1st half total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/ucl/ucl-ast-vik1-2026-10-21"
+  },
+  {
+   "id": "gone:1379796:1:2026-10-21T18:56:34.617Z",
+   "key": "1379796:1",
+   "at": "2026-10-21T19:07:09.210Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Viking FK +2.50",
+   "market": "Main spread",
+   "now_odds": "-133",
+   "now_chance": 57,
+   "edge": 4,
+   "text": "Edge gone: Viking FK +2.50 (Main spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/ucl/ucl-ast-vik1-2026-10-21"
+  },
   {
    "id": "new_edge:1379828:1:slight",
    "key": "1379828:1",
@@ -445,7 +473,9 @@
  ],
  "alert_seen": [
   "new_edge:1379828:1:slight",
-  "new_edge:1379796:1:slight"
+  "new_edge:1379796:1:slight",
+  "gone:1379828:1:2026-10-21T18:04:08.269Z",
+  "gone:1379796:1:2026-10-21T18:56:34.617Z"
  ],
  "kalshi_checked": null
 }
