@@ -4,14 +4,14 @@
  "game": "Pedrico Kravtsov / Woestendick vs. Nedunchezhiyan / Papa",
  "url": "https://polymarket.us/sports/atpdb/atpdb-pedkrawoeste-neduncpapa-2026-10-18",
  "start_time": "2026-10-21T21:35:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-21T22:51:16.877Z"
+  "fetched_at": "2026-10-21T22:57:15.955Z"
  },
- "updated": "2026-10-21T22:51:16.877Z",
+ "updated": "2026-10-21T22:57:15.955Z",
  "open_taken_at": "2026-10-21T05:14:57.822Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-21T08:31:28.415Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1529901:1:2026-10-21T08:31:28.415Z",
+   "key": "1529901:1",
+   "at": "2026-10-21T22:57:15.955Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Nedunchezhiyan J / Papa C win",
+   "market": "Moneyline",
+   "now_odds": "+376",
+   "now_chance": 21,
+   "edge": 25,
+   "text": "Edge gone: Nedunchezhiyan J / Papa C win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-pedkrawoeste-neduncpapa-2026-10-18"
+  },
   {
    "id": "new_edge:1529901:1:big",
    "key": "1529901:1",
@@ -80,7 +94,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1529901:1:big"
+  "new_edge:1529901:1:big",
+  "gone:1529901:1:2026-10-21T08:31:28.415Z"
  ],
  "kalshi_checked": null
 }
