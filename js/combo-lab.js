@@ -6,6 +6,8 @@
   const out=[];
   for(const m of ev.markets||[]){
    const prop=m.type==='prop';
+   // Period/half totals can remain open after play and have ambiguous side labels.
+   if(!prop&&m.group!=='lines')continue;
    if(!['moneyline','spread','total','prop'].includes(m.type)|| (mode==='lines'&&prop)||(mode==='props'&&!prop))continue;
    if(prop&&(!m.player||!m.team||!ev.teams.some(t=>String(t.abbr).toLowerCase()===String(m.team).toLowerCase())))continue;
    if(!Number.isFinite(m.yes_ask)||!Number.isFinite(m.yes_bid)||m.yes_ask<m.yes_bid||m.yes_ask-m.yes_bid>6)continue;

@@ -1,6 +1,6 @@
 const assert=require('node:assert/strict');const C=require('../js/combo-lab.js');
 const now=Date.parse('2026-10-21T01:00:00Z');
-const m={id:'m',type:'spread',yes_ask:40,yes_bid:38,no_cost:62};
+const m={id:'m',type:'spread',group:'lines',yes_ask:40,yes_bid:38,no_cost:62};
 const ev=(slug,start='2026-10-21T02:00:00Z')=>({slug,start_time:start,teams:[{abbr:'a'},{abbr:'b'}],markets:[{...m}]});
 assert.equal(C.eligibleEvent(ev('late'),now),true);
 assert.equal(C.eligibleEvent(ev('tomorrow','2026-10-21T05:00:00Z'),now),false);
@@ -30,3 +30,6 @@ assert.equal(large.length,19);
 assert.equal(new Set(large.map(p=>p.ev.slug+':'+(p.prop?p.m.player:'game-line'))).size,19);
 assert.equal(C.choose(multi,{count:19,now}).length,0);
 console.log('3-20 legs and explicit same-game option: exact count, unique players and one game line per event passed');
+
+assert.equal(C.candidates({...ev('period'),markets:[{...m,type:'total',group:'other',label:'Over 1.5 total goals in 1st period'}]}).length,0);
+assert.equal(C.candidates({...ev('unknown-period'),markets:[{...m,group:undefined}]}).length,0);
