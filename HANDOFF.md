@@ -1566,3 +1566,6 @@ Watchdog live verification: user privately saved GITHUB_TOKEN in Cloudflare. The
 
 ## 127. Independent five-minute dispatch cadence (Oct 21)
 Reed again saw a 14-minute gap. GitHub scheduled starts were absent; the independent watchdog raised incident #6 but its one-hour cross-outage cooldown prevented prompt repeat recovery after a prior healthy result. Cloudflare now supplies five-minute dispatch pacing for the existing production workflow even while public health is good, skipping recent/active runs and respecting ownership. A verified healthy result clears recovery cooldown; failed outages still get one bounded recovery and notification. No duplicate sports ingestion architecture, AI or public mutation endpoint. Publication still includes source processing and Pages delay.
+
+## 128. Monitor both Picks and Live Bets (Oct 21)
+Reed requested stale Today’s Picks coverage in the independent watchdog. Added a no-store public data/picks.json check for sections shape, five-minute updated_at freshness and current Chicago slate date. Empty sections remain valid. Either Picks or Live Bets failure drives the existing recovery/incident path, and incidents close only when all sources pass. No AI or separate schedule. Regression covers Picks-only failure while Live Bets and ESPN remain healthy.
