@@ -1281,7 +1281,9 @@
       </div>`;
     window.ComboLab.mount($('#combo-lab-root'), {onUse: legs => {
       if (calc.legs.length && !confirm(STR.comboLab.replace)) return false;
-      calc.legs = []; calc.category = 'longshot'; calc.catTouched = true;
+      calc.legs = []; calc.category = 'longshot'; calc.catTouched = true; calc.generated = true;
+      calc.quoted = ''; calc.myHit = ''; calc.pickId = null;
+      $('#c-quoted').value = ''; $('#c-my').value = '';
       $('#c-cat').value = 'longshot';
       legs.forEach(addPickedLeg);
     }});
@@ -1456,6 +1458,7 @@
       ? `<div class="pay-big">${esc(n > 1 ? STR.plain.ifAllWin(n, cash(st), cash(st * x)) : STR.plain.ifWins(cash(st), cash(st * x)))}${!r.quoted ? ` <span class="muted small">(${esc(STR.pay.slipNote)})</span>` : ''} ${tip('howPrices')}</div>
          <div class="chance-line">${chanceHtml(r.hit, n)} ${tip('chance')}</div>`
       : '';
+    if (calc.generated && r.est) $('#calc-out').insertAdjacentHTML('beforeend', '<p class="muted small">' + esc(STR.comboLab.note) + '</p>');
     const unit = S.getProfile().unit;
     $('#calc-out2').innerHTML =
       kpi(K.outGap, r.gap === null ? STR.none : (r.gap > 0 ? '+' : '') + pct(r.gap, 1), sign(r.gap), 'gap') +
