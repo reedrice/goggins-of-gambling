@@ -4,12 +4,12 @@
  "game": "Gauthier Onclin vs. Jan-Lennard Struff",
  "url": "https://polymarket.us/sports/atp/atp-gauonc-janstr-2026-10-21",
  "start_time": "2026-10-21T18:25:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185060",
-  "fetched_at": "2026-10-21T19:13:19.351Z",
+  "fetched_at": "2026-10-21T19:19:12.077Z",
   "tennis": true,
   "tennis_match": {
    "id": "185060",
@@ -17,17 +17,17 @@
    "date": "2026-10-21T18:35Z",
    "startDate": "2026-10-21T18:35Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 1,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
+     "id": "8",
+     "name": "STATUS_SUSPENDED",
+     "state": "post",
      "completed": false,
-     "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "description": "Suspended",
+     "detail": "Suspended",
+     "shortDetail": "Suspended"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Jan-Lennard Struff (GER) leads Gauthier Onclin (BEL) 5-4",
+     "text": "Jan-Lennard Struff (GER) bt Gauthier Onclin (BEL) 6-4",
      "type": "event"
     }
    ],
@@ -55,10 +55,10 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": false
       }
      ],
      "athlete": {
@@ -98,10 +98,10 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
      "linescores": [
       {
-       "value": 4
+       "value": 4,
+       "winner": false
       }
      ],
      "athlete": {
@@ -136,11 +136,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 440,
    "type": {
     "id": "1",
@@ -157,10 +152,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_SUSPENDED",
   "period": 1,
-  "clock": "1st Set",
+  "clock": "Suspended",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Jan-Lennard Struff",
@@ -178,7 +173,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-21T19:13:19.352Z",
+ "updated": "2026-10-21T19:19:12.077Z",
  "open_taken_at": "2026-10-21T05:15:48.326Z",
  "thresholds": {
   "big": 10,
@@ -298,6 +293,26 @@
  ],
  "edges": [
   {
+   "key": "1619359:1",
+   "market_id": "1619359",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Gauthier Onclin cover 4.5 vs the Jan-Lennard Struff in Gauthier Onclin vs. Jan-Lennard Struff?",
+   "side": "Jan-Lennard Struff -4.50 (Games)",
+   "open_chance": 39,
+   "now_chance": 25,
+   "open_odds": "+156",
+   "now_odds": "+300",
+   "edge": 14,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Jan-Lennard Struff 6 · Gauthier Onclin 4 · Suspended (games by set)",
+   "first_seen": "2026-10-21T19:13:19.352Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1619361:0",
    "market_id": "1619361",
    "market": "Games spread",
@@ -312,28 +327,8 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Jan-Lennard Struff 5 · Gauthier Onclin 4 · 1st Set (games by set)",
+   "context": "Jan-Lennard Struff 6 · Gauthier Onclin 4 · Suspended (games by set)",
    "first_seen": "2026-10-21T18:46:32.512Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1619359:1",
-   "market_id": "1619359",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Gauthier Onclin cover 4.5 vs the Jan-Lennard Struff in Gauthier Onclin vs. Jan-Lennard Struff?",
-   "side": "Jan-Lennard Struff -4.50 (Games)",
-   "open_chance": 39,
-   "now_chance": 29,
-   "open_odds": "+156",
-   "now_odds": "+245",
-   "edge": 10,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Jan-Lennard Struff not above the games spread right now",
-   "context": "Jan-Lennard Struff 5 · Gauthier Onclin 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-21T19:13:19.352Z",
    "status": "open",
    "kalshi": null
   },
@@ -399,6 +394,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1619359:1:big",
+   "key": "1619359:1",
+   "at": "2026-10-21T19:19:12.077Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Jan-Lennard Struff -4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+300",
+   "now_chance": 25,
+   "edge": 14,
+   "text": "New big edge: Jan-Lennard Struff -4.50 (Games) (Games spread), 14 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-gauonc-janstr-2026-10-21"
+  },
   {
    "id": "gone:1619359:0:2026-10-21T18:43:05.617Z",
    "key": "1619359:0",
@@ -492,7 +501,8 @@
   "new_edge:1619361:0:big",
   "new_edge:1618880:0:slight",
   "gone:1619359:0:2026-10-21T18:43:05.617Z",
-  "gone:1619348:0:2026-10-21T18:43:05.617Z"
+  "gone:1619348:0:2026-10-21T18:43:05.617Z",
+  "new_edge:1619359:1:big"
  ],
  "kalshi_checked": null
 }
