@@ -743,3 +743,7 @@ a.btn-play { display: block; text-align: center; text-decoration: none; margin-t
 #tab-picks .bp-team { display: inline-flex; align-items: center; gap: 5px; }
 #tab-picks .bp-logo { object-fit: contain; flex-shrink: 0; }
 #tab-picks .lb-matchup { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
+
+/* Every Picks sport stays reachable without a hidden horizontal scrollbar. */
+#picks-view.today-picks .pick-sports { flex-wrap: wrap; overflow-x: visible; }
+#picks-view.today-picks .pick-sports .chip { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
