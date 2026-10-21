@@ -98,6 +98,20 @@
   }
   const designText = () => liveText().design;
 
+  function sportOf(game) {
+    const league=String(game.slug || '').split('-')[0].toLowerCase();
+    if(['epl','ucl','uel','uecl','lal','sea','bun','bl1','fl1','lig1','mls','lmx','eflch'].includes(league))return 'soccer';
+    if(['cfb','ncaaf'].includes(league))return 'ncaaf';
+    if(['cbb','ncaab','ncaam'].includes(league))return 'ncaab';
+    if(['ncaaw','wncaab'].includes(league))return 'wncaab';
+    if(['atp','wta','tennis'].includes(league))return 'tennis';
+    if(['pga','lpga','golf'].includes(league))return 'golf';
+    return league;
+  }
+  function sportGames(games,sport='',slug='all') {
+    return games.filter(g=>(g.status!=='final'||g.slug===slug)&&(!sport||sportOf(g)===sport));
+  }
+
   /** Header lines from the ESPN context: score line + status line. */
   function scoreboard(d) {
     const c = d.game_context || {};
@@ -325,7 +339,7 @@
     const selection = edgeSelection(d.edges, ui.filter, ui.visitBase);
     const head = el('div', 'lb-head');
     if (d.all_games) {
-      head.append(el('div','lb-game',liveText().all),el('div','lb-status',liveText().games(d.game_count)),el('div','lb-updated',freshness(d).text));
+      head.append(el('div','lb-game',ui.sport ? liveText().sports[ui.sport] || ui.sport : liveText().all),el('div','lb-status',liveText().games(d.game_count)),el('div','lb-updated',freshness(d).text));
       if (d.failed) head.append(el('div','lb-stale',liveText().failed(d.failed)));
     } else {
       const sb = scoreboard(d);
@@ -334,9 +348,16 @@
     box.append(head);
     if (d.stale || freshness(d).stale) box.append(el('div','lb-stale',liveText().stale));
     const controls = el('div', 'lb-controls');
-    const games = (ui.games || []).filter(x => x.status !== 'final' || x.slug === ui.slug);
+    const games = sportGames(ui.games || [],ui.sport,ui.slug);
+    const sportLabel=el('label','lb-game-label',liveText().sport);
+    const sportSelect=el('select','lb-game-select');
+    sportSelect.setAttribute('aria-label',liveText().sport);
+    const sportKeys=[...new Set([...Object.keys(liveText().sports),...(ui.games || []).map(sportOf)])];
+    ['',...sportKeys].forEach(key=>{const option=el('option',null,key ? liveText().sports[key] || key.toUpperCase() : liveText().allSports);option.value=key;option.selected=key===ui.sport;sportSelect.append(option);});
+    sportSelect.onchange=()=>{ui.sport=sportSelect.value;ui.slug='all';ui.game=ui.prop=false;ui.load();};
+    sportLabel.append(sportSelect);controls.append(sportLabel);
     if (games.length) {
-      const label = el('label', 'lb-game-label', P.game);
+      const label = el('label', 'lb-game-label', liveText().teamGame);
       const select = el('select', 'lb-game-select');
       [{slug:'all',game:liveText().all},...games].forEach(x => {
         const option = el('option', null, x.game || x.slug); option.value = x.slug; option.selected = x.slug === ui.slug; select.append(option);
@@ -393,7 +414,7 @@
     content.append(el('div', 'live-bets-empty', 'Loading live bets…'));
     let loading=false;
     let timer = null, last = null;
-    const ui = { slug: 'all', filter: 'all', visitBase: readSeen(), details: new Set(), game: false, prop: false, reasons: false, redraw: () => { if (last) draw(content, last, ui); } };
+    const ui = { slug: 'all', sport:'', filter: 'all', visitBase: readSeen(), details: new Set(), game: false, prop: false, reasons: false, redraw: () => { if (last) draw(content, last, ui); } };
     // Which game: data/live/index.json (written by live-tick.mjs), else SLUG.
     let request = 0;
     const load = ui.load = async (manual=false) => {
@@ -403,8 +424,10 @@
       try {
         const ix = await fetch('data/live/index.json?ts=' + Date.now(),{cache:'no-store',signal:AbortSignal.timeout(15000)}).then(r => r.ok ? r.json() : null).catch(() => null);
         const games = (ix && ix.games) || [];
+        const available=sportGames(games,ui.sport,ui.slug);
+        if(ui.slug!=='all'&&!available.some(g=>g.slug===ui.slug))ui.slug='all';
         const selected = ui.slug;
-        const targets = selected === 'all' ? games.filter(g => g.status !== 'final') : [{slug:selected || SLUG}];
+        const targets = selected === 'all' ? available : available.filter(g=>g.slug===selected);
         if (!ix && selected === 'all') throw new Error('index unavailable');
         const results = await Promise.allSettled(targets.map(async g => {
           const r = await fetch('data/live/' + g.slug + '.json?ts=' + Date.now(),{cache:'no-store',signal:AbortSignal.timeout(15000)});
@@ -429,5 +452,5 @@
     timer = setInterval(()=>{if(!loading)load();}, REFRESH_MS);
   }
 
-  return { edgeTitle, edgeSelection, combineGames, render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
+  return { sportOf, sportGames, edgeTitle, edgeSelection, combineGames, render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
 });

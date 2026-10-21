@@ -111,3 +111,15 @@ console.log('ok live-bets helpers + data shape + grouping/cap + alerts + odds li
  assert.strictEqual(LB.edgeTitle({group:'game',side:'Under 108.5'}),'Under 108.5');
  console.log('Option 1 edge filters, New boundary, safety exclusions, identity and compact titles ok');
 }
+
+{
+ const games=[{slug:'nba-a-b',status:'live'},{slug:'nhl-c-d',status:'live'},{slug:'nba-c-d',status:'pregame'},{slug:'nba-e-f',status:'final'},{slug:'lmx-a-b',status:'live'}];
+ assert.deepStrictEqual(LB.sportGames(games,'nba').map(g=>g.slug),['nba-a-b','nba-c-d']);
+ assert.strictEqual(LB.sportGames(games,'nfl').length,0);
+ assert.strictEqual(LB.sportGames(games,'').length,4);
+ assert.strictEqual(LB.sportOf(games[4]),'soccer');
+ assert.strictEqual(LB.sportOf({slug:'cfb-a-b'}),'ncaaf');
+ assert.strictEqual(LB.sportGames(games,'nba','nba-e-f').length,3);
+ assert.strictEqual(LB.sportGames(games,'nhl','nba-a-b').length,1);
+ console.log('Sport grouping, soccer leagues, all sports, empty sports and selected-final handling passed');
+}
