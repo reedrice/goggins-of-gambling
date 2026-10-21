@@ -317,6 +317,7 @@
     const def = () => defaultView(box._game);   // Polymarket default: All / Game; zoom-out still reaches All
     reset.onclick = () => { ui.touched = false; ui.v = def(); ui.sel = null; renderChart(box); };
     live.onclick = () => { ui.v.live = true; ui.sel = null; renderChart(box); };
+    svg.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') { ui.sel = null; renderChart(box); } });
     const xOf = ev => { const r = svg.getBoundingClientRect(); return (ev.clientX - r.left) * W / r.width; };
     const tAt = px => { const w = ui.win; return w.a + (w.b - w.a) * Math.min(1, Math.max(0, (px - lOf(box)) / (W - lOf(box) - rOf(box)))); };
     const zoom = (factor, px) => {
@@ -445,7 +446,7 @@
     paintHead(ui.head, pr && pr.head, pr && pr.sides);
     ui.range.textContent = rangeLabel(win.a, win.b);
     const zoomed = !!ui.v.span && ui.v.span < tMax - tMin;
-    ui.live.hidden = ui.v.live; ui.reset.hidden = !(zoomed || !ui.v.live);   // only when zoomed or panned
+    ui.live.hidden = ui.v.live && ui.sel == null; ui.reset.hidden = !(zoomed || !ui.v.live);
   }
   /** Score header above a game chart: "BOS 58   Live · End Q2   45 DET" (Polymarket US event score). */
   function paintHead(head, h, sides) {
@@ -564,6 +565,7 @@
       const q2 = Number((side ? md.longQuote : md.shortQuote) && (side ? md.longQuote : md.shortQuote).value);   // other side's own quote
       if (q2 > 0 && q2 < 1) add(live2, q2 * 100);
       draw();
+      return true;
     };
     sec.showMarket(leg.marketId, leg.marketSlug);
     return sec;
@@ -710,38 +712,43 @@
   }
   function startLive(subs, charts, statusEl) {
     const slugs = [...new Set(subs.map(x => x.slug))];
-    let timer = null, dead = false, delay = LIVE_MIN_MS, lastEv = 0, okAt = 0;
+    let timer = null, dead = false, delay = LIVE_MIN_MS, lastEv = 0, okAt = 0, running = false;
+    const controller = new AbortController();
     const get = async url => {
-      const r = await fetch(url, { cache: 'no-store' });
+      const r = await fetch(url, { cache: 'no-store', signal: AbortSignal.any([controller.signal, AbortSignal.timeout(8000)]) });
       if (r.status === 429) { const e = new Error('429'); e.rate = true; throw e; }
       return r.ok ? r.json() : null;
     };
     const tick = async () => {
       timer = null;
-      if (dead) return;
+      if (dead || running) return;
       if (document.visibilityState !== 'visible') return;          // resumes on visibilitychange
+      running = true;
+      const started = Date.now();
       let limited = false;
-      try {
+      const attempt = async fn => { try { await fn(); } catch (e) { if (e.rate) limited = true; } };
+      const jobs = [];
         if (Date.now() - lastEv >= EVENT_EVERY_MS) {
           lastEv = Date.now();
-          await Promise.all(slugs.map(async sl => { const j = await get(`${PM}/v1/events/slug/${sl}`); const ev = j && (j.event || j);
-            if (ev && !dead) subs.filter(x => x.slug === sl).forEach(x => { try { x.fn(ev); } catch (e) { /* one bad leg */ } }); }));
+          jobs.push(...slugs.map(sl => attempt(async () => { const j = await get(`${PM}/v1/events/slug/${sl}`); const ev = j && (j.event || j);
+            if (ev && !dead) subs.filter(x => x.slug === sl).forEach(x => { try { x.fn(ev); } catch (e) { /* one bad leg */ } }); })));
         }
         const want = [...new Set(charts.map(c => c.slug()).filter(Boolean))];
-        await Promise.all(want.map(async ms => { const j = await get(`${PM}/v1/markets/${encodeURIComponent(ms)}/bbo`);
-          if (j && j.marketData && !dead) { okAt = Date.now(); charts.forEach(c => c.fromBbo(j.marketData)); } }));
-        delay = Math.max(LIVE_MIN_MS, Math.round(delay * 0.8));
-      } catch (e) { if (e.rate) { limited = true; delay = Math.min(LIVE_MAX_MS, delay * 2); } }
+        jobs.push(...want.map(ms => attempt(async () => { const j = await get(`${PM}/v1/markets/${encodeURIComponent(ms)}/bbo`);
+          if (j && j.marketData && !dead) charts.forEach(c => { if(c.fromBbo(j.marketData))okAt = Date.now(); }); })));
+      await Promise.all(jobs);
+      running = false;
+      delay = limited ? Math.min(LIVE_MAX_MS, delay * 2) : Math.max(LIVE_MIN_MS, Math.round(delay * 0.8));
       if (dead) return;
       statusEl.textContent = limited ? `Polymarket asked us to slow down. Next check in ${Math.round(delay / 1000)}s.`
-        : okAt && Date.now() - okAt < 15000 ? `🟢 Live from Polymarket · ${clock(okAt)} CT · checks every ${(delay / 1000).toFixed(1)}s`
+        : okAt && Date.now() - okAt < 15000 ? `🟢 Live from Polymarket · ${new Date(okAt).toLocaleTimeString('en-US',{timeZone:'America/Chicago',hour:'numeric',minute:'2-digit',second:'2-digit'})} CT · checks every ${(delay / 1000).toFixed(1)}s`
         : 'Live prices not reachable right now. Showing saved prices.';
-      timer = setTimeout(tick, delay);
+      timer = setTimeout(tick, Math.max(0, delay - (Date.now() - started)));
     };
     const vis = () => { if (document.visibilityState === 'visible' && !timer && !dead) tick(); };
     tick();
     document.addEventListener('visibilitychange', vis);
-    return () => { dead = true; if (timer) clearTimeout(timer); document.removeEventListener('visibilitychange', vis); };
+    return () => { dead = true; controller.abort(); if (timer) clearTimeout(timer); document.removeEventListener('visibilitychange', vis); };
   }
   function esc(e) { if (e.key === 'Escape') close(); }
 
@@ -801,5 +808,5 @@
   /** Event slug from a Polymarket US event URL. */
   const slugFromUrl = u => { const m = /\/([a-z]+-[a-z0-9]+-[a-z0-9]+-\d{4}-\d{2}-\d{2})(?:[/?#]|$)/.exec(u || ''); return m ? m[1] : null; };
 
-  return { TEAM_COLORS, legible, teamColor, pairSides, scoreHeader, curvePath, stepPoints, complement, valueAt, note, noteText, blankVisuals, VISUALS, liveChart, seasonStart, tagSeason, loadGames, ESPN_PATH, espnAbbr, open, close, chartBtn, pmHistory, viewWindow, prepSeries, nearestIdx, defaultView, gameInfo, fitY, rangeLabel, parseProp, siblingLines, gamesFromLog, summary, pickGames, seriesFor, american, slugFromUrl, statOf };
+  return { startLive, TEAM_COLORS, legible, teamColor, pairSides, scoreHeader, curvePath, stepPoints, complement, valueAt, note, noteText, blankVisuals, VISUALS, liveChart, seasonStart, tagSeason, loadGames, ESPN_PATH, espnAbbr, open, close, chartBtn, pmHistory, viewWindow, prepSeries, nearestIdx, defaultView, gameInfo, fitY, rangeLabel, parseProp, siblingLines, gamesFromLog, summary, pickGames, seriesFor, american, slugFromUrl, statOf };
 });
