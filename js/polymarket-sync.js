@@ -70,7 +70,12 @@
    return {desc:label||p.slug,question:l.title||'',market_id:l.slug,eventSlug:l.eventSlug||'',market_side:side||'',unsupported:!side};
   });
  }
- let current=null,key=null,salt=null,timer=null,host=null,busy=false,epoch=0,message='';
+ function activityLabel(slug,positions,S){
+  const p=positions?.[slug];const title=p?.marketMetadata?.title;
+  if(title&&title!==slug)return title;
+  return String(slug||'').startsWith('crossd-')?S.combo:S.bet;
+ }
+ let current=null,key=null,salt=null,timer=null,host=null,busy=false,epoch=0,message='',activityOpen=false;
  const node=(tag,text,cls)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;};
  const money=value=>value===null?root.STR.pmSync.unknown:new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(value);
  function lock(){epoch++;current=null;key=null;salt=null;busy=false;clearTimeout(timer);message='';paint();}
@@ -106,13 +111,13 @@
   if(totals.unclassified)host.append(node('p',S.unclassified(totals.unclassified),'muted small'));
   const positions=rows(snapshot.positions).filter(p=>p.quantity!==0&&!p.expired);host.append(node('h3',S.positions(positions.length)));
   if(!positions.length)host.append(node('p',S.noPositions,'muted'));
-  for(const p of positions){const card=node('div',undefined,'card');card.append(node('strong',p.marketMetadata?.title||p.slug),node('p',S.positionInfo(p.quantity,money(usd(p.cost)),money(usd(p.cashValue))),'muted small'));
+  for(const p of positions){const card=node('div',undefined,'card');const title=p.comboLegDetails?.length?S.comboTitle(p.comboLegDetails.length):activityLabel(p.slug,snapshot.positions,S);card.append(node('strong',title),node('p',S.positionInfo(p.quantity,money(usd(p.cost)),money(usd(p.cashValue))),'muted small'));
    for(const spec of progressSpecs(p)){card.append(node('div',spec.desc));if(root.BetProgress&&!spec.unsupported){const box=node('div','', 'bp-host');box.dataset.bp=JSON.stringify(root.BetProgress.spec(spec));card.append(box);}else card.append(node('p',S.progressUnavailable,'muted small'));}host.append(card);
   }
-  host.append(node('h3',S.activity));const list=node('ul');const recent=(snapshot.activities||[]).filter(a=>a.trade||a.positionResolution).slice(0,20);
-  recent.forEach(a=>{const t=a.trade,r=a.positionResolution;list.append(node('li',t?S.trade(t.marketSlug,money(usd(t.costBasis)),t.state):S.settlement(r.marketSlug)));});if(!recent.length)list.append(node('li',S.noActivity));host.append(list,node('p',S.pollNote,'muted small'));
+  const activity=node('details');activity.open=activityOpen;activity.ontoggle=()=>{activityOpen=activity.open;};activity.append(node('summary',S.activity));const list=node('ul');const recent=(snapshot.activities||[]).filter(a=>a.trade||a.positionResolution).slice(0,20);
+  recent.forEach(a=>{const t=a.trade,r=a.positionResolution;const label=activityLabel((t||r).marketSlug,snapshot.positions,S);list.append(node('li',t?S.trade(label):S.settlement(label)));});if(!recent.length)list.append(node('li',S.noActivity));activity.append(list);host.append(activity,node('p',S.pollNote,'muted small'));
  }
  function mount(element){host=element;clearTimeout(timer);paint();if(current)sync();}
  if(typeof document!=='undefined')document.addEventListener('visibilitychange',()=>{if(!document.hidden&&current){clearTimeout(timer);sync();}});
- return {mount,lock,headers,passwordKey,seal,unlock,pages,rows,stats,progressSpecs,validate};
+ return {mount,lock,headers,passwordKey,seal,unlock,pages,rows,stats,progressSpecs,activityLabel,validate};
 });

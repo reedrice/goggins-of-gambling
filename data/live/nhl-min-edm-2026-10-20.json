@@ -9,12 +9,12 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892546",
-  "fetched_at": "2026-10-21T03:25:03.781Z",
+  "fetched_at": "2026-10-21T03:43:02.702Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 3,
-  "clock": "11:07",
-  "regulation_secs_left": 1567,
+  "clock": "2:34",
+  "regulation_secs_left": 1054,
   "home": {
    "abbr": "EDM",
    "alias": "Oilers",
@@ -26,7 +26,7 @@
    "abbr": "MIN",
    "alias": "Wild",
    "name": "Minnesota Wild",
-   "score": 1,
+   "score": 3,
    "id": "30"
   },
   "possession": null,
@@ -124,25 +124,25 @@
    },
    {
     "team": "MIN",
-    "player": "Joel Eriksson Ek",
-    "short": "J. Eriksson Ek",
-    "pos": "C"
-   },
-   {
-    "team": "MIN",
     "player": "Kirill Kaprizov",
     "short": "K. Kaprizov",
     "pos": "LW"
    },
    {
     "team": "MIN",
-    "player": "Joel Eriksson Ek",
-    "short": "J. Eriksson Ek",
-    "pos": "C"
+    "player": "Matt Boldy",
+    "short": "M. Boldy",
+    "pos": "LW"
+   },
+   {
+    "team": "MIN",
+    "player": "Kirill Kaprizov",
+    "short": "K. Kaprizov",
+    "pos": "LW"
    }
   ]
  },
- "updated": "2026-10-21T03:25:03.782Z",
+ "updated": "2026-10-21T03:43:02.703Z",
  "open_taken_at": "2026-10-20T22:26:58.888Z",
  "thresholds": {
   "big": 10,
@@ -2572,6 +2572,26 @@
  ],
  "edges": [
   {
+   "key": "1481181:1",
+   "market_id": "1481181",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming hockey event MIN Wild vs EDM Oilers scheduled for October 21, 2026 at 1:00 AM UTC?",
+   "side": "Oilers win",
+   "open_chance": 55,
+   "now_chance": 51,
+   "open_odds": "-122",
+   "now_odds": "-104",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "EDM tied, Q3 2:34",
+   "first_seen": "2026-10-21T03:43:02.703Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
    "key": "1481185:0",
    "market_id": "1481185",
    "market": "Main spread",
@@ -2588,7 +2608,7 @@
    "reason": "Explained by score: MIN not covering +1.5 right now",
    "context": "MIN down 2, Q3 11:07",
    "first_seen": "2026-10-21T02:20:03.377Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": true
   },
   {
@@ -2608,7 +2628,7 @@
    "reason": "Big move (28 pts), likely news",
    "context": "MIN down 2, Q3 11:07",
    "first_seen": "2026-10-21T02:20:03.377Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": true
   },
   {
@@ -2628,7 +2648,7 @@
    "reason": null,
    "context": "MIN 1, EDM 3, Q3 11:07",
    "first_seen": "2026-10-21T01:46:16.413Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": true
   },
   {
@@ -2648,27 +2668,7 @@
    "reason": null,
    "context": "EDM up 2, Q3 11:07",
    "first_seen": "2026-10-21T02:31:04.717Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1481191:0",
-   "market_id": "1481191",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in MIN vs EDM be more than 5.5?",
-   "side": "Over 5.5",
-   "open_chance": 59,
-   "now_chance": 48,
-   "open_odds": "-144",
-   "now_odds": "+108",
-   "edge": 11,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "MIN 1, EDM 3, Q3 11:07",
-   "first_seen": "2026-10-21T03:25:03.782Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": true
   },
   {
@@ -2688,6 +2688,26 @@
    "reason": "Explained by score: scoring above pace (4 pts, pace 2)",
    "context": "MIN 1, EDM 3, Q3 20:00",
    "first_seen": "2026-10-21T02:41:06.798Z",
+   "status": "gone",
+   "kalshi": true
+  },
+  {
+   "key": "1481191:0",
+   "market_id": "1481191",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in MIN vs EDM be more than 5.5?",
+   "side": "Over 5.5",
+   "open_chance": 59,
+   "now_chance": 48,
+   "open_odds": "-144",
+   "now_odds": "+108",
+   "edge": 11,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "MIN 1, EDM 3, Q3 11:07",
+   "first_seen": "2026-10-21T03:25:03.782Z",
    "status": "gone",
    "kalshi": true
   },
@@ -2773,6 +2793,48 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1481192:0:2026-10-21T01:46:16.413Z",
+   "key": "1481192:0",
+   "at": "2026-10-21T03:43:02.703Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 6.5",
+   "market": "Main total",
+   "now_odds": "+270",
+   "now_chance": 27,
+   "edge": 20,
+   "text": "Edge gone: Over 6.5 (Main total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-min-edm-2026-10-20"
+  },
+  {
+   "id": "gone:1604131:0:2026-10-21T02:31:04.717Z",
+   "key": "1604131:0",
+   "at": "2026-10-21T03:43:02.703Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Yes: Connor McDavid record at least 1 goals in MIN vs EDM",
+   "market": "Player prop",
+   "now_odds": "+335",
+   "now_chance": 23,
+   "edge": 19,
+   "text": "Edge gone: Yes: Connor McDavid record at least 1 goals in MIN vs EDM (Player prop) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-min-edm-2026-10-20"
+  },
+  {
+   "id": "gone:1481191:0:2026-10-21T03:25:03.782Z",
+   "key": "1481191:0",
+   "at": "2026-10-21T03:43:02.703Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 5.5",
+   "market": "Alt total",
+   "now_odds": "+108",
+   "now_chance": 48,
+   "edge": 11,
+   "text": "Edge gone: Over 5.5 (Alt total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-min-edm-2026-10-20"
+  },
   {
    "id": "new_edge:1481192:0:big",
    "key": "1481192:0",
@@ -2950,10 +3012,13 @@
   "new_edge:1481193:0:slight",
   "gone:1613587:0:2026-10-21T01:04:10.418Z",
   "new_edge:1481192:0:big",
-  "new_edge:1481191:0:big"
+  "new_edge:1481191:0:big",
+  "gone:1481192:0:2026-10-21T01:46:16.413Z",
+  "gone:1604131:0:2026-10-21T02:31:04.717Z",
+  "gone:1481191:0:2026-10-21T03:25:03.782Z"
  ],
  "kalshi_checked": {
-  "at": "2026-10-21T03:25:04.083Z",
+  "at": "2026-10-21T03:43:03.029Z",
   "event": "26OCT20MINEDM"
  }
 }

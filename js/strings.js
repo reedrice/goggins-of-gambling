@@ -660,10 +660,11 @@ window.STR.pmSync = {
  metricNote:'Polymarket settlements only, using reported realized P/L changes. Open positions and manual bets are separate. One settled market or combo counts as one record; this is not a per-fill win rate.',
  spendingUnavailable:'Spending and sales totals are unavailable when the API does not identify trade direction. They are not inferred from trading volume. Settlement gains are profit, not total payouts.',
  unclassified:n=>n+' settlements lack enough information to classify.', positions:n=>'Open positions ('+n+')', noPositions:'No open positions reported.',
- positionInfo:(quantity,cost,value)=>'Net contracts '+quantity+' · Reported cost '+cost+' · Cash value '+value,
+ positionInfo:(quantity,cost,value)=>'Reported cost '+cost+' · Current value '+value,
  progressUnavailable:'Live progress unavailable for this market.', activity:'Recent trading activity', noActivity:'No trading activity reported.',
- trade:(slug,cost,state)=>slug+' · Reported cost '+cost+' · '+state, settlement:slug=>slug+' · Settled',
- pollNote:'Account sync: every 30 seconds while open and unlocked. Game statistics: about every 15 seconds, subject to ESPN delays. Reloading locks the connection. Manual tracking totals below exclude this account.',
+ combo:'Combo bet', comboTitle:n=>n+'-leg combo', bet:'Bet',
+ trade:label=>label+' · Trade recorded', settlement:label=>label+' · Settled',
+ pollNote:'Updates automatically while this page is open and unlocked. Reloading locks the connection.',
  manual:'Manually tracked bets',
  errors:{storage:'Could not save the encrypted account on this device. Check browser storage space.',keys:'Check the Key ID and Base64 secret key.',password:'Choose a local password with at least 12 characters.',unlock:'Could not unlock. Check your local password.',vault:'Saved connection format is unsupported.',auth:'Polymarket rejected the key. Verify it belongs to your Apple-linked account.',rate:'Polymarket rate limit reached. Retrying shortly.',network:'Could not reach Polymarket. Last synced data are retained.',schema:'Polymarket returned an unsupported account format.',pagination:'Full account history could not be loaded. Totals were not replaced.'}
 };
