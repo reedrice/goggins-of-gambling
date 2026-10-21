@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185101",
-  "fetched_at": "2026-10-21T19:32:19.597Z",
+  "fetched_at": "2026-10-21T19:38:20.569Z",
   "tennis": true,
   "tennis_match": {
    "id": "185101",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Benjamin Bonzi (FRA) leads (4) Tommy Paul (USA) 1-1",
+     "text": "Benjamin Bonzi (FRA) leads (4) Tommy Paul (USA) 2-2",
      "type": "event"
     }
    ],
@@ -61,7 +61,7 @@
      },
      "linescores": [
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -104,7 +104,7 @@
      "possession": true,
      "linescores": [
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -181,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-21T19:32:19.597Z",
+ "updated": "2026-10-21T19:38:20.569Z",
  "open_taken_at": "2026-10-21T05:15:58.759Z",
  "thresholds": {
   "big": 10,
@@ -257,6 +257,46 @@
  ],
  "edges": [
   {
+   "key": "1626842:0",
+   "market_id": "1626842",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Benjamin Bonzi win set 1 against Tommy Paul?",
+   "side": "Yes: Benjamin Bonzi win set 1 against Tommy Paul",
+   "open_chance": 35,
+   "now_chance": 27,
+   "open_odds": "+186",
+   "now_odds": "+270",
+   "edge": 8,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Benjamin Bonzi not above the games spread right now",
+   "context": "Tommy Paul 2 · Benjamin Bonzi 2 · 1st Set (games by set)",
+   "first_seen": "2026-10-21T19:38:20.569Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1624692:0",
+   "market_id": "1624692",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Benjamin Bonzi vs Tommy Paul scheduled for October 21, 2026 at 6:10 PM UTC?",
+   "side": "Benjamin Bonzi win",
+   "open_chance": 28,
+   "now_chance": 23,
+   "open_odds": "+257",
+   "now_odds": "+335",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Tommy Paul 2 · Benjamin Bonzi 2 · 1st Set (games by set)",
+   "first_seen": "2026-10-21T19:38:20.569Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1626842:1",
    "market_id": "1626842",
    "market": "Set 1 winner",
@@ -273,7 +313,7 @@
    "reason": "Explained by score: Benjamin Bonzi not above the games spread right now",
    "context": "Tommy Paul 1 · Benjamin Bonzi 1 · 1st Set (games by set)",
    "first_seen": "2026-10-21T16:20:30.528Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -293,11 +333,39 @@
    "reason": null,
    "context": "Tommy Paul 1 · Benjamin Bonzi 1 · 1st Set (games by set)",
    "first_seen": "2026-10-21T19:26:16.130Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1624692:0:slight",
+   "key": "1624692:0",
+   "at": "2026-10-21T19:38:20.569Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Benjamin Bonzi win",
+   "market": "Moneyline",
+   "now_odds": "+335",
+   "now_chance": 23,
+   "edge": 5,
+   "text": "New slight edge: Benjamin Bonzi win (Moneyline), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-benbon-tompau-2026-10-21"
+  },
+  {
+   "id": "gone:1624692:1:2026-10-21T19:26:16.130Z",
+   "key": "1624692:1",
+   "at": "2026-10-21T19:38:20.569Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Tommy Paul win",
+   "market": "Moneyline",
+   "now_odds": "-213",
+   "now_chance": 68,
+   "edge": 6,
+   "text": "Edge gone: Tommy Paul win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-benbon-tompau-2026-10-21"
+  },
   {
    "id": "new_edge:1624692:1:slight",
    "key": "1624692:1",
@@ -329,7 +397,9 @@
  ],
  "alert_seen": [
   "new_edge:1626842:1:slight",
-  "new_edge:1624692:1:slight"
+  "new_edge:1624692:1:slight",
+  "new_edge:1624692:0:slight",
+  "gone:1624692:1:2026-10-21T19:26:16.130Z"
  ],
  "kalshi_checked": null
 }
