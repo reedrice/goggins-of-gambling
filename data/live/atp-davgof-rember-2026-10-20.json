@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185040",
-  "fetched_at": "2026-10-21T17:28:16.809Z",
+  "fetched_at": "2026-10-21T17:34:13.910Z",
   "tennis": true,
   "tennis_match": {
    "id": "185040",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "detail": "3rd Set",
+     "shortDetail": "3rd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "David Goffin (BEL) is tied with Remy Bertola (SUI) 3-6 5-3",
+     "text": "Remy Bertola (SUI) leads David Goffin (BEL) 6-3 3-6 1-0",
      "type": "event"
     }
    ],
@@ -62,7 +62,11 @@
        "winner": true
       },
       {
-       "value": 3
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -109,7 +113,11 @@
        "winner": false
       },
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -167,8 +175,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "period": 3,
+  "clock": "3rd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Remy Bertola",
@@ -180,13 +188,13 @@
    "abbr": "David Goffin",
    "alias": "David Goffin",
    "name": "David Goffin",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-21T17:28:16.809Z",
+ "updated": "2026-10-21T17:34:13.910Z",
  "open_taken_at": "2026-10-21T05:15:17.159Z",
  "thresholds": {
   "big": 10,
@@ -328,62 +336,42 @@
  ],
  "edges": [
   {
-   "key": "1568353:1",
-   "market_id": "1568353",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event David Goffin vs Remy Bertola scheduled for October 20, 2026 at 10:00 AM UTC?",
-   "side": "Remy Bertola win",
-   "open_chance": 64,
-   "now_chance": 52,
-   "open_odds": "-178",
-   "now_odds": "-108",
-   "edge": 12,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Remy Bertola 6, 3 · David Goffin 3, 5 · 2nd Set (games by set)",
-   "first_seen": "2026-10-21T17:22:29.953Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1576302:1",
-   "market_id": "1576302",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the David Goffin cover 1.5 vs the Remy Bertola in David Goffin vs. Remy Bertola?",
-   "side": "Remy Bertola -1.50 (Games)",
-   "open_chance": 60,
-   "now_chance": 48,
-   "open_odds": "-150",
-   "now_odds": "+108",
-   "edge": 12,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Remy Bertola not above the games spread right now",
-   "context": "Remy Bertola 6, 3 · David Goffin 3, 5 · 2nd Set (games by set)",
-   "first_seen": "2026-10-21T17:22:29.953Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1576307:1",
+   "key": "1576307:0",
    "market_id": "1576307",
    "market": "Games spread",
    "group": "game",
    "question": "Will the David Goffin cover -1.5 vs the Remy Bertola in David Goffin vs. Remy Bertola?",
-   "side": "Remy Bertola +1.50 (Games)",
-   "open_chance": 71,
-   "now_chance": 65,
-   "open_odds": "-245",
-   "now_odds": "-186",
-   "edge": 6,
+   "side": "David Goffin -1.50 (Games)",
+   "open_chance": 33,
+   "now_chance": 25,
+   "open_odds": "+203",
+   "now_odds": "+300",
+   "edge": 8,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: David Goffin not above the games spread right now",
+   "context": "Remy Bertola 6, 3, 1 · David Goffin 3, 6, 0 · 3rd Set (games by set)",
+   "first_seen": "2026-10-21T17:34:13.910Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1568353:0",
+   "market_id": "1568353",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event David Goffin vs Remy Bertola scheduled for October 20, 2026 at 10:00 AM UTC?",
+   "side": "David Goffin win",
+   "open_chance": 37,
+   "now_chance": 30,
+   "open_odds": "+170",
+   "now_odds": "+233",
+   "edge": 7,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Remy Bertola 6, 3 · David Goffin 3, 5 · 2nd Set (games by set)",
-   "first_seen": "2026-10-21T17:28:16.809Z",
+   "context": "Remy Bertola 6, 3, 1 · David Goffin 3, 6, 0 · 3rd Set (games by set)",
+   "first_seen": "2026-10-21T17:05:00.067Z",
    "status": "open",
    "kalshi": null
   },
@@ -428,27 +416,109 @@
    "kalshi": null
   },
   {
-   "key": "1568353:0",
+   "key": "1568353:1",
    "market_id": "1568353",
    "market": "Moneyline",
    "group": "game",
    "question": "Who will win in the upcoming atp event David Goffin vs Remy Bertola scheduled for October 20, 2026 at 10:00 AM UTC?",
-   "side": "David Goffin win",
-   "open_chance": 37,
-   "now_chance": 23,
-   "open_odds": "+170",
-   "now_odds": "+335",
-   "edge": 14,
+   "side": "Remy Bertola win",
+   "open_chance": 64,
+   "now_chance": 52,
+   "open_odds": "-178",
+   "now_odds": "-108",
+   "edge": 12,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Remy Bertola 6, 3 · David Goffin 3, 5 · 2nd Set (games by set)",
+   "first_seen": "2026-10-21T17:22:29.953Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1576302:1",
+   "market_id": "1576302",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the David Goffin cover 1.5 vs the Remy Bertola in David Goffin vs. Remy Bertola?",
+   "side": "Remy Bertola -1.50 (Games)",
+   "open_chance": 60,
+   "now_chance": 48,
+   "open_odds": "-150",
+   "now_odds": "+108",
+   "edge": 12,
    "tier": "big",
    "class": "score",
-   "reason": "Explained by score: David Goffin trailing in sets",
-   "context": "Remy Bertola 6, 1 · David Goffin 3, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-10-21T17:05:00.067Z",
+   "reason": "Explained by score: Remy Bertola not above the games spread right now",
+   "context": "Remy Bertola 6, 3 · David Goffin 3, 5 · 2nd Set (games by set)",
+   "first_seen": "2026-10-21T17:22:29.953Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1576307:1",
+   "market_id": "1576307",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the David Goffin cover -1.5 vs the Remy Bertola in David Goffin vs. Remy Bertola?",
+   "side": "Remy Bertola +1.50 (Games)",
+   "open_chance": 71,
+   "now_chance": 65,
+   "open_odds": "-245",
+   "now_odds": "-186",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Remy Bertola 6, 3 · David Goffin 3, 5 · 2nd Set (games by set)",
+   "first_seen": "2026-10-21T17:28:16.809Z",
    "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1568353:0:slight",
+   "key": "1568353:0",
+   "at": "2026-10-21T17:34:13.910Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "David Goffin win",
+   "market": "Moneyline",
+   "now_odds": "+233",
+   "now_chance": 30,
+   "edge": 7,
+   "text": "New slight edge: David Goffin win (Moneyline), 7 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-davgof-rember-2026-10-20"
+  },
+  {
+   "id": "gone:1568353:1:2026-10-21T17:22:29.953Z",
+   "key": "1568353:1",
+   "at": "2026-10-21T17:34:13.910Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Remy Bertola win",
+   "market": "Moneyline",
+   "now_odds": "-108",
+   "now_chance": 52,
+   "edge": 12,
+   "text": "Edge gone: Remy Bertola win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-davgof-rember-2026-10-20"
+  },
+  {
+   "id": "gone:1576307:1:2026-10-21T17:28:16.809Z",
+   "key": "1576307:1",
+   "at": "2026-10-21T17:34:13.910Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Remy Bertola +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-186",
+   "now_chance": 65,
+   "edge": 6,
+   "text": "Edge gone: Remy Bertola +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-davgof-rember-2026-10-20"
+  },
   {
    "id": "new_edge:1568353:1:big",
    "key": "1568353:1",
@@ -544,7 +614,10 @@
   "gone:1576272:0:2026-10-21T16:20:27.146Z",
   "new_edge:1568353:1:slight",
   "new_edge:1568353:1:big",
-  "new_edge:1576307:1:slight"
+  "new_edge:1576307:1:slight",
+  "new_edge:1568353:0:slight",
+  "gone:1568353:1:2026-10-21T17:22:29.953Z",
+  "gone:1576307:1:2026-10-21T17:28:16.809Z"
  ],
  "kalshi_checked": null
 }
