@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "184998",
-  "fetched_at": "2026-10-21T07:15:32.329Z",
+  "fetched_at": "2026-10-21T07:25:27.514Z",
   "tennis": true,
   "tennis_match": {
    "id": "184998",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "James Duckworth (AUS) leads (2) Luciano Darderi (ITA) 5-5",
+     "text": "James Duckworth (AUS) is tied with (2) Luciano Darderi (ITA) 7-5 0-0",
      "type": "event"
     }
    ],
@@ -61,7 +61,11 @@
      },
      "linescores": [
       {
-       "value": 5
+       "value": 5,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -104,7 +108,11 @@
      "possession": true,
      "linescores": [
       {
-       "value": 5
+       "value": 7,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -162,8 +170,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Luciano Darderi",
@@ -175,13 +183,13 @@
    "abbr": "James Duckworth",
    "alias": "James Duckworth",
    "name": "James Duckworth",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-21T07:15:32.330Z",
+ "updated": "2026-10-21T07:25:27.515Z",
  "open_taken_at": "2026-10-21T05:15:17.891Z",
  "thresholds": {
   "big": 10,
@@ -345,6 +353,66 @@
  ],
  "edges": [
   {
+   "key": "1585111:1",
+   "market_id": "1585111",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the James Duckworth cover -1.5 vs the Luciano Darderi in James Duckworth vs. Luciano Darderi?",
+   "side": "Luciano Darderi +1.50 (Games)",
+   "open_chance": 59,
+   "now_chance": 27,
+   "open_odds": "-144",
+   "now_odds": "+270",
+   "edge": 32,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Luciano Darderi not above the games spread right now",
+   "context": "Luciano Darderi 5, 0 · James Duckworth 7, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-21T06:55:43.417Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1584293:1",
+   "market_id": "1584293",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event James Duckworth vs Luciano Darderi scheduled for October 20, 2026 at 6:30 AM UTC?",
+   "side": "Luciano Darderi win",
+   "open_chance": 52,
+   "now_chance": 25,
+   "open_odds": "-108",
+   "now_odds": "+300",
+   "edge": 27,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Luciano Darderi trailing in sets",
+   "context": "Luciano Darderi 5, 0 · James Duckworth 7, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-21T06:55:43.417Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1585110:1",
+   "market_id": "1585110",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the James Duckworth cover 1.5 vs the Luciano Darderi in James Duckworth vs. Luciano Darderi?",
+   "side": "Luciano Darderi -1.50 (Games)",
+   "open_chance": 46,
+   "now_chance": 24,
+   "open_odds": "+117",
+   "now_odds": "+317",
+   "edge": 22,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Luciano Darderi not above the games spread right now",
+   "context": "Luciano Darderi 5, 0 · James Duckworth 7, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-21T07:25:27.515Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1585091:1",
    "market_id": "1585091",
    "market": "Games total",
@@ -352,15 +420,35 @@
    "question": "Will the total in James Duckworth vs. Luciano Darderi be more than 22.5?",
    "side": "Under 22.5 (Games)",
    "open_chance": 46,
-   "now_chance": 34,
+   "now_chance": 24,
    "open_odds": "+117",
-   "now_odds": "+194",
-   "edge": 12,
+   "now_odds": "+317",
+   "edge": 22,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Luciano Darderi 5 · James Duckworth 5 · 1st Set (games by set)",
+   "context": "Luciano Darderi 5, 0 · James Duckworth 7, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-21T07:05:31.953Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1585074:1",
+   "market_id": "1585074",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will James Duckworth win set 2 against Luciano Darderi?",
+   "side": "No: James Duckworth win set 2 against Luciano Darderi",
+   "open_chance": 54,
+   "now_chance": 50,
+   "open_odds": "-117",
+   "now_odds": "+100",
+   "edge": 4,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: James Duckworth not above the games spread right now",
+   "context": "Luciano Darderi 5, 0 · James Duckworth 7, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-21T06:42:29.344Z",
    "status": "open",
    "kalshi": null
   },
@@ -381,66 +469,6 @@
    "reason": "Explained by score: James Duckworth not above the games spread right now",
    "context": "Luciano Darderi 2 · James Duckworth 2 · 1st Set (games by set)",
    "first_seen": "2026-10-21T06:42:29.344Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1585074:1",
-   "market_id": "1585074",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will James Duckworth win set 2 against Luciano Darderi?",
-   "side": "No: James Duckworth win set 2 against Luciano Darderi",
-   "open_chance": 54,
-   "now_chance": 47,
-   "open_odds": "-117",
-   "now_odds": "+113",
-   "edge": 7,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Luciano Darderi 3 · James Duckworth 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-21T06:42:29.344Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1584293:1",
-   "market_id": "1584293",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event James Duckworth vs Luciano Darderi scheduled for October 20, 2026 at 6:30 AM UTC?",
-   "side": "Luciano Darderi win",
-   "open_chance": 52,
-   "now_chance": 45,
-   "open_odds": "-108",
-   "now_odds": "+122",
-   "edge": 7,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Luciano Darderi 2 · James Duckworth 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-21T06:55:43.417Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1585111:1",
-   "market_id": "1585111",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the James Duckworth cover -1.5 vs the Luciano Darderi in James Duckworth vs. Luciano Darderi?",
-   "side": "Luciano Darderi +1.50 (Games)",
-   "open_chance": 59,
-   "now_chance": 54,
-   "open_odds": "-144",
-   "now_odds": "-117",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Luciano Darderi 3 · James Duckworth 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-21T06:55:43.417Z",
    "status": "gone",
    "kalshi": null
   }
