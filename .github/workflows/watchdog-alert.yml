@@ -1,0 +1,25 @@
+name: Independent watchdog alert
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: production-watchdog-alert
+  cancel-in-progress: false
+jobs:
+  notify:
+    if: github.repository == 'reedrice/goggins-of-gambling' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - name: Notify using the Actions bot identity
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/site-health-alert.mjs failed

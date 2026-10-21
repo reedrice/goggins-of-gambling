@@ -1578,3 +1578,6 @@ Reed requested exact cents rather than rounded whole dollars. Private account cu
 
 ## 131. Private open-position totals (Oct 21)
 Added top account KPIs for total remaining investment and summed gross payout if all open positions win, with cents. Closed/expired positions excluded; any missing or ambiguous cost suppresses the investment total instead of presenting a partial sum. Missing quantities suppress payout. Totals do not depend on complete settlement history. Copy distinguishes gross payout from profit/cash-out and notes opposing outcomes may prevent every position winning. Synthetic tests only; no private account values published.
+
+## 132. Persistent cadence and bot-authored alert correction (Oct 21)
+Successful jobs that never briefly cleared CDN freshness left recovery state blocking later pacing. Independent pacing now continues after successful completed jobs regardless of health, skipping active/recent jobs. Issue #7 was authored by Reed’s PAT and did not reproduce the bot mobile test. Unresolved alerts now dispatch watchdog-alert.yml using the Actions bot token and existing deduplicated incident logic. No new credentials or AI.
