@@ -61,6 +61,7 @@
     token: 'betdash_gh_token',
     login: 'betdash_gh_login',
     prefs: 'betdash_prefs',
+    kalshiVault: 'betdash_kalshi_vault', // encrypted only, excluded from export
     polymarketVault: 'betdash_polymarket_vault', // AES-GCM ciphertext only; excluded from backups/sharing
     play: 'betdash_play'          // PLAY MONEY (points, just for fun): {name, bets[]}, js/play.js
   });
@@ -191,6 +192,8 @@
   window.Store = {
     KEYS, getProfile, setProfile, getBets, setBets, upsertBet, deleteBet,
     getSettings, setSettings, getPrefs, setPrefs, hasPrefs, getToken, setToken, getLogin, setLogin, getPlay, setPlay,
+    getKalshiVault: () => readJSON(KEYS.kalshiVault, null),
+    setKalshiVault: value => writeJSON(KEYS.kalshiVault, value),
     getPolymarketVault: () => readJSON(KEYS.polymarketVault, null),
     setPolymarketVault: value => writeJSON(KEYS.polymarketVault, value),
     exportAll, importAll, resetAll

@@ -1638,7 +1638,7 @@
     const open = bets.filter(b => b.status === 'open').sort((a, b) => b.createdAt.localeCompare(a.createdAt));
     const settled = bets.filter(b => b.status !== 'open').sort((a, b) => String(b.settledAt).localeCompare(String(a.settledAt)));
     const kpi = (k, v, cls = '', tipKey = '') => `<div class="kpi"><div class="k">${esc(k)} ${tipKey ? tip(tipKey) : ''}</div><div class="v ${cls}">${v}</div></div>`;
-    el.innerHTML = `<h2>${esc(B.title(p.name))}</h2><div id="pm-account"></div><h3>${esc(STR.pmSync.manual)}</h3>
+    el.innerHTML = `<h2>${esc(B.title(p.name))}</h2><div id="pm-account"></div><div id="kalshi-account"></div><h3>${esc(STR.pmSync.manual)}</h3>
       <p class="muted small">${esc(B.privateNote(money(p.unit), money(p.maxPerSlip)))}${p.windowEnd ? esc(B.windowEnds(p.windowEnd)) : ''}</p>
       <div class="kpis">${kpi(B.now, money(st.current))}${kpi(B.pl, money(st.pl), sign(st.pl))}${kpi(B.open, money(st.openStake))}${kpi(B.roi, pct(rec.all.roi, 1), sign(rec.all.roi), 'roi')}</div>
       <h3>${esc(B.chart)}</h3>
@@ -1670,6 +1670,7 @@
       <div class="row"><button class="btn" id="exp">${esc(B.export)}</button><button class="btn" id="imp">${esc(B.import)}</button></div>
       <input type="file" id="imp-file" accept="application/json,.json" hidden>`;
     if(window.PolymarketSync)window.PolymarketSync.mount($('#pm-account'));
+    if(window.KalshiSync)window.KalshiSync.mount($('#kalshi-account'));
     drawChart($('#bk-chart'), st.series);
     el.querySelectorAll('[data-settle]').forEach(b => (b.onclick = () => settleBet(b.dataset.id, b.dataset.settle)));
     el.querySelectorAll('[data-reopen]').forEach(b => (b.onclick = () => settleBet(b.dataset.reopen, 'open')));

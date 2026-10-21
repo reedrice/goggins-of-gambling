@@ -13,3 +13,10 @@ A tiny relay for "Sign in with GitHub". GitHub's device-flow endpoints don't all
 5. Copy the Worker URL (e.g. `https://goggins-gh-auth.<you>.workers.dev`) and send it to the bot. It goes in `config.js` → `githubAuthWorker`, which makes the Settings button appear.
 
 Check: `curl -X POST -H 'Origin: https://reedrice.github.io' <URL>/device/code` returns a `user_code`. Without that Origin header it returns 403.
+
+## Kalshi read-only portfolio relay
+Kalshi rejects browser-origin requests, so deploy workers/kalshi-readonly.mjs as a separate Cloudflare Worker named kalshi-readonly. No secrets or environment bindings are needed. Disable Worker observability/request logging for this private account relay; the code has no logs and stores nothing. It forwards only signed GET requests to a fixed Kalshi host, with a strict endpoint/query allowlist, site origin restriction, redirect refusal and timestamp validation. It never receives private keys. API key IDs/signatures and private portfolio responses pass through the user's Cloudflare account.
+
+Deploy from Cloudflare Workers & Pages: create a Worker, replace its code with this file, deploy, then set config.js kalshiRelay to its HTTPS origin (no path). Do not set a placeholder URL or enable the form before an actual relay health check. No tokens need to be pasted into chat. Keep the existing GitHub auth worker separate. Browser users create Kalshi keys with Read all data only, no Full access/Trade/Transfers; the connector verifies scopes on each refresh and refuses unverified/broad keys.
+
+References: https://docs.kalshi.com/getting_started/api_keys ; https://docs.kalshi.com/api-reference/api-keys/get-api-keys ; https://docs.kalshi.com/api-reference/portfolio/get-positions ; https://docs.kalshi.com/api-reference/historical/get-historical-positions ; https://docs.kalshi.com/api-reference/portfolio/get-fills .

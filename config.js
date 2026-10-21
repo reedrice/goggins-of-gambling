@@ -55,6 +55,7 @@ window.APP_CONFIG = Object.freeze({
    * (GitHub's device endpoints have no CORS). Empty = the sign-in button stays hidden.
    */
   githubClientId: 'Ov23li16KIAkVHvjd1mq',
+  kalshiRelay: '', // activate after deploying workers/kalshi-readonly.mjs; HTTPS origin only
   githubAuthWorker: 'https://goggins-gh-auth.reedrice9.workers.dev',
   /** Repo-relative path of the shared, dollar-free bet log. */
   betLogPath: 'data/bet-log.json',
