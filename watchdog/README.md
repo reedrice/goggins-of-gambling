@@ -31,3 +31,6 @@ Status alone is not proof that a credential has Actions/Issues access: configure
 This removes the shared GitHub **schedule** failure. Dispatch and GitHub push notifications still require GitHub's API and mobile service. If that API is unavailable, status records `notification_failed` and the next cron retries. Independent email/push delivery requires a separately connected notification provider; it is not silently claimed to exist. Cloudflare's own outages/quotas can also delay checks; this is bounded recovery, not a timing SLA.
 
 To pause: remove/disable this Worker's cron. Repository owner gate prevents recovery independently. Never reintroduce an AI monitor as a fallback. Other bots must not duplicate this watchdog or the GitHub schedules.
+
+## Verified deployment (October 21, 2026)
+Worker: https://mib-feed-watchdog.reedrice9.workers.dev/status . One-minute cron and private GitHub secret verified. A genuine stale-feed recovery dispatched run 39639780024 at 16:59:51 UTC; it passed and the Worker verified healthy public JSON at 17:03:48 UTC. Alert/resolve behavior passed native mocks; this was not a new live notification test. Renew the private fine-grained credential before November 20, 2026.
