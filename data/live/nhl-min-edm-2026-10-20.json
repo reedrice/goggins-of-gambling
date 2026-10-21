@@ -4,22 +4,22 @@
  "game": "MIN Wild vs. EDM Oilers",
  "url": "https://polymarket.us/sports/nhl/nhl-min-edm-2026-10-20",
  "start_time": "2026-10-21T01:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892546",
-  "fetched_at": "2026-10-21T03:53:03.705Z",
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
-  "period": 4,
-  "clock": "1:50",
-  "regulation_secs_left": 110,
+  "fetched_at": "2026-10-21T04:03:06.219Z",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 0,
+  "clock": null,
+  "regulation_secs_left": 0,
   "home": {
    "abbr": "EDM",
    "alias": "Oilers",
    "name": "Edmonton Oilers",
-   "score": 3,
+   "score": 4,
    "id": "6"
   },
   "away": {
@@ -118,8 +118,8 @@
    },
    {
     "team": "EDM",
-    "player": "Leon Draisaitl",
-    "short": "L. Draisaitl",
+    "player": "Connor McDavid",
+    "short": "C. McDavid",
     "pos": "C"
    },
    {
@@ -142,7 +142,7 @@
    }
   ]
  },
- "updated": "2026-10-21T03:53:03.706Z",
+ "updated": "2026-10-21T04:03:06.220Z",
  "open_taken_at": "2026-10-20T22:26:58.888Z",
  "thresholds": {
   "big": 10,
@@ -2572,26 +2572,6 @@
  ],
  "edges": [
   {
-   "key": "1481181:0",
-   "market_id": "1481181",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming hockey event MIN Wild vs EDM Oilers scheduled for October 21, 2026 at 1:00 AM UTC?",
-   "side": "Wild win",
-   "open_chance": 46,
-   "now_chance": 38,
-   "open_odds": "+117",
-   "now_odds": "+163",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "MIN tied, Q4 1:50",
-   "first_seen": "2026-10-21T03:53:03.706Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
    "key": "1481185:0",
    "market_id": "1481185",
    "market": "Main spread",
@@ -2712,6 +2692,26 @@
    "kalshi": true
   },
   {
+   "key": "1481181:0",
+   "market_id": "1481181",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming hockey event MIN Wild vs EDM Oilers scheduled for October 21, 2026 at 1:00 AM UTC?",
+   "side": "Wild win",
+   "open_chance": 46,
+   "now_chance": 38,
+   "open_odds": "+117",
+   "now_odds": "+163",
+   "edge": 8,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "MIN tied, Q4 1:50",
+   "first_seen": "2026-10-21T03:53:03.706Z",
+   "status": "gone",
+   "kalshi": true
+  },
+  {
    "key": "1481189:0",
    "market_id": "1481189",
    "market": "Alt total",
@@ -2813,6 +2813,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1481181:0:2026-10-21T03:53:03.706Z",
+   "key": "1481181:0",
+   "at": "2026-10-21T04:03:06.220Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Wild win",
+   "market": "Moneyline",
+   "now_odds": "+163",
+   "now_chance": 38,
+   "edge": 8,
+   "text": "Edge gone: Wild win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-min-edm-2026-10-20"
+  },
   {
    "id": "new_edge:1481181:0:slight",
    "key": "1481181:0",
@@ -3065,10 +3079,11 @@
   "gone:1604131:0:2026-10-21T02:31:04.717Z",
   "gone:1481191:0:2026-10-21T03:25:03.782Z",
   "new_edge:1481181:0:slight",
-  "gone:1481181:1:2026-10-21T03:43:02.703Z"
+  "gone:1481181:1:2026-10-21T03:43:02.703Z",
+  "gone:1481181:0:2026-10-21T03:53:03.706Z"
  ],
  "kalshi_checked": {
-  "at": "2026-10-21T03:53:04.058Z",
+  "at": "2026-10-21T04:03:06.527Z",
   "event": "26OCT20MINEDM"
  }
 }
