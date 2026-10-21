@@ -9,12 +9,12 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892547",
-  "fetched_at": "2026-10-21T03:43:03.978Z",
+  "fetched_at": "2026-10-21T03:53:05.099Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 3,
-  "clock": "19:56",
-  "regulation_secs_left": 2096,
+  "clock": "12:59",
+  "regulation_secs_left": 1679,
   "home": {
    "abbr": "SEA",
    "alias": "Kraken",
@@ -26,7 +26,7 @@
    "abbr": "DET",
    "alias": "Red Wings",
    "name": "Detroit Red Wings",
-   "score": 0,
+   "score": 1,
    "id": "5"
   },
   "possession": null,
@@ -91,8 +91,8 @@
    },
    {
     "team": "SEA",
-    "player": "Chandler Stephenson",
-    "short": "C. Stephenson",
+    "player": "Berkly Catton",
+    "short": "B. Catton",
     "pos": "C"
    },
    {
@@ -100,10 +100,28 @@
     "player": "Brandon Montour",
     "short": "B. Montour",
     "pos": "D"
+   },
+   {
+    "team": "DET",
+    "player": "Viktor Arvidsson",
+    "short": "V. Arvidsson",
+    "pos": "LW"
+   },
+   {
+    "team": "DET",
+    "player": "Emmitt Finnie",
+    "short": "E. Finnie",
+    "pos": "C"
+   },
+   {
+    "team": "DET",
+    "player": "Viktor Arvidsson",
+    "short": "V. Arvidsson",
+    "pos": "LW"
    }
   ]
  },
- "updated": "2026-10-21T03:43:03.980Z",
+ "updated": "2026-10-21T03:53:05.101Z",
  "open_taken_at": "2026-10-20T22:27:00.340Z",
  "thresholds": {
   "big": 10,
@@ -2269,6 +2287,26 @@
  ],
  "edges": [
   {
+   "key": "1481248:0",
+   "market_id": "1481248",
+   "market": "Alt spread",
+   "group": "game",
+   "question": "Will the DET Red Wings cover 1.5 vs the SEA Kraken in DET vs SEA?",
+   "side": "Red Wings +1.50",
+   "open_chance": 72,
+   "now_chance": 27,
+   "open_odds": "-257",
+   "now_odds": "+270",
+   "edge": 45,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: DET not covering +1.5 right now",
+   "context": "DET down 2, Q3 12:59",
+   "first_seen": "2026-10-21T03:53:05.101Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
    "key": "1481249:0",
    "market_id": "1481249",
    "market": "Alt spread",
@@ -2276,35 +2314,15 @@
    "question": "Will the DET Red Wings cover 2.5 vs the SEA Kraken in DET vs SEA?",
    "side": "Red Wings +2.50",
    "open_chance": 81,
-   "now_chance": 29,
+   "now_chance": 52,
    "open_odds": "-426",
-   "now_odds": "+245",
-   "edge": 52,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: DET not covering +2.5 right now",
-   "context": "DET down 3, Q3 19:56",
-   "first_seen": "2026-10-21T02:10:16.460Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1481251:0",
-   "market_id": "1481251",
-   "market": "Alt spread",
-   "group": "game",
-   "question": "Will the DET Red Wings cover 3.5 vs the SEA Kraken in DET vs SEA?",
-   "side": "Red Wings +3.50",
-   "open_chance": 95,
-   "now_chance": 63,
-   "open_odds": "-1900",
-   "now_odds": "-170",
-   "edge": 32,
+   "now_odds": "-108",
+   "edge": 29,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (32 pts), likely news",
-   "context": "DET down 3, Q3 19:56",
-   "first_seen": "2026-10-21T03:11:04.148Z",
+   "reason": "Big move (29 pts), likely news",
+   "context": "DET down 2, Q3 12:59",
+   "first_seen": "2026-10-21T02:10:16.460Z",
    "status": "open",
    "kalshi": true
   },
@@ -2316,35 +2334,15 @@
    "question": "Will the total in DET vs SEA be more than 6.5?",
    "side": "Over 6.5",
    "open_chance": 50,
-   "now_chance": 21,
+   "now_chance": 29,
    "open_odds": "+100",
-   "now_odds": "+376",
-   "edge": 29,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (29 pts), likely news",
-   "context": "DET 0, SEA 3, Q3 19:56",
-   "first_seen": "2026-10-21T02:20:04.305Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1481254:0",
-   "market_id": "1481254",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in DET vs SEA be more than 4.5?",
-   "side": "Over 4.5",
-   "open_chance": 82,
-   "now_chance": 68,
-   "open_odds": "-456",
-   "now_odds": "-213",
-   "edge": 14,
+   "now_odds": "+245",
+   "edge": 21,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "DET 0, SEA 3, Q3 19:56",
-   "first_seen": "2026-10-21T02:31:06.555Z",
+   "context": "DET 1, SEA 3, Q3 12:59",
+   "first_seen": "2026-10-21T02:20:04.305Z",
    "status": "open",
    "kalshi": true
   },
@@ -2411,6 +2409,20 @@
  ],
  "alerts": [
   {
+   "id": "news:1481249:0",
+   "key": "1481249:0",
+   "at": "2026-10-21T03:53:05.101Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Red Wings +2.50",
+   "market": "Alt spread",
+   "now_odds": "-108",
+   "now_chance": 52,
+   "edge": 29,
+   "text": "Big move, likely news: Red Wings +2.50 (Alt spread) is 29 points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-det-sea-2026-10-20"
+  },
+  {
    "id": "news:1481256:0",
    "key": "1481256:0",
    "at": "2026-10-21T03:43:03.980Z",
@@ -2439,20 +2451,6 @@
    "url": "https://polymarket.us/sports/nhl/nhl-det-sea-2026-10-20"
   },
   {
-   "id": "news:1481251:0",
-   "key": "1481251:0",
-   "at": "2026-10-21T03:25:05.231Z",
-   "type": "news",
-   "tier": "big",
-   "side": "Red Wings +3.50",
-   "market": "Alt spread",
-   "now_odds": "-186",
-   "now_chance": 65,
-   "edge": 30,
-   "text": "Big move, likely news: Red Wings +3.50 (Alt spread) is 30 points cheaper than open.",
-   "url": "https://polymarket.us/sports/nhl/nhl-det-sea-2026-10-20"
-  },
-  {
    "id": "new_edge:1481255:0:big",
    "key": "1481255:0",
    "at": "2026-10-21T03:25:05.231Z",
@@ -2467,20 +2465,6 @@
    "url": "https://polymarket.us/sports/nhl/nhl-det-sea-2026-10-20"
   },
   {
-   "id": "new_edge:1481254:0:big",
-   "key": "1481254:0",
-   "at": "2026-10-21T03:25:05.231Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Over 4.5",
-   "market": "Alt total",
-   "now_odds": "-213",
-   "now_chance": 68,
-   "edge": 14,
-   "text": "New big edge: Over 4.5 (Alt total), 14 points cheaper than open.",
-   "url": "https://polymarket.us/sports/nhl/nhl-det-sea-2026-10-20"
-  },
-  {
    "id": "gone:1605696:0:2026-10-21T03:01:03.169Z",
    "key": "1605696:0",
    "at": "2026-10-21T03:25:05.231Z",
@@ -2492,20 +2476,6 @@
    "now_chance": 23,
    "edge": 15,
    "text": "Edge gone: Yes: Alex DeBrincat record at least 1 goals in DET vs SEA (Player prop) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/nhl/nhl-det-sea-2026-10-20"
-  },
-  {
-   "id": "new_edge:1481251:0:big",
-   "key": "1481251:0",
-   "at": "2026-10-21T03:11:04.148Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Red Wings +3.50",
-   "market": "Alt spread",
-   "now_odds": "-488",
-   "now_chance": 83,
-   "edge": 12,
-   "text": "New big edge: Red Wings +3.50 (Alt spread), 12 points cheaper than open.",
    "url": "https://polymarket.us/sports/nhl/nhl-det-sea-2026-10-20"
   },
   {
@@ -2548,20 +2518,6 @@
    "now_chance": 54,
    "edge": 6,
    "text": "New slight edge: Over 5.5 (Alt total), 6 points cheaper than open.",
-   "url": "https://polymarket.us/sports/nhl/nhl-det-sea-2026-10-20"
-  },
-  {
-   "id": "new_edge:1481254:0:slight",
-   "key": "1481254:0",
-   "at": "2026-10-21T03:01:03.169Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Over 4.5",
-   "market": "Alt total",
-   "now_odds": "-355",
-   "now_chance": 78,
-   "edge": 4,
-   "text": "New slight edge: Over 4.5 (Alt total), 4 points cheaper than open.",
    "url": "https://polymarket.us/sports/nhl/nhl-det-sea-2026-10-20"
   },
   {
@@ -2638,10 +2594,11 @@
   "new_edge:1481254:0:big",
   "gone:1605696:0:2026-10-21T03:01:03.169Z",
   "news:1481256:0",
-  "gone:1481255:0:2026-10-21T02:31:06.555Z"
+  "gone:1481255:0:2026-10-21T02:31:06.555Z",
+  "news:1481249:0"
  ],
  "kalshi_checked": {
-  "at": "2026-10-21T03:43:04.288Z",
+  "at": "2026-10-21T03:53:05.345Z",
   "event": "26OCT20DETSEA"
  }
 }
