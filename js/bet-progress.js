@@ -245,7 +245,7 @@
    if(root.TennisScores?.isTennis(s.eventSlug)){
     const T=root.TennisScores,date=(s.startTime||parts.slice(3).join('-')).slice(0,10).replaceAll('-',''),board=await get('https://site.api.espn.com/apis/site/v2/sports/tennis/'+T.tour(s.eventSlug)+'/scoreboard?dates='+date+'&limit=1000'),match=T.find(board,s.game,s.eventSlug,s.startTime);
     const result=!match?{reason:'noGame'}:s.resolveMarket&&!s.resolvedMarket?{reason:'noStat',game:T.adapt(match)}:T.evaluate(s,match);
-    if(host.isConnected)render(host,s,result);return;
+    if(host.isConnected){render(host,s,result);if(result.game?.tennis)host.closest('.lb-edge')?.querySelector('.lb-unverified')?.remove();}return;
    }
    if(!path){render(host,s,{reason:'noGame'});return;}
    const board=await get('https://site.api.espn.com/apis/site/v2/sports/'+path+'/scoreboard?dates='+parts.slice(3).join('')+'&limit=1000');
