@@ -126,3 +126,6 @@ Below 768px, --radius-panel, --panel-padding and --module-gap become 16px. Contr
 
 ## Independent operational watchdog (Reed, Oct 21)
 Reed authorized a non-AI Cloudflare watchdog in watchdog/. This is an exception only for public feed health checks and dispatch of the existing production GitHub workflow, not an external sports-data scraper. It consumes local published JSON; all sports ingestion remains GitHub Actions → data/espn/. Durable Object storage holds operational timestamps/incident IDs only. Read watchdog/README.md before changing deployment, recovery limits or credentials. Never create duplicate AI/local monitors, copy account credentials into source, or claim the watchdog is active until deployment, cron and private GitHub secret are verified. Existing GitHub watchdog remains a second layer. No private bets/keys enter this service.
+
+### Private account currency precision (Reed, Oct 21)
+Reed explicitly overrides the whole-dollar display rule for the private Polymarket account section: show USD amounts with exactly two decimal places, including invested cost, winning payout, settlement gains/losses and P/L. Keep this preference scoped to private account amounts.

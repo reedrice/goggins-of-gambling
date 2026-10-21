@@ -83,7 +83,7 @@
  }
  let current=null,key=null,salt=null,timer=null,host=null,busy=false,epoch=0,message='',activityOpen=false;
  const node=(tag,text,cls)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;};
- const money=value=>value===null?root.STR.pmSync.unknown:new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(value);
+ const money=value=>value===null?root.STR.pmSync.unknown:new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:2}).format(value);
  function lock(){epoch++;current=null;key=null;salt=null;busy=false;clearTimeout(timer);message='';paint();}
  async function persist(){const vault=await seal(current,key,salt);try{root.Store.setPolymarketVault(vault);}catch(e){throw Error('storage');}}
  async function sync(){

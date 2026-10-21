@@ -1572,3 +1572,6 @@ Reed requested stale Today’s Picks coverage in the independent watchdog. Added
 
 ## 129. Private open-position investment and payout (Oct 21)
 Reed requested amount invested and winning payout on each Polymarket account open-position card. Added shared-theme KPI cells using reported remaining-position USD cost for longs and absolute decimal contract quantity for gross winning return at the documented one-dollar contract payout. Missing cost and short-side cost/margin remain unavailable rather than inferred from turnover. Corrected cashValue label to Unrealized P/L per official portfolio schema. This is not lifetime spending, profit or an executable cash-out quote. Account reads, encryption and private-only storage unchanged; no account data inspected or published. Synthetic regressions cover partial quantities, missing fields, shorts and currencies. Sources: docs.polymarket.us/api-reference/portfolio/get-user-positions.md and market-structure/collateral-and-margin.md.
+
+## 130. Private Polymarket cents precision (Oct 21)
+Reed requested exact cents rather than rounded whole dollars. Private account currency formatter now uses exactly two decimals for all position and settlement totals. Documented the explicit scoped override in AGENTS.md; no source values, calculations or privacy behavior changed.
