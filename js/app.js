@@ -2119,6 +2119,7 @@
     return h + `<div class="live-rec-list">${list.map(e => `<div class="card live-rec-item">
         <div class="lr-top"><div><b>${esc(e.side || '')}</b><div class="muted small">${esc(e.market || '')} · ${esc(e.game || '')}</div></div>${badge(e.result)}</div>
         <div class="small">${esc(X.odds(e.odds_at_alert || '–', e.opening_odds || '–'))} · <span class="lr-tier lr-${esc(e.tier)}">${esc(X.tiers[e.tier] || e.tier)}</span></div>
+        ${window.BetProgress && [0,1].includes(e.side_index) ? window.BetProgress.html({...window.BetProgress.spec({desc:e.side,market:e.market,eventSlug:e.slug,market_id:e.market_id,market_side:e.side_index===0?'yes':'no'}),resolveMarket:true}) : `<p class="muted small">${esc(STR.progress.noStat)}</p>`}
         <div class="small muted">${esc(e.time_ct || '')}${safeUrl(e.link) ? ` · <a href="${esc(safeUrl(e.link))}" target="_blank" rel="noopener">${esc(X.link)}</a>` : ''}</div></div>`).join('')}</div>`;
   }
 

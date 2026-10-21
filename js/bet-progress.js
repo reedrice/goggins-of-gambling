@@ -6,7 +6,7 @@
 })(typeof self !== 'undefined' ? self : this, function (root) {
  'use strict';
  const PATHS = {nba:'basketball/nba',wnba:'basketball/wnba',nhl:'hockey/nhl',nfl:'football/nfl',mlb:'baseball/mlb',epl:'soccer/eng.1',ucl:'soccer/uefa.champions',uel:'soccer/uefa.europa',uecl:'soccer/uefa.europa.conf',lal:'soccer/esp.1',sea:'soccer/ita.1',bun:'soccer/ger.1',bl1:'soccer/ger.1',fl1:'soccer/fra.1',lig1:'soccer/fra.1',mls:'soccer/usa.1',lmx:'soccer/mex.1',eflch:'soccer/eng.2'};
- const ALIASES={was:'wsh',sjs:'sj',mon:'mtl',njd:'nj',lak:'la',tbl:'tb',uta:'utah',pho:'phx',gsw:'gs',nyk:'ny',nop:'no',sas:'sa',jac:'jax',cws:'chw',az:'ari'};
+ const ALIASES={veg:'vgk',was:'wsh',sjs:'sj',mon:'mtl',njd:'nj',lak:'la',tbl:'tb',uta:'utah',pho:'phx',gsw:'gs',nyk:'ny',nop:'no',sas:'sa',jac:'jax',cws:'chw',az:'ari'};
  const norm = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
  const abbr = s => ALIASES[String(s || '').toLowerCase()] || String(s || '').toLowerCase();
  const slugOf = s => (String(s || '').match(/([a-z0-9]+-[a-z0-9]+-[a-z0-9]+-\d{4}-\d{2}-\d{2})/) || [])[1] || '';
@@ -118,7 +118,7 @@
   return {reason:'noStat',game};
  }
  function resolveMarket(s,event){
-  const m=(event.markets||[]).find(m=>m.slug===s.marketSlug);
+  const m=(event.markets||[]).find(m=>m.slug===s.marketSlug||String(m.id)===String(s.marketSlug));
   if(!m||!['yes','no'].includes(s.side))return s;
   const chosen=(m.marketSides||[]).find(x=>x.long===(s.side==='yes'));if(!chosen)return s;
   const type=m.sportsMarketType||'', team=chosen.team;
@@ -128,7 +128,7 @@
   else if(/winner$/.test(type)&&team){text=(team.name||team.abbreviation)+' to win';side='yes';}
   const segment=/-sh-/.test(m.slug)?' (H2)':/-fh-/.test(m.slug)?' (H1)':(/-q([1-4])-/.exec(m.slug)||[])[1];
   if(segment)text+=typeof segment==='string'&&segment.startsWith(' ')?segment:' (Q'+segment+')';
-  return {...s,text,question:m.title||m.question||'',market:type,player:m.metadata?.playerName||'',team:team?.abbreviation||s.team,side};
+  return {...s,marketSlug:m.slug,text,question:m.title||m.question||'',market:type,player:m.metadata?.playerName||'',team:team?.abbreviation||s.team,side};
  }
  const marketCache=new Map();
  async function enrich(s){
