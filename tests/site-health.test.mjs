@@ -29,3 +29,11 @@ test('five-minute freshness threshold detects a six-minute gap',()=>{
  const at4=new Date(now-4*60000).toISOString();
  assert.deepEqual(problems({games:[]},{snapshots:[],updated_at:at4},at4,now),[]);
 });
+
+test('successful recovery that never reaches the public feed alerts after CDN grace instead of looping',()=>{
+ const created=new Date(now-4*60000).toISOString(),updated=new Date(now-3*60000).toISOString();
+ const runs=[{status:'completed',event:'workflow_dispatch',conclusion:'success',created_at:created,updated_at:updated}];
+ assert.equal(recoveryDecision(runs,now,now-10*60000),'cooldown');
+ assert.equal(recoveryDecision(runs,now,now-2*60000),'dispatch');
+ assert.equal(recoveryDecision([{...runs[0],updated_at:new Date(now-60000).toISOString()}],now,now-10*60000),'active');
+});
