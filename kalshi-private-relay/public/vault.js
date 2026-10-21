@@ -1,0 +1,4 @@
+// Password encryption, local to this personal origin. No network access.
+window.VaultCrypto=(()=>{const enc=new TextEncoder();const b64=v=>{let s='';for(const b of new Uint8Array(v))s+=String.fromCharCode(b);return btoa(s);};
+async function passwordKey(password,salt,iterations=310000){if(typeof password!=='string'||password.length<12||iterations!==310000)throw Error('password');const b=await crypto.subtle.importKey('raw',enc.encode(password),'PBKDF2',false,['deriveKey']);return crypto.subtle.deriveKey({name:'PBKDF2',hash:'SHA-256',salt,iterations},b,{name:'AES-GCM',length:256},false,['encrypt','decrypt']);}
+async function seal(value,key,salt){const iv=crypto.getRandomValues(new Uint8Array(12));return {version:1,iterations:310000,salt:b64(salt),iv:b64(iv),data:b64(await crypto.subtle.encrypt({name:'AES-GCM',iv},key,enc.encode(JSON.stringify(value))))};}return {passwordKey,seal};})();

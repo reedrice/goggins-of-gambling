@@ -20,3 +20,6 @@ Kalshi rejects browser-origin requests, so deploy workers/kalshi-readonly.mjs as
 Deploy from Cloudflare Workers & Pages: create a Worker, replace its code with this file, deploy, then set config.js kalshiRelay to its HTTPS origin (no path). Do not set a placeholder URL or enable the form before an actual relay health check. No tokens need to be pasted into chat. Keep the existing GitHub auth worker separate. Browser users create Kalshi keys with Read all data only, no Full access/Trade/Transfers; the connector verifies scopes on each refresh and refuses unverified/broad keys.
 
 References: https://docs.kalshi.com/getting_started/api_keys ; https://docs.kalshi.com/api-reference/api-keys/get-api-keys ; https://docs.kalshi.com/api-reference/portfolio/get-positions ; https://docs.kalshi.com/api-reference/historical/get-historical-positions ; https://docs.kalshi.com/api-reference/portfolio/get-fills .
+
+## Superseding privacy requirement (Reed, Oct 21)
+Do NOT deploy the shared Kalshi relay described above. It is superseded by ../kalshi-private-relay/README.md: each user owns their Worker and isolated panel. No Reed-hosted relay or main-origin Kalshi key entry is permitted. Main My Bets stores only a personal panel address.
