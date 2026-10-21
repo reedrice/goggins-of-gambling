@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-21T16:52:57.843Z"
+  "fetched_at": "2026-10-21T17:00:14.109Z"
  },
- "updated": "2026-10-21T16:52:57.844Z",
+ "updated": "2026-10-21T17:00:14.109Z",
  "open_taken_at": "2026-10-21T05:15:01.417Z",
  "thresholds": {
   "big": 10,
@@ -241,6 +241,26 @@
  ],
  "edges": [
   {
+   "key": "1538909:1",
+   "market_id": "1538909",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Facundo Mena vs Valerio Aboian scheduled for October 19, 2026 at 3:00 PM UTC?",
+   "side": "Valerio Aboian win",
+   "open_chance": 31,
+   "now_chance": 24,
+   "open_odds": "+223",
+   "now_odds": "+317",
+   "edge": 7,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-21T17:00:14.109Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1538909:0",
    "market_id": "1538909",
    "market": "Moneyline",
@@ -257,7 +277,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-21T16:52:57.844Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -277,7 +297,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-21T16:52:57.844Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -297,11 +317,67 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-21T16:52:57.844Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1538909:1:slight",
+   "key": "1538909:1",
+   "at": "2026-10-21T17:00:14.109Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Valerio Aboian win",
+   "market": "Moneyline",
+   "now_odds": "+317",
+   "now_chance": 24,
+   "edge": 7,
+   "text": "New slight edge: Valerio Aboian win (Moneyline), 7 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-facmen-valabo-2026-10-19"
+  },
+  {
+   "id": "gone:1538909:0:2026-10-21T16:52:57.844Z",
+   "key": "1538909:0",
+   "at": "2026-10-21T17:00:14.109Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Facundo Mena win",
+   "market": "Moneyline",
+   "now_odds": "-156",
+   "now_chance": 61,
+   "edge": 9,
+   "text": "Edge gone: Facundo Mena win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-facmen-valabo-2026-10-19"
+  },
+  {
+   "id": "gone:1540032:0:2026-10-21T16:52:57.844Z",
+   "key": "1540032:0",
+   "at": "2026-10-21T17:00:14.109Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Facundo Mena -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-133",
+   "now_chance": 57,
+   "edge": 6,
+   "text": "Edge gone: Facundo Mena -1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-facmen-valabo-2026-10-19"
+  },
+  {
+   "id": "gone:1540003:1:2026-10-21T16:52:57.844Z",
+   "key": "1540003:1",
+   "at": "2026-10-21T17:00:14.109Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-104",
+   "now_chance": 51,
+   "edge": 4,
+   "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-facmen-valabo-2026-10-19"
+  },
   {
    "id": "new_edge:1538909:0:slight",
    "key": "1538909:0",
@@ -348,7 +424,11 @@
  "alert_seen": [
   "new_edge:1538909:0:slight",
   "new_edge:1540032:0:slight",
-  "new_edge:1540003:1:slight"
+  "new_edge:1540003:1:slight",
+  "new_edge:1538909:1:slight",
+  "gone:1538909:0:2026-10-21T16:52:57.844Z",
+  "gone:1540032:0:2026-10-21T16:52:57.844Z",
+  "gone:1540003:1:2026-10-21T16:52:57.844Z"
  ],
  "kalshi_checked": null
 }
