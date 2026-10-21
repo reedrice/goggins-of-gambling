@@ -41,6 +41,7 @@
 
   /** Poly slug prefix -> display sport. Anything not listed is ignored by the fetcher. */
   const LEAGUES = {
+    cfb: 'NCAAF', cbb: 'NCAAB', wcbb: 'WNCAAB', atp: 'Tennis', wta: 'Tennis', atpdb: 'Tennis', wtadb: 'Tennis', pga: 'Golf', lpga: 'Golf', dpwt: 'Golf',
     nfl: 'NFL', mlb: 'MLB', nhl: 'NHL', nba: 'NBA', wnba: 'WNBA',
     epl: 'Soccer', ucl: 'Soccer', uel: 'Soccer', uecl: 'Soccer', lal: 'Soccer', sea: 'Soccer',
     bun: 'Soccer', bl1: 'Soccer', fl1: 'Soccer', lig1: 'Soccer', mls: 'Soccer', lmx: 'Soccer', eflch: 'Soccer'

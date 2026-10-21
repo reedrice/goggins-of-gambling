@@ -1581,3 +1581,6 @@ Added top account KPIs for total remaining investment and summed gross payout if
 
 ## 132. Persistent cadence and bot-authored alert correction (Oct 21)
 Successful jobs that never briefly cleared CDN freshness left recovery state blocking later pacing. Independent pacing now continues after successful completed jobs regardless of health, skipping active/recent jobs. Issue #7 was authored by Reed’s PAT and did not reproduce the bot mobile test. Unresolved alerts now dispatch watchdog-alert.yml using the Actions bot token and existing deduplicated incident logic. No new credentials or AI.
+
+## 133. Broader deterministic daily slate (Oct 21)
+Expanded market discovery to every tracked sport including college football/basketball, WNBA, tennis singles/doubles and golf. Daily generator evaluates three lines per game-market type and up to eighteen player markets, publishing up to three qualifying game lines plus six player prop bets per game. Keeps buyability, full-game filtering, historical Analytics requirement, edge thresholds, NHL evidence restrictions, manual-game reservations and no auto-combo rule. At most one side per market; display uses shared sport groups. Missing historical support stays unqualified, reported per game in routine coverage rather than using another sport’s model. No model API or new scheduler.

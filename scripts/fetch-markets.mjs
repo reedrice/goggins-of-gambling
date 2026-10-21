@@ -148,7 +148,8 @@ async function fetchPolymarket(dates) {
   const GAME = /^([a-z0-9]+)-([a-z0-9]+)-([a-z0-9]+)-(\d{4}-\d{2}-\d{2})$/;
   const games = listed.filter(e => {
     const m = GAME.exec(e.slug || '');
-    if (!m || !Core.LEAGUES[m[1]] || (e.teams || []).length !== 2) return false;
+    const league=String(e.slug||'').split('-')[0];
+    if (!Core.LEAGUES[league] || (!m && Core.LEAGUES[league]!=='Golf')) return false;
     const st = e.startTime || e.startDate;
     return st >= minISO && dates.includes(Core.ctDate(st)) || (st >= minISO && st < new Date().toISOString());
   });
