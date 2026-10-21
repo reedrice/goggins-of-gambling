@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-21T17:46:21.067Z"
+  "fetched_at": "2026-10-21T17:52:22.290Z"
  },
- "updated": "2026-10-21T17:46:21.067Z",
+ "updated": "2026-10-21T17:52:22.290Z",
  "open_taken_at": "2026-10-21T05:16:03.650Z",
  "thresholds": {
   "big": 10,
@@ -43,6 +43,26 @@
  ],
  "edges": [
   {
+   "key": "1632709:0",
+   "market_id": "1632709",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Patrick Maloney vs Kenta (2004) Miyoshi scheduled for October 21, 2026 at 4:00 PM UTC?",
+   "side": "Patrick Maloney win",
+   "open_chance": 43,
+   "now_chance": 24,
+   "open_odds": "+133",
+   "now_odds": "+317",
+   "edge": 19,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-21T17:52:22.290Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1632709:1",
    "market_id": "1632709",
    "market": "Moneyline",
@@ -59,11 +79,39 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-21T16:20:31.199Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1632709:0:big",
+   "key": "1632709:0",
+   "at": "2026-10-21T17:52:22.290Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Patrick Maloney win",
+   "market": "Moneyline",
+   "now_odds": "+317",
+   "now_chance": 24,
+   "edge": 19,
+   "text": "New big edge: Patrick Maloney win (Moneyline), 19 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-patmal-kenmiy-2026-10-21"
+  },
+  {
+   "id": "gone:1632709:1:2026-10-21T16:20:31.199Z",
+   "key": "1632709:1",
+   "at": "2026-10-21T17:52:22.290Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Kenta Miyoshi win",
+   "market": "Moneyline",
+   "now_odds": "+100",
+   "now_chance": 50,
+   "edge": 12,
+   "text": "Edge gone: Kenta Miyoshi win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-patmal-kenmiy-2026-10-21"
+  },
   {
    "id": "new_edge:1632709:1:slight",
    "key": "1632709:1",
@@ -95,7 +143,9 @@
  ],
  "alert_seen": [
   "new_edge:1632709:1:big",
-  "new_edge:1632709:1:slight"
+  "new_edge:1632709:1:slight",
+  "new_edge:1632709:0:big",
+  "gone:1632709:1:2026-10-21T16:20:31.199Z"
  ],
  "kalshi_checked": null
 }
