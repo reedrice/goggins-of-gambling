@@ -356,27 +356,6 @@
     box.append(head);
     if (d.stale || freshness(d).stale) box.append(el('div','lb-stale',liveText().stale));
     const controls = el('div', 'lb-controls');
-    const games = timeGames(sportGames(ui.games || [],ui.sport,ui.slug),ui.when);
-    const sportLabel=el('label','lb-game-label',liveText().sport);
-    const sportSelect=el('select','lb-game-select');
-    sportSelect.setAttribute('aria-label',liveText().sport);
-    const sportKeys=[...new Set([...Object.keys(liveText().sports),...(ui.games || []).map(sportOf)])];
-    ['',...sportKeys].forEach(key=>{const option=el('option',null,key ? liveText().sports[key] || key.toUpperCase() : liveText().allSports);option.value=key;option.selected=key===ui.sport;sportSelect.append(option);});
-    sportSelect.onchange=()=>{ui.sport=sportSelect.value;ui.slug='all';ui.game=ui.prop=false;window.dispatchEvent(new CustomEvent('live:sport-change',{detail:{sport:ui.sport}}));ui.load();};
-    sportLabel.append(sportSelect);controls.append(sportLabel);
-    const whenLabel=el('label','lb-game-label',liveText().when),whenSelect=el('select','lb-game-select');
-    whenSelect.setAttribute('aria-label',liveText().when);
-    Object.entries(liveText().windows).forEach(([key,label])=>{const option=el('option',null,label);option.value=key;option.selected=key===ui.when;whenSelect.append(option);});
-    whenSelect.onchange=()=>{ui.when=whenSelect.value;ui.slug='all';ui.load();};whenLabel.append(whenSelect);controls.append(whenLabel);
-    if (games.length) {
-      const label = el('label', 'lb-game-label', liveText().teamGame);
-      const select = el('select', 'lb-game-select');
-      [{slug:'all',game:liveText().all},...games].forEach(x => {
-        const option = el('option', null, x.game || x.slug); option.value = x.slug; option.selected = x.slug === ui.slug; select.append(option);
-      });
-      select.onchange = () => { ui.slug = select.value; ui.game = ui.prop = false; ui.load(); };
-      label.append(select); controls.append(label);
-    }
     const filters = el('div', 'lb-edge-filters'); filters.setAttribute('role', 'group'); filters.setAttribute('aria-label', P.filterLabel);
     ['all', 'big', 'slight', 'new'].forEach(key => {
       const button = el('button', 'lb-filter' + (ui.filter === key ? ' lb-on' : ''));
