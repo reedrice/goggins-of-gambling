@@ -648,3 +648,22 @@ window.STR.progress = {
  explanation: 'Game statistics, not a win probability. Live scores do not refresh the saved betting prices. Final settlement may follow different market rules.',
  stats: { reb:'rebounds', ast:'assists', pts:'points', goals:'goals', stl:'steals', blk:'blocks', saves:'saves', threes:'threes', pra:'points + rebounds + assists', passyd:'passing yards', rushyd:'rushing yards', recyd:'receiving yards', rec:'receptions', ptd:'passing touchdowns', int:'interceptions', hits:'hits', hr:'home runs', rbi:'RBIs', k:'strikeouts', runs:'runs', score:'points / goals' }
 };
+
+window.STR.pmSync = {
+ title:'Polymarket account', private:'Private, read-only connection on this device.',
+ password:'Local unlock password (12+ characters)', keyId:'Polymarket Key ID', secret:'Polymarket Secret Key',
+ connect:'Encrypt and connect', unlock:'Unlock sync', connecting:'Checking connection…', syncing:'Syncing account…',
+ unlockNote:'Use the local password you created here, not your Apple or Polymarket password.',
+ setupNote:'Keys and account data are encrypted in this browser with your local password. This reader cannot place, change or cancel orders. The API key itself may have broader permissions. Never use your Apple or Polymarket password here.',
+ refresh:'Sync now', lock:'Lock', disconnect:'Disconnect', disconnectConfirm:'Remove the encrypted Polymarket connection and cached account data from this device? Your manual bets remain.',
+ checked:time=>'Synced '+time+' CT', unknown:'—', spent:'Trade spending', returned:'Sales returned', won:'Settlement gains', lost:'Settlement losses', net:'Net settlement P/L', record:'Settlement W–L–Even',
+ metricNote:'Polymarket settlements only, using reported realized P/L changes. Open positions and manual bets are separate. One settled market or combo counts as one record; this is not a per-fill win rate.',
+ spendingUnavailable:'Spending and sales totals are unavailable when the API does not identify trade direction. They are not inferred from trading volume. Settlement gains are profit, not total payouts.',
+ unclassified:n=>n+' settlements lack enough information to classify.', positions:n=>'Open positions ('+n+')', noPositions:'No open positions reported.',
+ positionInfo:(quantity,cost,value)=>'Net contracts '+quantity+' · Reported cost '+cost+' · Cash value '+value,
+ progressUnavailable:'Live progress unavailable for this market.', activity:'Recent trading activity', noActivity:'No trading activity reported.',
+ trade:(slug,cost,state)=>slug+' · Reported cost '+cost+' · '+state, settlement:slug=>slug+' · Settled',
+ pollNote:'Account sync: every 30 seconds while open and unlocked. Game statistics: about every 15 seconds, subject to ESPN delays. Reloading locks the connection. Manual tracking totals below exclude this account.',
+ manual:'Manually tracked bets',
+ errors:{storage:'Could not save the encrypted account on this device. Check browser storage space.',keys:'Check the Key ID and Base64 secret key.',password:'Choose a local password with at least 12 characters.',unlock:'Could not unlock. Check your local password.',vault:'Saved connection format is unsupported.',auth:'Polymarket rejected the key. Verify it belongs to your Apple-linked account.',rate:'Polymarket rate limit reached. Retrying shortly.',network:'Could not reach Polymarket. Last synced data are retained.',schema:'Polymarket returned an unsupported account format.',pagination:'Full account history could not be loaded. Totals were not replaced.'}
+};

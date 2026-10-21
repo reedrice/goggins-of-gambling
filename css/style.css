@@ -723,27 +723,31 @@ a.btn-play { display: block; text-align: center; text-decoration: none; margin-t
 #tab-picks .pst-logo { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
 
 /* Live statistical progress: only the Picks tab, including its Live Bets view. */
-#tab-picks .bp-host { padding: 10px 0; margin-top: 8px; border-top: 1px solid #ffffff15; font: 12px/1.5 system-ui; }
-#tab-picks .bp-scoreline, #tab-picks .bp-values { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 12px; color: #e1e1e8; }
-#tab-picks .bp-clock, #tab-picks .bp-note { color: #b0b0ba; font-size: 11px; }
-#tab-picks .bp-values { margin-top: 6px; }
-#tab-picks .bp-bar { display: block; width: 100%; height: 8px; margin: 7px 0 4px; border: 0; border-radius: 8px; overflow: hidden; background: #303039; accent-color: #40c69b; }
-#tab-picks .bp-bar::-webkit-progress-bar { background: #303039; border-radius: 8px; }
-#tab-picks .bp-bar::-webkit-progress-value { background: #40c69b; border-radius: 8px; }
-#tab-picks .bp-bar::-moz-progress-bar { background: #40c69b; border-radius: 8px; }
-#tab-picks .bp-bar.bp-limit { accent-color: #eab95a; }
-#tab-picks .bp-bar.bp-limit::-webkit-progress-value { background: #eab95a; }
-#tab-picks .bp-bar.bp-limit::-moz-progress-bar { background: #eab95a; }
-#tab-picks .bp-checked { display: block; color: #8f8f9c; font-size: 10px; margin-top: 4px; }
-#tab-picks .bp-combo { margin: 8px 0; }
-#tab-picks .bp-combo > summary { min-height: 44px; padding: 10px 0; cursor: pointer; font-size: 13px; color: #bbb; }
-#tab-picks .bp-leg { padding: 8px 0; border-top: 1px solid #ffffff18; }
-#tab-picks .bp-leg-title { font-size: 13px; font-weight: 600; }
-#tab-picks .bp-leg .bp-host { border: 0; margin: 0; }
-#tab-picks .bp-team { display: inline-flex; align-items: center; gap: 5px; }
-#tab-picks .bp-logo { object-fit: contain; flex-shrink: 0; }
+:is(#tab-picks, #tab-bets) .bp-host { padding: 10px 0; margin-top: 8px; border-top: 1px solid #ffffff15; font: 12px/1.5 system-ui; }
+:is(#tab-picks, #tab-bets) .bp-scoreline, #tab-picks .bp-values { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 12px; color: #e1e1e8; }
+:is(#tab-picks, #tab-bets) .bp-clock, #tab-picks .bp-note { color: #b0b0ba; font-size: 11px; }
+:is(#tab-picks, #tab-bets) .bp-values { margin-top: 6px; }
+:is(#tab-picks, #tab-bets) .bp-bar { display: block; width: 100%; height: 8px; margin: 7px 0 4px; border: 0; border-radius: 8px; overflow: hidden; background: #303039; accent-color: #40c69b; }
+:is(#tab-picks, #tab-bets) .bp-bar::-webkit-progress-bar { background: #303039; border-radius: 8px; }
+:is(#tab-picks, #tab-bets) .bp-bar::-webkit-progress-value { background: #40c69b; border-radius: 8px; }
+:is(#tab-picks, #tab-bets) .bp-bar::-moz-progress-bar { background: #40c69b; border-radius: 8px; }
+:is(#tab-picks, #tab-bets) .bp-bar.bp-limit { accent-color: #eab95a; }
+:is(#tab-picks, #tab-bets) .bp-bar.bp-limit::-webkit-progress-value { background: #eab95a; }
+:is(#tab-picks, #tab-bets) .bp-bar.bp-limit::-moz-progress-bar { background: #eab95a; }
+:is(#tab-picks, #tab-bets) .bp-checked { display: block; color: #8f8f9c; font-size: 10px; margin-top: 4px; }
+:is(#tab-picks, #tab-bets) .bp-combo { margin: 8px 0; }
+:is(#tab-picks, #tab-bets) .bp-combo > summary { min-height: 44px; padding: 10px 0; cursor: pointer; font-size: 13px; color: #bbb; }
+:is(#tab-picks, #tab-bets) .bp-leg { padding: 8px 0; border-top: 1px solid #ffffff18; }
+:is(#tab-picks, #tab-bets) .bp-leg-title { font-size: 13px; font-weight: 600; }
+:is(#tab-picks, #tab-bets) .bp-leg .bp-host { border: 0; margin: 0; }
+:is(#tab-picks, #tab-bets) .bp-team { display: inline-flex; align-items: center; gap: 5px; }
+:is(#tab-picks, #tab-bets) .bp-logo { object-fit: contain; flex-shrink: 0; }
 #tab-picks .lb-matchup { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
 
 /* Every Picks sport stays reachable without a hidden horizontal scrollbar. */
 #picks-view.today-picks .pick-sports { flex-wrap: wrap; overflow-x: visible; }
 #picks-view.today-picks .pick-sports .chip { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
+
+#tab-bets .pm-sync label { display:block; margin:12px 0; }
+#tab-bets .pm-sync input { display:block; width:100%; box-sizing:border-box; margin-top:6px; }
+#tab-bets .pm-sync .card { margin:12px 0; }

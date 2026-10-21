@@ -30,3 +30,5 @@ test('hockey points sum goals and assists when ESPN omits points', () => {
 
 test('unrecognized period/half questions never use full game scores',()=>{assert.equal(evaluate(spec('Under 1.5',{question:'Over 1.5 total goals in 3rd period'})).reason,'noStat');assert.equal(evaluate(spec('Over 107.5',{market_id:'tsc-nba-phi-ny-2026-10-20-sh-107pt5'})).reason,'noStat');});
 test('No game sides invert the displayed adjusted margin',()=>assert.equal(evaluate(spec('76ers to win',{market_side:'no'})).margin,-4));
+
+test('saved bet direction is separate from readable description and market id',()=>{const s=BP.spec({desc:'Joel Embiid 10+ rebounds',side:'no',eventSlug:'nba-phi-ny-2026-10-20',marketId:'market'});assert.equal(s.text,'Joel Embiid 10+ rebounds');assert.equal(s.side,'no');assert.equal(s.marketSlug,'market');});

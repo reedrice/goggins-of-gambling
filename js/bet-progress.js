@@ -12,9 +12,9 @@
  const slugOf = s => (String(s || '').match(/([a-z0-9]+-[a-z0-9]+-[a-z0-9]+-\d{4}-\d{2}-\d{2})/) || [])[1] || '';
  const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  function spec(o, fallback = {}) {
-  return {text:o.side || o.desc || o.pick || '',question:o.question || '',market:o.market || '',player:o.player || '',team:o.player_team || o.team?.abbr || '',
+  return {text:o.desc || o.pick || (['yes','no'].includes(o.side)?'':o.side) || '',question:o.question || '',market:o.market || '',player:o.player || '',team:o.player_team || o.team?.abbr || '',
    eventSlug:o.event_slug || o.eventSlug || slugOf(o.polymarket_url || o.link || o.event_url || o.market_id) || fallback.eventSlug || '',
-   marketSlug:o.market_id || '',side:o.market_side || (o.key ? Number(String(o.key).split(':')[1]) ? 'no':'yes' : ''),game:o.event || o.event_game || fallback.game || ''};
+   marketSlug:o.market_id || o.marketId || o.marketSlug || '',side:o.market_side || (['yes','no'].includes(o.side)?o.side:'') || (o.key ? Number(String(o.key).split(':')[1]) ? 'no':'yes' : ''),game:o.event || o.event_game || fallback.game || ''};
  }
  function html(value) { return `<div class="bp-host" data-bp="${esc(JSON.stringify(value))}"></div>`; }
  function findEvent(board, slug) {
@@ -117,7 +117,7 @@
  }
  const cache=new Map();
  async function get(url) {
-  const cached=cache.get(url);if(cached&&Date.now()-cached.at<30000)return cached.promise;
+  const cached=cache.get(url);if(cached&&Date.now()-cached.at<15000)return cached.promise;
   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),12000);
   const promise=fetch(url,{signal:controller.signal,cache:'no-store'}).then(r=>{if(!r.ok)throw Error('ESPN unavailable');return r.json();}).catch(error=>{cache.delete(url);throw error;}).finally(()=>clearTimeout(timer));
   cache.set(url,{at:Date.now(),promise});return promise;
@@ -168,14 +168,14 @@
   } catch(error) {if(host.isConnected)render(host,{}, {reason:'unavailable'});} finally {host._bpBusy=false;}
  }
  function scan() {
-  if(document.hidden || document.querySelector('#tab-picks')?.hidden)return;
-  document.querySelectorAll('#tab-picks .bp-host').forEach(host=>{if(!host.closest('details:not([open])')&&!host.closest('[hidden]'))hydrate(host);});
+  if(document.hidden)return;
+  document.querySelectorAll('#tab-picks .bp-host, #tab-bets .bp-host').forEach(host=>{if(!host.closest('details:not([open])')&&!host.closest('[hidden]'))hydrate(host);});
  }
  if(typeof document!=='undefined') {
   let pending=false;const schedule=()=>{if(pending)return;pending=true;setTimeout(()=>{pending=false;scan();},60);};
   new MutationObserver(records=>{if(records.some(r=>Array.from(r.addedNodes).some(n=>n.nodeType===1&&(n.matches('.bp-host')||n.querySelector('.bp-host')))))schedule();}).observe(document.body,{childList:true,subtree:true});
   document.addEventListener('toggle',schedule,true);document.addEventListener('visibilitychange',schedule);
-  setInterval(scan,30000);
+  setInterval(scan,15000);
  }
  return {spec,html,findEvent,athleteStat,parseBet,selectedTeam,scoresFor,gameElapsed,evaluateBet};
 });

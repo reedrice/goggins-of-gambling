@@ -1099,7 +1099,7 @@
     const sportKey = value => { const key=String(value).trim(); return STR.picks.sportAliases[key.toLowerCase()] || key; };
     const sportsOf = it => String(it.sport || '').split('+').map(sportKey).filter(Boolean);
     const inDay = it => !days.length || pickDayOf(it, d) === picksDay;
-    const order = (window.APP_CONFIG && APP_CONFIG.sports) || [];
+    const order = (window.APP_CONFIG && (APP_CONFIG.picksSports || APP_CONFIG.sports)) || [];
     const daySports = [...new Set([...order, ...Object.values(sec).flatMap(l => (l || []).filter(inDay).flatMap(sportsOf))])]
       .sort((a, b) => (order.indexOf(a) + 1 || 99) - (order.indexOf(b) + 1 || 99));
     if (picksSport && !daySports.includes(picksSport)) picksSport = '';
@@ -1583,7 +1583,7 @@
    * @param {object} b Bet @param {boolean} [withHint] countdown (open bets)
    */
   function legsHtml(b, withHint) {
-    return GT.sortLegs(b.legs, legStart).map(l => `<div class="bleg">${legChartBtn(vizLeg(l))}${l.teams && l.teams.length ? T.badges(l.teams, 20) : platformBadge(l.platform)}<span class="bleg-txt">${legText(l)}${typeof l.p === 'number' && l.p > 0 && l.p < 1 ? `<span class="payx">${esc(betGetText(l.p * 100))} · ${esc(chanceText(l.p))}</span>` : ''}${legWhen(l, withHint)}</span></div>`).join('');
+    return GT.sortLegs(b.legs, legStart).map(l => `<div class="bleg">${legChartBtn(vizLeg(l))}${l.teams && l.teams.length ? T.badges(l.teams, 20) : platformBadge(l.platform)}<span class="bleg-txt">${legText(l)}${typeof l.p === 'number' && l.p > 0 && l.p < 1 ? `<span class="payx">${esc(betGetText(l.p * 100))} · ${esc(chanceText(l.p))}</span>` : ''}${legWhen(l, withHint)}${withHint && window.BetProgress ? window.BetProgress.html(window.BetProgress.spec(l)) : ''}</span></div>`).join('');
   }
 
   /**
@@ -1628,7 +1628,7 @@
     const open = bets.filter(b => b.status === 'open').sort((a, b) => b.createdAt.localeCompare(a.createdAt));
     const settled = bets.filter(b => b.status !== 'open').sort((a, b) => String(b.settledAt).localeCompare(String(a.settledAt)));
     const kpi = (k, v, cls = '', tipKey = '') => `<div class="kpi"><div class="k">${esc(k)} ${tipKey ? tip(tipKey) : ''}</div><div class="v ${cls}">${v}</div></div>`;
-    el.innerHTML = `<h2>${esc(B.title(p.name))}</h2>
+    el.innerHTML = `<h2>${esc(B.title(p.name))}</h2><div id="pm-account"></div><h3>${esc(STR.pmSync.manual)}</h3>
       <p class="muted small">${esc(B.privateNote(money(p.unit), money(p.maxPerSlip)))}${p.windowEnd ? esc(B.windowEnds(p.windowEnd)) : ''}</p>
       <div class="kpis">${kpi(B.now, money(st.current))}${kpi(B.pl, money(st.pl), sign(st.pl))}${kpi(B.open, money(st.openStake))}${kpi(B.roi, pct(rec.all.roi, 1), sign(rec.all.roi), 'roi')}</div>
       <h3>${esc(B.chart)}</h3>
@@ -1659,6 +1659,7 @@
       <h3>${esc(B.backup)}</h3>
       <div class="row"><button class="btn" id="exp">${esc(B.export)}</button><button class="btn" id="imp">${esc(B.import)}</button></div>
       <input type="file" id="imp-file" accept="application/json,.json" hidden>`;
+    if(window.PolymarketSync)window.PolymarketSync.mount($('#pm-account'));
     drawChart($('#bk-chart'), st.series);
     el.querySelectorAll('[data-settle]').forEach(b => (b.onclick = () => settleBet(b.dataset.id, b.dataset.settle)));
     el.querySelectorAll('[data-reopen]').forEach(b => (b.onclick = () => settleBet(b.dataset.reopen, 'open')));
