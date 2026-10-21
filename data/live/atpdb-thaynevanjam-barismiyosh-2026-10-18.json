@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-21T22:13:15.166Z"
+  "fetched_at": "2026-10-21T22:19:13.154Z"
  },
- "updated": "2026-10-21T22:13:15.166Z",
+ "updated": "2026-10-21T22:19:13.154Z",
  "open_taken_at": "2026-10-21T05:14:59.072Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-21T22:01:14.437Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1529903:0:2026-10-21T22:01:14.437Z",
+   "key": "1529903:0",
+   "at": "2026-10-21T22:19:13.154Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Thayne W / Vance Jam win",
+   "market": "Moneyline",
+   "now_odds": "+317",
+   "now_chance": 24,
+   "edge": 4,
+   "text": "Edge gone: Thayne W / Vance Jam win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-thaynevanjam-barismiyosh-2026-10-18"
+  },
   {
    "id": "new_edge:1529903:0:big",
    "key": "1529903:0",
@@ -95,7 +109,8 @@
  ],
  "alert_seen": [
   "new_edge:1529903:0:slight",
-  "new_edge:1529903:0:big"
+  "new_edge:1529903:0:big",
+  "gone:1529903:0:2026-10-21T22:01:14.437Z"
  ],
  "kalshi_checked": null
 }
