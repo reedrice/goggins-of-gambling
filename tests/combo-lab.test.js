@@ -17,6 +17,16 @@ const picks=C.choose(events,{count:4,now,random:()=>0.3});assert.equal(picks.len
 assert.equal(C.choose([ev('g'),ev('g'),ev('b')],{count:3,now}).length,0);
 assert.equal(C.choose(events,{count:6,mode:'lines',now}).length,0);
 assert.equal(C.multiplier([{price:50},{price:25}]),8);
-assert.throws(()=>C.choose(events,{count:12,now}));
+assert.throws(()=>C.choose(events,{count:21,now}));
 assert.equal(m.eventSlug,undefined);
 console.log('Combo generator: CT dates, final/non-games, tradability, liquidity, player attribution, unique games, exact count and price math passed');
+
+const many=Array.from({length:20},(_,i)=>ev('game'+i));
+for(const n of [3,6,10,15,19,20])assert.equal(C.choose(many,{count:n,now}).length,n);
+const multi=[ev('one'),ev('two'),ev('three')];
+for(const e of multi)e.markets=[{...m},...Array.from({length:8},(_,i)=>({...m,id:'prop'+i,type:'prop',player:'Player '+i,team:'a'}))];
+const large=C.choose(multi,{count:19,now,allowSameGame:true,random:()=>0.2});
+assert.equal(large.length,19);
+assert.equal(new Set(large.map(p=>p.ev.slug+':'+(p.prop?p.m.player:'game-line'))).size,19);
+assert.equal(C.choose(multi,{count:19,now}).length,0);
+console.log('3-20 legs and explicit same-game option: exact count, unique players and one game line per event passed');

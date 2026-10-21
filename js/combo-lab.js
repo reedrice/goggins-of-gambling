@@ -17,17 +17,26 @@
   }
   return out;
  }
- function choose(events,{count=4,mode='mixed',now=Date.now(),random=Math.random}={}){
-  if(![3,4,5,6].includes(count)||!['mixed','lines','props'].includes(mode))throw Error('Invalid combo options');
+ function choose(events,{count=4,mode='mixed',allowSameGame=false,now=Date.now(),random=Math.random}={}){
+  if(!Number.isInteger(count)||count<3||count>20||!['mixed','lines','props'].includes(mode))throw Error('Invalid combo options');
   const groups=events.filter(e=>eligibleEvent(e,now)).map(ev=>candidates(ev,mode)).filter(g=>g.length);
   for(let i=groups.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[groups[i],groups[j]]=[groups[j],groups[i]];}
-  const selected=[],used=new Set();
-  for(const rows of groups){
+  const selected=[],used=new Set(),families=new Set();
+  // Additional passes allow distinct player props from the same event, never
+  // opposing sides/alternate lines or a second game-line market in that game.
+  for(let pass=0;pass<(allowSameGame?count:1);pass++){
+   for(const rows of groups){
+    if(selected.length===count)break;
+    const event=rows[0].ev.slug;
+    if(!allowSameGame&&used.has(event))continue;
+    const family=p=>event+':'+(p.prop?'player:'+String(p.m.player).toLowerCase():'game-line');
+    const available=rows.filter(p=>!families.has(family(p)));
+    const desired=mode==='mixed'?available.filter(x=>x.prop===(selected.length%2===1)):available;
+    const pool=desired.length?desired:available;
+    if(!pool.length)continue;
+    const pick=pool[Math.floor(random()*pool.length)];selected.push(pick);used.add(event);families.add(family(pick));
+   }
    if(selected.length===count)break;
-   if(used.has(rows[0].ev.slug))continue;
-   const desired=mode==='mixed' ? rows.filter(x=>x.prop===(selected.length%2===1)) : rows;
-   const pool=desired.length?desired:rows;
-   selected.push(pool[Math.floor(random()*pool.length)]);used.add(rows[0].ev.slug);
   }
   return selected.length===count?selected:[];
  }
@@ -37,15 +46,16 @@
   const el=(tag,text)=>{const n=document.createElement(tag);if(text)n.textContent=text;return n;};
   const panel=el('details'),summary=el('summary',S.title);panel.className='card';panel.append(summary);container.append(panel);
   const controls=el('div');controls.className='row';
-  const count=el('select');count.setAttribute('aria-label',S.legs);for(const n of [3,4,5,6]){const o=el('option',S.legCount(n));o.value=n;o.selected=n===4;count.append(o);}
+  const count=el('select');count.setAttribute('aria-label',S.legs);for(const n of Array.from({length:18},(_,i)=>i+3)){const o=el('option',S.legCount(n));o.value=n;o.selected=n===4;count.append(o);}
   const mode=el('select');mode.setAttribute('aria-label',S.markets);for(const k of ['mixed','lines','props']){const o=el('option',S[k]);o.value=k;mode.append(o);}
   const generate=el('button',S.generate);generate.type='button';generate.className='btn btn-primary';controls.append(count,mode,generate);panel.append(controls);
+  const same=el('input');same.type='checkbox';const sameLabel=el('label');sameLabel.className='toggle';sameLabel.append(same,el('span',S.sameGame));panel.append(sameLabel);
   const status=el('p'),output=el('div');status.setAttribute('role','status');panel.append(status,output,el('p',S.note));
   let serial=0;
   const json=async url=>{const r=await fetch(url,{signal:AbortSignal.timeout(15000)});if(!r.ok)throw Error('Unavailable');return r.json();};
   generate.onclick=async()=>{
    const run=++serial;generate.disabled=true;output.replaceChildren();status.textContent=S.loading;
-   const wanted=Number(count.value),kind=mode.value;
+   const wanted=Number(count.value),kind=mode.value,allowSameGame=same.checked;
    try{
     const ix=await json('data/markets/index.json?t='+Date.now());
     const live=await json('data/live/index.json?t='+Date.now());
@@ -58,11 +68,11 @@
      const ev=W.MarketsCore.compactEvent(raw);ev.liveAt=new Date().toISOString();events.push(ev);
     }catch(e){failed++;}}}));
     if(run!==serial||!container.isConnected)return;
-    const picks=choose(events,{count:wanted,mode:kind,now});
+    const picks=choose(events,{count:wanted,mode:kind,allowSameGame,now});
     if(!picks.length){status.textContent=S.insufficient(wanted,failed);return;}
     const stamp=picks.map(p=>p.ev.liveAt).sort()[0];
     const legs=picks.map(p=>W.Picker.makeLeg(p.ev,p.m,p.side,p.ev.liveAt,true));
-    const list=el('ol');picks.forEach((p,i)=>{const li=el('li');const game=p.ev.title||p.ev.slug;const odds=p.price>=50?'-'+Math.round(p.price/(100-p.price)*100):'+'+Math.round((100-p.price)/p.price*100);li.append(el('strong',legs[i].desc),el('div',game+' | '+odds));if(W.Viz){const b=el('button',S.chart);b.type='button';b.className='btn btn-sm';b.onclick=()=>W.Viz.open({title:legs[i].desc,sub:game,legs:[{text:legs[i].desc,eventSlug:p.ev.slug,marketSlug:p.m.id,side:p.side==='no'?1:0}]});li.append(b);}list.append(li);});output.append(list);
+    const list=el('ol');picks.forEach((p,i)=>{const li=el('li');const game=p.ev.title||p.ev.slug;const odds=p.price>=50?'-'+Math.round(p.price/(100-p.price)*100):'+'+Math.round((100-p.price)/p.price*100);li.append(el('strong',legs[i].desc),el('div',game+' | '+odds));if(W.Viz){const b=el('button',S.chart);b.type='button';b.className='btn btn-sm';b.onclick=()=>W.Viz.open({title:legs[i].desc,sub:game,legs:[{text:legs[i].desc,eventSlug:p.ev.slug,marketSlug:p.m.id,side:p.side==='no'?1:0}]});li.append(b);}list.append(li);});output.append(list);if(new Set(picks.map(p=>p.ev.slug)).size<picks.length)output.append(el('p',S.correlated));
     const multiple=multiplier(picks);output.append(el('p',S.price('+'+Math.round((multiple-1)*100).toLocaleString('en-US'),Math.floor(multiple*10))));
     const use=el('button',S.use);use.type='button';use.className='btn';use.onclick=()=>{
      if(Date.now()-Date.parse(stamp)>120000){status.textContent=S.expired;return;}

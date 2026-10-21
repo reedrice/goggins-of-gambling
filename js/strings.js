@@ -585,10 +585,11 @@ window.STR.liveBets = {
 };
 
 window.STR.comboLab = {
+ sameGame: 'Allow same-game legs', correlated: 'Same-game legs can be correlated. Multiplying their prices does not give the true combined chance or an executable payout.',
  title: 'Longshot combo', legs: 'Number of legs', markets: 'Market types', legCount: n => n + ' legs',
  mixed: 'Mixed', lines: 'Game lines', props: 'Player prop bets', generate: 'Generate combo', chart: 'Chart', use: 'Use in builder',
  loading: "Checking today's live and upcoming markets...",
- note: 'Random market selection, not a prediction or an edge rating. One leg per game. Multiplied prices are an illustration assuming independence; the platform may not offer this combo or this payout. Every leg must win.',
+ note: 'Random market selection, not a prediction or an edge rating. One leg per game unless same-game legs are enabled. Multiplied prices are an illustration assuming independence; the platform may not offer this combo or this payout. Every leg must win.',
  price: (odds,pay) => 'Illustrative combined odds ' + odds + ' | $10 returns $' + pay.toLocaleString('en-US') + ' if all win, before fees.',
  checked: (time,n) => 'Prices checked ' + time + ' CT' + (n ? ' | ' + n + ' game feeds unavailable' : ''),
  insufficient: (n,failed) => 'Not enough eligible games for ' + n + ' legs. Try fewer legs or another market type.' + (failed ? ' Some game feeds were unavailable.' : ''),
