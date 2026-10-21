@@ -50,6 +50,11 @@
   // Short-side cost/margin semantics are not inferred from turnover or absolute cost.
   return {invested:q!==null&&q>0&&cost!==null&&cost>=0?cost:null,payout:q!==null?Math.abs(q):null,unrealized:usd(p.cashValue)};
  }
+ function openTotals(positions){
+  let invested=0,payout=0,missingCosts=0,missingQuantities=0;
+  for(const p of Object.values(positions||{})){if(p.expired)continue;const q=quantity(p);if(q===0)continue;if(q===null){missingQuantities++;missingCosts++;continue;}const amounts=positionAmounts(p);payout+=amounts.payout;if(amounts.invested===null)missingCosts++;else invested+=amounts.invested;}
+  return {invested:missingCosts?null:invested,payout:missingQuantities?null:payout,missingCosts};
+ }
  function settlements(activities){
   const unique=new Map();for(const a of activities||[]){const r=a.positionResolution;if(a.type!=='ACTIVITY_TYPE_POSITION_RESOLUTION'||!r?.marketSlug)continue;
    const id=r.tradeId||r.marketSlug+':'+(r.updateTime||r.afterPosition?.updateTime||'');unique.set(id,r);
@@ -111,7 +116,7 @@
   }
   const actions=node('div',undefined,'row');const refresh=node('button',S.refresh,'btn btn-sm');refresh.type='button';refresh.disabled=busy;refresh.onclick=sync;
   const locking=node('button',S.lock,'btn btn-sm');locking.type='button';locking.onclick=lock;const disconnect=node('button',S.disconnect,'btn btn-sm');disconnect.type='button';disconnect.onclick=()=>{if(root.confirm(S.disconnectConfirm)){root.Store.setPolymarketVault(null);lock();}};actions.append(refresh,locking,disconnect);host.append(actions);
-  const snapshot=current.snapshot;if(!snapshot)return;const totals=stats(snapshot),grid=node('div',undefined,'kpis');
+  const snapshot=current.snapshot;if(!snapshot)return;const totals=stats(snapshot),open=openTotals(snapshot.positions),openGrid=node('div',undefined,'kpis');for(const [label,value] of [[S.totalInvested,money(open.invested)],[S.totalPotentialPayout,money(open.payout)]]){const cell=node('div',undefined,'kpi');cell.append(node('div',label,'k'),node('div',value,'v'));openGrid.append(cell);}host.append(openGrid,node('p',S.openTotalsNote,'muted small'));if(open.missingCosts)host.append(node('p',S.openCostsMissing(open.missingCosts),'muted small'));const grid=node('div',undefined,'kpis');
   for(const [label,value] of [[S.spent,money(totals.spent)],[S.returned,money(totals.returned)],[S.won,money(totals.won)],[S.lost,money(totals.lost)],[S.net,money(totals.realized)],[S.record,snapshot.historyComplete?totals.wins+'–'+totals.losses+'–'+totals.even:S.unknown]]){const cell=node('div',undefined,'kpi');cell.append(node('div',label,'k'),node('div',snapshot.historyComplete?value:S.unknown,'v'));grid.append(cell);}host.append(grid,node('p',S.metricNote,'muted small'));
   if(totals.spent===null)host.append(node('p',S.spendingUnavailable,'muted small'));
   if(totals.unclassified)host.append(node('p',S.unclassified(totals.unclassified),'muted small'));
@@ -126,5 +131,5 @@
  }
  function mount(element){host=element;clearTimeout(timer);paint();if(current)sync();}
  if(typeof document!=='undefined')document.addEventListener('visibilitychange',()=>{if(!document.hidden&&current){clearTimeout(timer);sync();}});
- return {mount,lock,headers,passwordKey,seal,unlock,pages,rows,positionAmounts,stats,progressSpecs,activityLabel,validate};
+ return {mount,lock,headers,passwordKey,seal,unlock,pages,rows,positionAmounts,openTotals,stats,progressSpecs,activityLabel,validate};
 });

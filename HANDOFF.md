@@ -1575,3 +1575,6 @@ Reed requested amount invested and winning payout on each Polymarket account ope
 
 ## 130. Private Polymarket cents precision (Oct 21)
 Reed requested exact cents rather than rounded whole dollars. Private account currency formatter now uses exactly two decimals for all position and settlement totals. Documented the explicit scoped override in AGENTS.md; no source values, calculations or privacy behavior changed.
+
+## 131. Private open-position totals (Oct 21)
+Added top account KPIs for total remaining investment and summed gross payout if all open positions win, with cents. Closed/expired positions excluded; any missing or ambiguous cost suppresses the investment total instead of presenting a partial sum. Missing quantities suppress payout. Totals do not depend on complete settlement history. Copy distinguishes gross payout from profit/cash-out and notes opposing outcomes may prevent every position winning. Synthetic tests only; no private account values published.
