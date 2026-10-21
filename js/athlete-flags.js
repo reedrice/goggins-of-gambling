@@ -3,9 +3,13 @@
  const key=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
  function flag(a){const f=a?.flag;return f&&/^https:\/\/a\.espncdn\.com\/i\/teamlogos\/countries\/[^?#]+\.png$/.test(f.href)&&f.alt?{href:f.href,country:f.alt}:null;}
  function index(docs){const out=new Map();for(const d of docs)for(const e of d.events||[])for(const c of e.competitions||[])for(const p of c.competitors||[])for(const a of [p.athlete,...(p.roster?.athletes||[])].filter(Boolean)){const f=flag(a);if(!f)continue;for(const n of [a.displayName,a.shortName,a.fullName].filter(Boolean)){const k=d.league+':'+key(n);const old=out.get(k);out.set(k,old===null||old&&old.country!==f.country?null:f);}}return out;}
- let countries=new Map(),pending;
+ let countries=new Map(),verified=new Map(),pending;
+ async function loadVerified(){try{const r=await fetch('data/espn/athlete-nationalities.json',{signal:AbortSignal.timeout(12000)});if(!r.ok)return;const d=await r.json();for(const a of d.athletes||[]){const f=flag({flag:{href:a.flag,alt:a.country}});if(f&&/^https:\/\/(www\.)?(atptour\.com|itftennis\.com|pgatour\.com|lpga\.com)\//.test(a.source_url))verified.set(a.sport+':'+key(a.name),f);}}catch{}}
  async function load(){if(pending)return pending;pending=(async()=>{try{const r=await fetch('data/espn/index.json',{cache:'no-store',signal:AbortSignal.timeout(12000)});if(!r.ok)return;const ix=await r.json();const files=(ix.snapshots||[]).filter(s=>s.available&&/^(atp|wta|pga|lpga|dpwt)$/.test(s.league)&&/^data\/espn\/[a-z]+-\d{4}-\d{2}-\d{2}\.json$/.test(s.file));const results=await Promise.allSettled(files.map(async s=>{const r=await fetch(s.file,{signal:AbortSignal.timeout(12000)});if(!r.ok)throw Error('snapshot');return r.json();}));countries=index(results.filter(r=>r.status==='fulfilled').map(r=>r.value));}catch{} })();return pending;}
  function lookup(name,sport){const leagues=sport==='tennis'?['atp','wta']:sport==='golf'?['pga','lpga','dpwt']:[];const found=leagues.map(l=>countries.get(l+':'+key(name))).filter(Boolean);return found.length&&found.every(f=>f.country===found[0].country)?found[0]:null;}
  function decorate(row,text,sport){if(!/^(tennis|golf)$/.test(sport)){row.textContent=text;return;}for(const part of String(text).split(/(\s+vs\.?\s+|\s+\/\s+)/i)){if(/^\s+(?:vs\.?|\/)\s+$/i.test(part)){row.append(document.createTextNode(part));continue;}const person=document.createElement('span');person.className='lb-athlete';const f=lookup(part,sport);if(f){const img=document.createElement('img');img.src=f.href;img.alt=f.country;img.title=f.country;img.className='lb-country-flag';img.width=20;img.height=14;img.loading='lazy';img.addEventListener('error',()=>img.remove(),{once:true});person.append(img);}person.append(document.createTextNode(part));row.append(person);}}
- return {index,key,flag,load,lookup,decorate};
+ const loadAll=()=>Promise.all([load(),loadVerified()]);
+ const fromSnapshot=lookup;
+ lookup=function(name,sport){return fromSnapshot(name,sport)||verified.get(sport+':'+key(name))||null;};
+ return {index,key,flag,load:loadAll,lookup,decorate};
 });
