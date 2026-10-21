@@ -30,7 +30,7 @@
      const relevant=entries.map((s,i)=>({s,d:results[i]})).filter(x=>leagues.includes(x.s.league));
      const complete=leagues.every(l=>relevant.some(x=>x.s.league===l))&&relevant.every(x=>x.d&&Date.now()-Date.parse(x.d.fetched_at)<30*60000);
      const count=activeEvents(docs,leagues),pill=document.createElement('span');pill.className='slate-pill'+(count?'':' slate-empty');
-     const label=S.names[key],unit=S.units[['atp','wta'].includes(key)?'matches':key==='golf'?'events':'games'];
+     const label=S.names[key],kind=['atp','wta'].includes(key)?'matches':key==='golf'?'events':'games',unit=(count===1?S.singular:S.units)[kind];
      pill.textContent=`${icon} ${label} (${complete?count:count?count+'+':'—'}${complete||count?' '+unit:''})`;
      pill.title=complete?S.detail:S.partial;incomplete=incomplete||!complete;return pill;
     }));

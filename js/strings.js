@@ -721,3 +721,4 @@ window.STR.theme={title:'Appearance',scheme:'Color scheme',schemes:{ocean:'Ocean
 window.STR.chartDisplay={smoothed:'Smoothed overview',explanation:'Line uses time-bucket averages. Quotes and hover readouts use actual prices.'};
 
 window.STR.slate={title:'Daily Slate Overview',names:{nba:'NBA',nhl:'NHL',atp:'ATP',wta:'WTA',nfl:'NFL',cfb:'CFB',wnba:'WNBA',cbb:'CBB',wcbb:'WCBB',mlb:'MLB',soccer:'Soccer',golf:'Golf'},units:{games:'Games',matches:'Matches',events:'Events'},detail:'Today in America/Chicago. Scheduled and live events; ESPN coverage, not exchange market availability.',partial:'Some snapshot coverage is missing or delayed. + means a partial count.',unavailable:'Slate snapshots are temporarily unavailable; retrying automatically.',loadingFailed:'Slate unavailable'};
+window.STR.slate.singular={games:'Game',matches:'Match',events:'Event'};
