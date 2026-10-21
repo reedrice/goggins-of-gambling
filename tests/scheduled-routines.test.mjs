@@ -26,3 +26,9 @@ test('weekly report preserves measured counts without invented recommendations',
  assert.deepEqual(weeklyReport(d,'2026-10-21T00:00:00Z').sample,d.sample);
  assert.match(weeklyReport(d,'2026-10-21T00:00:00Z').note,/below 30/);
 });
+
+test('daily slate refreshes hourly from 7 AM through 11 PM Chicago',()=>{
+ assert.ok(due('daily-slate-odds-digest','2026-10-21T12:54:00Z',Date.parse('2026-10-21T17:01:00Z')));
+ assert.ok(!due('daily-slate-odds-digest','2026-10-21T17:01:00Z',Date.parse('2026-10-21T17:59:00Z')));
+ assert.equal(slot('daily-slate-odds-digest',Date.parse('2026-10-21T11:59:00Z')),null);
+});

@@ -1161,6 +1161,26 @@
     renderTodayPicks();
   }
 
+  // Fetch published picks while this view is visible; do not reset filters or open cards.
+  let picksCheckBusy = false;
+  async function checkPublishedPicks() {
+    if (document.hidden || picksView !== 'picks' || !$('#tab-picks') || $('#tab-picks').hidden || !picksData || picksCheckBusy) return;
+    picksCheckBusy = true;
+    try {
+      const fresh = await fetchData('data/picks.json');
+      if (fresh.updated_at !== picksData.updated_at && picksView === 'picks' && !$('#tab-picks').hidden) {
+        const expanded = [...document.querySelectorAll('#picks-view details[open]')].map(e => e.id).filter(Boolean);
+        await renderTodayPicks();
+        expanded.forEach(id => { const el = document.getElementById(id); if (el) el.open = true; });
+      }
+    } catch (_) { /* retain the last verified snapshot; retry on the next visible check */ }
+    finally { picksCheckBusy = false; }
+  }
+  setInterval(checkPublishedPicks, 60000);
+  document.addEventListener('visibilitychange', checkPublishedPicks);
+  window.addEventListener('focus', checkPublishedPicks);
+  window.addEventListener('online', checkPublishedPicks);
+
   // ------------------------------------------------- picks day switcher
   // picks.json can carry tomorrow's picks next to today's (each with its own
   // slate_date, see HANDOFF §23). The Picks tab shows one day at a time.
