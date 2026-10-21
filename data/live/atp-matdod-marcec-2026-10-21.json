@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-21T14:57:50.707Z"
+  "fetched_at": "2026-10-21T15:10:53.807Z"
  },
- "updated": "2026-10-21T14:57:50.707Z",
+ "updated": "2026-10-21T15:10:53.807Z",
  "open_taken_at": "2026-10-21T05:15:39.105Z",
  "thresholds": {
   "big": 10,
@@ -109,17 +109,17 @@
  ],
  "edges": [
   {
-   "key": "1616426:1",
-   "market_id": "1616426",
-   "market": "Moneyline",
+   "key": "1617132:1",
+   "market_id": "1617132",
+   "market": "Games spread",
    "group": "game",
-   "question": "Who will win in the upcoming atp event Matej Dodig vs Marco Cecchinato scheduled for October 21, 2026 at 9:00 AM UTC?",
-   "side": "Marco Cecchinato win",
-   "open_chance": 29,
-   "now_chance": 18,
-   "open_odds": "+245",
-   "now_odds": "+456",
-   "edge": 11,
+   "question": "Will the Matej Dodig cover -4.5 vs the Marco Cecchinato in Matej Dodig vs. Marco Cecchinato?",
+   "side": "Marco Cecchinato +4.50 (Games)",
+   "open_chance": 61,
+   "now_chance": 35,
+   "open_odds": "-156",
+   "now_odds": "+186",
+   "edge": 26,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -129,39 +129,39 @@
    "kalshi": null
   },
   {
-   "key": "1617132:1",
-   "market_id": "1617132",
-   "market": "Games spread",
+   "key": "1617081:0",
+   "market_id": "1617081",
+   "market": "Games total",
    "group": "game",
-   "question": "Will the Matej Dodig cover -4.5 vs the Marco Cecchinato in Matej Dodig vs. Marco Cecchinato?",
-   "side": "Marco Cecchinato +4.50 (Games)",
-   "open_chance": 61,
-   "now_chance": 50,
-   "open_odds": "-156",
-   "now_odds": "+100",
-   "edge": 11,
-   "tier": "big",
+   "question": "Will the total in Matej Dodig vs. Marco Cecchinato be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 42,
+   "now_chance": 38,
+   "open_odds": "+138",
+   "now_odds": "+163",
+   "edge": 4,
+   "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-21T14:57:50.707Z",
+   "first_seen": "2026-10-21T15:10:53.807Z",
    "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
   {
-   "id": "new_edge:1616426:1:big",
-   "key": "1616426:1",
-   "at": "2026-10-21T14:57:50.707Z",
+   "id": "new_edge:1617081:0:slight",
+   "key": "1617081:0",
+   "at": "2026-10-21T15:10:53.807Z",
    "type": "new_edge",
-   "tier": "big",
-   "side": "Marco Cecchinato win",
-   "market": "Moneyline",
-   "now_odds": "+456",
-   "now_chance": 18,
-   "edge": 11,
-   "text": "New big edge: Marco Cecchinato win (Moneyline), 11 points cheaper than open.",
+   "tier": "slight",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+163",
+   "now_chance": 38,
+   "edge": 4,
+   "text": "New slight edge: Over 22.5 (Games) (Games total), 4 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-matdod-marcec-2026-10-21"
   },
   {
@@ -181,7 +181,8 @@
  ],
  "alert_seen": [
   "new_edge:1616426:1:big",
-  "new_edge:1617132:1:big"
+  "new_edge:1617132:1:big",
+  "new_edge:1617081:0:slight"
  ],
  "kalshi_checked": null
 }

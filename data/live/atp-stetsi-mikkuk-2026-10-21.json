@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "184995",
-  "fetched_at": "2026-10-21T14:57:50.646Z",
+  "fetched_at": "2026-10-21T15:10:53.786Z",
   "tennis": true,
   "tennis_match": {
    "id": "184995",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(7) Stefanos Tsitsipas (GRE) leads Mikhail Kukushkin (KAZ) 5-0",
+     "text": "(7) Stefanos Tsitsipas (GRE) leads Mikhail Kukushkin (KAZ) 6-1 1-0",
      "type": "event"
     }
    ],
@@ -55,7 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
+      {
+       "value": 1,
+       "winner": false
+      },
       {
        "value": 0
       }
@@ -97,12 +102,17 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "curatedRank": {
       "current": 7
      },
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -137,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 708,
    "type": {
     "id": "1",
@@ -155,8 +170,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Mikhail Kukushkin",
@@ -168,13 +183,13 @@
    "abbr": "Stefanos Tsitsipas",
    "alias": "Stefanos Tsitsipas",
    "name": "Stefanos Tsitsipas",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-21T14:57:50.646Z",
+ "updated": "2026-10-21T15:10:53.786Z",
  "open_taken_at": "2026-10-21T05:15:37.269Z",
  "thresholds": {
   "big": 10,
@@ -248,44 +263,8 @@
    "taken_at": "2026-10-21T05:15:37.269Z"
   }
  ],
- "edges": [
-  {
-   "key": "1617165:0",
-   "market_id": "1617165",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Stefanos Tsitsipas cover -4.5 vs the Mikhail Kukushkin in Stefanos Tsitsipas vs. Mikhail Kukushkin?",
-   "side": "Stefanos Tsitsipas -4.50 (Games)",
-   "open_chance": 66,
-   "now_chance": 60,
-   "open_odds": "-194",
-   "now_odds": "-150",
-   "edge": 6,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-10-21T12:54:35.475Z",
-   "status": "gone",
-   "kalshi": null
-  }
- ],
- "alerts": [
-  {
-   "id": "gone:1617165:0:2026-10-21T12:54:35.475Z",
-   "key": "1617165:0",
-   "at": "2026-10-21T14:57:50.646Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Stefanos Tsitsipas -4.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-150",
-   "now_chance": 60,
-   "edge": 6,
-   "text": "Edge gone: Stefanos Tsitsipas -4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-stetsi-mikkuk-2026-10-21"
-  }
- ],
+ "edges": [],
+ "alerts": [],
  "alert_seen": [
   "gone:1617165:0:2026-10-21T12:54:35.475Z"
  ],
