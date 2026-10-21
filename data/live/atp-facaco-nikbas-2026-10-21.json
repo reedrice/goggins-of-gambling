@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185006",
-  "fetched_at": "2026-10-21T09:40:30.426Z",
+  "fetched_at": "2026-10-21T10:06:26.640Z",
   "tennis": true,
   "tennis_match": {
    "id": "185006",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Nikoloz Basilashvili (GEO) leads Facundo Diaz Acosta (ARG) 3-1",
+     "text": "Facundo Diaz Acosta (ARG) leads Nikoloz Basilashvili (GEO) 2-6 1-1",
      "type": "event"
     }
    ],
@@ -58,7 +58,11 @@
      "possession": false,
      "linescores": [
       {
-       "value": 3
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -100,6 +104,10 @@
      "homeAway": "home",
      "possession": true,
      "linescores": [
+      {
+       "value": 2,
+       "winner": false
+      },
       {
        "value": 1
       }
@@ -159,14 +167,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Nikoloz Basilashvili",
    "alias": "Nikoloz Basilashvili",
    "name": "Nikoloz Basilashvili",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Facundo Diaz Acosta",
@@ -178,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-21T09:40:30.426Z",
+ "updated": "2026-10-21T10:06:26.640Z",
  "open_taken_at": "2026-10-21T05:15:20.852Z",
  "thresholds": {
   "big": 10,
@@ -320,26 +328,6 @@
  ],
  "edges": [
   {
-   "key": "1603992:0",
-   "market_id": "1603992",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Facundo Diaz Acosta cover 1.5 vs the Nikoloz Basilashvili in Facundo Diaz Acosta vs. Nikoloz Basilashvili?",
-   "side": "Facundo Acosta +1.50 (Games)",
-   "open_chance": 39,
-   "now_chance": 28,
-   "open_odds": "+156",
-   "now_odds": "+257",
-   "edge": 11,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Nikoloz Basilashvili 3 · Facundo Diaz Acosta 1 · 1st Set (games by set)",
-   "first_seen": "2026-10-21T09:40:30.426Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1603974:0",
    "market_id": "1603974",
    "market": "Games total",
@@ -347,14 +335,34 @@
    "question": "Will the total in Facundo Diaz Acosta vs. Nikoloz Basilashvili be more than 22.5?",
    "side": "Over 22.5 (Games)",
    "open_chance": 49,
-   "now_chance": 43,
+   "now_chance": 27,
    "open_odds": "+104",
-   "now_odds": "+133",
-   "edge": 6,
-   "tier": "slight",
+   "now_odds": "+270",
+   "edge": 22,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Nikoloz Basilashvili 3 · Facundo Diaz Acosta 1 · 1st Set (games by set)",
+   "context": "Nikoloz Basilashvili 6, 1 · Facundo Diaz Acosta 2, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-21T09:40:30.426Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1603992:0",
+   "market_id": "1603992",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Facundo Diaz Acosta cover 1.5 vs the Nikoloz Basilashvili in Facundo Diaz Acosta vs. Nikoloz Basilashvili?",
+   "side": "Facundo Acosta +1.50 (Games)",
+   "open_chance": 39,
+   "now_chance": 17,
+   "open_odds": "+156",
+   "now_odds": "+488",
+   "edge": 22,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Nikoloz Basilashvili 6, 1 · Facundo Diaz Acosta 2, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-21T09:40:30.426Z",
    "status": "open",
    "kalshi": null
@@ -367,20 +375,34 @@
    "question": "Will Facundo Diaz Acosta win set 2 against Nikoloz Basilashvili?",
    "side": "Yes: Facundo Diaz Acosta win set 2 against Nikoloz Basilashvili",
    "open_chance": 39,
-   "now_chance": 34,
+   "now_chance": 35,
    "open_odds": "+156",
-   "now_odds": "+194",
-   "edge": 5,
+   "now_odds": "+186",
+   "edge": 4,
    "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Nikoloz Basilashvili 3 · Facundo Diaz Acosta 1 · 1st Set (games by set)",
+   "class": "score",
+   "reason": "Explained by score: Facundo Diaz Acosta not above the games spread right now",
+   "context": "Nikoloz Basilashvili 6, 1 · Facundo Diaz Acosta 2, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-21T09:40:30.426Z",
    "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1603974:0:big",
+   "key": "1603974:0",
+   "at": "2026-10-21T10:06:26.640Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+270",
+   "now_chance": 27,
+   "edge": 22,
+   "text": "New big edge: Over 22.5 (Games) (Games total), 22 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-facaco-nikbas-2026-10-21"
+  },
   {
    "id": "new_edge:1603992:0:big",
    "key": "1603992:0",
@@ -428,7 +450,8 @@
   "new_edge:1603994:0:slight",
   "new_edge:1603992:0:big",
   "new_edge:1603974:0:slight",
-  "new_edge:1603951:0:slight"
+  "new_edge:1603951:0:slight",
+  "new_edge:1603974:0:big"
  ],
  "kalshi_checked": null
 }
