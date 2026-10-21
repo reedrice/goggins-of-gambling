@@ -38,7 +38,7 @@ async function main(){
  }
  // Public record schemas need not change until official results exist, but must remain readable.
  for(const file of ['data/predictions.json','data/pick-history.json','data/live-record.json','data/live-feedback.json'])try{const data=await read(file);if(!data||typeof data!=='object')errors.push(`${file}: invalid JSON shape`);}catch(e){errors.push(e.message);}
- if(!errors.length){console.log('Healthy: feed, due games, ESPN and public record JSON');return;}
+ if(!errors.length){console.log('Healthy: feed, due games, ESPN and public record JSON');if(process.env.GITHUB_OUTPUT)fs.appendFileSync(process.env.GITHUB_OUTPUT,'healthy=true\n');return;}
  const runs=api(`repos/${REPO}/actions/workflows/${WORKFLOW}/runs?per_page=30`).workflow_runs;
  const decision=recoveryDecision(runs);
  const report=['## Site health',...errors.map(e=>'- '+e),`Recovery: ${decision}.`].join('\n');

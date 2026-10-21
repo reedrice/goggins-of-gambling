@@ -10,6 +10,7 @@ on:
 permissions:
   contents: read
   actions: write
+  issues: write
 concurrency:
   group: production-health
   cancel-in-progress: false
@@ -27,6 +28,17 @@ jobs:
         with:
           node-version: '24'
       - name: Verify public data and recover once if needed
+        id: health
         env:
           GH_TOKEN: ${{ github.token }}
         run: node scripts/site-health.mjs
+      - name: Notify Reed when recovery remains unhealthy
+        if: failure() && steps.health.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/site-health-alert.mjs failed
+      - name: Resolve an existing incident after verified recovery
+        if: success() && steps.health.outputs.healthy == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/site-health-alert.mjs healthy
