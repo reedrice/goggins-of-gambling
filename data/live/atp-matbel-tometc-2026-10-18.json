@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185009",
-  "fetched_at": "2026-10-21T08:47:24.142Z",
+  "fetched_at": "2026-10-21T08:54:42.659Z",
   "tennis": true,
   "tennis_match": {
    "id": "185009",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Mattia Bellucci (ITA) leads (6) Tomas Martin Etcheverry (ARG) 7-6 (7-5) 2-6 3-2",
+     "text": "Mattia Bellucci (ITA) leads (6) Tomas Martin Etcheverry (ARG) 7-6 (7-5) 2-6 4-2",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 6
      },
@@ -109,6 +110,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 7,
@@ -120,7 +122,7 @@
        "winner": false
       },
       {
-       "value": 3
+       "value": 4
       }
      ],
      "athlete": {
@@ -155,6 +157,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 708,
    "type": {
     "id": "1",
@@ -192,7 +199,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-21T08:47:24.142Z",
+ "updated": "2026-10-21T08:54:42.659Z",
  "open_taken_at": "2026-10-21T05:14:41.902Z",
  "thresholds": {
   "big": 10,
@@ -334,26 +341,6 @@
  ],
  "edges": [
   {
-   "key": "1517375:1",
-   "market_id": "1517375",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Mattia Bellucci vs Tomas Martin Etcheverry scheduled for October 18, 2026 at 6:00 AM UTC?",
-   "side": "Tomas Etcheverry win",
-   "open_chance": 47,
-   "now_chance": 17,
-   "open_odds": "+113",
-   "now_odds": "+488",
-   "edge": 30,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (30 pts), likely news",
-   "context": "Tomas Martin Etcheverry 6, 6, 2 · Mattia Bellucci 7, 2, 3 · 3rd Set (games by set)",
-   "first_seen": "2026-10-21T07:04:56.701Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1538129:1",
    "market_id": "1538129",
    "market": "Games spread",
@@ -361,36 +348,16 @@
    "question": "Will the Mattia Bellucci cover 1.5 vs the Tomas Martin Etcheverry in Mattia Bellucci vs. Tomas Martin Etcheverry?",
    "side": "Tomas Etcheverry -1.50 (Games)",
    "open_chance": 43,
-   "now_chance": 28,
+   "now_chance": 22,
    "open_odds": "+133",
-   "now_odds": "+257",
-   "edge": 15,
+   "now_odds": "+355",
+   "edge": 21,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Tomas Martin Etcheverry 6, 6, 2 · Mattia Bellucci 7, 2, 3 · 3rd Set (games by set)",
+   "context": "Tomas Martin Etcheverry 6, 6, 2 · Mattia Bellucci 7, 2, 4 · 3rd Set (games by set)",
    "first_seen": "2026-10-21T06:41:54.142Z",
    "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1538129:0",
-   "market_id": "1538129",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Mattia Bellucci cover 1.5 vs the Tomas Martin Etcheverry in Mattia Bellucci vs. Tomas Martin Etcheverry?",
-   "side": "Mattia Bellucci +1.50 (Games)",
-   "open_chance": 61,
-   "now_chance": 33,
-   "open_odds": "-156",
-   "now_odds": "+203",
-   "edge": 28,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Mattia Bellucci not above the games spread right now",
-   "context": "Tomas Martin Etcheverry 6, 6, 2 · Mattia Bellucci 7, 2, 2 · 3rd Set (games by set)",
-   "first_seen": "2026-10-21T06:55:07.320Z",
-   "status": "gone",
    "kalshi": null
   },
   {
@@ -415,34 +382,6 @@
   }
  ],
  "alerts": [
-  {
-   "id": "new_edge:1538129:0:big",
-   "key": "1538129:0",
-   "at": "2026-10-21T08:05:01.379Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Mattia Bellucci +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+108",
-   "now_chance": 48,
-   "edge": 13,
-   "text": "New big edge: Mattia Bellucci +1.50 (Games) (Games spread), 13 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-matbel-tometc-2026-10-18"
-  },
-  {
-   "id": "news:1517375:1",
-   "key": "1517375:1",
-   "at": "2026-10-21T07:34:56.825Z",
-   "type": "news",
-   "tier": "big",
-   "side": "Tomas Etcheverry win",
-   "market": "Moneyline",
-   "now_odds": "+376",
-   "now_chance": 21,
-   "edge": 26,
-   "text": "Big move, likely news: Tomas Etcheverry win (Moneyline) is 26 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-matbel-tometc-2026-10-18"
-  },
   {
    "id": "new_edge:1538129:1:big",
    "key": "1538129:1",
@@ -472,34 +411,6 @@
    "url": "https://polymarket.us/sports/atp/atp-matbel-tometc-2026-10-18"
   },
   {
-   "id": "gone:1517375:1:2026-10-21T07:04:56.701Z",
-   "key": "1517375:1",
-   "at": "2026-10-21T07:24:52.425Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Tomas Etcheverry win",
-   "market": "Moneyline",
-   "now_odds": "+133",
-   "now_chance": 43,
-   "edge": 4,
-   "text": "Edge gone: Tomas Etcheverry win (Moneyline) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-matbel-tometc-2026-10-18"
-  },
-  {
-   "id": "new_edge:1517375:1:slight",
-   "key": "1517375:1",
-   "at": "2026-10-21T07:04:56.701Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Tomas Etcheverry win",
-   "market": "Moneyline",
-   "now_odds": "+133",
-   "now_chance": 43,
-   "edge": 4,
-   "text": "New slight edge: Tomas Etcheverry win (Moneyline), 4 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-matbel-tometc-2026-10-18"
-  },
-  {
    "id": "gone:1538105:1:2026-10-21T06:41:54.142Z",
    "key": "1538105:1",
    "at": "2026-10-21T07:04:56.701Z",
@@ -511,34 +422,6 @@
    "now_chance": 42,
    "edge": 9,
    "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-matbel-tometc-2026-10-18"
-  },
-  {
-   "id": "gone:1538129:0:2026-10-21T06:55:07.320Z",
-   "key": "1538129:0",
-   "at": "2026-10-21T07:04:56.701Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Mattia Bellucci +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-127",
-   "now_chance": 56,
-   "edge": 5,
-   "text": "Edge gone: Mattia Bellucci +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-matbel-tometc-2026-10-18"
-  },
-  {
-   "id": "new_edge:1538129:0:slight",
-   "key": "1538129:0",
-   "at": "2026-10-21T06:55:07.320Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Mattia Bellucci +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-127",
-   "now_chance": 56,
-   "edge": 5,
-   "text": "New slight edge: Mattia Bellucci +1.50 (Games) (Games spread), 5 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-matbel-tometc-2026-10-18"
   },
   {
