@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-21T19:38:14.549Z"
+  "fetched_at": "2026-10-21T19:44:15.646Z"
  },
- "updated": "2026-10-21T19:38:14.549Z",
+ "updated": "2026-10-21T19:44:15.646Z",
  "open_taken_at": "2026-10-21T05:14:59.538Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-21T19:19:07.865Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1529904:0:2026-10-21T19:19:07.865Z",
+   "key": "1529904:0",
+   "at": "2026-10-21T19:44:15.646Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Chopra K / Martin A win",
+   "market": "Moneyline",
+   "now_odds": "-117",
+   "now_chance": 54,
+   "edge": 6,
+   "text": "Edge gone: Chopra K / Martin A win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-chopramartin-hoppermitsui-2026-10-18"
+  },
   {
    "id": "new_edge:1529904:0:slight",
    "key": "1529904:0",
@@ -95,7 +109,8 @@
  ],
  "alert_seen": [
   "new_edge:1529904:0:big",
-  "new_edge:1529904:0:slight"
+  "new_edge:1529904:0:slight",
+  "gone:1529904:0:2026-10-21T19:19:07.865Z"
  ],
  "kalshi_checked": null
 }
