@@ -211,7 +211,7 @@
   if(game) {
    const competitors=[...(game.competitors || [])].sort((a,b)=>(a.homeAway==='home')-(b.homeAway==='home'));
    const matchup=host.closest('.lb-edge')?.querySelector('.lb-matchup');
-   if(matchup){matchup.replaceChildren();competitors.forEach((c,i)=>{if(i)matchup.append(node('span','bp-at',game.tennis?'vs.':'@'));matchup.append(teamName(c));});}
+   if(matchup&&!matchup.querySelector('.lb-athlete')){matchup.replaceChildren();competitors.forEach((c,i)=>{if(i)matchup.append(node('span','bp-at',game.tennis?'vs.':'@'));matchup.append(teamName(c));});}
    const score=node('div','bp-scoreline');
    if(game.status?.type?.state==='pre')score.textContent=S.starts(new Date(game.date || '').toLocaleTimeString('en-US',{timeZone:'America/Chicago',hour:'numeric',minute:'2-digit'}));
    else {const text=competitors.map(c=>(c.team?.abbreviation || '')+' '+(game.tennis?(c.linescores||[]).map(s=>s.value).join(', '):(c.score ?? S.dash))).join(' · ');score.append(node('b','',game.tennis?S.tenniScores(text):text),node('span','bp-clock',clockText(game.status,S)));}
