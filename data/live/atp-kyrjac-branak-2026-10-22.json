@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185084",
-  "fetched_at": "2026-10-22T19:41:24.484Z",
+  "fetched_at": "2026-10-22T19:47:24.920Z",
   "tennis": true,
   "tennis_match": {
    "id": "185084",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(5) Brandon Nakashima (USA) leads Kyrian Jacquet (FRA) 6-4",
+     "text": "(5) Brandon Nakashima (USA) leads Kyrian Jacquet (FRA) 6-4 1-0",
      "type": "event"
     }
    ],
@@ -55,12 +55,17 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "curatedRank": {
       "current": 5
      },
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -100,9 +105,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
-       "value": 4
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -137,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 110,
    "type": {
     "id": "1",
@@ -155,14 +170,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Brandon Nakashima",
    "alias": "Brandon Nakashima",
    "name": "Brandon Nakashima",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Kyrian Jacquet",
@@ -174,7 +189,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-22T19:41:24.485Z",
+ "updated": "2026-10-22T19:47:24.920Z",
  "open_taken_at": "2026-10-21T05:16:04.865Z",
  "thresholds": {
   "big": 10,
