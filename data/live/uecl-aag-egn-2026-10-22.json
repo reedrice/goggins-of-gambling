@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for uecl",
-  "fetched_at": "2026-10-22T20:40:32.137Z"
+  "fetched_at": "2026-10-22T20:46:23.117Z"
  },
- "updated": "2026-10-22T20:40:32.138Z",
+ "updated": "2026-10-22T20:46:23.118Z",
  "open_taken_at": "2026-10-21T05:14:27.325Z",
  "thresholds": {
   "big": 10,
@@ -380,10 +380,30 @@
    "question": "Will the UECL match AGF Aarhus vs KF Egnatia Rrogozhine scheduled for Oct 22, 2026 end in a draw?",
    "side": "No: the UECL match AGF Aarhus vs KF Egnatia Rrogozhine scheduled for Oct 22, 2026 end in a draw",
    "open_chance": 79,
-   "now_chance": 38,
+   "now_chance": 26,
    "open_odds": "-376",
-   "now_odds": "+163",
-   "edge": 41,
+   "now_odds": "+285",
+   "edge": 53,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-22T19:08:52.211Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1402772:0",
+   "market_id": "1402772",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in AAG vs EGN be more than 2.5?",
+   "side": "Over 2.5",
+   "open_chance": 55,
+   "now_chance": 29,
+   "open_odds": "-122",
+   "now_odds": "+245",
+   "edge": 26,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -445,26 +465,6 @@
    "now_odds": "-178",
    "edge": 10,
    "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-22T19:08:52.211Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1402772:0",
-   "market_id": "1402772",
-   "market": "Main total",
-   "group": "game",
-   "question": "Will the total in AAG vs EGN be more than 2.5?",
-   "side": "Over 2.5",
-   "open_chance": 55,
-   "now_chance": 48,
-   "open_odds": "-122",
-   "now_odds": "+108",
-   "edge": 7,
-   "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -614,6 +614,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1402772:0:big",
+   "key": "1402772:0",
+   "at": "2026-10-22T20:46:23.118Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Over 2.5",
+   "market": "Main total",
+   "now_odds": "+245",
+   "now_chance": 29,
+   "edge": 26,
+   "text": "New big edge: Over 2.5 (Main total), 26 points cheaper than open.",
+   "url": "https://polymarket.us/sports/uecl/uecl-aag-egn-2026-10-22"
+  },
   {
    "id": "new_edge:1401649:1:big",
    "key": "1401649:1",
@@ -1023,7 +1037,8 @@
   "gone:1402769:1:2026-10-22T19:47:21.476Z",
   "new_edge:1401649:1:big",
   "gone:1401650:1:2026-10-22T19:08:52.211Z",
-  "new_edge:1401650:1:slight"
+  "new_edge:1401650:1:slight",
+  "new_edge:1402772:0:big"
  ],
  "kalshi_checked": null
 }
