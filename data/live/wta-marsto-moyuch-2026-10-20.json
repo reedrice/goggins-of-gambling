@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185591",
-  "fetched_at": "2026-10-22T05:37:18.840Z",
+  "fetched_at": "2026-10-22T05:43:17.906Z",
   "tennis": true,
   "tennis_match": {
    "id": "185591",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "detail": "3rd Set",
+     "shortDetail": "3rd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Moyuka Uchijima (JPN) is tied with Mary Stoiana (USA) 2-6 6-2",
+     "text": "Moyuka Uchijima (JPN) leads Mary Stoiana (USA) 2-6 6-2 1-0",
      "type": "event"
     }
    ],
@@ -55,13 +55,18 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
        "value": 2,
        "winner": false
       },
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -101,13 +106,18 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 2
+       "value": 2,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -142,6 +152,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 345,
    "type": {
     "id": "2",
@@ -160,14 +175,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "period": 3,
+  "clock": "3rd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Moyuka Uchijima",
    "alias": "Moyuka Uchijima",
    "name": "Moyuka Uchijima",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Mary Stoiana",
@@ -179,7 +194,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-22T05:37:18.840Z",
+ "updated": "2026-10-22T05:43:17.906Z",
  "open_taken_at": "2026-10-21T05:15:32.364Z",
  "thresholds": {
   "big": 10,
@@ -299,26 +314,6 @@
  ],
  "edges": [
   {
-   "key": "1613793:0",
-   "market_id": "1613793",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Mary Stoiana vs Moyuka Uchijima scheduled for October 21, 2026 at 2:30 AM UTC?",
-   "side": "Mary Stoiana win",
-   "open_chance": 63,
-   "now_chance": 52,
-   "open_odds": "-170",
-   "now_odds": "-108",
-   "edge": 11,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Moyuka Uchijima 2, 6 · Mary Stoiana 6, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-10-22T05:27:16.264Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1614560:0",
    "market_id": "1614560",
    "market": "Games spread",
@@ -326,15 +321,35 @@
    "question": "Will the Mary Stoiana cover -1.5 vs the Moyuka Uchijima in Mary Stoiana vs. Moyuka Uchijima?",
    "side": "Mary Stoiana -1.50 (Games)",
    "open_chance": 59,
-   "now_chance": 49,
+   "now_chance": 22,
    "open_odds": "-144",
-   "now_odds": "+104",
-   "edge": 10,
+   "now_odds": "+355",
+   "edge": 37,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Mary Stoiana not above the games spread right now",
-   "context": "Moyuka Uchijima 2, 6 · Mary Stoiana 6, 2 · 2nd Set (games by set)",
+   "context": "Moyuka Uchijima 2, 6, 1 · Mary Stoiana 6, 2, 0 · 3rd Set (games by set)",
    "first_seen": "2026-10-22T05:32:17.387Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1613793:0",
+   "market_id": "1613793",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Mary Stoiana vs Moyuka Uchijima scheduled for October 21, 2026 at 2:30 AM UTC?",
+   "side": "Mary Stoiana win",
+   "open_chance": 63,
+   "now_chance": 28,
+   "open_odds": "-170",
+   "now_odds": "+257",
+   "edge": 35,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (35 pts), likely news",
+   "context": "Moyuka Uchijima 2, 6, 1 · Mary Stoiana 6, 2, 0 · 3rd Set (games by set)",
+   "first_seen": "2026-10-22T05:27:16.264Z",
    "status": "open",
    "kalshi": null
   },
@@ -460,6 +475,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "news:1613793:0",
+   "key": "1613793:0",
+   "at": "2026-10-22T05:43:17.906Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Mary Stoiana win",
+   "market": "Moneyline",
+   "now_odds": "+257",
+   "now_chance": 28,
+   "edge": 35,
+   "text": "Big move, likely news: Mary Stoiana win (Moneyline) is 35 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-marsto-moyuch-2026-10-20"
+  },
   {
    "id": "new_edge:1613793:0:big",
    "key": "1613793:0",
@@ -628,7 +657,8 @@
   "new_edge:1613793:0:slight",
   "gone:1614555:1:2026-10-22T04:32:13.819Z",
   "gone:1614534:1:2026-10-22T05:13:18.888Z",
-  "new_edge:1613793:0:big"
+  "new_edge:1613793:0:big",
+  "news:1613793:0"
  ],
  "kalshi_checked": null
 }
