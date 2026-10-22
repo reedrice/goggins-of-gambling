@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185537",
-  "fetched_at": "2026-10-22T05:43:18.227Z",
+  "fetched_at": "2026-10-22T05:49:21.183Z",
   "tennis": true,
   "tennis_match": {
    "id": "185537",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Jasmine Paolini (ITA) leads (4) Iva Jovic (USA) 4-3",
+     "text": "(4) Iva Jovic (USA) leads Jasmine Paolini (ITA) 5-4",
      "type": "event"
     }
    ],
@@ -55,7 +55,6 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
      "linescores": [
       {
        "value": 4
@@ -98,13 +97,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
      "curatedRank": {
       "current": 4
      },
      "linescores": [
       {
-       "value": 3
+       "value": 5
       }
      ],
      "athlete": {
@@ -139,11 +137,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 963,
    "type": {
     "id": "2",
@@ -181,7 +174,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-22T05:43:18.227Z",
+ "updated": "2026-10-22T05:49:21.183Z",
  "open_taken_at": "2026-10-21T05:15:35.467Z",
  "thresholds": {
   "big": 10,
@@ -257,22 +250,22 @@
  ],
  "edges": [
   {
-   "key": "1636049:1",
-   "market_id": "1636049",
-   "market": "Games total",
+   "key": "1615479:1",
+   "market_id": "1615479",
+   "market": "Moneyline",
    "group": "game",
-   "question": "Will the total in Iva Jovic vs. Jasmine Paolini be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 60,
-   "now_chance": 47,
-   "open_odds": "-150",
-   "now_odds": "+113",
-   "edge": 13,
+   "question": "Who will win in the upcoming wta event Iva Jovic vs Jasmine Paolini scheduled for October 21, 2026 at 5:00 AM UTC?",
+   "side": "Jasmine Paolini win",
+   "open_chance": 35,
+   "now_chance": 23,
+   "open_odds": "+186",
+   "now_odds": "+335",
+   "edge": 12,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Jasmine Paolini 4 · Iva Jovic 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-22T05:13:19.158Z",
+   "context": "Jasmine Paolini 4 · Iva Jovic 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-22T05:49:21.183Z",
    "status": "open",
    "kalshi": null
   },
@@ -291,7 +284,27 @@
    "tier": "slight",
    "class": "score",
    "reason": "Explained by score: Iva Jovic not above the games spread right now",
-   "context": "Jasmine Paolini 4 · Iva Jovic 3 · 1st Set (games by set)",
+   "context": "Jasmine Paolini 4 · Iva Jovic 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-22T05:13:19.158Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1636049:1",
+   "market_id": "1636049",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Iva Jovic vs. Jasmine Paolini be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 60,
+   "now_chance": 55,
+   "open_odds": "-150",
+   "now_odds": "-122",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Jasmine Paolini 4 · Iva Jovic 5 · 1st Set (games by set)",
    "first_seen": "2026-10-22T05:13:19.158Z",
    "status": "open",
    "kalshi": null
@@ -313,11 +326,25 @@
    "reason": null,
    "context": "Jasmine Paolini 4 · Iva Jovic 3 · 1st Set (games by set)",
    "first_seen": "2026-10-22T05:13:19.158Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1615479:1:big",
+   "key": "1615479:1",
+   "at": "2026-10-22T05:49:21.183Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Jasmine Paolini win",
+   "market": "Moneyline",
+   "now_odds": "+335",
+   "now_chance": 23,
+   "edge": 12,
+   "text": "New big edge: Jasmine Paolini win (Moneyline), 12 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-ivajov-jaspao-2026-10-21"
+  },
   {
    "id": "new_edge:1636049:1:big",
    "key": "1636049:1",
@@ -394,7 +421,8 @@
   "new_edge:1615479:0:slight",
   "gone:1615479:0:2026-10-22T05:13:19.158Z",
   "new_edge:1615479:0:big",
-  "new_edge:1636049:1:big"
+  "new_edge:1636049:1:big",
+  "new_edge:1615479:1:big"
  ],
  "kalshi_checked": null
 }
