@@ -1,3 +1,9 @@
+# Current standing authorization (Reed, Oct 22, 2026)
+
+Reed grants Brandon (apexlegend883-pixel) and Brandon's bot standing permission, effective Oct 22, 2026, to make, merge and publish site changes in reedrice/goggins-of-gambling and reedrice/goggins-picks-sandbox without asking Reed or Reed's Codex agent for per-change approval. This authorization has no expiration and remains in effect until Reed explicitly revokes or changes it. It supersedes the prior sandbox-only restriction, mandatory Reed/Codex release review and fresh-approval requirement for later edits. Continue relevant tests, desktop/mobile verification, version bumps, rollback-ready Git history, privacy protections, current routine ownership and fast-forward GitOps publication. Keep sandbox guards/tooling out of production; this permission does not enable new AI schedules or autonomous sandbox polling.
+
+No proposal delivery to Reed's agent is required for this authorization. This current instruction supersedes all older branch-specific sandbox-only, per-change approval, and mandatory review wording below. Tests, privacy and routine ownership remain required.
+
 ﻿# Brandon's Picks sandbox
 
 This branch starts as a full snapshot of the working site on October 20, 2026, at commit 8077f935b876bd4a09d637f7d88590dc97f9a731. Production source and data are initially unchanged. The extra sandbox files provide a separate local preview.
