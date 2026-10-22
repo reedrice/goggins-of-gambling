@@ -733,3 +733,4 @@ window.STR.liveScoreboard = {title:'Sport scoreboard',loading:'Checking ESPN…'
 window.STR.liveScoreboard.allGames='Show all games';
 window.STR.liveScoreboard.game=name=>`Filter bets: ${name}`;
 
+window.STR.progress.noGameCompact='Live score unverified';

@@ -79,9 +79,14 @@
   }
 
   function edgeTitle(edge) {
-    if (groupOf(edge) !== 'prop') return edge.side;
-    return String(edge.side || '').replace(/\s+in\s+.+?\s+vs\.?\s+.+$/i, '')
+    const text=String(edge.side || '');
+    if (groupOf(edge) !== 'prop') {
+      const winner=/^(Yes|No):\s+(.+?)\s+win against\s+.+?\s+in the\s+.+?\s+match(?:\s+scheduled.*)?$/i.exec(text);
+      return winner ? winner[2] + (winner[1].toLowerCase()==='no' ? ' not to win' : ' to win') : text;
+    }
+    return text.replace(/^Yes:\s*/i,'').replace(/\s+in\s+.+?\s+vs\.?\s+.+$/i, '')
       .replace(/\brecord at least\s+(\d+(?:\.\d+)?)/i, '$1+')
+      .replace(/\bthree-point field goals made\b/ig,'threes')
       .replace(/\btotal\s+(?=rebounds|points|assists)/i, '');
   }
 
@@ -255,7 +260,6 @@
     if(root.AthleteFlags)root.AthleteFlags.decorate(matchup,eventGame,sportOf({slug:eventSlug}));
     else matchup.textContent=eventGame;
     li.append(matchup);
-    if (e.class === 'unverified') li.append(el('div', 'lb-unverified', P.unverified));
     li.append(el('div', 'lb-odds', e.now_odds));
     if (root.BetProgress) {
       const progress = el('div', 'bp-host'); progress.dataset.bp = JSON.stringify(root.BetProgress.spec({...e,event_slug:eventSlug,event:eventGame})); li.append(progress);
@@ -271,6 +275,7 @@
     details.addEventListener('toggle', () => { if (ui) details.open ? ui.details.add(detailKey) : ui.details.delete(detailKey); });
     details.append(el('summary', null, P.details), el('div', 'lb-market', e.market), platRow(e));
     details.append(el('div', 'lb-meta', e.side));
+    if(e.class==='unverified')details.append(el('div','lb-unverified',P.unverified));
     if(analytics)details.append(analytics);
     const pay = pays10(e.now_chance);
     if (pay) details.append(el('div', 'lb-meta', P.payout(pay)));

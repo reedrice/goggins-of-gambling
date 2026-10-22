@@ -217,7 +217,7 @@
    else {const text=competitors.map(c=>(c.team?.abbreviation || '')+' '+(game.tennis?(c.linescores||[]).map(s=>s.value).join(', '):(c.score ?? S.dash))).join(' · ');score.append(node('b','',game.tennis?S.tenniScores(text):text),node('span','bp-clock',clockText(game.status,S)));}
    rows.push(score);
   }
-  if(result.reason)rows.push(node('div','bp-note',S[result.reason] || S.noStat));
+  if(result.reason)rows.push(node('div','bp-note',result.reason==='noGame'&&host.closest('.lb-groups')?S.noGameCompact:S[result.reason] || S.noStat));
   else if(result.kind==='threshold') {
    const limit=result.target,value=result.value;
    const row=node('div','bp-values');row.append(node('b','',S.count(value,limit,S.stats[result.stat] || S.stats.score)));

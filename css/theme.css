@@ -330,3 +330,9 @@ input[type="checkbox"], input[type="radio"] { accent-color: var(--accent); }
 }
 @media(max-width:639px){.live-bets-root .lb-groups { grid-template-columns:minmax(0,1fr); }}
 .live-bets-root .lb-groups .lb-side, .live-bets-root .lb-groups .lb-matchup { display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; }
+
+/* Compact-card hierarchy: one title, one matchup, one live-status message. */
+.live-bets-root .lb-groups .lb-side { font-size:14px; line-height:1.35; }
+.live-bets-root .lb-groups .lb-matchup { margin-top:6px; font-weight:500; }
+.live-bets-root .lb-groups .lb-top { margin-bottom:2px; }
+.live-bets-root .lb-groups .lb-card-details > .lb-meta, .live-bets-root .lb-groups .lb-card-details > .lb-market { font-size:11px; line-height:1.45; }

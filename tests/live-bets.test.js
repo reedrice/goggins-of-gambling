@@ -130,3 +130,10 @@ assert.deepEqual(LB.timeGames(windowGames,'today',windowNow).map(g=>g.slug),['li
 assert.deepEqual(LB.timeGames(windowGames,'tomorrow',windowNow).map(g=>g.slug),['tomorrow']);
 assert.equal(LB.freshness(LB.combineGames([])).stale,false);
 console.log('Now/today keeps overnight live games, uses Chicago boundaries; empty feed is not stale');
+
+// Compact display must preserve the outcome rather than invert a soccer No.
+assert.equal(LB.edgeTitle({group:'game',side:'No: Club Santos Laguna win against Pumas de la UNAM in the Liga MX match scheduled for Oct 21, 2026'}),'Club Santos Laguna not to win');
+assert.equal(LB.edgeTitle({group:'game',side:'Yes: Club Santos Laguna win against Pumas de la UNAM in the Liga MX match scheduled for Oct 21, 2026'}),'Club Santos Laguna to win');
+assert.equal(LB.edgeTitle({group:'game',side:'Bearkats +1.50 (1st half)'}),'Bearkats +1.50 (1st half)');
+assert.equal(LB.edgeTitle({group:'prop',side:'Yes: Quentin Grimes 2+ three-point field goals made'}),'Quentin Grimes 2+ threes');
+
