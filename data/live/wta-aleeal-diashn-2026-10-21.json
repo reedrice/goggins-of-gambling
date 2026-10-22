@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185521",
-  "fetched_at": "2026-10-22T09:26:22.400Z",
+  "fetched_at": "2026-10-22T09:32:24.541Z",
   "tennis": true,
   "tennis_match": {
    "id": "185521",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(6) Diana Shnaider (RUS) leads Alexandra Eala (PHI) 5-4",
+     "text": "Alexandra Eala (PHI) leads (6) Diana Shnaider (RUS) 5-5",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "curatedRank": {
       "current": 6
      },
@@ -100,9 +101,10 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
-       "value": 4
+       "value": 5
       }
      ],
      "athlete": {
@@ -137,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 963,
    "type": {
     "id": "2",
@@ -174,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-22T09:26:22.400Z",
+ "updated": "2026-10-22T09:32:24.542Z",
  "open_taken_at": "2026-10-21T05:15:31.178Z",
  "thresholds": {
   "big": 10,
@@ -272,6 +279,46 @@
  ],
  "edges": [
   {
+   "key": "1614567:0",
+   "market_id": "1614567",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Alexandra Eala win set 1 against Diana Shnaider?",
+   "side": "Yes: Alexandra Eala win set 1 against Diana Shnaider",
+   "open_chance": 46,
+   "now_chance": 40,
+   "open_odds": "+117",
+   "now_odds": "+150",
+   "edge": 6,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Alexandra Eala not above the games spread right now",
+   "context": "Diana Shnaider 5 · Alexandra Eala 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-22T09:32:24.542Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1614579:1",
+   "market_id": "1614579",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Alexandra Eala vs. Diana Shnaider be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 59,
+   "now_chance": 55,
+   "open_odds": "-144",
+   "now_odds": "-122",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Diana Shnaider 5 · Alexandra Eala 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-22T08:59:54.609Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1613621:0",
    "market_id": "1613621",
    "market": "Moneyline",
@@ -288,47 +335,7 @@
    "reason": null,
    "context": "Diana Shnaider 5 · Alexandra Eala 4 · 1st Set (games by set)",
    "first_seen": "2026-10-22T09:26:22.400Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1614579:1",
-   "market_id": "1614579",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Alexandra Eala vs. Diana Shnaider be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 59,
-   "now_chance": 53,
-   "open_odds": "-144",
-   "now_odds": "-113",
-   "edge": 6,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Diana Shnaider 5 · Alexandra Eala 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-22T08:59:54.609Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1614591:0",
-   "market_id": "1614591",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Alexandra Eala cover 1.5 vs the Diana Shnaider in Alexandra Eala vs. Diana Shnaider?",
-   "side": "Alexandra Eala +1.50 (Games)",
-   "open_chance": 46,
-   "now_chance": 41,
-   "open_odds": "+117",
-   "now_odds": "+144",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Diana Shnaider 5 · Alexandra Eala 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-22T09:26:22.400Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -370,9 +377,57 @@
    "first_seen": "2026-10-22T07:23:19.874Z",
    "status": "gone",
    "kalshi": null
+  },
+  {
+   "key": "1614591:0",
+   "market_id": "1614591",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Alexandra Eala cover 1.5 vs the Diana Shnaider in Alexandra Eala vs. Diana Shnaider?",
+   "side": "Alexandra Eala +1.50 (Games)",
+   "open_chance": 46,
+   "now_chance": 41,
+   "open_odds": "+117",
+   "now_odds": "+144",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Diana Shnaider 5 · Alexandra Eala 4 · 1st Set (games by set)",
+   "first_seen": "2026-10-22T09:26:22.400Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1613621:0:2026-10-22T09:26:22.400Z",
+   "key": "1613621:0",
+   "at": "2026-10-22T09:32:24.542Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Alexandra Eala win",
+   "market": "Moneyline",
+   "now_odds": "+257",
+   "now_chance": 28,
+   "edge": 13,
+   "text": "Edge gone: Alexandra Eala win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-aleeal-diashn-2026-10-21"
+  },
+  {
+   "id": "gone:1614591:0:2026-10-22T09:26:22.400Z",
+   "key": "1614591:0",
+   "at": "2026-10-22T09:32:24.542Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Alexandra Eala +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+144",
+   "now_chance": 41,
+   "edge": 5,
+   "text": "Edge gone: Alexandra Eala +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-aleeal-diashn-2026-10-21"
+  },
   {
    "id": "new_edge:1613621:0:big",
    "key": "1613621:0",
@@ -497,7 +552,9 @@
   "new_edge:1614567:1:big",
   "new_edge:1613621:0:big",
   "new_edge:1614591:0:slight",
-  "gone:1613621:1:2026-10-22T07:17:51.074Z"
+  "gone:1613621:1:2026-10-22T07:17:51.074Z",
+  "gone:1613621:0:2026-10-22T09:26:22.400Z",
+  "gone:1614591:0:2026-10-22T09:26:22.400Z"
  ],
  "kalshi_checked": null
 }
