@@ -9,24 +9,24 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401909836",
-  "fetched_at": "2026-10-22T02:08:09.877Z",
+  "fetched_at": "2026-10-22T02:14:09.346Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 4,
-  "clock": "2:03",
-  "regulation_secs_left": 123,
+  "clock": "23.9",
+  "regulation_secs_left": 1434,
   "home": {
    "abbr": "BKN",
    "alias": "Nets",
    "name": "Brooklyn Nets",
-   "score": 97,
+   "score": 103,
    "id": "17"
   },
   "away": {
    "abbr": "CHA",
    "alias": "Hornets",
    "name": "Charlotte Hornets",
-   "score": 106,
+   "score": 109,
    "id": "30"
   },
   "possession": null,
@@ -89,9 +89,9 @@
    },
    {
     "team": "CHA",
-    "player": "Naz Reid",
-    "short": "N. Reid",
-    "pos": "C"
+    "player": "Grayson Allen",
+    "short": "G. Allen",
+    "pos": "G"
    },
    {
     "team": "CHA",
@@ -107,7 +107,7 @@
    }
   ]
  },
- "updated": "2026-10-22T02:08:09.878Z",
+ "updated": "2026-10-22T02:14:09.346Z",
  "open_taken_at": "2026-10-21T05:08:06.981Z",
  "thresholds": {
   "big": 10,
@@ -1525,62 +1525,22 @@
  ],
  "edges": [
   {
-   "key": "1605268:1",
-   "market_id": "1605268",
+   "key": "1451292:1",
+   "market_id": "1451292",
    "market": "Alt spread",
    "group": "game",
-   "question": "Will the CHA Hornets cover -4.5 vs the BKN Nets in CHA Hornets vs. BKN Nets?",
-   "side": "Nets +4.50",
-   "open_chance": 65,
+   "question": "Will the CHA Hornets cover -5.5 vs the BKN Nets in CHA Hornets vs. BKN Nets?",
+   "side": "Nets +5.50",
+   "open_chance": 67,
    "now_chance": 18,
-   "open_odds": "-186",
+   "open_odds": "-203",
    "now_odds": "+456",
-   "edge": 47,
+   "edge": 49,
    "tier": "big",
    "class": "score",
-   "reason": "Explained by score: BKN not covering +4.5 right now",
-   "context": "BKN down 9, Q4 2:03",
+   "reason": "Explained by score: BKN not covering +5.5 right now",
+   "context": "BKN down 6, Q4 23.9",
    "first_seen": "2026-10-21T14:57:38.567Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1605267:1",
-   "market_id": "1605267",
-   "market": "Alt spread",
-   "group": "game",
-   "question": "Will the CHA Hornets cover -7.5 vs the BKN Nets in CHA Hornets vs. BKN Nets?",
-   "side": "Nets +7.50",
-   "open_chance": 73,
-   "now_chance": 44,
-   "open_odds": "-270",
-   "now_odds": "+127",
-   "edge": 29,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: BKN not covering +7.5 right now",
-   "context": "BKN down 9, Q4 2:03",
-   "first_seen": "2026-10-21T17:22:19.726Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1596488:0",
-   "market_id": "1596488",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in CHA Hornets vs. BKN Nets be more than 219.5?",
-   "side": "Over 219.5",
-   "open_chance": 49,
-   "now_chance": 23,
-   "open_odds": "+104",
-   "now_odds": "+335",
-   "edge": 26,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: scoring below pace (203 pts, pace 212)",
-   "context": "CHA 106, BKN 97, Q4 2:03",
-   "first_seen": "2026-10-21T23:59:05.990Z",
    "status": "open",
    "kalshi": true
   },
@@ -1599,7 +1559,7 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "CHA up 9, Q4 2:03",
+   "context": "CHA up 6, Q4 23.9",
    "first_seen": "2026-10-22T00:18:12.368Z",
    "status": "open",
    "kalshi": true
@@ -1619,10 +1579,30 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "CHA up 9, Q4 2:03",
+   "context": "CHA up 6, Q4 23.9",
    "first_seen": "2026-10-21T23:14:07.772Z",
    "status": "open",
-   "kalshi": null
+   "kalshi": false
+  },
+  {
+   "key": "1605267:1",
+   "market_id": "1605267",
+   "market": "Alt spread",
+   "group": "game",
+   "question": "Will the CHA Hornets cover -7.5 vs the BKN Nets in CHA Hornets vs. BKN Nets?",
+   "side": "Nets +7.50",
+   "open_chance": 73,
+   "now_chance": 61,
+   "open_odds": "-270",
+   "now_odds": "-156",
+   "edge": 12,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "BKN down 6, Q4 23.9",
+   "first_seen": "2026-10-21T17:22:19.726Z",
+   "status": "open",
+   "kalshi": true
   },
   {
    "key": "1606287:0",
@@ -1639,28 +1619,8 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "BKN down 9, Q4 2:03",
+   "context": "BKN down 6, Q4 23.9",
    "first_seen": "2026-10-22T00:12:08.091Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1605275:0",
-   "market_id": "1605275",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in CHA Hornets vs. BKN Nets be more than 213.5?",
-   "side": "Over 213.5",
-   "open_chance": 64,
-   "now_chance": 60,
-   "open_odds": "-178",
-   "now_odds": "-150",
-   "edge": 4,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: scoring below pace (203 pts, pace 206)",
-   "context": "CHA 106, BKN 97, Q4 2:03",
-   "first_seen": "2026-10-22T02:08:09.878Z",
    "status": "open",
    "kalshi": true
   },
@@ -1679,7 +1639,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "BKN down 9, Q4 2:03",
+   "context": "BKN down 6, Q4 23.9",
    "first_seen": "2026-10-22T01:42:10.647Z",
    "status": "open",
    "kalshi": true
@@ -1702,47 +1662,7 @@
    "context": "BKN down 6, Halftime",
    "first_seen": "2026-10-21T23:53:06.685Z",
    "status": "gone",
-   "kalshi": false
-  },
-  {
-   "key": "1606229:0",
-   "market_id": "1606229",
-   "market": "Player prop",
-   "group": "prop",
-   "question": "Will Brandon Miller record at least 25 points in CHA Hornets vs. BKN Nets?",
-   "side": "Yes: Brandon Miller record at least 25 points in CHA Hornets vs. BKN Nets",
-   "open_chance": 53,
-   "now_chance": 22,
-   "open_odds": "-113",
-   "now_odds": "+355",
-   "edge": 31,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (31 pts), likely news",
-   "context": "CHA up 8, Q4 4:49",
-   "first_seen": "2026-10-22T01:54:12.518Z",
-   "status": "gone",
    "kalshi": null
-  },
-  {
-   "key": "1451292:1",
-   "market_id": "1451292",
-   "market": "Alt spread",
-   "group": "game",
-   "question": "Will the CHA Hornets cover -5.5 vs the BKN Nets in CHA Hornets vs. BKN Nets?",
-   "side": "Nets +5.50",
-   "open_chance": 67,
-   "now_chance": 38,
-   "open_odds": "-203",
-   "now_odds": "+163",
-   "edge": 29,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: BKN not covering +5.5 right now",
-   "context": "BKN down 8, Q4 4:49",
-   "first_seen": "2026-10-21T14:57:38.567Z",
-   "status": "gone",
-   "kalshi": true
   },
   {
    "key": "1606249:0",
@@ -1762,7 +1682,7 @@
    "context": "BKN down 8, Q4 6:30",
    "first_seen": "2026-10-21T10:39:56.867Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1606252:0",
@@ -1802,7 +1722,7 @@
    "context": "BKN down 8, Q4 9:19",
    "first_seen": "2026-10-21T23:32:11.520Z",
    "status": "gone",
-   "kalshi": null
+   "kalshi": true
   },
   {
    "key": "1636932:0",
@@ -1842,7 +1762,7 @@
    "context": "BKN down 5, Q2 2:04",
    "first_seen": "2026-10-22T00:49:08.376Z",
    "status": "gone",
-   "kalshi": null
+   "kalshi": false
   },
   {
    "key": "1636926:0",
@@ -1862,7 +1782,7 @@
    "context": "CHA up 4, End of Q1",
    "first_seen": "2026-10-21T23:06:09.156Z",
    "status": "gone",
-   "kalshi": null
+   "kalshi": true
   },
   {
    "key": "1632699:0",
@@ -1902,7 +1822,7 @@
    "context": "BKN down 4, Q2 8:06",
    "first_seen": "2026-10-22T00:24:07.091Z",
    "status": "gone",
-   "kalshi": false
+   "kalshi": null
   },
   {
    "key": "1641042:0",
@@ -1922,27 +1842,7 @@
    "context": "CHA down 2, Q1 6:18",
    "first_seen": "2026-10-21T17:34:04.865Z",
    "status": "gone",
-   "kalshi": false
-  },
-  {
-   "key": "1605277:0",
-   "market_id": "1605277",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in CHA Hornets vs. BKN Nets be more than 223.5?",
-   "side": "Over 223.5",
-   "open_chance": 41,
-   "now_chance": 30,
-   "open_odds": "+144",
-   "now_odds": "+233",
-   "edge": 11,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: scoring below pace (196 pts, pace 206)",
-   "context": "CHA 102, BKN 94, Q4 4:49",
-   "first_seen": "2026-10-21T23:59:05.990Z",
-   "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1605276:1",
@@ -1965,26 +1865,6 @@
    "kalshi": false
   },
   {
-   "key": "1451293:0",
-   "market_id": "1451293",
-   "market": "Main total",
-   "group": "game",
-   "question": "Will the total in CHA Hornets vs. BKN Nets be more than 218.5?",
-   "side": "Over 218.5",
-   "open_chance": 52,
-   "now_chance": 41,
-   "open_odds": "-108",
-   "now_odds": "+144",
-   "edge": 11,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: scoring below pace (102 pts, pace 109)",
-   "context": "CHA 54, BKN 48, Halftime",
-   "first_seen": "2026-10-21T23:59:05.990Z",
-   "status": "gone",
-   "kalshi": false
-  },
-  {
    "key": "1641040:0",
    "market_id": "1641040",
    "market": "Player prop",
@@ -2002,7 +1882,7 @@
    "context": "CHA up 5, Q2 2:04",
    "first_seen": "2026-10-21T23:32:11.520Z",
    "status": "gone",
-   "kalshi": null
+   "kalshi": false
   },
   {
    "key": "1639809:0",
@@ -2022,7 +1902,7 @@
    "context": "CHA up 4, Q2 8:06",
    "first_seen": "2026-10-22T00:12:08.091Z",
    "status": "gone",
-   "kalshi": null
+   "kalshi": false
   },
   {
    "key": "1606284:0",
@@ -2062,7 +1942,7 @@
    "context": "BKN down 4, Q2 9:31",
    "first_seen": "2026-10-21T17:22:19.726Z",
    "status": "gone",
-   "kalshi": null
+   "kalshi": false
   },
   {
    "key": "1580872:1",
@@ -2102,27 +1982,7 @@
    "context": "BKN down 8, Q4 6:30",
    "first_seen": "2026-10-21T21:36:08.000Z",
    "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1451293:1",
-   "market_id": "1451293",
-   "market": "Main total",
-   "group": "game",
-   "question": "Will the total in CHA Hornets vs. BKN Nets be more than 218.5?",
-   "side": "Under 218.5",
-   "open_chance": 49,
-   "now_chance": 42,
-   "open_odds": "+104",
-   "now_odds": "+138",
-   "edge": 7,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "CHA 98, BKN 90, Q4 6:30",
-   "first_seen": "2026-10-21T23:53:06.685Z",
-   "status": "gone",
-   "kalshi": false
+   "kalshi": true
   },
   {
    "key": "1632693:0",
@@ -2141,26 +2001,6 @@
    "reason": null,
    "context": "CHA down 4, Q1 10:06",
    "first_seen": "2026-10-21T23:32:11.520Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1605266:1",
-   "market_id": "1605266",
-   "market": "Alt spread",
-   "group": "game",
-   "question": "Will the CHA Hornets cover -10.5 vs the BKN Nets in CHA Hornets vs. BKN Nets?",
-   "side": "Nets +10.50",
-   "open_chance": 81,
-   "now_chance": 75,
-   "open_odds": "-426",
-   "now_odds": "-300",
-   "edge": 6,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "BKN down 8, Q4 4:49",
-   "first_seen": "2026-10-22T01:56:13.724Z",
    "status": "gone",
    "kalshi": true
   },
@@ -2202,7 +2042,7 @@
    "context": "CHA up 4, Q2 9:31",
    "first_seen": "2026-10-21T23:06:09.156Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1580872:0",
@@ -2223,46 +2063,6 @@
    "first_seen": "2026-10-21T23:59:05.990Z",
    "status": "gone",
    "kalshi": false
-  },
-  {
-   "key": "1596488:1",
-   "market_id": "1596488",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in CHA Hornets vs. BKN Nets be more than 219.5?",
-   "side": "Under 219.5",
-   "open_chance": 52,
-   "now_chance": 48,
-   "open_odds": "-108",
-   "now_odds": "+108",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "CHA 92, BKN 84, Q4 9:19",
-   "first_seen": "2026-10-21T23:53:06.685Z",
-   "status": "gone",
-   "kalshi": true
-  },
-  {
-   "key": "1605277:1",
-   "market_id": "1605277",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in CHA Hornets vs. BKN Nets be more than 223.5?",
-   "side": "Under 223.5",
-   "open_chance": 60,
-   "now_chance": 56,
-   "open_odds": "-150",
-   "now_odds": "-127",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "CHA 86, BKN 81, End of Q3",
-   "first_seen": "2026-10-21T23:53:06.685Z",
-   "status": "gone",
-   "kalshi": true
   },
   {
    "key": "1605276:0",
@@ -2346,48 +2146,6 @@
   }
  ],
  "alerts": [
-  {
-   "id": "gone:1605266:1:2026-10-22T01:56:13.724Z",
-   "key": "1605266:1",
-   "at": "2026-10-22T02:08:09.878Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Nets +10.50",
-   "market": "Alt spread",
-   "now_odds": "-300",
-   "now_chance": 75,
-   "edge": 6,
-   "text": "Edge gone: Nets +10.50 (Alt spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/nba/nba-cha-bkn-2026-10-21"
-  },
-  {
-   "id": "news:1606229:0",
-   "key": "1606229:0",
-   "at": "2026-10-22T02:02:12.157Z",
-   "type": "news",
-   "tier": "big",
-   "side": "Yes: Brandon Miller record at least 25 points in CHA Hornets vs. BKN Nets",
-   "market": "Player prop",
-   "now_odds": "+355",
-   "now_chance": 22,
-   "edge": 31,
-   "text": "Big move, likely news: Yes: Brandon Miller record at least 25 points in CHA Hornets vs. BKN Nets (Player prop) is 31 points cheaper than open.",
-   "url": "https://polymarket.us/sports/nba/nba-cha-bkn-2026-10-21"
-  },
-  {
-   "id": "gone:1606229:0:2026-10-22T01:54:12.518Z",
-   "key": "1606229:0",
-   "at": "2026-10-22T01:56:13.724Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Yes: Brandon Miller record at least 25 points in CHA Hornets vs. BKN Nets",
-   "market": "Player prop",
-   "now_odds": "+213",
-   "now_chance": 32,
-   "edge": 21,
-   "text": "Edge gone: Yes: Brandon Miller record at least 25 points in CHA Hornets vs. BKN Nets (Player prop) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/nba/nba-cha-bkn-2026-10-21"
-  },
   {
    "id": "gone:1605276:1:2026-10-22T01:39:12.230Z",
    "key": "1605276:1",
@@ -2557,34 +2315,6 @@
    "url": "https://polymarket.us/sports/nba/nba-cha-bkn-2026-10-21"
   },
   {
-   "id": "new_edge:1605277:0:big",
-   "key": "1605277:0",
-   "at": "2026-10-22T00:51:04.410Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Over 223.5",
-   "market": "Alt total",
-   "now_odds": "+257",
-   "now_chance": 28,
-   "edge": 13,
-   "text": "New big edge: Over 223.5 (Alt total), 13 points cheaper than open.",
-   "url": "https://polymarket.us/sports/nba/nba-cha-bkn-2026-10-21"
-  },
-  {
-   "id": "new_edge:1451293:0:big",
-   "key": "1451293:0",
-   "at": "2026-10-22T00:51:04.410Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Over 218.5",
-   "market": "Main total",
-   "now_odds": "+144",
-   "now_chance": 41,
-   "edge": 11,
-   "text": "New big edge: Over 218.5 (Main total), 11 points cheaper than open.",
-   "url": "https://polymarket.us/sports/nba/nba-cha-bkn-2026-10-21"
-  },
-  {
    "id": "new_edge:1580872:0:big",
    "key": "1580872:0",
    "at": "2026-10-22T00:51:04.410Z",
@@ -2610,20 +2340,6 @@
    "now_chance": 48,
    "edge": 10,
    "text": "New big edge: Over 216.5 (Alt total), 10 points cheaper than open.",
-   "url": "https://polymarket.us/sports/nba/nba-cha-bkn-2026-10-21"
-  },
-  {
-   "id": "new_edge:1596488:0:slight",
-   "key": "1596488:0",
-   "at": "2026-10-22T00:51:04.410Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Over 219.5",
-   "market": "Alt total",
-   "now_odds": "+144",
-   "now_chance": 41,
-   "edge": 8,
-   "text": "New slight edge: Over 219.5 (Alt total), 8 points cheaper than open.",
    "url": "https://polymarket.us/sports/nba/nba-cha-bkn-2026-10-21"
   },
   {
@@ -2907,20 +2623,6 @@
    "url": "https://polymarket.us/sports/nba/nba-cha-bkn-2026-10-21"
   },
   {
-   "id": "new_edge:1605268:1:big",
-   "key": "1605268:1",
-   "at": "2026-10-22T00:06:15.975Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Nets +4.50",
-   "market": "Alt spread",
-   "now_odds": "-117",
-   "now_chance": 54,
-   "edge": 11,
-   "text": "New big edge: Nets +4.50 (Alt spread), 11 points cheaper than open.",
-   "url": "https://polymarket.us/sports/nba/nba-cha-bkn-2026-10-21"
-  },
-  {
    "id": "new_edge:1605267:1:big",
    "key": "1605267:1",
    "at": "2026-10-22T00:06:15.975Z",
@@ -3145,7 +2847,7 @@
   "gone:1605266:1:2026-10-22T01:56:13.724Z"
  ],
  "kalshi_checked": {
-  "at": "2026-10-22T02:08:10.146Z",
+  "at": "2026-10-22T02:14:09.649Z",
   "event": "26OCT21CHABKN"
  }
 }
