@@ -9,17 +9,17 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892551",
-  "fetched_at": "2026-10-22T01:56:20.945Z",
+  "fetched_at": "2026-10-22T02:02:17.909Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 3,
-  "clock": "14:35",
-  "regulation_secs_left": 1775,
+  "clock": "12:02",
+  "regulation_secs_left": 1622,
   "home": {
    "abbr": "OTT",
    "alias": "Senators",
    "name": "Ottawa Senators",
-   "score": 3,
+   "score": 4,
    "id": "14"
   },
   "away": {
@@ -121,7 +121,7 @@
    }
   ]
  },
- "updated": "2026-10-22T01:56:20.946Z",
+ "updated": "2026-10-22T02:02:17.909Z",
  "open_taken_at": "2026-10-21T05:08:22.590Z",
  "thresholds": {
   "big": 10,
@@ -659,22 +659,22 @@
  ],
  "edges": [
   {
-   "key": "1562247:0",
-   "market_id": "1562247",
-   "market": "Alt spread",
+   "key": "1562253:1",
+   "market_id": "1562253",
+   "market": "Main total",
    "group": "game",
-   "question": "Will the FLA Panthers cover 1.5 vs the OTT Senators in FLA vs OTT?",
-   "side": "Panthers +1.50",
-   "open_chance": 73,
-   "now_chance": 32,
-   "open_odds": "-270",
-   "now_odds": "+213",
-   "edge": 41,
+   "question": "Will the total in FLA vs OTT be more than 5.5?",
+   "side": "Under 5.5",
+   "open_chance": 48,
+   "now_chance": 22,
+   "open_odds": "+108",
+   "now_odds": "+355",
+   "edge": 26,
    "tier": "big",
    "class": "score",
-   "reason": "Explained by score: FLA not covering +1.5 right now",
-   "context": "FLA down 2, Q3 14:35",
-   "first_seen": "2026-10-22T01:11:16.889Z",
+   "reason": "Explained by score: scoring above pace (5 pts, pace 3)",
+   "context": "FLA 1, OTT 4, Q3 12:02",
+   "first_seen": "2026-10-22T00:18:18.750Z",
    "status": "open",
    "kalshi": true
   },
@@ -695,27 +695,7 @@
    "reason": "Big move (29 pts), likely news",
    "context": "FLA down 2, Q3 14:35",
    "first_seen": "2026-10-22T01:11:16.889Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1562254:0",
-   "market_id": "1562254",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in FLA vs OTT be more than 6.5?",
-   "side": "Over 6.5",
-   "open_chance": 43,
-   "now_chance": 34,
-   "open_odds": "+133",
-   "now_odds": "+194",
-   "edge": 9,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "FLA 1, OTT 3, Q3 14:35",
-   "first_seen": "2026-10-21T20:54:14.675Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": true
   },
   {
@@ -735,6 +715,26 @@
    "reason": "Big move (27 pts), likely news",
    "context": "OTT up 2, End of Q2",
    "first_seen": "2026-10-22T01:35:48.849Z",
+   "status": "gone",
+   "kalshi": true
+  },
+  {
+   "key": "1562254:0",
+   "market_id": "1562254",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in FLA vs OTT be more than 6.5?",
+   "side": "Over 6.5",
+   "open_chance": 43,
+   "now_chance": 34,
+   "open_odds": "+133",
+   "now_odds": "+194",
+   "edge": 9,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "FLA 1, OTT 3, Q3 14:35",
+   "first_seen": "2026-10-21T20:54:14.675Z",
    "status": "gone",
    "kalshi": true
   },
@@ -759,26 +759,6 @@
    "kalshi": true
   },
   {
-   "key": "1562253:1",
-   "market_id": "1562253",
-   "market": "Main total",
-   "group": "game",
-   "question": "Will the total in FLA vs OTT be more than 5.5?",
-   "side": "Under 5.5",
-   "open_chance": 48,
-   "now_chance": 42,
-   "open_odds": "+108",
-   "now_odds": "+138",
-   "edge": 6,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: scoring above pace (4 pts, pace 3)",
-   "context": "FLA 1, OTT 3, Q3 15:44",
-   "first_seen": "2026-10-22T00:18:18.750Z",
-   "status": "gone",
-   "kalshi": true
-  },
-  {
    "key": "1562254:1",
    "market_id": "1562254",
    "market": "Alt total",
@@ -795,26 +775,6 @@
    "reason": "Explained by score: scoring above pace (4 pts, pace 3)",
    "context": "FLA 1, OTT 3, Q2 1:27",
    "first_seen": "2026-10-22T00:18:18.750Z",
-   "status": "gone",
-   "kalshi": true
-  },
-  {
-   "key": "1562247:1",
-   "market_id": "1562247",
-   "market": "Alt spread",
-   "group": "game",
-   "question": "Will the FLA Panthers cover 1.5 vs the OTT Senators in FLA vs OTT?",
-   "side": "Senators -1.50",
-   "open_chance": 29,
-   "now_chance": 25,
-   "open_odds": "+245",
-   "now_odds": "+300",
-   "edge": 4,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: OTT not covering -1.5 right now",
-   "context": "OTT tied, Q2 12:55",
-   "first_seen": "2026-10-22T00:56:19.702Z",
    "status": "gone",
    "kalshi": true
   },
@@ -856,7 +816,7 @@
    "context": "OTT tied, Q1 12:50",
    "first_seen": "2026-10-21T10:06:24.574Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   }
  ],
  "alerts": [
@@ -900,20 +860,6 @@
    "now_chance": 78,
    "edge": 5,
    "text": "New slight edge: Panthers +2.50 (Alt spread), 5 points cheaper than open.",
-   "url": "https://polymarket.us/sports/nhl/nhl-fla-ott-2026-10-21"
-  },
-  {
-   "id": "new_edge:1562247:0:big",
-   "key": "1562247:0",
-   "at": "2026-10-22T01:11:16.889Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Panthers +1.50",
-   "market": "Alt spread",
-   "now_odds": "-122",
-   "now_chance": 55,
-   "edge": 18,
-   "text": "New big edge: Panthers +1.50 (Alt spread), 18 points cheaper than open.",
    "url": "https://polymarket.us/sports/nhl/nhl-fla-ott-2026-10-21"
   },
   {
@@ -1101,7 +1047,7 @@
   "news:1638224:0"
  ],
  "kalshi_checked": {
-  "at": "2026-10-22T01:56:21.397Z",
+  "at": "2026-10-22T02:02:18.345Z",
   "event": "26OCT21FLAOTT"
  }
 }
