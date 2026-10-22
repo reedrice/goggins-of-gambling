@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for uecl",
-  "fetched_at": "2026-10-22T20:32:23.054Z"
+  "fetched_at": "2026-10-22T20:38:51.327Z"
  },
- "updated": "2026-10-22T20:32:23.054Z",
+ "updated": "2026-10-22T20:38:51.327Z",
  "open_taken_at": "2026-10-21T05:14:29.748Z",
  "thresholds": {
   "big": 10,
@@ -373,23 +373,43 @@
  ],
  "edges": [
   {
-   "key": "1403287:1",
-   "market_id": "1403287",
-   "market": "Main spread",
+   "key": "1403284:1",
+   "market_id": "1403284",
+   "market": "Alt spread",
    "group": "game",
-   "question": "Will the FK Borac Banja Luka cover -1.5 vs the Kuopion PS in BOR vs KPS?",
-   "side": "Kuopion PS +1.50",
-   "open_chance": 74,
-   "now_chance": 18,
-   "open_odds": "-285",
-   "now_odds": "+456",
-   "edge": 56,
+   "question": "Will the FK Borac Banja Luka cover -2.5 vs the Kuopion PS in BOR vs KPS?",
+   "side": "Kuopion PS +2.50",
+   "open_chance": 90,
+   "now_chance": 77,
+   "open_odds": "-900",
+   "now_odds": "-335",
+   "edge": 13,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-22T16:44:21.153Z",
-   "status": "gone",
+   "first_seen": "2026-10-22T19:11:26.676Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1403300:0",
+   "market_id": "1403300",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in BOR vs KPS be more than 2.5?",
+   "side": "Over 2.5",
+   "open_chance": 50,
+   "now_chance": 39,
+   "open_odds": "+100",
+   "now_odds": "+156",
+   "edge": 11,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-22T20:38:51.327Z",
+   "status": "open",
    "kalshi": null
   },
   {
@@ -413,26 +433,6 @@
    "kalshi": null
   },
   {
-   "key": "1403284:1",
-   "market_id": "1403284",
-   "market": "Alt spread",
-   "group": "game",
-   "question": "Will the FK Borac Banja Luka cover -2.5 vs the Kuopion PS in BOR vs KPS?",
-   "side": "Kuopion PS +2.50",
-   "open_chance": 90,
-   "now_chance": 63,
-   "open_odds": "-900",
-   "now_odds": "-170",
-   "edge": 27,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-22T19:11:26.676Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "1403300:1",
    "market_id": "1403300",
    "market": "Main total",
@@ -449,26 +449,6 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-22T17:03:28.871Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1403303:1",
-   "market_id": "1403303",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in BOR vs KPS be more than 3.5?",
-   "side": "Under 3.5",
-   "open_chance": 74,
-   "now_chance": 64,
-   "open_odds": "-285",
-   "now_odds": "-178",
-   "edge": 10,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-22T19:08:52.502Z",
    "status": "gone",
    "kalshi": null
   },
@@ -555,6 +535,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1403300:0:big",
+   "key": "1403300:0",
+   "at": "2026-10-22T20:38:51.327Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Over 2.5",
+   "market": "Main total",
+   "now_odds": "+156",
+   "now_chance": 39,
+   "edge": 11,
+   "text": "New big edge: Over 2.5 (Main total), 11 points cheaper than open.",
+   "url": "https://polymarket.us/sports/uecl/uecl-bor-kps-2026-10-22"
+  },
+  {
    "id": "gone:1401660:1:2026-10-22T19:47:21.779Z",
    "key": "1401660:1",
    "at": "2026-10-22T20:12:24.870Z",
@@ -622,20 +616,6 @@
    "now_chance": 66,
    "edge": 4,
    "text": "New slight edge: Under 1.5 (1st half) (1st half total), 4 points cheaper than open.",
-   "url": "https://polymarket.us/sports/uecl/uecl-bor-kps-2026-10-22"
-  },
-  {
-   "id": "new_edge:1403303:1:big",
-   "key": "1403303:1",
-   "at": "2026-10-22T19:30:36.471Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Under 3.5",
-   "market": "Alt total",
-   "now_odds": "-122",
-   "now_chance": 55,
-   "edge": 19,
-   "text": "New big edge: Under 3.5 (Alt total), 19 points cheaper than open.",
    "url": "https://polymarket.us/sports/uecl/uecl-bor-kps-2026-10-22"
   },
   {
@@ -709,20 +689,6 @@
    "url": "https://polymarket.us/sports/uecl/uecl-bor-kps-2026-10-22"
   },
   {
-   "id": "gone:1403303:1:2026-10-22T19:08:52.502Z",
-   "key": "1403303:1",
-   "at": "2026-10-22T19:24:21.355Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Under 3.5",
-   "market": "Alt total",
-   "now_odds": "-213",
-   "now_chance": 68,
-   "edge": 6,
-   "text": "Edge gone: Under 3.5 (Alt total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/uecl/uecl-bor-kps-2026-10-22"
-  },
-  {
    "id": "new_edge:1403360:0:slight",
    "key": "1403360:0",
    "at": "2026-10-22T19:20:06.665Z",
@@ -748,20 +714,6 @@
    "now_chance": 64,
    "edge": 7,
    "text": "New slight edge: Over 0.5 (1st half) (1st half total), 7 points cheaper than open.",
-   "url": "https://polymarket.us/sports/uecl/uecl-bor-kps-2026-10-22"
-  },
-  {
-   "id": "new_edge:1403287:1:big",
-   "key": "1403287:1",
-   "at": "2026-10-22T19:11:26.676Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Kuopion PS +1.50",
-   "market": "Main spread",
-   "now_odds": "-150",
-   "now_chance": 60,
-   "edge": 14,
-   "text": "New big edge: Kuopion PS +1.50 (Main spread), 14 points cheaper than open.",
    "url": "https://polymarket.us/sports/uecl/uecl-bor-kps-2026-10-22"
   },
   {
@@ -793,20 +745,6 @@
    "url": "https://polymarket.us/sports/uecl/uecl-bor-kps-2026-10-22"
   },
   {
-   "id": "new_edge:1403303:1:slight",
-   "key": "1403303:1",
-   "at": "2026-10-22T19:08:52.502Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Under 3.5",
-   "market": "Alt total",
-   "now_odds": "-213",
-   "now_chance": 68,
-   "edge": 6,
-   "text": "New slight edge: Under 3.5 (Alt total), 6 points cheaper than open.",
-   "url": "https://polymarket.us/sports/uecl/uecl-bor-kps-2026-10-22"
-  },
-  {
    "id": "new_edge:1403300:1:slight",
    "key": "1403300:1",
    "at": "2026-10-22T19:02:23.888Z",
@@ -818,20 +756,6 @@
    "now_chance": 47,
    "edge": 6,
    "text": "New slight edge: Under 2.5 (Main total), 6 points cheaper than open.",
-   "url": "https://polymarket.us/sports/uecl/uecl-bor-kps-2026-10-22"
-  },
-  {
-   "id": "gone:1403287:1:2026-10-22T16:44:21.153Z",
-   "key": "1403287:1",
-   "at": "2026-10-22T19:02:23.888Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Kuopion PS +1.50",
-   "market": "Main spread",
-   "now_odds": "-170",
-   "now_chance": 63,
-   "edge": 11,
-   "text": "Edge gone: Kuopion PS +1.50 (Main spread) is no longer 4+ points cheaper than open.",
    "url": "https://polymarket.us/sports/uecl/uecl-bor-kps-2026-10-22"
   }
  ],
@@ -867,7 +791,8 @@
   "gone:1403360:1:2026-10-22T19:30:36.471Z",
   "new_edge:1403298:1:big",
   "gone:1401660:1:2026-10-22T19:47:21.779Z",
-  "gone:1403298:1:2026-10-22T20:06:53.428Z"
+  "gone:1403298:1:2026-10-22T20:06:53.428Z",
+  "new_edge:1403300:0:big"
  ],
  "kalshi_checked": null
 }
