@@ -30,6 +30,7 @@
  * dollars; no "$" text, no cents.
  */
 import fs from 'node:fs';
+import {loadLedger,saveLedger} from './nba-prop-shadow.mjs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -179,6 +180,17 @@ async function main() {
   for (const e of record.entries.filter(x => x.result === 'pending')) {
     const r = gradeFrom(await fetchEvent(e.slug), e);
     if (r) { e.result = r; e.graded_at = new Date().toISOString(); e.graded_from = `Polymarket US settlement (${GATEWAY}/v1/events/slug/${e.slug})`; graded++; }
+  }
+  const shadowFile=path.join(ROOT,'data/testing/nba-prop-shadow.json');
+  if(fs.existsSync(shadowFile)&&!args.includes('--dry-run')){
+    const shadow=loadLedger();
+    for(const p of shadow.predictions.filter(p=>p.result==='pending')){
+      const ev=await fetchEvent(p.slug),market=((ev?.event||ev)?.markets||[]).find(m=>String(m.id)===p.market_id);
+      const long=market?.marketSides?.find(s=>s.long),price=long?.price;
+      if(!market?.closed||price===null||price===undefined||price===''||![0,1].includes(Number(price)))continue;
+      const result=gradeFrom(ev,p);if(result){p.result=result;p.graded_at=new Date().toISOString();p.graded_from=GATEWAY+'/v1/events/slug/'+p.slug;}
+    }
+    saveLedger(shadow);
   }
   summarize(record);
   record.note = 'Every live alert, logged for good and graded on real Polymarket US results. Flat 1 unit per alert. Small samples are noisy: a few games can swing these numbers a lot.';

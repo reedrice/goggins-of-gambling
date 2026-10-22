@@ -29,7 +29,7 @@ async function main(){
  const read=f=>JSON.parse(fs.readFileSync(path.join(ROOT,f),'utf8'));
  execFileSync(process.execPath,[path.join(ROOT,'scripts/sync-live-feedback.mjs')],{cwd:ROOT,stdio:'inherit',timeout:60000});
  const days=new Set(closedDays(read('data/live/index.json').games));
- if(!days.size){console.log('Record closeout: waiting for a complete tracked slate.');return;}
+ if(!days.size){execFileSync(process.execPath,[path.join(ROOT,'scripts/grade-live-alerts.mjs')],{cwd:ROOT,stdio:'inherit',timeout:240000});console.log('Record closeout: waiting for a complete tracked slate.');return;}
  const doc=read('data/predictions.json'),cache=new Map();let changed=0;
  for(const p of doc.predictions||[]){if(p.result!=='pending'||!days.has(p.date)||!PATHS[p.sport])continue;
   const key=p.sport+':'+p.date;if(!cache.has(key)){const url='https://site.api.espn.com/apis/site/v2/sports/'+PATHS[p.sport]+'/scoreboard?dates='+p.date.replaceAll('-','')+'&limit=1000';const r=await fetch(url,{signal:AbortSignal.timeout(15000)});if(!r.ok)throw Error('Official scoreboard unavailable: '+p.sport);cache.set(key,await r.json());}

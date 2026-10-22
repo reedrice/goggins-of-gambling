@@ -1,0 +1,37 @@
+# NBA prop testing: v1 prospective protocol
+
+Authorized by Reed Oct 22, 2026. This is a deterministic experiment, not a recommendation engine or a claim of a genuine probability advantage. No recurring AI, new scheduler, paid service, database or private account data. Existing GitHub Actions owns execution.
+
+## Frozen before collection
+
+`data/testing/nba-prop-protocol.json` fixes the model version, source eligibility, history windows, sample minima, prior strength, role tolerance, time/availability guards, bootstrap procedure, cost reserve, qualification margin and evaluation rules. `nba-prop-freeze.json` records hashes of the protocol, pure model, runner and identity/loader functions. A mismatch pauses testing with an explicit status; it must not stop the ordinary feed. Never silently regenerate the freeze after seeing results. A material change requires a new model version, archived prior ledger/manifest and a new prospective window. Preserve prior predictions and grades.
+
+The site, prices, scores and source statistics are **not frozen**. A fixed algorithm can recompute from new data. UI changes may continue. Historic rates and position priors update from eligible completed games through the same fixed formulas; no result-driven threshold tuning is allowed during this version.
+
+## Ability, position and role
+
+The existing `fetch-espn-status.mjs` collector retains NBA boxscore identity, explicit position/starter flags, minutes, points, rebounds, assists, threes, steals, blocks, attempts and fouls. It also builds a public regular-season history under `data/espn/nba-player-history.json`: up to two team schedules (current/previous season) and eight completed summaries per run, one cached team listing per day, 365-day history, bounded catalog, timed requests. No browser sports scraping or per-athlete poller. Partial history is honestly incomplete.
+
+For each full-game integer “at least N” contract, require strict away/home matchup identity and a unique player on that event's actual teams. Only a current boxscore with verified position, explicit starter/bench role, actual participation, nonmissing target stat/fouls and no listed uncertain availability can qualify. Require at least eight same-team/same-position/same-starter-role historical games, at most twenty, completed before the current tipoff and collected before the quote. Same-position/same-role other players provide a 30-minute-equivalent prior, with twenty distinct prior games required. Position is a prior, not a rule that every center/guard behaves alike.
+
+Player production is modeled separately by stat. Recent team shares of field-goal attempts (points), three-point attempts (threes), or the respective stat (other categories) are **observational role proxies**, not coaching assignments or possession tracking. Keep comparable-history shares within 0.10 of the recent five-game median. A Gamma-Poisson count approximation combines the player's own stat/minutes with the position prior, then averages remaining-minute scenarios based equally on observed live rotation and historical full-game minutes. Points use an approximate count model despite being compound scoring events; dependence, matchup defense and unseen rotation/injury changes are not fully modeled. These limitations are reasons for testing, not evidence of validity.
+
+Abstain before eight or after forty-two regulation minutes, in overtime, with fewer than three player minutes or an observed share below 18/48, at five fouls, in a late twenty-point blowout, with a target already reached, or with missing/ambiguous/stale inputs. Freshness ceiling is ten minutes. Current sources must predate the observed quote. Missing stats are never zero; missing roles are never assumed starters. Bootstrap two hundred historical-game resamples to show a 5th–95th percentile **experimental model range**, not a validated confidence/coverage guarantee.
+
+## Prospective ledger
+
+The live publisher captures supported NBA contract quotes for testing only (points/rebounds/assists/threes/steals/blocks when offered), separately from live edge selection. Require the side explicitly tradable, a bid/ask spread no greater than 0.06, and an executable ask within the existing ±500 odds range. No opening-price movement is used in the probability model.
+
+Log the **first eligible observation** per player/stat/target/side/game/version, including both passing and nonpassing forecasts. Do not retrospectively choose the best quote, relog tier changes or backfill from old alerts. Save observed and recorded timestamps, model/protocol hashes, quote, probabilities/range, identity, exact historical input rows, position/role and source provenance. Canonical identity deduplicates duplicate market IDs. Immutable observations are sharded by observation date under `data/testing/nba-prop-ledger/`; only settlement fields can later change.
+
+A test candidate passes the frozen margin screen only if its experimental lower bound exceeds the ask plus a 0.02-per-contract cost reserve by at least 0.03 probability units (three percentage points). The reserve is a sensitivity assumption, **not verified actual fees or fills**; no net advantage is certified. Prices never construct the independent probability estimate. The existing settlement fetch/cache grades testing entries only from an explicitly closed market with a binary 0/1 outcome. Refunds, ambiguous closures and unavailable outcomes stay pending for review. No outcomes come from recap text or inferred zero stats.
+
+## Evaluation
+
+The first eligible future prediction starts a fixed 56-day observation window. No new forecasts enter afterward; pending outcomes can still settle. Existing alert history is development data and is not imported. Each of six stat families is reviewed separately with floors of 300 settled qualifying forecasts, 100 distinct games and 30 Chicago game dates. These coverage floors are **not a power calculation**. The minimum worthwhile ROI is 5%, but adequate power has not yet been established.
+
+Before the endpoint, publish collection counts/coverage and data failures, not repeated profitability significance decisions. At the endpoint, compute qualified-forecast ROI with the stated cost reserve, Brier scores against the executable-price baseline, calibration bins and mean probability overstatement. Resample complete Chicago game-date blocks 5,000 times (keeping related players/markets/games together); use one-sided bounds with family alpha 0.05/6 for the six planned stat families. The screening requirements are lower ROI above zero and upper mean overstatement no greater than 0.05. Inadequate coverage is inconclusive, not an invitation to extend until successful. A small sample or a passing bootstrap screen alone does not prove model validity.
+
+**Promotion is disabled.** Independent source/settlement review, fee/fill verification, a defensible power analysis and review of calibration/selection/dependence are required before calling any category validated or using it to filter live recommendations. Any subsequent study or additional analyses must be prespecified, not chosen to rescue losing results. Native code records this status; no AI monitor wakes to review it automatically.
+
+Status: `data/testing/nba-prop-status.json`; manifest/ledger index: `nba-prop-shadow.json`. The Live Bets record contains a collapsed Testing panel. Its forecasts do not replace Analytics, big/slight price labels or actual user bets.

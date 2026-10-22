@@ -1062,7 +1062,7 @@
       // Below Richie's container: OUR "Live Bets record" (Reed: it lives here, never on
       // the Record tab, and never as a new bottom tab). Pablo's files stay untouched.
       $('#picks-view').innerHTML = '<div id="live-bets-root" class="live-bets-root"></div><section id="live-record-root" class="live-record-root"></section>';
-      Promise.all([fetchData('data/live-record.json').catch(()=>null),fetchData('data/live-feedback.json').catch(()=>null)]).then(([rec,feedback])=>{const box=$('#live-record-root');if(box){box.innerHTML=liveRecordHtml(rec);mountRecordGroups(box);if(rec&&window.LiveFeedback)window.LiveFeedback.mount(box,rec.entries||[],feedback);}});
+      Promise.all([fetchData('data/live-record.json').catch(()=>null),fetchData('data/live-feedback.json').catch(()=>null),fetchData('data/testing/nba-prop-status.json').catch(()=>null)]).then(([rec,feedback,testing])=>{const box=$('#live-record-root');if(box){box.innerHTML=nbaTestingHtml(testing)+liveRecordHtml(rec);mountRecordGroups(box);if(rec&&window.LiveFeedback)window.LiveFeedback.mount(box,rec.entries||[],feedback);}});
       if (window.LiveBets && typeof LiveBets.render === 'function') LiveBets.render($('#live-bets-root'),liveSlateSport.toLowerCase());
       window.dispatchEvent(new CustomEvent('picks:sport-change',{detail:{sport:liveSlateSport}}));
       [0, 1500, 4000].forEach(ms => setTimeout(() => { paintLiveBadges(); paintLiveToast(); }, ms));   // Richie's view updates its seen key -> badge clears
@@ -2145,6 +2145,11 @@
    * HANDOFF §35). Flat 1 unit per alert. American odds only; no cents/dollars.
    * Data text is untrusted: esc() everything, safeUrl() links.
    */
+  function nbaTestingHtml(data){
+    if(!data||data.mode!=='testing_only')return '';const S=STR.record.live.testing;
+    const windowText=data.started_at?fmtTime(data.started_at)+' → '+fmtTime(data.ends_at):S.waiting;
+    return '<details class="mib-panel nba-prop-testing"><summary>'+esc(S.title)+'</summary><p>'+esc(S.states[data.state]||S.waiting)+'</p><div class="kpis">'+kpi(S.history,data.history_games)+kpi(S.predictions,data.predictions)+kpi(S.settled,data.settled)+kpi(S.qualified,data.qualified)+'</div><p class="small muted">'+esc(S.window+': '+windowText)+'</p><p class="small muted">'+esc(S.note)+'</p><p class="small muted">'+esc(S.criteria)+'</p><p class="small muted">'+esc(S.range)+'</p><p class="small muted">'+esc(S.frozen+': '+data.model_version+' · '+String(data.protocol_hash).slice(0,12))+'</p></details>';
+  }
   const liveRecordExpanded=new Set();
   function mountRecordGroups(box) {
     box.onclick=event=>{

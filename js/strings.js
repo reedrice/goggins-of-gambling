@@ -410,6 +410,7 @@ window.STR = {
     },
     /** "Live Bets record" (app.js liveRecordHtml, data/live-record.json, HANDOFF §35). */
     live: {
+      testing:{title:'NBA prop bets · Testing',states:{paused:'Testing paused — review required',collecting_history:'Collecting verified history',collecting_results:'Collecting future results',window_complete:'Evaluation window complete'},history:'Historical games',predictions:'Predictions logged',settled:'Settled',qualified:'Passed experimental margin',window:'Evaluation window',waiting:'Starts with the first eligible prediction',note:'Experimental estimates only. Live alerts are unchanged. Position and role proxies are not verified coaching assignments.',criteria:'56-day window; each stat category needs at least 300 settled qualifying predictions, 100 games and 30 game dates. These are coverage floors, not proof of statistical power. No automatic promotion.',frozen:'Frozen model',range:'Probability ranges and cost reserves are experimental; actual fees and fills are not verified.'},
       title: 'Live Bets record', bySport:'By sport', sport:'Sport / market', other:'Other', gameLines:'Game lines', propBets:'Prop bets', otherMarkets:'Other markets',
       intro: 'Every live alert, kept for good (wins and losses) and graded on the real final result. Each one counts as a flat 1 unit bet at the odds when the alert went out.',
       none: 'No live alerts graded yet.', empty: 'No live alerts yet. They start once games are live.',

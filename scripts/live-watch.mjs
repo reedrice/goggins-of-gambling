@@ -44,6 +44,7 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { classify, fetchContext } from './live-context.mjs';
 import {loadUsage,participation} from './live-prop-quality.mjs';
+import {candidates as nbaTestCandidates} from './nba-prop-shadow.mjs';
 
 const GATEWAY = 'https://gateway.polymarket.us';
 const args = process.argv.slice(2);
@@ -531,6 +532,7 @@ async function publish() {
   const out = buildLive(open, ev, prev, new Date().toISOString(), ctx);
   // Full snapshot stays in data/espn; retain only per-edge audit evidence here.
   delete out.game_context.player_usage_event;
+  if(SLUG.startsWith('nba-'))out.prop_test_candidates=nbaTestCandidates(open,ev,out.updated);
   fs.mkdirSync(ALERTS_DIR, { recursive: true });
   fs.writeFileSync(file, JSON.stringify(out, null, 1));
   // Compact price history for the pop-up chart (HANDOFF §48), one line per market.
