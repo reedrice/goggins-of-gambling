@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185592",
-  "fetched_at": "2026-10-22T06:37:20.497Z",
+  "fetched_at": "2026-10-22T06:43:20.601Z",
   "tennis": true,
   "tennis_match": {
    "id": "185592",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Thu, October 21st at 2:40 AM EDT",
-     "shortDetail": "10/22 - 2:40 AM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Magda Linette (POL) leads Katerina Siniakova (CZE) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "fe013c03-6a8a-a745-4e09-e2bc7adc74bc",
       "displayName": "Katerina Siniakova",
@@ -87,6 +98,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "c7ee54cc-9ab2-3349-fc90-34f543660ab7",
       "displayName": "Magda Linette",
@@ -119,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 345,
    "type": {
     "id": "2",
@@ -135,10 +157,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Thu, October 21st at 2:40 AM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Katerina Siniakova",
@@ -156,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-22T06:37:20.497Z",
+ "updated": "2026-10-22T06:43:20.602Z",
  "open_taken_at": "2026-10-21T05:15:36.696Z",
  "thresholds": {
   "big": 10,
@@ -248,11 +270,25 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-22T06:37:20.497Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1615980:1:2026-10-22T06:37:20.497Z",
+   "key": "1615980:1",
+   "at": "2026-10-22T06:43:20.602Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Katerina Siniakova -4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+186",
+   "now_chance": 35,
+   "edge": 6,
+   "text": "Edge gone: Katerina Siniakova -4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-maglin-katsin-2026-10-20"
+  },
   {
    "id": "new_edge:1615980:1:slight",
    "key": "1615980:1",
@@ -269,7 +305,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1615980:1:slight"
+  "new_edge:1615980:1:slight",
+  "gone:1615980:1:2026-10-22T06:37:20.497Z"
  ],
  "kalshi_checked": null
 }
