@@ -9,6 +9,9 @@
  const ALIASES={veg:'vgk',was:'wsh',sjs:'sj',mon:'mtl',njd:'nj',lak:'la',tbl:'tb',uta:'utah',pho:'phx',gsw:'gs',nyk:'ny',nop:'no',sas:'sa',jac:'jax',cws:'chw',az:'ari'};
  const norm = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
  const abbr = s => ALIASES[String(s || '').toLowerCase()] || String(s || '').toLowerCase();
+ const COLLEGE_ALIASES={jmad:'jmu',applst:'app',ecar:'ecu',mphs:'mem',librty:'lib',kenest:'kenn'};
+ const leagueOf=s=>({ncaaf:'cfb',ncaab:'cbb',ncaam:'cbb',ncaaw:'wcbb',wncaab:'wcbb',bl1:'bun',lig1:'fl1',atpdb:'atp',wtadb:'wta'})[s]||s;
+ const teamCode=(s,league)=>['cfb','cbb','wcbb'].includes(leagueOf(league))?COLLEGE_ALIASES[String(s||'').toLowerCase()]||abbr(s):abbr(s);
  const slugOf = s => (String(s || '').match(/([a-z0-9]+-[a-z0-9]+-[a-z0-9]+-\d{4}-\d{2}-\d{2})/) || [])[1] || '';
  const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  function spec(o, fallback = {}) {
@@ -25,6 +28,8 @@
   });
   return found.length===1 ? found[0] : null; // Doubleheaders/ambiguous games are never guessed.
  }
+ // Keep the frozen NBA experiment matcher unchanged; adapt college display slugs here.
+ function findProgressEvent(board,slug){const parts=String(slug||'').split('-');parts[1]=teamCode(parts[1],parts[0]);parts[2]=teamCode(parts[2],parts[0]);return findEvent(board,parts.join('-'));}
  const numeric = v => { const s=String(v ?? '').trim();return /^-?\d+(?:\.\d+)?$/.test(s)?Number(s):null; };
  const STAT_KEYS={reb:[['rebounds','totalRebounds']],ast:[['assists']],pts:[['points']],goals:[['goals']],stl:[['steals']],blk:[['blocks']],saves:[['saves']],threes:[['threePointFieldGoalsMade-threePointFieldGoalsAttempted','threePointFieldGoalsMade']],pra:[['points'],['rebounds','totalRebounds'],['assists']],passyd:[['passingYards','yards']],rushyd:[['rushingYards','yards']],recyd:[['receivingYards','yards']],rec:[['receptions']],ptd:[['passingTouchdowns','touchdowns']],int:[['interceptions']],hits:[['hits']],hr:[['homeRuns']],rbi:[['RBIs','runsBattedIn']],k:[['strikeouts']]};
  const CATEGORIES={passyd:'passing',ptd:'passing',int:'passing',rushyd:'rushing',recyd:'receiving',rec:'receiving',hits:'batting',hr:'batting',rbi:'batting',k:'pitching'};
@@ -72,17 +77,20 @@
   const text=norm(s.text);
   const found=competitors.filter(c=>[c.team?.shortDisplayName,c.team?.name,c.team?.displayName,c.team?.abbreviation].filter(Boolean).some(name=>text.startsWith(norm(name))||text.startsWith('yes'+norm(name))||text.startsWith('no'+norm(name))));
   if(found.length===1)return found[0];
-  return s.team ? competitors.find(c=>abbr(c.team?.abbreviation)===abbr(s.team)) : null;
+  return s.team ? competitors.find(c=>teamCode(c.team?.abbreviation,(s.eventSlug||'').split('-')[0])===teamCode(s.team,(s.eventSlug||'').split('-')[0])) : null;
  }
  function scoresFor(c,segment,league,currentPeriod) {
   if(!segment)return numeric(c.score);
-  const periods=segment.quarter?[segment.quarter]:Array.from({length:segment.half===2?Math.max(2,(c.linescores||[]).length-2):2},(_,i)=>(segment.half-1)*2+i+1);
-  if(!['nba','wnba','nfl'].includes(league))return null;
+  league=leagueOf(league);const collegeBasketball=['cbb','wcbb'].includes(league);
+  // Men's college basketball has two halves; women's has four quarters.
+  const twoHalves=league==='cbb';
+  const periods=segment.quarter?[segment.quarter]:twoHalves?Array.from({length:segment.half===2?Math.max(1,(c.linescores||[]).length-1):1},(_,i)=>segment.half+i):Array.from({length:segment.half===2?Math.max(2,(c.linescores||[]).length-2):2},(_,i)=>(segment.half-1)*2+i+1);
+  if(!['nba','wnba','nfl','cfb'].includes(league)&&!collegeBasketball)return null;
   const scores=periods.map(p=>{const row=(c.linescores || [])[p-1];return row?numeric(row.value ?? row.displayValue):(currentPeriod && p>currentPeriod?0:null);});
   return scores.some(v=>v===null)?null:scores.reduce((a,b)=>a+b,0);
  }
  function gameElapsed(status,league) {
-  const lengths={nba:[4,12],wnba:[4,10],nhl:[3,20],nfl:[4,15]};const config=lengths[league];
+  const lengths={nba:[4,12],wnba:[4,10],nhl:[3,20],nfl:[4,15],cfb:[4,15],cbb:[2,20],wcbb:[4,10]};const config=lengths[leagueOf(league)];
   if(status.type?.completed)return 100;
   const clock=/^(\d+):(\d+)(?:\.\d+)?$/.exec(status.displayClock || '')||(/^\d+(?:\.\d+)?$/.test(status.displayClock||'')?['',0,Number(status.displayClock)]:null);
   if(!config||!clock||!status.period)return null;
@@ -96,10 +104,10 @@
   if(status.type?.state==='pre')return {reason:'pregame',game};
   if(!['in','post'].includes(status.type?.state))return {reason:'noStat',game};
   const bet=parseBet(s,parser);const final=!!status.type?.completed;
-  if(bet.segment&&typeof bet.segment==='object'&&status.period<(bet.segment.quarter||((bet.segment.half-1)*2+1)))return {reason:'segmentPending',game};
+  if(bet.segment&&typeof bet.segment==='object'&&status.period<(bet.segment.quarter||(leagueOf(league)==='cbb'?bet.segment.half:(bet.segment.half-1)*2+1)))return {reason:'segmentPending',game};
   if(bet.kind==='prop') {
    if(bet.segment)return {reason:'noStat',game};
-   const value=athleteStat(summary,bet.player,bet.stat,s.team);
+   const value=athleteStat(summary,bet.player,bet.stat,teamCode(s.team,league));
    return value===null?{reason:'noStat',game}:{kind:'threshold',value,target:bet.target,under:bet.under,stat:bet.stat,final,game,player:bet.player};
   }
   const selected=selectedTeam(competitors,s);
@@ -181,6 +189,22 @@
   const promise=fetch(url,{signal:controller.signal,cache:'no-store'}).then(r=>{if(!r.ok)throw Error('ESPN unavailable');return r.json();}).catch(error=>{cache.delete(url);throw error;}).finally(()=>clearTimeout(timer));
   cache.set(url,{at:Date.now(),promise});return promise;
  }
+ function snapshotPath(s){
+  const parts=/^([a-z0-9]+)-[a-z0-9]+-[a-z0-9]+-(\d{4}-\d{2}-\d{2})$/.exec(s.eventSlug||'');
+  if(!parts)return null;const league=leagueOf(parts[1]);
+  if(!PATHS[league]&&!['cfb','cbb','wcbb','atp','wta'].includes(league))return null;
+  return 'data/espn/'+league+'-'+parts[2]+'.json';
+ }
+ function snapshotResult(s,doc,parser,now=Date.now()){
+  const checked=Date.parse(doc?.fetched_at),event=findProgressEvent(doc,s.eventSlug);
+  if(!event)return {reason:'noGame',checkedAt:doc?.fetched_at};
+  const game={...event.competitions?.[0],status:event.status||event.competitions?.[0]?.status};
+  const metadata={checkedAt:doc.fetched_at};
+  if(!Number.isFinite(checked)||checked>now+60000||(!game.status?.type?.completed&&now-checked>10*60000))return {reason:'stale',game,...metadata};
+  if(game.status?.type?.state==='pre'&&Date.parse(game.date||event.date)<now-120000)return {reason:'startPending',game,...metadata};
+  const result=s.resolveMarket&&!s.resolvedMarket?{reason:'noStat',game}:evaluateBet(s,{header:{competitions:[game]},boxscore:event.boxscore},parser);
+  return {...result,...metadata};
+ }
  function node(tag,cls,text) {const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;}
  function image(url) {if(!/^https:\/\//i.test(url || ''))return null;const img=node('img','bp-logo');img.src=url;img.width=22;img.height=22;img.alt='';img.decoding='async';img.onerror=()=>img.remove();return img;}
  function teamName(c) {const label=node('span','bp-team');const logo=image(c.team?.logo || c.team?.logos?.[0]?.href);if(logo)label.append(logo);label.append(node('strong','',c.team?.shortDisplayName || c.team?.name || c.team?.abbreviation || ''));return label;}
@@ -213,7 +237,7 @@
    const matchup=host.closest('.lb-edge')?.querySelector('.lb-matchup');
    if(matchup&&!matchup.querySelector('.lb-athlete')){matchup.replaceChildren();competitors.forEach((c,i)=>{if(i)matchup.append(node('span','bp-at',game.tennis?'vs.':'@'));matchup.append(teamName(c));});}
    const score=node('div','bp-scoreline');
-   if(game.status?.type?.state==='pre')score.textContent=S.starts(new Date(game.date || '').toLocaleTimeString('en-US',{timeZone:'America/Chicago',hour:'numeric',minute:'2-digit'}));
+   if(game.status?.type?.state==='pre')score.textContent=(result.reason==='startPending'?S.scheduled:S.starts)(new Date(game.date || '').toLocaleTimeString('en-US',{timeZone:'America/Chicago',hour:'numeric',minute:'2-digit'}));
    else {const text=competitors.map(c=>(c.team?.abbreviation || '')+' '+(game.tennis?(c.linescores||[]).map(s=>s.value).join(', '):(c.score ?? S.dash))).join(' · ');score.append(node('b','',game.tennis?S.tenniScores(text):text),node('span','bp-clock',clockText(game.status,S)));}
    rows.push(score);
   }
@@ -232,7 +256,8 @@
    const caption=marginText(result,S),row=node('div','bp-values');row.append(node('b','',caption),node('span','',result.line===undefined?S.centerTie:S.centerLine));rows.push(row);
    const range=Math.max(10,Math.abs(result.margin)*1.25);rows.push(progressTrack(result.margin,-range,range,caption,result.margin>0?'positive':result.margin<0?'negative':'neutral',true));
   }
-  rows.push(node('span','bp-checked',(game?.status?.type?.completed?S.final+' · ':'')+S.checked(new Date().toLocaleTimeString('en-US',{timeZone:'America/Chicago',hour:'numeric',minute:'2-digit'}))));
+  const sourceTime=Date.parse(result.checkedAt);
+  rows.push(node('span','bp-checked',(game?.status?.type?.completed?S.final+' · ':'')+(Number.isFinite(sourceTime)?S.checked(new Date(sourceTime).toLocaleTimeString('en-US',{timeZone:'America/Chicago',hour:'numeric',minute:'2-digit'})):S.sourceTimeUnknown)));
   host.replaceChildren(...rows);
   root.SiteMotion?.progress(host);
  }
@@ -242,22 +267,15 @@
    let s=JSON.parse(host.dataset.bp);if(!host.children.length)host.append(node('div','bp-note',root.STR.progress.loading));
    try{s=await enrich(s);}catch(e){/* Scores remain available; never guess missing contract details. */}
    const label=host.previousElementSibling;if(s.resolveMarket&&label?.classList.contains('pm-leg-label'))label.textContent=s.text;
-   const parts=s.eventSlug.split('-'),path=PATHS[parts[0]];
+   const path=snapshotPath(s);if(!path){render(host,s,{reason:'noGame'});return;}
+   const board=await get(path);
    if(root.TennisScores?.isTennis(s.eventSlug)){
-    const T=root.TennisScores,date=(s.startTime||parts.slice(3).join('-')).slice(0,10).replaceAll('-',''),board=await get('https://site.api.espn.com/apis/site/v2/sports/tennis/'+T.tour(s.eventSlug)+'/scoreboard?dates='+date+'&limit=1000'),match=T.find(board,s.game,s.eventSlug,s.startTime);
-    const result=!match?{reason:'noGame'}:s.resolveMarket&&!s.resolvedMarket?{reason:'noStat',game:T.adapt(match)}:T.evaluate(s,match);
+    const T=root.TennisScores,grouped={events:(board.events||[]).map(e=>({...e,groupings:[{competitions:e.competitions||[]}]}))},match=T.find(grouped,s.game,s.eventSlug,s.startTime);
+    const at=Date.parse(board.fetched_at),old=!Number.isFinite(at)||at>Date.now()+60000||(!match?.status?.type?.completed&&Date.now()-at>600000);
+    const result=!match?{reason:'noGame'}:old?{reason:'stale',game:T.adapt(match)}:s.resolveMarket&&!s.resolvedMarket?{reason:'noStat',game:T.adapt(match)}:T.evaluate(s,match);result.checkedAt=board.fetched_at;
     if(host.isConnected){render(host,s,result);if(result.game?.tennis)host.closest('.lb-edge')?.querySelector('.lb-unverified')?.remove();}return;
    }
-   if(!path){render(host,s,{reason:'noGame'});return;}
-   const board=await get('https://site.api.espn.com/apis/site/v2/sports/'+path+'/scoreboard?dates='+parts.slice(3).join('')+'&limit=1000');
-   const event=findEvent(board,s.eventSlug);
-   if(!event){render(host,s,{reason:'noGame'});return;}
-   let summary={header:{competitions:event.competitions}};
-   if(event.status?.type?.state!=='pre')summary=await get('https://site.web.api.espn.com/apis/site/v2/sports/'+path+'/summary?event='+event.id);
-   // Keep score, splits and clock together from one scoreboard snapshot. Summary
-   // box scores can lag or temporarily report a zero clock at period transitions.
-   summary={...summary,header:{...summary.header,competitions:[{...event.competitions[0],status:event.status||event.competitions[0].status}]}};
-   if(host.isConnected){const result=s.resolveMarket&&!s.resolvedMarket?{reason:'noStat',game:summary.header?.competitions?.[0]}:evaluateBet(s,summary,root.Viz?.parseProp);host._bpVerified={spec:s,game:result.game};render(host,s,result);refreshComboWarning(host.closest('.pm-position'));}
+   if(host.isConnected){const result=snapshotResult(s,board,root.Viz?.parseProp);host._bpVerified={spec:s,game:result.game};render(host,s,result);refreshComboWarning(host.closest('.pm-position'));}
   } catch(error) {if(host.isConnected)render(host,{}, {reason:'unavailable'});} finally {host._bpBusy=false;}
  }
  function scan() {
@@ -275,6 +293,6 @@
   const s=await enrich({resolveMarket:true,eventSlug,marketSlug:String(marketId||''),side:'yes'});
   return s.resolvedMarket?s.marketSlug:null;
  }
- return {spec,html,findEvent,athleteStat,parseBet,selectedTeam,scoresFor,gameElapsed,evaluateBet,resolveMarket,marketIdentity,clockText,marginText,periodConflict};
+ return {spec,html,findEvent,findProgressEvent,athleteStat,parseBet,selectedTeam,scoresFor,gameElapsed,evaluateBet,resolveMarket,marketIdentity,snapshotPath,snapshotResult,clockText,marginText,periodConflict};
 });
 

@@ -649,6 +649,8 @@ window.STR.progress = {
  loading: 'Checking live progress…', unavailable: 'ESPN is unavailable. Retrying shortly.',
  noGame: 'No verified game match for live progress.', noStat: 'Live progress is unavailable for this market.',
  pregame: 'Waiting for the game to start.', clockUnavailable: 'Game clock unavailable', dash: '—',
+ startPending:'Scheduled start has passed; waiting for ESPN to confirm play.', scheduled:time=>'Scheduled '+time+' CT',
+ stale:'ESPN snapshot is old. Waiting for a published update.', sourceTimeUnknown:'ESPN source time unavailable',
  starts: time => `Starts ${time} CT`, checked: time => `Checked ESPN · ${time} CT`, final: 'Final statistics',
  count: (value,target,stat) => `${value} / ${target} ${stat}`, needs: n => `${n} more needed`, reached: 'Target reached', notReached: 'Target not reached',
  below: n => `Below ${n}`, atLine: 'At the line', limitReached: 'Limit reached',
