@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185551",
-  "fetched_at": "2026-10-22T08:39:24.781Z",
+  "fetched_at": "2026-10-22T08:47:32.029Z",
   "tennis": true,
   "tennis_match": {
    "id": "185551",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Mariia Kozyreva (RUS) & Maia Lumsden (GBR) leads Desirae Krawczyk (USA) & Fanny Stollar (HUN) 6-3",
+     "text": "Mariia Kozyreva (RUS) & Maia Lumsden (GBR) is tied with Desirae Krawczyk (USA) & Fanny Stollar (HUN) 6-3 1-1",
      "type": "event"
     }
    ],
@@ -55,9 +55,14 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
-       "value": 3
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 1
       }
      ],
      "roster": {
@@ -132,9 +137,14 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "roster": {
@@ -204,6 +214,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 963,
    "type": {
     "id": "4",
@@ -222,8 +237,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Desirae Krawczyk / Fanny Stollar",
@@ -235,13 +250,13 @@
    "abbr": "Mariia Kozyreva / Maia Lumsden",
    "alias": "Mariia Kozyreva / Maia Lumsden",
    "name": "Mariia Kozyreva / Maia Lumsden",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-22T08:39:24.781Z",
+ "updated": "2026-10-22T08:47:32.030Z",
  "open_taken_at": "2026-10-21T10:40:15.943Z",
  "thresholds": {
   "big": 10,
