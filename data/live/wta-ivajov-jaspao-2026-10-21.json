@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185537",
-  "fetched_at": "2026-10-22T06:23:19.509Z",
+  "fetched_at": "2026-10-22T06:25:19.370Z",
   "tennis": true,
   "tennis_match": {
    "id": "185537",
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 4,
@@ -101,6 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "curatedRank": {
       "current": 4
      },
@@ -145,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 963,
    "type": {
     "id": "2",
@@ -182,7 +189,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-22T06:23:19.509Z",
+ "updated": "2026-10-22T06:25:19.370Z",
  "open_taken_at": "2026-10-21T05:15:35.467Z",
  "thresholds": {
   "big": 10,
@@ -258,6 +265,26 @@
  ],
  "edges": [
   {
+   "key": "1636042:1",
+   "market_id": "1636042",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Iva Jovic cover -4.5 vs the Jasmine Paolini in Iva Jovic vs. Jasmine Paolini?",
+   "side": "Jasmine Paolini +4.50 (Games)",
+   "open_chance": 59,
+   "now_chance": 55,
+   "open_odds": "-144",
+   "now_odds": "-122",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Jasmine Paolini 4, 3 · Iva Jovic 6, 4 · 2nd Set (games by set)",
+   "first_seen": "2026-10-22T06:03:23.648Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1636042:0",
    "market_id": "1636042",
    "market": "Games spread",
@@ -274,31 +301,25 @@
    "reason": "Explained by score: Iva Jovic not above the games spread right now",
    "context": "Jasmine Paolini 4, 3 · Iva Jovic 6, 4 · 2nd Set (games by set)",
    "first_seen": "2026-10-22T05:13:19.158Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1636042:1",
-   "market_id": "1636042",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Iva Jovic cover -4.5 vs the Jasmine Paolini in Iva Jovic vs. Jasmine Paolini?",
-   "side": "Jasmine Paolini +4.50 (Games)",
-   "open_chance": 59,
-   "now_chance": 38,
-   "open_odds": "-144",
-   "now_odds": "+163",
-   "edge": 21,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Jasmine Paolini 4, 1 · Iva Jovic 6, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-10-22T06:03:23.648Z",
    "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1636042:1:slight",
+   "key": "1636042:1",
+   "at": "2026-10-22T06:25:19.370Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Jasmine Paolini +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-122",
+   "now_chance": 55,
+   "edge": 4,
+   "text": "New slight edge: Jasmine Paolini +4.50 (Games) (Games spread), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-ivajov-jaspao-2026-10-21"
+  },
   {
    "id": "gone:1636042:1:2026-10-22T06:03:23.648Z",
    "key": "1636042:1",
@@ -337,7 +358,8 @@
   "new_edge:1615479:1:big",
   "gone:1636049:1:2026-10-22T05:13:19.158Z",
   "new_edge:1636042:1:big",
-  "gone:1636042:1:2026-10-22T06:03:23.648Z"
+  "gone:1636042:1:2026-10-22T06:03:23.648Z",
+  "new_edge:1636042:1:slight"
  ],
  "kalshi_checked": null
 }
