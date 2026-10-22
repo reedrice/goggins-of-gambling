@@ -254,6 +254,20 @@
   }
 
   /** One edge card. */
+  function holdingSide(e){
+    const match=/^(.+):([01])$/.exec(String(e.key||''));
+    return match&&String(e.market_id)===match[1]?(match[2]==='0'?'yes':'no'):null;
+  }
+  function holdingBadge(e,eventSlug,card){
+    const badge=el('span','lb-holding',designText().holding);badge.hidden=true;
+    const account=root.PolymarketSync,side=holdingSide(e);
+    if(!side||!account?.holdingsStatus().unlocked||!root.BetProgress?.marketIdentity)return badge;
+    root.BetProgress.marketIdentity(eventSlug,e.market_id).then(slug=>{
+      if(!card.isConnected||!slug||!account.isHolding(slug,side))return;
+      badge.hidden=false;badge.title=designText().holdingNote(clock(account.holdingsStatus().checkedAt));
+    }).catch(()=>{}); // Unresolved identity never implies "not held".
+    return badge;
+  }
   function edgeRow(e, link, ui) {
     const P = designText();
     link = safeUrl(e.event_url) || link;
@@ -270,7 +284,7 @@
     if(root.AthleteFlags)root.AthleteFlags.decorate(matchup,eventGame,sportOf({slug:eventSlug}));
     else matchup.textContent=eventGame;
     li.append(matchup);
-    li.append(el('div', 'lb-odds lb-odds-'+oddsTone(e.now_odds), e.now_odds));
+    const quote=el('div','lb-quote');quote.append(el('div', 'lb-odds lb-odds-'+oddsTone(e.now_odds), e.now_odds),holdingBadge(e,eventSlug,li));li.append(quote);
     if (root.BetProgress) {
       const progress = el('div', 'bp-host'); progress.dataset.bp = JSON.stringify(root.BetProgress.spec({...e,event_slug:eventSlug,event:eventGame})); li.append(progress);
     }
@@ -376,6 +390,11 @@
       head.append(el('div','lb-game',d.game || 'Live game'),el('div','lb-score',sb.score),el('div','lb-status',sb.status),el('div','lb-updated',freshness(d).text));
     }
     if(ui.sport && root.LiveScoreboard){const row=el('div','lb-head-row'),board=el('div');row.append(head,board);box.append(row);root.LiveScoreboard.mount(board,ui.sport,{selected:ui.boardGame,focusId:ui.boardFocus,onSelect:(id,focusId)=>{ui.boardGame=id;ui.boardFocus=focusId;ui.game=ui.prop=false;ui.redraw();}});ui.boardFocus=null;}else box.append(head);
+    if(root.PolymarketSync){
+      const h=root.PolymarketSync.holdingsStatus(),time=clock(h.checkedAt),note=el('a','lb-holdings-status');note.href='#bets';
+      note.textContent=!h.unlocked?P.holdingsLocked:!h.checkedAt?P.holdingsPending:h.error?P.holdingsError(time):Date.now()-Date.parse(h.checkedAt)>120000?P.holdingsStale(time):P.holdingsSync(time);
+      note.title=P.holdingNote(time);box.append(note);
+    }
     if (d.stale || freshness(d).stale) box.append(el('div','lb-stale',liveText().stale));
     const controls = el('div', 'lb-controls');
     const filters = el('div', 'lb-edge-filters'); filters.setAttribute('role', 'group'); filters.setAttribute('aria-label', P.filterLabel);
@@ -471,11 +490,14 @@
     };
     refresh.onclick=()=>{if(!loading)load(true);};
     load();
-    rootEl._lbStop=autoRefresh(rootEl,()=>load(),()=>loading);
+    const holdingChange=()=>{if(rootEl.isConnected)ui.redraw();};window.addEventListener('polymarket:holdings-change',holdingChange);
+    const stopRefresh=autoRefresh(rootEl,()=>load(),()=>loading);
+    rootEl._lbStop=()=>{stopRefresh();window.removeEventListener('polymarket:holdings-change',holdingChange);};
+    root.PolymarketSync?.refreshHoldings();
     if(root.AthleteFlags)root.AthleteFlags.load().then(()=>{if(rootEl.isConnected)ui.redraw();});
   }
 
-  return { oddsTone, CLOSE_EVEN_ODDS, autoRefresh, timeGames, sportOf, sportGames, edgeTitle, edgeSelection, combineGames, render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
+  return { holdingSide, oddsTone, CLOSE_EVEN_ODDS, autoRefresh, timeGames, sportOf, sportGames, edgeTitle, edgeSelection, combineGames, render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
 });
 
 

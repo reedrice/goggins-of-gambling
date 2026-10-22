@@ -270,6 +270,11 @@
   document.addEventListener('toggle',schedule,true);document.addEventListener('visibilitychange',schedule);
   setInterval(scan,15000);
  }
- return {spec,html,findEvent,athleteStat,parseBet,selectedTeam,scoresFor,gameElapsed,evaluateBet,resolveMarket,clockText,marginText,periodConflict};
+ // Public contract identity only; reuse the progress event cache, never title matching.
+ async function marketIdentity(eventSlug,marketId){
+  const s=await enrich({resolveMarket:true,eventSlug,marketSlug:String(marketId||''),side:'yes'});
+  return s.resolvedMarket?s.marketSlug:null;
+ }
+ return {spec,html,findEvent,athleteStat,parseBet,selectedTeam,scoresFor,gameElapsed,evaluateBet,resolveMarket,marketIdentity,clockText,marginText,periodConflict};
 });
 

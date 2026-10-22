@@ -43,6 +43,13 @@
   }throw Error('pagination');
  }
  const quantity=p=>number(p.netPositionDecimal??p.netPosition);
+ // A market slug identifies the complete contract, including line and period.
+ // Never use labels or combo legs to infer an independently held outcome.
+ function matchesPosition(positions,slug,side){
+  if(typeof slug!=='string'||!slug||!['yes','no'].includes(side))return false;
+  const p=positions?.[slug],q=p&&quantity(p);
+  return !!p&&!p.expired&&!slug.startsWith('crossd-')&&!p.comboLegDetails?.length&&q!==null&&q!==0&&(side==='yes'?q>0:q<0);
+ }
  function rows(positions){return Object.entries(positions||{}).map(([slug,p])=>({slug,...p,quantity:quantity(p)})).filter(p=>p.quantity!==null);}
  function positionAmounts(p){
   const q=quantity(p),cost=usd(p.cost);
@@ -87,15 +94,19 @@
   return String(slug||'').startsWith('crossd-')?S.combo:S.bet;
  }
  let current=null,key=null,salt=null,timer=null,host=null,busy=false,epoch=0,message='',activityOpen=false;
+ function holdingsStatus(){return {unlocked:!!current,checkedAt:current?.snapshot?.checked_at||null,error:!!message,busy};}
+ function isHolding(slug,side){return !!current&&matchesPosition(current.snapshot?.positions,slug,side);}
+ const notifyHoldings=()=>root.dispatchEvent?.(new CustomEvent('polymarket:holdings-change'));
+ function liveVisible(){const live=typeof document!=='undefined'&&document.getElementById('live-bets-root');return !!live?.isConnected&&!live.closest('[hidden]')&&!!live.getClientRects().length;}
  const node=(tag,text,cls)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;};
  const money=value=>value===null?root.STR.pmSync.unknown:new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:2}).format(value);
- function lock(){epoch++;current=null;key=null;salt=null;busy=false;clearTimeout(timer);message='';paint();}
+ function lock(){epoch++;current=null;key=null;salt=null;busy=false;clearTimeout(timer);message='';paint();notifyHoldings();}
  async function persist(){const vault=await seal(current,key,salt);try{root.Store.setPolymarketVault(vault);}catch(e){throw Error('storage');}}
  async function sync(){
-  if(busy||!current||!host?.isConnected||host.closest('[hidden]')||document.hidden)return;const run=epoch;busy=true;message='';paint();
+  if(busy||!current||document.hidden||(!(host?.isConnected&&!host.closest('[hidden]'))&&!liveVisible()))return;const run=epoch;busy=true;message='';paint();
   try{const c=current.credentials;const [positions,activities]=await Promise.all([pages(c,'/v1/portfolio/positions'),pages(c,'/v1/portfolio/activities')]);if(run!==epoch)return;
    current={credentials:c,snapshot:{positions,activities,historyComplete:true,checked_at:new Date().toISOString()}};await persist();
-  }catch(e){if(run===epoch)message=root.STR.pmSync.errors[e.message]||root.STR.pmSync.errors.network;}finally{if(run===epoch){busy=false;paint();clearTimeout(timer);timer=setTimeout(sync,30000);}}
+  }catch(e){if(run===epoch)message=root.STR.pmSync.errors[e.message]||root.STR.pmSync.errors.network;}finally{if(run===epoch){busy=false;paint();notifyHoldings();clearTimeout(timer);timer=setTimeout(sync,30000);}}
  }
  function input(label,type='text'){const wrap=node('label',label),field=node('input');field.type=type;field.required=true;field.autocomplete=type==='password'?'new-password':'off';field.spellcheck=false;wrap.append(field);return {wrap,field};}
  function paint(){
@@ -110,7 +121,7 @@
       const c=validate({keyId:id.field.value.trim(),secretKey:secret.field.value.trim()});const positions=await pages(c,'/v1/portfolio/positions');
       salt=root.crypto.getRandomValues(new Uint8Array(16));key=await passwordKey(password.field.value,salt);current={credentials:c,snapshot:{positions,activities:[],checked_at:new Date().toISOString()}};
       await persist();
-     }form.reset();paint();sync();
+     }form.reset();paint();notifyHoldings();sync();
     }catch(e){current=null;key=null;salt=null;status.textContent=S.errors[e.message]||S.errors.unlock;submit.disabled=false;}
    };return;
   }
@@ -131,5 +142,5 @@
  }
  function mount(element){host=element;clearTimeout(timer);paint();if(current)sync();}
  if(typeof document!=='undefined')document.addEventListener('visibilitychange',()=>{if(!document.hidden&&current){clearTimeout(timer);sync();}});
- return {mount,lock,headers,passwordKey,seal,unlock,pages,rows,positionAmounts,openTotals,stats,progressSpecs,activityLabel,validate};
+ return {mount,lock,headers,passwordKey,seal,unlock,pages,rows,positionAmounts,openTotals,stats,progressSpecs,activityLabel,validate,matchesPosition,isHolding,holdingsStatus,refreshHoldings:sync};
 });

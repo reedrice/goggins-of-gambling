@@ -122,3 +122,9 @@
 /* Verified nationality belongs with the participant, never the bet title. */
 .lb-matchup .lb-athlete { display: inline-flex; align-items: center; gap: 6px; }
 .lb-country-flag { width: 20px; height: 14px; object-fit: contain; flex: 0 0 auto; border-radius: 2px; vertical-align: middle; }
+
+/* Private, synced contract identity; no stake or account identifiers in cards. */
+.live-bets-root .lb-quote { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:4px 8px; }
+.live-bets-root .lb-holding { color:var(--text-primary); font-size:11px; font-weight:700; line-height:1.3; }
+.live-bets-root .lb-holding[hidden] { display:none; }
+.live-bets-root .lb-holdings-status { display:inline-flex; align-items:center; min-height:44px; color:var(--text-secondary); font-size:12px; text-decoration:underline; text-underline-offset:3px; }
