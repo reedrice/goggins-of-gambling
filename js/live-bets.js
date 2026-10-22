@@ -260,16 +260,18 @@
     if (root.BetProgress) {
       const progress = el('div', 'bp-host'); progress.dataset.bp = JSON.stringify(root.BetProgress.spec({...e,event_slug:eventSlug,event:eventGame})); li.append(progress);
     }
+    let analytics=null;
     if (root.OurChance && e.market_id && !gone) {
       const oc = el('div', 'oc oc-sm'); oc.setAttribute('data-oc', JSON.stringify({ marketId: e.market_id, side: Number(String(e.key).split(':')[1]) ? 'no' : 'yes', market: e.now_chance, text: e.side, question: e.question }));
-      li.append(oc);
+      analytics=oc;
     }
     const details = el('details', 'lb-card-details');
     const detailKey = (eventSlug || '') + ':' + e.key;
     details.open = !!(ui && ui.details.has(detailKey));
     details.addEventListener('toggle', () => { if (ui) details.open ? ui.details.add(detailKey) : ui.details.delete(detailKey); });
     details.append(el('summary', null, P.details), el('div', 'lb-market', e.market), platRow(e));
-    if (edgeTitle(e) !== e.side) details.append(el('div', 'lb-meta', e.side));
+    details.append(el('div', 'lb-meta', e.side));
+    if(analytics)details.append(analytics);
     const pay = pays10(e.now_chance);
     if (pay) details.append(el('div', 'lb-meta', P.payout(pay)));
     details.append(el('div', 'lb-meta', P.opened(e.open_odds, clock(e.first_seen))));
@@ -460,5 +462,6 @@
 
   return { autoRefresh, timeGames, sportOf, sportGames, edgeTitle, edgeSelection, combineGames, render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
 });
+
 
 
