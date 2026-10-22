@@ -2147,6 +2147,7 @@
    */
   function nbaTestingHtml(data){
     if(!data||data.mode!=='testing_only')return '';const S=STR.record.live.testing;
+    const kpi=(label,value)=>'<div class="kpi"><div class="k">'+esc(label)+'</div><div class="v">'+esc(value??0)+'</div></div>';
     const windowText=data.started_at?fmtTime(data.started_at)+' → '+fmtTime(data.ends_at):S.waiting;
     return '<details class="mib-panel nba-prop-testing"><summary>'+esc(S.title)+'</summary><p>'+esc(S.states[data.state]||S.waiting)+'</p><div class="kpis">'+kpi(S.history,data.history_games)+kpi(S.predictions,data.predictions)+kpi(S.settled,data.settled)+kpi(S.qualified,data.qualified)+'</div><p class="small muted">'+esc(S.window+': '+windowText)+'</p><p class="small muted">'+esc(S.note)+'</p><p class="small muted">'+esc(S.criteria)+'</p><p class="small muted">'+esc(S.range)+'</p><p class="small muted">'+esc(S.frozen+': '+data.model_version+' · '+String(data.protocol_hash).slice(0,12))+'</p></details>';
   }
