@@ -9,12 +9,12 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892554",
-  "fetched_at": "2026-10-22T23:37:33.524Z",
+  "fetched_at": "2026-10-22T23:43:39.802Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "5:51",
-  "regulation_secs_left": 3051,
+  "clock": "3:49",
+  "regulation_secs_left": 2929,
   "home": {
    "abbr": "OTT",
    "alias": "Senators",
@@ -121,7 +121,7 @@
    }
   ]
  },
- "updated": "2026-10-22T23:37:33.525Z",
+ "updated": "2026-10-22T23:43:39.802Z",
  "open_taken_at": "2026-10-21T05:15:09.934Z",
  "thresholds": {
   "big": 10,
@@ -153,6 +153,26 @@
  ],
  "edges": [
   {
+   "key": "1562370:1",
+   "market_id": "1562370",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming hockey event SJS Sharks vs OTT Senators scheduled for October 22, 2026 at 11:00 PM UTC?",
+   "side": "Senators win",
+   "open_chance": 57,
+   "now_chance": 53,
+   "open_odds": "-133",
+   "now_odds": "-113",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "OTT tied, Q1 3:49",
+   "first_seen": "2026-10-22T23:43:39.802Z",
+   "status": "open",
+   "kalshi": false
+  },
+  {
    "key": "1562370:0",
    "market_id": "1562370",
    "market": "Moneyline",
@@ -173,10 +193,27 @@
    "kalshi": false
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "new_edge:1562370:1:slight",
+   "key": "1562370:1",
+   "at": "2026-10-22T23:43:39.802Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Senators win",
+   "market": "Moneyline",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 4,
+   "text": "New slight edge: Senators win (Moneyline), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-sj-ott-2026-10-22"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:1562370:1:slight"
+ ],
  "kalshi_checked": {
-  "at": "2026-10-22T23:37:33.667Z",
+  "at": "2026-10-22T23:43:40.027Z",
   "event": "26OCT22SJOTT"
  }
 }
