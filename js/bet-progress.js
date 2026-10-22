@@ -62,15 +62,15 @@
   if(prop && (/points\s*(?:,|\+)\s*rebounds\s*(?:,?\s*and|\+)\s*assists/i.test(text+' '+s.question) || /-pra-/.test(s.marketSlug))) prop.stat={key:'pra'};
   const context=text+' '+s.market+' '+s.question+' '+s.marketSlug;
   // Do not substitute full-game statistics for an unrecognized period contract.
-  const segment=/\bQ([1-4])\b/i.exec(context)||/-q([1-4])-/.exec(s.marketSlug);
-  const half=/\bH([12])\b/i.exec(context)||(/-fh-/.test(s.marketSlug)?['',1]:/-sh-/.test(s.marketSlug)?['',2]:null);
+  const segment=/\bQ([1-4])\b/i.exec(context)||/-q([1-4])-/.exec(s.marketSlug)||/-(?:tt)?([1-4])q-/.exec(s.marketSlug);
+  const half=/\bH([12])\b/i.exec(context)||/-(?:tt)?([12])h-/.exec(s.marketSlug)||(/-fh-/.test(s.marketSlug)?['',1]:/-sh-/.test(s.marketSlug)?['',2]:null);
   if(!segment && !half && /(?:\bperiod\b|\bquarter\b|\bhalf\b|-(?:p[1-3]|q[1-4]|fh|sh)-)/i.test(context))return {kind:'unknown'};
   if(prop) return {kind:'prop',player:prop.player,stat:prop.stat.key,target:prop.n,under:s.side==='no'||/^No:/i.test(text)||/[—–]\s*NO\b/i.test(text),segment:!!(segment||half)};
   const total=/\b(Over|Under)\s+(\d+(?:\.\d+)?)/i.exec(text);
-  if(total)return {kind:'total',target:+total[2],under:total[1].toLowerCase()==='under',teamTotal:/team total/i.test(s.market)||!/^\s*(?:Yes:|No:)?\s*(?:Over|Under)\b/i.test(text),segment:segment?{quarter:+segment[1]}:half?{half:+half[1]}:null};
+  if(total)return {kind:'total',target:+total[2],under:total[1].toLowerCase()==='under',teamTotal:s.teamTotal??(/team total/i.test(s.market)||!/^\s*(?:Yes:|No:)?\s*(?:Over|Under)\b/i.test(text)),segment:segment?{quarter:+segment[1]}:half?{half:+half[1]}:null};
   const spread=/([+-]\d+(?:\.\d+)?)/.exec(text);
   if(spread)return {kind:'spread',line:+spread[1],segment:segment?{quarter:+segment[1]}:half?{half:+half[1]}:null};
-  if(/to win|\bwins?\b|moneyline/i.test(text+' '+s.market))return {kind:'winner',segment:null};
+  if(/to win|\bwins?\b|moneyline/i.test(text+' '+s.market))return {kind:'winner',segment:segment?{quarter:+segment[1]}:half?{half:+half[1]}:null};
   return {kind:'unknown'};
  }
  function selectedTeam(competitors,s) {
@@ -134,9 +134,9 @@
   if((/spread$/.test(type)||/^tennis_match_(games|sets)_spread$/.test(type))&&team){text=(team.name||team.abbreviation)+' '+chosen.description;side='yes';}
   else if((/total$/.test(type)||/^tennis_match_total_(games|sets)$/.test(type))&&/^(over|under)$/i.test(chosen.description||'')&&Number.isFinite(m.line)){text=chosen.description+' '+Math.abs(m.line);side='yes';}
   else if(/winner$/.test(type)&&team){text=(team.name||team.abbreviation)+' to win';side='yes';}
-  const segment=/-sh-/.test(m.slug)?' (H2)':/-fh-/.test(m.slug)?' (H1)':(/-q([1-4])-/.exec(m.slug)||[])[1];
+  const segment=/-sh-|-(?:tt)?2h-/.test(m.slug)?' (H2)':/-fh-|-(?:tt)?1h-/.test(m.slug)?' (H1)':(/-q([1-4])-/.exec(m.slug)||/-(?:tt)?([1-4])q-/.exec(m.slug)||[])[1];
   if(segment)text+=typeof segment==='string'&&segment.startsWith(' ')?segment:' (Q'+segment+')';
-  return {...s,resolvedMarket:true,marketSlug:m.slug,text,question:m.title||m.question||'',market:type,player:m.metadata?.playerName||'',team:team?.abbreviation||s.team,side,game:event.title||s.game,startTime:event.startDate||s.startTime};
+  return {...s,resolvedMarket:true,teamTotal:!!team&&/total$/.test(type),marketSlug:m.slug,text,question:m.title||m.question||'',market:type,player:m.metadata?.playerName||'',team:team?.abbreviation||s.team,side,game:event.title||s.game,startTime:event.startDate||s.startTime};
  }
  const marketCache=new Map();
  async function enrich(s){
