@@ -337,3 +337,10 @@ input[type="checkbox"], input[type="radio"] { accent-color: var(--accent); }
 .live-bets-root .lb-groups .lb-top { margin-bottom:2px; }
 .live-bets-root .lb-groups .lb-card-details > .lb-meta, .live-bets-root .lb-groups .lb-card-details > .lb-market { font-size:11px; line-height:1.45; }
 
+
+/* Odds sign colors describe price format, not a safety or quality grade. */
+:root { --odds-even:var(--warn); --odds-plus:var(--accent-2); --odds-minus:var(--good); }
+.live-bets-root .lb-edge .lb-odds { font-weight:800; font-variant-numeric:tabular-nums; }
+.live-bets-root .lb-edge .lb-odds-even { color:var(--odds-even); }
+.live-bets-root .lb-edge .lb-odds-plus { color:var(--odds-plus); }
+.live-bets-root .lb-edge .lb-odds-minus { color:var(--odds-minus); }

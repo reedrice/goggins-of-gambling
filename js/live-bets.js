@@ -78,6 +78,15 @@
     return { game: split('game'), prop: split('prop'), reasons: sortEdges(reasons) };
   }
 
+  const CLOSE_EVEN_ODDS = 120;
+  function oddsTone(odds) {
+    const text=String(odds??'').trim().replace(/\u2212/g,'-');
+    if(/^(even|evs)$/i.test(text))return 'even';
+    if(!/^[+-]?\d+(?:\.\d+)?$/.test(text))return 'unknown';
+    const n=Number(text);
+    if(Math.abs(n)<100)return 'unknown';
+    return Math.abs(n)<=CLOSE_EVEN_ODDS?'even':n>0?'plus':'minus';
+  }
   function edgeTitle(edge) {
     const text=String(edge.side || '');
     if (groupOf(edge) !== 'prop') {
@@ -260,7 +269,7 @@
     if(root.AthleteFlags)root.AthleteFlags.decorate(matchup,eventGame,sportOf({slug:eventSlug}));
     else matchup.textContent=eventGame;
     li.append(matchup);
-    li.append(el('div', 'lb-odds', e.now_odds));
+    li.append(el('div', 'lb-odds lb-odds-'+oddsTone(e.now_odds), e.now_odds));
     if (root.BetProgress) {
       const progress = el('div', 'bp-host'); progress.dataset.bp = JSON.stringify(root.BetProgress.spec({...e,event_slug:eventSlug,event:eventGame})); li.append(progress);
     }
@@ -465,8 +474,9 @@
     if(root.AthleteFlags)root.AthleteFlags.load().then(()=>{if(rootEl.isConnected)ui.redraw();});
   }
 
-  return { autoRefresh, timeGames, sportOf, sportGames, edgeTitle, edgeSelection, combineGames, render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
+  return { oddsTone, CLOSE_EVEN_ODDS, autoRefresh, timeGames, sportOf, sportGames, edgeTitle, edgeSelection, combineGames, render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
 });
+
 
 
 
