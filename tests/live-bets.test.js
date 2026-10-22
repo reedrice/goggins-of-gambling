@@ -149,3 +149,7 @@ assert.equal(LB.oddsTone(null),'unknown');
 assert.equal(LB.oddsTone('—'),'unknown');
 assert.equal(LB.oddsTone('0'),'unknown');
 
+assert.equal(LB.oddsTone('-110'),'even');
+assert.equal(LB.oddsTone('+110'),'even');
+assert.equal(LB.oddsTone('-111'),'minus');
+assert.equal(LB.oddsTone('+111'),'plus');
