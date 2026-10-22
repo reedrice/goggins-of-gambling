@@ -1598,3 +1598,6 @@ Live Bets now places a compact ESPN snapshot scoreboard beside its sport/game-co
 
 ## 137. Scoreboard game filtering (Reed, Oct 21)
 Scoreboard games are accessible toggle buttons. Selecting a game filters both Live Bets groups using verified ESPN event_id plus sport/league matching; selecting it again or Show all games restores the selected sport. Unmatched games show zero qualifying bets rather than another matchup. Selection persists through feed refreshes, resets on sport changes, and does not affect Today’s Picks. Active border/aria-pressed and keyboard focus restoration preserve discoverability. No new fetch loop, AI, or backend changes.
+
+## 138. Compact uniform Live Bets cards (Reed, Oct 21)
+Both main Game lines and Prop bets lists use identical 360px card rows, 12px inset/gaps and smaller typography/progress tracks. Desktop >=1100px has two adjacent cards per group (four total columns). Medium screens use two total columns; phones stack one readable column. Expanded details/long content scroll inside the uniform card instead of clipping information or changing row heights. Market/Chart/Analytics/Details remain 44px actions, all progress values/bars and sport/game filtering are preserved. Master-token radii, semantic edge tints and private-account styling unchanged. No runtime/AI/backend changes.
