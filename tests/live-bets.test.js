@@ -151,5 +151,10 @@ assert.equal(LB.oddsTone('0'),'unknown');
 
 assert.equal(LB.oddsTone('-110'),'even');
 assert.equal(LB.oddsTone('+110'),'even');
-assert.equal(LB.oddsTone('-111'),'minus');
-assert.equal(LB.oddsTone('+111'),'plus');
+assert.equal(LB.oddsTone('-111'),'even');
+assert.equal(LB.oddsTone('+111'),'even');
+
+assert.equal(LB.oddsTone('-115'),'even');
+assert.equal(LB.oddsTone('+115'),'even');
+assert.equal(LB.oddsTone('-116'),'minus');
+assert.equal(LB.oddsTone('+116'),'plus');
