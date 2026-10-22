@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185537",
-  "fetched_at": "2026-10-22T05:13:19.158Z",
+  "fetched_at": "2026-10-22T05:15:40.431Z",
   "tennis": true,
   "tennis_match": {
    "id": "185537",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Jasmine Paolini (ITA) leads (4) Iva Jovic (USA) 1-0",
+     "text": "(4) Iva Jovic (USA) leads Jasmine Paolini (ITA) 1-1",
      "type": "event"
     }
    ],
@@ -55,7 +55,6 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
      "linescores": [
       {
        "value": 1
@@ -98,13 +97,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
      "curatedRank": {
       "current": 4
      },
      "linescores": [
       {
-       "value": 0
+       "value": 1
       }
      ],
      "athlete": {
@@ -139,11 +137,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 963,
    "type": {
     "id": "2",
@@ -181,7 +174,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-22T05:13:19.158Z",
+ "updated": "2026-10-22T05:15:40.431Z",
  "open_taken_at": "2026-10-21T05:15:35.467Z",
  "thresholds": {
   "big": 10,
@@ -271,7 +264,7 @@
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Iva Jovic not above the games spread right now",
-   "context": "Jasmine Paolini 1 · Iva Jovic 0 · 1st Set (games by set)",
+   "context": "Jasmine Paolini 1 · Iva Jovic 1 · 1st Set (games by set)",
    "first_seen": "2026-10-22T05:13:19.158Z",
    "status": "open",
    "kalshi": null
@@ -291,7 +284,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Jasmine Paolini 1 · Iva Jovic 0 · 1st Set (games by set)",
+   "context": "Jasmine Paolini 1 · Iva Jovic 1 · 1st Set (games by set)",
    "first_seen": "2026-10-22T05:13:19.158Z",
    "status": "open",
    "kalshi": null
@@ -313,11 +306,25 @@
    "reason": null,
    "context": "Jasmine Paolini 1 · Iva Jovic 0 · 1st Set (games by set)",
    "first_seen": "2026-10-22T05:13:19.158Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1615479:0:2026-10-22T05:13:19.158Z",
+   "key": "1615479:0",
+   "at": "2026-10-22T05:15:40.431Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Iva Jovic win",
+   "market": "Moneyline",
+   "now_odds": "-156",
+   "now_chance": 61,
+   "edge": 5,
+   "text": "Edge gone: Iva Jovic win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-ivajov-jaspao-2026-10-21"
+  },
   {
    "id": "new_edge:1636049:1:slight",
    "key": "1636049:1",
@@ -349,7 +356,8 @@
  ],
  "alert_seen": [
   "new_edge:1636049:1:slight",
-  "new_edge:1615479:0:slight"
+  "new_edge:1615479:0:slight",
+  "gone:1615479:0:2026-10-22T05:13:19.158Z"
  ],
  "kalshi_checked": null
 }
