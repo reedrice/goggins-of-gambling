@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185521",
-  "fetched_at": "2026-10-22T08:47:28.625Z",
+  "fetched_at": "2026-10-22T08:51:27.903Z",
   "tennis": true,
   "tennis_match": {
    "id": "185521",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Thu, October 22nd at 4:45 AM EDT",
-     "shortDetail": "10/22 - 4:45 AM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Alexandra Eala (PHI) leads (6) Diana Shnaider (RUS) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "curatedRank": {
       "current": 6
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "8af6b36d-7d61-3c1d-8134-c7b52a123dcf",
       "displayName": "Diana Shnaider",
@@ -90,6 +101,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "067c21f8-c2a6-3d19-beeb-5cf5874910ec",
       "displayName": "Alexandra Eala",
@@ -122,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 963,
    "type": {
     "id": "2",
@@ -138,10 +160,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Thu, October 22nd at 4:45 AM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Diana Shnaider",
@@ -159,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-22T08:47:28.625Z",
+ "updated": "2026-10-22T08:51:27.904Z",
  "open_taken_at": "2026-10-21T05:15:31.178Z",
  "thresholds": {
   "big": 10,
@@ -269,9 +291,9 @@
    "now_odds": "+104",
    "edge": 7,
    "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
+   "class": "score",
+   "reason": "Explained by score: Diana Shnaider not above the games spread right now",
+   "context": "Diana Shnaider 0 · Alexandra Eala 0 · 1st Set (games by set)",
    "first_seen": "2026-10-22T07:23:19.874Z",
    "status": "open",
    "kalshi": null
@@ -291,7 +313,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Diana Shnaider 0 · Alexandra Eala 0 · 1st Set (games by set)",
    "first_seen": "2026-10-22T07:17:51.074Z",
    "status": "open",
    "kalshi": null
