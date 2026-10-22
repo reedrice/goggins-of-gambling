@@ -4,12 +4,12 @@
  "game": "Magda Linette vs. Katerina Siniakova",
  "url": "https://polymarket.us/sports/wta/wta-maglin-katsin-2026-10-20",
  "start_time": "2026-10-22T06:30:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185592",
-  "fetched_at": "2026-10-22T07:59:22.603Z",
+  "fetched_at": "2026-10-22T08:08:23.135Z",
   "tennis": true,
   "tennis_match": {
    "id": "185592",
@@ -17,17 +17,17 @@
    "date": "2026-10-22T06:40Z",
    "startDate": "2026-10-22T06:40Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Katerina Siniakova (CZE) leads Magda Linette (POL) 6-4 5-0",
+     "text": "Katerina Siniakova (CZE) bt Magda Linette (POL) 6-4 6-1",
      "type": "event"
     }
    ],
@@ -55,14 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "winner": true,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 5
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -102,14 +103,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "winner": false,
      "linescores": [
       {
        "value": 4,
        "winner": false
       },
       {
-       "value": 0
+       "value": 1,
+       "winner": false
       }
      ],
      "athlete": {
@@ -144,11 +146,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 345,
    "type": {
     "id": "2",
@@ -165,16 +162,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Katerina Siniakova",
    "alias": "Katerina Siniakova",
    "name": "Katerina Siniakova",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Magda Linette",
@@ -186,7 +183,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-22T07:59:22.603Z",
+ "updated": "2026-10-22T08:08:23.135Z",
  "open_taken_at": "2026-10-21T05:15:36.696Z",
  "thresholds": {
   "big": 10,
@@ -278,7 +275,7 @@
    "reason": null,
    "context": "Katerina Siniakova 6, 5 · Magda Linette 4, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-22T07:29:23.160Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -298,7 +295,7 @@
    "reason": "Explained by score: Magda Linette not above the games spread right now",
    "context": "Katerina Siniakova 6, 5 · Magda Linette 4, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-22T06:57:52.357Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -343,6 +340,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1615968:0:2026-10-22T07:29:23.160Z",
+   "key": "1615968:0",
+   "at": "2026-10-22T08:08:23.135Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+317",
+   "now_chance": 24,
+   "edge": 18,
+   "text": "Edge gone: Over 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-maglin-katsin-2026-10-20"
+  },
   {
    "id": "new_edge:1615968:0:big",
    "key": "1615968:0",
@@ -452,7 +463,8 @@
   "gone:1615968:1:2026-10-22T06:49:17.109Z",
   "gone:1615896:0:2026-10-22T06:53:07.755Z",
   "gone:1615980:0:2026-10-22T06:57:52.357Z",
-  "new_edge:1615968:0:big"
+  "new_edge:1615968:0:big",
+  "gone:1615968:0:2026-10-22T07:29:23.160Z"
  ],
  "kalshi_checked": null
 }
