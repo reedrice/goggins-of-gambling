@@ -268,3 +268,24 @@ input[type="checkbox"], input[type="radio"] { accent-color: var(--accent); }
 #tab-bets .pm-position-grid .bp-host { min-width:0; }
 @media(min-width:640px){.pm-position-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }}
 @media(min-width:1100px){.pm-position-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }}
+
+/* Selected-sport scoreboard shares the Live Bets heading width. */
+.live-bets-root .lb-head-row { display:flex; align-items:center; gap:16px; min-width:0; margin:4px 0 12px; }
+.live-bets-root .lb-head-row > .lb-head { flex:0 0 220px; margin:0; }
+.live-bets-root .lb-scoreboard { flex:1 1 0; min-width:0; max-width:100%; }
+.live-bets-root .lb-board-note { color:var(--text-secondary); font-size:10px; margin-bottom:4px; }
+.live-bets-root .lb-board-rail { display:flex; align-items:stretch; min-width:0; gap:4px; }
+.live-bets-root .lb-board-viewport { display:flex; min-width:0; flex:1; overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x proximity; scrollbar-width:thin; }
+.live-bets-root .lb-board-game { box-sizing:border-box; flex:0 0 128px; padding:8px; border:1px solid var(--surface-border); border-radius:var(--radius-control); background:var(--surface-glass); backdrop-filter:blur(var(--surface-blur)); scroll-snap-align:start; }
+.live-bets-root .lb-board-game + .lb-board-game { margin-left:6px; }
+.live-bets-root .lb-board-clock { font-size:10px; color:var(--text-secondary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-bottom:4px; }
+.live-bets-root .lb-board-live { color:var(--warn); }
+.live-bets-root .lb-board-team { display:flex; align-items:center; gap:5px; font-size:12px; line-height:1.5; color:var(--text-primary); }
+.live-bets-root .lb-board-team img { object-fit:contain; flex-shrink:0; }
+.live-bets-root .lb-board-name { min-width:0; flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.live-bets-root .lb-board-score { font-variant-numeric:tabular-nums; }
+.live-bets-root .lb-board-tournament { display:block; font-size:12px; overflow-wrap:anywhere; }
+.live-bets-root .lb-board-arrow { flex:0 0 32px; min-width:32px; min-height:44px; padding:0; font-size:24px; border-radius:var(--radius-control); }
+.live-bets-root .lb-board-arrow:disabled { opacity:.25; cursor:default; }
+.live-bets-root .lb-board-empty { color:var(--text-secondary); font-size:12px; }
+@media(max-width:767px){.live-bets-root .lb-head-row { flex-direction:column; align-items:stretch; gap:8px; }.live-bets-root .lb-head-row > .lb-head { flex:auto; }.live-bets-root .lb-scoreboard { flex:auto; width:100%; }}
