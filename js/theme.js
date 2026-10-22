@@ -1,7 +1,7 @@
 /* Per-device appearance only. No network, account data, timers or backend changes. */
 (function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else{root.MibTheme=api;api.apply(root.Store,root.document);}})(typeof window!=='undefined'?window:globalThis,function(){
   'use strict';
-  const schemes=['ocean','violet','teal','custom'];
+  const schemes=['aurora','ocean','violet','teal','custom'];
   const properties=['color-scheme','--canvas','--accent','--focus-ring','--action-fill','--action-text','--selection-fill','--scrim','--text-primary','--text-secondary','--surface-glass','--surface-border','--surface-panel','--panel-border','--track'];
   const validColor=c=>typeof c==='string'&&/^#[0-9a-f]{6}$/i.test(c);
   const rgb=c=>[1,3,5].map(i=>parseInt(c.slice(i,i+2),16));
@@ -14,7 +14,7 @@
   }
   function apply(store,doc){
     if(!store||!doc)return;
-    const p=store.getPrefs(),scheme=schemes.includes(p.colorScheme)?p.colorScheme:'ocean',el=doc.documentElement;
+    const p=store.getPrefs(),scheme=schemes.includes(p.colorScheme)?p.colorScheme:'aurora',el=doc.documentElement;
     properties.forEach(k=>el.style.removeProperty(k));el.dataset.colorScheme=scheme;
     const custom=scheme==='custom'&&palette(p.customCanvas,p.customAccent);
     if(custom)Object.entries(custom).forEach(([k,v])=>el.style.setProperty(k,v));

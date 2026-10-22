@@ -6,6 +6,7 @@
 :root {
   color-scheme: dark;
   --canvas: #0A0E17;
+  --canvas-atmosphere: radial-gradient(ellipse at 8% 0%, rgba(63, 110, 174, .17), transparent 60%), radial-gradient(ellipse at 100% 45%, rgba(83, 70, 146, .1), transparent 60%);
   --surface-glass: rgba(255, 255, 255, 0.03);
   --surface-border: rgba(255, 255, 255, 0.05);
   --surface-panel: rgba(255, 255, 255, 0.07);
@@ -58,15 +59,25 @@
 
 /* Colorways are interchangeable; geometry, glass blur and spacing never change. */
 :root[data-color-scheme="violet"] {
+  --canvas-atmosphere: radial-gradient(ellipse at 8% 0%, rgba(121, 92, 190, .16), transparent 60%), radial-gradient(ellipse at 100% 45%, rgba(52, 110, 135, .1), transparent 60%);
   --canvas: #141426; --accent: #B5A2FF; --focus-ring: #D0C4FF;
   --action-fill: #51418B; --selection-fill: rgba(181, 162, 255, 0.14);
   --scrim: rgba(20, 20, 38, 0.76);
 }
 :root[data-color-scheme="teal"] {
+  --canvas-atmosphere: radial-gradient(ellipse at 8% 0%, rgba(45, 143, 135, .15), transparent 60%), radial-gradient(ellipse at 100% 45%, rgba(83, 70, 146, .1), transparent 60%);
   --canvas: #0B1A1F; --accent: #72D6CD; --focus-ring: #A8E8E2;
   --action-fill: #185B56; --selection-fill: rgba(114, 214, 205, 0.14);
   --scrim: rgba(11, 26, 31, 0.76);
 }
+/* Aurora: Brandon's requested calm, dimensional main-site appearance. */
+:root[data-color-scheme="aurora"] {
+  --canvas: #0D141E; --accent: #7CDCD3; --focus-ring: #B7F0EB;
+  --action-fill: #205C59; --selection-fill: rgba(124, 220, 211, .14);
+  --scrim: rgba(13, 20, 30, .82);
+  --canvas-atmosphere: radial-gradient(ellipse at 8% 0%, rgba(41, 124, 132, .17), transparent 60%), radial-gradient(ellipse at 100% 45%, rgba(100, 80, 170, .12), transparent 60%);
+}
+:root[data-color-scheme="custom"] { --canvas-atmosphere: none; }
 .theme-custom { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); }
 .theme-custom input[type="color"] { height: 48px; padding: var(--space-1); }
 #picks-score-ticker .pst-league { color: var(--text-secondary); }
@@ -75,7 +86,7 @@
 .risk-risky, .risk-bg-risky { background: var(--warn); }
 
 html, body { background: var(--canvas); color: var(--text-primary); }
-body { background-image: none; font-family: var(--font-ui); font-size: var(--type-body); font-weight: var(--weight-body); line-height: 1.55; }
+body { background-image: var(--canvas-atmosphere); background-size: 100% 100vh; background-repeat: no-repeat; min-height: 100vh; font-family: var(--font-ui); font-size: var(--type-body); font-weight: var(--weight-body); line-height: 1.55; }
 main { max-width: var(--content-width); padding: var(--space-6) var(--page-gutter) calc(var(--nav-clearance) + var(--safe-bottom)); }
 main > section { min-width: 0; }
 :is(h1, h2, h3, h4, .brand-name, .brand-tag, .picker h4) {

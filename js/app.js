@@ -2187,7 +2187,7 @@
     const unsynced = S.getBets().filter(b => b.share && !b.shared).length;
     el.innerHTML = `<h2>${esc(X.title)}</h2>
       <section class="card" aria-labelledby="theme-heading"><h3 id="theme-heading">${esc(STR.theme.title)}</h3>
-        <label class="field"><span>${esc(STR.theme.scheme)}</span><select id="set-theme">${Object.entries(STR.theme.schemes).map(([key,label])=>`<option value="${key}" ${key===(prefs.colorScheme||'ocean')?'selected':''}>${esc(label)}</option>`).join('')}</select></label>
+        <label class="field"><span>${esc(STR.theme.scheme)}</span><select id="set-theme">${Object.entries(STR.theme.schemes).map(([key,label])=>`<option value="${key}" ${key===(prefs.colorScheme||'aurora')?'selected':''}>${esc(label)}</option>`).join('')}</select></label>
         <div class="theme-custom" id="theme-custom" ${prefs.colorScheme==='custom'?'':'hidden'}>
           <label class="field"><span>${esc(STR.theme.canvas)}</span><input type="color" id="theme-canvas" value="${esc(MibTheme.validColor(prefs.customCanvas)?prefs.customCanvas:getComputedStyle(document.documentElement).getPropertyValue('--canvas').trim())}"></label>
           <label class="field"><span>${esc(STR.theme.accent)}</span><input type="color" id="theme-accent" value="${esc(MibTheme.validColor(prefs.customAccent)?prefs.customAccent:getComputedStyle(document.documentElement).getPropertyValue('--accent').trim())}"></label>
