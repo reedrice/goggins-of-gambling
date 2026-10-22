@@ -353,3 +353,9 @@ main:has(#tab-picks:not([hidden]) .live-bets-root) { max-width:1280px; }
 .live-bets-root .lb-groups .lb-edge:has(.lb-card-details[open]) .lb-card-details { margin-top:4px; }
 .live-bets-root .lb-groups .lb-edge:has(.lb-card-details[open]) .lb-card-actions { margin-top:4px; }
 
+
+/* Reserve both market-group lanes even when one group has no eligible bets. */
+@media(min-width:760px){
+ .live-bets-root .lb-groups .lb-group-game { grid-column:1; }
+ .live-bets-root .lb-groups .lb-group-prop { grid-column:2; }
+}

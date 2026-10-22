@@ -341,7 +341,7 @@
 
   /** One group (Game lines / Player props) with its own "Show more". */
   function groupBox(title, g, link, ui, key) {
-    const box = el('section', 'lb-group');
+    const box = el('section', 'lb-group lb-group-'+key);
     box.append(el('h3', 'lb-group-title', `${title} (${g.total})`));
     if (!g.total) { box.append(el('div', 'lb-none', designText().noMatching)); return box; }
     const ul = el('ul', 'lb-list');
@@ -398,7 +398,6 @@
       const groups = el('div', 'lb-groups');
       if (g.game.total) groups.append(groupBox(P.gameLines, g.game, link, ui, 'game'));
       if (g.prop.total) groups.append(groupBox(P.propBets, g.prop, link, ui, 'prop'));
-      if (!g.game.total || !g.prop.total) groups.classList.add('lb-single-group');
       box.append(groups);
     }
     box.append(alertsBox(d, ui));
@@ -476,6 +475,7 @@
 
   return { oddsTone, CLOSE_EVEN_ODDS, autoRefresh, timeGames, sportOf, sportGames, edgeTitle, edgeSelection, combineGames, render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
 });
+
 
 
 
