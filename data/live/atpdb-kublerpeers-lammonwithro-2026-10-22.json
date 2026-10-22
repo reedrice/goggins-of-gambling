@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185031",
-  "fetched_at": "2026-10-22T09:12:30.294Z",
+  "fetched_at": "2026-10-22T09:14:29.991Z",
   "tennis": true,
   "tennis_match": {
    "id": "185031",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Nathaniel Lammons (USA) & Jackson Withrow (USA) leads Jason Kubler (AUS) & John Peers (AUS) 7-6 (7-1)",
+     "text": "Jason Kubler (AUS) & John Peers (AUS) leads Nathaniel Lammons (USA) & Jackson Withrow (USA) 6-7 (1-7) 0-0",
      "type": "event"
     }
    ],
@@ -55,10 +55,15 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 7,
-       "tiebreak": 7
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "roster": {
@@ -133,10 +138,15 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 6,
-       "tiebreak": 1
+       "tiebreak": 1,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "roster": {
@@ -206,6 +216,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 708,
    "type": {
     "id": "3",
@@ -224,14 +239,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Nathaniel Lammons / Jackson Withrow",
    "alias": "Nathaniel Lammons / Jackson Withrow",
    "name": "Nathaniel Lammons / Jackson Withrow",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Jason Kubler / John Peers",
@@ -243,7 +258,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-22T09:12:30.294Z",
+ "updated": "2026-10-22T09:14:29.991Z",
  "open_taken_at": "2026-10-21T12:54:40.976Z",
  "thresholds": {
   "big": 10,
