@@ -9,17 +9,17 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892556",
-  "fetched_at": "2026-10-22T23:31:22.938Z",
+  "fetched_at": "2026-10-22T23:37:33.552Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "6:57",
-  "regulation_secs_left": 3117,
+  "clock": "4:28",
+  "regulation_secs_left": 2968,
   "home": {
    "abbr": "PIT",
    "alias": "Penguins",
    "name": "Pittsburgh Penguins",
-   "score": 0,
+   "score": 1,
    "id": "16"
   },
   "away": {
@@ -96,9 +96,28 @@
    }
   ],
   "in_game_injuries": [],
-  "leaders": []
+  "leaders": [
+   {
+    "team": "PIT",
+    "player": "Nick Robertson",
+    "short": "N. Robertson",
+    "pos": "LW"
+   },
+   {
+    "team": "PIT",
+    "player": "Kris Letang",
+    "short": "K. Letang",
+    "pos": "D"
+   },
+   {
+    "team": "PIT",
+    "player": "Nick Robertson",
+    "short": "N. Robertson",
+    "pos": "LW"
+   }
+  ]
  },
- "updated": "2026-10-22T23:31:22.938Z",
+ "updated": "2026-10-22T23:37:33.552Z",
  "open_taken_at": "2026-10-21T05:15:10.574Z",
  "thresholds": {
   "big": 10,
@@ -152,6 +171,26 @@
  ],
  "edges": [
   {
+   "key": "1562434:0",
+   "market_id": "1562434",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming hockey event FLA Panthers vs PIT Penguins scheduled for October 22, 2026 at 11:00 PM UTC?",
+   "side": "Panthers win",
+   "open_chance": 50,
+   "now_chance": 34,
+   "open_odds": "+100",
+   "now_odds": "+194",
+   "edge": 16,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: FLA trailing by 1",
+   "context": "FLA down 1, Q1 4:28",
+   "first_seen": "2026-10-22T23:37:33.552Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
    "key": "1562443:0",
    "market_id": "1562443",
    "market": "Main total",
@@ -159,23 +198,40 @@
    "question": "Will the total in FLA vs PIT be more than 4.5?",
    "side": "Over 4.5",
    "open_chance": 85,
-   "now_chance": 70,
+   "now_chance": 78,
    "open_odds": "-567",
-   "now_odds": "-233",
-   "edge": 15,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: scoring below pace (0 pts, pace 1)",
-   "context": "FLA 0, PIT 0, Q1 6:57",
+   "now_odds": "-355",
+   "edge": 7,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "FLA 0, PIT 1, Q1 4:28",
    "first_seen": "2026-10-22T23:19:00.643Z",
    "status": "open",
    "kalshi": true
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "new_edge:1562443:0:slight",
+   "key": "1562443:0",
+   "at": "2026-10-22T23:37:33.552Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 4.5",
+   "market": "Main total",
+   "now_odds": "-355",
+   "now_chance": 78,
+   "edge": 7,
+   "text": "New slight edge: Over 4.5 (Main total), 7 points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-fla-pit-2026-10-22"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:1562443:0:slight"
+ ],
  "kalshi_checked": {
-  "at": "2026-10-22T23:31:23.046Z",
+  "at": "2026-10-22T23:37:33.659Z",
   "event": "26OCT22FLAPIT"
  }
 }
