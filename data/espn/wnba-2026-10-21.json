@@ -3,24 +3,24 @@
   "league": "wnba",
   "query_date": "2026-10-21",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20261021&limit=1000",
-  "fetched_at": "2026-10-22T00:06:32.237Z",
+  "fetched_at": "2026-10-22T00:12:24.852Z",
   "events": [
     {
       "id": "401918307",
       "name": "Golden State Valkyries at Atlanta Dream",
       "date": "2026-10-22T00:00Z",
       "status": {
-        "clock": 0,
-        "displayClock": "0.0",
-        "period": 0,
+        "clock": 583,
+        "displayClock": "9:43",
+        "period": 1,
         "type": {
-          "id": "1",
-          "name": "STATUS_SCHEDULED",
-          "state": "pre",
+          "id": "2",
+          "name": "STATUS_IN_PROGRESS",
+          "state": "in",
           "completed": false,
-          "description": "Scheduled",
-          "detail": "Wed, October 21st at 8:00 PM EDT",
-          "shortDetail": "10/21 - 8:00 PM EDT"
+          "description": "In Progress",
+          "detail": "9:43 - 1st Quarter",
+          "shortDetail": "9:43 - 1st"
         }
       },
       "competitions": [
@@ -28,17 +28,17 @@
           "id": "401918307",
           "date": "2026-10-22T00:00Z",
           "status": {
-            "clock": 0,
-            "displayClock": "0.0",
-            "period": 0,
+            "clock": 583,
+            "displayClock": "9:43",
+            "period": 1,
             "type": {
-              "id": "1",
-              "name": "STATUS_SCHEDULED",
-              "state": "pre",
+              "id": "2",
+              "name": "STATUS_IN_PROGRESS",
+              "state": "in",
               "completed": false,
-              "description": "Scheduled",
-              "detail": "Wed, October 21st at 8:00 PM EDT",
-              "shortDetail": "10/21 - 8:00 PM EDT"
+              "description": "In Progress",
+              "detail": "9:43 - 1st Quarter",
+              "shortDetail": "9:43 - 1st"
             }
           },
           "competitors": [
@@ -46,6 +46,13 @@
               "id": "20",
               "homeAway": "home",
               "score": "0",
+              "linescores": [
+                {
+                  "value": 0,
+                  "displayValue": "0",
+                  "period": 1
+                }
+              ],
               "team": {
                 "id": "20",
                 "abbreviation": "ATL",
@@ -56,6 +63,13 @@
               "id": "129689",
               "homeAway": "away",
               "score": "0",
+              "linescores": [
+                {
+                  "value": 0,
+                  "displayValue": "0",
+                  "period": 1
+                }
+              ],
               "team": {
                 "id": "129689",
                 "abbreviation": "GS",
@@ -85,28 +99,92 @@
           "status": "Out"
         }
       ],
-      "starters": [],
-      "starting_goalies": [],
-      "probables": [],
-      "book_lines": [
+      "starters": [
         {
-          "provider": "DraftKings",
-          "details": "ATL -4.5",
-          "spread": -4.5,
-          "total": 153.5
+          "player": "Kayla Thornton",
+          "athlete_id": "2529622",
+          "team": "GS",
+          "position": "F",
+          "evidence": "boxscore.players.statistics.athletes.starter=true"
+        },
+        {
+          "player": "Gabby Williams",
+          "athlete_id": "3142328",
+          "team": "GS",
+          "position": "F",
+          "evidence": "boxscore.players.statistics.athletes.starter=true"
+        },
+        {
+          "player": "Cecilia Zandalasini",
+          "athlete_id": "4257500",
+          "team": "GS",
+          "position": "F",
+          "evidence": "boxscore.players.statistics.athletes.starter=true"
+        },
+        {
+          "player": "Kiah Stokes",
+          "athlete_id": "2590093",
+          "team": "GS",
+          "position": "C",
+          "evidence": "boxscore.players.statistics.athletes.starter=true"
+        },
+        {
+          "player": "Veronica Burton",
+          "athlete_id": "4398935",
+          "team": "GS",
+          "position": "G",
+          "evidence": "boxscore.players.statistics.athletes.starter=true"
+        },
+        {
+          "player": "Naz Hillmon",
+          "athlete_id": "4398915",
+          "team": "ATL",
+          "position": "F",
+          "evidence": "boxscore.players.statistics.athletes.starter=true"
+        },
+        {
+          "player": "Angel Reese",
+          "athlete_id": "4433402",
+          "team": "ATL",
+          "position": "F",
+          "evidence": "boxscore.players.statistics.athletes.starter=true"
+        },
+        {
+          "player": "Allisha Gray",
+          "athlete_id": "3058901",
+          "team": "ATL",
+          "position": "G",
+          "evidence": "boxscore.players.statistics.athletes.starter=true"
+        },
+        {
+          "player": "Jordin Canada",
+          "athlete_id": "3142250",
+          "team": "ATL",
+          "position": "G",
+          "evidence": "boxscore.players.statistics.athletes.starter=true"
+        },
+        {
+          "player": "Rhyne Howard",
+          "athlete_id": "4398674",
+          "team": "ATL",
+          "position": "G",
+          "evidence": "boxscore.players.statistics.athletes.starter=true"
         }
       ],
+      "starting_goalies": [],
+      "probables": [],
+      "book_lines": [],
       "coverage": {
         "injuries": "published_report",
-        "starters": "unverified",
+        "starters": "explicit_starter_flags",
         "goalies": "unverified",
         "hockey_lines": "unavailable",
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20261021&limit=1000",
-      "fetched_at": "2026-10-22T00:06:32.237Z",
+      "fetched_at": "2026-10-22T00:12:24.852Z",
       "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/summary?event=401918307",
-      "details_checked_at": "2026-10-22T00:06:32.237Z",
+      "details_checked_at": "2026-10-22T00:12:24.852Z",
       "details_available": true
     }
   ]
