@@ -368,3 +368,13 @@ main:has(#tab-picks:not([hidden]) .live-bets-root) { max-width:1280px; }
 @media (prefers-reduced-motion: reduce) {
  .slate-pill,.view-toggle button,.bp-fill,.lb-board-viewport { transition:none!important;scroll-behavior:auto!important; }
 }
+
+/* Sport totals disclose their own market rows without expanding other sports. */
+.live-rec tr[data-record-sport] { cursor:pointer; }
+.live-rec .lr-sport-toggle { display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 8px;background:transparent;border:0;color:inherit;font:inherit;text-align:left; }
+.live-rec .lr-sport-toggle span { display:inline-block; }
+.live-rec .lr-sport-toggle[aria-expanded="true"] span { transform:rotate(90deg); }
+.live-rec tr[data-record-parent] td:first-child { padding-left:32px;color:var(--text-secondary); }
+.live-rec tr[data-record-parent][hidden] { display:none!important; }
+.live-rec tr[data-record-sport]:hover { background:var(--surface-glass); }
+@media(prefers-reduced-motion:no-preference){.live-rec .lr-sport-toggle span { transition:transform 180ms ease; }}

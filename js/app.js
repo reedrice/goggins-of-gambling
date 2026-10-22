@@ -1062,7 +1062,7 @@
       // Below Richie's container: OUR "Live Bets record" (Reed: it lives here, never on
       // the Record tab, and never as a new bottom tab). Pablo's files stay untouched.
       $('#picks-view').innerHTML = '<div id="live-bets-root" class="live-bets-root"></div><section id="live-record-root" class="live-record-root"></section>';
-      Promise.all([fetchData('data/live-record.json').catch(()=>null),fetchData('data/live-feedback.json').catch(()=>null)]).then(([rec,feedback])=>{const box=$('#live-record-root');if(box){box.innerHTML=liveRecordHtml(rec);if(rec&&window.LiveFeedback)window.LiveFeedback.mount(box,rec.entries||[],feedback);}});
+      Promise.all([fetchData('data/live-record.json').catch(()=>null),fetchData('data/live-feedback.json').catch(()=>null)]).then(([rec,feedback])=>{const box=$('#live-record-root');if(box){box.innerHTML=liveRecordHtml(rec);mountRecordGroups(box);if(rec&&window.LiveFeedback)window.LiveFeedback.mount(box,rec.entries||[],feedback);}});
       if (window.LiveBets && typeof LiveBets.render === 'function') LiveBets.render($('#live-bets-root'),liveSlateSport.toLowerCase());
       window.dispatchEvent(new CustomEvent('picks:sport-change',{detail:{sport:liveSlateSport}}));
       [0, 1500, 4000].forEach(ms => setTimeout(() => { paintLiveBadges(); paintLiveToast(); }, ms));   // Richie's view updates its seen key -> badge clears
@@ -2145,18 +2145,28 @@
    * HANDOFF §35). Flat 1 unit per alert. American odds only; no cents/dollars.
    * Data text is untrusted: esc() everything, safeUrl() links.
    */
+  const liveRecordExpanded=new Set();
+  function mountRecordGroups(box) {
+    box.onclick=event=>{
+      const row=event.target.closest('tr[data-record-sport]');if(!row||!box.contains(row))return;
+      const button=row.querySelector('.lr-sport-toggle'),open=button.getAttribute('aria-expanded')!=='true';
+      button.setAttribute('aria-expanded',String(open));
+      open?liveRecordExpanded.add(button.dataset.recordKey):liveRecordExpanded.delete(button.dataset.recordKey);
+      box.querySelectorAll('tr[data-record-parent]').forEach(child=>{if(child.dataset.recordParent===row.dataset.recordSport)child.hidden=!open;});
+    };
+  }
   function liveRecordHtml(rec) {
     const X = STR.record.live;
     let h = `<h3>${esc(X.title)} ${tip('liveRecord')}</h3>`;
     if (!rec || !Array.isArray(rec.entries)) return h + `<div class="section-empty">${esc(X.none)}</div>`;
     const T = rec.totals || {}, rate = v => (v == null ? '–' : `${v}%`), u = v => `${v > 0 ? '+' : ''}${Number(v || 0).toFixed(2)}u`;
-    const row = (label, t) => (t ? `<tr><td>${esc(label)}</td><td class="num">${t.w}-${t.l}-${t.p}</td><td class="num">${esc(rate(t.hit_rate))}</td><td class="num">${esc(rate(t.expected_rate))}</td><td class="num ${sign(t.units)}">${esc(u(t.units))}</td><td class="num ${t.roi == null ? '' : sign(t.roi)}">${esc(rate(t.roi))}</td><td class="num">${t.graded}</td></tr>` : '');
+    const row = (label, t, group=null) => (t ? `<tr${group?.child?` id="lr-${group.index}-${group.child}" data-record-parent="${group.index}"${liveRecordExpanded.has(group.key)?'':' hidden'}`:group?` data-record-sport="${group.index}"`:''}><td>${group&&!group.child?`<button type="button" class="lr-sport-toggle" data-record-key="${esc(group.key)}" aria-expanded="${liveRecordExpanded.has(group.key)}" aria-controls="${group.controls}"><span aria-hidden="true">▸</span>${esc(label)}</button>`:esc(label)}</td><td class="num">${t.w}-${t.l}-${t.p}</td><td class="num">${esc(rate(t.hit_rate))}</td><td class="num">${esc(rate(t.expected_rate))}</td><td class="num ${sign(t.units)}">${esc(u(t.units))}</td><td class="num ${t.roi == null ? '' : sign(t.roi)}">${esc(rate(t.roi))}</td><td class="num">${t.graded}</td></tr>` : '');
     const all = T.all || { n: 0, pending: 0 };
     h += `<p class="muted small">${esc(X.intro)}</p>
       <div class="table-wrap"><table class="live-rec"><tr><th></th><th class="num">${esc(X.wlp)}</th><th class="num">${esc(X.hit)}</th><th class="num">${esc(X.expected)}</th><th class="num">${esc(X.units)}</th><th class="num">${esc(X.roi)}</th><th class="num">${esc(X.sample)}</th></tr>
       ${row(X.all, T.all)}${row(X.big, T.big)}${row(X.slight, T.slight)}${row(X.untiered, T.untiered)}</table></div>
       <p class="muted small">${esc(X.counts(all.n, all.pending))} ${esc(X.noisy)}</p>`;
-    if(rec.by_sport) h += '<h4>'+esc(X.bySport)+'</h4><div class="table-wrap"><table class="live-rec"><tr><th>'+esc(X.sport)+'</th>'+[X.wlp,X.hit,X.expected,X.units,X.roi,X.sample].map(label=>'<th class="num">'+esc(label)+'</th>').join('')+'</tr>'+Object.entries(rec.by_sport).map(([key,t])=>{const sport=STR.liveBets.sports[key] || X.other,groups=t.by_market;return row(sport,t)+(groups?row(sport+' · '+X.gameLines,groups.game)+row(sport+' · '+X.propBets,groups.prop)+(groups.other?.n?row(sport+' · '+X.otherMarkets,groups.other):''):'');}).join('')+'</table></div>';
+    if(rec.by_sport) h += '<h4>'+esc(X.bySport)+'</h4><div class="table-wrap"><table class="live-rec"><tr><th>'+esc(X.sport)+'</th>'+[X.wlp,X.hit,X.expected,X.units,X.roi,X.sample].map(label=>'<th class="num">'+esc(label)+'</th>').join('')+'</tr>'+Object.entries(rec.by_sport).map(([key,t],index)=>{const sport=STR.liveBets.sports[key] || X.other,groups=t.by_market;if(!groups)return row(sport,t);const types=['game','prop',...(groups.other?.n?['other']:[])],group={key,index,controls:types.map(type=>`lr-${index}-${type}`).join(' ')};return row(sport,t,group)+types.map(type=>row(type==='game'?X.gameLines:type==='prop'?X.propBets:X.otherMarkets,groups[type],{...group,child:type})).join('');}).join('')+'</table></div>';
     const list = rec.entries.slice().sort((a, b) => String(b.at).localeCompare(String(a.at))).slice(0, 30);
     if (!list.length) return h + `<div class="section-empty">${esc(X.empty)}</div>`;
     const badge = r => `<span class="badge ${r === 'win' ? 'won' : r === 'loss' ? 'lost' : r === 'pending' ? 'open' : 'push'}">${esc(X.result[r] || r)}</span>`;
