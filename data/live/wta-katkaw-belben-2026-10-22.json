@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185536",
-  "fetched_at": "2026-10-22T07:11:24.105Z",
+  "fetched_at": "2026-10-22T07:17:52.707Z",
   "tennis": true,
   "tennis_match": {
    "id": "185536",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Katarzyna Kawa (POL) leads (5) Belinda Bencic (SUI) 3-2",
+     "text": "Katarzyna Kawa (POL) leads (5) Belinda Bencic (SUI) 3-3",
      "type": "event"
     }
    ],
@@ -55,12 +55,13 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "curatedRank": {
       "current": 5
      },
      "linescores": [
       {
-       "value": 2
+       "value": 3
       }
      ],
      "athlete": {
@@ -100,6 +101,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 3
@@ -137,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 963,
    "type": {
     "id": "2",
@@ -174,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-22T07:11:24.105Z",
+ "updated": "2026-10-22T07:17:52.708Z",
  "open_taken_at": "2026-10-21T05:15:52.006Z",
  "thresholds": {
   "big": 10,
@@ -244,11 +251,25 @@
    "reason": null,
    "context": "Belinda Bencic 2 · Katarzyna Kawa 3 · 1st Set (games by set)",
    "first_seen": "2026-10-22T06:53:08.777Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1636077:1:2026-10-22T06:53:08.777Z",
+   "key": "1636077:1",
+   "at": "2026-10-22T07:17:52.708Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "No: Katarzyna Kawa win set 1 against Belinda Bencic",
+   "market": "Set 1 winner",
+   "now_odds": "-223",
+   "now_chance": 69,
+   "edge": 17,
+   "text": "Edge gone: No: Katarzyna Kawa win set 1 against Belinda Bencic (Set 1 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-katkaw-belben-2026-10-22"
+  },
   {
    "id": "news:1636077:1",
    "key": "1636077:1",
@@ -282,7 +303,8 @@
   "new_edge:1636077:1:big",
   "new_edge:1620216:1:slight",
   "news:1636077:1",
-  "new_edge:1620216:1:big"
+  "new_edge:1620216:1:big",
+  "gone:1636077:1:2026-10-22T06:53:08.777Z"
  ],
  "kalshi_checked": null
 }
