@@ -4,14 +4,14 @@
  "game": "Ararat-Armenia FA vs. AZ Alkmaar",
  "url": "https://polymarket.us/sports/uel/uel-aa-aza-2026-10-22",
  "start_time": "2026-10-22T16:45:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for uel",
-  "fetched_at": "2026-10-22T17:43:19.448Z"
+  "fetched_at": "2026-10-22T18:50:19.903Z"
  },
- "updated": "2026-10-22T17:43:19.449Z",
+ "updated": "2026-10-22T18:50:19.904Z",
  "open_taken_at": "2026-10-21T05:14:10.213Z",
  "thresholds": {
   "big": 10,
@@ -433,7 +433,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-22T05:27:11.256Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -453,27 +453,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-22T17:37:22.711Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1395992:1",
-   "market_id": "1395992",
-   "market": "Main total",
-   "group": "game",
-   "question": "Will the total in AA vs AZA be more than 3.5?",
-   "side": "Under 3.5",
-   "open_chance": 62,
-   "now_chance": 48,
-   "open_odds": "-163",
-   "now_odds": "+108",
-   "edge": 14,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-22T17:20:15.197Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -535,9 +515,57 @@
    "first_seen": "2026-10-22T16:44:18.370Z",
    "status": "gone",
    "kalshi": null
+  },
+  {
+   "key": "1395992:1",
+   "market_id": "1395992",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in AA vs AZA be more than 3.5?",
+   "side": "Under 3.5",
+   "open_chance": 62,
+   "now_chance": 48,
+   "open_odds": "-163",
+   "now_odds": "+108",
+   "edge": 14,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-22T17:20:15.197Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1395976:1:2026-10-22T17:37:22.711Z",
+   "key": "1395976:1",
+   "at": "2026-10-22T18:50:19.904Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 2.5",
+   "market": "Alt total",
+   "now_odds": "+488",
+   "now_chance": 17,
+   "edge": 22,
+   "text": "Edge gone: Under 2.5 (Alt total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/uel/uel-aa-aza-2026-10-22"
+  },
+  {
+   "id": "gone:1395992:1:2026-10-22T17:20:15.197Z",
+   "key": "1395992:1",
+   "at": "2026-10-22T18:50:19.904Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 3.5",
+   "market": "Main total",
+   "now_odds": "+108",
+   "now_chance": 48,
+   "edge": 14,
+   "text": "Edge gone: Under 3.5 (Main total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/uel/uel-aa-aza-2026-10-22"
+  },
   {
    "id": "new_edge:1395965:0:big",
    "key": "1395965:0",
@@ -718,7 +746,9 @@
   "new_edge:1395964:0:big",
   "new_edge:1395992:1:big",
   "new_edge:1395965:0:big",
-  "new_edge:1395976:1:big"
+  "new_edge:1395976:1:big",
+  "gone:1395976:1:2026-10-22T17:37:22.711Z",
+  "gone:1395992:1:2026-10-22T17:20:15.197Z"
  ],
  "kalshi_checked": null
 }
