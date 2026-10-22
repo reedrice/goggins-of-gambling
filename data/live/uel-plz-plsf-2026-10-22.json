@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for uel",
-  "fetched_at": "2026-10-22T19:02:22.881Z"
+  "fetched_at": "2026-10-22T19:08:51.705Z"
  },
- "updated": "2026-10-22T19:02:22.881Z",
+ "updated": "2026-10-22T19:08:51.705Z",
  "open_taken_at": "2026-10-21T05:14:22.411Z",
  "thresholds": {
   "big": 10,
@@ -395,18 +395,18 @@
  ],
  "edges": [
   {
-   "key": "1402147:0",
-   "market_id": "1402147",
-   "market": "Alt total",
+   "key": "1402146:0",
+   "market_id": "1402146",
+   "market": "Main total",
    "group": "game",
-   "question": "Will the total in PLZ vs PLSF be more than 3.5?",
-   "side": "Over 3.5",
-   "open_chance": 34,
-   "now_chance": 28,
-   "open_odds": "+194",
-   "now_odds": "+257",
-   "edge": 6,
-   "tier": "slight",
+   "question": "Will the total in PLZ vs PLSF be more than 2.5?",
+   "side": "Over 2.5",
+   "open_chance": 56,
+   "now_chance": 46,
+   "open_odds": "-127",
+   "now_odds": "+117",
+   "edge": 10,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -415,17 +415,17 @@
    "kalshi": null
   },
   {
-   "key": "1402146:0",
-   "market_id": "1402146",
-   "market": "Main total",
+   "key": "1402147:0",
+   "market_id": "1402147",
+   "market": "Alt total",
    "group": "game",
-   "question": "Will the total in PLZ vs PLSF be more than 2.5?",
-   "side": "Over 2.5",
-   "open_chance": 56,
-   "now_chance": 51,
-   "open_odds": "-127",
-   "now_odds": "-104",
-   "edge": 5,
+   "question": "Will the total in PLZ vs PLSF be more than 3.5?",
+   "side": "Over 3.5",
+   "open_chance": 34,
+   "now_chance": 25,
+   "open_odds": "+194",
+   "now_odds": "+300",
+   "edge": 9,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -451,7 +451,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-22T18:54:20.593Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -496,6 +496,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1402146:0:big",
+   "key": "1402146:0",
+   "at": "2026-10-22T19:08:51.705Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Over 2.5",
+   "market": "Main total",
+   "now_odds": "+117",
+   "now_chance": 46,
+   "edge": 10,
+   "text": "New big edge: Over 2.5 (Main total), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/uel/uel-plz-plsf-2026-10-22"
+  },
+  {
+   "id": "gone:1402145:0:2026-10-22T18:54:20.593Z",
+   "key": "1402145:0",
+   "at": "2026-10-22T19:08:51.705Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 1.5",
+   "market": "Alt total",
+   "now_odds": "-317",
+   "now_chance": 76,
+   "edge": 4,
+   "text": "Edge gone: Over 1.5 (Alt total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/uel/uel-plz-plsf-2026-10-22"
+  },
   {
    "id": "new_edge:1402147:0:slight",
    "key": "1402147:0",
@@ -557,7 +585,9 @@
   "new_edge:1402147:0:slight",
   "new_edge:1402146:0:slight",
   "new_edge:1402145:0:slight",
-  "gone:1402172:0:2026-10-22T16:31:22.082Z"
+  "gone:1402172:0:2026-10-22T16:31:22.082Z",
+  "new_edge:1402146:0:big",
+  "gone:1402145:0:2026-10-22T18:54:20.593Z"
  ],
  "kalshi_checked": null
 }
