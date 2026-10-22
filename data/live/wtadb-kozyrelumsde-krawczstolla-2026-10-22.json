@@ -4,12 +4,12 @@
  "game": "Kozyreva / Lumsden vs. Krawczyk / Stollar",
  "url": "https://polymarket.us/sports/wtadb/wtadb-kozyrelumsde-krawczstolla-2026-10-22",
  "start_time": "2026-10-22T08:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185551",
-  "fetched_at": "2026-10-22T09:39:24.295Z",
+  "fetched_at": "2026-10-22T09:45:21.938Z",
   "tennis": true,
   "tennis_match": {
    "id": "185551",
@@ -17,17 +17,17 @@
    "date": "2026-10-22T08:05Z",
    "startDate": "2026-10-22T08:05Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Desirae Krawczyk (USA) & Fanny Stollar (HUN) is tied with Mariia Kozyreva (RUS) & Maia Lumsden (GBR) 3-6 7-6 (7-5)",
+     "text": "Desirae Krawczyk (USA) & Fanny Stollar (HUN) bt Mariia Kozyreva (RUS) & Maia Lumsden (GBR) 3-6 7-6 (7-5) 1-0 (10-4)",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "linescores": [
       {
        "value": 3,
@@ -62,7 +63,13 @@
       },
       {
        "value": 7,
-       "tiebreak": 7
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 1,
+       "tiebreak": 10,
+       "winner": true
       }
      ],
      "roster": {
@@ -137,6 +144,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "linescores": [
       {
        "value": 6,
@@ -144,7 +152,13 @@
       },
       {
        "value": 6,
-       "tiebreak": 5
+       "tiebreak": 5,
+       "winner": false
+      },
+      {
+       "value": 0,
+       "tiebreak": 4,
+       "winner": false
       }
      ],
      "roster": {
@@ -230,16 +244,16 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Desirae Krawczyk / Fanny Stollar",
    "alias": "Desirae Krawczyk / Fanny Stollar",
    "name": "Desirae Krawczyk / Fanny Stollar",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Mariia Kozyreva / Maia Lumsden",
@@ -251,7 +265,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-22T09:39:24.296Z",
+ "updated": "2026-10-22T09:45:21.938Z",
  "open_taken_at": "2026-10-21T10:40:15.943Z",
  "thresholds": {
   "big": 10,
