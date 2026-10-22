@@ -619,7 +619,7 @@ window.STR.liveBets = {
    about: 'About edges', explanation: 'Compared with the opening Polymarket price: big = 10–24 points lower, slight = 4–9. Game context comes from ESPN. Alerts show prices at detection; current cards may differ.'
  },
  noAlerts: 'No alerts across these games yet.',
- all: 'All games', games: n => n + ' games', failed: n => n + ' game feeds unavailable; retrying',
+ all: 'All games', games: n => n + (n === 1 ? ' game' : ' games'), failed: n => n + ' game feeds unavailable; retrying',
  stale: 'Some prices may be old. The feed is waiting for an update.',
  noGames:'No active or upcoming games in this selection.', empty: 'Markets checked. No qualifying price movements right now; new markets are being watched from their first captured price.',
  unavailable: 'Live bets are unavailable. Retrying in a minute.'
@@ -732,3 +732,4 @@ window.STR.slate.names.tennis='Tennis';
 window.STR.liveScoreboard = {title:'Sport scoreboard',loading:'Checking ESPN…',unavailable:'Scores unavailable · retrying with the next update',empty:'No games reported for today.',delayed:'Scores may be delayed',checked:time=>`ESPN checked ${time} CT`,previous:'Previous games',next:'Next games'};
 window.STR.liveScoreboard.allGames='Show all games';
 window.STR.liveScoreboard.game=name=>`Filter bets: ${name}`;
+
