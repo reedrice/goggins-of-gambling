@@ -4,14 +4,14 @@
  "game": "CF Pachuca vs. CF Cruz Azul",
  "url": "https://polymarket.us/sports/lmx/lmx-pac-caz-2026-10-21",
  "start_time": "2026-10-22T03:10:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for lmx",
-  "fetched_at": "2026-10-22T03:06:17.487Z"
+  "fetched_at": "2026-10-22T03:12:15.380Z"
  },
- "updated": "2026-10-22T03:06:17.487Z",
+ "updated": "2026-10-22T03:12:15.381Z",
  "open_taken_at": "2026-10-21T05:15:03.840Z",
  "thresholds": {
   "big": 10,
@@ -417,6 +417,26 @@
  ],
  "edges": [
   {
+   "key": "1541969:1",
+   "market_id": "1541969",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Will CF Cruz Azul win against CF Pachuca in the Liga MX match scheduled for Oct 21, 2026?",
+   "side": "No: CF Cruz Azul win against CF Pachuca in the Liga MX match scheduled for Oct 21, 2026",
+   "open_chance": 58,
+   "now_chance": 53,
+   "open_odds": "-138",
+   "now_odds": "-113",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-22T03:12:15.381Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1640257:0",
    "market_id": "1640257",
    "market": "Main spread",
@@ -433,7 +453,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-22T03:06:17.487Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -517,7 +537,39 @@
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "new_edge:1541969:1:slight",
+   "key": "1541969:1",
+   "at": "2026-10-22T03:12:15.381Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "No: CF Cruz Azul win against CF Pachuca in the Liga MX match scheduled for Oct 21, 2026",
+   "market": "Moneyline",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 5,
+   "text": "New slight edge: No: CF Cruz Azul win against CF Pachuca in the Liga MX match scheduled for Oct 21, 2026 (Moneyline), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/lmx/lmx-pac-caz-2026-10-21"
+  },
+  {
+   "id": "gone:1640257:0:2026-10-22T03:06:17.487Z",
+   "key": "1640257:0",
+   "at": "2026-10-22T03:12:15.381Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "CF Pachuca +1.50",
+   "market": "Main spread",
+   "now_odds": "-317",
+   "now_chance": 76,
+   "edge": 4,
+   "text": "Edge gone: CF Pachuca +1.50 (Main spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/lmx/lmx-pac-caz-2026-10-21"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:1541969:1:slight",
+  "gone:1640257:0:2026-10-22T03:06:17.487Z"
+ ],
  "kalshi_checked": null
 }
