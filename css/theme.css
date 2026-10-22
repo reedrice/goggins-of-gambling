@@ -389,3 +389,44 @@ main:has(#tab-picks:not([hidden]) .live-bets-root) { max-width:1280px; }
 .live-rec tr[data-record-parent][hidden] { display:none!important; }
 .live-rec tr[data-record-sport]:hover { background:var(--surface-glass); }
 @media(prefers-reduced-motion:no-preference){.live-rec .lr-sport-toggle span { transition:transform 180ms ease; }}
+
+
+/* Stronger visual depth and typography, requested by Brandon Oct 22.
+   Static CSS only. Custom palettes keep their chosen flat canvas and colors. */
+:root {
+  --ambient-secondary: #8271DD;
+  --heading-ink: linear-gradient(110deg, var(--text-primary) 20%, var(--accent) 78%);
+  --panel-elevation: 0 16px 40px rgba(0, 0, 0, .16), inset 0 1px 0 rgba(255, 255, 255, .07);
+}
+:root:not([data-color-scheme="custom"]) {
+  --canvas-atmosphere:
+    radial-gradient(ellipse at -10% 0%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 62%),
+    radial-gradient(ellipse at 110% 45%, color-mix(in srgb, var(--ambient-secondary) 32%, transparent), transparent 65%),
+    radial-gradient(ellipse at 35% 110%, rgba(34, 95, 151, .2), transparent 60%);
+}
+body { background-attachment: fixed; }
+:is(h1, h2, h3, .brand-name) { font-weight: 650; letter-spacing: -.04em; text-wrap: balance; }
+h2 { font-size: clamp(28px, 4vw, 38px); line-height: 1.2; }
+h3 { font-size: 20px; line-height: 1.3; }
+.brand-name.small { font-size: clamp(21px, 3vw, 27px); letter-spacing: -.045em; }
+.brand-tag.small { font-size: 10px; letter-spacing: .12em; font-weight: 500; }
+:root:not([data-color-scheme="custom"]) :is(h2, .brand-name) {
+  color: var(--text-primary);
+}
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  :root:not([data-color-scheme="custom"]) :is(h2, .brand-name) {
+    background-image: var(--heading-ink); background-clip: text; -webkit-background-clip: text;
+    color: transparent; -webkit-text-fill-color: transparent;
+  }
+}
+:root:not([data-color-scheme="custom"]) :is(.card, .mib-panel, .picks-score-ticker, .account-panel) {
+  box-shadow: var(--panel-elevation);
+}
+:root:not([data-color-scheme="custom"]) :is(.view-toggle, .slate-pill[aria-pressed="true"], .tabbar button.active) {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1), 0 4px 20px color-mix(in srgb, var(--accent) 8%, transparent);
+}
+@media (forced-colors: active) {
+  :root:not([data-color-scheme="custom"]) :is(h2, .brand-name) {
+    background-image: none; color: CanvasText; -webkit-text-fill-color: CanvasText;
+  }
+}
