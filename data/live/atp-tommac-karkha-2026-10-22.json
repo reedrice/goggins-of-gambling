@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185004",
-  "fetched_at": "2026-10-22T10:30:26.381Z",
+  "fetched_at": "2026-10-22T10:35:36.078Z",
   "tennis": true,
   "tennis_match": {
    "id": "185004",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(5) Karen Khachanov (RUS) leads Tomas Machac (CZE) 5-2",
+     "text": "Tomas Machac (CZE) leads (5) Karen Khachanov (RUS) 2-6 0-0",
      "type": "event"
     }
    ],
@@ -55,13 +55,17 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "possession": false,
      "curatedRank": {
       "current": 5
      },
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -101,10 +105,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
-       "value": 2
+       "value": 2,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -162,14 +170,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Karen Khachanov",
    "alias": "Karen Khachanov",
    "name": "Karen Khachanov",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Tomas Machac",
@@ -181,7 +189,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-22T10:30:26.381Z",
+ "updated": "2026-10-22T10:35:36.079Z",
  "open_taken_at": "2026-10-21T10:06:02.038Z",
  "thresholds": {
   "big": 10,
