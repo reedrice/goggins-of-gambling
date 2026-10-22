@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892550",
-  "fetched_at": "2026-10-22T00:18:18.693Z",
+  "fetched_at": "2026-10-22T00:24:13.496Z",
   "game_state": "in",
   "espn_status": "STATUS_END_PERIOD",
   "period": 1,
@@ -124,7 +124,7 @@
    }
   ]
  },
- "updated": "2026-10-22T00:18:18.694Z",
+ "updated": "2026-10-22T00:24:13.497Z",
  "open_taken_at": "2026-10-21T05:08:21.387Z",
  "thresholds": {
   "big": 10,
@@ -903,10 +903,10 @@
    "question": "Will the total in PHI vs BUF be more than 6.5?",
    "side": "Under 6.5",
    "open_chance": 56,
-   "now_chance": 51,
+   "now_chance": 50,
    "open_odds": "-127",
-   "now_odds": "-104",
-   "edge": 5,
+   "now_odds": "+100",
+   "edge": 6,
    "tier": "slight",
    "class": "score",
    "reason": "Explained by score: scoring above pace (2 pts, pace 2)",
@@ -933,7 +933,7 @@
    "context": "BUF down 2, End of Q1",
    "first_seen": "2026-10-21T19:07:15.652Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1638191:1",
@@ -953,27 +953,7 @@
    "context": "BUF down 2, End of Q1",
    "first_seen": "2026-10-21T19:07:15.652Z",
    "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1638194:1",
-   "market_id": "1638194",
-   "market": "Player prop",
-   "group": "prop",
-   "question": "Will Owen Power record at least 1 assists in PHI vs BUF?",
-   "side": "No: Owen Power record at least 1 assists in PHI vs BUF",
-   "open_chance": 69,
-   "now_chance": 65,
-   "open_odds": "-223",
-   "now_odds": "-186",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "BUF down 2, End of Q1",
-   "first_seen": "2026-10-21T20:57:59.151Z",
-   "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1562191:0",
@@ -1056,6 +1036,26 @@
    "kalshi": true
   },
   {
+   "key": "1638194:1",
+   "market_id": "1638194",
+   "market": "Player prop",
+   "group": "prop",
+   "question": "Will Owen Power record at least 1 assists in PHI vs BUF?",
+   "side": "No: Owen Power record at least 1 assists in PHI vs BUF",
+   "open_chance": 69,
+   "now_chance": 65,
+   "open_odds": "-223",
+   "now_odds": "-186",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "BUF down 2, End of Q1",
+   "first_seen": "2026-10-21T20:57:59.151Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1638158:0",
    "market_id": "1638158",
    "market": "Player prop",
@@ -1073,7 +1073,7 @@
    "context": "PHI tied, Q1 7:23",
    "first_seen": "2026-10-21T22:38:15.163Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1638170:1",
@@ -1093,7 +1093,7 @@
    "context": "BUF tied, Q1 7:23",
    "first_seen": "2026-10-21T10:06:24.497Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1638176:1",
@@ -1113,7 +1113,7 @@
    "context": "BUF tied, Q1 20:00",
    "first_seen": "2026-10-21T23:26:15.194Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1638173:1",
@@ -1133,7 +1133,7 @@
    "context": "Pregame",
    "first_seen": "2026-10-21T20:18:20.022Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1635370:0",
@@ -1153,10 +1153,24 @@
    "context": "Pregame",
    "first_seen": "2026-10-21T05:30:15.377Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1638194:1:2026-10-21T20:57:59.151Z",
+   "key": "1638194:1",
+   "at": "2026-10-22T00:24:13.497Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "No: Owen Power record at least 1 assists in PHI vs BUF",
+   "market": "Player prop",
+   "now_odds": "-186",
+   "now_chance": 65,
+   "edge": 4,
+   "text": "Edge gone: No: Owen Power record at least 1 assists in PHI vs BUF (Player prop) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-phi-buf-2026-10-21"
+  },
   {
    "id": "new_edge:1562182:1:big",
    "key": "1562182:1",
@@ -1371,10 +1385,11 @@
   "new_edge:1562182:1:slight",
   "gone:1638158:0:2026-10-21T22:38:15.163Z",
   "gone:1638170:1:2026-10-21T10:06:24.497Z",
-  "new_edge:1562182:1:big"
+  "new_edge:1562182:1:big",
+  "gone:1638194:1:2026-10-21T20:57:59.151Z"
  ],
  "kalshi_checked": {
-  "at": "2026-10-22T00:18:18.942Z",
+  "at": "2026-10-22T00:24:13.678Z",
   "event": "26OCT21PHIBUF"
  }
 }
