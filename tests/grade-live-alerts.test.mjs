@@ -67,3 +67,24 @@ assert.equal(grouped.by_sport.soccer.void,1);
 assert.equal(grouped.by_sport.golf.graded,0);
 assert.equal(Object.values(grouped.by_sport).reduce((n,t)=>n+t.n,0),grouped.totals.all.n);
 console.log('Sport records partition alerts and retain identical settlement/unit math');
+
+const splitEntries=[
+ {slug:'nba-a-b-2026-10-21',market:'Main spread',result:'win',odds_at_alert:'+150'},
+ {slug:'nba-a-b-2026-10-21',market:'Player prop',result:'loss',odds_at_alert:'-110'},
+ {slug:'nba-a-b-2026-10-21',market:'Player prop',result:'pending',odds_at_alert:'+100'},
+ {slug:'wta-a-b-2026-10-21',market:'Games total',result:'push',odds_at_alert:'-110'},
+ {slug:'nba-a-b-2026-10-21',market:null,result:'void',odds_at_alert:'+100'}];
+const beforeSplit=JSON.stringify(splitEntries),splitRecord=summarize({entries:splitEntries});
+assert.equal(JSON.stringify(splitEntries),beforeSplit);
+assert.equal(splitRecord.by_sport.nba.by_market.game.units,1.5);
+assert.equal(splitRecord.by_sport.nba.by_market.prop.units,-1);
+assert.equal(splitRecord.by_sport.nba.by_market.prop.pending,1);
+assert.equal(splitRecord.by_sport.nba.by_market.other.void,1);
+assert.equal(splitRecord.by_sport.tennis.by_market.game.p,1);
+assert.equal(splitRecord.by_sport.golf.by_market.prop.hit_rate,null);
+for(const sport of Object.values(splitRecord.by_sport)){
+ assert.equal(Object.values(sport.by_market).reduce((n,t)=>n+t.n,0),sport.n);
+ assert.equal(Object.values(sport.by_market).reduce((n,t)=>n+t.graded,0),sport.graded);
+ assert.ok(Math.abs(Object.values(sport.by_market).reduce((n,t)=>n+t.units,0)-sport.units)<.02);
+}
+console.log('Market splits preserve entries, reconcile totals, distinguish tennis lines, unknowns and empty samples');

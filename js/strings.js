@@ -410,7 +410,7 @@ window.STR = {
     },
     /** "Live Bets record" (app.js liveRecordHtml, data/live-record.json, HANDOFF §35). */
     live: {
-      title: 'Live Bets record', bySport:'By sport', sport:'Sport', other:'Other',
+      title: 'Live Bets record', bySport:'By sport', sport:'Sport / market', other:'Other', gameLines:'Game lines', propBets:'Prop bets', otherMarkets:'Other markets',
       intro: 'Every live alert, kept for good (wins and losses) and graded on the real final result. Each one counts as a flat 1 unit bet at the odds when the alert went out.',
       none: 'No live alerts graded yet.', empty: 'No live alerts yet. They start once games are live.',
       wlp: 'W-L-P', hit: 'Hit rate', expected: 'Expected', units: 'Units', roi: 'ROI', sample: 'Graded',

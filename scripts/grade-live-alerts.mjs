@@ -147,6 +147,11 @@ export function sportCategory(entry) {
  if(['pga','lpga','dpwt','pgatc','golf'].includes(league))return 'golf';
  return ['nba','wnba','nfl','nhl','mlb'].includes(league) ? league : 'other';
 }
+export function marketCategory(entry) {
+  if(entry.market==='Player prop')return 'prop';
+  if(/^(Moneyline|(?:Main|Alt|Team|Games|Sets|Q[1-4]|[12](?:st|nd) half) (?:total|spread|winner)|Set \d+ winner)$/.test(entry.market||''))return 'game';
+  return 'other'; // Never silently count an unknown market as a game line.
+}
 export function summarize(record) {
   const by = t => record.entries.filter(e => e.tier === t);
   record.totals = { all: totals(record.entries), big: totals(by('big')), slight: totals(by('slight')) };
@@ -154,7 +159,7 @@ export function summarize(record) {
   const categories=['nba','wnba','nfl','ncaaf','ncaab','wncaab','nhl','mlb','soccer','tennis','golf'];
   const grouped=new Map(categories.map(k=>[k,[]]));
   for(const e of record.entries){const k=sportCategory(e);if(!grouped.has(k))grouped.set(k,[]);grouped.get(k).push(e);}
-  record.by_sport=Object.fromEntries([...grouped].map(([key,entries])=>[key,totals(entries)]));
+  record.by_sport=Object.fromEntries([...grouped].map(([key,entries])=>[key,{...totals(entries),by_market:Object.fromEntries(['game','prop','other'].map(type=>[type,totals(entries.filter(e=>marketCategory(e)===type))]))}]));
   return record;
 }
 
