@@ -138,8 +138,8 @@ assert.equal(LB.edgeTitle({group:'game',side:'Bearkats +1.50 (1st half)'}),'Bear
 assert.equal(LB.edgeTitle({group:'prop',side:'Yes: Quentin Grimes 2+ three-point field goals made'}),'Quentin Grimes 2+ threes');
 
 
-assert.equal(LB.oddsTone('-120'),'even');
-assert.equal(LB.oddsTone('+120'),'even');
+assert.equal(LB.oddsTone('-120'),'minus');
+assert.equal(LB.oddsTone('+120'),'plus');
 assert.equal(LB.oddsTone('+100'),'even');
 assert.equal(LB.oddsTone('EVEN'),'even');
 assert.equal(LB.oddsTone('+121'),'plus');
@@ -148,3 +148,4 @@ assert.equal(LB.oddsTone('−156'),'minus');
 assert.equal(LB.oddsTone(null),'unknown');
 assert.equal(LB.oddsTone('—'),'unknown');
 assert.equal(LB.oddsTone('0'),'unknown');
+

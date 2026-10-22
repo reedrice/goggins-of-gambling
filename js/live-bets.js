@@ -78,7 +78,7 @@
     return { game: split('game'), prop: split('prop'), reasons: sortEdges(reasons) };
   }
 
-  const CLOSE_EVEN_ODDS = 120;
+  const CLOSE_EVEN_ODDS = 100;
   function oddsTone(odds) {
     const text=String(odds??'').trim().replace(/\u2212/g,'-');
     if(/^(even|evs)$/i.test(text))return 'even';
@@ -476,6 +476,7 @@
 
   return { oddsTone, CLOSE_EVEN_ODDS, autoRefresh, timeGames, sportOf, sportGames, edgeTitle, edgeSelection, combineGames, render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
 });
+
 
 
 
