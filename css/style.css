@@ -695,7 +695,7 @@ a.btn-play { display: block; text-align: center; text-decoration: none; margin-t
 #picks-score-ticker .pst-score { color: #fff; font-size: 16px; font-variant-numeric: tabular-nums; }
 #picks-score-ticker .pst-at, #picks-score-ticker .pst-clock { color: #a9a9b3; font-size: 11px; }
 #picks-score-ticker .pst-empty { padding: 2px 12px; font-size: 13px; color: #b9b9c2; }
-.picks-score-ticker:hover .pst-track, .picks-score-ticker:focus-within .pst-track, #picks-score-ticker .pst-paused .pst-track { animation-play-state: paused; }
+#picks-score-ticker.pst-paused .pst-track { animation-play-state: paused; }
 @keyframes picks-scores-scroll { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) {
  #picks-score-ticker .pst-track { animation: none; }

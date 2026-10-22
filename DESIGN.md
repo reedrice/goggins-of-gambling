@@ -46,3 +46,7 @@ Single-series lines use the active theme accent consistently, never a color base
 
 ## Aurora appearance (Brandon, Oct 22)
 Brandon requested a calmer futuristic main-site background with more color depth. Aurora is the default for unset preferences; explicit existing color choices are preserved. Named presets use static, restrained ambient radial gradients via the shared --canvas-atmosphere role token in css/theme.css. Custom palettes remain flat so user-selected light/dark colors keep their contrast. This request supersedes the previous no-gradient canvas rule for these shared background layers only. Existing panel/glass geometry, responsive spacing, semantic outcome/odds colors and private-account boundaries remain unchanged. No animated background, new requests, schedules or runtime loops.
+
+
+### Continuous score ticker (Brandon, Oct 22)
+The score ticker scrolls continuously at desktop and phone widths, including hover/focus. This supersedes the mobile manual-scroller rule above. Preserve the explicit Pause/Resume control and OS reduced-motion preference (static scrollable scores). No new data requests or timers.
