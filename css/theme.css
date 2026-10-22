@@ -290,3 +290,8 @@ input[type="checkbox"], input[type="radio"] { accent-color: var(--accent); }
 .live-bets-root .lb-board-empty { color:var(--text-secondary); font-size:12px; }
 @media(max-width:767px){.live-bets-root .lb-head-row { flex-direction:column; align-items:stretch; gap:8px; }.live-bets-root .lb-head-row > .lb-head { flex:auto; }.live-bets-root .lb-scoreboard { flex:auto; width:100%; }}
 
+
+.live-bets-root button.lb-board-game { text-align:left; cursor:pointer; font-family:var(--font-ui); font-weight:400; min-height:72px; color:var(--text-primary); }
+.live-bets-root .lb-board-game[aria-pressed="true"] { border-color:var(--accent); background:var(--selection-fill); }
+.live-bets-root .lb-board-game:focus-visible { outline:2px solid var(--focus-ring); outline-offset:-3px; }
+.live-bets-root .lb-board-clear { font:inherit; color:var(--accent); background:transparent; border:0; padding:0 6px; min-height:44px; cursor:pointer; }
