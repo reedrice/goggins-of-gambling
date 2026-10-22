@@ -234,6 +234,7 @@
   }
   rows.push(node('span','bp-checked',(game?.status?.type?.completed?S.final+' · ':'')+S.checked(new Date().toLocaleTimeString('en-US',{timeZone:'America/Chicago',hour:'numeric',minute:'2-digit'}))));
   host.replaceChildren(...rows);
+  root.SiteMotion?.progress(host);
  }
  async function hydrate(host) {
   if(host._bpBusy)return;host._bpBusy=true;

@@ -261,6 +261,7 @@
     const gone = e.status === 'gone', why = REASON_CLASSES.includes(e.class);
     const cls = why ? `lb-why lb-${e.class}` : `lb-${e.tier === 'big' ? 'big' : 'slight'}`;
     const li = el('li', `lb-edge ${cls}${gone ? ' lb-gone' : ''}`);
+    li.dataset.motionKey=eventSlug+':'+e.key;
     const top = el('div', 'lb-top');
     const label = gone ? P.gone : why ? CLASS_LABEL[e.class] : P.tiers[e.tier] || P.edge;
     top.append(el('span', 'lb-tier', label), el('span', 'lb-pts', P.cheaper(Math.round(e.edge))));
@@ -278,6 +279,7 @@
       const oc = el('div', 'oc oc-sm'); oc.setAttribute('data-oc', JSON.stringify({ marketId: e.market_id, side: Number(String(e.key).split(':')[1]) ? 'no' : 'yes', market: e.now_chance, text: e.side, question: e.question }));
       analytics=oc;
     }
+    root.SiteMotion?.card(li,li.dataset.motionKey,e.first_seen);
     const details = el('details', 'lb-card-details');
     const detailKey = (eventSlug || '') + ':' + e.key;
     details.open = !!(ui && ui.details.has(detailKey));

@@ -123,6 +123,7 @@
           if (!snapshot.upcoming && game.homeScore!==null) item.append(node('b', 'pst-score', game.homeScore));
           const detail = snapshot.upcoming ? new Date(game.detail).toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit' }) + ' CT' : game.detail;
           item.append(node('span', 'pst-clock', detail));
+          item.querySelectorAll('.pst-score').forEach((score,i)=>window.SiteMotion?.update('ticker:'+group.league+':'+game.id+':'+i,score,score.textContent));
           block.append(item);
         });
         lane.append(block);

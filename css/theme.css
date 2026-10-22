@@ -359,3 +359,12 @@ main:has(#tab-picks:not([hidden]) .live-bets-root) { max-width:1280px; }
  .live-bets-root .lb-groups .lb-group-game { grid-column:1; }
  .live-bets-root .lb-groups .lb-group-prop { grid-column:2; }
 }
+
+/* Short, optional presentation transitions; geometry and semantic colors stay intact. */
+@media (prefers-reduced-motion: no-preference) {
+ .slate-pill,.view-toggle button { transition:background-color 180ms ease,border-color 180ms ease,color 180ms ease,box-shadow 180ms ease; }
+ .slate-pill:active,.view-toggle button:active { transform:scale(.98); }
+}
+@media (prefers-reduced-motion: reduce) {
+ .slate-pill,.view-toggle button,.bp-fill,.lb-board-viewport { transition:none!important;scroll-behavior:auto!important; }
+}
