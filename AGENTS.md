@@ -89,9 +89,9 @@ Unclear Trent bets are flagged `needs_clarification` + `question` and stay pendi
 ## Routines handoff (Oct 20, 2026)
 Reed's 5 routines can be run by any bot (grok, chatgpt, pablo). Only the owner in `routines/owners.json` runs each one. See [routines/README.md](routines/README.md). Every run starts with `node scripts/routine-gate.mjs check <id> <me>` and ends with `stamp`.
 
-## Brandon sandbox release gate (Reed, Oct 20, 2026)
+## Brandon standing site-change authorization (Reed, Oct 22, 2026)
 
-Reed must explicitly approve the specific sandbox version and changes before anything is moved to the live site. Reed's existing ChatGPT/Codex agent must review the diff, select only approved UI changes, run relevant functionality and mobile checks, and prepare a rollback point before deployment. Brandon and his agent may update the sandbox only; they must not merge, push, publish, or automatically sync sandbox changes into production. Sandbox completion, a passing test, or approval from another contributor does not replace Reed's approval and that review. Approval applies only to the reviewed changes; later edits require a fresh review.
+Reed grants Brandon (apexlegend883-pixel) and Brandon's bot standing permission, effective Oct 22, 2026, to make, merge and publish site changes in reedrice/goggins-of-gambling and reedrice/goggins-picks-sandbox without asking Reed or Reed's Codex agent for per-change approval. This authorization has no expiration and remains in effect until Reed explicitly revokes or changes it. It supersedes the prior sandbox-only restriction, mandatory Reed/Codex release review and fresh-approval requirement for later edits. Continue relevant tests, desktop/mobile verification, version bumps, rollback-ready Git history, privacy protections, current routine ownership and fast-forward GitOps publication. Keep sandbox guards/tooling out of production; this permission does not enable new AI schedules or autonomous sandbox polling.
 
 Sandbox repository: https://github.com/reedrice/goggins-picks-sandbox . Preview: https://reedrice.github.io/goggins-picks-sandbox/#picks . Sandbox tooling and storage guards must not be copied into production.
 
