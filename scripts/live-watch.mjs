@@ -335,8 +335,8 @@ export function appendAlerts(dir, slug, alerts, at = new Date().toISOString()) {
   return file;
 }
 
-/** Game is over when the event says so or every watched market is closed. */
-export const gameOver = ev => !!(ev.ended || ev.closed || (ev.markets || []).every(m => m.closed || !m.active));
+/** Missing or temporarily inactive markets are not evidence of a final result. */
+export const gameOver = ev => ev.ended === true || ev.closed === true || (Array.isArray(ev.markets) && ev.markets.length > 0 && ev.markets.every(m => m.closed === true));
 
 /** Loop "check" until the game ends. Errors on one check don't stop the loop. */
 async function watch() {

@@ -64,6 +64,9 @@ test('appendAlerts saves prices only (no $) and appends across checks', () => {
 test('gameOver', () => {
   assert.strictEqual(gameOver(F.event), false);
   assert.strictEqual(gameOver({ markets: [{ closed: true }] }), true);
+  for(const event of [{},{markets:[]},{markets:[{active:false,closed:false}]},{markets:[{closed:true},{active:false,closed:false}]}]) assert.equal(gameOver(event),false);
+  assert.equal(gameOver({closed:true,markets:[]}),true);
+  assert.equal(gameOver({ended:true}),true);
 });
 
 test('snapshot file tag keeps the date', () => assert.strictEqual(tagOf('nfl-was-sf-2026-10-19'), 'was-sf-2026-10-19'));

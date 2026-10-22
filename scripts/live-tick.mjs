@@ -62,7 +62,8 @@ export function shouldTick({ start, status }, nowMs, leadMin = null) {
 }
 // Rescheduled events must refresh their old published schedule even if discovery moved them out of the window.
 export function needsTick(game,published,now,lead=null){
- return shouldTick({start:game.start,status:published?.status},now,lead)||!!published&&shouldTick({start:published.start_time,status:published.status},now,lead);
+ const reopen=published?.status==='final'&&published.game_context?.game_state!=='post'&&game.open===true;
+ return shouldTick({start:game.start,status:reopen?null:published?.status},now,lead)||!!published&&shouldTick({start:published.start_time,status:published.status},now,lead);
 }
 
 /** Pure: build index.json from published game files. */
@@ -86,7 +87,7 @@ async function listGames(nowMs, leadMin) {
     if (page.length < 200) break;
   }
   return out.filter(isTeamGame)
-    .map(e => ({ slug: e.slug, start: e.startTime || e.startDate }));
+    .map(e => ({ slug: e.slug, start: e.startTime || e.startDate, open: e.active === true && e.closed === false && (e.markets || []).some(m => m.active === true && m.closed === false && m.status === 'MARKET_STATUS_OPEN') }));
 }
 
 /** --dry helper: how many game lines / props the publish would watch (one free request). */

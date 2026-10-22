@@ -18,3 +18,12 @@ test('publication reconciles schedule without moving opening price baseline',()=
  assert.equal(open.start_time,'2026-10-20T09:30:00Z');
  assert.equal(buildLive(open,{...event,startDate:'invalid'},null,'2026-10-21T10:34:00Z').start_time,open.start_time);
 });
+
+test('exchange-open games recover from stale finals without reopening verified finished games',()=>{
+ const now=Date.parse('2026-10-22T16:00:00Z'),game={start:'2026-10-23T01:30:00Z',open:true},saved={status:'final',start_time:game.start,game_context:{game_state:'pre'}};
+ assert.equal(needsTick(game,saved,now),true);
+ assert.equal(needsTick({...game,open:false},saved,now),false);
+ assert.equal(needsTick({...game,open:undefined},saved,now),false);
+ assert.equal(needsTick(game,{...saved,game_context:{game_state:'post'}},now),false);
+ assert.equal(needsTick({...game,start:'2026-10-26T01:30:00Z'},saved,now),false);
+});
