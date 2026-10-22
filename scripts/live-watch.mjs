@@ -43,6 +43,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { classify, fetchContext } from './live-context.mjs';
+import {loadUsage,participation} from './live-prop-quality.mjs';
 
 const GATEWAY = 'https://gateway.polymarket.us';
 const args = process.argv.slice(2);
@@ -394,12 +395,15 @@ export function buildLive(open, ev, prev, nowIso = new Date().toISOString(), ctx
       if (!tierOf(edge)) continue;
       // Why did it move? score / injury / likely news / real edge (live-context.mjs).
       const c = classify(ctx, o, sd.i, edge);
+      const quality=participation(open.slug.split('-')[0],o,ctx,nowIso);
+      if(quality&&!quality.eligible){c.class='participation';c.reason=quality.reason;}
       const key = `${o.id}:${sd.i}`; seen.add(key);
       edges.push({ key, market_id: o.id, market: o.kind, group: o.group || (o.kind === 'Player prop' ? 'prop' : 'game'),
         question: o.question, side: o.sides[sd.i],
         open_chance: +sd.open.toFixed(1), now_chance: +sd.now.toFixed(1),
         open_odds: american(sd.open), now_odds: american(sd.now), edge, tier: c.tier,
         class: c.class, reason: c.reason, context: c.context,
+        ...(quality?{participation:quality}:{}),
         first_seen: prevEdges[key]?.first_seen || nowIso, status: 'open' });
     }
   }
@@ -523,7 +527,10 @@ async function publish() {
   const open = fs.existsSync(OPEN_FILE) ? JSON.parse(fs.readFileSync(OPEN_FILE, 'utf8')) : openFromPublished(prev);
   const ev = await fetchEvent();
   const ctx = await fetchContext(SLUG, ev.title || open.title, ev.startDate);   // never throws
+  ctx.player_usage_event=loadUsage(SLUG,ctx.event_id);
   const out = buildLive(open, ev, prev, new Date().toISOString(), ctx);
+  // Full snapshot stays in data/espn; retain only per-edge audit evidence here.
+  delete out.game_context.player_usage_event;
   fs.mkdirSync(ALERTS_DIR, { recursive: true });
   fs.writeFileSync(file, JSON.stringify(out, null, 1));
   // Compact price history for the pop-up chart (HANDOFF §48), one line per market.

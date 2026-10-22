@@ -39,7 +39,7 @@
   // Shown in "Moved for a reason". 'injury' edges are DROPPED entirely: injury
   // data only decides whether an edge is real and is never shown (Oct 19 rule).
   const REASON_CLASSES = ['score', 'news'];
-  const HIDDEN_CLASSES = ['injury'];
+  const HIDDEN_CLASSES = ['injury', 'participation'];
   // ODDS LIMIT (Oct 19, 2026): never show a side priced past +500 / -500 right
   // now (chance under 16.7% or over 83.3%). publish already drops these; this
   // is a safety net so an old data file can't show one.

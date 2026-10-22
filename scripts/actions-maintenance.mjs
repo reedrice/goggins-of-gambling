@@ -19,12 +19,13 @@ function main(){
    if(process.env.ACTIONS_TAKEOVER==='true'&&r.enabled&&r.owner==='chatgpt'){r.previous_run={by:r.last_run_by,at:r.last_run_at};r.owner='github-actions';r.last_run_by=null;r.last_run_at=null;r.notes='GitHub Actions live-maintenance.yml: feed, grading, feedback and Pages deployment. No LLM or local computer required. Other bots skip. Scheduled starts may be delayed by GitHub.';}
    const gate=decide(owners,'live-feed-update','github-actions');
    if(!gate.run){console.log('SKIP: '+gate.reason);output('false');return;}
+   run(['scripts/fetch-espn-status.mjs']);
    const started=Date.now();run(['scripts/live-tick.mjs']);
    checkFresh(JSON.parse(fs.readFileSync('data/live/index.json')).games,started);
    run(['scripts/record-closeout.mjs']);
    // Persist the feed stamp for the source-backed routine runner, still in this unpublished CI tree.
    fs.writeFileSync('routines/owners.json',JSON.stringify(stamp(owners,'live-feed-update','github-actions'),null,2)+'\n');
-   run(['scripts/fetch-espn-status.mjs']);run(['scripts/fetch-espn-flags.mjs']);run(['scripts/scheduled-routines.mjs']);run(['tests/no-instructions.test.mjs']);run(['tests/no-ai-runtime.test.mjs']);
+   run(['scripts/fetch-espn-flags.mjs']);run(['scripts/scheduled-routines.mjs']);run(['tests/no-instructions.test.mjs']);run(['tests/no-ai-runtime.test.mjs']);
    const tracked=git('diff','--name-only').split('\n').filter(Boolean),untracked=git('ls-files','--others','--exclude-standard').split('\n').filter(Boolean);
    if([...tracked,...untracked].some(p=>!allowed(p)))throw Error('Refuse changes outside public maintenance allowlist');
    git('add','--',...[...tracked,...untracked].filter(allowed));
