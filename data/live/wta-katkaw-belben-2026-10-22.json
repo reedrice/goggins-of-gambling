@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185536",
-  "fetched_at": "2026-10-22T06:49:17.846Z",
+  "fetched_at": "2026-10-22T06:53:08.776Z",
   "tennis": true,
   "tennis_match": {
    "id": "185536",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Thu, October 21st at 2:45 AM EDT",
-     "shortDetail": "10/22 - 2:45 AM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Katarzyna Kawa (POL) leads (5) Belinda Bencic (SUI) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 5
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "4a64595c-074a-b6e6-1a41-299469b5e1ea",
       "displayName": "Belinda Bencic",
@@ -90,6 +101,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "0aa547c1-9cd6-e728-0e86-f0f64ba35d8f",
       "displayName": "Katarzyna Kawa",
@@ -122,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 963,
    "type": {
     "id": "2",
@@ -138,10 +160,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Thu, October 21st at 2:45 AM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Belinda Bencic",
@@ -159,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-22T06:49:17.846Z",
+ "updated": "2026-10-22T06:53:08.777Z",
  "open_taken_at": "2026-10-21T05:15:52.006Z",
  "thresholds": {
   "big": 10,
@@ -211,8 +233,81 @@
    "taken_at": "2026-10-21T05:15:52.006Z"
   }
  ],
- "edges": [],
- "alerts": [],
- "alert_seen": [],
+ "edges": [
+  {
+   "key": "1636077:1",
+   "market_id": "1636077",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Katarzyna Kawa win set 1 against Belinda Bencic?",
+   "side": "No: Katarzyna Kawa win set 1 against Belinda Bencic",
+   "open_chance": 86,
+   "now_chance": 63,
+   "open_odds": "-614",
+   "now_odds": "-170",
+   "edge": 23,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Belinda Bencic 0 · Katarzyna Kawa 1 · 1st Set (games by set)",
+   "first_seen": "2026-10-22T06:53:08.777Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1620216:1",
+   "market_id": "1620216",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Katarzyna Kawa vs Belinda Bencic scheduled for October 22, 2026 at 5:00 AM UTC?",
+   "side": "Belinda Bencic win",
+   "open_chance": 90,
+   "now_chance": 83,
+   "open_odds": "-900",
+   "now_odds": "-488",
+   "edge": 7,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Belinda Bencic 0 · Katarzyna Kawa 1 · 1st Set (games by set)",
+   "first_seen": "2026-10-22T06:53:08.777Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
+ "alerts": [
+  {
+   "id": "new_edge:1636077:1:big",
+   "key": "1636077:1",
+   "at": "2026-10-22T06:53:08.777Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "No: Katarzyna Kawa win set 1 against Belinda Bencic",
+   "market": "Set 1 winner",
+   "now_odds": "-170",
+   "now_chance": 63,
+   "edge": 23,
+   "text": "New big edge: No: Katarzyna Kawa win set 1 against Belinda Bencic (Set 1 winner), 23 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-katkaw-belben-2026-10-22"
+  },
+  {
+   "id": "new_edge:1620216:1:slight",
+   "key": "1620216:1",
+   "at": "2026-10-22T06:53:08.777Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Belinda Bencic win",
+   "market": "Moneyline",
+   "now_odds": "-488",
+   "now_chance": 83,
+   "edge": 7,
+   "text": "New slight edge: Belinda Bencic win (Moneyline), 7 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-katkaw-belben-2026-10-22"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:1636077:1:big",
+  "new_edge:1620216:1:slight"
+ ],
  "kalshi_checked": null
 }
