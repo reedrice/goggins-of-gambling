@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-22T10:05:25.123Z"
+  "fetched_at": "2026-10-22T10:11:25.703Z"
  },
- "updated": "2026-10-22T10:05:25.123Z",
+ "updated": "2026-10-22T10:11:25.703Z",
  "open_taken_at": "2026-10-21T05:15:39.718Z",
  "thresholds": {
   "big": 10,
@@ -87,6 +87,26 @@
  ],
  "edges": [
   {
+   "key": "1618119:1",
+   "market_id": "1618119",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Michele Ribecai cover 1.5 vs the Max Houkes in Michele Ribecai vs. Max Houkes?",
+   "side": "Max Houkes -1.50 (Games)",
+   "open_chance": 55,
+   "now_chance": 51,
+   "open_odds": "-122",
+   "now_odds": "-104",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-22T10:11:25.703Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1618119:0",
    "market_id": "1618119",
    "market": "Games spread",
@@ -129,6 +149,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1618119:1:slight",
+   "key": "1618119:1",
+   "at": "2026-10-22T10:11:25.703Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Max Houkes -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-104",
+   "now_chance": 51,
+   "edge": 4,
+   "text": "New slight edge: Max Houkes -1.50 (Games) (Games spread), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-micrib-maxhou-2026-10-21"
+  },
+  {
    "id": "new_edge:1618104:0:slight",
    "key": "1618104:0",
    "at": "2026-10-21T08:15:51.044Z",
@@ -144,7 +178,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1618104:0:slight"
+  "new_edge:1618104:0:slight",
+  "new_edge:1618119:1:slight"
  ],
  "kalshi_checked": null
 }
