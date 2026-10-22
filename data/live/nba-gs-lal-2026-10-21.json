@@ -9,24 +9,24 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401909092",
-  "fetched_at": "2026-10-22T04:38:02.264Z",
+  "fetched_at": "2026-10-22T04:42:18.086Z",
   "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "espn_status": "STATUS_END_PERIOD",
   "period": 4,
-  "clock": "1:59",
-  "regulation_secs_left": 119,
+  "clock": "0.0",
+  "regulation_secs_left": 0,
   "home": {
    "abbr": "LAL",
    "alias": "Lakers",
    "name": "Los Angeles Lakers",
-   "score": 125,
+   "score": 127,
    "id": "13"
   },
   "away": {
    "abbr": "GS",
    "alias": "Warriors",
    "name": "Golden State Warriors",
-   "score": 98,
+   "score": 105,
    "id": "9"
   },
   "possession": null,
@@ -128,7 +128,7 @@
    }
   ]
  },
- "updated": "2026-10-22T04:38:02.264Z",
+ "updated": "2026-10-22T04:42:18.087Z",
  "open_taken_at": "2026-10-21T05:08:16.290Z",
  "thresholds": {
   "big": 10,
@@ -1590,46 +1590,6 @@
  ],
  "edges": [
   {
-   "key": "1574012:1",
-   "market_id": "1574012",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in GS Warriors vs. LA Lakers be more than 229.5?",
-   "side": "Under 229.5",
-   "open_chance": 40,
-   "now_chance": 20,
-   "open_odds": "+150",
-   "now_odds": "+400",
-   "edge": 20,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: scoring above pace (223 pts, pace 222)",
-   "context": "GS 98, LAL 125, Q4 1:59",
-   "first_seen": "2026-10-22T02:27:10.703Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1605405:0",
-   "market_id": "1605405",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in GS Warriors vs. LA Lakers be more than 233.5?",
-   "side": "Over 233.5",
-   "open_chance": 52,
-   "now_chance": 37,
-   "open_odds": "-108",
-   "now_odds": "+170",
-   "edge": 15,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: scoring below pace (223 pts, pace 226)",
-   "context": "GS 98, LAL 125, Q4 1:59",
-   "first_seen": "2026-10-22T02:15:17.530Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
    "key": "1607654:0",
    "market_id": "1607654",
    "market": "Player prop",
@@ -1644,7 +1604,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "GS down 27, Q4 1:59",
+   "context": "GS down 22, End of Q4",
    "first_seen": "2026-10-21T16:52:50.575Z",
    "status": "open",
    "kalshi": false
@@ -1767,7 +1727,7 @@
    "context": "GS down 30, Q3 1:36",
    "first_seen": "2026-10-22T04:03:09.762Z",
    "status": "gone",
-   "kalshi": false
+   "kalshi": null
   },
   {
    "key": "1293508:0",
@@ -1827,7 +1787,7 @@
    "context": "GS down 14, Halftime",
    "first_seen": "2026-10-21T19:38:08.476Z",
    "status": "gone",
-   "kalshi": false
+   "kalshi": null
   },
   {
    "key": "1491243:0",
@@ -1868,6 +1828,26 @@
    "first_seen": "2026-10-22T01:17:26.815Z",
    "status": "gone",
    "kalshi": false
+  },
+  {
+   "key": "1574012:1",
+   "market_id": "1574012",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in GS Warriors vs. LA Lakers be more than 229.5?",
+   "side": "Under 229.5",
+   "open_chance": 40,
+   "now_chance": 20,
+   "open_odds": "+150",
+   "now_odds": "+400",
+   "edge": 20,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: scoring above pace (223 pts, pace 222)",
+   "context": "GS 98, LAL 125, Q4 1:59",
+   "first_seen": "2026-10-22T02:27:10.703Z",
+   "status": "gone",
+   "kalshi": true
   },
   {
    "key": "1641612:0",
@@ -1930,6 +1910,26 @@
    "kalshi": false
   },
   {
+   "key": "1605405:0",
+   "market_id": "1605405",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in GS Warriors vs. LA Lakers be more than 233.5?",
+   "side": "Over 233.5",
+   "open_chance": 52,
+   "now_chance": 37,
+   "open_odds": "-108",
+   "now_odds": "+170",
+   "edge": 15,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: scoring below pace (223 pts, pace 226)",
+   "context": "GS 98, LAL 125, Q4 1:59",
+   "first_seen": "2026-10-22T02:15:17.530Z",
+   "status": "gone",
+   "kalshi": true
+  },
+  {
    "key": "1607753:0",
    "market_id": "1607753",
    "market": "Player prop",
@@ -1987,7 +1987,7 @@
    "context": "LAL up 28, Q4 8:00",
    "first_seen": "2026-10-22T02:21:09.940Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1637822:0",
@@ -2047,7 +2047,7 @@
    "context": "GS down 30, Q3 1:36",
    "first_seen": "2026-10-22T01:27:08.693Z",
    "status": "gone",
-   "kalshi": false
+   "kalshi": null
   },
   {
    "key": "1574844:1",
@@ -2694,7 +2694,7 @@
   "gone:1607753:0:2026-10-22T04:09:07.063Z"
  ],
  "kalshi_checked": {
-  "at": "2026-10-22T04:38:02.291Z",
+  "at": "2026-10-22T04:42:18.451Z",
   "event": "26OCT21GSWLAL"
  }
 }
