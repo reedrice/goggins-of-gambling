@@ -4,12 +4,12 @@
  "game": "Kubler / Peers vs. Lammons / Withrow",
  "url": "https://polymarket.us/sports/atpdb/atpdb-kublerpeers-lammonwithro-2026-10-22",
  "start_time": "2026-10-22T08:15:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185031",
-  "fetched_at": "2026-10-22T09:57:20.773Z",
+  "fetched_at": "2026-10-22T10:03:27.191Z",
   "tennis": true,
   "tennis_match": {
    "id": "185031",
@@ -17,17 +17,17 @@
    "date": "2026-10-22T08:20Z",
    "startDate": "2026-10-22T08:20Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Jason Kubler (AUS) & John Peers (AUS) leads Nathaniel Lammons (USA) & Jackson Withrow (USA) 6-7 (1-7) 6-6 (2-3)",
+     "text": "Nathaniel Lammons (USA) & Jackson Withrow (USA) bt Jason Kubler (AUS) & John Peers (AUS) 7-6 (7-1) 7-6 (7-3)",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "linescores": [
       {
        "value": 7,
@@ -62,8 +63,9 @@
        "winner": true
       },
       {
-       "value": 6,
-       "tiebreak": 3
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
       }
      ],
      "roster": {
@@ -138,6 +140,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "linescores": [
       {
        "value": 6,
@@ -146,7 +149,8 @@
       },
       {
        "value": 6,
-       "tiebreak": 2
+       "tiebreak": 3,
+       "winner": false
       }
      ],
      "roster": {
@@ -232,16 +236,16 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Nathaniel Lammons / Jackson Withrow",
    "alias": "Nathaniel Lammons / Jackson Withrow",
    "name": "Nathaniel Lammons / Jackson Withrow",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Jason Kubler / John Peers",
@@ -253,7 +257,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-22T09:57:20.775Z",
+ "updated": "2026-10-22T10:03:27.192Z",
  "open_taken_at": "2026-10-21T12:54:40.976Z",
  "thresholds": {
   "big": 10,
