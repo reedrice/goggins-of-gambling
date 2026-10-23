@@ -9,17 +9,17 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892560",
-  "fetched_at": "2026-10-23T01:20:50.242Z",
+  "fetched_at": "2026-10-23T01:26:32.283Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "10:53",
-  "regulation_secs_left": 3353,
+  "clock": "9:11",
+  "regulation_secs_left": 3251,
   "home": {
    "abbr": "CGY",
    "alias": "Flames",
    "name": "Calgary Flames",
-   "score": 0,
+   "score": 1,
    "id": "3"
   },
   "away": {
@@ -91,7 +91,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-23T01:20:50.242Z",
+ "updated": "2026-10-23T01:26:32.284Z",
  "open_taken_at": "2026-10-21T05:15:14.507Z",
  "thresholds": {
   "big": 10,
@@ -123,6 +123,26 @@
  ],
  "edges": [
   {
+   "key": "1562815:0",
+   "market_id": "1562815",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming hockey event MIN Wild vs CGY Flames scheduled for October 23, 2026 at 1:00 AM UTC?",
+   "side": "Wild win",
+   "open_chance": 62,
+   "now_chance": 49,
+   "open_odds": "-163",
+   "now_odds": "+104",
+   "edge": 13,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: MIN trailing by 1",
+   "context": "MIN down 1, Q1 9:11",
+   "first_seen": "2026-10-23T01:26:32.284Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
    "key": "1562815:1",
    "market_id": "1562815",
    "market": "Moneyline",
@@ -139,11 +159,25 @@
    "reason": null,
    "context": "CGY tied, Q1 10:53",
    "first_seen": "2026-10-22T18:50:24.727Z",
-   "status": "open",
-   "kalshi": null
+   "status": "gone",
+   "kalshi": true
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1562815:1:2026-10-22T18:50:24.727Z",
+   "key": "1562815:1",
+   "at": "2026-10-23T01:26:32.284Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Flames win",
+   "market": "Moneyline",
+   "now_odds": "+186",
+   "now_chance": 35,
+   "edge": 4,
+   "text": "Edge gone: Flames win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-min-cgy-2026-10-22"
+  },
   {
    "id": "new_edge:1562815:1:slight",
    "key": "1562815:1",
@@ -160,7 +194,11 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1562815:1:slight"
+  "new_edge:1562815:1:slight",
+  "gone:1562815:1:2026-10-22T18:50:24.727Z"
  ],
- "kalshi_checked": null
+ "kalshi_checked": {
+  "at": "2026-10-23T01:26:32.442Z",
+  "event": "26OCT22MINCGY"
+ }
 }

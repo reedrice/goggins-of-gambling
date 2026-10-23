@@ -9,24 +9,24 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401909093",
-  "fetched_at": "2026-10-23T01:20:45.040Z",
+  "fetched_at": "2026-10-23T01:26:26.540Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 4,
-  "clock": "9:11",
-  "regulation_secs_left": 551,
+  "clock": "7:55",
+  "regulation_secs_left": 475,
   "home": {
    "abbr": "PHI",
    "alias": "76ers",
    "name": "Philadelphia 76ers",
-   "score": 89,
+   "score": 92,
    "id": "20"
   },
   "away": {
    "abbr": "CLE",
    "alias": "Cavaliers",
    "name": "Cleveland Cavaliers",
-   "score": 92,
+   "score": 95,
    "id": "5"
   },
   "possession": null,
@@ -100,7 +100,7 @@
    }
   ]
  },
- "updated": "2026-10-23T01:20:45.043Z",
+ "updated": "2026-10-23T01:26:26.545Z",
  "open_taken_at": "2026-10-21T05:14:00.845Z",
  "thresholds": {
   "big": 10,
@@ -352,6 +352,72 @@
  ],
  "edges": [
   {
+   "key": "1642482:0",
+   "market_id": "1642482",
+   "market": "Player prop",
+   "group": "prop",
+   "question": "Will LeBron James record at least 8 assists in CLE Cavaliers vs. PHI 76ers?",
+   "side": "Yes: LeBron James record at least 8 assists in CLE Cavaliers vs. PHI 76ers",
+   "open_chance": 57,
+   "now_chance": 22,
+   "open_odds": "-133",
+   "now_odds": "+355",
+   "edge": 35,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (35 pts), likely news",
+   "context": "PHI down 3, Q4 7:55",
+   "participation": {
+    "version": 1,
+    "eligible": true,
+    "rule": "basketball-observed-minutes",
+    "league": "nba",
+    "athlete_id": "1966",
+    "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909093",
+    "checked_at": "2026-10-23T01:26:14.173Z",
+    "minutes": 30,
+    "elapsed_minutes": 40.08,
+    "observed_share": 0.748,
+    "reason": null
+   },
+   "first_seen": "2026-10-23T01:26:26.545Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "1641844:0",
+   "market_id": "1641844",
+   "market": "Player prop",
+   "group": "prop",
+   "question": "Will Joel Embiid record at least 2 three-point field goals made in CLE Cavaliers vs. PHI 76ers?",
+   "side": "Yes: Joel Embiid record at least 2 three-point field goals made in CLE Cavaliers vs. PHI 76ers",
+   "open_chance": 46,
+   "now_chance": 22,
+   "open_odds": "+117",
+   "now_odds": "+355",
+   "edge": 24,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "PHI down 3, Q4 7:55",
+   "participation": {
+    "version": 1,
+    "eligible": true,
+    "rule": "basketball-observed-minutes",
+    "league": "nba",
+    "athlete_id": "3059318",
+    "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909093",
+    "checked_at": "2026-10-23T01:26:14.173Z",
+    "minutes": 29,
+    "elapsed_minutes": 40.08,
+    "observed_share": 0.723,
+    "reason": null
+   },
+   "first_seen": "2026-10-22T05:51:09.698Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
    "key": "1589956:1",
    "market_id": "1589956",
    "market": "Main spread",
@@ -366,61 +432,8 @@
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: PHI not covering -2.5 right now",
-   "context": "PHI down 3, Q4 9:11",
+   "context": "PHI down 3, Q4 7:55",
    "first_seen": "2026-10-23T00:52:18.642Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1641844:0",
-   "market_id": "1641844",
-   "market": "Player prop",
-   "group": "prop",
-   "question": "Will Joel Embiid record at least 2 three-point field goals made in CLE Cavaliers vs. PHI 76ers?",
-   "side": "Yes: Joel Embiid record at least 2 three-point field goals made in CLE Cavaliers vs. PHI 76ers",
-   "open_chance": 46,
-   "now_chance": 32,
-   "open_odds": "+117",
-   "now_odds": "+213",
-   "edge": 14,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "PHI down 3, Q4 9:11",
-   "participation": {
-    "version": 1,
-    "eligible": true,
-    "rule": "basketball-observed-minutes",
-    "league": "nba",
-    "athlete_id": "3059318",
-    "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909093",
-    "checked_at": "2026-10-23T01:20:34.773Z",
-    "minutes": 28,
-    "elapsed_minutes": 38.82,
-    "observed_share": 0.721,
-    "reason": null
-   },
-   "first_seen": "2026-10-22T05:51:09.698Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1605432:1",
-   "market_id": "1605432",
-   "market": "Alt spread",
-   "group": "game",
-   "question": "Will the CLE Cavaliers cover -1.5 vs the PHI 76ers in CLE Cavaliers vs. PHI 76ers?",
-   "side": "76ers +1.50",
-   "open_chance": 60,
-   "now_chance": 49,
-   "open_odds": "-150",
-   "now_odds": "+104",
-   "edge": 11,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: PHI not covering +1.5 right now",
-   "context": "PHI down 3, Q4 9:11",
-   "first_seen": "2026-10-23T00:38:21.232Z",
    "status": "open",
    "kalshi": true
   },
@@ -432,14 +445,14 @@
    "question": "Will VJ Edgecombe record at least 2 three-point field goals made in CLE Cavaliers vs. PHI 76ers?",
    "side": "Yes: VJ Edgecombe record at least 2 three-point field goals made in CLE Cavaliers vs. PHI 76ers",
    "open_chance": 44,
-   "now_chance": 33,
+   "now_chance": 30,
    "open_odds": "+127",
-   "now_odds": "+203",
-   "edge": 11,
+   "now_odds": "+233",
+   "edge": 14,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "PHI down 3, Q4 9:11",
+   "context": "PHI down 3, Q4 7:55",
    "participation": {
     "version": 1,
     "eligible": true,
@@ -447,13 +460,33 @@
     "league": "nba",
     "athlete_id": "5124612",
     "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909093",
-    "checked_at": "2026-10-23T01:20:34.773Z",
-    "minutes": 24,
-    "elapsed_minutes": 38.82,
-    "observed_share": 0.618,
+    "checked_at": "2026-10-23T01:26:14.173Z",
+    "minutes": 25,
+    "elapsed_minutes": 40.08,
+    "observed_share": 0.624,
     "reason": null
    },
    "first_seen": "2026-10-22T23:25:18.972Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "1605432:1",
+   "market_id": "1605432",
+   "market": "Alt spread",
+   "group": "game",
+   "question": "Will the CLE Cavaliers cover -1.5 vs the PHI 76ers in CLE Cavaliers vs. PHI 76ers?",
+   "side": "76ers +1.50",
+   "open_chance": 60,
+   "now_chance": 47,
+   "open_odds": "-150",
+   "now_odds": "+113",
+   "edge": 13,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: PHI not covering +1.5 right now",
+   "context": "PHI down 3, Q4 7:55",
+   "first_seen": "2026-10-23T00:38:21.232Z",
    "status": "open",
    "kalshi": true
   },
@@ -465,37 +498,17 @@
    "question": "Who will win in the upcoming basketball event CLE Cavaliers vs PHI 76ers scheduled for October 22, 2026 at 11:00 PM UTC?",
    "side": "76ers win",
    "open_chance": 57,
-   "now_chance": 47,
+   "now_chance": 45,
    "open_odds": "-133",
-   "now_odds": "+113",
-   "edge": 10,
+   "now_odds": "+122",
+   "edge": 12,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: PHI trailing by 3",
-   "context": "PHI down 3, Q4 9:11",
+   "context": "PHI down 3, Q4 7:55",
    "first_seen": "2026-10-23T00:38:21.232Z",
    "status": "open",
    "kalshi": true
-  },
-  {
-   "key": "1605431:1",
-   "market_id": "1605431",
-   "market": "Alt spread",
-   "group": "game",
-   "question": "Will the CLE Cavaliers cover -4.5 vs the PHI 76ers in CLE Cavaliers vs. PHI 76ers?",
-   "side": "76ers +4.50",
-   "open_chance": 70,
-   "now_chance": 66,
-   "open_odds": "-233",
-   "now_odds": "-194",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "PHI down 3, Q4 9:11",
-   "first_seen": "2026-10-23T00:38:21.232Z",
-   "status": "open",
-   "kalshi": false
   },
   {
    "key": "1642422:0",
@@ -505,14 +518,14 @@
    "question": "Will Tyrese Maxey record at least 3 three-point field goals made in CLE Cavaliers vs. PHI 76ers?",
    "side": "Yes: Tyrese Maxey record at least 3 three-point field goals made in CLE Cavaliers vs. PHI 76ers",
    "open_chance": 48,
-   "now_chance": 44,
+   "now_chance": 42,
    "open_odds": "+108",
-   "now_odds": "+127",
-   "edge": 4,
+   "now_odds": "+138",
+   "edge": 6,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "PHI down 3, Q4 9:11",
+   "context": "PHI down 3, Q4 7:55",
    "participation": {
     "version": 1,
     "eligible": true,
@@ -520,13 +533,33 @@
     "league": "nba",
     "athlete_id": "4431678",
     "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909093",
-    "checked_at": "2026-10-23T01:20:34.773Z",
+    "checked_at": "2026-10-23T01:26:14.173Z",
     "minutes": 33,
-    "elapsed_minutes": 38.82,
-    "observed_share": 0.85,
+    "elapsed_minutes": 40.08,
+    "observed_share": 0.823,
     "reason": null
    },
    "first_seen": "2026-10-22T06:43:11.554Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "1605430:0",
+   "market_id": "1605430",
+   "market": "Alt spread",
+   "group": "game",
+   "question": "Will the CLE Cavaliers cover -7.5 vs the PHI 76ers in CLE Cavaliers vs. PHI 76ers?",
+   "side": "Cavaliers -7.50",
+   "open_chance": 25,
+   "now_chance": 20,
+   "open_odds": "+300",
+   "now_odds": "+400",
+   "edge": 5,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: CLE not covering -7.5 right now",
+   "context": "CLE up 3, Q4 7:55",
+   "first_seen": "2026-10-23T01:26:26.545Z",
    "status": "open",
    "kalshi": true
   },
@@ -582,9 +615,43 @@
    "first_seen": "2026-10-22T23:31:19.605Z",
    "status": "gone",
    "kalshi": true
+  },
+  {
+   "key": "1605431:1",
+   "market_id": "1605431",
+   "market": "Alt spread",
+   "group": "game",
+   "question": "Will the CLE Cavaliers cover -4.5 vs the PHI 76ers in CLE Cavaliers vs. PHI 76ers?",
+   "side": "76ers +4.50",
+   "open_chance": 70,
+   "now_chance": 66,
+   "open_odds": "-233",
+   "now_odds": "-194",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "PHI down 3, Q4 9:11",
+   "first_seen": "2026-10-23T00:38:21.232Z",
+   "status": "gone",
+   "kalshi": false
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1605431:1:2026-10-23T00:38:21.232Z",
+   "key": "1605431:1",
+   "at": "2026-10-23T01:26:26.545Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "76ers +4.50",
+   "market": "Alt spread",
+   "now_odds": "-194",
+   "now_chance": 66,
+   "edge": 4,
+   "text": "Edge gone: 76ers +4.50 (Alt spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/nba/nba-cle-phi-2026-10-22"
+  },
   {
    "id": "news:1641750:0",
    "key": "1641750:0",
@@ -815,30 +882,20 @@
   "gone:1605430:1:2026-10-22T23:31:19.605Z",
   "new_edge:1605431:1:big",
   "new_edge:1641750:0:big",
-  "news:1641750:0"
+  "news:1641750:0",
+  "gone:1605431:1:2026-10-23T00:38:21.232Z"
  ],
  "prop_test_candidates": [
   {
-   "market_id": "1642480",
-   "player": "LeBron James",
+   "market_id": "1642631",
+   "player": "Evan Mobley",
    "period": "full_game",
-   "question": "Will LeBron James record at least 6 assists in CLE Cavaliers vs. PHI 76ers?",
+   "question": "Will Evan Mobley record at least 20 points in CLE Cavaliers vs. PHI 76ers?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.82,
-   "bid": 0.81,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
-  },
-  {
-   "market_id": "1642451",
-   "player": "VJ Edgecombe",
-   "period": "full_game",
-   "question": "Will VJ Edgecombe record at least 6 total rebounds in CLE Cavaliers vs. PHI 76ers?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.75,
-   "bid": 0.74,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "ask": 0.76,
+   "bid": 0.75,
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
    "market_id": "1642794",
@@ -847,42 +904,9 @@
    "question": "Will Jarrett Allen record at least 15 points in CLE Cavaliers vs. PHI 76ers?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.69,
-   "bid": 0.63,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
-  },
-  {
-   "market_id": "1642644",
-   "player": "Donovan Mitchell",
-   "period": "full_game",
-   "question": "Will Donovan Mitchell record at least 35 points in CLE Cavaliers vs. PHI 76ers?",
-   "sides": [],
-   "side_index": 0,
    "ask": 0.61,
    "bid": 0.57,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
-  },
-  {
-   "market_id": "1642468",
-   "player": "LeBron James",
-   "period": "full_game",
-   "question": "Will LeBron James record at least 20 points in CLE Cavaliers vs. PHI 76ers?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.61,
-   "bid": 0.55,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
-  },
-  {
-   "market_id": "1641718",
-   "player": "Jaylen Brown",
-   "period": "full_game",
-   "question": "Will Jaylen Brown record at least 4 assists in CLE Cavaliers vs. PHI 76ers?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.57,
-   "bid": 0.54,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
    "market_id": "1669919",
@@ -893,40 +917,51 @@
    "side_index": 0,
    "ask": 0.57,
    "bid": 0.56,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
-   "market_id": "1642774",
-   "player": "James Harden",
+   "market_id": "1642730",
+   "player": "Donovan Mitchell",
    "period": "full_game",
-   "question": "Will James Harden record at least 6 assists in CLE Cavaliers vs. PHI 76ers?",
+   "question": "Will Donovan Mitchell record at least 8 total rebounds in CLE Cavaliers vs. PHI 76ers?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.56,
+   "bid": 0.52,
+   "quoted_at": "2026-10-23T01:26:26.545Z"
+  },
+  {
+   "market_id": "1641703",
+   "player": "Jaylen Brown",
+   "period": "full_game",
+   "question": "Will Jaylen Brown record at least 15 points in CLE Cavaliers vs. PHI 76ers?",
    "sides": [],
    "side_index": 0,
    "ask": 0.55,
    "bid": 0.51,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
-   "market_id": "1641739",
-   "player": "Joel Embiid",
+   "market_id": "1641718",
+   "player": "Jaylen Brown",
    "period": "full_game",
-   "question": "Will Joel Embiid record at least 20 points in CLE Cavaliers vs. PHI 76ers?",
+   "question": "Will Jaylen Brown record at least 4 assists in CLE Cavaliers vs. PHI 76ers?",
    "sides": [],
    "side_index": 0,
    "ask": 0.54,
-   "bid": 0.51,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "bid": 0.5,
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
-   "market_id": "1642251",
-   "player": "Tyrese Maxey",
+   "market_id": "1642644",
+   "player": "Donovan Mitchell",
    "period": "full_game",
-   "question": "Will Tyrese Maxey record at least 4 total rebounds in CLE Cavaliers vs. PHI 76ers?",
+   "question": "Will Donovan Mitchell record at least 35 points in CLE Cavaliers vs. PHI 76ers?",
    "sides": [],
    "side_index": 0,
    "ask": 0.54,
-   "bid": 0.51,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "bid": 0.5,
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
    "market_id": "1642802",
@@ -937,29 +972,29 @@
    "side_index": 0,
    "ask": 0.52,
    "bid": 0.51,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
-   "market_id": "1642456",
-   "player": "VJ Edgecombe",
+   "market_id": "1642251",
+   "player": "Tyrese Maxey",
    "period": "full_game",
-   "question": "Will VJ Edgecombe record at least 4 assists in CLE Cavaliers vs. PHI 76ers?",
+   "question": "Will Tyrese Maxey record at least 4 total rebounds in CLE Cavaliers vs. PHI 76ers?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.5,
-   "bid": 0.45,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "ask": 0.52,
+   "bid": 0.51,
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
-   "market_id": "1642741",
-   "player": "Donovan Mitchell",
+   "market_id": "1642784",
+   "player": "James Harden",
    "period": "full_game",
-   "question": "Will Donovan Mitchell record at least 3 three-point field goals made in CLE Cavaliers vs. PHI 76ers?",
+   "question": "Will James Harden record at least 3 three-point field goals made in CLE Cavaliers vs. PHI 76ers?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.48,
-   "bid": 0.45,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "ask": 0.42,
+   "bid": 0.39,
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
    "market_id": "1642422",
@@ -968,9 +1003,20 @@
    "question": "Will Tyrese Maxey record at least 3 three-point field goals made in CLE Cavaliers vs. PHI 76ers?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.44,
-   "bid": 0.39,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "ask": 0.42,
+   "bid": 0.38,
+   "quoted_at": "2026-10-23T01:26:26.545Z"
+  },
+  {
+   "market_id": "1642476",
+   "player": "LeBron James",
+   "period": "full_game",
+   "question": "Will LeBron James record at least 10 total rebounds in CLE Cavaliers vs. PHI 76ers?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.4,
+   "bid": 0.36,
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
    "market_id": "1642790",
@@ -981,7 +1027,7 @@
    "side_index": 0,
    "ask": 0.4,
    "bid": 0.39,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
    "market_id": "1642760",
@@ -990,20 +1036,31 @@
    "question": "Will Peyton Watson record at least 1 three-point field goals made in CLE Cavaliers vs. PHI 76ers?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.35,
+   "ask": 0.34,
    "bid": 0.29,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
-   "market_id": "1641724",
-   "player": "Jaylen Brown",
+   "market_id": "1642652",
+   "player": "Peyton Watson",
    "period": "full_game",
-   "question": "Will Jaylen Brown record at least 2 three-point field goals made in CLE Cavaliers vs. PHI 76ers?",
+   "question": "Will Peyton Watson record at least 10 points in CLE Cavaliers vs. PHI 76ers?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.34,
+   "bid": 0.31,
+   "quoted_at": "2026-10-23T01:26:26.545Z"
+  },
+  {
+   "market_id": "1642751",
+   "player": "Donovan Mitchell",
+   "period": "full_game",
+   "question": "Will Donovan Mitchell record at least 3 steals in CLE Cavaliers vs. PHI 76ers?",
    "sides": [],
    "side_index": 0,
    "ask": 0.33,
-   "bid": 0.3,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "bid": 0.31,
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
    "market_id": "1642460",
@@ -1012,9 +1069,9 @@
    "question": "Will VJ Edgecombe record at least 2 three-point field goals made in CLE Cavaliers vs. PHI 76ers?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.33,
-   "bid": 0.29,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "ask": 0.3,
+   "bid": 0.28,
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
    "market_id": "1642443",
@@ -1023,42 +1080,9 @@
    "question": "Will VJ Edgecombe record at least 15 points in CLE Cavaliers vs. PHI 76ers?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.33,
-   "bid": 0.31,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
-  },
-  {
-   "market_id": "1641844",
-   "player": "Joel Embiid",
-   "period": "full_game",
-   "question": "Will Joel Embiid record at least 2 three-point field goals made in CLE Cavaliers vs. PHI 76ers?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.32,
-   "bid": 0.31,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
-  },
-  {
-   "market_id": "1669951",
-   "player": "Sam Merrill",
-   "period": "full_game",
-   "question": "Will Sam Merrill record at least 2 three-point field goals made in CLE Cavaliers vs. PHI 76ers?",
-   "sides": [],
-   "side_index": 0,
    "ask": 0.3,
-   "bid": 0.24,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
-  },
-  {
-   "market_id": "1642632",
-   "player": "Evan Mobley",
-   "period": "full_game",
-   "question": "Will Evan Mobley record at least 25 points in CLE Cavaliers vs. PHI 76ers?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.3,
-   "bid": 0.25,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "bid": 0.29,
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
    "market_id": "1684582",
@@ -1069,18 +1093,18 @@
    "side_index": 0,
    "ask": 0.3,
    "bid": 0.28,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
-   "market_id": "1641716",
-   "player": "Jaylen Brown",
+   "market_id": "1669951",
+   "player": "Sam Merrill",
    "period": "full_game",
-   "question": "Will Jaylen Brown record at least 10 total rebounds in CLE Cavaliers vs. PHI 76ers?",
+   "question": "Will Sam Merrill record at least 2 three-point field goals made in CLE Cavaliers vs. PHI 76ers?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.27,
-   "bid": 0.23,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "ask": 0.28,
+   "bid": 0.25,
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
    "market_id": "1669923",
@@ -1091,18 +1115,7 @@
    "side_index": 0,
    "ask": 0.26,
    "bid": 0.25,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
-  },
-  {
-   "market_id": "1642489",
-   "player": "LeBron James",
-   "period": "full_game",
-   "question": "Will LeBron James record at least 2 three-point field goals made in CLE Cavaliers vs. PHI 76ers?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.26,
-   "bid": 0.25,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
    "market_id": "1662863",
@@ -1113,29 +1126,29 @@
    "side_index": 0,
    "ask": 0.26,
    "bid": 0.25,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
-   "market_id": "1642731",
-   "player": "Donovan Mitchell",
+   "market_id": "1642837",
+   "player": "LeBron James",
    "period": "full_game",
-   "question": "Will Donovan Mitchell record at least 4 assists in CLE Cavaliers vs. PHI 76ers?",
+   "question": "Will LeBron James record at least 3 steals in CLE Cavaliers vs. PHI 76ers?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.24,
-   "bid": 0.23,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "ask": 0.26,
+   "bid": 0.21,
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
-   "market_id": "1642796",
-   "player": "Jarrett Allen",
+   "market_id": "1642164",
+   "player": "Tyrese Maxey",
    "period": "full_game",
-   "question": "Will Jarrett Allen record at least 20 points in CLE Cavaliers vs. PHI 76ers?",
+   "question": "Will Tyrese Maxey record at least 35 points in CLE Cavaliers vs. PHI 76ers?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.24,
-   "bid": 0.18,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "ask": 0.23,
+   "bid": 0.2,
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
    "market_id": "1642831",
@@ -1146,51 +1159,62 @@
    "side_index": 0,
    "ask": 0.23,
    "bid": 0.22,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
-   "market_id": "1642645",
+   "market_id": "1641844",
+   "player": "Joel Embiid",
+   "period": "full_game",
+   "question": "Will Joel Embiid record at least 2 three-point field goals made in CLE Cavaliers vs. PHI 76ers?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.22,
+   "bid": 0.19,
+   "quoted_at": "2026-10-23T01:26:26.545Z"
+  },
+  {
+   "market_id": "1642482",
+   "player": "LeBron James",
+   "period": "full_game",
+   "question": "Will LeBron James record at least 8 assists in CLE Cavaliers vs. PHI 76ers?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.22,
+   "bid": 0.19,
+   "quoted_at": "2026-10-23T01:26:26.545Z"
+  },
+  {
+   "market_id": "1642796",
+   "player": "Jarrett Allen",
+   "period": "full_game",
+   "question": "Will Jarrett Allen record at least 20 points in CLE Cavaliers vs. PHI 76ers?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.21,
+   "bid": 0.18,
+   "quoted_at": "2026-10-23T01:26:26.545Z"
+  },
+  {
+   "market_id": "1642731",
    "player": "Donovan Mitchell",
    "period": "full_game",
-   "question": "Will Donovan Mitchell record at least 40 points in CLE Cavaliers vs. PHI 76ers?",
+   "question": "Will Donovan Mitchell record at least 4 assists in CLE Cavaliers vs. PHI 76ers?",
    "sides": [],
    "side_index": 0,
    "ask": 0.2,
-   "bid": 0.18,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
-  },
-  {
-   "market_id": "1642743",
-   "player": "Donovan Mitchell",
-   "period": "full_game",
-   "question": "Will Donovan Mitchell record at least 4 three-point field goals made in CLE Cavaliers vs. PHI 76ers?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.19,
-   "bid": 0.18,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
-  },
-  {
-   "market_id": "1642453",
-   "player": "VJ Edgecombe",
-   "period": "full_game",
-   "question": "Will VJ Edgecombe record at least 8 total rebounds in CLE Cavaliers vs. PHI 76ers?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.19,
-   "bid": 0.18,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
-  },
-  {
-   "market_id": "1642669",
-   "player": "Evan Mobley",
-   "period": "full_game",
-   "question": "Will Evan Mobley record at least 12 total rebounds in CLE Cavaliers vs. PHI 76ers?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.18,
    "bid": 0.15,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "quoted_at": "2026-10-23T01:26:26.545Z"
+  },
+  {
+   "market_id": "1642804",
+   "player": "Jarrett Allen",
+   "period": "full_game",
+   "question": "Will Jarrett Allen record at least 10 total rebounds in CLE Cavaliers vs. PHI 76ers?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.2,
+   "bid": 0.17,
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   },
   {
    "market_id": "1684585",
@@ -1201,22 +1225,11 @@
    "side_index": 0,
    "ask": 0.17,
    "bid": 0.12,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
-  },
-  {
-   "market_id": "1642702",
-   "player": "Evan Mobley",
-   "period": "full_game",
-   "question": "Will Evan Mobley record at least 4 assists in CLE Cavaliers vs. PHI 76ers?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.17,
-   "bid": 0.14,
-   "quoted_at": "2026-10-23T01:20:45.043Z"
+   "quoted_at": "2026-10-23T01:26:26.545Z"
   }
  ],
  "kalshi_checked": {
-  "at": "2026-10-23T01:20:45.347Z",
+  "at": "2026-10-23T01:26:27.005Z",
   "event": "26OCT22CLEPHI"
  }
 }
