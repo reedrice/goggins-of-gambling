@@ -4,7 +4,7 @@
  "note": "Learned only from real graded results. Adjustments stay at 0 (and trust at 1) until a bucket or category has 30 graded picks. Small samples are noisy.",
  "sample": {
   "picks_logged": 207,
-  "picks_graded": 128,
+  "picks_graded": 137,
   "predictions_graded": 22,
   "clv_legs": 191
  },
@@ -40,9 +40,9 @@
    {
     "lo": 30,
     "hi": 40,
-    "n": 24,
-    "avg_said": 35.2,
-    "actual": 33.3,
+    "n": 25,
+    "avg_said": 35.3,
+    "actual": 32,
     "adjustment_pts": 0,
     "status": "collecting data"
    },
@@ -58,27 +58,36 @@
    {
     "lo": 50,
     "hi": 60,
-    "n": 17,
+    "n": 19,
     "avg_said": 54,
-    "actual": 35.3,
+    "actual": 31.6,
     "adjustment_pts": 0,
     "status": "collecting data"
    },
    {
     "lo": 60,
     "hi": 70,
-    "n": 10,
-    "avg_said": 64.2,
-    "actual": 50,
+    "n": 11,
+    "avg_said": 63.8,
+    "actual": 45.5,
     "adjustment_pts": 0,
     "status": "collecting data"
    },
    {
     "lo": 70,
     "hi": 80,
+    "n": 5,
+    "avg_said": 73,
+    "actual": 40,
+    "adjustment_pts": 0,
+    "status": "collecting data"
+   },
+   {
+    "lo": 80,
+    "hi": 90,
     "n": 3,
-    "avg_said": 72.7,
-    "actual": 66.7,
+    "avg_said": 84.3,
+    "actual": 0,
     "adjustment_pts": 0,
     "status": "collecting data"
    }
@@ -114,9 +123,9 @@
   ]
  },
  "market_shrink": {
-  "n": 128,
+  "n": 137,
   "raw_weight": 0,
-  "weight": 0.44,
+  "weight": 0.42,
   "status": "applied"
  },
  "clv": {
@@ -190,6 +199,38 @@
    "status": "collecting data"
   },
   {
+   "key": "NHL · total",
+   "sport": "NHL",
+   "type": "total",
+   "stat": null,
+   "n": 8,
+   "w": 2,
+   "l": 6,
+   "hit_rate": 25,
+   "units": -4.09,
+   "roi": -51.1,
+   "avg_clv": 0.5,
+   "clv_n": 20,
+   "trust": 1,
+   "status": "collecting data"
+  },
+  {
+   "key": "NHL · spread",
+   "sport": "NHL",
+   "type": "spread",
+   "stat": null,
+   "n": 7,
+   "w": 0,
+   "l": 7,
+   "hit_rate": 0,
+   "units": -7,
+   "roi": -100,
+   "avg_clv": -1,
+   "clv_n": 21,
+   "trust": 1,
+   "status": "collecting data"
+  },
+  {
    "key": "Soccer · spread",
    "sport": "Soccer",
    "type": "spread",
@@ -206,18 +247,18 @@
    "status": "collecting data"
   },
   {
-   "key": "NHL · total",
+   "key": "NHL · moneyline",
    "sport": "NHL",
-   "type": "total",
+   "type": "moneyline",
    "stat": null,
    "n": 6,
-   "w": 2,
-   "l": 4,
-   "hit_rate": 33.3,
-   "units": -2.09,
-   "roi": -34.8,
-   "avg_clv": 0.5,
-   "clv_n": 20,
+   "w": 0,
+   "l": 6,
+   "hit_rate": 0,
+   "units": -6,
+   "roi": -100,
+   "avg_clv": -0.1,
+   "clv_n": 10,
    "trust": 1,
    "status": "collecting data"
   },
@@ -266,22 +307,6 @@
    "roi": -100,
    "avg_clv": null,
    "clv_n": 0,
-   "trust": 1,
-   "status": "collecting data"
-  },
-  {
-   "key": "NHL · moneyline",
-   "sport": "NHL",
-   "type": "moneyline",
-   "stat": null,
-   "n": 4,
-   "w": 0,
-   "l": 4,
-   "hit_rate": 0,
-   "units": -4,
-   "roi": -100,
-   "avg_clv": -0.1,
-   "clv_n": 10,
    "trust": 1,
    "status": "collecting data"
   },
@@ -378,22 +403,6 @@
    "roi": -100,
    "avg_clv": 5.5,
    "clv_n": 2,
-   "trust": 1,
-   "status": "collecting data"
-  },
-  {
-   "key": "NHL · spread",
-   "sport": "NHL",
-   "type": "spread",
-   "stat": null,
-   "n": 2,
-   "w": 0,
-   "l": 2,
-   "hit_rate": 0,
-   "units": -2,
-   "roi": -100,
-   "avg_clv": -1,
-   "clv_n": 21,
    "trust": 1,
    "status": "collecting data"
   },
@@ -662,5 +671,5 @@
  "worst": [
   "NBA + NHL · parlay"
  ],
- "updated_at": "2026-10-23T01:40:40.260Z"
+ "updated_at": "2026-10-23T01:46:33.044Z"
 }
