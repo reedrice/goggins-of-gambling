@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185061",
-  "fetched_at": "2026-10-23T16:46:53.192Z",
+  "fetched_at": "2026-10-23T16:52:52.924Z",
   "tennis": true,
   "tennis_match": {
    "id": "185061",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Fri, October 23rd at 12:45 PM EDT",
-     "shortDetail": "10/23 - 12:45 PM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(5) Alex Michelsen (USA) leads (1) Arthur Fils (FRA) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "curatedRank": {
       "current": 5
      },
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "3a18ef3a-cc7b-3f51-a969-cac9c930c75d",
       "displayName": "Alex Michelsen",
@@ -90,9 +101,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "curatedRank": {
       "current": 1
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "911397bc-b02d-3987-94ce-642b3aeac50d",
       "displayName": "Arthur Fils",
@@ -125,6 +142,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 440,
    "type": {
     "id": "1",
@@ -141,10 +163,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Fri, October 23rd at 12:45 PM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Alex Michelsen",
@@ -162,7 +184,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-23T16:46:53.193Z",
+ "updated": "2026-10-23T16:52:52.924Z",
  "open_taken_at": "2026-10-22T15:01:18.601Z",
  "thresholds": {
   "big": 10,
