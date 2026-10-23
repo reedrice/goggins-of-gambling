@@ -81,3 +81,14 @@ test('ranks are exact sourced integers 1-25; no 99, zero, missing or string rank
  for(const n of [1,25])assert.equal(collegeMeta({}, {curatedRank:{current:n}},{}).awayRank,n);
  for(const n of [0,26,99,null,'3'])assert.equal(collegeMeta({}, {curatedRank:{current:n}},{}).awayRank,null);
 });
+
+
+test('Top25 group leads all conferences, includes either ranked team, and never duplicates games',()=>{
+ const {snapshotFor}=require('../js/picks-scores.js');
+ const make=(id,conf,awayRank,homeRank)=>{const e=event(id);Object.assign(e.competitions[0],{conferenceCompetition:true,groups:{shortName:conf,isConference:true}});e.competitions[0].competitors[1].curatedRank={current:awayRank};e.competitions[0].competitors[0].curatedRank={current:homeRank};return e;};
+ const docs=[{league:'cfb',events:[make('plain','ACC',99,99),make('one','SEC',1,99),make('two','Big Ten',8,15),make('home','ACC',99,22)]}];
+ const groups=snapshotFor(docs,'NCAAF').groups;
+ assert.equal(groups[0].conference,'top25');assert.deepEqual(groups[0].games.map(g=>g.id),['two','one','home']);
+ assert.deepEqual(groups[1].games.map(g=>g.id),['plain']);assert.equal(new Set(groups.flatMap(g=>g.games.map(x=>x.id))).size,4);
+ assert.equal(snapshotFor(docs,'').groups.length,1);
+});

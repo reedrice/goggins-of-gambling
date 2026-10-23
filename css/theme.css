@@ -429,3 +429,7 @@ h3 { font-size: 20px; line-height: 1.3; }
 
 /* National rank is sourced data, with the existing shared accent/type tokens. */
 #picks-score-ticker .pst-rank { color:var(--accent);font-weight:var(--weight-heading);font-variant-numeric:tabular-nums; }
+
+/* Conference/group labels remain legible against the shared glass surface. */
+:root { --weight-ticker-label: 800; }
+#picks-score-ticker .pst-conference { font-weight:var(--weight-ticker-label);color:var(--text-primary);letter-spacing:.06em; }

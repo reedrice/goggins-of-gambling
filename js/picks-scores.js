@@ -74,11 +74,16 @@
   function groupGames(results, byConference=false) {
     const groups = new Map();
     results.flat().forEach(game => {
-      const key=byConference?game.league+':'+game.conference:game.league;
+      const ranked=byConference&&(game.awayRank||game.homeRank);
+      const key=byConference?game.league+':'+(ranked?'top25':game.conference):game.league;
       if (!groups.has(key)) groups.set(key, new Map());
       groups.get(key).set(game.id, game);
     });
-    return Array.from(groups, ([key, games]) => {const rows=Array.from(games.values());return {league:rows[0].league,...(byConference?{conference:rows[0].conference}:{}),games:rows};});
+    return Array.from(groups, ([key, games]) => {
+      const rows=Array.from(games.values()),top25=byConference&&key.endsWith(':top25');
+      if(top25)rows.sort((a,b)=>(!!b.awayRank+!!b.homeRank)-(!!a.awayRank+!!a.homeRank)||Math.min(a.awayRank||99,a.homeRank||99)-Math.min(b.awayRank||99,b.homeRank||99));
+      return {league:rows[0].league,...(byConference?{conference:top25?'top25':rows[0].conference}:{}),games:rows};
+    }).sort((a,b)=>Number(b.conference==='top25')-Number(a.conference==='top25'));
   }
   function stop() {
     if (!active) return;
@@ -134,7 +139,7 @@
       const lane = node('div', 'pst-lane');
       snapshot.groups.forEach(group => {
         const block = node('div', 'pst-group');
-        block.append(node('strong', 'pst-league', group.conference ? (group.conference==='non-conference'?S.nonConference:group.conference==='unknown'?S.conferenceUnknown:group.conference) : S.leagues[group.league] || S.soccer));
+        block.append(node('strong', 'pst-league'+(group.conference?' pst-conference':''), group.conference ? (group.conference==='top25'?S.top25:group.conference==='non-conference'?S.nonConference:group.conference==='unknown'?S.conferenceUnknown:group.conference) : S.leagues[group.league] || S.soccer));
         group.games.forEach(game => {
           const item = node('span', 'pst-game');
           item.append(team(game.away, game.awayLogo, game.awayRank));

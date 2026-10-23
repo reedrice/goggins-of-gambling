@@ -132,7 +132,7 @@ window.STR = {
   picks: {
     scores: {
       title: 'Live scores', upcoming: 'Upcoming today', loading: 'Checking ESPN…', pause: 'Pause', resume: 'Resume', at: '@', soccer: 'Soccer',
-      rank: n => `#${n}`, rankLabel: n => `National rank ${n}`, nonConference: 'Non-conference', conferenceUnknown: 'Conference unavailable', emptySport: sport => `No live or upcoming ${sport} games today.`, delayed: 'Snapshots may be delayed', empty: 'No more games scheduled today.', unavailable: 'Scores are unavailable. Retrying shortly.',
+      rank: n => `#${n}`, rankLabel: n => `National rank ${n}`, top25: 'Top 25 matchups', nonConference: 'Non-conference', conferenceUnknown: 'Conference unavailable', emptySport: sport => `No live or upcoming ${sport} games today.`, delayed: 'Snapshots may be delayed', empty: 'No more games scheduled today.', unavailable: 'Scores are unavailable. Retrying shortly.',
       checked: time => `ESPN · ${time} CT`,
       partial: (leagues, time) => `ESPN · ${time} CT · Unavailable: ${leagues}`,
       coverage: 'Published ESPN snapshots for the selected sport. When none are live, shows that sport’s upcoming games today. Snapshot timestamp indicates data freshness; checks published files every minute.',
