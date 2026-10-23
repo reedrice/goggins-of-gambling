@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185108",
-  "fetched_at": "2026-10-23T22:28:51.218Z",
+  "fetched_at": "2026-10-23T22:30:56.195Z",
   "tennis": true,
   "tennis_match": {
    "id": "185108",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "detail": "3rd Set",
+     "shortDetail": "3rd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Luca Van Assche (FRA) is tied with (6) Lorenzo Musetti (ITA) 6-7 (5-7) 7-6 (9-7)",
+     "text": "Luca Van Assche (FRA) leads (6) Lorenzo Musetti (ITA) 6-7 (5-7) 7-6 (9-7) 0-0",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 6
      },
@@ -66,7 +67,11 @@
       },
       {
        "value": 6,
-       "tiebreak": 7
+       "tiebreak": 7,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -106,6 +111,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 6,
@@ -114,7 +120,11 @@
       },
       {
        "value": 7,
-       "tiebreak": 9
+       "tiebreak": 9,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -149,6 +159,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 110,
    "type": {
     "id": "1",
@@ -167,8 +182,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "period": 3,
+  "clock": "3rd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Lorenzo Musetti",
@@ -180,13 +195,13 @@
    "abbr": "Luca Van Assche",
    "alias": "Luca Van Assche",
    "name": "Luca Van Assche",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-23T22:28:51.218Z",
+ "updated": "2026-10-23T22:30:56.196Z",
  "open_taken_at": "2026-10-22T14:43:13.953Z",
  "thresholds": {
   "big": 10,
