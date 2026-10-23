@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185063",
-  "fetched_at": "2026-10-23T14:50:52.677Z",
+  "fetched_at": "2026-10-23T14:56:52.805Z",
   "tennis": true,
   "tennis_match": {
    "id": "185063",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(2) Jiri Lehecka (CZE) leads Tallon Griekspoor (NED) 6-4",
+     "text": "Tallon Griekspoor (NED) is tied with (2) Jiri Lehecka (CZE) 4-6 1-0",
      "type": "event"
     }
    ],
@@ -55,12 +55,17 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 2
      },
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -100,9 +105,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
-       "value": 4
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -137,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 440,
    "type": {
     "id": "1",
@@ -155,14 +170,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Jiri Lehecka",
    "alias": "Jiri Lehecka",
    "name": "Jiri Lehecka",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Tallon Griekspoor",
@@ -174,7 +189,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-23T14:50:52.677Z",
+ "updated": "2026-10-23T14:56:52.806Z",
  "open_taken_at": "2026-10-22T13:19:12.412Z",
  "thresholds": {
   "big": 10,
