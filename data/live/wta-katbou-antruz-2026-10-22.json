@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185612",
-  "fetched_at": "2026-10-23T09:16:50.111Z",
+  "fetched_at": "2026-10-23T09:26:41.243Z",
   "tennis": true,
   "tennis_match": {
    "id": "185612",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "detail": "3rd Set",
+     "shortDetail": "3rd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(8) Katie Boulter (GBR) is tied with Antonia Ruzic (CRO) 3-6 6-3",
+     "text": "(8) Katie Boulter (GBR) leads Antonia Ruzic (CRO) 3-6 6-3 1-0",
      "type": "event"
     }
    ],
@@ -55,13 +55,18 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 3
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -101,6 +106,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "curatedRank": {
       "current": 8
      },
@@ -110,7 +116,11 @@
        "winner": false
       },
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -145,6 +155,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 345,
    "type": {
     "id": "2",
@@ -163,8 +178,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "period": 3,
+  "clock": "3rd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Antonia Ruzic",
@@ -176,13 +191,13 @@
    "abbr": "Katie Boulter",
    "alias": "Katie Boulter",
    "name": "Katie Boulter",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-23T09:16:50.112Z",
+ "updated": "2026-10-23T09:26:41.244Z",
  "open_taken_at": "2026-10-22T04:03:22.822Z",
  "thresholds": {
   "big": 10,
