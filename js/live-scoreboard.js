@@ -4,8 +4,13 @@
  const GROUPS={nba:['nba'],wnba:['wnba'],nhl:['nhl'],mlb:['mlb'],nfl:['nfl'],ncaaf:['cfb'],ncaab:['cbb'],wncaab:['wcbb'],tennis:['atp','wta'],golf:['pga','lpga','dpwt'],soccer:['epl','bun','eflch','fl1','lal','lmx','mls','sea','ucl','uecl','uel']};
  const day=t=>new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(t));
  const logo=c=>[c.team?.logo,...(c.team?.logos||[]).map(x=>x.href)].find(x=>typeof x==='string'&&/^https:\/\//.test(x));
+ const identities=new Map();
+ const league=s=>({ncaaf:'cfb',ncaab:'cbb',ncaam:'cbb',ncaaw:'wcbb',wncaab:'wcbb'})[s]||s;
+ const college={jmad:'jmu',applst:'app',ecar:'ecu',mphs:'mem',librty:'lib',kenest:'kenn'};
+ const code=(s,l)=>{s=String(s||'').toLowerCase();return ['cfb','cbb','wcbb'].includes(l)?college[s]||s:s;};
  function games(docs,sport,now=Date.now()){
-  const seen=new Set(),out=[];
+  const seen=new Set(),out=[],keys=new Map();
+  for(const id of identities.keys())if(GROUPS[sport]?.includes(id.split(':')[0]))identities.delete(id);
   for(const d of docs.filter(d=>GROUPS[sport]?.includes(d.league)))for(const e of d.events||[])for(const c of e.competitions?.length?e.competitions:[e]){
    const status=c.status||e.status||{},type=status.type||{},at=Date.parse(c.date||e.date),id=d.league+':'+(c.id||e.id);
    if(seen.has(id)||!Number.isFinite(at)||!type.state)continue;
@@ -16,8 +21,11 @@
    if(!tournament&&pair.length!==2)continue;
    const teams=pair.map(p=>({name:p.team?.abbreviation||p.athlete?.shortName||p.athlete?.displayName||p.team?.displayName||p.roster?.displayName||p.displayName||'',logo:logo(p),score:type.state==='pre'?null:(typeof p.score==='object'?p.score?.displayValue:p.score)??null}));
    if(teams.some(t=>!t.name))continue;
+   const away=competitors.find(p=>p.homeAway==='away')?.team?.abbreviation,home=competitors.find(p=>p.homeAway==='home')?.team?.abbreviation;
+   if(away&&home){const key=[d.league,code(away,d.league),code(home,d.league),day(at)].join(':');identities.set(id,key);keys.set(key,(keys.get(key)||0)+1);}
    seen.add(id);out.push({id,at,state:type.state,detail:type.shortDetail||type.detail||type.description||'',teams,tournament,name:e.name||'',checked:d.fetched_at});
   }
+  for(const g of out)if(keys.get(identities.get(g.id))!==1)identities.delete(g.id);
   return out.sort((a,b)=>({in:0,pre:1,post:2}[a.state]??3)-({in:0,pre:1,post:2}[b.state]??3)||a.at-b.at);
  }
  const cache=new Map(),offsets=new Map();
@@ -27,7 +35,14 @@
   const promise=(async()=>{const ix=await read('data/espn/index.json');const entries=(ix.snapshots||[]).filter(s=>GROUPS[sport]?.includes(s.league)&&s.date===day(Date.now())&&/^data\/espn\/[a-z0-9-]+\.json$/.test(s.file));if(!entries.length)throw Error('coverage');const results=await Promise.allSettled(entries.map(async s=>{if(!s.available)throw Error('unavailable');const d=await read(s.file);if(d.league!==s.league||!Array.isArray(d.events))throw Error('shape');return d;}));return {docs:results.filter(x=>x.status==='fulfilled').map(x=>x.value),partial:results.some(x=>x.status==='rejected')};})();
   cache.set(sport,{at:Date.now(),promise});try{return await promise;}catch(e){cache.delete(sport);throw e;}
  }
- function matches(feed,id){return !!id && id.slice(id.indexOf(':')+1)===String(feed.game_context?.event_id||'') && GROUPS[Object.keys(GROUPS).find(s=>GROUPS[s].includes(id.split(':')[0]))]?.includes(String(feed.slug||'').split('-')[0]);}
+ function matches(feed,id){
+  if(!id)return false;const l=id.split(':')[0],parts=/^([a-z0-9]+)-([a-z0-9]+)-([a-z0-9]+)-(\d{4}-\d{2}-\d{2})$/.exec(feed.slug||'');
+  if(!parts||league(parts[1])!==l)return false;
+  const eventId=feed.game_context?.event_id;
+  if(eventId)return id.slice(id.indexOf(':')+1)===String(eventId);
+  // Only a unique loaded snapshot may bridge absent feed context; never use display names.
+  return identities.has(id)&&identities.get(id)===[l,code(parts[2],l),code(parts[3],l),parts[4]].join(':');
+ }
  function mount(host,sport,options={}){
   if(!host||!GROUPS[sport])return;
   const S=window.STR.liveScoreboard,node=(tag,cls,text)=>{const n=document.createElement(tag);n.className=cls;if(text!==undefined)n.textContent=text;return n;};
