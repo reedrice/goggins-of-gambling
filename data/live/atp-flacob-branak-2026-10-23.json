@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185107",
-  "fetched_at": "2026-10-23T17:54:46.560Z",
+  "fetched_at": "2026-10-23T17:56:56.862Z",
   "tennis": true,
   "tennis_match": {
    "id": "185107",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(5) Brandon Nakashima (USA) leads (1) Flavio Cobolli (ITA) 6-4",
+     "text": "(1) Flavio Cobolli (ITA) leads (5) Brandon Nakashima (USA) 4-6 0-0",
      "type": "event"
     }
    ],
@@ -55,12 +55,17 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 5
      },
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -100,12 +105,17 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 1
      },
      "linescores": [
       {
-       "value": 4
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -140,6 +150,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 110,
    "type": {
     "id": "1",
@@ -158,14 +173,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Brandon Nakashima",
    "alias": "Brandon Nakashima",
    "name": "Brandon Nakashima",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Flavio Cobolli",
@@ -177,7 +192,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-23T17:54:46.561Z",
+ "updated": "2026-10-23T17:56:56.862Z",
  "open_taken_at": "2026-10-22T20:32:31.164Z",
  "thresholds": {
   "big": 10,
