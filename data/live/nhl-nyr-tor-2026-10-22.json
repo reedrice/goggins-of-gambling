@@ -9,12 +9,12 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892553",
-  "fetched_at": "2026-10-23T00:44:22.731Z",
+  "fetched_at": "2026-10-23T00:46:22.891Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 2,
-  "clock": "1:58",
-  "regulation_secs_left": 1918,
+  "clock": "0:50",
+  "regulation_secs_left": 1850,
   "home": {
    "abbr": "TOR",
    "alias": "Maple Leafs",
@@ -142,7 +142,7 @@
    }
   ]
  },
- "updated": "2026-10-23T00:44:22.733Z",
+ "updated": "2026-10-23T00:46:22.892Z",
  "open_taken_at": "2026-10-21T05:15:12.010Z",
  "thresholds": {
   "big": 10,
@@ -181,14 +181,14 @@
    "question": "Who will win in the upcoming hockey event NYR Rangers vs TOR Maple Leafs scheduled for October 22, 2026 at 11:00 PM UTC?",
    "side": "Rangers win",
    "open_chance": 53,
-   "now_chance": 46,
+   "now_chance": 26,
    "open_odds": "-113",
-   "now_odds": "+117",
-   "edge": 7,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "NYR tied, Q2 1:58",
+   "now_odds": "+285",
+   "edge": 27,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (27 pts), likely news",
+   "context": "NYR tied, Q2 0:50",
    "first_seen": "2026-10-22T23:19:00.925Z",
    "status": "open",
    "kalshi": true
@@ -216,6 +216,20 @@
  ],
  "alerts": [
   {
+   "id": "news:1562562:0",
+   "key": "1562562:0",
+   "at": "2026-10-23T00:46:22.892Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Rangers win",
+   "market": "Moneyline",
+   "now_odds": "+285",
+   "now_chance": 26,
+   "edge": 27,
+   "text": "Big move, likely news: Rangers win (Moneyline) is 27 points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-nyr-tor-2026-10-22"
+  },
+  {
    "id": "new_edge:1562562:0:slight",
    "key": "1562562:0",
    "at": "2026-10-23T00:44:22.733Z",
@@ -231,10 +245,11 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1562562:0:slight"
+  "new_edge:1562562:0:slight",
+  "news:1562562:0"
  ],
  "kalshi_checked": {
-  "at": "2026-10-23T00:44:22.848Z",
+  "at": "2026-10-23T00:46:23.023Z",
   "event": "26OCT22NYRTOR"
  }
 }
