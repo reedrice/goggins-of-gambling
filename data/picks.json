@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "slate_date": "2026-10-23",
-  "updated_at": "2026-10-23T18:31:19.323Z",
+  "updated_at": "2026-10-23T18:36:57.708Z",
   "notes": [
     "Rules-based daily slate: exchange asks and the existing ESPN-history Analytics model. No AI calls.",
     "ESPN availability coverage varies; missing starter/goalie confirmations stay unverified. No fresh sportsbook or social scraping.",
@@ -20,7 +20,7 @@
         "start_time": "2026-10-24T00:00:00Z",
         "reasoning": "History 4-5 record · Market 60%",
         "source": "Rules-based Analytics from ESPN history and current Polymarket US",
-        "created_at": "2026-10-23T18:31:19.323Z"
+        "created_at": "2026-10-23T18:36:57.708Z"
       },
       {
         "id": "2026-10-23-tb-mil",
@@ -33,7 +33,7 @@
         "start_time": "2026-10-24T00:00:00Z",
         "reasoning": "History 7-1 record · Market 63%",
         "source": "Rules-based Analytics from ESPN history and current Polymarket US",
-        "created_at": "2026-10-23T18:31:19.323Z"
+        "created_at": "2026-10-23T18:36:57.708Z"
       },
       {
         "id": "2026-10-23-tb-col",
@@ -46,10 +46,43 @@
         "start_time": "2026-10-24T01:00:00Z",
         "reasoning": "History 7-2 record · Market 48%",
         "source": "Rules-based Analytics from ESPN history and current Polymarket US",
-        "created_at": "2026-10-23T18:31:19.323Z"
+        "created_at": "2026-10-23T18:36:57.708Z"
       }
     ],
     "singles": [
+      {
+        "id": "auto-2026-10-23-asc-atp-lucass-lormus-2026-10-23-gs-neg-1pt5-yes",
+        "slate_date": "2026-10-23",
+        "sport": "Tennis",
+        "event": "Luca Van Assche vs. Lorenzo Musetti",
+        "platform": "Polymarket US",
+        "action": "wait",
+        "start_time": "2026-10-23T18:40:00Z",
+        "link": "https://polymarket.us/sports/atp/atp-lucass-lormus-2026-10-23",
+        "polymarket_url": "https://polymarket.us/sports/atp/atp-lucass-lormus-2026-10-23",
+        "market": "Luca Van Assche wins by over 1.5 games",
+        "side": "Assche -1.5",
+        "price": 23,
+        "fair": 31,
+        "edge": 8,
+        "stake_units": 0,
+        "hit_prob": 31,
+        "our_chance": 31,
+        "market_chance": 23,
+        "our_chance_why": "ESPN empirical full-game margins · 20 completed events · History 42% · Market 23%",
+        "market_id": "asc-atp-lucass-lormus-2026-10-23-gs-neg-1pt5",
+        "market_side": "yes",
+        "team": {
+          "league": "atp",
+          "abbr": "lucass"
+        },
+        "reasoning": "ESPN empirical full-game margins · 20 completed events · History 42% · Market 23%. Rules-based comparison; lineup and goalie confirmations are unverified.",
+        "pending_news": "Starter and injury context unverified",
+        "generated_by": "github-actions",
+        "history_model": "ESPN empirical full-game margins",
+        "history_sample": 20,
+        "history_source": "data/espn/history.json"
+      },
       {
         "id": "auto-2026-10-23-aec-atp-lucass-lormus-2026-10-23-yes",
         "slate_date": "2026-10-23",
@@ -110,39 +143,6 @@
           "abbr": "lucass"
         },
         "reasoning": "ESPN empirical full-game margins · 20 completed events · History 52% · Market 38%. Rules-based comparison; lineup and goalie confirmations are unverified.",
-        "pending_news": "Starter and injury context unverified",
-        "generated_by": "github-actions",
-        "history_model": "ESPN empirical full-game margins",
-        "history_sample": 20,
-        "history_source": "data/espn/history.json"
-      },
-      {
-        "id": "auto-2026-10-23-asc-atp-lucass-lormus-2026-10-23-gs-pos-4pt5-yes",
-        "slate_date": "2026-10-23",
-        "sport": "Tennis",
-        "event": "Luca Van Assche vs. Lorenzo Musetti",
-        "platform": "Polymarket US",
-        "action": "wait",
-        "start_time": "2026-10-23T18:40:00Z",
-        "link": "https://polymarket.us/sports/atp/atp-lucass-lormus-2026-10-23",
-        "polymarket_url": "https://polymarket.us/sports/atp/atp-lucass-lormus-2026-10-23",
-        "market": "Lorenzo Musetti wins by over 4.5 games",
-        "side": "Assche +4.5",
-        "price": 63,
-        "fair": 65,
-        "edge": 2,
-        "stake_units": 0,
-        "hit_prob": 65,
-        "our_chance": 65,
-        "market_chance": 63,
-        "our_chance_why": "ESPN empirical full-game margins · 20 completed events · History 67% · Market 63%",
-        "market_id": "asc-atp-lucass-lormus-2026-10-23-gs-pos-4pt5",
-        "market_side": "yes",
-        "team": {
-          "league": "atp",
-          "abbr": "lucass"
-        },
-        "reasoning": "ESPN empirical full-game margins · 20 completed events · History 67% · Market 63%. Rules-based comparison; lineup and goalie confirmations are unverified.",
         "pending_news": "Starter and injury context unverified",
         "generated_by": "github-actions",
         "history_model": "ESPN empirical full-game margins",
@@ -693,21 +693,21 @@
         "polymarket_url": "https://polymarket.us/sports/wta/wta-annli-ashkru-2026-10-23",
         "market": "Who wins",
         "side": "Krueger to win",
-        "price": 42,
+        "price": 41,
         "fair": 46,
-        "edge": 4,
+        "edge": 5,
         "stake_units": 0,
         "hit_prob": 46,
         "our_chance": 46,
-        "market_chance": 42,
-        "our_chance_why": "ESPN matchup outcome frequencies · 20 completed events · History 52% · Market 42%",
+        "market_chance": 41,
+        "our_chance_why": "ESPN matchup outcome frequencies · 20 completed events · History 52% · Market 41%",
         "market_id": "aec-wta-annli-ashkru-2026-10-23",
         "market_side": "no",
         "team": {
           "league": "wta",
           "abbr": "ashkru"
         },
-        "reasoning": "ESPN matchup outcome frequencies · 20 completed events · History 52% · Market 42%. Rules-based comparison; lineup and goalie confirmations are unverified.",
+        "reasoning": "ESPN matchup outcome frequencies · 20 completed events · History 52% · Market 41%. Rules-based comparison; lineup and goalie confirmations are unverified.",
         "pending_news": "Starter and injury context unverified",
         "generated_by": "github-actions",
         "history_model": "ESPN matchup outcome frequencies",
