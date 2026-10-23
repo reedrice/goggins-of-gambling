@@ -9,17 +9,17 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892562",
-  "fetched_at": "2026-10-23T02:12:37.936Z",
+  "fetched_at": "2026-10-23T02:18:25.484Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "18:03",
-  "regulation_secs_left": 3783,
+  "clock": "14:52",
+  "regulation_secs_left": 3592,
   "home": {
    "abbr": "SEA",
    "alias": "Kraken",
    "name": "Seattle Kraken",
-   "score": 0,
+   "score": 1,
    "id": "124292"
   },
   "away": {
@@ -75,9 +75,28 @@
    }
   ],
   "in_game_injuries": [],
-  "leaders": []
+  "leaders": [
+   {
+    "team": "SEA",
+    "player": "Jordan Eberle",
+    "short": "J. Eberle",
+    "pos": "RW"
+   },
+   {
+    "team": "SEA",
+    "player": "Ryker Evans",
+    "short": "R. Evans",
+    "pos": "D"
+   },
+   {
+    "team": "SEA",
+    "player": "Jordan Eberle",
+    "short": "J. Eberle",
+    "pos": "RW"
+   }
+  ]
  },
- "updated": "2026-10-23T02:12:37.936Z",
+ "updated": "2026-10-23T02:18:25.485Z",
  "open_taken_at": "2026-10-21T05:15:15.823Z",
  "thresholds": {
   "big": 10,
@@ -109,6 +128,26 @@
  ],
  "edges": [
   {
+   "key": "1562941:0",
+   "market_id": "1562941",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming hockey event UTA Mammoth vs SEA Kraken scheduled for October 23, 2026 at 2:00 AM UTC?",
+   "side": "Mammoth win",
+   "open_chance": 60,
+   "now_chance": 49,
+   "open_odds": "-150",
+   "now_odds": "+104",
+   "edge": 11,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: UTA trailing by 1",
+   "context": "UTA down 1, Q1 14:52",
+   "first_seen": "2026-10-23T02:18:25.485Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1562941:1",
    "market_id": "1562941",
    "market": "Moneyline",
@@ -125,11 +164,25 @@
    "reason": null,
    "context": "SEA tied, Q1 18:03",
    "first_seen": "2026-10-22T16:26:42.749Z",
-   "status": "open",
-   "kalshi": true
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1562941:1:2026-10-22T16:26:42.749Z",
+   "key": "1562941:1",
+   "at": "2026-10-23T02:18:25.485Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Kraken win",
+   "market": "Moneyline",
+   "now_odds": "+163",
+   "now_chance": 38,
+   "edge": 4,
+   "text": "Edge gone: Kraken win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-uta-sea-2026-10-22"
+  },
   {
    "id": "new_edge:1562941:1:slight",
    "key": "1562941:1",
@@ -146,10 +199,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1562941:1:slight"
+  "new_edge:1562941:1:slight",
+  "gone:1562941:1:2026-10-22T16:26:42.749Z"
  ],
- "kalshi_checked": {
-  "at": "2026-10-23T02:12:38.106Z",
-  "event": "26OCT22UTASEA"
- }
+ "kalshi_checked": null
 }
