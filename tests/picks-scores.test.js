@@ -45,3 +45,24 @@ test('uses scoreboard team logos and accepts only HTTPS images',()=>{
  test('college sports use the same verified team score handling',()=>assert.equal(liveGames({events:[event('cfb')]},'NCAAF')[0].league,'NCAAF'));
  test('tennis reads individual matches and set games, not the tournament status',()=>{const match={id:'match',date:'2026-10-21T01:00:00Z',status:{type:{state:'in',completed:false,shortDetail:'2nd set'}},competitors:[{homeAway:'away',athlete:{shortName:'A. Player'},linescores:[{value:6},{value:2}]},{homeAway:'home',athlete:{shortName:'B. Player'},linescores:[{value:4},{value:3}]}]};const board={events:[{id:'tournament',status:{type:{state:'post',completed:true}},groupings:[{competitions:[match]}]}]};const rows=liveGames(board,'ATP');assert.equal(rows.length,1);assert.equal(rows[0].awayScore,'6, 2');assert.equal(rows[0].home,'B. Player');match.status.type.state='post';match.status.type.completed=true;assert.equal(liveGames(board,'ATP').length,0);});
  test('golf shows tournament status without fabricated head-to-head scores',()=>{const e=event('golf');e.name='Test Championship';e.competitions[0].competitors=[];const r=liveGames({events:[e]},'PGA')[0];assert.equal(r.tournament,true);assert.equal(r.away,'Test Championship');assert.equal(r.awayScore,null);});
+
+
+test('sport filtering keeps NFL and NCAA football separate; All restores both',()=>{
+ const {snapshotFor}=require('../js/picks-scores.js');
+ const docs=[{league:'nfl',events:[event('nfl-live')]},{league:'cfb',events:[event('college-live')]},{league:'nba',events:[event('nba-live')]}];
+ assert.deepEqual(snapshotFor(docs,'NFL').groups.flatMap(g=>g.games.map(e=>e.id)),['nfl-live']);
+ assert.deepEqual(snapshotFor(docs,'NCAAF').groups.flatMap(g=>g.games.map(e=>e.id)),['college-live']);
+ assert.equal(snapshotFor(docs,'').groups.length,3);
+});
+test('upcoming fallback is selected-sport specific even when other sports are live',()=>{
+ const {snapshotFor}=require('../js/picks-scores.js');const now=new Date('2026-10-23T15:00:00Z');
+ const docs=[{league:'nba',events:[event('nba-live')]},{league:'cfb',events:[event('cfb-next','pre',{date:'2026-10-23T20:00:00Z'})]}];
+ const result=snapshotFor(docs,'NCAAF',now);assert.equal(result.upcoming,true);assert.equal(result.groups[0].games[0].id,'cfb-next');
+ assert.deepEqual(snapshotFor(docs,'NFL',now).groups,[]);
+});
+test('normalized tennis snapshots keep match data and do not leak into football',()=>{
+ const {snapshotFor}=require('../js/picks-scores.js');
+ const match=event('tennis');match.competitions[0].competitors.forEach((c,i)=>{delete c.team;c.athlete={displayName:'Player '+i};c.linescores=[{value:i+1}];});
+ const docs=[{league:'atp',events:[match]}];
+ assert.equal(snapshotFor(docs,'Tennis').groups[0].games[0].id,'tennis');assert.deepEqual(snapshotFor(docs,'NFL').groups,[]);
+});

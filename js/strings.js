@@ -132,10 +132,10 @@ window.STR = {
   picks: {
     scores: {
       title: 'Live scores', upcoming: 'Upcoming today', loading: 'Checking ESPN…', pause: 'Pause', resume: 'Resume', at: '@', soccer: 'Soccer',
-      empty: 'No more games scheduled today.', unavailable: 'Scores are unavailable. Retrying shortly.',
+      emptySport: sport => `No live or upcoming ${sport} games today.`, delayed: 'Snapshots may be delayed', empty: 'No more games scheduled today.', unavailable: 'Scores are unavailable. Retrying shortly.',
       checked: time => `ESPN · ${time} CT`,
       partial: (leagues, time) => `ESPN · ${time} CT · Unavailable: ${leagues}`,
-      coverage: 'All live games reported by ESPN for NBA, NHL, NFL, MLB, WNBA, college football/basketball, soccer, tennis and golf. When none are live, shows today’s upcoming games. Refreshes every minute.',
+      coverage: 'Published ESPN snapshots for the selected sport. When none are live, shows that sport’s upcoming games today. Snapshot timestamp indicates data freshness; checks published files every minute.',
       leagues: { NCAAF:'College football', NCAAB:'College basketball', WNCAAB:'Women’s college basketball', ATP:'ATP tennis', WTA:'WTA tennis', PGA:'PGA golf', LPGA:'LPGA golf', NBA: 'NBA', NHL: 'NHL', NFL: 'NFL', MLB: 'MLB', WNBA: 'WNBA',
         'uefa.champions': 'Champions League', 'uefa.europa': 'Europa League', 'uefa.europa.conf': 'Conference League',
         'eng.1': 'Premier League', 'eng.2': 'Championship', 'esp.1': 'La Liga', 'ita.1': 'Serie A',

@@ -1,4 +1,4 @@
-/* Browser-only ESPN score ticker. Independent of picks, betting data and feed routines. */
+/* Sport-filtered ticker consuming published ESPN snapshots; no direct sports ingestion. */
 (function (root, factory) {
   const api = factory();
   if (typeof module === 'object' && module.exports) module.exports = api;
@@ -12,7 +12,15 @@
     ['ATP','tennis/atp'], ['WTA','tennis/wta'], ['PGA','golf/pga'], ['LPGA','golf/lpga']
   ];
   const REFRESH = 60000;
-  let active = null, cache = null;
+  let active = null, cache = null, selectedSport = '';
+  const SPORT_LEAGUES = {NBA:['nba'],NHL:['nhl'],NFL:['nfl'],MLB:['mlb'],WNBA:['wnba'],NCAAF:['cfb'],NCAAB:['cbb'],WNCAAB:['wcbb'],Tennis:['atp','wta'],Golf:['pga','lpga','dpwt'],Soccer:['epl','bun','eflch','fl1','lal','lmx','mls','sea','ucl','uecl','uel']};
+  const leagueSource = league => Object.entries(SPORT_LEAGUES).find(([,leagues])=>leagues.includes(league))?.[0];
+  function snapshotFor(docs, sport = '', now = new Date()) {
+    const selected = docs.filter(d=>!sport || SPORT_LEAGUES[sport]?.includes(d.league));
+    const games = mode => selected.flatMap(d=>liveGames(d, ['atp','wta','pga','lpga','dpwt'].includes(d.league)?d.league.toUpperCase():leagueSource(d.league), mode, now));
+    const live=games('live');
+    return {groups:groupGames([live.length?live:games('upcoming')]),upcoming:!live.length};
+  }
   function dates(now = new Date()) {
     const fmt = d => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Chicago', year: 'numeric', month: '2-digit', day: '2-digit' }).format(d).replace(/-/g, '');
     // Yesterday catches games still live after local midnight. Completed games are filtered below.
@@ -24,7 +32,7 @@
   }
   function liveGames(board, source, mode = 'live', now = new Date()) {
     const seen = new Set();
-    const events = (board.events || []).flatMap(event => source==='ATP'||source==='WTA' ? (event.groupings || []).flatMap(g=>(g.competitions || []).map(c=>({...event,id:event.id+':'+c.id,date:c.date,competitions:[c]}))) : [event]);
+    const events = (board.events || []).flatMap(event => (source==='ATP'||source==='WTA') && Array.isArray(event.groupings) ? event.groupings.flatMap(g=>(g.competitions || []).map(c=>({...event,id:event.id+':'+c.id,date:c.date,competitions:[c]}))) : [event]);
     return events.flatMap(event => {
       const game = (event.competitions || [])[0];
       const status = (game && game.status) || event.status || {};
@@ -100,12 +108,15 @@
     root.setAttribute('role', 'region'); root.setAttribute('aria-label', S.title);
     function render(snapshot) {
       if (active !== state || !root.isConnected) return;
-      const when = new Date(snapshot.at).toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit' });
+      const view = snapshotFor(snapshot.docs, selectedSport);
+      snapshot = {...snapshot,...view,failures:snapshot.failures.filter(league=>!selectedSport||SPORT_LEAGUES[selectedSport].includes(league))};
+      const when = new Date(snapshot.sourceAt || snapshot.at).toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit' });
       header.querySelector('.pst-title').textContent = snapshot.upcoming ? S.upcoming : S.title;
       meta.textContent = snapshot.failures.length ? S.partial(snapshot.failures.join(', '), when) : S.checked(when);
       meta.title = S.coverage;
+      if (Date.now()-Date.parse(snapshot.sourceAt)>30*60000) meta.textContent += ' · '+S.delayed;
       if (!snapshot.groups.length) {
-        viewport.replaceChildren(node('div', 'pst-empty', snapshot.failures.length ? S.unavailable : S.empty)); pause.disabled = true; return;
+        viewport.replaceChildren(node('div', 'pst-empty', snapshot.failures.length ? S.unavailable : selectedSport ? S.emptySport(S.leagues[selectedSport] || selectedSport) : S.empty)); pause.disabled = true; return;
       }
       const oldTrack = viewport.querySelector('.pst-track');
       const transform = oldTrack && getComputedStyle(oldTrack).transform;
@@ -147,22 +158,21 @@
       const controller = state.controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 12000);
       try {
-      const dayRange = dates();
-      const results = await Promise.allSettled(SOURCES.map(async ([label, path]) => {
-        // ESPN's scoreboard date ranges return 400 for some leagues; query each day explicitly.
-        const boards = await Promise.all(dayRange.map(async day => {
-          const response = await fetch('https://site.api.espn.com/apis/site/v2/sports/' + path + '/scoreboard?dates=' + day + '&limit=1000', { signal: controller.signal, cache: 'no-store' });
-          if (!response.ok) throw new Error(label);
-          const board = await response.json();
-          if (!Array.isArray(board.events)) throw new Error(label);
-          return board;
-        }));
-        return { live: boards.flatMap(board => liveGames(board, label)), upcoming: boards.flatMap(board => liveGames(board, label, 'upcoming')) };
+      const read = async path => {
+        const response=await fetch(path+'?scores='+Math.floor(Date.now()/REFRESH),{signal:controller.signal,cache:'no-store'});
+        if(!response.ok)throw Error('snapshot');return response.json();
+      };
+      const index=await read('data/espn/index.json');
+      if(!Array.isArray(index.snapshots))throw Error('index');
+      const entries=index.snapshots.filter(s=>leagueSource(s.league)&&typeof s.file==='string'&&/^data\/espn\/[a-z0-9-]+\.json$/.test(s.file));
+      const results=await Promise.allSettled(entries.map(async entry=>{
+        if(!entry.available)throw Error('unavailable');
+        const doc=await read(entry.file);
+        if(doc.league!==entry.league||!Array.isArray(doc.events))throw Error('shape');
+        return doc;
       }));
       if (active !== state) return;
-      const fulfilled = results.filter(r => r.status === 'fulfilled').map(r => r.value);
-      const live = groupGames(fulfilled.map(r => r.live));
-      cache = { at: Date.now(), upcoming: !live.length, groups: live.length ? live : groupGames(fulfilled.map(r => r.upcoming)), failures: results.flatMap((r, i) => r.status === 'rejected' ? [S.leagues[SOURCES[i][0]] || S.soccer] : []) };
+      cache={at:Date.now(),sourceAt:index.updated_at,docs:results.filter(r=>r.status==='fulfilled').map(r=>r.value),failures:results.flatMap((r,i)=>r.status==='rejected'?[entries[i].league]:[])};
       render(cache);
       } catch {
         if(active===state){meta.textContent=S.unavailable;if(!viewport.querySelector('.pst-game'))viewport.replaceChildren(node('div','pst-empty',S.unavailable));}
@@ -175,8 +185,9 @@
     state.redraw = () => { if (cache) render(cache); };
     state.wake = () => { if (!document.hidden) { clearTimeout(state.timer); refresh(); } };
   }
+  if (typeof window !== 'undefined') window.addEventListener('picks:sport-change',event=>{const sport=event.detail?.sport;if(sport!==''&&!SPORT_LEAGUES[sport])return;selectedSport=sport;active?.redraw?.();});
   if (typeof window !== 'undefined') window.addEventListener('resize', () => active?.redraw?.());
   if (typeof window !== 'undefined') for(const event of ['focus','online'])window.addEventListener(event,()=>active?.wake?.());
   if (typeof document !== 'undefined') document.addEventListener('visibilitychange', () => active?.wake?.());
-  return { SOURCES, dates, liveGames, groupGames, mount, stop };
+  return { SOURCES, SPORT_LEAGUES, snapshotFor, dates, liveGames, groupGames, mount, stop };
 });
