@@ -334,7 +334,7 @@
     if (!list.length) { box.append(el('div', 'lb-none', liveText().noAlerts)); return box; }
     const isNew = markNew(list, ui.visitBase);
     const ul = el('ul', 'lb-alert-list');
-    (ui.alertMore ? list : list.slice(0, 5)).forEach((a, i) => {
+    list.slice(0, 5 + (Number(ui.alertMore) || 0)).forEach((a, i) => {
       const li = el('li', `lb-alert lb-a-${a.type}${isNew[i] ? ' lb-new' : ''}`);
       const top = el('div', 'lb-alert-top');
       const kind = (P.alertTypes[a.type] || P.update) + (a.type === 'new_edge' && P.tiers[a.tier] ? ' · ' + P.tiers[a.tier] : '');
@@ -349,8 +349,9 @@
     });
     box.append(ul);
     if (list.length > 5) {
-      const more = el('button', 'lb-more', ui.alertMore ? P.less : P.more(list.length - 5)); more.type = 'button';
-      more.onclick = () => { ui.alertMore = !ui.alertMore; ui.redraw(); }; box.append(more);
+      const extra = Number(ui.alertMore) || 0, remaining = Math.max(0, list.length - 5 - extra);
+      const more = el('button', 'lb-more', remaining ? P.more(Math.min(5, remaining)) : P.less); more.type = 'button';
+      more.onclick = () => { ui.alertMore = remaining ? extra + 5 : 0; ui.redraw(); }; box.append(more);
     }
     return box;
   }
@@ -362,12 +363,14 @@
     if (!g.total) { box.append(el('div', 'lb-none', designText().noMatching)); return box; }
     const ul = el('ul', 'lb-list');
     g.shown.forEach(e => ul.append(edgeRow(e, link, ui)));
-    if (ui[key]) g.more.forEach(e => ul.append(edgeRow(e, link, ui)));
+    const extra = Number(ui[key]) || 0;
+    g.more.slice(0, extra).forEach(e => ul.append(edgeRow(e, link, ui)));
     box.append(ul);
     if (g.more.length) {
-      const b = el('button', 'lb-more', ui[key] ? designText().less : designText().more(g.more.length));
+      const remaining = Math.max(0, g.more.length - extra);
+      const b = el('button', 'lb-more', remaining ? designText().more(Math.min(5, remaining)) : designText().less);
       b.type = 'button';
-      b.onclick = () => { ui[key] = !ui[key]; ui.redraw(); };
+      b.onclick = () => { ui[key] = remaining ? extra + 5 : 0; ui.redraw(); };
       box.append(b);
     }
     return box;

@@ -551,7 +551,7 @@
     // state.leafLim. Game headers are sticky inside the scrolling results box.
 
     /** Markets shown per leaf before "Show more". */
-    const LEAF_PAGE = 10;
+    const LEAF_PAGE = 5;
 
     /** Whole results box: count + Expand all / Collapse all + game cards. */
     function drawTree() {
