@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185108",
-  "fetched_at": "2026-10-23T20:55:41.279Z",
+  "fetched_at": "2026-10-23T21:01:51.225Z",
   "tennis": true,
   "tennis_match": {
    "id": "185108",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(6) Lorenzo Musetti (ITA) leads Luca Van Assche (FRA) 7-6 (7-5)",
+     "text": "Luca Van Assche (FRA) leads (6) Lorenzo Musetti (ITA) 6-7 (5-7) 0-0",
      "type": "event"
     }
    ],
@@ -55,13 +55,18 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "curatedRank": {
       "current": 6
      },
      "linescores": [
       {
        "value": 7,
-       "tiebreak": 7
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -101,10 +106,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 6,
-       "tiebreak": 5
+       "tiebreak": 5,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -139,6 +149,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 110,
    "type": {
     "id": "1",
@@ -157,14 +172,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Lorenzo Musetti",
    "alias": "Lorenzo Musetti",
    "name": "Lorenzo Musetti",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Luca Van Assche",
@@ -176,7 +191,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-23T20:55:41.279Z",
+ "updated": "2026-10-23T21:01:51.225Z",
  "open_taken_at": "2026-10-22T14:43:13.953Z",
  "thresholds": {
   "big": 10,
