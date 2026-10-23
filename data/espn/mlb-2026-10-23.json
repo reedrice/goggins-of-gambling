@@ -3,7 +3,7 @@
   "league": "mlb",
   "query_date": "2026-10-23",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard?dates=20261023&limit=1000",
-  "fetched_at": "2026-10-23T02:44:11.541Z",
+  "fetched_at": "2026-10-23T02:46:09.609Z",
   "events": [
     {
       "id": "401908042",
@@ -22,6 +22,124 @@
           "detail": "Scheduled",
           "shortDetail": "10/23 - 8:00 PM EDT"
         }
+      },
+      "boxscore": {
+        "players": [
+          {
+            "team": {
+              "abbreviation": "TB"
+            },
+            "statistics": [
+              {
+                "keys": [
+                  "hits-atBats",
+                  "atBats",
+                  "hits",
+                  "RBIs",
+                  "homeRuns",
+                  "stolenBases",
+                  "strikeouts",
+                  "avg"
+                ],
+                "names": [
+                  "H-AB",
+                  "AB",
+                  "H",
+                  "RBI",
+                  "HR",
+                  "SB",
+                  "K",
+                  "AVG"
+                ],
+                "athletes": []
+              },
+              {
+                "keys": [
+                  "fullInnings.partInnings",
+                  "hits",
+                  "runs",
+                  "earnedRuns",
+                  "walks",
+                  "strikeouts",
+                  "homeRuns",
+                  "pitches-strikes",
+                  "ERA",
+                  "pitches"
+                ],
+                "names": [
+                  "IP",
+                  "H",
+                  "R",
+                  "ER",
+                  "BB",
+                  "K",
+                  "HR",
+                  "PC-ST",
+                  "ERA",
+                  "PC"
+                ],
+                "athletes": []
+              }
+            ]
+          },
+          {
+            "team": {
+              "abbreviation": "MIL"
+            },
+            "statistics": [
+              {
+                "keys": [
+                  "hits-atBats",
+                  "atBats",
+                  "hits",
+                  "RBIs",
+                  "homeRuns",
+                  "stolenBases",
+                  "strikeouts",
+                  "avg"
+                ],
+                "names": [
+                  "H-AB",
+                  "AB",
+                  "H",
+                  "RBI",
+                  "HR",
+                  "SB",
+                  "K",
+                  "AVG"
+                ],
+                "athletes": []
+              },
+              {
+                "keys": [
+                  "fullInnings.partInnings",
+                  "hits",
+                  "runs",
+                  "earnedRuns",
+                  "walks",
+                  "strikeouts",
+                  "homeRuns",
+                  "pitches-strikes",
+                  "ERA",
+                  "pitches"
+                ],
+                "names": [
+                  "IP",
+                  "H",
+                  "R",
+                  "ER",
+                  "BB",
+                  "K",
+                  "HR",
+                  "PC-ST",
+                  "ERA",
+                  "PC"
+                ],
+                "athletes": []
+              }
+            ]
+          }
+        ]
       },
       "competitions": [
         {
@@ -73,7 +191,68 @@
         }
       ],
       "player_usage": [],
-      "injuries": [],
+      "injuries": [
+        {
+          "team": "MIL",
+          "player": "Brandon Woodruff",
+          "position": "SP",
+          "status": "60-Day-IL"
+        },
+        {
+          "team": "MIL",
+          "player": "Grant Anderson",
+          "position": "RP",
+          "status": "15-Day-IL"
+        },
+        {
+          "team": "MIL",
+          "player": "Quinn Priester",
+          "position": "SP",
+          "status": "60-Day-IL"
+        },
+        {
+          "team": "MIL",
+          "player": "Angel Zerpa",
+          "position": "RP",
+          "status": "60-Day-IL"
+        },
+        {
+          "team": "MIL",
+          "player": "Brian Fitzpatrick",
+          "position": "RP",
+          "status": "60-Day-IL"
+        },
+        {
+          "team": "TB",
+          "player": "Gavin Lux",
+          "position": "LF",
+          "status": "60-Day-IL"
+        },
+        {
+          "team": "TB",
+          "player": "Shane McClanahan",
+          "position": "SP",
+          "status": "Out"
+        },
+        {
+          "team": "TB",
+          "player": "Jacob Melton",
+          "position": "LF",
+          "status": "60-Day-IL"
+        },
+        {
+          "team": "TB",
+          "player": "Edwin Uceta",
+          "position": "RP",
+          "status": "60-Day-IL"
+        },
+        {
+          "team": "TB",
+          "player": "Jonathan Heasley",
+          "position": "RP",
+          "status": "60-Day-IL"
+        }
+      ],
       "starters": [],
       "starting_goalies": [],
       "probables": [
@@ -101,17 +280,17 @@
         }
       ],
       "coverage": {
-        "injuries": "unavailable",
+        "injuries": "published_report",
         "starters": "unverified",
         "goalies": "unverified",
         "hockey_lines": "unavailable",
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard?dates=20261023&limit=1000",
-      "fetched_at": "2026-10-23T02:44:11.541Z",
-      "details_source_url": null,
-      "details_checked_at": null,
-      "details_available": false
+      "fetched_at": "2026-10-23T02:46:09.609Z",
+      "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/summary?event=401908042",
+      "details_checked_at": "2026-10-23T02:46:09.609Z",
+      "details_available": true
     }
   ]
 }
