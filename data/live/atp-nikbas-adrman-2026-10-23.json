@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185017",
-  "fetched_at": "2026-10-23T06:35:50.120Z",
+  "fetched_at": "2026-10-23T06:41:50.628Z",
   "tennis": true,
   "tennis_match": {
    "id": "185017",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Fri, October 22nd at 2:35 AM EDT",
-     "shortDetail": "10/23 - 2:35 AM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Nikoloz Basilashvili (GEO) leads Adrian Mannarino (FRA) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "dbc865c9-ab39-49ff-dbb3-895a876665d3",
       "displayName": "Adrian Mannarino",
@@ -87,6 +98,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "5dc21899-ba8c-2090-ba30-c0169a979977",
       "displayName": "Nikoloz Basilashvili",
@@ -119,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 708,
    "type": {
     "id": "1",
@@ -135,10 +157,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Fri, October 22nd at 2:35 AM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Adrian Mannarino",
@@ -156,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-23T06:35:50.121Z",
+ "updated": "2026-10-23T06:41:50.628Z",
  "open_taken_at": "2026-10-22T05:01:31.328Z",
  "thresholds": {
   "big": 10,
@@ -204,11 +226,25 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-23T06:33:51.327Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1650298:0:2026-10-23T06:33:51.327Z",
+   "key": "1650298:0",
+   "at": "2026-10-23T06:41:50.628Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Nikoloz Basilashvili win",
+   "market": "Moneyline",
+   "now_odds": "-104",
+   "now_chance": 51,
+   "edge": 4,
+   "text": "Edge gone: Nikoloz Basilashvili win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-nikbas-adrman-2026-10-23"
+  },
   {
    "id": "new_edge:1650298:0:slight",
    "key": "1650298:0",
@@ -225,7 +261,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1650298:0:slight"
+  "new_edge:1650298:0:slight",
+  "gone:1650298:0:2026-10-23T06:33:51.327Z"
  ],
  "kalshi_checked": null
 }
