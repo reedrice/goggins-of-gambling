@@ -9,24 +9,24 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401909846",
-  "fetched_at": "2026-10-23T23:12:43.861Z",
+  "fetched_at": "2026-10-23T23:18:39.577Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 0,
-  "clock": null,
-  "regulation_secs_left": 3600,
+  "period": 1,
+  "clock": "8:20",
+  "regulation_secs_left": 3200,
   "home": {
    "abbr": "WSH",
    "alias": "Wizards",
    "name": "Washington Wizards",
-   "score": null,
+   "score": 3,
    "id": "27"
   },
   "away": {
    "abbr": "TOR",
    "alias": "Raptors",
    "name": "Toronto Raptors",
-   "score": null,
+   "score": 10,
    "id": "28"
   },
   "possession": null,
@@ -64,9 +64,9 @@
   "leaders": [
    {
     "team": "WSH",
-    "player": "Anthony Davis",
-    "short": "A. Davis",
-    "pos": "F"
+    "player": "Bilal Coulibaly",
+    "short": "B. Coulibaly",
+    "pos": "G"
    },
    {
     "team": "WSH",
@@ -76,31 +76,31 @@
    },
    {
     "team": "WSH",
-    "player": "Anthony Davis",
-    "short": "A. Davis",
-    "pos": "F"
-   },
-   {
-    "team": "TOR",
-    "player": "Kawhi Leonard",
-    "short": "K. Leonard",
-    "pos": "F"
-   },
-   {
-    "team": "TOR",
-    "player": "Immanuel Quickley",
-    "short": "I. Quickley",
+    "player": "Bilal Coulibaly",
+    "short": "B. Coulibaly",
     "pos": "G"
    },
    {
     "team": "TOR",
-    "player": "Collin Murray-Boyles",
-    "short": "C. Murray-Boyles",
+    "player": "RJ Barrett",
+    "short": "R. Barrett",
+    "pos": "F"
+   },
+   {
+    "team": "TOR",
+    "player": "RJ Barrett",
+    "short": "R. Barrett",
+    "pos": "F"
+   },
+   {
+    "team": "TOR",
+    "player": "RJ Barrett",
+    "short": "R. Barrett",
     "pos": "F"
    }
   ]
  },
- "updated": "2026-10-23T23:12:43.862Z",
+ "updated": "2026-10-23T23:18:39.580Z",
  "open_taken_at": "2026-10-22T05:01:14.452Z",
  "thresholds": {
   "big": 10,
@@ -139,14 +139,14 @@
    "question": "Who will win in the upcoming basketball event TOR Raptors vs WAS Wizards scheduled for October 23, 2026 at 11:00 PM UTC?",
    "side": "Wizards win",
    "open_chance": 35,
-   "now_chance": 26,
+   "now_chance": 18,
    "open_odds": "+186",
-   "now_odds": "+285",
-   "edge": 9,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": ", Q0",
+   "now_odds": "+456",
+   "edge": 17,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: WSH trailing by 7",
+   "context": "WSH down 7, Q1 8:20",
    "first_seen": "2026-10-23T04:59:19.112Z",
    "status": "open",
    "kalshi": true
@@ -193,6 +193,28 @@
  ],
  "prop_test_candidates": [
   {
+   "market_id": "1700615",
+   "player": "Anthony Davis",
+   "period": "full_game",
+   "question": "Will Anthony Davis record at least 8 total rebounds in TOR Raptors vs. WAS Wizards?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.82,
+   "bid": 0.77,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
+  },
+  {
+   "market_id": "1700919",
+   "player": "Trae Young",
+   "period": "full_game",
+   "question": "Will Trae Young record at least 6 assists in TOR Raptors vs. WAS Wizards?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.81,
+   "bid": 0.77,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
+  },
+  {
    "market_id": "1699778",
    "player": "Collin Murray-Boyles",
    "period": "full_game",
@@ -201,73 +223,18 @@
    "side_index": 0,
    "ask": 0.81,
    "bid": 0.76,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1699772",
-   "player": "Kawhi Leonard",
+   "market_id": "1727535",
+   "player": "Scottie Barnes",
    "period": "full_game",
-   "question": "Will Kawhi Leonard record at least 1 steals in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.8,
-   "bid": 0.79,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1698466",
-   "player": "RJ Barrett",
-   "period": "full_game",
-   "question": "Will RJ Barrett record at least 1 three-point field goals made in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.79,
-   "bid": 0.77,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1701694",
-   "player": "Bilal Coulibaly",
-   "period": "full_game",
-   "question": "Will Bilal Coulibaly record at least 5 points in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.79,
-   "bid": 0.78,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1699753",
-   "player": "Jakob Poeltl",
-   "period": "full_game",
-   "question": "Will Jakob Poeltl record at least 5 points in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Scottie Barnes record at least 4 assists in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
    "ask": 0.77,
    "bid": 0.76,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1701770",
-   "player": "Tre Johnson",
-   "period": "full_game",
-   "question": "Will Tre Johnson record at least 1 three-point field goals made in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.76,
-   "bid": 0.73,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1701708",
-   "player": "Kyshawn George",
-   "period": "full_game",
-   "question": "Will Kyshawn George record at least 10 points in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.76,
-   "bid": 0.74,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1698311",
@@ -278,7 +245,18 @@
    "side_index": 0,
    "ask": 0.76,
    "bid": 0.75,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
+  },
+  {
+   "market_id": "1701770",
+   "player": "Tre Johnson",
+   "period": "full_game",
+   "question": "Will Tre Johnson record at least 1 three-point field goals made in TOR Raptors vs. WAS Wizards?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.75,
+   "bid": 0.73,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1698276",
@@ -289,18 +267,7 @@
    "side_index": 0,
    "ask": 0.75,
    "bid": 0.74,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1698455",
-   "player": "RJ Barrett",
-   "period": "full_game",
-   "question": "Will RJ Barrett record at least 4 total rebounds in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.75,
-   "bid": 0.74,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1698314",
@@ -311,18 +278,7 @@
    "side_index": 0,
    "ask": 0.74,
    "bid": 0.73,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1698297",
-   "player": "Scottie Barnes",
-   "period": "full_game",
-   "question": "Will Scottie Barnes record at least 15 points in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.74,
-   "bid": 0.73,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1699807",
@@ -333,7 +289,18 @@
    "side_index": 0,
    "ask": 0.73,
    "bid": 0.72,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
+  },
+  {
+   "market_id": "1699330",
+   "player": "Immanuel Quickley",
+   "period": "full_game",
+   "question": "Will Immanuel Quickley record at least 2 three-point field goals made in TOR Raptors vs. WAS Wizards?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.72,
+   "bid": 0.71,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1699797",
@@ -343,30 +310,19 @@
    "sides": [],
    "side_index": 0,
    "ask": 0.72,
-   "bid": 0.71,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "bid": 0.66,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1698448",
-   "player": "RJ Barrett",
+   "market_id": "1701708",
+   "player": "Kyshawn George",
    "period": "full_game",
-   "question": "Will RJ Barrett record at least 15 points in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.72,
-   "bid": 0.71,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1700920",
-   "player": "Trae Young",
-   "period": "full_game",
-   "question": "Will Trae Young record at least 8 assists in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Kyshawn George record at least 10 points in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
    "ask": 0.69,
    "bid": 0.64,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1701702",
@@ -377,40 +333,18 @@
    "side_index": 0,
    "ask": 0.69,
    "bid": 0.68,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1698301",
-   "player": "Scottie Barnes",
+   "market_id": "1700920",
+   "player": "Trae Young",
    "period": "full_game",
-   "question": "Will Scottie Barnes record at least 6 total rebounds in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Trae Young record at least 8 assists in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.67,
-   "bid": 0.66,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1701699",
-   "player": "Bilal Coulibaly",
-   "period": "full_game",
-   "question": "Will Bilal Coulibaly record at least 1 three-point field goals made in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.66,
-   "bid": 0.65,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1698446",
-   "player": "Kawhi Leonard",
-   "period": "full_game",
-   "question": "Will Kawhi Leonard record at least 5 total rebounds in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.66,
-   "bid": 0.65,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "ask": 0.65,
+   "bid": 0.6,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1700929",
@@ -421,7 +355,18 @@
    "side_index": 0,
    "ask": 0.65,
    "bid": 0.63,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
+  },
+  {
+   "market_id": "1698462",
+   "player": "RJ Barrett",
+   "period": "full_game",
+   "question": "Will RJ Barrett record at least 4 assists in TOR Raptors vs. WAS Wizards?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.64,
+   "bid": 0.59,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1701722",
@@ -432,29 +377,7 @@
    "side_index": 0,
    "ask": 0.64,
    "bid": 0.63,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1700925",
-   "player": "Trae Young",
-   "period": "full_game",
-   "question": "Will Trae Young record at least 2 three-point field goals made in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.63,
-   "bid": 0.62,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1699330",
-   "player": "Immanuel Quickley",
-   "period": "full_game",
-   "question": "Will Immanuel Quickley record at least 2 three-point field goals made in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.62,
-   "bid": 0.6,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1700948",
@@ -465,29 +388,18 @@
    "side_index": 0,
    "ask": 0.62,
    "bid": 0.61,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1699284",
-   "player": "Immanuel Quickley",
+   "market_id": "1698281",
+   "player": "Kawhi Leonard",
    "period": "full_game",
-   "question": "Will Immanuel Quickley record at least 15 points in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Kawhi Leonard record at least 6 total rebounds in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.61,
-   "bid": 0.6,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1699759",
-   "player": "Jakob Poeltl",
-   "period": "full_game",
-   "question": "Will Jakob Poeltl record at least 6 total rebounds in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.61,
-   "bid": 0.6,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "ask": 0.62,
+   "bid": 0.56,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1700606",
@@ -497,8 +409,8 @@
    "sides": [],
    "side_index": 0,
    "ask": 0.6,
-   "bid": 0.54,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "bid": 0.59,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1698309",
@@ -509,29 +421,18 @@
    "side_index": 0,
    "ask": 0.59,
    "bid": 0.58,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1701718",
-   "player": "Kyshawn George",
+   "market_id": "1699783",
+   "player": "Collin Murray-Boyles",
    "period": "full_game",
-   "question": "Will Kyshawn George record at least 2 three-point field goals made in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Collin Murray-Boyles record at least 6 total rebounds in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.58,
+   "ask": 0.59,
    "bid": 0.55,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1701712",
-   "player": "Kyshawn George",
-   "period": "full_game",
-   "question": "Will Kyshawn George record at least 4 total rebounds in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.58,
-   "bid": 0.57,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1701705",
@@ -542,18 +443,18 @@
    "side_index": 0,
    "ask": 0.57,
    "bid": 0.56,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1698287",
-   "player": "Kawhi Leonard",
+   "market_id": "1701718",
+   "player": "Kyshawn George",
    "period": "full_game",
-   "question": "Will Kawhi Leonard record at least 2 three-point field goals made in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Kyshawn George record at least 2 three-point field goals made in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
    "ask": 0.56,
-   "bid": 0.54,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "bid": 0.55,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1700946",
@@ -564,84 +465,51 @@
    "side_index": 0,
    "ask": 0.56,
    "bid": 0.55,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1699304",
-   "player": "Immanuel Quickley",
+   "market_id": "1698306",
+   "player": "Scottie Barnes",
    "period": "full_game",
-   "question": "Will Immanuel Quickley record at least 4 total rebounds in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Scottie Barnes record at least 6 assists in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.56,
-   "bid": 0.55,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "ask": 0.54,
+   "bid": 0.51,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1698457",
-   "player": "RJ Barrett",
+   "market_id": "1699780",
+   "player": "Collin Murray-Boyles",
    "period": "full_game",
-   "question": "Will RJ Barrett record at least 5 total rebounds in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Collin Murray-Boyles record at least 10 points in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.56,
-   "bid": 0.55,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "ask": 0.54,
+   "bid": 0.53,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1700909",
-   "player": "Anthony Davis",
-   "period": "full_game",
-   "question": "Will Anthony Davis record at least 3 assists in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.55,
-   "bid": 0.54,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1699320",
-   "player": "Immanuel Quickley",
-   "period": "full_game",
-   "question": "Will Immanuel Quickley record at least 6 assists in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.55,
-   "bid": 0.54,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1698281",
+   "market_id": "1698277",
    "player": "Kawhi Leonard",
    "period": "full_game",
-   "question": "Will Kawhi Leonard record at least 6 total rebounds in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Kawhi Leonard record at least 25 points in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.55,
-   "bid": 0.54,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "ask": 0.51,
+   "bid": 0.47,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1700914",
-   "player": "Trae Young",
-   "period": "full_game",
-   "question": "Will Trae Young record at least 20 points in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.53,
-   "bid": 0.5,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1698468",
+   "market_id": "1698449",
    "player": "RJ Barrett",
    "period": "full_game",
-   "question": "Will RJ Barrett record at least 2 three-point field goals made in TOR Raptors vs. WAS Wizards?",
+   "question": "Will RJ Barrett record at least 20 points in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.52,
-   "bid": 0.51,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "ask": 0.51,
+   "bid": 0.45,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1700921",
@@ -652,51 +520,7 @@
    "side_index": 0,
    "ask": 0.5,
    "bid": 0.48,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1699780",
-   "player": "Collin Murray-Boyles",
-   "period": "full_game",
-   "question": "Will Collin Murray-Boyles record at least 10 points in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.5,
-   "bid": 0.47,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1701697",
-   "player": "Bilal Coulibaly",
-   "period": "full_game",
-   "question": "Will Bilal Coulibaly record at least 4 total rebounds in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.5,
-   "bid": 0.49,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1699783",
-   "player": "Collin Murray-Boyles",
-   "period": "full_game",
-   "question": "Will Collin Murray-Boyles record at least 6 total rebounds in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.5,
-   "bid": 0.48,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1700911",
-   "player": "Anthony Davis",
-   "period": "full_game",
-   "question": "Will Anthony Davis record at least 1 three-point field goals made in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.49,
-   "bid": 0.48,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1699332",
@@ -707,7 +531,7 @@
    "side_index": 0,
    "ask": 0.49,
    "bid": 0.48,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1699809",
@@ -718,18 +542,7 @@
    "side_index": 0,
    "ask": 0.49,
    "bid": 0.47,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1698277",
-   "player": "Kawhi Leonard",
-   "period": "full_game",
-   "question": "Will Kawhi Leonard record at least 25 points in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.49,
-   "bid": 0.48,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1701771",
@@ -740,40 +553,7 @@
    "side_index": 0,
    "ask": 0.48,
    "bid": 0.47,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1698306",
-   "player": "Scottie Barnes",
-   "period": "full_game",
-   "question": "Will Scottie Barnes record at least 6 assists in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.48,
-   "bid": 0.47,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1701695",
-   "player": "Bilal Coulibaly",
-   "period": "full_game",
-   "question": "Will Bilal Coulibaly record at least 10 points in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.48,
-   "bid": 0.47,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1701892",
-   "player": "Tre Johnson",
-   "period": "full_game",
-   "question": "Will Tre Johnson record at least 10 points in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.48,
-   "bid": 0.45,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1699774",
@@ -784,106 +564,51 @@
    "side_index": 0,
    "ask": 0.48,
    "bid": 0.47,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1701709",
-   "player": "Kyshawn George",
+   "market_id": "1701892",
+   "player": "Tre Johnson",
    "period": "full_game",
-   "question": "Will Kyshawn George record at least 15 points in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Tre Johnson record at least 10 points in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
    "ask": 0.47,
-   "bid": 0.46,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1698298",
-   "player": "Scottie Barnes",
-   "period": "full_game",
-   "question": "Will Scottie Barnes record at least 20 points in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.46,
    "bid": 0.45,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1700629",
-   "player": "Anthony Davis",
+   "market_id": "1700914",
+   "player": "Trae Young",
    "period": "full_game",
-   "question": "Will Anthony Davis record at least 2 blocks in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.45,
-   "bid": 0.44,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1699755",
-   "player": "Jakob Poeltl",
-   "period": "full_game",
-   "question": "Will Jakob Poeltl record at least 10 points in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.45,
-   "bid": 0.44,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1698302",
-   "player": "Scottie Barnes",
-   "period": "full_game",
-   "question": "Will Scottie Barnes record at least 8 total rebounds in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.45,
-   "bid": 0.44,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1698449",
-   "player": "RJ Barrett",
-   "period": "full_game",
-   "question": "Will RJ Barrett record at least 20 points in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Trae Young record at least 20 points in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
    "ask": 0.44,
-   "bid": 0.43,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "bid": 0.38,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1698459",
-   "player": "RJ Barrett",
+   "market_id": "1700947",
+   "player": "Jamal Shead",
    "period": "full_game",
-   "question": "Will RJ Barrett record at least 6 total rebounds in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.44,
-   "bid": 0.43,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1698462",
-   "player": "RJ Barrett",
-   "period": "full_game",
-   "question": "Will RJ Barrett record at least 4 assists in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Jamal Shead record at least 5 assists in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
    "ask": 0.43,
-   "bid": 0.42,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "bid": 0.38,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1698285",
-   "player": "Kawhi Leonard",
+   "market_id": "1727517",
+   "player": "Ja'Kobe Walter",
    "period": "full_game",
-   "question": "Will Kawhi Leonard record at least 4 assists in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Ja'Kobe Walter record at least 2 total rebounds in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
    "ask": 0.42,
    "bid": 0.41,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1698312",
@@ -894,40 +619,18 @@
    "side_index": 0,
    "ask": 0.42,
    "bid": 0.41,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1700619",
-   "player": "Anthony Davis",
+   "market_id": "1698302",
+   "player": "Scottie Barnes",
    "period": "full_game",
-   "question": "Will Anthony Davis record at least 12 total rebounds in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Scottie Barnes record at least 8 total rebounds in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
    "ask": 0.41,
-   "bid": 0.4,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1701713",
-   "player": "Kyshawn George",
-   "period": "full_game",
-   "question": "Will Kyshawn George record at least 5 total rebounds in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.41,
-   "bid": 0.37,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1698288",
-   "player": "Kawhi Leonard",
-   "period": "full_game",
-   "question": "Will Kawhi Leonard record at least 3 three-point field goals made in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.4,
-   "bid": 0.39,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "bid": 0.38,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1700926",
@@ -938,18 +641,29 @@
    "side_index": 0,
    "ask": 0.4,
    "bid": 0.39,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1700917",
-   "player": "Trae Young",
+   "market_id": "1698315",
+   "player": "Scottie Barnes",
    "period": "full_game",
-   "question": "Will Trae Young record at least 3 total rebounds in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Scottie Barnes record at least 2 blocks in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.39,
-   "bid": 0.38,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "ask": 0.4,
+   "bid": 0.35,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
+  },
+  {
+   "market_id": "1701709",
+   "player": "Kyshawn George",
+   "period": "full_game",
+   "question": "Will Kyshawn George record at least 15 points in TOR Raptors vs. WAS Wizards?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.4,
+   "bid": 0.35,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1701703",
@@ -960,7 +674,7 @@
    "side_index": 0,
    "ask": 0.39,
    "bid": 0.38,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1700949",
@@ -971,29 +685,7 @@
    "side_index": 0,
    "ask": 0.38,
    "bid": 0.37,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1701716",
-   "player": "Kyshawn George",
-   "period": "full_game",
-   "question": "Will Kyshawn George record at least 4 assists in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.38,
-   "bid": 0.37,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1699306",
-   "player": "Immanuel Quickley",
-   "period": "full_game",
-   "question": "Will Immanuel Quickley record at least 5 total rebounds in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.38,
-   "bid": 0.36,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1699803",
@@ -1004,51 +696,7 @@
    "side_index": 0,
    "ask": 0.37,
    "bid": 0.34,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1699768",
-   "player": "Immanuel Quickley",
-   "period": "full_game",
-   "question": "Will Immanuel Quickley record at least 2 steals in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.37,
-   "bid": 0.36,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1700947",
-   "player": "Jamal Shead",
-   "period": "full_game",
-   "question": "Will Jamal Shead record at least 5 assists in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.36,
-   "bid": 0.35,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1698315",
-   "player": "Scottie Barnes",
-   "period": "full_game",
-   "question": "Will Scottie Barnes record at least 2 blocks in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.36,
-   "bid": 0.35,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1699761",
-   "player": "Jakob Poeltl",
-   "period": "full_game",
-   "question": "Will Jakob Poeltl record at least 8 total rebounds in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.36,
-   "bid": 0.35,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1701719",
@@ -1059,40 +707,40 @@
    "side_index": 0,
    "ask": 0.35,
    "bid": 0.34,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1701700",
-   "player": "Bilal Coulibaly",
+   "market_id": "1700608",
+   "player": "Anthony Davis",
    "period": "full_game",
-   "question": "Will Bilal Coulibaly record at least 2 three-point field goals made in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Anthony Davis record at least 25 points in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.34,
-   "bid": 0.33,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "ask": 0.35,
+   "bid": 0.29,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1699799",
-   "player": "Ja'Kobe Walter",
+   "market_id": "1701716",
+   "player": "Kyshawn George",
    "period": "full_game",
-   "question": "Will Ja'Kobe Walter record at least 10 points in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Kyshawn George record at least 4 assists in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.34,
-   "bid": 0.33,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "ask": 0.32,
+   "bid": 0.27,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1699291",
-   "player": "Immanuel Quickley",
+   "market_id": "1699785",
+   "player": "Collin Murray-Boyles",
    "period": "full_game",
-   "question": "Will Immanuel Quickley record at least 20 points in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Collin Murray-Boyles record at least 8 total rebounds in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.33,
-   "bid": 0.32,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "ask": 0.32,
+   "bid": 0.29,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1701723",
@@ -1103,7 +751,7 @@
    "side_index": 0,
    "ask": 0.32,
    "bid": 0.31,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1700930",
@@ -1114,40 +762,29 @@
    "side_index": 0,
    "ask": 0.32,
    "bid": 0.31,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1701698",
-   "player": "Bilal Coulibaly",
+   "market_id": "1700910",
+   "player": "Anthony Davis",
    "period": "full_game",
-   "question": "Will Bilal Coulibaly record at least 5 total rebounds in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Anthony Davis record at least 4 assists in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
    "ask": 0.31,
-   "bid": 0.3,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "bid": 0.27,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1699785",
-   "player": "Collin Murray-Boyles",
+   "market_id": "1699762",
+   "player": "Jakob Poeltl",
    "period": "full_game",
-   "question": "Will Collin Murray-Boyles record at least 8 total rebounds in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Jakob Poeltl record at least 10 total rebounds in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
    "ask": 0.3,
-   "bid": 0.29,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1698470",
-   "player": "RJ Barrett",
-   "period": "full_game",
-   "question": "Will RJ Barrett record at least 3 three-point field goals made in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.27,
    "bid": 0.26,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1698282",
@@ -1156,9 +793,75 @@
    "question": "Will Kawhi Leonard record at least 8 total rebounds in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.27,
+   "ask": 0.3,
    "bid": 0.26,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
+  },
+  {
+   "market_id": "1698278",
+   "player": "Kawhi Leonard",
+   "period": "full_game",
+   "question": "Will Kawhi Leonard record at least 30 points in TOR Raptors vs. WAS Wizards?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.29,
+   "bid": 0.26,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
+  },
+  {
+   "market_id": "1698303",
+   "player": "Scottie Barnes",
+   "period": "full_game",
+   "question": "Will Scottie Barnes record at least 10 total rebounds in TOR Raptors vs. WAS Wizards?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.29,
+   "bid": 0.24,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
+  },
+  {
+   "market_id": "1699333",
+   "player": "Immanuel Quickley",
+   "period": "full_game",
+   "question": "Will Immanuel Quickley record at least 4 three-point field goals made in TOR Raptors vs. WAS Wizards?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.28,
+   "bid": 0.27,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
+  },
+  {
+   "market_id": "1700621",
+   "player": "Anthony Davis",
+   "period": "full_game",
+   "question": "Will Anthony Davis record at least 14 total rebounds in TOR Raptors vs. WAS Wizards?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.28,
+   "bid": 0.25,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
+  },
+  {
+   "market_id": "1700922",
+   "player": "Trae Young",
+   "period": "full_game",
+   "question": "Will Trae Young record at least 12 assists in TOR Raptors vs. WAS Wizards?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.27,
+   "bid": 0.22,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
+  },
+  {
+   "market_id": "1698451",
+   "player": "RJ Barrett",
+   "period": "full_game",
+   "question": "Will RJ Barrett record at least 25 points in TOR Raptors vs. WAS Wizards?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.27,
+   "bid": 0.23,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1699776",
@@ -1169,40 +872,29 @@
    "side_index": 0,
    "ask": 0.27,
    "bid": 0.26,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1698278",
-   "player": "Kawhi Leonard",
+   "market_id": "1698310",
+   "player": "Scottie Barnes",
    "period": "full_game",
-   "question": "Will Kawhi Leonard record at least 30 points in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Scottie Barnes record at least 2 three-point field goals made in TOR Raptors vs. WAS Wizards?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.26,
+   "bid": 0.22,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
+  },
+  {
+   "market_id": "1725379",
+   "player": "Collin Murray-Boyles",
+   "period": "full_game",
+   "question": "Will Collin Murray-Boyles record at least 4 assists in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
    "ask": 0.26,
    "bid": 0.25,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1700621",
-   "player": "Anthony Davis",
-   "period": "full_game",
-   "question": "Will Anthony Davis record at least 14 total rebounds in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.26,
-   "bid": 0.25,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1701714",
-   "player": "Kyshawn George",
-   "period": "full_game",
-   "question": "Will Kyshawn George record at least 6 total rebounds in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.26,
-   "bid": 0.25,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1698464",
@@ -1212,30 +904,41 @@
    "sides": [],
    "side_index": 0,
    "ask": 0.25,
-   "bid": 0.22,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "bid": 0.23,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1701717",
-   "player": "Kyshawn George",
+   "market_id": "1699782",
+   "player": "Collin Murray-Boyles",
    "period": "full_game",
-   "question": "Will Kyshawn George record at least 5 assists in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Collin Murray-Boyles record at least 15 points in TOR Raptors vs. WAS Wizards?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.25,
+   "bid": 0.2,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
+  },
+  {
+   "market_id": "1700915",
+   "player": "Trae Young",
+   "period": "full_game",
+   "question": "Will Trae Young record at least 25 points in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
    "ask": 0.24,
-   "bid": 0.23,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "bid": 0.21,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1698303",
-   "player": "Scottie Barnes",
+   "market_id": "1699326",
+   "player": "Immanuel Quickley",
    "period": "full_game",
-   "question": "Will Scottie Barnes record at least 10 total rebounds in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Immanuel Quickley record at least 8 assists in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.24,
-   "bid": 0.23,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "ask": 0.23,
+   "bid": 0.17,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1700918",
@@ -1244,31 +947,9 @@
    "question": "Will Trae Young record at least 4 total rebounds in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.24,
-   "bid": 0.23,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1698286",
-   "player": "Kawhi Leonard",
-   "period": "full_game",
-   "question": "Will Kawhi Leonard record at least 5 assists in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
    "ask": 0.23,
    "bid": 0.22,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1698299",
-   "player": "Scottie Barnes",
-   "period": "full_game",
-   "question": "Will Scottie Barnes record at least 25 points in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.23,
-   "bid": 0.22,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1701772",
@@ -1279,40 +960,7 @@
    "side_index": 0,
    "ask": 0.22,
    "bid": 0.2,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1698307",
-   "player": "Scottie Barnes",
-   "period": "full_game",
-   "question": "Will Scottie Barnes record at least 8 assists in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.22,
-   "bid": 0.21,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1701710",
-   "player": "Kyshawn George",
-   "period": "full_game",
-   "question": "Will Kyshawn George record at least 20 points in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.22,
-   "bid": 0.21,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1698289",
-   "player": "Kawhi Leonard",
-   "period": "full_game",
-   "question": "Will Kawhi Leonard record at least 4 three-point field goals made in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.21,
-   "bid": 0.2,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1700927",
@@ -1323,18 +971,7 @@
    "side_index": 0,
    "ask": 0.21,
    "bid": 0.2,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1699782",
-   "player": "Collin Murray-Boyles",
-   "period": "full_game",
-   "question": "Will Collin Murray-Boyles record at least 15 points in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.21,
-   "bid": 0.2,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1700912",
@@ -1345,40 +982,18 @@
    "side_index": 0,
    "ask": 0.2,
    "bid": 0.19,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1700631",
-   "player": "Anthony Davis",
+   "market_id": "1727492",
+   "player": "Kawhi Leonard",
    "period": "full_game",
-   "question": "Will Anthony Davis record at least 3 blocks in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.2,
-   "bid": 0.17,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1699762",
-   "player": "Jakob Poeltl",
-   "period": "full_game",
-   "question": "Will Jakob Poeltl record at least 10 total rebounds in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Kawhi Leonard record at least 6 assists in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
    "ask": 0.2,
    "bid": 0.19,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1701720",
-   "player": "Kyshawn George",
-   "period": "full_game",
-   "question": "Will Kyshawn George record at least 4 three-point field goals made in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.19,
-   "bid": 0.18,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1701696",
@@ -1387,31 +1002,42 @@
    "question": "Will Bilal Coulibaly record at least 15 points in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.19,
+   "ask": 0.2,
    "bid": 0.18,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
-   "market_id": "1700610",
-   "player": "Anthony Davis",
+   "market_id": "1699297",
+   "player": "Immanuel Quickley",
    "period": "full_game",
-   "question": "Will Anthony Davis record at least 30 points in TOR Raptors vs. WAS Wizards?",
+   "question": "Will Immanuel Quickley record at least 25 points in TOR Raptors vs. WAS Wizards?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.19,
+   "bid": 0.13,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
+  },
+  {
+   "market_id": "1698304",
+   "player": "Scottie Barnes",
+   "period": "full_game",
+   "question": "Will Scottie Barnes record at least 12 total rebounds in TOR Raptors vs. WAS Wizards?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.19,
+   "bid": 0.17,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
+  },
+  {
+   "market_id": "1698299",
+   "player": "Scottie Barnes",
+   "period": "full_game",
+   "question": "Will Scottie Barnes record at least 25 points in TOR Raptors vs. WAS Wizards?",
    "sides": [],
    "side_index": 0,
    "ask": 0.18,
-   "bid": 0.17,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
-  },
-  {
-   "market_id": "1698461",
-   "player": "RJ Barrett",
-   "period": "full_game",
-   "question": "Will RJ Barrett record at least 8 total rebounds in TOR Raptors vs. WAS Wizards?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.18,
-   "bid": 0.17,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "bid": 0.14,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1699770",
@@ -1422,7 +1048,18 @@
    "side_index": 0,
    "ask": 0.18,
    "bid": 0.17,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
+  },
+  {
+   "market_id": "1698283",
+   "player": "Kawhi Leonard",
+   "period": "full_game",
+   "question": "Will Kawhi Leonard record at least 10 total rebounds in TOR Raptors vs. WAS Wizards?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.17,
+   "bid": 0.14,
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   },
   {
    "market_id": "1701704",
@@ -1433,11 +1070,11 @@
    "side_index": 0,
    "ask": 0.17,
    "bid": 0.16,
-   "quoted_at": "2026-10-23T23:12:43.862Z"
+   "quoted_at": "2026-10-23T23:18:39.580Z"
   }
  ],
  "kalshi_checked": {
-  "at": "2026-10-23T23:12:44.059Z",
+  "at": "2026-10-23T23:18:39.902Z",
   "event": "26OCT23TORWAS"
  }
 }
