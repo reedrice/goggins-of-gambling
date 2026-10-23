@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185016",
-  "fetched_at": "2026-10-23T15:16:42.696Z",
+  "fetched_at": "2026-10-23T15:24:56.479Z",
   "tennis": true,
   "tennis_match": {
    "id": "185016",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(5) Karen Khachanov (RUS) leads (3) Alexander Bublik (KAZ) 6-4",
+     "text": "(3) Alexander Bublik (KAZ) is tied with (5) Karen Khachanov (RUS) 4-6 1-0",
      "type": "event"
     }
    ],
@@ -55,12 +55,17 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 5
      },
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -100,12 +105,17 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 3
      },
      "linescores": [
       {
-       "value": 4
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -140,6 +150,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 708,
    "type": {
     "id": "1",
@@ -158,14 +173,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Karen Khachanov",
    "alias": "Karen Khachanov",
    "name": "Karen Khachanov",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Alexander Bublik",
@@ -177,7 +192,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-23T15:16:42.696Z",
+ "updated": "2026-10-23T15:24:56.479Z",
  "open_taken_at": "2026-10-22T15:51:14.763Z",
  "thresholds": {
   "big": 10,
