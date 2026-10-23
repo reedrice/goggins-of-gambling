@@ -9,24 +9,24 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892558",
-  "fetched_at": "2026-10-23T00:05:28.858Z",
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 0,
-  "clock": null,
-  "regulation_secs_left": 3600,
+  "fetched_at": "2026-10-23T00:14:24.119Z",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
+  "period": 1,
+  "clock": "16:06",
+  "regulation_secs_left": 3666,
   "home": {
    "abbr": "STL",
    "alias": "Blues",
    "name": "St. Louis Blues",
-   "score": null,
+   "score": 0,
    "id": "19"
   },
   "away": {
    "abbr": "VGK",
    "alias": "Golden Knights",
    "name": "Vegas Golden Knights",
-   "score": null,
+   "score": 0,
    "id": "37"
   },
   "possession": null,
@@ -82,46 +82,9 @@
    }
   ],
   "in_game_injuries": [],
-  "leaders": [
-   {
-    "team": "STL",
-    "player": "Mason McTavish",
-    "short": "M. McTavish",
-    "pos": "C"
-   },
-   {
-    "team": "STL",
-    "player": "Dylan Holloway",
-    "short": "D. Holloway",
-    "pos": "LW"
-   },
-   {
-    "team": "STL",
-    "player": "Mason McTavish",
-    "short": "M. McTavish",
-    "pos": "C"
-   },
-   {
-    "team": "VGK",
-    "player": "Mark Stone",
-    "short": "M. Stone",
-    "pos": "RW"
-   },
-   {
-    "team": "VGK",
-    "player": "Jack Eichel",
-    "short": "J. Eichel",
-    "pos": "C"
-   },
-   {
-    "team": "VGK",
-    "player": "Jack Eichel",
-    "short": "J. Eichel",
-    "pos": "C"
-   }
-  ]
+  "leaders": []
  },
- "updated": "2026-10-23T00:05:28.859Z",
+ "updated": "2026-10-23T00:14:24.120Z",
  "open_taken_at": "2026-10-21T05:15:13.800Z",
  "thresholds": {
   "big": 10,
@@ -169,11 +132,25 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-23T00:05:28.859Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1562752:0:2026-10-23T00:05:28.859Z",
+   "key": "1562752:0",
+   "at": "2026-10-23T00:14:24.120Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Golden Knights win",
+   "market": "Moneyline",
+   "now_odds": "-108",
+   "now_chance": 52,
+   "edge": 4,
+   "text": "Edge gone: Golden Knights win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-veg-stl-2026-10-22"
+  },
   {
    "id": "new_edge:1562752:0:slight",
    "key": "1562752:0",
@@ -190,7 +167,11 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1562752:0:slight"
+  "new_edge:1562752:0:slight",
+  "gone:1562752:0:2026-10-23T00:05:28.859Z"
  ],
- "kalshi_checked": null
+ "kalshi_checked": {
+  "at": "2026-10-23T00:14:24.195Z",
+  "event": null
+ }
 }
