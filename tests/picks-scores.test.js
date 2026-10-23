@@ -66,3 +66,18 @@ test('normalized tennis snapshots keep match data and do not leak into football'
  const docs=[{league:'atp',events:[match]}];
  assert.equal(snapshotFor(docs,'Tennis').groups[0].games[0].id,'tennis');assert.deepEqual(snapshotFor(docs,'NFL').groups,[]);
 });
+
+
+test('college ticker groups same conferences together and never assigns non-conference games to the host conference',()=>{
+ const {snapshotFor}=require('../js/picks-scores.js');
+ const make=(id,label,conference=true)=>{const e=event(id);Object.assign(e.competitions[0],{conferenceCompetition:conference,groups:{shortName:label,isConference:true}});return e;};
+ const docs=[{league:'cfb',events:[make('a','SEC'),make('b','ACC'),make('c','SEC'),make('d','ACC',false),event('unknown')]}];
+ const groups=snapshotFor(docs,'NCAAF').groups;
+ assert.deepEqual(groups.map(g=>[g.conference,g.games.map(x=>x.id)]),[['SEC',['a','c']],['ACC',['b']],['non-conference',['d']],['unknown',['unknown']]]);
+ assert.equal(snapshotFor(docs,'').groups.length,1);
+});
+test('ranks are exact sourced integers 1-25; no 99, zero, missing or string rank badges',()=>{
+ const {collegeMeta}=require('../js/picks-scores.js');
+ for(const n of [1,25])assert.equal(collegeMeta({}, {curatedRank:{current:n}},{}).awayRank,n);
+ for(const n of [0,26,99,null,'3'])assert.equal(collegeMeta({}, {curatedRank:{current:n}},{}).awayRank,null);
+});

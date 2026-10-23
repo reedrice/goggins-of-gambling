@@ -7,3 +7,11 @@ test('nested tennis draws flatten into actual matches; golf has no fabricated li
 test('worker pool bounds concurrent requests',async()=>{let active=0,max=0;await pool([1,2,3,4,5],2,async()=>{active++;max=Math.max(max,active);await new Promise(r=>setTimeout(r,5));active--;});assert.equal(max,2);});
 
 test('snapshots preserve sourced athlete country flags and doubles roster identities',()=>{const a={displayName:'Test Player',flag:{href:'https://a.espncdn.com/i/teamlogos/countries/500/chn.png',alt:'China'}};const row=normalizeFixture({id:'match',competitions:[{competitors:[{athlete:a},{roster:{displayName:'Pair',athletes:[a]}}]}]},'atp','https://espn.test','2026-10-21T00:00:00Z');assert.equal(row.competitions[0].competitors[0].athlete.flag.alt,'China');assert.equal(row.competitions[0].competitors[1].roster.athletes[0].flag.alt,'China');});
+
+
+test('college snapshots retain sourced conference and Top25 rank only',()=>{
+ const c={conferenceCompetition:true,groups:{id:'8',name:'Southeastern Conference',shortName:'SEC',isConference:true},competitors:[{id:'1',curatedRank:{current:7},team:{id:'1'}},{id:'2',curatedRank:{current:99},team:{id:'2'}}]};
+ const e={id:'college',competitions:[c]},out=normalizeFixture(e,'cfb','https://example.test/source','2026-10-23T08:00:00Z');
+ const game=out.competitions[0];assert.equal(game.groups.shortName,'SEC');assert.equal(game.conferenceCompetition,true);assert.equal(game.competitors[0].curatedRank.current,7);assert.equal(game.competitors[1].curatedRank,undefined);
+ assert.equal(normalizeFixture(e,'nfl','source','time').competitions[0].groups,undefined);
+});

@@ -19,7 +19,7 @@
     const selected = docs.filter(d=>!sport || SPORT_LEAGUES[sport]?.includes(d.league));
     const games = mode => selected.flatMap(d=>liveGames(d, ['atp','wta','pga','lpga','dpwt'].includes(d.league)?d.league.toUpperCase():leagueSource(d.league), mode, now));
     const live=games('live');
-    return {groups:groupGames([live.length?live:games('upcoming')]),upcoming:!live.length};
+    return {groups:groupGames([live.length?live:games('upcoming')],sport==='NCAAF'),upcoming:!live.length};
   }
   function dates(now = new Date()) {
     const fmt = d => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Chicago', year: 'numeric', month: '2-digit', day: '2-digit' }).format(d).replace(/-/g, '');
@@ -61,16 +61,24 @@
         away: away.team.shortDisplayName || away.team.displayName || away.team.abbreviation,
         home: home.team.shortDisplayName || home.team.displayName || home.team.abbreviation,
         awayLogo: teamLogo(away.team), homeLogo: teamLogo(home.team),
+        ...(source==='NCAAF'?collegeMeta(game,away,home):{}),
         awayScore: score(away), homeScore: score(home), detail: mode === 'upcoming' ? event.date : status.type.shortDetail || status.type.detail || status.displayClock || '' }];
     });
   }
-  function groupGames(results) {
+  function collegeMeta(competition, away, home) {
+    const rank=c=>Number.isInteger(c.curatedRank?.current)&&c.curatedRank.current>=1&&c.curatedRank.current<=25?c.curatedRank.current:null;
+    const group=competition.groups;
+    const conference=competition.conferenceCompetition===false?'non-conference':competition.conferenceCompetition===true&&group?.isConference&&(group.shortName||group.name)?(group.shortName||group.name):'unknown';
+    return {conference,awayRank:rank(away),homeRank:rank(home)};
+  }
+  function groupGames(results, byConference=false) {
     const groups = new Map();
     results.flat().forEach(game => {
-      if (!groups.has(game.league)) groups.set(game.league, new Map());
-      groups.get(game.league).set(game.id, game);
+      const key=byConference?game.league+':'+game.conference:game.league;
+      if (!groups.has(key)) groups.set(key, new Map());
+      groups.get(key).set(game.id, game);
     });
-    return Array.from(groups, ([league, games]) => ({ league, games: Array.from(games.values()) }));
+    return Array.from(groups, ([key, games]) => {const rows=Array.from(games.values());return {league:rows[0].league,...(byConference?{conference:rows[0].conference}:{}),games:rows};});
   }
   function stop() {
     if (!active) return;
@@ -95,13 +103,14 @@
     root.addEventListener('error', event => {
       if (event.target.matches && event.target.matches('img.pst-logo')) event.target.remove();
     }, true);
-    const team = (name, logo) => {
+    const team = (name, logo, rank) => {
       const label = node('span', 'pst-team');
       if (logo) {
         const image = node('img', 'pst-logo'); image.src = logo;
         image.alt = ''; image.width = 20; image.height = 20; image.decoding = 'async';
         label.append(image);
       }
+      if(rank){const number=node('span','pst-rank',S.rank(rank));number.setAttribute('aria-label',S.rankLabel(rank));label.append(number);}
       label.append(node('span', 'pst-name', name));
       return label;
     };
@@ -125,12 +134,12 @@
       const lane = node('div', 'pst-lane');
       snapshot.groups.forEach(group => {
         const block = node('div', 'pst-group');
-        block.append(node('strong', 'pst-league', S.leagues[group.league] || S.soccer));
+        block.append(node('strong', 'pst-league', group.conference ? (group.conference==='non-conference'?S.nonConference:group.conference==='unknown'?S.conferenceUnknown:group.conference) : S.leagues[group.league] || S.soccer));
         group.games.forEach(game => {
           const item = node('span', 'pst-game');
-          item.append(team(game.away, game.awayLogo));
+          item.append(team(game.away, game.awayLogo, game.awayRank));
           if (!snapshot.upcoming && game.awayScore!==null) item.append(node('b', 'pst-score', game.awayScore));
-          if(!game.tournament)item.append(node('span', 'pst-at', S.at), team(game.home, game.homeLogo));
+          if(!game.tournament)item.append(node('span', 'pst-at', S.at), team(game.home, game.homeLogo, game.homeRank));
           if (!snapshot.upcoming && game.homeScore!==null) item.append(node('b', 'pst-score', game.homeScore));
           const detail = snapshot.upcoming ? new Date(game.detail).toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit' }) + ' CT' : game.detail;
           item.append(node('span', 'pst-clock', detail));
@@ -189,5 +198,5 @@
   if (typeof window !== 'undefined') window.addEventListener('resize', () => active?.redraw?.());
   if (typeof window !== 'undefined') for(const event of ['focus','online'])window.addEventListener(event,()=>active?.wake?.());
   if (typeof document !== 'undefined') document.addEventListener('visibilitychange', () => active?.wake?.());
-  return { SOURCES, SPORT_LEAGUES, snapshotFor, dates, liveGames, groupGames, mount, stop };
+  return { SOURCES, SPORT_LEAGUES, snapshotFor, collegeMeta, dates, liveGames, groupGames, mount, stop };
 });
