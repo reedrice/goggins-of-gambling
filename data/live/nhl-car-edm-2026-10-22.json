@@ -9,12 +9,12 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892561",
-  "fetched_at": "2026-10-23T03:24:25.881Z",
+  "fetched_at": "2026-10-23T03:26:24.239Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 3,
-  "clock": "8:40",
-  "regulation_secs_left": 1420,
+  "clock": "6:47",
+  "regulation_secs_left": 1307,
   "home": {
    "abbr": "EDM",
    "alias": "Oilers",
@@ -135,7 +135,7 @@
    }
   ]
  },
- "updated": "2026-10-23T03:24:25.882Z",
+ "updated": "2026-10-23T03:26:24.240Z",
  "open_taken_at": "2026-10-21T05:15:15.166Z",
  "thresholds": {
   "big": 10,
@@ -167,26 +167,6 @@
  ],
  "edges": [
   {
-   "key": "1562878:0",
-   "market_id": "1562878",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming hockey event CAR Hurricanes vs EDM Oilers scheduled for October 23, 2026 at 1:00 AM UTC?",
-   "side": "Hurricanes win",
-   "open_chance": 55,
-   "now_chance": 51,
-   "open_odds": "-122",
-   "now_odds": "-104",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "CAR tied, Q3 8:40",
-   "first_seen": "2026-10-23T03:18:24.019Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
    "key": "1562878:1",
    "market_id": "1562878",
    "market": "Moneyline",
@@ -205,9 +185,43 @@
    "first_seen": "2026-10-23T03:04:26.147Z",
    "status": "gone",
    "kalshi": true
+  },
+  {
+   "key": "1562878:0",
+   "market_id": "1562878",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming hockey event CAR Hurricanes vs EDM Oilers scheduled for October 23, 2026 at 1:00 AM UTC?",
+   "side": "Hurricanes win",
+   "open_chance": 55,
+   "now_chance": 51,
+   "open_odds": "-122",
+   "now_odds": "-104",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "CAR tied, Q3 8:40",
+   "first_seen": "2026-10-23T03:18:24.019Z",
+   "status": "gone",
+   "kalshi": true
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1562878:0:2026-10-23T03:18:24.019Z",
+   "key": "1562878:0",
+   "at": "2026-10-23T03:26:24.240Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Hurricanes win",
+   "market": "Moneyline",
+   "now_odds": "-104",
+   "now_chance": 51,
+   "edge": 4,
+   "text": "Edge gone: Hurricanes win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-car-edm-2026-10-22"
+  },
   {
    "id": "new_edge:1562878:0:slight",
    "key": "1562878:0",
@@ -225,10 +239,11 @@
  ],
  "alert_seen": [
   "new_edge:1562878:1:big",
-  "new_edge:1562878:0:slight"
+  "new_edge:1562878:0:slight",
+  "gone:1562878:0:2026-10-23T03:18:24.019Z"
  ],
  "kalshi_checked": {
-  "at": "2026-10-23T03:24:25.993Z",
+  "at": "2026-10-23T03:26:24.357Z",
   "event": "26OCT22CAREDM"
  }
 }
