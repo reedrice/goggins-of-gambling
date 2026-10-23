@@ -9,12 +9,12 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892562",
-  "fetched_at": "2026-10-23T02:38:25.330Z",
+  "fetched_at": "2026-10-23T02:44:27.953Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "3:48",
-  "regulation_secs_left": 2928,
+  "clock": "1:37",
+  "regulation_secs_left": 2797,
   "home": {
    "abbr": "SEA",
    "alias": "Kraken",
@@ -26,7 +26,7 @@
    "abbr": "UTA",
    "alias": "Mammoth",
    "name": "Utah Mammoth",
-   "score": 0,
+   "score": 1,
    "id": "129764"
   },
   "possession": null,
@@ -93,10 +93,28 @@
     "player": "Jordan Eberle",
     "short": "J. Eberle",
     "pos": "RW"
+   },
+   {
+    "team": "UTA",
+    "player": "Vincent Trocheck",
+    "short": "V. Trocheck",
+    "pos": "C"
+   },
+   {
+    "team": "UTA",
+    "player": "Kailer Yamamoto",
+    "short": "K. Yamamoto",
+    "pos": "RW"
+   },
+   {
+    "team": "UTA",
+    "player": "Vincent Trocheck",
+    "short": "V. Trocheck",
+    "pos": "C"
    }
   ]
  },
- "updated": "2026-10-23T02:38:25.330Z",
+ "updated": "2026-10-23T02:44:27.953Z",
  "open_taken_at": "2026-10-21T05:15:15.823Z",
  "thresholds": {
   "big": 10,
@@ -135,14 +153,14 @@
    "question": "Who will win in the upcoming hockey event UTA Mammoth vs SEA Kraken scheduled for October 23, 2026 at 2:00 AM UTC?",
    "side": "Mammoth win",
    "open_chance": 60,
-   "now_chance": 49,
+   "now_chance": 51,
    "open_odds": "-150",
-   "now_odds": "+104",
-   "edge": 11,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: UTA trailing by 1",
-   "context": "UTA down 1, Q1 3:48",
+   "now_odds": "-104",
+   "edge": 9,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "UTA tied, Q1 1:37",
    "first_seen": "2026-10-23T02:18:25.485Z",
    "status": "open",
    "kalshi": true
@@ -169,6 +187,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1562941:0:slight",
+   "key": "1562941:0",
+   "at": "2026-10-23T02:44:27.953Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Mammoth win",
+   "market": "Moneyline",
+   "now_odds": "-104",
+   "now_chance": 51,
+   "edge": 9,
+   "text": "New slight edge: Mammoth win (Moneyline), 9 points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-uta-sea-2026-10-22"
+  },
   {
    "id": "gone:1562941:1:2026-10-22T16:26:42.749Z",
    "key": "1562941:1",
@@ -200,10 +232,11 @@
  ],
  "alert_seen": [
   "new_edge:1562941:1:slight",
-  "gone:1562941:1:2026-10-22T16:26:42.749Z"
+  "gone:1562941:1:2026-10-22T16:26:42.749Z",
+  "new_edge:1562941:0:slight"
  ],
  "kalshi_checked": {
-  "at": "2026-10-23T02:38:25.450Z",
+  "at": "2026-10-23T02:44:28.049Z",
   "event": "26OCT22UTASEA"
  }
 }
