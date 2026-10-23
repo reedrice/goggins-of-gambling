@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-23T23:21:35.869Z"
+  "fetched_at": "2026-10-23T23:27:47.287Z"
  },
- "updated": "2026-10-23T23:21:35.869Z",
+ "updated": "2026-10-23T23:27:47.287Z",
  "open_taken_at": "2026-10-22T05:01:16.904Z",
  "thresholds": {
   "big": 10,
@@ -43,6 +43,26 @@
  ],
  "edges": [
   {
+   "key": "1331008:0",
+   "market_id": "1331008",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming football event Yale vs Penn scheduled for October 23, 2026 at 11:00 PM UTC?",
+   "side": "Bulldogs win",
+   "open_chance": 63.5,
+   "now_chance": 55.5,
+   "open_odds": "-174",
+   "now_odds": "-125",
+   "edge": 8,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-23T23:27:47.287Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1331008:1",
    "market_id": "1331008",
    "market": "Moneyline",
@@ -59,11 +79,39 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-23T08:26:23.752Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1331008:0:slight",
+   "key": "1331008:0",
+   "at": "2026-10-23T23:27:47.287Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Bulldogs win",
+   "market": "Moneyline",
+   "now_odds": "-125",
+   "now_chance": 55.5,
+   "edge": 8,
+   "text": "New slight edge: Bulldogs win (Moneyline), 8 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-yale-penn-2026-10-23"
+  },
+  {
+   "id": "gone:1331008:1:2026-10-23T08:26:23.752Z",
+   "key": "1331008:1",
+   "at": "2026-10-23T23:27:47.287Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Quakers win",
+   "market": "Moneyline",
+   "now_odds": "+217",
+   "now_chance": 31.5,
+   "edge": 5.5,
+   "text": "Edge gone: Quakers win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-yale-penn-2026-10-23"
+  },
   {
    "id": "new_edge:1331008:1:big",
    "key": "1331008:1",
@@ -95,7 +143,9 @@
  ],
  "alert_seen": [
   "new_edge:1331008:1:slight",
-  "new_edge:1331008:1:big"
+  "new_edge:1331008:1:big",
+  "new_edge:1331008:0:slight",
+  "gone:1331008:1:2026-10-23T08:26:23.752Z"
  ],
  "kalshi_checked": null
 }
