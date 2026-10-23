@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185548",
-  "fetched_at": "2026-10-23T09:36:36.396Z",
+  "fetched_at": "2026-10-23T09:42:42.990Z",
   "tennis": true,
   "tennis_match": {
    "id": "185548",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Fri, October 23rd at 5:35 AM EDT",
-     "shortDetail": "10/23 - 5:35 AM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(4) Iva Jovic (USA) leads (6) Diana Shnaider (RUS) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "curatedRank": {
       "current": 6
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "8af6b36d-7d61-3c1d-8134-c7b52a123dcf",
       "displayName": "Diana Shnaider",
@@ -90,9 +101,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "curatedRank": {
       "current": 4
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "fb4a5abc-e29b-3269-bcec-2da93f349e66",
       "displayName": "Iva Jovic",
@@ -125,6 +142,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 963,
    "type": {
     "id": "2",
@@ -141,10 +163,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Fri, October 23rd at 5:35 AM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Diana Shnaider",
@@ -162,7 +184,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-23T09:36:36.396Z",
+ "updated": "2026-10-23T09:42:42.991Z",
  "open_taken_at": "2026-10-22T13:19:12.216Z",
  "thresholds": {
   "big": 10,
@@ -238,26 +260,6 @@
  ],
  "edges": [
   {
-   "key": "1679251:1",
-   "market_id": "1679251",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Iva Jovic vs Diana Shnaider scheduled for October 23, 2026 at 8:00 AM UTC?",
-   "side": "Diana Shnaider win",
-   "open_chance": 51,
-   "now_chance": 45,
-   "open_odds": "-104",
-   "now_odds": "+122",
-   "edge": 6,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-10-22T22:17:25.967Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1680215:1",
    "market_id": "1680215",
    "market": "Games spread",
@@ -265,15 +267,35 @@
    "question": "Will the Iva Jovic cover -1.5 vs the Diana Shnaider in Iva Jovic vs. Diana Shnaider?",
    "side": "Diana Shnaider +1.50 (Games)",
    "open_chance": 57,
-   "now_chance": 52,
+   "now_chance": 46,
    "open_odds": "-133",
-   "now_odds": "-108",
-   "edge": 5,
+   "now_odds": "+117",
+   "edge": 11,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Diana Shnaider 0 · Iva Jovic 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-22T22:11:26.883Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1679251:1",
+   "market_id": "1679251",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Iva Jovic vs Diana Shnaider scheduled for October 23, 2026 at 8:00 AM UTC?",
+   "side": "Diana Shnaider win",
+   "open_chance": 51,
+   "now_chance": 42,
+   "open_odds": "-104",
+   "now_odds": "+138",
+   "edge": 9,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-10-22T22:11:26.883Z",
+   "context": "Diana Shnaider 0 · Iva Jovic 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-22T22:17:25.967Z",
    "status": "open",
    "kalshi": null
   },
@@ -294,11 +316,39 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-23T08:36:45.430Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1680215:1:big",
+   "key": "1680215:1",
+   "at": "2026-10-23T09:42:42.991Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Diana Shnaider +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+117",
+   "now_chance": 46,
+   "edge": 11,
+   "text": "New big edge: Diana Shnaider +1.50 (Games) (Games spread), 11 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-ivajov-diashn-2026-10-23"
+  },
+  {
+   "id": "gone:1680214:1:2026-10-23T08:36:45.430Z",
+   "key": "1680214:1",
+   "at": "2026-10-23T09:42:42.991Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Diana Shnaider -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+133",
+   "now_chance": 43,
+   "edge": 4,
+   "text": "Edge gone: Diana Shnaider -1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-ivajov-diashn-2026-10-23"
+  },
   {
    "id": "new_edge:1679251:1:slight",
    "key": "1679251:1",
@@ -345,7 +395,9 @@
  "alert_seen": [
   "new_edge:1679251:1:slight",
   "new_edge:1680215:1:slight",
-  "new_edge:1680214:1:slight"
+  "new_edge:1680214:1:slight",
+  "new_edge:1680215:1:big",
+  "gone:1680214:1:2026-10-23T08:36:45.430Z"
  ],
  "kalshi_checked": null
 }
