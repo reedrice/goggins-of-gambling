@@ -9,12 +9,12 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892561",
-  "fetched_at": "2026-10-23T02:04:29.015Z",
+  "fetched_at": "2026-10-23T02:06:27.107Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 2,
-  "clock": "20:00",
-  "regulation_secs_left": 3000,
+  "clock": "19:30",
+  "regulation_secs_left": 2970,
   "home": {
    "abbr": "EDM",
    "alias": "Oilers",
@@ -135,7 +135,7 @@
    }
   ]
  },
- "updated": "2026-10-23T02:04:29.016Z",
+ "updated": "2026-10-23T02:06:27.108Z",
  "open_taken_at": "2026-10-21T05:15:15.166Z",
  "thresholds": {
   "big": 10,
@@ -167,6 +167,26 @@
  ],
  "edges": [
   {
+   "key": "1562878:1",
+   "market_id": "1562878",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming hockey event CAR Hurricanes vs EDM Oilers scheduled for October 23, 2026 at 1:00 AM UTC?",
+   "side": "Oilers win",
+   "open_chance": 47,
+   "now_chance": 32,
+   "open_odds": "+113",
+   "now_odds": "+213",
+   "edge": 15,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "EDM tied, Q2 19:30",
+   "first_seen": "2026-10-23T02:06:27.108Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
    "key": "1562878:0",
    "market_id": "1562878",
    "market": "Moneyline",
@@ -187,10 +207,27 @@
    "kalshi": true
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "new_edge:1562878:1:big",
+   "key": "1562878:1",
+   "at": "2026-10-23T02:06:27.108Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Oilers win",
+   "market": "Moneyline",
+   "now_odds": "+213",
+   "now_chance": 32,
+   "edge": 15,
+   "text": "New big edge: Oilers win (Moneyline), 15 points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-car-edm-2026-10-22"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:1562878:1:big"
+ ],
  "kalshi_checked": {
-  "at": "2026-10-23T02:04:29.283Z",
+  "at": "2026-10-23T02:06:27.326Z",
   "event": "26OCT22CAREDM"
  }
 }
