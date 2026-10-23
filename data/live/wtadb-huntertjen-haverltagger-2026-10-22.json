@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185606",
-  "fetched_at": "2026-10-23T06:53:41.791Z",
+  "fetched_at": "2026-10-23T06:55:52.048Z",
   "tennis": true,
   "tennis_match": {
    "id": "185606",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Fri, October 22nd at 2:50 AM EDT",
-     "shortDetail": "10/23 - 2:50 AM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(1) Storm Hunter (AUS) & Janice Tjen (INA) leads Isabelle Haverlag (NED) & Lilli Tagger (AUT) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "roster": {
       "displayName": "Isabelle Haverlag / Lilli Tagger",
       "shortDisplayName": "I. Haverlag / L. Tagger",
@@ -122,9 +133,15 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 1
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "roster": {
       "displayName": "Storm Hunter / Janice Tjen",
       "shortDisplayName": "S. Hunter / J. Tjen",
@@ -192,6 +209,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 345,
    "type": {
     "id": "4",
@@ -208,10 +230,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Fri, October 22nd at 2:50 AM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Isabelle Haverlag / Lilli Tagger",
@@ -229,7 +251,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-23T06:53:41.795Z",
+ "updated": "2026-10-23T06:55:52.048Z",
  "open_taken_at": "2026-10-22T06:03:30.984Z",
  "thresholds": {
   "big": 10,
