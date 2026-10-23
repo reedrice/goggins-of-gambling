@@ -9,17 +9,17 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892553",
-  "fetched_at": "2026-10-23T01:46:23.538Z",
+  "fetched_at": "2026-10-23T01:52:23.118Z",
   "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "espn_status": "STATUS_END_PERIOD",
   "period": 3,
-  "clock": "1:14",
-  "regulation_secs_left": 974,
+  "clock": "0:00",
+  "regulation_secs_left": 900,
   "home": {
    "abbr": "TOR",
    "alias": "Maple Leafs",
    "name": "Toronto Maple Leafs",
-   "score": 4,
+   "score": 5,
    "id": "21"
   },
   "away": {
@@ -106,21 +106,21 @@
   "leaders": [
    {
     "team": "TOR",
-    "player": "Teddy Blueger",
-    "short": "T. Blueger",
-    "pos": "C"
+    "player": "Brandon Duhaime",
+    "short": "B. Duhaime",
+    "pos": "RW"
    },
    {
     "team": "TOR",
-    "player": "Zack MacEwen",
-    "short": "Z. MacEwen",
-    "pos": "C"
+    "player": "Brandon Duhaime",
+    "short": "B. Duhaime",
+    "pos": "RW"
    },
    {
     "team": "TOR",
-    "player": "Teddy Blueger",
-    "short": "T. Blueger",
-    "pos": "C"
+    "player": "Brandon Duhaime",
+    "short": "B. Duhaime",
+    "pos": "RW"
    },
    {
     "team": "NYR",
@@ -142,7 +142,7 @@
    }
   ]
  },
- "updated": "2026-10-23T01:46:23.539Z",
+ "updated": "2026-10-23T01:52:23.119Z",
  "open_taken_at": "2026-10-21T05:15:12.010Z",
  "thresholds": {
   "big": 10,
@@ -190,17 +190,33 @@
    "reason": null,
    "context": "NYR tied, Q3 1:14",
    "first_seen": "2026-10-23T01:38:25.872Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": true
   }
  ],
- "alerts": [],
+ "alerts": [
+  {
+   "id": "gone:1562562:0:2026-10-23T01:38:25.872Z",
+   "key": "1562562:0",
+   "at": "2026-10-23T01:52:23.119Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Rangers win",
+   "market": "Moneyline",
+   "now_odds": "+104",
+   "now_chance": 49,
+   "edge": 4,
+   "text": "Edge gone: Rangers win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-nyr-tor-2026-10-22"
+  }
+ ],
  "alert_seen": [
   "new_edge:1562562:0:slight",
-  "news:1562562:0"
+  "news:1562562:0",
+  "gone:1562562:0:2026-10-23T01:38:25.872Z"
  ],
  "kalshi_checked": {
-  "at": "2026-10-23T01:46:23.663Z",
+  "at": "2026-10-23T01:52:23.219Z",
   "event": "26OCT22NYRTOR"
  }
 }
