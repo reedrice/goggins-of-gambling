@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185546",
-  "fetched_at": "2026-10-23T05:06:41.182Z",
+  "fetched_at": "2026-10-23T05:12:48.922Z",
   "tennis": true,
   "tennis_match": {
    "id": "185546",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Fri, October 22nd at 1:05 AM EDT",
-     "shortDetail": "10/23 - 1:05 AM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Marie Bouzkova (CZE) leads Sara Bejlek (CZE) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,11 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "ec086637-8d93-7095-de13-83aafe91d01a",
       "displayName": "Marie Bouzkova",
@@ -87,6 +97,11 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "6367c1ef-3c93-376d-a8b4-13be71e53c5a",
       "displayName": "Sara Bejlek",
@@ -135,10 +150,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Fri, October 22nd at 1:05 AM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Marie Bouzkova",
@@ -156,7 +171,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-23T05:06:41.183Z",
+ "updated": "2026-10-23T05:12:48.922Z",
  "open_taken_at": "2026-10-22T05:01:31.251Z",
  "thresholds": {
   "big": 10,
@@ -248,7 +263,7 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-23T04:59:22.177Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -273,6 +288,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1650472:1:2026-10-23T04:59:22.177Z",
+   "key": "1650472:1",
+   "at": "2026-10-23T05:12:48.922Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Marie Bouzkova win",
+   "market": "Moneyline",
+   "now_odds": "-133",
+   "now_chance": 57,
+   "edge": 4,
+   "text": "Edge gone: Marie Bouzkova win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-sarbej-marbou-2026-10-23"
+  },
   {
    "id": "gone:1666298:1:2026-10-23T04:53:25.967Z",
    "key": "1666298:1",
@@ -319,7 +348,8 @@
  "alert_seen": [
   "new_edge:1650472:1:slight",
   "new_edge:1666298:1:slight",
-  "gone:1666298:1:2026-10-23T04:53:25.967Z"
+  "gone:1666298:1:2026-10-23T04:53:25.967Z",
+  "gone:1650472:1:2026-10-23T04:59:22.177Z"
  ],
  "kalshi_checked": null
 }
