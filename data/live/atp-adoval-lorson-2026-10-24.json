@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187154",
-  "fetched_at": "2026-10-24T13:22:07.143Z",
+  "fetched_at": "2026-10-24T13:28:06.806Z",
   "tennis": true,
   "tennis_match": {
    "id": "187154",
@@ -17,17 +17,17 @@
    "date": "2026-10-24T10:30Z",
    "startDate": "2026-10-24T10:30Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 3,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, October 24th at 6:30 AM EDT",
-     "shortDetail": "10/24 - 6:30 AM EDT"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Lorenzo Sonego (ITA) bt Adolfo Daniel Vallejo (PAR) 6-2 3-6 6-3",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,21 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "687223c9-e8fb-7106-54b2-0bd2f9697146",
       "displayName": "Lorenzo Sonego",
@@ -87,6 +107,21 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 2,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 3,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "2f86d2cc-27de-3420-8931-d0839160e742",
       "displayName": "Adolfo Daniel Vallejo",
@@ -135,28 +170,28 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sat, October 24th at 6:30 AM EDT",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Lorenzo Sonego",
    "alias": "Lorenzo Sonego",
    "name": "Lorenzo Sonego",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Adolfo Daniel Vallejo",
    "alias": "Adolfo Daniel Vallejo",
    "name": "Adolfo Daniel Vallejo",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T13:22:07.068Z",
+ "updated": "2026-10-24T13:28:06.737Z",
  "open_taken_at": "2026-10-23T17:02:01.871Z",
  "thresholds": {
   "big": 10,
