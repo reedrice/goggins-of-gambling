@@ -737,7 +737,7 @@ window.STR.slate={title:'Daily Slate Overview',names:{nba:'NBA',nhl:'NHL',atp:'A
 window.STR.slate.singular={games:'Game',matches:'Match',events:'Event'};
 window.STR.slate.names.tennis='Tennis';
 
-window.STR.liveScoreboard = {title:'Sport scoreboard',loading:'Checking ESPN…',unavailable:'Scores unavailable · retrying with the next update',empty:'No games reported for today.',delayed:'Scores may be delayed',checked:time=>`ESPN checked ${time} CT`,previous:'Previous games',next:'Next games'};
+window.STR.liveScoreboard = {rank:n=>`#${n}`,rankLabel:n=>`National rank ${n}`,title:'Sport scoreboard',loading:'Checking ESPN…',unavailable:'Scores unavailable · retrying with the next update',empty:'No games reported for today.',delayed:'Scores may be delayed',checked:time=>`ESPN checked ${time} CT`,previous:'Previous games',next:'Next games'};
 window.STR.liveScoreboard.allGames='Show all games';
 window.STR.liveScoreboard.game=name=>`Filter bets: ${name}`;
 

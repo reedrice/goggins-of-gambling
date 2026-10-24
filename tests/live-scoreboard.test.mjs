@@ -17,3 +17,13 @@ test('college filters bridge missing feed context using a unique snapshot team p
  B.games([{league:'cfb',events:[e,{...e,id:'second',competitions:[{...e.competitions[0],id:'second'}]}]}],'ncaaf',now);assert.equal(B.matches(feed,'cfb:college'),false);
  B.games([],'ncaaf',now);assert.equal(B.matches(feed,'cfb:college'),false);
 });
+
+
+test('college scoreboard retains national Top25 rank on the correct away/home team',()=>{
+ const e=event('ranked','pre');e.competitions[0].competitors[0].curatedRank={current:25};e.competitions[0].competitors[1].curatedRank={current:1};
+ const rows=B.games([{league:'cfb',events:[e]}],'ncaaf',now);
+ assert.deepEqual(rows[0].teams.map(t=>[t.name,t.rank]),[['ATL',1],['ORL',25]]);
+ assert.equal(rows[0].teams[0].score,null);
+ for(const n of [0,26,99,null,'7']){e.competitions[0].competitors[0].curatedRank={current:n};assert.equal(B.games([{league:'cfb',events:[e]}],'ncaaf',now)[0].teams[1].rank,null);}
+ assert.equal(B.games([{league:'nba',events:[e]}],'nba',now)[0].teams[0].rank,null);
+});
