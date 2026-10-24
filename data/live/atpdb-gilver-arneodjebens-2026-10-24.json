@@ -4,12 +4,12 @@
  "game": "Gille / Verbeek vs. Arneodo / Jebens",
  "url": "https://polymarket.us/sports/atpdb/atpdb-gilver-arneodjebens-2026-10-24",
  "start_time": "2026-10-24T17:15:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187260",
-  "fetched_at": "2026-10-24T19:05:20.129Z",
+  "fetched_at": "2026-10-24T19:11:05.313Z",
   "tennis": true,
   "tennis_match": {
    "id": "187260",
@@ -17,17 +17,17 @@
    "date": "2026-10-24T15:30Z",
    "startDate": "2026-10-24T15:30Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 3,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, October 24th at 11:30 AM EDT",
-     "shortDetail": "10/24 - 11:30 AM EDT"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Romain Arneodo (MON) & Hendrik Jebens (GER) bt Sander Gille (BEL) & Sem Verbeek (NED) 7-6 (7-2) 6-7 (5-7) 10-7",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,23 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "tiebreak": 5,
+       "winner": false
+      },
+      {
+       "value": 10,
+       "winner": true
+      }
+     ],
      "roster": {
       "displayName": "Romain Arneodo / Hendrik Jebens",
       "shortDisplayName": "R. Arneodo / H. Jebens",
@@ -122,6 +144,23 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 6,
+       "tiebreak": 2,
+       "winner": false
+      },
+      {
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 7,
+       "winner": false
+      }
+     ],
      "roster": {
       "displayName": "Sander Gille / Sem Verbeek",
       "shortDisplayName": "S. Gille / S. Verbeek",
@@ -205,28 +244,28 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sat, October 24th at 11:30 AM EDT",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Romain Arneodo / Hendrik Jebens",
    "alias": "Romain Arneodo / Hendrik Jebens",
    "name": "Romain Arneodo / Hendrik Jebens",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Sander Gille / Sem Verbeek",
    "alias": "Sander Gille / Sem Verbeek",
    "name": "Sander Gille / Sem Verbeek",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T19:05:20.033Z",
+ "updated": "2026-10-24T19:11:05.178Z",
  "open_taken_at": "2026-10-24T09:55:18.868Z",
  "thresholds": {
   "big": 10,

@@ -3,24 +3,24 @@
   "league": "nhl",
   "query_date": "2026-10-24",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261024&limit=1000",
-  "fetched_at": "2026-10-24T19:04:43.657Z",
+  "fetched_at": "2026-10-24T19:10:30.567Z",
   "events": [
     {
       "id": "401892566",
       "name": "Anaheim Ducks at Philadelphia Flyers",
       "date": "2026-10-24T17:00Z",
       "status": {
-        "clock": 0,
-        "displayClock": "0:00",
-        "period": 2,
+        "clock": 1190,
+        "displayClock": "19:50",
+        "period": 3,
         "type": {
-          "id": "22",
-          "name": "STATUS_END_PERIOD",
+          "id": "2",
+          "name": "STATUS_IN_PROGRESS",
           "state": "in",
           "completed": false,
-          "description": "End of Period",
-          "detail": "End of 2nd Period",
-          "shortDetail": "End of 2nd"
+          "description": "In Progress",
+          "detail": "19:50 - 3rd Period",
+          "shortDetail": "19:50 - 3rd"
         }
       },
       "boxscore": {
@@ -62,7 +62,7 @@
                     },
                     "stats": [
                       "0",
-                      "1",
+                      "0",
                       "0",
                       "0",
                       "14:33",
@@ -1296,17 +1296,17 @@
           "id": "401892566",
           "date": "2026-10-24T17:00Z",
           "status": {
-            "clock": 0,
-            "displayClock": "0:00",
-            "period": 2,
+            "clock": 1190,
+            "displayClock": "19:50",
+            "period": 3,
             "type": {
-              "id": "22",
-              "name": "STATUS_END_PERIOD",
+              "id": "2",
+              "name": "STATUS_IN_PROGRESS",
               "state": "in",
               "completed": false,
-              "description": "End of Period",
-              "detail": "End of 2nd Period",
-              "shortDetail": "End of 2nd"
+              "description": "In Progress",
+              "detail": "19:50 - 3rd Period",
+              "shortDetail": "19:50 - 3rd"
             }
           },
           "competitors": [
@@ -1324,6 +1324,11 @@
                   "value": 1,
                   "displayValue": "1",
                   "period": 2
+                },
+                {
+                  "value": 0,
+                  "displayValue": "0",
+                  "period": 3
                 }
               ],
               "team": {
@@ -1349,6 +1354,11 @@
                   "value": 3,
                   "displayValue": "3",
                   "period": 2
+                },
+                {
+                  "value": 0,
+                  "displayValue": "0",
+                  "period": 3
                 }
               ],
               "team": {
@@ -1441,9 +1451,9 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261024&limit=1000",
-      "fetched_at": "2026-10-24T19:04:43.657Z",
+      "fetched_at": "2026-10-24T19:10:30.567Z",
       "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/summary?event=401892566",
-      "details_checked_at": "2026-10-24T19:04:43.657Z",
+      "details_checked_at": "2026-10-24T19:10:30.567Z",
       "details_available": true
     },
     {
@@ -1463,6 +1473,9 @@
           "detail": "Sat, October 24th at 3:30 PM EDT",
           "shortDetail": "10/24 - 3:30 PM EDT"
         }
+      },
+      "boxscore": {
+        "players": []
       },
       "competitions": [
         {
@@ -1513,7 +1526,50 @@
         }
       ],
       "player_usage": [],
-      "injuries": [],
+      "injuries": [
+        {
+          "team": "NJ",
+          "player": "Connor Hellebuyck",
+          "position": "G",
+          "status": "Out"
+        },
+        {
+          "team": "NJ",
+          "player": "Seamus Casey",
+          "position": "D",
+          "status": "Injured Reserve"
+        },
+        {
+          "team": "LA",
+          "player": "Quinton Byfield",
+          "position": "RW",
+          "status": "Day-To-Day"
+        },
+        {
+          "team": "LA",
+          "player": "Alex Turcotte",
+          "position": "C",
+          "status": "Injured Reserve"
+        },
+        {
+          "team": "LA",
+          "player": "Jakub Dvorak",
+          "position": "D",
+          "status": "Injured Reserve"
+        },
+        {
+          "team": "LA",
+          "player": "Jan Jenik",
+          "position": "C",
+          "status": "Injured Reserve"
+        },
+        {
+          "team": "LA",
+          "player": "Kevin Fiala",
+          "position": "LW",
+          "status": "Injured Reserve"
+        }
+      ],
       "starters": [],
       "starting_goalies": [],
       "probables": [
@@ -1525,7 +1581,7 @@
           "confirmed": false
         },
         {
-          "player": "Darcy Kuemper",
+          "player": "Anton Forsberg",
           "position": "probableStartingGoalie",
           "team": "LA",
           "status": "probable",
@@ -1535,23 +1591,23 @@
       "book_lines": [
         {
           "provider": "DraftKings",
-          "details": "NJ -205",
+          "details": "NJ -185",
           "spread": -1.5,
           "total": 5.5
         }
       ],
       "coverage": {
-        "injuries": "unavailable",
+        "injuries": "published_report",
         "starters": "unverified",
         "goalies": "unverified",
         "hockey_lines": "unavailable",
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261024&limit=1000",
-      "fetched_at": "2026-10-24T19:04:43.657Z",
-      "details_source_url": null,
-      "details_checked_at": null,
-      "details_available": false
+      "fetched_at": "2026-10-24T19:10:30.567Z",
+      "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/summary?event=401892567",
+      "details_checked_at": "2026-10-24T19:10:30.567Z",
+      "details_available": true
     },
     {
       "id": "401892568",
@@ -1655,7 +1711,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261024&limit=1000",
-      "fetched_at": "2026-10-24T19:04:43.657Z",
+      "fetched_at": "2026-10-24T19:10:30.567Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -1762,7 +1818,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261024&limit=1000",
-      "fetched_at": "2026-10-24T19:04:43.657Z",
+      "fetched_at": "2026-10-24T19:10:30.567Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -1869,7 +1925,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261024&limit=1000",
-      "fetched_at": "2026-10-24T19:04:43.657Z",
+      "fetched_at": "2026-10-24T19:10:30.567Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -1976,7 +2032,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261024&limit=1000",
-      "fetched_at": "2026-10-24T19:04:43.657Z",
+      "fetched_at": "2026-10-24T19:10:30.567Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -2083,7 +2139,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261024&limit=1000",
-      "fetched_at": "2026-10-24T19:04:43.657Z",
+      "fetched_at": "2026-10-24T19:10:30.567Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -2190,7 +2246,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261024&limit=1000",
-      "fetched_at": "2026-10-24T19:04:43.657Z",
+      "fetched_at": "2026-10-24T19:10:30.567Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -2297,7 +2353,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261024&limit=1000",
-      "fetched_at": "2026-10-24T19:04:43.657Z",
+      "fetched_at": "2026-10-24T19:10:30.567Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -2404,7 +2460,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261024&limit=1000",
-      "fetched_at": "2026-10-24T19:04:43.657Z",
+      "fetched_at": "2026-10-24T19:10:30.567Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -2511,7 +2567,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261024&limit=1000",
-      "fetched_at": "2026-10-24T19:04:43.657Z",
+      "fetched_at": "2026-10-24T19:10:30.567Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -2618,7 +2674,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261024&limit=1000",
-      "fetched_at": "2026-10-24T19:04:43.657Z",
+      "fetched_at": "2026-10-24T19:10:30.567Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false

@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-24T19:05:00.908Z"
+  "fetched_at": "2026-10-24T19:10:46.992Z"
  },
- "updated": "2026-10-24T19:05:00.787Z",
+ "updated": "2026-10-24T19:10:46.851Z",
  "open_taken_at": "2026-10-23T05:00:27.424Z",
  "thresholds": {
   "big": 10,
@@ -395,6 +395,26 @@
  ],
  "edges": [
   {
+   "key": "1345651:0",
+   "market_id": "1345651",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming football event West Florida vs Eastern Kentucky scheduled for October 24, 2026 at 7:00 PM UTC?",
+   "side": "Argonauts win",
+   "open_chance": 53,
+   "now_chance": 49,
+   "open_odds": "-113",
+   "now_odds": "+104",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-24T18:48:55.491Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1722110:0",
    "market_id": "1722110",
    "market": "Alt spread",
@@ -435,26 +455,6 @@
    "kalshi": null
   },
   {
-   "key": "1345651:0",
-   "market_id": "1345651",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming football event West Florida vs Eastern Kentucky scheduled for October 24, 2026 at 7:00 PM UTC?",
-   "side": "Argonauts win",
-   "open_chance": 53,
-   "now_chance": 49,
-   "open_odds": "-113",
-   "now_odds": "+104",
-   "edge": 4,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-24T18:48:55.491Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "1722111:0",
    "market_id": "1722111",
    "market": "Alt spread",
@@ -476,6 +476,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1345651:0:slight",
+   "key": "1345651:0",
+   "at": "2026-10-24T19:10:46.851Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Argonauts win",
+   "market": "Moneyline",
+   "now_odds": "+104",
+   "now_chance": 49,
+   "edge": 4,
+   "text": "New slight edge: Argonauts win (Moneyline), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-uwfl-ekent-2026-10-24"
+  },
   {
    "id": "gone:1722110:0:2026-10-24T15:08:07.270Z",
    "key": "1722110:0",
@@ -522,7 +536,8 @@
  "alert_seen": [
   "gone:1722110:0:2026-10-24T15:08:07.270Z",
   "gone:1345651:0:2026-10-24T18:48:55.491Z",
-  "gone:1722111:0:2026-10-24T18:36:47.680Z"
+  "gone:1722111:0:2026-10-24T18:36:47.680Z",
+  "new_edge:1345651:0:slight"
  ],
  "kalshi_checked": null
 }
