@@ -4,14 +4,14 @@
  "game": "San Diego vs. Dayton",
  "url": "https://polymarket.us/sports/cfb/cfb-usd-day-2026-10-24",
  "start_time": "2026-10-24T16:00:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-24T15:55:46.891Z"
+  "fetched_at": "2026-10-24T16:01:51.343Z"
  },
- "updated": "2026-10-24T15:55:46.771Z",
+ "updated": "2026-10-24T16:01:51.274Z",
  "open_taken_at": "2026-10-23T05:00:23.774Z",
  "thresholds": {
   "big": 10,
@@ -41,28 +41,6 @@
    "taken_at": "2026-10-23T05:00:23.774Z"
   },
   {
-   "market_id": "1722837",
-   "market": "Main total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 54.5,
-   "question": "Will the total in San Diego vs. Dayton be more than 54.5?",
-   "sides": [
-    "Over 54.5",
-    "Under 54.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 51,
-   "yes_buy": 53,
-   "no_buy": 51,
-   "taken_at": "2026-10-24T09:49:25.956Z"
-  },
-  {
    "market_id": "1719551",
    "market": "Main spread",
    "group": "game",
@@ -83,6 +61,28 @@
    "yes_buy": 50,
    "no_buy": 54.5,
    "taken_at": "2026-10-24T03:05:29.478Z"
+  },
+  {
+   "market_id": "1722837",
+   "market": "Main total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 54.5,
+   "question": "Will the total in San Diego vs. Dayton be more than 54.5?",
+   "sides": [
+    "Over 54.5",
+    "Under 54.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 51,
+   "yes_buy": 53,
+   "no_buy": 51,
+   "taken_at": "2026-10-24T09:49:25.956Z"
   },
   {
    "market_id": "1719554",
@@ -455,7 +455,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T12:37:46.726Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -475,7 +475,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T14:10:46.799Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -495,7 +495,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T14:10:46.799Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -519,7 +519,54 @@
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:1722838:0:2026-10-24T12:37:46.726Z",
+   "key": "1722838:0",
+   "at": "2026-10-24T16:01:51.274Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 55.5",
+   "market": "Alt total",
+   "now_odds": "+122",
+   "now_chance": 45,
+   "edge": 7,
+   "text": "Edge gone: Over 55.5 (Alt total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-usd-day-2026-10-24"
+  },
+  {
+   "id": "gone:1719551:1:2026-10-24T14:10:46.799Z",
+   "key": "1719551:1",
+   "at": "2026-10-24T16:01:51.274Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Flyers -4.50",
+   "market": "Main spread",
+   "now_odds": "+100",
+   "now_chance": 50,
+   "edge": 4.5,
+   "text": "Edge gone: Flyers -4.50 (Main spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-usd-day-2026-10-24"
+  },
+  {
+   "id": "gone:1719552:1:2026-10-24T14:10:46.799Z",
+   "key": "1719552:1",
+   "at": "2026-10-24T16:01:51.274Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Flyers -5.50",
+   "market": "Alt spread",
+   "now_odds": "+108",
+   "now_chance": 48,
+   "edge": 4,
+   "text": "Edge gone: Flyers -5.50 (Alt spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-usd-day-2026-10-24"
+  }
+ ],
+ "alert_seen": [
+  "gone:1722838:0:2026-10-24T12:37:46.726Z",
+  "gone:1719551:1:2026-10-24T14:10:46.799Z",
+  "gone:1719552:1:2026-10-24T14:10:46.799Z"
+ ],
  "kalshi_checked": null
 }
