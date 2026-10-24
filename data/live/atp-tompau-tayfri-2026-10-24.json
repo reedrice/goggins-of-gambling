@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185112",
-  "fetched_at": "2026-10-24T12:10:55.972Z",
+  "fetched_at": "2026-10-24T12:17:04.409Z",
   "tennis": true,
   "tennis_match": {
    "id": "185112",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(4) Tommy Paul (USA) is tied with (2) Taylor Fritz (USA)",
+     "text": "(4) Tommy Paul (USA) leads (2) Taylor Fritz (USA) 0-0",
      "type": "event"
     }
    ],
@@ -55,9 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 2
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "6493155f-cacc-7aa5-ba78-d952efa4c652",
       "displayName": "Taylor Fritz",
@@ -95,9 +101,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 4
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "8965d2eb-1419-a6e6-5d3f-573b8b0bc565",
       "displayName": "Tommy Paul",
@@ -130,6 +142,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 110,
    "type": {
     "id": "1",
@@ -167,7 +184,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T12:10:55.855Z",
+ "updated": "2026-10-24T12:17:04.301Z",
  "open_taken_at": "2026-10-23T17:02:02.202Z",
  "thresholds": {
   "big": 10,
@@ -329,26 +346,26 @@
    "taken_at": "2026-10-24T03:05:49.102Z"
   },
   {
-   "market_id": "1716035",
-   "market": "Set 2 winner",
+   "market_id": "1716029",
+   "market": "Sets total",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Tommy Paul win set 2 against Taylor Fritz?",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Tommy Paul vs. Taylor Fritz be more than 2.5?",
    "sides": [
-    "Yes: Tommy Paul win set 2 against Taylor Fritz",
-    "No: Tommy Paul win set 2 against Taylor Fritz"
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
    ],
    "teams": [
-    "Tommy Paul",
+    null,
     null
    ],
    "player": null,
-   "mid": 41,
-   "yes_buy": 42,
-   "no_buy": 60,
-   "taken_at": "2026-10-24T12:03:26.329Z"
+   "mid": 45.5,
+   "yes_buy": 46,
+   "no_buy": 55,
+   "taken_at": "2026-10-24T12:17:04.301Z"
   },
   {
    "market_id": "1716034",
@@ -371,6 +388,28 @@
    "yes_buy": 44,
    "no_buy": 61,
    "taken_at": "2026-10-24T10:33:01.494Z"
+  },
+  {
+   "market_id": "1716035",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Tommy Paul win set 2 against Taylor Fritz?",
+   "sides": [
+    "Yes: Tommy Paul win set 2 against Taylor Fritz",
+    "No: Tommy Paul win set 2 against Taylor Fritz"
+   ],
+   "teams": [
+    "Tommy Paul",
+    null
+   ],
+   "player": null,
+   "mid": 41,
+   "yes_buy": 42,
+   "no_buy": 60,
+   "taken_at": "2026-10-24T12:03:26.329Z"
   },
   {
    "market_id": "1716028",
@@ -417,6 +456,28 @@
    "taken_at": "2026-10-24T07:37:19.157Z"
   },
   {
+   "market_id": "1716024",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Tommy Paul cover -1.5 vs the Taylor Fritz in Tommy Paul vs. Taylor Fritz?",
+   "sides": [
+    "Tommy Paul -1.50 (Sets)",
+    "Taylor Fritz +1.50 (Sets)"
+   ],
+   "teams": [
+    "Tommy Paul",
+    "Taylor Fritz"
+   ],
+   "player": null,
+   "mid": 20.5,
+   "yes_buy": 21,
+   "no_buy": 80,
+   "taken_at": "2026-10-24T12:09:06.468Z"
+  },
+  {
    "market_id": "1716022",
    "market": "Games spread",
    "group": "game",
@@ -459,28 +520,6 @@
    "yes_buy": 21,
    "no_buy": 80,
    "taken_at": "2026-10-24T12:09:06.468Z"
-  },
-  {
-   "market_id": "1716024",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Tommy Paul cover -1.5 vs the Taylor Fritz in Tommy Paul vs. Taylor Fritz?",
-   "sides": [
-    "Tommy Paul -1.50 (Sets)",
-    "Taylor Fritz +1.50 (Sets)"
-   ],
-   "teams": [
-    "Tommy Paul",
-    "Taylor Fritz"
-   ],
-   "player": null,
-   "mid": 20.5,
-   "yes_buy": 21,
-   "no_buy": 80,
-   "taken_at": "2026-10-24T12:09:06.468Z"
   }
  ],
  "edges": [
@@ -492,15 +531,95 @@
    "question": "Will the total in Tommy Paul vs. Taylor Fritz be more than 22.5?",
    "side": "Under 22.5 (Games)",
    "open_chance": 42,
-   "now_chance": 29,
+   "now_chance": 32,
    "open_odds": "+138",
-   "now_odds": "+245",
-   "edge": 13,
+   "now_odds": "+213",
+   "edge": 10,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Taylor Fritz  · Tommy Paul  · 1st Set (games by set)",
+   "context": "Taylor Fritz 0 · Tommy Paul 0 · 1st Set (games by set)",
    "first_seen": "2026-10-24T12:09:06.468Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1715832:1",
+   "market_id": "1715832",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Tommy Paul vs Taylor Fritz scheduled for October 24, 2026 at 12:00 PM UTC?",
+   "side": "Taylor Fritz win",
+   "open_chance": 64,
+   "now_chance": 59,
+   "open_odds": "-178",
+   "now_odds": "-144",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Taylor Fritz 0 · Tommy Paul 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T12:17:04.301Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1716025:1",
+   "market_id": "1716025",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Tommy Paul cover 1.5 vs the Taylor Fritz in Tommy Paul vs. Taylor Fritz?",
+   "side": "Taylor Fritz -1.50 (Sets)",
+   "open_chance": 40,
+   "now_chance": 35,
+   "open_odds": "+150",
+   "now_odds": "+186",
+   "edge": 5,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Taylor Fritz not above the sets spread right now",
+   "context": "Taylor Fritz 0 · Tommy Paul 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T12:17:04.301Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1716034:1",
+   "market_id": "1716034",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Tommy Paul win set 1 against Taylor Fritz?",
+   "side": "No: Tommy Paul win set 1 against Taylor Fritz",
+   "open_chance": 61,
+   "now_chance": 56,
+   "open_odds": "-156",
+   "now_odds": "-127",
+   "edge": 5,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Tommy Paul not above the games spread right now",
+   "context": "Taylor Fritz 0 · Tommy Paul 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T11:16:01.005Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1716019:1",
+   "market_id": "1716019",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Tommy Paul cover 1.5 vs the Taylor Fritz in Tommy Paul vs. Taylor Fritz?",
+   "side": "Taylor Fritz -1.50 (Games)",
+   "open_chance": 57,
+   "now_chance": 53,
+   "open_odds": "-133",
+   "now_odds": "-113",
+   "edge": 4,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Taylor Fritz not above the games spread right now",
+   "context": "Taylor Fritz 0 · Tommy Paul 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T12:17:04.301Z",
    "status": "open",
    "kalshi": null
   },
@@ -521,31 +640,39 @@
    "reason": null,
    "context": "Taylor Fritz  · Tommy Paul  · 1st Set (games by set)",
    "first_seen": "2026-10-24T12:10:55.855Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1716034:1",
-   "market_id": "1716034",
-   "market": "Set 1 winner",
-   "group": "game",
-   "question": "Will Tommy Paul win set 1 against Taylor Fritz?",
-   "side": "No: Tommy Paul win set 1 against Taylor Fritz",
-   "open_chance": 61,
-   "now_chance": 56,
-   "open_odds": "-156",
-   "now_odds": "-127",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-10-24T11:16:01.005Z",
    "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1715832:1:slight",
+   "key": "1715832:1",
+   "at": "2026-10-24T12:17:04.301Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Taylor Fritz win",
+   "market": "Moneyline",
+   "now_odds": "-144",
+   "now_chance": 59,
+   "edge": 5,
+   "text": "New slight edge: Taylor Fritz win (Moneyline), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-tompau-tayfri-2026-10-24"
+  },
+  {
+   "id": "gone:1716034:0:2026-10-24T12:10:55.855Z",
+   "key": "1716034:0",
+   "at": "2026-10-24T12:17:04.301Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Yes: Tommy Paul win set 1 against Taylor Fritz",
+   "market": "Set 1 winner",
+   "now_odds": "+150",
+   "now_chance": 40,
+   "edge": 4,
+   "text": "Edge gone: Yes: Tommy Paul win set 1 against Taylor Fritz (Set 1 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-tompau-tayfri-2026-10-24"
+  },
   {
    "id": "new_edge:1716034:0:slight",
    "key": "1716034:0",
@@ -607,7 +734,9 @@
   "new_edge:1716034:1:slight",
   "new_edge:1716027:1:big",
   "new_edge:1716034:0:slight",
-  "gone:1716034:1:2026-10-24T11:16:01.005Z"
+  "gone:1716034:1:2026-10-24T11:16:01.005Z",
+  "new_edge:1715832:1:slight",
+  "gone:1716034:0:2026-10-24T12:10:55.855Z"
  ],
  "kalshi_checked": null
 }
