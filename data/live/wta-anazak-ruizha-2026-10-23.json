@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187138",
-  "fetched_at": "2026-10-24T14:23:10.817Z",
+  "fetched_at": "2026-10-24T14:29:15.620Z",
   "tennis": true,
   "tennis_match": {
    "id": "187138",
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 2,
@@ -101,6 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 6,
@@ -142,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 232,
    "type": {
     "id": "2",
@@ -179,13 +186,35 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T14:23:10.572Z",
+ "updated": "2026-10-24T14:29:15.458Z",
  "open_taken_at": "2026-10-23T11:46:53.606Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1709639",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Anastasia Zakharova cover -4.5 vs the Ruien Zhang in Anastasia Zakharova vs. Ruien Zhang?",
+   "sides": [
+    "Anastasia Zakharova -4.50 (Games)",
+    "Ruien Zhang +4.50 (Games)"
+   ],
+   "teams": [
+    "Anastasia Zakharova",
+    "Ruien Zhang"
+   ],
+   "player": null,
+   "mid": 60,
+   "yes_buy": 61,
+   "no_buy": 41,
+   "taken_at": "2026-10-24T11:47:59.865Z"
+  },
   {
    "market_id": "1709655",
    "market": "Games total",
@@ -451,28 +480,6 @@
    "taken_at": "2026-10-24T10:47:52.251Z"
   },
   {
-   "market_id": "1709639",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Anastasia Zakharova cover -4.5 vs the Ruien Zhang in Anastasia Zakharova vs. Ruien Zhang?",
-   "sides": [
-    "Anastasia Zakharova -4.50 (Games)",
-    "Ruien Zhang +4.50 (Games)"
-   ],
-   "teams": [
-    "Anastasia Zakharova",
-    "Ruien Zhang"
-   ],
-   "player": null,
-   "mid": 60,
-   "yes_buy": 61,
-   "no_buy": 41,
-   "taken_at": "2026-10-24T11:47:59.865Z"
-  },
-  {
    "market_id": "1709650",
    "market": "Sets spread",
    "group": "game",
@@ -597,26 +604,6 @@
    "first_seen": "2026-10-24T13:34:09.216Z",
    "status": "gone",
    "kalshi": null
-  },
-  {
-   "key": "1709639:1",
-   "market_id": "1709639",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Anastasia Zakharova cover -4.5 vs the Ruien Zhang in Anastasia Zakharova vs. Ruien Zhang?",
-   "side": "Ruien Zhang +4.50 (Games)",
-   "open_chance": 41,
-   "now_chance": 33,
-   "open_odds": "+144",
-   "now_odds": "+203",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Zhang Ruien 1 · Anastasia Zakharova 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-24T11:54:20.028Z",
-   "status": "gone",
-   "kalshi": null
   }
  ],
  "alerts": [
@@ -688,48 +675,6 @@
    "now_chance": 43,
    "edge": 22,
    "text": "New big edge: Ruien Zhang +7.50 (Games) (Games spread), 22 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-anazak-ruizha-2026-10-23"
-  },
-  {
-   "id": "new_edge:1709639:1:slight",
-   "key": "1709639:1",
-   "at": "2026-10-24T13:36:59.192Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Ruien Zhang +4.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+203",
-   "now_chance": 33,
-   "edge": 8,
-   "text": "New slight edge: Ruien Zhang +4.50 (Games) (Games spread), 8 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-anazak-ruizha-2026-10-23"
-  },
-  {
-   "id": "gone:1709639:1:2026-10-24T11:54:20.028Z",
-   "key": "1709639:1",
-   "at": "2026-10-24T13:34:09.216Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Ruien Zhang +4.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+257",
-   "now_chance": 28,
-   "edge": 13,
-   "text": "Edge gone: Ruien Zhang +4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-anazak-ruizha-2026-10-23"
-  },
-  {
-   "id": "new_edge:1709639:1:big",
-   "key": "1709639:1",
-   "at": "2026-10-24T12:10:54.933Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Ruien Zhang +4.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+233",
-   "now_chance": 30,
-   "edge": 11,
-   "text": "New big edge: Ruien Zhang +4.50 (Games) (Games spread), 11 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-anazak-ruizha-2026-10-23"
   }
  ],

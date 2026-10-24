@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for eflch",
-  "fetched_at": "2026-10-24T14:23:07.055Z"
+  "fetched_at": "2026-10-24T14:29:12.462Z"
  },
- "updated": "2026-10-24T14:23:07.050Z",
+ "updated": "2026-10-24T14:29:12.458Z",
  "open_taken_at": "2026-10-23T05:00:38.653Z",
  "thresholds": {
   "big": 10,
@@ -39,6 +39,28 @@
    "yes_buy": 40,
    "no_buy": 62,
    "taken_at": "2026-10-23T05:00:38.653Z"
+  },
+  {
+   "market_id": "1712220",
+   "market": "Main spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": -1.5,
+   "question": "Will the Queens Park Rangers FC cover -1.5 vs the Swansea City AFC in QPR vs SWA?",
+   "sides": [
+    "Queens Park Rangers FC -1.50",
+    "Swansea City AFC +1.50"
+   ],
+   "teams": [
+    "Queens Park Rangers FC",
+    "Swansea City AFC"
+   ],
+   "player": null,
+   "mid": 16.5,
+   "yes_buy": 18,
+   "no_buy": 85,
+   "taken_at": "2026-10-24T03:05:42.593Z"
   },
   {
    "market_id": "1712219",
@@ -82,28 +104,6 @@
    "mid": 5.5,
    "yes_buy": 7,
    "no_buy": 96,
-   "taken_at": "2026-10-24T03:05:42.593Z"
-  },
-  {
-   "market_id": "1712220",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": -1.5,
-   "question": "Will the Queens Park Rangers FC cover -1.5 vs the Swansea City AFC in QPR vs SWA?",
-   "sides": [
-    "Queens Park Rangers FC -1.50",
-    "Swansea City AFC +1.50"
-   ],
-   "teams": [
-    "Queens Park Rangers FC",
-    "Swansea City AFC"
-   ],
-   "player": null,
-   "mid": 16.5,
-   "yes_buy": 18,
-   "no_buy": 85,
    "taken_at": "2026-10-24T03:05:42.593Z"
   },
   {
@@ -307,26 +307,6 @@
  ],
  "edges": [
   {
-   "key": "1712220:1",
-   "market_id": "1712220",
-   "market": "Alt spread",
-   "group": "game",
-   "question": "Will the Queens Park Rangers FC cover -1.5 vs the Swansea City AFC in QPR vs SWA?",
-   "side": "Swansea City AFC +1.50",
-   "open_chance": 85,
-   "now_chance": 18,
-   "open_odds": "-567",
-   "now_odds": "+456",
-   "edge": 67,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-24T14:17:05.150Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1712219:1",
    "market_id": "1712219",
    "market": "Main spread",
@@ -343,7 +323,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T14:17:05.150Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -363,7 +343,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T14:17:05.150Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -383,23 +363,51 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T14:17:05.150Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
   {
-   "id": "new_edge:1712220:1:big",
-   "key": "1712220:1",
-   "at": "2026-10-24T14:17:05.150Z",
-   "type": "new_edge",
+   "id": "gone:1712219:1:2026-10-24T14:17:05.150Z",
+   "key": "1712219:1",
+   "at": "2026-10-24T14:29:12.458Z",
+   "type": "gone",
    "tier": "big",
-   "side": "Swansea City AFC +1.50",
-   "market": "Alt spread",
-   "now_odds": "+376",
-   "now_chance": 21,
-   "edge": 64,
-   "text": "New big edge: Swansea City AFC +1.50 (Alt spread), 64 points cheaper than open.",
+   "side": "Swansea City AFC +2.50",
+   "market": "Main spread",
+   "now_odds": "+150",
+   "now_chance": 40,
+   "edge": 56,
+   "text": "Edge gone: Swansea City AFC +2.50 (Main spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/eflch/eflch-qpr-swa-2026-10-24"
+  },
+  {
+   "id": "gone:1712263:1:2026-10-24T14:17:05.150Z",
+   "key": "1712263:1",
+   "at": "2026-10-24T14:29:12.458Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 4.5",
+   "market": "Alt total",
+   "now_odds": "+203",
+   "now_chance": 33,
+   "edge": 55,
+   "text": "Edge gone: Under 4.5 (Alt total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/eflch/eflch-qpr-swa-2026-10-24"
+  },
+  {
+   "id": "gone:1712264:1:2026-10-24T14:17:05.150Z",
+   "key": "1712264:1",
+   "at": "2026-10-24T14:29:12.458Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 5.5",
+   "market": "Main total",
+   "now_odds": "-150",
+   "now_chance": 60,
+   "edge": 36,
+   "text": "Edge gone: Under 5.5 (Main total) is no longer 4+ points cheaper than open.",
    "url": "https://polymarket.us/sports/eflch/eflch-qpr-swa-2026-10-24"
   },
   {
@@ -450,7 +458,10 @@
   "new_edge:1712220:1:big",
   "new_edge:1712263:1:big",
   "new_edge:1712219:1:big",
-  "new_edge:1712264:1:big"
+  "new_edge:1712264:1:big",
+  "gone:1712219:1:2026-10-24T14:17:05.150Z",
+  "gone:1712263:1:2026-10-24T14:17:05.150Z",
+  "gone:1712264:1:2026-10-24T14:17:05.150Z"
  ],
  "kalshi_checked": null
 }
