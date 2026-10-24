@@ -1734,3 +1734,7 @@ Reed requested immediate deployment of the customizable allocation. A Layout sel
 Pagination sizing follow-up: category Previous/Next controls now use the same column tracks as their cards, one card-width per button. The page count occupies a separate full-width row, including asymmetric and single-category layouts.
 
 Oct 24 pagination refinement: Reed requested Previous/Next slightly narrower than cards. Each button is centered within its existing card track with a 4px inset per side; paging, layout allocation and refresh behavior are unchanged.
+
+
+## 168. Compact visual layout chooser (Oct 24)
+Reed requested one Layout button that reveals visual arrangement options. Replaced the wide native select with a native details/summary disclosure and five miniature four-column previews, a game-line/prop-bet legend, numeric splits, exact accessible option labels and pressed state. Selection saves the same preference, closes the chooser, and returns focus to its trigger; Escape closes it. Existing allocation, six-item paging and all refresh behavior remain unchanged. Previous/Next retains the separately requested 4px inset per side.

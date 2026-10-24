@@ -747,4 +747,4 @@ window.STR.liveScoreboard.conferences={empty:"No games in this group today.",tit
 
 window.STR.listPaging={log:"Bet log",previous:"Previous",next:"Next",range:(start,end,total)=>`${start}–${end} of ${total}`};
 
-window.STR.liveLayout={title:"Layout",split:(game,prop)=>`${game} game lines / ${prop} prop bets`};
+window.STR.liveLayout={title:"Layout",game:"Game lines",prop:"Prop bets",split:(game,prop)=>`${game} game lines / ${prop} prop bets`};

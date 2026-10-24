@@ -441,11 +441,15 @@
       button.onclick = () => { ui.filter = key; ui.game = ui.prop = false; ui.redraw(); box.querySelector('.lb-filter.lb-on').focus(); }; filters.append(button);
     });
     controls.append(filters);
-    const layoutLabel=el('label','lb-layout-control',root.STR.liveLayout.title),layoutSelect=el('select','lb-layout-select');
-    layoutSelect.setAttribute('aria-label',root.STR.liveLayout.title);
-    for(let n=4;n>=0;n--){const option=el('option',null,root.STR.liveLayout.split(n,4-n));option.value=String(n);layoutSelect.append(option);}
-    layoutSelect.value=String(layout(ui.layout));layoutSelect.onchange=()=>{ui.layout=layout(layoutSelect.value);ui.game=ui.prop=0;try{root.localStorage.setItem(LAYOUT_KEY,String(ui.layout));}catch{}ui.redraw();box.querySelector('.lb-layout-select')?.focus({preventScroll:true});};
-    layoutLabel.append(layoutSelect);controls.append(layoutLabel);box.append(controls);
+    const layoutPanel=el('details','lb-layout-control'),layoutButton=el('summary','lb-layout-trigger',root.STR.liveLayout.title),choices=el('div','lb-layout-options');
+    choices.setAttribute('role','group');choices.setAttribute('aria-label',root.STR.liveLayout.title);
+    for(let n=4;n>=0;n--){
+      const button=el('button','lb-layout-option'),preview=el('span','lb-layout-preview');button.type='button';button.setAttribute('aria-label',root.STR.liveLayout.split(n,4-n));button.setAttribute('aria-pressed',String(layout(ui.layout)===n));
+      preview.setAttribute('aria-hidden','true');for(let col=0;col<4;col++){const track=el('span',col<n?'lb-layout-game':'lb-layout-prop');for(let row=0;row<2;row++)track.append(el('i'));preview.append(track);}
+      button.append(preview,el('span','lb-layout-caption',n+' / '+(4-n)));button.onclick=()=>{ui.layout=n;ui.game=ui.prop=0;try{root.localStorage.setItem(LAYOUT_KEY,String(n));}catch{}ui.redraw();box.querySelector('.lb-layout-trigger')?.focus({preventScroll:true});};choices.append(button);
+    }
+    const legend=el('div','lb-layout-legend');legend.append(el('span','lb-layout-game',root.STR.liveLayout.game),el('span','lb-layout-prop',root.STR.liveLayout.prop));
+    layoutPanel.append(layoutButton,choices,legend);layoutPanel.addEventListener('keydown',event=>{if(event.key==='Escape'){layoutPanel.open=false;layoutButton.focus();}});controls.append(layoutPanel);box.append(controls);
     const notice = el('div', 'lb-notice');
     notice.append(el('span', null, selection.counts.new ? P.newCount(selection.counts.new) : P.caughtUp));
     if (selection.counts.new) {

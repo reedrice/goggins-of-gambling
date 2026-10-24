@@ -477,3 +477,19 @@ body { background-attachment: scroll; }
 .live-bets-root .lb-group .lb-page-controls .lb-more { width:calc(100% - 8px); justify-self:center; min-width:0; margin:0; box-sizing:border-box; }
 .live-bets-root .lb-group .lb-page-controls > span { grid-column:1 / -1; }
 @media(max-width:1023px){.live-bets-root .lb-group .lb-page-controls { grid-template-columns:repeat(2,minmax(0,1fr)); }}
+
+/* One disclosure opens five visual layout previews, with no overlay or extra loop. */
+.live-bets-root .lb-layout-control { display:block; width:fit-content; max-width:100%; margin-block:12px; }
+.lb-layout-trigger { display:list-item; width:fit-content; box-sizing:border-box; min-height:44px; padding:12px 16px; border:1px solid var(--panel-border); border-radius:var(--radius-control); background:var(--surface-panel); color:var(--text-primary); cursor:pointer; font-weight:var(--weight-heading); }
+.lb-layout-options { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:8px; margin-top:12px; max-width:480px; }
+.lb-layout-option { min-width:0; min-height:72px; padding:10px; border:1px solid var(--panel-border); border-radius:var(--radius-control); background:var(--surface-panel); color:var(--text-secondary); cursor:pointer; }
+.lb-layout-option[aria-pressed="true"] { border-color:var(--accent); background:var(--selection-fill); color:var(--text-primary); }
+.lb-layout-preview { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:3px; width:54px; max-width:100%; margin:auto auto 6px; }
+.lb-layout-preview > span { display:grid; gap:3px; }
+.lb-layout-preview i { display:block; height:12px; border-radius:2px; background:currentColor; }
+.lb-layout-game { color:var(--accent); }
+.lb-layout-prop { color:var(--text-secondary); }
+.lb-layout-caption { font-size:12px; font-weight:var(--weight-heading); }
+.lb-layout-legend { display:flex; gap:16px; margin-top:8px; font-size:12px; }
+.lb-layout-legend > span::before { content:''; display:inline-block; width:8px; height:8px; margin-right:5px; background:currentColor; border-radius:2px; }
+.lb-layout-control:not([open]) > :not(summary) { display:none; }
