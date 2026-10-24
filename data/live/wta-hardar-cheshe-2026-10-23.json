@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187131",
-  "fetched_at": "2026-10-24T12:09:05.881Z",
+  "fetched_at": "2026-10-24T12:10:55.287Z",
   "tennis": true,
   "tennis_match": {
    "id": "187131",
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 7,
@@ -101,6 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 5,
@@ -142,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 232,
    "type": {
     "id": "2",
@@ -179,13 +186,35 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T12:09:05.725Z",
+ "updated": "2026-10-24T12:10:55.183Z",
  "open_taken_at": "2026-10-23T12:21:56.993Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1709716",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Harriet Dart cover 1.5 vs the Cheuk Ying Shek in Harriet Dart vs. Cheuk Ying Shek?",
+   "sides": [
+    "Harriet Dart +1.50 (Games)",
+    "Cheuk Ying Shek -1.50 (Games)"
+   ],
+   "teams": [
+    "Harriet Dart",
+    "Cheuk Ying Shek"
+   ],
+   "player": null,
+   "mid": 60.5,
+   "yes_buy": 61,
+   "no_buy": 40,
+   "taken_at": "2026-10-24T09:49:49.289Z"
+  },
   {
    "market_id": "1708504",
    "market": "Moneyline",
@@ -229,28 +258,6 @@
    "yes_buy": 84,
    "no_buy": 22,
    "taken_at": "2026-10-24T10:33:00.475Z"
-  },
-  {
-   "market_id": "1709716",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Harriet Dart cover 1.5 vs the Cheuk Ying Shek in Harriet Dart vs. Cheuk Ying Shek?",
-   "sides": [
-    "Harriet Dart +1.50 (Games)",
-    "Cheuk Ying Shek -1.50 (Games)"
-   ],
-   "teams": [
-    "Harriet Dart",
-    "Cheuk Ying Shek"
-   ],
-   "player": null,
-   "mid": 60.5,
-   "yes_buy": 61,
-   "no_buy": 40,
-   "taken_at": "2026-10-24T09:49:49.289Z"
   },
   {
    "market_id": "1709714",
@@ -497,26 +504,6 @@
  ],
  "edges": [
   {
-   "key": "1708504:0",
-   "market_id": "1708504",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Harriet Dart vs Cheuk Ying Shek scheduled for October 24, 2026 at 3:00 AM UTC?",
-   "side": "Harriet Dart win",
-   "open_chance": 92,
-   "now_chance": 72,
-   "open_odds": "-1150",
-   "now_odds": "-257",
-   "edge": 20,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Harriet Dart trailing in sets",
-   "context": "Cheuk Ying Shek 7, 5 · Harriet Dart 5, 6 · 2nd Set (games by set)",
-   "first_seen": "2026-10-24T11:15:59.916Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1709735:1",
    "market_id": "1709735",
    "market": "Games total",
@@ -613,6 +600,26 @@
    "reason": null,
    "context": "Cheuk Ying Shek 5 · Harriet Dart 5 · 1st Set (games by set)",
    "first_seen": "2026-10-24T10:36:07.678Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1708504:0",
+   "market_id": "1708504",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Harriet Dart vs Cheuk Ying Shek scheduled for October 24, 2026 at 3:00 AM UTC?",
+   "side": "Harriet Dart win",
+   "open_chance": 92,
+   "now_chance": 72,
+   "open_odds": "-1150",
+   "now_odds": "-257",
+   "edge": 20,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Harriet Dart trailing in sets",
+   "context": "Cheuk Ying Shek 7, 5 · Harriet Dart 5, 6 · 2nd Set (games by set)",
+   "first_seen": "2026-10-24T11:15:59.916Z",
    "status": "gone",
    "kalshi": null
   },
