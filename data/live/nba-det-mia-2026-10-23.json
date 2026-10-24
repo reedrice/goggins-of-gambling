@@ -9,24 +9,24 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401909847",
-  "fetched_at": "2026-10-24T00:07:35.077Z",
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 0,
-  "clock": null,
-  "regulation_secs_left": 3600,
+  "fetched_at": "2026-10-24T00:13:39.157Z",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
+  "period": 1,
+  "clock": "11:20",
+  "regulation_secs_left": 3380,
   "home": {
    "abbr": "MIA",
    "alias": "Heat",
    "name": "Miami Heat",
-   "score": null,
+   "score": 0,
    "id": "14"
   },
   "away": {
    "abbr": "DET",
    "alias": "Pistons",
    "name": "Detroit Pistons",
-   "score": null,
+   "score": 6,
    "id": "8"
   },
   "possession": null,
@@ -40,38 +40,14 @@
     "pos": "F"
    },
    {
-    "team": "MIA",
-    "player": "Davion Mitchell",
-    "short": "D. Mitchell",
-    "pos": "G"
-   },
-   {
-    "team": "MIA",
-    "player": "Bam Adebayo",
-    "short": "B. Adebayo",
+    "team": "DET",
+    "player": "Jalen Duren",
+    "short": "J. Duren",
     "pos": "C"
-   },
-   {
-    "team": "DET",
-    "player": "Cade Cunningham",
-    "short": "C. Cunningham",
-    "pos": "G"
-   },
-   {
-    "team": "DET",
-    "player": "Cade Cunningham",
-    "short": "C. Cunningham",
-    "pos": "G"
-   },
-   {
-    "team": "DET",
-    "player": "Ausar Thompson",
-    "short": "A. Thompson",
-    "pos": "G"
    }
   ]
  },
- "updated": "2026-10-24T00:07:35.079Z",
+ "updated": "2026-10-24T00:13:39.161Z",
  "open_taken_at": "2026-10-22T05:01:15.018Z",
  "thresholds": {
   "big": 10,
@@ -147,26 +123,6 @@
  ],
  "edges": [
   {
-   "key": "1669752:1",
-   "market_id": "1669752",
-   "market": "Main spread",
-   "group": "game",
-   "question": "Will the DET Pistons cover 2.5 vs the MIA Heat in DET Pistons vs. MIA Heat?",
-   "side": "Heat -2.50",
-   "open_chance": 51,
-   "now_chance": 41,
-   "open_odds": "-104",
-   "now_odds": "+144",
-   "edge": 10,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-10-22T18:50:18.232Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1305782:1",
    "market_id": "1305782",
    "market": "Moneyline",
@@ -174,17 +130,37 @@
    "question": "Who will win in the upcoming basketball event DET Pistons vs MIA Heat scheduled for October 24, 2026 at 12:00 AM UTC?",
    "side": "Heat win",
    "open_chance": 55,
-   "now_chance": 47,
+   "now_chance": 37,
    "open_odds": "-122",
-   "now_odds": "+113",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
+   "now_odds": "+170",
+   "edge": 18,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: MIA trailing by 6",
+   "context": "MIA down 6, Q1 11:20",
    "first_seen": "2026-10-22T22:03:21.292Z",
    "status": "open",
    "kalshi": true
+  },
+  {
+   "key": "1669752:1",
+   "market_id": "1669752",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will the DET Pistons cover 2.5 vs the MIA Heat in DET Pistons vs. MIA Heat?",
+   "side": "Heat -2.50",
+   "open_chance": 51,
+   "now_chance": 33,
+   "open_odds": "-104",
+   "now_odds": "+203",
+   "edge": 18,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: MIA not covering -2.5 right now",
+   "context": "MIA down 6, Q1 11:20",
+   "first_seen": "2026-10-22T18:50:18.232Z",
+   "status": "open",
+   "kalshi": null
   },
   {
    "key": "1669763:1",
@@ -201,9 +177,9 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "DET 6, MIA 0, Q1 11:20",
    "first_seen": "2026-10-22T06:52:59.551Z",
-   "status": "gone",
+   "status": "open",
    "kalshi": null
   },
   {
@@ -228,6 +204,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1669763:1:slight",
+   "key": "1669763:1",
+   "at": "2026-10-24T00:13:39.161Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Under 235.5",
+   "market": "Main total",
+   "now_odds": "+108",
+   "now_chance": 48,
+   "edge": 4,
+   "text": "New slight edge: Under 235.5 (Main total), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/nba/nba-det-mia-2026-10-23"
+  },
   {
    "id": "new_edge:1669752:1:big",
    "key": "1669752:1",
@@ -274,7 +264,8 @@
  "alert_seen": [
   "gone:1669763:1:2026-10-22T06:52:59.551Z",
   "new_edge:1669752:1:big",
-  "new_edge:1305782:1:slight"
+  "new_edge:1305782:1:slight",
+  "new_edge:1669763:1:slight"
  ],
  "prop_test_candidates": [
   {
@@ -286,7 +277,7 @@
    "side_index": 0,
    "ask": 0.83,
    "bid": 0.82,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1693873",
@@ -295,9 +286,20 @@
    "question": "Will Bobby Portis record at least 5 points in DET Pistons vs. MIA Heat?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.82,
+   "ask": 0.83,
    "bid": 0.81,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
+  },
+  {
+   "market_id": "1677900",
+   "player": "Davion Mitchell",
+   "period": "full_game",
+   "question": "Will Davion Mitchell record at least 5 points in DET Pistons vs. MIA Heat?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.83,
+   "bid": 0.78,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677736",
@@ -308,18 +310,7 @@
    "side_index": 0,
    "ask": 0.8,
    "bid": 0.79,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1700227",
-   "player": "Tim Hardaway Jr.",
-   "period": "full_game",
-   "question": "Will Tim Hardaway Jr. record at least 1 three-point field goals made in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.8,
-   "bid": 0.78,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1727793",
@@ -329,8 +320,8 @@
    "sides": [],
    "side_index": 0,
    "ask": 0.8,
-   "bid": 0.79,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "bid": 0.76,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1727843",
@@ -341,7 +332,18 @@
    "side_index": 0,
    "ask": 0.78,
    "bid": 0.77,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
+  },
+  {
+   "market_id": "1727803",
+   "player": "Giannis Antetokounmpo",
+   "period": "full_game",
+   "question": "Will Giannis Antetokounmpo record at least 4 assists in DET Pistons vs. MIA Heat?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.78,
+   "bid": 0.73,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1693881",
@@ -352,7 +354,7 @@
    "side_index": 0,
    "ask": 0.75,
    "bid": 0.74,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1727809",
@@ -363,29 +365,7 @@
    "side_index": 0,
    "ask": 0.75,
    "bid": 0.74,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1677663",
-   "player": "Cade Cunningham",
-   "period": "full_game",
-   "question": "Will Cade Cunningham record at least 20 points in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.75,
-   "bid": 0.74,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1677721",
-   "player": "Giannis Antetokounmpo",
-   "period": "full_game",
-   "question": "Will Giannis Antetokounmpo record at least 8 total rebounds in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.75,
-   "bid": 0.74,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677762",
@@ -396,7 +376,7 @@
    "side_index": 0,
    "ask": 0.75,
    "bid": 0.74,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1727814",
@@ -407,7 +387,7 @@
    "side_index": 0,
    "ask": 0.73,
    "bid": 0.72,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1727762",
@@ -417,8 +397,8 @@
    "sides": [],
    "side_index": 0,
    "ask": 0.73,
-   "bid": 0.71,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "bid": 0.68,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1679379",
@@ -429,7 +409,7 @@
    "side_index": 0,
    "ask": 0.72,
    "bid": 0.71,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1700177",
@@ -440,7 +420,7 @@
    "side_index": 0,
    "ask": 0.72,
    "bid": 0.71,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1700239",
@@ -451,7 +431,7 @@
    "side_index": 0,
    "ask": 0.72,
    "bid": 0.71,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1727805",
@@ -462,7 +442,7 @@
    "side_index": 0,
    "ask": 0.71,
    "bid": 0.7,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1727753",
@@ -473,18 +453,7 @@
    "side_index": 0,
    "ask": 0.7,
    "bid": 0.69,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1677712",
-   "player": "Giannis Antetokounmpo",
-   "period": "full_game",
-   "question": "Will Giannis Antetokounmpo record at least 25 points in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.69,
-   "bid": 0.67,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1693892",
@@ -495,7 +464,7 @@
    "side_index": 0,
    "ask": 0.69,
    "bid": 0.68,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1700172",
@@ -506,18 +475,7 @@
    "side_index": 0,
    "ask": 0.69,
    "bid": 0.68,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1700147",
-   "player": "Duncan Robinson",
-   "period": "full_game",
-   "question": "Will Duncan Robinson record at least 2 three-point field goals made in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.68,
-   "bid": 0.67,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677783",
@@ -528,18 +486,7 @@
    "side_index": 0,
    "ask": 0.68,
    "bid": 0.66,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1679312",
-   "player": "John Collins",
-   "period": "full_game",
-   "question": "Will John Collins record at least 10 points in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.68,
-   "bid": 0.67,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1700217",
@@ -548,9 +495,9 @@
    "question": "Will Tim Hardaway Jr. record at least 5 points in DET Pistons vs. MIA Heat?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.67,
+   "ask": 0.68,
    "bid": 0.66,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1727824",
@@ -561,7 +508,7 @@
    "side_index": 0,
    "ask": 0.67,
    "bid": 0.66,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1700160",
@@ -572,29 +519,7 @@
    "side_index": 0,
    "ask": 0.67,
    "bid": 0.66,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1677787",
-   "player": "Bam Adebayo",
-   "period": "full_game",
-   "question": "Will Bam Adebayo record at least 15 points in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.66,
-   "bid": 0.65,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1677757",
-   "player": "Jalen Duren",
-   "period": "full_game",
-   "question": "Will Jalen Duren record at least 15 points in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.66,
-   "bid": 0.65,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1693898",
@@ -605,7 +530,7 @@
    "side_index": 0,
    "ask": 0.65,
    "bid": 0.63,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1727766",
@@ -615,8 +540,8 @@
    "sides": [],
    "side_index": 0,
    "ask": 0.65,
-   "bid": 0.64,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "bid": 0.6,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1693877",
@@ -627,7 +552,7 @@
    "side_index": 0,
    "ask": 0.63,
    "bid": 0.62,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677753",
@@ -638,18 +563,7 @@
    "side_index": 0,
    "ask": 0.62,
    "bid": 0.61,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1679375",
-   "player": "John Collins",
-   "period": "full_game",
-   "question": "Will John Collins record at least 1 three-point field goals made in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.62,
-   "bid": 0.61,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677767",
@@ -660,18 +574,7 @@
    "side_index": 0,
    "ask": 0.62,
    "bid": 0.61,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1693905",
-   "player": "Bam Adebayo",
-   "period": "full_game",
-   "question": "Will Bam Adebayo record at least 1 blocks in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.62,
-   "bid": 0.58,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1693903",
@@ -682,7 +585,7 @@
    "side_index": 0,
    "ask": 0.62,
    "bid": 0.61,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677688",
@@ -692,8 +595,41 @@
    "sides": [],
    "side_index": 0,
    "ask": 0.62,
-   "bid": 0.6,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "bid": 0.57,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
+  },
+  {
+   "market_id": "1700229",
+   "player": "Tim Hardaway Jr.",
+   "period": "full_game",
+   "question": "Will Tim Hardaway Jr. record at least 2 three-point field goals made in DET Pistons vs. MIA Heat?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.61,
+   "bid": 0.56,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
+  },
+  {
+   "market_id": "1693905",
+   "player": "Bam Adebayo",
+   "period": "full_game",
+   "question": "Will Bam Adebayo record at least 1 blocks in DET Pistons vs. MIA Heat?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.61,
+   "bid": 0.57,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
+  },
+  {
+   "market_id": "1677774",
+   "player": "Andrew Wiggins",
+   "period": "full_game",
+   "question": "Will Andrew Wiggins record at least 4 total rebounds in DET Pistons vs. MIA Heat?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.61,
+   "bid": 0.58,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677792",
@@ -704,40 +640,7 @@
    "side_index": 0,
    "ask": 0.61,
    "bid": 0.6,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1679316",
-   "player": "John Collins",
-   "period": "full_game",
-   "question": "Will John Collins record at least 5 total rebounds in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.61,
-   "bid": 0.59,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1677695",
-   "player": "Ausar Thompson",
-   "period": "full_game",
-   "question": "Will Ausar Thompson record at least 4 assists in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.6,
-   "bid": 0.59,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1677749",
-   "player": "Cade Cunningham",
-   "period": "full_game",
-   "question": "Will Cade Cunningham record at least 5 total rebounds in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.6,
-   "bid": 0.59,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1693896",
@@ -748,7 +651,7 @@
    "side_index": 0,
    "ask": 0.6,
    "bid": 0.57,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1700212",
@@ -759,7 +662,7 @@
    "side_index": 0,
    "ask": 0.6,
    "bid": 0.59,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677784",
@@ -769,8 +672,8 @@
    "sides": [],
    "side_index": 0,
    "ask": 0.59,
-   "bid": 0.58,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "bid": 0.54,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1700187",
@@ -781,18 +684,7 @@
    "side_index": 0,
    "ask": 0.59,
    "bid": 0.57,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1677774",
-   "player": "Andrew Wiggins",
-   "period": "full_game",
-   "question": "Will Andrew Wiggins record at least 4 total rebounds in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.59,
-   "bid": 0.58,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1727832",
@@ -803,7 +695,7 @@
    "side_index": 0,
    "ask": 0.59,
    "bid": 0.58,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1700143",
@@ -813,8 +705,8 @@
    "sides": [],
    "side_index": 0,
    "ask": 0.58,
-   "bid": 0.57,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "bid": 0.55,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677779",
@@ -825,18 +717,7 @@
    "side_index": 0,
    "ask": 0.57,
    "bid": 0.56,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1693901",
-   "player": "Jalen Duren",
-   "period": "full_game",
-   "question": "Will Jalen Duren record at least 1 blocks in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.57,
-   "bid": 0.56,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1693874",
@@ -847,29 +728,7 @@
    "side_index": 0,
    "ask": 0.57,
    "bid": 0.56,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1700134",
-   "player": "Duncan Robinson",
-   "period": "full_game",
-   "question": "Will Duncan Robinson record at least 10 points in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.57,
-   "bid": 0.56,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1677723",
-   "player": "Giannis Antetokounmpo",
-   "period": "full_game",
-   "question": "Will Giannis Antetokounmpo record at least 10 total rebounds in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.57,
-   "bid": 0.53,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677781",
@@ -880,51 +739,7 @@
    "side_index": 0,
    "ask": 0.56,
    "bid": 0.55,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1700229",
-   "player": "Tim Hardaway Jr.",
-   "period": "full_game",
-   "question": "Will Tim Hardaway Jr. record at least 2 three-point field goals made in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.56,
-   "bid": 0.55,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1677905",
-   "player": "Davion Mitchell",
-   "period": "full_game",
-   "question": "Will Davion Mitchell record at least 6 assists in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.56,
-   "bid": 0.55,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1677686",
-   "player": "Ausar Thompson",
-   "period": "full_game",
-   "question": "Will Ausar Thompson record at least 10 points in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.54,
-   "bid": 0.53,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1677763",
-   "player": "Jalen Duren",
-   "period": "full_game",
-   "question": "Will Jalen Duren record at least 10 total rebounds in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.54,
-   "bid": 0.53,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1700183",
@@ -935,7 +750,7 @@
    "side_index": 0,
    "ask": 0.54,
    "bid": 0.53,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1727818",
@@ -945,30 +760,8 @@
    "sides": [],
    "side_index": 0,
    "ask": 0.53,
-   "bid": 0.52,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1694569",
-   "player": "Bobby Portis",
-   "period": "full_game",
-   "question": "Will Bobby Portis record at least 2 assists in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.5,
-   "bid": 0.49,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1700149",
-   "player": "Duncan Robinson",
-   "period": "full_game",
-   "question": "Will Duncan Robinson record at least 3 three-point field goals made in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.49,
-   "bid": 0.47,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "bid": 0.48,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677664",
@@ -977,9 +770,9 @@
    "question": "Will Cade Cunningham record at least 25 points in DET Pistons vs. MIA Heat?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.49,
+   "ask": 0.5,
    "bid": 0.48,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1700198",
@@ -990,7 +783,7 @@
    "side_index": 0,
    "ask": 0.49,
    "bid": 0.48,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1693878",
@@ -1001,7 +794,7 @@
    "side_index": 0,
    "ask": 0.49,
    "bid": 0.48,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677737",
@@ -1012,7 +805,7 @@
    "side_index": 0,
    "ask": 0.48,
    "bid": 0.47,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677903",
@@ -1023,7 +816,7 @@
    "side_index": 0,
    "ask": 0.47,
    "bid": 0.46,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677675",
@@ -1034,7 +827,7 @@
    "side_index": 0,
    "ask": 0.46,
    "bid": 0.45,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677901",
@@ -1045,7 +838,7 @@
    "side_index": 0,
    "ask": 0.46,
    "bid": 0.45,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1700206",
@@ -1056,7 +849,7 @@
    "side_index": 0,
    "ask": 0.45,
    "bid": 0.44,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677775",
@@ -1067,18 +860,7 @@
    "side_index": 0,
    "ask": 0.45,
    "bid": 0.44,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1679317",
-   "player": "John Collins",
-   "period": "full_game",
-   "question": "Will John Collins record at least 6 total rebounds in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.45,
-   "bid": 0.44,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1693882",
@@ -1089,7 +871,7 @@
    "side_index": 0,
    "ask": 0.44,
    "bid": 0.43,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677697",
@@ -1100,7 +882,7 @@
    "side_index": 0,
    "ask": 0.44,
    "bid": 0.43,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1700241",
@@ -1111,7 +893,7 @@
    "side_index": 0,
    "ask": 0.44,
    "bid": 0.43,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677797",
@@ -1121,8 +903,8 @@
    "sides": [],
    "side_index": 0,
    "ask": 0.43,
-   "bid": 0.42,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "bid": 0.41,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1700179",
@@ -1133,7 +915,7 @@
    "side_index": 0,
    "ask": 0.43,
    "bid": 0.42,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1700219",
@@ -1144,7 +926,7 @@
    "side_index": 0,
    "ask": 0.43,
    "bid": 0.42,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677750",
@@ -1155,7 +937,7 @@
    "side_index": 0,
    "ask": 0.43,
    "bid": 0.42,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677793",
@@ -1166,7 +948,7 @@
    "side_index": 0,
    "ask": 0.42,
    "bid": 0.41,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1725632",
@@ -1177,7 +959,18 @@
    "side_index": 0,
    "ask": 0.42,
    "bid": 0.39,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
+  },
+  {
+   "market_id": "1677714",
+   "player": "Giannis Antetokounmpo",
+   "period": "full_game",
+   "question": "Will Giannis Antetokounmpo record at least 30 points in DET Pistons vs. MIA Heat?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.4,
+   "bid": 0.35,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1693893",
@@ -1188,7 +981,7 @@
    "side_index": 0,
    "ask": 0.39,
    "bid": 0.38,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677754",
@@ -1199,7 +992,7 @@
    "side_index": 0,
    "ask": 0.38,
    "bid": 0.37,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677768",
@@ -1210,18 +1003,18 @@
    "side_index": 0,
    "ask": 0.38,
    "bid": 0.37,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
-   "market_id": "1677788",
-   "player": "Bam Adebayo",
+   "market_id": "1677724",
+   "player": "Giannis Antetokounmpo",
    "period": "full_game",
-   "question": "Will Bam Adebayo record at least 20 points in DET Pistons vs. MIA Heat?",
+   "question": "Will Giannis Antetokounmpo record at least 12 total rebounds in DET Pistons vs. MIA Heat?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.37,
-   "bid": 0.36,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "ask": 0.38,
+   "bid": 0.32,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1679381",
@@ -1232,18 +1025,18 @@
    "side_index": 0,
    "ask": 0.36,
    "bid": 0.35,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
-   "market_id": "1679371",
-   "player": "John Collins",
+   "market_id": "1700231",
+   "player": "Tim Hardaway Jr.",
    "period": "full_game",
-   "question": "Will John Collins record at least 2 assists in DET Pistons vs. MIA Heat?",
+   "question": "Will Tim Hardaway Jr. record at least 3 three-point field goals made in DET Pistons vs. MIA Heat?",
    "sides": [],
    "side_index": 0,
    "ask": 0.36,
-   "bid": 0.35,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "bid": 0.3,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1700189",
@@ -1254,7 +1047,7 @@
    "side_index": 0,
    "ask": 0.36,
    "bid": 0.34,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677689",
@@ -1265,7 +1058,7 @@
    "side_index": 0,
    "ask": 0.36,
    "bid": 0.35,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1693897",
@@ -1276,29 +1069,18 @@
    "side_index": 0,
    "ask": 0.35,
    "bid": 0.34,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
-   "market_id": "1677724",
-   "player": "Giannis Antetokounmpo",
+   "market_id": "1702466",
+   "player": "Ausar Thompson",
    "period": "full_game",
-   "question": "Will Giannis Antetokounmpo record at least 12 total rebounds in DET Pistons vs. MIA Heat?",
+   "question": "Will Ausar Thompson record at least 6 assists in DET Pistons vs. MIA Heat?",
    "sides": [],
    "side_index": 0,
    "ask": 0.33,
-   "bid": 0.32,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1700231",
-   "player": "Tim Hardaway Jr.",
-   "period": "full_game",
-   "question": "Will Tim Hardaway Jr. record at least 3 three-point field goals made in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.32,
-   "bid": 0.3,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "bid": 0.28,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677782",
@@ -1309,29 +1091,7 @@
    "side_index": 0,
    "ask": 0.31,
    "bid": 0.3,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1677906",
-   "player": "Davion Mitchell",
-   "period": "full_game",
-   "question": "Will Davion Mitchell record at least 8 assists in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.31,
-   "bid": 0.3,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1677764",
-   "player": "Jalen Duren",
-   "period": "full_game",
-   "question": "Will Jalen Duren record at least 12 total rebounds in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.31,
-   "bid": 0.3,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677785",
@@ -1341,74 +1101,30 @@
    "sides": [],
    "side_index": 0,
    "ask": 0.3,
-   "bid": 0.29,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1677778",
-   "player": "Andrew Wiggins",
-   "period": "full_game",
-   "question": "Will Andrew Wiggins record at least 3 assists in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.29,
-   "bid": 0.28,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1702466",
-   "player": "Ausar Thompson",
-   "period": "full_game",
-   "question": "Will Ausar Thompson record at least 6 assists in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.29,
-   "bid": 0.28,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1677758",
-   "player": "Jalen Duren",
-   "period": "full_game",
-   "question": "Will Jalen Duren record at least 20 points in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.29,
-   "bid": 0.27,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1677776",
-   "player": "Andrew Wiggins",
-   "period": "full_game",
-   "question": "Will Andrew Wiggins record at least 6 total rebounds in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.29,
-   "bid": 0.28,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1700173",
-   "player": "Giannis Antetokounmpo",
-   "period": "full_game",
-   "question": "Will Giannis Antetokounmpo record at least 2 steals in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.29,
-   "bid": 0.28,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1700151",
-   "player": "Duncan Robinson",
-   "period": "full_game",
-   "question": "Will Duncan Robinson record at least 4 three-point field goals made in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.28,
    "bid": 0.26,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
+  },
+  {
+   "market_id": "1677904",
+   "player": "Davion Mitchell",
+   "period": "full_game",
+   "question": "Will Davion Mitchell record at least 4 total rebounds in DET Pistons vs. MIA Heat?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.3,
+   "bid": 0.24,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
+  },
+  {
+   "market_id": "1700162",
+   "player": "Andrew Wiggins",
+   "period": "full_game",
+   "question": "Will Andrew Wiggins record at least 2 steals in DET Pistons vs. MIA Heat?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.29,
+   "bid": 0.26,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1700208",
@@ -1419,29 +1135,7 @@
    "side_index": 0,
    "ask": 0.28,
    "bid": 0.27,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1700145",
-   "player": "Duncan Robinson",
-   "period": "full_game",
-   "question": "Will Duncan Robinson record at least 3 assists in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.28,
-   "bid": 0.27,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1700162",
-   "player": "Andrew Wiggins",
-   "period": "full_game",
-   "question": "Will Andrew Wiggins record at least 2 steals in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.28,
-   "bid": 0.27,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1693904",
@@ -1452,7 +1146,7 @@
    "side_index": 0,
    "ask": 0.27,
    "bid": 0.26,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677666",
@@ -1463,18 +1157,7 @@
    "side_index": 0,
    "ask": 0.27,
    "bid": 0.26,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1700135",
-   "player": "Duncan Robinson",
-   "period": "full_game",
-   "question": "Will Duncan Robinson record at least 15 points in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.26,
-   "bid": 0.25,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1700185",
@@ -1485,18 +1168,7 @@
    "side_index": 0,
    "ask": 0.26,
    "bid": 0.25,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1700213",
-   "player": "Davion Mitchell",
-   "period": "full_game",
-   "question": "Will Davion Mitchell record at least 2 steals in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.26,
-   "bid": 0.25,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677738",
@@ -1507,7 +1179,7 @@
    "side_index": 0,
    "ask": 0.25,
    "bid": 0.24,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677676",
@@ -1518,7 +1190,18 @@
    "side_index": 0,
    "ask": 0.25,
    "bid": 0.24,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
+  },
+  {
+   "market_id": "1727784",
+   "player": "Jalen Duren",
+   "period": "full_game",
+   "question": "Will Jalen Duren record at least 4 assists in DET Pistons vs. MIA Heat?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.25,
+   "bid": 0.19,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1693875",
@@ -1529,7 +1212,7 @@
    "side_index": 0,
    "ask": 0.25,
    "bid": 0.24,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1693879",
@@ -1540,29 +1223,18 @@
    "side_index": 0,
    "ask": 0.25,
    "bid": 0.24,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
-   "market_id": "1677904",
-   "player": "Davion Mitchell",
+   "market_id": "1677751",
+   "player": "Cade Cunningham",
    "period": "full_game",
-   "question": "Will Davion Mitchell record at least 4 total rebounds in DET Pistons vs. MIA Heat?",
+   "question": "Will Cade Cunningham record at least 8 total rebounds in DET Pistons vs. MIA Heat?",
    "sides": [],
    "side_index": 0,
    "ask": 0.25,
-   "bid": 0.24,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1693902",
-   "player": "Jalen Duren",
-   "period": "full_game",
-   "question": "Will Jalen Duren record at least 2 blocks in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.24,
-   "bid": 0.23,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "bid": 0.2,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677798",
@@ -1572,8 +1244,8 @@
    "sides": [],
    "side_index": 0,
    "ask": 0.23,
-   "bid": 0.2,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "bid": 0.21,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1700139",
@@ -1584,18 +1256,7 @@
    "side_index": 0,
    "ask": 0.23,
    "bid": 0.22,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
-  },
-  {
-   "market_id": "1693906",
-   "player": "Bam Adebayo",
-   "period": "full_game",
-   "question": "Will Bam Adebayo record at least 2 blocks in DET Pistons vs. MIA Heat?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.22,
-   "bid": 0.21,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677687",
@@ -1606,7 +1267,7 @@
    "side_index": 0,
    "ask": 0.22,
    "bid": 0.21,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1693883",
@@ -1617,18 +1278,29 @@
    "side_index": 0,
    "ask": 0.21,
    "bid": 0.2,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
-   "market_id": "1679318",
-   "player": "John Collins",
+   "market_id": "1727790",
+   "player": "Andrew Wiggins",
    "period": "full_game",
-   "question": "Will John Collins record at least 8 total rebounds in DET Pistons vs. MIA Heat?",
+   "question": "Will Andrew Wiggins record at least 4 assists in DET Pistons vs. MIA Heat?",
    "sides": [],
    "side_index": 0,
    "ask": 0.2,
-   "bid": 0.19,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "bid": 0.14,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
+  },
+  {
+   "market_id": "1677759",
+   "player": "Jalen Duren",
+   "period": "full_game",
+   "question": "Will Jalen Duren record at least 25 points in DET Pistons vs. MIA Heat?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.2,
+   "bid": 0.16,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1700242",
@@ -1639,7 +1311,7 @@
    "side_index": 0,
    "ask": 0.2,
    "bid": 0.18,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677755",
@@ -1650,7 +1322,7 @@
    "side_index": 0,
    "ask": 0.19,
    "bid": 0.18,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677707",
@@ -1660,8 +1332,19 @@
    "sides": [],
    "side_index": 0,
    "ask": 0.19,
-   "bid": 0.18,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "bid": 0.17,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
+  },
+  {
+   "market_id": "1677717",
+   "player": "Giannis Antetokounmpo",
+   "period": "full_game",
+   "question": "Will Giannis Antetokounmpo record at least 40 points in DET Pistons vs. MIA Heat?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.19,
+   "bid": 0.13,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1677765",
@@ -1672,7 +1355,7 @@
    "side_index": 0,
    "ask": 0.19,
    "bid": 0.18,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1693894",
@@ -1683,29 +1366,29 @@
    "side_index": 0,
    "ask": 0.19,
    "bid": 0.17,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
-   "market_id": "1727784",
-   "player": "Jalen Duren",
+   "market_id": "1677902",
+   "player": "Davion Mitchell",
    "period": "full_game",
-   "question": "Will Jalen Duren record at least 4 assists in DET Pistons vs. MIA Heat?",
+   "question": "Will Davion Mitchell record at least 15 points in DET Pistons vs. MIA Heat?",
    "sides": [],
    "side_index": 0,
    "ask": 0.18,
-   "bid": 0.17,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "bid": 0.15,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
-   "market_id": "1677751",
-   "player": "Cade Cunningham",
+   "market_id": "1731245",
+   "player": "Tim Hardaway Jr.",
    "period": "full_game",
-   "question": "Will Cade Cunningham record at least 8 total rebounds in DET Pistons vs. MIA Heat?",
+   "question": "Will Tim Hardaway Jr. record at least 4 three-point field goals made in DET Pistons vs. MIA Heat?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.18,
-   "bid": 0.17,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "ask": 0.17,
+   "bid": 0.16,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1679373",
@@ -1716,18 +1399,18 @@
    "side_index": 0,
    "ask": 0.17,
    "bid": 0.13,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
-   "market_id": "1677759",
-   "player": "Jalen Duren",
+   "market_id": "1700221",
+   "player": "Tim Hardaway Jr.",
    "period": "full_game",
-   "question": "Will Jalen Duren record at least 25 points in DET Pistons vs. MIA Heat?",
+   "question": "Will Tim Hardaway Jr. record at least 15 points in DET Pistons vs. MIA Heat?",
    "sides": [],
    "side_index": 0,
    "ask": 0.17,
-   "bid": 0.16,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "bid": 0.15,
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   },
   {
    "market_id": "1704634",
@@ -1738,11 +1421,11 @@
    "side_index": 0,
    "ask": 0.17,
    "bid": 0.16,
-   "quoted_at": "2026-10-24T00:07:35.079Z"
+   "quoted_at": "2026-10-24T00:13:39.161Z"
   }
  ],
  "kalshi_checked": {
-  "at": "2026-10-24T00:07:35.194Z",
+  "at": "2026-10-24T00:13:39.325Z",
   "event": "26OCT23DETMIA"
  }
 }
