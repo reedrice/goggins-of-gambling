@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-24T16:24:40.838Z"
+  "fetched_at": "2026-10-24T16:30:51.004Z"
  },
- "updated": "2026-10-24T16:24:40.689Z",
+ "updated": "2026-10-24T16:30:50.875Z",
  "open_taken_at": "2026-10-23T05:00:23.706Z",
  "thresholds": {
   "big": 10,
@@ -483,6 +483,26 @@
  ],
  "edges": [
   {
+   "key": "1341084:1",
+   "market_id": "1341084",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming football event New Hampshire vs Merrimack scheduled for October 24, 2026 at 4:00 PM UTC?",
+   "side": "Warriors win",
+   "open_chance": 55.5,
+   "now_chance": 41.5,
+   "open_odds": "-125",
+   "now_odds": "+141",
+   "edge": 14,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-24T16:30:50.875Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1719451:0",
    "market_id": "1719451",
    "market": "Alt spread",
@@ -505,6 +525,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1341084:1:big",
+   "key": "1341084:1",
+   "at": "2026-10-24T16:30:50.875Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Warriors win",
+   "market": "Moneyline",
+   "now_odds": "+141",
+   "now_chance": 41.5,
+   "edge": 14,
+   "text": "New big edge: Warriors win (Moneyline), 14 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-nhamp-merri-2026-10-24"
+  },
+  {
    "id": "gone:1719451:0:2026-10-24T14:04:44.402Z",
    "key": "1719451:0",
    "at": "2026-10-24T16:01:51.014Z",
@@ -520,7 +554,8 @@
   }
  ],
  "alert_seen": [
-  "gone:1719451:0:2026-10-24T14:04:44.402Z"
+  "gone:1719451:0:2026-10-24T14:04:44.402Z",
+  "new_edge:1341084:1:big"
  ],
  "kalshi_checked": null
 }
