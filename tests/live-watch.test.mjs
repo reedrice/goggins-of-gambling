@@ -149,6 +149,30 @@ test('mergeOpen never overwrites an opening price and stamps each market', () =>
   assert.deepStrictEqual([m.gone.yesBuy, m.gone.taken_at], [31, 'T0']);                   // old-only kept
 });
 
+test('late-listed markets start at first observation, survive restart, and qualify only after a later move',()=>{
+  const at='2099-01-01T00:00:00Z',later='2099-01-01T00:10:00Z';
+  const ev={...structuredClone(F.event),markets:[...structuredClone(F.event.markets),
+    {id:'late-prop',sportsMarketType:'football_player_receptions',question:'Will Test Player record at least 3 receptions?',active:true,closed:false,status:'MARKET_STATUS_OPEN',bestBidQuote:{value:'0.49'},bestAskQuote:{value:'0.51'}},
+    {id:'late-total',sportsMarketType:'football_team_full_game_total',question:'Over 45.5 total points',line:45.5,active:true,closed:false,status:'MARKET_STATUS_OPEN',bestBidQuote:{value:'0.49'},bestAskQuote:{value:'0.51'}}]};
+  const old=structuredClone(F.open),before=JSON.stringify(old);
+  const fresh=selectMarkets(ev,sportOf(old.slug),['all']);
+  const open={...old,markets:mergeOpen(old.markets,fresh,at,'old-time')};
+  assert.equal(JSON.stringify(old),before);
+  assert.equal(open.markets.find(m=>m.id==='ml').mid,50);
+  const first=buildLive(open,ev,null,at);
+  assert.equal(first.edges.some(e=>e.market_id.startsWith('late-')),false);
+  const restored=openFromPublished(JSON.parse(JSON.stringify(first)));
+  const next=structuredClone(ev);
+  for(const m of next.markets.filter(m=>m.id.startsWith('late-'))){m.bestBidQuote.value='0.39';m.bestAskQuote.value='0.41';}
+  const extended={...restored,markets:mergeOpen(restored.markets,selectMarkets(next,sportOf(old.slug),['all']),later,restored.taken_at)};
+  for(const id of ['late-prop','late-total']){
+    const baseline=extended.markets.find(m=>m.id===id);
+    assert.equal(baseline.yesBuy,51);assert.equal(baseline.taken_at,at);
+    assert.ok(buildLive(extended,next,first,later).edges.some(e=>e.market_id===id&&e.status==='open'));
+  }
+  assert.equal(extended.markets.filter(m=>m.id==='late-prop').length,1);
+});
+
 test('alerts: new edge, tier up, gone, news, injury removal; deduped, newest first, capped', () => {
   const E = (key, o = {}) => ({ key, side: 'S' + key, market: 'Moneyline', tier: 'slight', class: 'edge', status: 'open', edge: 6, now_odds: '+150', now_chance: 40, first_seen: 'F', ...o });
   // Pregame: nothing.

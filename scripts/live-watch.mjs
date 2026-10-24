@@ -525,11 +525,17 @@ async function publish() {
   // Opening prices: the local snapshot, else the ones already published in the
   // repo (so any machine/runner keeps the SAME open), else take one now.
   if (!fs.existsSync(OPEN_FILE) && !prev) await snapshot();
-  const open = fs.existsSync(OPEN_FILE) ? JSON.parse(fs.readFileSync(OPEN_FILE, 'utf8')) : openFromPublished(prev);
+  const saved = fs.existsSync(OPEN_FILE) ? JSON.parse(fs.readFileSync(OPEN_FILE, 'utf8')) : openFromPublished(prev);
   const ev = await fetchEvent();
+  const now = new Date().toISOString();
+  // Markets can be listed after the first snapshot. Establish their first
+  // observed baseline using this same event response; never reprice old ones.
+  const open = {...saved, markets:mergeOpen(saved.markets,selectMarkets(ev),now,saved.taken_at)};
+  fs.mkdirSync(DIR, {recursive:true});
+  fs.writeFileSync(OPEN_FILE, JSON.stringify(open,null,1));
   const ctx = await fetchContext(SLUG, ev.title || open.title, ev.startDate);   // never throws
   ctx.player_usage_event=loadUsage(SLUG,ctx.event_id);
-  const out = buildLive(open, ev, prev, new Date().toISOString(), ctx);
+  const out = buildLive(open, ev, prev, now, ctx);
   // Full snapshot stays in data/espn; retain only per-edge audit evidence here.
   delete out.game_context.player_usage_event;
   if(SLUG.startsWith('nba-'))out.prop_test_candidates=nbaTestCandidates(open,ev,out.updated);
