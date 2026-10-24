@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187135",
-  "fetched_at": "2026-10-24T07:46:01.533Z",
+  "fetched_at": "2026-10-24T07:52:04.366Z",
   "tennis": true,
   "tennis_match": {
    "id": "187135",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Tatiana Prozorova (RUS) leads Ekaterine Gorgodze (GEO) 6-3",
+     "text": "Ekaterine Gorgodze (GEO) is tied with Tatiana Prozorova (RUS) 3-6 1-0",
      "type": "event"
     }
    ],
@@ -55,9 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
-       "value": 3
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -97,9 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -134,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 232,
    "type": {
     "id": "2",
@@ -152,8 +167,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Ekaterine Gorgodze",
@@ -165,13 +180,13 @@
    "abbr": "Tatiana Prozorova",
    "alias": "Tatiana Prozorova",
    "name": "Tatiana Prozorova",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T07:46:01.439Z",
+ "updated": "2026-10-24T07:52:04.262Z",
  "open_taken_at": "2026-10-23T11:46:53.421Z",
  "thresholds": {
   "big": 10,
@@ -245,94 +260,6 @@
    "taken_at": "2026-10-24T06:43:29.940Z"
   },
   {
-   "market_id": "1708842",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Tatiana Prozorova win set 2 against Ekaterine Gorgodze?",
-   "sides": [
-    "Yes: Tatiana Prozorova win set 2 against Ekaterine Gorgodze",
-    "No: Tatiana Prozorova win set 2 against Ekaterine Gorgodze"
-   ],
-   "teams": [
-    "Tatiana Prozorova",
-    null
-   ],
-   "player": null,
-   "mid": 77,
-   "yes_buy": 78,
-   "no_buy": 24,
-   "taken_at": "2026-10-24T07:20:15.148Z"
-  },
-  {
-   "market_id": "1708833",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Tatiana Prozorova vs. Ekaterine Gorgodze be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 65,
-   "yes_buy": 66,
-   "no_buy": 36,
-   "taken_at": "2026-10-24T03:05:47.230Z"
-  },
-  {
-   "market_id": "1708829",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Tatiana Prozorova cover -7.5 vs the Ekaterine Gorgodze in Tatiana Prozorova vs. Ekaterine Gorgodze?",
-   "sides": [
-    "Tatiana Prozorova -7.50 (Games)",
-    "Ekaterine Gorgodze +7.50 (Games)"
-   ],
-   "teams": [
-    "Tatiana Prozorova",
-    "Ekaterine Gorgodze"
-   ],
-   "player": null,
-   "mid": 31.5,
-   "yes_buy": 34,
-   "no_buy": 71,
-   "taken_at": "2026-10-24T06:49:08.274Z"
-  },
-  {
-   "market_id": "1708841",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Tatiana Prozorova win set 1 against Ekaterine Gorgodze?",
-   "sides": [
-    "Yes: Tatiana Prozorova win set 1 against Ekaterine Gorgodze",
-    "No: Tatiana Prozorova win set 1 against Ekaterine Gorgodze"
-   ],
-   "teams": [
-    "Tatiana Prozorova",
-    null
-   ],
-   "player": null,
-   "mid": 55,
-   "yes_buy": 57,
-   "no_buy": 47,
-   "taken_at": "2026-10-24T07:17:06.839Z"
-  },
-  {
    "market_id": "1708825",
    "market": "Games spread",
    "group": "game",
@@ -343,6 +270,28 @@
    "sides": [
     "Tatiana Prozorova -1.50 (Games)",
     "Ekaterine Gorgodze +1.50 (Games)"
+   ],
+   "teams": [
+    "Tatiana Prozorova",
+    "Ekaterine Gorgodze"
+   ],
+   "player": null,
+   "mid": 75.5,
+   "yes_buy": 76,
+   "no_buy": 25,
+   "taken_at": "2026-10-24T06:43:29.940Z"
+  },
+  {
+   "market_id": "1708826",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Tatiana Prozorova cover 1.5 vs the Ekaterine Gorgodze in Tatiana Prozorova vs. Ekaterine Gorgodze?",
+   "sides": [
+    "Tatiana Prozorova +1.50 (Games)",
+    "Ekaterine Gorgodze -1.50 (Games)"
    ],
    "teams": [
     "Tatiana Prozorova",
@@ -399,26 +348,26 @@
    "taken_at": "2026-10-24T06:49:08.274Z"
   },
   {
-   "market_id": "1708836",
-   "market": "Sets total",
+   "market_id": "1708834",
+   "market": "Games total",
    "group": "game",
    "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Tatiana Prozorova vs. Ekaterine Gorgodze be more than 2.5?",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Tatiana Prozorova vs. Ekaterine Gorgodze be more than 22.5?",
    "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
    ],
    "teams": [
     null,
     null
    ],
    "player": null,
-   "mid": 30.5,
-   "yes_buy": 32,
-   "no_buy": 71,
-   "taken_at": "2026-10-24T06:49:08.274Z"
+   "mid": 38.5,
+   "yes_buy": 39,
+   "no_buy": 62,
+   "taken_at": "2026-10-24T06:43:29.940Z"
   },
   {
    "market_id": "1708835",
@@ -443,48 +392,114 @@
    "taken_at": "2026-10-24T06:49:08.274Z"
   },
   {
-   "market_id": "1708834",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Tatiana Prozorova vs. Ekaterine Gorgodze be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 38.5,
-   "yes_buy": 39,
-   "no_buy": 62,
-   "taken_at": "2026-10-24T06:43:29.940Z"
-  },
-  {
-   "market_id": "1708826",
+   "market_id": "1708829",
    "market": "Games spread",
    "group": "game",
    "mtype": "spread",
    "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Tatiana Prozorova cover 1.5 vs the Ekaterine Gorgodze in Tatiana Prozorova vs. Ekaterine Gorgodze?",
+   "line": -7.5,
+   "question": "Will the Tatiana Prozorova cover -7.5 vs the Ekaterine Gorgodze in Tatiana Prozorova vs. Ekaterine Gorgodze?",
    "sides": [
-    "Tatiana Prozorova +1.50 (Games)",
-    "Ekaterine Gorgodze -1.50 (Games)"
+    "Tatiana Prozorova -7.50 (Games)",
+    "Ekaterine Gorgodze +7.50 (Games)"
    ],
    "teams": [
     "Tatiana Prozorova",
     "Ekaterine Gorgodze"
    ],
    "player": null,
-   "mid": 75.5,
-   "yes_buy": 76,
-   "no_buy": 25,
-   "taken_at": "2026-10-24T06:43:29.940Z"
+   "mid": 31.5,
+   "yes_buy": 34,
+   "no_buy": 71,
+   "taken_at": "2026-10-24T06:49:08.274Z"
+  },
+  {
+   "market_id": "1708842",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Tatiana Prozorova win set 2 against Ekaterine Gorgodze?",
+   "sides": [
+    "Yes: Tatiana Prozorova win set 2 against Ekaterine Gorgodze",
+    "No: Tatiana Prozorova win set 2 against Ekaterine Gorgodze"
+   ],
+   "teams": [
+    "Tatiana Prozorova",
+    null
+   ],
+   "player": null,
+   "mid": 77,
+   "yes_buy": 78,
+   "no_buy": 24,
+   "taken_at": "2026-10-24T07:20:15.148Z"
+  },
+  {
+   "market_id": "1708833",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Tatiana Prozorova vs. Ekaterine Gorgodze be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 65,
+   "yes_buy": 66,
+   "no_buy": 36,
+   "taken_at": "2026-10-24T03:05:47.230Z"
+  },
+  {
+   "market_id": "1708841",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Tatiana Prozorova win set 1 against Ekaterine Gorgodze?",
+   "sides": [
+    "Yes: Tatiana Prozorova win set 1 against Ekaterine Gorgodze",
+    "No: Tatiana Prozorova win set 1 against Ekaterine Gorgodze"
+   ],
+   "teams": [
+    "Tatiana Prozorova",
+    null
+   ],
+   "player": null,
+   "mid": 55,
+   "yes_buy": 57,
+   "no_buy": 47,
+   "taken_at": "2026-10-24T07:17:06.839Z"
+  },
+  {
+   "market_id": "1708836",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Tatiana Prozorova vs. Ekaterine Gorgodze be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 30.5,
+   "yes_buy": 32,
+   "no_buy": 71,
+   "taken_at": "2026-10-24T06:49:08.274Z"
   },
   {
    "market_id": "1708832",
@@ -511,42 +526,42 @@
  ],
  "edges": [
   {
-   "key": "1708829:0",
-   "market_id": "1708829",
-   "market": "Games spread",
+   "key": "1708834:0",
+   "market_id": "1708834",
+   "market": "Games total",
    "group": "game",
-   "question": "Will the Tatiana Prozorova cover -7.5 vs the Ekaterine Gorgodze in Tatiana Prozorova vs. Ekaterine Gorgodze?",
-   "side": "Tatiana Prozorova -7.50 (Games)",
-   "open_chance": 34,
-   "now_chance": 20,
-   "open_odds": "+194",
-   "now_odds": "+400",
-   "edge": 14,
+   "question": "Will the total in Tatiana Prozorova vs. Ekaterine Gorgodze be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 39,
+   "now_chance": 18,
+   "open_odds": "+156",
+   "now_odds": "+456",
+   "edge": 21,
    "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Tatiana Prozorova not above the games spread right now",
-   "context": "Ekaterine Gorgodze 3 · Tatiana Prozorova 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-24T07:46:01.439Z",
+   "class": "edge",
+   "reason": null,
+   "context": "Ekaterine Gorgodze 3, 1 · Tatiana Prozorova 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-24T07:05:03.490Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1708833:0",
-   "market_id": "1708833",
-   "market": "Games total",
+   "key": "1708831:1",
+   "market_id": "1708831",
+   "market": "Sets spread",
    "group": "game",
-   "question": "Will the total in Tatiana Prozorova vs. Ekaterine Gorgodze be more than 17.5?",
-   "side": "Over 17.5 (Games)",
-   "open_chance": 66,
-   "now_chance": 62,
-   "open_odds": "-194",
-   "now_odds": "-163",
-   "edge": 4,
-   "tier": "slight",
+   "question": "Will the Tatiana Prozorova cover -1.5 vs the Ekaterine Gorgodze in Tatiana Prozorova vs. Ekaterine Gorgodze?",
+   "side": "Ekaterine Gorgodze +1.50 (Sets)",
+   "open_chance": 41,
+   "now_chance": 30,
+   "open_odds": "+144",
+   "now_odds": "+233",
+   "edge": 11,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Ekaterine Gorgodze 3 · Tatiana Prozorova 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-24T07:46:01.439Z",
+   "context": "Ekaterine Gorgodze 3, 1 · Tatiana Prozorova 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-24T07:52:04.262Z",
    "status": "open",
    "kalshi": null
   },
@@ -591,67 +606,55 @@
    "kalshi": null
   },
   {
-   "key": "1708827:0",
-   "market_id": "1708827",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Tatiana Prozorova cover -4.5 vs the Ekaterine Gorgodze in Tatiana Prozorova vs. Ekaterine Gorgodze?",
-   "side": "Tatiana Prozorova -4.50 (Games)",
-   "open_chance": 64,
-   "now_chance": 55,
-   "open_odds": "-178",
-   "now_odds": "-122",
-   "edge": 9,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Tatiana Prozorova not above the games spread right now",
-   "context": "Ekaterine Gorgodze 3 · Tatiana Prozorova 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-24T07:31:13.229Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1708826:1",
-   "market_id": "1708826",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Tatiana Prozorova cover 1.5 vs the Ekaterine Gorgodze in Tatiana Prozorova vs. Ekaterine Gorgodze?",
-   "side": "Ekaterine Gorgodze -1.50 (Games)",
-   "open_chance": 25,
-   "now_chance": 18,
-   "open_odds": "+300",
-   "now_odds": "+456",
-   "edge": 7,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Ekaterine Gorgodze not above the games spread right now",
-   "context": "Ekaterine Gorgodze 3 · Tatiana Prozorova 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-24T07:31:13.229Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1708834:0",
-   "market_id": "1708834",
+   "key": "1708833:0",
+   "market_id": "1708833",
    "market": "Games total",
    "group": "game",
-   "question": "Will the total in Tatiana Prozorova vs. Ekaterine Gorgodze be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 39,
-   "now_chance": 35,
-   "open_odds": "+156",
-   "now_odds": "+186",
+   "question": "Will the total in Tatiana Prozorova vs. Ekaterine Gorgodze be more than 17.5?",
+   "side": "Over 17.5 (Games)",
+   "open_chance": 66,
+   "now_chance": 62,
+   "open_odds": "-194",
+   "now_odds": "-163",
    "edge": 4,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Ekaterine Gorgodze 2 · Tatiana Prozorova 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-24T07:05:03.490Z",
+   "context": "Ekaterine Gorgodze 3 · Tatiana Prozorova 6 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T07:46:01.439Z",
    "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1708831:1:big",
+   "key": "1708831:1",
+   "at": "2026-10-24T07:52:04.262Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Ekaterine Gorgodze +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+233",
+   "now_chance": 30,
+   "edge": 11,
+   "text": "New big edge: Ekaterine Gorgodze +1.50 (Sets) (Sets spread), 11 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-tatpro-ekagor-2026-10-23"
+  },
+  {
+   "id": "gone:1708833:0:2026-10-24T07:46:01.439Z",
+   "key": "1708833:0",
+   "at": "2026-10-24T07:52:04.262Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-163",
+   "now_chance": 62,
+   "edge": 4,
+   "text": "Edge gone: Over 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-tatpro-ekagor-2026-10-23"
+  },
   {
    "id": "new_edge:1708833:0:slight",
    "key": "1708833:0",
@@ -760,7 +763,9 @@
   "new_edge:1708834:0:slight",
   "new_edge:1708833:1:big",
   "gone:1708833:1:2026-10-24T07:31:13.229Z",
-  "new_edge:1708833:0:slight"
+  "new_edge:1708833:0:slight",
+  "new_edge:1708831:1:big",
+  "gone:1708833:0:2026-10-24T07:46:01.439Z"
  ],
  "kalshi_checked": null
 }

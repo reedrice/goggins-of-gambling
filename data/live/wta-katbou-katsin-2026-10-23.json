@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185583",
-  "fetched_at": "2026-10-24T07:46:01.166Z",
+  "fetched_at": "2026-10-24T07:52:04.017Z",
   "tennis": true,
   "tennis_match": {
    "id": "185583",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, October 24th at 3:50 AM EDT",
-     "shortDetail": "10/24 - 3:50 AM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(8) Katie Boulter (GBR) leads Katerina Siniakova (CZE) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "fe013c03-6a8a-a745-4e09-e2bc7adc74bc",
       "displayName": "Katerina Siniakova",
@@ -87,9 +98,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 8
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "deff75f7-ab53-fa1f-d53b-1d2c6433e266",
       "displayName": "Katie Boulter",
@@ -122,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 345,
    "type": {
     "id": "2",
@@ -138,10 +160,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Sat, October 24th at 3:50 AM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Katerina Siniakova",
@@ -159,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T07:46:01.062Z",
+ "updated": "2026-10-24T07:52:03.942Z",
  "open_taken_at": "2026-10-23T10:02:46.860Z",
  "thresholds": {
   "big": 10,
@@ -277,26 +299,26 @@
    "taken_at": "2026-10-24T06:43:29.498Z"
   },
   {
-   "market_id": "1706503",
-   "market": "Games total",
+   "market_id": "1706510",
+   "market": "Set 1 winner",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Katie Boulter vs. Katerina Siniakova be more than 22.5?",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Katie Boulter win set 1 against Katerina Siniakova?",
    "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
+    "Yes: Katie Boulter win set 1 against Katerina Siniakova",
+    "No: Katie Boulter win set 1 against Katerina Siniakova"
    ],
    "teams": [
-    null,
+    "Katie Boulter",
     null
    ],
    "player": null,
-   "mid": 45,
-   "yes_buy": 46,
-   "no_buy": 56,
-   "taken_at": "2026-10-24T03:05:46.819Z"
+   "mid": 42.5,
+   "yes_buy": 45,
+   "no_buy": 60,
+   "taken_at": "2026-10-24T06:43:29.498Z"
   },
   {
    "market_id": "1706495",
@@ -319,6 +341,50 @@
    "yes_buy": 45,
    "no_buy": 56,
    "taken_at": "2026-10-24T03:05:46.819Z"
+  },
+  {
+   "market_id": "1706503",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Katie Boulter vs. Katerina Siniakova be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 45,
+   "yes_buy": 46,
+   "no_buy": 56,
+   "taken_at": "2026-10-24T03:05:46.819Z"
+  },
+  {
+   "market_id": "1706511",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Katie Boulter win set 2 against Katerina Siniakova?",
+   "sides": [
+    "Yes: Katie Boulter win set 2 against Katerina Siniakova",
+    "No: Katie Boulter win set 2 against Katerina Siniakova"
+   ],
+   "teams": [
+    "Katie Boulter",
+    null
+   ],
+   "player": null,
+   "mid": 43.5,
+   "yes_buy": 46,
+   "no_buy": 59,
+   "taken_at": "2026-10-24T07:52:03.942Z"
   },
   {
    "market_id": "1706505",
@@ -451,28 +517,6 @@
    "yes_buy": 25,
    "no_buy": 76,
    "taken_at": "2026-10-24T06:43:29.498Z"
-  },
-  {
-   "market_id": "1706510",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Katie Boulter win set 1 against Katerina Siniakova?",
-   "sides": [
-    "Yes: Katie Boulter win set 1 against Katerina Siniakova",
-    "No: Katie Boulter win set 1 against Katerina Siniakova"
-   ],
-   "teams": [
-    "Katie Boulter",
-    null
-   ],
-   "player": null,
-   "mid": 42.5,
-   "yes_buy": 45,
-   "no_buy": 60,
-   "taken_at": "2026-10-24T06:43:29.498Z"
   }
  ],
  "edges": [
@@ -491,8 +535,28 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Katerina Siniakova 0 · Katie Boulter 0 · 1st Set (games by set)",
    "first_seen": "2026-10-24T04:36:49.578Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1706510:1",
+   "market_id": "1706510",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Katie Boulter win set 1 against Katerina Siniakova?",
+   "side": "No: Katie Boulter win set 1 against Katerina Siniakova",
+   "open_chance": 60,
+   "now_chance": 56,
+   "open_odds": "-150",
+   "now_odds": "-127",
+   "edge": 4,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Katie Boulter not above the games spread right now",
+   "context": "Katerina Siniakova 0 · Katie Boulter 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T07:52:03.942Z",
    "status": "open",
    "kalshi": null
   },
@@ -511,7 +575,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Katerina Siniakova 0 · Katie Boulter 0 · 1st Set (games by set)",
    "first_seen": "2026-10-24T04:36:49.578Z",
    "status": "open",
    "kalshi": null
