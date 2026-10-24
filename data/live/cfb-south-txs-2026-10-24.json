@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-24T19:56:48.763Z"
+  "fetched_at": "2026-10-24T20:02:51.046Z"
  },
- "updated": "2026-10-24T19:56:48.692Z",
+ "updated": "2026-10-24T20:02:50.862Z",
  "open_taken_at": "2026-10-23T05:00:26.620Z",
  "thresholds": {
   "big": 10,
@@ -285,26 +285,6 @@
  ],
  "edges": [
   {
-   "key": "1345641:1",
-   "market_id": "1345641",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming football event Southern vs Texas Southern scheduled for October 24, 2026 at 7:00 PM UTC?",
-   "side": "Tigers win",
-   "open_chance": 50,
-   "now_chance": 46,
-   "open_odds": "+100",
-   "now_odds": "+117",
-   "edge": 4,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-24T19:29:52.701Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1723209:0",
    "market_id": "1723209",
    "market": "Alt total",
@@ -525,6 +505,26 @@
    "kalshi": null
   },
   {
+   "key": "1345641:1",
+   "market_id": "1345641",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming football event Southern vs Texas Southern scheduled for October 24, 2026 at 7:00 PM UTC?",
+   "side": "Tigers win",
+   "open_chance": 50,
+   "now_chance": 46,
+   "open_odds": "+100",
+   "now_odds": "+117",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-24T19:29:52.701Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1723222:0",
    "market_id": "1723222",
    "market": "Alt total",
@@ -546,6 +546,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1345641:1:2026-10-24T19:29:52.701Z",
+   "key": "1345641:1",
+   "at": "2026-10-24T20:02:50.862Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Tigers win",
+   "market": "Moneyline",
+   "now_odds": "+117",
+   "now_chance": 46,
+   "edge": 4,
+   "text": "Edge gone: Tigers win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-south-txs-2026-10-24"
+  },
   {
    "id": "new_edge:1345641:1:big",
    "key": "1345641:1",
@@ -757,7 +771,8 @@
   "gone:1723225:0:2026-10-24T15:02:00.849Z",
   "gone:1345641:0:2026-10-24T16:51:49.960Z",
   "new_edge:1345641:1:slight",
-  "new_edge:1345641:1:big"
+  "new_edge:1345641:1:big",
+  "gone:1345641:1:2026-10-24T19:29:52.701Z"
  ],
  "kalshi_checked": null
 }
