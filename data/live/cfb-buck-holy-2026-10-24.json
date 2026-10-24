@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-24T18:01:00.883Z"
+  "fetched_at": "2026-10-24T18:06:47.520Z"
  },
- "updated": "2026-10-24T18:01:00.754Z",
+ "updated": "2026-10-24T18:06:47.370Z",
  "open_taken_at": "2026-10-23T05:00:24.562Z",
  "thresholds": {
   "big": 10,
@@ -39,6 +39,28 @@
    "yes_buy": 23.5,
    "no_buy": 77,
    "taken_at": "2026-10-23T05:00:24.562Z"
+  },
+  {
+   "market_id": "1719812",
+   "market": "Main spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 3.5,
+   "question": "Will the Bucknell cover 3.5 vs the Holy Cross in Bucknell vs. Holy Cross?",
+   "sides": [
+    "Bison +3.50",
+    "Crusaders -3.50"
+   ],
+   "teams": [
+    "Bison",
+    "Crusaders"
+   ],
+   "player": null,
+   "mid": 32.3,
+   "yes_buy": 35,
+   "no_buy": 70.5,
+   "taken_at": "2026-10-24T03:05:29.923Z"
   },
   {
    "market_id": "1719820",
@@ -437,28 +459,6 @@
    "taken_at": "2026-10-24T16:01:51.952Z"
   },
   {
-   "market_id": "1719812",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": 3.5,
-   "question": "Will the Bucknell cover 3.5 vs the Holy Cross in Bucknell vs. Holy Cross?",
-   "sides": [
-    "Bison +3.50",
-    "Crusaders -3.50"
-   ],
-   "teams": [
-    "Bison",
-    "Crusaders"
-   ],
-   "player": null,
-   "mid": 32.3,
-   "yes_buy": 35,
-   "no_buy": 70.5,
-   "taken_at": "2026-10-24T03:05:29.923Z"
-  },
-  {
    "market_id": "1719824",
    "market": "Alt spread",
    "group": "game",
@@ -482,6 +482,26 @@
   }
  ],
  "edges": [
+  {
+   "key": "1719812:0",
+   "market_id": "1719812",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will the Bucknell cover 3.5 vs the Holy Cross in Bucknell vs. Holy Cross?",
+   "side": "Bison +3.50",
+   "open_chance": 35,
+   "now_chance": 20.5,
+   "open_odds": "+186",
+   "now_odds": "+388",
+   "edge": 14.5,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-24T18:06:47.370Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1719817:0",
    "market_id": "1719817",
@@ -745,6 +765,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1719812:0:big",
+   "key": "1719812:0",
+   "at": "2026-10-24T18:06:47.370Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Bison +3.50",
+   "market": "Main spread",
+   "now_odds": "+388",
+   "now_chance": 20.5,
+   "edge": 14.5,
+   "text": "New big edge: Bison +3.50 (Main spread), 15 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-buck-holy-2026-10-24"
+  },
+  {
    "id": "gone:1719817:0:2026-10-24T14:10:47.532Z",
    "key": "1719817:0",
    "at": "2026-10-24T17:02:55.862Z",
@@ -944,7 +978,8 @@
   "gone:1719816:0:2026-10-24T16:36:48.810Z",
   "new_edge:1342151:1:slight",
   "gone:1342151:0:2026-10-24T15:55:47.281Z",
-  "gone:1342151:1:2026-10-24T17:09:44.524Z"
+  "gone:1342151:1:2026-10-24T17:09:44.524Z",
+  "new_edge:1719812:0:big"
  ],
  "kalshi_checked": null
 }
