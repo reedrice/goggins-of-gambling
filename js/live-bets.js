@@ -427,9 +427,10 @@
       head.append(el('div','lb-game',d.game || 'Live game'),el('div','lb-score',sb.score),el('div','lb-status',sb.status),el('div','lb-updated',freshness(d).text));
     }
     if(ui.sport && root.LiveScoreboard){const row=el('div','lb-head-row'),board=el('div');row.append(head,board);box.append(row);root.LiveScoreboard.mount(board,ui.sport,{...(college?{snapshot:ui.boardSnapshot||{docs:[],partial:true},conference:ui.conference}:{}),selected:ui.boardGame,focusId:ui.boardFocus,onSelect:(id,focusId)=>{ui.boardGame=id;ui.boardFocus=focusId;ui.game=ui.prop=false;ui.redraw();}});ui.boardFocus=null;}else box.append(head);
+    const utilityRow=el('div','lb-utility-row');box.append(utilityRow);
     if(root.PolymarketSync){
       const h=root.PolymarketSync.holdingsStatus(),time=clock(h.checkedAt),note=el('a','lb-holdings-status');note.href='#bets';
-      paintHoldings(note,P,h);box.append(note);
+      paintHoldings(note,P,h);utilityRow.append(note);
     }
     if (d.stale || freshness(d).stale) box.append(el('div','lb-stale',liveText().stale));
     const controls = el('div', 'lb-controls');
@@ -449,7 +450,7 @@
       button.append(preview,el('span','lb-layout-caption',n+' / '+(4-n)));button.onclick=()=>{ui.layout=n;ui.game=ui.prop=0;try{root.localStorage.setItem(LAYOUT_KEY,String(n));}catch{}ui.redraw();box.querySelector('.lb-layout-trigger')?.focus({preventScroll:true});};choices.append(button);
     }
     const legend=el('div','lb-layout-legend');legend.append(el('span','lb-layout-game',root.STR.liveLayout.game),el('span','lb-layout-prop',root.STR.liveLayout.prop));
-    layoutPanel.append(layoutButton,choices,legend);layoutPanel.addEventListener('keydown',event=>{if(event.key==='Escape'){layoutPanel.open=false;layoutButton.focus();}});controls.append(layoutPanel);box.append(controls);
+    layoutPanel.append(layoutButton,choices,legend);layoutPanel.addEventListener('keydown',event=>{if(event.key==='Escape'){layoutPanel.open=false;layoutButton.focus();}});utilityRow.append(layoutPanel);box.append(controls);
     const notice = el('div', 'lb-notice');
     notice.append(el('span', null, selection.counts.new ? P.newCount(selection.counts.new) : P.caughtUp));
     if (selection.counts.new) {

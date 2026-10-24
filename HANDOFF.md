@@ -1742,3 +1742,5 @@ Reed requested one Layout button that reveals visual arrangement options. Replac
 Oct 24 pagination spacing: category controls now have the same --space-3 gap above them and between tracks as the card grid. The requested centered 4px button inset remains intact. No runtime/data changes.
 
 Oct 24 page-background seam: the shared scrolling atmosphere retained a 100vh image size after fixed attachment was removed, visibly clipping colored layers at one viewport. Background size now follows the full body content (100% 100%), including changing card layouts and expanded sections. No fixed layers, blur, extra surfaces, timers or requests added; custom palettes remain flat.
+
+Oct 24 Layout placement: moved the compact visual chooser beside the holdings status, under the scoreboard and above tier filters, as marked in Reed’s screenshot. A wrapping flex utility row preserves mobile fit and the same preference/chooser behavior.

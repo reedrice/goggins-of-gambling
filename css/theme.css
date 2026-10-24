@@ -493,3 +493,8 @@ body { background-attachment: scroll; }
 .lb-layout-legend { display:flex; gap:16px; margin-top:8px; font-size:12px; }
 .lb-layout-legend > span::before { content:''; display:inline-block; width:8px; height:8px; margin-right:5px; background:currentColor; border-radius:2px; }
 .lb-layout-control:not([open]) > :not(summary) { display:none; }
+
+/* Holdings and layout share the utility row beneath the scoreboard. */
+.lb-utility-row { display:flex; align-items:center; flex-wrap:wrap; gap:var(--space-4); margin-block:var(--space-3); }
+.live-bets-root .lb-utility-row .lb-layout-control { margin:0; }
+.lb-utility-row .lb-holdings-status { margin:0; }
