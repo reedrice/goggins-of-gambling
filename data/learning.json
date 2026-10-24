@@ -3,8 +3,8 @@
  "min_samples": 30,
  "note": "Learned only from real graded results. Adjustments stay at 0 (and trust at 1) until a bucket or category has 30 graded picks. Small samples are noisy.",
  "sample": {
-  "picks_logged": 553,
-  "picks_graded": 375,
+  "picks_logged": 554,
+  "picks_graded": 386,
   "predictions_graded": 33,
   "clv_legs": 374
  },
@@ -13,8 +13,8 @@
    {
     "lo": 0,
     "hi": 10,
-    "n": 9,
-    "avg_said": 3.2,
+    "n": 10,
+    "avg_said": 3.8,
     "actual": 0,
     "adjustment_pts": 0,
     "status": "collecting data"
@@ -31,9 +31,9 @@
    {
     "lo": 20,
     "hi": 30,
-    "n": 27,
-    "avg_said": 25.6,
-    "actual": 22.2,
+    "n": 28,
+    "avg_said": 25.5,
+    "actual": 21.4,
     "adjustment_pts": 0,
     "status": "collecting data"
    },
@@ -58,19 +58,19 @@
    {
     "lo": 50,
     "hi": 60,
-    "n": 68,
+    "n": 71,
     "avg_said": 54,
-    "actual": 48.5,
-    "adjustment_pts": -2.2,
+    "actual": 49.3,
+    "adjustment_pts": -2,
     "status": "applied"
    },
    {
     "lo": 60,
     "hi": 70,
-    "n": 39,
-    "avg_said": 64.8,
-    "actual": 59,
-    "adjustment_pts": -1.6,
+    "n": 45,
+    "avg_said": 64.6,
+    "actual": 53.3,
+    "adjustment_pts": -3.5,
     "status": "applied"
    },
    {
@@ -132,9 +132,9 @@
   ]
  },
  "market_shrink": {
-  "n": 375,
-  "raw_weight": 0.53,
-  "weight": 0.63,
+  "n": 386,
+  "raw_weight": 0.39,
+  "weight": 0.52,
   "status": "applied"
  },
  "clv": {
@@ -208,6 +208,22 @@
    "status": "collecting data"
   },
   {
+   "key": "Soccer · spread",
+   "sport": "Soccer",
+   "type": "spread",
+   "stat": null,
+   "n": 17,
+   "w": 5,
+   "l": 12,
+   "hit_rate": 29.4,
+   "units": 11.77,
+   "roi": 69.2,
+   "avg_clv": -1.6,
+   "clv_n": 19,
+   "trust": 1,
+   "status": "collecting data"
+  },
+  {
    "key": "NHL · prop · goals",
    "sport": "NHL",
    "type": "prop",
@@ -220,22 +236,6 @@
    "roi": 21.5,
    "avg_clv": -2.5,
    "clv_n": 14,
-   "trust": 1,
-   "status": "collecting data"
-  },
-  {
-   "key": "Soccer · spread",
-   "sport": "Soccer",
-   "type": "spread",
-   "stat": null,
-   "n": 14,
-   "w": 5,
-   "l": 9,
-   "hit_rate": 35.7,
-   "units": 14.77,
-   "roi": 105.5,
-   "avg_clv": -1.6,
-   "clv_n": 19,
    "trust": 1,
    "status": "collecting data"
   },
@@ -300,6 +300,22 @@
    "roi": -100,
    "avg_clv": null,
    "clv_n": 0,
+   "trust": 1,
+   "status": "collecting data"
+  },
+  {
+   "key": "WNBA · prop · pts",
+   "sport": "WNBA",
+   "type": "prop",
+   "stat": "pts",
+   "n": 10,
+   "w": 4,
+   "l": 6,
+   "hit_rate": 40,
+   "units": -2.51,
+   "roi": -25.1,
+   "avg_clv": 1.1,
+   "clv_n": 10,
    "trust": 1,
    "status": "collecting data"
   },
@@ -384,22 +400,6 @@
    "status": "collecting data"
   },
   {
-   "key": "WNBA · prop · pts",
-   "sport": "WNBA",
-   "type": "prop",
-   "stat": "pts",
-   "n": 4,
-   "w": 1,
-   "l": 3,
-   "hit_rate": 25,
-   "units": -2.04,
-   "roi": -51,
-   "avg_clv": 1.1,
-   "clv_n": 10,
-   "trust": 1,
-   "status": "collecting data"
-  },
-  {
    "key": "NFL · total",
    "sport": "NFL",
    "type": "total",
@@ -411,6 +411,22 @@
    "units": -0.92,
    "roi": -30.6,
    "avg_clv": 0.5,
+   "clv_n": 3,
+   "trust": 1,
+   "status": "collecting data"
+  },
+  {
+   "key": "WNBA · prop · reb",
+   "sport": "WNBA",
+   "type": "prop",
+   "stat": "reb",
+   "n": 3,
+   "w": 2,
+   "l": 1,
+   "hit_rate": 66.7,
+   "units": 0.39,
+   "roi": 13.1,
+   "avg_clv": -2.3,
    "clv_n": 3,
    "trust": 1,
    "status": "collecting data"
@@ -528,18 +544,18 @@
    "status": "collecting data"
   },
   {
-   "key": "WNBA · prop · reb",
+   "key": "WNBA · prop · threes",
    "sport": "WNBA",
    "type": "prop",
-   "stat": "reb",
+   "stat": "threes",
    "n": 2,
-   "w": 2,
-   "l": 0,
-   "hit_rate": 100,
-   "units": 1.39,
-   "roi": 69.7,
-   "avg_clv": -2.3,
-   "clv_n": 3,
+   "w": 0,
+   "l": 2,
+   "hit_rate": 0,
+   "units": -2,
+   "roi": -100,
+   "avg_clv": 0,
+   "clv_n": 2,
    "trust": 1,
    "status": "collecting data"
   },
@@ -704,22 +720,6 @@
    "status": "collecting data"
   },
   {
-   "key": "WNBA · prop · threes",
-   "sport": "WNBA",
-   "type": "prop",
-   "stat": "threes",
-   "n": 1,
-   "w": 0,
-   "l": 1,
-   "hit_rate": 0,
-   "units": -1,
-   "roi": -100,
-   "avg_clv": 0,
-   "clv_n": 2,
-   "trust": 1,
-   "status": "collecting data"
-  },
-  {
    "key": "Economics · other",
    "sport": "Economics",
    "type": "other",
@@ -794,5 +794,5 @@
   "NHL · moneyline",
   "NHL · spread"
  ],
- "updated_at": "2026-10-24T19:36:23.853Z"
+ "updated_at": "2026-10-24T19:42:47.488Z"
 }
