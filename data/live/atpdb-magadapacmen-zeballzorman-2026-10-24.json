@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-24T22:02:12.023Z"
+  "fetched_at": "2026-10-24T22:08:00.852Z"
  },
- "updated": "2026-10-24T22:02:11.944Z",
+ "updated": "2026-10-24T22:08:00.693Z",
  "open_taken_at": "2026-10-24T02:29:08.431Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T14:56:15.222Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1737550:1:2026-10-24T14:56:15.222Z",
+   "key": "1737550:1",
+   "at": "2026-10-24T22:08:00.693Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Zeballos F / Zormann M win",
+   "market": "Moneyline",
+   "now_odds": "+285",
+   "now_chance": 26,
+   "edge": 19,
+   "text": "Edge gone: Zeballos F / Zormann M win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-magadapacmen-zeballzorman-2026-10-24"
+  },
   {
    "id": "new_edge:1737550:1:big",
    "key": "1737550:1",
@@ -80,7 +94,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1737550:1:big"
+  "new_edge:1737550:1:big",
+  "gone:1737550:1:2026-10-24T14:56:15.222Z"
  ],
  "kalshi_checked": null
 }
