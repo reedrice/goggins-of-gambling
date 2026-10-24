@@ -184,6 +184,7 @@
  }
  const cache=new Map();
  async function get(url) {
+  if(root.PublicJSON)return root.PublicJSON.snapshot(url);
   const cached=cache.get(url);if(cached&&Date.now()-cached.at<15000)return cached.promise;
   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),12000);
   const promise=fetch(url,{signal:controller.signal,cache:'no-store'}).then(r=>{if(!r.ok)throw Error('ESPN unavailable');return r.json();}).catch(error=>{cache.delete(url);throw error;}).finally(()=>clearTimeout(timer));

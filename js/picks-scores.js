@@ -173,6 +173,7 @@
       const timeout = setTimeout(() => controller.abort(), 12000);
       try {
       const read = async path => {
+        if(window.PublicJSON)return window.PublicJSON.snapshot(path);
         const response=await fetch(path+'?scores='+Math.floor(Date.now()/REFRESH),{signal:controller.signal,cache:'no-store'});
         if(!response.ok)throw Error('snapshot');return response.json();
       };

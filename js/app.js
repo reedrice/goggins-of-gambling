@@ -231,8 +231,9 @@
     toast._t = setTimeout(() => t.classList.remove('show'), ms);
   }
 
-  /** Fetch a repo data file relative to the site, bypassing caches. */
+  /** Fetch a repo data file relative to the site, sharing short-lived public snapshots. */
   async function fetchData(path) {
+    if(window.PublicJSON)return window.PublicJSON.get(path);
     const r = await fetch(path + '?t=' + Date.now(), { cache: 'no-store' });
     if (!r.ok) throw new Error(path + ' ' + r.status);
     return r.json();
@@ -734,8 +735,7 @@
     const slug = liveSlug();
     if (!slug) { liveAlerts = []; } else {
       try {
-        const r = await fetch(`data/live/${slug}.json?ts=${Date.now()}`, { cache: 'no-store' });
-        const j = r.ok ? await r.json() : null;
+        const j = window.PublicJSON ? await window.PublicJSON.live(slug) : await fetch(`data/live/${slug}.json?ts=${Date.now()}`, {cache:'no-store'}).then(r=>r.ok?r.json():null);
         liveAlerts = j && Array.isArray(j.alerts) ? j.alerts.slice(0, 50) : [];
       } catch (e) { liveAlerts = []; }
     }

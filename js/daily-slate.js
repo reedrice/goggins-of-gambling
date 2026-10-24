@@ -23,7 +23,7 @@
   const sync=()=>row.querySelectorAll('button').forEach(b=>{const on=b.dataset.sport===selected;b.setAttribute('aria-pressed',String(on));b.classList.toggle('slate-selected',on);});
   const button=sport=>{const b=document.createElement('button');b.type='button';b.dataset.sport=sport;b.onclick=()=>{selected=sport;sync();window.dispatchEvent(new CustomEvent('slate:select',{detail:{sport}}));};return b;};
   window.addEventListener('picks:sport-change',e=>{selected=e.detail.sport;sync();});
-  const read=async path=>{const r=await fetch(path+'?slate='+Math.floor(Date.now()/300000),{cache:'no-store',signal:AbortSignal.timeout(12000)});if(!r.ok)throw Error('HTTP '+r.status);return r.json();};
+  const read=async path=>{if(window.PublicJSON)return window.PublicJSON.snapshot(path);const r=await fetch(path+'?slate='+Math.floor(Date.now()/300000),{cache:'no-store',signal:AbortSignal.timeout(12000)});if(!r.ok)throw Error('HTTP '+r.status);return r.json();};
   async function refresh(){
    if(loading||document.visibilityState==='hidden')return;loading=true;
    try{

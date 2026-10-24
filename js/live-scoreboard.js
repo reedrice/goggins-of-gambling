@@ -32,7 +32,7 @@
  function conferenceGames(rows,key='all'){return rows.filter(g=>key==='all'||(key==='top25'?g.teams.some(t=>t.rank):g.conference?.key===key));}
  function conferenceOptions(rows){return [...new Map(rows.filter(g=>g.conference).map(g=>[g.conference.key,g.conference])).values()].sort((a,b)=>(a.label||a.key).localeCompare(b.label||b.key));}
  const cache=new Map(),offsets=new Map();
- async function read(path){const r=await fetch(path+'?scores='+Math.floor(Date.now()/30000),{cache:'no-store',signal:AbortSignal.timeout(12000)});if(!r.ok)throw Error('score snapshot');return r.json();}
+ async function read(path){if(window.PublicJSON)return window.PublicJSON.snapshot(path);const r=await fetch(path+'?scores='+Math.floor(Date.now()/30000),{cache:'no-store',signal:AbortSignal.timeout(12000)});if(!r.ok)throw Error('score snapshot');return r.json();}
  async function load(sport){
   const old=cache.get(sport);if(old&&Date.now()-old.at<30000)return old.promise;
   const promise=(async()=>{const ix=await read('data/espn/index.json');const entries=(ix.snapshots||[]).filter(s=>GROUPS[sport]?.includes(s.league)&&s.date===day(Date.now())&&/^data\/espn\/[a-z0-9-]+\.json$/.test(s.file));if(!entries.length)throw Error('coverage');const results=await Promise.allSettled(entries.map(async s=>{if(!s.available)throw Error('unavailable');const d=await read(s.file);if(d.league!==s.league||!Array.isArray(d.events))throw Error('shape');return d;}));return {docs:results.filter(x=>x.status==='fulfilled').map(x=>x.value),partial:results.some(x=>x.status==='rejected')};})();

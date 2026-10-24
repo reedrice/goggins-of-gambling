@@ -483,7 +483,7 @@
       const current = ++request;loading=true;refresh.disabled=true;refresh.textContent=liveText().checking;
       if(manual)status.textContent=liveText().checking;
       try {
-        const ix = await fetch('data/live/index.json?ts=' + Date.now(),{cache:'no-store',signal:AbortSignal.timeout(15000)}).then(r => r.ok ? r.json() : null).catch(() => null);
+        const ix = await (root.PublicJSON ? root.PublicJSON.get('data/live/index.json',{force:manual}) : fetch('data/live/index.json?ts=' + Date.now(),{cache:'no-store',signal:AbortSignal.timeout(15000)}).then(r => r.ok ? r.json() : null)).catch(() => null);
         const games = (ix && ix.games) || [];
         const available=timeGames(sportGames(games,ui.sport,ui.slug),ui.when);
         if(ui.slug!=='all'&&!available.some(g=>g.slug===ui.slug))ui.slug='all';
@@ -491,6 +491,7 @@
         const targets = selected === 'all' ? available : available.filter(g=>g.slug===selected);
         if (!ix && selected === 'all') throw new Error('index unavailable');
         const results = await Promise.allSettled(targets.map(async g => {
+          if(root.PublicJSON)return root.PublicJSON.get('data/live/'+g.slug+'.json',{version:g.updated});
           const r = await fetch('data/live/' + g.slug + '.json?ts=' + Date.now(),{cache:'no-store',signal:AbortSignal.timeout(15000)});
           if (!r.ok) throw new Error(r.status);
           return r.json();
