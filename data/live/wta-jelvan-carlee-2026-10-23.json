@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187134",
-  "fetched_at": "2026-10-24T06:51:11.605Z",
+  "fetched_at": "2026-10-24T06:57:06.617Z",
   "tennis": true,
   "tennis_match": {
    "id": "187134",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Carol Young Suh Lee (USA) is tied with Jeline Vandromme (BEL) 5-7 2-0",
+     "text": "Carol Young Suh Lee (USA) is tied with Jeline Vandromme (BEL) 5-7 3-0",
      "type": "event"
     }
    ],
@@ -55,13 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
        "value": 5,
        "winner": false
       },
       {
-       "value": 2
+       "value": 3
       }
      ],
      "athlete": {
@@ -101,6 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 7,
@@ -142,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 232,
    "type": {
     "id": "2",
@@ -179,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T06:51:11.484Z",
+ "updated": "2026-10-24T06:57:06.510Z",
  "open_taken_at": "2026-10-23T11:46:53.062Z",
  "thresholds": {
   "big": 10,
@@ -231,47 +238,25 @@
    "taken_at": "2026-10-24T04:12:00.100Z"
   },
   {
-   "market_id": "1708824",
-   "market": "Set 2 winner",
+   "market_id": "1708817",
+   "market": "Games total",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Jeline Vandromme win set 2 against Carol Young Suh Lee?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Jeline Vandromme vs. Carol Young Suh Lee be more than 27.5?",
    "sides": [
-    "Yes: Jeline Vandromme win set 2 against Carol Young Suh Lee",
-    "No: Jeline Vandromme win set 2 against Carol Young Suh Lee"
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
    ],
    "teams": [
-    "Jeline Vandromme",
+    null,
     null
    ],
    "player": null,
-   "mid": 59,
-   "yes_buy": 61,
-   "no_buy": 43,
-   "taken_at": "2026-10-24T05:52:06.174Z"
-  },
-  {
-   "market_id": "1708808",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Jeline Vandromme cover 1.5 vs the Carol Young Suh Lee in Jeline Vandromme vs. Carol Young Suh Lee?",
-   "sides": [
-    "Jeline Vandromme +1.50 (Games)",
-    "Carol Young Suh Lee -1.50 (Games)"
-   ],
-   "teams": [
-    "Jeline Vandromme",
-    "Carol Young Suh Lee"
-   ],
-   "player": null,
-   "mid": 70.5,
-   "yes_buy": 71,
-   "no_buy": 30,
+   "mid": 28.5,
+   "yes_buy": 29,
+   "no_buy": 72,
    "taken_at": "2026-10-24T04:12:00.100Z"
   },
   {
@@ -297,25 +282,69 @@
    "taken_at": "2026-10-24T03:05:46.930Z"
   },
   {
-   "market_id": "1708817",
-   "market": "Games total",
+   "market_id": "1708824",
+   "market": "Set 2 winner",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Jeline Vandromme vs. Carol Young Suh Lee be more than 27.5?",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Jeline Vandromme win set 2 against Carol Young Suh Lee?",
    "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
+    "Yes: Jeline Vandromme win set 2 against Carol Young Suh Lee",
+    "No: Jeline Vandromme win set 2 against Carol Young Suh Lee"
    ],
    "teams": [
-    null,
+    "Jeline Vandromme",
     null
    ],
    "player": null,
-   "mid": 28.5,
-   "yes_buy": 29,
-   "no_buy": 72,
+   "mid": 59,
+   "yes_buy": 61,
+   "no_buy": 43,
+   "taken_at": "2026-10-24T05:52:06.174Z"
+  },
+  {
+   "market_id": "1708809",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Jeline Vandromme cover -4.5 vs the Carol Young Suh Lee in Jeline Vandromme vs. Carol Young Suh Lee?",
+   "sides": [
+    "Jeline Vandromme -4.50 (Games)",
+    "Carol Young Suh Lee +4.50 (Games)"
+   ],
+   "teams": [
+    "Jeline Vandromme",
+    "Carol Young Suh Lee"
+   ],
+   "player": null,
+   "mid": 32.5,
+   "yes_buy": 33,
+   "no_buy": 68,
+   "taken_at": "2026-10-24T04:12:00.100Z"
+  },
+  {
+   "market_id": "1708808",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Jeline Vandromme cover 1.5 vs the Carol Young Suh Lee in Jeline Vandromme vs. Carol Young Suh Lee?",
+   "sides": [
+    "Jeline Vandromme +1.50 (Games)",
+    "Carol Young Suh Lee -1.50 (Games)"
+   ],
+   "teams": [
+    "Jeline Vandromme",
+    "Carol Young Suh Lee"
+   ],
+   "player": null,
+   "mid": 70.5,
+   "yes_buy": 71,
+   "no_buy": 30,
    "taken_at": "2026-10-24T04:12:00.100Z"
   },
   {
@@ -361,28 +390,6 @@
    "yes_buy": 43,
    "no_buy": 58,
    "taken_at": "2026-10-24T03:05:46.930Z"
-  },
-  {
-   "market_id": "1708809",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Jeline Vandromme cover -4.5 vs the Carol Young Suh Lee in Jeline Vandromme vs. Carol Young Suh Lee?",
-   "sides": [
-    "Jeline Vandromme -4.50 (Games)",
-    "Carol Young Suh Lee +4.50 (Games)"
-   ],
-   "teams": [
-    "Jeline Vandromme",
-    "Carol Young Suh Lee"
-   ],
-   "player": null,
-   "mid": 32.5,
-   "yes_buy": 33,
-   "no_buy": 68,
-   "taken_at": "2026-10-24T04:12:00.100Z"
   },
   {
    "market_id": "1708814",
@@ -519,46 +526,6 @@
  ],
  "edges": [
   {
-   "key": "1708824:0",
-   "market_id": "1708824",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Jeline Vandromme win set 2 against Carol Young Suh Lee?",
-   "side": "Yes: Jeline Vandromme win set 2 against Carol Young Suh Lee",
-   "open_chance": 61,
-   "now_chance": 29,
-   "open_odds": "-156",
-   "now_odds": "+245",
-   "edge": 32,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Jeline Vandromme not above the games spread right now",
-   "context": "Carol Young Suh Lee 5, 2 · Jeline Vandromme 7, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-10-24T06:49:08.044Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1707991:1",
-   "market_id": "1707991",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Jeline Vandromme vs Carol Young Suh Lee scheduled for October 24, 2026 at 3:00 AM UTC?",
-   "side": "Carol Young Suh Lee win",
-   "open_chance": 45,
-   "now_chance": 38,
-   "open_odds": "+122",
-   "now_odds": "+163",
-   "edge": 7,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Carol Young Suh Lee trailing in sets",
-   "context": "Carol Young Suh Lee 5, 2 · Jeline Vandromme 7, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-10-24T05:52:06.174Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1708817:1",
    "market_id": "1708817",
    "market": "Games total",
@@ -566,16 +533,76 @@
    "question": "Will the total in Jeline Vandromme vs. Carol Young Suh Lee be more than 27.5?",
    "side": "Under 27.5 (Games)",
    "open_chance": 72,
-   "now_chance": 44,
+   "now_chance": 27,
    "open_odds": "-257",
-   "now_odds": "+127",
-   "edge": 28,
+   "now_odds": "+270",
+   "edge": 45,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (28 pts), likely news",
-   "context": "Carol Young Suh Lee 5, 1 · Jeline Vandromme 7, 0 · 2nd Set (games by set)",
+   "reason": "Big move (45 pts), likely news",
+   "context": "Carol Young Suh Lee 5, 3 · Jeline Vandromme 7, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-24T06:43:29.722Z",
-   "status": "gone",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1708807:0",
+   "market_id": "1708807",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Jeline Vandromme cover -1.5 vs the Carol Young Suh Lee in Jeline Vandromme vs. Carol Young Suh Lee?",
+   "side": "Jeline Vandromme -1.50 (Games)",
+   "open_chance": 54,
+   "now_chance": 23,
+   "open_odds": "-117",
+   "now_odds": "+335",
+   "edge": 31,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Jeline Vandromme not above the games spread right now",
+   "context": "Carol Young Suh Lee 5, 3 · Jeline Vandromme 7, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-24T06:57:06.510Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1708810:1",
+   "market_id": "1708810",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Jeline Vandromme cover 4.5 vs the Carol Young Suh Lee in Jeline Vandromme vs. Carol Young Suh Lee?",
+   "side": "Carol Young Suh Lee -4.50 (Games)",
+   "open_chance": 30,
+   "now_chance": 19,
+   "open_odds": "+233",
+   "now_odds": "+426",
+   "edge": 11,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Carol Young Suh Lee not above the games spread right now",
+   "context": "Carol Young Suh Lee 5, 3 · Jeline Vandromme 7, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-24T06:57:06.510Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1707991:0",
+   "market_id": "1707991",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Jeline Vandromme vs Carol Young Suh Lee scheduled for October 24, 2026 at 3:00 AM UTC?",
+   "side": "Jeline Vandromme win",
+   "open_chance": 56,
+   "now_chance": 52,
+   "open_odds": "-127",
+   "now_odds": "-108",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Carol Young Suh Lee 5, 3 · Jeline Vandromme 7, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-24T06:57:06.510Z",
+   "status": "open",
    "kalshi": null
   },
   {
@@ -614,26 +641,6 @@
    "class": "edge",
    "reason": null,
    "context": "Carol Young Suh Lee 5, 1 · Jeline Vandromme 7, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-10-24T05:52:06.174Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1708809:1",
-   "market_id": "1708809",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Jeline Vandromme cover -4.5 vs the Carol Young Suh Lee in Jeline Vandromme vs. Carol Young Suh Lee?",
-   "side": "Carol Young Suh Lee +4.50 (Games)",
-   "open_chance": 68,
-   "now_chance": 54,
-   "open_odds": "-213",
-   "now_odds": "-117",
-   "edge": 14,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Carol Young Suh Lee 0 · Jeline Vandromme 1 · 1st Set (games by set)",
    "first_seen": "2026-10-24T05:52:06.174Z",
    "status": "gone",
    "kalshi": null
@@ -697,9 +704,43 @@
    "first_seen": "2026-10-24T06:43:29.722Z",
    "status": "gone",
    "kalshi": null
+  },
+  {
+   "key": "1707991:1",
+   "market_id": "1707991",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Jeline Vandromme vs Carol Young Suh Lee scheduled for October 24, 2026 at 3:00 AM UTC?",
+   "side": "Carol Young Suh Lee win",
+   "open_chance": 45,
+   "now_chance": 38,
+   "open_odds": "+122",
+   "now_odds": "+163",
+   "edge": 7,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Carol Young Suh Lee trailing in sets",
+   "context": "Carol Young Suh Lee 5, 2 · Jeline Vandromme 7, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-24T05:52:06.174Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1707991:0:slight",
+   "key": "1707991:0",
+   "at": "2026-10-24T06:57:06.510Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Jeline Vandromme win",
+   "market": "Moneyline",
+   "now_odds": "-108",
+   "now_chance": 52,
+   "edge": 4,
+   "text": "New slight edge: Jeline Vandromme win (Moneyline), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-jelvan-carlee-2026-10-23"
+  },
   {
    "id": "gone:1708807:1:2026-10-24T05:52:06.174Z",
    "key": "1708807:1",
@@ -785,20 +826,6 @@
    "url": "https://polymarket.us/sports/wta/wta-jelvan-carlee-2026-10-23"
   },
   {
-   "id": "gone:1708809:1:2026-10-24T05:52:06.174Z",
-   "key": "1708809:1",
-   "at": "2026-10-24T06:43:29.722Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Carol Young Suh Lee +4.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-117",
-   "now_chance": 54,
-   "edge": 14,
-   "text": "Edge gone: Carol Young Suh Lee +4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-jelvan-carlee-2026-10-23"
-  },
-  {
    "id": "gone:1708815:1:2026-10-24T05:07:00.776Z",
    "key": "1708815:1",
    "at": "2026-10-24T06:43:29.722Z",
@@ -824,20 +851,6 @@
    "now_chance": 33,
    "edge": 16,
    "text": "New big edge: Carol Young Suh Lee +1.50 (Games) (Games spread), 16 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-jelvan-carlee-2026-10-23"
-  },
-  {
-   "id": "new_edge:1708809:1:big",
-   "key": "1708809:1",
-   "at": "2026-10-24T05:52:06.174Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Carol Young Suh Lee +4.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-117",
-   "now_chance": 54,
-   "edge": 14,
-   "text": "New big edge: Carol Young Suh Lee +4.50 (Games) (Games spread), 14 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-jelvan-carlee-2026-10-23"
   },
   {
@@ -911,7 +924,8 @@
   "gone:1708815:1:2026-10-24T05:07:00.776Z",
   "news:1708817:1",
   "gone:1708816:1:2026-10-24T06:43:29.722Z",
-  "gone:1708807:1:2026-10-24T05:52:06.174Z"
+  "gone:1708807:1:2026-10-24T05:52:06.174Z",
+  "new_edge:1707991:0:slight"
  ],
  "kalshi_checked": null
 }
