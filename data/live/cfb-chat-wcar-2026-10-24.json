@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-24T19:29:52.578Z"
+  "fetched_at": "2026-10-24T19:35:51.307Z"
  },
- "updated": "2026-10-24T19:29:52.499Z",
+ "updated": "2026-10-24T19:35:51.233Z",
  "open_taken_at": "2026-10-23T05:00:26.449Z",
  "thresholds": {
   "big": 10,
@@ -549,26 +549,6 @@
  ],
  "edges": [
   {
-   "key": "1343847:1",
-   "market_id": "1343847",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming football event Chattanooga vs Western Carolina scheduled for October 24, 2026 at 6:30 PM UTC?",
-   "side": "Catamounts win",
-   "open_chance": 55,
-   "now_chance": 49.5,
-   "open_odds": "-122",
-   "now_odds": "+102",
-   "edge": 5.5,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-24T19:16:50.828Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1723157:1",
    "market_id": "1723157",
    "market": "Alt total",
@@ -829,6 +809,26 @@
    "kalshi": null
   },
   {
+   "key": "1343847:1",
+   "market_id": "1343847",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming football event Chattanooga vs Western Carolina scheduled for October 24, 2026 at 6:30 PM UTC?",
+   "side": "Catamounts win",
+   "open_chance": 55,
+   "now_chance": 49.5,
+   "open_odds": "-122",
+   "now_odds": "+102",
+   "edge": 5.5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-24T19:16:50.828Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1721775:1",
    "market_id": "1721775",
    "market": "Main spread",
@@ -890,6 +890,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1343847:1:2026-10-24T19:16:50.828Z",
+   "key": "1343847:1",
+   "at": "2026-10-24T19:35:51.233Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Catamounts win",
+   "market": "Moneyline",
+   "now_odds": "+102",
+   "now_chance": 49.5,
+   "edge": 5.5,
+   "text": "Edge gone: Catamounts win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-chat-wcar-2026-10-24"
+  },
   {
    "id": "new_edge:1343847:1:slight",
    "key": "1343847:1",
@@ -1161,7 +1175,8 @@
   "new_edge:1343847:0:big",
   "gone:1343847:0:2026-10-24T18:42:55.466Z",
   "new_edge:1343847:1:big",
-  "new_edge:1343847:1:slight"
+  "new_edge:1343847:1:slight",
+  "gone:1343847:1:2026-10-24T19:16:50.828Z"
  ],
  "kalshi_checked": null
 }
