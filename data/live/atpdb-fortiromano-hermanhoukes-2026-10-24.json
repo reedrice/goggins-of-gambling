@@ -4,14 +4,14 @@
  "game": "Forti / Romano vs. Hermans / Houkes",
  "url": "https://polymarket.us/sports/atpdb/atpdb-fortiromano-hermanhoukes-2026-10-24",
  "start_time": "2026-10-24T14:15:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-24T14:11:15.655Z"
+  "fetched_at": "2026-10-24T14:17:18.022Z"
  },
- "updated": "2026-10-24T14:11:15.548Z",
+ "updated": "2026-10-24T14:17:17.917Z",
  "open_taken_at": "2026-10-24T11:42:13.347Z",
  "thresholds": {
   "big": 10,
@@ -43,6 +43,26 @@
  ],
  "edges": [
   {
+   "key": "1749958:1",
+   "market_id": "1749958",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atpdb event Forti / Romano vs Hermans / Houkes scheduled for October 24, 2026 at 12:55 PM UTC?",
+   "side": "Hermans M / Houkes M win",
+   "open_chance": 31,
+   "now_chance": 27,
+   "open_odds": "+223",
+   "now_odds": "+270",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-24T14:17:17.917Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1749958:0",
    "market_id": "1749958",
    "market": "Moneyline",
@@ -59,11 +79,43 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T13:34:19.402Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "new_edge:1749958:1:slight",
+   "key": "1749958:1",
+   "at": "2026-10-24T14:17:17.917Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Hermans M / Houkes M win",
+   "market": "Moneyline",
+   "now_odds": "+270",
+   "now_chance": 27,
+   "edge": 4,
+   "text": "New slight edge: Hermans M / Houkes M win (Moneyline), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-fortiromano-hermanhoukes-2026-10-24"
+  },
+  {
+   "id": "gone:1749958:0:2026-10-24T13:34:19.402Z",
+   "key": "1749958:0",
+   "at": "2026-10-24T14:17:17.917Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Forti F / Romano F win",
+   "market": "Moneyline",
+   "now_odds": "-223",
+   "now_chance": 69,
+   "edge": 5,
+   "text": "Edge gone: Forti F / Romano F win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-fortiromano-hermanhoukes-2026-10-24"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:1749958:1:slight",
+  "gone:1749958:0:2026-10-24T13:34:19.402Z"
+ ],
  "kalshi_checked": null
 }
