@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187114",
-  "fetched_at": "2026-10-24T07:05:02.612Z",
+  "fetched_at": "2026-10-24T07:10:55.550Z",
   "tennis": true,
   "tennis_match": {
    "id": "187114",
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
        "value": 3
@@ -97,6 +98,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 2
@@ -134,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 264,
    "type": {
     "id": "2",
@@ -171,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T07:05:02.519Z",
+ "updated": "2026-10-24T07:10:55.458Z",
  "open_taken_at": "2026-10-23T10:02:46.027Z",
  "thresholds": {
   "big": 10,
@@ -201,26 +208,26 @@
    "taken_at": "2026-10-24T03:05:45.735Z"
   },
   {
-   "market_id": "1706298",
-   "market": "Games spread",
+   "market_id": "1706303",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Maya Joint cover 4.5 vs the Viktorija Golubic in Maya Joint vs. Viktorija Golubic?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Maya Joint vs. Viktorija Golubic be more than 17.5?",
    "sides": [
-    "Maya Joint +4.50 (Games)",
-    "Viktorija Golubic -4.50 (Games)"
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
    ],
    "teams": [
-    "Maya Joint",
-    "Viktorija Golubic"
+    null,
+    null
    ],
    "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-10-24T04:55:00.080Z"
+   "mid": 84.5,
+   "yes_buy": 86,
+   "no_buy": 17,
+   "taken_at": "2026-10-24T07:10:55.458Z"
   },
   {
    "market_id": "1706312",
@@ -311,6 +318,28 @@
    "taken_at": "2026-10-24T03:32:24.303Z"
   },
   {
+   "market_id": "1706297",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Maya Joint cover -4.5 vs the Viktorija Golubic in Maya Joint vs. Viktorija Golubic?",
+   "sides": [
+    "Maya Joint -4.50 (Games)",
+    "Viktorija Golubic +4.50 (Games)"
+   ],
+   "teams": [
+    "Maya Joint",
+    "Viktorija Golubic"
+   ],
+   "player": null,
+   "mid": 12.5,
+   "yes_buy": 13,
+   "no_buy": 88,
+   "taken_at": "2026-10-24T05:36:05.493Z"
+  },
+  {
    "market_id": "1706299",
    "market": "Games spread",
    "group": "game",
@@ -331,6 +360,28 @@
    "yes_buy": 6,
    "no_buy": 95,
    "taken_at": "2026-10-24T05:06:59.703Z"
+  },
+  {
+   "market_id": "1706298",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Maya Joint cover 4.5 vs the Viktorija Golubic in Maya Joint vs. Viktorija Golubic?",
+   "sides": [
+    "Maya Joint +4.50 (Games)",
+    "Viktorija Golubic -4.50 (Games)"
+   ],
+   "teams": [
+    "Maya Joint",
+    "Viktorija Golubic"
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-10-24T04:55:00.080Z"
   },
   {
    "market_id": "1706295",
@@ -375,28 +426,6 @@
    "yes_buy": 32,
    "no_buy": 69,
    "taken_at": "2026-10-24T07:02:58.108Z"
-  },
-  {
-   "market_id": "1706297",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Maya Joint cover -4.5 vs the Viktorija Golubic in Maya Joint vs. Viktorija Golubic?",
-   "sides": [
-    "Maya Joint -4.50 (Games)",
-    "Viktorija Golubic +4.50 (Games)"
-   ],
-   "teams": [
-    "Maya Joint",
-    "Viktorija Golubic"
-   ],
-   "player": null,
-   "mid": 12.5,
-   "yes_buy": 13,
-   "no_buy": 88,
-   "taken_at": "2026-10-24T05:36:05.493Z"
   },
   {
    "market_id": "1706302",
@@ -445,26 +474,6 @@
  ],
  "edges": [
   {
-   "key": "1706298:1",
-   "market_id": "1706298",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Maya Joint cover 4.5 vs the Viktorija Golubic in Maya Joint vs. Viktorija Golubic?",
-   "side": "Viktorija Golubic -4.50 (Games)",
-   "open_chance": 67,
-   "now_chance": 40,
-   "open_odds": "-203",
-   "now_odds": "+150",
-   "edge": 27,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Viktorija Golubic not above the games spread right now",
-   "context": "Viktorija Golubic 3 · Maya Joint 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-24T06:57:05.765Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1706311:0",
    "market_id": "1706311",
    "market": "Set 1 winner",
@@ -472,10 +481,10 @@
    "question": "Will Maya Joint win set 1 against Viktorija Golubic?",
    "side": "Yes: Maya Joint win set 1 against Viktorija Golubic",
    "open_chance": 55,
-   "now_chance": 34,
+   "now_chance": 35,
    "open_odds": "-122",
-   "now_odds": "+194",
-   "edge": 21,
+   "now_odds": "+186",
+   "edge": 20,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Maya Joint not above the games spread right now",
@@ -492,10 +501,10 @@
    "question": "Will the Maya Joint cover 1.5 vs the Viktorija Golubic in Maya Joint vs. Viktorija Golubic?",
    "side": "Maya Joint +1.50 (Games)",
    "open_chance": 61,
-   "now_chance": 45,
+   "now_chance": 49,
    "open_odds": "-156",
-   "now_odds": "+122",
-   "edge": 16,
+   "now_odds": "+104",
+   "edge": 12,
    "tier": "big",
    "class": "edge",
    "reason": null,
@@ -512,15 +521,35 @@
    "question": "Who will win in the upcoming wta event Maya Joint vs Viktorija Golubic scheduled for October 24, 2026 at 1:30 AM UTC?",
    "side": "Maya Joint win",
    "open_chance": 54,
-   "now_chance": 43,
+   "now_chance": 44,
    "open_odds": "-117",
-   "now_odds": "+133",
-   "edge": 11,
+   "now_odds": "+127",
+   "edge": 10,
    "tier": "big",
    "class": "edge",
    "reason": null,
    "context": "Viktorija Golubic 3 · Maya Joint 2 · 1st Set (games by set)",
    "first_seen": "2026-10-24T06:57:05.765Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1706297:1",
+   "market_id": "1706297",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Maya Joint cover -4.5 vs the Viktorija Golubic in Maya Joint vs. Viktorija Golubic?",
+   "side": "Viktorija Golubic +4.50 (Games)",
+   "open_chance": 88,
+   "now_chance": 78,
+   "open_odds": "-733",
+   "now_odds": "-355",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Viktorija Golubic 3 · Maya Joint 2 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T07:10:55.458Z",
    "status": "open",
    "kalshi": null
   },
@@ -532,16 +561,36 @@
    "question": "Will the total in Maya Joint vs. Viktorija Golubic be more than 22.5?",
    "side": "Under 22.5 (Games)",
    "open_chance": 56,
-   "now_chance": 52,
+   "now_chance": 50,
    "open_odds": "-127",
-   "now_odds": "-108",
-   "edge": 4,
+   "now_odds": "+100",
+   "edge": 6,
    "tier": "slight",
    "class": "edge",
    "reason": null,
    "context": "Viktorija Golubic 3 · Maya Joint 2 · 1st Set (games by set)",
    "first_seen": "2026-10-24T07:05:02.519Z",
    "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1706298:1",
+   "market_id": "1706298",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Maya Joint cover 4.5 vs the Viktorija Golubic in Maya Joint vs. Viktorija Golubic?",
+   "side": "Viktorija Golubic -4.50 (Games)",
+   "open_chance": 67,
+   "now_chance": 40,
+   "open_odds": "-203",
+   "now_odds": "+150",
+   "edge": 27,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Viktorija Golubic not above the games spread right now",
+   "context": "Viktorija Golubic 3 · Maya Joint 2 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T06:57:05.765Z",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -626,6 +675,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1706297:1:big",
+   "key": "1706297:1",
+   "at": "2026-10-24T07:10:55.458Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Viktorija Golubic +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-355",
+   "now_chance": 78,
+   "edge": 10,
+   "text": "New big edge: Viktorija Golubic +4.50 (Games) (Games spread), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-mayjoi-vikgol-2026-10-23"
+  },
   {
    "id": "new_edge:1706304:1:slight",
    "key": "1706304:1",
@@ -793,7 +856,8 @@
   "gone:1706311:1:2026-10-24T06:43:29.147Z",
   "gone:1706234:1:2026-10-24T06:43:29.147Z",
   "new_edge:1706234:0:big",
-  "new_edge:1706304:1:slight"
+  "new_edge:1706304:1:slight",
+  "new_edge:1706297:1:big"
  ],
  "kalshi_checked": null
 }
