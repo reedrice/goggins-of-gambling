@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for eflch",
-  "fetched_at": "2026-10-24T11:33:59.776Z"
+  "fetched_at": "2026-10-24T11:36:04.621Z"
  },
- "updated": "2026-10-24T11:33:59.770Z",
+ "updated": "2026-10-24T11:36:04.618Z",
  "open_taken_at": "2026-10-23T05:00:38.039Z",
  "thresholds": {
   "big": 10,
@@ -323,7 +323,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T10:27:05.097Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -343,11 +343,39 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T10:27:05.097Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1709903:1:2026-10-24T10:27:05.097Z",
+   "key": "1709903:1",
+   "at": "2026-10-24T11:36:04.618Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 2.5",
+   "market": "Main total",
+   "now_odds": "+122",
+   "now_chance": 45,
+   "edge": 5,
+   "text": "Edge gone: Under 2.5 (Main total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/eflch/eflch-cha-nor-2026-10-24"
+  },
+  {
+   "id": "gone:1709905:1:2026-10-24T10:27:05.097Z",
+   "key": "1709905:1",
+   "at": "2026-10-24T11:36:04.618Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 3.5",
+   "market": "Alt total",
+   "now_odds": "-213",
+   "now_chance": 68,
+   "edge": 5,
+   "text": "Edge gone: Under 3.5 (Alt total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/eflch/eflch-cha-nor-2026-10-24"
+  },
   {
    "id": "new_edge:1709903:1:slight",
    "key": "1709903:1",
@@ -379,7 +407,9 @@
  ],
  "alert_seen": [
   "new_edge:1709903:1:slight",
-  "new_edge:1709905:1:slight"
+  "new_edge:1709905:1:slight",
+  "gone:1709903:1:2026-10-24T10:27:05.097Z",
+  "gone:1709905:1:2026-10-24T10:27:05.097Z"
  ],
  "kalshi_checked": null
 }

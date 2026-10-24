@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187139",
-  "fetched_at": "2026-10-24T11:34:06.612Z",
+  "fetched_at": "2026-10-24T11:36:11.595Z",
   "tennis": true,
   "tennis_match": {
    "id": "187139",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Mei Yamaguchi (JPN) is tied with Linda Fruhvirtova (CZE) 2-6 1-0",
+     "text": "Linda Fruhvirtova (CZE) is tied with Mei Yamaguchi (JPN) 6-2 1-1",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
        "value": 2,
@@ -102,14 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 0
+       "value": 1
       }
      ],
      "athlete": {
@@ -186,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T11:34:06.526Z",
+ "updated": "2026-10-24T11:36:11.504Z",
  "open_taken_at": "2026-10-24T03:32:29.786Z",
  "thresholds": {
   "big": 10,
@@ -348,28 +348,6 @@
    "taken_at": "2026-10-24T10:47:54.862Z"
   },
   {
-   "market_id": "1740069",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Linda Fruhvirtova vs. Mei Yamaguchi be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 34.5,
-   "yes_buy": 35,
-   "no_buy": 66,
-   "taken_at": "2026-10-24T10:47:54.862Z"
-  },
-  {
    "market_id": "1740064",
    "market": "Games spread",
    "group": "game",
@@ -411,6 +389,28 @@
    "mid": 21.5,
    "yes_buy": 22,
    "no_buy": 79,
+   "taken_at": "2026-10-24T10:47:54.862Z"
+  },
+  {
+   "market_id": "1740069",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Linda Fruhvirtova vs. Mei Yamaguchi be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 34.5,
+   "yes_buy": 35,
+   "no_buy": 66,
    "taken_at": "2026-10-24T10:47:54.862Z"
   },
   {
@@ -526,26 +526,6 @@
  ],
  "edges": [
   {
-   "key": "1740068:1",
-   "market_id": "1740068",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Linda Fruhvirtova vs. Mei Yamaguchi be more than 17.5?",
-   "side": "Under 17.5 (Games)",
-   "open_chance": 49,
-   "now_chance": 39,
-   "open_odds": "+104",
-   "now_odds": "+156",
-   "edge": 10,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Mei Yamaguchi 2, 1 · Linda Fruhvirtova 6, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-10-24T11:08:08.459Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1740064:1",
    "market_id": "1740064",
    "market": "Games spread",
@@ -553,35 +533,15 @@
    "question": "Will the Linda Fruhvirtova cover -7.5 vs the Mei Yamaguchi in Linda Fruhvirtova vs. Mei Yamaguchi?",
    "side": "Mei Yamaguchi +7.50 (Games)",
    "open_chance": 79,
-   "now_chance": 69,
+   "now_chance": 68,
    "open_odds": "-376",
-   "now_odds": "-223",
-   "edge": 10,
+   "now_odds": "-213",
+   "edge": 11,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Mei Yamaguchi 2, 1 · Linda Fruhvirtova 6, 0 · 2nd Set (games by set)",
+   "context": "Mei Yamaguchi 2, 1 · Linda Fruhvirtova 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-24T11:27:54.920Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1740079:0",
-   "market_id": "1740079",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Linda Fruhvirtova win set 2 against Mei Yamaguchi?",
-   "side": "Yes: Linda Fruhvirtova win set 2 against Mei Yamaguchi",
-   "open_chance": 78,
-   "now_chance": 73,
-   "open_odds": "-355",
-   "now_odds": "-270",
-   "edge": 5,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Linda Fruhvirtova not above the games spread right now",
-   "context": "Mei Yamaguchi 2, 1 · Linda Fruhvirtova 6, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-10-24T11:34:06.526Z",
    "status": "open",
    "kalshi": null
   },
@@ -600,7 +560,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Mei Yamaguchi 2, 1 · Linda Fruhvirtova 6, 0 · 2nd Set (games by set)",
+   "context": "Mei Yamaguchi 2, 1 · Linda Fruhvirtova 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-24T11:02:14.085Z",
    "status": "open",
    "kalshi": null
@@ -626,6 +586,26 @@
    "kalshi": null
   },
   {
+   "key": "1740068:1",
+   "market_id": "1740068",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Linda Fruhvirtova vs. Mei Yamaguchi be more than 17.5?",
+   "side": "Under 17.5 (Games)",
+   "open_chance": 49,
+   "now_chance": 39,
+   "open_odds": "+104",
+   "now_odds": "+156",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Mei Yamaguchi 2, 1 · Linda Fruhvirtova 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-24T11:08:08.459Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1740069:1",
    "market_id": "1740069",
    "market": "Games total",
@@ -642,6 +622,26 @@
    "reason": null,
    "context": "Mei Yamaguchi 1 · Linda Fruhvirtova 1 · 1st Set (games by set)",
    "first_seen": "2026-10-24T11:08:08.459Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1740079:0",
+   "market_id": "1740079",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Linda Fruhvirtova win set 2 against Mei Yamaguchi?",
+   "side": "Yes: Linda Fruhvirtova win set 2 against Mei Yamaguchi",
+   "open_chance": 78,
+   "now_chance": 73,
+   "open_odds": "-355",
+   "now_odds": "-270",
+   "edge": 5,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Linda Fruhvirtova not above the games spread right now",
+   "context": "Mei Yamaguchi 2, 1 · Linda Fruhvirtova 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-24T11:34:06.526Z",
    "status": "gone",
    "kalshi": null
   }
