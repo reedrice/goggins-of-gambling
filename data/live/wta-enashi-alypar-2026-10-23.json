@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187112",
-  "fetched_at": "2026-10-24T03:17:53.978Z",
+  "fetched_at": "2026-10-24T03:24:03.537Z",
   "tennis": true,
   "tennis_match": {
    "id": "187112",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Fri, October 23rd at 11:20 PM EDT",
-     "shortDetail": "10/23 - 11:20 PM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Ena Shibahara (JPN) leads Alycia Parks (USA) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "c9236c27-4296-3453-8ce8-c95d00702e9f",
       "displayName": "Alycia Parks",
@@ -87,6 +98,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "5211233b-991a-7411-a88c-56756c8978b2",
       "displayName": "Ena Shibahara",
@@ -119,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 264,
    "type": {
     "id": "2",
@@ -135,10 +157,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Fri, October 23rd at 11:20 PM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Alycia Parks",
@@ -156,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T03:17:53.854Z",
+ "updated": "2026-10-24T03:24:03.279Z",
  "open_taken_at": "2026-10-23T10:02:46.475Z",
  "thresholds": {
   "big": 10,
@@ -274,28 +296,6 @@
    "taken_at": "2026-10-24T03:05:46.143Z"
   },
   {
-   "market_id": "1706394",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Ena Shibahara vs. Alycia Parks be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 48.5,
-   "yes_buy": 49,
-   "no_buy": 52,
-   "taken_at": "2026-10-24T03:05:46.143Z"
-  },
-  {
    "market_id": "1706386",
    "market": "Games spread",
    "group": "game",
@@ -315,6 +315,72 @@
    "mid": 47.5,
    "yes_buy": 48,
    "no_buy": 53,
+   "taken_at": "2026-10-24T03:05:46.143Z"
+  },
+  {
+   "market_id": "1706401",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Ena Shibahara win set 1 against Alycia Parks?",
+   "sides": [
+    "Yes: Ena Shibahara win set 1 against Alycia Parks",
+    "No: Ena Shibahara win set 1 against Alycia Parks"
+   ],
+   "teams": [
+    "Ena Shibahara",
+    null
+   ],
+   "player": null,
+   "mid": 49,
+   "yes_buy": 52,
+   "no_buy": 54,
+   "taken_at": "2026-10-24T03:24:03.279Z"
+  },
+  {
+   "market_id": "1706402",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Ena Shibahara win set 2 against Alycia Parks?",
+   "sides": [
+    "Yes: Ena Shibahara win set 2 against Alycia Parks",
+    "No: Ena Shibahara win set 2 against Alycia Parks"
+   ],
+   "teams": [
+    "Ena Shibahara",
+    null
+   ],
+   "player": null,
+   "mid": 47,
+   "yes_buy": 50,
+   "no_buy": 56,
+   "taken_at": "2026-10-24T03:24:03.279Z"
+  },
+  {
+   "market_id": "1706394",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Ena Shibahara vs. Alycia Parks be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 48.5,
+   "yes_buy": 49,
+   "no_buy": 52,
    "taken_at": "2026-10-24T03:05:46.143Z"
   },
   {
