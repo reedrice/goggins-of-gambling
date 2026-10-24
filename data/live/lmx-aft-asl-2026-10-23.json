@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for lmx",
-  "fetched_at": "2026-10-24T03:09:22.203Z"
+  "fetched_at": "2026-10-24T03:12:29.152Z"
  },
- "updated": "2026-10-24T03:09:22.197Z",
+ "updated": "2026-10-24T03:12:29.149Z",
  "open_taken_at": "2026-10-22T05:01:25.289Z",
  "thresholds": {
   "big": 10,
@@ -85,28 +85,6 @@
    "taken_at": "2026-10-22T05:01:25.289Z"
   },
   {
-   "market_id": "1698433",
-   "market": "Main spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": -1.5,
-   "question": "Will the Atlante FC cover -1.5 vs the Atletico San Luis in AFT vs ASL?",
-   "sides": [
-    "Atlante FC -1.50",
-    "Atlético San Luis +1.50"
-   ],
-   "teams": [
-    "Atlante FC",
-    "Atlético San Luis"
-   ],
-   "player": null,
-   "mid": 20,
-   "yes_buy": 21,
-   "no_buy": 81,
-   "taken_at": "2026-10-24T03:09:22.197Z"
-  },
-  {
    "market_id": "1698438",
    "market": "Main total",
    "group": "game",
@@ -126,6 +104,72 @@
    "mid": 49,
    "yes_buy": 50,
    "no_buy": 52,
+   "taken_at": "2026-10-24T03:09:22.197Z"
+  },
+  {
+   "market_id": "1698439",
+   "market": "Alt total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 3.5,
+   "question": "Will the total in AFT vs ASL be more than 3.5?",
+   "sides": [
+    "Over 3.5",
+    "Under 3.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 27.5,
+   "yes_buy": 28,
+   "no_buy": 73,
+   "taken_at": "2026-10-24T03:09:22.197Z"
+  },
+  {
+   "market_id": "1698436",
+   "market": "Alt total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 0.5,
+   "question": "Will the total in AFT vs ASL be more than 0.5?",
+   "sides": [
+    "Over 0.5",
+    "Under 0.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 95,
+   "yes_buy": 98,
+   "no_buy": 8,
+   "taken_at": "2026-10-24T03:05:40.550Z"
+  },
+  {
+   "market_id": "1698433",
+   "market": "Main spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": -1.5,
+   "question": "Will the Atlante FC cover -1.5 vs the Atletico San Luis in AFT vs ASL?",
+   "sides": [
+    "Atlante FC -1.50",
+    "Atlético San Luis +1.50"
+   ],
+   "teams": [
+    "Atlante FC",
+    "Atlético San Luis"
+   ],
+   "player": null,
+   "mid": 20,
+   "yes_buy": 21,
+   "no_buy": 81,
    "taken_at": "2026-10-24T03:09:22.197Z"
   },
   {
@@ -173,28 +217,6 @@
    "taken_at": "2026-10-24T03:05:40.550Z"
   },
   {
-   "market_id": "1698439",
-   "market": "Alt total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 3.5,
-   "question": "Will the total in AFT vs ASL be more than 3.5?",
-   "sides": [
-    "Over 3.5",
-    "Under 3.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 27.5,
-   "yes_buy": 28,
-   "no_buy": 73,
-   "taken_at": "2026-10-24T03:09:22.197Z"
-  },
-  {
    "market_id": "1698441",
    "market": "Alt total",
    "group": "game",
@@ -215,28 +237,6 @@
    "yes_buy": 5,
    "no_buy": 96,
    "taken_at": "2026-10-24T03:09:22.197Z"
-  },
-  {
-   "market_id": "1698436",
-   "market": "Alt total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 0.5,
-   "question": "Will the total in AFT vs ASL be more than 0.5?",
-   "sides": [
-    "Over 0.5",
-    "Under 0.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 95,
-   "yes_buy": 98,
-   "no_buy": 8,
-   "taken_at": "2026-10-24T03:05:40.550Z"
   },
   {
    "market_id": "1698437",
@@ -477,11 +477,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T03:09:22.197Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1698437:0:2026-10-24T03:09:22.197Z",
+   "key": "1698437:0",
+   "at": "2026-10-24T03:12:29.149Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 1.5",
+   "market": "Alt total",
+   "now_odds": "-300",
+   "now_chance": 75,
+   "edge": 5,
+   "text": "Edge gone: Over 1.5 (Alt total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/lmx/lmx-aft-asl-2026-10-23"
+  },
   {
    "id": "new_edge:1698437:0:slight",
    "key": "1698437:0",
@@ -498,7 +512,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1698437:0:slight"
+  "new_edge:1698437:0:slight",
+  "gone:1698437:0:2026-10-24T03:09:22.197Z"
  ],
  "kalshi_checked": null
 }
