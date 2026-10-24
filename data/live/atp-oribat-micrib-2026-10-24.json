@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-24T13:28:15.913Z"
+  "fetched_at": "2026-10-24T13:34:19.457Z"
  },
- "updated": "2026-10-24T13:28:15.847Z",
+ "updated": "2026-10-24T13:34:19.354Z",
  "open_taken_at": "2026-10-24T11:34:14.154Z",
  "thresholds": {
   "big": 10,
@@ -39,6 +39,50 @@
    "yes_buy": 47,
    "no_buy": 54,
    "taken_at": "2026-10-24T12:09:17.340Z"
+  },
+  {
+   "market_id": "1751530",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Oriol Roca Batalla cover 7.5 vs the Michele Ribecai in Oriol Roca Batalla vs. Michele Ribecai?",
+   "sides": [
+    "Oriol Roca Batalla +7.50 (Games)",
+    "Michele Ribecai -7.50 (Games)"
+   ],
+   "teams": [
+    "Oriol Roca Batalla",
+    "Michele Ribecai"
+   ],
+   "player": null,
+   "mid": 59,
+   "yes_buy": 62,
+   "no_buy": 44,
+   "taken_at": "2026-10-24T13:34:19.354Z"
+  },
+  {
+   "market_id": "1751538",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Oriol Roca Batalla vs. Michele Ribecai be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 47.5,
+   "yes_buy": 48,
+   "no_buy": 53,
+   "taken_at": "2026-10-24T13:16:13.229Z"
   },
   {
    "market_id": "1751521",
@@ -83,28 +127,6 @@
    "yes_buy": 52,
    "no_buy": 54,
    "taken_at": "2026-10-24T13:28:15.847Z"
-  },
-  {
-   "market_id": "1751538",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Oriol Roca Batalla vs. Michele Ribecai be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 47.5,
-   "yes_buy": 48,
-   "no_buy": 53,
-   "taken_at": "2026-10-24T13:16:13.229Z"
   },
   {
    "market_id": "1751523",
@@ -169,7 +191,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T13:28:15.847Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -214,6 +236,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1751521:1:2026-10-24T13:28:15.847Z",
+   "key": "1751521:1",
+   "at": "2026-10-24T13:34:19.354Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Michele Ribecai +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+117",
+   "now_chance": 46,
+   "edge": 15,
+   "text": "Edge gone: Michele Ribecai +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-oribat-micrib-2026-10-24"
+  },
   {
    "id": "new_edge:1751521:1:big",
    "key": "1751521:1",
@@ -275,7 +311,8 @@
   "gone:1749850:0:2026-10-24T12:38:18.262Z",
   "new_edge:1749850:1:big",
   "new_edge:1751521:1:big",
-  "gone:1749850:1:2026-10-24T13:22:16.753Z"
+  "gone:1749850:1:2026-10-24T13:22:16.753Z",
+  "gone:1751521:1:2026-10-24T13:28:15.847Z"
  ],
  "kalshi_checked": null
 }
