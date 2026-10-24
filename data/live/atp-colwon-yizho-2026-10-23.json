@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-24T03:26:06.871Z"
+  "fetched_at": "2026-10-24T03:32:23.664Z"
  },
- "updated": "2026-10-24T03:26:06.794Z",
+ "updated": "2026-10-24T03:32:23.524Z",
  "open_taken_at": "2026-10-23T07:24:39.851Z",
  "thresholds": {
   "big": 10,
@@ -105,6 +105,28 @@
    "yes_buy": 87,
    "no_buy": 14,
    "taken_at": "2026-10-24T03:17:52.896Z"
+  },
+  {
+   "market_id": "1704329",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Coleman Wong cover 1.5 vs the Yi Zhou in Coleman Wong vs. Yi Zhou?",
+   "sides": [
+    "Coleman Wong +1.50 (Sets)",
+    "Yi Zhou -1.50 (Sets)"
+   ],
+   "teams": [
+    "Coleman Wong",
+    "Yi Zhou"
+   ],
+   "player": null,
+   "mid": 85.5,
+   "yes_buy": 86,
+   "no_buy": 15,
+   "taken_at": "2026-10-24T03:09:27.477Z"
   },
   {
    "market_id": "1704318",
@@ -261,28 +283,6 @@
    "taken_at": "2026-10-24T03:05:45.053Z"
   },
   {
-   "market_id": "1704329",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Coleman Wong cover 1.5 vs the Yi Zhou in Coleman Wong vs. Yi Zhou?",
-   "sides": [
-    "Coleman Wong +1.50 (Sets)",
-    "Yi Zhou -1.50 (Sets)"
-   ],
-   "teams": [
-    "Coleman Wong",
-    "Yi Zhou"
-   ],
-   "player": null,
-   "mid": 85.5,
-   "yes_buy": 86,
-   "no_buy": 15,
-   "taken_at": "2026-10-24T03:09:27.477Z"
-  },
-  {
    "market_id": "1704340",
    "market": "Set 2 winner",
    "group": "game",
@@ -349,6 +349,26 @@
    "kalshi": null
   },
   {
+   "key": "1704329:0",
+   "market_id": "1704329",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Coleman Wong cover 1.5 vs the Yi Zhou in Coleman Wong vs. Yi Zhou?",
+   "side": "Coleman Wong +1.50 (Sets)",
+   "open_chance": 86,
+   "now_chance": 81,
+   "open_odds": "-614",
+   "now_odds": "-426",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-24T03:32:23.524Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1704340:1",
    "market_id": "1704340",
    "market": "Set 2 winner",
@@ -410,6 +430,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1704329:0:slight",
+   "key": "1704329:0",
+   "at": "2026-10-24T03:32:23.524Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Coleman Wong +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "-426",
+   "now_chance": 81,
+   "edge": 5,
+   "text": "New slight edge: Coleman Wong +1.50 (Sets) (Sets spread), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-colwon-yizho-2026-10-23"
+  },
   {
    "id": "gone:1704340:1:2026-10-24T03:24:01.910Z",
    "key": "1704340:1",
@@ -516,7 +550,8 @@
   "new_edge:1704340:1:big",
   "gone:1704333:1:2026-10-24T03:17:52.896Z",
   "gone:1704340:1:2026-10-24T03:24:01.910Z",
-  "gone:1704339:0:2026-10-24T03:17:52.896Z"
+  "gone:1704339:0:2026-10-24T03:17:52.896Z",
+  "new_edge:1704329:0:slight"
  ],
  "kalshi_checked": null
 }
