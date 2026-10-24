@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-24T11:08:05.749Z"
+  "fetched_at": "2026-10-24T11:10:08.563Z"
  },
- "updated": "2026-10-24T11:08:05.618Z",
+ "updated": "2026-10-24T11:10:08.501Z",
  "open_taken_at": "2026-10-23T14:03:09.150Z",
  "thresholds": {
   "big": 10,
@@ -63,28 +63,6 @@
    "taken_at": "2026-10-24T10:27:10.211Z"
   },
   {
-   "market_id": "1711509",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Marco Trungelliti cover 4.5 vs the Alexander Ritschard in Marco Trungelliti vs. Alexander Ritschard?",
-   "sides": [
-    "Marco Trungelliti +4.50 (Games)",
-    "Alexander Ritschard -4.50 (Games)"
-   ],
-   "teams": [
-    "Marco Trungelliti",
-    "Alexander Ritschard"
-   ],
-   "player": null,
-   "mid": 67.5,
-   "yes_buy": 68,
-   "no_buy": 33,
-   "taken_at": "2026-10-24T10:13:09.443Z"
-  },
-  {
    "market_id": "1711515",
    "market": "Games total",
    "group": "game",
@@ -105,6 +83,28 @@
    "yes_buy": 50,
    "no_buy": 52,
    "taken_at": "2026-10-24T03:05:48.271Z"
+  },
+  {
+   "market_id": "1711509",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Marco Trungelliti cover 4.5 vs the Alexander Ritschard in Marco Trungelliti vs. Alexander Ritschard?",
+   "sides": [
+    "Marco Trungelliti +4.50 (Games)",
+    "Alexander Ritschard -4.50 (Games)"
+   ],
+   "teams": [
+    "Marco Trungelliti",
+    "Alexander Ritschard"
+   ],
+   "player": null,
+   "mid": 67.5,
+   "yes_buy": 68,
+   "no_buy": 33,
+   "taken_at": "2026-10-24T10:13:09.443Z"
   },
   {
    "market_id": "1711507",
@@ -398,10 +398,10 @@
    "question": "Will the Marco Trungelliti cover 4.5 vs the Alexander Ritschard in Marco Trungelliti vs. Alexander Ritschard?",
    "side": "Marco Trungelliti +4.50 (Games)",
    "open_chance": 68,
-   "now_chance": 35,
+   "now_chance": 41,
    "open_odds": "-213",
-   "now_odds": "+186",
-   "edge": 33,
+   "now_odds": "+144",
+   "edge": 27,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -418,10 +418,10 @@
    "question": "Who will win in the upcoming atp event Marco Trungelliti vs Alexander Ritschard scheduled for October 24, 2026 at 10:00 AM UTC?",
    "side": "Marco Trungelliti win",
    "open_chance": 55,
-   "now_chance": 24,
+   "now_chance": 33,
    "open_odds": "-122",
-   "now_odds": "+317",
-   "edge": 31,
+   "now_odds": "+203",
+   "edge": 22,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -438,11 +438,11 @@
    "question": "Will the total in Marco Trungelliti vs. Alexander Ritschard be more than 22.5?",
    "side": "Over 22.5 (Games)",
    "open_chance": 50,
-   "now_chance": 30,
+   "now_chance": 43,
    "open_odds": "+100",
-   "now_odds": "+233",
-   "edge": 20,
-   "tier": "big",
+   "now_odds": "+133",
+   "edge": 7,
+   "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -512,6 +512,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1711515:0:slight",
+   "key": "1711515:0",
+   "at": "2026-10-24T11:10:08.501Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+133",
+   "now_chance": 43,
+   "edge": 7,
+   "text": "New slight edge: Over 22.5 (Games) (Games total), 7 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-martru-alerit-2026-10-24"
+  },
   {
    "id": "new_edge:1711515:0:big",
    "key": "1711515:0",
@@ -755,7 +769,8 @@
   "new_edge:1711514:0:big",
   "new_edge:1711511:0:big",
   "new_edge:1711515:0:big",
-  "gone:1711511:0:2026-10-24T10:41:55.338Z"
+  "gone:1711511:0:2026-10-24T10:41:55.338Z",
+  "new_edge:1711515:0:slight"
  ],
  "kalshi_checked": null
 }

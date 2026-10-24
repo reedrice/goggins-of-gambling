@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-24T11:08:05.440Z"
+  "fetched_at": "2026-10-24T11:10:08.305Z"
  },
- "updated": "2026-10-24T11:08:05.338Z",
+ "updated": "2026-10-24T11:10:08.241Z",
  "open_taken_at": "2026-10-23T12:15:47.013Z",
  "thresholds": {
   "big": 10,
@@ -39,6 +39,28 @@
    "yes_buy": 54,
    "no_buy": 47,
    "taken_at": "2026-10-24T03:05:47.877Z"
+  },
+  {
+   "market_id": "1708805",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Sandro Kopp win set 1 against Filippo Romano?",
+   "sides": [
+    "Yes: Sandro Kopp win set 1 against Filippo Romano",
+    "No: Sandro Kopp win set 1 against Filippo Romano"
+   ],
+   "teams": [
+    "Sandro Kopp",
+    null
+   ],
+   "player": null,
+   "mid": 53,
+   "yes_buy": 54,
+   "no_buy": 48,
+   "taken_at": "2026-10-24T10:54:00.885Z"
   },
   {
    "market_id": "1708797",
@@ -83,28 +105,6 @@
    "yes_buy": 73,
    "no_buy": 28,
    "taken_at": "2026-10-24T09:49:49.103Z"
-  },
-  {
-   "market_id": "1708805",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Sandro Kopp win set 1 against Filippo Romano?",
-   "sides": [
-    "Yes: Sandro Kopp win set 1 against Filippo Romano",
-    "No: Sandro Kopp win set 1 against Filippo Romano"
-   ],
-   "teams": [
-    "Sandro Kopp",
-    null
-   ],
-   "player": null,
-   "mid": 53,
-   "yes_buy": 54,
-   "no_buy": 48,
-   "taken_at": "2026-10-24T10:54:00.885Z"
   },
   {
    "market_id": "1708792",
@@ -173,26 +173,26 @@
    "taken_at": "2026-10-24T09:49:49.103Z"
   },
   {
-   "market_id": "1708800",
-   "market": "Sets total",
+   "market_id": "1708795",
+   "market": "Sets spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Sandro Kopp vs. Filippo Romano be more than 2.5?",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Sandro Kopp cover -1.5 vs the Filippo Romano in Sandro Kopp vs. Filippo Romano?",
    "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
+    "Sandro Kopp -1.50 (Sets)",
+    "Filippo Romano +1.50 (Sets)"
    ],
    "teams": [
-    null,
-    null
+    "Sandro Kopp",
+    "Filippo Romano"
    ],
    "player": null,
-   "mid": 34.5,
-   "yes_buy": 35,
-   "no_buy": 66,
-   "taken_at": "2026-10-24T09:49:49.103Z"
+   "mid": 28.5,
+   "yes_buy": 29,
+   "no_buy": 72,
+   "taken_at": "2026-10-24T10:47:52.488Z"
   },
   {
    "market_id": "1708806",
@@ -237,6 +237,28 @@
    "yes_buy": 48,
    "no_buy": 54,
    "taken_at": "2026-10-24T03:05:47.877Z"
+  },
+  {
+   "market_id": "1708800",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Sandro Kopp vs. Filippo Romano be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 34.5,
+   "yes_buy": 35,
+   "no_buy": 66,
+   "taken_at": "2026-10-24T09:49:49.103Z"
   },
   {
    "market_id": "1708791",
@@ -303,28 +325,6 @@
    "yes_buy": 30,
    "no_buy": 71,
    "taken_at": "2026-10-24T09:49:49.103Z"
-  },
-  {
-   "market_id": "1708795",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Sandro Kopp cover -1.5 vs the Filippo Romano in Sandro Kopp vs. Filippo Romano?",
-   "sides": [
-    "Sandro Kopp -1.50 (Sets)",
-    "Filippo Romano +1.50 (Sets)"
-   ],
-   "teams": [
-    "Sandro Kopp",
-    "Filippo Romano"
-   ],
-   "player": null,
-   "mid": 28.5,
-   "yes_buy": 29,
-   "no_buy": 72,
-   "taken_at": "2026-10-24T10:47:52.488Z"
   }
  ],
  "edges": [
@@ -336,15 +336,35 @@
    "question": "Will Sandro Kopp win set 1 against Filippo Romano?",
    "side": "No: Sandro Kopp win set 1 against Filippo Romano",
    "open_chance": 48,
-   "now_chance": 23,
+   "now_chance": 17,
    "open_odds": "+108",
-   "now_odds": "+335",
-   "edge": 25,
+   "now_odds": "+488",
+   "edge": 31,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T11:08:05.338Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1708795:1",
+   "market_id": "1708795",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Sandro Kopp cover -1.5 vs the Filippo Romano in Sandro Kopp vs. Filippo Romano?",
+   "side": "Filippo Romano +1.50 (Sets)",
+   "open_chance": 72,
+   "now_chance": 46,
+   "open_odds": "-257",
+   "now_odds": "+117",
+   "edge": 26,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-24T11:10:08.241Z",
    "status": "open",
    "kalshi": null
   },
@@ -396,10 +416,10 @@
    "question": "Who will win in the upcoming atp event Sandro Kopp vs Filippo Romano scheduled for October 24, 2026 at 8:00 AM UTC?",
    "side": "Filippo Romano win",
    "open_chance": 47,
-   "now_chance": 34,
+   "now_chance": 33,
    "open_odds": "+113",
-   "now_odds": "+194",
-   "edge": 13,
+   "now_odds": "+203",
+   "edge": 14,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -416,35 +436,15 @@
    "question": "Will the total in Sandro Kopp vs. Filippo Romano be more than 2.5?",
    "side": "Under 2.5 (Sets)",
    "open_chance": 66,
-   "now_chance": 56,
+   "now_chance": 55,
    "open_odds": "-194",
-   "now_odds": "-127",
-   "edge": 10,
+   "now_odds": "-122",
+   "edge": 11,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T11:08:05.338Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1708806:0",
-   "market_id": "1708806",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Sandro Kopp win set 2 against Filippo Romano?",
-   "side": "Yes: Sandro Kopp win set 2 against Filippo Romano",
-   "open_chance": 56,
-   "now_chance": 47,
-   "open_odds": "-127",
-   "now_odds": "+113",
-   "edge": 9,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-24T10:56:03.966Z",
    "status": "open",
    "kalshi": null
   },
@@ -529,6 +529,26 @@
    "kalshi": null
   },
   {
+   "key": "1708806:0",
+   "market_id": "1708806",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Sandro Kopp win set 2 against Filippo Romano?",
+   "side": "Yes: Sandro Kopp win set 2 against Filippo Romano",
+   "open_chance": 56,
+   "now_chance": 51,
+   "open_odds": "-127",
+   "now_odds": "-104",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-24T10:56:03.966Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1708495:0",
    "market_id": "1708495",
    "market": "Moneyline",
@@ -590,6 +610,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1708795:1:big",
+   "key": "1708795:1",
+   "at": "2026-10-24T11:10:08.241Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Filippo Romano +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+117",
+   "now_chance": 46,
+   "edge": 26,
+   "text": "New big edge: Filippo Romano +1.50 (Sets) (Sets spread), 26 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-sankop-filrom-2026-10-24"
+  },
   {
    "id": "new_edge:1708789:1:big",
    "key": "1708789:1",
@@ -848,7 +882,8 @@
   "gone:1708806:0:2026-10-24T10:56:03.966Z",
   "new_edge:1708789:1:big",
   "new_edge:1708800:1:big",
-  "gone:1708798:0:2026-10-24T11:02:10.746Z"
+  "gone:1708798:0:2026-10-24T11:02:10.746Z",
+  "new_edge:1708795:1:big"
  ],
  "kalshi_checked": null
 }
