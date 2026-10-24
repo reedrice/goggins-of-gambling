@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for eflch",
-  "fetched_at": "2026-10-24T15:29:02.869Z"
+  "fetched_at": "2026-10-24T15:32:06.111Z"
  },
- "updated": "2026-10-24T15:29:02.863Z",
+ "updated": "2026-10-24T15:32:06.109Z",
  "open_taken_at": "2026-10-23T05:00:38.797Z",
  "thresholds": {
   "big": 10,
@@ -63,6 +63,28 @@
    "taken_at": "2026-10-23T05:00:38.797Z"
   },
   {
+   "market_id": "1712230",
+   "market": "Main spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 2.5,
+   "question": "Will the West Ham United FC cover 2.5 vs the Southampton FC in WHU vs SOT?",
+   "sides": [
+    "West Ham United FC +2.50",
+    "Southampton FC -2.50"
+   ],
+   "teams": [
+    "West Ham United FC",
+    "Southampton FC"
+   ],
+   "player": null,
+   "mid": 92,
+   "yes_buy": 93,
+   "no_buy": 9,
+   "taken_at": "2026-10-24T14:04:59.358Z"
+  },
+  {
    "market_id": "1712275",
    "market": "Main total",
    "group": "game",
@@ -105,28 +127,6 @@
    "yes_buy": 94,
    "no_buy": 10,
    "taken_at": "2026-10-24T03:05:42.826Z"
-  },
-  {
-   "market_id": "1712230",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": 2.5,
-   "question": "Will the West Ham United FC cover 2.5 vs the Southampton FC in WHU vs SOT?",
-   "sides": [
-    "West Ham United FC +2.50",
-    "Southampton FC -2.50"
-   ],
-   "teams": [
-    "West Ham United FC",
-    "Southampton FC"
-   ],
-   "player": null,
-   "mid": 92,
-   "yes_buy": 93,
-   "no_buy": 9,
-   "taken_at": "2026-10-24T14:04:59.358Z"
   },
   {
    "market_id": "1712276",
@@ -307,6 +307,26 @@
  ],
  "edges": [
   {
+   "key": "1712230:0",
+   "market_id": "1712230",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will the West Ham United FC cover 2.5 vs the Southampton FC in WHU vs SOT?",
+   "side": "West Ham United FC +2.50",
+   "open_chance": 93,
+   "now_chance": 82,
+   "open_odds": "-1329",
+   "now_odds": "-456",
+   "edge": 11,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-24T15:32:06.109Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1712229:0",
    "market_id": "1712229",
    "market": "Main spread",
@@ -323,7 +343,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T14:37:59.445Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -343,7 +363,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T15:23:05.067Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -363,11 +383,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T14:04:59.358Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1712275:1:2026-10-24T15:23:05.067Z",
+   "key": "1712275:1",
+   "at": "2026-10-24T15:32:06.109Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 4.5",
+   "market": "Main total",
+   "now_odds": "+203",
+   "now_chance": 33,
+   "edge": 44,
+   "text": "Edge gone: Under 4.5 (Main total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/eflch/eflch-whu-sot-2026-10-24"
+  },
   {
    "id": "gone:1712229:0:2026-10-24T14:37:59.445Z",
    "key": "1712229:0",
@@ -448,7 +482,8 @@
   "gone:1619243:1:2026-10-24T14:29:12.536Z",
   "new_edge:1712230:0:big",
   "gone:1712229:0:2026-10-24T14:37:59.445Z",
-  "gone:1712230:0:2026-10-24T14:43:52.140Z"
+  "gone:1712230:0:2026-10-24T14:43:52.140Z",
+  "gone:1712275:1:2026-10-24T15:23:05.067Z"
  ],
  "kalshi_checked": null
 }
