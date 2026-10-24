@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187115",
-  "fetched_at": "2026-10-24T11:15:59.509Z",
+  "fetched_at": "2026-10-24T11:21:50.198Z",
   "tennis": true,
   "tennis_match": {
    "id": "187115",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Zhang Shuai (CHN) leads Kayla Day (USA) 6-3",
+     "text": "Kayla Day (USA) is tied with Zhang Shuai (CHN) 3-6 1-0",
      "type": "event"
     }
    ],
@@ -55,9 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -97,9 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
-       "value": 3
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -134,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 264,
    "type": {
     "id": "2",
@@ -152,14 +167,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Zhang Shuai",
    "alias": "Zhang Shuai",
    "name": "Zhang Shuai",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Kayla Day",
@@ -171,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T11:15:59.440Z",
+ "updated": "2026-10-24T11:21:50.025Z",
  "open_taken_at": "2026-10-23T10:02:46.861Z",
  "thresholds": {
   "big": 10,
@@ -201,28 +216,6 @@
    "taken_at": "2026-10-24T03:05:46.544Z"
   },
   {
-   "market_id": "1706447",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Kayla Day vs. Shuai Zhang be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 70.5,
-   "yes_buy": 71,
-   "no_buy": 30,
-   "taken_at": "2026-10-24T10:41:54.768Z"
-  },
-  {
    "market_id": "1706446",
    "market": "Sets spread",
    "group": "game",
@@ -245,28 +238,6 @@
    "taken_at": "2026-10-24T10:47:52.179Z"
   },
   {
-   "market_id": "1706456",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Kayla Day win set 2 against Shuai Zhang?",
-   "sides": [
-    "Yes: Kayla Day win set 2 against Shuai Zhang",
-    "No: Kayla Day win set 2 against Shuai Zhang"
-   ],
-   "teams": [
-    "Kayla Day",
-    null
-   ],
-   "player": null,
-   "mid": 49,
-   "yes_buy": 51,
-   "no_buy": 53,
-   "taken_at": "2026-10-24T10:41:54.768Z"
-  },
-  {
    "market_id": "1706442",
    "market": "Games spread",
    "group": "game",
@@ -286,6 +257,28 @@
    "mid": 74,
    "yes_buy": 76,
    "no_buy": 28,
+   "taken_at": "2026-10-24T10:41:54.768Z"
+  },
+  {
+   "market_id": "1706456",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Kayla Day win set 2 against Shuai Zhang?",
+   "sides": [
+    "Yes: Kayla Day win set 2 against Shuai Zhang",
+    "No: Kayla Day win set 2 against Shuai Zhang"
+   ],
+   "teams": [
+    "Kayla Day",
+    null
+   ],
+   "player": null,
+   "mid": 49,
+   "yes_buy": 51,
+   "no_buy": 53,
    "taken_at": "2026-10-24T10:41:54.768Z"
   },
   {
@@ -311,28 +304,6 @@
    "taken_at": "2026-10-24T03:05:46.544Z"
   },
   {
-   "market_id": "1706450",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Kayla Day vs. Shuai Zhang be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 34.5,
-   "yes_buy": 35,
-   "no_buy": 66,
-   "taken_at": "2026-10-24T10:41:54.768Z"
-  },
-  {
    "market_id": "1706440",
    "market": "Games spread",
    "group": "game",
@@ -353,6 +324,72 @@
    "yes_buy": 53,
    "no_buy": 50,
    "taken_at": "2026-10-24T03:05:46.544Z"
+  },
+  {
+   "market_id": "1706441",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Kayla Day cover -4.5 vs the Shuai Zhang in Kayla Day vs. Shuai Zhang?",
+   "sides": [
+    "Kayla Day -4.50 (Games)",
+    "Shuai Zhang +4.50 (Games)"
+   ],
+   "teams": [
+    "Kayla Day",
+    "Shuai Zhang"
+   ],
+   "player": null,
+   "mid": 27.5,
+   "yes_buy": 28,
+   "no_buy": 73,
+   "taken_at": "2026-10-24T10:41:54.768Z"
+  },
+  {
+   "market_id": "1706447",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Kayla Day vs. Shuai Zhang be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 70.5,
+   "yes_buy": 71,
+   "no_buy": 30,
+   "taken_at": "2026-10-24T10:41:54.768Z"
+  },
+  {
+   "market_id": "1706450",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Kayla Day vs. Shuai Zhang be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 34.5,
+   "yes_buy": 35,
+   "no_buy": 66,
+   "taken_at": "2026-10-24T10:41:54.768Z"
   },
   {
    "market_id": "1706449",
@@ -397,28 +434,6 @@
    "yes_buy": 41,
    "no_buy": 62,
    "taken_at": "2026-10-24T10:33:00.113Z"
-  },
-  {
-   "market_id": "1706441",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Kayla Day cover -4.5 vs the Shuai Zhang in Kayla Day vs. Shuai Zhang?",
-   "sides": [
-    "Kayla Day -4.50 (Games)",
-    "Shuai Zhang +4.50 (Games)"
-   ],
-   "teams": [
-    "Kayla Day",
-    "Shuai Zhang"
-   ],
-   "player": null,
-   "mid": 27.5,
-   "yes_buy": 28,
-   "no_buy": 73,
-   "taken_at": "2026-10-24T10:41:54.768Z"
   },
   {
    "market_id": "1706455",
@@ -518,34 +533,14 @@
    "question": "Will the Kayla Day cover 4.5 vs the Shuai Zhang in Kayla Day vs. Shuai Zhang?",
    "side": "Kayla Day +4.50 (Games)",
    "open_chance": 76,
-   "now_chance": 39,
+   "now_chance": 44,
    "open_odds": "-317",
-   "now_odds": "+156",
-   "edge": 37,
+   "now_odds": "+127",
+   "edge": 32,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (37 pts), likely news",
-   "context": "Zhang Shuai 6 · Kayla Day 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-24T10:54:00.536Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1706446:0",
-   "market_id": "1706446",
-   "market": "Sets spread",
-   "group": "game",
-   "question": "Will the Kayla Day cover 1.5 vs the Shuai Zhang in Kayla Day vs. Shuai Zhang?",
-   "side": "Kayla Day +1.50 (Sets)",
-   "open_chance": 74,
-   "now_chance": 40,
-   "open_odds": "-285",
-   "now_odds": "+150",
-   "edge": 34,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (34 pts), likely news",
-   "context": "Zhang Shuai 6 · Kayla Day 3 · 1st Set (games by set)",
+   "reason": "Big move (32 pts), likely news",
+   "context": "Zhang Shuai 6, 0 · Kayla Day 3, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-24T10:54:00.536Z",
    "status": "open",
    "kalshi": null
@@ -558,14 +553,14 @@
    "question": "Will the Kayla Day cover 1.5 vs the Shuai Zhang in Kayla Day vs. Shuai Zhang?",
    "side": "Kayla Day +1.50 (Games)",
    "open_chance": 53,
-   "now_chance": 25,
+   "now_chance": 22,
    "open_odds": "-113",
-   "now_odds": "+300",
-   "edge": 28,
+   "now_odds": "+355",
+   "edge": 31,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Kayla Day not above the games spread right now",
-   "context": "Zhang Shuai 6 · Kayla Day 3 · 1st Set (games by set)",
+   "context": "Zhang Shuai 6, 0 · Kayla Day 3, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-24T10:36:07.089Z",
    "status": "open",
    "kalshi": null
@@ -578,14 +573,34 @@
    "question": "Who will win in the upcoming wta event Kayla Day vs Shuai Zhang scheduled for October 24, 2026 at 1:30 AM UTC?",
    "side": "Kayla Day win",
    "open_chance": 47,
-   "now_chance": 20,
+   "now_chance": 21,
    "open_odds": "+113",
-   "now_odds": "+400",
-   "edge": 27,
+   "now_odds": "+376",
+   "edge": 26,
    "tier": "big",
-   "class": "news",
-   "reason": "Big move (27 pts), likely news",
-   "context": "Zhang Shuai 6 · Kayla Day 3 · 1st Set (games by set)",
+   "class": "score",
+   "reason": "Explained by score: Kayla Day trailing in sets",
+   "context": "Zhang Shuai 6, 0 · Kayla Day 3, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-24T10:54:00.536Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1706446:0",
+   "market_id": "1706446",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Kayla Day cover 1.5 vs the Shuai Zhang in Kayla Day vs. Shuai Zhang?",
+   "side": "Kayla Day +1.50 (Sets)",
+   "open_chance": 74,
+   "now_chance": 51,
+   "open_odds": "-285",
+   "now_odds": "-104",
+   "edge": 23,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Zhang Shuai 6, 0 · Kayla Day 3, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-24T10:54:00.536Z",
    "status": "open",
    "kalshi": null
@@ -598,15 +613,35 @@
    "question": "Will Kayla Day win set 2 against Shuai Zhang?",
    "side": "Yes: Kayla Day win set 2 against Shuai Zhang",
    "open_chance": 51,
-   "now_chance": 40,
+   "now_chance": 43,
    "open_odds": "-104",
-   "now_odds": "+150",
-   "edge": 11,
-   "tier": "big",
+   "now_odds": "+133",
+   "edge": 8,
+   "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Zhang Shuai 6 · Kayla Day 3 · 1st Set (games by set)",
+   "context": "Zhang Shuai 6, 0 · Kayla Day 3, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-24T10:54:00.536Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1706448:0",
+   "market_id": "1706448",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Kayla Day vs. Shuai Zhang be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 45,
+   "now_chance": 38,
+   "open_odds": "+122",
+   "now_odds": "+163",
+   "edge": 7,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Zhang Shuai 6, 0 · Kayla Day 3, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-24T11:15:59.440Z",
    "status": "open",
    "kalshi": null
   },
@@ -627,27 +662,7 @@
    "reason": null,
    "context": "Zhang Shuai 6 · Kayla Day 3 · 1st Set (games by set)",
    "first_seen": "2026-10-24T11:15:59.440Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1706448:0",
-   "market_id": "1706448",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Kayla Day vs. Shuai Zhang be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 45,
-   "now_chance": 38,
-   "open_odds": "+122",
-   "now_odds": "+163",
-   "edge": 7,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Zhang Shuai 6 · Kayla Day 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-24T11:15:59.440Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -692,6 +707,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1706449:0:2026-10-24T11:15:59.440Z",
+   "key": "1706449:0",
+   "at": "2026-10-24T11:21:50.025Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+426",
+   "now_chance": 19,
+   "edge": 11,
+   "text": "Edge gone: Over 27.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-kayday-shuzha-2026-10-23"
+  },
   {
    "id": "new_edge:1706449:0:big",
    "key": "1706449:0",
@@ -956,7 +985,8 @@
   "gone:1706447:1:2026-10-24T10:56:03.557Z",
   "news:1706446:0",
   "new_edge:1706449:0:big",
-  "new_edge:1706448:0:slight"
+  "new_edge:1706448:0:slight",
+  "gone:1706449:0:2026-10-24T11:15:59.440Z"
  ],
  "kalshi_checked": null
 }
