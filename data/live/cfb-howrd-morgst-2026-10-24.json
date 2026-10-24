@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-24T13:33:53.237Z"
+  "fetched_at": "2026-10-24T13:36:45.259Z"
  },
- "updated": "2026-10-24T13:33:53.143Z",
+ "updated": "2026-10-24T13:36:45.182Z",
  "open_taken_at": "2026-10-23T05:00:26.993Z",
  "thresholds": {
   "big": 10,
@@ -41,6 +41,28 @@
    "taken_at": "2026-10-23T05:00:26.993Z"
   },
   {
+   "market_id": "1721987",
+   "market": "Main spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 7.5,
+   "question": "Will the Howard cover 7.5 vs the Morgan State in Howard vs. Morgan State?",
+   "sides": [
+    "Bison +7.50",
+    "Bears -7.50"
+   ],
+   "teams": [
+    "Bison",
+    "Bears"
+   ],
+   "player": null,
+   "mid": 53.5,
+   "yes_buy": 55,
+   "no_buy": 48,
+   "taken_at": "2026-10-24T13:00:52.104Z"
+  },
+  {
    "market_id": "1723269",
    "market": "Main total",
    "group": "game",
@@ -64,7 +86,7 @@
   },
   {
    "market_id": "1721986",
-   "market": "Main spread",
+   "market": "Alt spread",
    "group": "game",
    "mtype": "spread",
    "period": "full_game",
@@ -83,31 +105,30 @@
    "yes_buy": 51,
    "no_buy": 53.5,
    "taken_at": "2026-10-24T12:16:46.829Z"
-  },
-  {
-   "market_id": "1721987",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": 7.5,
-   "question": "Will the Howard cover 7.5 vs the Morgan State in Howard vs. Morgan State?",
-   "sides": [
-    "Bison +7.50",
-    "Bears -7.50"
-   ],
-   "teams": [
-    "Bison",
-    "Bears"
-   ],
-   "player": null,
-   "mid": 53.5,
-   "yes_buy": 55,
-   "no_buy": 48,
-   "taken_at": "2026-10-24T13:00:52.104Z"
   }
  ],
- "edges": [],
+ "edges": [
+  {
+   "key": "1721986:0",
+   "market_id": "1721986",
+   "market": "Alt spread",
+   "group": "game",
+   "question": "Will the Howard cover 6.5 vs the Morgan State in Howard vs. Morgan State?",
+   "side": "Bison +6.50",
+   "open_chance": 51,
+   "now_chance": 46.5,
+   "open_odds": "-104",
+   "now_odds": "+115",
+   "edge": 4.5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-24T13:36:45.182Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
  "alerts": [],
  "alert_seen": [],
  "kalshi_checked": null
