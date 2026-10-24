@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185065",
-  "fetched_at": "2026-10-24T17:45:59.605Z",
+  "fetched_at": "2026-10-24T17:52:08.167Z",
   "tennis": true,
   "tennis_match": {
    "id": "185065",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Arthur Fils (FRA) leads Jan-Lennard Struff (GER) 4-6 3-3",
+     "text": "(1) Arthur Fils (FRA) is tied with Jan-Lennard Struff (GER) 4-6 4-3",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
        "value": 6,
@@ -101,6 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 1
      },
@@ -110,7 +112,7 @@
        "winner": false
       },
       {
-       "value": 3
+       "value": 4
       }
      ],
      "athlete": {
@@ -145,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 440,
    "type": {
     "id": "1",
@@ -182,7 +189,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T17:45:59.487Z",
+ "updated": "2026-10-24T17:52:08.098Z",
  "open_taken_at": "2026-10-23T20:48:24.409Z",
  "thresholds": {
   "big": 10,
@@ -212,28 +219,6 @@
    "taken_at": "2026-10-24T03:05:50.479Z"
   },
   {
-   "market_id": "1725335",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Arthur Fils cover 4.5 vs the Jan-Lennard Struff in Arthur Fils vs. Jan-Lennard Struff?",
-   "sides": [
-    "Arthur Fils +4.50 (Games)",
-    "Jan-Lennard Struff -4.50 (Games)"
-   ],
-   "teams": [
-    "Arthur Fils",
-    "Jan-Lennard Struff"
-   ],
-   "player": null,
-   "mid": 84.5,
-   "yes_buy": 86,
-   "no_buy": 17,
-   "taken_at": "2026-10-24T17:34:15.978Z"
-  },
-  {
    "market_id": "1725341",
    "market": "Games total",
    "group": "game",
@@ -256,6 +241,28 @@
    "taken_at": "2026-10-24T03:05:50.479Z"
   },
   {
+   "market_id": "1725335",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Arthur Fils cover 4.5 vs the Jan-Lennard Struff in Arthur Fils vs. Jan-Lennard Struff?",
+   "sides": [
+    "Arthur Fils +4.50 (Games)",
+    "Jan-Lennard Struff -4.50 (Games)"
+   ],
+   "teams": [
+    "Arthur Fils",
+    "Jan-Lennard Struff"
+   ],
+   "player": null,
+   "mid": 84.5,
+   "yes_buy": 86,
+   "no_buy": 17,
+   "taken_at": "2026-10-24T17:34:15.978Z"
+  },
+  {
    "market_id": "1725342",
    "market": "Games total",
    "group": "game",
@@ -276,6 +283,28 @@
    "yes_buy": 30,
    "no_buy": 76,
    "taken_at": "2026-10-24T04:21:19.324Z"
+  },
+  {
+   "market_id": "1725349",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Arthur Fils win set 2 against Jan-Lennard Struff?",
+   "sides": [
+    "Yes: Arthur Fils win set 2 against Jan-Lennard Struff",
+    "No: Arthur Fils win set 2 against Jan-Lennard Struff"
+   ],
+   "teams": [
+    "Arthur Fils",
+    null
+   ],
+   "player": null,
+   "mid": 72.5,
+   "yes_buy": 73,
+   "no_buy": 28,
+   "taken_at": "2026-10-24T16:37:03.948Z"
   },
   {
    "market_id": "1725333",
@@ -363,28 +392,6 @@
    "mid": 6.5,
    "yes_buy": 7,
    "no_buy": 94,
-   "taken_at": "2026-10-24T16:37:03.948Z"
-  },
-  {
-   "market_id": "1725349",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Arthur Fils win set 2 against Jan-Lennard Struff?",
-   "sides": [
-    "Yes: Arthur Fils win set 2 against Jan-Lennard Struff",
-    "No: Arthur Fils win set 2 against Jan-Lennard Struff"
-   ],
-   "teams": [
-    "Arthur Fils",
-    null
-   ],
-   "player": null,
-   "mid": 72.5,
-   "yes_buy": 73,
-   "no_buy": 28,
    "taken_at": "2026-10-24T16:37:03.948Z"
   },
   {
@@ -478,22 +485,22 @@
  ],
  "edges": [
   {
-   "key": "1725155:0",
-   "market_id": "1725155",
-   "market": "Moneyline",
+   "key": "1725332:0",
+   "market_id": "1725332",
+   "market": "Games spread",
    "group": "game",
-   "question": "Who will win in the upcoming atp event Arthur Fils vs Jan-Lennard Struff scheduled for October 24, 2026 at 4:30 PM UTC?",
-   "side": "Arthur Fils win",
-   "open_chance": 82,
-   "now_chance": 45,
-   "open_odds": "-456",
-   "now_odds": "+122",
-   "edge": 37,
+   "question": "Will the Arthur Fils cover -1.5 vs the Jan-Lennard Struff in Arthur Fils vs. Jan-Lennard Struff?",
+   "side": "Arthur Fils -1.50 (Games)",
+   "open_chance": 77,
+   "now_chance": 25,
+   "open_odds": "-335",
+   "now_odds": "+300",
+   "edge": 52,
    "tier": "big",
    "class": "score",
-   "reason": "Explained by score: Arthur Fils trailing in sets",
-   "context": "Jan-Lennard Struff 6, 3 · Arthur Fils 4, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-10-24T16:49:23.053Z",
+   "reason": "Explained by score: Arthur Fils not above the games spread right now",
+   "context": "Jan-Lennard Struff 6, 3 · Arthur Fils 4, 4 · 2nd Set (games by set)",
+   "first_seen": "2026-10-24T16:37:03.948Z",
    "status": "open",
    "kalshi": null
   },
@@ -505,35 +512,35 @@
    "question": "Will the total in Arthur Fils vs. Jan-Lennard Struff be more than 27.5?",
    "side": "Under 27.5 (Games)",
    "open_chance": 76,
-   "now_chance": 40,
+   "now_chance": 36,
    "open_odds": "-317",
-   "now_odds": "+150",
-   "edge": 36,
+   "now_odds": "+178",
+   "edge": 40,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (36 pts), likely news",
-   "context": "Jan-Lennard Struff 6, 3 · Arthur Fils 4, 3 · 2nd Set (games by set)",
+   "reason": "Big move (40 pts), likely news",
+   "context": "Jan-Lennard Struff 6, 3 · Arthur Fils 4, 4 · 2nd Set (games by set)",
    "first_seen": "2026-10-24T16:52:01.754Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1725341:1",
-   "market_id": "1725341",
-   "market": "Games total",
+   "key": "1725155:0",
+   "market_id": "1725155",
+   "market": "Moneyline",
    "group": "game",
-   "question": "Will the total in Arthur Fils vs. Jan-Lennard Struff be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 54,
-   "now_chance": 20,
-   "open_odds": "-117",
-   "now_odds": "+400",
+   "question": "Who will win in the upcoming atp event Arthur Fils vs Jan-Lennard Struff scheduled for October 24, 2026 at 4:30 PM UTC?",
+   "side": "Arthur Fils win",
+   "open_chance": 82,
+   "now_chance": 48,
+   "open_odds": "-456",
+   "now_odds": "+108",
    "edge": 34,
    "tier": "big",
-   "class": "news",
-   "reason": "Big move (34 pts), likely news",
-   "context": "Jan-Lennard Struff 6, 3 · Arthur Fils 4, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-10-24T17:37:18.433Z",
+   "class": "score",
+   "reason": "Explained by score: Arthur Fils trailing in sets",
+   "context": "Jan-Lennard Struff 6, 3 · Arthur Fils 4, 4 · 2nd Set (games by set)",
+   "first_seen": "2026-10-24T16:49:23.053Z",
    "status": "open",
    "kalshi": null
   },
@@ -550,31 +557,31 @@
    "now_odds": "-108",
    "edge": 20,
    "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Arthur Fils not above the games spread right now",
-   "context": "Jan-Lennard Struff 6, 3 · Arthur Fils 4, 3 · 2nd Set (games by set)",
+   "class": "edge",
+   "reason": null,
+   "context": "Jan-Lennard Struff 6, 3 · Arthur Fils 4, 4 · 2nd Set (games by set)",
    "first_seen": "2026-10-24T17:10:00.079Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1725332:0",
-   "market_id": "1725332",
-   "market": "Games spread",
+   "key": "1725349:0",
+   "market_id": "1725349",
+   "market": "Set 2 winner",
    "group": "game",
-   "question": "Will the Arthur Fils cover -1.5 vs the Jan-Lennard Struff in Arthur Fils vs. Jan-Lennard Struff?",
-   "side": "Arthur Fils -1.50 (Games)",
-   "open_chance": 77,
-   "now_chance": 40,
-   "open_odds": "-335",
-   "now_odds": "+150",
-   "edge": 37,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Arthur Fils not above the games spread right now",
-   "context": "Jan-Lennard Struff 6, 2 · Arthur Fils 4, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-10-24T16:37:03.948Z",
-   "status": "gone",
+   "question": "Will Arthur Fils win set 2 against Jan-Lennard Struff?",
+   "side": "Yes: Arthur Fils win set 2 against Jan-Lennard Struff",
+   "open_chance": 73,
+   "now_chance": 68,
+   "open_odds": "-270",
+   "now_odds": "-213",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Jan-Lennard Struff 6, 3 · Arthur Fils 4, 4 · 2nd Set (games by set)",
+   "first_seen": "2026-10-24T17:52:08.098Z",
+   "status": "open",
    "kalshi": null
   },
   {
