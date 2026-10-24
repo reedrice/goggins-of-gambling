@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187119",
-  "fetched_at": "2026-10-24T09:55:09.773Z",
+  "fetched_at": "2026-10-24T10:00:59.032Z",
   "tennis": true,
   "tennis_match": {
    "id": "187119",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Yulia Putintseva (KAZ) leads Hayu Kinoshita (JPN) 7-5",
+     "text": "Hayu Kinoshita (JPN) leads Yulia Putintseva (KAZ) 5-7 0-0",
      "type": "event"
     }
    ],
@@ -55,9 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
-       "value": 7
+       "value": 7,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -97,9 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
-       "value": 5
+       "value": 5,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -134,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 264,
    "type": {
     "id": "2",
@@ -152,14 +167,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Yulia Putintseva",
    "alias": "Yulia Putintseva",
    "name": "Yulia Putintseva",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Hayu Kinoshita",
@@ -171,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T09:55:09.686Z",
+ "updated": "2026-10-24T10:00:58.919Z",
  "open_taken_at": "2026-10-23T10:02:46.178Z",
  "thresholds": {
   "big": 10,
@@ -198,28 +213,6 @@
    "mid": 11.5,
    "yes_buy": 12,
    "no_buy": 89,
-   "taken_at": "2026-10-24T03:05:46.040Z"
-  },
-  {
-   "market_id": "1706354",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Hayu Kinoshita cover 7.5 vs the Yulia Putintseva in Hayu Kinoshita vs. Yulia Putintseva?",
-   "sides": [
-    "Hayu Kinoshita +7.50 (Games)",
-    "Yulia Putintseva -7.50 (Games)"
-   ],
-   "teams": [
-    "Hayu Kinoshita",
-    "Yulia Putintseva"
-   ],
-   "player": null,
-   "mid": 67.5,
-   "yes_buy": 69,
-   "no_buy": 34,
    "taken_at": "2026-10-24T03:05:46.040Z"
   },
   {
@@ -265,6 +258,28 @@
    "yes_buy": 27,
    "no_buy": 78,
    "taken_at": "2026-10-24T09:55:09.686Z"
+  },
+  {
+   "market_id": "1706354",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Hayu Kinoshita cover 7.5 vs the Yulia Putintseva in Hayu Kinoshita vs. Yulia Putintseva?",
+   "sides": [
+    "Hayu Kinoshita +7.50 (Games)",
+    "Yulia Putintseva -7.50 (Games)"
+   ],
+   "teams": [
+    "Hayu Kinoshita",
+    "Yulia Putintseva"
+   ],
+   "player": null,
+   "mid": 67.5,
+   "yes_buy": 69,
+   "no_buy": 34,
+   "taken_at": "2026-10-24T03:05:46.040Z"
   },
   {
    "market_id": "1706360",
@@ -423,6 +438,26 @@
  ],
  "edges": [
   {
+   "key": "1706352:0",
+   "market_id": "1706352",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Hayu Kinoshita cover 4.5 vs the Yulia Putintseva in Hayu Kinoshita vs. Yulia Putintseva?",
+   "side": "Hayu Kinoshita +4.50 (Games)",
+   "open_chance": 55,
+   "now_chance": 39,
+   "open_odds": "-122",
+   "now_odds": "+156",
+   "edge": 16,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Yulia Putintseva 7, 0 · Hayu Kinoshita 5, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-24T09:55:09.686Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1706358:0",
    "market_id": "1706358",
    "market": "Games total",
@@ -439,31 +474,25 @@
    "reason": "Big move (27 pts), likely news",
    "context": "Yulia Putintseva 7 · Hayu Kinoshita 5 · 1st Set (games by set)",
    "first_seen": "2026-10-24T09:55:09.686Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1706352:0",
-   "market_id": "1706352",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Hayu Kinoshita cover 4.5 vs the Yulia Putintseva in Hayu Kinoshita vs. Yulia Putintseva?",
-   "side": "Hayu Kinoshita +4.50 (Games)",
-   "open_chance": 55,
-   "now_chance": 47,
-   "open_odds": "-122",
-   "now_odds": "+113",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Yulia Putintseva 7 · Hayu Kinoshita 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-24T09:55:09.686Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1706352:0:big",
+   "key": "1706352:0",
+   "at": "2026-10-24T10:00:58.919Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Hayu Kinoshita +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+156",
+   "now_chance": 39,
+   "edge": 16,
+   "text": "New big edge: Hayu Kinoshita +4.50 (Games) (Games spread), 16 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-haykin-yulput-2026-10-23"
+  },
   {
    "id": "news:1706358:0",
    "key": "1706358:0",
@@ -495,7 +524,8 @@
  ],
  "alert_seen": [
   "news:1706358:0",
-  "new_edge:1706352:0:slight"
+  "new_edge:1706352:0:slight",
+  "new_edge:1706352:0:big"
  ],
  "kalshi_checked": null
 }
