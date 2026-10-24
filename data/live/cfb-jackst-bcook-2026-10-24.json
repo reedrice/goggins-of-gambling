@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-24T17:02:55.998Z"
+  "fetched_at": "2026-10-24T17:09:44.767Z"
  },
- "updated": "2026-10-24T17:02:55.895Z",
+ "updated": "2026-10-24T17:09:44.696Z",
  "open_taken_at": "2026-10-23T05:00:24.625Z",
  "thresholds": {
   "big": 10,
@@ -461,6 +461,26 @@
  ],
  "edges": [
   {
+   "key": "1342152:0",
+   "market_id": "1342152",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming football event Jackson State vs Bethune-Cookman scheduled for October 24, 2026 at 5:00 PM UTC?",
+   "side": "Tigers win",
+   "open_chance": 74,
+   "now_chance": 69,
+   "open_odds": "-285",
+   "now_odds": "-223",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-24T17:09:44.696Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1722917:1",
    "market_id": "1722917",
    "market": "Alt total",
@@ -723,6 +743,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1342152:0:slight",
+   "key": "1342152:0",
+   "at": "2026-10-24T17:09:44.696Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Tigers win",
+   "market": "Moneyline",
+   "now_odds": "-223",
+   "now_chance": 69,
+   "edge": 5,
+   "text": "New slight edge: Tigers win (Moneyline), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-jackst-bcook-2026-10-24"
+  },
+  {
    "id": "gone:1722917:1:2026-10-24T14:37:45.310Z",
    "key": "1722917:1",
    "at": "2026-10-24T17:02:55.895Z",
@@ -903,7 +937,8 @@
   "gone:1722915:1:2026-10-24T14:55:54.207Z",
   "gone:1722916:1:2026-10-24T14:55:54.207Z",
   "gone:1722921:1:2026-10-24T14:43:37.952Z",
-  "gone:1722926:1:2026-10-24T14:43:37.952Z"
+  "gone:1722926:1:2026-10-24T14:43:37.952Z",
+  "new_edge:1342152:0:slight"
  ],
  "kalshi_checked": null
 }
