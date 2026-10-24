@@ -742,3 +742,5 @@ window.STR.liveScoreboard.allGames='Show all games';
 window.STR.liveScoreboard.game=name=>`Filter bets: ${name}`;
 
 window.STR.progress.noGameCompact='Live score unverified';
+
+STR.liveScoreboard.conferences={empty:"No games in this group today.",title:"College football conference filters",all:"All conferences",top25:"Top 25",nonconference:"Non-conference",unknown:"Conference unavailable"};

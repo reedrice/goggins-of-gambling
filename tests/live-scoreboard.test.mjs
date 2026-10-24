@@ -27,3 +27,18 @@ test('college scoreboard retains national Top25 rank on the correct away/home te
  for(const n of [0,26,99,null,'7']){e.competitions[0].competitors[0].curatedRank={current:n};assert.equal(B.games([{league:'cfb',events:[e]}],'ncaaf',now)[0].teams[1].rank,null);}
  assert.equal(B.games([{league:'nba',events:[e]}],'nba',now)[0].teams[0].rank,null);
 });
+
+test('conference and Top25 selections share game identity and preserve ranked conference overlap',()=>{
+ const make=(id,conference,rank)=>{const e=event(id,'pre');Object.assign(e.competitions[0],conference);if(rank)e.competitions[0].competitors[0].curatedRank={current:rank};return e;};
+ const sec={conferenceCompetition:true,groups:{id:'8',shortName:'SEC',isConference:true}},acc={conferenceCompetition:true,groups:{id:'1',shortName:'ACC',isConference:true}};
+ const rows=B.games([{league:'cfb',events:[make('sec',sec,7),make('acc',acc),make('cross',{conferenceCompetition:false},25),make('missing',{})]}],'ncaaf',now);
+ assert.deepEqual(B.conferenceGames(rows,'conference:8').map(g=>g.id),['cfb:sec']);
+ assert.deepEqual(B.conferenceGames(rows,'top25').map(g=>g.id),['cfb:sec','cfb:cross']);
+ assert.deepEqual(B.conferenceGames(rows,'nonconference').map(g=>g.id),['cfb:cross']);
+ assert.deepEqual(B.conferenceGames(rows,'unknown').map(g=>g.id),['cfb:missing']);
+ assert.equal(B.conferenceGames(rows,'all').length,4);assert.equal(B.conferenceGames(rows,'conference:missing').length,0);
+ assert.equal(B.conferenceOptions(rows).length,4);
+ const selected=B.conferenceGames(rows,'conference:8');
+ const feeds=[{slug:'cfb-atl-orl-2026-10-21',game_context:{event_id:'sec'}},{slug:'cfb-atl-orl-2026-10-21',game_context:{event_id:'acc'}},{slug:'cfb-atl-orl-2026-10-21'}];
+ assert.deepEqual(feeds.filter(f=>selected.some(g=>B.matches(f,g.id))),[feeds[0]]);
+});

@@ -388,10 +388,18 @@
   /** Draw the whole view from data `d` into `box`. `ui` keeps open/closed state across refreshes. */
   let curSlug = null, curGame = '';                // for the tap-to-chart pop-up
   function draw(box, d, ui) {
-    if(ui.boardGame && root.LiveScoreboard)d=combineGames((ui.feeds||[]).filter(feed=>root.LiveScoreboard.matches(feed,ui.boardGame)));
+    const college=ui.sport==='ncaaf'&&root.LiveScoreboard;
+    if(college&&ui.conference&&ui.conference!=='all'){const rows=root.LiveScoreboard.conferenceGames(ui.boardRows||[],ui.conference);d=combineGames((ui.feeds||[]).filter(feed=>rows.some(g=>root.LiveScoreboard.matches(feed,g.id))));}
+    if(ui.boardGame && root.LiveScoreboard)d=combineGames((ui.feeds||[]).filter(feed=>root.LiveScoreboard.matches(feed,ui.boardGame)&&(!college||!ui.conference||root.LiveScoreboard.conferenceGames(ui.boardRows||[],ui.conference).some(g=>g.id===ui.boardGame))));
     curSlug = d.slug || null; curGame = d.game || '';
     box.replaceChildren();
     const P = designText();
+    if(college){
+      const S=root.STR.liveScoreboard.conferences,bar=el('div','lb-conference-filters');bar.setAttribute('role','group');bar.setAttribute('aria-label',S.title);
+      const choices=[{key:'all',label:S.all},{key:'top25',label:S.top25},...root.LiveScoreboard.conferenceOptions(ui.boardRows||[])];
+      for(const choice of choices){const key=choice.key,b=el('button','chip'+((ui.conference||'all')===key?' on':''),choice.label||S[key]);b.type='button';b.dataset.conference=key;b.setAttribute('aria-pressed',String((ui.conference||'all')===key));b.onclick=()=>{ui.conference=key;ui.boardGame=null;ui.boardFocus=null;ui.game=ui.prop=ui.history=0;ui.redraw();Array.from(box.querySelectorAll('[data-conference]')).find(n=>n.dataset.conference===key)?.focus({preventScroll:true});};bar.append(b);}
+      box.append(bar);
+    }
     const selection = edgeSelection(d.edges, ui.filter, ui.visitBase);
     const head = el('div', 'lb-head');
     if (d.all_games) {
@@ -401,7 +409,7 @@
       const sb = scoreboard(d);
       head.append(el('div','lb-game',d.game || 'Live game'),el('div','lb-score',sb.score),el('div','lb-status',sb.status),el('div','lb-updated',freshness(d).text));
     }
-    if(ui.sport && root.LiveScoreboard){const row=el('div','lb-head-row'),board=el('div');row.append(head,board);box.append(row);root.LiveScoreboard.mount(board,ui.sport,{selected:ui.boardGame,focusId:ui.boardFocus,onSelect:(id,focusId)=>{ui.boardGame=id;ui.boardFocus=focusId;ui.game=ui.prop=false;ui.redraw();}});ui.boardFocus=null;}else box.append(head);
+    if(ui.sport && root.LiveScoreboard){const row=el('div','lb-head-row'),board=el('div');row.append(head,board);box.append(row);root.LiveScoreboard.mount(board,ui.sport,{...(college?{snapshot:ui.boardSnapshot||{docs:[],partial:true},conference:ui.conference}:{}),selected:ui.boardGame,focusId:ui.boardFocus,onSelect:(id,focusId)=>{ui.boardGame=id;ui.boardFocus=focusId;ui.game=ui.prop=false;ui.redraw();}});ui.boardFocus=null;}else box.append(head);
     if(root.PolymarketSync){
       const h=root.PolymarketSync.holdingsStatus(),time=clock(h.checkedAt),note=el('a','lb-holdings-status');note.href='#bets';
       note.textContent=!h.unlocked?P.holdingsLocked:!h.checkedAt?P.holdingsPending:h.error?P.holdingsError(time):Date.now()-Date.parse(h.checkedAt)>120000?P.holdingsStale(time):P.holdingsSync(time);
@@ -467,7 +475,7 @@
     let loading=false;
     let last = null;
     const ui = { slug: 'all', when:'today', sport:initialSport, filter: 'all', visitBase: readSeen(), details: new Set(), game: false, prop: false, reasons: false, redraw: () => { if (last) draw(content, last, ui); } };
-    rootEl._lbSetSport=sport=>{ui.sport=sport;ui.slug='all';ui.boardGame=null;ui.boardFocus=null;window.dispatchEvent(new CustomEvent('live:sport-change',{detail:{sport}}));ui.load();};
+    rootEl._lbSetSport=sport=>{ui.sport=sport;ui.slug='all';ui.conference='all';ui.boardRows=[];ui.boardSnapshot=null;ui.boardGame=null;ui.boardFocus=null;window.dispatchEvent(new CustomEvent('live:sport-change',{detail:{sport}}));ui.load();};
     // Which game: data/live/index.json (written by live-tick.mjs), else SLUG.
     let request = 0;
     const load = ui.load = async (manual=false) => {
@@ -490,6 +498,9 @@
         if (current !== request || !rootEl.isConnected) return;
         const feeds = results.filter(r => r.status === 'fulfilled').map(r => r.value);
         if (targets.length && !feeds.length) throw new Error('feeds unavailable');
+        const snapshot=ui.sport==='ncaaf'&&root.LiveScoreboard?await root.LiveScoreboard.load('ncaaf').catch(()=>null):null;
+        if(current!==request||!rootEl.isConnected)return;
+        ui.boardSnapshot=snapshot;ui.boardRows=snapshot?root.LiveScoreboard.games(snapshot.docs,'ncaaf'):[];
         ui.games = games;ui.feeds=feeds;
         const d = selected === 'all' ? combineGames(feeds,results.length-feeds.length) : feeds[0];
         status.textContent=manual?(last&&JSON.stringify(last)===JSON.stringify(d)?liveText().noNewFeed:liveText().feedLoaded):liveText().autoRefresh;
