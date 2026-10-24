@@ -4,14 +4,14 @@
  "game": "Stoke City FC vs. Bristol City FC",
  "url": "https://polymarket.us/sports/eflch/eflch-sto-bri-2026-10-24",
  "start_time": "2026-10-24T14:00:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for eflch",
-  "fetched_at": "2026-10-24T13:56:14.646Z"
+  "fetched_at": "2026-10-24T14:02:00.472Z"
  },
- "updated": "2026-10-24T13:56:14.642Z",
+ "updated": "2026-10-24T14:02:00.467Z",
  "open_taken_at": "2026-10-23T05:00:38.785Z",
  "thresholds": {
   "big": 10,
@@ -85,28 +85,6 @@
    "taken_at": "2026-10-23T05:00:38.785Z"
   },
   {
-   "market_id": "1712267",
-   "market": "Main total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 2.5,
-   "question": "Will the total in STO vs BRI be more than 2.5?",
-   "sides": [
-    "Over 2.5",
-    "Under 2.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 47,
-   "yes_buy": 48,
-   "no_buy": 54,
-   "taken_at": "2026-10-24T03:05:42.751Z"
-  },
-  {
    "market_id": "1712224",
    "market": "Main spread",
    "group": "game",
@@ -126,6 +104,28 @@
    "mid": 17.5,
    "yes_buy": 19,
    "no_buy": 84,
+   "taken_at": "2026-10-24T03:05:42.751Z"
+  },
+  {
+   "market_id": "1712267",
+   "market": "Main total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 2.5,
+   "question": "Will the total in STO vs BRI be more than 2.5?",
+   "sides": [
+    "Over 2.5",
+    "Under 2.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 47,
+   "yes_buy": 48,
+   "no_buy": 54,
    "taken_at": "2026-10-24T03:05:42.751Z"
   },
   {
@@ -307,6 +307,26 @@
  ],
  "edges": [
   {
+   "key": "1712268:0",
+   "market_id": "1712268",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in STO vs BRI be more than 3.5?",
+   "side": "Over 3.5",
+   "open_chance": 27,
+   "now_chance": 23,
+   "open_odds": "+270",
+   "now_odds": "+335",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-24T14:02:00.467Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1619239:0",
    "market_id": "1619239",
    "market": "Moneyline",
@@ -347,7 +367,24 @@
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "new_edge:1712268:0:slight",
+   "key": "1712268:0",
+   "at": "2026-10-24T14:02:00.467Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 3.5",
+   "market": "Alt total",
+   "now_odds": "+335",
+   "now_chance": 23,
+   "edge": 4,
+   "text": "New slight edge: Over 3.5 (Alt total), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/eflch/eflch-sto-bri-2026-10-24"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:1712268:0:slight"
+ ],
  "kalshi_checked": null
 }
