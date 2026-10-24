@@ -14,6 +14,8 @@ Reed requested new picks to appear when @BookitWithTrent posts. Previously this 
 
 ## Import and publish
 
+Repository sync recovery: this maintenance checkout now has a shallow current-main boundary, avoiding a large generated-data history download. Use `git fetch --no-tags --no-auto-maintenance --progress origin main` so transfer progress is visible. If catching up a long backlog, `git fetch --depth=1 --no-tags --no-auto-maintenance --progress origin main` retrieves the current snapshot. A shallow boundary can prevent local ancestry checks: verify the prior published SHA is an ancestor using authenticated GitHub compare, confirm no tracked local changes, then align with `git reset --keep origin/main`. Never use this to discard unpublished work or force-push. Normal incremental fetch was verified after recovery. Network access is still required; a sandbox DNS failure is not repository corruption.
+
 1. Start from clean latest main and check the owner gate (`decide` or routine-gate check); skip silently if another owner or disabled.
 2. Write verified input outside tracked files, e.g. `.cache/trent/import.json`:
    `{coverage:"partial",posts:[{id:"real X id",author:"BookitWithTrent",posted_at:"ISO",text:"verified text",picks:[{key:"stable-team-or-market-key",league:"NBA",game:"A @ B",pick:"A ML",type:"moneyline",odds:null,units:null}]}]}`.

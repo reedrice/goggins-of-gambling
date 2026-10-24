@@ -7,6 +7,22 @@ function event(state='in'){
 }
 const spec=()=>BP.spec({desc:'Appalachian State +4.5 (H1)',team:{abbr:'applst'},eventSlug:'cfb-jmad-applst-2026-10-22'});
 const board=(e=event(),at=new Date(now).toISOString())=>({fetched_at:at,events:[e]});
+
+test('Air Force/Wyoming and UMass/UConn exchange codes match ESPN without relaxing identity',()=>{
+ for(const [slug,away,home] of [['cfb-airf-wyom-2026-10-23','AFA','WYO'],['cfb-umass-uconn-2026-10-23','MASS','CONN']]){
+  const e=event();const clubs=e.competitions[0].competitors;
+  clubs[0].team={abbreviation:away};clubs[1].team={abbreviation:home};
+  const s=BP.spec({desc:'Under 49.5',eventSlug:slug});
+  assert.equal(BP.snapshotResult(s,board(e),null,now).kind,'threshold');
+  assert.equal(BP.findProgressEvent({events:[e,e]},slug),null);
+  assert.equal(BP.findProgressEvent({events:[e]},slug.replace(away==='AFA'?'airf-wyom':'umass-uconn',away==='AFA'?'wyom-airf':'uconn-umass')),null);
+  const spread={...s,text:'Wyoming +6.5 (H1)',team:'wyom'};
+  if(away==='AFA')assert.equal(BP.snapshotResult(spread,board(e),null,now).kind,'margin');
+  const final=structuredClone(e);final.status.type={state:'post',completed:true};
+  assert.equal(BP.snapshotResult(s,board(final),null,now+86400000).final,true);
+  assert.equal(BP.snapshotResult(s,board(e),null,now+660000).reason,'stale');
+ }
+});
 test('real college 1h and 1q contract codes preserve the selected side and period',()=>{
  for(const [code,period] of [['1h',{half:1}],['1q',{quarter:1}],['2h',{half:2}],['2q',{quarter:2}]]){
   const slug='asc-cfb-jmad-applst-2026-10-22-'+code+'-neg-4pt5';

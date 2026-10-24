@@ -9,7 +9,7 @@
  const ALIASES={veg:'vgk',was:'wsh',sjs:'sj',mon:'mtl',njd:'nj',lak:'la',tbl:'tb',uta:'utah',pho:'phx',gsw:'gs',nyk:'ny',nop:'no',sas:'sa',jac:'jax',cws:'chw',az:'ari'};
  const norm = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
  const abbr = s => ALIASES[String(s || '').toLowerCase()] || String(s || '').toLowerCase();
- const COLLEGE_ALIASES={jmad:'jmu',applst:'app',ecar:'ecu',mphs:'mem',librty:'lib',kenest:'kenn'};
+ const COLLEGE_ALIASES={jmad:'jmu',applst:'app',ecar:'ecu',mphs:'mem',librty:'lib',kenest:'kenn',airf:'afa',wyom:'wyo',umass:'mass',uconn:'conn'};
  const leagueOf=s=>({ncaaf:'cfb',ncaab:'cbb',ncaam:'cbb',ncaaw:'wcbb',wncaab:'wcbb',bl1:'bun',lig1:'fl1',atpdb:'atp',wtadb:'wta'})[s]||s;
  const teamCode=(s,league)=>['cfb','cbb','wcbb'].includes(leagueOf(league))?COLLEGE_ALIASES[String(s||'').toLowerCase()]||abbr(s):abbr(s);
  const slugOf = s => (String(s || '').match(/([a-z0-9]+-[a-z0-9]+-[a-z0-9]+-\d{4}-\d{2}-\d{2})/) || [])[1] || '';
