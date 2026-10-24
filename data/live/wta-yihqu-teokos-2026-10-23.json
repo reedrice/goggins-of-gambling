@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187129",
-  "fetched_at": "2026-10-24T13:01:07.576Z",
+  "fetched_at": "2026-10-24T13:07:08.499Z",
   "tennis": true,
   "tennis_match": {
    "id": "187129",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, October 24th at 9:00 AM EDT",
-     "shortDetail": "10/24 - 9:00 AM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Yihan Qu (CHN) leads Teodora Kostovic (SER) 1-1",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "ca370891-0413-3862-9637-1cfaa120eb76",
       "displayName": "Teodora Kostovic",
@@ -87,6 +98,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "9ac9b399-7b01-3abb-b4d7-57bdc9d85f61",
       "displayName": "Qu Yihan",
@@ -119,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 232,
    "type": {
     "id": "2",
@@ -135,10 +157,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Sat, October 24th at 9:00 AM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Teodora Kostovic",
@@ -156,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T13:01:07.422Z",
+ "updated": "2026-10-24T13:07:08.288Z",
  "open_taken_at": "2026-10-23T11:46:53.492Z",
  "thresholds": {
   "big": 10,
@@ -230,25 +252,25 @@
    "taken_at": "2026-10-24T12:03:25.304Z"
   },
   {
-   "market_id": "1709612",
-   "market": "Sets spread",
+   "market_id": "1709617",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Yihan Qu cover 1.5 vs the Teodora Kostovic in Yihan Qu vs. Teodora Kostovic?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Yihan Qu vs. Teodora Kostovic be more than 22.5?",
    "sides": [
-    "Yihan Qu +1.50 (Sets)",
-    "Teodora Kostovic -1.50 (Sets)"
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
    ],
    "teams": [
-    "Yihan Qu",
-    "Teodora Kostovic"
+    null,
+    null
    ],
    "player": null,
-   "mid": 41.5,
-   "yes_buy": 42,
-   "no_buy": 59,
+   "mid": 34.5,
+   "yes_buy": 35,
+   "no_buy": 66,
    "taken_at": "2026-10-24T11:47:59.622Z"
   },
   {
@@ -274,26 +296,70 @@
    "taken_at": "2026-10-24T03:05:47.309Z"
   },
   {
-   "market_id": "1709617",
-   "market": "Games total",
+   "market_id": "1709631",
+   "market": "Set 1 winner",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Yihan Qu vs. Teodora Kostovic be more than 22.5?",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Yihan Qu win set 1 against Teodora Kostovic?",
    "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
+    "Yes: Yihan Qu win set 1 against Teodora Kostovic",
+    "No: Yihan Qu win set 1 against Teodora Kostovic"
    ],
    "teams": [
-    null,
+    "Yihan Qu",
     null
    ],
    "player": null,
-   "mid": 34.5,
-   "yes_buy": 35,
-   "no_buy": 66,
+   "mid": 23,
+   "yes_buy": 26,
+   "no_buy": 80,
+   "taken_at": "2026-10-24T10:56:03.805Z"
+  },
+  {
+   "market_id": "1709612",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Yihan Qu cover 1.5 vs the Teodora Kostovic in Yihan Qu vs. Teodora Kostovic?",
+   "sides": [
+    "Yihan Qu +1.50 (Sets)",
+    "Teodora Kostovic -1.50 (Sets)"
+   ],
+   "teams": [
+    "Yihan Qu",
+    "Teodora Kostovic"
+   ],
+   "player": null,
+   "mid": 41.5,
+   "yes_buy": 42,
+   "no_buy": 59,
    "taken_at": "2026-10-24T11:47:59.622Z"
+  },
+  {
+   "market_id": "1709634",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Yihan Qu win set 2 against Teodora Kostovic?",
+   "sides": [
+    "Yes: Yihan Qu win set 2 against Teodora Kostovic",
+    "No: Yihan Qu win set 2 against Teodora Kostovic"
+   ],
+   "teams": [
+    "Yihan Qu",
+    null
+   ],
+   "player": null,
+   "mid": 27.5,
+   "yes_buy": 30,
+   "no_buy": 75,
+   "taken_at": "2026-10-24T13:07:08.288Z"
   },
   {
    "market_id": "1709621",
@@ -448,31 +514,129 @@
    "yes_buy": 27,
    "no_buy": 74,
    "taken_at": "2026-10-24T11:47:59.622Z"
-  },
-  {
-   "market_id": "1709631",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Yihan Qu win set 1 against Teodora Kostovic?",
-   "sides": [
-    "Yes: Yihan Qu win set 1 against Teodora Kostovic",
-    "No: Yihan Qu win set 1 against Teodora Kostovic"
-   ],
-   "teams": [
-    "Yihan Qu",
-    null
-   ],
-   "player": null,
-   "mid": 23,
-   "yes_buy": 26,
-   "no_buy": 80,
-   "taken_at": "2026-10-24T10:56:03.805Z"
   }
  ],
  "edges": [
+  {
+   "key": "1709631:1",
+   "market_id": "1709631",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Yihan Qu win set 1 against Teodora Kostovic?",
+   "side": "No: Yihan Qu win set 1 against Teodora Kostovic",
+   "open_chance": 80,
+   "now_chance": 68,
+   "open_odds": "-400",
+   "now_odds": "-213",
+   "edge": 12,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Qu Yihan not above the games spread right now",
+   "context": "Teodora Kostovic 1 · Qu Yihan 1 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T13:07:08.288Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1709612:0",
+   "market_id": "1709612",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Yihan Qu cover 1.5 vs the Teodora Kostovic in Yihan Qu vs. Teodora Kostovic?",
+   "side": "Yihan Qu +1.50 (Sets)",
+   "open_chance": 42,
+   "now_chance": 32,
+   "open_odds": "+138",
+   "now_odds": "+213",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Teodora Kostovic 1 · Qu Yihan 1 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T13:07:08.288Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1709614:1",
+   "market_id": "1709614",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Yihan Qu vs. Teodora Kostovic be more than 17.5?",
+   "side": "Under 17.5 (Games)",
+   "open_chance": 42,
+   "now_chance": 33,
+   "open_odds": "+138",
+   "now_odds": "+203",
+   "edge": 9,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Teodora Kostovic 1 · Qu Yihan 1 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T13:07:08.288Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1707995:1",
+   "market_id": "1707995",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Yihan Qu vs Teodora Kostovic scheduled for October 24, 2026 at 3:00 AM UTC?",
+   "side": "Teodora Kostovic win",
+   "open_chance": 85,
+   "now_chance": 79,
+   "open_odds": "-567",
+   "now_odds": "-376",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Teodora Kostovic 1 · Qu Yihan 1 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T13:07:08.288Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1709608:1",
+   "market_id": "1709608",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Yihan Qu cover 7.5 vs the Teodora Kostovic in Yihan Qu vs. Teodora Kostovic?",
+   "side": "Teodora Kostovic -7.50 (Games)",
+   "open_chance": 30,
+   "now_chance": 25,
+   "open_odds": "+233",
+   "now_odds": "+300",
+   "edge": 5,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Teodora Kostovic not above the games spread right now",
+   "context": "Teodora Kostovic 1 · Qu Yihan 1 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T13:07:08.288Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1709617:1",
+   "market_id": "1709617",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Yihan Qu vs. Teodora Kostovic be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 66,
+   "now_chance": 61,
+   "open_odds": "-194",
+   "now_odds": "-156",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Teodora Kostovic 1 · Qu Yihan 1 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T13:07:08.288Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1709621:0",
    "market_id": "1709621",
@@ -488,13 +652,69 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Teodora Kostovic 1 · Qu Yihan 1 · 1st Set (games by set)",
    "first_seen": "2026-10-24T11:47:59.622Z",
    "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1709612:0:big",
+   "key": "1709612:0",
+   "at": "2026-10-24T13:07:08.288Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Yihan Qu +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+213",
+   "now_chance": 32,
+   "edge": 10,
+   "text": "New big edge: Yihan Qu +1.50 (Sets) (Sets spread), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-yihqu-teokos-2026-10-23"
+  },
+  {
+   "id": "new_edge:1709614:1:slight",
+   "key": "1709614:1",
+   "at": "2026-10-24T13:07:08.288Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+203",
+   "now_chance": 33,
+   "edge": 9,
+   "text": "New slight edge: Under 17.5 (Games) (Games total), 9 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-yihqu-teokos-2026-10-23"
+  },
+  {
+   "id": "new_edge:1707995:1:slight",
+   "key": "1707995:1",
+   "at": "2026-10-24T13:07:08.288Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Teodora Kostovic win",
+   "market": "Moneyline",
+   "now_odds": "-376",
+   "now_chance": 79,
+   "edge": 6,
+   "text": "New slight edge: Teodora Kostovic win (Moneyline), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-yihqu-teokos-2026-10-23"
+  },
+  {
+   "id": "new_edge:1709617:1:slight",
+   "key": "1709617:1",
+   "at": "2026-10-24T13:07:08.288Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-156",
+   "now_chance": 61,
+   "edge": 5,
+   "text": "New slight edge: Under 22.5 (Games) (Games total), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-yihqu-teokos-2026-10-23"
+  },
   {
    "id": "new_edge:1709621:0:slight",
    "key": "1709621:0",
@@ -511,7 +731,11 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1709621:0:slight"
+  "new_edge:1709621:0:slight",
+  "new_edge:1709612:0:big",
+  "new_edge:1709614:1:slight",
+  "new_edge:1707995:1:slight",
+  "new_edge:1709617:1:slight"
  ],
  "kalshi_checked": null
 }
