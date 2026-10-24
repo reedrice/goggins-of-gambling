@@ -232,6 +232,7 @@
   if(marker)track.append(node('span','bp-marker'));return track;
  }
  function render(host,s,result) {
+  const paintKey=JSON.stringify([s,result]);if(host._bpPaintKey===paintKey&&host.children.length)return;
   const S=root.STR.progress;host.title=S.explanation;const rows=[];const game=result.game;
   if(game) {
    const competitors=[...(game.competitors || [])].sort((a,b)=>(a.homeAway==='home')-(b.homeAway==='home'));
@@ -259,7 +260,7 @@
   }
   const sourceTime=Date.parse(result.checkedAt);
   rows.push(node('span','bp-checked',(game?.status?.type?.completed?S.final+' · ':'')+(Number.isFinite(sourceTime)?S.checked(new Date(sourceTime).toLocaleTimeString('en-US',{timeZone:'America/Chicago',hour:'numeric',minute:'2-digit'})):S.sourceTimeUnknown)));
-  host.replaceChildren(...rows);
+  host.replaceChildren(...rows);host._bpPaintKey=paintKey;
   root.SiteMotion?.progress(host);
  }
  async function hydrate(host) {
@@ -267,7 +268,7 @@
   try {
    let s=JSON.parse(host.dataset.bp);if(!host.children.length)host.append(node('div','bp-note',root.STR.progress.loading));
    try{s=await enrich(s);}catch(e){/* Scores remain available; never guess missing contract details. */}
-   const label=host.previousElementSibling;if(s.resolveMarket&&label?.classList.contains('pm-leg-label'))label.textContent=s.text;
+   const label=host.previousElementSibling;if(s.resolveMarket&&label?.classList.contains('pm-leg-label')&&label.textContent!==s.text)label.textContent=s.text;
    const path=snapshotPath(s);if(!path){render(host,s,{reason:'noGame'});return;}
    const board=await get(path);
    if(root.TennisScores?.isTennis(s.eventSlug)){
@@ -294,6 +295,6 @@
   const s=await enrich({resolveMarket:true,eventSlug,marketSlug:String(marketId||''),side:'yes'});
   return s.resolvedMarket?s.marketSlug:null;
  }
- return {spec,html,findEvent,findProgressEvent,athleteStat,parseBet,selectedTeam,scoresFor,gameElapsed,evaluateBet,resolveMarket,marketIdentity,snapshotPath,snapshotResult,clockText,marginText,periodConflict};
+ return {render,spec,html,findEvent,findProgressEvent,athleteStat,parseBet,selectedTeam,scoresFor,gameElapsed,evaluateBet,resolveMarket,marketIdentity,snapshotPath,snapshotResult,clockText,marginText,periodConflict};
 });
 

@@ -32,3 +32,6 @@ Brandon requested a calmer futuristic main-site background with more color depth
 
 ### Continuous score ticker (Brandon, Oct 22)
 The score ticker scrolls continuously at desktop and phone widths, including hover/focus. This supersedes the mobile manual-scroller rule above. Preserve the explicit Pause/Resume control and OS reduced-motion preference (static scrollable scores). No new data requests or timers.
+
+### Scrolling performance (Reed, Oct 24)
+Repeated cards/rows/pills retain role-token colors and geometry but omit backdrop blur and broad card shadows. Navigation/sheets retain glass blur. Canvas gradients scroll with the page. This performance override avoids resampling the backdrop for every list item and supersedes universal per-card blur/fixed canvas attachment. Do not reintroduce per-item filters or blanket will-change layers.

@@ -94,9 +94,11 @@
   return String(slug||'').startsWith('crossd-')?S.combo:S.bet;
  }
  let current=null,key=null,salt=null,timer=null,host=null,busy=false,epoch=0,message='',activityOpen=false;
+ let holdingRevision=0,lastHoldingKey='locked';
+ function holdingKey(positions){return JSON.stringify(Object.entries(positions||{}).filter(([slug,p])=>matchesPosition(positions,slug,'yes')||matchesPosition(positions,slug,'no')).map(([slug,p])=>[slug,quantity(p)>0?'yes':'no']).sort((a,b)=>a[0].localeCompare(b[0])));}
  function holdingsStatus(){return {unlocked:!!current,checkedAt:current?.snapshot?.checked_at||null,error:!!message,busy};}
  function isHolding(slug,side){return !!current&&matchesPosition(current.snapshot?.positions,slug,side);}
- const notifyHoldings=()=>root.dispatchEvent?.(new CustomEvent('polymarket:holdings-change'));
+ const notifyHoldings=()=>{const next=current?'unlocked:'+holdingKey(current.snapshot?.positions):'locked';if(next!==lastHoldingKey){lastHoldingKey=next;holdingRevision++;}root.dispatchEvent?.(new CustomEvent('polymarket:holdings-change'));};
  function liveVisible(){const live=typeof document!=='undefined'&&document.getElementById('live-bets-root');return !!live?.isConnected&&!live.closest('[hidden]')&&!!live.getClientRects().length;}
  const node=(tag,text,cls)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;};
  const money=value=>value===null?root.STR.pmSync.unknown:new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:2}).format(value);
@@ -142,5 +144,5 @@
  }
  function mount(element){host=element;clearTimeout(timer);paint();if(current)sync();}
  if(typeof document!=='undefined')document.addEventListener('visibilitychange',()=>{if(!document.hidden&&current){clearTimeout(timer);sync();}});
- return {mount,lock,headers,passwordKey,seal,unlock,pages,rows,positionAmounts,openTotals,stats,progressSpecs,activityLabel,validate,matchesPosition,isHolding,holdingsStatus,refreshHoldings:sync};
+ return {holdingKey,holdingsRevision:()=>holdingRevision,mount,lock,headers,passwordKey,seal,unlock,pages,rows,positionAmounts,openTotals,stats,progressSpecs,activityLabel,validate,matchesPosition,isHolding,holdingsStatus,refreshHoldings:sync};
 });

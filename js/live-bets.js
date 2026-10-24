@@ -325,6 +325,19 @@
   }
 
   /** The Alerts box (top of the view). */
+  // Keep closed activity/history out of the DOM, and release it on collapse.
+  function lazyDetails(details, build) {
+    let body=null;
+    const sync=()=>{if(details.open&&!body){body=build();details.append(body);}else if(!details.open&&body){body.remove();body=null;}};
+    details.addEventListener('toggle',sync);sync();return sync;
+  }
+  function viewKey(d,ui,holdingRevision,stale) {
+    return JSON.stringify([d,ui.sport,ui.slug,ui.filter,ui.visitBase,ui.game,ui.prop,ui.activity,ui.alertMore,ui.reasons,ui.conference,ui.boardGame,ui.espnRevision,[...(ui.details||[])].sort(),holdingRevision,stale]);
+  }
+  function paintHoldings(note,P,h) {
+    const time=clock(h.checkedAt),text=!h.unlocked?P.holdingsLocked:!h.checkedAt?P.holdingsPending:h.error?P.holdingsError(time):Date.now()-Date.parse(h.checkedAt)>120000?P.holdingsStale(time):P.holdingsSync(time);
+    if(note.textContent!==text)note.textContent=text;note.title=P.holdingNote(time);
+  }
   function alertsBox(d, ui) {
     const P = designText(), box = el('details', 'lb-alerts lb-activity');
     const list = (d.alerts || []).filter(a => inLimit(a.now_chance));
@@ -332,6 +345,8 @@
     box.addEventListener('toggle', () => { ui.activity = box.open; });
     box.append(el('summary', null, P.activity(list.length)));
     if (!list.length) { box.append(el('div', 'lb-none', liveText().noAlerts)); return box; }
+    lazyDetails(box,()=>{
+    const body=el('div','lb-details-body');
     const isNew = markNew(list, ui.visitBase);
     const extra = Math.min(Math.max(0, list.length - 5), Math.max(0, Number(ui.alertMore) || 0));
     const ul = el('ul', 'lb-alert-list');
@@ -348,7 +363,7 @@
       if (link) { const l = el('a', 'lb-alert-link', P.market); l.href = link; l.target = '_blank'; l.rel = 'noopener'; li.append(l); }
       ul.append(li);
     });
-    box.append(ul);
+    body.append(ul);
     if (list.length > 5) {
       const controls = el('div', 'lb-page-controls'), remaining = Math.max(0, list.length - 5 - extra);
       const action = (kind, count, value) => {
@@ -357,8 +372,10 @@
       };
       if(remaining)action('more',Math.min(5,remaining),extra+Math.min(5,remaining));
       if(extra)action('less',Math.min(5,extra),Math.max(0,extra-5));
-      box.append(controls);
+      body.append(controls);
     }
+    return body;
+    });
     return box;
   }
 
@@ -391,9 +408,15 @@
     const college=ui.sport==='ncaaf'&&root.LiveScoreboard;
     if(college&&ui.conference&&ui.conference!=='all'){const rows=root.LiveScoreboard.conferenceGames(ui.boardRows||[],ui.conference);d=combineGames((ui.feeds||[]).filter(feed=>rows.some(g=>root.LiveScoreboard.matches(feed,g.id))));}
     if(ui.boardGame && root.LiveScoreboard)d=combineGames((ui.feeds||[]).filter(feed=>root.LiveScoreboard.matches(feed,ui.boardGame)&&(!college||!ui.conference||root.LiveScoreboard.conferenceGames(ui.boardRows||[],ui.conference).some(g=>g.id===ui.boardGame))));
+    const P=designText(),fresh=freshness(d),holdings=root.PolymarketSync?.holdingsStatus();
+    const signature=viewKey(d,ui,root.PolymarketSync?.holdingsRevision?.(),fresh.stale);
+    if(box._lbViewKey===signature&&box.children.length){
+      const stamp=box.querySelector('.lb-updated');if(stamp&&stamp.textContent!==fresh.text)stamp.textContent=fresh.text;
+      const note=box.querySelector('.lb-holdings-status');if(note&&holdings)paintHoldings(note,P,holdings);
+      return;
+    }
     curSlug = d.slug || null; curGame = d.game || '';
     box.replaceChildren();
-    const P = designText();
     if(college){
       const S=root.STR.liveScoreboard.conferences,bar=el('div','lb-conference-filters');bar.setAttribute('role','group');bar.setAttribute('aria-label',S.title);
       const choices=[{key:'all',label:S.all},{key:'top25',label:S.top25},...root.LiveScoreboard.conferenceOptions(ui.boardRows||[])];
@@ -412,8 +435,7 @@
     if(ui.sport && root.LiveScoreboard){const row=el('div','lb-head-row'),board=el('div');row.append(head,board);box.append(row);root.LiveScoreboard.mount(board,ui.sport,{...(college?{snapshot:ui.boardSnapshot||{docs:[],partial:true},conference:ui.conference}:{}),selected:ui.boardGame,focusId:ui.boardFocus,onSelect:(id,focusId)=>{ui.boardGame=id;ui.boardFocus=focusId;ui.game=ui.prop=false;ui.redraw();}});ui.boardFocus=null;}else box.append(head);
     if(root.PolymarketSync){
       const h=root.PolymarketSync.holdingsStatus(),time=clock(h.checkedAt),note=el('a','lb-holdings-status');note.href='#bets';
-      note.textContent=!h.unlocked?P.holdingsLocked:!h.checkedAt?P.holdingsPending:h.error?P.holdingsError(time):Date.now()-Date.parse(h.checkedAt)>120000?P.holdingsStale(time):P.holdingsSync(time);
-      note.title=P.holdingNote(time);box.append(note);
+      paintHoldings(note,P,h);box.append(note);
     }
     if (d.stale || freshness(d).stale) box.append(el('div','lb-stale',liveText().stale));
     const controls = el('div', 'lb-controls');
@@ -447,14 +469,13 @@
       det.open = !!ui.reasons;
       det.addEventListener('toggle', () => { ui.reasons = det.open; });
       det.append(el('summary', null, P.priceHistory(selection.past.length + selection.reasons.length)));
-      const ul = el('ul', 'lb-list');
-      [...selection.past, ...selection.reasons].forEach(e => ul.append(edgeRow(e, link, ui)));
-      det.append(ul);
+      lazyDetails(det,()=>{const ul=el('ul','lb-list');[...selection.past,...selection.reasons].forEach(e=>ul.append(edgeRow(e,link,ui)));return ul;});
       box.append(det);
     }
     const about = el('details', 'lb-about'); about.append(el('summary', null, P.about), el('div', 'lb-foot', P.explanation)); box.append(about);
     const newest = [d.updated, ...(d.alerts || []).map(a => a.at), ...(d.edges || []).map(e => e.first_seen)].filter(Boolean).sort().pop();
     if (newest && (!readSeen() || newest > readSeen())) writeSeen(newest);
+    box._lbViewKey=signature;
   }
 
   function autoRefresh(root, run, busy) {
@@ -474,7 +495,7 @@
     content.append(el('div', 'live-bets-empty', 'Loading live bets…'));
     let loading=false;
     let last = null;
-    const ui = { slug: 'all', when:'today', sport:initialSport, filter: 'all', visitBase: readSeen(), details: new Set(), game: false, prop: false, reasons: false, redraw: () => { if (last) draw(content, last, ui); } };
+    const ui = { slug: 'all', when:'today', sport:initialSport, filter: 'all', visitBase: readSeen(), details: new Set(), game: false, prop: false, reasons: false, redraw: (force=false) => { if(force)content._lbViewKey=null;if (last) draw(content, last, ui); } };
     rootEl._lbSetSport=sport=>{ui.sport=sport;ui.slug='all';ui.conference='all';ui.boardRows=[];ui.boardSnapshot=null;ui.boardGame=null;ui.boardFocus=null;window.dispatchEvent(new CustomEvent('live:sport-change',{detail:{sport}}));ui.load();};
     // Which game: data/live/index.json (written by live-tick.mjs), else SLUG.
     let request = 0;
@@ -501,6 +522,9 @@
         if (targets.length && !feeds.length) throw new Error('feeds unavailable');
         const snapshot=ui.sport==='ncaaf'&&root.LiveScoreboard?await root.LiveScoreboard.load('ncaaf').catch(()=>null):null;
         if(current!==request||!rootEl.isConnected)return;
+        const espn=root.PublicJSON?await root.PublicJSON.get('data/espn/index.json').catch(()=>null):null;
+        if(current!==request||!rootEl.isConnected)return;
+        ui.espnRevision=espn?.updated_at;
         ui.boardSnapshot=snapshot;ui.boardRows=snapshot?root.LiveScoreboard.games(snapshot.docs,'ncaaf'):[];
         ui.games = games;ui.feeds=feeds;
         const d = selected === 'all' ? combineGames(feeds,results.length-feeds.length) : feeds[0];
@@ -518,10 +542,10 @@
     const stopRefresh=autoRefresh(rootEl,()=>load(),()=>loading);
     rootEl._lbStop=()=>{stopRefresh();window.removeEventListener('polymarket:holdings-change',holdingChange);};
     root.PolymarketSync?.refreshHoldings();
-    if(root.AthleteFlags)root.AthleteFlags.load().then(()=>{if(rootEl.isConnected)ui.redraw();});
+    if(root.AthleteFlags)root.AthleteFlags.load().then(()=>{if(rootEl.isConnected)ui.redraw(true);});
   }
 
-  return { holdingSide, oddsTone, CLOSE_EVEN_ODDS, autoRefresh, timeGames, sportOf, sportGames, edgeTitle, edgeSelection, combineGames, render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
+  return { lazyDetails,viewKey,holdingSide, oddsTone, CLOSE_EVEN_ODDS, autoRefresh, timeGames, sportOf, sportGames, edgeTitle, edgeSelection, combineGames, render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
 });
 
 
