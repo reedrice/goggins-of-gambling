@@ -3,10 +3,10 @@
  "mode": "testing_only",
  "model_version": "nba-prop-role-v1",
  "protocol_hash": "16e61c296f595c9d79970972a4bfb5ad8927ead2596d2474fdc1d64c245f2822",
- "updated_at": "2026-10-24T22:43:55.948Z",
+ "updated_at": "2026-10-24T22:49:50.333Z",
  "state": "collecting_results",
  "history_games": 401,
- "predictions": 1024,
+ "predictions": 1025,
  "settled": 984,
  "qualified": 249,
  "distinct_games": 15,
@@ -14,7 +14,11 @@
  "started_at": "2026-10-22T23:31:19.605Z",
  "ends_at": "2026-12-17T23:31:19.605Z",
  "skips": {
-  "outside_live_evaluation_window": 796
+  "missing_or_stale_boxscore": 77,
+  "outside_live_evaluation_window": 678,
+  "insufficient_same_team_position_role_history": 37,
+  "insufficient_comparable_role_history": 2,
+  "limited_minutes_or_foul_risk": 1
  },
  "per_stat": {
   "pts": {
@@ -33,7 +37,7 @@
    "qualified": 71
   },
   "threes": {
-   "logged": 213,
+   "logged": 214,
    "settled": 204,
    "qualified": 15
   },
