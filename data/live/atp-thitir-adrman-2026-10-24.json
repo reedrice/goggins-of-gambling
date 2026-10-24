@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187153",
-  "fetched_at": "2026-10-24T18:52:01.349Z",
+  "fetched_at": "2026-10-24T18:58:11.670Z",
   "tennis": true,
   "tennis_match": {
    "id": "187153",
@@ -17,17 +17,17 @@
    "date": "2026-10-24T16:00Z",
    "startDate": "2026-10-24T16:00Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, October 24th at 12:00 PM EDT",
-     "shortDetail": "10/24 - 12:00 PM EDT"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Adrian Mannarino (FRA) bt Thiago Agustin Tirante (ARG) 6-4 7-6 (7-5)",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,18 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "dbc865c9-ab39-49ff-dbb3-895a876665d3",
       "displayName": "Adrian Mannarino",
@@ -87,6 +104,18 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "tiebreak": 5,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "d7013896-f27c-1590-01c8-3df0a2781e16",
       "displayName": "Thiago Agustin Tirante",
@@ -135,16 +164,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sat, October 24th at 12:00 PM EDT",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Adrian Mannarino",
    "alias": "Adrian Mannarino",
    "name": "Adrian Mannarino",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Thiago Agustin Tirante",
@@ -156,7 +185,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T18:52:01.251Z",
+ "updated": "2026-10-24T18:58:11.519Z",
  "open_taken_at": "2026-10-23T17:02:02.424Z",
  "thresholds": {
   "big": 10,
