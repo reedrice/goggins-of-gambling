@@ -1062,7 +1062,7 @@
       // Below Richie's container: OUR "Live Bets record" (Reed: it lives here, never on
       // the Record tab, and never as a new bottom tab). Pablo's files stay untouched.
       $('#picks-view').innerHTML = '<div id="live-bets-root" class="live-bets-root"></div><section id="live-record-root" class="live-record-root"></section>';
-      Promise.all([fetchData('data/live-record.json').catch(()=>null),fetchData('data/live-feedback.json').catch(()=>null),fetchData('data/testing/nba-prop-status.json').catch(()=>null)]).then(([rec,feedback,testing])=>{const box=$('#live-record-root');if(box){box.innerHTML=nbaTestingHtml(testing)+liveRecordHtml(rec);mountRecordGroups(box);if(rec&&window.LiveFeedback)window.LiveFeedback.mount(box,rec.entries||[],feedback);}});
+      Promise.all([fetchData('data/live-record.json').catch(()=>null),fetchData('data/live-feedback.json').catch(()=>null),fetchData('data/testing/nba-prop-status.json').catch(()=>null)]).then(([rec,feedback,testing])=>{const box=$('#live-record-root');if(box){box.innerHTML=nbaTestingHtml(testing)+liveRecordHtml(rec);mountRecordGroups(box);mountRecordLog(box,rec,feedback);}});
       if (window.LiveBets && typeof LiveBets.render === 'function') LiveBets.render($('#live-bets-root'),liveSlateSport.toLowerCase());
       window.dispatchEvent(new CustomEvent('picks:sport-change',{detail:{sport:liveSlateSport}}));
       [0, 1500, 4000].forEach(ms => setTimeout(() => { paintLiveBadges(); paintLiveToast(); }, ms));   // Richie's view updates its seen key -> badge clears
@@ -2152,6 +2152,7 @@
     return '<details class="mib-panel nba-prop-testing"><summary>'+esc(S.title)+'</summary><p>'+esc(S.states[data.state]||S.waiting)+'</p><div class="kpis">'+kpi(S.history,data.history_games)+kpi(S.predictions,data.predictions)+kpi(S.settled,data.settled)+kpi(S.qualified,data.qualified)+'</div><p class="small muted">'+esc(S.window+': '+windowText)+'</p><p class="small muted">'+esc(S.note)+'</p><p class="small muted">'+esc(S.criteria)+'</p><p class="small muted">'+esc(S.range)+'</p><p class="small muted">'+esc(S.frozen+': '+data.model_version+' · '+String(data.protocol_hash).slice(0,12))+'</p></details>';
   }
   const liveRecordExpanded=new Set();
+  let liveRecordOffset=0;
   function mountRecordGroups(box) {
     box.onclick=event=>{
       const row=event.target.closest('tr[data-record-sport]');if(!row||!box.contains(row))return;
@@ -2161,7 +2162,13 @@
       box.querySelectorAll('tr[data-record-parent]').forEach(child=>{if(child.dataset.recordParent===row.dataset.recordSport)child.hidden=!open;});
     };
   }
-  function liveRecordHtml(rec) {
+  function mountRecordLog(box,rec,feedback) {
+    const details=box.querySelector('.live-rec-log');if(!details)return;
+    LiveBets.lazyDetails(details,()=>{const body=document.createElement('div');
+      const paint=()=>{body.innerHTML=liveRecordHtml(rec,true);if(window.LiveFeedback)LiveFeedback.mount(body,rec.entries||[],feedback);body.querySelectorAll('[data-log-page]').forEach(button=>button.onclick=()=>{liveRecordOffset=Number(button.dataset.logPage);paint();const list=body.querySelector('.live-rec-list');list?.focus({preventScroll:true});list?.scrollIntoView({block:'start'});});};paint();return body;
+    });
+  }
+  function liveRecordHtml(rec,logOnly=false) {
     const X = STR.record.live;
     let h = `<h3>${esc(X.title)} ${tip('liveRecord')}</h3>`;
     if (!rec || !Array.isArray(rec.entries)) return h + `<div class="section-empty">${esc(X.none)}</div>`;
@@ -2173,14 +2180,16 @@
       ${row(X.all, T.all)}${row(X.big, T.big)}${row(X.slight, T.slight)}${row(X.untiered, T.untiered)}</table></div>
       <p class="muted small">${esc(X.counts(all.n, all.pending))} ${esc(X.noisy)}</p>`;
     if(rec.by_sport) h += '<h4>'+esc(X.bySport)+'</h4><div class="table-wrap"><table class="live-rec"><tr><th>'+esc(X.sport)+'</th>'+[X.wlp,X.hit,X.expected,X.units,X.roi,X.sample].map(label=>'<th class="num">'+esc(label)+'</th>').join('')+'</tr>'+Object.entries(rec.by_sport).map(([key,t],index)=>{const sport=STR.liveBets.sports[key] || X.other,groups=t.by_market;if(!groups)return row(sport,t);const types=['game','prop',...(groups.other?.n?['other']:[])],group={key,index,controls:types.map(type=>`lr-${index}-${type}`).join(' ')};return row(sport,t,group)+types.map(type=>row(type==='game'?X.gameLines:type==='prop'?X.propBets:X.otherMarkets,groups[type],{...group,child:type})).join('');}).join('')+'</table></div>';
-    const list = rec.entries.slice().sort((a, b) => String(b.at).localeCompare(String(a.at))).slice(0, 30);
+    if(!logOnly)return h+'<details class="live-rec-log"><summary>'+esc(STR.listPaging.log)+'</summary></details>';
+    const sorted=rec.entries.slice().sort((a,b)=>String(b.at).localeCompare(String(a.at)));
+    const paging=window.LiveBets.page(sorted,liveRecordOffset),list=paging.items;liveRecordOffset=paging.start;
     if (!list.length) return h + `<div class="section-empty">${esc(X.empty)}</div>`;
     const badge = r => `<span class="badge ${r === 'win' ? 'won' : r === 'loss' ? 'lost' : r === 'pending' ? 'open' : 'push'}">${esc(X.result[r] || r)}</span>`;
-    return h + `<div class="live-rec-list">${list.map(e => `<div class="card live-rec-item" data-live-alert="${esc(e.id)}">
+    return `<div class="live-rec-list" tabindex="-1">${list.map(e => `<div class="card live-rec-item" data-live-alert="${esc(e.id)}">
         <div class="lr-top"><div><b>${esc(e.side || '')}</b><div class="muted small">${esc(e.market || '')} · ${esc(e.game || '')}</div></div>${badge(e.result)}</div>
         <div class="small">${esc(X.odds(e.odds_at_alert || '–', e.opening_odds || '–'))} · <span class="lr-tier lr-${esc(e.tier)}">${esc(X.tiers[e.tier] || e.tier)}</span></div>
-        ${window.BetProgress && [0,1].includes(e.side_index) ? window.BetProgress.html({...window.BetProgress.spec({desc:e.side,market:e.market,eventSlug:e.slug,market_id:e.market_id,market_side:e.side_index===0?'yes':'no'}),resolveMarket:true}) : `<p class="muted small">${esc(STR.progress.noStat)}</p>`}
-        <div class="small muted">${esc(e.time_ct || '')}${safeUrl(e.link) ? ` · <a href="${esc(safeUrl(e.link))}" target="_blank" rel="noopener">${esc(X.link)}</a>` : ''}</div></div>`).join('')}</div>`;
+        ${e.result==='pending' && window.BetProgress && [0,1].includes(e.side_index) ? window.BetProgress.html({...window.BetProgress.spec({desc:e.side,market:e.market,eventSlug:e.slug,market_id:e.market_id,market_side:e.side_index===0?'yes':'no'}),resolveMarket:true}) : (e.result==='pending'?`<p class="muted small">${esc(STR.progress.noStat)}</p>`:'')}
+        <div class="small muted">${esc(e.time_ct || '')}${safeUrl(e.link) ? ` · <a href="${esc(safeUrl(e.link))}" target="_blank" rel="noopener">${esc(X.link)}</a>` : ''}</div></div>`).join('')}</div>${paging.total>paging.size?`<div class="lb-page-controls"><button type="button" class="btn" data-log-page="${paging.start-paging.size}" ${paging.start===0?'disabled':''}>${esc(STR.listPaging.previous)}</button><span class="small muted">${esc(STR.listPaging.range(paging.start+1,paging.end,paging.total))}</span><button type="button" class="btn" data-log-page="${paging.start+paging.size}" ${paging.end===paging.total?'disabled':''}>${esc(STR.listPaging.next)}</button></div>`:''}`;
   }
 
   // ---------------------------------------------------------------- settings

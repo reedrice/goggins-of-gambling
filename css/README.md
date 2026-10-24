@@ -35,3 +35,5 @@ The score ticker scrolls continuously at desktop and phone widths, including hov
 
 ### Scrolling performance (Reed, Oct 24)
 Repeated cards/rows/pills retain role-token colors and geometry but omit backdrop blur and broad card shadows. Navigation/sheets retain glass blur. Canvas gradients scroll with the page. This performance override avoids resampling the backdrop for every list item and supersedes universal per-card blur/fixed canvas attachment. Do not reintroduce per-item filters or blanket will-change layers.
+
+Oct 24 crowded-slate update: record table wrappers omit backdrop blur; six-item log cards use content-visibility:auto with an estimated intrinsic slot. Native disclosure removes log content on collapse. Shared surface/spacing/color tokens remain unchanged.

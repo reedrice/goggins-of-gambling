@@ -280,11 +280,23 @@
    if(host.isConnected){const result=snapshotResult(s,board,root.Viz?.parseProp);host._bpVerified={spec:s,game:result.game};render(host,s,result);refreshComboWarning(host.closest('.pm-position'));}
   } catch(error) {if(host.isConnected)render(host,{}, {reason:'unavailable'});} finally {host._bpBusy=false;}
  }
+
+ // Observe once; no per-card layout reads or scroll handlers.
+ function viewportQueue(observerFactory,run) {
+  const tracked=new Set(),near=new Set();
+  const observer=observerFactory(entries=>{for(const e of entries){if(e.isIntersecting){near.add(e.target);run(e.target);}else near.delete(e.target);}});
+  return {sync(hosts){const current=new Set(hosts);for(const h of tracked)if(!current.has(h)){observer.unobserve(h);tracked.delete(h);near.delete(h);}for(const h of current)if(!tracked.has(h)){tracked.add(h);observer.observe(h);}},run(){near.forEach(run);}};
+ }
+ let visibleQueue;
+ function eligible(host){return !document.hidden&&host.isConnected&&!host.closest('details:not([open])')&&!host.closest('[hidden]');}
  function scan() {
   if(document.hidden)return;
-  document.querySelectorAll('#tab-picks .bp-host, #tab-bets .bp-host').forEach(host=>{if(!host.closest('details:not([open])')&&!host.closest('[hidden]'))hydrate(host);});
+  const hosts=document.querySelectorAll('#tab-picks .bp-host, #tab-bets .bp-host');
+  if(visibleQueue){visibleQueue.sync(hosts);visibleQueue.run();}
+  else hosts.forEach(host=>{if(eligible(host))hydrate(host);});
  }
  if(typeof document!=='undefined') {
+  if(typeof IntersectionObserver!=='undefined')visibleQueue=viewportQueue(callback=>new IntersectionObserver(callback,{rootMargin:'400px 0px'}),host=>{if(eligible(host))hydrate(host);});
   let pending=false;const schedule=()=>{if(pending)return;pending=true;setTimeout(()=>{pending=false;scan();},60);};
   new MutationObserver(records=>{if(records.some(r=>Array.from(r.addedNodes).some(n=>n.nodeType===1&&(n.matches('.bp-host')||n.querySelector('.bp-host')))))schedule();}).observe(document.body,{childList:true,subtree:true});
   document.addEventListener('toggle',schedule,true);document.addEventListener('visibilitychange',schedule);
@@ -295,6 +307,6 @@
   const s=await enrich({resolveMarket:true,eventSlug,marketSlug:String(marketId||''),side:'yes'});
   return s.resolvedMarket?s.marketSlug:null;
  }
- return {render,spec,html,findEvent,findProgressEvent,athleteStat,parseBet,selectedTeam,scoresFor,gameElapsed,evaluateBet,resolveMarket,marketIdentity,snapshotPath,snapshotResult,clockText,marginText,periodConflict};
+ return {viewportQueue,render,spec,html,findEvent,findProgressEvent,athleteStat,parseBet,selectedTeam,scoresFor,gameElapsed,evaluateBet,resolveMarket,marketIdentity,snapshotPath,snapshotResult,clockText,marginText,periodConflict};
 });
 

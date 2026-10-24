@@ -744,3 +744,5 @@ window.STR.liveScoreboard.game=name=>`Filter bets: ${name}`;
 window.STR.progress.noGameCompact='Live score unverified';
 
 window.STR.liveScoreboard.conferences={empty:"No games in this group today.",title:"College football conference filters",all:"All conferences",top25:"Top 25",nonconference:"Non-conference",unknown:"Conference unavailable"};
+
+window.STR.listPaging={log:"Bet log",previous:"Previous",next:"Next",range:(start,end,total)=>`${start}–${end} of ${total}`};

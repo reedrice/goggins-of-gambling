@@ -451,3 +451,9 @@ body { background-attachment: scroll; }
   -webkit-backdrop-filter: none; backdrop-filter: none;
 }
 :root:not([data-color-scheme="custom"]) :is(.card,.lb-edge,.lb-alert) { box-shadow: none; }
+
+/* Bounded lists: skip off-screen card layout/paint, retaining an estimated slot. */
+.live-rec-item { content-visibility:auto; contain-intrinsic-size:auto 260px; }
+.lb-page-controls { align-items:center; flex-wrap:wrap; }
+
+.live-record-root .table-wrap { -webkit-backdrop-filter:none; backdrop-filter:none; }

@@ -332,7 +332,7 @@
     details.addEventListener('toggle',sync);sync();return sync;
   }
   function viewKey(d,ui,holdingRevision,stale) {
-    return JSON.stringify([d,ui.sport,ui.slug,ui.filter,ui.visitBase,ui.game,ui.prop,ui.activity,ui.alertMore,ui.reasons,ui.conference,ui.boardGame,ui.espnRevision,[...(ui.details||[])].sort(),holdingRevision,stale]);
+    return JSON.stringify([d,ui.sport,ui.slug,ui.filter,ui.visitBase,ui.game,ui.prop,ui.activity,ui.alertMore,ui.history,ui.reasons,ui.conference,ui.boardGame,ui.espnRevision,[...(ui.details||[])].sort(),holdingRevision,stale]);
   }
   function paintHoldings(note,P,h) {
     const time=clock(h.checkedAt),text=!h.unlocked?P.holdingsLocked:!h.checkedAt?P.holdingsPending:h.error?P.holdingsError(time):Date.now()-Date.parse(h.checkedAt)>120000?P.holdingsStale(time):P.holdingsSync(time);
@@ -348,10 +348,10 @@
     lazyDetails(box,()=>{
     const body=el('div','lb-details-body');
     const isNew = markNew(list, ui.visitBase);
-    const extra = Math.min(Math.max(0, list.length - 5), Math.max(0, Number(ui.alertMore) || 0));
+    const paging=page(list,ui.alertMore);
     const ul = el('ul', 'lb-alert-list');
-    list.slice(0, 5 + extra).forEach((a, i) => {
-      const li = el('li', `lb-alert lb-a-${a.type}${isNew[i] ? ' lb-new' : ''}`);
+    paging.items.forEach((a, i) => {
+      const li = el('li', `lb-alert lb-a-${a.type}${isNew[paging.start+i] ? ' lb-new' : ''}`);
       const top = el('div', 'lb-alert-top');
       const kind = (P.alertTypes[a.type] || P.update) + (a.type === 'new_edge' && P.tiers[a.tier] ? ' · ' + P.tiers[a.tier] : '');
       top.append(el('span', 'lb-alert-kind', kind), el('span', 'lb-alert-time', clock(a.at)));
@@ -364,42 +364,33 @@
       ul.append(li);
     });
     body.append(ul);
-    if (list.length > 5) {
-      const controls = el('div', 'lb-page-controls'), remaining = Math.max(0, list.length - 5 - extra);
-      const action = (kind, count, value) => {
-        const button=el('button','lb-more',kind==='more'?P.more(count):P.lessBatch(count));button.type='button';button.dataset.page=kind;
-        button.onclick=()=>{const root=box.closest('.live-bets-root');ui.alertMore=value;ui.redraw();(root?.querySelector('.lb-activity [data-page="'+kind+'"]')||root?.querySelector('.lb-activity [data-page]'))?.focus({preventScroll:true});};controls.append(button);
-      };
-      if(remaining)action('more',Math.min(5,remaining),extra+Math.min(5,remaining));
-      if(extra)action('less',Math.min(5,extra),Math.max(0,extra-5));
-      body.append(controls);
+    if(paging.total>paging.size){const controls=el('div','lb-page-controls');
+      for(const [label,value,disabled] of [[root.STR.listPaging.previous,paging.start-paging.size,paging.start===0],[root.STR.listPaging.next,paging.end,paging.end===paging.total]]){const button=el('button','lb-more',label);button.type='button';button.disabled=disabled;button.onclick=()=>{ui.alertMore=value;ui.redraw();};controls.append(button);}
+      controls.append(el('span','small muted',root.STR.listPaging.range(paging.start+1,paging.end,paging.total)));body.append(controls);
     }
     return body;
     });
     return box;
   }
 
-  /** One group (Game lines / Player props) with its own "Show more". */
-  function groupBox(title, g, link, ui, key) {
-    const box = el('section', 'lb-group lb-group-'+key);
-    box.append(el('h3', 'lb-group-title', `${title} (${g.total})`));
-    if (!g.total) { box.append(el('div', 'lb-none', designText().noMatching)); return box; }
-    const ul = el('ul', 'lb-list');
-    g.shown.forEach(e => ul.append(edgeRow(e, link, ui)));
-    const extra = Math.min(g.more.length, Math.max(0, Number(ui[key]) || 0));
-    g.more.slice(0, extra).forEach(e => ul.append(edgeRow(e, link, ui)));
-    box.append(ul);
-    if (g.more.length) {
-      const controls=el('div','lb-page-controls'),remaining=Math.max(0,g.more.length-extra);
-      const action=(kind,count,value)=>{
-        const button=el('button','lb-more',kind==='more'?designText().more(count):designText().lessBatch(count));button.type='button';button.dataset.page=kind;
-        button.onclick=()=>{const root=box.closest('.live-bets-root');ui[key]=value;ui.redraw();(root?.querySelector('.lb-group-'+key+' [data-page="'+kind+'"]')||root?.querySelector('.lb-group-'+key+' [data-page]'))?.focus({preventScroll:true});};controls.append(button);
-      };
-      if(remaining)action('more',Math.min(5,remaining),extra+Math.min(5,remaining));
-      if(extra)action('less',Math.min(5,extra),Math.max(0,extra-5));
-      box.append(controls);
-    }
-    return box;
+
+  function page(items,offset=0,size=6) {
+    const start=Math.min(Math.floor(Math.max(0,Number(offset)||0)/size)*size,Math.max(0,Math.floor((items.length-1)/size)*size));
+    return {items:items.slice(start,start+size),start,end:Math.min(items.length,start+size),total:items.length,size};
+  }
+  function pagedList(items,offset,onPage,renderItem) {
+    const body=el('div'),p=page(items,offset),ul=el('ul','lb-list');p.items.forEach(e=>ul.append(renderItem(e)));body.append(ul);
+    if(p.total>p.size){const controls=el('div','lb-page-controls');
+      for(const [label,value,disabled] of [[root.STR.listPaging.previous,p.start-p.size,p.start===0],[root.STR.listPaging.next,p.start+p.size,p.end===p.total]]){
+        const b=el('button','lb-more',label);b.type='button';b.disabled=disabled;b.onclick=()=>onPage(value);controls.append(b);
+      }
+      controls.append(el('span','small muted',root.STR.listPaging.range(p.start+1,p.end,p.total)));body.append(controls);
+    }return body;
+  }
+  function groupBox(title,g,link,ui,key) {
+    const box=el('section','lb-group lb-group-'+key);box.append(el('h3','lb-group-title',title+' ('+g.total+')'));
+    if(!g.total){box.append(el('div','lb-none',designText().noMatching));return box;}
+    box.append(pagedList([...g.shown,...g.more],ui[key],value=>{ui[key]=value;ui.redraw();const target=document.querySelector('.lb-group-'+key+' h3');target?.setAttribute('tabindex','-1');target?.focus({preventScroll:true});target?.scrollIntoView({block:'nearest'});},e=>edgeRow(e,link,ui)));return box;
   }
 
   /** Draw the whole view from data `d` into `box`. `ui` keeps open/closed state across refreshes. */
@@ -469,7 +460,7 @@
       det.open = !!ui.reasons;
       det.addEventListener('toggle', () => { ui.reasons = det.open; });
       det.append(el('summary', null, P.priceHistory(selection.past.length + selection.reasons.length)));
-      lazyDetails(det,()=>{const ul=el('ul','lb-list');[...selection.past,...selection.reasons].forEach(e=>ul.append(edgeRow(e,link,ui)));return ul;});
+      lazyDetails(det,()=>pagedList([...selection.past,...selection.reasons],ui.history,value=>{ui.history=value;ui.redraw();},e=>edgeRow(e,link,ui)));
       box.append(det);
     }
     const about = el('details', 'lb-about'); about.append(el('summary', null, P.about), el('div', 'lb-foot', P.explanation)); box.append(about);
@@ -496,7 +487,7 @@
     let loading=false;
     let last = null;
     const ui = { slug: 'all', when:'today', sport:initialSport, filter: 'all', visitBase: readSeen(), details: new Set(), game: false, prop: false, reasons: false, redraw: (force=false) => { if(force)content._lbViewKey=null;if (last) draw(content, last, ui); } };
-    rootEl._lbSetSport=sport=>{ui.sport=sport;ui.slug='all';ui.conference='all';ui.boardRows=[];ui.boardSnapshot=null;ui.boardGame=null;ui.boardFocus=null;window.dispatchEvent(new CustomEvent('live:sport-change',{detail:{sport}}));ui.load();};
+    rootEl._lbSetSport=sport=>{ui.sport=sport;ui.game=ui.prop=ui.history=ui.alertMore=0;ui.slug='all';ui.conference='all';ui.boardRows=[];ui.boardSnapshot=null;ui.boardGame=null;ui.boardFocus=null;window.dispatchEvent(new CustomEvent('live:sport-change',{detail:{sport}}));ui.load();};
     // Which game: data/live/index.json (written by live-tick.mjs), else SLUG.
     let request = 0;
     const load = ui.load = async (manual=false) => {
@@ -545,7 +536,7 @@
     if(root.AthleteFlags)root.AthleteFlags.load().then(()=>{if(rootEl.isConnected)ui.redraw(true);});
   }
 
-  return { lazyDetails,viewKey,holdingSide, oddsTone, CLOSE_EVEN_ODDS, autoRefresh, timeGames, sportOf, sportGames, edgeTitle, edgeSelection, combineGames, render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
+  return { page,lazyDetails,viewKey,holdingSide, oddsTone, CLOSE_EVEN_ODDS, autoRefresh, timeGames, sportOf, sportGames, edgeTitle, edgeSelection, combineGames, render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
 });
 
 
