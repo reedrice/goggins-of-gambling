@@ -261,7 +261,7 @@
   function holdingBadge(e,eventSlug,card){
     const badge=el('span','lb-holding',designText().holding);badge.hidden=true;
     const account=root.PolymarketSync,side=holdingSide(e);
-    if(!side||!account?.holdingsStatus().unlocked||!root.BetProgress?.marketIdentity)return badge;
+    if(!side||!account?.isLinked?.()||!account.holdingsStatus().unlocked||!root.BetProgress?.marketIdentity)return badge;
     root.BetProgress.marketIdentity(eventSlug,e.market_id).then(slug=>{
       if(!card.isConnected||!slug||!account.isHolding(slug,side))return;
       badge.hidden=false;badge.title=designText().holdingNote(clock(account.holdingsStatus().checkedAt));
@@ -402,7 +402,7 @@
     const college=ui.sport==='ncaaf'&&root.LiveScoreboard;
     if(college&&ui.conference&&ui.conference!=='all'){const rows=root.LiveScoreboard.conferenceGames(ui.boardRows||[],ui.conference);d=combineGames((ui.feeds||[]).filter(feed=>rows.some(g=>root.LiveScoreboard.matches(feed,g.id))));}
     if(ui.boardGame && root.LiveScoreboard)d=combineGames((ui.feeds||[]).filter(feed=>root.LiveScoreboard.matches(feed,ui.boardGame)&&(!college||!ui.conference||root.LiveScoreboard.conferenceGames(ui.boardRows||[],ui.conference).some(g=>g.id===ui.boardGame))));
-    const P=designText(),fresh=freshness(d),holdings=root.PolymarketSync?.holdingsStatus();
+    const P=designText(),fresh=freshness(d),holdings=root.PolymarketSync?.isLinked?.()?root.PolymarketSync.holdingsStatus():null;
     const signature=viewKey(d,ui,root.PolymarketSync?.holdingsRevision?.(),fresh.stale);
     if(box._lbViewKey===signature&&box.children.length){
       const stamp=box.querySelector('.lb-updated');if(stamp&&stamp.textContent!==fresh.text)stamp.textContent=fresh.text;
@@ -428,7 +428,7 @@
     }
     if(ui.sport && root.LiveScoreboard){const row=el('div','lb-head-row'),board=el('div');row.append(head,board);box.append(row);root.LiveScoreboard.mount(board,ui.sport,{...(college?{snapshot:ui.boardSnapshot||{docs:[],partial:true},conference:ui.conference}:{}),selected:ui.boardGame,focusId:ui.boardFocus,onSelect:(id,focusId)=>{ui.boardGame=id;ui.boardFocus=focusId;ui.game=ui.prop=false;ui.redraw();}});ui.boardFocus=null;}else box.append(head);
     const utilityRow=el('div','lb-utility-row');box.append(utilityRow);
-    if(root.PolymarketSync){
+    if(root.PolymarketSync?.isLinked?.()){
       const h=root.PolymarketSync.holdingsStatus(),time=clock(h.checkedAt),note=el('a','lb-holdings-status');note.href='#bets';
       paintHoldings(note,P,h);utilityRow.append(note);
     }
@@ -548,7 +548,7 @@
     const holdingChange=()=>{if(rootEl.isConnected)ui.redraw();};window.addEventListener('polymarket:holdings-change',holdingChange);
     const stopRefresh=autoRefresh(rootEl,()=>load(),()=>loading);
     rootEl._lbStop=()=>{stopRefresh();window.removeEventListener('polymarket:holdings-change',holdingChange);};
-    root.PolymarketSync?.refreshHoldings();
+    if(root.PolymarketSync?.isLinked?.())root.PolymarketSync.refreshHoldings();
     if(root.AthleteFlags)root.AthleteFlags.load().then(()=>{if(rootEl.isConnected)ui.redraw(true);});
   }
 

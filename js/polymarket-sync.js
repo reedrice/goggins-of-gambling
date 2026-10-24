@@ -96,6 +96,7 @@
  let current=null,key=null,salt=null,timer=null,host=null,busy=false,epoch=0,message='',activityOpen=false;
  let holdingRevision=0,lastHoldingKey='locked';
  function holdingKey(positions){return JSON.stringify(Object.entries(positions||{}).filter(([slug,p])=>matchesPosition(positions,slug,'yes')||matchesPosition(positions,slug,'no')).map(([slug,p])=>[slug,quantity(p)>0?'yes':'no']).sort((a,b)=>a[0].localeCompare(b[0])));}
+ function isLinked(){try{return !!current||!!root.Store?.getPolymarketVault?.();}catch{return !!current;}}
  function holdingsStatus(){return {unlocked:!!current,checkedAt:current?.snapshot?.checked_at||null,error:!!message,busy};}
  function isHolding(slug,side){return !!current&&matchesPosition(current.snapshot?.positions,slug,side);}
  const notifyHoldings=()=>{const next=current?'unlocked:'+holdingKey(current.snapshot?.positions):'locked';if(next!==lastHoldingKey){lastHoldingKey=next;holdingRevision++;}root.dispatchEvent?.(new CustomEvent('polymarket:holdings-change'));};
@@ -144,5 +145,5 @@
  }
  function mount(element){host=element;clearTimeout(timer);paint();if(current)sync();}
  if(typeof document!=='undefined')document.addEventListener('visibilitychange',()=>{if(!document.hidden&&current){clearTimeout(timer);sync();}});
- return {holdingKey,holdingsRevision:()=>holdingRevision,mount,lock,headers,passwordKey,seal,unlock,pages,rows,positionAmounts,openTotals,stats,progressSpecs,activityLabel,validate,matchesPosition,isHolding,holdingsStatus,refreshHoldings:sync};
+ return {isLinked,holdingKey,holdingsRevision:()=>holdingRevision,mount,lock,headers,passwordKey,seal,unlock,pages,rows,positionAmounts,openTotals,stats,progressSpecs,activityLabel,validate,matchesPosition,isHolding,holdingsStatus,refreshHoldings:sync};
 });
