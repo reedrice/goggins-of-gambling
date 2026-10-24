@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187122",
-  "fetched_at": "2026-10-24T11:42:07.251Z",
+  "fetched_at": "2026-10-24T11:48:04.060Z",
   "tennis": true,
   "tennis_match": {
    "id": "187122",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Kyoka Okamura (JPN) leads Sayaka Ishii (JPN) 4-6 1-1",
+     "text": "Kyoka Okamura (JPN) is tied with Sayaka Ishii (JPN) 4-6 2-1",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
        "value": 6,
@@ -102,14 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
        "value": 4,
        "winner": false
       },
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -186,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T11:42:07.133Z",
+ "updated": "2026-10-24T11:48:03.992Z",
  "open_taken_at": "2026-10-24T05:46:17.422Z",
  "thresholds": {
   "big": 10,
@@ -214,28 +214,6 @@
    "yes_buy": 69,
    "no_buy": 34,
    "taken_at": "2026-10-24T06:43:34.283Z"
-  },
-  {
-   "market_id": "1743179",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Kyoka Okamura vs. Sayaka Ishii be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 64,
-   "yes_buy": 65,
-   "no_buy": 37,
-   "taken_at": "2026-10-24T10:19:08.805Z"
   },
   {
    "market_id": "1743172",
@@ -282,26 +260,26 @@
    "taken_at": "2026-10-24T08:18:11.268Z"
   },
   {
-   "market_id": "1743205",
-   "market": "Set 2 winner",
+   "market_id": "1743186",
+   "market": "Sets total",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Kyoka Okamura win set 2 against Sayaka Ishii?",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Kyoka Okamura vs. Sayaka Ishii be more than 2.5?",
    "sides": [
-    "Yes: Kyoka Okamura win set 2 against Sayaka Ishii",
-    "No: Kyoka Okamura win set 2 against Sayaka Ishii"
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
    ],
    "teams": [
-    "Kyoka Okamura",
+    null,
     null
    ],
    "player": null,
-   "mid": 53,
-   "yes_buy": 55,
-   "no_buy": 49,
-   "taken_at": "2026-10-24T11:27:56.550Z"
+   "mid": 34.5,
+   "yes_buy": 35,
+   "no_buy": 66,
+   "taken_at": "2026-10-24T10:19:08.805Z"
   },
   {
    "market_id": "1743170",
@@ -392,26 +370,48 @@
    "taken_at": "2026-10-24T10:19:08.805Z"
   },
   {
-   "market_id": "1743186",
-   "market": "Sets total",
+   "market_id": "1743179",
+   "market": "Games total",
    "group": "game",
    "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Kyoka Okamura vs. Sayaka Ishii be more than 2.5?",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Kyoka Okamura vs. Sayaka Ishii be more than 17.5?",
    "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
    ],
    "teams": [
     null,
     null
    ],
    "player": null,
-   "mid": 34.5,
-   "yes_buy": 35,
-   "no_buy": 66,
+   "mid": 64,
+   "yes_buy": 65,
+   "no_buy": 37,
    "taken_at": "2026-10-24T10:19:08.805Z"
+  },
+  {
+   "market_id": "1743205",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Kyoka Okamura win set 2 against Sayaka Ishii?",
+   "sides": [
+    "Yes: Kyoka Okamura win set 2 against Sayaka Ishii",
+    "No: Kyoka Okamura win set 2 against Sayaka Ishii"
+   ],
+   "teams": [
+    "Kyoka Okamura",
+    null
+   ],
+   "player": null,
+   "mid": 53,
+   "yes_buy": 55,
+   "no_buy": 49,
+   "taken_at": "2026-10-24T11:27:56.550Z"
   },
   {
    "market_id": "1743174",
@@ -526,26 +526,6 @@
  ],
  "edges": [
   {
-   "key": "1743169:0",
-   "market_id": "1743169",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Kyoka Okamura cover -1.5 vs the Sayaka Ishii in Kyoka Okamura vs. Sayaka Ishii?",
-   "side": "Kyoka Okamura -1.50 (Games)",
-   "open_chance": 66,
-   "now_chance": 25,
-   "open_odds": "-194",
-   "now_odds": "+300",
-   "edge": 41,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Kyoka Okamura not above the games spread right now",
-   "context": "Sayaka Ishii 6, 1 · Kyoka Okamura 4, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-24T10:54:05.086Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1742387:0",
    "market_id": "1742387",
    "market": "Moneyline",
@@ -553,14 +533,34 @@
    "question": "Who will win in the upcoming wta event Kyoka Okamura vs Sayaka Ishii scheduled for October 24, 2026 at 9:15 AM UTC?",
    "side": "Kyoka Okamura win",
    "open_chance": 69,
-   "now_chance": 31,
+   "now_chance": 30,
    "open_odds": "-223",
-   "now_odds": "+223",
-   "edge": 38,
+   "now_odds": "+233",
+   "edge": 39,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Kyoka Okamura trailing in sets",
-   "context": "Sayaka Ishii 6, 1 · Kyoka Okamura 4, 1 · 2nd Set (games by set)",
+   "context": "Sayaka Ishii 6, 1 · Kyoka Okamura 4, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-24T10:54:05.086Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1743169:0",
+   "market_id": "1743169",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Kyoka Okamura cover -1.5 vs the Sayaka Ishii in Kyoka Okamura vs. Sayaka Ishii?",
+   "side": "Kyoka Okamura -1.50 (Games)",
+   "open_chance": 66,
+   "now_chance": 29,
+   "open_odds": "-194",
+   "now_odds": "+245",
+   "edge": 37,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Kyoka Okamura not above the games spread right now",
+   "context": "Sayaka Ishii 6, 1 · Kyoka Okamura 4, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-24T10:54:05.086Z",
    "status": "open",
    "kalshi": null
@@ -573,14 +573,14 @@
    "question": "Will the Kyoka Okamura cover 1.5 vs the Sayaka Ishii in Kyoka Okamura vs. Sayaka Ishii?",
    "side": "Kyoka Okamura +1.50 (Games)",
    "open_chance": 65,
-   "now_chance": 43,
+   "now_chance": 40,
    "open_odds": "-186",
-   "now_odds": "+133",
-   "edge": 22,
+   "now_odds": "+150",
+   "edge": 25,
    "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Kyoka Okamura not above the games spread right now",
-   "context": "Sayaka Ishii 6, 1 · Kyoka Okamura 4, 1 · 2nd Set (games by set)",
+   "class": "news",
+   "reason": "Big move (25 pts), likely news",
+   "context": "Sayaka Ishii 6, 1 · Kyoka Okamura 4, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-24T10:54:05.086Z",
    "status": "open",
    "kalshi": null
@@ -600,8 +600,28 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Sayaka Ishii 6, 1 · Kyoka Okamura 4, 1 · 2nd Set (games by set)",
+   "context": "Sayaka Ishii 6, 1 · Kyoka Okamura 4, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-24T10:54:05.086Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1743186:1",
+   "market_id": "1743186",
+   "market": "Sets total",
+   "group": "game",
+   "question": "Will the total in Kyoka Okamura vs. Sayaka Ishii be more than 2.5?",
+   "side": "Under 2.5 (Sets)",
+   "open_chance": 66,
+   "now_chance": 50,
+   "open_odds": "-194",
+   "now_odds": "+100",
+   "edge": 16,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Sayaka Ishii 6, 1 · Kyoka Okamura 4, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-24T11:16:04.371Z",
    "status": "open",
    "kalshi": null
   },
@@ -620,7 +640,7 @@
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Sayaka Ishii not above the games spread right now",
-   "context": "Sayaka Ishii 6, 1 · Kyoka Okamura 4, 1 · 2nd Set (games by set)",
+   "context": "Sayaka Ishii 6, 1 · Kyoka Okamura 4, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-24T11:21:54.096Z",
    "status": "open",
    "kalshi": null
@@ -633,56 +653,16 @@
    "question": "Will the total in Kyoka Okamura vs. Sayaka Ishii be more than 27.5?",
    "side": "Under 27.5 (Games)",
    "open_chance": 73,
-   "now_chance": 68,
+   "now_chance": 63,
    "open_odds": "-270",
-   "now_odds": "-213",
-   "edge": 5,
-   "tier": "slight",
+   "now_odds": "-170",
+   "edge": 10,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Sayaka Ishii 6, 1 · Kyoka Okamura 4, 1 · 2nd Set (games by set)",
+   "context": "Sayaka Ishii 6, 1 · Kyoka Okamura 4, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-24T11:16:04.371Z",
    "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1743205:0",
-   "market_id": "1743205",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Kyoka Okamura win set 2 against Sayaka Ishii?",
-   "side": "Yes: Kyoka Okamura win set 2 against Sayaka Ishii",
-   "open_chance": 55,
-   "now_chance": 51,
-   "open_odds": "-122",
-   "now_odds": "-104",
-   "edge": 4,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Kyoka Okamura not above the games spread right now",
-   "context": "Sayaka Ishii 6, 1 · Kyoka Okamura 4, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-24T11:42:07.133Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1743186:1",
-   "market_id": "1743186",
-   "market": "Sets total",
-   "group": "game",
-   "question": "Will the total in Kyoka Okamura vs. Sayaka Ishii be more than 2.5?",
-   "side": "Under 2.5 (Sets)",
-   "open_chance": 66,
-   "now_chance": 39,
-   "open_odds": "-194",
-   "now_odds": "+156",
-   "edge": 27,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (27 pts), likely news",
-   "context": "Sayaka Ishii 5 · Kyoka Okamura 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-24T11:16:04.371Z",
-   "status": "gone",
    "kalshi": null
   },
   {
@@ -784,9 +764,57 @@
    "first_seen": "2026-10-24T11:08:10.098Z",
    "status": "gone",
    "kalshi": null
+  },
+  {
+   "key": "1743205:0",
+   "market_id": "1743205",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Kyoka Okamura win set 2 against Sayaka Ishii?",
+   "side": "Yes: Kyoka Okamura win set 2 against Sayaka Ishii",
+   "open_chance": 55,
+   "now_chance": 51,
+   "open_odds": "-122",
+   "now_odds": "-104",
+   "edge": 4,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Kyoka Okamura not above the games spread right now",
+   "context": "Sayaka Ishii 6, 1 · Kyoka Okamura 4, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-24T11:42:07.133Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "news:1743170:0",
+   "key": "1743170:0",
+   "at": "2026-10-24T11:48:03.992Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Kyoka Okamura +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+150",
+   "now_chance": 40,
+   "edge": 25,
+   "text": "Big move, likely news: Kyoka Okamura +1.50 (Games) (Games spread) is 25 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-kyooka-sayish-2026-10-24"
+  },
+  {
+   "id": "new_edge:1743186:1:big",
+   "key": "1743186:1",
+   "at": "2026-10-24T11:48:03.992Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 2.5 (Sets)",
+   "market": "Sets total",
+   "now_odds": "+100",
+   "now_chance": 50,
+   "edge": 16,
+   "text": "New big edge: Under 2.5 (Sets) (Sets total), 16 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-kyooka-sayish-2026-10-24"
+  },
   {
    "id": "new_edge:1743183:1:slight",
    "key": "1743183:1",
@@ -969,7 +997,9 @@
   "new_edge:1743183:1:big",
   "news:1742387:0",
   "gone:1743183:1:2026-10-24T11:16:04.371Z",
-  "new_edge:1743183:1:slight"
+  "new_edge:1743183:1:slight",
+  "news:1743170:0",
+  "new_edge:1743186:1:big"
  ],
  "kalshi_checked": null
 }
