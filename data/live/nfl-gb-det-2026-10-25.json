@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401873020",
-  "fetched_at": "2026-10-24T20:02:55.216Z",
+  "fetched_at": "2026-10-24T20:09:11.618Z",
   "game_state": "pre",
   "espn_status": "STATUS_SCHEDULED",
   "period": 0,
@@ -68,6 +68,13 @@
    },
    {
     "team": "GB",
+    "player": "Jordon Riley",
+    "short": "J. Riley",
+    "pos": "DT",
+    "status": "Questionable"
+   },
+   {
+    "team": "GB",
     "player": "Aaron Banks",
     "short": "A. Banks",
     "pos": "G",
@@ -93,13 +100,6 @@
     "short": "L. Musgrave",
     "pos": "TE",
     "status": "Out"
-   },
-   {
-    "team": "GB",
-    "player": "Benjamin St-Juste",
-    "short": "B. St-Juste",
-    "pos": "CB",
-    "status": "Questionable"
    }
   ],
   "in_game_injuries": [],
@@ -166,7 +166,7 @@
    }
   ]
  },
- "updated": "2026-10-24T20:02:54.869Z",
+ "updated": "2026-10-24T20:09:11.384Z",
  "open_taken_at": "2026-10-24T05:00:50.435Z",
  "thresholds": {
   "big": 10,
@@ -413,6 +413,28 @@
    "mid": 4,
    "yes_buy": 5.5,
    "no_buy": 97.5,
+   "taken_at": "2026-10-24T05:00:50.435Z"
+  },
+  {
+   "market_id": "1425991",
+   "market": "Alt spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": -21.5,
+   "question": "Will the Green Bay Packers cover -21.5 vs the Detroit Lions in GB Packers vs. DET Lions?",
+   "sides": [
+    "Packers -21.50",
+    "Lions +21.50"
+   ],
+   "teams": [
+    "Packers",
+    "Lions"
+   ],
+   "player": null,
+   "mid": 4,
+   "yes_buy": 5,
+   "no_buy": 97,
    "taken_at": "2026-10-24T05:00:50.435Z"
   },
   {
@@ -2525,28 +2547,6 @@
    "mid": 50.5,
    "yes_buy": 52,
    "no_buy": 51,
-   "taken_at": "2026-10-24T05:00:50.435Z"
-  },
-  {
-   "market_id": "1362603",
-   "market": "Q4 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "fourth_quarter",
-   "line": null,
-   "question": "Will Detroit Lions win the fourth quarter?",
-   "sides": [
-    "Yes: Detroit Lions win the fourth quarter",
-    "No: Detroit Lions win the fourth quarter"
-   ],
-   "teams": [
-    "Lions",
-    null
-   ],
-   "player": null,
-   "mid": 47,
-   "yes_buy": 49,
-   "no_buy": 55,
    "taken_at": "2026-10-24T05:00:50.435Z"
   },
   {
@@ -7236,28 +7236,6 @@
    "taken_at": "2026-10-24T05:00:50.435Z"
   },
   {
-   "market_id": "1632384",
-   "market": "Player prop",
-   "group": "prop",
-   "mtype": "prop",
-   "period": "full_game",
-   "line": 10,
-   "question": "Will Savion Williams record 10+ receiving yards?",
-   "sides": [
-    "Yes: Savion Williams record 10+ receiving yards",
-    "No: Savion Williams record 10+ receiving yards"
-   ],
-   "teams": [
-    "Packers",
-    "Packers"
-   ],
-   "player": "Savion Williams",
-   "mid": 71,
-   "yes_buy": 73,
-   "no_buy": 31,
-   "taken_at": "2026-10-24T15:31:56.679Z"
-  },
-  {
    "market_id": "1632385",
    "market": "Player prop",
    "group": "prop",
@@ -7277,28 +7255,6 @@
    "mid": 54,
    "yes_buy": 56,
    "no_buy": 48,
-   "taken_at": "2026-10-24T15:31:56.679Z"
-  },
-  {
-   "market_id": "1632386",
-   "market": "Player prop",
-   "group": "prop",
-   "mtype": "prop",
-   "period": "full_game",
-   "line": 30,
-   "question": "Will Savion Williams record 30+ receiving yards?",
-   "sides": [
-    "Yes: Savion Williams record 30+ receiving yards",
-    "No: Savion Williams record 30+ receiving yards"
-   ],
-   "teams": [
-    "Packers",
-    "Packers"
-   ],
-   "player": "Savion Williams",
-   "mid": 36,
-   "yes_buy": 37,
-   "no_buy": 65,
    "taken_at": "2026-10-24T15:31:56.679Z"
   },
   {
@@ -8270,6 +8226,72 @@
    "taken_at": "2026-10-24T05:00:50.435Z"
   },
   {
+   "market_id": "1362603",
+   "market": "Q4 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "fourth_quarter",
+   "line": null,
+   "question": "Will Detroit Lions win the fourth quarter?",
+   "sides": [
+    "Yes: Detroit Lions win the fourth quarter",
+    "No: Detroit Lions win the fourth quarter"
+   ],
+   "teams": [
+    "Lions",
+    null
+   ],
+   "player": null,
+   "mid": 47,
+   "yes_buy": 49,
+   "no_buy": 55,
+   "taken_at": "2026-10-24T05:00:50.435Z"
+  },
+  {
+   "market_id": "1632384",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 10,
+   "question": "Will Savion Williams record 10+ receiving yards?",
+   "sides": [
+    "Yes: Savion Williams record 10+ receiving yards",
+    "No: Savion Williams record 10+ receiving yards"
+   ],
+   "teams": [
+    "Packers",
+    "Packers"
+   ],
+   "player": "Savion Williams",
+   "mid": 71,
+   "yes_buy": 73,
+   "no_buy": 31,
+   "taken_at": "2026-10-24T15:31:56.679Z"
+  },
+  {
+   "market_id": "1632386",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 30,
+   "question": "Will Savion Williams record 30+ receiving yards?",
+   "sides": [
+    "Yes: Savion Williams record 30+ receiving yards",
+    "No: Savion Williams record 30+ receiving yards"
+   ],
+   "teams": [
+    "Packers",
+    "Packers"
+   ],
+   "player": "Savion Williams",
+   "mid": 36,
+   "yes_buy": 37,
+   "no_buy": 65,
+   "taken_at": "2026-10-24T15:31:56.679Z"
+  },
+  {
    "market_id": "1632305",
    "market": "Player prop",
    "group": "prop",
@@ -8466,28 +8488,6 @@
    "yes_buy": 8,
    "no_buy": 98,
    "taken_at": "2026-10-24T06:43:17.751Z"
-  },
-  {
-   "market_id": "1425991",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": -21.5,
-   "question": "Will the Green Bay Packers cover -21.5 vs the Detroit Lions in GB Packers vs. DET Lions?",
-   "sides": [
-    "Packers -21.50",
-    "Lions +21.50"
-   ],
-   "teams": [
-    "Packers",
-    "Lions"
-   ],
-   "player": null,
-   "mid": 4,
-   "yes_buy": 5,
-   "no_buy": 97,
-   "taken_at": "2026-10-24T05:00:50.435Z"
   },
   {
    "market_id": "1632404",
@@ -9117,7 +9117,7 @@
  "alerts": [],
  "alert_seen": [],
  "kalshi_checked": {
-  "at": "2026-10-24T20:02:55.426Z",
+  "at": "2026-10-24T20:09:11.811Z",
   "event": "26OCT25GBDET"
  }
 }
