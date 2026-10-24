@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187118",
-  "fetched_at": "2026-10-24T01:36:52.266Z",
+  "fetched_at": "2026-10-24T01:43:05.170Z",
   "tennis": true,
   "tennis_match": {
    "id": "187118",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Fri, October 23rd at 9:35 PM EDT",
-     "shortDetail": "10/23 - 9:35 PM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Shiho Tsujioka (JPN) leads Kamilla Rakhimova (UZB) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "3daf9333-e5be-5f0f-68d5-d2cbddca79a7",
       "displayName": "Kamilla Rakhimova",
@@ -87,6 +98,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "608ee4d0-fe42-3219-a2f1-039d89734749",
       "displayName": "Shiho Tsujioka",
@@ -119,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 264,
    "type": {
     "id": "2",
@@ -135,10 +157,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Fri, October 23rd at 9:35 PM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Kamilla Rakhimova",
@@ -156,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T01:36:52.266Z",
+ "updated": "2026-10-24T01:43:05.171Z",
  "open_taken_at": "2026-10-23T12:15:47.073Z",
  "thresholds": {
   "big": 10,
