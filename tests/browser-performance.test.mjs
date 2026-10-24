@@ -27,3 +27,9 @@ test('progress DOM stays in place when unchanged, but values, source timestamps,
 test('scrolling performance styles preserve tokens and reserve blur for navigation and sheets',()=>{
  const css=fs.readFileSync('css/theme.css','utf8').split('/* Scrolling performance:')[1];assert.ok(css);assert.match(css,/background-attachment: scroll/);assert.match(css,/backdrop-filter: none/);assert.ok(!css.includes('.topbar'));assert.ok(!css.includes('.sheet'));assert.ok(!/#[0-9a-f]{3,8}\b/i.test(css));
 });
+
+test('layout allocation is bounded and invalidates unchanged views without changing feed data',()=>{
+ for(let n=0;n<=4;n++){assert.equal(LB.layout(String(n)),n);assert.equal(n+(4-LB.layout(n)),4);}
+ for(const v of [-1,5,1.5,'invalid',undefined])assert.equal(LB.layout(v),2);
+ const d={edges:[]},ui={layout:2};assert.notEqual(LB.viewKey(d,ui,0,false),LB.viewKey(d,{layout:4},0,false));assert.equal(LB.readLayout(),2);
+});

@@ -332,7 +332,7 @@
     details.addEventListener('toggle',sync);sync();return sync;
   }
   function viewKey(d,ui,holdingRevision,stale) {
-    return JSON.stringify([d,ui.sport,ui.slug,ui.filter,ui.visitBase,ui.game,ui.prop,ui.activity,ui.alertMore,ui.history,ui.reasons,ui.conference,ui.boardGame,ui.espnRevision,[...(ui.details||[])].sort(),holdingRevision,stale]);
+    return JSON.stringify([d,ui.sport,ui.slug,ui.filter,ui.visitBase,ui.game,ui.prop,ui.activity,ui.alertMore,ui.history,ui.layout,ui.reasons,ui.conference,ui.boardGame,ui.espnRevision,[...(ui.details||[])].sort(),holdingRevision,stale]);
   }
   function paintHoldings(note,P,h) {
     const time=clock(h.checkedAt),text=!h.unlocked?P.holdingsLocked:!h.checkedAt?P.holdingsPending:h.error?P.holdingsError(time):Date.now()-Date.parse(h.checkedAt)>120000?P.holdingsStale(time):P.holdingsSync(time);
@@ -374,6 +374,9 @@
   }
 
 
+  const LAYOUT_KEY='liveBets.layout.v1';
+  function layout(value){const n=Number(value);return Number.isInteger(n)&&n>=0&&n<=4?n:2;}
+  function readLayout(){try{const saved=root.localStorage.getItem(LAYOUT_KEY);return saved===null?2:layout(saved);}catch{return 2;}}
   function page(items,offset=0,size=6) {
     const start=Math.min(Math.floor(Math.max(0,Number(offset)||0)/size)*size,Math.max(0,Math.floor((items.length-1)/size)*size));
     return {items:items.slice(start,start+size),start,end:Math.min(items.length,start+size),total:items.length,size};
@@ -437,7 +440,12 @@
       button.type = 'button'; button.setAttribute('aria-label', P.filters[key] + ' ' + selection.counts[key]); button.setAttribute('aria-pressed', String(ui.filter === key));
       button.onclick = () => { ui.filter = key; ui.game = ui.prop = false; ui.redraw(); box.querySelector('.lb-filter.lb-on').focus(); }; filters.append(button);
     });
-    controls.append(filters); box.append(controls);
+    controls.append(filters);
+    const layoutLabel=el('label','lb-layout-control',root.STR.liveLayout.title),layoutSelect=el('select','lb-layout-select');
+    layoutSelect.setAttribute('aria-label',root.STR.liveLayout.title);
+    for(let n=4;n>=0;n--){const option=el('option',null,root.STR.liveLayout.split(n,4-n));option.value=String(n);layoutSelect.append(option);}
+    layoutSelect.value=String(layout(ui.layout));layoutSelect.onchange=()=>{ui.layout=layout(layoutSelect.value);ui.game=ui.prop=0;try{root.localStorage.setItem(LAYOUT_KEY,String(ui.layout));}catch{}ui.redraw();box.querySelector('.lb-layout-select')?.focus({preventScroll:true});};
+    layoutLabel.append(layoutSelect);controls.append(layoutLabel);box.append(controls);
     const notice = el('div', 'lb-notice');
     notice.append(el('span', null, selection.counts.new ? P.newCount(selection.counts.new) : P.caughtUp));
     if (selection.counts.new) {
@@ -450,8 +458,11 @@
       box.append(el('div', 'lb-none', selection.counts.all ? P.noMatching : d.game_count===0 ? liveText().noGames : liveText().empty));
     } else {
       const groups = el('div', 'lb-groups');
-      if (g.game.total) groups.append(groupBox(P.gameLines, g.game, link, ui, 'game'));
-      if (g.prop.total) groups.append(groupBox(P.propBets, g.prop, link, ui, 'prop'));
+      const gameCols=layout(ui.layout),propCols=4-gameCols;
+      for(const [key,cols,title] of [['game',gameCols,P.gameLines],['prop',propCols,P.propBets]]){
+        if(!cols)continue;
+        const group=groupBox(title,g[key],link,ui,key);group.style.setProperty('--category-cols',cols);groups.append(group);
+      }
       box.append(groups);
     }
     box.append(alertsBox(d, ui));
@@ -486,7 +497,7 @@
     content.append(el('div', 'live-bets-empty', 'Loading live bets…'));
     let loading=false;
     let last = null;
-    const ui = { slug: 'all', when:'today', sport:initialSport, filter: 'all', visitBase: readSeen(), details: new Set(), game: false, prop: false, reasons: false, redraw: (force=false) => { if(force)content._lbViewKey=null;if (last) draw(content, last, ui); } };
+    const ui = { slug: 'all', when:'today', sport:initialSport, filter: 'all', layout:readLayout(), visitBase: readSeen(), details: new Set(), game: false, prop: false, reasons: false, redraw: (force=false) => { if(force)content._lbViewKey=null;if (last) draw(content, last, ui); } };
     rootEl._lbSetSport=sport=>{ui.sport=sport;ui.game=ui.prop=ui.history=ui.alertMore=0;ui.slug='all';ui.conference='all';ui.boardRows=[];ui.boardSnapshot=null;ui.boardGame=null;ui.boardFocus=null;window.dispatchEvent(new CustomEvent('live:sport-change',{detail:{sport}}));ui.load();};
     // Which game: data/live/index.json (written by live-tick.mjs), else SLUG.
     let request = 0;
@@ -536,7 +547,7 @@
     if(root.AthleteFlags)root.AthleteFlags.load().then(()=>{if(rootEl.isConnected)ui.redraw(true);});
   }
 
-  return { page,lazyDetails,viewKey,holdingSide, oddsTone, CLOSE_EVEN_ODDS, autoRefresh, timeGames, sportOf, sportGames, edgeTitle, edgeSelection, combineGames, render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
+  return { layout,readLayout,page,lazyDetails,viewKey,holdingSide, oddsTone, CLOSE_EVEN_ODDS, autoRefresh, timeGames, sportOf, sportGames, edgeTitle, edgeSelection, combineGames, render, platBadges, pays10, safeUrl, sortEdges, groupEdges, scoreboard, statusText, markNew, inLimit, seedSeen, freshness, pickGame, STALE_MIN, SEEN_KEY, SLUG, CAP, ODDS_LIMIT };
 });
 
 
