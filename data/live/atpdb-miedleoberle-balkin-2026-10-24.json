@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185022",
-  "fetched_at": "2026-10-24T07:40:53.977Z",
+  "fetched_at": "2026-10-24T07:46:00.275Z",
   "tennis": true,
   "tennis_match": {
    "id": "185022",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(3) N.Sriram Balaji (IND) & Evan King (USA) leads (1) Lucas Miedler (AUT) & Neil Oberleitner (AUT) 6-5",
+     "text": "(1) Lucas Miedler (AUT) & Neil Oberleitner (AUT) leads (3) N.Sriram Balaji (IND) & Evan King (USA) 6-6 (4-2)",
      "type": "event"
     }
    ],
@@ -55,13 +55,13 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
      "curatedRank": {
       "current": 3
      },
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "tiebreak": 2
       }
      ],
      "roster": {
@@ -136,13 +136,13 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
      "curatedRank": {
       "current": 1
      },
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "tiebreak": 4
       }
      ],
      "roster": {
@@ -212,11 +212,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 708,
    "type": {
     "id": "3",
@@ -254,7 +249,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T07:40:53.732Z",
+ "updated": "2026-10-24T07:46:00.158Z",
  "open_taken_at": "2026-10-23T07:58:54.058Z",
  "thresholds": {
   "big": 10,
@@ -286,6 +281,26 @@
  ],
  "edges": [
   {
+   "key": "1704599:1",
+   "market_id": "1704599",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atpdb event Miedler / Oberleitner vs Balaji / King scheduled for October 24, 2026 at 6:30 AM UTC?",
+   "side": "Balaji / King win",
+   "open_chance": 35,
+   "now_chance": 25,
+   "open_odds": "+186",
+   "now_odds": "+300",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "N.Sriram Balaji / Evan King 6 · Lucas Miedler / Neil Oberleitner 6 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T07:20:13.808Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1704599:0",
    "market_id": "1704599",
    "market": "Moneyline",
@@ -302,31 +317,39 @@
    "reason": null,
    "context": "N.Sriram Balaji / Evan King 6 · Lucas Miedler / Neil Oberleitner 5 · 1st Set (games by set)",
    "first_seen": "2026-10-24T07:40:53.732Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1704599:1",
-   "market_id": "1704599",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atpdb event Miedler / Oberleitner vs Balaji / King scheduled for October 24, 2026 at 6:30 AM UTC?",
-   "side": "Balaji / King win",
-   "open_chance": 35,
-   "now_chance": 27,
-   "open_odds": "+186",
-   "now_odds": "+270",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "N.Sriram Balaji / Evan King 4 · Lucas Miedler / Neil Oberleitner 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-24T07:20:13.808Z",
    "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1704599:1:big",
+   "key": "1704599:1",
+   "at": "2026-10-24T07:46:00.158Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Balaji / King win",
+   "market": "Moneyline",
+   "now_odds": "+300",
+   "now_chance": 25,
+   "edge": 10,
+   "text": "New big edge: Balaji / King win (Moneyline), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-miedleoberle-balkin-2026-10-24"
+  },
+  {
+   "id": "gone:1704599:0:2026-10-24T07:40:53.732Z",
+   "key": "1704599:0",
+   "at": "2026-10-24T07:46:00.158Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Miedler L / Oberleitner N win",
+   "market": "Moneyline",
+   "now_odds": "+104",
+   "now_chance": 49,
+   "edge": 17,
+   "text": "Edge gone: Miedler L / Oberleitner N win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-miedleoberle-balkin-2026-10-24"
+  },
   {
    "id": "new_edge:1704599:0:big",
    "key": "1704599:0",
@@ -373,7 +396,9 @@
  "alert_seen": [
   "new_edge:1704599:1:slight",
   "gone:1704599:1:2026-10-24T07:20:13.808Z",
-  "new_edge:1704599:0:big"
+  "new_edge:1704599:0:big",
+  "new_edge:1704599:1:big",
+  "gone:1704599:0:2026-10-24T07:40:53.732Z"
  ],
  "kalshi_checked": null
 }
