@@ -9,12 +9,12 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401909095",
-  "fetched_at": "2026-10-24T00:54:46.072Z",
+  "fetched_at": "2026-10-24T01:00:52.621Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 3,
-  "clock": "4:16",
-  "regulation_secs_left": 1156,
+  "clock": "3:21",
+  "regulation_secs_left": 1101,
   "home": {
    "abbr": "BOS",
    "alias": "Celtics",
@@ -26,7 +26,7 @@
    "abbr": "NY",
    "alias": "Knicks",
    "name": "New York Knicks",
-   "score": 60,
+   "score": 66,
    "id": "18"
   },
   "possession": null,
@@ -79,7 +79,7 @@
    }
   ]
  },
- "updated": "2026-10-24T00:54:46.074Z",
+ "updated": "2026-10-24T01:00:52.624Z",
  "open_taken_at": "2026-10-22T05:01:14.529Z",
  "thresholds": {
   "big": 10,
@@ -199,6 +199,26 @@
  ],
  "edges": [
   {
+   "key": "1605472:1",
+   "market_id": "1605472",
+   "market": "Alt spread",
+   "group": "game",
+   "question": "Will the NY Knicks cover 4.5 vs the BOS Celtics in NY Knicks vs. BOS Celtics?",
+   "side": "Celtics -4.50",
+   "open_chance": 45,
+   "now_chance": 40,
+   "open_odds": "+122",
+   "now_odds": "+150",
+   "edge": 5,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: BOS not covering -4.5 right now",
+   "context": "BOS up 2, Q3 3:21",
+   "first_seen": "2026-10-22T06:57:43.705Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
    "key": "1305771:0",
    "market_id": "1305771",
    "market": "Alt spread",
@@ -206,17 +226,17 @@
    "question": "Will the NY Knicks cover 1.5 vs the BOS Celtics in NY Knicks vs. BOS Celtics?",
    "side": "Knicks +1.50",
    "open_chance": 50,
-   "now_chance": 23,
+   "now_chance": 45,
    "open_odds": "+100",
-   "now_odds": "+335",
-   "edge": 27,
-   "tier": "big",
+   "now_odds": "+122",
+   "edge": 5,
+   "tier": "slight",
    "class": "score",
    "reason": "Explained by score: NY not covering +1.5 right now",
-   "context": "NY down 8, Q3 4:16",
+   "context": "NY down 2, Q3 3:21",
    "first_seen": "2026-10-23T13:22:55.785Z",
    "status": "open",
-   "kalshi": null
+   "kalshi": true
   },
   {
    "key": "1305767:0",
@@ -235,8 +255,8 @@
    "reason": "Explained by score: NY trailing by 8",
    "context": "NY down 8, Q3 4:16",
    "first_seen": "2026-10-23T23:18:39.571Z",
-   "status": "open",
-   "kalshi": null
+   "status": "gone",
+   "kalshi": false
   },
   {
    "key": "1605472:0",
@@ -255,8 +275,8 @@
    "reason": "Explained by score: NY not covering +4.5 right now",
    "context": "NY down 8, Q3 4:16",
    "first_seen": "2026-10-23T23:06:33.064Z",
-   "status": "open",
-   "kalshi": null
+   "status": "gone",
+   "kalshi": true
   },
   {
    "key": "1438974:0",
@@ -275,8 +295,8 @@
    "reason": "Explained by score: NY not covering +2.5 right now",
    "context": "NY down 8, Q3 4:16",
    "first_seen": "2026-10-23T23:18:39.571Z",
-   "status": "open",
-   "kalshi": null
+   "status": "gone",
+   "kalshi": true
   },
   {
    "key": "1438974:1",
@@ -296,7 +316,7 @@
    "context": "BOS down 1, Q3 11:02",
    "first_seen": "2026-10-22T06:57:43.705Z",
    "status": "gone",
-   "kalshi": null
+   "kalshi": true
   },
   {
    "key": "1305771:1",
@@ -316,7 +336,7 @@
    "context": "BOS down 1, Q3 11:02",
    "first_seen": "2026-10-22T07:05:12.531Z",
    "status": "gone",
-   "kalshi": null
+   "kalshi": true
   },
   {
    "key": "1305767:1",
@@ -336,27 +356,7 @@
    "context": "BOS tied, Q2 34.2",
    "first_seen": "2026-10-23T23:27:44.750Z",
    "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1605472:1",
-   "market_id": "1605472",
-   "market": "Alt spread",
-   "group": "game",
-   "question": "Will the NY Knicks cover 4.5 vs the BOS Celtics in NY Knicks vs. BOS Celtics?",
-   "side": "Celtics -4.50",
-   "open_chance": 45,
-   "now_chance": 41,
-   "open_odds": "+122",
-   "now_odds": "+144",
-   "edge": 4,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: BOS not covering -4.5 right now",
-   "context": "BOS down 1, Q3 11:02",
-   "first_seen": "2026-10-22T06:57:43.705Z",
-   "status": "gone",
-   "kalshi": null
+   "kalshi": false
   }
  ],
  "alerts": [
@@ -496,18 +496,7 @@
    "side_index": 0,
    "ask": 0.83,
    "bid": 0.82,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
-  },
-  {
-   "market_id": "1671353",
-   "player": "Josh Hart",
-   "period": "full_game",
-   "question": "Will Josh Hart record at least 6 total rebounds in NY Knicks vs. BOS Celtics?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.83,
-   "bid": 0.8,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1648465",
@@ -518,7 +507,7 @@
    "side_index": 0,
    "ask": 0.82,
    "bid": 0.8,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1648554",
@@ -529,7 +518,7 @@
    "side_index": 0,
    "ask": 0.81,
    "bid": 0.8,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1727596",
@@ -540,29 +529,18 @@
    "side_index": 0,
    "ask": 0.8,
    "bid": 0.79,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
-   "market_id": "1648480",
-   "player": "Jalen Brunson",
+   "market_id": "1671364",
+   "player": "OG Anunoby",
    "period": "full_game",
-   "question": "Will Jalen Brunson record at least 15 points in NY Knicks vs. BOS Celtics?",
+   "question": "Will OG Anunoby record at least 8 total rebounds in NY Knicks vs. BOS Celtics?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.78,
-   "bid": 0.76,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
-  },
-  {
-   "market_id": "1699913",
-   "player": "Neemias Queta",
-   "period": "full_game",
-   "question": "Will Neemias Queta record at least 6 total rebounds in NY Knicks vs. BOS Celtics?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.74,
-   "bid": 0.69,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "ask": 0.73,
+   "bid": 0.72,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1671507",
@@ -573,29 +551,7 @@
    "side_index": 0,
    "ask": 0.7,
    "bid": 0.67,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
-  },
-  {
-   "market_id": "1671530",
-   "player": "Payton Pritchard",
-   "period": "full_game",
-   "question": "Will Payton Pritchard record at least 2 three-point field goals made in NY Knicks vs. BOS Celtics?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.68,
-   "bid": 0.63,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
-  },
-  {
-   "market_id": "1671357",
-   "player": "Josh Hart",
-   "period": "full_game",
-   "question": "Will Josh Hart record at least 4 assists in NY Knicks vs. BOS Celtics?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.66,
-   "bid": 0.62,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1727614",
@@ -606,7 +562,18 @@
    "side_index": 0,
    "ask": 0.66,
    "bid": 0.65,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
+  },
+  {
+   "market_id": "1671357",
+   "player": "Josh Hart",
+   "period": "full_game",
+   "question": "Will Josh Hart record at least 4 assists in NY Knicks vs. BOS Celtics?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.65,
+   "bid": 0.62,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1713620",
@@ -617,7 +584,7 @@
    "side_index": 0,
    "ask": 0.65,
    "bid": 0.64,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1727579",
@@ -628,7 +595,51 @@
    "side_index": 0,
    "ask": 0.64,
    "bid": 0.63,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
+  },
+  {
+   "market_id": "1671354",
+   "player": "Josh Hart",
+   "period": "full_game",
+   "question": "Will Josh Hart record at least 8 total rebounds in NY Knicks vs. BOS Celtics?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.63,
+   "bid": 0.58,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
+  },
+  {
+   "market_id": "1648481",
+   "player": "Jalen Brunson",
+   "period": "full_game",
+   "question": "Will Jalen Brunson record at least 20 points in NY Knicks vs. BOS Celtics?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.61,
+   "bid": 0.58,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
+  },
+  {
+   "market_id": "1648558",
+   "player": "Jayson Tatum",
+   "period": "full_game",
+   "question": "Will Jayson Tatum record at least 2 three-point field goals made in NY Knicks vs. BOS Celtics?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.58,
+   "bid": 0.55,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
+  },
+  {
+   "market_id": "1699858",
+   "player": "Sam Hauser",
+   "period": "full_game",
+   "question": "Will Sam Hauser record at least 3 three-point field goals made in NY Knicks vs. BOS Celtics?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.58,
+   "bid": 0.56,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1671409",
@@ -639,18 +650,7 @@
    "side_index": 0,
    "ask": 0.58,
    "bid": 0.57,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
-  },
-  {
-   "market_id": "1699858",
-   "player": "Sam Hauser",
-   "period": "full_game",
-   "question": "Will Sam Hauser record at least 3 three-point field goals made in NY Knicks vs. BOS Celtics?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.57,
-   "bid": 0.55,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1671509",
@@ -660,19 +660,41 @@
    "sides": [],
    "side_index": 0,
    "ask": 0.56,
-   "bid": 0.53,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "bid": 0.54,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
-   "market_id": "1648558",
+   "market_id": "1648505",
    "player": "Jayson Tatum",
    "period": "full_game",
-   "question": "Will Jayson Tatum record at least 2 three-point field goals made in NY Knicks vs. BOS Celtics?",
+   "question": "Will Jayson Tatum record at least 12 total rebounds in NY Knicks vs. BOS Celtics?",
    "sides": [],
    "side_index": 0,
    "ask": 0.56,
-   "bid": 0.55,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "bid": 0.54,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
+  },
+  {
+   "market_id": "1648462",
+   "player": "Karl-Anthony Towns",
+   "period": "full_game",
+   "question": "Will Karl-Anthony Towns record at least 20 points in NY Knicks vs. BOS Celtics?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.55,
+   "bid": 0.52,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
+  },
+  {
+   "market_id": "1648498",
+   "player": "Jayson Tatum",
+   "period": "full_game",
+   "question": "Will Jayson Tatum record at least 25 points in NY Knicks vs. BOS Celtics?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.54,
+   "bid": 0.52,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1671244",
@@ -681,20 +703,9 @@
    "question": "Will Josh Hart record at least 10 points in NY Knicks vs. BOS Celtics?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.55,
+   "ask": 0.54,
    "bid": 0.5,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
-  },
-  {
-   "market_id": "1713624",
-   "player": "Landry Shamet",
-   "period": "full_game",
-   "question": "Will Landry Shamet record at least 2 three-point field goals made in NY Knicks vs. BOS Celtics?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.53,
-   "bid": 0.52,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1671521",
@@ -705,18 +716,7 @@
    "side_index": 0,
    "ask": 0.53,
    "bid": 0.49,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
-  },
-  {
-   "market_id": "1671544",
-   "player": "Payton Pritchard",
-   "period": "full_game",
-   "question": "Will Payton Pritchard record at least 4 assists in NY Knicks vs. BOS Celtics?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.52,
-   "bid": 0.47,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1648549",
@@ -726,8 +726,8 @@
    "sides": [],
    "side_index": 0,
    "ask": 0.51,
-   "bid": 0.48,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "bid": 0.5,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1671269",
@@ -738,51 +738,73 @@
    "side_index": 0,
    "ask": 0.51,
    "bid": 0.48,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
-   "market_id": "1648498",
-   "player": "Jayson Tatum",
+   "market_id": "1713624",
+   "player": "Landry Shamet",
    "period": "full_game",
-   "question": "Will Jayson Tatum record at least 25 points in NY Knicks vs. BOS Celtics?",
+   "question": "Will Landry Shamet record at least 2 three-point field goals made in NY Knicks vs. BOS Celtics?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.51,
-   "bid": 0.5,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "ask": 0.5,
+   "bid": 0.44,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
-   "market_id": "1727588",
-   "player": "Jalen Brunson",
-   "period": "full_game",
-   "question": "Will Jalen Brunson record at least 4 assists in NY Knicks vs. BOS Celtics?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.49,
-   "bid": 0.48,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
-  },
-  {
-   "market_id": "1648462",
+   "market_id": "1648467",
    "player": "Karl-Anthony Towns",
    "period": "full_game",
-   "question": "Will Karl-Anthony Towns record at least 20 points in NY Knicks vs. BOS Celtics?",
+   "question": "Will Karl-Anthony Towns record at least 12 total rebounds in NY Knicks vs. BOS Celtics?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.5,
+   "bid": 0.45,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
+  },
+  {
+   "market_id": "1671369",
+   "player": "OG Anunoby",
+   "period": "full_game",
+   "question": "Will OG Anunoby record at least 3 three-point field goals made in NY Knicks vs. BOS Celtics?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.49,
+   "bid": 0.43,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
+  },
+  {
+   "market_id": "1671544",
+   "player": "Payton Pritchard",
+   "period": "full_game",
+   "question": "Will Payton Pritchard record at least 4 assists in NY Knicks vs. BOS Celtics?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.49,
+   "bid": 0.43,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
+  },
+  {
+   "market_id": "1671525",
+   "player": "Payton Pritchard",
+   "period": "full_game",
+   "question": "Will Payton Pritchard record at least 10 points in NY Knicks vs. BOS Celtics?",
    "sides": [],
    "side_index": 0,
    "ask": 0.49,
    "bid": 0.48,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
-   "market_id": "1648522",
+   "market_id": "1648523",
    "player": "Jalen Brunson",
    "period": "full_game",
-   "question": "Will Jalen Brunson record at least 2 three-point field goals made in NY Knicks vs. BOS Celtics?",
+   "question": "Will Jalen Brunson record at least 3 three-point field goals made in NY Knicks vs. BOS Celtics?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.45,
+   "ask": 0.47,
    "bid": 0.41,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1699889",
@@ -793,62 +815,7 @@
    "side_index": 0,
    "ask": 0.45,
    "bid": 0.44,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
-  },
-  {
-   "market_id": "1699847",
-   "player": "Sam Hauser",
-   "period": "full_game",
-   "question": "Will Sam Hauser record at least 3 total rebounds in NY Knicks vs. BOS Celtics?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.44,
-   "bid": 0.4,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
-  },
-  {
-   "market_id": "1648467",
-   "player": "Karl-Anthony Towns",
-   "period": "full_game",
-   "question": "Will Karl-Anthony Towns record at least 12 total rebounds in NY Knicks vs. BOS Celtics?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.43,
-   "bid": 0.39,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
-  },
-  {
-   "market_id": "1671369",
-   "player": "OG Anunoby",
-   "period": "full_game",
-   "question": "Will OG Anunoby record at least 3 three-point field goals made in NY Knicks vs. BOS Celtics?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.42,
-   "bid": 0.4,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
-  },
-  {
-   "market_id": "1648481",
-   "player": "Jalen Brunson",
-   "period": "full_game",
-   "question": "Will Jalen Brunson record at least 20 points in NY Knicks vs. BOS Celtics?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.42,
-   "bid": 0.39,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
-  },
-  {
-   "market_id": "1671503",
-   "player": "Derrick White",
-   "period": "full_game",
-   "question": "Will Derrick White record at least 15 points in NY Knicks vs. BOS Celtics?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.4,
-   "bid": 0.36,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1671262",
@@ -859,7 +826,7 @@
    "side_index": 0,
    "ask": 0.4,
    "bid": 0.39,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1648546",
@@ -869,8 +836,19 @@
    "sides": [],
    "side_index": 0,
    "ask": 0.4,
+   "bid": 0.36,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
+  },
+  {
+   "market_id": "1671522",
+   "player": "Derrick White",
+   "period": "full_game",
+   "question": "Will Derrick White record at least 6 assists in NY Knicks vs. BOS Celtics?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.38,
    "bid": 0.35,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1648526",
@@ -880,19 +858,8 @@
    "sides": [],
    "side_index": 0,
    "ask": 0.38,
-   "bid": 0.33,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
-  },
-  {
-   "market_id": "1671522",
-   "player": "Derrick White",
-   "period": "full_game",
-   "question": "Will Derrick White record at least 6 assists in NY Knicks vs. BOS Celtics?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.37,
-   "bid": 0.32,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "bid": 0.35,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1671360",
@@ -902,8 +869,8 @@
    "sides": [],
    "side_index": 0,
    "ask": 0.36,
-   "bid": 0.32,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "bid": 0.31,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1699843",
@@ -912,20 +879,9 @@
    "question": "Will Sam Hauser record at least 10 points in NY Knicks vs. BOS Celtics?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.36,
-   "bid": 0.31,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
-  },
-  {
-   "market_id": "1713626",
-   "player": "Andre Drummond",
-   "period": "full_game",
-   "question": "Will Andre Drummond record at least 5 points in NY Knicks vs. BOS Celtics?",
-   "sides": [],
-   "side_index": 0,
    "ask": 0.35,
-   "bid": 0.29,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "bid": 0.32,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1671508",
@@ -934,9 +890,20 @@
    "question": "Will Derrick White record at least 5 total rebounds in NY Knicks vs. BOS Celtics?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.34,
-   "bid": 0.29,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "ask": 0.35,
+   "bid": 0.32,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
+  },
+  {
+   "market_id": "1713626",
+   "player": "Andre Drummond",
+   "period": "full_game",
+   "question": "Will Andre Drummond record at least 5 points in NY Knicks vs. BOS Celtics?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.33,
+   "bid": 0.3,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1671270",
@@ -945,20 +912,9 @@
    "question": "Will Mikal Bridges record at least 1 three-point field goals made in NY Knicks vs. BOS Celtics?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.32,
+   "ask": 0.3,
    "bid": 0.29,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
-  },
-  {
-   "market_id": "1713630",
-   "player": "Andre Drummond",
-   "period": "full_game",
-   "question": "Will Andre Drummond record at least 6 total rebounds in NY Knicks vs. BOS Celtics?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.32,
-   "bid": 0.29,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1648473",
@@ -968,8 +924,30 @@
    "sides": [],
    "side_index": 0,
    "ask": 0.29,
-   "bid": 0.25,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "bid": 0.26,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
+  },
+  {
+   "market_id": "1671531",
+   "player": "Payton Pritchard",
+   "period": "full_game",
+   "question": "Will Payton Pritchard record at least 3 three-point field goals made in NY Knicks vs. BOS Celtics?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.29,
+   "bid": 0.23,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
+  },
+  {
+   "market_id": "1648482",
+   "player": "Jalen Brunson",
+   "period": "full_game",
+   "question": "Will Jalen Brunson record at least 25 points in NY Knicks vs. BOS Celtics?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.29,
+   "bid": 0.23,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1671255",
@@ -980,29 +958,18 @@
    "side_index": 0,
    "ask": 0.29,
    "bid": 0.26,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
-   "market_id": "1648555",
-   "player": "Jayson Tatum",
+   "market_id": "1713630",
+   "player": "Andre Drummond",
    "period": "full_game",
-   "question": "Will Jayson Tatum record at least 8 assists in NY Knicks vs. BOS Celtics?",
+   "question": "Will Andre Drummond record at least 6 total rebounds in NY Knicks vs. BOS Celtics?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.27,
-   "bid": 0.23,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
-  },
-  {
-   "market_id": "1648548",
-   "player": "Paul George",
-   "period": "full_game",
-   "question": "Will Paul George record at least 4 assists in NY Knicks vs. BOS Celtics?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.22,
-   "bid": 0.21,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "ask": 0.28,
+   "bid": 0.27,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1671510",
@@ -1013,18 +980,29 @@
    "side_index": 0,
    "ask": 0.21,
    "bid": 0.18,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
-   "market_id": "1727615",
-   "player": "Mitchell Robinson",
+   "market_id": "1648550",
+   "player": "Paul George",
    "period": "full_game",
-   "question": "Will Mitchell Robinson record at least 4 total rebounds in NY Knicks vs. BOS Celtics?",
+   "question": "Will Paul George record at least 3 three-point field goals made in NY Knicks vs. BOS Celtics?",
    "sides": [],
    "side_index": 0,
    "ask": 0.2,
-   "bid": 0.17,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "bid": 0.15,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
+  },
+  {
+   "market_id": "1648499",
+   "player": "Jayson Tatum",
+   "period": "full_game",
+   "question": "Will Jayson Tatum record at least 30 points in NY Knicks vs. BOS Celtics?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.2,
+   "bid": 0.16,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1648557",
@@ -1035,7 +1013,18 @@
    "side_index": 0,
    "ask": 0.19,
    "bid": 0.18,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
+  },
+  {
+   "market_id": "1727615",
+   "player": "Mitchell Robinson",
+   "period": "full_game",
+   "question": "Will Mitchell Robinson record at least 4 total rebounds in NY Knicks vs. BOS Celtics?",
+   "sides": [],
+   "side_index": 0,
+   "ask": 0.19,
+   "bid": 0.18,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1713625",
@@ -1046,18 +1035,7 @@
    "side_index": 0,
    "ask": 0.18,
    "bid": 0.17,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
-  },
-  {
-   "market_id": "1648499",
-   "player": "Jayson Tatum",
-   "period": "full_game",
-   "question": "Will Jayson Tatum record at least 30 points in NY Knicks vs. BOS Celtics?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.18,
-   "bid": 0.17,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1648463",
@@ -1066,31 +1044,9 @@
    "question": "Will Karl-Anthony Towns record at least 25 points in NY Knicks vs. BOS Celtics?",
    "sides": [],
    "side_index": 0,
-   "ask": 0.17,
+   "ask": 0.18,
    "bid": 0.15,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
-  },
-  {
-   "market_id": "1713621",
-   "player": "Landry Shamet",
-   "period": "full_game",
-   "question": "Will Landry Shamet record at least 10 points in NY Knicks vs. BOS Celtics?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.17,
-   "bid": 0.14,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
-  },
-  {
-   "market_id": "1671527",
-   "player": "Payton Pritchard",
-   "period": "full_game",
-   "question": "Will Payton Pritchard record at least 15 points in NY Knicks vs. BOS Celtics?",
-   "sides": [],
-   "side_index": 0,
-   "ask": 0.17,
-   "bid": 0.13,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   },
   {
    "market_id": "1648468",
@@ -1100,9 +1056,12 @@
    "sides": [],
    "side_index": 0,
    "ask": 0.17,
-   "bid": 0.14,
-   "quoted_at": "2026-10-24T00:54:46.074Z"
+   "bid": 0.13,
+   "quoted_at": "2026-10-24T01:00:52.624Z"
   }
  ],
- "kalshi_checked": null
+ "kalshi_checked": {
+  "at": "2026-10-24T01:00:53.137Z",
+  "event": "26OCT23NYKBOS"
+ }
 }
