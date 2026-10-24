@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-24T19:48:26.389Z"
+  "fetched_at": "2026-10-24T19:50:59.316Z"
  },
- "updated": "2026-10-24T19:48:26.314Z",
+ "updated": "2026-10-24T19:50:59.191Z",
  "open_taken_at": "2026-10-23T22:31:02.168Z",
  "thresholds": {
   "big": 10,
@@ -411,26 +411,6 @@
    "kalshi": null
   },
   {
-   "key": "1732546:1",
-   "market_id": "1732546",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Gustavo Heide cover -1.5 vs the Matheus Pucinelli de Almeida in Gustavo Heide vs. Matheus Pucinelli de Almeida?",
-   "side": "Matheus Pucinelli de Almeida +1.50 (Games)",
-   "open_chance": 50,
-   "now_chance": 44,
-   "open_odds": "+100",
-   "now_odds": "+127",
-   "edge": 6,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-24T19:27:44.140Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1729262:1",
    "market_id": "1729262",
    "market": "Moneyline",
@@ -438,15 +418,35 @@
    "question": "Who will win in the upcoming atp event Gustavo Heide vs Matheus Pucinelli de Almeida scheduled for October 24, 2026 at 3:00 PM UTC?",
    "side": "Matheus Pucinelli de Almeida win",
    "open_chance": 43,
-   "now_chance": 38,
+   "now_chance": 33,
    "open_odds": "+133",
-   "now_odds": "+163",
-   "edge": 5,
-   "tier": "slight",
+   "now_odds": "+203",
+   "edge": 10,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T19:05:15.314Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1732546:1",
+   "market_id": "1732546",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Gustavo Heide cover -1.5 vs the Matheus Pucinelli de Almeida in Gustavo Heide vs. Matheus Pucinelli de Almeida?",
+   "side": "Matheus Pucinelli de Almeida +1.50 (Games)",
+   "open_chance": 50,
+   "now_chance": 40,
+   "open_odds": "+100",
+   "now_odds": "+150",
+   "edge": 10,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-24T19:27:44.140Z",
    "status": "open",
    "kalshi": null
   },
@@ -532,6 +532,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1732546:1:big",
+   "key": "1732546:1",
+   "at": "2026-10-24T19:50:59.191Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Matheus Pucinelli de Almeida +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+150",
+   "now_chance": 40,
+   "edge": 10,
+   "text": "New big edge: Matheus Pucinelli de Almeida +1.50 (Games) (Games spread), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-gushei-matalm-2026-10-24"
+  },
   {
    "id": "gone:1732556:0:2026-10-24T19:05:15.314Z",
    "key": "1732556:0",
@@ -713,7 +727,8 @@
   "new_edge:1732550:1:slight",
   "new_edge:1732546:1:slight",
   "gone:1732573:0:2026-10-24T19:17:03.370Z",
-  "gone:1732556:0:2026-10-24T19:05:15.314Z"
+  "gone:1732556:0:2026-10-24T19:05:15.314Z",
+  "new_edge:1732546:1:big"
  ],
  "kalshi_checked": null
 }
