@@ -380,12 +380,14 @@
       if (e.target.closest('.pf-teambtn')) { state.teamListOpen = !state.teamListOpen; renderTeamSel(); return; }
       const tm = e.target.closest('[data-team]');
       if (tm) { state.f.team = tm.dataset.team; state.f.player = ''; state.teamListOpen = false; changed(); return; }
-      const more = e.target.closest('[data-more-node]');
+      const more = e.target.closest('[data-more-node], [data-less-node]');
       if (more && state.tree) {
-        const id = more.dataset.moreNode, n = state.tree.index.get(id);
-        state.leafLim.set(id, (state.leafLim.get(id) || LEAF_PAGE) + LEAF_PAGE);
+        const reducing=more.hasAttribute('data-less-node'),id=more.dataset.moreNode||more.dataset.lessNode,n=state.tree.index.get(id);
+        if(!n)return;
+        const shown=Math.min(n.items.length,state.leafLim.get(id)||LEAF_PAGE);
+        state.leafLim.set(id,Math.max(LEAF_PAGE,Math.min(n.items.length,shown+(reducing?-LEAF_PAGE:LEAF_PAGE))));
         const d = bodyOf(id);
-        if (n && d) d.querySelector(':scope > .pg-body').innerHTML = bodyHtml(n);
+        if (n && d) {const body=d.querySelector(':scope > .pg-body');body.innerHTML=bodyHtml(n);(body.querySelector(reducing?'[data-less-node]':'[data-more-node]')||body.querySelector('.pres-more')||d.querySelector('summary'))?.focus({preventScroll:true});}
         return;
       }
       const ex = e.target.closest('[data-expand]');
@@ -594,9 +596,9 @@
     /** Body: child nodes, or (leaf) the markets with a per-leaf "Show more". */
     function bodyHtml(n) {
       if (!n.items) return n.children.map(nodeHtml).join('');
-      const lim = state.leafLim.get(n.id) || LEAF_PAGE;
+      const lim = Math.min(n.items.length, state.leafLim.get(n.id) || LEAF_PAGE);
       return n.items.slice(0, lim).map(m => marketRow(n.ev, m, false)).join('') +
-        (n.items.length > lim ? `<button type="button" class="btn btn-sm pres-more" data-more-node="${esc(n.id)}">${esc(STR.calc.showMore(Math.min(LEAF_PAGE, n.items.length - lim)))}</button>` : '');
+        `<div class="pres-page-controls">${n.items.length > lim ? `<button type="button" class="btn btn-sm pres-more" data-more-node="${esc(n.id)}">${esc(STR.calc.showMore(Math.min(LEAF_PAGE, n.items.length - lim)))}</button>` : ''}${lim > LEAF_PAGE ? `<button type="button" class="btn btn-sm pres-more" data-less-node="${esc(n.id)}">${esc(STR.calc.showLess(Math.min(LEAF_PAGE,lim-LEAF_PAGE)))}</button>` : ''}</div>`;
     }
 
     /** Body element of a node's <details>. */

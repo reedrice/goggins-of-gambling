@@ -333,8 +333,9 @@
     box.append(el('summary', null, P.activity(list.length)));
     if (!list.length) { box.append(el('div', 'lb-none', liveText().noAlerts)); return box; }
     const isNew = markNew(list, ui.visitBase);
+    const extra = Math.min(Math.max(0, list.length - 5), Math.max(0, Number(ui.alertMore) || 0));
     const ul = el('ul', 'lb-alert-list');
-    list.slice(0, 5 + (Number(ui.alertMore) || 0)).forEach((a, i) => {
+    list.slice(0, 5 + extra).forEach((a, i) => {
       const li = el('li', `lb-alert lb-a-${a.type}${isNew[i] ? ' lb-new' : ''}`);
       const top = el('div', 'lb-alert-top');
       const kind = (P.alertTypes[a.type] || P.update) + (a.type === 'new_edge' && P.tiers[a.tier] ? ' · ' + P.tiers[a.tier] : '');
@@ -349,9 +350,14 @@
     });
     box.append(ul);
     if (list.length > 5) {
-      const extra = Number(ui.alertMore) || 0, remaining = Math.max(0, list.length - 5 - extra);
-      const more = el('button', 'lb-more', remaining ? P.more(Math.min(5, remaining)) : P.less); more.type = 'button';
-      more.onclick = () => { ui.alertMore = remaining ? extra + 5 : 0; ui.redraw(); }; box.append(more);
+      const controls = el('div', 'lb-page-controls'), remaining = Math.max(0, list.length - 5 - extra);
+      const action = (kind, count, value) => {
+        const button=el('button','lb-more',kind==='more'?P.more(count):P.lessBatch(count));button.type='button';button.dataset.page=kind;
+        button.onclick=()=>{const root=box.closest('.live-bets-root');ui.alertMore=value;ui.redraw();(root?.querySelector('.lb-activity [data-page="'+kind+'"]')||root?.querySelector('.lb-activity [data-page]'))?.focus({preventScroll:true});};controls.append(button);
+      };
+      if(remaining)action('more',Math.min(5,remaining),extra+Math.min(5,remaining));
+      if(extra)action('less',Math.min(5,extra),Math.max(0,extra-5));
+      box.append(controls);
     }
     return box;
   }
@@ -363,15 +369,18 @@
     if (!g.total) { box.append(el('div', 'lb-none', designText().noMatching)); return box; }
     const ul = el('ul', 'lb-list');
     g.shown.forEach(e => ul.append(edgeRow(e, link, ui)));
-    const extra = Number(ui[key]) || 0;
+    const extra = Math.min(g.more.length, Math.max(0, Number(ui[key]) || 0));
     g.more.slice(0, extra).forEach(e => ul.append(edgeRow(e, link, ui)));
     box.append(ul);
     if (g.more.length) {
-      const remaining = Math.max(0, g.more.length - extra);
-      const b = el('button', 'lb-more', remaining ? designText().more(Math.min(5, remaining)) : designText().less);
-      b.type = 'button';
-      b.onclick = () => { ui[key] = remaining ? extra + 5 : 0; ui.redraw(); };
-      box.append(b);
+      const controls=el('div','lb-page-controls'),remaining=Math.max(0,g.more.length-extra);
+      const action=(kind,count,value)=>{
+        const button=el('button','lb-more',kind==='more'?designText().more(count):designText().lessBatch(count));button.type='button';button.dataset.page=kind;
+        button.onclick=()=>{const root=box.closest('.live-bets-root');ui[key]=value;ui.redraw();(root?.querySelector('.lb-group-'+key+' [data-page="'+kind+'"]')||root?.querySelector('.lb-group-'+key+' [data-page]'))?.focus({preventScroll:true});};controls.append(button);
+      };
+      if(remaining)action('more',Math.min(5,remaining),extra+Math.min(5,remaining));
+      if(extra)action('less',Math.min(5,extra),Math.max(0,extra-5));
+      box.append(controls);
     }
     return box;
   }

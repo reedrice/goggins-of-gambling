@@ -286,7 +286,7 @@ window.STR = {
     gameLines: 'Main bets (who wins, spread, total points)',
     playerProps: 'Player bets',
     other: 'Other bets',
-    showMore: n => `Show ${n} more`,
+    showMore: n => `Show ${n} more`, showLess: n => `Show ${n} less`,
     back: '← All games',
     yes: 'Yes', no: 'No',
     added: desc => `Added: ${desc}`,
@@ -621,7 +621,7 @@ window.STR.liveBets = {
    caughtUp: 'No new active edges since your last visit.', noMatching: 'No active edges match this filter.',
    activity: n => `Activity (${n})`, priceHistory: n => `Past edges & price moves (${n})`,
    alertTypes: { new_edge: 'Edge detected', gone: 'Edge ended', removed: 'Removed', news: 'Price move' },
-   atAlert: odds => `At alert: ${odds}`, less: 'Show less', more: n => `Show ${n} more`,
+   atAlert: odds => `At alert: ${odds}`, less: 'Show less', lessBatch: n => `Show ${n} less`, more: n => `Show ${n} more`,
    about: 'About edges', explanation: 'Compared with the opening Polymarket price: big = 10–24 points lower, slight = 4–9. Game context comes from ESPN. Alerts show prices at detection; current cards may differ.'
  },
  noAlerts: 'No alerts across these games yet.',
