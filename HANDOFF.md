@@ -1746,3 +1746,7 @@ Oct 24 page-background seam: the shared scrolling atmosphere retained a 100vh im
 Oct 24 Layout placement: moved the compact visual chooser beside the holdings status, under the scoreboard and above tier filters, as marked in Reed’s screenshot. A wrapping flex utility row preserves mobile fit and the same preference/chooser behavior.
 
 Oct 24 conditional holdings UI: Live Bets shows Polymarket holdings status and requests its refresh only when a saved encrypted vault or an unlocked session exists. isLinked exposes only a boolean, no credentials/positions. Existing sync already avoids private requests without an unlocked account; that guard is preserved. Unlinked visitors see Layout alone in the utility row. Kalshi remains origin-isolated and has no Live Bets holdings poller; a saved Kalshi origin is not misrepresented as synced Polymarket holdings.
+
+
+## 169. Single-entry bot onboarding (Oct 24)
+ONBOARDING.md provides the requested single GitHub entry point for planning/design/implementation bots: reading order, current architecture and UX, outdated-note warnings, task-specific source/test map, privacy/frozen experiment constraints, exploration versus authorization, and safe handoff/publication. AGENTS and README link to it. Documentation only; no runtime or routine changes.

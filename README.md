@@ -6,7 +6,7 @@ A mobile-first static dashboard for daily picks, a private bankroll tracker, a b
 
 > **Brand:** the app name, tagline, and slogans live in [`config.js`](config.js) (`appName`, `tagline`, ...). The page title, header, and onboarding all read from it. To rename the app, edit `config.js` only. See [HANDOFF.md](HANDOFF.md#renaming-the-brand).
 
-If you're an AI agent or a new maintainer, start with **[AGENTS.md](AGENTS.md)** (then [DESIGN.md](DESIGN.md), [STATUS.md](STATUS.md) and the detailed log [HANDOFF.md](HANDOFF.md)). All UI text is in [`js/strings.js`](js/strings.js); the platform list is in `config.js`; market data refreshes with `node scripts/fetch-markets.mjs --commit`, and other apps' prices with `node scripts/fetch-book-odds.mjs --commit` (needs `ODDS_API_KEY`).
+If you're an AI agent or a new maintainer, start with **[ONBOARDING.md](ONBOARDING.md)** for the reading order and current context, then **[AGENTS.md](AGENTS.md)** (then [DESIGN.md](DESIGN.md), [STATUS.md](STATUS.md) and the detailed log [HANDOFF.md](HANDOFF.md)). All UI text is in [`js/strings.js`](js/strings.js); the platform list is in `config.js`; market data refreshes with `node scripts/fetch-markets.mjs --commit`, and other apps' prices with `node scripts/fetch-book-odds.mjs --commit` (needs `ODDS_API_KEY`).
 
 ## Features
 
