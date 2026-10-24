@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-24T03:43:55.510Z"
+  "fetched_at": "2026-10-24T03:46:01.738Z"
  },
- "updated": "2026-10-24T03:43:55.423Z",
+ "updated": "2026-10-24T03:46:01.537Z",
  "open_taken_at": "2026-10-23T07:24:39.851Z",
  "thresholds": {
   "big": 10,
@@ -129,6 +129,28 @@
    "taken_at": "2026-10-24T03:05:45.053Z"
   },
   {
+   "market_id": "1704340",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Coleman Wong win set 2 against Yi Zhou?",
+   "sides": [
+    "Yes: Coleman Wong win set 2 against Yi Zhou",
+    "No: Coleman Wong win set 2 against Yi Zhou"
+   ],
+   "teams": [
+    "Coleman Wong",
+    null
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-10-24T03:05:45.053Z"
+  },
+  {
    "market_id": "1704334",
    "market": "Sets total",
    "group": "game",
@@ -151,26 +173,26 @@
    "taken_at": "2026-10-24T03:17:52.896Z"
   },
   {
-   "market_id": "1704339",
-   "market": "Set 1 winner",
+   "market_id": "1704317",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Coleman Wong win set 1 against Yi Zhou?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Coleman Wong cover -1.5 vs the Yi Zhou in Coleman Wong vs. Yi Zhou?",
    "sides": [
-    "Yes: Coleman Wong win set 1 against Yi Zhou",
-    "No: Coleman Wong win set 1 against Yi Zhou"
+    "Coleman Wong -1.50 (Games)",
+    "Yi Zhou +1.50 (Games)"
    ],
    "teams": [
     "Coleman Wong",
-    null
+    "Yi Zhou"
    ],
    "player": null,
    "mid": 58.5,
    "yes_buy": 59,
    "no_buy": 42,
-   "taken_at": "2026-10-24T03:09:27.477Z"
+   "taken_at": "2026-10-24T03:05:45.053Z"
   },
   {
    "market_id": "1704332",
@@ -193,6 +215,28 @@
    "yes_buy": 60,
    "no_buy": 42,
    "taken_at": "2026-10-24T03:05:45.053Z"
+  },
+  {
+   "market_id": "1704339",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Coleman Wong win set 1 against Yi Zhou?",
+   "sides": [
+    "Yes: Coleman Wong win set 1 against Yi Zhou",
+    "No: Coleman Wong win set 1 against Yi Zhou"
+   ],
+   "teams": [
+    "Coleman Wong",
+    null
+   ],
+   "player": null,
+   "mid": 58.5,
+   "yes_buy": 59,
+   "no_buy": 42,
+   "taken_at": "2026-10-24T03:09:27.477Z"
   },
   {
    "market_id": "1704333",
@@ -261,50 +305,6 @@
    "taken_at": "2026-10-24T03:05:45.053Z"
   },
   {
-   "market_id": "1704317",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Coleman Wong cover -1.5 vs the Yi Zhou in Coleman Wong vs. Yi Zhou?",
-   "sides": [
-    "Coleman Wong -1.50 (Games)",
-    "Yi Zhou +1.50 (Games)"
-   ],
-   "teams": [
-    "Coleman Wong",
-    "Yi Zhou"
-   ],
-   "player": null,
-   "mid": 58.5,
-   "yes_buy": 59,
-   "no_buy": 42,
-   "taken_at": "2026-10-24T03:05:45.053Z"
-  },
-  {
-   "market_id": "1704340",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Coleman Wong win set 2 against Yi Zhou?",
-   "sides": [
-    "Yes: Coleman Wong win set 2 against Yi Zhou",
-    "No: Coleman Wong win set 2 against Yi Zhou"
-   ],
-   "teams": [
-    "Coleman Wong",
-    null
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-10-24T03:05:45.053Z"
-  },
-  {
    "market_id": "1704329",
    "market": "Sets spread",
    "group": "game",
@@ -328,6 +328,26 @@
   }
  ],
  "edges": [
+  {
+   "key": "1704340:1",
+   "market_id": "1704340",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Coleman Wong win set 2 against Yi Zhou?",
+   "side": "No: Coleman Wong win set 2 against Yi Zhou",
+   "open_chance": 67,
+   "now_chance": 42,
+   "open_odds": "-203",
+   "now_odds": "+138",
+   "edge": 25,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-24T03:24:01.910Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1704320:0",
    "market_id": "1704320",
@@ -365,6 +385,46 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T03:37:51.619Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1704316:0",
+   "market_id": "1704316",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Coleman Wong vs Yi Zhou scheduled for October 24, 2026 at 2:00 AM UTC?",
+   "side": "Coleman Wong win",
+   "open_chance": 66,
+   "now_chance": 61,
+   "open_odds": "-194",
+   "now_odds": "-156",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-24T03:37:51.619Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1704339:0",
+   "market_id": "1704339",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Coleman Wong win set 1 against Yi Zhou?",
+   "side": "Yes: Coleman Wong win set 1 against Yi Zhou",
+   "open_chance": 59,
+   "now_chance": 54,
+   "open_odds": "-144",
+   "now_odds": "-117",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-24T03:17:52.896Z",
    "status": "open",
    "kalshi": null
   },
@@ -409,46 +469,6 @@
    "kalshi": null
   },
   {
-   "key": "1704340:1",
-   "market_id": "1704340",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Coleman Wong win set 2 against Yi Zhou?",
-   "side": "No: Coleman Wong win set 2 against Yi Zhou",
-   "open_chance": 67,
-   "now_chance": 59,
-   "open_odds": "-203",
-   "now_odds": "-144",
-   "edge": 8,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-24T03:24:01.910Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1704316:0",
-   "market_id": "1704316",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Coleman Wong vs Yi Zhou scheduled for October 24, 2026 at 2:00 AM UTC?",
-   "side": "Coleman Wong win",
-   "open_chance": 66,
-   "now_chance": 59,
-   "open_odds": "-194",
-   "now_odds": "-144",
-   "edge": 7,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-24T03:37:51.619Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "1704329:0",
    "market_id": "1704329",
    "market": "Sets spread",
@@ -465,26 +485,6 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T03:32:23.524Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1704339:0",
-   "market_id": "1704339",
-   "market": "Set 1 winner",
-   "group": "game",
-   "question": "Will Coleman Wong win set 1 against Yi Zhou?",
-   "side": "Yes: Coleman Wong win set 1 against Yi Zhou",
-   "open_chance": 59,
-   "now_chance": 55,
-   "open_odds": "-144",
-   "now_odds": "-122",
-   "edge": 4,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-24T03:17:52.896Z",
    "status": "gone",
    "kalshi": null
   }

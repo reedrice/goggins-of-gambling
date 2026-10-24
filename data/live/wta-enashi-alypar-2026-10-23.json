@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187112",
-  "fetched_at": "2026-10-24T03:43:56.510Z",
+  "fetched_at": "2026-10-24T03:46:02.749Z",
   "tennis": true,
   "tennis_match": {
    "id": "187112",
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
        "value": 2
@@ -97,6 +98,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 5
@@ -134,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 264,
    "type": {
     "id": "2",
@@ -171,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T03:43:56.414Z",
+ "updated": "2026-10-24T03:46:02.601Z",
  "open_taken_at": "2026-10-23T10:02:46.475Z",
  "thresholds": {
   "big": 10,
@@ -245,25 +252,25 @@
    "taken_at": "2026-10-24T03:24:03.279Z"
   },
   {
-   "market_id": "1706386",
-   "market": "Games spread",
+   "market_id": "1706393",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Ena Shibahara cover 1.5 vs the Alycia Parks in Ena Shibahara vs. Alycia Parks?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Ena Shibahara vs. Alycia Parks be more than 17.5?",
    "sides": [
-    "Ena Shibahara +1.50 (Games)",
-    "Alycia Parks -1.50 (Games)"
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
    ],
    "teams": [
-    "Ena Shibahara",
-    "Alycia Parks"
+    null,
+    null
    ],
    "player": null,
-   "mid": 47.5,
-   "yes_buy": 48,
-   "no_buy": 53,
+   "mid": 78.5,
+   "yes_buy": 79,
+   "no_buy": 22,
    "taken_at": "2026-10-24T03:05:46.143Z"
   },
   {
@@ -287,28 +294,6 @@
    "yes_buy": 41,
    "no_buy": 60,
    "taken_at": "2026-10-24T03:05:46.143Z"
-  },
-  {
-   "market_id": "1706402",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Ena Shibahara win set 2 against Alycia Parks?",
-   "sides": [
-    "Yes: Ena Shibahara win set 2 against Alycia Parks",
-    "No: Ena Shibahara win set 2 against Alycia Parks"
-   ],
-   "teams": [
-    "Ena Shibahara",
-    null
-   ],
-   "player": null,
-   "mid": 47,
-   "yes_buy": 50,
-   "no_buy": 56,
-   "taken_at": "2026-10-24T03:24:03.279Z"
   },
   {
    "market_id": "1706387",
@@ -421,26 +406,48 @@
    "taken_at": "2026-10-24T03:05:46.143Z"
   },
   {
-   "market_id": "1706393",
-   "market": "Games total",
+   "market_id": "1706386",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Ena Shibahara vs. Alycia Parks be more than 17.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Ena Shibahara cover 1.5 vs the Alycia Parks in Ena Shibahara vs. Alycia Parks?",
    "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
+    "Ena Shibahara +1.50 (Games)",
+    "Alycia Parks -1.50 (Games)"
    ],
    "teams": [
-    null,
+    "Ena Shibahara",
+    "Alycia Parks"
+   ],
+   "player": null,
+   "mid": 47.5,
+   "yes_buy": 48,
+   "no_buy": 53,
+   "taken_at": "2026-10-24T03:05:46.143Z"
+  },
+  {
+   "market_id": "1706402",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Ena Shibahara win set 2 against Alycia Parks?",
+   "sides": [
+    "Yes: Ena Shibahara win set 2 against Alycia Parks",
+    "No: Ena Shibahara win set 2 against Alycia Parks"
+   ],
+   "teams": [
+    "Ena Shibahara",
     null
    ],
    "player": null,
-   "mid": 78.5,
-   "yes_buy": 79,
-   "no_buy": 22,
-   "taken_at": "2026-10-24T03:05:46.143Z"
+   "mid": 47,
+   "yes_buy": 50,
+   "no_buy": 56,
+   "taken_at": "2026-10-24T03:24:03.279Z"
   },
   {
    "market_id": "1706392",
@@ -518,15 +525,55 @@
    "question": "Who will win in the upcoming wta event Ena Shibahara vs Alycia Parks scheduled for October 24, 2026 at 1:30 AM UTC?",
    "side": "Alycia Parks win",
    "open_chance": 55,
-   "now_chance": 27,
+   "now_chance": 25,
    "open_odds": "-122",
-   "now_odds": "+270",
-   "edge": 28,
+   "now_odds": "+300",
+   "edge": 30,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (28 pts), likely news",
+   "reason": "Big move (30 pts), likely news",
    "context": "Alycia Parks 2 · Ena Shibahara 5 · 1st Set (games by set)",
    "first_seen": "2026-10-24T03:32:24.741Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1706385:1",
+   "market_id": "1706385",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Ena Shibahara cover -1.5 vs the Alycia Parks in Ena Shibahara vs. Alycia Parks?",
+   "side": "Alycia Parks +1.50 (Games)",
+   "open_chance": 60,
+   "now_chance": 36,
+   "open_odds": "-150",
+   "now_odds": "+178",
+   "edge": 24,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Alycia Parks not above the games spread right now",
+   "context": "Alycia Parks 2 · Ena Shibahara 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T03:26:07.989Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1706387:1",
+   "market_id": "1706387",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Ena Shibahara cover -4.5 vs the Alycia Parks in Ena Shibahara vs. Alycia Parks?",
+   "side": "Alycia Parks +4.50 (Games)",
+   "open_chance": 72,
+   "now_chance": 50,
+   "open_odds": "-257",
+   "now_odds": "+100",
+   "edge": 22,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Alycia Parks 2 · Ena Shibahara 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T03:37:52.438Z",
    "status": "open",
    "kalshi": null
   },
@@ -547,47 +594,7 @@
    "reason": "Explained by score: Alycia Parks not above the games spread right now",
    "context": "Alycia Parks 2 · Ena Shibahara 5 · 1st Set (games by set)",
    "first_seen": "2026-10-24T03:26:07.989Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1706385:1",
-   "market_id": "1706385",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Ena Shibahara cover -1.5 vs the Alycia Parks in Ena Shibahara vs. Alycia Parks?",
-   "side": "Alycia Parks +1.50 (Games)",
-   "open_chance": 60,
-   "now_chance": 39,
-   "open_odds": "-150",
-   "now_odds": "+156",
-   "edge": 21,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Alycia Parks not above the games spread right now",
-   "context": "Alycia Parks 2 · Ena Shibahara 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-24T03:26:07.989Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1706387:1",
-   "market_id": "1706387",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Ena Shibahara cover -4.5 vs the Alycia Parks in Ena Shibahara vs. Alycia Parks?",
-   "side": "Alycia Parks +4.50 (Games)",
-   "open_chance": 72,
-   "now_chance": 51,
-   "open_odds": "-257",
-   "now_odds": "-104",
-   "edge": 21,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Alycia Parks 2 · Ena Shibahara 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-24T03:37:52.438Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -607,11 +614,25 @@
    "reason": null,
    "context": "Alycia Parks 2 · Ena Shibahara 5 · 1st Set (games by set)",
    "first_seen": "2026-10-24T03:43:56.414Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1706402:1:2026-10-24T03:43:56.414Z",
+   "key": "1706402:1",
+   "at": "2026-10-24T03:46:02.601Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "No: Ena Shibahara win set 2 against Alycia Parks",
+   "market": "Set 2 winner",
+   "now_odds": "+127",
+   "now_chance": 44,
+   "edge": 12,
+   "text": "Edge gone: No: Ena Shibahara win set 2 against Alycia Parks (Set 2 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-enashi-alypar-2026-10-23"
+  },
   {
    "id": "news:1706244:1",
    "key": "1706244:1",
@@ -689,7 +710,8 @@
   "new_edge:1706244:1:big",
   "new_edge:1706387:1:big",
   "news:1706244:1",
-  "new_edge:1706402:1:big"
+  "new_edge:1706402:1:big",
+  "gone:1706402:1:2026-10-24T03:43:56.414Z"
  ],
  "kalshi_checked": null
 }

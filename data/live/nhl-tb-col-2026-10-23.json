@@ -9,12 +9,12 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892565",
-  "fetched_at": "2026-10-24T03:43:51.290Z",
+  "fetched_at": "2026-10-24T03:45:56.523Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 3,
-  "clock": "8:59",
-  "regulation_secs_left": 1439,
+  "clock": "7:22",
+  "regulation_secs_left": 1342,
   "home": {
    "abbr": "COL",
    "alias": "Avalanche",
@@ -100,7 +100,7 @@
    }
   ]
  },
- "updated": "2026-10-24T03:43:51.039Z",
+ "updated": "2026-10-24T03:45:56.319Z",
  "open_taken_at": "2026-10-22T05:01:24.284Z",
  "thresholds": {
   "big": 10,
@@ -174,25 +174,25 @@
    "taken_at": "2026-10-24T03:05:40.430Z"
   },
   {
-   "market_id": "1579580",
-   "market": "Alt spread",
+   "market_id": "1579589",
+   "market": "Alt total",
    "group": "game",
-   "mtype": "spread",
+   "mtype": "total",
    "period": "full_game",
-   "line": 2.5,
-   "question": "Will the TBL Lightning cover 2.5 vs the COL Avalanche in TBL vs COL?",
+   "line": 9.5,
+   "question": "Will the total in TBL vs COL be more than 9.5?",
    "sides": [
-    "Lightning +2.50",
-    "Avalanche -2.50"
+    "Over 9.5",
+    "Under 9.5"
    ],
    "teams": [
-    "Lightning",
-    "Avalanche"
+    null,
+    null
    ],
    "player": null,
-   "mid": 53.5,
-   "yes_buy": 54,
-   "no_buy": 47,
+   "mid": 21.5,
+   "yes_buy": 22,
+   "no_buy": 79,
    "taken_at": "2026-10-24T03:05:40.430Z"
   },
   {
@@ -834,25 +834,25 @@
    "taken_at": "2026-10-24T03:05:40.430Z"
   },
   {
-   "market_id": "1579589",
-   "market": "Alt total",
+   "market_id": "1579580",
+   "market": "Alt spread",
    "group": "game",
-   "mtype": "total",
+   "mtype": "spread",
    "period": "full_game",
-   "line": 9.5,
-   "question": "Will the total in TBL vs COL be more than 9.5?",
+   "line": 2.5,
+   "question": "Will the TBL Lightning cover 2.5 vs the COL Avalanche in TBL vs COL?",
    "sides": [
-    "Over 9.5",
-    "Under 9.5"
+    "Lightning +2.50",
+    "Avalanche -2.50"
    ],
    "teams": [
-    null,
-    null
+    "Lightning",
+    "Avalanche"
    ],
    "player": null,
-   "mid": 21.5,
-   "yes_buy": 22,
-   "no_buy": 79,
+   "mid": 53.5,
+   "yes_buy": 54,
+   "no_buy": 47,
    "taken_at": "2026-10-24T03:05:40.430Z"
   },
   {
@@ -1078,6 +1078,46 @@
  ],
  "edges": [
   {
+   "key": "1579588:0",
+   "market_id": "1579588",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in TBL vs COL be more than 8.5?",
+   "side": "Over 8.5",
+   "open_chance": 52,
+   "now_chance": 32,
+   "open_odds": "-108",
+   "now_odds": "+213",
+   "edge": 20,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "TB 2, COL 5, Q3 7:22",
+   "first_seen": "2026-10-24T03:23:56.502Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "1579581:0",
+   "market_id": "1579581",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will the TBL Lightning cover 3.5 vs the COL Avalanche in TBL vs COL?",
+   "side": "Lightning +3.50",
+   "open_chance": 82,
+   "now_chance": 64,
+   "open_odds": "-456",
+   "now_odds": "-178",
+   "edge": 18,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "TB down 3, Q3 7:22",
+   "first_seen": "2026-10-24T03:26:01.273Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
    "key": "1579580:0",
    "market_id": "1579580",
    "market": "Alt spread",
@@ -1094,47 +1134,7 @@
    "reason": "Explained by score: TB not covering +2.5 right now",
    "context": "TB down 3, Q3 8:59",
    "first_seen": "2026-10-24T03:23:56.502Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1579581:0",
-   "market_id": "1579581",
-   "market": "Main spread",
-   "group": "game",
-   "question": "Will the TBL Lightning cover 3.5 vs the COL Avalanche in TBL vs COL?",
-   "side": "Lightning +3.50",
-   "open_chance": 82,
-   "now_chance": 67,
-   "open_odds": "-456",
-   "now_odds": "-203",
-   "edge": 15,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "TB down 3, Q3 8:59",
-   "first_seen": "2026-10-24T03:26:01.273Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1579588:0",
-   "market_id": "1579588",
-   "market": "Main total",
-   "group": "game",
-   "question": "Will the total in TBL vs COL be more than 8.5?",
-   "side": "Over 8.5",
-   "open_chance": 52,
-   "now_chance": 46,
-   "open_odds": "-108",
-   "now_odds": "+117",
-   "edge": 6,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "TB 2, COL 5, Q3 8:59",
-   "first_seen": "2026-10-24T03:23:56.502Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": true
   },
   {
@@ -1154,77 +1154,23 @@
    "reason": "Explained by score: scoring above pace (7 pts, pace 5)",
    "context": "TB 2, COL 5, Q3 8:59",
    "first_seen": "2026-10-24T03:32:18.497Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1579589:1",
-   "market_id": "1579589",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in TBL vs COL be more than 9.5?",
-   "side": "Under 9.5",
-   "open_chance": 79,
-   "now_chance": 74,
-   "open_odds": "-376",
-   "now_odds": "-285",
-   "edge": 5,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: scoring above pace (7 pts, pace 5)",
-   "context": "TB 2, COL 5, Q3 15:42",
-   "first_seen": "2026-10-24T03:26:01.273Z",
-   "status": "gone",
-   "kalshi": true
-  },
-  {
-   "key": "1579589:0",
-   "market_id": "1579589",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in TBL vs COL be more than 9.5?",
-   "side": "Over 9.5",
-   "open_chance": 22,
-   "now_chance": 18,
-   "open_odds": "+355",
-   "now_odds": "+456",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "TB 2, COL 5, Q3 11:04",
-   "first_seen": "2026-10-24T03:37:48.173Z",
    "status": "gone",
    "kalshi": true
   }
  ],
  "alerts": [
   {
-   "id": "gone:1579589:0:2026-10-24T03:37:48.173Z",
-   "key": "1579589:0",
-   "at": "2026-10-24T03:43:51.039Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Over 9.5",
-   "market": "Alt total",
-   "now_odds": "+456",
-   "now_chance": 18,
-   "edge": 4,
-   "text": "Edge gone: Over 9.5 (Alt total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/nhl/nhl-tb-col-2026-10-23"
-  },
-  {
-   "id": "new_edge:1579589:0:slight",
-   "key": "1579589:0",
-   "at": "2026-10-24T03:37:48.173Z",
+   "id": "new_edge:1579588:0:big",
+   "key": "1579588:0",
+   "at": "2026-10-24T03:45:56.319Z",
    "type": "new_edge",
-   "tier": "slight",
-   "side": "Over 9.5",
-   "market": "Alt total",
-   "now_odds": "+456",
-   "now_chance": 18,
-   "edge": 4,
-   "text": "New slight edge: Over 9.5 (Alt total), 4 points cheaper than open.",
+   "tier": "big",
+   "side": "Over 8.5",
+   "market": "Main total",
+   "now_odds": "+213",
+   "now_chance": 32,
+   "edge": 20,
+   "text": "New big edge: Over 8.5 (Main total), 20 points cheaper than open.",
    "url": "https://polymarket.us/sports/nhl/nhl-tb-col-2026-10-23"
   },
   {
@@ -1291,10 +1237,11 @@
   "new_edge:1579581:0:big",
   "gone:1579588:0:2026-10-24T03:23:56.502Z",
   "new_edge:1579589:0:slight",
-  "gone:1579589:0:2026-10-24T03:37:48.173Z"
+  "gone:1579589:0:2026-10-24T03:37:48.173Z",
+  "new_edge:1579588:0:big"
  ],
  "kalshi_checked": {
-  "at": "2026-10-24T03:43:51.489Z",
+  "at": "2026-10-24T03:45:56.738Z",
   "event": "26OCT23TBCOL"
  }
 }
