@@ -4,12 +4,12 @@
  "game": "Hunter / Tjen vs. Maleckova / Skoch",
  "url": "https://polymarket.us/sports/wtadb/wtadb-huntertjen-malsko-2026-10-23",
  "start_time": "2026-10-24T05:10:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185608",
-  "fetched_at": "2026-10-24T05:52:04.831Z",
+  "fetched_at": "2026-10-24T06:43:28.838Z",
   "tennis": true,
   "tennis_match": {
    "id": "185608",
@@ -17,17 +17,17 @@
    "date": "2026-10-24T05:20Z",
    "startDate": "2026-10-24T05:20Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Storm Hunter (AUS) & Janice Tjen (INA) leads Miriam Skoch (CZE) & Jesika Maleckova (CZE) 4-3",
+     "text": "(1) Storm Hunter (AUS) & Janice Tjen (INA) bt Miriam Skoch (CZE) & Jesika Maleckova (CZE) 6-4 6-1",
      "type": "event"
     }
    ],
@@ -55,10 +55,15 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "winner": false,
      "linescores": [
       {
-       "value": 3
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 1,
+       "winner": false
       }
      ],
      "roster": {
@@ -133,13 +138,18 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "winner": true,
      "curatedRank": {
       "current": 1
      },
      "linescores": [
       {
-       "value": 4
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
       }
      ],
      "roster": {
@@ -209,11 +219,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 345,
    "type": {
     "id": "4",
@@ -230,10 +235,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Miriam Skoch / Jesika Maleckova",
@@ -245,13 +250,13 @@
    "abbr": "Storm Hunter / Janice Tjen",
    "alias": "Storm Hunter / Janice Tjen",
    "name": "Storm Hunter / Janice Tjen",
-   "score": 0
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T05:52:04.714Z",
+ "updated": "2026-10-24T06:43:28.736Z",
  "open_taken_at": "2026-10-23T08:32:46.264Z",
  "thresholds": {
   "big": 10,
@@ -299,11 +304,25 @@
    "reason": null,
    "context": "Miriam Skoch / Jesika Maleckova 3 · Storm Hunter / Janice Tjen 4 · 1st Set (games by set)",
    "first_seen": "2026-10-24T05:46:09.184Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1704647:1:2026-10-24T05:46:09.184Z",
+   "key": "1704647:1",
+   "at": "2026-10-24T06:43:28.736Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Maleckova / Skoch win",
+   "market": "Moneyline",
+   "now_odds": "+355",
+   "now_chance": 22,
+   "edge": 8,
+   "text": "Edge gone: Maleckova / Skoch win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-huntertjen-malsko-2026-10-23"
+  },
   {
    "id": "new_edge:1704647:1:slight",
    "key": "1704647:1",
@@ -320,7 +339,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1704647:1:slight"
+  "new_edge:1704647:1:slight",
+  "gone:1704647:1:2026-10-24T05:46:09.184Z"
  ],
  "kalshi_checked": null
 }

@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187140",
-  "fetched_at": "2026-10-24T05:52:06.205Z",
+  "fetched_at": "2026-10-24T06:43:29.847Z",
   "tennis": true,
   "tennis_match": {
    "id": "187140",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Elena Pridankina (RUS) leads Tyra Caterina Grant (ITA) 3-2",
+     "text": "Elena Pridankina (RUS) leads Tyra Caterina Grant (ITA) 6-3 3-2",
      "type": "event"
     }
    ],
@@ -55,8 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "possession": false,
      "linescores": [
+      {
+       "value": 3,
+       "winner": false
+      },
       {
        "value": 2
       }
@@ -98,8 +102,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "possession": true,
      "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
       {
        "value": 3
       }
@@ -159,8 +167,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Tyra Caterina Grant",
@@ -172,13 +180,13 @@
    "abbr": "Elena Pridankina",
    "alias": "Elena Pridankina",
    "name": "Elena Pridankina",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T05:52:06.107Z",
+ "updated": "2026-10-24T06:43:29.694Z",
  "open_taken_at": "2026-10-23T11:46:52.995Z",
  "thresholds": {
   "big": 10,
@@ -206,6 +214,50 @@
    "yes_buy": 54,
    "no_buy": 47,
    "taken_at": "2026-10-24T03:05:46.849Z"
+  },
+  {
+   "market_id": "1709595",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Elena Pridankina win set 2 against Tyra Caterina Grant?",
+   "sides": [
+    "Yes: Elena Pridankina win set 2 against Tyra Caterina Grant",
+    "No: Elena Pridankina win set 2 against Tyra Caterina Grant"
+   ],
+   "teams": [
+    "Elena Pridankina",
+    null
+   ],
+   "player": null,
+   "mid": 56,
+   "yes_buy": 58,
+   "no_buy": 46,
+   "taken_at": "2026-10-24T05:36:06.328Z"
+  },
+  {
+   "market_id": "1709391",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Elena Pridankina cover -7.5 vs the Tyra Caterina Grant in Elena Pridankina vs. Tyra Caterina Grant?",
+   "sides": [
+    "Elena Pridankina -7.50 (Games)",
+    "Tyra Caterina Grant +7.50 (Games)"
+   ],
+   "teams": [
+    "Elena Pridankina",
+    "Tyra Caterina Grant"
+   ],
+   "player": null,
+   "mid": 37.5,
+   "yes_buy": 38,
+   "no_buy": 63,
+   "taken_at": "2026-10-24T04:18:11.537Z"
   },
   {
    "market_id": "1709164",
@@ -384,28 +436,6 @@
    "taken_at": "2026-10-24T04:49:05.777Z"
   },
   {
-   "market_id": "1709595",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Elena Pridankina win set 2 against Tyra Caterina Grant?",
-   "sides": [
-    "Yes: Elena Pridankina win set 2 against Tyra Caterina Grant",
-    "No: Elena Pridankina win set 2 against Tyra Caterina Grant"
-   ],
-   "teams": [
-    "Elena Pridankina",
-    null
-   ],
-   "player": null,
-   "mid": 56,
-   "yes_buy": 58,
-   "no_buy": 46,
-   "taken_at": "2026-10-24T05:36:06.328Z"
-  },
-  {
    "market_id": "1709046",
    "market": "Games spread",
    "group": "game",
@@ -447,28 +477,6 @@
    "mid": 25.5,
    "yes_buy": 26,
    "no_buy": 75,
-   "taken_at": "2026-10-24T04:18:11.537Z"
-  },
-  {
-   "market_id": "1709391",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Elena Pridankina cover -7.5 vs the Tyra Caterina Grant in Elena Pridankina vs. Tyra Caterina Grant?",
-   "sides": [
-    "Elena Pridankina -7.50 (Games)",
-    "Tyra Caterina Grant +7.50 (Games)"
-   ],
-   "teams": [
-    "Elena Pridankina",
-    "Tyra Caterina Grant"
-   ],
-   "player": null,
-   "mid": 37.5,
-   "yes_buy": 38,
-   "no_buy": 63,
    "taken_at": "2026-10-24T04:18:11.537Z"
   },
   {
@@ -518,106 +526,6 @@
  ],
  "edges": [
   {
-   "key": "1709572:0",
-   "market_id": "1709572",
-   "market": "Sets spread",
-   "group": "game",
-   "question": "Will the Elena Pridankina cover -1.5 vs the Tyra Caterina Grant in Elena Pridankina vs. Tyra Caterina Grant?",
-   "side": "Elena Pridankina -1.50 (Sets)",
-   "open_chance": 57,
-   "now_chance": 45,
-   "open_odds": "-133",
-   "now_odds": "+122",
-   "edge": 12,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Elena Pridankina not above the sets spread right now",
-   "context": "Tyra Caterina Grant 2 · Elena Pridankina 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-24T04:42:46.361Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1709578:1",
-   "market_id": "1709578",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Elena Pridankina vs. Tyra Caterina Grant be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 59,
-   "now_chance": 51,
-   "open_odds": "-144",
-   "now_odds": "-104",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Tyra Caterina Grant 2 · Elena Pridankina 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-24T05:52:06.107Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1709041:1",
-   "market_id": "1709041",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Elena Pridankina cover -1.5 vs the Tyra Caterina Grant in Elena Pridankina vs. Tyra Caterina Grant?",
-   "side": "Tyra Caterina Grant +1.50 (Games)",
-   "open_chance": 51,
-   "now_chance": 46,
-   "open_odds": "-104",
-   "now_odds": "+117",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Tyra Caterina Grant 2 · Elena Pridankina 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-24T05:39:02.177Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1707990:1",
-   "market_id": "1707990",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Elena Pridankina vs Tyra Caterina Grant scheduled for October 24, 2026 at 3:00 AM UTC?",
-   "side": "Tyra Caterina Grant win",
-   "open_chance": 47,
-   "now_chance": 43,
-   "open_odds": "+113",
-   "now_odds": "+133",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Tyra Caterina Grant 2 · Elena Pridankina 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-24T05:39:02.177Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1709593:0",
-   "market_id": "1709593",
-   "market": "Set 1 winner",
-   "group": "game",
-   "question": "Will Elena Pridankina win set 1 against Tyra Caterina Grant?",
-   "side": "Yes: Elena Pridankina win set 1 against Tyra Caterina Grant",
-   "open_chance": 64,
-   "now_chance": 60,
-   "open_odds": "-178",
-   "now_odds": "-150",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Tyra Caterina Grant 2 · Elena Pridankina 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-24T05:52:06.107Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1709593:1",
    "market_id": "1709593",
    "market": "Set 1 winner",
@@ -658,42 +566,42 @@
    "kalshi": null
   },
   {
-   "key": "1709391:0",
-   "market_id": "1709391",
-   "market": "Games spread",
+   "key": "1709572:0",
+   "market_id": "1709572",
+   "market": "Sets spread",
    "group": "game",
-   "question": "Will the Elena Pridankina cover -7.5 vs the Tyra Caterina Grant in Elena Pridankina vs. Tyra Caterina Grant?",
-   "side": "Elena Pridankina -7.50 (Games)",
-   "open_chance": 38,
-   "now_chance": 22,
-   "open_odds": "+163",
-   "now_odds": "+355",
-   "edge": 16,
+   "question": "Will the Elena Pridankina cover -1.5 vs the Tyra Caterina Grant in Elena Pridankina vs. Tyra Caterina Grant?",
+   "side": "Elena Pridankina -1.50 (Sets)",
+   "open_chance": 57,
+   "now_chance": 45,
+   "open_odds": "-133",
+   "now_odds": "+122",
+   "edge": 12,
    "tier": "big",
    "class": "score",
-   "reason": "Explained by score: Elena Pridankina not above the games spread right now",
-   "context": "Tyra Caterina Grant 1 · Elena Pridankina 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-24T05:13:16.033Z",
+   "reason": "Explained by score: Elena Pridankina not above the sets spread right now",
+   "context": "Tyra Caterina Grant 2 · Elena Pridankina 3 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T04:42:46.361Z",
    "status": "gone",
    "kalshi": null
   },
   {
-   "key": "1709595:1",
-   "market_id": "1709595",
-   "market": "Set 2 winner",
+   "key": "1709578:1",
+   "market_id": "1709578",
+   "market": "Games total",
    "group": "game",
-   "question": "Will Elena Pridankina win set 2 against Tyra Caterina Grant?",
-   "side": "No: Elena Pridankina win set 2 against Tyra Caterina Grant",
-   "open_chance": 46,
-   "now_chance": 40,
-   "open_odds": "+117",
-   "now_odds": "+150",
-   "edge": 6,
+   "question": "Will the total in Elena Pridankina vs. Tyra Caterina Grant be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 59,
+   "now_chance": 51,
+   "open_odds": "-144",
+   "now_odds": "-104",
+   "edge": 8,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Tyra Caterina Grant 1 · Elena Pridankina 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-24T05:46:10.615Z",
+   "context": "Tyra Caterina Grant 2 · Elena Pridankina 3 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T05:52:06.107Z",
    "status": "gone",
    "kalshi": null
   },
@@ -716,9 +624,91 @@
    "first_seen": "2026-10-24T05:43:38.036Z",
    "status": "gone",
    "kalshi": null
+  },
+  {
+   "key": "1709041:1",
+   "market_id": "1709041",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Elena Pridankina cover -1.5 vs the Tyra Caterina Grant in Elena Pridankina vs. Tyra Caterina Grant?",
+   "side": "Tyra Caterina Grant +1.50 (Games)",
+   "open_chance": 51,
+   "now_chance": 46,
+   "open_odds": "-104",
+   "now_odds": "+117",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Tyra Caterina Grant 2 · Elena Pridankina 3 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T05:39:02.177Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1709593:0",
+   "market_id": "1709593",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Elena Pridankina win set 1 against Tyra Caterina Grant?",
+   "side": "Yes: Elena Pridankina win set 1 against Tyra Caterina Grant",
+   "open_chance": 64,
+   "now_chance": 60,
+   "open_odds": "-178",
+   "now_odds": "-150",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Tyra Caterina Grant 2 · Elena Pridankina 3 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T05:52:06.107Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1709578:1:2026-10-24T05:52:06.107Z",
+   "key": "1709578:1",
+   "at": "2026-10-24T06:43:29.694Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-104",
+   "now_chance": 51,
+   "edge": 8,
+   "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-elepri-tyrgra-2026-10-23"
+  },
+  {
+   "id": "gone:1709041:1:2026-10-24T05:39:02.177Z",
+   "key": "1709041:1",
+   "at": "2026-10-24T06:43:29.694Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Tyra Caterina Grant +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+117",
+   "now_chance": 46,
+   "edge": 5,
+   "text": "Edge gone: Tyra Caterina Grant +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-elepri-tyrgra-2026-10-23"
+  },
+  {
+   "id": "gone:1709593:0:2026-10-24T05:52:06.107Z",
+   "key": "1709593:0",
+   "at": "2026-10-24T06:43:29.694Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Yes: Elena Pridankina win set 1 against Tyra Caterina Grant",
+   "market": "Set 1 winner",
+   "now_odds": "-150",
+   "now_chance": 60,
+   "edge": 4,
+   "text": "Edge gone: Yes: Elena Pridankina win set 1 against Tyra Caterina Grant (Set 1 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-elepri-tyrgra-2026-10-23"
+  },
   {
    "id": "new_edge:1709578:1:slight",
    "key": "1709578:1",
@@ -731,20 +721,6 @@
    "now_chance": 51,
    "edge": 8,
    "text": "New slight edge: Under 22.5 (Games) (Games total), 8 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-elepri-tyrgra-2026-10-23"
-  },
-  {
-   "id": "new_edge:1707990:1:slight",
-   "key": "1707990:1",
-   "at": "2026-10-24T05:52:06.107Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Tyra Caterina Grant win",
-   "market": "Moneyline",
-   "now_odds": "+133",
-   "now_chance": 43,
-   "edge": 4,
-   "text": "New slight edge: Tyra Caterina Grant win (Moneyline), 4 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-elepri-tyrgra-2026-10-23"
   },
   {
@@ -790,20 +766,6 @@
    "url": "https://polymarket.us/sports/wta/wta-elepri-tyrgra-2026-10-23"
   },
   {
-   "id": "gone:1709595:1:2026-10-24T05:46:10.615Z",
-   "key": "1709595:1",
-   "at": "2026-10-24T05:52:06.107Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "No: Elena Pridankina win set 2 against Tyra Caterina Grant",
-   "market": "Set 2 winner",
-   "now_odds": "+150",
-   "now_chance": 40,
-   "edge": 6,
-   "text": "Edge gone: No: Elena Pridankina win set 2 against Tyra Caterina Grant (Set 2 winner) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-elepri-tyrgra-2026-10-23"
-  },
-  {
    "id": "new_edge:1709593:1:big",
    "key": "1709593:1",
    "at": "2026-10-24T05:46:10.615Z",
@@ -829,20 +791,6 @@
    "now_chance": 45,
    "edge": 18,
    "text": "New big edge: Tyra Caterina Grant +4.50 (Games) (Games spread), 18 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-elepri-tyrgra-2026-10-23"
-  },
-  {
-   "id": "new_edge:1709595:1:slight",
-   "key": "1709595:1",
-   "at": "2026-10-24T05:46:10.615Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "No: Elena Pridankina win set 2 against Tyra Caterina Grant",
-   "market": "Set 2 winner",
-   "now_odds": "+150",
-   "now_chance": 40,
-   "edge": 6,
-   "text": "New slight edge: No: Elena Pridankina win set 2 against Tyra Caterina Grant (Set 2 winner), 6 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-elepri-tyrgra-2026-10-23"
   },
   {
@@ -874,20 +822,6 @@
    "url": "https://polymarket.us/sports/wta/wta-elepri-tyrgra-2026-10-23"
   },
   {
-   "id": "new_edge:1707990:1:big",
-   "key": "1707990:1",
-   "at": "2026-10-24T05:39:02.177Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Tyra Caterina Grant win",
-   "market": "Moneyline",
-   "now_odds": "+178",
-   "now_chance": 36,
-   "edge": 11,
-   "text": "New big edge: Tyra Caterina Grant win (Moneyline), 11 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-elepri-tyrgra-2026-10-23"
-  },
-  {
    "id": "new_edge:1709593:1:slight",
    "key": "1709593:1",
    "at": "2026-10-24T05:39:02.177Z",
@@ -913,34 +847,6 @@
    "now_chance": 56,
    "edge": 7,
    "text": "New slight edge: Tyra Caterina Grant +4.50 (Games) (Games spread), 7 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-elepri-tyrgra-2026-10-23"
-  },
-  {
-   "id": "gone:1709391:0:2026-10-24T05:13:16.033Z",
-   "key": "1709391:0",
-   "at": "2026-10-24T05:39:02.177Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Elena Pridankina -7.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+203",
-   "now_chance": 33,
-   "edge": 5,
-   "text": "Edge gone: Elena Pridankina -7.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-elepri-tyrgra-2026-10-23"
-  },
-  {
-   "id": "new_edge:1709391:0:slight",
-   "key": "1709391:0",
-   "at": "2026-10-24T05:13:16.033Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Elena Pridankina -7.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+203",
-   "now_chance": 33,
-   "edge": 5,
-   "text": "New slight edge: Elena Pridankina -7.50 (Games) (Games spread), 5 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-elepri-tyrgra-2026-10-23"
   },
   {
@@ -977,7 +883,10 @@
   "new_edge:1709593:0:slight",
   "gone:1709593:1:2026-10-24T05:39:02.177Z",
   "gone:1709046:1:2026-10-24T05:39:02.177Z",
-  "gone:1709595:1:2026-10-24T05:46:10.615Z"
+  "gone:1709595:1:2026-10-24T05:46:10.615Z",
+  "gone:1709578:1:2026-10-24T05:52:06.107Z",
+  "gone:1709041:1:2026-10-24T05:39:02.177Z",
+  "gone:1709593:0:2026-10-24T05:52:06.107Z"
  ],
  "kalshi_checked": null
 }

@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185564",
-  "fetched_at": "2026-10-24T05:52:04.447Z",
+  "fetched_at": "2026-10-24T06:43:28.580Z",
   "tennis": true,
   "tennis_match": {
    "id": "185564",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Desirae Krawczyk (USA) & Fanny Stollar (HUN) leads Ulrikke Eikeri (NOR) & Quinn Gleason (USA) 5-4",
+     "text": "Desirae Krawczyk (USA) & Fanny Stollar (HUN) is tied with Ulrikke Eikeri (NOR) & Quinn Gleason (USA) 7-6 (10-8) 3-3",
      "type": "event"
     }
    ],
@@ -58,7 +58,12 @@
      "possession": false,
      "linescores": [
       {
-       "value": 4
+       "value": 6,
+       "tiebreak": 8,
+       "winner": false
+      },
+      {
+       "value": 3
       }
      ],
      "roster": {
@@ -136,7 +141,12 @@
      "possession": true,
      "linescores": [
       {
-       "value": 5
+       "value": 7,
+       "tiebreak": 10,
+       "winner": true
+      },
+      {
+       "value": 3
       }
      ],
      "roster": {
@@ -229,8 +239,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Ulrikke Eikeri / Quinn Gleason",
@@ -242,13 +252,13 @@
    "abbr": "Desirae Krawczyk / Fanny Stollar",
    "alias": "Desirae Krawczyk / Fanny Stollar",
    "name": "Desirae Krawczyk / Fanny Stollar",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T05:52:04.328Z",
+ "updated": "2026-10-24T06:43:28.500Z",
  "open_taken_at": "2026-10-23T05:00:46.047Z",
  "thresholds": {
   "big": 10,
@@ -287,20 +297,34 @@
    "question": "Who will win in the upcoming wtadb event Krawczyk / Stollar vs Eikeri / Gleason scheduled for October 24, 2026 at 5:00 AM UTC?",
    "side": "Eikeri U / Gleason Q win",
    "open_chance": 50,
-   "now_chance": 42,
+   "now_chance": 21,
    "open_odds": "+100",
-   "now_odds": "+138",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Ulrikke Eikeri / Quinn Gleason 4 · Desirae Krawczyk / Fanny Stollar 5 · 1st Set (games by set)",
+   "now_odds": "+376",
+   "edge": 29,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (29 pts), likely news",
+   "context": "Ulrikke Eikeri / Quinn Gleason 6, 3 · Desirae Krawczyk / Fanny Stollar 7, 3 · 2nd Set (games by set)",
    "first_seen": "2026-10-24T05:13:13.588Z",
    "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "news:1701888:1",
+   "key": "1701888:1",
+   "at": "2026-10-24T06:43:28.500Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Eikeri U / Gleason Q win",
+   "market": "Moneyline",
+   "now_odds": "+376",
+   "now_chance": 21,
+   "edge": 29,
+   "text": "Big move, likely news: Eikeri U / Gleason Q win (Moneyline) is 29 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-krawczstolla-eikerigleaso-2026-10-24"
+  },
   {
    "id": "new_edge:1701888:1:big",
    "key": "1701888:1",
@@ -332,7 +356,8 @@
  ],
  "alert_seen": [
   "new_edge:1701888:1:slight",
-  "new_edge:1701888:1:big"
+  "new_edge:1701888:1:big",
+  "news:1701888:1"
  ],
  "kalshi_checked": null
 }
