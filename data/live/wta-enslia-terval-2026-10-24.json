@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187111",
-  "fetched_at": "2026-10-24T14:02:04.673Z",
+  "fetched_at": "2026-10-24T14:05:03.821Z",
   "tennis": true,
   "tennis_match": {
    "id": "187111",
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 4
@@ -97,6 +98,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 2
@@ -134,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 264,
    "type": {
     "id": "2",
@@ -171,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T14:02:04.599Z",
+ "updated": "2026-10-24T14:05:03.732Z",
  "open_taken_at": "2026-10-24T01:49:04.719Z",
  "thresholds": {
   "big": 10,
@@ -221,28 +228,6 @@
    "yes_buy": 40,
    "no_buy": 61,
    "taken_at": "2026-10-24T11:54:22.688Z"
-  },
-  {
-   "market_id": "1737540",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in En-Shuo Liang vs. Tereza Valentova be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 64.5,
-   "yes_buy": 66,
-   "no_buy": 37,
-   "taken_at": "2026-10-24T08:06:40.382Z"
   },
   {
    "market_id": "1737535",
@@ -421,6 +406,28 @@
    "taken_at": "2026-10-24T11:57:12.348Z"
   },
   {
+   "market_id": "1737540",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in En-Shuo Liang vs. Tereza Valentova be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 64.5,
+   "yes_buy": 66,
+   "no_buy": 37,
+   "taken_at": "2026-10-24T08:06:40.382Z"
+  },
+  {
    "market_id": "1737543",
    "market": "Sets total",
    "group": "game",
@@ -518,35 +525,15 @@
    "question": "Will the En-Shuo Liang cover 7.5 vs the Tereza Valentova in En-Shuo Liang vs. Tereza Valentova?",
    "side": "Tereza Valentova -7.50 (Games)",
    "open_chance": 61,
-   "now_chance": 38,
+   "now_chance": 25,
    "open_odds": "-156",
-   "now_odds": "+163",
-   "edge": 23,
+   "now_odds": "+300",
+   "edge": 36,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Tereza Valentova not above the games spread right now",
    "context": "Tereza Valentova 4 · En-Shuo Liang 2 · 1st Set (games by set)",
    "first_seen": "2026-10-24T13:44:09.406Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1737540:0",
-   "market_id": "1737540",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in En-Shuo Liang vs. Tereza Valentova be more than 17.5?",
-   "side": "Over 17.5 (Games)",
-   "open_chance": 66,
-   "now_chance": 51,
-   "open_odds": "-194",
-   "now_odds": "-104",
-   "edge": 15,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Tereza Valentova 4 · En-Shuo Liang 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-24T13:41:52.888Z",
    "status": "open",
    "kalshi": null
   },
@@ -568,6 +555,26 @@
    "context": "Tereza Valentova 4 · En-Shuo Liang 2 · 1st Set (games by set)",
    "first_seen": "2026-10-24T05:52:10.116Z",
    "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1737540:0",
+   "market_id": "1737540",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in En-Shuo Liang vs. Tereza Valentova be more than 17.5?",
+   "side": "Over 17.5 (Games)",
+   "open_chance": 66,
+   "now_chance": 51,
+   "open_odds": "-194",
+   "now_odds": "-104",
+   "edge": 15,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Tereza Valentova 4 · En-Shuo Liang 2 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T13:41:52.888Z",
+   "status": "gone",
    "kalshi": null
   },
   {
