@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187139",
-  "fetched_at": "2026-10-24T13:07:11.924Z",
+  "fetched_at": "2026-10-24T13:13:07.648Z",
   "tennis": true,
   "tennis_match": {
    "id": "187139",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Linda Fruhvirtova (CZE) leads Mei Yamaguchi (JPN) 6-2 2-6 5-5",
+     "text": "Mei Yamaguchi (JPN) leads Linda Fruhvirtova (CZE) 2-6 6-2 6-5",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 2,
@@ -65,7 +66,7 @@
        "winner": true
       },
       {
-       "value": 5
+       "value": 6
       }
      ],
      "athlete": {
@@ -105,6 +106,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 6,
@@ -150,6 +152,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 232,
    "type": {
     "id": "2",
@@ -187,7 +194,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T13:07:11.714Z",
+ "updated": "2026-10-24T13:13:07.542Z",
  "open_taken_at": "2026-10-24T03:32:29.786Z",
  "thresholds": {
   "big": 10,
@@ -534,14 +541,14 @@
    "question": "Who will win in the upcoming wta event Linda Fruhvirtova vs Mei Yamaguchi scheduled for October 24, 2026 at 7:40 AM UTC?",
    "side": "Linda Fruhvirtova win",
    "open_chance": 79,
-   "now_chance": 59,
+   "now_chance": 53,
    "open_odds": "-376",
-   "now_odds": "-144",
-   "edge": 20,
+   "now_odds": "-113",
+   "edge": 26,
    "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Mei Yamaguchi 2, 6, 5 · Linda Fruhvirtova 6, 2, 5 · 3rd Set (games by set)",
+   "class": "news",
+   "reason": "Big move (26 pts), likely news",
+   "context": "Mei Yamaguchi 2, 6, 6 · Linda Fruhvirtova 6, 2, 5 · 3rd Set (games by set)",
    "first_seen": "2026-10-24T12:59:02.350Z",
    "status": "open",
    "kalshi": null
@@ -728,6 +735,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "news:1738740:0",
+   "key": "1738740:0",
+   "at": "2026-10-24T13:13:07.542Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Linda Fruhvirtova win",
+   "market": "Moneyline",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 26,
+   "text": "Big move, likely news: Linda Fruhvirtova win (Moneyline) is 26 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-linfru-meiyam-2026-10-24"
+  },
   {
    "id": "gone:1738740:0:2026-10-24T12:59:02.350Z",
    "key": "1738740:0",
@@ -951,7 +972,8 @@
   "gone:1738740:0:2026-10-24T12:03:28.137Z",
   "gone:1738740:1:2026-10-24T12:23:01.728Z",
   "gone:1738740:1:2026-10-24T12:53:23.250Z",
-  "gone:1738740:0:2026-10-24T12:59:02.350Z"
+  "gone:1738740:0:2026-10-24T12:59:02.350Z",
+  "news:1738740:0"
  ],
  "kalshi_checked": null
 }
