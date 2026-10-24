@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187214",
-  "fetched_at": "2026-10-24T13:50:05.943Z",
+  "fetched_at": "2026-10-24T13:56:19.564Z",
   "tennis": true,
   "tennis_match": {
    "id": "187214",
@@ -156,7 +156,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T13:50:05.823Z",
+ "updated": "2026-10-24T13:56:19.395Z",
  "open_taken_at": "2026-10-23T18:02:58.802Z",
  "thresholds": {
   "big": 10,
@@ -318,6 +318,28 @@
    "taken_at": "2026-10-24T03:05:50.270Z"
   },
   {
+   "market_id": "1717197",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Henry Bernet win set 1 against Daniel Altmaier?",
+   "sides": [
+    "Yes: Henry Bernet win set 1 against Daniel Altmaier",
+    "No: Henry Bernet win set 1 against Daniel Altmaier"
+   ],
+   "teams": [
+    "Henry Bernet",
+    null
+   ],
+   "player": null,
+   "mid": 45.5,
+   "yes_buy": 48,
+   "no_buy": 57,
+   "taken_at": "2026-10-24T12:09:07.654Z"
+  },
+  {
    "market_id": "1717198",
    "market": "Set 2 winner",
    "group": "game",
@@ -340,26 +362,26 @@
    "taken_at": "2026-10-24T12:38:09.591Z"
   },
   {
-   "market_id": "1717197",
-   "market": "Set 1 winner",
+   "market_id": "1717191",
+   "market": "Games total",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Henry Bernet win set 1 against Daniel Altmaier?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Henry Bernet vs. Daniel Altmaier be more than 27.5?",
    "sides": [
-    "Yes: Henry Bernet win set 1 against Daniel Altmaier",
-    "No: Henry Bernet win set 1 against Daniel Altmaier"
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
    ],
    "teams": [
-    "Henry Bernet",
+    null,
     null
    ],
    "player": null,
-   "mid": 45.5,
-   "yes_buy": 48,
-   "no_buy": 57,
-   "taken_at": "2026-10-24T12:09:07.654Z"
+   "mid": 32.5,
+   "yes_buy": 33,
+   "no_buy": 68,
+   "taken_at": "2026-10-24T12:38:09.591Z"
   },
   {
    "market_id": "1717181",
@@ -448,31 +470,49 @@
    "yes_buy": 27,
    "no_buy": 74,
    "taken_at": "2026-10-24T12:38:09.591Z"
-  },
-  {
-   "market_id": "1717191",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Henry Bernet vs. Daniel Altmaier be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 32.5,
-   "yes_buy": 33,
-   "no_buy": 68,
-   "taken_at": "2026-10-24T12:38:09.591Z"
   }
  ],
  "edges": [
+  {
+   "key": "1717191:1",
+   "market_id": "1717191",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Henry Bernet vs. Daniel Altmaier be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 68,
+   "now_chance": 56,
+   "open_odds": "-213",
+   "now_odds": "-127",
+   "edge": 12,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-10-24T13:56:19.395Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1716674:1",
+   "market_id": "1716674",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Henry Bernet vs Daniel Altmaier scheduled for October 24, 2026 at 12:30 PM UTC?",
+   "side": "Daniel Altmaier win",
+   "open_chance": 59,
+   "now_chance": 54,
+   "open_odds": "-144",
+   "now_odds": "-117",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-10-24T13:56:19.395Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1717197:0",
    "market_id": "1717197",
@@ -490,11 +530,53 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-24T12:38:09.591Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1717191:1:big",
+   "key": "1717191:1",
+   "at": "2026-10-24T13:56:19.395Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-127",
+   "now_chance": 56,
+   "edge": 12,
+   "text": "New big edge: Under 27.5 (Games) (Games total), 12 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-henber-danalt-2026-10-24"
+  },
+  {
+   "id": "new_edge:1716674:1:slight",
+   "key": "1716674:1",
+   "at": "2026-10-24T13:56:19.395Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Daniel Altmaier win",
+   "market": "Moneyline",
+   "now_odds": "-117",
+   "now_chance": 54,
+   "edge": 5,
+   "text": "New slight edge: Daniel Altmaier win (Moneyline), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-henber-danalt-2026-10-24"
+  },
+  {
+   "id": "gone:1717197:0:2026-10-24T12:38:09.591Z",
+   "key": "1717197:0",
+   "at": "2026-10-24T13:56:19.395Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Yes: Henry Bernet win set 1 against Daniel Altmaier",
+   "market": "Set 1 winner",
+   "now_odds": "+138",
+   "now_chance": 42,
+   "edge": 6,
+   "text": "Edge gone: Yes: Henry Bernet win set 1 against Daniel Altmaier (Set 1 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-henber-danalt-2026-10-24"
+  },
   {
    "id": "new_edge:1717197:0:slight",
    "key": "1717197:0",
@@ -511,7 +593,10 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1717197:0:slight"
+  "new_edge:1717197:0:slight",
+  "new_edge:1717191:1:big",
+  "new_edge:1716674:1:slight",
+  "gone:1717197:0:2026-10-24T12:38:09.591Z"
  ],
  "kalshi_checked": null
 }
