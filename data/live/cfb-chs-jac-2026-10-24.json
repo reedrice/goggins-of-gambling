@@ -4,14 +4,14 @@
  "game": "Chicago State vs. Lindenwood",
  "url": "https://polymarket.us/sports/cfb/cfb-chs-jac-2026-10-24",
  "start_time": "2026-10-24T19:00:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-24T18:57:57.403Z"
+  "fetched_at": "2026-10-24T19:05:00.270Z"
  },
- "updated": "2026-10-24T18:57:57.307Z",
+ "updated": "2026-10-24T19:05:00.164Z",
  "open_taken_at": "2026-10-23T05:00:26.851Z",
  "thresholds": {
   "big": 10,
@@ -461,26 +461,6 @@
  ],
  "edges": [
   {
-   "key": "1723245:1",
-   "market_id": "1723245",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in Chicago State vs. Lindenwood be more than 51.5?",
-   "side": "Under 51.5",
-   "open_chance": 51,
-   "now_chance": 47,
-   "open_odds": "-104",
-   "now_odds": "+113",
-   "edge": 4,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-24T18:36:47.222Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1721906:0",
    "market_id": "1721906",
    "market": "Alt spread",
@@ -521,6 +501,26 @@
    "kalshi": null
   },
   {
+   "key": "1723245:1",
+   "market_id": "1723245",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in Chicago State vs. Lindenwood be more than 51.5?",
+   "side": "Under 51.5",
+   "open_chance": 51,
+   "now_chance": 47,
+   "open_odds": "-104",
+   "now_odds": "+113",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-24T18:36:47.222Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1723246:1",
    "market_id": "1723246",
    "market": "Main total",
@@ -541,7 +541,24 @@
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:1723245:1:2026-10-24T18:36:47.222Z",
+   "key": "1723245:1",
+   "at": "2026-10-24T19:05:00.164Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 51.5",
+   "market": "Alt total",
+   "now_odds": "+113",
+   "now_chance": 47,
+   "edge": 4,
+   "text": "Edge gone: Under 51.5 (Alt total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-chs-jac-2026-10-24"
+  }
+ ],
+ "alert_seen": [
+  "gone:1723245:1:2026-10-24T18:36:47.222Z"
+ ],
  "kalshi_checked": null
 }
