@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187218",
-  "fetched_at": "2026-10-24T10:54:02.552Z",
+  "fetched_at": "2026-10-24T10:56:06.017Z",
   "tennis": true,
   "tennis_match": {
    "id": "187218",
@@ -156,7 +156,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T10:54:02.488Z",
+ "updated": "2026-10-24T10:56:05.934Z",
  "open_taken_at": "2026-10-23T18:02:58.502Z",
  "thresholds": {
   "big": 10,
@@ -340,25 +340,25 @@
    "taken_at": "2026-10-24T10:07:09.632Z"
   },
   {
-   "market_id": "1717205",
-   "market": "Sets spread",
+   "market_id": "1717199",
+   "market": "Games spread",
    "group": "game",
    "mtype": "spread",
-   "period": "tennis_match_sets_spread",
+   "period": "tennis_match_games_spread",
    "line": -1.5,
    "question": "Will the Juan Manuel Cerundolo cover -1.5 vs the Zachary Svajda in Juan Manuel Cerundolo vs. Zachary Svajda?",
    "sides": [
-    "Juan Manuel Cerundolo -1.50 (Sets)",
-    "Zachary Svajda +1.50 (Sets)"
+    "Juan Manuel Cerundolo -1.50 (Games)",
+    "Zachary Svajda +1.50 (Games)"
    ],
    "teams": [
     "Juan Manuel Cerundolo",
     "Zachary Svajda"
    ],
    "player": null,
-   "mid": 26.5,
-   "yes_buy": 28,
-   "no_buy": 75,
+   "mid": 28.5,
+   "yes_buy": 29,
+   "no_buy": 72,
    "taken_at": "2026-10-24T10:19:06.354Z"
   },
   {
@@ -428,25 +428,25 @@
    "taken_at": "2026-10-24T10:19:06.354Z"
   },
   {
-   "market_id": "1717199",
-   "market": "Games spread",
+   "market_id": "1717205",
+   "market": "Sets spread",
    "group": "game",
    "mtype": "spread",
-   "period": "tennis_match_games_spread",
+   "period": "tennis_match_sets_spread",
    "line": -1.5,
    "question": "Will the Juan Manuel Cerundolo cover -1.5 vs the Zachary Svajda in Juan Manuel Cerundolo vs. Zachary Svajda?",
    "sides": [
-    "Juan Manuel Cerundolo -1.50 (Games)",
-    "Zachary Svajda +1.50 (Games)"
+    "Juan Manuel Cerundolo -1.50 (Sets)",
+    "Zachary Svajda +1.50 (Sets)"
    ],
    "teams": [
     "Juan Manuel Cerundolo",
     "Zachary Svajda"
    ],
    "player": null,
-   "mid": 28.5,
-   "yes_buy": 29,
-   "no_buy": 72,
+   "mid": 26.5,
+   "yes_buy": 28,
+   "no_buy": 75,
    "taken_at": "2026-10-24T10:19:06.354Z"
   },
   {
@@ -472,8 +472,46 @@
    "taken_at": "2026-10-24T10:19:06.354Z"
   }
  ],
- "edges": [],
- "alerts": [],
- "alert_seen": [],
+ "edges": [
+  {
+   "key": "1717199:1",
+   "market_id": "1717199",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Juan Manuel Cerundolo cover -1.5 vs the Zachary Svajda in Juan Manuel Cerundolo vs. Zachary Svajda?",
+   "side": "Zachary Svajda +1.50 (Games)",
+   "open_chance": 72,
+   "now_chance": 64,
+   "open_odds": "-257",
+   "now_odds": "-178",
+   "edge": 8,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-10-24T10:56:05.934Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
+ "alerts": [
+  {
+   "id": "new_edge:1717199:1:slight",
+   "key": "1717199:1",
+   "at": "2026-10-24T10:56:05.934Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Zachary Svajda +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-178",
+   "now_chance": 64,
+   "edge": 8,
+   "text": "New slight edge: Zachary Svajda +1.50 (Games) (Games spread), 8 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-juacer-zacsva-2026-10-24"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:1717199:1:slight"
+ ],
  "kalshi_checked": null
 }
