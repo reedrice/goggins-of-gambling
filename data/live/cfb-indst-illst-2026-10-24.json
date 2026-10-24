@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-24T19:16:51.357Z"
+  "fetched_at": "2026-10-24T19:23:00.020Z"
  },
- "updated": "2026-10-24T19:16:51.264Z",
+ "updated": "2026-10-24T19:22:59.910Z",
  "open_taken_at": "2026-10-23T05:00:26.909Z",
  "thresholds": {
   "big": 10,
@@ -527,6 +527,26 @@
  ],
  "edges": [
   {
+   "key": "1345644:1",
+   "market_id": "1345644",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming football event Indiana State vs Illinois State scheduled for October 24, 2026 at 7:00 PM UTC?",
+   "side": "Redbirds win",
+   "open_chance": 92,
+   "now_chance": 83,
+   "open_odds": "-1150",
+   "now_odds": "-488",
+   "edge": 9,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-24T19:22:59.910Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1723262:0",
    "market_id": "1723262",
    "market": "Alt total",
@@ -609,6 +629,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1345644:1:slight",
+   "key": "1345644:1",
+   "at": "2026-10-24T19:22:59.910Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Redbirds win",
+   "market": "Moneyline",
+   "now_odds": "-488",
+   "now_chance": 83,
+   "edge": 9,
+   "text": "New slight edge: Redbirds win (Moneyline), 9 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-indst-illst-2026-10-24"
+  },
+  {
    "id": "gone:1723262:0:2026-10-24T15:02:01.051Z",
    "key": "1723262:0",
    "at": "2026-10-24T19:05:00.255Z",
@@ -654,7 +688,8 @@
  "alert_seen": [
   "gone:1723262:0:2026-10-24T15:02:01.051Z",
   "gone:1723258:0:2026-10-24T15:08:06.890Z",
-  "gone:1723259:0:2026-10-24T15:08:06.890Z"
+  "gone:1723259:0:2026-10-24T15:08:06.890Z",
+  "new_edge:1345644:1:slight"
  ],
  "kalshi_checked": null
 }

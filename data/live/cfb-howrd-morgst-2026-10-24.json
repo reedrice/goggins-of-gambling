@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-24T19:16:51.570Z"
+  "fetched_at": "2026-10-24T19:23:00.099Z"
  },
- "updated": "2026-10-24T19:16:51.494Z",
+ "updated": "2026-10-24T19:22:59.899Z",
  "open_taken_at": "2026-10-23T05:00:26.993Z",
  "thresholds": {
   "big": 10,
@@ -499,7 +499,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T19:05:00.425Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -524,6 +524,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1345645:1:2026-10-24T19:05:00.425Z",
+   "key": "1345645:1",
+   "at": "2026-10-24T19:22:59.899Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Bears win",
+   "market": "Moneyline",
+   "now_odds": "-203",
+   "now_chance": 67,
+   "edge": 6,
+   "text": "Edge gone: Bears win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-howrd-morgst-2026-10-24"
+  },
   {
    "id": "new_edge:1345645:1:slight",
    "key": "1345645:1",
@@ -555,7 +569,8 @@
  ],
  "alert_seen": [
   "new_edge:1345645:1:slight",
-  "gone:1721986:0:2026-10-24T13:36:45.182Z"
+  "gone:1721986:0:2026-10-24T13:36:45.182Z",
+  "gone:1345645:1:2026-10-24T19:05:00.425Z"
  ],
  "kalshi_checked": null
 }
