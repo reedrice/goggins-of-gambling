@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185588",
-  "fetched_at": "2026-10-24T05:13:14.096Z",
+  "fetched_at": "2026-10-24T05:19:17.688Z",
   "tennis": true,
   "tennis_match": {
    "id": "185588",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, October 23rd at 1:15 AM EDT",
-     "shortDetail": "10/24 - 1:15 AM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(1) Ann Li (USA) leads Ashlyn Krueger (USA) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "fa13885a-add0-3264-a264-f4e9487ffeb0",
       "displayName": "Ashlyn Krueger",
@@ -87,9 +98,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 1
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "7d6f2967-947e-8208-fb9c-cccb09c866b0",
       "displayName": "Ann Li",
@@ -122,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 345,
    "type": {
     "id": "2",
@@ -138,10 +160,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Sat, October 23rd at 1:15 AM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Ashlyn Krueger",
@@ -159,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T05:13:13.887Z",
+ "updated": "2026-10-24T05:19:17.614Z",
  "open_taken_at": "2026-10-23T06:33:56.707Z",
  "thresholds": {
   "big": 10,
@@ -233,28 +255,6 @@
    "taken_at": "2026-10-24T03:05:45.005Z"
   },
   {
-   "market_id": "1704344",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Ann Li cover 4.5 vs the Ashlyn Krueger in Ann Li vs. Ashlyn Krueger?",
-   "sides": [
-    "Ann Li +4.50 (Games)",
-    "Ashlyn Krueger -4.50 (Games)"
-   ],
-   "teams": [
-    "Ann Li",
-    "Ashlyn Krueger"
-   ],
-   "player": null,
-   "mid": 77,
-   "yes_buy": 78,
-   "no_buy": 24,
-   "taken_at": "2026-10-24T03:09:27.593Z"
-  },
-  {
    "market_id": "1704349",
    "market": "Games total",
    "group": "game",
@@ -277,47 +277,47 @@
    "taken_at": "2026-10-24T03:05:45.005Z"
   },
   {
-   "market_id": "1704342",
+   "market_id": "1704344",
    "market": "Games spread",
    "group": "game",
    "mtype": "spread",
    "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Ann Li cover 1.5 vs the Ashlyn Krueger in Ann Li vs. Ashlyn Krueger?",
+   "line": 4.5,
+   "question": "Will the Ann Li cover 4.5 vs the Ashlyn Krueger in Ann Li vs. Ashlyn Krueger?",
    "sides": [
-    "Ann Li +1.50 (Games)",
-    "Ashlyn Krueger -1.50 (Games)"
+    "Ann Li +4.50 (Games)",
+    "Ashlyn Krueger -4.50 (Games)"
    ],
    "teams": [
     "Ann Li",
     "Ashlyn Krueger"
    ],
    "player": null,
-   "mid": 71.5,
-   "yes_buy": 72,
-   "no_buy": 29,
-   "taken_at": "2026-10-24T03:05:45.005Z"
+   "mid": 77,
+   "yes_buy": 78,
+   "no_buy": 24,
+   "taken_at": "2026-10-24T03:09:27.593Z"
   },
   {
-   "market_id": "1704357",
-   "market": "Set 1 winner",
+   "market_id": "1704358",
+   "market": "Set 2 winner",
    "group": "game",
    "mtype": "winner",
-   "period": "tennis_set_1_winner",
+   "period": "tennis_set_2_winner",
    "line": null,
-   "question": "Will Ann Li win set 1 against Ashlyn Krueger?",
+   "question": "Will Ann Li win set 2 against Ashlyn Krueger?",
    "sides": [
-    "Yes: Ann Li win set 1 against Ashlyn Krueger",
-    "No: Ann Li win set 1 against Ashlyn Krueger"
+    "Yes: Ann Li win set 2 against Ashlyn Krueger",
+    "No: Ann Li win set 2 against Ashlyn Krueger"
    ],
    "teams": [
     "Ann Li",
     null
    ],
    "player": null,
-   "mid": 58,
-   "yes_buy": 60,
-   "no_buy": 44,
+   "mid": 56,
+   "yes_buy": 59,
+   "no_buy": 47,
    "taken_at": "2026-10-24T03:05:45.005Z"
   },
   {
@@ -340,6 +340,28 @@
    "mid": 54.5,
    "yes_buy": 55,
    "no_buy": 46,
+   "taken_at": "2026-10-24T03:05:45.005Z"
+  },
+  {
+   "market_id": "1704357",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Ann Li win set 1 against Ashlyn Krueger?",
+   "sides": [
+    "Yes: Ann Li win set 1 against Ashlyn Krueger",
+    "No: Ann Li win set 1 against Ashlyn Krueger"
+   ],
+   "teams": [
+    "Ann Li",
+    null
+   ],
+   "player": null,
+   "mid": 58,
+   "yes_buy": 60,
+   "no_buy": 44,
    "taken_at": "2026-10-24T03:05:45.005Z"
   },
   {
@@ -475,25 +497,25 @@
    "taken_at": "2026-10-24T03:09:27.593Z"
   },
   {
-   "market_id": "1704358",
-   "market": "Set 2 winner",
+   "market_id": "1704342",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Ann Li win set 2 against Ashlyn Krueger?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Ann Li cover 1.5 vs the Ashlyn Krueger in Ann Li vs. Ashlyn Krueger?",
    "sides": [
-    "Yes: Ann Li win set 2 against Ashlyn Krueger",
-    "No: Ann Li win set 2 against Ashlyn Krueger"
+    "Ann Li +1.50 (Games)",
+    "Ashlyn Krueger -1.50 (Games)"
    ],
    "teams": [
     "Ann Li",
-    null
+    "Ashlyn Krueger"
    ],
    "player": null,
-   "mid": 56,
-   "yes_buy": 59,
-   "no_buy": 47,
+   "mid": 71.5,
+   "yes_buy": 72,
+   "no_buy": 29,
    "taken_at": "2026-10-24T03:05:45.005Z"
   }
  ],
@@ -511,10 +533,50 @@
    "now_odds": "+426",
    "edge": 10,
    "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Ashlyn Krueger not above the games spread right now",
+   "context": "Ashlyn Krueger 0 · Ann Li 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T04:03:56.684Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1704358:1",
+   "market_id": "1704358",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Ann Li win set 2 against Ashlyn Krueger?",
+   "side": "No: Ann Li win set 2 against Ashlyn Krueger",
+   "open_chance": 47,
+   "now_chance": 42,
+   "open_odds": "+113",
+   "now_odds": "+138",
+   "edge": 5,
+   "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-10-24T04:03:56.684Z",
+   "context": "Ashlyn Krueger 0 · Ann Li 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T05:19:17.614Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1704357:0",
+   "market_id": "1704357",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Ann Li win set 1 against Ashlyn Krueger?",
+   "side": "Yes: Ann Li win set 1 against Ashlyn Krueger",
+   "open_chance": 60,
+   "now_chance": 56,
+   "open_odds": "-150",
+   "now_odds": "-127",
+   "edge": 4,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Ann Li not above the games spread right now",
+   "context": "Ashlyn Krueger 0 · Ann Li 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-24T05:19:17.614Z",
    "status": "open",
    "kalshi": null
   },
@@ -535,7 +597,7 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-24T04:42:44.908Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -560,6 +622,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1704358:1:slight",
+   "key": "1704358:1",
+   "at": "2026-10-24T05:19:17.614Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "No: Ann Li win set 2 against Ashlyn Krueger",
+   "market": "Set 2 winner",
+   "now_odds": "+138",
+   "now_chance": 42,
+   "edge": 5,
+   "text": "New slight edge: No: Ann Li win set 2 against Ashlyn Krueger (Set 2 winner), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-annli-ashkru-2026-10-23"
+  },
+  {
+   "id": "gone:1704349:0:2026-10-24T04:42:44.908Z",
+   "key": "1704349:0",
+   "at": "2026-10-24T05:19:17.614Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-317",
+   "now_chance": 76,
+   "edge": 6,
+   "text": "Edge gone: Over 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-annli-ashkru-2026-10-23"
+  },
   {
    "id": "new_edge:1704349:0:slight",
    "key": "1704349:0",
@@ -607,7 +697,9 @@
   "new_edge:1704346:1:big",
   "new_edge:1704352:0:slight",
   "new_edge:1704348:1:slight",
-  "new_edge:1704349:0:slight"
+  "new_edge:1704349:0:slight",
+  "new_edge:1704358:1:slight",
+  "gone:1704349:0:2026-10-24T04:42:44.908Z"
  ],
  "kalshi_checked": null
 }
