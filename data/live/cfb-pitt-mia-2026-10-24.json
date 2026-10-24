@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-24T04:05:55.216Z"
+  "fetched_at": "2026-10-24T04:11:48.883Z"
  },
- "updated": "2026-10-24T04:05:55.138Z",
+ "updated": "2026-10-24T04:11:48.783Z",
  "open_taken_at": "2026-10-23T05:00:29.809Z",
  "thresholds": {
   "big": 10,
@@ -1669,28 +1669,6 @@
    "taken_at": "2026-10-23T05:00:29.809Z"
   },
   {
-   "market_id": "1451664",
-   "market": "Team total",
-   "group": "game",
-   "mtype": "team_total",
-   "period": "full_game",
-   "line": 28.5,
-   "question": "Will the total in Pittsburgh vs. Miami (FL) be more than 28.5?",
-   "sides": [
-    "Panthers Over 28.5 points",
-    "Panthers Under 28.5 points"
-   ],
-   "teams": [
-    "Panthers",
-    "Panthers"
-   ],
-   "player": null,
-   "mid": 6.5,
-   "yes_buy": 9,
-   "no_buy": 96,
-   "taken_at": "2026-10-23T05:00:29.809Z"
-  },
-  {
    "market_id": "1451659",
    "market": "Team total",
    "group": "game",
@@ -1909,6 +1887,28 @@
    "yes_buy": 16,
    "no_buy": 85,
    "taken_at": "2026-10-23T05:00:29.809Z"
+  },
+  {
+   "market_id": "1395060",
+   "market": "2nd half winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "second_half",
+   "line": null,
+   "question": "Will the second half end tied?",
+   "sides": [
+    "Yes: the second half end tied",
+    "No: the second half end tied"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 5,
+   "yes_buy": 8,
+   "no_buy": 98,
+   "taken_at": "2026-10-24T04:11:48.783Z"
   },
   {
    "market_id": "1395089",
@@ -2571,6 +2571,28 @@
    "taken_at": "2026-10-23T05:00:29.809Z"
   },
   {
+   "market_id": "1451554",
+   "market": "1st half total",
+   "group": "game",
+   "mtype": "total",
+   "period": "first_half",
+   "line": 31.5,
+   "question": "Will the total in Pittsburgh vs. Miami (FL) be more than 31.5?",
+   "sides": [
+    "Over 31.5 (1st half)",
+    "Under 31.5 (1st half)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 28,
+   "yes_buy": 30,
+   "no_buy": 74,
+   "taken_at": "2026-10-24T03:05:35.238Z"
+  },
+  {
    "market_id": "1451595",
    "market": "Q1 total",
    "group": "game",
@@ -2637,26 +2659,26 @@
    "taken_at": "2026-10-23T05:00:29.809Z"
   },
   {
-   "market_id": "1451554",
-   "market": "1st half total",
+   "market_id": "1451664",
+   "market": "Team total",
    "group": "game",
-   "mtype": "total",
-   "period": "first_half",
-   "line": 31.5,
-   "question": "Will the total in Pittsburgh vs. Miami (FL) be more than 31.5?",
+   "mtype": "team_total",
+   "period": "full_game",
+   "line": 28.5,
+   "question": "Will the total in Pittsburgh vs. Miami (FL) be more than 28.5?",
    "sides": [
-    "Over 31.5 (1st half)",
-    "Under 31.5 (1st half)"
+    "Panthers Over 28.5 points",
+    "Panthers Under 28.5 points"
    ],
    "teams": [
-    null,
-    null
+    "Panthers",
+    "Panthers"
    ],
    "player": null,
-   "mid": 28,
-   "yes_buy": 30,
-   "no_buy": 74,
-   "taken_at": "2026-10-24T03:05:35.238Z"
+   "mid": 6.5,
+   "yes_buy": 9,
+   "no_buy": 96,
+   "taken_at": "2026-10-23T05:00:29.809Z"
   },
   {
    "market_id": "1451555",
@@ -2880,6 +2902,46 @@
   }
  ],
  "edges": [
+  {
+   "key": "1451592:1",
+   "market_id": "1451592",
+   "market": "Q1 total",
+   "group": "game",
+   "question": "Will the total in Pittsburgh vs. Miami (FL) be more than 13.5?",
+   "side": "Under 13.5 (Q1)",
+   "open_chance": 65,
+   "now_chance": 60,
+   "open_odds": "-186",
+   "now_odds": "-150",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-24T04:11:48.783Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1451553:0",
+   "market_id": "1451553",
+   "market": "1st half total",
+   "group": "game",
+   "question": "Will the total in Pittsburgh vs. Miami (FL) be more than 26.5?",
+   "side": "Over 26.5 (1st half)",
+   "open_chance": 52,
+   "now_chance": 48,
+   "open_odds": "-108",
+   "now_odds": "+108",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-24T04:11:48.783Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1451668:1",
    "market_id": "1451668",
