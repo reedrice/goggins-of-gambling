@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-24T14:17:17.969Z"
+  "fetched_at": "2026-10-24T14:23:22.591Z"
  },
- "updated": "2026-10-24T14:17:17.870Z",
+ "updated": "2026-10-24T14:23:22.378Z",
  "open_taken_at": "2026-10-24T11:34:14.154Z",
  "thresholds": {
   "big": 10,
@@ -129,26 +129,26 @@
    "taken_at": "2026-10-24T14:17:17.870Z"
   },
   {
-   "market_id": "1751523",
-   "market": "Games spread",
+   "market_id": "1751554",
+   "market": "Set 2 winner",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Oriol Roca Batalla cover 1.5 vs the Michele Ribecai in Oriol Roca Batalla vs. Michele Ribecai?",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Oriol Roca Batalla win set 2 against Michele Ribecai?",
    "sides": [
-    "Oriol Roca Batalla +1.50 (Games)",
-    "Michele Ribecai -1.50 (Games)"
+    "Yes: Oriol Roca Batalla win set 2 against Michele Ribecai",
+    "No: Oriol Roca Batalla win set 2 against Michele Ribecai"
    ],
    "teams": [
     "Oriol Roca Batalla",
-    "Michele Ribecai"
+    null
    ],
    "player": null,
-   "mid": 49.5,
-   "yes_buy": 50,
-   "no_buy": 51,
-   "taken_at": "2026-10-24T13:16:13.229Z"
+   "mid": 39,
+   "yes_buy": 40,
+   "no_buy": 62,
+   "taken_at": "2026-10-24T13:56:30.019Z"
   },
   {
    "market_id": "1751521",
@@ -173,26 +173,26 @@
    "taken_at": "2026-10-24T13:16:13.229Z"
   },
   {
-   "market_id": "1751554",
-   "market": "Set 2 winner",
+   "market_id": "1751523",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Oriol Roca Batalla win set 2 against Michele Ribecai?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Oriol Roca Batalla cover 1.5 vs the Michele Ribecai in Oriol Roca Batalla vs. Michele Ribecai?",
    "sides": [
-    "Yes: Oriol Roca Batalla win set 2 against Michele Ribecai",
-    "No: Oriol Roca Batalla win set 2 against Michele Ribecai"
+    "Oriol Roca Batalla +1.50 (Games)",
+    "Michele Ribecai -1.50 (Games)"
    ],
    "teams": [
     "Oriol Roca Batalla",
-    null
+    "Michele Ribecai"
    ],
    "player": null,
-   "mid": 39,
-   "yes_buy": 40,
-   "no_buy": 62,
-   "taken_at": "2026-10-24T13:56:30.019Z"
+   "mid": 49.5,
+   "yes_buy": 50,
+   "no_buy": 51,
+   "taken_at": "2026-10-24T13:16:13.229Z"
   },
   {
    "market_id": "1751540",
@@ -241,22 +241,42 @@
  ],
  "edges": [
   {
-   "key": "1749850:0",
-   "market_id": "1749850",
-   "market": "Moneyline",
+   "key": "1751521:0",
+   "market_id": "1751521",
+   "market": "Games spread",
    "group": "game",
-   "question": "Who will win in the upcoming atp event Oriol Roca Batalla vs Michele Ribecai scheduled for October 24, 2026 at 12:15 PM UTC?",
-   "side": "Oriol Roca Batalla win",
-   "open_chance": 47,
+   "question": "Will the Oriol Roca Batalla cover -1.5 vs the Michele Ribecai in Oriol Roca Batalla vs. Michele Ribecai?",
+   "side": "Oriol Roca Batalla -1.50 (Games)",
+   "open_chance": 40,
    "now_chance": 17,
-   "open_odds": "+113",
+   "open_odds": "+150",
    "now_odds": "+488",
-   "edge": 30,
+   "edge": 23,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-24T12:38:18.262Z",
+   "first_seen": "2026-10-24T14:23:22.378Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1751554:0",
+   "market_id": "1751554",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Oriol Roca Batalla win set 2 against Michele Ribecai?",
+   "side": "Yes: Oriol Roca Batalla win set 2 against Michele Ribecai",
+   "open_chance": 40,
+   "now_chance": 19,
+   "open_odds": "+150",
+   "now_odds": "+426",
+   "edge": 21,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-24T14:23:22.378Z",
    "status": "open",
    "kalshi": null
   },
@@ -279,29 +299,37 @@
    "first_seen": "2026-10-24T14:02:11.599Z",
    "status": "gone",
    "kalshi": null
-  },
-  {
-   "key": "1751521:1",
-   "market_id": "1751521",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Oriol Roca Batalla cover -1.5 vs the Michele Ribecai in Oriol Roca Batalla vs. Michele Ribecai?",
-   "side": "Michele Ribecai +1.50 (Games)",
-   "open_chance": 61,
-   "now_chance": 54,
-   "open_odds": "-156",
-   "now_odds": "-117",
-   "edge": 7,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-24T13:28:15.847Z",
-   "status": "gone",
-   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1751521:0:big",
+   "key": "1751521:0",
+   "at": "2026-10-24T14:23:22.378Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Oriol Roca Batalla -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+488",
+   "now_chance": 17,
+   "edge": 23,
+   "text": "New big edge: Oriol Roca Batalla -1.50 (Games) (Games spread), 23 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-oribat-micrib-2026-10-24"
+  },
+  {
+   "id": "new_edge:1751554:0:big",
+   "key": "1751554:0",
+   "at": "2026-10-24T14:23:22.378Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Yes: Oriol Roca Batalla win set 2 against Michele Ribecai",
+   "market": "Set 2 winner",
+   "now_odds": "+426",
+   "now_chance": 19,
+   "edge": 21,
+   "text": "New big edge: Yes: Oriol Roca Batalla win set 2 against Michele Ribecai (Set 2 winner), 21 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-oribat-micrib-2026-10-24"
+  },
   {
    "id": "gone:1751540:1:2026-10-24T14:02:11.599Z",
    "key": "1751540:1",
@@ -317,34 +345,6 @@
    "url": "https://polymarket.us/sports/atp/atp-oribat-micrib-2026-10-24"
   },
   {
-   "id": "new_edge:1749850:0:big",
-   "key": "1749850:0",
-   "at": "2026-10-24T14:11:15.535Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Oriol Roca Batalla win",
-   "market": "Moneyline",
-   "now_odds": "+376",
-   "now_chance": 21,
-   "edge": 26,
-   "text": "New big edge: Oriol Roca Batalla win (Moneyline), 26 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-oribat-micrib-2026-10-24"
-  },
-  {
-   "id": "new_edge:1749850:0:slight",
-   "key": "1749850:0",
-   "at": "2026-10-24T14:05:10.743Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Oriol Roca Batalla win",
-   "market": "Moneyline",
-   "now_odds": "+156",
-   "now_chance": 39,
-   "edge": 8,
-   "text": "New slight edge: Oriol Roca Batalla win (Moneyline), 8 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-oribat-micrib-2026-10-24"
-  },
-  {
    "id": "new_edge:1751540:1:slight",
    "key": "1751540:1",
    "at": "2026-10-24T14:02:11.599Z",
@@ -356,62 +356,6 @@
    "now_chance": 61,
    "edge": 8,
    "text": "New slight edge: Under 27.5 (Games) (Games total), 8 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-oribat-micrib-2026-10-24"
-  },
-  {
-   "id": "new_edge:1751521:1:slight",
-   "key": "1751521:1",
-   "at": "2026-10-24T13:37:07.745Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Michele Ribecai +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-117",
-   "now_chance": 54,
-   "edge": 7,
-   "text": "New slight edge: Michele Ribecai +1.50 (Games) (Games spread), 7 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-oribat-micrib-2026-10-24"
-  },
-  {
-   "id": "gone:1751521:1:2026-10-24T13:28:15.847Z",
-   "key": "1751521:1",
-   "at": "2026-10-24T13:34:19.354Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Michele Ribecai +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+117",
-   "now_chance": 46,
-   "edge": 15,
-   "text": "Edge gone: Michele Ribecai +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-oribat-micrib-2026-10-24"
-  },
-  {
-   "id": "new_edge:1751521:1:big",
-   "key": "1751521:1",
-   "at": "2026-10-24T13:28:15.847Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Michele Ribecai +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+117",
-   "now_chance": 46,
-   "edge": 15,
-   "text": "New big edge: Michele Ribecai +1.50 (Games) (Games spread), 15 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-oribat-micrib-2026-10-24"
-  },
-  {
-   "id": "gone:1749850:0:2026-10-24T12:38:18.262Z",
-   "key": "1749850:0",
-   "at": "2026-10-24T12:44:20.464Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Oriol Roca Batalla win",
-   "market": "Moneyline",
-   "now_odds": "+133",
-   "now_chance": 43,
-   "edge": 4,
-   "text": "Edge gone: Oriol Roca Batalla win (Moneyline) is no longer 4+ points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-oribat-micrib-2026-10-24"
   }
  ],
@@ -429,7 +373,9 @@
   "new_edge:1751540:1:slight",
   "new_edge:1749850:0:slight",
   "new_edge:1749850:0:big",
-  "gone:1751540:1:2026-10-24T14:02:11.599Z"
+  "gone:1751540:1:2026-10-24T14:02:11.599Z",
+  "new_edge:1751521:0:big",
+  "new_edge:1751554:0:big"
  ],
  "kalshi_checked": null
 }
