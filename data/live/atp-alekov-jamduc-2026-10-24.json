@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187217",
-  "fetched_at": "2026-10-24T15:41:12.618Z",
+  "fetched_at": "2026-10-24T15:47:16.693Z",
   "tennis": true,
   "tennis_match": {
    "id": "187217",
@@ -156,13 +156,57 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-24T15:41:12.519Z",
+ "updated": "2026-10-24T15:47:16.583Z",
  "open_taken_at": "2026-10-23T18:02:58.070Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1716663",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming atp event Aleksandar Kovacevic vs James Duckworth scheduled for October 24, 2026 at 8:00 AM UTC?",
+   "sides": [
+    "Aleksandar Kovacevic win",
+    "James Duckworth win"
+   ],
+   "teams": [
+    "Aleksandar Kovacevic",
+    "James Duckworth"
+   ],
+   "player": null,
+   "mid": 61.5,
+   "yes_buy": 62,
+   "no_buy": 39,
+   "taken_at": "2026-10-24T03:05:49.773Z"
+  },
+  {
+   "market_id": "1717073",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Aleksandar Kovacevic cover 4.5 vs the James Duckworth in Aleksandar Kovacevic vs. James Duckworth?",
+   "sides": [
+    "Aleksandar Kovacevic +4.50 (Games)",
+    "James Duckworth -4.50 (Games)"
+   ],
+   "teams": [
+    "Aleksandar Kovacevic",
+    "James Duckworth"
+   ],
+   "player": null,
+   "mid": 70.5,
+   "yes_buy": 71,
+   "no_buy": 30,
+   "taken_at": "2026-10-24T13:50:05.633Z"
+  },
   {
    "market_id": "1717090",
    "market": "Set 2 winner",
@@ -228,28 +272,6 @@
    "yes_buy": 56,
    "no_buy": 45,
    "taken_at": "2026-10-24T14:29:16.226Z"
-  },
-  {
-   "market_id": "1716663",
-   "market": "Moneyline",
-   "group": "game",
-   "mtype": "winner",
-   "period": "full_game",
-   "line": null,
-   "question": "Who will win in the upcoming atp event Aleksandar Kovacevic vs James Duckworth scheduled for October 24, 2026 at 8:00 AM UTC?",
-   "sides": [
-    "Aleksandar Kovacevic win",
-    "James Duckworth win"
-   ],
-   "teams": [
-    "Aleksandar Kovacevic",
-    "James Duckworth"
-   ],
-   "player": null,
-   "mid": 61.5,
-   "yes_buy": 62,
-   "no_buy": 39,
-   "taken_at": "2026-10-24T03:05:49.773Z"
   },
   {
    "market_id": "1717071",
@@ -384,28 +406,6 @@
    "taken_at": "2026-10-24T13:50:05.633Z"
   },
   {
-   "market_id": "1717073",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Aleksandar Kovacevic cover 4.5 vs the James Duckworth in Aleksandar Kovacevic vs. James Duckworth?",
-   "sides": [
-    "Aleksandar Kovacevic +4.50 (Games)",
-    "James Duckworth -4.50 (Games)"
-   ],
-   "teams": [
-    "Aleksandar Kovacevic",
-    "James Duckworth"
-   ],
-   "player": null,
-   "mid": 70.5,
-   "yes_buy": 71,
-   "no_buy": 30,
-   "taken_at": "2026-10-24T13:50:05.633Z"
-  },
-  {
    "market_id": "1717077",
    "market": "Sets spread",
    "group": "game",
@@ -523,11 +523,11 @@
    "question": "Will the Aleksandar Kovacevic cover -4.5 vs the James Duckworth in Aleksandar Kovacevic vs. James Duckworth?",
    "side": "James Duckworth +4.50 (Games)",
    "open_chance": 68,
-   "now_chance": 56,
+   "now_chance": 59,
    "open_odds": "-213",
-   "now_odds": "-127",
-   "edge": 12,
-   "tier": "big",
+   "now_odds": "-144",
+   "edge": 9,
+   "tier": "slight",
    "class": "edge",
    "reason": null,
    "context": "Pregame",
@@ -697,6 +697,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1717072:1:slight",
+   "key": "1717072:1",
+   "at": "2026-10-24T15:47:16.583Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "James Duckworth +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-144",
+   "now_chance": 59,
+   "edge": 9,
+   "text": "New slight edge: James Duckworth +4.50 (Games) (Games spread), 9 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-alekov-jamduc-2026-10-24"
+  },
   {
    "id": "new_edge:1717072:1:big",
    "key": "1717072:1",
@@ -1007,7 +1021,8 @@
   "gone:1717090:0:2026-10-24T14:38:02.771Z",
   "new_edge:1717079:0:big",
   "gone:1717072:0:2026-10-24T15:32:09.145Z",
-  "new_edge:1717072:1:big"
+  "new_edge:1717072:1:big",
+  "new_edge:1717072:1:slight"
  ],
  "kalshi_checked": null
 }
