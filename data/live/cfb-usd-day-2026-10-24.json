@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-24T17:16:01.914Z"
+  "fetched_at": "2026-10-24T17:27:53.851Z"
  },
- "updated": "2026-10-24T17:16:01.757Z",
+ "updated": "2026-10-24T17:27:53.740Z",
  "open_taken_at": "2026-10-23T05:00:23.774Z",
  "thresholds": {
   "big": 10,
@@ -439,26 +439,6 @@
  ],
  "edges": [
   {
-   "key": "1341090:0",
-   "market_id": "1341090",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming football event San Diego vs Dayton scheduled for October 24, 2026 at 4:00 PM UTC?",
-   "side": "Toreros win",
-   "open_chance": 34.5,
-   "now_chance": 17,
-   "open_odds": "+190",
-   "now_odds": "+488",
-   "edge": 17.5,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-24T17:09:44.058Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1719552:0",
    "market_id": "1719552",
    "market": "Main spread",
@@ -475,7 +455,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T17:16:01.757Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -561,17 +541,17 @@
  ],
  "alerts": [
   {
-   "id": "new_edge:1341090:0:big",
-   "key": "1341090:0",
-   "at": "2026-10-24T17:16:01.757Z",
-   "type": "new_edge",
+   "id": "gone:1719552:0:2026-10-24T17:16:01.757Z",
+   "key": "1719552:0",
+   "at": "2026-10-24T17:27:53.740Z",
+   "type": "gone",
    "tier": "big",
-   "side": "Toreros win",
-   "market": "Moneyline",
-   "now_odds": "+488",
-   "now_chance": 17,
-   "edge": 17.5,
-   "text": "New big edge: Toreros win (Moneyline), 18 points cheaper than open.",
+   "side": "Toreros +5.50",
+   "market": "Main spread",
+   "now_odds": "+186",
+   "now_chance": 35,
+   "edge": 15.5,
+   "text": "Edge gone: Toreros +5.50 (Main spread) is no longer 4+ points cheaper than open.",
    "url": "https://polymarket.us/sports/cfb/cfb-usd-day-2026-10-24"
   },
   {
@@ -586,20 +566,6 @@
    "now_chance": 35,
    "edge": 15.5,
    "text": "New big edge: Toreros +5.50 (Main spread), 16 points cheaper than open.",
-   "url": "https://polymarket.us/sports/cfb/cfb-usd-day-2026-10-24"
-  },
-  {
-   "id": "new_edge:1341090:0:slight",
-   "key": "1341090:0",
-   "at": "2026-10-24T17:09:44.058Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Toreros win",
-   "market": "Moneyline",
-   "now_odds": "+239",
-   "now_chance": 29.5,
-   "edge": 5,
-   "text": "New slight edge: Toreros win (Moneyline), 5 points cheaper than open.",
    "url": "https://polymarket.us/sports/cfb/cfb-usd-day-2026-10-24"
   },
   {
@@ -654,7 +620,8 @@
   "gone:1341090:1:2026-10-24T16:13:56.478Z",
   "new_edge:1341090:0:slight",
   "new_edge:1341090:0:big",
-  "new_edge:1719552:0:big"
+  "new_edge:1719552:0:big",
+  "gone:1719552:0:2026-10-24T17:16:01.757Z"
  ],
  "kalshi_checked": null
 }
