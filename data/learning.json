@@ -4,9 +4,9 @@
  "note": "Learned only from real graded results. Adjustments stay at 0 (and trust at 1) until a bucket or category has 30 graded picks. Small samples are noisy.",
  "sample": {
   "picks_logged": 567,
-  "picks_graded": 406,
+  "picks_graded": 412,
   "predictions_graded": 33,
-  "clv_legs": 476
+  "clv_legs": 489
  },
  "calibration": {
   "picks": [
@@ -49,19 +49,19 @@
    {
     "lo": 40,
     "hi": 50,
-    "n": 119,
+    "n": 120,
     "avg_said": 44.6,
-    "actual": 37,
-    "adjustment_pts": -4.1,
+    "actual": 37.5,
+    "adjustment_pts": -3.9,
     "status": "applied"
    },
    {
     "lo": 50,
     "hi": 60,
-    "n": 77,
-    "avg_said": 53.9,
-    "actual": 48.1,
-    "adjustment_pts": -2.6,
+    "n": 82,
+    "avg_said": 54,
+    "actual": 51.2,
+    "adjustment_pts": -1.3,
     "status": "applied"
    },
    {
@@ -132,13 +132,13 @@
   ]
  },
  "market_shrink": {
-  "n": 406,
-  "raw_weight": 0.3,
-  "weight": 0.44,
+  "n": 412,
+  "raw_weight": 0.34,
+  "weight": 0.47,
   "status": "applied"
  },
  "clv": {
-  "n": 476,
+  "n": 489,
   "avg_pts": -0.3,
   "beat_close_pct": 23.9
  },
@@ -154,8 +154,8 @@
    "hit_rate": 47,
    "units": 11.03,
    "roi": 8.2,
-   "avg_clv": 1,
-   "clv_n": 98,
+   "avg_clv": 1.1,
+   "clv_n": 100,
    "trust": 1.05,
    "status": "applied"
   },
@@ -171,7 +171,7 @@
    "units": 2.13,
    "roi": 3.3,
    "avg_clv": -1.2,
-   "clv_n": 53,
+   "clv_n": 55,
    "trust": 1.01,
    "status": "applied"
   },
@@ -187,7 +187,7 @@
    "units": -1.88,
    "roi": -6.3,
    "avg_clv": 0.1,
-   "clv_n": 36,
+   "clv_n": 37,
    "trust": 0.99,
    "status": "applied"
   },
@@ -202,8 +202,8 @@
    "hit_rate": 45.8,
    "units": -9.34,
    "roi": -38.9,
-   "avg_clv": -0.5,
-   "clv_n": 33,
+   "avg_clv": -0.6,
+   "clv_n": 35,
    "trust": 1,
    "status": "collecting data"
   },
@@ -234,8 +234,8 @@
    "hit_rate": 46.7,
    "units": 3.22,
    "roi": 21.5,
-   "avg_clv": -3,
-   "clv_n": 20,
+   "avg_clv": -2.7,
+   "clv_n": 23,
    "trust": 1,
    "status": "collecting data"
   },
@@ -266,8 +266,8 @@
    "hit_rate": 28.6,
    "units": -5.66,
    "roi": -40.4,
-   "avg_clv": -0.1,
-   "clv_n": 16,
+   "avg_clv": -0.2,
+   "clv_n": 17,
    "trust": 1,
    "status": "collecting data"
   },
@@ -282,8 +282,8 @@
    "hit_rate": 20,
    "units": -4.39,
    "roi": -43.9,
-   "avg_clv": -0.5,
-   "clv_n": 11,
+   "avg_clv": 0,
+   "clv_n": 13,
    "trust": 1,
    "status": "collecting data"
   },
@@ -352,6 +352,22 @@
    "status": "collecting data"
   },
   {
+   "key": "NBA · spread",
+   "sport": "NBA",
+   "type": "spread",
+   "stat": null,
+   "n": 5,
+   "w": 5,
+   "l": 0,
+   "hit_rate": 100,
+   "units": 4.79,
+   "roi": 95.8,
+   "avg_clv": -4.2,
+   "clv_n": 19,
+   "trust": 1,
+   "status": "collecting data"
+  },
+  {
    "key": "NHL · parlay",
    "sport": "NHL",
    "type": "parlay",
@@ -380,6 +396,22 @@
    "roi": -100,
    "avg_clv": null,
    "clv_n": 0,
+   "trust": 1,
+   "status": "collecting data"
+  },
+  {
+   "key": "NBA · total",
+   "sport": "NBA",
+   "type": "total",
+   "stat": null,
+   "n": 4,
+   "w": 3,
+   "l": 1,
+   "hit_rate": 75,
+   "units": 1.75,
+   "roi": 43.7,
+   "avg_clv": 3,
+   "clv_n": 5,
    "trust": 1,
    "status": "collecting data"
   },
@@ -476,22 +508,6 @@
    "roi": -20.6,
    "avg_clv": -2,
    "clv_n": 3,
-   "trust": 1,
-   "status": "collecting data"
-  },
-  {
-   "key": "NBA · total",
-   "sport": "NBA",
-   "type": "total",
-   "stat": null,
-   "n": 2,
-   "w": 1,
-   "l": 1,
-   "hit_rate": 50,
-   "units": 0,
-   "roi": 0,
-   "avg_clv": 3,
-   "clv_n": 5,
    "trust": 1,
    "status": "collecting data"
   },
@@ -688,22 +704,6 @@
    "status": "collecting data"
   },
   {
-   "key": "NBA · spread",
-   "sport": "NBA",
-   "type": "spread",
-   "stat": null,
-   "n": 1,
-   "w": 1,
-   "l": 0,
-   "hit_rate": 100,
-   "units": 1,
-   "roi": 100,
-   "avg_clv": -4.2,
-   "clv_n": 19,
-   "trust": 1,
-   "status": "collecting data"
-  },
-  {
    "key": "NCAAF · moneyline",
    "sport": "NCAAF",
    "type": "moneyline",
@@ -794,5 +794,5 @@
   "Soccer · other",
   "NBA · prop · pts"
  ],
- "updated_at": "2026-10-25T00:37:46.450Z"
+ "updated_at": "2026-10-25T00:43:27.567Z"
 }
