@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187128",
-  "fetched_at": "2026-10-25T03:08:31.606Z",
+  "fetched_at": "2026-10-25T03:14:14.582Z",
   "tennis": true,
   "tennis_match": {
    "id": "187128",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Aliaksandra Sasnovich (BLR) leads Kamilla Rakhimova (UZB) 5-4",
+     "text": "Aliaksandra Sasnovich (BLR) is tied with Kamilla Rakhimova (UZB) 6-4 0-0",
      "type": "event"
     }
    ],
@@ -55,10 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
-       "value": 4
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -98,10 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -159,8 +167,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Kamilla Rakhimova",
@@ -172,13 +180,13 @@
    "abbr": "Aliaksandra Sasnovich",
    "alias": "Aliaksandra Sasnovich",
    "name": "Aliaksandra Sasnovich",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-25T03:08:31.463Z",
+ "updated": "2026-10-25T03:14:14.485Z",
  "open_taken_at": "2026-10-24T08:06:43.727Z",
  "thresholds": {
   "big": 10,
@@ -230,28 +238,6 @@
    "taken_at": "2026-10-24T19:57:03.045Z"
   },
   {
-   "market_id": "1746761",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Aliaksandra Sasnovich win set 1 against Kamilla Rakhimova?",
-   "sides": [
-    "Yes: Aliaksandra Sasnovich win set 1 against Kamilla Rakhimova",
-    "No: Aliaksandra Sasnovich win set 1 against Kamilla Rakhimova"
-   ],
-   "teams": [
-    "Aliaksandra Sasnovich",
-    null
-   ],
-   "player": null,
-   "mid": 52.5,
-   "yes_buy": 55,
-   "no_buy": 50,
-   "taken_at": "2026-10-25T00:08:23.897Z"
-  },
-  {
    "market_id": "1746745",
    "market": "Games spread",
    "group": "game",
@@ -272,6 +258,28 @@
    "yes_buy": 53,
    "no_buy": 52,
    "taken_at": "2026-10-24T10:47:58.062Z"
+  },
+  {
+   "market_id": "1746751",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Aliaksandra Sasnovich cover -1.5 vs the Kamilla Rakhimova in Aliaksandra Sasnovich vs. Kamilla Rakhimova?",
+   "sides": [
+    "Aliaksandra Sasnovich -1.50 (Sets)",
+    "Kamilla Rakhimova +1.50 (Sets)"
+   ],
+   "teams": [
+    "Aliaksandra Sasnovich",
+    "Kamilla Rakhimova"
+   ],
+   "player": null,
+   "mid": 34.5,
+   "yes_buy": 37,
+   "no_buy": 68,
+   "taken_at": "2026-10-24T14:11:10.989Z"
   },
   {
    "market_id": "1746754",
@@ -362,6 +370,28 @@
    "taken_at": "2026-10-25T01:39:15.746Z"
   },
   {
+   "market_id": "1746761",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Aliaksandra Sasnovich win set 1 against Kamilla Rakhimova?",
+   "sides": [
+    "Yes: Aliaksandra Sasnovich win set 1 against Kamilla Rakhimova",
+    "No: Aliaksandra Sasnovich win set 1 against Kamilla Rakhimova"
+   ],
+   "teams": [
+    "Aliaksandra Sasnovich",
+    null
+   ],
+   "player": null,
+   "mid": 52.5,
+   "yes_buy": 55,
+   "no_buy": 50,
+   "taken_at": "2026-10-25T00:08:23.897Z"
+  },
+  {
    "market_id": "1746752",
    "market": "Sets spread",
    "group": "game",
@@ -381,28 +411,6 @@
    "mid": 74.5,
    "yes_buy": 77,
    "no_buy": 28,
-   "taken_at": "2026-10-24T14:11:10.989Z"
-  },
-  {
-   "market_id": "1746751",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Aliaksandra Sasnovich cover -1.5 vs the Kamilla Rakhimova in Aliaksandra Sasnovich vs. Kamilla Rakhimova?",
-   "sides": [
-    "Aliaksandra Sasnovich -1.50 (Sets)",
-    "Kamilla Rakhimova +1.50 (Sets)"
-   ],
-   "teams": [
-    "Aliaksandra Sasnovich",
-    "Kamilla Rakhimova"
-   ],
-   "player": null,
-   "mid": 34.5,
-   "yes_buy": 37,
-   "no_buy": 68,
    "taken_at": "2026-10-24T14:11:10.989Z"
   },
   {
@@ -496,22 +504,62 @@
  ],
  "edges": [
   {
-   "key": "1746761:1",
-   "market_id": "1746761",
-   "market": "Set 1 winner",
+   "key": "1746751:1",
+   "market_id": "1746751",
+   "market": "Sets spread",
    "group": "game",
-   "question": "Will Aliaksandra Sasnovich win set 1 against Kamilla Rakhimova?",
-   "side": "No: Aliaksandra Sasnovich win set 1 against Kamilla Rakhimova",
-   "open_chance": 50,
-   "now_chance": 24,
-   "open_odds": "+100",
-   "now_odds": "+317",
-   "edge": 26,
+   "question": "Will the Aliaksandra Sasnovich cover -1.5 vs the Kamilla Rakhimova in Aliaksandra Sasnovich vs. Kamilla Rakhimova?",
+   "side": "Kamilla Rakhimova +1.50 (Sets)",
+   "open_chance": 68,
+   "now_chance": 38,
+   "open_odds": "-213",
+   "now_odds": "+163",
+   "edge": 30,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (26 pts), likely news",
-   "context": "Kamilla Rakhimova 4 · Aliaksandra Sasnovich 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-25T03:08:31.463Z",
+   "reason": "Big move (30 pts), likely news",
+   "context": "Kamilla Rakhimova 4, 0 · Aliaksandra Sasnovich 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-25T03:14:14.485Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1746002:1",
+   "market_id": "1746002",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Aliaksandra Sasnovich vs Kamilla Rakhimova scheduled for October 25, 2026 at 1:00 AM UTC?",
+   "side": "Kamilla Rakhimova win",
+   "open_chance": 48,
+   "now_chance": 23,
+   "open_odds": "+108",
+   "now_odds": "+335",
+   "edge": 25,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Kamilla Rakhimova trailing in sets",
+   "context": "Kamilla Rakhimova 4, 0 · Aliaksandra Sasnovich 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-25T02:13:05.044Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1746745:1",
+   "market_id": "1746745",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Aliaksandra Sasnovich cover -1.5 vs the Kamilla Rakhimova in Aliaksandra Sasnovich vs. Kamilla Rakhimova?",
+   "side": "Kamilla Rakhimova +1.50 (Games)",
+   "open_chance": 52,
+   "now_chance": 28,
+   "open_odds": "-108",
+   "now_odds": "+257",
+   "edge": 24,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Kamilla Rakhimova not above the games spread right now",
+   "context": "Kamilla Rakhimova 4, 0 · Aliaksandra Sasnovich 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-25T02:28:09.030Z",
    "status": "open",
    "kalshi": null
   },
@@ -530,68 +578,8 @@
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Kamilla Rakhimova not above the games spread right now",
-   "context": "Kamilla Rakhimova 4 · Aliaksandra Sasnovich 5 · 1st Set (games by set)",
+   "context": "Kamilla Rakhimova 4, 0 · Aliaksandra Sasnovich 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-25T02:22:20.477Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1746745:1",
-   "market_id": "1746745",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Aliaksandra Sasnovich cover -1.5 vs the Kamilla Rakhimova in Aliaksandra Sasnovich vs. Kamilla Rakhimova?",
-   "side": "Kamilla Rakhimova +1.50 (Games)",
-   "open_chance": 52,
-   "now_chance": 32,
-   "open_odds": "-108",
-   "now_odds": "+213",
-   "edge": 20,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Kamilla Rakhimova 4 · Aliaksandra Sasnovich 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-25T02:28:09.030Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1746002:1",
-   "market_id": "1746002",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Aliaksandra Sasnovich vs Kamilla Rakhimova scheduled for October 25, 2026 at 1:00 AM UTC?",
-   "side": "Kamilla Rakhimova win",
-   "open_chance": 48,
-   "now_chance": 32,
-   "open_odds": "+108",
-   "now_odds": "+213",
-   "edge": 16,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Kamilla Rakhimova 4 · Aliaksandra Sasnovich 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-25T02:13:05.044Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1746754:1",
-   "market_id": "1746754",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Aliaksandra Sasnovich vs. Kamilla Rakhimova be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 55,
-   "now_chance": 45,
-   "open_odds": "-122",
-   "now_odds": "+122",
-   "edge": 10,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Kamilla Rakhimova 4 · Aliaksandra Sasnovich 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-25T01:39:15.746Z",
    "status": "open",
    "kalshi": null
   },
@@ -603,14 +591,14 @@
    "question": "Will the Aliaksandra Sasnovich cover -4.5 vs the Kamilla Rakhimova in Aliaksandra Sasnovich vs. Kamilla Rakhimova?",
    "side": "Kamilla Rakhimova +4.50 (Games)",
    "open_chance": 67,
-   "now_chance": 57,
+   "now_chance": 61,
    "open_odds": "-203",
-   "now_odds": "-133",
-   "edge": 10,
-   "tier": "big",
+   "now_odds": "-156",
+   "edge": 6,
+   "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Kamilla Rakhimova 4 · Aliaksandra Sasnovich 5 · 1st Set (games by set)",
+   "context": "Kamilla Rakhimova 4, 0 · Aliaksandra Sasnovich 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-25T02:42:17.464Z",
    "status": "open",
    "kalshi": null
@@ -630,7 +618,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Kamilla Rakhimova 4 · Aliaksandra Sasnovich 5 · 1st Set (games by set)",
+   "context": "Kamilla Rakhimova 4, 0 · Aliaksandra Sasnovich 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-25T01:39:15.746Z",
    "status": "open",
    "kalshi": null
@@ -652,6 +640,46 @@
    "reason": "Explained by score: Kamilla Rakhimova not above the games spread right now",
    "context": "Kamilla Rakhimova 2 · Aliaksandra Sasnovich 2 · 1st Set (games by set)",
    "first_seen": "2026-10-25T01:42:26.080Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1746761:1",
+   "market_id": "1746761",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Aliaksandra Sasnovich win set 1 against Kamilla Rakhimova?",
+   "side": "No: Aliaksandra Sasnovich win set 1 against Kamilla Rakhimova",
+   "open_chance": 50,
+   "now_chance": 24,
+   "open_odds": "+100",
+   "now_odds": "+317",
+   "edge": 26,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (26 pts), likely news",
+   "context": "Kamilla Rakhimova 4 · Aliaksandra Sasnovich 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-25T03:08:31.463Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1746754:1",
+   "market_id": "1746754",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Aliaksandra Sasnovich vs. Kamilla Rakhimova be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 55,
+   "now_chance": 45,
+   "open_odds": "-122",
+   "now_odds": "+122",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Kamilla Rakhimova 4 · Aliaksandra Sasnovich 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-25T01:39:15.746Z",
    "status": "gone",
    "kalshi": null
   },
@@ -817,6 +845,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "news:1746751:1",
+   "key": "1746751:1",
+   "at": "2026-10-25T03:14:14.485Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Kamilla Rakhimova +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+163",
+   "now_chance": 38,
+   "edge": 30,
+   "text": "Big move, likely news: Kamilla Rakhimova +1.50 (Sets) (Sets spread) is 30 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-alisas-kamrak-2026-10-24"
+  },
   {
    "id": "gone:1746754:0:2026-10-25T02:54:12.185Z",
    "key": "1746754:0",
@@ -1194,7 +1236,8 @@
   "new_edge:1746754:0:slight",
   "gone:1746755:1:2026-10-25T02:28:09.030Z",
   "gone:1746747:1:2026-10-25T02:42:17.464Z",
-  "gone:1746754:0:2026-10-25T02:54:12.185Z"
+  "gone:1746754:0:2026-10-25T02:54:12.185Z",
+  "news:1746751:1"
  ],
  "kalshi_checked": null
 }

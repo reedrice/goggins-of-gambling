@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for mls",
-  "fetched_at": "2026-10-25T03:08:26.482Z"
+  "fetched_at": "2026-10-25T03:14:10.295Z"
  },
- "updated": "2026-10-25T03:08:26.478Z",
+ "updated": "2026-10-25T03:14:10.287Z",
  "open_taken_at": "2026-10-23T05:00:40.017Z",
  "thresholds": {
   "big": 10,
@@ -63,28 +63,6 @@
    "taken_at": "2026-10-24T03:05:44.056Z"
   },
   {
-   "market_id": "1737594",
-   "market": "Alt total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 5.5,
-   "question": "Will the total in RSL vs STL be more than 5.5?",
-   "sides": [
-    "Over 5.5",
-    "Under 5.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 11,
-   "yes_buy": 12,
-   "no_buy": 90,
-   "taken_at": "2026-10-24T03:05:44.056Z"
-  },
-  {
    "market_id": "1737593",
    "market": "Alt total",
    "group": "game",
@@ -104,6 +82,28 @@
    "mid": 23,
    "yes_buy": 24,
    "no_buy": 78,
+   "taken_at": "2026-10-24T03:05:44.056Z"
+  },
+  {
+   "market_id": "1737594",
+   "market": "Alt total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 5.5,
+   "question": "Will the total in RSL vs STL be more than 5.5?",
+   "sides": [
+    "Over 5.5",
+    "Under 5.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 11,
+   "yes_buy": 12,
+   "no_buy": 90,
    "taken_at": "2026-10-24T03:05:44.056Z"
   },
   {
@@ -1238,10 +1238,10 @@
    "question": "Will the total in RSL vs STL be more than 3.5?",
    "side": "Under 3.5",
    "open_chance": 59,
-   "now_chance": 34,
+   "now_chance": 44,
    "open_odds": "-144",
-   "now_odds": "+194",
-   "edge": 25,
+   "now_odds": "+127",
+   "edge": 15,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -1251,22 +1251,22 @@
    "kalshi": null
   },
   {
-   "key": "1737593:1",
+   "key": "1737593:0",
    "market_id": "1737593",
    "market": "Alt total",
    "group": "game",
    "question": "Will the total in RSL vs STL be more than 4.5?",
-   "side": "Under 4.5",
-   "open_chance": 78,
-   "now_chance": 73,
-   "open_odds": "-355",
-   "now_odds": "-270",
-   "edge": 5,
+   "side": "Over 4.5",
+   "open_chance": 24,
+   "now_chance": 18,
+   "open_odds": "+317",
+   "now_odds": "+456",
+   "edge": 6,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-25T02:57:11.307Z",
+   "first_seen": "2026-10-25T03:14:10.287Z",
    "status": "open",
    "kalshi": null
   },
@@ -1351,6 +1351,26 @@
    "kalshi": null
   },
   {
+   "key": "1737593:1",
+   "market_id": "1737593",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in RSL vs STL be more than 4.5?",
+   "side": "Under 4.5",
+   "open_chance": 78,
+   "now_chance": 73,
+   "open_odds": "-355",
+   "now_odds": "-270",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-25T02:57:11.307Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1737710:1",
    "market_id": "1737710",
    "market": "1st half winner",
@@ -1372,6 +1392,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1737593:1:2026-10-25T02:57:11.307Z",
+   "key": "1737593:1",
+   "at": "2026-10-25T03:14:10.287Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 4.5",
+   "market": "Alt total",
+   "now_odds": "-270",
+   "now_chance": 73,
+   "edge": 5,
+   "text": "Edge gone: Under 4.5 (Alt total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/mls/mls-rsl-stl-2026-10-24"
+  },
   {
    "id": "new_edge:1737592:1:big",
    "key": "1737592:1",
@@ -1641,7 +1675,8 @@
   "gone:1737563:1:2026-10-25T02:28:05.204Z",
   "gone:1737592:1:2026-10-25T02:54:07.788Z",
   "new_edge:1737592:1:big",
-  "new_edge:1737593:1:big"
+  "new_edge:1737593:1:big",
+  "gone:1737593:1:2026-10-25T02:57:11.307Z"
  ],
  "kalshi_checked": null
 }
