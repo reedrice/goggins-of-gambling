@@ -9,13 +9,13 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187146",
-  "fetched_at": "2026-10-25T05:02:10.091Z",
+  "fetched_at": "2026-10-25T05:08:05.221Z",
   "tennis": true,
   "tennis_match": {
    "id": "187146",
    "uid": "s:850~l:900~e:232-2026~c:187146",
-   "date": "2026-10-25T05:05Z",
-   "startDate": "2026-10-25T05:05Z",
+   "date": "2026-10-25T05:10Z",
+   "startDate": "2026-10-25T05:10Z",
    "timeValid": true,
    "recent": true,
    "status": {
@@ -26,8 +26,8 @@
      "state": "pre",
      "completed": false,
      "description": "Scheduled",
-     "detail": "Sun, October 24th at 1:05 AM EDT",
-     "shortDetail": "10/25 - 1:05 AM EDT"
+     "detail": "Sun, October 24th at 1:10 AM EDT",
+     "shortDetail": "10/25 - 1:10 AM EDT"
     }
    },
    "venue": {
@@ -138,7 +138,7 @@
   "game_state": "pre",
   "espn_status": "STATUS_SCHEDULED",
   "period": 1,
-  "clock": "Sun, October 24th at 1:05 AM EDT",
+  "clock": "Sun, October 24th at 1:10 AM EDT",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Joanna Garland",
@@ -156,7 +156,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-25T05:02:10.008Z",
+ "updated": "2026-10-25T05:08:05.152Z",
  "open_taken_at": "2026-10-24T15:02:35.616Z",
  "thresholds": {
   "big": 10,
@@ -184,6 +184,28 @@
    "yes_buy": 58,
    "no_buy": 44,
    "taken_at": "2026-10-24T18:43:21.783Z"
+  },
+  {
+   "market_id": "1758205",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Tatiana Prozorova vs. Joanna Garland be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 61.5,
+   "yes_buy": 62,
+   "no_buy": 39,
+   "taken_at": "2026-10-25T05:02:10.008Z"
   },
   {
    "market_id": "1758200",
@@ -266,28 +288,6 @@
    "teams": [
     "Tatiana Prozorova",
     "Joanna Garland"
-   ],
-   "player": null,
-   "mid": 61.5,
-   "yes_buy": 62,
-   "no_buy": 39,
-   "taken_at": "2026-10-25T05:02:10.008Z"
-  },
-  {
-   "market_id": "1758205",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Tatiana Prozorova vs. Joanna Garland be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
    ],
    "player": null,
    "mid": 61.5,
@@ -474,6 +474,26 @@
  ],
  "edges": [
   {
+   "key": "1758205:1",
+   "market_id": "1758205",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Tatiana Prozorova vs. Joanna Garland be more than 17.5?",
+   "side": "Under 17.5 (Games)",
+   "open_chance": 39,
+   "now_chance": 24,
+   "open_odds": "+156",
+   "now_odds": "+317",
+   "edge": 15,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-10-25T05:08:05.152Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1758203:0",
    "market_id": "1758203",
    "market": "Sets spread",
@@ -496,6 +516,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1758205:1:big",
+   "key": "1758205:1",
+   "at": "2026-10-25T05:08:05.152Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+317",
+   "now_chance": 24,
+   "edge": 15,
+   "text": "New big edge: Under 17.5 (Games) (Games total), 15 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-tatpro-joagar-2026-10-24"
+  },
+  {
    "id": "new_edge:1758203:0:slight",
    "key": "1758203:0",
    "at": "2026-10-25T05:02:10.008Z",
@@ -511,7 +545,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1758203:0:slight"
+  "new_edge:1758203:0:slight",
+  "new_edge:1758205:1:big"
  ],
  "kalshi_checked": null
 }
