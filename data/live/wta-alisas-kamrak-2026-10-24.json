@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187128",
-  "fetched_at": "2026-10-25T03:58:13.413Z",
+  "fetched_at": "2026-10-25T04:03:49.779Z",
   "tennis": true,
   "tennis_match": {
    "id": "187128",
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 4,
@@ -101,6 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 6,
@@ -142,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 264,
    "type": {
     "id": "2",
@@ -179,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-25T03:58:13.283Z",
+ "updated": "2026-10-25T04:03:49.631Z",
  "open_taken_at": "2026-10-24T08:06:43.727Z",
  "thresholds": {
   "big": 10,
@@ -209,26 +216,26 @@
    "taken_at": "2026-10-24T10:19:10.540Z"
   },
   {
-   "market_id": "1746745",
-   "market": "Games spread",
+   "market_id": "1746762",
+   "market": "Set 2 winner",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Aliaksandra Sasnovich cover -1.5 vs the Kamilla Rakhimova in Aliaksandra Sasnovich vs. Kamilla Rakhimova?",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Aliaksandra Sasnovich win set 2 against Kamilla Rakhimova?",
    "sides": [
-    "Aliaksandra Sasnovich -1.50 (Games)",
-    "Kamilla Rakhimova +1.50 (Games)"
+    "Yes: Aliaksandra Sasnovich win set 2 against Kamilla Rakhimova",
+    "No: Aliaksandra Sasnovich win set 2 against Kamilla Rakhimova"
    ],
    "teams": [
     "Aliaksandra Sasnovich",
-    "Kamilla Rakhimova"
+    null
    ],
    "player": null,
-   "mid": 50.5,
-   "yes_buy": 53,
-   "no_buy": 52,
-   "taken_at": "2026-10-24T10:47:58.062Z"
+   "mid": 42,
+   "yes_buy": 44,
+   "no_buy": 60,
+   "taken_at": "2026-10-25T03:23:11.744Z"
   },
   {
    "market_id": "1746755",
@@ -253,26 +260,26 @@
    "taken_at": "2026-10-25T01:39:15.746Z"
   },
   {
-   "market_id": "1746762",
-   "market": "Set 2 winner",
+   "market_id": "1746745",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Aliaksandra Sasnovich win set 2 against Kamilla Rakhimova?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Aliaksandra Sasnovich cover -1.5 vs the Kamilla Rakhimova in Aliaksandra Sasnovich vs. Kamilla Rakhimova?",
    "sides": [
-    "Yes: Aliaksandra Sasnovich win set 2 against Kamilla Rakhimova",
-    "No: Aliaksandra Sasnovich win set 2 against Kamilla Rakhimova"
+    "Aliaksandra Sasnovich -1.50 (Games)",
+    "Kamilla Rakhimova +1.50 (Games)"
    ],
    "teams": [
     "Aliaksandra Sasnovich",
-    null
+    "Kamilla Rakhimova"
    ],
    "player": null,
-   "mid": 42,
-   "yes_buy": 44,
-   "no_buy": 60,
-   "taken_at": "2026-10-25T03:23:11.744Z"
+   "mid": 50.5,
+   "yes_buy": 53,
+   "no_buy": 52,
+   "taken_at": "2026-10-24T10:47:58.062Z"
   },
   {
    "market_id": "1746756",
@@ -526,35 +533,15 @@
    "question": "Will the total in Aliaksandra Sasnovich vs. Kamilla Rakhimova be more than 27.5?",
    "side": "Under 27.5 (Games)",
    "open_chance": 79,
-   "now_chance": 53,
+   "now_chance": 54,
    "open_odds": "-376",
-   "now_odds": "-113",
-   "edge": 26,
+   "now_odds": "-117",
+   "edge": 25,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (26 pts), likely news",
+   "reason": "Big move (25 pts), likely news",
    "context": "Kamilla Rakhimova 4, 4 · Aliaksandra Sasnovich 6, 3 · 2nd Set (games by set)",
    "first_seen": "2026-10-25T02:28:09.030Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1746745:1",
-   "market_id": "1746745",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Aliaksandra Sasnovich cover -1.5 vs the Kamilla Rakhimova in Aliaksandra Sasnovich vs. Kamilla Rakhimova?",
-   "side": "Kamilla Rakhimova +1.50 (Games)",
-   "open_chance": 52,
-   "now_chance": 33,
-   "open_odds": "-108",
-   "now_odds": "+203",
-   "edge": 19,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Kamilla Rakhimova 4, 4 · Aliaksandra Sasnovich 6, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-10-25T03:58:13.283Z",
    "status": "open",
    "kalshi": null
   },
@@ -566,15 +553,35 @@
    "question": "Who will win in the upcoming wta event Aliaksandra Sasnovich vs Kamilla Rakhimova scheduled for October 25, 2026 at 1:00 AM UTC?",
    "side": "Kamilla Rakhimova win",
    "open_chance": 48,
-   "now_chance": 30,
+   "now_chance": 28,
    "open_odds": "+108",
-   "now_odds": "+233",
-   "edge": 18,
+   "now_odds": "+257",
+   "edge": 20,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Kamilla Rakhimova trailing in sets",
    "context": "Kamilla Rakhimova 4, 4 · Aliaksandra Sasnovich 6, 3 · 2nd Set (games by set)",
    "first_seen": "2026-10-25T03:58:13.283Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1746762:1",
+   "market_id": "1746762",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Aliaksandra Sasnovich win set 2 against Kamilla Rakhimova?",
+   "side": "No: Aliaksandra Sasnovich win set 2 against Kamilla Rakhimova",
+   "open_chance": 60,
+   "now_chance": 52,
+   "open_odds": "-150",
+   "now_odds": "-108",
+   "edge": 8,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Aliaksandra Sasnovich not above the games spread right now",
+   "context": "Kamilla Rakhimova 4, 4 · Aliaksandra Sasnovich 6, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-10-25T03:28:54.354Z",
    "status": "open",
    "kalshi": null
   },
@@ -659,22 +666,22 @@
    "kalshi": null
   },
   {
-   "key": "1746762:1",
-   "market_id": "1746762",
-   "market": "Set 2 winner",
+   "key": "1746745:1",
+   "market_id": "1746745",
+   "market": "Games spread",
    "group": "game",
-   "question": "Will Aliaksandra Sasnovich win set 2 against Kamilla Rakhimova?",
-   "side": "No: Aliaksandra Sasnovich win set 2 against Kamilla Rakhimova",
-   "open_chance": 60,
-   "now_chance": 44,
-   "open_odds": "-150",
-   "now_odds": "+127",
-   "edge": 16,
+   "question": "Will the Aliaksandra Sasnovich cover -1.5 vs the Kamilla Rakhimova in Aliaksandra Sasnovich vs. Kamilla Rakhimova?",
+   "side": "Kamilla Rakhimova +1.50 (Games)",
+   "open_chance": 52,
+   "now_chance": 33,
+   "open_odds": "-108",
+   "now_odds": "+203",
+   "edge": 19,
    "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Aliaksandra Sasnovich not above the games spread right now",
-   "context": "Kamilla Rakhimova 4, 3 · Aliaksandra Sasnovich 6, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-10-25T03:28:54.354Z",
+   "class": "edge",
+   "reason": null,
+   "context": "Kamilla Rakhimova 4, 4 · Aliaksandra Sasnovich 6, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-10-25T03:58:13.283Z",
    "status": "gone",
    "kalshi": null
   },
@@ -860,6 +867,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1746745:1:2026-10-25T03:58:13.283Z",
+   "key": "1746745:1",
+   "at": "2026-10-25T04:03:49.631Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Kamilla Rakhimova +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+203",
+   "now_chance": 33,
+   "edge": 19,
+   "text": "Edge gone: Kamilla Rakhimova +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-alisas-kamrak-2026-10-24"
+  },
   {
    "id": "news:1746755:1",
    "key": "1746755:1",
@@ -1231,7 +1252,8 @@
   "new_edge:1746754:1:slight",
   "gone:1746751:1:2026-10-25T03:14:14.485Z",
   "news:1746756:1",
-  "news:1746755:1"
+  "news:1746755:1",
+  "gone:1746745:1:2026-10-25T03:58:13.283Z"
  ],
  "kalshi_checked": null
 }
