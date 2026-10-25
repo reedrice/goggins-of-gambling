@@ -9,15 +9,37 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-25T08:01:19.516Z"
+  "fetched_at": "2026-10-25T08:07:22.115Z"
  },
- "updated": "2026-10-25T08:01:19.442Z",
+ "updated": "2026-10-25T08:07:22.011Z",
  "open_taken_at": "2026-10-24T12:17:15.039Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1751206",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming atp event Koki Matsuda vs Geun Jun Kim scheduled for October 25, 2026 at 5:00 AM UTC?",
+   "sides": [
+    "Koki Matsuda win",
+    "Geun Jun Kim win"
+   ],
+   "teams": [
+    "Koki Matsuda",
+    "Geun Jun Kim"
+   ],
+   "player": null,
+   "mid": 71,
+   "yes_buy": 73,
+   "no_buy": 31,
+   "taken_at": "2026-10-24T18:31:12.166Z"
+  },
   {
    "market_id": "1752695",
    "market": "Set 2 winner",
@@ -39,28 +61,6 @@
    "yes_buy": 72,
    "no_buy": 34,
    "taken_at": "2026-10-25T06:32:18.937Z"
-  },
-  {
-   "market_id": "1752667",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Koki Matsuda vs. Geun Jun Kim be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 24.5,
-   "yes_buy": 25,
-   "no_buy": 76,
-   "taken_at": "2026-10-25T06:11:19.273Z"
   },
   {
    "market_id": "1752644",
@@ -85,26 +85,26 @@
    "taken_at": "2026-10-25T00:14:28.957Z"
   },
   {
-   "market_id": "1751206",
-   "market": "Moneyline",
+   "market_id": "1752667",
+   "market": "Games total",
    "group": "game",
-   "mtype": "winner",
-   "period": "full_game",
-   "line": null,
-   "question": "Who will win in the upcoming atp event Koki Matsuda vs Geun Jun Kim scheduled for October 25, 2026 at 5:00 AM UTC?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Koki Matsuda vs. Geun Jun Kim be more than 22.5?",
    "sides": [
-    "Koki Matsuda win",
-    "Geun Jun Kim win"
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
    ],
    "teams": [
-    "Koki Matsuda",
-    "Geun Jun Kim"
+    null,
+    null
    ],
    "player": null,
-   "mid": 71,
-   "yes_buy": 73,
-   "no_buy": 31,
-   "taken_at": "2026-10-24T18:31:12.166Z"
+   "mid": 24.5,
+   "yes_buy": 25,
+   "no_buy": 76,
+   "taken_at": "2026-10-25T06:11:19.273Z"
   },
   {
    "market_id": "1752670",
@@ -329,26 +329,6 @@
  ],
  "edges": [
   {
-   "key": "1752667:1",
-   "market_id": "1752667",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Koki Matsuda vs. Geun Jun Kim be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 76,
-   "now_chance": 66,
-   "open_odds": "-317",
-   "now_odds": "-194",
-   "edge": 10,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-25T06:32:18.937Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1752638:1",
    "market_id": "1752638",
    "market": "Games spread",
@@ -405,6 +385,26 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-25T07:05:19.338Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1752667:1",
+   "market_id": "1752667",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Koki Matsuda vs. Geun Jun Kim be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 76,
+   "now_chance": 66,
+   "open_odds": "-317",
+   "now_odds": "-194",
+   "edge": 10,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-25T06:32:18.937Z",
    "status": "gone",
    "kalshi": null
   },
@@ -490,6 +490,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1752667:1:2026-10-25T06:32:18.937Z",
+   "key": "1752667:1",
+   "at": "2026-10-25T08:07:22.011Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-194",
+   "now_chance": 66,
+   "edge": 10,
+   "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-kokmat-geukim-2026-10-25"
+  },
   {
    "id": "gone:1752670:1:2026-10-25T07:05:19.338Z",
    "key": "1752670:1",
@@ -798,7 +812,8 @@
   "gone:1752638:1:2026-10-25T06:47:19.773Z",
   "gone:1752641:1:2026-10-25T07:05:19.338Z",
   "gone:1752644:0:2026-10-25T06:11:19.273Z",
-  "gone:1752670:1:2026-10-25T07:05:19.338Z"
+  "gone:1752670:1:2026-10-25T07:05:19.338Z",
+  "gone:1752667:1:2026-10-25T06:32:18.937Z"
  ],
  "kalshi_checked": null
 }
