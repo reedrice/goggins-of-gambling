@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187224",
-  "fetched_at": "2026-10-25T16:56:26.524Z",
+  "fetched_at": "2026-10-25T17:02:28.589Z",
   "tennis": true,
   "tennis_match": {
    "id": "187224",
@@ -156,7 +156,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-25T16:56:26.413Z",
+ "updated": "2026-10-25T17:02:28.457Z",
  "open_taken_at": "2026-10-24T17:16:42.528Z",
  "thresholds": {
   "big": 10,
@@ -206,6 +206,50 @@
    "yes_buy": 80,
    "no_buy": 21,
    "taken_at": "2026-10-25T16:43:59.730Z"
+  },
+  {
+   "market_id": "1760383",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Mika Brunold cover 1.5 vs the Remy Bertola in Mika Brunold vs. Remy Bertola?",
+   "sides": [
+    "Mika Brunold +1.50 (Games)",
+    "Remy Bertola -1.50 (Games)"
+   ],
+   "teams": [
+    "Mika Brunold",
+    "Remy Bertola"
+   ],
+   "player": null,
+   "mid": 42.5,
+   "yes_buy": 43,
+   "no_buy": 58,
+   "taken_at": "2026-10-25T17:02:28.457Z"
+  },
+  {
+   "market_id": "1760392",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Mika Brunold vs. Remy Bertola be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 13,
+   "yes_buy": 14,
+   "no_buy": 88,
+   "taken_at": "2026-10-25T17:02:28.457Z"
   },
   {
    "market_id": "1760391",
@@ -327,13 +371,13 @@
    "question": "Who will win in the upcoming atp event Mika Brunold vs Remy Bertola scheduled for October 25, 2026 at 9:00 AM UTC?",
    "side": "Mika Brunold win",
    "open_chance": 58,
-   "now_chance": 18,
+   "now_chance": 32,
    "open_odds": "-138",
-   "now_odds": "+456",
-   "edge": 40,
+   "now_odds": "+213",
+   "edge": 26,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (40 pts), likely news",
+   "reason": "Big move (26 pts), likely news",
    "context": "Pregame",
    "first_seen": "2026-10-25T16:56:26.413Z",
    "status": "open",
@@ -376,11 +420,25 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-25T16:50:04.111Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1760391:1:2026-10-25T16:50:04.111Z",
+   "key": "1760391:1",
+   "at": "2026-10-25T17:02:28.457Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+163",
+   "now_chance": 38,
+   "edge": 12,
+   "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-mikbru-rember-2026-10-25"
+  },
   {
    "id": "news:1760198:0",
    "key": "1760198:0",
@@ -427,7 +485,8 @@
  "alert_seen": [
   "new_edge:1760385:0:big",
   "new_edge:1760391:1:big",
-  "news:1760198:0"
+  "news:1760198:0",
+  "gone:1760391:1:2026-10-25T16:50:04.111Z"
  ],
  "kalshi_checked": null
 }
