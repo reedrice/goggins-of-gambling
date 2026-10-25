@@ -9,37 +9,15 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-25T17:13:28.554Z"
+  "fetched_at": "2026-10-25T17:16:31.699Z"
  },
- "updated": "2026-10-25T17:13:28.417Z",
+ "updated": "2026-10-25T17:16:31.588Z",
  "open_taken_at": "2026-10-24T20:19:26.074Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "1766179",
-   "market": "Moneyline",
-   "group": "game",
-   "mtype": "winner",
-   "period": "full_game",
-   "line": null,
-   "question": "Who will win in the upcoming atp event Tom Paris vs Romain Faucon scheduled for October 25, 2026 at 2:20 PM UTC?",
-   "sides": [
-    "Tom Paris win",
-    "Romain Faucon win"
-   ],
-   "teams": [
-    "Tom Paris",
-    "Romain Faucon"
-   ],
-   "player": null,
-   "mid": 71.5,
-   "yes_buy": 73,
-   "no_buy": 30,
-   "taken_at": "2026-10-24T23:50:26.088Z"
-  },
   {
    "market_id": "1766258",
    "market": "Games spread",
@@ -83,6 +61,28 @@
    "yes_buy": 26,
    "no_buy": 75,
    "taken_at": "2026-10-25T16:44:01.484Z"
+  },
+  {
+   "market_id": "1766179",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming atp event Tom Paris vs Romain Faucon scheduled for October 25, 2026 at 2:20 PM UTC?",
+   "sides": [
+    "Tom Paris win",
+    "Romain Faucon win"
+   ],
+   "teams": [
+    "Tom Paris",
+    "Romain Faucon"
+   ],
+   "player": null,
+   "mid": 71.5,
+   "yes_buy": 73,
+   "no_buy": 30,
+   "taken_at": "2026-10-24T23:50:26.088Z"
   },
   {
    "market_id": "1766261",
@@ -195,26 +195,6 @@
    "kalshi": null
   },
   {
-   "key": "1766179:0",
-   "market_id": "1766179",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Tom Paris vs Romain Faucon scheduled for October 25, 2026 at 2:20 PM UTC?",
-   "side": "Tom Paris win",
-   "open_chance": 73,
-   "now_chance": 63,
-   "open_odds": "-270",
-   "now_odds": "-170",
-   "edge": 10,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-25T16:44:01.484Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1766267:1",
    "market_id": "1766267",
    "market": "Games total",
@@ -226,6 +206,26 @@
    "open_odds": "-133",
    "now_odds": "+150",
    "edge": 17,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-25T16:44:01.484Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1766179:0",
+   "market_id": "1766179",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Tom Paris vs Romain Faucon scheduled for October 25, 2026 at 2:20 PM UTC?",
+   "side": "Tom Paris win",
+   "open_chance": 73,
+   "now_chance": 63,
+   "open_odds": "-270",
+   "now_odds": "-170",
+   "edge": 10,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -276,6 +276,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1766179:0:2026-10-25T16:44:01.484Z",
+   "key": "1766179:0",
+   "at": "2026-10-25T17:16:31.588Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Tom Paris win",
+   "market": "Moneyline",
+   "now_odds": "-170",
+   "now_chance": 63,
+   "edge": 10,
+   "text": "Edge gone: Tom Paris win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-tompar-romfau-2026-10-25"
+  },
   {
    "id": "gone:1766260:1:2026-10-25T16:56:27.839Z",
    "key": "1766260:1",
@@ -397,7 +411,8 @@
   "gone:1766260:0:2026-10-25T16:44:01.484Z",
   "new_edge:1766258:1:big",
   "new_edge:1766260:1:slight",
-  "gone:1766260:1:2026-10-25T16:56:27.839Z"
+  "gone:1766260:1:2026-10-25T16:56:27.839Z",
+  "gone:1766179:0:2026-10-25T16:44:01.484Z"
  ],
  "kalshi_checked": null
 }
