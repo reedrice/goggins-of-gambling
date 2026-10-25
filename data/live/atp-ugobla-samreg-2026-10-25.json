@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-25T10:06:25.078Z"
+  "fetched_at": "2026-10-25T10:12:09.025Z"
  },
- "updated": "2026-10-25T10:06:24.922Z",
+ "updated": "2026-10-25T10:12:08.944Z",
  "open_taken_at": "2026-10-24T20:19:26.069Z",
  "thresholds": {
   "big": 10,
@@ -39,6 +39,72 @@
    "yes_buy": 92,
    "no_buy": 9,
    "taken_at": "2026-10-24T23:42:40.533Z"
+  },
+  {
+   "market_id": "1766283",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Ugo Blanchet cover 1.5 vs the Samir Hamza Reguig in Ugo Blanchet vs. Samir Hamza Reguig?",
+   "sides": [
+    "Ugo Blanchet +1.50 (Sets)",
+    "Samir Hamza Reguig -1.50 (Sets)"
+   ],
+   "teams": [
+    "Ugo Blanchet",
+    "Samir Hamza Reguig"
+   ],
+   "player": null,
+   "mid": 91.5,
+   "yes_buy": 92,
+   "no_buy": 9,
+   "taken_at": "2026-10-25T10:12:08.944Z"
+  },
+  {
+   "market_id": "1766292",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Ugo Blanchet win set 1 against Samir Hamza Reguig?",
+   "sides": [
+    "Yes: Ugo Blanchet win set 1 against Samir Hamza Reguig",
+    "No: Ugo Blanchet win set 1 against Samir Hamza Reguig"
+   ],
+   "teams": [
+    "Ugo Blanchet",
+    null
+   ],
+   "player": null,
+   "mid": 82.5,
+   "yes_buy": 83,
+   "no_buy": 18,
+   "taken_at": "2026-10-25T10:12:08.944Z"
+  },
+  {
+   "market_id": "1766278",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Ugo Blanchet cover -4.5 vs the Samir Hamza Reguig in Ugo Blanchet vs. Samir Hamza Reguig?",
+   "sides": [
+    "Ugo Blanchet -4.50 (Games)",
+    "Samir Hamza Reguig +4.50 (Games)"
+   ],
+   "teams": [
+    "Ugo Blanchet",
+    "Samir Hamza Reguig"
+   ],
+   "player": null,
+   "mid": 63,
+   "yes_buy": 64,
+   "no_buy": 38,
+   "taken_at": "2026-10-25T10:12:08.944Z"
   },
   {
    "market_id": "1766284",
@@ -81,11 +147,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-25T10:06:24.922Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1766284:1:2026-10-25T10:06:24.922Z",
+   "key": "1766284:1",
+   "at": "2026-10-25T10:12:08.944Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+133",
+   "now_chance": 43,
+   "edge": 5,
+   "text": "Edge gone: Under 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-ugobla-samreg-2026-10-25"
+  },
   {
    "id": "new_edge:1766284:1:slight",
    "key": "1766284:1",
@@ -102,7 +182,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1766284:1:slight"
+  "new_edge:1766284:1:slight",
+  "gone:1766284:1:2026-10-25T10:06:24.922Z"
  ],
  "kalshi_checked": null
 }

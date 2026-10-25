@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-25T10:06:21.536Z"
+  "fetched_at": "2026-10-25T10:12:05.911Z"
  },
- "updated": "2026-10-25T10:06:21.434Z",
+ "updated": "2026-10-25T10:12:05.773Z",
  "open_taken_at": "2026-10-24T15:32:25.274Z",
  "thresholds": {
   "big": 10,
@@ -39,6 +39,28 @@
    "yes_buy": 60,
    "no_buy": 43,
    "taken_at": "2026-10-24T16:31:23.077Z"
+  },
+  {
+   "market_id": "1759004",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Michele Ribecai cover 7.5 vs the Filippo Romano in Michele Ribecai vs. Filippo Romano?",
+   "sides": [
+    "Michele Ribecai +7.50 (Games)",
+    "Filippo Romano -7.50 (Games)"
+   ],
+   "teams": [
+    "Michele Ribecai",
+    "Filippo Romano"
+   ],
+   "player": null,
+   "mid": 94.5,
+   "yes_buy": 95,
+   "no_buy": 6,
+   "taken_at": "2026-10-25T10:12:05.773Z"
   },
   {
    "market_id": "1759007",
@@ -151,28 +173,6 @@
    "taken_at": "2026-10-25T10:06:21.434Z"
   },
   {
-   "market_id": "1759010",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Michele Ribecai vs. Filippo Romano be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 31.5,
-   "yes_buy": 32,
-   "no_buy": 69,
-   "taken_at": "2026-10-25T10:06:21.434Z"
-  },
-  {
    "market_id": "1759009",
    "market": "Games total",
    "group": "game",
@@ -193,9 +193,51 @@
    "yes_buy": 29,
    "no_buy": 72,
    "taken_at": "2026-10-25T10:06:21.434Z"
+  },
+  {
+   "market_id": "1759010",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Michele Ribecai vs. Filippo Romano be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 31.5,
+   "yes_buy": 32,
+   "no_buy": 69,
+   "taken_at": "2026-10-25T10:06:21.434Z"
   }
  ],
  "edges": [
+  {
+   "key": "1759001:1",
+   "market_id": "1759001",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Michele Ribecai cover -4.5 vs the Filippo Romano in Michele Ribecai vs. Filippo Romano?",
+   "side": "Filippo Romano +4.50 (Games)",
+   "open_chance": 69,
+   "now_chance": 64,
+   "open_odds": "-223",
+   "now_odds": "-178",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-25T10:12:05.773Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1758254:1",
    "market_id": "1758254",
@@ -217,7 +259,24 @@
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "new_edge:1759001:1:slight",
+   "key": "1759001:1",
+   "at": "2026-10-25T10:12:05.773Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Filippo Romano +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-178",
+   "now_chance": 64,
+   "edge": 5,
+   "text": "New slight edge: Filippo Romano +4.50 (Games) (Games spread), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-micrib-filrom-2026-10-25"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:1759001:1:slight"
+ ],
  "kalshi_checked": null
 }
