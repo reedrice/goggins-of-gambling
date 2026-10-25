@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-25T12:51:26.014Z"
+  "fetched_at": "2026-10-25T12:57:27.553Z"
  },
- "updated": "2026-10-25T12:51:25.914Z",
+ "updated": "2026-10-25T12:57:27.475Z",
  "open_taken_at": "2026-10-24T11:16:08.238Z",
  "thresholds": {
   "big": 10,
@@ -129,28 +129,6 @@
    "taken_at": "2026-10-25T12:42:27.292Z"
   },
   {
-   "market_id": "1749520",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Kaigaoge Kang win set 2 against Millen Hurrion?",
-   "sides": [
-    "Yes: Kaigaoge Kang win set 2 against Millen Hurrion",
-    "No: Kaigaoge Kang win set 2 against Millen Hurrion"
-   ],
-   "teams": [
-    "Kaigaoge Kang",
-    null
-   ],
-   "player": null,
-   "mid": 27.5,
-   "yes_buy": 28,
-   "no_buy": 73,
-   "taken_at": "2026-10-25T12:42:27.292Z"
-  },
-  {
    "market_id": "1749514",
    "market": "Sets total",
    "group": "game",
@@ -239,6 +217,28 @@
    "taken_at": "2026-10-25T12:36:10.637Z"
   },
   {
+   "market_id": "1749520",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Kaigaoge Kang win set 2 against Millen Hurrion?",
+   "sides": [
+    "Yes: Kaigaoge Kang win set 2 against Millen Hurrion",
+    "No: Kaigaoge Kang win set 2 against Millen Hurrion"
+   ],
+   "teams": [
+    "Kaigaoge Kang",
+    null
+   ],
+   "player": null,
+   "mid": 27.5,
+   "yes_buy": 28,
+   "no_buy": 73,
+   "taken_at": "2026-10-25T12:42:27.292Z"
+  },
+  {
    "market_id": "1749513",
    "market": "Games total",
    "group": "game",
@@ -259,6 +259,28 @@
    "yes_buy": 8,
    "no_buy": 98,
    "taken_at": "2026-10-25T11:27:31.868Z"
+  },
+  {
+   "market_id": "1749519",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Kaigaoge Kang win set 1 against Millen Hurrion?",
+   "sides": [
+    "Yes: Kaigaoge Kang win set 1 against Millen Hurrion",
+    "No: Kaigaoge Kang win set 1 against Millen Hurrion"
+   ],
+   "teams": [
+    "Kaigaoge Kang",
+    null
+   ],
+   "player": null,
+   "mid": 8.5,
+   "yes_buy": 11,
+   "no_buy": 94,
+   "taken_at": "2026-10-25T12:57:27.475Z"
   },
   {
    "market_id": "1749512",
@@ -307,6 +329,26 @@
  ],
  "edges": [
   {
+   "key": "1749520:0",
+   "market_id": "1749520",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Kaigaoge Kang win set 2 against Millen Hurrion?",
+   "side": "Yes: Kaigaoge Kang win set 2 against Millen Hurrion",
+   "open_chance": 28,
+   "now_chance": 19,
+   "open_odds": "+257",
+   "now_odds": "+426",
+   "edge": 9,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-25T12:57:27.475Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1749505:1",
    "market_id": "1749505",
    "market": "Games spread",
@@ -329,6 +371,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1749520:0:slight",
+   "key": "1749520:0",
+   "at": "2026-10-25T12:57:27.475Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Yes: Kaigaoge Kang win set 2 against Millen Hurrion",
+   "market": "Set 2 winner",
+   "now_odds": "+426",
+   "now_chance": 19,
+   "edge": 9,
+   "text": "New slight edge: Yes: Kaigaoge Kang win set 2 against Millen Hurrion (Set 2 winner), 9 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-kaikan-milhur-2026-10-24"
+  },
+  {
    "id": "new_edge:1749505:1:slight",
    "key": "1749505:1",
    "at": "2026-10-25T12:48:14.374Z",
@@ -345,7 +401,8 @@
  ],
  "alert_seen": [
   "gone:1749513:1:2026-10-25T12:06:21.618Z",
-  "new_edge:1749505:1:slight"
+  "new_edge:1749505:1:slight",
+  "new_edge:1749520:0:slight"
  ],
  "kalshi_checked": null
 }
