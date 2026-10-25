@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187142",
-  "fetched_at": "2026-10-25T06:05:28.840Z",
+  "fetched_at": "2026-10-25T06:11:24.986Z",
   "tennis": true,
   "tennis_match": {
    "id": "187142",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Dayana Yastremska (UKR) leads Emerson Jones (AUS) 6-2 3-1",
+     "text": "Dayana Yastremska (UKR) leads Emerson Jones (AUS) 6-2 4-2",
      "type": "event"
     }
    ],
@@ -55,14 +55,13 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
      "linescores": [
       {
        "value": 2,
        "winner": false
       },
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -102,14 +101,13 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 3
+       "value": 4
       }
      ],
      "athlete": {
@@ -144,11 +142,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 232,
    "type": {
     "id": "2",
@@ -186,7 +179,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-25T06:05:28.739Z",
+ "updated": "2026-10-25T06:11:24.877Z",
  "open_taken_at": "2026-10-24T15:02:35.564Z",
  "thresholds": {
   "big": 10,
@@ -214,6 +207,28 @@
    "yes_buy": 62,
    "no_buy": 40,
    "taken_at": "2026-10-24T17:52:18.097Z"
+  },
+  {
+   "market_id": "1758181",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Dayana Yastremska cover -4.5 vs the Emerson Jones in Dayana Yastremska vs. Emerson Jones?",
+   "sides": [
+    "Dayana Yastremska -4.50 (Games)",
+    "Emerson Jones +4.50 (Games)"
+   ],
+   "teams": [
+    "Dayana Yastremska",
+    "Emerson Jones"
+   ],
+   "player": null,
+   "mid": 31.5,
+   "yes_buy": 32,
+   "no_buy": 69,
+   "taken_at": "2026-10-25T05:02:09.950Z"
   },
   {
    "market_id": "1758196",
@@ -370,28 +385,6 @@
    "taken_at": "2026-10-24T17:52:18.097Z"
   },
   {
-   "market_id": "1758181",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Dayana Yastremska cover -4.5 vs the Emerson Jones in Dayana Yastremska vs. Emerson Jones?",
-   "sides": [
-    "Dayana Yastremska -4.50 (Games)",
-    "Emerson Jones +4.50 (Games)"
-   ],
-   "teams": [
-    "Dayana Yastremska",
-    "Emerson Jones"
-   ],
-   "player": null,
-   "mid": 31.5,
-   "yes_buy": 32,
-   "no_buy": 69,
-   "taken_at": "2026-10-25T05:02:09.950Z"
-  },
-  {
    "market_id": "1758188",
    "market": "Games total",
    "group": "game",
@@ -526,23 +519,23 @@
  ],
  "edges": [
   {
-   "key": "1758181:1",
-   "market_id": "1758181",
-   "market": "Games spread",
+   "key": "1758187:0",
+   "market_id": "1758187",
+   "market": "Games total",
    "group": "game",
-   "question": "Will the Dayana Yastremska cover -4.5 vs the Emerson Jones in Dayana Yastremska vs. Emerson Jones?",
-   "side": "Emerson Jones +4.50 (Games)",
-   "open_chance": 69,
-   "now_chance": 37,
-   "open_odds": "-223",
-   "now_odds": "+170",
-   "edge": 32,
+   "question": "Will the total in Dayana Yastremska vs. Emerson Jones be more than 17.5?",
+   "side": "Over 17.5 (Games)",
+   "open_chance": 67,
+   "now_chance": 52,
+   "open_odds": "-203",
+   "now_odds": "-108",
+   "edge": 15,
    "tier": "big",
-   "class": "news",
-   "reason": "Big move (32 pts), likely news",
-   "context": "Emerson Jones 2, 1 · Dayana Yastremska 6, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-10-25T05:14:25.903Z",
-   "status": "gone",
+   "class": "edge",
+   "reason": null,
+   "context": "Emerson Jones 2, 2 · Dayana Yastremska 6, 4 · 2nd Set (games by set)",
+   "first_seen": "2026-10-25T05:23:18.653Z",
+   "status": "open",
    "kalshi": null
   },
   {
@@ -622,46 +615,6 @@
    "reason": "Explained by score: Emerson Jones not above the games spread right now",
    "context": "Emerson Jones 2, 1 · Dayana Yastremska 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-25T05:38:36.056Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1758196:1",
-   "market_id": "1758196",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Dayana Yastremska win set 2 against Emerson Jones?",
-   "side": "No: Dayana Yastremska win set 2 against Emerson Jones",
-   "open_chance": 36,
-   "now_chance": 20,
-   "open_odds": "+178",
-   "now_odds": "+400",
-   "edge": 16,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Emerson Jones 2, 1 · Dayana Yastremska 6, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-10-25T05:59:33.816Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1758187:0",
-   "market_id": "1758187",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Dayana Yastremska vs. Emerson Jones be more than 17.5?",
-   "side": "Over 17.5 (Games)",
-   "open_chance": 67,
-   "now_chance": 52,
-   "open_odds": "-203",
-   "now_odds": "-108",
-   "edge": 15,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Emerson Jones 2, 1 · Dayana Yastremska 6, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-10-25T05:23:18.653Z",
    "status": "gone",
    "kalshi": null
   },
@@ -784,43 +737,9 @@
    "first_seen": "2026-10-25T05:08:05.063Z",
    "status": "gone",
    "kalshi": null
-  },
-  {
-   "key": "1758196:0",
-   "market_id": "1758196",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Dayana Yastremska win set 2 against Emerson Jones?",
-   "side": "Yes: Dayana Yastremska win set 2 against Emerson Jones",
-   "open_chance": 65,
-   "now_chance": 61,
-   "open_odds": "-186",
-   "now_odds": "-156",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Emerson Jones 2 · Dayana Yastremska 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-25T05:47:04.501Z",
-   "status": "gone",
-   "kalshi": null
   }
  ],
  "alerts": [
-  {
-   "id": "gone:1758196:1:2026-10-25T05:59:33.816Z",
-   "key": "1758196:1",
-   "at": "2026-10-25T06:05:28.739Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "No: Dayana Yastremska win set 2 against Emerson Jones",
-   "market": "Set 2 winner",
-   "now_odds": "+400",
-   "now_chance": 20,
-   "edge": 16,
-   "text": "Edge gone: No: Dayana Yastremska win set 2 against Emerson Jones (Set 2 winner) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-dayyas-emejon-2026-10-24"
-  },
   {
    "id": "new_edge:1758190:0:big",
    "key": "1758190:0",
@@ -833,20 +752,6 @@
    "now_chance": 25,
    "edge": 24,
    "text": "New big edge: Over 2.5 (Sets) (Sets total), 24 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-dayyas-emejon-2026-10-24"
-  },
-  {
-   "id": "new_edge:1758196:1:big",
-   "key": "1758196:1",
-   "at": "2026-10-25T05:59:33.816Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "No: Dayana Yastremska win set 2 against Emerson Jones",
-   "market": "Set 2 winner",
-   "now_odds": "+400",
-   "now_chance": 20,
-   "edge": 16,
-   "text": "New big edge: No: Dayana Yastremska win set 2 against Emerson Jones (Set 2 winner), 16 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-dayyas-emejon-2026-10-24"
   },
   {
@@ -889,34 +794,6 @@
    "now_chance": 43,
    "edge": 6,
    "text": "Edge gone: Over 2.5 (Sets) (Sets total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-dayyas-emejon-2026-10-24"
-  },
-  {
-   "id": "gone:1758196:0:2026-10-25T05:47:04.501Z",
-   "key": "1758196:0",
-   "at": "2026-10-25T05:53:09.630Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Yes: Dayana Yastremska win set 2 against Emerson Jones",
-   "market": "Set 2 winner",
-   "now_odds": "-156",
-   "now_chance": 61,
-   "edge": 4,
-   "text": "Edge gone: Yes: Dayana Yastremska win set 2 against Emerson Jones (Set 2 winner) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-dayyas-emejon-2026-10-24"
-  },
-  {
-   "id": "new_edge:1758196:0:slight",
-   "key": "1758196:0",
-   "at": "2026-10-25T05:47:04.501Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Yes: Dayana Yastremska win set 2 against Emerson Jones",
-   "market": "Set 2 winner",
-   "now_odds": "-156",
-   "now_chance": 61,
-   "edge": 4,
-   "text": "New slight edge: Yes: Dayana Yastremska win set 2 against Emerson Jones (Set 2 winner), 4 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-dayyas-emejon-2026-10-24"
   },
   {
@@ -987,20 +864,6 @@
    "now_chance": 62,
    "edge": 5,
    "text": "Edge gone: Over 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-dayyas-emejon-2026-10-24"
-  },
-  {
-   "id": "news:1758181:1",
-   "key": "1758181:1",
-   "at": "2026-10-25T05:23:18.653Z",
-   "type": "news",
-   "tier": "big",
-   "side": "Emerson Jones +4.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+133",
-   "now_chance": 43,
-   "edge": 26,
-   "text": "Big move, likely news: Emerson Jones +4.50 (Games) (Games spread) is 26 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-dayyas-emejon-2026-10-24"
   },
   {
@@ -1085,20 +948,6 @@
    "now_chance": 57,
    "edge": 8,
    "text": "Edge gone: Emerson Jones +1.50 (Sets) (Sets spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-dayyas-emejon-2026-10-24"
-  },
-  {
-   "id": "new_edge:1758181:1:big",
-   "key": "1758181:1",
-   "at": "2026-10-25T05:14:25.903Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Emerson Jones +4.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-127",
-   "now_chance": 56,
-   "edge": 13,
-   "text": "New big edge: Emerson Jones +4.50 (Games) (Games spread), 13 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-dayyas-emejon-2026-10-24"
   },
   {
