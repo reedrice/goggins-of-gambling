@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185565",
-  "fetched_at": "2026-10-25T07:23:19.613Z",
+  "fetched_at": "2026-10-25T07:25:52.889Z",
   "tennis": true,
   "tennis_match": {
    "id": "185565",
@@ -55,6 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 6
@@ -132,6 +133,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "curatedRank": {
       "current": 1
      },
@@ -207,6 +209,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 963,
    "type": {
     "id": "4",
@@ -244,7 +251,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-25T07:23:19.435Z",
+ "updated": "2026-10-25T07:25:52.746Z",
  "open_taken_at": "2026-10-24T07:31:19.067Z",
  "thresholds": {
   "big": 10,
@@ -283,16 +290,16 @@
    "question": "Who will win in the upcoming wtadb event Bucsa / Melichar-Martinez vs Krawczyk / Stollar scheduled for October 25, 2026 at 6:30 AM UTC?",
    "side": "Bucsa / Melichar-Martinez win",
    "open_chance": 65,
-   "now_chance": 48,
+   "now_chance": 59,
    "open_odds": "-186",
-   "now_odds": "+108",
-   "edge": 17,
-   "tier": "big",
+   "now_odds": "-144",
+   "edge": 6,
+   "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Desirae Krawczyk / Fanny Stollar 5 · Cristina Bucsa / Nicole Melichar-Martinez 3 · 1st Set (games by set)",
+   "context": "Desirae Krawczyk / Fanny Stollar 6 · Cristina Bucsa / Nicole Melichar-Martinez 5 · 1st Set (games by set)",
    "first_seen": "2026-10-25T06:47:14.685Z",
-   "status": "gone",
+   "status": "open",
    "kalshi": null
   },
   {
@@ -317,6 +324,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1745702:0:slight",
+   "key": "1745702:0",
+   "at": "2026-10-25T07:25:52.746Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Bucsa / Melichar-Martinez win",
+   "market": "Moneyline",
+   "now_odds": "-144",
+   "now_chance": 59,
+   "edge": 6,
+   "text": "New slight edge: Bucsa / Melichar-Martinez win (Moneyline), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-bucsamelmar-krawczstolla-2026-10-25"
+  },
   {
    "id": "gone:1745702:0:2026-10-25T06:47:14.685Z",
    "key": "1745702:0",
@@ -393,7 +414,8 @@
   "new_edge:1745702:0:big",
   "gone:1745702:1:2026-10-25T06:38:17.180Z",
   "news:1745702:0",
-  "gone:1745702:0:2026-10-25T06:47:14.685Z"
+  "gone:1745702:0:2026-10-25T06:47:14.685Z",
+  "new_edge:1745702:0:slight"
  ],
  "kalshi_checked": null
 }

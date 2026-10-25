@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187143",
-  "fetched_at": "2026-10-25T07:23:33.321Z",
+  "fetched_at": "2026-10-25T07:26:02.071Z",
   "tennis": true,
   "tennis_match": {
    "id": "187143",
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
        "value": 2,
@@ -101,6 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 6,
@@ -142,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 232,
    "type": {
     "id": "2",
@@ -179,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-25T07:23:33.168Z",
+ "updated": "2026-10-25T07:26:01.902Z",
  "open_taken_at": "2026-10-24T15:02:35.559Z",
  "thresholds": {
   "big": 10,
@@ -231,6 +238,50 @@
    "taken_at": "2026-10-24T17:46:09.549Z"
   },
   {
+   "market_id": "1758224",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Harriet Dart vs. Mei Yamaguchi be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 50.5,
+   "yes_buy": 51,
+   "no_buy": 50,
+   "taken_at": "2026-10-25T06:38:26.323Z"
+  },
+  {
+   "market_id": "1758226",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Harriet Dart vs. Mei Yamaguchi be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 20,
+   "yes_buy": 23,
+   "no_buy": 83,
+   "taken_at": "2026-10-25T07:17:30.464Z"
+  },
+  {
    "market_id": "1758219",
    "market": "Games spread",
    "group": "game",
@@ -273,28 +324,6 @@
    "yes_buy": 51,
    "no_buy": 50,
    "taken_at": "2026-10-25T06:38:26.323Z"
-  },
-  {
-   "market_id": "1758226",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Harriet Dart vs. Mei Yamaguchi be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 20,
-   "yes_buy": 23,
-   "no_buy": 83,
-   "taken_at": "2026-10-25T07:17:30.464Z"
   },
   {
    "market_id": "1757348",
@@ -407,28 +436,6 @@
    "taken_at": "2026-10-25T06:38:26.323Z"
   },
   {
-   "market_id": "1758224",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Harriet Dart vs. Mei Yamaguchi be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 50.5,
-   "yes_buy": 51,
-   "no_buy": 50,
-   "taken_at": "2026-10-25T06:38:26.323Z"
-  },
-  {
    "market_id": "1758225",
    "market": "Games total",
    "group": "game",
@@ -519,46 +526,6 @@
  ],
  "edges": [
   {
-   "key": "1758219:1",
-   "market_id": "1758219",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Harriet Dart cover -7.5 vs the Mei Yamaguchi in Harriet Dart vs. Mei Yamaguchi?",
-   "side": "Mei Yamaguchi +7.50 (Games)",
-   "open_chance": 66,
-   "now_chance": 37,
-   "open_odds": "-194",
-   "now_odds": "+170",
-   "edge": 29,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (29 pts), likely news",
-   "context": "Mei Yamaguchi 2, 0 · Harriet Dart 6, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-10-25T07:05:25.034Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1758223:0",
-   "market_id": "1758223",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Harriet Dart vs. Mei Yamaguchi be more than 17.5?",
-   "side": "Over 17.5 (Games)",
-   "open_chance": 51,
-   "now_chance": 27,
-   "open_odds": "-104",
-   "now_odds": "+270",
-   "edge": 24,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Mei Yamaguchi 2, 0 · Harriet Dart 6, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-10-25T07:05:25.034Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1758221:1",
    "market_id": "1758221",
    "market": "Sets spread",
@@ -579,22 +546,42 @@
    "kalshi": null
   },
   {
-   "key": "1758224:0",
-   "market_id": "1758224",
-   "market": "Games total",
+   "key": "1758219:1",
+   "market_id": "1758219",
+   "market": "Games spread",
    "group": "game",
-   "question": "Will the total in Harriet Dart vs. Mei Yamaguchi be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 51,
-   "now_chance": 21,
-   "open_odds": "-104",
-   "now_odds": "+376",
-   "edge": 30,
+   "question": "Will the Harriet Dart cover -7.5 vs the Mei Yamaguchi in Harriet Dart vs. Mei Yamaguchi?",
+   "side": "Mei Yamaguchi +7.50 (Games)",
+   "open_chance": 66,
+   "now_chance": 37,
+   "open_odds": "-194",
+   "now_odds": "+170",
+   "edge": 29,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (30 pts), likely news",
-   "context": "Mei Yamaguchi 2 · Harriet Dart 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-25T07:17:30.464Z",
+   "reason": "Big move (29 pts), likely news",
+   "context": "Mei Yamaguchi 2, 0 · Harriet Dart 6, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-25T07:05:25.034Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1758223:0",
+   "market_id": "1758223",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Harriet Dart vs. Mei Yamaguchi be more than 17.5?",
+   "side": "Over 17.5 (Games)",
+   "open_chance": 51,
+   "now_chance": 27,
+   "open_odds": "-104",
+   "now_odds": "+270",
+   "edge": 24,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Mei Yamaguchi 2, 0 · Harriet Dart 6, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-25T07:05:25.034Z",
    "status": "gone",
    "kalshi": null
   },
