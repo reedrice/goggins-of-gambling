@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-25T11:52:27.906Z"
+  "fetched_at": "2026-10-25T11:57:25.033Z"
  },
- "updated": "2026-10-25T11:52:27.817Z",
+ "updated": "2026-10-25T11:57:24.880Z",
  "open_taken_at": "2026-10-24T11:16:08.262Z",
  "thresholds": {
   "big": 10,
@@ -85,25 +85,47 @@
    "taken_at": "2026-10-25T11:48:35.673Z"
   },
   {
-   "market_id": "1749501",
-   "market": "Set 1 winner",
+   "market_id": "1749486",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Filip Peliwo win set 1 against Saba Purtseladze?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Filip Peliwo cover 1.5 vs the Saba Purtseladze in Filip Peliwo vs. Saba Purtseladze?",
    "sides": [
-    "Yes: Filip Peliwo win set 1 against Saba Purtseladze",
-    "No: Filip Peliwo win set 1 against Saba Purtseladze"
+    "Filip Peliwo +1.50 (Games)",
+    "Saba Purtseladze -1.50 (Games)"
    ],
    "teams": [
     "Filip Peliwo",
-    null
+    "Saba Purtseladze"
    ],
    "player": null,
-   "mid": 37.5,
-   "yes_buy": 38,
-   "no_buy": 63,
+   "mid": 43,
+   "yes_buy": 45,
+   "no_buy": 59,
+   "taken_at": "2026-10-25T00:22:17.267Z"
+  },
+  {
+   "market_id": "1749490",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Filip Peliwo cover 7.5 vs the Saba Purtseladze in Filip Peliwo vs. Saba Purtseladze?",
+   "sides": [
+    "Filip Peliwo +7.50 (Games)",
+    "Saba Purtseladze -7.50 (Games)"
+   ],
+   "teams": [
+    "Filip Peliwo",
+    "Saba Purtseladze"
+   ],
+   "player": null,
+   "mid": 31.5,
+   "yes_buy": 32,
+   "no_buy": 69,
    "taken_at": "2026-10-25T11:48:35.673Z"
   },
   {
@@ -195,48 +217,26 @@
    "taken_at": "2026-10-25T00:22:17.267Z"
   },
   {
-   "market_id": "1749490",
-   "market": "Games spread",
+   "market_id": "1749501",
+   "market": "Set 1 winner",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Filip Peliwo cover 7.5 vs the Saba Purtseladze in Filip Peliwo vs. Saba Purtseladze?",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Filip Peliwo win set 1 against Saba Purtseladze?",
    "sides": [
-    "Filip Peliwo +7.50 (Games)",
-    "Saba Purtseladze -7.50 (Games)"
+    "Yes: Filip Peliwo win set 1 against Saba Purtseladze",
+    "No: Filip Peliwo win set 1 against Saba Purtseladze"
    ],
    "teams": [
     "Filip Peliwo",
-    "Saba Purtseladze"
+    null
    ],
    "player": null,
-   "mid": 31.5,
-   "yes_buy": 32,
-   "no_buy": 69,
+   "mid": 37.5,
+   "yes_buy": 38,
+   "no_buy": 63,
    "taken_at": "2026-10-25T11:48:35.673Z"
-  },
-  {
-   "market_id": "1749486",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Filip Peliwo cover 1.5 vs the Saba Purtseladze in Filip Peliwo vs. Saba Purtseladze?",
-   "sides": [
-    "Filip Peliwo +1.50 (Games)",
-    "Saba Purtseladze -1.50 (Games)"
-   ],
-   "teams": [
-    "Filip Peliwo",
-    "Saba Purtseladze"
-   ],
-   "player": null,
-   "mid": 43,
-   "yes_buy": 45,
-   "no_buy": 59,
-   "taken_at": "2026-10-25T00:22:17.267Z"
   }
  ],
  "edges": [
@@ -288,20 +288,34 @@
    "question": "Will the Filip Peliwo cover 1.5 vs the Saba Purtseladze in Filip Peliwo vs. Saba Purtseladze?",
    "side": "Filip Peliwo +1.50 (Games)",
    "open_chance": 45,
-   "now_chance": 32,
+   "now_chance": 39,
    "open_odds": "+122",
-   "now_odds": "+213",
-   "edge": 13,
-   "tier": "big",
+   "now_odds": "+156",
+   "edge": 6,
+   "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-25T11:48:35.673Z",
-   "status": "gone",
+   "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1749486:0:slight",
+   "key": "1749486:0",
+   "at": "2026-10-25T11:57:24.880Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Filip Peliwo +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+156",
+   "now_chance": 39,
+   "edge": 6,
+   "text": "New slight edge: Filip Peliwo +1.50 (Games) (Games spread), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-filpel-sabpur-2026-10-24"
+  },
   {
    "id": "new_edge:1749494:1:slight",
    "key": "1749494:1",
@@ -363,7 +377,8 @@
   "new_edge:1749488:0:big",
   "new_edge:1749486:0:big",
   "new_edge:1749494:1:slight",
-  "gone:1749486:0:2026-10-25T11:48:35.673Z"
+  "gone:1749486:0:2026-10-25T11:48:35.673Z",
+  "new_edge:1749486:0:slight"
  ],
  "kalshi_checked": null
 }
