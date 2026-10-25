@@ -4,12 +4,12 @@
  "game": "Arneodo / Jebens vs. Reymond / Sanchez",
  "url": "https://polymarket.us/sports/atpdb/atpdb-arneodjebens-reysan-2026-10-25",
  "start_time": "2026-10-25T14:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187262",
-  "fetched_at": "2026-10-25T14:03:36.817Z",
+  "fetched_at": "2026-10-25T16:44:13.767Z",
   "tennis": true,
   "tennis_match": {
    "id": "187262",
@@ -17,17 +17,17 @@
    "date": "2026-10-25T13:30Z",
    "startDate": "2026-10-25T13:30Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sun, October 25th at 9:30 AM EDT",
-     "shortDetail": "10/25 - 9:30 AM EDT"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Arthur Reymond (FRA) & Luca Sanchez (FRA) bt Romain Arneodo (MON) & Hendrik Jebens (GER) 6-3 6-4",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,17 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "roster": {
       "displayName": "Arthur Reymond / Luca Sanchez",
       "shortDisplayName": "A. Reymond / L. Sanchez",
@@ -122,6 +138,17 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 4,
+       "winner": false
+      }
+     ],
      "roster": {
       "displayName": "Romain Arneodo / Hendrik Jebens",
       "shortDisplayName": "R. Arneodo / H. Jebens",
@@ -205,16 +232,16 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sun, October 25th at 9:30 AM EDT",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Arthur Reymond / Luca Sanchez",
    "alias": "Arthur Reymond / Luca Sanchez",
    "name": "Arthur Reymond / Luca Sanchez",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Romain Arneodo / Hendrik Jebens",
@@ -226,7 +253,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-25T14:03:36.760Z",
+ "updated": "2026-10-25T16:44:13.652Z",
  "open_taken_at": "2026-10-24T19:27:56.111Z",
  "thresholds": {
   "big": 10,
@@ -274,11 +301,25 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-25T07:17:34.368Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1764063:1:2026-10-25T07:17:34.368Z",
+   "key": "1764063:1",
+   "at": "2026-10-25T16:44:13.652Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Reymond / Sanchez win",
+   "market": "Moneyline",
+   "now_odds": "+113",
+   "now_chance": 47,
+   "edge": 10,
+   "text": "Edge gone: Reymond / Sanchez win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-arneodjebens-reysan-2026-10-25"
+  },
   {
    "id": "new_edge:1764063:1:big",
    "key": "1764063:1",
@@ -295,7 +336,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1764063:1:big"
+  "new_edge:1764063:1:big",
+  "gone:1764063:1:2026-10-25T07:17:34.368Z"
  ],
  "kalshi_checked": null
 }

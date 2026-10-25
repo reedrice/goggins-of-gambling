@@ -3,24 +3,24 @@
   "league": "fl1",
   "query_date": "2026-10-25",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard?dates=20261025&limit=1000",
-  "fetched_at": "2026-10-25T14:03:08.395Z",
+  "fetched_at": "2026-10-25T16:43:29.124Z",
   "events": [
     {
       "id": "401876425",
       "name": "Lille at AS Monaco",
       "date": "2026-10-25T14:00Z",
       "status": {
-        "clock": 180,
-        "displayClock": "3'",
-        "period": 1,
+        "clock": 5400,
+        "displayClock": "90'+7'",
+        "period": 2,
         "type": {
-          "id": "25",
-          "name": "STATUS_FIRST_HALF",
-          "state": "in",
-          "completed": false,
-          "description": "First Half",
-          "detail": "3'",
-          "shortDetail": "3'"
+          "id": "28",
+          "name": "STATUS_FULL_TIME",
+          "state": "post",
+          "completed": true,
+          "description": "Full Time",
+          "detail": "FT",
+          "shortDetail": "FT"
         }
       },
       "competitions": [
@@ -28,17 +28,17 @@
           "id": "401876425",
           "date": "2026-10-25T14:00Z",
           "status": {
-            "clock": 180,
-            "displayClock": "3'",
-            "period": 1,
+            "clock": 5400,
+            "displayClock": "90'+7'",
+            "period": 2,
             "type": {
-              "id": "25",
-              "name": "STATUS_FIRST_HALF",
-              "state": "in",
-              "completed": false,
-              "description": "First Half",
-              "detail": "3'",
-              "shortDetail": "3'"
+              "id": "28",
+              "name": "STATUS_FULL_TIME",
+              "state": "post",
+              "completed": true,
+              "description": "Full Time",
+              "detail": "FT",
+              "shortDetail": "FT"
             }
           },
           "wasSuspended": false,
@@ -46,7 +46,7 @@
             {
               "id": "174",
               "homeAway": "home",
-              "score": "0",
+              "score": "1",
               "team": {
                 "id": "174",
                 "abbreviation": "MON",
@@ -59,7 +59,7 @@
             {
               "id": "166",
               "homeAway": "away",
-              "score": "0",
+              "score": "1",
               "team": {
                 "id": "166",
                 "abbreviation": "LILL",
@@ -77,14 +77,7 @@
       "starters": [],
       "starting_goalies": [],
       "probables": [],
-      "book_lines": [
-        {
-          "provider": "DraftKings",
-          "details": "MON -110",
-          "spread": null,
-          "total": 2.5
-        }
-      ],
+      "book_lines": [],
       "coverage": {
         "injuries": "unavailable",
         "starters": "unverified",
@@ -93,7 +86,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard?dates=20261025&limit=1000",
-      "fetched_at": "2026-10-25T14:03:08.395Z",
+      "fetched_at": "2026-10-25T16:43:29.124Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -103,33 +96,38 @@
       "name": "Le Mans at AJ Auxerre",
       "date": "2026-10-25T16:15Z",
       "status": {
-        "clock": 0,
-        "displayClock": "0'",
+        "clock": 1680,
+        "displayClock": "28'",
+        "period": 1,
         "type": {
-          "id": "1",
-          "name": "STATUS_SCHEDULED",
-          "state": "pre",
+          "id": "25",
+          "name": "STATUS_FIRST_HALF",
+          "state": "in",
           "completed": false,
-          "description": "Scheduled",
-          "detail": "Sun, October 25th at 12:15 PM EDT",
-          "shortDetail": "Scheduled"
+          "description": "First Half",
+          "detail": "28'",
+          "shortDetail": "28'"
         }
+      },
+      "boxscore": {
+        "players": []
       },
       "competitions": [
         {
           "id": "401876429",
           "date": "2026-10-25T16:15Z",
           "status": {
-            "clock": 0,
-            "displayClock": "0'",
+            "clock": 1680,
+            "displayClock": "28'",
+            "period": 1,
             "type": {
-              "id": "1",
-              "name": "STATUS_SCHEDULED",
-              "state": "pre",
+              "id": "25",
+              "name": "STATUS_FIRST_HALF",
+              "state": "in",
               "completed": false,
-              "description": "Scheduled",
-              "detail": "Sun, October 25th at 12:15 PM EDT",
-              "shortDetail": "Scheduled"
+              "description": "First Half",
+              "detail": "28'",
+              "shortDetail": "28'"
             }
           },
           "wasSuspended": false,
@@ -165,62 +163,222 @@
       ],
       "player_usage": [],
       "injuries": [],
-      "starters": [],
+      "starters": [
+        {
+          "player": "Paul Nardi",
+          "athlete_id": "159312",
+          "team": "AUX",
+          "position": "G",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Axel Tuanzebe",
+          "athlete_id": "229524",
+          "team": "AUX",
+          "position": "CD",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Clément Akpa",
+          "athlete_id": "344520",
+          "team": "AUX",
+          "position": "CD-L",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Christ Makosso",
+          "athlete_id": "362476",
+          "team": "AUX",
+          "position": "CD-R",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Kévin Danois",
+          "athlete_id": "323722",
+          "team": "AUX",
+          "position": "CM-L",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Naouirou Ahamada",
+          "athlete_id": "297775",
+          "team": "AUX",
+          "position": "CM-R",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Fredrik Oppegard",
+          "athlete_id": "310134",
+          "team": "AUX",
+          "position": "LM",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Lamine Sy",
+          "athlete_id": "335320",
+          "team": "AUX",
+          "position": "RM",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Cameron Archer",
+          "athlete_id": "293347",
+          "team": "AUX",
+          "position": "F",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Danny Namaso",
+          "athlete_id": "243748",
+          "team": "AUX",
+          "position": "CF-L",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Romain Faivre",
+          "athlete_id": "268591",
+          "team": "AUX",
+          "position": "CF-R",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Nicolas Kocik",
+          "athlete_id": "233308",
+          "team": "MNS",
+          "position": "G",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Samuel Yohou",
+          "athlete_id": "223117",
+          "team": "MNS",
+          "position": "CD",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Raúl Torrente",
+          "athlete_id": "310024",
+          "team": "MNS",
+          "position": "CD-L",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Djibril Sidibé",
+          "athlete_id": "30302",
+          "team": "MNS",
+          "position": "CD-R",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Alexandre Lauray",
+          "athlete_id": "287606",
+          "team": "MNS",
+          "position": "CM-L",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Antoine Rabillard",
+          "athlete_id": "232335",
+          "team": "MNS",
+          "position": "CM-R",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Lucas Bretelle",
+          "athlete_id": "330722",
+          "team": "MNS",
+          "position": "AM",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Lucas Calodat",
+          "athlete_id": "331636",
+          "team": "MNS",
+          "position": "LM",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Lucas Buades",
+          "athlete_id": "262482",
+          "team": "MNS",
+          "position": "RM",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Habib Diallo",
+          "athlete_id": "223376",
+          "team": "MNS",
+          "position": "CF-L",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Louis Mafouta",
+          "athlete_id": "268720",
+          "team": "MNS",
+          "position": "CF-R",
+          "evidence": "rosters.roster.starter=true"
+        }
+      ],
       "starting_goalies": [],
       "probables": [],
       "book_lines": [
         {
           "provider": "DraftKings",
-          "details": "AUX +110",
+          "details": "AUX +115",
           "spread": null,
           "total": 2.5
         }
       ],
       "coverage": {
         "injuries": "unavailable",
-        "starters": "unverified",
+        "starters": "explicit_starter_flags",
         "goalies": "unverified",
         "hockey_lines": "unavailable",
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard?dates=20261025&limit=1000",
-      "fetched_at": "2026-10-25T14:03:08.395Z",
-      "details_source_url": null,
-      "details_checked_at": null,
-      "details_available": false
+      "fetched_at": "2026-10-25T16:43:29.124Z",
+      "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/summary?event=401876429",
+      "details_checked_at": "2026-10-25T16:43:29.124Z",
+      "details_available": true
     },
     {
       "id": "401876430",
       "name": "Lorient at Angers",
       "date": "2026-10-25T16:15Z",
       "status": {
-        "clock": 0,
-        "displayClock": "0'",
+        "clock": 1740,
+        "displayClock": "29'",
+        "period": 1,
         "type": {
-          "id": "1",
-          "name": "STATUS_SCHEDULED",
-          "state": "pre",
+          "id": "25",
+          "name": "STATUS_FIRST_HALF",
+          "state": "in",
           "completed": false,
-          "description": "Scheduled",
-          "detail": "Sun, October 25th at 12:15 PM EDT",
-          "shortDetail": "Scheduled"
+          "description": "First Half",
+          "detail": "29'",
+          "shortDetail": "29'"
         }
+      },
+      "boxscore": {
+        "players": []
       },
       "competitions": [
         {
           "id": "401876430",
           "date": "2026-10-25T16:15Z",
           "status": {
-            "clock": 0,
-            "displayClock": "0'",
+            "clock": 1740,
+            "displayClock": "29'",
+            "period": 1,
             "type": {
-              "id": "1",
-              "name": "STATUS_SCHEDULED",
-              "state": "pre",
+              "id": "25",
+              "name": "STATUS_FIRST_HALF",
+              "state": "in",
               "completed": false,
-              "description": "Scheduled",
-              "detail": "Sun, October 25th at 12:15 PM EDT",
-              "shortDetail": "Scheduled"
+              "description": "First Half",
+              "detail": "29'",
+              "shortDetail": "29'"
             }
           },
           "wasSuspended": false,
@@ -256,45 +414,201 @@
       ],
       "player_usage": [],
       "injuries": [],
-      "starters": [],
+      "starters": [
+        {
+          "player": "Anthony Lopes",
+          "athlete_id": "131743",
+          "team": "ANG",
+          "position": "G",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Ousmane Camara",
+          "athlete_id": "412232",
+          "team": "ANG",
+          "position": "CD",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Jordan Lefort",
+          "athlete_id": "191712",
+          "team": "ANG",
+          "position": "CD-L",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Carlens Arcus",
+          "athlete_id": "218703",
+          "team": "ANG",
+          "position": "CD-R",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Joseph Kalulu Kyatengwa",
+          "athlete_id": "377899",
+          "team": "ANG",
+          "position": "LB",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Lilian Raolisoa",
+          "athlete_id": "357154",
+          "team": "ANG",
+          "position": "RB",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Branco van den Boomen",
+          "athlete_id": "196234",
+          "team": "ANG",
+          "position": "CM",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Amine Sbaï",
+          "athlete_id": "314388",
+          "team": "ANG",
+          "position": "CM-L",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Yassin Belkhdim",
+          "athlete_id": "338006",
+          "team": "ANG",
+          "position": "CM-R",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Amine El Ouazzani",
+          "athlete_id": "301262",
+          "team": "ANG",
+          "position": "CF-L",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Prosper Peter",
+          "athlete_id": "403232",
+          "team": "ANG",
+          "position": "CF-R",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Yvon Mvogo",
+          "athlete_id": "199381",
+          "team": "LOR",
+          "position": "G",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Montassar Talbi",
+          "athlete_id": "265099",
+          "team": "LOR",
+          "position": "CD",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Isaak Touré",
+          "athlete_id": "306535",
+          "team": "LOR",
+          "position": "CD-L",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Nathaniel Adjei",
+          "athlete_id": "345563",
+          "team": "LOR",
+          "position": "CD-R",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Noah Cadiou",
+          "athlete_id": "315215",
+          "team": "LOR",
+          "position": "CM-L",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Arthur Avom",
+          "athlete_id": "355870",
+          "team": "LOR",
+          "position": "CM-R",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Arsène Kouassi",
+          "athlete_id": "381626",
+          "team": "LOR",
+          "position": "LM",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Dembo Sylla",
+          "athlete_id": "347940",
+          "team": "LOR",
+          "position": "RM",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Ibrahima Baldé",
+          "athlete_id": "324565",
+          "team": "LOR",
+          "position": "F",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Souleymane Faye",
+          "athlete_id": "297345",
+          "team": "LOR",
+          "position": "CF-L",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Jean-Victor Makengo",
+          "athlete_id": "225557",
+          "team": "LOR",
+          "position": "CF-R",
+          "evidence": "rosters.roster.starter=true"
+        }
+      ],
       "starting_goalies": [],
       "probables": [],
       "book_lines": [
         {
           "provider": "DraftKings",
-          "details": "LOR +140",
+          "details": "LOR +130",
           "spread": null,
           "total": 2.5
         }
       ],
       "coverage": {
         "injuries": "unavailable",
-        "starters": "unverified",
+        "starters": "explicit_starter_flags",
         "goalies": "unverified",
         "hockey_lines": "unavailable",
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard?dates=20261025&limit=1000",
-      "fetched_at": "2026-10-25T14:03:08.395Z",
-      "details_source_url": null,
-      "details_checked_at": null,
-      "details_available": false
+      "fetched_at": "2026-10-25T16:43:29.124Z",
+      "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/summary?event=401876430",
+      "details_checked_at": "2026-10-25T16:43:29.124Z",
+      "details_available": true
     },
     {
       "id": "401876426",
       "name": "Le Havre AC at Marseille",
       "date": "2026-10-25T16:15Z",
       "status": {
-        "clock": 0,
-        "displayClock": "0'",
+        "clock": 1680,
+        "displayClock": "28'",
+        "period": 1,
         "type": {
-          "id": "1",
-          "name": "STATUS_SCHEDULED",
-          "state": "pre",
+          "id": "25",
+          "name": "STATUS_FIRST_HALF",
+          "state": "in",
           "completed": false,
-          "description": "Scheduled",
-          "detail": "Sun, October 25th at 12:15 PM EDT",
-          "shortDetail": "Scheduled"
+          "description": "First Half",
+          "detail": "28'",
+          "shortDetail": "28'"
         }
       },
       "competitions": [
@@ -302,16 +616,17 @@
           "id": "401876426",
           "date": "2026-10-25T16:15Z",
           "status": {
-            "clock": 0,
-            "displayClock": "0'",
+            "clock": 1680,
+            "displayClock": "28'",
+            "period": 1,
             "type": {
-              "id": "1",
-              "name": "STATUS_SCHEDULED",
-              "state": "pre",
+              "id": "25",
+              "name": "STATUS_FIRST_HALF",
+              "state": "in",
               "completed": false,
-              "description": "Scheduled",
-              "detail": "Sun, October 25th at 12:15 PM EDT",
-              "shortDetail": "Scheduled"
+              "description": "First Half",
+              "detail": "28'",
+              "shortDetail": "28'"
             }
           },
           "wasSuspended": false,
@@ -319,7 +634,7 @@
             {
               "id": "176",
               "homeAway": "home",
-              "score": "0",
+              "score": "1",
               "team": {
                 "id": "176",
                 "abbreviation": "OLM",
@@ -353,7 +668,7 @@
       "book_lines": [
         {
           "provider": "DraftKings",
-          "details": "OLM -205",
+          "details": "OLM -220",
           "spread": null,
           "total": 3.5
         }
@@ -366,7 +681,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard?dates=20261025&limit=1000",
-      "fetched_at": "2026-10-25T14:03:08.395Z",
+      "fetched_at": "2026-10-25T16:43:29.124Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -376,16 +691,17 @@
       "name": "Strasbourg at Stade Rennais",
       "date": "2026-10-25T16:15Z",
       "status": {
-        "clock": 0,
-        "displayClock": "0'",
+        "clock": 1680,
+        "displayClock": "28'",
+        "period": 1,
         "type": {
-          "id": "1",
-          "name": "STATUS_SCHEDULED",
-          "state": "pre",
+          "id": "25",
+          "name": "STATUS_FIRST_HALF",
+          "state": "in",
           "completed": false,
-          "description": "Scheduled",
-          "detail": "Sun, October 25th at 12:15 PM EDT",
-          "shortDetail": "Scheduled"
+          "description": "First Half",
+          "detail": "28'",
+          "shortDetail": "28'"
         }
       },
       "competitions": [
@@ -393,16 +709,17 @@
           "id": "401876424",
           "date": "2026-10-25T16:15Z",
           "status": {
-            "clock": 0,
-            "displayClock": "0'",
+            "clock": 1680,
+            "displayClock": "28'",
+            "period": 1,
             "type": {
-              "id": "1",
-              "name": "STATUS_SCHEDULED",
-              "state": "pre",
+              "id": "25",
+              "name": "STATUS_FIRST_HALF",
+              "state": "in",
               "completed": false,
-              "description": "Scheduled",
-              "detail": "Sun, October 25th at 12:15 PM EDT",
-              "shortDetail": "Scheduled"
+              "description": "First Half",
+              "detail": "28'",
+              "shortDetail": "28'"
             }
           },
           "wasSuspended": false,
@@ -444,7 +761,7 @@
       "book_lines": [
         {
           "provider": "DraftKings",
-          "details": "REN -130",
+          "details": "REN -125",
           "spread": null,
           "total": 3.5
         }
@@ -457,7 +774,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard?dates=20261025&limit=1000",
-      "fetched_at": "2026-10-25T14:03:08.395Z",
+      "fetched_at": "2026-10-25T16:43:29.124Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -467,16 +784,17 @@
       "name": "Troyes at Toulouse",
       "date": "2026-10-25T16:15Z",
       "status": {
-        "clock": 0,
-        "displayClock": "0'",
+        "clock": 1680,
+        "displayClock": "28'",
+        "period": 1,
         "type": {
-          "id": "1",
-          "name": "STATUS_SCHEDULED",
-          "state": "pre",
+          "id": "25",
+          "name": "STATUS_FIRST_HALF",
+          "state": "in",
           "completed": false,
-          "description": "Scheduled",
-          "detail": "Sun, October 25th at 12:15 PM EDT",
-          "shortDetail": "Scheduled"
+          "description": "First Half",
+          "detail": "28'",
+          "shortDetail": "28'"
         }
       },
       "competitions": [
@@ -484,16 +802,17 @@
           "id": "401876423",
           "date": "2026-10-25T16:15Z",
           "status": {
-            "clock": 0,
-            "displayClock": "0'",
+            "clock": 1680,
+            "displayClock": "28'",
+            "period": 1,
             "type": {
-              "id": "1",
-              "name": "STATUS_SCHEDULED",
-              "state": "pre",
+              "id": "25",
+              "name": "STATUS_FIRST_HALF",
+              "state": "in",
               "completed": false,
-              "description": "Scheduled",
-              "detail": "Sun, October 25th at 12:15 PM EDT",
-              "shortDetail": "Scheduled"
+              "description": "First Half",
+              "detail": "28'",
+              "shortDetail": "28'"
             }
           },
           "wasSuspended": false,
@@ -535,7 +854,7 @@
       "book_lines": [
         {
           "provider": "DraftKings",
-          "details": "TOU -190",
+          "details": "TOU -170",
           "spread": null,
           "total": 2.5
         }
@@ -548,7 +867,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard?dates=20261025&limit=1000",
-      "fetched_at": "2026-10-25T14:03:08.395Z",
+      "fetched_at": "2026-10-25T16:43:29.124Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false

@@ -4,12 +4,12 @@
  "game": "Lorenzo Sonego vs. Jacob Fearnley",
  "url": "https://polymarket.us/sports/atp/atp-lorson-jacfea-2026-10-25",
  "start_time": "2026-10-25T12:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187158",
-  "fetched_at": "2026-10-25T14:03:35.079Z",
+  "fetched_at": "2026-10-25T16:44:13.388Z",
   "tennis": true,
   "tennis_match": {
    "id": "187158",
@@ -17,17 +17,17 @@
    "date": "2026-10-25T12:00Z",
    "startDate": "2026-10-25T12:00Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 3,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sun, October 25th at 8:00 AM EDT",
-     "shortDetail": "10/25 - 8:00 AM EDT"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Jacob Fearnley (GBR) bt Lorenzo Sonego (ITA) 6-1 6-7 (3-7) 6-4",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,22 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "tiebreak": 3,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "dbf5766d-f283-30f0-8b52-778dd47c684d",
       "displayName": "Jacob Fearnley",
@@ -87,6 +108,22 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 1,
+       "winner": false
+      },
+      {
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 4,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "687223c9-e8fb-7106-54b2-0bd2f9697146",
       "displayName": "Lorenzo Sonego",
@@ -135,28 +172,28 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sun, October 25th at 8:00 AM EDT",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Jacob Fearnley",
    "alias": "Jacob Fearnley",
    "name": "Jacob Fearnley",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Lorenzo Sonego",
    "alias": "Lorenzo Sonego",
    "name": "Lorenzo Sonego",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-25T14:03:34.992Z",
+ "updated": "2026-10-25T16:44:13.278Z",
  "open_taken_at": "2026-10-24T15:02:35.050Z",
  "thresholds": {
   "big": 10,
@@ -512,47 +549,7 @@
    "reason": "Big move (31 pts), likely news",
    "context": "Pregame",
    "first_seen": "2026-10-25T13:42:31.020Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1758104:0",
-   "market_id": "1758104",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Lorenzo Sonego cover 4.5 vs the Jacob Fearnley in Lorenzo Sonego vs. Jacob Fearnley?",
-   "side": "Lorenzo Sonego +4.50 (Games)",
-   "open_chance": 71,
-   "now_chance": 47,
-   "open_odds": "-245",
-   "now_odds": "+113",
-   "edge": 24,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-10-25T12:24:26.411Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1758100:0",
-   "market_id": "1758100",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Lorenzo Sonego cover 1.5 vs the Jacob Fearnley in Lorenzo Sonego vs. Jacob Fearnley?",
-   "side": "Lorenzo Sonego +1.50 (Games)",
-   "open_chance": 49,
-   "now_chance": 41,
-   "open_odds": "+104",
-   "now_odds": "+144",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-10-25T12:31:32.738Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -572,6 +569,26 @@
    "reason": "Big move (29 pts), likely news",
    "context": "Pregame",
    "first_seen": "2026-10-25T13:33:34.968Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1758104:0",
+   "market_id": "1758104",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Lorenzo Sonego cover 4.5 vs the Jacob Fearnley in Lorenzo Sonego vs. Jacob Fearnley?",
+   "side": "Lorenzo Sonego +4.50 (Games)",
+   "open_chance": 71,
+   "now_chance": 47,
+   "open_odds": "-245",
+   "now_odds": "+113",
+   "edge": 24,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-10-25T12:24:26.411Z",
    "status": "gone",
    "kalshi": null
   },
@@ -632,6 +649,26 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-25T12:57:34.159Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1758100:0",
+   "market_id": "1758100",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Lorenzo Sonego cover 1.5 vs the Jacob Fearnley in Lorenzo Sonego vs. Jacob Fearnley?",
+   "side": "Lorenzo Sonego +1.50 (Games)",
+   "open_chance": 49,
+   "now_chance": 41,
+   "open_odds": "+104",
+   "now_odds": "+144",
+   "edge": 8,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-10-25T12:31:32.738Z",
    "status": "gone",
    "kalshi": null
   },
@@ -717,6 +754,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1758100:0:2026-10-25T12:31:32.738Z",
+   "key": "1758100:0",
+   "at": "2026-10-25T16:44:13.278Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Lorenzo Sonego +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+144",
+   "now_chance": 41,
+   "edge": 8,
+   "text": "Edge gone: Lorenzo Sonego +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-lorson-jacfea-2026-10-25"
+  },
   {
    "id": "gone:1758098:0:2026-10-25T12:57:34.159Z",
    "key": "1758098:0",
@@ -1145,7 +1196,8 @@
   "new_edge:1758117:1:big",
   "news:1758117:1",
   "news:1758124:1",
-  "gone:1758098:0:2026-10-25T12:57:34.159Z"
+  "gone:1758098:0:2026-10-25T12:57:34.159Z",
+  "gone:1758100:0:2026-10-25T12:31:32.738Z"
  ],
  "kalshi_checked": null
 }
