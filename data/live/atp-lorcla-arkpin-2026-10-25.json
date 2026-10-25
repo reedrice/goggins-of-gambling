@@ -9,37 +9,15 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-25T18:04:40.016Z"
+  "fetched_at": "2026-10-25T18:10:45.549Z"
  },
- "updated": "2026-10-25T18:04:39.932Z",
+ "updated": "2026-10-25T18:10:45.357Z",
  "open_taken_at": "2026-10-25T01:06:28.582Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "1774192",
-   "market": "Moneyline",
-   "group": "game",
-   "mtype": "winner",
-   "period": "full_game",
-   "line": null,
-   "question": "Who will win in the upcoming atp event Lorenzo Claverie vs Arklon Huertas Del Pino Cordova scheduled for October 25, 2026 at 3:00 PM UTC?",
-   "sides": [
-    "Lorenzo Claverie win",
-    "Arklon Del Pino win"
-   ],
-   "teams": [
-    "Lorenzo Claverie",
-    "Arklon Del Pino"
-   ],
-   "player": null,
-   "mid": 53.5,
-   "yes_buy": 54,
-   "no_buy": 47,
-   "taken_at": "2026-10-25T09:12:14.735Z"
-  },
   {
    "market_id": "1774368",
    "market": "Games total",
@@ -239,28 +217,6 @@
    "taken_at": "2026-10-25T17:07:51.471Z"
   },
   {
-   "market_id": "1774371",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Lorenzo Claverie vs. Arklon Huertas Del Pino Cordova be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 34.5,
-   "yes_buy": 35,
-   "no_buy": 66,
-   "taken_at": "2026-10-25T17:07:51.471Z"
-  },
-  {
    "market_id": "1774370",
    "market": "Games total",
    "group": "game",
@@ -303,6 +259,50 @@
    "yes_buy": 34,
    "no_buy": 67,
    "taken_at": "2026-10-25T17:07:51.471Z"
+  },
+  {
+   "market_id": "1774192",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming atp event Lorenzo Claverie vs Arklon Huertas Del Pino Cordova scheduled for October 25, 2026 at 3:00 PM UTC?",
+   "sides": [
+    "Lorenzo Claverie win",
+    "Arklon Del Pino win"
+   ],
+   "teams": [
+    "Lorenzo Claverie",
+    "Arklon Del Pino"
+   ],
+   "player": null,
+   "mid": 53.5,
+   "yes_buy": 54,
+   "no_buy": 47,
+   "taken_at": "2026-10-25T09:12:14.735Z"
+  },
+  {
+   "market_id": "1774371",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Lorenzo Claverie vs. Arklon Huertas Del Pino Cordova be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 34.5,
+   "yes_buy": 35,
+   "no_buy": 66,
+   "taken_at": "2026-10-25T17:07:51.471Z"
   }
  ],
  "edges": [
@@ -323,7 +323,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-25T17:49:33.730Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -349,6 +349,20 @@
  ],
  "alerts": [
   {
+   "id": "gone:1774192:0:2026-10-25T17:49:33.730Z",
+   "key": "1774192:0",
+   "at": "2026-10-25T18:10:45.357Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Lorenzo Claverie win",
+   "market": "Moneyline",
+   "now_odds": "+194",
+   "now_chance": 34,
+   "edge": 20,
+   "text": "Edge gone: Lorenzo Claverie win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-lorcla-arkpin-2026-10-25"
+  },
+  {
    "id": "new_edge:1774192:0:big",
    "key": "1774192:0",
    "at": "2026-10-25T17:49:33.730Z",
@@ -364,7 +378,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1774192:0:big"
+  "new_edge:1774192:0:big",
+  "gone:1774192:0:2026-10-25T17:49:33.730Z"
  ],
  "kalshi_checked": null
 }

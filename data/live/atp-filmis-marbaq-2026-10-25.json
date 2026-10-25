@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-25T18:04:43.058Z"
+  "fetched_at": "2026-10-25T18:10:49.107Z"
  },
- "updated": "2026-10-25T18:04:42.929Z",
+ "updated": "2026-10-25T18:10:48.820Z",
  "open_taken_at": "2026-10-25T04:18:20.073Z",
  "thresholds": {
   "big": 10,
@@ -19,26 +19,26 @@
  },
  "open": [
   {
-   "market_id": "1781733",
-   "market": "Games spread",
+   "market_id": "1781748",
+   "market": "Set 2 winner",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Filip Misolic cover -4.5 vs the Martin Baquero in Filip Misolic vs. Martin Baquero?",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Filip Misolic win set 2 against Martin Baquero?",
    "sides": [
-    "Filip Misolic -4.50 (Games)",
-    "Martin Baquero +4.50 (Games)"
+    "Yes: Filip Misolic win set 2 against Martin Baquero",
+    "No: Filip Misolic win set 2 against Martin Baquero"
    ],
    "teams": [
     "Filip Misolic",
-    "Martin Baquero"
+    null
    ],
    "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-10-25T17:28:28.163Z"
+   "mid": 75.5,
+   "yes_buy": 76,
+   "no_buy": 25,
+   "taken_at": "2026-10-25T17:37:16.351Z"
   },
   {
    "market_id": "1781739",
@@ -77,6 +77,28 @@
    "teams": [
     null,
     null
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-10-25T17:28:28.163Z"
+  },
+  {
+   "market_id": "1781733",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Filip Misolic cover -4.5 vs the Martin Baquero in Filip Misolic vs. Martin Baquero?",
+   "sides": [
+    "Filip Misolic -4.50 (Games)",
+    "Martin Baquero +4.50 (Games)"
+   ],
+   "teams": [
+    "Filip Misolic",
+    "Martin Baquero"
    ],
    "player": null,
    "mid": 33.5,
@@ -127,28 +149,6 @@
    "yes_buy": 34,
    "no_buy": 67,
    "taken_at": "2026-10-25T17:28:28.163Z"
-  },
-  {
-   "market_id": "1781748",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Filip Misolic win set 2 against Martin Baquero?",
-   "sides": [
-    "Yes: Filip Misolic win set 2 against Martin Baquero",
-    "No: Filip Misolic win set 2 against Martin Baquero"
-   ],
-   "teams": [
-    "Filip Misolic",
-    null
-   ],
-   "player": null,
-   "mid": 75.5,
-   "yes_buy": 76,
-   "no_buy": 25,
-   "taken_at": "2026-10-25T17:37:16.351Z"
   },
   {
    "market_id": "1781742",
@@ -307,26 +307,6 @@
  ],
  "edges": [
   {
-   "key": "1781733:1",
-   "market_id": "1781733",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Filip Misolic cover -4.5 vs the Martin Baquero in Filip Misolic vs. Martin Baquero?",
-   "side": "Martin Baquero +4.50 (Games)",
-   "open_chance": 67,
-   "now_chance": 25,
-   "open_odds": "-203",
-   "now_odds": "+300",
-   "edge": 42,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-25T17:49:36.702Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1781739:0",
    "market_id": "1781739",
    "market": "Games total",
@@ -344,6 +324,26 @@
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-25T18:04:42.929Z",
    "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1781733:1",
+   "market_id": "1781733",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Filip Misolic cover -4.5 vs the Martin Baquero in Filip Misolic vs. Martin Baquero?",
+   "side": "Martin Baquero +4.50 (Games)",
+   "open_chance": 67,
+   "now_chance": 25,
+   "open_odds": "-203",
+   "now_odds": "+300",
+   "edge": 42,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-25T17:49:36.702Z",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -467,26 +467,6 @@
    "kalshi": null
   },
   {
-   "key": "1781748:0",
-   "market_id": "1781748",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Filip Misolic win set 2 against Martin Baquero?",
-   "side": "Yes: Filip Misolic win set 2 against Martin Baquero",
-   "open_chance": 76,
-   "now_chance": 68,
-   "open_odds": "-317",
-   "now_odds": "-213",
-   "edge": 8,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-25T17:58:35.781Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "1781739:1",
    "market_id": "1781739",
    "market": "Games total",
@@ -508,6 +488,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1781733:1:2026-10-25T17:49:36.702Z",
+   "key": "1781733:1",
+   "at": "2026-10-25T18:10:48.820Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Martin Baquero +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+300",
+   "now_chance": 25,
+   "edge": 42,
+   "text": "Edge gone: Martin Baquero +4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-filmis-marbaq-2026-10-25"
+  },
   {
    "id": "new_edge:1781739:0:slight",
    "key": "1781739:0",
@@ -551,20 +545,6 @@
    "url": "https://polymarket.us/sports/atp/atp-filmis-marbaq-2026-10-25"
   },
   {
-   "id": "gone:1781748:0:2026-10-25T17:58:35.781Z",
-   "key": "1781748:0",
-   "at": "2026-10-25T18:04:42.929Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Yes: Filip Misolic win set 2 against Martin Baquero",
-   "market": "Set 2 winner",
-   "now_odds": "-213",
-   "now_chance": 68,
-   "edge": 8,
-   "text": "Edge gone: Yes: Filip Misolic win set 2 against Martin Baquero (Set 2 winner) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-filmis-marbaq-2026-10-25"
-  },
-  {
    "id": "gone:1781739:1:2026-10-25T17:43:48.108Z",
    "key": "1781739:1",
    "at": "2026-10-25T18:04:42.929Z",
@@ -576,20 +556,6 @@
    "now_chance": 63,
    "edge": 4,
    "text": "Edge gone: Under 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-filmis-marbaq-2026-10-25"
-  },
-  {
-   "id": "new_edge:1781748:0:slight",
-   "key": "1781748:0",
-   "at": "2026-10-25T17:58:35.781Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Yes: Filip Misolic win set 2 against Martin Baquero",
-   "market": "Set 2 winner",
-   "now_odds": "-213",
-   "now_chance": 68,
-   "edge": 8,
-   "text": "New slight edge: Yes: Filip Misolic win set 2 against Martin Baquero (Set 2 winner), 8 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-filmis-marbaq-2026-10-25"
   },
   {
@@ -779,7 +745,8 @@
   "gone:1781731:1:2026-10-25T17:43:48.108Z",
   "gone:1781741:0:2026-10-25T17:43:48.108Z",
   "gone:1781748:0:2026-10-25T17:58:35.781Z",
-  "gone:1781739:1:2026-10-25T17:43:48.108Z"
+  "gone:1781739:1:2026-10-25T17:43:48.108Z",
+  "gone:1781733:1:2026-10-25T17:49:36.702Z"
  ],
  "kalshi_checked": null
 }
