@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185128",
-  "fetched_at": "2026-10-25T11:07:36.734Z",
+  "fetched_at": "2026-10-25T11:13:01.457Z",
   "tennis": true,
   "tennis_match": {
    "id": "185128",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Sun, October 25th at 7:05 AM EDT",
-     "shortDetail": "10/25 - 7:05 AM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(1) Julian Cash (GBR) & Lloyd Glasspool (GBR) leads (2) Theo Arribage (FRA) & Albano Olivetti (FRA) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,15 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "curatedRank": {
       "current": 2
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "roster": {
       "displayName": "Theo Arribage / Albano Olivetti",
       "shortDisplayName": "T. Arribage / A. Olivetti",
@@ -125,9 +136,15 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "curatedRank": {
       "current": 1
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "roster": {
       "displayName": "Julian Cash / Lloyd Glasspool",
       "shortDisplayName": "J. Cash / L. Glasspool",
@@ -195,6 +212,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 110,
    "type": {
     "id": "3",
@@ -211,10 +233,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Sun, October 25th at 7:05 AM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Theo Arribage / Albano Olivetti",
@@ -232,7 +254,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-25T11:07:36.620Z",
+ "updated": "2026-10-25T11:13:01.286Z",
  "open_taken_at": "2026-10-24T10:56:12.608Z",
  "thresholds": {
   "big": 10,
@@ -280,11 +302,25 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-25T01:47:08.946Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1749086:0:2026-10-25T01:47:08.946Z",
+   "key": "1749086:0",
+   "at": "2026-10-25T11:13:01.286Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Cash / Glasspool win",
+   "market": "Moneyline",
+   "now_odds": "-127",
+   "now_chance": 56,
+   "edge": 5,
+   "text": "Edge gone: Cash / Glasspool win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-cashglassp-arribaolivet-2026-10-25"
+  },
   {
    "id": "new_edge:1749086:0:slight",
    "key": "1749086:0",
@@ -301,7 +337,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1749086:0:slight"
+  "new_edge:1749086:0:slight",
+  "gone:1749086:0:2026-10-25T01:47:08.946Z"
  ],
  "kalshi_checked": null
 }
