@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187123",
-  "fetched_at": "2026-10-25T07:26:01.754Z",
+  "fetched_at": "2026-10-25T07:32:21.941Z",
   "tennis": true,
   "tennis_match": {
    "id": "187123",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "detail": "3rd Set",
+     "shortDetail": "3rd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Yulia Putintseva (KAZ) is tied with Sayaka Ishii (JPN) 4-6 6-2",
+     "text": "Sayaka Ishii (JPN) leads Yulia Putintseva (KAZ) 6-4 2-6 1-1",
      "type": "event"
     }
    ],
@@ -61,7 +61,11 @@
        "winner": false
       },
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -107,7 +111,11 @@
        "winner": true
       },
       {
-       "value": 2
+       "value": 2,
+       "winner": false
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -160,14 +168,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "period": 3,
+  "clock": "3rd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Yulia Putintseva",
    "alias": "Yulia Putintseva",
    "name": "Yulia Putintseva",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Sayaka Ishii",
@@ -179,7 +187,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-25T07:26:01.657Z",
+ "updated": "2026-10-25T07:32:21.806Z",
  "open_taken_at": "2026-10-24T14:50:24.478Z",
  "thresholds": {
   "big": 10,
@@ -209,28 +217,6 @@
    "taken_at": "2026-10-24T17:10:09.862Z"
   },
   {
-   "market_id": "1758164",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Sayaka Ishii cover 4.5 vs the Yulia Putintseva in Sayaka Ishii vs. Yulia Putintseva?",
-   "sides": [
-    "Sayaka Ishii +4.50 (Games)",
-    "Yulia Putintseva -4.50 (Games)"
-   ],
-   "teams": [
-    "Sayaka Ishii",
-    "Yulia Putintseva"
-   ],
-   "player": null,
-   "mid": 28.5,
-   "yes_buy": 31,
-   "no_buy": 74,
-   "taken_at": "2026-10-25T04:24:15.319Z"
-  },
-  {
    "market_id": "1758171",
    "market": "Games total",
    "group": "game",
@@ -253,16 +239,16 @@
    "taken_at": "2026-10-25T06:11:24.466Z"
   },
   {
-   "market_id": "1758161",
+   "market_id": "1758162",
    "market": "Games spread",
    "group": "game",
    "mtype": "spread",
    "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Sayaka Ishii cover -1.5 vs the Yulia Putintseva in Sayaka Ishii vs. Yulia Putintseva?",
+   "line": 1.5,
+   "question": "Will the Sayaka Ishii cover 1.5 vs the Yulia Putintseva in Sayaka Ishii vs. Yulia Putintseva?",
    "sides": [
-    "Sayaka Ishii -1.50 (Games)",
-    "Yulia Putintseva +1.50 (Games)"
+    "Sayaka Ishii +1.50 (Games)",
+    "Yulia Putintseva -1.50 (Games)"
    ],
    "teams": [
     "Sayaka Ishii",
@@ -275,16 +261,38 @@
    "taken_at": "2026-10-25T05:02:09.650Z"
   },
   {
-   "market_id": "1758162",
+   "market_id": "1758164",
    "market": "Games spread",
    "group": "game",
    "mtype": "spread",
    "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Sayaka Ishii cover 1.5 vs the Yulia Putintseva in Sayaka Ishii vs. Yulia Putintseva?",
+   "line": 4.5,
+   "question": "Will the Sayaka Ishii cover 4.5 vs the Yulia Putintseva in Sayaka Ishii vs. Yulia Putintseva?",
    "sides": [
-    "Sayaka Ishii +1.50 (Games)",
-    "Yulia Putintseva -1.50 (Games)"
+    "Sayaka Ishii +4.50 (Games)",
+    "Yulia Putintseva -4.50 (Games)"
+   ],
+   "teams": [
+    "Sayaka Ishii",
+    "Yulia Putintseva"
+   ],
+   "player": null,
+   "mid": 28.5,
+   "yes_buy": 31,
+   "no_buy": 74,
+   "taken_at": "2026-10-25T04:24:15.319Z"
+  },
+  {
+   "market_id": "1758161",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Sayaka Ishii cover -1.5 vs the Yulia Putintseva in Sayaka Ishii vs. Yulia Putintseva?",
+   "sides": [
+    "Sayaka Ishii -1.50 (Games)",
+    "Yulia Putintseva +1.50 (Games)"
    ],
    "teams": [
     "Sayaka Ishii",
@@ -519,21 +527,21 @@
  ],
  "edges": [
   {
-   "key": "1758164:1",
-   "market_id": "1758164",
-   "market": "Games spread",
+   "key": "1758171:1",
+   "market_id": "1758171",
+   "market": "Games total",
    "group": "game",
-   "question": "Will the Sayaka Ishii cover 4.5 vs the Yulia Putintseva in Sayaka Ishii vs. Yulia Putintseva?",
-   "side": "Yulia Putintseva -4.50 (Games)",
-   "open_chance": 74,
-   "now_chance": 45,
-   "open_odds": "-285",
-   "now_odds": "+122",
-   "edge": 29,
+   "question": "Will the total in Sayaka Ishii vs. Yulia Putintseva be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 83,
+   "now_chance": 56,
+   "open_odds": "-488",
+   "now_odds": "-127",
+   "edge": 27,
    "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Yulia Putintseva not above the games spread right now",
-   "context": "Yulia Putintseva 4, 6 · Sayaka Ishii 6, 2 · 2nd Set (games by set)",
+   "class": "news",
+   "reason": "Big move (27 pts), likely news",
+   "context": "Yulia Putintseva 4, 6, 1 · Sayaka Ishii 6, 2, 1 · 3rd Set (games by set)",
    "first_seen": "2026-10-25T06:17:24.476Z",
    "status": "open",
    "kalshi": null
@@ -546,14 +554,14 @@
    "question": "Who will win in the upcoming wta event Sayaka Ishii vs Yulia Putintseva scheduled for October 25, 2026 at 4:10 AM UTC?",
    "side": "Yulia Putintseva win",
    "open_chance": 87,
-   "now_chance": 81,
+   "now_chance": 77,
    "open_odds": "-669",
-   "now_odds": "-426",
-   "edge": 6,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Yulia Putintseva trailing in sets",
-   "context": "Yulia Putintseva 4, 6 · Sayaka Ishii 6, 2 · 2nd Set (games by set)",
+   "now_odds": "-335",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Yulia Putintseva 4, 6, 1 · Sayaka Ishii 6, 2, 1 · 3rd Set (games by set)",
    "first_seen": "2026-10-25T06:17:24.476Z",
    "status": "open",
    "kalshi": null
@@ -599,20 +607,20 @@
    "kalshi": null
   },
   {
-   "key": "1758171:1",
-   "market_id": "1758171",
-   "market": "Games total",
+   "key": "1758164:1",
+   "market_id": "1758164",
+   "market": "Games spread",
    "group": "game",
-   "question": "Will the total in Sayaka Ishii vs. Yulia Putintseva be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 83,
-   "now_chance": 54,
-   "open_odds": "-488",
-   "now_odds": "-117",
+   "question": "Will the Sayaka Ishii cover 4.5 vs the Yulia Putintseva in Sayaka Ishii vs. Yulia Putintseva?",
+   "side": "Yulia Putintseva -4.50 (Games)",
+   "open_chance": 74,
+   "now_chance": 45,
+   "open_odds": "-285",
+   "now_odds": "+122",
    "edge": 29,
    "tier": "big",
-   "class": "news",
-   "reason": "Big move (29 pts), likely news",
+   "class": "score",
+   "reason": "Explained by score: Yulia Putintseva not above the games spread right now",
    "context": "Yulia Putintseva 4, 6 · Sayaka Ishii 6, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-25T06:17:24.476Z",
    "status": "gone",
