@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187224",
-  "fetched_at": "2026-10-25T16:43:59.888Z",
+  "fetched_at": "2026-10-25T16:50:04.224Z",
   "tennis": true,
   "tennis_match": {
    "id": "187224",
@@ -156,7 +156,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-25T16:43:59.730Z",
+ "updated": "2026-10-25T16:50:04.111Z",
  "open_taken_at": "2026-10-24T17:16:42.528Z",
  "thresholds": {
   "big": 10,
@@ -206,6 +206,50 @@
    "yes_buy": 80,
    "no_buy": 21,
    "taken_at": "2026-10-25T16:43:59.730Z"
+  },
+  {
+   "market_id": "1760391",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Mika Brunold vs. Remy Bertola be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 51.5,
+   "yes_buy": 53,
+   "no_buy": 50,
+   "taken_at": "2026-10-24T22:34:36.812Z"
+  },
+  {
+   "market_id": "1760399",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Mika Brunold win set 2 against Remy Bertola?",
+   "sides": [
+    "Yes: Mika Brunold win set 2 against Remy Bertola",
+    "No: Mika Brunold win set 2 against Remy Bertola"
+   ],
+   "teams": [
+    "Mika Brunold",
+    null
+   ],
+   "player": null,
+   "mid": 56,
+   "yes_buy": 59,
+   "no_buy": 47,
+   "taken_at": "2026-10-25T13:27:35.170Z"
   },
   {
    "market_id": "1760384",
@@ -272,54 +316,83 @@
    "yes_buy": 54,
    "no_buy": 49,
    "taken_at": "2026-10-24T22:34:36.812Z"
+  }
+ ],
+ "edges": [
+  {
+   "key": "1760385:0",
+   "market_id": "1760385",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Mika Brunold cover 4.5 vs the Remy Bertola in Mika Brunold vs. Remy Bertola?",
+   "side": "Mika Brunold +4.50 (Games)",
+   "open_chance": 80,
+   "now_chance": 64,
+   "open_odds": "-400",
+   "now_odds": "-178",
+   "edge": 16,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-10-25T16:50:04.111Z",
+   "status": "open",
+   "kalshi": null
   },
   {
+   "key": "1760391:1",
    "market_id": "1760391",
    "market": "Games total",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
    "question": "Will the total in Mika Brunold vs. Remy Bertola be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 51.5,
-   "yes_buy": 53,
-   "no_buy": 50,
-   "taken_at": "2026-10-24T22:34:36.812Z"
-  },
-  {
-   "market_id": "1760399",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Mika Brunold win set 2 against Remy Bertola?",
-   "sides": [
-    "Yes: Mika Brunold win set 2 against Remy Bertola",
-    "No: Mika Brunold win set 2 against Remy Bertola"
-   ],
-   "teams": [
-    "Mika Brunold",
-    null
-   ],
-   "player": null,
-   "mid": 56,
-   "yes_buy": 59,
-   "no_buy": 47,
-   "taken_at": "2026-10-25T13:27:35.170Z"
+   "side": "Under 22.5 (Games)",
+   "open_chance": 50,
+   "now_chance": 38,
+   "open_odds": "+100",
+   "now_odds": "+163",
+   "edge": 12,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-10-25T16:50:04.111Z",
+   "status": "open",
+   "kalshi": null
   }
  ],
- "edges": [],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "new_edge:1760385:0:big",
+   "key": "1760385:0",
+   "at": "2026-10-25T16:50:04.111Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Mika Brunold +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-178",
+   "now_chance": 64,
+   "edge": 16,
+   "text": "New big edge: Mika Brunold +4.50 (Games) (Games spread), 16 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-mikbru-rember-2026-10-25"
+  },
+  {
+   "id": "new_edge:1760391:1:big",
+   "key": "1760391:1",
+   "at": "2026-10-25T16:50:04.111Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+163",
+   "now_chance": 38,
+   "edge": 12,
+   "text": "New big edge: Under 22.5 (Games) (Games total), 12 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-mikbru-rember-2026-10-25"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:1760385:0:big",
+  "new_edge:1760391:1:big"
+ ],
  "kalshi_checked": null
 }
