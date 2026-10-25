@@ -9,37 +9,15 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-25T18:10:49.107Z"
+  "fetched_at": "2026-10-25T18:16:17.677Z"
  },
- "updated": "2026-10-25T18:10:48.820Z",
+ "updated": "2026-10-25T18:16:17.552Z",
  "open_taken_at": "2026-10-25T04:18:20.073Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "1781748",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Filip Misolic win set 2 against Martin Baquero?",
-   "sides": [
-    "Yes: Filip Misolic win set 2 against Martin Baquero",
-    "No: Filip Misolic win set 2 against Martin Baquero"
-   ],
-   "teams": [
-    "Filip Misolic",
-    null
-   ],
-   "player": null,
-   "mid": 75.5,
-   "yes_buy": 76,
-   "no_buy": 25,
-   "taken_at": "2026-10-25T17:37:16.351Z"
-  },
   {
    "market_id": "1781739",
    "market": "Games total",
@@ -83,6 +61,28 @@
    "yes_buy": 34,
    "no_buy": 67,
    "taken_at": "2026-10-25T17:28:28.163Z"
+  },
+  {
+   "market_id": "1781748",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Filip Misolic win set 2 against Martin Baquero?",
+   "sides": [
+    "Yes: Filip Misolic win set 2 against Martin Baquero",
+    "No: Filip Misolic win set 2 against Martin Baquero"
+   ],
+   "teams": [
+    "Filip Misolic",
+    null
+   ],
+   "player": null,
+   "mid": 75.5,
+   "yes_buy": 76,
+   "no_buy": 25,
+   "taken_at": "2026-10-25T17:37:16.351Z"
   },
   {
    "market_id": "1781733",
@@ -314,11 +314,11 @@
    "question": "Will the total in Filip Misolic vs. Martin Baquero be more than 17.5?",
    "side": "Over 17.5 (Games)",
    "open_chance": 34,
-   "now_chance": 26,
+   "now_chance": 21,
    "open_odds": "+194",
-   "now_odds": "+285",
-   "edge": 8,
-   "tier": "slight",
+   "now_odds": "+376",
+   "edge": 13,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -488,6 +488,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1781739:0:big",
+   "key": "1781739:0",
+   "at": "2026-10-25T18:16:17.552Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+376",
+   "now_chance": 21,
+   "edge": 13,
+   "text": "New big edge: Over 17.5 (Games) (Games total), 13 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-filmis-marbaq-2026-10-25"
+  },
   {
    "id": "gone:1781733:1:2026-10-25T17:49:36.702Z",
    "key": "1781733:1",
@@ -746,7 +760,8 @@
   "gone:1781741:0:2026-10-25T17:43:48.108Z",
   "gone:1781748:0:2026-10-25T17:58:35.781Z",
   "gone:1781739:1:2026-10-25T17:43:48.108Z",
-  "gone:1781733:1:2026-10-25T17:49:36.702Z"
+  "gone:1781733:1:2026-10-25T17:49:36.702Z",
+  "new_edge:1781739:0:big"
  ],
  "kalshi_checked": null
 }
