@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187141",
-  "fetched_at": "2026-10-25T04:18:08.656Z",
+  "fetched_at": "2026-10-25T04:24:10.035Z",
   "tennis": true,
   "tennis_match": {
    "id": "187141",
@@ -186,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-25T04:18:08.564Z",
+ "updated": "2026-10-25T04:24:09.933Z",
  "open_taken_at": "2026-10-24T08:06:43.769Z",
  "thresholds": {
   "big": 10,
@@ -214,28 +214,6 @@
    "yes_buy": 37,
    "no_buy": 64,
    "taken_at": "2026-10-24T09:49:56.537Z"
-  },
-  {
-   "market_id": "1746726",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Alevtina Ibragimova cover -4.5 vs the Polina Iatcenko in Alevtina Ibragimova vs. Polina Iatcenko?",
-   "sides": [
-    "Alevtina Ibragimova -4.50 (Games)",
-    "Polina Iatcenko +4.50 (Games)"
-   ],
-   "teams": [
-    "Alevtina Ibragimova",
-    "Polina Iatcenko"
-   ],
-   "player": null,
-   "mid": 17.5,
-   "yes_buy": 18,
-   "no_buy": 83,
-   "taken_at": "2026-10-25T03:14:14.537Z"
   },
   {
    "market_id": "1746722",
@@ -279,6 +257,50 @@
    "mid": 39,
    "yes_buy": 42,
    "no_buy": 64,
+   "taken_at": "2026-10-25T03:14:14.537Z"
+  },
+  {
+   "market_id": "1746735",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Alevtina Ibragimova vs. Polina Iatcenko be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 73.5,
+   "yes_buy": 74,
+   "no_buy": 27,
+   "taken_at": "2026-10-25T03:08:31.491Z"
+  },
+  {
+   "market_id": "1746726",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Alevtina Ibragimova cover -4.5 vs the Polina Iatcenko in Alevtina Ibragimova vs. Polina Iatcenko?",
+   "sides": [
+    "Alevtina Ibragimova -4.50 (Games)",
+    "Polina Iatcenko +4.50 (Games)"
+   ],
+   "teams": [
+    "Alevtina Ibragimova",
+    "Polina Iatcenko"
+   ],
+   "player": null,
+   "mid": 17.5,
+   "yes_buy": 18,
+   "no_buy": 83,
    "taken_at": "2026-10-25T03:14:14.537Z"
   },
   {
@@ -458,28 +480,6 @@
    "taken_at": "2026-10-24T22:58:14.112Z"
   },
   {
-   "market_id": "1746735",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Alevtina Ibragimova vs. Polina Iatcenko be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 73.5,
-   "yes_buy": 74,
-   "no_buy": 27,
-   "taken_at": "2026-10-25T03:08:31.491Z"
-  },
-  {
    "market_id": "1746732",
    "market": "Games spread",
    "group": "game",
@@ -525,6 +525,26 @@
   }
  ],
  "edges": [
+  {
+   "key": "1746735:0",
+   "market_id": "1746735",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Alevtina Ibragimova vs. Polina Iatcenko be more than 17.5?",
+   "side": "Over 17.5 (Games)",
+   "open_chance": 74,
+   "now_chance": 67,
+   "open_odds": "-285",
+   "now_odds": "-203",
+   "edge": 7,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Polina Iatcenko 3, 2 · Alevtina Ibragimova 6, 4 · 2nd Set (games by set)",
+   "first_seen": "2026-10-25T04:24:09.933Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1746733:1",
    "market_id": "1746733",
@@ -747,6 +767,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1746735:0:slight",
+   "key": "1746735:0",
+   "at": "2026-10-25T04:24:09.933Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-203",
+   "now_chance": 67,
+   "edge": 7,
+   "text": "New slight edge: Over 17.5 (Games) (Games total), 7 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-aleibr-poliat-2026-10-24"
+  },
   {
    "id": "gone:1746731:1:2026-10-25T04:12:05.907Z",
    "key": "1746731:1",
@@ -1089,7 +1123,8 @@
   "gone:1746736:1:2026-10-25T03:17:11.609Z",
   "new_edge:1746731:1:big",
   "gone:1746737:1:2026-10-25T03:23:11.763Z",
-  "gone:1746731:1:2026-10-25T04:12:05.907Z"
+  "gone:1746731:1:2026-10-25T04:12:05.907Z",
+  "new_edge:1746735:0:slight"
  ],
  "kalshi_checked": null
 }

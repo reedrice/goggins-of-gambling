@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187144",
-  "fetched_at": "2026-10-25T04:18:14.728Z",
+  "fetched_at": "2026-10-25T04:24:15.971Z",
   "tennis": true,
   "tennis_match": {
    "id": "187144",
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 4,
@@ -101,6 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 6,
@@ -142,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 232,
    "type": {
     "id": "2",
@@ -179,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-25T04:18:14.610Z",
+ "updated": "2026-10-25T04:24:15.885Z",
  "open_taken_at": "2026-10-24T15:02:35.703Z",
  "thresholds": {
   "big": 10,
@@ -209,28 +216,6 @@
    "taken_at": "2026-10-24T15:17:25.204Z"
   },
   {
-   "market_id": "1758236",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Carol Young Suh Lee cover 4.5 vs the Elena Pridankina in Carol Young Suh Lee vs. Elena Pridankina?",
-   "sides": [
-    "Carol Young Suh Lee +4.50 (Games)",
-    "Elena Pridankina -4.50 (Games)"
-   ],
-   "teams": [
-    "Carol Young Suh Lee",
-    "Elena Pridankina"
-   ],
-   "player": null,
-   "mid": 72.5,
-   "yes_buy": 73,
-   "no_buy": 28,
-   "taken_at": "2026-10-25T03:08:39.049Z"
-  },
-  {
    "market_id": "1758234",
    "market": "Games spread",
    "group": "game",
@@ -251,6 +236,72 @@
    "yes_buy": 58,
    "no_buy": 44,
    "taken_at": "2026-10-25T02:54:19.706Z"
+  },
+  {
+   "market_id": "1758250",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Carol Young Suh Lee win set 2 against Elena Pridankina?",
+   "sides": [
+    "Yes: Carol Young Suh Lee win set 2 against Elena Pridankina",
+    "No: Carol Young Suh Lee win set 2 against Elena Pridankina"
+   ],
+   "teams": [
+    "Carol Young Suh Lee",
+    null
+   ],
+   "player": null,
+   "mid": 52.5,
+   "yes_buy": 54,
+   "no_buy": 49,
+   "taken_at": "2026-10-25T03:14:21.776Z"
+  },
+  {
+   "market_id": "1758235",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Carol Young Suh Lee cover -4.5 vs the Elena Pridankina in Carol Young Suh Lee vs. Elena Pridankina?",
+   "sides": [
+    "Carol Young Suh Lee -4.50 (Games)",
+    "Elena Pridankina +4.50 (Games)"
+   ],
+   "teams": [
+    "Carol Young Suh Lee",
+    "Elena Pridankina"
+   ],
+   "player": null,
+   "mid": 29.5,
+   "yes_buy": 30,
+   "no_buy": 71,
+   "taken_at": "2026-10-25T03:08:39.049Z"
+  },
+  {
+   "market_id": "1758236",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Carol Young Suh Lee cover 4.5 vs the Elena Pridankina in Carol Young Suh Lee vs. Elena Pridankina?",
+   "sides": [
+    "Carol Young Suh Lee +4.50 (Games)",
+    "Elena Pridankina -4.50 (Games)"
+   ],
+   "teams": [
+    "Carol Young Suh Lee",
+    "Elena Pridankina"
+   ],
+   "player": null,
+   "mid": 72.5,
+   "yes_buy": 73,
+   "no_buy": 28,
+   "taken_at": "2026-10-25T03:08:39.049Z"
   },
   {
    "market_id": "1758233",
@@ -297,28 +348,6 @@
    "taken_at": "2026-10-25T00:22:21.406Z"
   },
   {
-   "market_id": "1758235",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Carol Young Suh Lee cover -4.5 vs the Elena Pridankina in Carol Young Suh Lee vs. Elena Pridankina?",
-   "sides": [
-    "Carol Young Suh Lee -4.50 (Games)",
-    "Elena Pridankina +4.50 (Games)"
-   ],
-   "teams": [
-    "Carol Young Suh Lee",
-    "Elena Pridankina"
-   ],
-   "player": null,
-   "mid": 29.5,
-   "yes_buy": 30,
-   "no_buy": 71,
-   "taken_at": "2026-10-25T03:08:39.049Z"
-  },
-  {
    "market_id": "1758244",
    "market": "Sets total",
    "group": "game",
@@ -339,28 +368,6 @@
    "yes_buy": 34,
    "no_buy": 67,
    "taken_at": "2026-10-25T03:08:39.049Z"
-  },
-  {
-   "market_id": "1758250",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Carol Young Suh Lee win set 2 against Elena Pridankina?",
-   "sides": [
-    "Yes: Carol Young Suh Lee win set 2 against Elena Pridankina",
-    "No: Carol Young Suh Lee win set 2 against Elena Pridankina"
-   ],
-   "teams": [
-    "Carol Young Suh Lee",
-    null
-   ],
-   "player": null,
-   "mid": 52.5,
-   "yes_buy": 54,
-   "no_buy": 49,
-   "taken_at": "2026-10-25T03:14:21.776Z"
   },
   {
    "market_id": "1758242",
@@ -519,6 +526,66 @@
  ],
  "edges": [
   {
+   "key": "1758234:1",
+   "market_id": "1758234",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Carol Young Suh Lee cover 1.5 vs the Elena Pridankina in Carol Young Suh Lee vs. Elena Pridankina?",
+   "side": "Elena Pridankina -1.50 (Games)",
+   "open_chance": 44,
+   "now_chance": 18,
+   "open_odds": "+127",
+   "now_odds": "+456",
+   "edge": 26,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Elena Pridankina not above the games spread right now",
+   "context": "Elena Pridankina 4, 1 · Carol Young Suh Lee 6, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-25T04:24:15.885Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1758250:1",
+   "market_id": "1758250",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Carol Young Suh Lee win set 2 against Elena Pridankina?",
+   "side": "No: Carol Young Suh Lee win set 2 against Elena Pridankina",
+   "open_chance": 49,
+   "now_chance": 24,
+   "open_odds": "+104",
+   "now_odds": "+317",
+   "edge": 25,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (25 pts), likely news",
+   "context": "Elena Pridankina 4, 1 · Carol Young Suh Lee 6, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-25T03:37:01.958Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1758235:1",
+   "market_id": "1758235",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Carol Young Suh Lee cover -4.5 vs the Elena Pridankina in Carol Young Suh Lee vs. Elena Pridankina?",
+   "side": "Elena Pridankina +4.50 (Games)",
+   "open_chance": 71,
+   "now_chance": 60,
+   "open_odds": "-245",
+   "now_odds": "-150",
+   "edge": 11,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Elena Pridankina 4, 1 · Carol Young Suh Lee 6, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-25T03:49:16.483Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1758239:1",
    "market_id": "1758239",
    "market": "Sets spread",
@@ -535,7 +602,7 @@
    "reason": "Big move (46 pts), likely news",
    "context": "Elena Pridankina 4, 1 · Carol Young Suh Lee 6, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-25T03:58:21.661Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -555,66 +622,6 @@
    "reason": "Explained by score: Elena Pridankina not above the games spread right now",
    "context": "Elena Pridankina 4, 1 · Carol Young Suh Lee 6, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-25T03:17:20.472Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1758235:1",
-   "market_id": "1758235",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Carol Young Suh Lee cover -4.5 vs the Elena Pridankina in Carol Young Suh Lee vs. Elena Pridankina?",
-   "side": "Elena Pridankina +4.50 (Games)",
-   "open_chance": 71,
-   "now_chance": 55,
-   "open_odds": "-245",
-   "now_odds": "-122",
-   "edge": 16,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Elena Pridankina 4, 1 · Carol Young Suh Lee 6, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-10-25T03:49:16.483Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1758244:0",
-   "market_id": "1758244",
-   "market": "Sets total",
-   "group": "game",
-   "question": "Will the total in Carol Young Suh Lee vs. Elena Pridankina be more than 2.5?",
-   "side": "Over 2.5 (Sets)",
-   "open_chance": 34,
-   "now_chance": 25,
-   "open_odds": "+194",
-   "now_odds": "+300",
-   "edge": 9,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Elena Pridankina 4, 1 · Carol Young Suh Lee 6, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-10-25T04:18:14.610Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1758250:1",
-   "market_id": "1758250",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Carol Young Suh Lee win set 2 against Elena Pridankina?",
-   "side": "No: Carol Young Suh Lee win set 2 against Elena Pridankina",
-   "open_chance": 49,
-   "now_chance": 23,
-   "open_odds": "+104",
-   "now_odds": "+335",
-   "edge": 26,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (26 pts), likely news",
-   "context": "Elena Pridankina 4, 0 · Carol Young Suh Lee 6, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-25T03:37:01.958Z",
    "status": "gone",
    "kalshi": null
   },
@@ -737,9 +744,43 @@
    "first_seen": "2026-10-25T03:14:21.776Z",
    "status": "gone",
    "kalshi": null
+  },
+  {
+   "key": "1758244:0",
+   "market_id": "1758244",
+   "market": "Sets total",
+   "group": "game",
+   "question": "Will the total in Carol Young Suh Lee vs. Elena Pridankina be more than 2.5?",
+   "side": "Over 2.5 (Sets)",
+   "open_chance": 34,
+   "now_chance": 25,
+   "open_odds": "+194",
+   "now_odds": "+300",
+   "edge": 9,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Elena Pridankina 4, 1 · Carol Young Suh Lee 6, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-25T04:18:14.610Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1758244:0:2026-10-25T04:18:14.610Z",
+   "key": "1758244:0",
+   "at": "2026-10-25T04:24:15.885Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 2.5 (Sets)",
+   "market": "Sets total",
+   "now_odds": "+300",
+   "now_chance": 25,
+   "edge": 9,
+   "text": "Edge gone: Over 2.5 (Sets) (Sets total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-carlee-elepri-2026-10-24"
+  },
   {
    "id": "new_edge:1758244:0:slight",
    "key": "1758244:0",
@@ -1080,7 +1121,8 @@
   "new_edge:1758235:1:big",
   "new_edge:1758242:0:big",
   "new_edge:1758244:0:slight",
-  "gone:1758242:0:2026-10-25T04:06:08.052Z"
+  "gone:1758242:0:2026-10-25T04:06:08.052Z",
+  "gone:1758244:0:2026-10-25T04:18:14.610Z"
  ],
  "kalshi_checked": null
 }
