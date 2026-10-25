@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185128",
-  "fetched_at": "2026-10-25T11:42:21.602Z",
+  "fetched_at": "2026-10-25T11:48:35.412Z",
   "tennis": true,
   "tennis_match": {
    "id": "185128",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(2) Theo Arribage (FRA) & Albano Olivetti (FRA) leads (1) Julian Cash (GBR) & Lloyd Glasspool (GBR) 5-4",
+     "text": "(1) Julian Cash (GBR) & Lloyd Glasspool (GBR) is tied with (2) Theo Arribage (FRA) & Albano Olivetti (FRA) 4-6 1-0",
      "type": "event"
     }
    ],
@@ -61,7 +61,11 @@
      },
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "roster": {
@@ -142,7 +146,11 @@
      },
      "linescores": [
       {
-       "value": 4
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 1
       }
      ],
      "roster": {
@@ -235,14 +243,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Theo Arribage / Albano Olivetti",
    "alias": "Theo Arribage / Albano Olivetti",
    "name": "Theo Arribage / Albano Olivetti",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Julian Cash / Lloyd Glasspool",
@@ -254,7 +262,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-25T11:42:21.417Z",
+ "updated": "2026-10-25T11:48:35.279Z",
  "open_taken_at": "2026-10-24T10:56:12.608Z",
  "thresholds": {
   "big": 10,
@@ -293,20 +301,34 @@
    "question": "Who will win in the upcoming atpdb event Cash / Glasspool vs Arribage / Olivetti scheduled for October 25, 2026 at 10:00 AM UTC?",
    "side": "Cash / Glasspool win",
    "open_chance": 61,
-   "now_chance": 44,
+   "now_chance": 34,
    "open_odds": "-156",
-   "now_odds": "+127",
-   "edge": 17,
+   "now_odds": "+194",
+   "edge": 27,
    "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Theo Arribage / Albano Olivetti 5 · Julian Cash / Lloyd Glasspool 4 · 1st Set (games by set)",
+   "class": "news",
+   "reason": "Big move (27 pts), likely news",
+   "context": "Theo Arribage / Albano Olivetti 6, 0 · Julian Cash / Lloyd Glasspool 4, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-25T01:47:08.946Z",
    "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "news:1749086:0",
+   "key": "1749086:0",
+   "at": "2026-10-25T11:48:35.279Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Cash / Glasspool win",
+   "market": "Moneyline",
+   "now_odds": "+194",
+   "now_chance": 34,
+   "edge": 27,
+   "text": "Big move, likely news: Cash / Glasspool win (Moneyline) is 27 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-cashglassp-arribaolivet-2026-10-25"
+  },
   {
    "id": "new_edge:1749086:0:big",
    "key": "1749086:0",
@@ -353,7 +375,8 @@
  "alert_seen": [
   "new_edge:1749086:0:slight",
   "gone:1749086:0:2026-10-25T01:47:08.946Z",
-  "new_edge:1749086:0:big"
+  "new_edge:1749086:0:big",
+  "news:1749086:0"
  ],
  "kalshi_checked": null
 }
