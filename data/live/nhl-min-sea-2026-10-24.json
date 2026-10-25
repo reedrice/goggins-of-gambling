@@ -9,12 +9,12 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892577",
-  "fetched_at": "2026-10-25T04:27:10.870Z",
+  "fetched_at": "2026-10-25T04:32:58.485Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 3,
-  "clock": "6:32",
-  "regulation_secs_left": 1292,
+  "clock": "4:05",
+  "regulation_secs_left": 1145,
   "home": {
    "abbr": "SEA",
    "alias": "Kraken",
@@ -128,7 +128,7 @@
    }
   ]
  },
- "updated": "2026-10-25T04:27:10.778Z",
+ "updated": "2026-10-25T04:32:58.389Z",
  "open_taken_at": "2026-10-23T05:00:38.080Z",
  "thresholds": {
   "big": 10,
@@ -155,28 +155,6 @@
    "mid": 24,
    "yes_buy": 25,
    "no_buy": 77,
-   "taken_at": "2026-10-24T03:05:41.984Z"
-  },
-  {
-   "market_id": "1610447",
-   "market": "Main total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 5.5,
-   "question": "Will the total in MIN vs SEA be more than 5.5?",
-   "sides": [
-    "Over 5.5",
-    "Under 5.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 57,
-   "yes_buy": 58,
-   "no_buy": 44,
    "taken_at": "2026-10-24T03:05:41.984Z"
   },
   {
@@ -221,28 +199,6 @@
    "mid": 34.5,
    "yes_buy": 37,
    "no_buy": 68,
-   "taken_at": "2026-10-24T09:49:43.844Z"
-  },
-  {
-   "market_id": "1737330",
-   "market": "Player prop",
-   "group": "prop",
-   "mtype": "prop",
-   "period": "full_game",
-   "line": 2,
-   "question": "Will Quinn Hughes record at least 2 assists in MIN vs SEA?",
-   "sides": [
-    "Yes: Quinn Hughes record at least 2 assists in MIN vs SEA",
-    "No: Quinn Hughes record at least 2 assists in MIN vs SEA"
-   ],
-   "teams": [
-    "Wild",
-    "Wild"
-   ],
-   "player": "Quinn Hughes",
-   "mid": 27,
-   "yes_buy": 30,
-   "no_buy": 76,
    "taken_at": "2026-10-24T09:49:43.844Z"
   },
   {
@@ -903,6 +859,50 @@
    "mid": 4.5,
    "yes_buy": 6,
    "no_buy": 97,
+   "taken_at": "2026-10-24T09:49:43.844Z"
+  },
+  {
+   "market_id": "1610447",
+   "market": "Main total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 5.5,
+   "question": "Will the total in MIN vs SEA be more than 5.5?",
+   "sides": [
+    "Over 5.5",
+    "Under 5.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 57,
+   "yes_buy": 58,
+   "no_buy": 44,
+   "taken_at": "2026-10-24T03:05:41.984Z"
+  },
+  {
+   "market_id": "1737330",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Quinn Hughes record at least 2 assists in MIN vs SEA?",
+   "sides": [
+    "Yes: Quinn Hughes record at least 2 assists in MIN vs SEA",
+    "No: Quinn Hughes record at least 2 assists in MIN vs SEA"
+   ],
+   "teams": [
+    "Wild",
+    "Wild"
+   ],
+   "player": "Quinn Hughes",
+   "mid": 27,
+   "yes_buy": 30,
+   "no_buy": 76,
    "taken_at": "2026-10-24T09:49:43.844Z"
   },
   {
@@ -2646,42 +2646,22 @@
  ],
  "edges": [
   {
-   "key": "1610447:1",
-   "market_id": "1610447",
-   "market": "Main total",
+   "key": "1610439:1",
+   "market_id": "1610439",
+   "market": "Main spread",
    "group": "game",
-   "question": "Will the total in MIN vs SEA be more than 5.5?",
-   "side": "Under 5.5",
-   "open_chance": 44,
-   "now_chance": 19,
-   "open_odds": "+127",
-   "now_odds": "+426",
-   "edge": 25,
+   "question": "Will the MIN Wild cover -2.5 vs the SEA Kraken in MIN vs SEA?",
+   "side": "Kraken +2.50",
+   "open_chance": 77,
+   "now_chance": 17,
+   "open_odds": "-335",
+   "now_odds": "+488",
+   "edge": 60,
    "tier": "big",
    "class": "score",
-   "reason": "Explained by score: scoring above pace (5 pts, pace 4)",
-   "context": "MIN 4, SEA 1, Q3 6:32",
-   "first_seen": "2026-10-25T04:18:04.962Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1737330:0",
-   "market_id": "1737330",
-   "market": "Player prop",
-   "group": "prop",
-   "question": "Will Quinn Hughes record at least 2 assists in MIN vs SEA?",
-   "side": "Yes: Quinn Hughes record at least 2 assists in MIN vs SEA",
-   "open_chance": 30,
-   "now_chance": 22,
-   "open_odds": "+233",
-   "now_odds": "+355",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "MIN up 3, Q3 6:32",
-   "first_seen": "2026-10-24T19:42:16.176Z",
+   "reason": "Explained by score: SEA not covering +2.5 right now",
+   "context": "SEA down 3, Q3 4:05",
+   "first_seen": "2026-10-25T04:32:58.389Z",
    "status": "open",
    "kalshi": true
   },
@@ -2700,7 +2680,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "MIN up 3, Q3 6:32",
+   "context": "MIN up 3, Q3 4:05",
    "first_seen": "2026-10-24T12:10:50.896Z",
    "status": "open",
    "kalshi": null
@@ -2722,6 +2702,26 @@
    "reason": "Big move (31 pts), likely news",
    "context": "SEA down 3, Q3 7:12",
    "first_seen": "2026-10-25T03:14:09.816Z",
+   "status": "gone",
+   "kalshi": true
+  },
+  {
+   "key": "1610447:1",
+   "market_id": "1610447",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in MIN vs SEA be more than 5.5?",
+   "side": "Under 5.5",
+   "open_chance": 44,
+   "now_chance": 19,
+   "open_odds": "+127",
+   "now_odds": "+426",
+   "edge": 25,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: scoring above pace (5 pts, pace 4)",
+   "context": "MIN 4, SEA 1, Q3 6:32",
+   "first_seen": "2026-10-25T04:18:04.962Z",
    "status": "gone",
    "kalshi": true
   },
@@ -2783,7 +2783,7 @@
    "context": "MIN up 3, Q3 11:41",
    "first_seen": "2026-10-25T04:12:02.145Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1736973:1",
@@ -2823,7 +2823,27 @@
    "context": "Pregame",
    "first_seen": "2026-10-24T19:42:16.176Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
+  },
+  {
+   "key": "1737330:0",
+   "market_id": "1737330",
+   "market": "Player prop",
+   "group": "prop",
+   "question": "Will Quinn Hughes record at least 2 assists in MIN vs SEA?",
+   "side": "Yes: Quinn Hughes record at least 2 assists in MIN vs SEA",
+   "open_chance": 30,
+   "now_chance": 22,
+   "open_odds": "+233",
+   "now_odds": "+355",
+   "edge": 8,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "MIN up 3, Q3 6:32",
+   "first_seen": "2026-10-24T19:42:16.176Z",
+   "status": "gone",
+   "kalshi": null
   },
   {
    "key": "1610448:1",
@@ -2883,7 +2903,7 @@
    "context": "SEA down 1, Q1 13:36",
    "first_seen": "2026-10-24T18:17:19.315Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1736983:1",
@@ -2923,7 +2943,7 @@
    "context": "SEA down 1, Q2 10:02",
    "first_seen": "2026-10-24T16:23:01.763Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1737507:0",
@@ -2943,7 +2963,7 @@
    "context": "MIN up 1, Q2 10:02",
    "first_seen": "2026-10-24T17:03:10.295Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1742796:1",
@@ -2983,7 +3003,7 @@
    "context": "MIN tied, Q1 0:00",
    "first_seen": "2026-10-24T19:42:16.176Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1736975:1",
@@ -3023,7 +3043,7 @@
    "context": "MIN up 3, Q2 0:30",
    "first_seen": "2026-10-24T15:17:05.011Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1737004:1",
@@ -3083,7 +3103,7 @@
    "context": "SEA tied, Q1 0:00",
    "first_seen": "2026-10-24T19:42:16.176Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1737522:0",
@@ -3103,7 +3123,7 @@
    "context": "SEA tied, Q1 0:00",
    "first_seen": "2026-10-24T19:42:16.176Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1737060:1",
@@ -3163,7 +3183,7 @@
    "context": "Pregame",
    "first_seen": "2026-10-25T01:12:14.760Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1737019:0",
@@ -3263,7 +3283,7 @@
    "context": "Pregame",
    "first_seen": "2026-10-24T19:42:16.176Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1747081:0",
@@ -3307,6 +3327,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1737330:0:2026-10-24T19:42:16.176Z",
+   "key": "1737330:0",
+   "at": "2026-10-25T04:32:58.389Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Yes: Quinn Hughes record at least 2 assists in MIN vs SEA",
+   "market": "Player prop",
+   "now_odds": "+355",
+   "now_chance": 22,
+   "edge": 8,
+   "text": "Edge gone: Yes: Quinn Hughes record at least 2 assists in MIN vs SEA (Player prop) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-min-sea-2026-10-24"
+  },
   {
    "id": "gone:1610448:0:2026-10-25T04:24:05.948Z",
    "key": "1610448:0",
@@ -3950,10 +3984,11 @@
   "new_edge:1610449:0:slight",
   "new_edge:1610448:0:big",
   "gone:1737504:1:2026-10-25T04:12:02.145Z",
-  "gone:1610448:0:2026-10-25T04:24:05.948Z"
+  "gone:1610448:0:2026-10-25T04:24:05.948Z",
+  "gone:1737330:0:2026-10-24T19:42:16.176Z"
  ],
  "kalshi_checked": {
-  "at": "2026-10-25T04:27:11.073Z",
+  "at": "2026-10-25T04:32:58.677Z",
   "event": "26OCT24MINSEA"
  }
 }
