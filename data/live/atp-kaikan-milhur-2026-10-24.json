@@ -9,15 +9,37 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-25T12:57:27.553Z"
+  "fetched_at": "2026-10-25T13:03:28.140Z"
  },
- "updated": "2026-10-25T12:57:27.475Z",
+ "updated": "2026-10-25T13:03:26.193Z",
  "open_taken_at": "2026-10-24T11:16:08.238Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1749378",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming atp event Kaigaoge Kang vs Millen Hurrion scheduled for October 25, 2026 at 2:00 AM UTC?",
+   "sides": [
+    "Kaigaoge Kang win",
+    "Millen Hurrion win"
+   ],
+   "teams": [
+    "Kaigaoge Kang",
+    "Millen Hurrion"
+   ],
+   "player": null,
+   "mid": 7,
+   "yes_buy": 9,
+   "no_buy": 95,
+   "taken_at": "2026-10-24T20:03:10.839Z"
+  },
   {
    "market_id": "1749508",
    "market": "Games spread",
@@ -41,26 +63,26 @@
    "taken_at": "2026-10-25T00:37:23.218Z"
   },
   {
-   "market_id": "1749511",
+   "market_id": "1749512",
    "market": "Games total",
    "group": "game",
    "mtype": "total",
    "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Kaigaoge Kang vs. Millen Hurrion be more than 17.5?",
+   "line": 22.5,
+   "question": "Will the total in Kaigaoge Kang vs. Millen Hurrion be more than 22.5?",
    "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
    ],
    "teams": [
     null,
     null
    ],
    "player": null,
-   "mid": 40,
-   "yes_buy": 42,
-   "no_buy": 62,
-   "taken_at": "2026-10-25T00:37:23.218Z"
+   "mid": 24.5,
+   "yes_buy": 25,
+   "no_buy": 76,
+   "taken_at": "2026-10-25T12:06:21.618Z"
   },
   {
    "market_id": "1749506",
@@ -283,51 +305,49 @@
    "taken_at": "2026-10-25T12:57:27.475Z"
   },
   {
-   "market_id": "1749512",
+   "market_id": "1749511",
    "market": "Games total",
    "group": "game",
    "mtype": "total",
    "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Kaigaoge Kang vs. Millen Hurrion be more than 22.5?",
+   "line": 17.5,
+   "question": "Will the total in Kaigaoge Kang vs. Millen Hurrion be more than 17.5?",
    "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
    ],
    "teams": [
     null,
     null
    ],
    "player": null,
-   "mid": 24.5,
-   "yes_buy": 25,
-   "no_buy": 76,
-   "taken_at": "2026-10-25T12:06:21.618Z"
-  },
-  {
-   "market_id": "1749378",
-   "market": "Moneyline",
-   "group": "game",
-   "mtype": "winner",
-   "period": "full_game",
-   "line": null,
-   "question": "Who will win in the upcoming atp event Kaigaoge Kang vs Millen Hurrion scheduled for October 25, 2026 at 2:00 AM UTC?",
-   "sides": [
-    "Kaigaoge Kang win",
-    "Millen Hurrion win"
-   ],
-   "teams": [
-    "Kaigaoge Kang",
-    "Millen Hurrion"
-   ],
-   "player": null,
-   "mid": 7,
-   "yes_buy": 9,
-   "no_buy": 95,
-   "taken_at": "2026-10-24T20:03:10.839Z"
+   "mid": 40,
+   "yes_buy": 42,
+   "no_buy": 62,
+   "taken_at": "2026-10-25T00:37:23.218Z"
   }
  ],
  "edges": [
+  {
+   "key": "1749512:1",
+   "market_id": "1749512",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Kaigaoge Kang vs. Millen Hurrion be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 76,
+   "now_chance": 53,
+   "open_odds": "-317",
+   "now_odds": "-113",
+   "edge": 23,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-25T13:03:26.193Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1749520:0",
    "market_id": "1749520",
@@ -371,6 +391,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1749512:1:big",
+   "key": "1749512:1",
+   "at": "2026-10-25T13:03:26.193Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 23,
+   "text": "New big edge: Under 22.5 (Games) (Games total), 23 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-kaikan-milhur-2026-10-24"
+  },
+  {
    "id": "new_edge:1749520:0:slight",
    "key": "1749520:0",
    "at": "2026-10-25T12:57:27.475Z",
@@ -402,7 +436,8 @@
  "alert_seen": [
   "gone:1749513:1:2026-10-25T12:06:21.618Z",
   "new_edge:1749505:1:slight",
-  "new_edge:1749520:0:slight"
+  "new_edge:1749520:0:slight",
+  "new_edge:1749512:1:big"
  ],
  "kalshi_checked": null
 }
