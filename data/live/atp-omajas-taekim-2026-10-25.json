@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-25T09:33:10.342Z"
+  "fetched_at": "2026-10-25T09:39:19.632Z"
  },
- "updated": "2026-10-25T09:33:10.283Z",
+ "updated": "2026-10-25T09:39:19.518Z",
  "open_taken_at": "2026-10-24T12:17:15.268Z",
  "thresholds": {
   "big": 10,
@@ -41,28 +41,6 @@
    "taken_at": "2026-10-24T18:43:18.879Z"
   },
   {
-   "market_id": "1752744",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Omar Jasika win set 2 against Tae Woo Kim?",
-   "sides": [
-    "Yes: Omar Jasika win set 2 against Tae Woo Kim",
-    "No: Omar Jasika win set 2 against Tae Woo Kim"
-   ],
-   "teams": [
-    "Omar Jasika",
-    null
-   ],
-   "player": null,
-   "mid": 94,
-   "yes_buy": 96,
-   "no_buy": 8,
-   "taken_at": "2026-10-25T08:37:36.205Z"
-  },
-  {
    "market_id": "1752712",
    "market": "Games spread",
    "group": "game",
@@ -83,6 +61,28 @@
    "yes_buy": 53,
    "no_buy": 50,
    "taken_at": "2026-10-25T00:14:29.073Z"
+  },
+  {
+   "market_id": "1752726",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Omar Jasika vs. Tae Woo Kim be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 31.5,
+   "yes_buy": 32,
+   "no_buy": 69,
+   "taken_at": "2026-10-25T07:38:16.253Z"
   },
   {
    "market_id": "1752729",
@@ -107,6 +107,28 @@
    "taken_at": "2026-10-25T07:38:16.253Z"
   },
   {
+   "market_id": "1752744",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Omar Jasika win set 2 against Tae Woo Kim?",
+   "sides": [
+    "Yes: Omar Jasika win set 2 against Tae Woo Kim",
+    "No: Omar Jasika win set 2 against Tae Woo Kim"
+   ],
+   "teams": [
+    "Omar Jasika",
+    null
+   ],
+   "player": null,
+   "mid": 94,
+   "yes_buy": 96,
+   "no_buy": 8,
+   "taken_at": "2026-10-25T08:37:36.205Z"
+  },
+  {
    "market_id": "1752706",
    "market": "Games spread",
    "group": "game",
@@ -126,28 +148,6 @@
    "mid": 70.5,
    "yes_buy": 71,
    "no_buy": 30,
-   "taken_at": "2026-10-25T07:38:16.253Z"
-  },
-  {
-   "market_id": "1752726",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Omar Jasika vs. Tae Woo Kim be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 31.5,
-   "yes_buy": 32,
-   "no_buy": 69,
    "taken_at": "2026-10-25T07:38:16.253Z"
   },
   {
@@ -349,6 +349,26 @@
    "kalshi": null
   },
   {
+   "key": "1752726:0",
+   "market_id": "1752726",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Omar Jasika vs. Tae Woo Kim be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 32,
+   "now_chance": 21,
+   "open_odds": "+213",
+   "now_odds": "+376",
+   "edge": 11,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-25T09:39:19.518Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1752724:1",
    "market_id": "1752724",
    "market": "Games total",
@@ -430,6 +450,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1752726:0:big",
+   "key": "1752726:0",
+   "at": "2026-10-25T09:39:19.518Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+376",
+   "now_chance": 21,
+   "edge": 11,
+   "text": "New big edge: Over 22.5 (Games) (Games total), 11 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-omajas-taekim-2026-10-25"
+  },
   {
    "id": "gone:1752717:0:2026-10-25T09:18:15.792Z",
    "key": "1752717:0",
@@ -613,7 +647,8 @@
   "gone:1752744:0:2026-10-25T09:12:05.791Z",
   "gone:1752724:1:2026-10-25T08:31:27.853Z",
   "gone:1752726:1:2026-10-25T09:12:05.791Z",
-  "gone:1752717:0:2026-10-25T09:18:15.792Z"
+  "gone:1752717:0:2026-10-25T09:18:15.792Z",
+  "new_edge:1752726:0:big"
  ],
  "kalshi_checked": null
 }
