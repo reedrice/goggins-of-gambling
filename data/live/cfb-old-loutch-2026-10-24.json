@@ -9,37 +9,15 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-24T23:55:56.399Z"
+  "fetched_at": "2026-10-25T00:02:07.041Z"
  },
- "updated": "2026-10-24T23:55:56.300Z",
+ "updated": "2026-10-25T00:02:06.964Z",
  "open_taken_at": "2026-10-23T05:00:32.451Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "1563545",
-   "market": "Main spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": 21.5,
-   "question": "Will the Old Dominion cover 21.5 vs the LA Tech in Old Dominion vs. LA Tech?",
-   "sides": [
-    "Monarchs +21.50",
-    "Bulldogs -21.50"
-   ],
-   "teams": [
-    "Monarchs",
-    "Bulldogs"
-   ],
-   "player": null,
-   "mid": 72.2,
-   "yes_buy": 72.5,
-   "no_buy": 28,
-   "taken_at": "2026-10-23T05:00:32.451Z"
-  },
   {
    "market_id": "1564079",
    "market": "Main total",
@@ -60,6 +38,50 @@
    "mid": 89.5,
    "yes_buy": 90,
    "no_buy": 11,
+   "taken_at": "2026-10-23T05:00:32.451Z"
+  },
+  {
+   "market_id": "1564080",
+   "market": "Alt total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 31.5,
+   "question": "Will the total in Old Dominion vs. LA Tech be more than 31.5?",
+   "sides": [
+    "Over 31.5",
+    "Under 31.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 84,
+   "yes_buy": 86,
+   "no_buy": 18,
+   "taken_at": "2026-10-23T05:00:32.451Z"
+  },
+  {
+   "market_id": "1563545",
+   "market": "Main spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 21.5,
+   "question": "Will the Old Dominion cover 21.5 vs the LA Tech in Old Dominion vs. LA Tech?",
+   "sides": [
+    "Monarchs +21.50",
+    "Bulldogs -21.50"
+   ],
+   "teams": [
+    "Monarchs",
+    "Bulldogs"
+   ],
+   "player": null,
+   "mid": 72.2,
+   "yes_buy": 72.5,
+   "no_buy": 28,
    "taken_at": "2026-10-23T05:00:32.451Z"
   },
   {
@@ -126,28 +148,6 @@
    "mid": 92.3,
    "yes_buy": 95,
    "no_buy": 10.5,
-   "taken_at": "2026-10-23T05:00:32.451Z"
-  },
-  {
-   "market_id": "1564080",
-   "market": "Alt total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 31.5,
-   "question": "Will the total in Old Dominion vs. LA Tech be more than 31.5?",
-   "sides": [
-    "Over 31.5",
-    "Under 31.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 84,
-   "yes_buy": 86,
-   "no_buy": 18,
    "taken_at": "2026-10-23T05:00:32.451Z"
   },
   {
@@ -2793,46 +2793,6 @@
  ],
  "edges": [
   {
-   "key": "1564080:0",
-   "market_id": "1564080",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in Old Dominion vs. LA Tech be more than 31.5?",
-   "side": "Over 31.5",
-   "open_chance": 86,
-   "now_chance": 22,
-   "open_odds": "-614",
-   "now_odds": "+355",
-   "edge": 64,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-24T22:16:15.607Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1564079:0",
-   "market_id": "1564079",
-   "market": "Main total",
-   "group": "game",
-   "question": "Will the total in Old Dominion vs. LA Tech be more than 28.5?",
-   "side": "Over 28.5",
-   "open_chance": 90,
-   "now_chance": 31,
-   "open_odds": "-900",
-   "now_odds": "+223",
-   "edge": 59,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-24T23:42:15.939Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1563545:0",
    "market_id": "1563545",
    "market": "Main spread",
@@ -2849,7 +2809,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T23:55:56.300Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -3355,6 +3315,20 @@
  ],
  "alerts": [
   {
+   "id": "gone:1563545:0:2026-10-24T23:55:56.300Z",
+   "key": "1563545:0",
+   "at": "2026-10-25T00:02:06.964Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Monarchs +21.50",
+   "market": "Main spread",
+   "now_odds": "+365",
+   "now_chance": 21.5,
+   "edge": 51,
+   "text": "Edge gone: Monarchs +21.50 (Main spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-old-loutch-2026-10-24"
+  },
+  {
    "id": "gone:1563549:0:2026-10-24T23:36:13.189Z",
    "key": "1563549:0",
    "at": "2026-10-24T23:55:56.300Z",
@@ -3366,20 +3340,6 @@
    "now_chance": 69.5,
    "edge": 20.5,
    "text": "Edge gone: Monarchs +30.50 (Alt spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/cfb/cfb-old-loutch-2026-10-24"
-  },
-  {
-   "id": "gone:1564079:0:2026-10-24T23:42:15.939Z",
-   "key": "1564079:0",
-   "at": "2026-10-24T23:50:06.378Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Over 28.5",
-   "market": "Main total",
-   "now_odds": "+100",
-   "now_chance": 50,
-   "edge": 40,
-   "text": "Edge gone: Over 28.5 (Main total) is no longer 4+ points cheaper than open.",
    "url": "https://polymarket.us/sports/cfb/cfb-old-loutch-2026-10-24"
   },
   {
@@ -3436,34 +3396,6 @@
    "now_chance": 74,
    "edge": 10,
    "text": "New big edge: No: the fourth quarter end tied (Q4 winner), 10 points cheaper than open.",
-   "url": "https://polymarket.us/sports/cfb/cfb-old-loutch-2026-10-24"
-  },
-  {
-   "id": "gone:1564080:0:2026-10-24T22:16:15.607Z",
-   "key": "1564080:0",
-   "at": "2026-10-24T23:03:24.099Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Over 31.5",
-   "market": "Alt total",
-   "now_odds": "-335",
-   "now_chance": 77,
-   "edge": 9,
-   "text": "Edge gone: Over 31.5 (Alt total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/cfb/cfb-old-loutch-2026-10-24"
-  },
-  {
-   "id": "new_edge:1564080:0:big",
-   "key": "1564080:0",
-   "at": "2026-10-24T22:16:15.607Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Over 31.5",
-   "market": "Alt total",
-   "now_odds": "-245",
-   "now_chance": 71,
-   "edge": 15,
-   "text": "New big edge: Over 31.5 (Alt total), 15 points cheaper than open.",
    "url": "https://polymarket.us/sports/cfb/cfb-old-loutch-2026-10-24"
   },
   {
@@ -3817,7 +3749,8 @@
   "gone:1401780:0:2026-10-24T23:27:12.502Z",
   "gone:1401781:1:2026-10-24T23:27:12.502Z",
   "gone:1564079:0:2026-10-24T23:42:15.939Z",
-  "gone:1563549:0:2026-10-24T23:36:13.189Z"
+  "gone:1563549:0:2026-10-24T23:36:13.189Z",
+  "gone:1563545:0:2026-10-24T23:55:56.300Z"
  ],
  "kalshi_checked": null
 }
