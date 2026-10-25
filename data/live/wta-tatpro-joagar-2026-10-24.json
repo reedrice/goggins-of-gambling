@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187146",
-  "fetched_at": "2026-10-25T06:38:26.679Z",
+  "fetched_at": "2026-10-25T06:41:42.605Z",
   "tennis": true,
   "tennis_match": {
    "id": "187146",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "detail": "3rd Set",
+     "shortDetail": "3rd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Joanna Garland (TPO) is tied with Tatiana Prozorova (RUS) 4-6 6-3",
+     "text": "Tatiana Prozorova (RUS) leads Joanna Garland (TPO) 6-4 3-6 0-0",
      "type": "event"
     }
    ],
@@ -55,13 +55,18 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 4,
        "winner": false
       },
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -101,13 +106,18 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 3
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -142,6 +152,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 232,
    "type": {
     "id": "2",
@@ -160,14 +175,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "period": 3,
+  "clock": "3rd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Joanna Garland",
    "alias": "Joanna Garland",
    "name": "Joanna Garland",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Tatiana Prozorova",
@@ -179,7 +194,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-25T06:38:26.512Z",
+ "updated": "2026-10-25T06:41:42.511Z",
  "open_taken_at": "2026-10-24T15:02:35.616Z",
  "thresholds": {
   "big": 10,
@@ -231,28 +246,6 @@
    "taken_at": "2026-10-25T05:02:10.008Z"
   },
   {
-   "market_id": "1758198",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Tatiana Prozorova cover 1.5 vs the Joanna Garland in Tatiana Prozorova vs. Joanna Garland?",
-   "sides": [
-    "Tatiana Prozorova +1.50 (Games)",
-    "Joanna Garland -1.50 (Games)"
-   ],
-   "teams": [
-    "Tatiana Prozorova",
-    "Joanna Garland"
-   ],
-   "player": null,
-   "mid": 61.5,
-   "yes_buy": 62,
-   "no_buy": 39,
-   "taken_at": "2026-10-25T05:02:10.008Z"
-  },
-  {
    "market_id": "1758197",
    "market": "Games spread",
    "group": "game",
@@ -273,6 +266,28 @@
    "yes_buy": 54,
    "no_buy": 49,
    "taken_at": "2026-10-24T18:43:21.783Z"
+  },
+  {
+   "market_id": "1758198",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Tatiana Prozorova cover 1.5 vs the Joanna Garland in Tatiana Prozorova vs. Joanna Garland?",
+   "sides": [
+    "Tatiana Prozorova +1.50 (Games)",
+    "Joanna Garland -1.50 (Games)"
+   ],
+   "teams": [
+    "Tatiana Prozorova",
+    "Joanna Garland"
+   ],
+   "player": null,
+   "mid": 61.5,
+   "yes_buy": 62,
+   "no_buy": 39,
+   "taken_at": "2026-10-25T05:02:10.008Z"
   },
   {
    "market_id": "1758200",
@@ -533,7 +548,7 @@
    "tier": "big",
    "class": "news",
    "reason": "Big move (40 pts), likely news",
-   "context": "Joanna Garland 4, 6 · Tatiana Prozorova 6, 3 · 2nd Set (games by set)",
+   "context": "Joanna Garland 4, 6, 0 · Tatiana Prozorova 6, 3, 0 · 3rd Set (games by set)",
    "first_seen": "2026-10-25T06:23:03.266Z",
    "status": "open",
    "kalshi": null
@@ -553,48 +568,28 @@
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Tatiana Prozorova not above the games spread right now",
-   "context": "Joanna Garland 4, 6 · Tatiana Prozorova 6, 3 · 2nd Set (games by set)",
+   "context": "Joanna Garland 4, 6, 0 · Tatiana Prozorova 6, 3, 0 · 3rd Set (games by set)",
    "first_seen": "2026-10-25T05:14:26.154Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1758198:0",
-   "market_id": "1758198",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Tatiana Prozorova cover 1.5 vs the Joanna Garland in Tatiana Prozorova vs. Joanna Garland?",
-   "side": "Tatiana Prozorova +1.50 (Games)",
-   "open_chance": 62,
-   "now_chance": 53,
-   "open_odds": "-163",
-   "now_odds": "-113",
-   "edge": 9,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Joanna Garland 4, 6 · Tatiana Prozorova 6, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-10-25T05:41:33.581Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1757349:0",
+   "key": "1757349:1",
    "market_id": "1757349",
    "market": "Moneyline",
    "group": "game",
    "question": "Who will win in the upcoming wta event Tatiana Prozorova vs Joanna Garland scheduled for October 25, 2026 at 2:00 AM UTC?",
-   "side": "Tatiana Prozorova win",
-   "open_chance": 58,
-   "now_chance": 52,
-   "open_odds": "-138",
-   "now_odds": "-108",
-   "edge": 6,
+   "side": "Joanna Garland win",
+   "open_chance": 44,
+   "now_chance": 40,
+   "open_odds": "+127",
+   "now_odds": "+150",
+   "edge": 4,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Joanna Garland 4, 6 · Tatiana Prozorova 6, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-10-25T05:14:26.154Z",
+   "context": "Joanna Garland 4, 6, 0 · Tatiana Prozorova 6, 3, 0 · 3rd Set (games by set)",
+   "first_seen": "2026-10-25T05:47:04.634Z",
    "status": "open",
    "kalshi": null
   },
@@ -635,26 +630,6 @@
    "reason": "Explained by score: Joanna Garland not above the games spread right now",
    "context": "Joanna Garland 4, 1 · Tatiana Prozorova 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-25T05:38:36.257Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1757349:1",
-   "market_id": "1757349",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Tatiana Prozorova vs Joanna Garland scheduled for October 25, 2026 at 2:00 AM UTC?",
-   "side": "Joanna Garland win",
-   "open_chance": 44,
-   "now_chance": 26,
-   "open_odds": "+127",
-   "now_odds": "+285",
-   "edge": 18,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Joanna Garland trailing in sets",
-   "context": "Joanna Garland 4, 4 · Tatiana Prozorova 6, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-10-25T05:47:04.634Z",
    "status": "gone",
    "kalshi": null
   },
@@ -719,6 +694,26 @@
    "kalshi": null
   },
   {
+   "key": "1758198:0",
+   "market_id": "1758198",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Tatiana Prozorova cover 1.5 vs the Joanna Garland in Tatiana Prozorova vs. Joanna Garland?",
+   "side": "Tatiana Prozorova +1.50 (Games)",
+   "open_chance": 62,
+   "now_chance": 53,
+   "open_odds": "-163",
+   "now_odds": "-113",
+   "edge": 9,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Joanna Garland 4, 6 · Tatiana Prozorova 6, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-10-25T05:41:33.581Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1758208:1",
    "market_id": "1758208",
    "market": "Sets total",
@@ -759,6 +754,26 @@
    "kalshi": null
   },
   {
+   "key": "1757349:0",
+   "market_id": "1757349",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Tatiana Prozorova vs Joanna Garland scheduled for October 25, 2026 at 2:00 AM UTC?",
+   "side": "Tatiana Prozorova win",
+   "open_chance": 58,
+   "now_chance": 52,
+   "open_odds": "-138",
+   "now_odds": "-108",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Joanna Garland 4, 6 · Tatiana Prozorova 6, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-10-25T05:14:26.154Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1758203:0",
    "market_id": "1758203",
    "market": "Sets spread",
@@ -780,6 +795,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1757349:1:slight",
+   "key": "1757349:1",
+   "at": "2026-10-25T06:41:42.511Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Joanna Garland win",
+   "market": "Moneyline",
+   "now_odds": "+150",
+   "now_chance": 40,
+   "edge": 4,
+   "text": "New slight edge: Joanna Garland win (Moneyline), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-tatpro-joagar-2026-10-24"
+  },
   {
    "id": "news:1758207:1",
    "key": "1758207:1",
@@ -1098,7 +1127,8 @@
   "news:1758206:1",
   "new_edge:1758203:1:big",
   "news:1758207:1",
-  "new_edge:1758198:0:slight"
+  "new_edge:1758198:0:slight",
+  "new_edge:1757349:1:slight"
  ],
  "kalshi_checked": null
 }
