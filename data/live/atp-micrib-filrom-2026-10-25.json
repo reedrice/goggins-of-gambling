@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-25T10:33:38.076Z"
+  "fetched_at": "2026-10-25T10:37:26.551Z"
  },
- "updated": "2026-10-25T10:33:37.902Z",
+ "updated": "2026-10-25T10:37:26.469Z",
  "open_taken_at": "2026-10-24T15:32:25.274Z",
  "thresholds": {
   "big": 10,
@@ -107,26 +107,26 @@
    "taken_at": "2026-10-25T10:06:21.434Z"
   },
   {
-   "market_id": "1759015",
-   "market": "Set 1 winner",
+   "market_id": "1759008",
+   "market": "Games total",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Michele Ribecai win set 1 against Filippo Romano?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Michele Ribecai vs. Filippo Romano be more than 22.5?",
    "sides": [
-    "Yes: Michele Ribecai win set 1 against Filippo Romano",
-    "No: Michele Ribecai win set 1 against Filippo Romano"
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
    ],
    "teams": [
-    "Michele Ribecai",
+    null,
     null
    ],
    "player": null,
-   "mid": 62.5,
-   "yes_buy": 65,
-   "no_buy": 40,
-   "taken_at": "2026-10-25T10:18:28.968Z"
+   "mid": 44,
+   "yes_buy": 45,
+   "no_buy": 57,
+   "taken_at": "2026-10-24T17:03:25.084Z"
   },
   {
    "market_id": "1758999",
@@ -148,28 +148,6 @@
    "mid": 52,
    "yes_buy": 53,
    "no_buy": 49,
-   "taken_at": "2026-10-24T17:03:25.084Z"
-  },
-  {
-   "market_id": "1759008",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Michele Ribecai vs. Filippo Romano be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 44,
-   "yes_buy": 45,
-   "no_buy": 57,
    "taken_at": "2026-10-24T17:03:25.084Z"
   },
   {
@@ -261,6 +239,28 @@
    "taken_at": "2026-10-25T10:06:21.434Z"
   },
   {
+   "market_id": "1759015",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Michele Ribecai win set 1 against Filippo Romano?",
+   "sides": [
+    "Yes: Michele Ribecai win set 1 against Filippo Romano",
+    "No: Michele Ribecai win set 1 against Filippo Romano"
+   ],
+   "teams": [
+    "Michele Ribecai",
+    null
+   ],
+   "player": null,
+   "mid": 62.5,
+   "yes_buy": 65,
+   "no_buy": 40,
+   "taken_at": "2026-10-25T10:18:28.968Z"
+  },
+  {
    "market_id": "1759010",
    "market": "Sets total",
    "group": "game",
@@ -284,6 +284,26 @@
   }
  ],
  "edges": [
+  {
+   "key": "1759016:1",
+   "market_id": "1759016",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Michele Ribecai win set 2 against Filippo Romano?",
+   "side": "No: Michele Ribecai win set 2 against Filippo Romano",
+   "open_chance": 61,
+   "now_chance": 53,
+   "open_odds": "-156",
+   "now_odds": "-113",
+   "edge": 8,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-25T10:37:26.469Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1759008:1",
    "market_id": "1759008",
@@ -325,6 +345,46 @@
    "kalshi": null
   },
   {
+   "key": "1758254:0",
+   "market_id": "1758254",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Michele Ribecai vs Filippo Romano scheduled for October 25, 2026 at 9:00 AM UTC?",
+   "side": "Michele Ribecai win",
+   "open_chance": 60,
+   "now_chance": 54,
+   "open_odds": "-150",
+   "now_odds": "-117",
+   "edge": 6,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-25T10:37:26.469Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1758999:0",
+   "market_id": "1758999",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Michele Ribecai cover -1.5 vs the Filippo Romano in Michele Ribecai vs. Filippo Romano?",
+   "side": "Michele Ribecai -1.50 (Games)",
+   "open_chance": 53,
+   "now_chance": 49,
+   "open_odds": "-113",
+   "now_odds": "+104",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-25T10:37:26.469Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1759015:0",
    "market_id": "1759015",
    "market": "Set 1 winner",
@@ -341,27 +401,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-25T10:24:29.377Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1758999:1",
-   "market_id": "1758999",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Michele Ribecai cover -1.5 vs the Filippo Romano in Michele Ribecai vs. Filippo Romano?",
-   "side": "Filippo Romano +1.50 (Games)",
-   "open_chance": 49,
-   "now_chance": 44,
-   "open_odds": "+104",
-   "now_odds": "+127",
-   "edge": 5,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-25T10:24:29.377Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -383,9 +423,85 @@
    "first_seen": "2026-10-24T17:03:25.084Z",
    "status": "gone",
    "kalshi": null
+  },
+  {
+   "key": "1758999:1",
+   "market_id": "1758999",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Michele Ribecai cover -1.5 vs the Filippo Romano in Michele Ribecai vs. Filippo Romano?",
+   "side": "Filippo Romano +1.50 (Games)",
+   "open_chance": 49,
+   "now_chance": 44,
+   "open_odds": "+104",
+   "now_odds": "+127",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-25T10:24:29.377Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1759016:1:slight",
+   "key": "1759016:1",
+   "at": "2026-10-25T10:37:26.469Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "No: Michele Ribecai win set 2 against Filippo Romano",
+   "market": "Set 2 winner",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 8,
+   "text": "New slight edge: No: Michele Ribecai win set 2 against Filippo Romano (Set 2 winner), 8 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-micrib-filrom-2026-10-25"
+  },
+  {
+   "id": "new_edge:1758254:0:slight",
+   "key": "1758254:0",
+   "at": "2026-10-25T10:37:26.469Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Michele Ribecai win",
+   "market": "Moneyline",
+   "now_odds": "-117",
+   "now_chance": 54,
+   "edge": 6,
+   "text": "New slight edge: Michele Ribecai win (Moneyline), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-micrib-filrom-2026-10-25"
+  },
+  {
+   "id": "new_edge:1758999:0:slight",
+   "key": "1758999:0",
+   "at": "2026-10-25T10:37:26.469Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Michele Ribecai -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+104",
+   "now_chance": 49,
+   "edge": 4,
+   "text": "New slight edge: Michele Ribecai -1.50 (Games) (Games spread), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-micrib-filrom-2026-10-25"
+  },
+  {
+   "id": "gone:1758999:1:2026-10-25T10:24:29.377Z",
+   "key": "1758999:1",
+   "at": "2026-10-25T10:37:26.469Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Filippo Romano +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+127",
+   "now_chance": 44,
+   "edge": 5,
+   "text": "Edge gone: Filippo Romano +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-micrib-filrom-2026-10-25"
+  },
   {
    "id": "new_edge:1759008:1:slight",
    "key": "1759008:1",
@@ -507,7 +623,11 @@
   "new_edge:1758999:1:slight",
   "gone:1759015:0:2026-10-25T10:24:29.377Z",
   "new_edge:1759008:1:slight",
-  "gone:1758254:1:2026-10-24T17:03:25.084Z"
+  "gone:1758254:1:2026-10-24T17:03:25.084Z",
+  "new_edge:1759016:1:slight",
+  "new_edge:1758254:0:slight",
+  "new_edge:1758999:0:slight",
+  "gone:1758999:1:2026-10-25T10:24:29.377Z"
  ],
  "kalshi_checked": null
 }

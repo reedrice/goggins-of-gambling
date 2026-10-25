@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-25T10:33:29.161Z"
+  "fetched_at": "2026-10-25T10:37:19.630Z"
  },
- "updated": "2026-10-25T10:33:29.028Z",
+ "updated": "2026-10-25T10:37:19.549Z",
  "open_taken_at": "2026-10-24T11:16:08.384Z",
  "thresholds": {
   "big": 10,
@@ -127,6 +127,28 @@
    "yes_buy": 60,
    "no_buy": 41,
    "taken_at": "2026-10-25T10:11:59.643Z"
+  },
+  {
+   "market_id": "1749604",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Ryuki Matsuda vs. Naoya Honda be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 36.5,
+   "yes_buy": 39,
+   "no_buy": 66,
+   "taken_at": "2026-10-25T09:18:14.173Z"
   },
   {
    "market_id": "1749594",
@@ -261,6 +283,28 @@
    "taken_at": "2026-10-25T09:12:04.340Z"
   },
   {
+   "market_id": "1749599",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Ryuki Matsuda cover -1.5 vs the Naoya Honda in Ryuki Matsuda vs. Naoya Honda?",
+   "sides": [
+    "Ryuki Matsuda -1.50 (Sets)",
+    "Naoya Honda +1.50 (Sets)"
+   ],
+   "teams": [
+    "Ryuki Matsuda",
+    "Naoya Honda"
+   ],
+   "player": null,
+   "mid": 29.5,
+   "yes_buy": 30,
+   "no_buy": 71,
+   "taken_at": "2026-10-25T09:12:04.340Z"
+  },
+  {
    "market_id": "1749603",
    "market": "Games total",
    "group": "game",
@@ -303,53 +347,29 @@
    "yes_buy": 70,
    "no_buy": 36,
    "taken_at": "2026-10-25T10:18:21.158Z"
-  },
-  {
-   "market_id": "1749599",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Ryuki Matsuda cover -1.5 vs the Naoya Honda in Ryuki Matsuda vs. Naoya Honda?",
-   "sides": [
-    "Ryuki Matsuda -1.50 (Sets)",
-    "Naoya Honda +1.50 (Sets)"
-   ],
-   "teams": [
-    "Ryuki Matsuda",
-    "Naoya Honda"
-   ],
-   "player": null,
-   "mid": 29.5,
-   "yes_buy": 30,
-   "no_buy": 71,
-   "taken_at": "2026-10-25T09:12:04.340Z"
-  },
-  {
-   "market_id": "1749604",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Ryuki Matsuda vs. Naoya Honda be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 36.5,
-   "yes_buy": 39,
-   "no_buy": 66,
-   "taken_at": "2026-10-25T09:18:14.173Z"
   }
  ],
  "edges": [
+  {
+   "key": "1749604:1",
+   "market_id": "1749604",
+   "market": "Sets total",
+   "group": "game",
+   "question": "Will the total in Ryuki Matsuda vs. Naoya Honda be more than 2.5?",
+   "side": "Under 2.5 (Sets)",
+   "open_chance": 66,
+   "now_chance": 42,
+   "open_odds": "-194",
+   "now_odds": "+138",
+   "edge": 24,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-25T09:24:01.291Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1749609:0",
    "market_id": "1749609",
@@ -411,6 +431,26 @@
    "kalshi": null
   },
   {
+   "key": "1749599:0",
+   "market_id": "1749599",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Ryuki Matsuda cover -1.5 vs the Naoya Honda in Ryuki Matsuda vs. Naoya Honda?",
+   "side": "Ryuki Matsuda -1.50 (Sets)",
+   "open_chance": 30,
+   "now_chance": 26,
+   "open_odds": "+233",
+   "now_odds": "+285",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-25T10:37:19.549Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1749599:1",
    "market_id": "1749599",
    "market": "Sets spread",
@@ -427,26 +467,6 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-25T10:03:18.793Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1749604:1",
-   "market_id": "1749604",
-   "market": "Sets total",
-   "group": "game",
-   "question": "Will the total in Ryuki Matsuda vs. Naoya Honda be more than 2.5?",
-   "side": "Under 2.5 (Sets)",
-   "open_chance": 66,
-   "now_chance": 62,
-   "open_odds": "-194",
-   "now_odds": "-163",
-   "edge": 4,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-25T09:24:01.291Z",
    "status": "gone",
    "kalshi": null
   },

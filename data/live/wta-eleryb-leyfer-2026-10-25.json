@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185550",
-  "fetched_at": "2026-10-25T10:33:31.051Z",
+  "fetched_at": "2026-10-25T10:37:20.987Z",
   "tennis": true,
   "tennis_match": {
    "id": "185550",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Elena Rybakina (KAZ) leads Leylah Fernandez (CAN) 6-2 4-2",
+     "text": "(1) Elena Rybakina (KAZ) leads Leylah Fernandez (CAN) 6-2 5-2",
      "type": "event"
     }
    ],
@@ -110,7 +110,7 @@
        "winner": true
       },
       {
-       "value": 4
+       "value": 5
       }
      ],
      "athlete": {
@@ -182,13 +182,35 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-25T10:33:30.867Z",
+ "updated": "2026-10-25T10:37:20.890Z",
  "open_taken_at": "2026-10-24T11:48:10.554Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1752755",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Elena Rybakina cover -7.5 vs the Leylah Fernandez in Elena Rybakina vs. Leylah Fernandez?",
+   "sides": [
+    "Elena Rybakina -7.50 (Games)",
+    "Leylah Fernandez +7.50 (Games)"
+   ],
+   "teams": [
+    "Elena Rybakina",
+    "Leylah Fernandez"
+   ],
+   "player": null,
+   "mid": 29.5,
+   "yes_buy": 30,
+   "no_buy": 71,
+   "taken_at": "2026-10-25T09:03:58.518Z"
+  },
   {
    "market_id": "1752749",
    "market": "Games spread",
@@ -254,28 +276,6 @@
    "yes_buy": 80,
    "no_buy": 21,
    "taken_at": "2026-10-25T09:27:13.500Z"
-  },
-  {
-   "market_id": "1752755",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Elena Rybakina cover -7.5 vs the Leylah Fernandez in Elena Rybakina vs. Leylah Fernandez?",
-   "sides": [
-    "Elena Rybakina -7.50 (Games)",
-    "Leylah Fernandez +7.50 (Games)"
-   ],
-   "teams": [
-    "Elena Rybakina",
-    "Leylah Fernandez"
-   ],
-   "player": null,
-   "mid": 29.5,
-   "yes_buy": 30,
-   "no_buy": 71,
-   "taken_at": "2026-10-25T09:03:58.518Z"
   },
   {
    "market_id": "1752766",
@@ -522,6 +522,26 @@
  ],
  "edges": [
   {
+   "key": "1752755:1",
+   "market_id": "1752755",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Elena Rybakina cover -7.5 vs the Leylah Fernandez in Elena Rybakina vs. Leylah Fernandez?",
+   "side": "Leylah Fernandez +7.50 (Games)",
+   "open_chance": 71,
+   "now_chance": 35,
+   "open_odds": "-245",
+   "now_odds": "+186",
+   "edge": 36,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (36 pts), likely news",
+   "context": "Leylah Fernandez 2, 2 · Elena Rybakina 6, 5 · 2nd Set (games by set)",
+   "first_seen": "2026-10-25T10:18:22.714Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1752764:0",
    "market_id": "1752764",
    "market": "Games total",
@@ -538,27 +558,7 @@
    "reason": "Big move (36 pts), likely news",
    "context": "Leylah Fernandez 2, 2 · Elena Rybakina 6, 4 · 2nd Set (games by set)",
    "first_seen": "2026-10-25T10:03:20.324Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1752755:1",
-   "market_id": "1752755",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Elena Rybakina cover -7.5 vs the Leylah Fernandez in Elena Rybakina vs. Leylah Fernandez?",
-   "side": "Leylah Fernandez +7.50 (Games)",
-   "open_chance": 71,
-   "now_chance": 61,
-   "open_odds": "-245",
-   "now_odds": "-156",
-   "edge": 10,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Leylah Fernandez 2, 2 · Elena Rybakina 6, 4 · 2nd Set (games by set)",
-   "first_seen": "2026-10-25T10:18:22.714Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -683,6 +683,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "news:1752755:1",
+   "key": "1752755:1",
+   "at": "2026-10-25T10:37:20.890Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Leylah Fernandez +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+186",
+   "now_chance": 35,
+   "edge": 36,
+   "text": "Big move, likely news: Leylah Fernandez +7.50 (Games) (Games spread) is 36 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-eleryb-leyfer-2026-10-25"
+  },
   {
    "id": "new_edge:1752755:1:slight",
    "key": "1752755:1",
@@ -953,7 +967,8 @@
   "gone:1752766:0:2026-10-25T10:03:20.324Z",
   "news:1752766:0",
   "gone:1752755:1:2026-10-25T10:18:22.714Z",
-  "new_edge:1752755:1:slight"
+  "new_edge:1752755:1:slight",
+  "news:1752755:1"
  ],
  "kalshi_checked": null
 }
