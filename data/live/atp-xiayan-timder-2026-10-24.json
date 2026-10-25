@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-25T11:04:12.080Z"
+  "fetched_at": "2026-10-25T11:07:37.064Z"
  },
- "updated": "2026-10-25T11:04:11.955Z",
+ "updated": "2026-10-25T11:07:36.965Z",
  "open_taken_at": "2026-10-24T11:16:08.054Z",
  "thresholds": {
   "big": 10,
@@ -85,25 +85,47 @@
    "taken_at": "2026-10-25T00:22:17.113Z"
   },
   {
-   "market_id": "1749457",
-   "market": "Games total",
+   "market_id": "1749460",
+   "market": "Sets total",
    "group": "game",
    "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Xiaoyin Yang vs. Timofei Derepasko be more than 17.5?",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Xiaoyin Yang vs. Timofei Derepasko be more than 2.5?",
    "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
    ],
    "teams": [
     null,
     null
    ],
    "player": null,
-   "mid": 31.5,
-   "yes_buy": 32,
-   "no_buy": 69,
+   "mid": 40,
+   "yes_buy": 41,
+   "no_buy": 61,
+   "taken_at": "2026-10-25T11:07:36.965Z"
+  },
+  {
+   "market_id": "1749466",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Xiaoyin Yang win set 2 against Timofei Derepasko?",
+   "sides": [
+    "Yes: Xiaoyin Yang win set 2 against Timofei Derepasko",
+    "No: Xiaoyin Yang win set 2 against Timofei Derepasko"
+   ],
+   "teams": [
+    "Xiaoyin Yang",
+    null
+   ],
+   "player": null,
+   "mid": 32.5,
+   "yes_buy": 33,
+   "no_buy": 68,
    "taken_at": "2026-10-25T09:47:58.897Z"
   },
   {
@@ -239,6 +261,28 @@
    "taken_at": "2026-10-25T09:47:58.897Z"
   },
   {
+   "market_id": "1749457",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Xiaoyin Yang vs. Timofei Derepasko be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 31.5,
+   "yes_buy": 32,
+   "no_buy": 69,
+   "taken_at": "2026-10-25T09:47:58.897Z"
+  },
+  {
    "market_id": "1749465",
    "market": "Set 1 winner",
    "group": "game",
@@ -281,31 +325,29 @@
    "yes_buy": 15,
    "no_buy": 86,
    "taken_at": "2026-10-25T09:47:58.897Z"
-  },
-  {
-   "market_id": "1749466",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Xiaoyin Yang win set 2 against Timofei Derepasko?",
-   "sides": [
-    "Yes: Xiaoyin Yang win set 2 against Timofei Derepasko",
-    "No: Xiaoyin Yang win set 2 against Timofei Derepasko"
-   ],
-   "teams": [
-    "Xiaoyin Yang",
-    null
-   ],
-   "player": null,
-   "mid": 32.5,
-   "yes_buy": 33,
-   "no_buy": 68,
-   "taken_at": "2026-10-25T09:47:58.897Z"
   }
  ],
  "edges": [
+  {
+   "key": "1749466:1",
+   "market_id": "1749466",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Xiaoyin Yang win set 2 against Timofei Derepasko?",
+   "side": "No: Xiaoyin Yang win set 2 against Timofei Derepasko",
+   "open_chance": 68,
+   "now_chance": 62,
+   "open_odds": "-213",
+   "now_odds": "-163",
+   "edge": 6,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-25T11:07:36.965Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1749454:1",
    "market_id": "1749454",
@@ -328,6 +370,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1749466:1:slight",
+   "key": "1749466:1",
+   "at": "2026-10-25T11:07:36.965Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "No: Xiaoyin Yang win set 2 against Timofei Derepasko",
+   "market": "Set 2 winner",
+   "now_odds": "-163",
+   "now_chance": 62,
+   "edge": 6,
+   "text": "New slight edge: No: Xiaoyin Yang win set 2 against Timofei Derepasko (Set 2 winner), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-xiayan-timder-2026-10-24"
+  },
   {
    "id": "gone:1749454:1:2026-10-25T10:06:14.345Z",
    "key": "1749454:1",
@@ -363,7 +419,8 @@
   "gone:1749454:1:2026-10-25T10:06:14.345Z",
   "gone:1749465:0:2026-10-25T10:37:19.220Z",
   "new_edge:1749465:1:big",
-  "new_edge:1749374:1:big"
+  "new_edge:1749374:1:big",
+  "new_edge:1749466:1:slight"
  ],
  "kalshi_checked": null
 }
