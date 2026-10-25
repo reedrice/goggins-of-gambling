@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-25T20:47:32.493Z"
+  "fetched_at": "2026-10-25T20:53:45.062Z"
  },
- "updated": "2026-10-25T20:47:32.393Z",
+ "updated": "2026-10-25T20:53:44.910Z",
  "open_taken_at": "2026-10-25T02:19:35.210Z",
  "thresholds": {
   "big": 10,
@@ -149,6 +149,28 @@
    "yes_buy": 44,
    "no_buy": 59,
    "taken_at": "2026-10-25T10:27:33.051Z"
+  },
+  {
+   "market_id": "1777230",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Cooper Woestendick win set 1 against Andrew Fenty?",
+   "sides": [
+    "Yes: Cooper Woestendick win set 1 against Andrew Fenty",
+    "No: Cooper Woestendick win set 1 against Andrew Fenty"
+   ],
+   "teams": [
+    "Cooper Woestendick",
+    null
+   ],
+   "player": null,
+   "mid": 32.5,
+   "yes_buy": 33,
+   "no_buy": 68,
+   "taken_at": "2026-10-25T20:35:40.041Z"
   },
   {
    "market_id": "1777225",
@@ -325,31 +347,29 @@
    "yes_buy": 41,
    "no_buy": 60,
    "taken_at": "2026-10-25T20:35:40.041Z"
-  },
-  {
-   "market_id": "1777230",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Cooper Woestendick win set 1 against Andrew Fenty?",
-   "sides": [
-    "Yes: Cooper Woestendick win set 1 against Andrew Fenty",
-    "No: Cooper Woestendick win set 1 against Andrew Fenty"
-   ],
-   "teams": [
-    "Cooper Woestendick",
-    null
-   ],
-   "player": null,
-   "mid": 32.5,
-   "yes_buy": 33,
-   "no_buy": 68,
-   "taken_at": "2026-10-25T20:35:40.041Z"
   }
  ],
  "edges": [
+  {
+   "key": "1777230:1",
+   "market_id": "1777230",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Cooper Woestendick win set 1 against Andrew Fenty?",
+   "side": "No: Cooper Woestendick win set 1 against Andrew Fenty",
+   "open_chance": 68,
+   "now_chance": 60,
+   "open_odds": "-213",
+   "now_odds": "-150",
+   "edge": 8,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-25T20:53:44.910Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1777222:0",
    "market_id": "1777222",
@@ -373,6 +393,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1777230:1:slight",
+   "key": "1777230:1",
+   "at": "2026-10-25T20:53:44.910Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "No: Cooper Woestendick win set 1 against Andrew Fenty",
+   "market": "Set 1 winner",
+   "now_odds": "-150",
+   "now_chance": 60,
+   "edge": 8,
+   "text": "New slight edge: No: Cooper Woestendick win set 1 against Andrew Fenty (Set 1 winner), 8 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-coowoe-andfen-2026-10-25"
+  },
+  {
    "id": "gone:1777222:0:2026-10-25T20:35:40.041Z",
    "key": "1777222:0",
    "at": "2026-10-25T20:41:11.895Z",
@@ -388,7 +422,8 @@
   }
  ],
  "alert_seen": [
-  "gone:1777222:0:2026-10-25T20:35:40.041Z"
+  "gone:1777222:0:2026-10-25T20:35:40.041Z",
+  "new_edge:1777230:1:slight"
  ],
  "kalshi_checked": null
 }
