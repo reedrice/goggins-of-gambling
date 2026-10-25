@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for mls",
-  "fetched_at": "2026-10-25T04:24:06.151Z"
+  "fetched_at": "2026-10-25T04:27:10.847Z"
  },
- "updated": "2026-10-25T04:24:06.148Z",
+ "updated": "2026-10-25T04:27:10.835Z",
  "open_taken_at": "2026-10-23T05:00:40.139Z",
  "thresholds": {
   "big": 10,
@@ -107,28 +107,6 @@
    "taken_at": "2026-10-24T03:37:51.089Z"
   },
   {
-   "market_id": "1738554",
-   "market": "Main spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": -1.5,
-   "question": "Will the Portland Timbers cover -1.5 vs the Charlotte FC in POR vs CLT?",
-   "sides": [
-    "The Timbers -1.50",
-    "Charlotte FC +1.50"
-   ],
-   "teams": [
-    "The Timbers",
-    "Charlotte FC"
-   ],
-   "player": null,
-   "mid": 27,
-   "yes_buy": 30,
-   "no_buy": 76,
-   "taken_at": "2026-10-24T03:32:22.781Z"
-  },
-  {
    "market_id": "1738566",
    "market": "Alt total",
    "group": "game",
@@ -149,6 +127,28 @@
    "yes_buy": 18,
    "no_buy": 86,
    "taken_at": "2026-10-24T03:51:56.444Z"
+  },
+  {
+   "market_id": "1738554",
+   "market": "Main spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": -1.5,
+   "question": "Will the Portland Timbers cover -1.5 vs the Charlotte FC in POR vs CLT?",
+   "sides": [
+    "The Timbers -1.50",
+    "Charlotte FC +1.50"
+   ],
+   "teams": [
+    "The Timbers",
+    "Charlotte FC"
+   ],
+   "player": null,
+   "mid": 27,
+   "yes_buy": 30,
+   "no_buy": 76,
+   "taken_at": "2026-10-24T03:32:22.781Z"
   },
   {
    "market_id": "1738564",
@@ -1106,10 +1106,10 @@
    "question": "Will the MLS match Portland Timbers vs Charlotte FC scheduled for Oct 24, 2026 end in a draw?",
    "side": "No: the MLS match Portland Timbers vs Charlotte FC scheduled for Oct 24, 2026 end in a draw",
    "open_chance": 78,
-   "now_chance": 40,
+   "now_chance": 35,
    "open_odds": "-355",
-   "now_odds": "+150",
-   "edge": 38,
+   "now_odds": "+186",
+   "edge": 43,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -1126,10 +1126,10 @@
    "question": "Will Portland Timbers win against Charlotte FC in the MLS match scheduled for Oct 24, 2026?",
    "side": "Yes: Portland Timbers win against Charlotte FC in the MLS match scheduled for Oct 24, 2026",
    "open_chance": 48,
-   "now_chance": 27,
+   "now_chance": 22,
    "open_odds": "+108",
-   "now_odds": "+270",
-   "edge": 21,
+   "now_odds": "+355",
+   "edge": 26,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -1146,11 +1146,11 @@
    "question": "Will the total in POR vs CLT be more than 4.5?",
    "side": "Under 4.5",
    "open_chance": 72,
-   "now_chance": 58,
+   "now_chance": 64,
    "open_odds": "-257",
-   "now_odds": "-138",
-   "edge": 14,
-   "tier": "big",
+   "now_odds": "-178",
+   "edge": 8,
+   "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -1260,6 +1260,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1738565:1:slight",
+   "key": "1738565:1",
+   "at": "2026-10-25T04:27:10.835Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Under 4.5",
+   "market": "Main total",
+   "now_odds": "-178",
+   "now_chance": 64,
+   "edge": 8,
+   "text": "New slight edge: Under 4.5 (Main total), 8 points cheaper than open.",
+   "url": "https://polymarket.us/sports/mls/mls-por-clt-2026-10-24"
+  },
   {
    "id": "new_edge:1639893:1:big",
    "key": "1639893:1",
@@ -1533,7 +1547,8 @@
   "new_edge:1639893:1:big",
   "new_edge:1639894:0:big",
   "gone:1639893:0:2026-10-25T03:23:07.678Z",
-  "gone:1738566:1:2026-10-25T04:12:02.206Z"
+  "gone:1738566:1:2026-10-25T04:12:02.206Z",
+  "new_edge:1738565:1:slight"
  ],
  "kalshi_checked": null
 }
