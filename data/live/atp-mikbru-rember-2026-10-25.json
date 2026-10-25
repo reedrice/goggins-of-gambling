@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187224",
-  "fetched_at": "2026-10-25T17:16:30.087Z",
+  "fetched_at": "2026-10-25T17:22:09.626Z",
   "tennis": true,
   "tennis_match": {
    "id": "187224",
@@ -17,17 +17,17 @@
    "date": "2026-10-25T14:00Z",
    "startDate": "2026-10-25T14:00Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sun, October 25th at 10:00 AM EDT",
-     "shortDetail": "10/25 - 10:00 AM EDT"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Remy Bertola (SUI) bt Mika Brunold (SUI) 7-6 (7-5) 6-4",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,18 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "44c432c7-045f-3781-b457-b98441736c15",
       "displayName": "Remy Bertola",
@@ -87,6 +104,18 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 6,
+       "tiebreak": 5,
+       "winner": false
+      },
+      {
+       "value": 4,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "3fe2ed2f-33da-3a62-af56-a6570643f2cb",
       "displayName": "Mika Brunold",
@@ -135,16 +164,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sun, October 25th at 10:00 AM EDT",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Remy Bertola",
    "alias": "Remy Bertola",
    "name": "Remy Bertola",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Mika Brunold",
@@ -156,7 +185,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-25T17:16:29.959Z",
+ "updated": "2026-10-25T17:22:09.483Z",
  "open_taken_at": "2026-10-24T17:16:42.528Z",
  "thresholds": {
   "big": 10,
