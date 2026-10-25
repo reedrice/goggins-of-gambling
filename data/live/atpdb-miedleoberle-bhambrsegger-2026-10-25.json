@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185036",
-  "fetched_at": "2026-10-25T07:41:20.919Z",
+  "fetched_at": "2026-10-25T07:46:55.297Z",
   "tennis": true,
   "tennis_match": {
    "id": "185036",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Lucas Miedler (AUT) & Neil Oberleitner (AUT) leads (4) Yuki Bhambri (IND) & Ryan Seggerman (USA) 6-5",
+     "text": "(4) Yuki Bhambri (IND) & Ryan Seggerman (USA) leads (1) Lucas Miedler (AUT) & Neil Oberleitner (AUT) 7-6 (7-3)",
      "type": "event"
     }
    ],
@@ -55,13 +55,13 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
      "curatedRank": {
       "current": 4
      },
      "linescores": [
       {
-       "value": 5
+       "value": 7,
+       "tiebreak": 7
       }
      ],
      "roster": {
@@ -136,13 +136,13 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
      "curatedRank": {
       "current": 1
      },
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "tiebreak": 3
       }
      ],
      "roster": {
@@ -212,11 +212,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 708,
    "type": {
     "id": "3",
@@ -254,7 +249,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-25T07:41:20.735Z",
+ "updated": "2026-10-25T07:46:55.120Z",
  "open_taken_at": "2026-10-24T09:49:56.634Z",
  "thresholds": {
   "big": 10,
@@ -284,8 +279,46 @@
    "taken_at": "2026-10-24T17:43:14.190Z"
   }
  ],
- "edges": [],
- "alerts": [],
- "alert_seen": [],
+ "edges": [
+  {
+   "key": "1746795:0",
+   "market_id": "1746795",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atpdb event Miedler / Oberleitner vs Bhambri / Seggerman scheduled for October 25, 2026 at 7:00 AM UTC?",
+   "side": "Miedler L / Oberleitner N win",
+   "open_chance": 62,
+   "now_chance": 35,
+   "open_odds": "-163",
+   "now_odds": "+186",
+   "edge": 27,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (27 pts), likely news",
+   "context": "Yuki Bhambri / Ryan Seggerman 7 · Lucas Miedler / Neil Oberleitner 6 · 1st Set (games by set)",
+   "first_seen": "2026-10-25T07:46:55.120Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
+ "alerts": [
+  {
+   "id": "news:1746795:0",
+   "key": "1746795:0",
+   "at": "2026-10-25T07:46:55.120Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Miedler L / Oberleitner N win",
+   "market": "Moneyline",
+   "now_odds": "+186",
+   "now_chance": 35,
+   "edge": 27,
+   "text": "Big move, likely news: Miedler L / Oberleitner N win (Moneyline) is 27 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-miedleoberle-bhambrsegger-2026-10-25"
+  }
+ ],
+ "alert_seen": [
+  "news:1746795:0"
+ ],
  "kalshi_checked": null
 }
