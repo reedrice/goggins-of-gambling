@@ -9,17 +9,17 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892574",
-  "fetched_at": "2026-10-25T01:39:09.627Z",
+  "fetched_at": "2026-10-25T01:42:19.321Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 3,
-  "clock": "3:25",
-  "regulation_secs_left": 1105,
+  "clock": "2:19",
+  "regulation_secs_left": 1039,
   "home": {
    "abbr": "EDM",
    "alias": "Oilers",
    "name": "Edmonton Oilers",
-   "score": 1,
+   "score": 2,
    "id": "6"
   },
   "away": {
@@ -142,7 +142,7 @@
    }
   ]
  },
- "updated": "2026-10-25T01:39:09.527Z",
+ "updated": "2026-10-25T01:42:19.229Z",
  "open_taken_at": "2026-10-23T05:00:37.174Z",
  "thresholds": {
   "big": 10,
@@ -150,25 +150,47 @@
  },
  "open": [
   {
-   "market_id": "1610007",
+   "market_id": "1609996",
+   "market": "Main spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": -3.5,
+   "question": "Will the TOR Maple Leafs cover -3.5 vs the EDM Oilers in TOR vs EDM?",
+   "sides": [
+    "Maple Leafs -3.50",
+    "Oilers +3.50"
+   ],
+   "teams": [
+    "Maple Leafs",
+    "Oilers"
+   ],
+   "player": null,
+   "mid": 4,
+   "yes_buy": 6,
+   "no_buy": 98,
+   "taken_at": "2026-10-24T10:36:01.961Z"
+  },
+  {
+   "market_id": "1610008",
    "market": "Main total",
    "group": "game",
    "mtype": "total",
    "period": "full_game",
-   "line": 7.5,
-   "question": "Will the total in TOR vs EDM be more than 7.5?",
+   "line": 8.5,
+   "question": "Will the total in TOR vs EDM be more than 8.5?",
    "sides": [
-    "Over 7.5",
-    "Under 7.5"
+    "Over 8.5",
+    "Under 8.5"
    ],
    "teams": [
     null,
     null
    ],
    "player": null,
-   "mid": 37,
-   "yes_buy": 38,
-   "no_buy": 64,
+   "mid": 27.5,
+   "yes_buy": 28,
+   "no_buy": 73,
    "taken_at": "2026-10-24T03:05:41.216Z"
   },
   {
@@ -1162,26 +1184,26 @@
    "taken_at": "2026-10-24T14:01:59.139Z"
   },
   {
-   "market_id": "1609996",
-   "market": "Main spread",
+   "market_id": "1610007",
+   "market": "Main total",
    "group": "game",
-   "mtype": "spread",
+   "mtype": "total",
    "period": "full_game",
-   "line": -3.5,
-   "question": "Will the TOR Maple Leafs cover -3.5 vs the EDM Oilers in TOR vs EDM?",
+   "line": 7.5,
+   "question": "Will the total in TOR vs EDM be more than 7.5?",
    "sides": [
-    "Maple Leafs -3.50",
-    "Oilers +3.50"
+    "Over 7.5",
+    "Under 7.5"
    ],
    "teams": [
-    "Maple Leafs",
-    "Oilers"
+    null,
+    null
    ],
    "player": null,
-   "mid": 4,
-   "yes_buy": 6,
-   "no_buy": 98,
-   "taken_at": "2026-10-24T10:36:01.961Z"
+   "mid": 37,
+   "yes_buy": 38,
+   "no_buy": 64,
+   "taken_at": "2026-10-24T03:05:41.216Z"
   },
   {
    "market_id": "1610006",
@@ -1291,28 +1313,6 @@
    "mid": 68,
    "yes_buy": 69,
    "no_buy": 33,
-   "taken_at": "2026-10-24T03:05:41.216Z"
-  },
-  {
-   "market_id": "1610008",
-   "market": "Alt total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 8.5,
-   "question": "Will the total in TOR vs EDM be more than 8.5?",
-   "sides": [
-    "Over 8.5",
-    "Under 8.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 27.5,
-   "yes_buy": 28,
-   "no_buy": 73,
    "taken_at": "2026-10-24T03:05:41.216Z"
   },
   {
@@ -2872,30 +2872,10 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "EDM down 4, Q3 3:25",
+   "context": "EDM down 3, Q3 2:19",
    "first_seen": "2026-10-24T17:16:21.305Z",
    "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1610007:1",
-   "market_id": "1610007",
-   "market": "Main total",
-   "group": "game",
-   "question": "Will the total in TOR vs EDM be more than 7.5?",
-   "side": "Under 7.5",
-   "open_chance": 64,
-   "now_chance": 58,
-   "open_odds": "-178",
-   "now_odds": "-138",
-   "edge": 6,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: scoring above pace (6 pts, pace 5)",
-   "context": "TOR 5, EDM 1, Q3 3:25",
-   "first_seen": "2026-10-25T01:39:09.527Z",
-   "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1746766:0",
@@ -2912,7 +2892,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "EDM down 4, Q3 3:25",
+   "context": "EDM down 3, Q3 2:19",
    "first_seen": "2026-10-24T16:37:00.207Z",
    "status": "open",
    "kalshi": true
@@ -2932,10 +2912,10 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "TOR up 4, Q3 3:25",
+   "context": "TOR up 3, Q3 2:19",
    "first_seen": "2026-10-24T16:37:00.207Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1733975:1",
@@ -2952,10 +2932,10 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "EDM down 4, Q3 3:25",
+   "context": "EDM down 3, Q3 2:19",
    "first_seen": "2026-10-24T16:37:00.207Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1733973:0",
@@ -2972,30 +2952,10 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "EDM down 4, Q3 3:25",
+   "context": "EDM down 3, Q3 2:19",
    "first_seen": "2026-10-24T17:03:09.628Z",
    "status": "open",
-   "kalshi": true
-  },
-  {
-   "key": "1609996:1",
-   "market_id": "1609996",
-   "market": "Main spread",
-   "group": "game",
-   "question": "Will the TOR Maple Leafs cover -3.5 vs the EDM Oilers in TOR vs EDM?",
-   "side": "Oilers +3.50",
-   "open_chance": 98,
-   "now_chance": 25,
-   "open_odds": "-4900",
-   "now_odds": "+300",
-   "edge": 73,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (73 pts), likely news",
-   "context": "EDM down 3, Q3 6:04",
-   "first_seen": "2026-10-25T01:24:04.869Z",
-   "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1746777:1",
@@ -3015,7 +2975,7 @@
    "context": "EDM down 2, Q2 0:44",
    "first_seen": "2026-10-24T17:09:56.532Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1610007:0",
@@ -3114,6 +3074,26 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-24T16:37:00.207Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1610007:1",
+   "market_id": "1610007",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in TOR vs EDM be more than 7.5?",
+   "side": "Under 7.5",
+   "open_chance": 64,
+   "now_chance": 58,
+   "open_odds": "-178",
+   "now_odds": "-138",
+   "edge": 6,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: scoring above pace (6 pts, pace 5)",
+   "context": "TOR 5, EDM 1, Q3 3:25",
+   "first_seen": "2026-10-25T01:39:09.527Z",
    "status": "gone",
    "kalshi": true
   },
@@ -3235,7 +3215,7 @@
    "context": "EDM down 3, Q2 2:52",
    "first_seen": "2026-10-24T16:43:17.334Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1733958:1",
@@ -3255,7 +3235,7 @@
    "context": "TOR up 2, Q2 13:37",
    "first_seen": "2026-10-24T16:37:00.207Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1733917:1",
@@ -3295,7 +3275,7 @@
    "context": "EDM down 1, Q1 0:55",
    "first_seen": "2026-10-24T16:51:58.871Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1731635:1",
@@ -3315,7 +3295,7 @@
    "context": "TOR up 1, Q1 3:52",
    "first_seen": "2026-10-24T13:15:59.324Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1733948:1",
@@ -3455,7 +3435,7 @@
    "context": "EDM tied, Q1 9:00",
    "first_seen": "2026-10-24T16:37:00.207Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1731674:0",
@@ -3475,7 +3455,7 @@
    "context": "EDM tied, Q1 16:27",
    "first_seen": "2026-10-24T15:23:03.681Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1610006:1",
@@ -3515,7 +3495,7 @@
    "context": "TOR tied, Q1 18:17",
    "first_seen": "2026-10-24T16:37:00.207Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1733937:1",
@@ -4255,7 +4235,7 @@
   "gone:1733921:0:2026-10-24T16:37:00.207Z"
  ],
  "kalshi_checked": {
-  "at": "2026-10-25T01:39:09.839Z",
+  "at": "2026-10-25T01:42:19.853Z",
   "event": "26OCT24TOREDM"
  }
 }

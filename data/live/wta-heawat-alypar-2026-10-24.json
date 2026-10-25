@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187127",
-  "fetched_at": "2026-10-25T01:39:15.883Z",
+  "fetched_at": "2026-10-25T01:42:25.924Z",
   "tennis": true,
   "tennis_match": {
    "id": "187127",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, October 24th at 9:40 PM EDT",
-     "shortDetail": "10/24 - 9:40 PM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Heather Watson (GBR) leads Alycia Parks (USA) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "c9236c27-4296-3453-8ce8-c95d00702e9f",
       "displayName": "Alycia Parks",
@@ -87,6 +98,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "4fc09602-fa5c-772b-b8e8-51c7ffed65f7",
       "displayName": "Heather Watson",
@@ -119,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 264,
    "type": {
     "id": "2",
@@ -135,10 +157,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Sat, October 24th at 9:40 PM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Alycia Parks",
@@ -156,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-25T01:39:15.775Z",
+ "updated": "2026-10-25T01:42:25.815Z",
  "open_taken_at": "2026-10-24T08:06:43.670Z",
  "thresholds": {
   "big": 10,
@@ -252,6 +274,28 @@
    "taken_at": "2026-10-24T14:11:10.947Z"
   },
   {
+   "market_id": "1746700",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Heather Watson vs. Alycia Parks be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-10-25T01:33:20.233Z"
+  },
+  {
    "market_id": "1746678",
    "market": "Games spread",
    "group": "game",
@@ -294,28 +338,6 @@
    "yes_buy": 46,
    "no_buy": 55,
    "taken_at": "2026-10-25T00:31:03.738Z"
-  },
-  {
-   "market_id": "1746702",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Heather Watson vs. Alycia Parks be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 45,
-   "yes_buy": 46,
-   "no_buy": 56,
-   "taken_at": "2026-10-24T10:27:16.339Z"
   },
   {
    "market_id": "1746681",
@@ -428,26 +450,26 @@
    "taken_at": "2026-10-24T23:06:22.306Z"
   },
   {
-   "market_id": "1746700",
+   "market_id": "1746702",
    "market": "Games total",
    "group": "game",
    "mtype": "total",
    "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Heather Watson vs. Alycia Parks be more than 17.5?",
+   "line": 22.5,
+   "question": "Will the total in Heather Watson vs. Alycia Parks be more than 22.5?",
    "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
    ],
    "teams": [
     null,
     null
    ],
    "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-10-25T01:33:20.233Z"
+   "mid": 45,
+   "yes_buy": 46,
+   "no_buy": 56,
+   "taken_at": "2026-10-24T10:27:16.339Z"
   }
  ],
  "edges": [
@@ -464,9 +486,9 @@
    "now_odds": "+245",
    "edge": 38,
    "tier": "big",
-   "class": "news",
-   "reason": "Big move (38 pts), likely news",
-   "context": "Pregame",
+   "class": "score",
+   "reason": "Explained by score: Alycia Parks not above the games spread right now",
+   "context": "Alycia Parks 0 · Heather Watson 0 · 1st Set (games by set)",
    "first_seen": "2026-10-25T01:39:15.775Z",
    "status": "open",
    "kalshi": null
@@ -484,10 +506,30 @@
    "now_odds": "+245",
    "edge": 38,
    "tier": "big",
-   "class": "news",
-   "reason": "Big move (38 pts), likely news",
-   "context": "Pregame",
+   "class": "score",
+   "reason": "Explained by score: Alycia Parks not above the games spread right now",
+   "context": "Alycia Parks 0 · Heather Watson 0 · 1st Set (games by set)",
    "first_seen": "2026-10-25T01:39:15.775Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1746700:1",
+   "market_id": "1746700",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Heather Watson vs. Alycia Parks be more than 17.5?",
+   "side": "Under 17.5 (Games)",
+   "open_chance": 67,
+   "now_chance": 39,
+   "open_odds": "-203",
+   "now_odds": "+156",
+   "edge": 28,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (28 pts), likely news",
+   "context": "Alycia Parks 0 · Heather Watson 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-25T01:42:25.815Z",
    "status": "open",
    "kalshi": null
   },
@@ -506,8 +548,48 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Alycia Parks 0 · Heather Watson 0 · 1st Set (games by set)",
    "first_seen": "2026-10-25T01:33:20.233Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1745999:1",
+   "market_id": "1745999",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Heather Watson vs Alycia Parks scheduled for October 25, 2026 at 1:00 AM UTC?",
+   "side": "Alycia Parks win",
+   "open_chance": 55,
+   "now_chance": 47,
+   "open_odds": "-122",
+   "now_odds": "+113",
+   "edge": 8,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Alycia Parks 0 · Heather Watson 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-25T00:31:03.738Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1746678:1",
+   "market_id": "1746678",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Heather Watson cover 1.5 vs the Alycia Parks in Heather Watson vs. Alycia Parks?",
+   "side": "Alycia Parks -1.50 (Games)",
+   "open_chance": 51,
+   "now_chance": 44,
+   "open_odds": "-104",
+   "now_odds": "+127",
+   "edge": 7,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Alycia Parks not above the games spread right now",
+   "context": "Alycia Parks 0 · Heather Watson 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-25T00:31:03.738Z",
    "status": "open",
    "kalshi": null
   },
@@ -526,48 +608,8 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Alycia Parks 0 · Heather Watson 0 · 1st Set (games by set)",
    "first_seen": "2026-10-25T01:33:20.233Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1745999:1",
-   "market_id": "1745999",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Heather Watson vs Alycia Parks scheduled for October 25, 2026 at 1:00 AM UTC?",
-   "side": "Alycia Parks win",
-   "open_chance": 55,
-   "now_chance": 50,
-   "open_odds": "-122",
-   "now_odds": "+100",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-10-25T00:31:03.738Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1746678:1",
-   "market_id": "1746678",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Heather Watson cover 1.5 vs the Alycia Parks in Heather Watson vs. Alycia Parks?",
-   "side": "Alycia Parks -1.50 (Games)",
-   "open_chance": 51,
-   "now_chance": 46,
-   "open_odds": "-104",
-   "now_odds": "+117",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-10-25T00:31:03.738Z",
    "status": "open",
    "kalshi": null
   },
@@ -633,6 +675,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "news:1746700:1",
+   "key": "1746700:1",
+   "at": "2026-10-25T01:42:25.815Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+156",
+   "now_chance": 39,
+   "edge": 28,
+   "text": "Big move, likely news: Under 17.5 (Games) (Games total) is 28 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-heawat-alypar-2026-10-24"
+  },
   {
    "id": "news:1746684:1",
    "key": "1746684:1",
@@ -814,7 +870,8 @@
   "new_edge:1746678:1:slight",
   "gone:1746678:0:2026-10-25T01:33:20.233Z",
   "gone:1746675:0:2026-10-25T01:33:20.233Z",
-  "gone:1746702:0:2026-10-25T01:33:20.233Z"
+  "gone:1746702:0:2026-10-25T01:33:20.233Z",
+  "news:1746700:1"
  ],
  "kalshi_checked": null
 }
