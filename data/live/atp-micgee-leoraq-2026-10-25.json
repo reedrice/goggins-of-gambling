@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-25T09:06:37.730Z"
+  "fetched_at": "2026-10-25T09:12:10.427Z"
  },
- "updated": "2026-10-25T09:06:37.436Z",
+ "updated": "2026-10-25T09:12:10.357Z",
  "open_taken_at": "2026-10-24T16:49:38.530Z",
  "thresholds": {
   "big": 10,
@@ -61,6 +61,28 @@
    "yes_buy": 71,
    "no_buy": 30,
    "taken_at": "2026-10-25T09:04:04.419Z"
+  },
+  {
+   "market_id": "1760290",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Michael Geerts win set 1 against Leo Raquillet?",
+   "sides": [
+    "Yes: Michael Geerts win set 1 against Leo Raquillet",
+    "No: Michael Geerts win set 1 against Leo Raquillet"
+   ],
+   "teams": [
+    "Michael Geerts",
+    null
+   ],
+   "player": null,
+   "mid": 68.5,
+   "yes_buy": 70,
+   "no_buy": 33,
+   "taken_at": "2026-10-25T09:12:10.357Z"
   },
   {
    "market_id": "1760277",
@@ -129,6 +151,28 @@
    "taken_at": "2026-10-24T23:42:37.626Z"
   },
   {
+   "market_id": "1760276",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Michael Geerts cover -4.5 vs the Leo Raquillet in Michael Geerts vs. Leo Raquillet?",
+   "sides": [
+    "Michael Geerts -4.50 (Games)",
+    "Leo Raquillet +4.50 (Games)"
+   ],
+   "teams": [
+    "Michael Geerts",
+    "Leo Raquillet"
+   ],
+   "player": null,
+   "mid": 35.5,
+   "yes_buy": 37,
+   "no_buy": 66,
+   "taken_at": "2026-10-24T23:42:37.626Z"
+  },
+  {
    "market_id": "1760283",
    "market": "Games total",
    "group": "game",
@@ -151,26 +195,26 @@
    "taken_at": "2026-10-24T23:42:37.626Z"
   },
   {
-   "market_id": "1760276",
-   "market": "Games spread",
+   "market_id": "1760285",
+   "market": "Sets total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Michael Geerts cover -4.5 vs the Leo Raquillet in Michael Geerts vs. Leo Raquillet?",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Michael Geerts vs. Leo Raquillet be more than 2.5?",
    "sides": [
-    "Michael Geerts -4.50 (Games)",
-    "Leo Raquillet +4.50 (Games)"
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
    ],
    "teams": [
-    "Michael Geerts",
-    "Leo Raquillet"
+    null,
+    null
    ],
    "player": null,
-   "mid": 35.5,
+   "mid": 36.5,
    "yes_buy": 37,
-   "no_buy": 66,
-   "taken_at": "2026-10-24T23:42:37.626Z"
+   "no_buy": 64,
+   "taken_at": "2026-10-25T09:12:10.357Z"
   },
   {
    "market_id": "1760284",
@@ -226,15 +270,35 @@
    "question": "Will the Michael Geerts cover -4.5 vs the Leo Raquillet in Michael Geerts vs. Leo Raquillet?",
    "side": "Leo Raquillet +4.50 (Games)",
    "open_chance": 66,
-   "now_chance": 60,
+   "now_chance": 54,
    "open_odds": "-194",
-   "now_odds": "-150",
-   "edge": 6,
-   "tier": "slight",
+   "now_odds": "-117",
+   "edge": 12,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-25T09:04:04.419Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1759959:1",
+   "market_id": "1759959",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Michael Geerts vs Leo Raquillet scheduled for October 25, 2026 at 9:00 AM UTC?",
+   "side": "Leo Raquillet win",
+   "open_chance": 33,
+   "now_chance": 29,
+   "open_odds": "+203",
+   "now_odds": "+245",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-25T09:12:10.357Z",
    "status": "open",
    "kalshi": null
   },
@@ -255,11 +319,53 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T23:47:48.948Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1760276:1:big",
+   "key": "1760276:1",
+   "at": "2026-10-25T09:12:10.357Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Leo Raquillet +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-117",
+   "now_chance": 54,
+   "edge": 12,
+   "text": "New big edge: Leo Raquillet +4.50 (Games) (Games spread), 12 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-micgee-leoraq-2026-10-25"
+  },
+  {
+   "id": "new_edge:1759959:1:slight",
+   "key": "1759959:1",
+   "at": "2026-10-25T09:12:10.357Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Leo Raquillet win",
+   "market": "Moneyline",
+   "now_odds": "+245",
+   "now_chance": 29,
+   "edge": 4,
+   "text": "New slight edge: Leo Raquillet win (Moneyline), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-micgee-leoraq-2026-10-25"
+  },
+  {
+   "id": "gone:1759959:0:2026-10-24T23:47:48.948Z",
+   "key": "1759959:0",
+   "at": "2026-10-25T09:12:10.357Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Michael Geerts win",
+   "market": "Moneyline",
+   "now_odds": "-203",
+   "now_chance": 67,
+   "edge": 4,
+   "text": "Edge gone: Michael Geerts win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-micgee-leoraq-2026-10-25"
+  },
   {
    "id": "new_edge:1760276:1:slight",
    "key": "1760276:1",
@@ -291,7 +397,10 @@
  ],
  "alert_seen": [
   "new_edge:1760276:1:slight",
-  "new_edge:1759959:0:slight"
+  "new_edge:1759959:0:slight",
+  "new_edge:1760276:1:big",
+  "new_edge:1759959:1:slight",
+  "gone:1759959:0:2026-10-24T23:47:48.948Z"
  ],
  "kalshi_checked": null
 }
