@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-25T09:39:25.809Z"
+  "fetched_at": "2026-10-25T09:42:10.666Z"
  },
- "updated": "2026-10-25T09:39:25.716Z",
+ "updated": "2026-10-25T09:42:10.503Z",
  "open_taken_at": "2026-10-24T16:49:38.530Z",
  "thresholds": {
   "big": 10,
@@ -41,26 +41,48 @@
    "taken_at": "2026-10-24T23:06:31.078Z"
   },
   {
-   "market_id": "1760275",
+   "market_id": "1760274",
    "market": "Games spread",
    "group": "game",
    "mtype": "spread",
    "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Michael Geerts cover 1.5 vs the Leo Raquillet in Michael Geerts vs. Leo Raquillet?",
+   "line": -1.5,
+   "question": "Will the Michael Geerts cover -1.5 vs the Leo Raquillet in Michael Geerts vs. Leo Raquillet?",
    "sides": [
-    "Michael Geerts +1.50 (Games)",
-    "Leo Raquillet -1.50 (Games)"
+    "Michael Geerts -1.50 (Games)",
+    "Leo Raquillet +1.50 (Games)"
    ],
    "teams": [
     "Michael Geerts",
     "Leo Raquillet"
    ],
    "player": null,
-   "mid": 70.5,
-   "yes_buy": 71,
-   "no_buy": 30,
-   "taken_at": "2026-10-25T09:04:04.419Z"
+   "mid": 61.5,
+   "yes_buy": 63,
+   "no_buy": 40,
+   "taken_at": "2026-10-24T23:42:37.626Z"
+  },
+  {
+   "market_id": "1760291",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Michael Geerts win set 2 against Leo Raquillet?",
+   "sides": [
+    "Yes: Michael Geerts win set 2 against Leo Raquillet",
+    "No: Michael Geerts win set 2 against Leo Raquillet"
+   ],
+   "teams": [
+    "Michael Geerts",
+    null
+   ],
+   "player": null,
+   "mid": 86.5,
+   "yes_buy": 89,
+   "no_buy": 16,
+   "taken_at": "2026-10-25T09:42:10.503Z"
   },
   {
    "market_id": "1760276",
@@ -151,6 +173,28 @@
    "taken_at": "2026-10-25T09:24:08.644Z"
   },
   {
+   "market_id": "1760275",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Michael Geerts cover 1.5 vs the Leo Raquillet in Michael Geerts vs. Leo Raquillet?",
+   "sides": [
+    "Michael Geerts +1.50 (Games)",
+    "Leo Raquillet -1.50 (Games)"
+   ],
+   "teams": [
+    "Michael Geerts",
+    "Leo Raquillet"
+   ],
+   "player": null,
+   "mid": 70.5,
+   "yes_buy": 71,
+   "no_buy": 30,
+   "taken_at": "2026-10-25T09:04:04.419Z"
+  },
+  {
    "market_id": "1760285",
    "market": "Sets total",
    "group": "game",
@@ -215,28 +259,6 @@
    "yes_buy": 69,
    "no_buy": 32,
    "taken_at": "2026-10-25T09:04:04.419Z"
-  },
-  {
-   "market_id": "1760274",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Michael Geerts cover -1.5 vs the Leo Raquillet in Michael Geerts vs. Leo Raquillet?",
-   "sides": [
-    "Michael Geerts -1.50 (Games)",
-    "Leo Raquillet +1.50 (Games)"
-   ],
-   "teams": [
-    "Michael Geerts",
-    "Leo Raquillet"
-   ],
-   "player": null,
-   "mid": 61.5,
-   "yes_buy": 63,
-   "no_buy": 40,
-   "taken_at": "2026-10-24T23:42:37.626Z"
   },
   {
    "market_id": "1760279",
@@ -361,11 +383,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-25T09:39:25.716Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1760285:0:2026-10-25T09:39:25.716Z",
+   "key": "1760285:0",
+   "at": "2026-10-25T09:42:10.503Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 2.5 (Sets)",
+   "market": "Sets total",
+   "now_odds": "+213",
+   "now_chance": 32,
+   "edge": 5,
+   "text": "Edge gone: Over 2.5 (Sets) (Sets total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-micgee-leoraq-2026-10-25"
+  },
   {
    "id": "new_edge:1760285:0:slight",
    "key": "1760285:0",
@@ -446,7 +482,8 @@
   "new_edge:1759959:1:big",
   "new_edge:1760278:1:big",
   "new_edge:1760282:0:big",
-  "new_edge:1760285:0:slight"
+  "new_edge:1760285:0:slight",
+  "gone:1760285:0:2026-10-25T09:39:25.716Z"
  ],
  "kalshi_checked": null
 }
