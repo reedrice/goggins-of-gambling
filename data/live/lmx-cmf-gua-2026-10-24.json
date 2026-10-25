@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for lmx",
-  "fetched_at": "2026-10-25T01:00:11.972Z"
+  "fetched_at": "2026-10-25T01:06:13.032Z"
  },
- "updated": "2026-10-25T01:00:11.955Z",
+ "updated": "2026-10-25T01:06:13.028Z",
  "open_taken_at": "2026-10-23T05:00:39.667Z",
  "thresholds": {
   "big": 10,
@@ -104,6 +104,50 @@
    "mid": 55,
    "yes_buy": 56,
    "no_buy": 46,
+   "taken_at": "2026-10-24T03:05:43.732Z"
+  },
+  {
+   "market_id": "1736502",
+   "market": "Alt total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 0.5,
+   "question": "Will the total in CMF vs GUA be more than 0.5?",
+   "sides": [
+    "Over 0.5",
+    "Under 0.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 93,
+   "yes_buy": 94,
+   "no_buy": 8,
+   "taken_at": "2026-10-24T03:05:43.732Z"
+  },
+  {
+   "market_id": "1736533",
+   "market": "1st half spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "first_half",
+   "line": 1.5,
+   "question": "Will the CF Monterrey cover 1.5 vs the CD Guadalajara in CMF vs GUA?",
+   "sides": [
+    "CF Monterrey +1.50 (1st half)",
+    "CD Guadalajara -1.50 (1st half)"
+   ],
+   "teams": [
+    "CF Monterrey",
+    "CD Guadalajara"
+   ],
+   "player": null,
+   "mid": 93,
+   "yes_buy": 94,
+   "no_buy": 8,
    "taken_at": "2026-10-24T03:05:43.732Z"
   },
   {
@@ -214,28 +258,6 @@
    "mid": 33.5,
    "yes_buy": 34,
    "no_buy": 67,
-   "taken_at": "2026-10-24T03:05:43.732Z"
-  },
-  {
-   "market_id": "1736502",
-   "market": "Alt total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 0.5,
-   "question": "Will the total in CMF vs GUA be more than 0.5?",
-   "sides": [
-    "Over 0.5",
-    "Under 0.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 93,
-   "yes_buy": 94,
-   "no_buy": 8,
    "taken_at": "2026-10-24T03:05:43.732Z"
   },
   {
@@ -456,28 +478,6 @@
    "mid": 9.5,
    "yes_buy": 11,
    "no_buy": 92,
-   "taken_at": "2026-10-24T03:05:43.732Z"
-  },
-  {
-   "market_id": "1736533",
-   "market": "1st half spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "first_half",
-   "line": 1.5,
-   "question": "Will the CF Monterrey cover 1.5 vs the CD Guadalajara in CMF vs GUA?",
-   "sides": [
-    "CF Monterrey +1.50 (1st half)",
-    "CD Guadalajara -1.50 (1st half)"
-   ],
-   "teams": [
-    "CF Monterrey",
-    "CD Guadalajara"
-   ],
-   "player": null,
-   "mid": 93,
-   "yes_buy": 94,
-   "no_buy": 8,
    "taken_at": "2026-10-24T03:05:43.732Z"
   },
   {
@@ -895,7 +895,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-24T17:09:58.330Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -1001,6 +1001,20 @@
  ],
  "alerts": [
   {
+   "id": "gone:1736528:1:2026-10-24T17:09:58.330Z",
+   "key": "1736528:1",
+   "at": "2026-10-25T01:06:13.028Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "No: CF Monterrey lead CD Guadalajara at halftime",
+   "market": "1st half winner",
+   "now_odds": "-213",
+   "now_chance": 68,
+   "edge": 4,
+   "text": "Edge gone: No: CF Monterrey lead CD Guadalajara at halftime (1st half winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/lmx/lmx-cmf-gua-2026-10-24"
+  },
+  {
    "id": "new_edge:1736528:1:slight",
    "key": "1736528:1",
    "at": "2026-10-25T01:00:11.955Z",
@@ -1016,7 +1030,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1736528:1:slight"
+  "new_edge:1736528:1:slight",
+  "gone:1736528:1:2026-10-24T17:09:58.330Z"
  ],
  "kalshi_checked": null
 }
