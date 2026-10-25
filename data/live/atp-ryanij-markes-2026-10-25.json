@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-25T17:43:45.339Z"
+  "fetched_at": "2026-10-25T17:49:33.930Z"
  },
- "updated": "2026-10-25T17:43:45.248Z",
+ "updated": "2026-10-25T17:49:33.829Z",
  "open_taken_at": "2026-10-25T01:06:28.536Z",
  "thresholds": {
   "big": 10,
@@ -41,25 +41,25 @@
    "taken_at": "2026-10-25T05:38:44.595Z"
   },
   {
-   "market_id": "1774308",
-   "market": "Games spread",
+   "market_id": "1774315",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Ryan Nijboer cover -4.5 vs the Mariano Kestelboim in Ryan Nijboer vs. Mariano Kestelboim?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Ryan Nijboer vs. Mariano Kestelboim be more than 22.5?",
    "sides": [
-    "Ryan Nijboer -4.50 (Games)",
-    "Mariano Kestelboim +4.50 (Games)"
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
    ],
    "teams": [
-    "Ryan Nijboer",
-    "Mariano Kestelboim"
+    null,
+    null
    ],
    "player": null,
-   "mid": 50.5,
-   "yes_buy": 51,
-   "no_buy": 50,
+   "mid": 34.5,
+   "yes_buy": 35,
+   "no_buy": 66,
    "taken_at": "2026-10-25T16:44:03.871Z"
   },
   {
@@ -107,29 +107,49 @@
    "taken_at": "2026-10-25T16:44:03.871Z"
   },
   {
-   "market_id": "1774315",
-   "market": "Games total",
+   "market_id": "1774308",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Ryan Nijboer vs. Mariano Kestelboim be more than 22.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Ryan Nijboer cover -4.5 vs the Mariano Kestelboim in Ryan Nijboer vs. Mariano Kestelboim?",
    "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
+    "Ryan Nijboer -4.50 (Games)",
+    "Mariano Kestelboim +4.50 (Games)"
    ],
    "teams": [
-    null,
-    null
+    "Ryan Nijboer",
+    "Mariano Kestelboim"
    ],
    "player": null,
-   "mid": 34.5,
-   "yes_buy": 35,
-   "no_buy": 66,
+   "mid": 50.5,
+   "yes_buy": 51,
+   "no_buy": 50,
    "taken_at": "2026-10-25T16:44:03.871Z"
   }
  ],
  "edges": [
+  {
+   "key": "1774308:0",
+   "market_id": "1774308",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Ryan Nijboer cover -4.5 vs the Mariano Kestelboim in Ryan Nijboer vs. Mariano Kestelboim?",
+   "side": "Ryan Nijboer -4.50 (Games)",
+   "open_chance": 51,
+   "now_chance": 33,
+   "open_odds": "-104",
+   "now_odds": "+203",
+   "edge": 18,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-25T17:49:33.829Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1774194:0",
    "market_id": "1774194",
@@ -138,10 +158,10 @@
    "question": "Who will win in the upcoming atp event Ryan Nijboer vs Mariano Kestelboim scheduled for October 25, 2026 at 3:00 PM UTC?",
    "side": "Ryan Nijboer win",
    "open_chance": 83,
-   "now_chance": 75,
+   "now_chance": 79,
    "open_odds": "-488",
-   "now_odds": "-300",
-   "edge": 8,
+   "now_odds": "-376",
+   "edge": 4,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -152,6 +172,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1774308:0:big",
+   "key": "1774308:0",
+   "at": "2026-10-25T17:49:33.829Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Ryan Nijboer -4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+203",
+   "now_chance": 33,
+   "edge": 18,
+   "text": "New big edge: Ryan Nijboer -4.50 (Games) (Games spread), 18 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-ryanij-markes-2026-10-25"
+  },
   {
    "id": "gone:1774194:0:2026-10-25T16:56:29.834Z",
    "key": "1774194:0",
@@ -183,7 +217,8 @@
  ],
  "alert_seen": [
   "new_edge:1774194:0:slight",
-  "gone:1774194:0:2026-10-25T16:56:29.834Z"
+  "gone:1774194:0:2026-10-25T16:56:29.834Z",
+  "new_edge:1774308:0:big"
  ],
  "kalshi_checked": null
 }
