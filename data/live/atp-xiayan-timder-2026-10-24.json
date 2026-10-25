@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-25T10:37:19.293Z"
+  "fetched_at": "2026-10-25T10:43:02.520Z"
  },
- "updated": "2026-10-25T10:37:19.220Z",
+ "updated": "2026-10-25T10:43:02.370Z",
  "open_taken_at": "2026-10-24T11:16:08.054Z",
  "thresholds": {
   "big": 10,
@@ -83,6 +83,28 @@
    "yes_buy": 44,
    "no_buy": 60,
    "taken_at": "2026-10-25T00:22:17.113Z"
+  },
+  {
+   "market_id": "1749465",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Xiaoyin Yang win set 1 against Timofei Derepasko?",
+   "sides": [
+    "Yes: Xiaoyin Yang win set 1 against Timofei Derepasko",
+    "No: Xiaoyin Yang win set 1 against Timofei Derepasko"
+   ],
+   "teams": [
+    "Xiaoyin Yang",
+    null
+   ],
+   "player": null,
+   "mid": 32.5,
+   "yes_buy": 33,
+   "no_buy": 68,
+   "taken_at": "2026-10-25T09:47:58.897Z"
   },
   {
    "market_id": "1749457",
@@ -239,28 +261,6 @@
    "taken_at": "2026-10-25T09:47:58.897Z"
   },
   {
-   "market_id": "1749465",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Xiaoyin Yang win set 1 against Timofei Derepasko?",
-   "sides": [
-    "Yes: Xiaoyin Yang win set 1 against Timofei Derepasko",
-    "No: Xiaoyin Yang win set 1 against Timofei Derepasko"
-   ],
-   "teams": [
-    "Xiaoyin Yang",
-    null
-   ],
-   "player": null,
-   "mid": 32.5,
-   "yes_buy": 33,
-   "no_buy": 68,
-   "taken_at": "2026-10-25T09:47:58.897Z"
-  },
-  {
    "market_id": "1749454",
    "market": "Sets spread",
    "group": "game",
@@ -307,6 +307,26 @@
  ],
  "edges": [
   {
+   "key": "1749454:1",
+   "market_id": "1749454",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Xiaoyin Yang cover -1.5 vs the Timofei Derepasko in Xiaoyin Yang vs. Timofei Derepasko?",
+   "side": "Timofei Derepasko +1.50 (Sets)",
+   "open_chance": 86,
+   "now_chance": 82,
+   "open_odds": "-614",
+   "now_odds": "-456",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-25T10:06:14.345Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1749465:0",
    "market_id": "1749465",
    "market": "Set 1 winner",
@@ -323,31 +343,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-25T10:37:19.220Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1749454:1",
-   "market_id": "1749454",
-   "market": "Sets spread",
-   "group": "game",
-   "question": "Will the Xiaoyin Yang cover -1.5 vs the Timofei Derepasko in Xiaoyin Yang vs. Timofei Derepasko?",
-   "side": "Timofei Derepasko +1.50 (Sets)",
-   "open_chance": 86,
-   "now_chance": 79,
-   "open_odds": "-614",
-   "now_odds": "-376",
-   "edge": 7,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-25T10:06:14.345Z",
    "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1749465:0:2026-10-25T10:37:19.220Z",
+   "key": "1749465:0",
+   "at": "2026-10-25T10:43:02.370Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Yes: Xiaoyin Yang win set 1 against Timofei Derepasko",
+   "market": "Set 1 winner",
+   "now_odds": "+317",
+   "now_chance": 24,
+   "edge": 9,
+   "text": "Edge gone: Yes: Xiaoyin Yang win set 1 against Timofei Derepasko (Set 1 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-xiayan-timder-2026-10-24"
+  },
   {
    "id": "new_edge:1749465:0:slight",
    "key": "1749465:0",
@@ -394,7 +408,8 @@
  "alert_seen": [
   "new_edge:1749454:1:slight",
   "new_edge:1749465:0:slight",
-  "gone:1749454:1:2026-10-25T10:06:14.345Z"
+  "gone:1749454:1:2026-10-25T10:06:14.345Z",
+  "gone:1749465:0:2026-10-25T10:37:19.220Z"
  ],
  "kalshi_checked": null
 }
