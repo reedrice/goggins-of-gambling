@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-25T02:07:12.773Z"
+  "fetched_at": "2026-10-25T02:13:08.894Z"
  },
- "updated": "2026-10-25T02:07:12.696Z",
+ "updated": "2026-10-25T02:13:08.799Z",
  "open_taken_at": "2026-10-24T12:17:14.320Z",
  "thresholds": {
   "big": 10,
@@ -151,26 +151,26 @@
    "taken_at": "2026-10-25T01:42:29.825Z"
   },
   {
-   "market_id": "1751601",
-   "market": "Games spread",
+   "market_id": "1751611",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Woobin Shin cover -7.5 vs the Thomas Fancutt in Woobin Shin vs. Thomas Fancutt?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Woobin Shin vs. Thomas Fancutt be more than 22.5?",
    "sides": [
-    "Woobin Shin -7.50 (Games)",
-    "Thomas Fancutt +7.50 (Games)"
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
    ],
    "teams": [
-    "Woobin Shin",
-    "Thomas Fancutt"
+    null,
+    null
    ],
    "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-10-25T01:33:24.851Z"
+   "mid": 48,
+   "yes_buy": 49,
+   "no_buy": 53,
+   "taken_at": "2026-10-24T23:27:27.593Z"
   },
   {
    "market_id": "1751614",
@@ -193,6 +193,28 @@
    "yes_buy": 48,
    "no_buy": 53,
    "taken_at": "2026-10-25T01:42:29.825Z"
+  },
+  {
+   "market_id": "1751601",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Woobin Shin cover -7.5 vs the Thomas Fancutt in Woobin Shin vs. Thomas Fancutt?",
+   "sides": [
+    "Woobin Shin -7.50 (Games)",
+    "Thomas Fancutt +7.50 (Games)"
+   ],
+   "teams": [
+    "Woobin Shin",
+    "Thomas Fancutt"
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-10-25T01:33:24.851Z"
   },
   {
    "market_id": "1751613",
@@ -237,28 +259,6 @@
    "yes_buy": 34,
    "no_buy": 67,
    "taken_at": "2026-10-25T01:33:24.851Z"
-  },
-  {
-   "market_id": "1751611",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Woobin Shin vs. Thomas Fancutt be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 48,
-   "yes_buy": 49,
-   "no_buy": 53,
-   "taken_at": "2026-10-24T23:27:27.593Z"
   },
   {
    "market_id": "1751607",
@@ -336,10 +336,10 @@
    "question": "Who will win in the upcoming atp event Woobin Shin vs Thomas Fancutt scheduled for October 25, 2026 at 1:30 AM UTC?",
    "side": "Thomas Fancutt win",
    "open_chance": 71,
-   "now_chance": 27,
+   "now_chance": 30,
    "open_odds": "-245",
-   "now_odds": "+270",
-   "edge": 44,
+   "now_odds": "+233",
+   "edge": 41,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -456,11 +456,11 @@
    "question": "Will the Woobin Shin cover -7.5 vs the Thomas Fancutt in Woobin Shin vs. Thomas Fancutt?",
    "side": "Thomas Fancutt +7.50 (Games)",
    "open_chance": 67,
-   "now_chance": 53,
+   "now_chance": 61,
    "open_odds": "-203",
-   "now_odds": "-113",
-   "edge": 14,
-   "tier": "big",
+   "now_odds": "-156",
+   "edge": 6,
+   "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -550,6 +550,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1751601:1:slight",
+   "key": "1751601:1",
+   "at": "2026-10-25T02:13:08.799Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Thomas Fancutt +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-156",
+   "now_chance": 61,
+   "edge": 6,
+   "text": "New slight edge: Thomas Fancutt +7.50 (Games) (Games spread), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-wooshi-thofan-2026-10-24"
+  },
   {
    "id": "new_edge:1751626:1:big",
    "key": "1751626:1",
@@ -836,7 +850,8 @@
   "gone:1751601:1:2026-10-25T01:56:26.191Z",
   "gone:1751607:1:2026-10-25T01:42:29.825Z",
   "new_edge:1751626:1:big",
-  "gone:1751597:1:2026-10-25T01:50:17.234Z"
+  "gone:1751597:1:2026-10-25T01:50:17.234Z",
+  "new_edge:1751601:1:slight"
  ],
  "kalshi_checked": null
 }
