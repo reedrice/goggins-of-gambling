@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185021",
-  "fetched_at": "2026-10-25T11:27:38.942Z",
+  "fetched_at": "2026-10-25T11:33:07.601Z",
   "tennis": true,
   "tennis_match": {
    "id": "185021",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "detail": "3rd Set",
+     "shortDetail": "3rd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Daniil Medvedev (RUS) is tied with Nikoloz Basilashvili (GEO) 6-7 (6-8) 6-1",
+     "text": "Nikoloz Basilashvili (GEO) leads (1) Daniil Medvedev (RUS) 7-6 (8-6) 1-6 1-0",
      "type": "event"
     }
    ],
@@ -55,11 +55,16 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 7,
        "tiebreak": 8,
        "winner": true
+      },
+      {
+       "value": 1,
+       "winner": false
       },
       {
        "value": 1
@@ -102,6 +107,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "curatedRank": {
       "current": 1
      },
@@ -112,7 +118,11 @@
        "winner": false
       },
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -147,6 +157,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 708,
    "type": {
     "id": "1",
@@ -165,8 +180,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "period": 3,
+  "clock": "3rd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Nikoloz Basilashvili",
@@ -178,13 +193,13 @@
    "abbr": "Daniil Medvedev",
    "alias": "Daniil Medvedev",
    "name": "Daniil Medvedev",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-25T11:27:38.813Z",
+ "updated": "2026-10-25T11:33:07.490Z",
  "open_taken_at": "2026-10-24T14:02:17.539Z",
  "thresholds": {
   "big": 10,
@@ -214,28 +229,6 @@
    "taken_at": "2026-10-24T15:53:28.712Z"
   },
   {
-   "market_id": "1755826",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Daniil Medvedev cover 1.5 vs the Nikoloz Basilashvili in Daniil Medvedev vs. Nikoloz Basilashvili?",
-   "sides": [
-    "Daniil Medvedev +1.50 (Games)",
-    "Nikoloz Basilashvili -1.50 (Games)"
-   ],
-   "teams": [
-    "Daniil Medvedev",
-    "Nikoloz Basilashvili"
-   ],
-   "player": null,
-   "mid": 82.5,
-   "yes_buy": 85,
-   "no_buy": 20,
-   "taken_at": "2026-10-25T00:22:20.828Z"
-  },
-  {
    "market_id": "1755830",
    "market": "Games spread",
    "group": "game",
@@ -256,6 +249,28 @@
    "yes_buy": 10,
    "no_buy": 94,
    "taken_at": "2026-10-25T01:39:22.482Z"
+  },
+  {
+   "market_id": "1755826",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Daniil Medvedev cover 1.5 vs the Nikoloz Basilashvili in Daniil Medvedev vs. Nikoloz Basilashvili?",
+   "sides": [
+    "Daniil Medvedev +1.50 (Games)",
+    "Nikoloz Basilashvili -1.50 (Games)"
+   ],
+   "teams": [
+    "Daniil Medvedev",
+    "Nikoloz Basilashvili"
+   ],
+   "player": null,
+   "mid": 82.5,
+   "yes_buy": 85,
+   "no_buy": 20,
+   "taken_at": "2026-10-25T00:22:20.828Z"
   },
   {
    "market_id": "1755843",
