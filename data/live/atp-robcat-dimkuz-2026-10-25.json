@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-25T13:51:31.933Z"
+  "fetched_at": "2026-10-25T13:57:34.308Z"
  },
- "updated": "2026-10-25T13:51:31.839Z",
+ "updated": "2026-10-25T13:57:34.203Z",
  "open_taken_at": "2026-10-24T16:49:38.780Z",
  "thresholds": {
   "big": 10,
@@ -39,28 +39,6 @@
    "yes_buy": 29,
    "no_buy": 72,
    "taken_at": "2026-10-24T23:42:37.844Z"
-  },
-  {
-   "market_id": "1760336",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Robin Catry vs. Dimitar Kuzmanov be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 57.5,
-   "yes_buy": 58,
-   "no_buy": 43,
-   "taken_at": "2026-10-25T12:06:29.461Z"
   },
   {
    "market_id": "1760345",
@@ -104,6 +82,28 @@
    "mid": 33.5,
    "yes_buy": 34,
    "no_buy": 67,
+   "taken_at": "2026-10-25T12:06:29.461Z"
+  },
+  {
+   "market_id": "1760336",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Robin Catry vs. Dimitar Kuzmanov be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 57.5,
+   "yes_buy": 58,
+   "no_buy": 43,
    "taken_at": "2026-10-25T12:06:29.461Z"
   },
   {
@@ -351,22 +351,22 @@
  ],
  "edges": [
   {
-   "key": "1760336:1",
-   "market_id": "1760336",
-   "market": "Games total",
+   "key": "1760332:1",
+   "market_id": "1760332",
+   "market": "Games spread",
    "group": "game",
-   "question": "Will the total in Robin Catry vs. Dimitar Kuzmanov be more than 17.5?",
-   "side": "Under 17.5 (Games)",
-   "open_chance": 43,
-   "now_chance": 37,
-   "open_odds": "+133",
-   "now_odds": "+170",
-   "edge": 6,
-   "tier": "slight",
+   "question": "Will the Robin Catry cover -7.5 vs the Dimitar Kuzmanov in Robin Catry vs. Dimitar Kuzmanov?",
+   "side": "Dimitar Kuzmanov +7.50 (Games)",
+   "open_chance": 67,
+   "now_chance": 49,
+   "open_odds": "-203",
+   "now_odds": "+104",
+   "edge": 18,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-25T13:51:31.839Z",
+   "first_seen": "2026-10-25T13:57:34.203Z",
    "status": "open",
    "kalshi": null
   },
@@ -387,26 +387,6 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-25T13:27:34.903Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1760345:1",
-   "market_id": "1760345",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Robin Catry win set 2 against Dimitar Kuzmanov?",
-   "side": "No: Robin Catry win set 2 against Dimitar Kuzmanov",
-   "open_chance": 49,
-   "now_chance": 18,
-   "open_odds": "+104",
-   "now_odds": "+456",
-   "edge": 31,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-25T13:48:39.796Z",
    "status": "gone",
    "kalshi": null
   },
@@ -511,6 +491,26 @@
    "kalshi": null
   },
   {
+   "key": "1760336:1",
+   "market_id": "1760336",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Robin Catry vs. Dimitar Kuzmanov be more than 17.5?",
+   "side": "Under 17.5 (Games)",
+   "open_chance": 43,
+   "now_chance": 37,
+   "open_odds": "+133",
+   "now_odds": "+170",
+   "edge": 6,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-25T13:51:31.839Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1760336:0",
    "market_id": "1760336",
    "market": "Games total",
@@ -573,6 +573,34 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1760332:1:big",
+   "key": "1760332:1",
+   "at": "2026-10-25T13:57:34.203Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Dimitar Kuzmanov +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+104",
+   "now_chance": 49,
+   "edge": 18,
+   "text": "New big edge: Dimitar Kuzmanov +7.50 (Games) (Games spread), 18 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-robcat-dimkuz-2026-10-25"
+  },
+  {
+   "id": "gone:1760336:1:2026-10-25T13:51:31.839Z",
+   "key": "1760336:1",
+   "at": "2026-10-25T13:57:34.203Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+170",
+   "now_chance": 37,
+   "edge": 6,
+   "text": "Edge gone: Under 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-robcat-dimkuz-2026-10-25"
+  },
+  {
    "id": "new_edge:1760336:1:slight",
    "key": "1760336:1",
    "at": "2026-10-25T13:51:31.839Z",
@@ -587,20 +615,6 @@
    "url": "https://polymarket.us/sports/atp/atp-robcat-dimkuz-2026-10-25"
   },
   {
-   "id": "gone:1760345:1:2026-10-25T13:48:39.796Z",
-   "key": "1760345:1",
-   "at": "2026-10-25T13:51:31.839Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "No: Robin Catry win set 2 against Dimitar Kuzmanov",
-   "market": "Set 2 winner",
-   "now_odds": "+456",
-   "now_chance": 18,
-   "edge": 31,
-   "text": "Edge gone: No: Robin Catry win set 2 against Dimitar Kuzmanov (Set 2 winner) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-robcat-dimkuz-2026-10-25"
-  },
-  {
    "id": "gone:1760336:0:2026-10-25T13:48:39.796Z",
    "key": "1760336:0",
    "at": "2026-10-25T13:51:31.839Z",
@@ -612,20 +626,6 @@
    "now_chance": 52,
    "edge": 6,
    "text": "Edge gone: Over 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-robcat-dimkuz-2026-10-25"
-  },
-  {
-   "id": "new_edge:1760345:1:big",
-   "key": "1760345:1",
-   "at": "2026-10-25T13:48:39.796Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "No: Robin Catry win set 2 against Dimitar Kuzmanov",
-   "market": "Set 2 winner",
-   "now_odds": "+456",
-   "now_chance": 18,
-   "edge": 31,
-   "text": "New big edge: No: Robin Catry win set 2 against Dimitar Kuzmanov (Set 2 winner), 31 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-robcat-dimkuz-2026-10-25"
   },
   {
@@ -908,7 +908,9 @@
   "gone:1760330:1:2026-10-25T13:27:34.903Z",
   "new_edge:1760336:1:slight",
   "gone:1760345:1:2026-10-25T13:48:39.796Z",
-  "gone:1760336:0:2026-10-25T13:48:39.796Z"
+  "gone:1760336:0:2026-10-25T13:48:39.796Z",
+  "new_edge:1760332:1:big",
+  "gone:1760336:1:2026-10-25T13:51:31.839Z"
  ],
  "kalshi_checked": null
 }
