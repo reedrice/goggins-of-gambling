@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for lal",
-  "fetched_at": "2026-10-25T19:07:18.930Z"
+  "fetched_at": "2026-10-25T19:13:19.144Z"
  },
- "updated": "2026-10-25T19:07:18.926Z",
+ "updated": "2026-10-25T19:13:19.140Z",
  "open_taken_at": "2026-10-24T05:00:58.040Z",
  "thresholds": {
   "big": 10,
@@ -129,26 +129,26 @@
    "taken_at": "2026-10-24T05:00:58.040Z"
   },
   {
-   "market_id": "1529262",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
+   "market_id": "1804776",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
    "period": "full_game",
-   "line": -2.5,
-   "question": "Will the Real Sociedad de Futbol cover -2.5 vs the Levante UD in RSO vs LEV?",
+   "line": 1,
+   "question": "Will Jon Gorrotxategi record at least 1 assists in RSO vs LEV?",
    "sides": [
-    "Txuriurdin -2.50",
-    "Les Granotes +2.50"
+    "Yes: Jon Gorrotxategi record at least 1 assists in RSO vs LEV",
+    "No: Jon Gorrotxategi record at least 1 assists in RSO vs LEV"
    ],
    "teams": [
     "Txuriurdin",
-    "Les Granotes"
+    "Txuriurdin"
    ],
-   "player": null,
-   "mid": 18.5,
-   "yes_buy": 19,
-   "no_buy": 82,
-   "taken_at": "2026-10-24T05:00:58.040Z"
+   "player": "Jon Gorrotxategi",
+   "mid": 50.5,
+   "yes_buy": 51,
+   "no_buy": 50,
+   "taken_at": "2026-10-25T19:13:19.140Z"
   },
   {
    "market_id": "1804762",
@@ -193,6 +193,28 @@
    "yes_buy": 51,
    "no_buy": 50,
    "taken_at": "2026-10-25T19:07:18.926Z"
+  },
+  {
+   "market_id": "1529262",
+   "market": "Alt spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": -2.5,
+   "question": "Will the Real Sociedad de Futbol cover -2.5 vs the Levante UD in RSO vs LEV?",
+   "sides": [
+    "Txuriurdin -2.50",
+    "Les Granotes +2.50"
+   ],
+   "teams": [
+    "Txuriurdin",
+    "Les Granotes"
+   ],
+   "player": null,
+   "mid": 18.5,
+   "yes_buy": 19,
+   "no_buy": 82,
+   "taken_at": "2026-10-24T05:00:58.040Z"
   },
   {
    "market_id": "1804770",
@@ -1253,26 +1275,6 @@
  ],
  "edges": [
   {
-   "key": "1529269:1",
-   "market_id": "1529269",
-   "market": "Main total",
-   "group": "game",
-   "question": "Will the total in RSO vs LEV be more than 3.5?",
-   "side": "Under 3.5",
-   "open_chance": 62,
-   "now_chance": 52,
-   "open_odds": "-163",
-   "now_odds": "-108",
-   "edge": 10,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-25T18:52:12.731Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1529263:0",
    "market_id": "1529263",
    "market": "Main spread",
@@ -1280,11 +1282,11 @@
    "question": "Will the Real Sociedad de Futbol cover -1.5 vs the Levante UD in RSO vs LEV?",
    "side": "Txuriurdin -1.50",
    "open_chance": 38,
-   "now_chance": 30,
+   "now_chance": 22,
    "open_odds": "+163",
-   "now_odds": "+233",
-   "edge": 8,
-   "tier": "slight",
+   "now_odds": "+355",
+   "edge": 16,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -1413,6 +1415,26 @@
    "kalshi": null
   },
   {
+   "key": "1529269:1",
+   "market_id": "1529269",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in RSO vs LEV be more than 3.5?",
+   "side": "Under 3.5",
+   "open_chance": 62,
+   "now_chance": 52,
+   "open_odds": "-163",
+   "now_odds": "-108",
+   "edge": 10,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-25T18:52:12.731Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1529294:1",
    "market_id": "1529294",
    "market": "1st half spread",
@@ -1534,6 +1556,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1529263:0:big",
+   "key": "1529263:0",
+   "at": "2026-10-25T19:13:19.140Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Txuriurdin -1.50",
+   "market": "Main spread",
+   "now_odds": "+355",
+   "now_chance": 22,
+   "edge": 16,
+   "text": "New big edge: Txuriurdin -1.50 (Main spread), 16 points cheaper than open.",
+   "url": "https://polymarket.us/sports/lal/lal-rso-lev-2026-10-25"
+  },
+  {
+   "id": "gone:1529269:1:2026-10-25T18:52:12.731Z",
+   "key": "1529269:1",
+   "at": "2026-10-25T19:13:19.140Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 3.5",
+   "market": "Main total",
+   "now_odds": "-108",
+   "now_chance": 52,
+   "edge": 10,
+   "text": "Edge gone: Under 3.5 (Main total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/lal/lal-rso-lev-2026-10-25"
+  },
   {
    "id": "new_edge:1529263:0:slight",
    "key": "1529263:0",
@@ -1992,7 +2042,9 @@
   "gone:1529315:0:2026-10-25T18:22:15.989Z",
   "new_edge:1529263:1:slight",
   "new_edge:1642108:1:slight",
-  "new_edge:1529263:0:slight"
+  "new_edge:1529263:0:slight",
+  "new_edge:1529263:0:big",
+  "gone:1529269:1:2026-10-25T18:52:12.731Z"
  ],
  "kalshi_checked": null
 }
