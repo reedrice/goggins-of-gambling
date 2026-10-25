@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-25T17:02:30.005Z"
+  "fetched_at": "2026-10-25T17:07:49.807Z"
  },
- "updated": "2026-10-25T17:02:29.916Z",
+ "updated": "2026-10-25T17:07:49.712Z",
  "open_taken_at": "2026-10-24T20:19:26.424Z",
  "thresholds": {
   "big": 10,
@@ -61,6 +61,28 @@
    "yes_buy": 62,
    "no_buy": 39,
    "taken_at": "2026-10-25T16:44:01.804Z"
+  },
+  {
+   "market_id": "1766311",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Kilian Feldbausch win set 2 against Arthur Bouquier?",
+   "sides": [
+    "Yes: Kilian Feldbausch win set 2 against Arthur Bouquier",
+    "No: Kilian Feldbausch win set 2 against Arthur Bouquier"
+   ],
+   "teams": [
+    "Kilian Feldbausch",
+    null
+   ],
+   "player": null,
+   "mid": 64.5,
+   "yes_buy": 67,
+   "no_buy": 38,
+   "taken_at": "2026-10-25T17:07:49.712Z"
   },
   {
    "market_id": "1766298",
@@ -248,10 +270,10 @@
    "question": "Will the Kilian Feldbausch cover -7.5 vs the Arthur Bouquier in Kilian Feldbausch vs. Arthur Bouquier?",
    "side": "Arthur Bouquier +7.50 (Games)",
    "open_chance": 65,
-   "now_chance": 36,
+   "now_chance": 38,
    "open_odds": "-186",
-   "now_odds": "+178",
-   "edge": 29,
+   "now_odds": "+163",
+   "edge": 27,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -277,11 +299,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-25T16:50:05.830Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1766302:0:2026-10-25T16:50:05.830Z",
+   "key": "1766302:0",
+   "at": "2026-10-25T17:07:49.712Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+138",
+   "now_chance": 42,
+   "edge": 18,
+   "text": "Edge gone: Over 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-kilfel-artbou-2026-10-25"
+  },
   {
    "id": "new_edge:1766298:1:big",
    "key": "1766298:1",
@@ -313,7 +349,8 @@
  ],
  "alert_seen": [
   "new_edge:1766298:1:big",
-  "new_edge:1766302:0:big"
+  "new_edge:1766302:0:big",
+  "gone:1766302:0:2026-10-25T16:50:05.830Z"
  ],
  "kalshi_checked": null
 }
