@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185827",
-  "fetched_at": "2026-10-26T18:41:49.940Z",
+  "fetched_at": "2026-10-26T18:47:50.403Z",
   "tennis": true,
   "tennis_match": {
    "id": "185827",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Rositsa Dencheva (BUL) leads Gabriela Knutson (CZE) 4-3",
+     "text": "Rositsa Dencheva (BUL) leads Gabriela Knutson (CZE) 4-4",
      "type": "event"
     }
    ],
@@ -55,9 +55,10 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
-       "value": 3
+       "value": 4
       }
      ],
      "athlete": {
@@ -97,6 +98,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 4
@@ -134,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1081,
    "type": {
     "id": "2",
@@ -171,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T18:41:49.844Z",
+ "updated": "2026-10-26T18:47:50.291Z",
  "open_taken_at": "2026-10-25T16:44:11.150Z",
  "thresholds": {
   "big": 10,
@@ -201,6 +208,28 @@
    "taken_at": "2026-10-26T04:53:28.948Z"
   },
   {
+   "market_id": "1805227",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Rositsa Dencheva cover 7.5 vs the Gabriela Knutson in Rositsa Dencheva vs. Gabriela Knutson?",
+   "sides": [
+    "Rositsa Dencheva +7.50 (Games)",
+    "Gabriela Knutson -7.50 (Games)"
+   ],
+   "teams": [
+    "Rositsa Dencheva",
+    "Gabriela Knutson"
+   ],
+   "player": null,
+   "mid": 69.5,
+   "yes_buy": 70,
+   "no_buy": 31,
+   "taken_at": "2026-10-26T17:49:12.760Z"
+  },
+  {
    "market_id": "1805225",
    "market": "Games spread",
    "group": "game",
@@ -221,28 +250,6 @@
    "yes_buy": 63,
    "no_buy": 39,
    "taken_at": "2026-10-26T09:06:19.679Z"
-  },
-  {
-   "market_id": "1805238",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Rositsa Dencheva win set 1 against Gabriela Knutson?",
-   "sides": [
-    "Yes: Rositsa Dencheva win set 1 against Gabriela Knutson",
-    "No: Rositsa Dencheva win set 1 against Gabriela Knutson"
-   ],
-   "teams": [
-    "Rositsa Dencheva",
-    null
-   ],
-   "player": null,
-   "mid": 43.5,
-   "yes_buy": 45,
-   "no_buy": 58,
-   "taken_at": "2026-10-26T18:36:15.576Z"
   },
   {
    "market_id": "1805231",
@@ -355,28 +362,6 @@
    "taken_at": "2026-10-26T17:49:12.760Z"
   },
   {
-   "market_id": "1805228",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Rositsa Dencheva cover -1.5 vs the Gabriela Knutson in Rositsa Dencheva vs. Gabriela Knutson?",
-   "sides": [
-    "Rositsa Dencheva -1.50 (Sets)",
-    "Gabriela Knutson +1.50 (Sets)"
-   ],
-   "teams": [
-    "Rositsa Dencheva",
-    "Gabriela Knutson"
-   ],
-   "player": null,
-   "mid": 25,
-   "yes_buy": 27,
-   "no_buy": 77,
-   "taken_at": "2026-10-26T05:09:02.709Z"
-  },
-  {
    "market_id": "1805224",
    "market": "Games spread",
    "group": "game",
@@ -421,26 +406,48 @@
    "taken_at": "2026-10-26T17:49:12.760Z"
   },
   {
-   "market_id": "1805227",
-   "market": "Games spread",
+   "market_id": "1805238",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Rositsa Dencheva win set 1 against Gabriela Knutson?",
+   "sides": [
+    "Yes: Rositsa Dencheva win set 1 against Gabriela Knutson",
+    "No: Rositsa Dencheva win set 1 against Gabriela Knutson"
+   ],
+   "teams": [
+    "Rositsa Dencheva",
+    null
+   ],
+   "player": null,
+   "mid": 43.5,
+   "yes_buy": 45,
+   "no_buy": 58,
+   "taken_at": "2026-10-26T18:36:15.576Z"
+  },
+  {
+   "market_id": "1805228",
+   "market": "Sets spread",
    "group": "game",
    "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Rositsa Dencheva cover 7.5 vs the Gabriela Knutson in Rositsa Dencheva vs. Gabriela Knutson?",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Rositsa Dencheva cover -1.5 vs the Gabriela Knutson in Rositsa Dencheva vs. Gabriela Knutson?",
    "sides": [
-    "Rositsa Dencheva +7.50 (Games)",
-    "Gabriela Knutson -7.50 (Games)"
+    "Rositsa Dencheva -1.50 (Sets)",
+    "Gabriela Knutson +1.50 (Sets)"
    ],
    "teams": [
     "Rositsa Dencheva",
     "Gabriela Knutson"
    ],
    "player": null,
-   "mid": 69.5,
-   "yes_buy": 70,
-   "no_buy": 31,
-   "taken_at": "2026-10-26T17:49:12.760Z"
+   "mid": 25,
+   "yes_buy": 27,
+   "no_buy": 77,
+   "taken_at": "2026-10-26T05:09:02.709Z"
   },
   {
    "market_id": "1805230",
@@ -489,26 +496,6 @@
  ],
  "edges": [
   {
-   "key": "1805231:1",
-   "market_id": "1805231",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Rositsa Dencheva vs. Gabriela Knutson be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 61,
-   "now_chance": 49,
-   "open_odds": "-156",
-   "now_odds": "+104",
-   "edge": 12,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Gabriela Knutson 3 · Rositsa Dencheva 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T18:36:15.576Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1805222:0",
    "market_id": "1805222",
    "market": "Games spread",
@@ -516,75 +503,15 @@
    "question": "Will the Rositsa Dencheva cover -1.5 vs the Gabriela Knutson in Rositsa Dencheva vs. Gabriela Knutson?",
    "side": "Rositsa Dencheva -1.50 (Games)",
    "open_chance": 35,
-   "now_chance": 23,
+   "now_chance": 21,
    "open_odds": "+186",
-   "now_odds": "+335",
-   "edge": 12,
+   "now_odds": "+376",
+   "edge": 14,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Rositsa Dencheva not above the games spread right now",
-   "context": "Gabriela Knutson 3 · Rositsa Dencheva 4 · 1st Set (games by set)",
+   "context": "Gabriela Knutson 4 · Rositsa Dencheva 4 · 1st Set (games by set)",
    "first_seen": "2026-10-26T18:17:37.752Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1805232:1",
-   "market_id": "1805232",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Rositsa Dencheva vs. Gabriela Knutson be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 78,
-   "now_chance": 67,
-   "open_odds": "-355",
-   "now_odds": "-203",
-   "edge": 11,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Gabriela Knutson 3 · Rositsa Dencheva 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T18:41:49.844Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1805238:1",
-   "market_id": "1805238",
-   "market": "Set 1 winner",
-   "group": "game",
-   "question": "Will Rositsa Dencheva win set 1 against Gabriela Knutson?",
-   "side": "No: Rositsa Dencheva win set 1 against Gabriela Knutson",
-   "open_chance": 58,
-   "now_chance": 48,
-   "open_odds": "-138",
-   "now_odds": "+108",
-   "edge": 10,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Gabriela Knutson 3 · Rositsa Dencheva 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T18:41:49.844Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1805228:0",
-   "market_id": "1805228",
-   "market": "Sets spread",
-   "group": "game",
-   "question": "Will the Rositsa Dencheva cover -1.5 vs the Gabriela Knutson in Rositsa Dencheva vs. Gabriela Knutson?",
-   "side": "Rositsa Dencheva -1.50 (Sets)",
-   "open_chance": 27,
-   "now_chance": 17,
-   "open_odds": "+270",
-   "now_odds": "+488",
-   "edge": 10,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Rositsa Dencheva not above the sets spread right now",
-   "context": "Gabriela Knutson 3 · Rositsa Dencheva 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T09:28:04.967Z",
    "status": "open",
    "kalshi": null
   },
@@ -596,14 +523,14 @@
    "question": "Who will win in the upcoming wta event Rositsa Dencheva vs Gabriela Knutson scheduled for October 26, 2026 at 9:00 AM UTC?",
    "side": "Rositsa Dencheva win",
    "open_chance": 44,
-   "now_chance": 39,
+   "now_chance": 31,
    "open_odds": "+127",
-   "now_odds": "+156",
-   "edge": 5,
-   "tier": "slight",
+   "now_odds": "+223",
+   "edge": 13,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Gabriela Knutson 3 · Rositsa Dencheva 4 · 1st Set (games by set)",
+   "context": "Gabriela Knutson 4 · Rositsa Dencheva 4 · 1st Set (games by set)",
    "first_seen": "2026-10-26T09:06:19.679Z",
    "status": "open",
    "kalshi": null
@@ -616,15 +543,55 @@
    "question": "Will the Rositsa Dencheva cover 1.5 vs the Gabriela Knutson in Rositsa Dencheva vs. Gabriela Knutson?",
    "side": "Rositsa Dencheva +1.50 (Games)",
    "open_chance": 48,
-   "now_chance": 43,
+   "now_chance": 36,
    "open_odds": "+108",
-   "now_odds": "+133",
-   "edge": 5,
+   "now_odds": "+178",
+   "edge": 12,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Gabriela Knutson 4 · Rositsa Dencheva 4 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T09:06:19.679Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1805231:1",
+   "market_id": "1805231",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Rositsa Dencheva vs. Gabriela Knutson be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 61,
+   "now_chance": 51,
+   "open_odds": "-156",
+   "now_odds": "-104",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Gabriela Knutson 4 · Rositsa Dencheva 4 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T18:36:15.576Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1805232:1",
+   "market_id": "1805232",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Rositsa Dencheva vs. Gabriela Knutson be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 78,
+   "now_chance": 69,
+   "open_odds": "-355",
+   "now_odds": "-223",
+   "edge": 9,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Gabriela Knutson 3 · Rositsa Dencheva 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T09:06:19.679Z",
+   "context": "Gabriela Knutson 4 · Rositsa Dencheva 4 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T18:41:49.844Z",
    "status": "open",
    "kalshi": null
   },
@@ -643,7 +610,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Gabriela Knutson 3 · Rositsa Dencheva 4 · 1st Set (games by set)",
+   "context": "Gabriela Knutson 4 · Rositsa Dencheva 4 · 1st Set (games by set)",
    "first_seen": "2026-10-26T16:40:26.150Z",
    "status": "open",
    "kalshi": null
@@ -665,6 +632,46 @@
    "reason": null,
    "context": "Gabriela Knutson 2 · Rositsa Dencheva 3 · 1st Set (games by set)",
    "first_seen": "2026-10-26T17:49:12.760Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1805238:1",
+   "market_id": "1805238",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Rositsa Dencheva win set 1 against Gabriela Knutson?",
+   "side": "No: Rositsa Dencheva win set 1 against Gabriela Knutson",
+   "open_chance": 58,
+   "now_chance": 48,
+   "open_odds": "-138",
+   "now_odds": "+108",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Gabriela Knutson 3 · Rositsa Dencheva 4 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T18:41:49.844Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1805228:0",
+   "market_id": "1805228",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Rositsa Dencheva cover -1.5 vs the Gabriela Knutson in Rositsa Dencheva vs. Gabriela Knutson?",
+   "side": "Rositsa Dencheva -1.50 (Sets)",
+   "open_chance": 27,
+   "now_chance": 17,
+   "open_odds": "+270",
+   "now_odds": "+488",
+   "edge": 10,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Rositsa Dencheva not above the sets spread right now",
+   "context": "Gabriela Knutson 3 · Rositsa Dencheva 4 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T09:28:04.967Z",
    "status": "gone",
    "kalshi": null
   },
@@ -730,6 +737,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1805232:1:slight",
+   "key": "1805232:1",
+   "at": "2026-10-26T18:47:50.291Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Under 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-223",
+   "now_chance": 69,
+   "edge": 9,
+   "text": "New slight edge: Under 27.5 (Games) (Games total), 9 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-rosden-gabknu-2026-10-26"
+  },
+  {
+   "id": "gone:1805238:1:2026-10-26T18:41:49.844Z",
+   "key": "1805238:1",
+   "at": "2026-10-26T18:47:50.291Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "No: Rositsa Dencheva win set 1 against Gabriela Knutson",
+   "market": "Set 1 winner",
+   "now_odds": "+108",
+   "now_chance": 48,
+   "edge": 10,
+   "text": "Edge gone: No: Rositsa Dencheva win set 1 against Gabriela Knutson (Set 1 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-rosden-gabknu-2026-10-26"
+  },
   {
    "id": "new_edge:1805231:1:big",
    "key": "1805231:1",
@@ -1046,7 +1081,9 @@
   "new_edge:1805223:0:slight",
   "new_edge:1805231:1:big",
   "new_edge:1805232:1:big",
-  "new_edge:1805238:1:big"
+  "new_edge:1805238:1:big",
+  "new_edge:1805232:1:slight",
+  "gone:1805238:1:2026-10-26T18:41:49.844Z"
  ],
  "kalshi_checked": null
 }
