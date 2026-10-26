@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-26T06:01:44.593Z"
+  "fetched_at": "2026-10-26T06:07:45.326Z"
  },
- "updated": "2026-10-26T06:01:44.523Z",
+ "updated": "2026-10-26T06:07:45.249Z",
  "open_taken_at": "2026-10-25T11:48:55.883Z",
  "thresholds": {
   "big": 10,
@@ -41,26 +41,26 @@
    "taken_at": "2026-10-25T16:44:09.756Z"
   },
   {
-   "market_id": "1796157",
-   "market": "Sets spread",
+   "market_id": "1796166",
+   "market": "Set 1 winner",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Omar Jasika cover 1.5 vs the Yuta Kikuchi in Omar Jasika vs. Yuta Kikuchi?",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Omar Jasika win set 1 against Yuta Kikuchi?",
    "sides": [
-    "Omar Jasika +1.50 (Sets)",
-    "Yuta Kikuchi -1.50 (Sets)"
+    "Yes: Omar Jasika win set 1 against Yuta Kikuchi",
+    "No: Omar Jasika win set 1 against Yuta Kikuchi"
    ],
    "teams": [
     "Omar Jasika",
-    "Yuta Kikuchi"
+    null
    ],
    "player": null,
-   "mid": 86.5,
-   "yes_buy": 87,
-   "no_buy": 14,
-   "taken_at": "2026-10-26T05:27:50.981Z"
+   "mid": 61.5,
+   "yes_buy": 62,
+   "no_buy": 39,
+   "taken_at": "2026-10-26T05:34:13.117Z"
   },
   {
    "market_id": "1796167",
@@ -82,28 +82,6 @@
    "mid": 63.5,
    "yes_buy": 64,
    "no_buy": 37,
-   "taken_at": "2026-10-26T05:34:13.117Z"
-  },
-  {
-   "market_id": "1796153",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Omar Jasika cover 4.5 vs the Yuta Kikuchi in Omar Jasika vs. Yuta Kikuchi?",
-   "sides": [
-    "Omar Jasika +4.50 (Games)",
-    "Yuta Kikuchi -4.50 (Games)"
-   ],
-   "teams": [
-    "Omar Jasika",
-    "Yuta Kikuchi"
-   ],
-   "player": null,
-   "mid": 57.5,
-   "yes_buy": 58,
-   "no_buy": 43,
    "taken_at": "2026-10-26T05:34:13.117Z"
   },
   {
@@ -151,28 +129,6 @@
    "taken_at": "2026-10-26T05:34:13.117Z"
   },
   {
-   "market_id": "1796150",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Omar Jasika cover -1.5 vs the Yuta Kikuchi in Omar Jasika vs. Yuta Kikuchi?",
-   "sides": [
-    "Omar Jasika -1.50 (Games)",
-    "Yuta Kikuchi +1.50 (Games)"
-   ],
-   "teams": [
-    "Omar Jasika",
-    "Yuta Kikuchi"
-   ],
-   "player": null,
-   "mid": 34.5,
-   "yes_buy": 35,
-   "no_buy": 66,
-   "taken_at": "2026-10-26T05:34:13.117Z"
-  },
-  {
    "market_id": "1796154",
    "market": "Games spread",
    "group": "game",
@@ -195,25 +151,91 @@
    "taken_at": "2026-10-26T05:34:13.117Z"
   },
   {
-   "market_id": "1796166",
-   "market": "Set 1 winner",
+   "market_id": "1796160",
+   "market": "Games total",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Omar Jasika win set 1 against Yuta Kikuchi?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Omar Jasika vs. Yuta Kikuchi be more than 27.5?",
    "sides": [
-    "Yes: Omar Jasika win set 1 against Yuta Kikuchi",
-    "No: Omar Jasika win set 1 against Yuta Kikuchi"
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
    ],
    "teams": [
-    "Omar Jasika",
+    null,
     null
    ],
    "player": null,
-   "mid": 61.5,
-   "yes_buy": 62,
-   "no_buy": 39,
+   "mid": 48.5,
+   "yes_buy": 49,
+   "no_buy": 52,
+   "taken_at": "2026-10-26T05:34:13.117Z"
+  },
+  {
+   "market_id": "1796157",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Omar Jasika cover 1.5 vs the Yuta Kikuchi in Omar Jasika vs. Yuta Kikuchi?",
+   "sides": [
+    "Omar Jasika +1.50 (Sets)",
+    "Yuta Kikuchi -1.50 (Sets)"
+   ],
+   "teams": [
+    "Omar Jasika",
+    "Yuta Kikuchi"
+   ],
+   "player": null,
+   "mid": 86.5,
+   "yes_buy": 87,
+   "no_buy": 14,
+   "taken_at": "2026-10-26T05:27:50.981Z"
+  },
+  {
+   "market_id": "1796153",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Omar Jasika cover 4.5 vs the Yuta Kikuchi in Omar Jasika vs. Yuta Kikuchi?",
+   "sides": [
+    "Omar Jasika +4.50 (Games)",
+    "Yuta Kikuchi -4.50 (Games)"
+   ],
+   "teams": [
+    "Omar Jasika",
+    "Yuta Kikuchi"
+   ],
+   "player": null,
+   "mid": 57.5,
+   "yes_buy": 58,
+   "no_buy": 43,
+   "taken_at": "2026-10-26T05:34:13.117Z"
+  },
+  {
+   "market_id": "1796150",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Omar Jasika cover -1.5 vs the Yuta Kikuchi in Omar Jasika vs. Yuta Kikuchi?",
+   "sides": [
+    "Omar Jasika -1.50 (Games)",
+    "Yuta Kikuchi +1.50 (Games)"
+   ],
+   "teams": [
+    "Omar Jasika",
+    "Yuta Kikuchi"
+   ],
+   "player": null,
+   "mid": 34.5,
+   "yes_buy": 35,
+   "no_buy": 66,
    "taken_at": "2026-10-26T05:34:13.117Z"
   },
   {
@@ -283,28 +305,6 @@
    "taken_at": "2026-10-26T05:34:13.117Z"
   },
   {
-   "market_id": "1796160",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Omar Jasika vs. Yuta Kikuchi be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 48.5,
-   "yes_buy": 49,
-   "no_buy": 52,
-   "taken_at": "2026-10-26T05:34:13.117Z"
-  },
-  {
    "market_id": "1796161",
    "market": "Sets total",
    "group": "game",
@@ -350,6 +350,46 @@
   }
  ],
  "edges": [
+  {
+   "key": "1796160:0",
+   "market_id": "1796160",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Omar Jasika vs. Yuta Kikuchi be more than 27.5?",
+   "side": "Over 27.5 (Games)",
+   "open_chance": 49,
+   "now_chance": 19,
+   "open_odds": "+104",
+   "now_odds": "+426",
+   "edge": 30,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-26T06:07:45.249Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1796166:1",
+   "market_id": "1796166",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Omar Jasika win set 1 against Yuta Kikuchi?",
+   "side": "No: Omar Jasika win set 1 against Yuta Kikuchi",
+   "open_chance": 39,
+   "now_chance": 31,
+   "open_odds": "+156",
+   "now_odds": "+223",
+   "edge": 8,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-26T06:07:45.249Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1796152:0",
    "market_id": "1796152",
