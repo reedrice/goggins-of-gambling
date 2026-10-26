@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185666",
-  "fetched_at": "2026-10-26T04:29:31.020Z",
+  "fetched_at": "2026-10-26T04:32:06.556Z",
   "tennis": true,
   "tennis_match": {
    "id": "185666",
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
        "value": 6,
@@ -101,6 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 0,
@@ -142,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 264,
    "type": {
     "id": "2",
@@ -179,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T04:29:30.932Z",
+ "updated": "2026-10-26T04:32:06.469Z",
  "open_taken_at": "2026-10-25T11:33:18.708Z",
  "thresholds": {
   "big": 10,
@@ -319,28 +326,6 @@
    "taken_at": "2026-10-26T02:49:35.210Z"
   },
   {
-   "market_id": "1796205",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Daria Kasatkina cover 1.5 vs the Talia Gibson in Daria Kasatkina vs. Talia Gibson?",
-   "sides": [
-    "Daria Kasatkina +1.50 (Games)",
-    "Talia Gibson -1.50 (Games)"
-   ],
-   "teams": [
-    "Daria Kasatkina",
-    "Talia Gibson"
-   ],
-   "player": null,
-   "mid": 58.5,
-   "yes_buy": 61,
-   "no_buy": 44,
-   "taken_at": "2026-10-26T01:43:44.986Z"
-  },
-  {
    "market_id": "1796204",
    "market": "Games spread",
    "group": "game",
@@ -361,6 +346,28 @@
    "yes_buy": 51,
    "no_buy": 51,
    "taken_at": "2026-10-25T16:44:09.459Z"
+  },
+  {
+   "market_id": "1796205",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Daria Kasatkina cover 1.5 vs the Talia Gibson in Daria Kasatkina vs. Talia Gibson?",
+   "sides": [
+    "Daria Kasatkina +1.50 (Games)",
+    "Talia Gibson -1.50 (Games)"
+   ],
+   "teams": [
+    "Daria Kasatkina",
+    "Talia Gibson"
+   ],
+   "player": null,
+   "mid": 58.5,
+   "yes_buy": 61,
+   "no_buy": 44,
+   "taken_at": "2026-10-26T01:43:44.986Z"
   },
   {
    "market_id": "1796225",
@@ -526,10 +533,10 @@
    "question": "Will the Daria Kasatkina cover 4.5 vs the Talia Gibson in Daria Kasatkina vs. Talia Gibson?",
    "side": "Daria Kasatkina +4.50 (Games)",
    "open_chance": 61,
-   "now_chance": 20,
+   "now_chance": 26,
    "open_odds": "-156",
-   "now_odds": "+400",
-   "edge": 41,
+   "now_odds": "+285",
+   "edge": 35,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Daria Kasatkina not above the games spread right now",
@@ -546,15 +553,35 @@
    "question": "Who will win in the upcoming wta event Daria Kasatkina vs Talia Gibson scheduled for October 26, 2026 at 2:40 AM UTC?",
    "side": "Daria Kasatkina win",
    "open_chance": 61,
-   "now_chance": 23,
+   "now_chance": 30,
    "open_odds": "-156",
-   "now_odds": "+335",
-   "edge": 38,
+   "now_odds": "+233",
+   "edge": 31,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Daria Kasatkina trailing in sets",
    "context": "Talia Gibson 6, 3 · Daria Kasatkina 0, 3 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T04:17:41.726Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1796240:1",
+   "market_id": "1796240",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Daria Kasatkina win set 2 against Talia Gibson?",
+   "side": "No: Daria Kasatkina win set 2 against Talia Gibson",
+   "open_chance": 56,
+   "now_chance": 45,
+   "open_odds": "-127",
+   "now_odds": "+122",
+   "edge": 11,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Daria Kasatkina not above the games spread right now",
+   "context": "Talia Gibson 6, 3 · Daria Kasatkina 0, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T04:32:06.469Z",
    "status": "open",
    "kalshi": null
   },
@@ -566,15 +593,35 @@
    "question": "Will the total in Daria Kasatkina vs. Talia Gibson be more than 17.5?",
    "side": "Over 17.5 (Games)",
    "open_chance": 80,
-   "now_chance": 64,
+   "now_chance": 72,
    "open_odds": "-400",
-   "now_odds": "-178",
-   "edge": 16,
-   "tier": "big",
+   "now_odds": "-257",
+   "edge": 8,
+   "tier": "slight",
    "class": "edge",
    "reason": null,
    "context": "Talia Gibson 6, 3 · Daria Kasatkina 0, 3 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T03:39:35.164Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1796223:1",
+   "market_id": "1796223",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Daria Kasatkina vs. Talia Gibson be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 56,
+   "now_chance": 49,
+   "open_odds": "-127",
+   "now_odds": "+104",
+   "edge": 7,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Talia Gibson 6, 3 · Daria Kasatkina 0, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T04:32:06.469Z",
    "status": "open",
    "kalshi": null
   },
@@ -586,11 +633,11 @@
    "question": "Will the Daria Kasatkina cover 7.5 vs the Talia Gibson in Daria Kasatkina vs. Talia Gibson?",
    "side": "Daria Kasatkina +7.50 (Games)",
    "open_chance": 61,
-   "now_chance": 48,
+   "now_chance": 56,
    "open_odds": "-156",
-   "now_odds": "+108",
-   "edge": 13,
-   "tier": "big",
+   "now_odds": "-127",
+   "edge": 5,
+   "tier": "slight",
    "class": "edge",
    "reason": null,
    "context": "Talia Gibson 6, 3 · Daria Kasatkina 0, 3 · 2nd Set (games by set)",
@@ -615,7 +662,7 @@
    "reason": null,
    "context": "Talia Gibson 6, 3 · Daria Kasatkina 0, 3 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T04:17:41.726Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -680,6 +727,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1796223:1:slight",
+   "key": "1796223:1",
+   "at": "2026-10-26T04:32:06.469Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+104",
+   "now_chance": 49,
+   "edge": 7,
+   "text": "New slight edge: Under 22.5 (Games) (Games total), 7 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-darkas-talgib-2026-10-25"
+  },
+  {
+   "id": "gone:1796223:0:2026-10-26T04:17:41.726Z",
+   "key": "1796223:0",
+   "at": "2026-10-26T04:32:06.469Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+163",
+   "now_chance": 38,
+   "edge": 8,
+   "text": "Edge gone: Over 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-darkas-talgib-2026-10-25"
+  },
   {
    "id": "new_edge:1796221:0:big",
    "key": "1796221:0",
@@ -830,7 +905,9 @@
   "gone:1796227:0:2026-10-26T02:49:35.210Z",
   "news:1796213:0",
   "new_edge:1796221:0:big",
-  "new_edge:1796223:0:slight"
+  "new_edge:1796223:0:slight",
+  "new_edge:1796223:1:slight",
+  "gone:1796223:0:2026-10-26T04:17:41.726Z"
  ],
  "kalshi_checked": null
 }
