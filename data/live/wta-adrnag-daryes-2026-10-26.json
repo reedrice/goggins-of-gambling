@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187276",
-  "fetched_at": "2026-10-26T14:15:35.181Z",
+  "fetched_at": "2026-10-26T14:21:13.294Z",
   "tennis": true,
   "tennis_match": {
    "id": "187276",
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 7,
@@ -106,6 +107,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 6,
@@ -152,6 +154,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1081,
    "type": {
     "id": "2",
@@ -189,7 +196,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T14:15:35.068Z",
+ "updated": "2026-10-26T14:21:13.214Z",
  "open_taken_at": "2026-10-25T05:02:18.984Z",
  "thresholds": {
   "big": 10,
@@ -529,26 +536,6 @@
  ],
  "edges": [
   {
-   "key": "1781649:0",
-   "market_id": "1781649",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Adrienn Nagy vs Daria Yesypchuk scheduled for October 26, 2026 at 9:00 AM UTC?",
-   "side": "Adrienn Nagy win",
-   "open_chance": 54,
-   "now_chance": 39,
-   "open_odds": "-117",
-   "now_odds": "+156",
-   "edge": 15,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Daria Yesypchuk 7, 5, 4 · Adrienn Nagy 6, 7, 4 · 3rd Set (games by set)",
-   "first_seen": "2026-10-26T13:18:01.280Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1781882:0",
    "market_id": "1781882",
    "market": "Sets spread",
@@ -645,6 +632,26 @@
    "reason": "Explained by score: Adrienn Nagy not above the games spread right now",
    "context": "Daria Yesypchuk 6 · Adrienn Nagy 6 · 1st Set (games by set)",
    "first_seen": "2026-10-26T12:47:36.319Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1781649:0",
+   "market_id": "1781649",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Adrienn Nagy vs Daria Yesypchuk scheduled for October 26, 2026 at 9:00 AM UTC?",
+   "side": "Adrienn Nagy win",
+   "open_chance": 54,
+   "now_chance": 39,
+   "open_odds": "-117",
+   "now_odds": "+156",
+   "edge": 15,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Daria Yesypchuk 7, 5, 4 · Adrienn Nagy 6, 7, 4 · 3rd Set (games by set)",
+   "first_seen": "2026-10-26T13:18:01.280Z",
    "status": "gone",
    "kalshi": null
   },
@@ -790,6 +797,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1781649:0:2026-10-26T13:18:01.280Z",
+   "key": "1781649:0",
+   "at": "2026-10-26T14:21:13.214Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Adrienn Nagy win",
+   "market": "Moneyline",
+   "now_odds": "+156",
+   "now_chance": 39,
+   "edge": 15,
+   "text": "Edge gone: Adrienn Nagy win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-adrnag-daryes-2026-10-26"
+  },
   {
    "id": "gone:1781875:1:2026-10-26T13:51:47.650Z",
    "key": "1781875:1",
@@ -1075,7 +1096,8 @@
   "new_edge:1781885:1:big",
   "news:1781892:1",
   "gone:1781649:1:2026-10-26T13:51:47.650Z",
-  "gone:1781875:1:2026-10-26T13:51:47.650Z"
+  "gone:1781875:1:2026-10-26T13:51:47.650Z",
+  "gone:1781649:0:2026-10-26T13:18:01.280Z"
  ],
  "kalshi_checked": null
 }
