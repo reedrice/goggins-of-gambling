@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185712",
-  "fetched_at": "2026-10-26T04:44:31.065Z",
+  "fetched_at": "2026-10-26T04:47:31.517Z",
   "tennis": true,
   "tennis_match": {
    "id": "185712",
@@ -17,17 +17,17 @@
    "date": "2026-10-26T03:05Z",
    "startDate": "2026-10-26T03:05Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(7) Maria Timofeeva (UZB) leads Teodora Kostovic (SER) 6-4 6-1",
+     "text": "(7) Maria Timofeeva (UZB) bt Teodora Kostovic (SER) 6-4 6-1",
      "type": "event"
     }
    ],
@@ -55,13 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
      "linescores": [
       {
        "value": 4,
        "winner": false
       },
       {
-       "value": 1
+       "value": 1,
+       "winner": false
       }
      ],
      "athlete": {
@@ -101,6 +103,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
      "curatedRank": {
       "current": 7
      },
@@ -110,7 +113,8 @@
        "winner": true
       },
       {
-       "value": 6
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -161,10 +165,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Teodora Kostovic",
@@ -176,13 +180,13 @@
    "abbr": "Maria Timofeeva",
    "alias": "Maria Timofeeva",
    "name": "Maria Timofeeva",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T04:44:30.959Z",
+ "updated": "2026-10-26T04:47:31.430Z",
  "open_taken_at": "2026-10-25T11:04:28.440Z",
  "thresholds": {
   "big": 10,
