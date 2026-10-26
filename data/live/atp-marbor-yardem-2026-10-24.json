@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-26T03:13:40.755Z"
+  "fetched_at": "2026-10-26T03:18:31.310Z"
  },
- "updated": "2026-10-26T03:13:40.576Z",
+ "updated": "2026-10-26T03:18:31.207Z",
  "open_taken_at": "2026-10-24T11:16:08.657Z",
  "thresholds": {
   "big": 10,
@@ -63,16 +63,16 @@
    "taken_at": "2026-10-26T03:11:33.990Z"
   },
   {
-   "market_id": "1749578",
+   "market_id": "1749580",
    "market": "Games spread",
    "group": "game",
    "mtype": "spread",
    "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Martin Borisiouk cover 4.5 vs the Yaroslav Demin in Martin Borisiouk vs. Yaroslav Demin?",
+   "line": 7.5,
+   "question": "Will the Martin Borisiouk cover 7.5 vs the Yaroslav Demin in Martin Borisiouk vs. Yaroslav Demin?",
    "sides": [
-    "Martin Borisiouk +4.50 (Games)",
-    "Yaroslav Demin -4.50 (Games)"
+    "Martin Borisiouk +7.50 (Games)",
+    "Yaroslav Demin -7.50 (Games)"
    ],
    "teams": [
     "Martin Borisiouk",
@@ -85,16 +85,16 @@
    "taken_at": "2026-10-26T03:11:33.990Z"
   },
   {
-   "market_id": "1749580",
+   "market_id": "1749578",
    "market": "Games spread",
    "group": "game",
    "mtype": "spread",
    "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Martin Borisiouk cover 7.5 vs the Yaroslav Demin in Martin Borisiouk vs. Yaroslav Demin?",
+   "line": 4.5,
+   "question": "Will the Martin Borisiouk cover 4.5 vs the Yaroslav Demin in Martin Borisiouk vs. Yaroslav Demin?",
    "sides": [
-    "Martin Borisiouk +7.50 (Games)",
-    "Yaroslav Demin -7.50 (Games)"
+    "Martin Borisiouk +4.50 (Games)",
+    "Yaroslav Demin -4.50 (Games)"
    ],
    "teams": [
     "Martin Borisiouk",
@@ -127,6 +127,28 @@
    "yes_buy": 52,
    "no_buy": 51,
    "taken_at": "2026-10-25T00:22:17.519Z"
+  },
+  {
+   "market_id": "1749591",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Martin Borisiouk win set 1 against Yaroslav Demin?",
+   "sides": [
+    "Yes: Martin Borisiouk win set 1 against Yaroslav Demin",
+    "No: Martin Borisiouk win set 1 against Yaroslav Demin"
+   ],
+   "teams": [
+    "Martin Borisiouk",
+    null
+   ],
+   "player": null,
+   "mid": 53.5,
+   "yes_buy": 54,
+   "no_buy": 47,
+   "taken_at": "2026-10-26T03:18:31.207Z"
   },
   {
    "market_id": "1749586",
@@ -325,6 +347,26 @@
    "kalshi": null
   },
   {
+   "key": "1749389:1",
+   "market_id": "1749389",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Martin Borisiouk vs Yaroslav Demin scheduled for October 25, 2026 at 2:00 AM UTC?",
+   "side": "Yaroslav Demin win",
+   "open_chance": 54,
+   "now_chance": 46,
+   "open_odds": "-117",
+   "now_odds": "+117",
+   "edge": 8,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-26T03:18:31.207Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1749576:1",
    "market_id": "1749576",
    "market": "Games spread",
@@ -346,6 +388,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1749389:1:slight",
+   "key": "1749389:1",
+   "at": "2026-10-26T03:18:31.207Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Yaroslav Demin win",
+   "market": "Moneyline",
+   "now_odds": "+117",
+   "now_chance": 46,
+   "edge": 8,
+   "text": "New slight edge: Yaroslav Demin win (Moneyline), 8 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-marbor-yardem-2026-10-24"
+  },
   {
    "id": "new_edge:1749584:0:big",
    "key": "1749584:0",
@@ -392,7 +448,8 @@
  "alert_seen": [
   "new_edge:1749584:0:big",
   "new_edge:1749575:0:big",
-  "new_edge:1749576:1:slight"
+  "new_edge:1749576:1:slight",
+  "new_edge:1749389:1:slight"
  ],
  "kalshi_checked": null
 }
