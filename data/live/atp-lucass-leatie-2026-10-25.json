@@ -4,12 +4,12 @@
  "game": "Luca Van Assche vs. Learner Tien",
  "url": "https://polymarket.us/sports/atp/atp-lucass-leatie-2026-10-25",
  "start_time": "2026-10-26T19:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185175",
-  "fetched_at": "2026-10-26T20:41:58.373Z",
+  "fetched_at": "2026-10-26T20:47:15.217Z",
   "tennis": true,
   "tennis_match": {
    "id": "185175",
@@ -17,17 +17,17 @@
    "date": "2026-10-26T19:15Z",
    "startDate": "2026-10-26T19:15Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Learner Tien (USA) leads Luca Van Assche (FRA) 6-3 5-1",
+     "text": "Learner Tien (USA) bt Luca Van Assche (FRA) 6-3 6-1",
      "type": "event"
     }
    ],
@@ -55,14 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "winner": true,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 5
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -102,14 +103,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "winner": false,
      "linescores": [
       {
        "value": 3,
        "winner": false
       },
       {
-       "value": 1
+       "value": 1,
+       "winner": false
       }
      ],
      "athlete": {
@@ -144,11 +146,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 10,
    "type": {
     "id": "1",
@@ -165,16 +162,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Learner Tien",
    "alias": "Learner Tien",
    "name": "Learner Tien",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Luca Van Assche",
@@ -186,7 +183,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T20:41:58.168Z",
+ "updated": "2026-10-26T20:47:15.042Z",
  "open_taken_at": "2026-10-24T11:16:09.379Z",
  "thresholds": {
   "big": 10,
@@ -542,7 +539,7 @@
    "reason": "Big move (49 pts), likely news",
    "context": "Learner Tien 6, 5 · Luca Van Assche 3, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T20:36:16.856Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {

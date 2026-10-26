@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187291",
-  "fetched_at": "2026-10-26T20:42:11.911Z",
+  "fetched_at": "2026-10-26T20:47:27.955Z",
   "tennis": true,
   "tennis_match": {
    "id": "187291",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Carmen Andreea Herea (ROM) leads Maria Fernanda Navarro Oliva (MEX) 6-2",
+     "text": "Carmen Andreea Herea (ROM) leads Maria Fernanda Navarro Oliva (MEX) 6-2 1-0",
      "type": "event"
     }
    ],
@@ -55,9 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
-       "value": 2
+       "value": 2,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -97,9 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -134,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1034,
    "type": {
     "id": "2",
@@ -152,8 +167,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Maria Fernanda Navarro Oliva",
@@ -165,13 +180,13 @@
    "abbr": "Carmen Andreea Herea",
    "alias": "Carmen Andreea Herea",
    "name": "Carmen Andreea Herea",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T20:42:11.793Z",
+ "updated": "2026-10-26T20:47:27.847Z",
  "open_taken_at": "2026-10-26T18:47:55.721Z",
  "thresholds": {
   "big": 10,
@@ -267,8 +282,46 @@
    "taken_at": "2026-10-26T19:23:51.888Z"
   }
  ],
- "edges": [],
- "alerts": [],
- "alert_seen": [],
+ "edges": [
+  {
+   "key": "1844149:0",
+   "market_id": "1844149",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Carmen Andreea Herea vs. Maria Fernanda Navarro Oliva be more than 17.5?",
+   "side": "Over 17.5 (Games)",
+   "open_chance": 31,
+   "now_chance": 22,
+   "open_odds": "+223",
+   "now_odds": "+355",
+   "edge": 9,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Maria Fernanda Navarro Oliva 2, 0 · Carmen Andreea Herea 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T20:47:27.847Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
+ "alerts": [
+  {
+   "id": "new_edge:1844149:0:slight",
+   "key": "1844149:0",
+   "at": "2026-10-26T20:47:27.847Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+355",
+   "now_chance": 22,
+   "edge": 9,
+   "text": "New slight edge: Over 17.5 (Games) (Games total), 9 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-carher-maroli-2026-10-27"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:1844149:0:slight"
+ ],
  "kalshi_checked": null
 }
