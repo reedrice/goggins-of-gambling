@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-26T19:41:48.793Z"
+  "fetched_at": "2026-10-26T19:47:33.863Z"
  },
- "updated": "2026-10-26T19:41:48.714Z",
+ "updated": "2026-10-26T19:47:33.791Z",
  "open_taken_at": "2026-10-25T05:02:11.789Z",
  "thresholds": {
   "big": 10,
@@ -41,28 +41,6 @@
    "taken_at": "2026-10-25T05:02:11.789Z"
   },
   {
-   "market_id": "1773397",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Matteo Martineau vs. Otto Virtanen be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 56,
-   "yes_buy": 57,
-   "no_buy": 45,
-   "taken_at": "2026-10-26T09:23:18.134Z"
-  },
-  {
    "market_id": "1773391",
    "market": "Games spread",
    "group": "game",
@@ -85,28 +63,6 @@
    "taken_at": "2026-10-26T17:33:17.516Z"
   },
   {
-   "market_id": "1773390",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Matteo Martineau cover -4.5 vs the Otto Virtanen in Matteo Martineau vs. Otto Virtanen?",
-   "sides": [
-    "Matteo Martineau -4.50 (Games)",
-    "Otto Virtanen +4.50 (Games)"
-   ],
-   "teams": [
-    "Matteo Martineau",
-    "Otto Virtanen"
-   ],
-   "player": null,
-   "mid": 27.5,
-   "yes_buy": 28,
-   "no_buy": 73,
-   "taken_at": "2026-10-26T17:49:07.081Z"
-  },
-  {
    "market_id": "1773405",
    "market": "Set 2 winner",
    "group": "game",
@@ -126,6 +82,50 @@
    "mid": 44.5,
    "yes_buy": 47,
    "no_buy": 58,
+   "taken_at": "2026-10-26T17:49:07.081Z"
+  },
+  {
+   "market_id": "1773397",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Matteo Martineau vs. Otto Virtanen be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 56,
+   "yes_buy": 57,
+   "no_buy": 45,
+   "taken_at": "2026-10-26T09:23:18.134Z"
+  },
+  {
+   "market_id": "1773390",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Matteo Martineau cover -4.5 vs the Otto Virtanen in Matteo Martineau vs. Otto Virtanen?",
+   "sides": [
+    "Matteo Martineau -4.50 (Games)",
+    "Otto Virtanen +4.50 (Games)"
+   ],
+   "teams": [
+    "Matteo Martineau",
+    "Otto Virtanen"
+   ],
+   "player": null,
+   "mid": 27.5,
+   "yes_buy": 28,
+   "no_buy": 73,
    "taken_at": "2026-10-26T17:49:07.081Z"
   },
   {
@@ -351,6 +351,26 @@
  ],
  "edges": [
   {
+   "key": "1773405:0",
+   "market_id": "1773405",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Matteo Martineau win set 2 against Otto Virtanen?",
+   "side": "Yes: Matteo Martineau win set 2 against Otto Virtanen",
+   "open_chance": 47,
+   "now_chance": 20,
+   "open_odds": "+113",
+   "now_odds": "+400",
+   "edge": 27,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-26T19:47:33.791Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1773397:1",
    "market_id": "1773397",
    "market": "Games total",
@@ -367,7 +387,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-26T19:29:43.421Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -532,6 +552,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1773397:1:2026-10-26T19:29:43.421Z",
+   "key": "1773397:1",
+   "at": "2026-10-26T19:47:33.791Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+426",
+   "now_chance": 19,
+   "edge": 26,
+   "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-matmar-ottvir-2026-10-26"
+  },
   {
    "id": "new_edge:1773391:1:big",
    "key": "1773391:1",
@@ -818,7 +852,8 @@
   "gone:1760926:0:2026-10-26T00:40:11.778Z",
   "gone:1773389:0:2026-10-26T09:23:18.134Z",
   "gone:1773398:1:2026-10-26T17:42:54.902Z",
-  "gone:1773399:1:2026-10-26T17:49:07.081Z"
+  "gone:1773399:1:2026-10-26T17:49:07.081Z",
+  "gone:1773397:1:2026-10-26T19:29:43.421Z"
  ],
  "kalshi_checked": null
 }
