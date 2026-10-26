@@ -1,42 +1,8 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-26T03:40:51.602Z",
+ "updated_at": "2026-10-26T03:46:33.750Z",
  "source": "ESPN public roster API (site.api.espn.com), matched to Polymarket US player names",
  "leagues": {
-  "nba": {
-   "names": {
-    "PF": "Power Forward",
-    "C": "Center",
-    "SG": "Shooting Guard",
-    "SF": "Small Forward",
-    "PG": "Point Guard"
-   },
-   "players": {
-    "sac|zach lavine": "SG",
-    "sac|darius acuff": "PG",
-    "sac|deandre hunter": "SF",
-    "mem|cedric coward": "SG",
-    "mem|cameron boozer": "PF",
-    "mem|quinten post": "C",
-    "mem|jerami grant": "SF",
-    "mem|jaylen wells": "SF",
-    "sac|domantas sabonis": "C",
-    "mem|ty jerome": "PG",
-    "mem|isaiah stewart": "C",
-    "sac|precious achiuwa": "PF",
-    "was|anthony davis": "PF",
-    "was|kyshawn george": "SG",
-    "was|trae young": "PG",
-    "hou|jabari smith": "PF",
-    "hou|kevin durant": "SF",
-    "hou|fred vanvleet": "PG",
-    "atl|nickeil alexander walker": "SG",
-    "hou|alperen sengun": "C",
-    "atl|jalen johnson": "PF",
-    "hou|amen thompson": "SG",
-    "atl|cj mccollum": "PG"
-   }
-  },
   "nhl": {
    "names": {
     "C": "Center",
@@ -46,23 +12,23 @@
    },
    "players": {
     "min|joel eriksson ek": "C",
-    "min|jared spurgeon": "D",
-    "min|bobby brink": "RW",
-    "van|jonathan lekkerimaki": "RW",
-    "van|filip chytil": "C",
-    "van|drew oconnor": "LW",
     "min|kirill kaprizov": "LW",
-    "van|filip hronek": "D",
     "min|matt boldy": "LW",
-    "min|jonas brodin": "D",
-    "min|olli maatta": "D",
-    "van|brock boeser": "RW",
-    "van|jake debrusk": "LW",
-    "van|marco rossi": "C",
-    "van|zeev buium": "D",
-    "min|blake coleman": "LW",
-    "min|ryan hartman": "RW",
     "min|quinn hughes": "D",
+    "van|filip hronek": "D",
+    "van|brock boeser": "RW",
+    "van|drew oconnor": "LW",
+    "van|jake debrusk": "LW",
+    "min|jared spurgeon": "D",
+    "min|blake coleman": "LW",
+    "van|marco rossi": "C",
+    "min|olli maatta": "D",
+    "min|jonas brodin": "D",
+    "van|filip chytil": "C",
+    "van|jonathan lekkerimaki": "RW",
+    "van|zeev buium": "D",
+    "min|ryan hartman": "RW",
+    "min|bobby brink": "RW",
     "min|danila yurov": "RW",
     "van|linus karlsson": "C",
     "la|artemi panarin": "LW",
@@ -121,13 +87,18 @@
   "lmx": {
    "names": {
     "D": "Defender",
-    "F": "Forward"
+    "F": "Forward",
+    "M": "Midfielder"
    },
    "players": {
+    "san|ezequiel bullaude": "M",
     "tij|mourad el ghezouani": "F",
-    "tij|adonis preciado": "F",
+    "san|diego gonzalez": "F",
     "san|esteban lozano": "F",
-    "tij|jackson porozo": "D"
+    "san|facundo caseres": "M",
+    "san|felipe sanchez": "D",
+    "san|fran villalba": "M",
+    "san|mauricio cuevas": "D"
    }
   },
   "lal": {
@@ -137,6 +108,29 @@
    "players": {
     "osa|ante budimir": "F",
     "sev|robbie ure": "F"
+   }
+  },
+  "nba": {
+   "names": {
+    "C": "Center",
+    "PG": "Point Guard",
+    "PF": "Power Forward",
+    "SF": "Small Forward",
+    "SG": "Shooting Guard"
+   },
+   "players": {
+    "was|kyshawn george": "SG",
+    "was|anthony davis": "PF",
+    "was|trae young": "PG",
+    "hou|jabari smith": "PF",
+    "hou|kevin durant": "SF",
+    "hou|fred vanvleet": "PG",
+    "atl|nickeil alexander walker": "SG",
+    "hou|alperen sengun": "C",
+    "atl|jalen johnson": "PF",
+    "hou|amen thompson": "SG",
+    "atl|dyson daniels": "SF",
+    "atl|cj mccollum": "PG"
    }
   },
   "mlb": {
@@ -220,14 +214,6 @@
   }
  },
  "stats": {
-  "nba": {
-   "players": 23,
-   "matched": 23,
-   "rate": 1,
-   "by": {
-    "team": 23
-   }
-  },
   "nhl": {
    "players": 71,
    "matched": 71,
@@ -237,11 +223,12 @@
    }
   },
   "lmx": {
-   "players": 4,
-   "matched": 4,
+   "players": 8,
+   "matched": 8,
    "rate": 1,
    "by": {
-    "team": 4
+    "team": 7,
+    "nickname": 1
    }
   },
   "lal": {
@@ -250,6 +237,14 @@
    "rate": 1,
    "by": {
     "team": 2
+   }
+  },
+  "nba": {
+   "players": 12,
+   "matched": 12,
+   "rate": 1,
+   "by": {
+    "team": 12
    }
   },
   "mlb": {
