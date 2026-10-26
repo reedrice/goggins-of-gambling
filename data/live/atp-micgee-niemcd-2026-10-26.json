@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-26T11:52:50.090Z"
+  "fetched_at": "2026-10-26T11:58:59.047Z"
  },
- "updated": "2026-10-26T11:52:49.978Z",
+ "updated": "2026-10-26T11:58:58.926Z",
  "open_taken_at": "2026-10-25T10:46:13.681Z",
  "thresholds": {
   "big": 10,
@@ -39,28 +39,6 @@
    "yes_buy": 56,
    "no_buy": 46,
    "taken_at": "2026-10-25T21:20:37.002Z"
-  },
-  {
-   "market_id": "1794991",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Michael Geerts vs. Niels McDonald be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 30.5,
-   "yes_buy": 31,
-   "no_buy": 70,
-   "taken_at": "2026-10-26T10:03:42.206Z"
   },
   {
    "market_id": "1794981",
@@ -105,6 +83,28 @@
    "yes_buy": 31,
    "no_buy": 70,
    "taken_at": "2026-10-26T10:09:33.218Z"
+  },
+  {
+   "market_id": "1794991",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Michael Geerts vs. Niels McDonald be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 30.5,
+   "yes_buy": 31,
+   "no_buy": 70,
+   "taken_at": "2026-10-26T10:03:42.206Z"
   },
   {
    "market_id": "1794984",
@@ -351,6 +351,26 @@
  ],
  "edges": [
   {
+   "key": "1794983:1",
+   "market_id": "1794983",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Michael Geerts cover -4.5 vs the Niels McDonald in Michael Geerts vs. Niels McDonald?",
+   "side": "Niels McDonald +4.50 (Games)",
+   "open_chance": 70,
+   "now_chance": 47,
+   "open_odds": "-233",
+   "now_odds": "+113",
+   "edge": 23,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-26T11:58:58.926Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1794981:1",
    "market_id": "1794981",
    "market": "Games spread",
@@ -358,10 +378,10 @@
    "question": "Will the Michael Geerts cover -1.5 vs the Niels McDonald in Michael Geerts vs. Niels McDonald?",
    "side": "Niels McDonald +1.50 (Games)",
    "open_chance": 51,
-   "now_chance": 33,
+   "now_chance": 32,
    "open_odds": "-104",
-   "now_odds": "+203",
-   "edge": 18,
+   "now_odds": "+213",
+   "edge": 19,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -552,6 +572,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1794983:1:big",
+   "key": "1794983:1",
+   "at": "2026-10-26T11:58:58.926Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Niels McDonald +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+113",
+   "now_chance": 47,
+   "edge": 23,
+   "text": "New big edge: Niels McDonald +4.50 (Games) (Games spread), 23 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-micgee-niemcd-2026-10-26"
+  },
   {
    "id": "new_edge:1794981:1:big",
    "key": "1794981:1",
@@ -919,7 +953,8 @@
   "gone:1794981:0:2026-10-25T23:28:43.092Z",
   "gone:1794998:1:2026-10-26T11:19:44.370Z",
   "gone:1794991:1:2026-10-26T10:53:42.412Z",
-  "new_edge:1794981:1:big"
+  "new_edge:1794981:1:big",
+  "new_edge:1794983:1:big"
  ],
  "kalshi_checked": null
 }
