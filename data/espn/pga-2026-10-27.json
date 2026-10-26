@@ -3,7 +3,7 @@
   "league": "pga",
   "query_date": "2026-10-27",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/golf/pga/scoreboard?dates=20261027&limit=1000",
-  "fetched_at": "2026-10-26T12:26:30.709Z",
+  "fetched_at": "2026-10-26T12:32:22.337Z",
   "events": [
     {
       "id": "401850917",
@@ -25,13 +25,13 @@
           "status": {
             "period": 4,
             "type": {
-              "id": "2",
-              "name": "STATUS_IN_PROGRESS",
-              "state": "in",
-              "completed": false,
-              "description": "In Progress",
-              "detail": "Playoff - In Progress",
-              "shortDetail": "Playoff - In Progress"
+              "id": "35",
+              "name": "STATUS_PLAY_COMPLETE",
+              "state": "post",
+              "completed": true,
+              "description": "Play Complete",
+              "detail": "Playoff - Play Complete",
+              "shortDetail": "Playoff - Play Complete"
             }
           },
           "competitors": [
@@ -598,10 +598,18 @@
                   }
                 },
                 {
-                  "value": 6,
+                  "value": 9,
                   "displayValue": "E",
                   "period": 4,
                   "linescores": [
+                    {
+                      "value": 3,
+                      "displayValue": "3",
+                      "period": 16,
+                      "scoreType": {
+                        "displayValue": "E"
+                      }
+                    },
                     {
                       "value": 3,
                       "displayValue": "3",
@@ -671,7 +679,7 @@
             },
             {
               "id": "6001",
-              "score": "-16",
+              "score": "-15",
               "linescores": [
                 {
                   "value": 66,
@@ -1232,8 +1240,8 @@
                   }
                 },
                 {
-                  "value": 6,
-                  "displayValue": "E",
+                  "value": 10,
+                  "displayValue": "+1",
                   "period": 4,
                   "linescores": [
                     {
@@ -1250,6 +1258,14 @@
                       "period": 16,
                       "scoreType": {
                         "displayValue": "E"
+                      }
+                    },
+                    {
+                      "value": 4,
+                      "displayValue": "4",
+                      "period": 16,
+                      "scoreType": {
+                        "displayValue": "+1"
                       }
                     }
                   ],
@@ -62779,7 +62795,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/golf/pga/scoreboard?dates=20261027&limit=1000",
-      "fetched_at": "2026-10-26T12:26:30.709Z",
+      "fetched_at": "2026-10-26T12:32:22.337Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
