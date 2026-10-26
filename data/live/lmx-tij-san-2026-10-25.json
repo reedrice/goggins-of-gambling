@@ -9,15 +9,37 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for lmx",
-  "fetched_at": "2026-10-26T05:02:28.919Z"
+  "fetched_at": "2026-10-26T05:08:41.818Z"
  },
- "updated": "2026-10-26T05:02:28.914Z",
+ "updated": "2026-10-26T05:08:41.815Z",
  "open_taken_at": "2026-10-24T05:01:05.704Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1819991",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Adonis Preciado record at least 1 goals in TIJ vs SAN?",
+   "sides": [
+    "Yes: Adonis Preciado record at least 1 goals in TIJ vs SAN",
+    "No: Adonis Preciado record at least 1 goals in TIJ vs SAN"
+   ],
+   "teams": [
+    "Club Tijuana",
+    "Club Tijuana"
+   ],
+   "player": "Adonis Preciado",
+   "mid": 56.5,
+   "yes_buy": 57,
+   "no_buy": 44,
+   "taken_at": "2026-10-26T05:02:28.914Z"
+  },
   {
    "market_id": "1778633",
    "market": "Main total",
@@ -61,28 +83,6 @@
    "yes_buy": 12,
    "no_buy": 90,
    "taken_at": "2026-10-25T04:03:47.433Z"
-  },
-  {
-   "market_id": "1819991",
-   "market": "Player prop",
-   "group": "prop",
-   "mtype": "prop",
-   "period": "full_game",
-   "line": 1,
-   "question": "Will Adonis Preciado record at least 1 goals in TIJ vs SAN?",
-   "sides": [
-    "Yes: Adonis Preciado record at least 1 goals in TIJ vs SAN",
-    "No: Adonis Preciado record at least 1 goals in TIJ vs SAN"
-   ],
-   "teams": [
-    "Club Tijuana",
-    "Club Tijuana"
-   ],
-   "player": "Adonis Preciado",
-   "mid": 56.5,
-   "yes_buy": 57,
-   "no_buy": 44,
-   "taken_at": "2026-10-26T05:02:28.914Z"
   },
   {
    "market_id": "1778625",
@@ -857,42 +857,22 @@
  ],
  "edges": [
   {
-   "key": "1778624:1",
-   "market_id": "1778624",
-   "market": "Main spread",
-   "group": "game",
-   "question": "Will the Club Tijuana cover -2.5 vs the Club Santos Laguna in TIJ vs SAN?",
-   "side": "Club Santos Laguna +2.50",
-   "open_chance": 90,
-   "now_chance": 19,
-   "open_odds": "-900",
-   "now_odds": "+426",
-   "edge": 71,
-   "tier": "big",
+   "key": "1819991:1",
+   "market_id": "1819991",
+   "market": "Player prop",
+   "group": "prop",
+   "question": "Will Adonis Preciado record at least 1 goals in TIJ vs SAN?",
+   "side": "No: Adonis Preciado record at least 1 goals in TIJ vs SAN",
+   "open_chance": 44,
+   "now_chance": 39,
+   "open_odds": "+127",
+   "now_odds": "+156",
+   "edge": 5,
+   "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-26T03:32:58.461Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1778633:1",
-   "market_id": "1778633",
-   "market": "Main total",
-   "group": "game",
-   "question": "Will the total in TIJ vs SAN be more than 5.5?",
-   "side": "Under 5.5",
-   "open_chance": 93,
-   "now_chance": 56,
-   "open_odds": "-1329",
-   "now_odds": "-127",
-   "edge": 37,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-26T04:53:17.762Z",
+   "first_seen": "2026-10-26T05:08:41.815Z",
    "status": "open",
    "kalshi": null
   },
@@ -913,6 +893,46 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-26T03:39:24.266Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1778624:1",
+   "market_id": "1778624",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will the Club Tijuana cover -2.5 vs the Club Santos Laguna in TIJ vs SAN?",
+   "side": "Club Santos Laguna +2.50",
+   "open_chance": 90,
+   "now_chance": 19,
+   "open_odds": "-900",
+   "now_odds": "+426",
+   "edge": 71,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-26T03:32:58.461Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1778633:1",
+   "market_id": "1778633",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in TIJ vs SAN be more than 5.5?",
+   "side": "Under 5.5",
+   "open_chance": 93,
+   "now_chance": 56,
+   "open_odds": "-1329",
+   "now_odds": "-127",
+   "edge": 37,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-26T04:53:17.762Z",
    "status": "gone",
    "kalshi": null
   },
@@ -1098,6 +1118,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1819991:1:slight",
+   "key": "1819991:1",
+   "at": "2026-10-26T05:08:41.815Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "No: Adonis Preciado record at least 1 goals in TIJ vs SAN",
+   "market": "Player prop",
+   "now_odds": "+156",
+   "now_chance": 39,
+   "edge": 5,
+   "text": "New slight edge: No: Adonis Preciado record at least 1 goals in TIJ vs SAN (Player prop), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/lmx/lmx-tij-san-2026-10-25"
+  },
+  {
+   "id": "gone:1778633:1:2026-10-26T04:53:17.762Z",
+   "key": "1778633:1",
+   "at": "2026-10-26T05:08:41.815Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 5.5",
+   "market": "Main total",
+   "now_odds": "-127",
+   "now_chance": 56,
+   "edge": 37,
+   "text": "Edge gone: Under 5.5 (Main total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/lmx/lmx-tij-san-2026-10-25"
+  },
   {
    "id": "gone:1669851:1:2026-10-26T04:47:21.243Z",
    "key": "1669851:1",
@@ -1454,7 +1502,9 @@
   "gone:1778630:1:2026-10-26T04:08:01.526Z",
   "new_edge:1778631:0:big",
   "gone:1669851:1:2026-10-26T04:47:21.243Z",
-  "gone:1669852:0:2026-10-26T04:47:21.243Z"
+  "gone:1669852:0:2026-10-26T04:47:21.243Z",
+  "new_edge:1819991:1:slight",
+  "gone:1778633:1:2026-10-26T04:53:17.762Z"
  ],
  "kalshi_checked": null
 }
