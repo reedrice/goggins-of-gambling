@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185761",
-  "fetched_at": "2026-10-26T22:52:52.817Z",
+  "fetched_at": "2026-10-26T22:58:30.678Z",
   "tennis": true,
   "tennis_match": {
    "id": "185761",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Nauhany Vitoria Leme Da Silva (BRA) leads Despina Papamichail (GRE) 5-3",
+     "text": "Nauhany Vitoria Leme Da Silva (BRA) leads Despina Papamichail (GRE) 5-4",
      "type": "event"
     }
    ],
@@ -55,10 +55,10 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
-       "value": 3
+       "value": 4
       }
      ],
      "athlete": {
@@ -98,7 +98,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
        "value": 5
@@ -178,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T22:52:52.705Z",
+ "updated": "2026-10-26T22:58:30.496Z",
  "open_taken_at": "2026-10-25T20:17:31.714Z",
  "thresholds": {
   "big": 10,
@@ -208,48 +208,26 @@
    "taken_at": "2026-10-26T00:40:18.563Z"
   },
   {
-   "market_id": "1810690",
-   "market": "Set 1 winner",
+   "market_id": "1810682",
+   "market": "Games total",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Nauhany Vitoria Leme Da Silva win set 1 against Despina Papamichail?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Nauhany Vitoria Leme Da Silva vs. Despina Papamichail be more than 17.5?",
    "sides": [
-    "Yes: Nauhany Vitoria Leme Da Silva win set 1 against Despina Papamichail",
-    "No: Nauhany Vitoria Leme Da Silva win set 1 against Despina Papamichail"
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
    ],
    "teams": [
-    "Nauhany Leme Da Silva",
+    null,
     null
    ],
    "player": null,
-   "mid": 48.5,
-   "yes_buy": 50,
-   "no_buy": 53,
-   "taken_at": "2026-10-26T22:31:37.553Z"
-  },
-  {
-   "market_id": "1810677",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Nauhany Vitoria Leme Da Silva cover 4.5 vs the Despina Papamichail in Nauhany Vitoria Leme Da Silva vs. Despina Papamichail?",
-   "sides": [
-    "Nauhany Leme Da Silva +4.50 (Games)",
-    "Despina Papamichail -4.50 (Games)"
-   ],
-   "teams": [
-    "Nauhany Leme Da Silva",
-    "Despina Papamichail"
-   ],
-   "player": null,
-   "mid": 69.5,
-   "yes_buy": 70,
-   "no_buy": 31,
-   "taken_at": "2026-10-26T21:11:52.907Z"
+   "mid": 76,
+   "yes_buy": 78,
+   "no_buy": 26,
+   "taken_at": "2026-10-26T11:19:50.984Z"
   },
   {
    "market_id": "1810679",
@@ -274,6 +252,50 @@
    "taken_at": "2026-10-26T21:11:52.907Z"
   },
   {
+   "market_id": "1810677",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Nauhany Vitoria Leme Da Silva cover 4.5 vs the Despina Papamichail in Nauhany Vitoria Leme Da Silva vs. Despina Papamichail?",
+   "sides": [
+    "Nauhany Leme Da Silva +4.50 (Games)",
+    "Despina Papamichail -4.50 (Games)"
+   ],
+   "teams": [
+    "Nauhany Leme Da Silva",
+    "Despina Papamichail"
+   ],
+   "player": null,
+   "mid": 69.5,
+   "yes_buy": 70,
+   "no_buy": 31,
+   "taken_at": "2026-10-26T21:11:52.907Z"
+  },
+  {
+   "market_id": "1810690",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Nauhany Vitoria Leme Da Silva win set 1 against Despina Papamichail?",
+   "sides": [
+    "Yes: Nauhany Vitoria Leme Da Silva win set 1 against Despina Papamichail",
+    "No: Nauhany Vitoria Leme Da Silva win set 1 against Despina Papamichail"
+   ],
+   "teams": [
+    "Nauhany Leme Da Silva",
+    null
+   ],
+   "player": null,
+   "mid": 48.5,
+   "yes_buy": 50,
+   "no_buy": 53,
+   "taken_at": "2026-10-26T22:31:37.553Z"
+  },
+  {
    "market_id": "1810675",
    "market": "Games spread",
    "group": "game",
@@ -296,50 +318,6 @@
    "taken_at": "2026-10-26T05:02:55.214Z"
   },
   {
-   "market_id": "1810674",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Nauhany Vitoria Leme Da Silva cover -1.5 vs the Despina Papamichail in Nauhany Vitoria Leme Da Silva vs. Despina Papamichail?",
-   "sides": [
-    "Nauhany Leme Da Silva -1.50 (Games)",
-    "Despina Papamichail +1.50 (Games)"
-   ],
-   "teams": [
-    "Nauhany Leme Da Silva",
-    "Despina Papamichail"
-   ],
-   "player": null,
-   "mid": 41.5,
-   "yes_buy": 44,
-   "no_buy": 61,
-   "taken_at": "2026-10-26T03:05:20.232Z"
-  },
-  {
-   "market_id": "1810676",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Nauhany Vitoria Leme Da Silva cover -4.5 vs the Despina Papamichail in Nauhany Vitoria Leme Da Silva vs. Despina Papamichail?",
-   "sides": [
-    "Nauhany Leme Da Silva -4.50 (Games)",
-    "Despina Papamichail +4.50 (Games)"
-   ],
-   "teams": [
-    "Nauhany Leme Da Silva",
-    "Despina Papamichail"
-   ],
-   "player": null,
-   "mid": 25.5,
-   "yes_buy": 26,
-   "no_buy": 75,
-   "taken_at": "2026-10-26T21:11:52.907Z"
-  },
-  {
    "market_id": "1810683",
    "market": "Games total",
    "group": "game",
@@ -360,6 +338,28 @@
    "yes_buy": 44,
    "no_buy": 58,
    "taken_at": "2026-10-26T08:47:33.870Z"
+  },
+  {
+   "market_id": "1810674",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Nauhany Vitoria Leme Da Silva cover -1.5 vs the Despina Papamichail in Nauhany Vitoria Leme Da Silva vs. Despina Papamichail?",
+   "sides": [
+    "Nauhany Leme Da Silva -1.50 (Games)",
+    "Despina Papamichail +1.50 (Games)"
+   ],
+   "teams": [
+    "Nauhany Leme Da Silva",
+    "Despina Papamichail"
+   ],
+   "player": null,
+   "mid": 41.5,
+   "yes_buy": 44,
+   "no_buy": 61,
+   "taken_at": "2026-10-26T03:05:20.232Z"
   },
   {
    "market_id": "1810680",
@@ -428,26 +428,26 @@
    "taken_at": "2026-10-26T21:11:52.907Z"
   },
   {
-   "market_id": "1810682",
-   "market": "Games total",
+   "market_id": "1810676",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Nauhany Vitoria Leme Da Silva vs. Despina Papamichail be more than 17.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Nauhany Vitoria Leme Da Silva cover -4.5 vs the Despina Papamichail in Nauhany Vitoria Leme Da Silva vs. Despina Papamichail?",
    "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
+    "Nauhany Leme Da Silva -4.50 (Games)",
+    "Despina Papamichail +4.50 (Games)"
    ],
    "teams": [
-    null,
-    null
+    "Nauhany Leme Da Silva",
+    "Despina Papamichail"
    ],
    "player": null,
-   "mid": 76,
-   "yes_buy": 78,
-   "no_buy": 26,
-   "taken_at": "2026-10-26T11:19:50.984Z"
+   "mid": 25.5,
+   "yes_buy": 26,
+   "no_buy": 75,
+   "taken_at": "2026-10-26T21:11:52.907Z"
   },
   {
    "market_id": "1810681",
@@ -496,6 +496,26 @@
  ],
  "edges": [
   {
+   "key": "1810690:1",
+   "market_id": "1810690",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Nauhany Vitoria Leme Da Silva win set 1 against Despina Papamichail?",
+   "side": "No: Nauhany Vitoria Leme Da Silva win set 1 against Despina Papamichail",
+   "open_chance": 53,
+   "now_chance": 30,
+   "open_odds": "-113",
+   "now_odds": "+233",
+   "edge": 23,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Despina Papamichail 4 · Nauhany Vitoria Leme Da Silva 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T22:58:30.496Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1810619:1",
    "market_id": "1810619",
    "market": "Moneyline",
@@ -503,15 +523,55 @@
    "question": "Who will win in the upcoming wta event Nauhany Vitoria Leme Da Silva vs Despina Papamichail scheduled for October 26, 2026 at 9:00 PM UTC?",
    "side": "Despina Papamichail win",
    "open_chance": 58,
-   "now_chance": 27,
+   "now_chance": 40,
    "open_odds": "-138",
-   "now_odds": "+270",
-   "edge": 31,
+   "now_odds": "+150",
+   "edge": 18,
    "tier": "big",
-   "class": "news",
-   "reason": "Big move (31 pts), likely news",
-   "context": "Despina Papamichail 3 · Nauhany Vitoria Leme Da Silva 5 · 1st Set (games by set)",
+   "class": "edge",
+   "reason": null,
+   "context": "Despina Papamichail 4 · Nauhany Vitoria Leme Da Silva 5 · 1st Set (games by set)",
    "first_seen": "2026-10-26T08:47:33.870Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1810675:1",
+   "market_id": "1810675",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Nauhany Vitoria Leme Da Silva cover 1.5 vs the Despina Papamichail in Nauhany Vitoria Leme Da Silva vs. Despina Papamichail?",
+   "side": "Despina Papamichail -1.50 (Games)",
+   "open_chance": 53,
+   "now_chance": 38,
+   "open_odds": "-113",
+   "now_odds": "+163",
+   "edge": 15,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Despina Papamichail not above the games spread right now",
+   "context": "Despina Papamichail 4 · Nauhany Vitoria Leme Da Silva 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T09:17:47.366Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1810683:1",
+   "market_id": "1810683",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Nauhany Vitoria Leme Da Silva vs. Despina Papamichail be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 58,
+   "now_chance": 45,
+   "open_odds": "-138",
+   "now_odds": "+122",
+   "edge": 13,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Despina Papamichail 4 · Nauhany Vitoria Leme Da Silva 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T22:26:01.555Z",
    "status": "open",
    "kalshi": null
   },
@@ -523,15 +583,75 @@
    "question": "Will the Nauhany Vitoria Leme Da Silva cover -1.5 vs the Despina Papamichail in Nauhany Vitoria Leme Da Silva vs. Despina Papamichail?",
    "side": "Despina Papamichail +1.50 (Games)",
    "open_chance": 61,
-   "now_chance": 31,
+   "now_chance": 48,
    "open_odds": "-156",
-   "now_odds": "+223",
-   "edge": 30,
+   "now_odds": "+108",
+   "edge": 13,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Despina Papamichail 4 · Nauhany Vitoria Leme Da Silva 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T09:36:56.391Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1810677:1",
+   "market_id": "1810677",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Nauhany Vitoria Leme Da Silva cover 4.5 vs the Despina Papamichail in Nauhany Vitoria Leme Da Silva vs. Despina Papamichail?",
+   "side": "Despina Papamichail -4.50 (Games)",
+   "open_chance": 31,
+   "now_chance": 19,
+   "open_odds": "+223",
+   "now_odds": "+426",
+   "edge": 12,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Despina Papamichail not above the games spread right now",
-   "context": "Despina Papamichail 3 · Nauhany Vitoria Leme Da Silva 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T09:36:56.391Z",
+   "context": "Despina Papamichail 4 · Nauhany Vitoria Leme Da Silva 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T22:58:30.496Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1810684:1",
+   "market_id": "1810684",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Nauhany Vitoria Leme Da Silva vs. Despina Papamichail be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 77,
+   "now_chance": 67,
+   "open_odds": "-335",
+   "now_odds": "-203",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Despina Papamichail 4 · Nauhany Vitoria Leme Da Silva 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T21:11:52.907Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1810680:1",
+   "market_id": "1810680",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Nauhany Vitoria Leme Da Silva cover -1.5 vs the Despina Papamichail in Nauhany Vitoria Leme Da Silva vs. Despina Papamichail?",
+   "side": "Despina Papamichail +1.50 (Sets)",
+   "open_chance": 75,
+   "now_chance": 70,
+   "open_odds": "-300",
+   "now_odds": "-233",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Despina Papamichail 4 · Nauhany Vitoria Leme Da Silva 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T22:52:52.705Z",
    "status": "open",
    "kalshi": null
   },
@@ -551,86 +671,6 @@
    "class": "news",
    "reason": "Big move (25 pts), likely news",
    "context": "Despina Papamichail 3 · Nauhany Vitoria Leme Da Silva 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T22:26:01.555Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1810675:1",
-   "market_id": "1810675",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Nauhany Vitoria Leme Da Silva cover 1.5 vs the Despina Papamichail in Nauhany Vitoria Leme Da Silva vs. Despina Papamichail?",
-   "side": "Despina Papamichail -1.50 (Games)",
-   "open_chance": 53,
-   "now_chance": 29,
-   "open_odds": "-113",
-   "now_odds": "+245",
-   "edge": 24,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Despina Papamichail not above the games spread right now",
-   "context": "Despina Papamichail 3 · Nauhany Vitoria Leme Da Silva 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T09:17:47.366Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1810680:1",
-   "market_id": "1810680",
-   "market": "Sets spread",
-   "group": "game",
-   "question": "Will the Nauhany Vitoria Leme Da Silva cover -1.5 vs the Despina Papamichail in Nauhany Vitoria Leme Da Silva vs. Despina Papamichail?",
-   "side": "Despina Papamichail +1.50 (Sets)",
-   "open_chance": 75,
-   "now_chance": 70,
-   "open_odds": "-300",
-   "now_odds": "-233",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Despina Papamichail 3 · Nauhany Vitoria Leme Da Silva 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T22:52:52.705Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1810684:1",
-   "market_id": "1810684",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Nauhany Vitoria Leme Da Silva vs. Despina Papamichail be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 77,
-   "now_chance": 73,
-   "open_odds": "-335",
-   "now_odds": "-270",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Despina Papamichail 3 · Nauhany Vitoria Leme Da Silva 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T21:11:52.907Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1810683:1",
-   "market_id": "1810683",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Nauhany Vitoria Leme Da Silva vs. Despina Papamichail be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 58,
-   "now_chance": 49,
-   "open_odds": "-138",
-   "now_odds": "+104",
-   "edge": 9,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Despina Papamichail 3 · Nauhany Vitoria Leme Da Silva 4 · 1st Set (games by set)",
    "first_seen": "2026-10-26T22:26:01.555Z",
    "status": "gone",
    "kalshi": null
@@ -717,6 +757,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1810683:1:big",
+   "key": "1810683:1",
+   "at": "2026-10-26T22:58:30.496Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+122",
+   "now_chance": 45,
+   "edge": 13,
+   "text": "New big edge: Under 22.5 (Games) (Games total), 13 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-nausil-despap-2026-10-26"
+  },
+  {
+   "id": "new_edge:1810684:1:big",
+   "key": "1810684:1",
+   "at": "2026-10-26T22:58:30.496Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-203",
+   "now_chance": 67,
+   "edge": 10,
+   "text": "New big edge: Under 27.5 (Games) (Games total), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-nausil-despap-2026-10-26"
+  },
   {
    "id": "news:1810619:1",
    "key": "1810619:1",
@@ -1052,7 +1120,9 @@
   "news:1810619:1",
   "news:1810676:1",
   "new_edge:1810680:1:slight",
-  "gone:1810683:1:2026-10-26T22:26:01.555Z"
+  "gone:1810683:1:2026-10-26T22:26:01.555Z",
+  "new_edge:1810683:1:big",
+  "new_edge:1810684:1:big"
  ],
  "kalshi_checked": null
 }
