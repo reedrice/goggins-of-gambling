@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185137",
-  "fetched_at": "2026-10-26T20:36:19.372Z",
+  "fetched_at": "2026-10-26T20:42:00.803Z",
   "tennis": true,
   "tennis_match": {
    "id": "185137",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Dominic Stricker (SUI) leads (9) Casper Ruud (NOR) 5-4",
+     "text": "Dominic Stricker (SUI) is tied with (9) Casper Ruud (NOR) 6-4 0-0",
      "type": "event"
     }
    ],
@@ -55,13 +55,17 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "possession": true,
      "curatedRank": {
       "current": 9
      },
      "linescores": [
       {
-       "value": 4
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -101,10 +105,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -162,8 +170,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Casper Ruud",
@@ -175,13 +183,13 @@
    "abbr": "Dominic Stricker",
    "alias": "Dominic Stricker",
    "name": "Dominic Stricker",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T20:36:19.328Z",
+ "updated": "2026-10-26T20:42:00.714Z",
  "open_taken_at": "2026-10-24T16:17:30.258Z",
  "thresholds": {
   "big": 10,
@@ -253,28 +261,6 @@
    "yes_buy": 82,
    "no_buy": 19,
    "taken_at": "2026-10-26T19:06:51.462Z"
-  },
-  {
-   "market_id": "1758984",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Dominic Stricker cover 4.5 vs the Casper Ruud in Dominic Stricker vs. Casper Ruud?",
-   "sides": [
-    "Dominic Stephan Stricker +4.50 (Games)",
-    "Casper Ruud -4.50 (Games)"
-   ],
-   "teams": [
-    "Dominic Stephan Stricker",
-    "Casper Ruud"
-   ],
-   "player": null,
-   "mid": 63.5,
-   "yes_buy": 64,
-   "no_buy": 37,
-   "taken_at": "2026-10-25T16:43:59.651Z"
   },
   {
    "market_id": "1758990",
@@ -453,6 +439,28 @@
    "taken_at": "2026-10-26T19:35:50.403Z"
   },
   {
+   "market_id": "1758984",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Dominic Stricker cover 4.5 vs the Casper Ruud in Dominic Stricker vs. Casper Ruud?",
+   "sides": [
+    "Dominic Stephan Stricker +4.50 (Games)",
+    "Casper Ruud -4.50 (Games)"
+   ],
+   "teams": [
+    "Dominic Stephan Stricker",
+    "Casper Ruud"
+   ],
+   "player": null,
+   "mid": 63.5,
+   "yes_buy": 64,
+   "no_buy": 37,
+   "taken_at": "2026-10-25T16:43:59.651Z"
+  },
+  {
    "market_id": "1758997",
    "market": "Set 1 winner",
    "group": "game",
@@ -528,34 +536,14 @@
    "question": "Will the total in Dominic Stricker vs. Casper Ruud be more than 22.5?",
    "side": "Under 22.5 (Games)",
    "open_chance": 51,
-   "now_chance": 25,
+   "now_chance": 22,
    "open_odds": "-104",
-   "now_odds": "+300",
-   "edge": 26,
+   "now_odds": "+355",
+   "edge": 29,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (26 pts), likely news",
-   "context": "Casper Ruud 4 · Dominic Stricker 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T20:02:21.721Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1758957:1",
-   "market_id": "1758957",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Dominic Stricker vs Casper Ruud scheduled for October 25, 2026 at 9:00 AM UTC?",
-   "side": "Casper Ruud win",
-   "open_chance": 71,
-   "now_chance": 47,
-   "open_odds": "-245",
-   "now_odds": "+113",
-   "edge": 24,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Casper Ruud 4 · Dominic Stricker 5 · 1st Set (games by set)",
+   "reason": "Big move (29 pts), likely news",
+   "context": "Casper Ruud 4, 0 · Dominic Stricker 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T20:02:21.721Z",
    "status": "open",
    "kalshi": null
@@ -573,50 +561,30 @@
    "now_odds": "-133",
    "edge": 24,
    "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Casper Ruud 4 · Dominic Stricker 5 · 1st Set (games by set)",
+   "class": "score",
+   "reason": "Explained by score: Casper Ruud not above the games spread right now",
+   "context": "Casper Ruud 4, 0 · Dominic Stricker 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T18:11:31.230Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1758982:1",
-   "market_id": "1758982",
-   "market": "Games spread",
+   "key": "1758957:1",
+   "market_id": "1758957",
+   "market": "Moneyline",
    "group": "game",
-   "question": "Will the Dominic Stricker cover 1.5 vs the Casper Ruud in Dominic Stricker vs. Casper Ruud?",
-   "side": "Casper Ruud -1.50 (Games)",
-   "open_chance": 65,
-   "now_chance": 43,
-   "open_odds": "-186",
-   "now_odds": "+133",
-   "edge": 22,
+   "question": "Who will win in the upcoming atp event Dominic Stricker vs Casper Ruud scheduled for October 25, 2026 at 9:00 AM UTC?",
+   "side": "Casper Ruud win",
+   "open_chance": 71,
+   "now_chance": 48,
+   "open_odds": "-245",
+   "now_odds": "+108",
+   "edge": 23,
    "tier": "big",
    "class": "score",
-   "reason": "Explained by score: Casper Ruud not above the games spread right now",
-   "context": "Casper Ruud 4 · Dominic Stricker 5 · 1st Set (games by set)",
+   "reason": "Explained by score: Casper Ruud trailing in sets",
+   "context": "Casper Ruud 4, 0 · Dominic Stricker 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T20:02:21.721Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1758987:1",
-   "market_id": "1758987",
-   "market": "Sets spread",
-   "group": "game",
-   "question": "Will the Dominic Stricker cover -1.5 vs the Casper Ruud in Dominic Stricker vs. Casper Ruud?",
-   "side": "Casper Ruud +1.50 (Sets)",
-   "open_chance": 92,
-   "now_chance": 71,
-   "open_odds": "-1150",
-   "now_odds": "-245",
-   "edge": 21,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Casper Ruud 4 · Dominic Stricker 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T20:05:22.823Z",
    "status": "open",
    "kalshi": null
   },
@@ -628,35 +596,75 @@
    "question": "Will the total in Dominic Stricker vs. Casper Ruud be more than 27.5?",
    "side": "Under 27.5 (Games)",
    "open_chance": 67,
-   "now_chance": 50,
+   "now_chance": 45,
    "open_odds": "-203",
-   "now_odds": "+100",
-   "edge": 17,
+   "now_odds": "+122",
+   "edge": 22,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Casper Ruud 4 · Dominic Stricker 5 · 1st Set (games by set)",
+   "context": "Casper Ruud 4, 0 · Dominic Stricker 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T20:17:31.030Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1758984:1",
-   "market_id": "1758984",
+   "key": "1758987:1",
+   "market_id": "1758987",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Dominic Stricker cover -1.5 vs the Casper Ruud in Dominic Stricker vs. Casper Ruud?",
+   "side": "Casper Ruud +1.50 (Sets)",
+   "open_chance": 92,
+   "now_chance": 70,
+   "open_odds": "-1150",
+   "now_odds": "-233",
+   "edge": 22,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Casper Ruud 4, 0 · Dominic Stricker 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T20:05:22.823Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1758982:1",
+   "market_id": "1758982",
    "market": "Games spread",
    "group": "game",
-   "question": "Will the Dominic Stricker cover 4.5 vs the Casper Ruud in Dominic Stricker vs. Casper Ruud?",
-   "side": "Casper Ruud -4.50 (Games)",
-   "open_chance": 37,
-   "now_chance": 23,
-   "open_odds": "+170",
-   "now_odds": "+335",
-   "edge": 14,
+   "question": "Will the Dominic Stricker cover 1.5 vs the Casper Ruud in Dominic Stricker vs. Casper Ruud?",
+   "side": "Casper Ruud -1.50 (Games)",
+   "open_chance": 65,
+   "now_chance": 44,
+   "open_odds": "-186",
+   "now_odds": "+127",
+   "edge": 21,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Casper Ruud not above the games spread right now",
-   "context": "Casper Ruud 4 · Dominic Stricker 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T20:05:22.823Z",
+   "context": "Casper Ruud 4, 0 · Dominic Stricker 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T20:02:21.721Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1758998:0",
+   "market_id": "1758998",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Dominic Stricker win set 2 against Casper Ruud?",
+   "side": "Yes: Dominic Stricker win set 2 against Casper Ruud",
+   "open_chance": 37,
+   "now_chance": 33,
+   "open_odds": "+170",
+   "now_odds": "+203",
+   "edge": 4,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Dominic Stricker not above the games spread right now",
+   "context": "Casper Ruud 4, 0 · Dominic Stricker 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T20:42:00.714Z",
    "status": "open",
    "kalshi": null
   },
@@ -696,6 +704,26 @@
    "class": "edge",
    "reason": null,
    "context": "Casper Ruud 3 · Dominic Stricker 4 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T20:05:22.823Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1758984:1",
+   "market_id": "1758984",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Dominic Stricker cover 4.5 vs the Casper Ruud in Dominic Stricker vs. Casper Ruud?",
+   "side": "Casper Ruud -4.50 (Games)",
+   "open_chance": 37,
+   "now_chance": 23,
+   "open_odds": "+170",
+   "now_odds": "+335",
+   "edge": 14,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Casper Ruud not above the games spread right now",
+   "context": "Casper Ruud 4 · Dominic Stricker 5 · 1st Set (games by set)",
    "first_seen": "2026-10-26T20:05:22.823Z",
    "status": "gone",
    "kalshi": null
