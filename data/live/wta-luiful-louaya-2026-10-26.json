@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185756",
-  "fetched_at": "2026-10-26T18:17:39.408Z",
+  "fetched_at": "2026-10-26T18:23:23.282Z",
   "tennis": true,
   "tennis_match": {
    "id": "185756",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Lourdes Ayala (ARG) leads Luiza Fullana (BRA) 5-4",
+     "text": "Luiza Fullana (BRA) leads Lourdes Ayala (ARG) 4-6 0-0",
      "type": "event"
     }
    ],
@@ -55,10 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -98,10 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
-       "value": 4
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -159,14 +167,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Lourdes Ayala",
    "alias": "Lourdes Ayala",
    "name": "Lourdes Ayala",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Luiza Fullana",
@@ -178,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T18:17:39.351Z",
+ "updated": "2026-10-26T18:23:23.204Z",
  "open_taken_at": "2026-10-25T18:32:51.187Z",
  "thresholds": {
   "big": 10,
@@ -227,6 +235,50 @@
    "mid": 80.5,
    "yes_buy": 81,
    "no_buy": 20,
+   "taken_at": "2026-10-26T17:04:08.750Z"
+  },
+  {
+   "market_id": "1809721",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Luiza Fullana cover 4.5 vs the Lourdes Ayala in Luiza Fullana vs. Lourdes Ayala?",
+   "sides": [
+    "Luiza Fullana +4.50 (Games)",
+    "Lourdes Ayala -4.50 (Games)"
+   ],
+   "teams": [
+    "Luiza Fullana",
+    "Lourdes Ayala"
+   ],
+   "player": null,
+   "mid": 78.5,
+   "yes_buy": 79,
+   "no_buy": 22,
+   "taken_at": "2026-10-26T17:04:08.750Z"
+  },
+  {
+   "market_id": "1809727",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Luiza Fullana vs. Lourdes Ayala be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 34.5,
+   "yes_buy": 35,
+   "no_buy": 66,
    "taken_at": "2026-10-26T17:04:08.750Z"
   },
   {
@@ -296,50 +348,6 @@
    "taken_at": "2026-10-26T17:04:08.750Z"
   },
   {
-   "market_id": "1809727",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Luiza Fullana vs. Lourdes Ayala be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 34.5,
-   "yes_buy": 35,
-   "no_buy": 66,
-   "taken_at": "2026-10-26T17:04:08.750Z"
-  },
-  {
-   "market_id": "1809729",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Luiza Fullana vs. Lourdes Ayala be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 30.5,
-   "yes_buy": 33,
-   "no_buy": 72,
-   "taken_at": "2026-10-26T10:38:47.273Z"
-  },
-  {
    "market_id": "1809728",
    "market": "Games total",
    "group": "game",
@@ -360,28 +368,6 @@
    "yes_buy": 16,
    "no_buy": 85,
    "taken_at": "2026-10-26T17:36:51.583Z"
-  },
-  {
-   "market_id": "1809724",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Luiza Fullana cover -1.5 vs the Lourdes Ayala in Luiza Fullana vs. Lourdes Ayala?",
-   "sides": [
-    "Luiza Fullana -1.50 (Sets)",
-    "Lourdes Ayala +1.50 (Sets)"
-   ],
-   "teams": [
-    "Luiza Fullana",
-    "Lourdes Ayala"
-   ],
-   "player": null,
-   "mid": 61.5,
-   "yes_buy": 64,
-   "no_buy": 41,
-   "taken_at": "2026-10-26T05:02:54.061Z"
   },
   {
    "market_id": "1809720",
@@ -406,26 +392,48 @@
    "taken_at": "2026-10-26T05:02:54.061Z"
   },
   {
-   "market_id": "1809721",
-   "market": "Games spread",
+   "market_id": "1809729",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Luiza Fullana vs. Lourdes Ayala be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 30.5,
+   "yes_buy": 33,
+   "no_buy": 72,
+   "taken_at": "2026-10-26T10:38:47.273Z"
+  },
+  {
+   "market_id": "1809724",
+   "market": "Sets spread",
    "group": "game",
    "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Luiza Fullana cover 4.5 vs the Lourdes Ayala in Luiza Fullana vs. Lourdes Ayala?",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Luiza Fullana cover -1.5 vs the Lourdes Ayala in Luiza Fullana vs. Lourdes Ayala?",
    "sides": [
-    "Luiza Fullana +4.50 (Games)",
-    "Lourdes Ayala -4.50 (Games)"
+    "Luiza Fullana -1.50 (Sets)",
+    "Lourdes Ayala +1.50 (Sets)"
    ],
    "teams": [
     "Luiza Fullana",
     "Lourdes Ayala"
    ],
    "player": null,
-   "mid": 78.5,
-   "yes_buy": 79,
-   "no_buy": 22,
-   "taken_at": "2026-10-26T17:04:08.750Z"
+   "mid": 61.5,
+   "yes_buy": 64,
+   "no_buy": 41,
+   "taken_at": "2026-10-26T05:02:54.061Z"
   },
   {
    "market_id": "1809726",
@@ -503,35 +511,115 @@
    "question": "Will the Luiza Fullana cover -4.5 vs the Lourdes Ayala in Luiza Fullana vs. Lourdes Ayala?",
    "side": "Luiza Fullana -4.50 (Games)",
    "open_chance": 65,
-   "now_chance": 32,
+   "now_chance": 23,
    "open_odds": "-186",
-   "now_odds": "+213",
-   "edge": 33,
+   "now_odds": "+335",
+   "edge": 42,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Luiza Fullana not above the games spread right now",
-   "context": "Lourdes Ayala 5 · Luiza Fullana 4 · 1st Set (games by set)",
+   "context": "Lourdes Ayala 6, 0 · Luiza Fullana 4, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T08:47:32.720Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1809724:0",
-   "market_id": "1809724",
+   "key": "1808317:0",
+   "market_id": "1808317",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Luiza Fullana vs Lourdes Ayala scheduled for October 26, 2026 at 1:00 PM UTC?",
+   "side": "Luiza Fullana win",
+   "open_chance": 85,
+   "now_chance": 44,
+   "open_odds": "-567",
+   "now_odds": "+127",
+   "edge": 41,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Luiza Fullana trailing in sets",
+   "context": "Lourdes Ayala 6, 0 · Luiza Fullana 4, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T04:53:30.285Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1809727:1",
+   "market_id": "1809727",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Luiza Fullana vs. Lourdes Ayala be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 66,
+   "now_chance": 33,
+   "open_odds": "-194",
+   "now_odds": "+203",
+   "edge": 33,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (33 pts), likely news",
+   "context": "Lourdes Ayala 6, 0 · Luiza Fullana 4, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T17:43:04.003Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1809725:0",
+   "market_id": "1809725",
    "market": "Sets spread",
    "group": "game",
+   "question": "Will the Luiza Fullana cover 1.5 vs the Lourdes Ayala in Luiza Fullana vs. Lourdes Ayala?",
+   "side": "Luiza Fullana +1.50 (Sets)",
+   "open_chance": 93,
+   "now_chance": 61,
+   "open_odds": "-1329",
+   "now_odds": "-156",
+   "edge": 32,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (32 pts), likely news",
+   "context": "Lourdes Ayala 6, 0 · Luiza Fullana 4, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T17:04:08.750Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1809718:0",
+   "market_id": "1809718",
+   "market": "Games spread",
+   "group": "game",
    "question": "Will the Luiza Fullana cover -1.5 vs the Lourdes Ayala in Luiza Fullana vs. Lourdes Ayala?",
-   "side": "Luiza Fullana -1.50 (Sets)",
-   "open_chance": 64,
-   "now_chance": 35,
-   "open_odds": "-178",
-   "now_odds": "+186",
+   "side": "Luiza Fullana -1.50 (Games)",
+   "open_chance": 74,
+   "now_chance": 45,
+   "open_odds": "-285",
+   "now_odds": "+122",
    "edge": 29,
    "tier": "big",
    "class": "score",
-   "reason": "Explained by score: Luiza Fullana not above the sets spread right now",
-   "context": "Lourdes Ayala 5 · Luiza Fullana 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T17:04:08.750Z",
+   "reason": "Explained by score: Luiza Fullana not above the games spread right now",
+   "context": "Lourdes Ayala 6, 0 · Luiza Fullana 4, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T17:43:04.003Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1809719:0",
+   "market_id": "1809719",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Luiza Fullana cover 1.5 vs the Lourdes Ayala in Luiza Fullana vs. Lourdes Ayala?",
+   "side": "Luiza Fullana +1.50 (Games)",
+   "open_chance": 76,
+   "now_chance": 52,
+   "open_odds": "-317",
+   "now_odds": "-108",
+   "edge": 24,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Luiza Fullana not above the games spread right now",
+   "context": "Lourdes Ayala 6, 0 · Luiza Fullana 4, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T18:11:37.325Z",
    "status": "open",
    "kalshi": null
   },
@@ -550,128 +638,28 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Lourdes Ayala 5 · Luiza Fullana 4 · 1st Set (games by set)",
+   "context": "Lourdes Ayala 6, 0 · Luiza Fullana 4, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T17:43:04.003Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1808317:0",
-   "market_id": "1808317",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Luiza Fullana vs Lourdes Ayala scheduled for October 26, 2026 at 1:00 PM UTC?",
-   "side": "Luiza Fullana win",
-   "open_chance": 85,
-   "now_chance": 64,
-   "open_odds": "-567",
-   "now_odds": "-178",
-   "edge": 21,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Lourdes Ayala 5 · Luiza Fullana 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T04:53:30.285Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1809727:1",
-   "market_id": "1809727",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Luiza Fullana vs. Lourdes Ayala be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 66,
-   "now_chance": 47,
-   "open_odds": "-194",
-   "now_odds": "+113",
-   "edge": 19,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Lourdes Ayala 5 · Luiza Fullana 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T17:43:04.003Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1809725:0",
-   "market_id": "1809725",
-   "market": "Sets spread",
-   "group": "game",
-   "question": "Will the Luiza Fullana cover 1.5 vs the Lourdes Ayala in Luiza Fullana vs. Lourdes Ayala?",
-   "side": "Luiza Fullana +1.50 (Sets)",
-   "open_chance": 93,
-   "now_chance": 79,
-   "open_odds": "-1329",
-   "now_odds": "-376",
-   "edge": 14,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Lourdes Ayala 5 · Luiza Fullana 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T17:04:08.750Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1809718:0",
-   "market_id": "1809718",
+   "key": "1809721:0",
+   "market_id": "1809721",
    "market": "Games spread",
    "group": "game",
-   "question": "Will the Luiza Fullana cover -1.5 vs the Lourdes Ayala in Luiza Fullana vs. Lourdes Ayala?",
-   "side": "Luiza Fullana -1.50 (Games)",
-   "open_chance": 74,
-   "now_chance": 61,
-   "open_odds": "-285",
-   "now_odds": "-156",
-   "edge": 13,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Luiza Fullana not above the games spread right now",
-   "context": "Lourdes Ayala 5 · Luiza Fullana 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T17:43:04.003Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1809729:1",
-   "market_id": "1809729",
-   "market": "Sets total",
-   "group": "game",
-   "question": "Will the total in Luiza Fullana vs. Lourdes Ayala be more than 2.5?",
-   "side": "Under 2.5 (Sets)",
-   "open_chance": 72,
-   "now_chance": 59,
-   "open_odds": "-257",
-   "now_odds": "-144",
-   "edge": 13,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Lourdes Ayala 5 · Luiza Fullana 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T17:33:24.800Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1809719:0",
-   "market_id": "1809719",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Luiza Fullana cover 1.5 vs the Lourdes Ayala in Luiza Fullana vs. Lourdes Ayala?",
-   "side": "Luiza Fullana +1.50 (Games)",
-   "open_chance": 76,
-   "now_chance": 71,
-   "open_odds": "-317",
-   "now_odds": "-245",
-   "edge": 5,
+   "question": "Will the Luiza Fullana cover 4.5 vs the Lourdes Ayala in Luiza Fullana vs. Lourdes Ayala?",
+   "side": "Luiza Fullana +4.50 (Games)",
+   "open_chance": 79,
+   "now_chance": 70,
+   "open_odds": "-376",
+   "now_odds": "-233",
+   "edge": 9,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Lourdes Ayala 5 · Luiza Fullana 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T18:11:37.325Z",
+   "context": "Lourdes Ayala 6, 0 · Luiza Fullana 4, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T18:23:23.204Z",
    "status": "open",
    "kalshi": null
   },
@@ -692,6 +680,46 @@
    "reason": "Big move (32 pts), likely news",
    "context": "Pregame",
    "first_seen": "2026-10-26T17:04:08.750Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1809724:0",
+   "market_id": "1809724",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Luiza Fullana cover -1.5 vs the Lourdes Ayala in Luiza Fullana vs. Lourdes Ayala?",
+   "side": "Luiza Fullana -1.50 (Sets)",
+   "open_chance": 64,
+   "now_chance": 35,
+   "open_odds": "-178",
+   "now_odds": "+186",
+   "edge": 29,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Luiza Fullana not above the sets spread right now",
+   "context": "Lourdes Ayala 5 · Luiza Fullana 4 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T17:04:08.750Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1809729:1",
+   "market_id": "1809729",
+   "market": "Sets total",
+   "group": "game",
+   "question": "Will the total in Luiza Fullana vs. Lourdes Ayala be more than 2.5?",
+   "side": "Under 2.5 (Sets)",
+   "open_chance": 72,
+   "now_chance": 59,
+   "open_odds": "-257",
+   "now_odds": "-144",
+   "edge": 13,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Lourdes Ayala 5 · Luiza Fullana 4 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T17:33:24.800Z",
    "status": "gone",
    "kalshi": null
   },
@@ -777,6 +805,62 @@
   }
  ],
  "alerts": [
+  {
+   "id": "news:1809727:1",
+   "key": "1809727:1",
+   "at": "2026-10-26T18:23:23.204Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+203",
+   "now_chance": 33,
+   "edge": 33,
+   "text": "Big move, likely news: Under 22.5 (Games) (Games total) is 33 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-luiful-louaya-2026-10-26"
+  },
+  {
+   "id": "news:1809725:0",
+   "key": "1809725:0",
+   "at": "2026-10-26T18:23:23.204Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Luiza Fullana +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "-156",
+   "now_chance": 61,
+   "edge": 32,
+   "text": "Big move, likely news: Luiza Fullana +1.50 (Sets) (Sets spread) is 32 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-luiful-louaya-2026-10-26"
+  },
+  {
+   "id": "new_edge:1809721:0:slight",
+   "key": "1809721:0",
+   "at": "2026-10-26T18:23:23.204Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Luiza Fullana +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-233",
+   "now_chance": 70,
+   "edge": 9,
+   "text": "New slight edge: Luiza Fullana +4.50 (Games) (Games spread), 9 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-luiful-louaya-2026-10-26"
+  },
+  {
+   "id": "gone:1809729:1:2026-10-26T17:33:24.800Z",
+   "key": "1809729:1",
+   "at": "2026-10-26T18:23:23.204Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 2.5 (Sets)",
+   "market": "Sets total",
+   "now_odds": "-144",
+   "now_chance": 59,
+   "edge": 13,
+   "text": "Edge gone: Under 2.5 (Sets) (Sets total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-luiful-louaya-2026-10-26"
+  },
   {
    "id": "new_edge:1809728:1:big",
    "key": "1809728:1",
@@ -1005,7 +1089,11 @@
   "gone:1809726:1:2026-10-26T17:43:04.003Z",
   "new_edge:1809728:1:big",
   "new_edge:1809719:0:slight",
-  "gone:1808317:0:2026-10-26T04:53:30.285Z"
+  "gone:1808317:0:2026-10-26T04:53:30.285Z",
+  "news:1809727:1",
+  "news:1809725:0",
+  "new_edge:1809721:0:slight",
+  "gone:1809729:1:2026-10-26T17:33:24.800Z"
  ],
  "kalshi_checked": null
 }
