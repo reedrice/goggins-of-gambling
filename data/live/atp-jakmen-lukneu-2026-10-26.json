@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185197",
-  "fetched_at": "2026-10-26T17:49:13.915Z",
+  "fetched_at": "2026-10-26T17:52:45.106Z",
   "tennis": true,
   "tennis_match": {
    "id": "185197",
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
        "value": 2,
@@ -101,6 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 8
      },
@@ -145,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 10,
    "type": {
     "id": "1",
@@ -182,13 +189,35 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T17:49:13.842Z",
+ "updated": "2026-10-26T17:52:45.035Z",
  "open_taken_at": "2026-10-25T17:16:42.706Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1805210",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Jakub Mensik cover -1.5 vs the Lukas Neumayer in Jakub Mensik vs. Lukas Neumayer?",
+   "sides": [
+    "Jakub Mensik -1.50 (Sets)",
+    "Lukas Neumayer +1.50 (Sets)"
+   ],
+   "teams": [
+    "Jakub Mensik",
+    "Lukas Neumayer"
+   ],
+   "player": null,
+   "mid": 59,
+   "yes_buy": 60,
+   "no_buy": 42,
+   "taken_at": "2026-10-26T16:51:56.203Z"
+  },
   {
    "market_id": "1805206",
    "market": "Games spread",
@@ -454,28 +483,6 @@
    "taken_at": "2026-10-26T17:09:52.595Z"
   },
   {
-   "market_id": "1805210",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Jakub Mensik cover -1.5 vs the Lukas Neumayer in Jakub Mensik vs. Lukas Neumayer?",
-   "sides": [
-    "Jakub Mensik -1.50 (Sets)",
-    "Lukas Neumayer +1.50 (Sets)"
-   ],
-   "teams": [
-    "Jakub Mensik",
-    "Lukas Neumayer"
-   ],
-   "player": null,
-   "mid": 59,
-   "yes_buy": 60,
-   "no_buy": 42,
-   "taken_at": "2026-10-26T16:51:56.203Z"
-  },
-  {
    "market_id": "1805220",
    "market": "Set 1 winner",
    "group": "game",
@@ -536,26 +543,6 @@
    "reason": null,
    "context": "Lukas Neumayer 2, 1 · Jakub Mensik 6, 3 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T17:28:37.495Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1805210:1",
-   "market_id": "1805210",
-   "market": "Sets spread",
-   "group": "game",
-   "question": "Will the Jakub Mensik cover -1.5 vs the Lukas Neumayer in Jakub Mensik vs. Lukas Neumayer?",
-   "side": "Lukas Neumayer +1.50 (Sets)",
-   "open_chance": 42,
-   "now_chance": 25,
-   "open_odds": "+138",
-   "now_odds": "+300",
-   "edge": 17,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Lukas Neumayer 2 · Jakub Mensik 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T16:57:18.951Z",
    "status": "gone",
    "kalshi": null
   },
@@ -652,20 +639,6 @@
    "url": "https://polymarket.us/sports/atp/atp-jakmen-lukneu-2026-10-26"
   },
   {
-   "id": "gone:1805210:1:2026-10-26T16:57:18.951Z",
-   "key": "1805210:1",
-   "at": "2026-10-26T17:28:37.495Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Lukas Neumayer +1.50 (Sets)",
-   "market": "Sets spread",
-   "now_odds": "+300",
-   "now_chance": 25,
-   "edge": 17,
-   "text": "Edge gone: Lukas Neumayer +1.50 (Sets) (Sets spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-jakmen-lukneu-2026-10-26"
-  },
-  {
    "id": "gone:1805215:0:2026-10-26T17:09:52.595Z",
    "key": "1805215:0",
    "at": "2026-10-26T17:16:12.985Z",
@@ -694,20 +667,6 @@
    "url": "https://polymarket.us/sports/atp/atp-jakmen-lukneu-2026-10-26"
   },
   {
-   "id": "new_edge:1805210:1:big",
-   "key": "1805210:1",
-   "at": "2026-10-26T17:09:52.595Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Lukas Neumayer +1.50 (Sets)",
-   "market": "Sets spread",
-   "now_odds": "+300",
-   "now_chance": 25,
-   "edge": 17,
-   "text": "New big edge: Lukas Neumayer +1.50 (Sets) (Sets spread), 17 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-jakmen-lukneu-2026-10-26"
-  },
-  {
    "id": "new_edge:1805215:0:slight",
    "key": "1805215:0",
    "at": "2026-10-26T17:09:52.595Z",
@@ -719,20 +678,6 @@
    "now_chance": 23,
    "edge": 9,
    "text": "New slight edge: Over 2.5 (Sets) (Sets total), 9 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-jakmen-lukneu-2026-10-26"
-  },
-  {
-   "id": "new_edge:1805210:1:slight",
-   "key": "1805210:1",
-   "at": "2026-10-26T16:57:18.951Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Lukas Neumayer +1.50 (Sets)",
-   "market": "Sets spread",
-   "now_odds": "+178",
-   "now_chance": 36,
-   "edge": 6,
-   "text": "New slight edge: Lukas Neumayer +1.50 (Sets) (Sets spread), 6 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-jakmen-lukneu-2026-10-26"
   }
  ],
