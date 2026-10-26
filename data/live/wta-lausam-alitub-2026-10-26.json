@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185765",
-  "fetched_at": "2026-10-26T14:32:44.355Z",
+  "fetched_at": "2026-10-26T14:40:15.629Z",
   "tennis": true,
   "tennis_match": {
    "id": "185765",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Alice Tubello (FRA) leads (4) Laura Samson (CZE) 6-0",
+     "text": "Alice Tubello (FRA) leads (4) Laura Samson (CZE) 6-0 1-0",
      "type": "event"
     }
    ],
@@ -57,7 +57,11 @@
      "homeAway": "away",
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -101,6 +105,10 @@
       "current": 4
      },
      "linescores": [
+      {
+       "value": 0,
+       "winner": false
+      },
       {
        "value": 0
       }
@@ -155,14 +163,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Alice Tubello",
    "alias": "Alice Tubello",
    "name": "Alice Tubello",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Laura Samson",
@@ -174,7 +182,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T14:32:44.273Z",
+ "updated": "2026-10-26T14:40:15.560Z",
  "open_taken_at": "2026-10-25T18:32:51.296Z",
  "thresholds": {
   "big": 10,
@@ -226,28 +234,6 @@
    "taken_at": "2026-10-26T08:32:51.291Z"
   },
   {
-   "market_id": "1809771",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Laura Samson win set 2 against Alice Tubello?",
-   "sides": [
-    "Yes: Laura Samson win set 2 against Alice Tubello",
-    "No: Laura Samson win set 2 against Alice Tubello"
-   ],
-   "teams": [
-    "Laura Samson",
-    null
-   ],
-   "player": null,
-   "mid": 45.5,
-   "yes_buy": 47,
-   "no_buy": 56,
-   "taken_at": "2026-10-26T14:32:44.273Z"
-  },
-  {
    "market_id": "1809759",
    "market": "Games spread",
    "group": "game",
@@ -270,26 +256,26 @@
    "taken_at": "2026-10-26T14:32:44.273Z"
   },
   {
-   "market_id": "1809757",
-   "market": "Games spread",
+   "market_id": "1809765",
+   "market": "Sets total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Laura Samson cover 4.5 vs the Alice Tubello in Laura Samson vs. Alice Tubello?",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Laura Samson vs. Alice Tubello be more than 2.5?",
    "sides": [
-    "Laura Samson +4.50 (Games)",
-    "Alice Tubello -4.50 (Games)"
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
    ],
    "teams": [
-    "Laura Samson",
-    "Alice Tubello"
+    null,
+    null
    ],
    "player": null,
-   "mid": 77.5,
-   "yes_buy": 78,
-   "no_buy": 23,
-   "taken_at": "2026-10-26T14:10:56.571Z"
+   "mid": 36.5,
+   "yes_buy": 39,
+   "no_buy": 66,
+   "taken_at": "2026-10-26T10:38:47.305Z"
   },
   {
    "market_id": "1809763",
@@ -312,6 +298,28 @@
    "yes_buy": 44,
    "no_buy": 61,
    "taken_at": "2026-10-26T08:32:51.291Z"
+  },
+  {
+   "market_id": "1809757",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Laura Samson cover 4.5 vs the Alice Tubello in Laura Samson vs. Alice Tubello?",
+   "sides": [
+    "Laura Samson +4.50 (Games)",
+    "Alice Tubello -4.50 (Games)"
+   ],
+   "teams": [
+    "Laura Samson",
+    "Alice Tubello"
+   ],
+   "player": null,
+   "mid": 77.5,
+   "yes_buy": 78,
+   "no_buy": 23,
+   "taken_at": "2026-10-26T14:10:56.571Z"
   },
   {
    "market_id": "1809755",
@@ -424,6 +432,28 @@
    "taken_at": "2026-10-25T23:01:51.010Z"
   },
   {
+   "market_id": "1809771",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Laura Samson win set 2 against Alice Tubello?",
+   "sides": [
+    "Yes: Laura Samson win set 2 against Alice Tubello",
+    "No: Laura Samson win set 2 against Alice Tubello"
+   ],
+   "teams": [
+    "Laura Samson",
+    null
+   ],
+   "player": null,
+   "mid": 45.5,
+   "yes_buy": 47,
+   "no_buy": 56,
+   "taken_at": "2026-10-26T14:32:44.273Z"
+  },
+  {
    "market_id": "1809761",
    "market": "Sets spread",
    "group": "game",
@@ -444,28 +474,6 @@
    "yes_buy": 81,
    "no_buy": 23,
    "taken_at": "2026-10-25T23:01:51.010Z"
-  },
-  {
-   "market_id": "1809765",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Laura Samson vs. Alice Tubello be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 36.5,
-   "yes_buy": 39,
-   "no_buy": 66,
-   "taken_at": "2026-10-26T10:38:47.305Z"
   },
   {
    "market_id": "1809760",
@@ -499,14 +507,14 @@
    "question": "Will the Laura Samson cover 4.5 vs the Alice Tubello in Laura Samson vs. Alice Tubello?",
    "side": "Laura Samson +4.50 (Games)",
    "open_chance": 78,
-   "now_chance": 31,
+   "now_chance": 28,
    "open_odds": "-355",
-   "now_odds": "+223",
-   "edge": 47,
+   "now_odds": "+257",
+   "edge": 50,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Laura Samson not above the games spread right now",
-   "context": "Alice Tubello 6 · Laura Samson 0 · 1st Set (games by set)",
+   "context": "Alice Tubello 6, 1 · Laura Samson 0, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T14:21:16.687Z",
    "status": "open",
    "kalshi": null
@@ -519,35 +527,15 @@
    "question": "Will the Laura Samson cover 1.5 vs the Alice Tubello in Laura Samson vs. Alice Tubello?",
    "side": "Laura Samson +1.50 (Games)",
    "open_chance": 66,
-   "now_chance": 21,
+   "now_chance": 20,
    "open_odds": "-194",
-   "now_odds": "+376",
-   "edge": 45,
+   "now_odds": "+400",
+   "edge": 46,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Laura Samson not above the games spread right now",
-   "context": "Alice Tubello 6 · Laura Samson 0 · 1st Set (games by set)",
+   "context": "Alice Tubello 6, 1 · Laura Samson 0, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T14:15:38.380Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1808319:0",
-   "market_id": "1808319",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Laura Samson vs Alice Tubello scheduled for October 26, 2026 at 1:00 PM UTC?",
-   "side": "Laura Samson win",
-   "open_chance": 65,
-   "now_chance": 22,
-   "open_odds": "-186",
-   "now_odds": "+355",
-   "edge": 43,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (43 pts), likely news",
-   "context": "Alice Tubello 6 · Laura Samson 0 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T05:58:48.001Z",
    "status": "open",
    "kalshi": null
   },
@@ -559,14 +547,14 @@
    "question": "Will the total in Laura Samson vs. Alice Tubello be more than 17.5?",
    "side": "Over 17.5 (Games)",
    "open_chance": 76,
-   "now_chance": 51,
+   "now_chance": 42,
    "open_odds": "-317",
-   "now_odds": "-104",
-   "edge": 25,
+   "now_odds": "+138",
+   "edge": 34,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (25 pts), likely news",
-   "context": "Alice Tubello 6 · Laura Samson 0 · 1st Set (games by set)",
+   "reason": "Big move (34 pts), likely news",
+   "context": "Alice Tubello 6, 1 · Laura Samson 0, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T14:32:44.273Z",
    "status": "open",
    "kalshi": null
@@ -586,8 +574,48 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Alice Tubello 6 · Laura Samson 0 · 1st Set (games by set)",
+   "context": "Alice Tubello 6, 1 · Laura Samson 0, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T14:32:44.273Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1809759:0",
+   "market_id": "1809759",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Laura Samson cover 7.5 vs the Alice Tubello in Laura Samson vs. Alice Tubello?",
+   "side": "Laura Samson +7.50 (Games)",
+   "open_chance": 41,
+   "now_chance": 35,
+   "open_odds": "+144",
+   "now_odds": "+186",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Alice Tubello 6, 1 · Laura Samson 0, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T14:40:15.560Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1809765:0",
+   "market_id": "1809765",
+   "market": "Sets total",
+   "group": "game",
+   "question": "Will the total in Laura Samson vs. Alice Tubello be more than 2.5?",
+   "side": "Over 2.5 (Sets)",
+   "open_chance": 39,
+   "now_chance": 33,
+   "open_odds": "+156",
+   "now_odds": "+203",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Alice Tubello 6, 1 · Laura Samson 0, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T14:21:16.687Z",
    "status": "open",
    "kalshi": null
   },
@@ -632,26 +660,6 @@
    "kalshi": null
   },
   {
-   "key": "1809765:0",
-   "market_id": "1809765",
-   "market": "Sets total",
-   "group": "game",
-   "question": "Will the total in Laura Samson vs. Alice Tubello be more than 2.5?",
-   "side": "Over 2.5 (Sets)",
-   "open_chance": 39,
-   "now_chance": 30,
-   "open_odds": "+156",
-   "now_odds": "+233",
-   "edge": 9,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Alice Tubello 3 · Laura Samson 0 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T14:21:16.687Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "1809762:1",
    "market_id": "1809762",
    "market": "Games total",
@@ -670,29 +678,23 @@
    "first_seen": "2026-10-26T14:04:50.430Z",
    "status": "gone",
    "kalshi": null
-  },
-  {
-   "key": "1808319:1",
-   "market_id": "1808319",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Laura Samson vs Alice Tubello scheduled for October 26, 2026 at 1:00 PM UTC?",
-   "side": "Alice Tubello win",
-   "open_chance": 38,
-   "now_chance": 34,
-   "open_odds": "+163",
-   "now_odds": "+194",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-10-26T04:53:30.161Z",
-   "status": "gone",
-   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1809759:0:slight",
+   "key": "1809759:0",
+   "at": "2026-10-26T14:40:15.560Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Laura Samson +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+186",
+   "now_chance": 35,
+   "edge": 6,
+   "text": "New slight edge: Laura Samson +7.50 (Games) (Games spread), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-lausam-alitub-2026-10-26"
+  },
   {
    "id": "news:1809762:0",
    "key": "1809762:0",
@@ -750,20 +752,6 @@
    "url": "https://polymarket.us/sports/wta/wta-lausam-alitub-2026-10-26"
   },
   {
-   "id": "news:1808319:0",
-   "key": "1808319:0",
-   "at": "2026-10-26T14:21:16.687Z",
-   "type": "news",
-   "tier": "big",
-   "side": "Laura Samson win",
-   "market": "Moneyline",
-   "now_odds": "+156",
-   "now_chance": 39,
-   "edge": 26,
-   "text": "Big move, likely news: Laura Samson win (Moneyline) is 26 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-lausam-alitub-2026-10-26"
-  },
-  {
    "id": "new_edge:1809757:0:big",
    "key": "1809757:0",
    "at": "2026-10-26T14:21:16.687Z",
@@ -817,20 +805,6 @@
    "now_chance": 54,
    "edge": 12,
    "text": "New big edge: Laura Samson +1.50 (Games) (Games spread), 12 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-lausam-alitub-2026-10-26"
-  },
-  {
-   "id": "new_edge:1808319:0:big",
-   "key": "1808319:0",
-   "at": "2026-10-26T14:15:38.380Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Laura Samson win",
-   "market": "Moneyline",
-   "now_odds": "-117",
-   "now_chance": 54,
-   "edge": 11,
-   "text": "New big edge: Laura Samson win (Moneyline), 11 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-lausam-alitub-2026-10-26"
   },
   {
@@ -892,7 +866,8 @@
   "news:1809762:0",
   "new_edge:1809763:0:big",
   "gone:1809761:0:2026-10-26T14:10:56.571Z",
-  "gone:1809765:0:2026-10-26T14:21:16.687Z"
+  "gone:1809765:0:2026-10-26T14:21:16.687Z",
+  "new_edge:1809759:0:slight"
  ],
  "kalshi_checked": null
 }
