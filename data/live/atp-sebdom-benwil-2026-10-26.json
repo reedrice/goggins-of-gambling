@@ -9,15 +9,37 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-26T21:30:59.414Z"
+  "fetched_at": "2026-10-26T21:36:54.748Z"
  },
- "updated": "2026-10-26T21:30:59.228Z",
+ "updated": "2026-10-26T21:36:54.624Z",
  "open_taken_at": "2026-10-26T05:02:57.425Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1826486",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Sebastian Dominko win set 2 against Benjamin Willwerth?",
+   "sides": [
+    "Yes: Sebastian Dominko win set 2 against Benjamin Willwerth",
+    "No: Sebastian Dominko win set 2 against Benjamin Willwerth"
+   ],
+   "teams": [
+    "Sebastian Dominko",
+    null
+   ],
+   "player": null,
+   "mid": 50.5,
+   "yes_buy": 51,
+   "no_buy": 50,
+   "taken_at": "2026-10-26T19:47:42.014Z"
+  },
   {
    "market_id": "1825254",
    "market": "Moneyline",
@@ -83,28 +105,6 @@
    "yes_buy": 60,
    "no_buy": 41,
    "taken_at": "2026-10-26T19:35:59.641Z"
-  },
-  {
-   "market_id": "1826486",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Sebastian Dominko win set 2 against Benjamin Willwerth?",
-   "sides": [
-    "Yes: Sebastian Dominko win set 2 against Benjamin Willwerth",
-    "No: Sebastian Dominko win set 2 against Benjamin Willwerth"
-   ],
-   "teams": [
-    "Sebastian Dominko",
-    null
-   ],
-   "player": null,
-   "mid": 50.5,
-   "yes_buy": 51,
-   "no_buy": 50,
-   "taken_at": "2026-10-26T19:47:42.014Z"
   },
   {
    "market_id": "1826468",
@@ -351,46 +351,6 @@
  ],
  "edges": [
   {
-   "key": "1826486:1",
-   "market_id": "1826486",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Sebastian Dominko win set 2 against Benjamin Willwerth?",
-   "side": "No: Sebastian Dominko win set 2 against Benjamin Willwerth",
-   "open_chance": 50,
-   "now_chance": 32,
-   "open_odds": "+100",
-   "now_odds": "+213",
-   "edge": 18,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-26T21:18:17.724Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1826469:0",
-   "market_id": "1826469",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Sebastian Dominko vs. Benjamin Willwerth be more than 27.5?",
-   "side": "Over 27.5 (Games)",
-   "open_chance": 31,
-   "now_chance": 27,
-   "open_odds": "+223",
-   "now_odds": "+270",
-   "edge": 4,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-26T21:30:59.228Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1826456:1",
    "market_id": "1826456",
    "market": "Games spread",
@@ -529,9 +489,43 @@
    "first_seen": "2026-10-26T20:17:39.052Z",
    "status": "gone",
    "kalshi": null
+  },
+  {
+   "key": "1826469:0",
+   "market_id": "1826469",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Sebastian Dominko vs. Benjamin Willwerth be more than 27.5?",
+   "side": "Over 27.5 (Games)",
+   "open_chance": 31,
+   "now_chance": 27,
+   "open_odds": "+223",
+   "now_odds": "+270",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-26T21:30:59.228Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1826469:0:2026-10-26T21:30:59.228Z",
+   "key": "1826469:0",
+   "at": "2026-10-26T21:36:54.624Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+270",
+   "now_chance": 27,
+   "edge": 4,
+   "text": "Edge gone: Over 27.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-sebdom-benwil-2026-10-26"
+  },
   {
    "id": "new_edge:1826469:0:slight",
    "key": "1826469:0",
@@ -572,20 +566,6 @@
    "now_chance": 24,
    "edge": 13,
    "text": "New big edge: Over 2.5 (Sets) (Sets total), 13 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-sebdom-benwil-2026-10-26"
-  },
-  {
-   "id": "new_edge:1826486:1:big",
-   "key": "1826486:1",
-   "at": "2026-10-26T21:18:17.724Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "No: Sebastian Dominko win set 2 against Benjamin Willwerth",
-   "market": "Set 2 winner",
-   "now_odds": "+488",
-   "now_chance": 17,
-   "edge": 33,
-   "text": "New big edge: No: Sebastian Dominko win set 2 against Benjamin Willwerth (Set 2 winner), 33 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-sebdom-benwil-2026-10-26"
   },
   {
@@ -814,7 +794,8 @@
   "gone:1826470:1:2026-10-26T20:11:56.661Z",
   "new_edge:1826470:0:big",
   "new_edge:1826469:0:slight",
-  "gone:1826470:0:2026-10-26T21:24:00.959Z"
+  "gone:1826470:0:2026-10-26T21:24:00.959Z",
+  "gone:1826469:0:2026-10-26T21:30:59.228Z"
  ],
  "kalshi_checked": null
 }

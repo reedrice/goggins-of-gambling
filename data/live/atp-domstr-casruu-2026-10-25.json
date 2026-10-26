@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185137",
-  "fetched_at": "2026-10-26T21:30:50.539Z",
+  "fetched_at": "2026-10-26T21:36:46.789Z",
   "tennis": true,
   "tennis_match": {
    "id": "185137",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(9) Casper Ruud (NOR) leads Dominic Stricker (SUI) 4-6 7-5 2-1",
+     "text": "(9) Casper Ruud (NOR) leads Dominic Stricker (SUI) 4-6 7-5 3-1",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 9
      },
@@ -68,7 +69,7 @@
        "winner": true
       },
       {
-       "value": 2
+       "value": 3
       }
      ],
      "athlete": {
@@ -108,6 +109,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 6,
@@ -153,6 +155,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 23,
    "type": {
     "id": "1",
@@ -190,7 +197,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T21:30:50.445Z",
+ "updated": "2026-10-26T21:36:46.695Z",
  "open_taken_at": "2026-10-24T16:17:30.258Z",
  "thresholds": {
   "big": 10,
@@ -530,46 +537,6 @@
  ],
  "edges": [
   {
-   "key": "1758982:1",
-   "market_id": "1758982",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Dominic Stricker cover 1.5 vs the Casper Ruud in Dominic Stricker vs. Casper Ruud?",
-   "side": "Casper Ruud -1.50 (Games)",
-   "open_chance": 65,
-   "now_chance": 48,
-   "open_odds": "-186",
-   "now_odds": "+108",
-   "edge": 17,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Casper Ruud not above the games spread right now",
-   "context": "Casper Ruud 4, 7, 2 · Dominic Stricker 6, 5, 1 · 3rd Set (games by set)",
-   "first_seen": "2026-10-26T20:02:21.721Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1758981:0",
-   "market_id": "1758981",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Dominic Stricker cover -1.5 vs the Casper Ruud in Dominic Stricker vs. Casper Ruud?",
-   "side": "Dominic Stephan Stricker -1.50 (Games)",
-   "open_chance": 25,
-   "now_chance": 19,
-   "open_odds": "+300",
-   "now_odds": "+426",
-   "edge": 6,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Casper Ruud 4, 7, 2 · Dominic Stricker 6, 5, 1 · 3rd Set (games by set)",
-   "first_seen": "2026-10-26T21:30:50.445Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1758987:1",
    "market_id": "1758987",
    "market": "Sets spread",
@@ -606,26 +573,6 @@
    "reason": "Big move (27 pts), likely news",
    "context": "Casper Ruud 4, 3 · Dominic Stricker 6, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T20:05:22.823Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1758957:1",
-   "market_id": "1758957",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Dominic Stricker vs Casper Ruud scheduled for October 25, 2026 at 9:00 AM UTC?",
-   "side": "Casper Ruud win",
-   "open_chance": 71,
-   "now_chance": 45,
-   "open_odds": "-245",
-   "now_odds": "+122",
-   "edge": 26,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Casper Ruud trailing in sets",
-   "context": "Casper Ruud 4, 5 · Dominic Stricker 6, 5 · 2nd Set (games by set)",
-   "first_seen": "2026-10-26T20:02:21.721Z",
    "status": "gone",
    "kalshi": null
   },
@@ -670,6 +617,26 @@
    "kalshi": null
   },
   {
+   "key": "1758982:1",
+   "market_id": "1758982",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Dominic Stricker cover 1.5 vs the Casper Ruud in Dominic Stricker vs. Casper Ruud?",
+   "side": "Casper Ruud -1.50 (Games)",
+   "open_chance": 65,
+   "now_chance": 48,
+   "open_odds": "-186",
+   "now_odds": "+108",
+   "edge": 17,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Casper Ruud not above the games spread right now",
+   "context": "Casper Ruud 4, 7, 2 · Dominic Stricker 6, 5, 1 · 3rd Set (games by set)",
+   "first_seen": "2026-10-26T20:02:21.721Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1758984:1",
    "market_id": "1758984",
    "market": "Games spread",
@@ -690,22 +657,22 @@
    "kalshi": null
   },
   {
-   "key": "1758957:0",
-   "market_id": "1758957",
-   "market": "Moneyline",
+   "key": "1758981:0",
+   "market_id": "1758981",
+   "market": "Games spread",
    "group": "game",
-   "question": "Who will win in the upcoming atp event Dominic Stricker vs Casper Ruud scheduled for October 25, 2026 at 9:00 AM UTC?",
-   "side": "Dominic Stephan Stricker win",
-   "open_chance": 34,
-   "now_chance": 29,
-   "open_odds": "+194",
-   "now_odds": "+245",
-   "edge": 5,
+   "question": "Will the Dominic Stricker cover -1.5 vs the Casper Ruud in Dominic Stricker vs. Casper Ruud?",
+   "side": "Dominic Stephan Stricker -1.50 (Games)",
+   "open_chance": 25,
+   "now_chance": 19,
+   "open_odds": "+300",
+   "now_odds": "+426",
+   "edge": 6,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Casper Ruud 4, 7, 1 · Dominic Stricker 6, 5, 0 · 3rd Set (games by set)",
-   "first_seen": "2026-10-25T12:06:29.135Z",
+   "context": "Casper Ruud 4, 7, 2 · Dominic Stricker 6, 5, 1 · 3rd Set (games by set)",
+   "first_seen": "2026-10-26T21:30:50.445Z",
    "status": "gone",
    "kalshi": null
   },
@@ -771,6 +738,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1758981:0:2026-10-26T21:30:50.445Z",
+   "key": "1758981:0",
+   "at": "2026-10-26T21:36:46.695Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Dominic Stephan Stricker -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+426",
+   "now_chance": 19,
+   "edge": 6,
+   "text": "Edge gone: Dominic Stephan Stricker -1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-domstr-casruu-2026-10-25"
+  },
   {
    "id": "new_edge:1758981:0:slight",
    "key": "1758981:0",
@@ -870,20 +851,6 @@
    "url": "https://polymarket.us/sports/atp/atp-domstr-casruu-2026-10-25"
   },
   {
-   "id": "new_edge:1758957:1:big",
-   "key": "1758957:1",
-   "at": "2026-10-26T20:11:47.362Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Casper Ruud win",
-   "market": "Moneyline",
-   "now_odds": "-144",
-   "now_chance": 59,
-   "edge": 12,
-   "text": "New big edge: Casper Ruud win (Moneyline), 12 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-domstr-casruu-2026-10-25"
-  },
-  {
    "id": "new_edge:1758992:1:big",
    "key": "1758992:1",
    "at": "2026-10-26T20:05:22.823Z",
@@ -912,34 +879,6 @@
    "url": "https://polymarket.us/sports/atp/atp-domstr-casruu-2026-10-25"
   },
   {
-   "id": "new_edge:1758957:1:slight",
-   "key": "1758957:1",
-   "at": "2026-10-26T20:02:21.721Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Casper Ruud win",
-   "market": "Moneyline",
-   "now_odds": "-163",
-   "now_chance": 62,
-   "edge": 9,
-   "text": "New slight edge: Casper Ruud win (Moneyline), 9 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-domstr-casruu-2026-10-25"
-  },
-  {
-   "id": "gone:1758957:0:2026-10-25T12:06:29.135Z",
-   "key": "1758957:0",
-   "at": "2026-10-26T20:02:21.721Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Dominic Stephan Stricker win",
-   "market": "Moneyline",
-   "now_odds": "+245",
-   "now_chance": 29,
-   "edge": 5,
-   "text": "Edge gone: Dominic Stephan Stricker win (Moneyline) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-domstr-casruu-2026-10-25"
-  },
-  {
    "id": "gone:1758982:0:2026-10-26T19:06:51.462Z",
    "key": "1758982:0",
    "at": "2026-10-26T20:02:21.721Z",
@@ -951,20 +890,6 @@
    "now_chance": 33,
    "edge": 4,
    "text": "Edge gone: Dominic Stephan Stricker +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-domstr-casruu-2026-10-25"
-  },
-  {
-   "id": "new_edge:1758957:0:slight",
-   "key": "1758957:0",
-   "at": "2026-10-26T19:47:33.231Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Dominic Stephan Stricker win",
-   "market": "Moneyline",
-   "now_odds": "+233",
-   "now_chance": 30,
-   "edge": 4,
-   "text": "New slight edge: Dominic Stephan Stricker win (Moneyline), 4 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-domstr-casruu-2026-10-25"
   },
   {
@@ -1022,7 +947,8 @@
   "news:1758981:1",
   "news:1758991:1",
   "news:1758987:1",
-  "new_edge:1758981:0:slight"
+  "new_edge:1758981:0:slight",
+  "gone:1758981:0:2026-10-26T21:30:50.445Z"
  ],
  "kalshi_checked": null
 }
