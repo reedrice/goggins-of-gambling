@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-26T17:04:03.505Z"
+  "fetched_at": "2026-10-26T17:09:48.683Z"
  },
- "updated": "2026-10-26T17:04:03.442Z",
+ "updated": "2026-10-26T17:09:48.577Z",
  "open_taken_at": "2026-10-25T00:16:50.123Z",
  "thresholds": {
   "big": 10,
@@ -39,28 +39,6 @@
    "yes_buy": 78,
    "no_buy": 27,
    "taken_at": "2026-10-25T01:00:29.346Z"
-  },
-  {
-   "market_id": "1773915",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Victoria Rodriguez vs. Maria Fernanda Herazo Gonzalez be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 8.5,
-   "yes_buy": 9,
-   "no_buy": 92,
-   "taken_at": "2026-10-26T15:59:13.180Z"
   },
   {
    "market_id": "1773905",
@@ -105,6 +83,28 @@
    "yes_buy": 44,
    "no_buy": 60,
    "taken_at": "2026-10-26T15:46:43.649Z"
+  },
+  {
+   "market_id": "1773915",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Victoria Rodriguez vs. Maria Fernanda Herazo Gonzalez be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 8.5,
+   "yes_buy": 9,
+   "no_buy": 92,
+   "taken_at": "2026-10-26T15:59:13.180Z"
   },
   {
    "market_id": "1773914",
@@ -285,26 +285,6 @@
  ],
  "edges": [
   {
-   "key": "1773915:1",
-   "market_id": "1773915",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Victoria Rodriguez vs. Maria Fernanda Herazo Gonzalez be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 92,
-   "now_chance": 44,
-   "open_odds": "-1150",
-   "now_odds": "+127",
-   "edge": 48,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-26T16:45:50.612Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1773905:0",
    "market_id": "1773905",
    "market": "Games spread",
@@ -312,10 +292,10 @@
    "question": "Will the Victoria Rodriguez cover -1.5 vs the Maria Fernanda Herazo Gonzalez in Victoria Rodriguez vs. Maria Fernanda Herazo Gonzalez?",
    "side": "Victoria Rodriguez -1.50 (Games)",
    "open_chance": 84,
-   "now_chance": 57,
+   "now_chance": 58,
    "open_odds": "-525",
-   "now_odds": "-133",
-   "edge": 27,
+   "now_odds": "-138",
+   "edge": 26,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -332,16 +312,36 @@
    "question": "Who will win in the upcoming wta event Victoria Rodriguez vs Maria Fernanda Herazo Gonzalez scheduled for October 25, 2026 at 6:10 PM UTC?",
    "side": "Victoria Rodriguez win",
    "open_chance": 78,
-   "now_chance": 56,
+   "now_chance": 58,
    "open_odds": "-355",
-   "now_odds": "-127",
-   "edge": 22,
+   "now_odds": "-138",
+   "edge": 20,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-26T16:27:12.256Z",
    "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1773915:1",
+   "market_id": "1773915",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Victoria Rodriguez vs. Maria Fernanda Herazo Gonzalez be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 92,
+   "now_chance": 44,
+   "open_odds": "-1150",
+   "now_odds": "+127",
+   "edge": 48,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-26T16:45:50.612Z",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -506,6 +506,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1773915:1:2026-10-26T16:45:50.612Z",
+   "key": "1773915:1",
+   "at": "2026-10-26T17:09:48.577Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+127",
+   "now_chance": 44,
+   "edge": 48,
+   "text": "Edge gone: Under 27.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-vicrod-margon-2026-10-25"
+  },
   {
    "id": "gone:1773912:0:2026-10-26T16:57:15.262Z",
    "key": "1773912:0",
@@ -815,7 +829,8 @@
   "new_edge:1773912:0:big",
   "new_edge:1773906:0:big",
   "gone:1773912:0:2026-10-26T16:57:15.262Z",
-  "gone:1773906:0:2026-10-26T16:57:15.262Z"
+  "gone:1773906:0:2026-10-26T16:57:15.262Z",
+  "gone:1773915:1:2026-10-26T16:45:50.612Z"
  ],
  "kalshi_checked": null
 }
