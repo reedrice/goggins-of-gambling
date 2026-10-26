@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185752",
-  "fetched_at": "2026-10-26T16:08:50.701Z",
+  "fetched_at": "2026-10-26T16:11:54.221Z",
   "tennis": true,
   "tennis_match": {
    "id": "185752",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Fernanda Labrana (CHI) leads Gabriela Ce (BRA) 2-1",
+     "text": "Fernanda Labrana (CHI) leads Gabriela Ce (BRA) 3-1",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 1
@@ -97,9 +98,10 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
-       "value": 2
+       "value": 3
       }
      ],
      "athlete": {
@@ -134,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1080,
    "type": {
     "id": "2",
@@ -171,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T16:08:50.595Z",
+ "updated": "2026-10-26T16:11:54.111Z",
  "open_taken_at": "2026-10-25T18:32:50.886Z",
  "thresholds": {
   "big": 10,
@@ -223,6 +230,28 @@
    "taken_at": "2026-10-26T08:32:50.965Z"
   },
   {
+   "market_id": "1809698",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Fernanda Labrana win set 1 against Gabriela CE?",
+   "sides": [
+    "Yes: Fernanda Labrana win set 1 against Gabriela CE",
+    "No: Fernanda Labrana win set 1 against Gabriela CE"
+   ],
+   "teams": [
+    "Fernanda Labrana",
+    null
+   ],
+   "player": null,
+   "mid": 35.5,
+   "yes_buy": 36,
+   "no_buy": 65,
+   "taken_at": "2026-10-26T15:59:18.205Z"
+  },
+  {
    "market_id": "1809689",
    "market": "Sets spread",
    "group": "game",
@@ -267,28 +296,6 @@
    "taken_at": "2026-10-25T23:01:50.718Z"
   },
   {
-   "market_id": "1809691",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Fernanda Labrana vs. Gabriela CE be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 34,
-   "yes_buy": 36,
-   "no_buy": 68,
-   "taken_at": "2026-10-26T11:19:49.210Z"
-  },
-  {
    "market_id": "1809683",
    "market": "Games spread",
    "group": "game",
@@ -309,6 +316,28 @@
    "yes_buy": 26,
    "no_buy": 75,
    "taken_at": "2026-10-26T15:21:48.009Z"
+  },
+  {
+   "market_id": "1809691",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Fernanda Labrana vs. Gabriela CE be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 34,
+   "yes_buy": 36,
+   "no_buy": 68,
+   "taken_at": "2026-10-26T11:19:49.210Z"
   },
   {
    "market_id": "1809693",
@@ -463,31 +492,29 @@
    "yes_buy": 76,
    "no_buy": 29,
    "taken_at": "2026-10-26T11:19:49.210Z"
-  },
-  {
-   "market_id": "1809698",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Fernanda Labrana win set 1 against Gabriela CE?",
-   "sides": [
-    "Yes: Fernanda Labrana win set 1 against Gabriela CE",
-    "No: Fernanda Labrana win set 1 against Gabriela CE"
-   ],
-   "teams": [
-    "Fernanda Labrana",
-    null
-   ],
-   "player": null,
-   "mid": 35.5,
-   "yes_buy": 36,
-   "no_buy": 65,
-   "taken_at": "2026-10-26T15:59:18.205Z"
   }
  ],
  "edges": [
+  {
+   "key": "1809698:1",
+   "market_id": "1809698",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Fernanda Labrana win set 1 against Gabriela CE?",
+   "side": "No: Fernanda Labrana win set 1 against Gabriela CE",
+   "open_chance": 65,
+   "now_chance": 37,
+   "open_odds": "-186",
+   "now_odds": "+170",
+   "edge": 28,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (28 pts), likely news",
+   "context": "Gabriela Ce 1 · Fernanda Labrana 3 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T16:11:54.111Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1809689:1",
    "market_id": "1809689",
@@ -503,28 +530,8 @@
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Gabriela Ce not above the sets spread right now",
-   "context": "Gabriela Ce 1 · Fernanda Labrana 2 · 1st Set (games by set)",
+   "context": "Gabriela Ce 1 · Fernanda Labrana 3 · 1st Set (games by set)",
    "first_seen": "2026-10-26T15:28:54.988Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1809685:1",
-   "market_id": "1809685",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Fernanda Labrana cover 4.5 vs the Gabriela CE in Fernanda Labrana vs. Gabriela CE?",
-   "side": "Gabriela Ce -4.50 (Games)",
-   "open_chance": 57,
-   "now_chance": 42,
-   "open_odds": "-133",
-   "now_odds": "+138",
-   "edge": 15,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Gabriela Ce not above the games spread right now",
-   "context": "Gabriela Ce 1 · Fernanda Labrana 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T15:53:08.380Z",
    "status": "open",
    "kalshi": null
   },
@@ -536,15 +543,35 @@
    "question": "Will the Fernanda Labrana cover 1.5 vs the Gabriela CE in Fernanda Labrana vs. Gabriela CE?",
    "side": "Gabriela Ce -1.50 (Games)",
    "open_chance": 75,
-   "now_chance": 62,
+   "now_chance": 53,
    "open_odds": "-300",
-   "now_odds": "-163",
-   "edge": 13,
+   "now_odds": "-113",
+   "edge": 22,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Gabriela Ce not above the games spread right now",
-   "context": "Gabriela Ce 1 · Fernanda Labrana 2 · 1st Set (games by set)",
+   "context": "Gabriela Ce 1 · Fernanda Labrana 3 · 1st Set (games by set)",
    "first_seen": "2026-10-26T16:02:35.716Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1809685:1",
+   "market_id": "1809685",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Fernanda Labrana cover 4.5 vs the Gabriela CE in Fernanda Labrana vs. Gabriela CE?",
+   "side": "Gabriela Ce -4.50 (Games)",
+   "open_chance": 57,
+   "now_chance": 36,
+   "open_odds": "-133",
+   "now_odds": "+178",
+   "edge": 21,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Gabriela Ce not above the games spread right now",
+   "context": "Gabriela Ce 1 · Fernanda Labrana 3 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T15:53:08.380Z",
    "status": "open",
    "kalshi": null
   },
@@ -556,14 +583,14 @@
    "question": "Will the total in Fernanda Labrana vs. Gabriela CE be more than 17.5?",
    "side": "Under 17.5 (Games)",
    "open_chance": 35,
-   "now_chance": 23,
+   "now_chance": 17,
    "open_odds": "+186",
-   "now_odds": "+335",
-   "edge": 12,
+   "now_odds": "+488",
+   "edge": 18,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Gabriela Ce 1 · Fernanda Labrana 2 · 1st Set (games by set)",
+   "context": "Gabriela Ce 1 · Fernanda Labrana 3 · 1st Set (games by set)",
    "first_seen": "2026-10-26T15:59:18.205Z",
    "status": "open",
    "kalshi": null
@@ -576,15 +603,35 @@
    "question": "Will the total in Fernanda Labrana vs. Gabriela CE be more than 22.5?",
    "side": "Under 22.5 (Games)",
    "open_chance": 68,
-   "now_chance": 58,
+   "now_chance": 53,
    "open_odds": "-213",
-   "now_odds": "-138",
-   "edge": 10,
+   "now_odds": "-113",
+   "edge": 15,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Gabriela Ce 1 · Fernanda Labrana 2 · 1st Set (games by set)",
+   "context": "Gabriela Ce 1 · Fernanda Labrana 3 · 1st Set (games by set)",
    "first_seen": "2026-10-26T15:21:48.009Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1808312:1",
+   "market_id": "1808312",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Fernanda Labrana vs Gabriela CE scheduled for October 26, 2026 at 1:00 PM UTC?",
+   "side": "Gabriela Ce win",
+   "open_chance": 74,
+   "now_chance": 63,
+   "open_odds": "-285",
+   "now_odds": "-170",
+   "edge": 11,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Gabriela Ce 1 · Fernanda Labrana 3 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T16:11:54.111Z",
    "status": "open",
    "kalshi": null
   },
@@ -603,7 +650,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Gabriela Ce 1 · Fernanda Labrana 2 · 1st Set (games by set)",
+   "context": "Gabriela Ce 1 · Fernanda Labrana 3 · 1st Set (games by set)",
    "first_seen": "2026-10-26T15:21:48.009Z",
    "status": "open",
    "kalshi": null
@@ -669,26 +716,6 @@
    "kalshi": null
   },
   {
-   "key": "1809690:0",
-   "market_id": "1809690",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Fernanda Labrana vs. Gabriela CE be more than 17.5?",
-   "side": "Over 17.5 (Games)",
-   "open_chance": 70,
-   "now_chance": 64,
-   "open_odds": "-233",
-   "now_odds": "-178",
-   "edge": 6,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-10-26T08:47:32.460Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "1809691:0",
    "market_id": "1809691",
    "market": "Games total",
@@ -730,6 +757,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "news:1809698:1",
+   "key": "1809698:1",
+   "at": "2026-10-26T16:11:54.111Z",
+   "type": "news",
+   "tier": "big",
+   "side": "No: Fernanda Labrana win set 1 against Gabriela CE",
+   "market": "Set 1 winner",
+   "now_odds": "+170",
+   "now_chance": 37,
+   "edge": 28,
+   "text": "Big move, likely news: No: Fernanda Labrana win set 1 against Gabriela CE (Set 1 winner) is 28 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-ferlab-gabce-2026-10-26"
+  },
+  {
+   "id": "new_edge:1808312:1:big",
+   "key": "1808312:1",
+   "at": "2026-10-26T16:11:54.111Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Gabriela Ce win",
+   "market": "Moneyline",
+   "now_odds": "-170",
+   "now_chance": 63,
+   "edge": 11,
+   "text": "New big edge: Gabriela Ce win (Moneyline), 11 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-ferlab-gabce-2026-10-26"
+  },
   {
    "id": "new_edge:1809690:1:big",
    "key": "1809690:1",
@@ -798,20 +853,6 @@
    "now_chance": 21,
    "edge": 7,
    "text": "Edge gone: Fernanda Labrana win (Moneyline) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-ferlab-gabce-2026-10-26"
-  },
-  {
-   "id": "gone:1809690:0:2026-10-26T08:47:32.460Z",
-   "key": "1809690:0",
-   "at": "2026-10-26T15:59:18.205Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Over 17.5 (Games)",
-   "market": "Games total",
-   "now_odds": "-178",
-   "now_chance": 64,
-   "edge": 6,
-   "text": "Edge gone: Over 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-ferlab-gabce-2026-10-26"
   },
   {
@@ -939,20 +980,6 @@
    "edge": 9,
    "text": "New slight edge: Fernanda Labrana +4.50 (Games) (Games spread), 9 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-ferlab-gabce-2026-10-26"
-  },
-  {
-   "id": "new_edge:1809690:0:slight",
-   "key": "1809690:0",
-   "at": "2026-10-26T15:16:22.072Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Over 17.5 (Games)",
-   "market": "Games total",
-   "now_odds": "-186",
-   "now_chance": 65,
-   "edge": 5,
-   "text": "New slight edge: Over 17.5 (Games) (Games total), 5 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-ferlab-gabce-2026-10-26"
   }
  ],
  "alert_seen": [
@@ -971,7 +998,9 @@
   "gone:1809691:0:2026-10-26T15:53:08.380Z",
   "new_edge:1809691:1:slight",
   "new_edge:1809690:1:big",
-  "new_edge:1809691:1:big"
+  "new_edge:1809691:1:big",
+  "news:1809698:1",
+  "new_edge:1808312:1:big"
  ],
  "kalshi_checked": null
 }
