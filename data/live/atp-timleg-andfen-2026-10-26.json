@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-26T20:47:25.199Z"
+  "fetched_at": "2026-10-26T20:53:57.950Z"
  },
- "updated": "2026-10-26T20:47:25.091Z",
+ "updated": "2026-10-26T20:53:57.839Z",
  "open_taken_at": "2026-10-25T22:34:33.194Z",
  "thresholds": {
   "big": 10,
@@ -41,26 +41,26 @@
    "taken_at": "2026-10-25T23:43:19.541Z"
   },
   {
-   "market_id": "1815914",
-   "market": "Games total",
+   "market_id": "1815905",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Timo Legout vs. Andrew Fenty be more than 27.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Timo Legout cover 1.5 vs the Andrew Fenty in Timo Legout vs. Andrew Fenty?",
    "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
+    "Timo Legout +1.50 (Games)",
+    "Andrew Fenty -1.50 (Games)"
    ],
    "teams": [
-    null,
-    null
+    "Timo Legout",
+    "Andrew Fenty"
    ],
    "player": null,
-   "mid": 27.5,
-   "yes_buy": 30,
-   "no_buy": 75,
-   "taken_at": "2026-10-26T15:06:58.598Z"
+   "mid": 56.5,
+   "yes_buy": 57,
+   "no_buy": 44,
+   "taken_at": "2026-10-26T17:28:40.192Z"
   },
   {
    "market_id": "1815904",
@@ -85,26 +85,26 @@
    "taken_at": "2026-10-26T17:28:40.192Z"
   },
   {
-   "market_id": "1815905",
-   "market": "Games spread",
+   "market_id": "1815914",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Timo Legout cover 1.5 vs the Andrew Fenty in Timo Legout vs. Andrew Fenty?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Timo Legout vs. Andrew Fenty be more than 27.5?",
    "sides": [
-    "Timo Legout +1.50 (Games)",
-    "Andrew Fenty -1.50 (Games)"
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
    ],
    "teams": [
-    "Timo Legout",
-    "Andrew Fenty"
+    null,
+    null
    ],
    "player": null,
-   "mid": 56.5,
-   "yes_buy": 57,
-   "no_buy": 44,
-   "taken_at": "2026-10-26T17:28:40.192Z"
+   "mid": 27.5,
+   "yes_buy": 30,
+   "no_buy": 75,
+   "taken_at": "2026-10-26T15:06:58.598Z"
   },
   {
    "market_id": "1815907",
@@ -351,6 +351,46 @@
  ],
  "edges": [
   {
+   "key": "1815914:1",
+   "market_id": "1815914",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Timo Legout vs. Andrew Fenty be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 75,
+   "now_chance": 59,
+   "open_odds": "-300",
+   "now_odds": "-144",
+   "edge": 16,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-26T17:16:15.877Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1815905:1",
+   "market_id": "1815905",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Timo Legout cover 1.5 vs the Andrew Fenty in Timo Legout vs. Andrew Fenty?",
+   "side": "Andrew Fenty -1.50 (Games)",
+   "open_chance": 44,
+   "now_chance": 40,
+   "open_odds": "+127",
+   "now_odds": "+150",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-26T19:35:58.769Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1815904:0",
    "market_id": "1815904",
    "market": "Games spread",
@@ -367,27 +407,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-26T19:47:41.138Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1815914:1",
-   "market_id": "1815914",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Timo Legout vs. Andrew Fenty be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 75,
-   "now_chance": 58,
-   "open_odds": "-300",
-   "now_odds": "-138",
-   "edge": 17,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-26T17:16:15.877Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -407,26 +427,6 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-26T20:02:29.057Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1814147:0",
-   "market_id": "1814147",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Timo Legout vs Andrew Fenty scheduled for October 26, 2026 at 5:10 PM UTC?",
-   "side": "Timo Legout win",
-   "open_chance": 68,
-   "now_chance": 33,
-   "open_odds": "-213",
-   "now_odds": "+203",
-   "edge": 35,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-26T19:57:38.817Z",
    "status": "gone",
    "kalshi": null
   },
@@ -467,26 +467,6 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-26T19:07:00.905Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1815905:1",
-   "market_id": "1815905",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Timo Legout cover 1.5 vs the Andrew Fenty in Timo Legout vs. Andrew Fenty?",
-   "side": "Andrew Fenty -1.50 (Games)",
-   "open_chance": 44,
-   "now_chance": 24,
-   "open_odds": "+127",
-   "now_odds": "+317",
-   "edge": 20,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-26T19:35:58.769Z",
    "status": "gone",
    "kalshi": null
   },
@@ -631,26 +611,6 @@
    "kalshi": null
   },
   {
-   "key": "1814147:1",
-   "market_id": "1814147",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Timo Legout vs Andrew Fenty scheduled for October 26, 2026 at 5:10 PM UTC?",
-   "side": "Andrew Fenty win",
-   "open_chance": 33,
-   "now_chance": 28,
-   "open_odds": "+203",
-   "now_odds": "+257",
-   "edge": 5,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-26T19:41:56.521Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "1815914:0",
    "market_id": "1815914",
    "market": "Games total",
@@ -712,6 +672,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1815905:1:slight",
+   "key": "1815905:1",
+   "at": "2026-10-26T20:53:57.839Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Andrew Fenty -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+150",
+   "now_chance": 40,
+   "edge": 4,
+   "text": "New slight edge: Andrew Fenty -1.50 (Games) (Games spread), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-timleg-andfen-2026-10-26"
+  },
   {
    "id": "gone:1815907:1:2026-10-26T19:54:02.967Z",
    "key": "1815907:1",
@@ -825,20 +799,6 @@
    "url": "https://polymarket.us/sports/atp/atp-timleg-andfen-2026-10-26"
   },
   {
-   "id": "gone:1814147:0:2026-10-26T19:57:38.817Z",
-   "key": "1814147:0",
-   "at": "2026-10-26T20:02:29.057Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Timo Legout win",
-   "market": "Moneyline",
-   "now_odds": "-156",
-   "now_chance": 61,
-   "edge": 7,
-   "text": "Edge gone: Timo Legout win (Moneyline) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-timleg-andfen-2026-10-26"
-  },
-  {
    "id": "gone:1815912:0:2026-10-26T17:28:40.192Z",
    "key": "1815912:0",
    "at": "2026-10-26T19:57:38.817Z",
@@ -850,20 +810,6 @@
    "now_chance": 64,
    "edge": 19,
    "text": "Edge gone: Over 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-timleg-andfen-2026-10-26"
-  },
-  {
-   "id": "gone:1814147:1:2026-10-26T19:41:56.521Z",
-   "key": "1814147:1",
-   "at": "2026-10-26T19:57:38.817Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Andrew Fenty win",
-   "market": "Moneyline",
-   "now_odds": "+257",
-   "now_chance": 28,
-   "edge": 5,
-   "text": "Edge gone: Andrew Fenty win (Moneyline) is no longer 4+ points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-timleg-andfen-2026-10-26"
   },
   {
@@ -920,20 +866,6 @@
    "now_chance": 20,
    "edge": 10,
    "text": "Edge gone: Over 27.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-timleg-andfen-2026-10-26"
-  },
-  {
-   "id": "new_edge:1814147:1:slight",
-   "key": "1814147:1",
-   "at": "2026-10-26T19:41:56.521Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Andrew Fenty win",
-   "market": "Moneyline",
-   "now_odds": "+257",
-   "now_chance": 28,
-   "edge": 5,
-   "text": "New slight edge: Andrew Fenty win (Moneyline), 5 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-timleg-andfen-2026-10-26"
   },
   {
@@ -1274,7 +1206,8 @@
   "gone:1815905:1:2026-10-26T19:35:58.769Z",
   "gone:1815914:1:2026-10-26T17:16:15.877Z",
   "gone:1815908:1:2026-10-26T20:05:31.381Z",
-  "gone:1815907:1:2026-10-26T19:54:02.967Z"
+  "gone:1815907:1:2026-10-26T19:54:02.967Z",
+  "new_edge:1815905:1:slight"
  ],
  "kalshi_checked": null
 }

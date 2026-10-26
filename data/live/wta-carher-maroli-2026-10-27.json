@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187291",
-  "fetched_at": "2026-10-26T20:47:27.955Z",
+  "fetched_at": "2026-10-26T20:54:00.815Z",
   "tennis": true,
   "tennis_match": {
    "id": "187291",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Carmen Andreea Herea (ROM) leads Maria Fernanda Navarro Oliva (MEX) 6-2 1-0",
+     "text": "Carmen Andreea Herea (ROM) leads Maria Fernanda Navarro Oliva (MEX) 6-2 2-1",
      "type": "event"
     }
    ],
@@ -55,14 +55,13 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
      "linescores": [
       {
        "value": 2,
        "winner": false
       },
       {
-       "value": 0
+       "value": 1
       }
      ],
      "athlete": {
@@ -102,14 +101,13 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -144,11 +142,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 1034,
    "type": {
     "id": "2",
@@ -186,7 +179,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T20:47:27.847Z",
+ "updated": "2026-10-26T20:54:00.709Z",
  "open_taken_at": "2026-10-26T18:47:55.721Z",
  "thresholds": {
   "big": 10,
@@ -300,11 +293,25 @@
    "reason": null,
    "context": "Maria Fernanda Navarro Oliva 2, 0 · Carmen Andreea Herea 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T20:47:27.847Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1844149:0:2026-10-26T20:47:27.847Z",
+   "key": "1844149:0",
+   "at": "2026-10-26T20:54:00.709Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+355",
+   "now_chance": 22,
+   "edge": 9,
+   "text": "Edge gone: Over 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-carher-maroli-2026-10-27"
+  },
   {
    "id": "new_edge:1844149:0:slight",
    "key": "1844149:0",
@@ -321,7 +328,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1844149:0:slight"
+  "new_edge:1844149:0:slight",
+  "gone:1844149:0:2026-10-26T20:47:27.847Z"
  ],
  "kalshi_checked": null
 }
