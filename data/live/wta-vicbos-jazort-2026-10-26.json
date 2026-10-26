@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185757",
-  "fetched_at": "2026-10-26T16:34:03.754Z",
+  "fetched_at": "2026-10-26T16:40:28.491Z",
   "tennis": true,
   "tennis_match": {
    "id": "185757",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Mon, October 26th at 12:35 PM EDT",
-     "shortDetail": "10/26 - 12:35 PM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Victoria Bosio (ARG) leads (8) Jazmin Ortenzi (ARG) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 8
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "9dff472e-f004-3a98-b3fc-0900f6b4de41",
       "displayName": "Jazmin Ortenzi",
@@ -90,6 +101,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "91f0f59c-4b17-1c90-d966-b8294b341917",
       "displayName": "Victoria Bosio",
@@ -122,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1080,
    "type": {
     "id": "2",
@@ -138,10 +160,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Mon, October 26th at 12:35 PM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Jazmin Ortenzi",
@@ -159,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T16:34:03.556Z",
+ "updated": "2026-10-26T16:40:28.419Z",
  "open_taken_at": "2026-10-25T18:32:51.204Z",
  "thresholds": {
   "big": 10,
@@ -211,6 +233,28 @@
    "taken_at": "2026-10-26T16:34:03.556Z"
   },
   {
+   "market_id": "1809708",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Victoria Bosio vs. Jazmin Ortenzi be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 34.5,
+   "yes_buy": 35,
+   "no_buy": 66,
+   "taken_at": "2026-10-26T16:34:03.556Z"
+  },
+  {
    "market_id": "1809703",
    "market": "Games spread",
    "group": "game",
@@ -233,20 +277,20 @@
    "taken_at": "2026-10-26T01:03:48.426Z"
   },
   {
-   "market_id": "1809700",
-   "market": "Games spread",
+   "market_id": "1809709",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Victoria Bosio cover -1.5 vs the Jazmin Ortenzi in Victoria Bosio vs. Jazmin Ortenzi?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Victoria Bosio vs. Jazmin Ortenzi be more than 22.5?",
    "sides": [
-    "Victoria Bosio -1.50 (Games)",
-    "Jazmin Ortenzi +1.50 (Games)"
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
    ],
    "teams": [
-    "Victoria Bosio",
-    "Jazmin Ortenzi"
+    null,
+    null
    ],
    "player": null,
    "mid": 34.5,
@@ -277,42 +321,86 @@
    "taken_at": "2026-10-26T16:34:03.556Z"
   },
   {
-   "market_id": "1809708",
-   "market": "Games total",
+   "market_id": "1809704",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Victoria Bosio vs. Jazmin Ortenzi be more than 17.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Victoria Bosio cover -7.5 vs the Jazmin Ortenzi in Victoria Bosio vs. Jazmin Ortenzi?",
    "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
+    "Victoria Bosio -7.50 (Games)",
+    "Jazmin Ortenzi +7.50 (Games)"
    ],
    "teams": [
-    null,
-    null
+    "Victoria Bosio",
+    "Jazmin Ortenzi"
    ],
    "player": null,
-   "mid": 34.5,
-   "yes_buy": 35,
-   "no_buy": 66,
+   "mid": 23.5,
+   "yes_buy": 24,
+   "no_buy": 77,
    "taken_at": "2026-10-26T16:34:03.556Z"
   },
   {
-   "market_id": "1809709",
-   "market": "Games total",
+   "market_id": "1809716",
+   "market": "Set 1 winner",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Victoria Bosio vs. Jazmin Ortenzi be more than 22.5?",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Victoria Bosio win set 1 against Jazmin Ortenzi?",
    "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
+    "Yes: Victoria Bosio win set 1 against Jazmin Ortenzi",
+    "No: Victoria Bosio win set 1 against Jazmin Ortenzi"
    ],
    "teams": [
-    null,
+    "Victoria Bosio",
     null
+   ],
+   "player": null,
+   "mid": 23,
+   "yes_buy": 24,
+   "no_buy": 78,
+   "taken_at": "2026-10-26T16:40:28.419Z"
+  },
+  {
+   "market_id": "1809706",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Victoria Bosio cover -1.5 vs the Jazmin Ortenzi in Victoria Bosio vs. Jazmin Ortenzi?",
+   "sides": [
+    "Victoria Bosio -1.50 (Sets)",
+    "Jazmin Ortenzi +1.50 (Sets)"
+   ],
+   "teams": [
+    "Victoria Bosio",
+    "Jazmin Ortenzi"
+   ],
+   "player": null,
+   "mid": 15.5,
+   "yes_buy": 18,
+   "no_buy": 87,
+   "taken_at": "2026-10-26T05:09:05.532Z"
+  },
+  {
+   "market_id": "1809700",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Victoria Bosio cover -1.5 vs the Jazmin Ortenzi in Victoria Bosio vs. Jazmin Ortenzi?",
+   "sides": [
+    "Victoria Bosio -1.50 (Games)",
+    "Jazmin Ortenzi +1.50 (Games)"
+   ],
+   "teams": [
+    "Victoria Bosio",
+    "Jazmin Ortenzi"
    ],
    "player": null,
    "mid": 34.5,
@@ -331,28 +419,6 @@
    "sides": [
     "Victoria Bosio -4.50 (Games)",
     "Jazmin Ortenzi +4.50 (Games)"
-   ],
-   "teams": [
-    "Victoria Bosio",
-    "Jazmin Ortenzi"
-   ],
-   "player": null,
-   "mid": 23.5,
-   "yes_buy": 24,
-   "no_buy": 77,
-   "taken_at": "2026-10-26T16:34:03.556Z"
-  },
-  {
-   "market_id": "1809704",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Victoria Bosio cover -7.5 vs the Jazmin Ortenzi in Victoria Bosio vs. Jazmin Ortenzi?",
-   "sides": [
-    "Victoria Bosio -7.50 (Games)",
-    "Jazmin Ortenzi +7.50 (Games)"
    ],
    "teams": [
     "Victoria Bosio",
@@ -407,31 +473,29 @@
    "yes_buy": 50,
    "no_buy": 55,
    "taken_at": "2026-10-26T06:13:46.016Z"
-  },
-  {
-   "market_id": "1809706",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Victoria Bosio cover -1.5 vs the Jazmin Ortenzi in Victoria Bosio vs. Jazmin Ortenzi?",
-   "sides": [
-    "Victoria Bosio -1.50 (Sets)",
-    "Jazmin Ortenzi +1.50 (Sets)"
-   ],
-   "teams": [
-    "Victoria Bosio",
-    "Jazmin Ortenzi"
-   ],
-   "player": null,
-   "mid": 15.5,
-   "yes_buy": 18,
-   "no_buy": 87,
-   "taken_at": "2026-10-26T05:09:05.532Z"
   }
  ],
  "edges": [
+  {
+   "key": "1809708:1",
+   "market_id": "1809708",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Victoria Bosio vs. Jazmin Ortenzi be more than 17.5?",
+   "side": "Under 17.5 (Games)",
+   "open_chance": 66,
+   "now_chance": 35,
+   "open_odds": "-194",
+   "now_odds": "+186",
+   "edge": 31,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (31 pts), likely news",
+   "context": "Jazmin Ortenzi 0 · Victoria Bosio 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T16:40:28.419Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1808315:0",
    "market_id": "1808315",
@@ -440,15 +504,55 @@
    "question": "Who will win in the upcoming wta event Victoria Bosio vs Jazmin Ortenzi scheduled for October 26, 2026 at 1:00 PM UTC?",
    "side": "Victoria Bosio win",
    "open_chance": 32,
-   "now_chance": 25,
+   "now_chance": 20,
    "open_odds": "+213",
-   "now_odds": "+300",
-   "edge": 7,
+   "now_odds": "+400",
+   "edge": 12,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Jazmin Ortenzi 0 · Victoria Bosio 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T05:34:16.720Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1809705:1",
+   "market_id": "1809705",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Victoria Bosio cover 7.5 vs the Jazmin Ortenzi in Victoria Bosio vs. Jazmin Ortenzi?",
+   "side": "Jazmin Ortenzi -7.50 (Games)",
+   "open_chance": 40,
+   "now_chance": 32,
+   "open_odds": "+150",
+   "now_odds": "+213",
+   "edge": 8,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Jazmin Ortenzi not above the games spread right now",
+   "context": "Jazmin Ortenzi 0 · Victoria Bosio 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T16:40:28.419Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1809701:0",
+   "market_id": "1809701",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Victoria Bosio cover 1.5 vs the Jazmin Ortenzi in Victoria Bosio vs. Jazmin Ortenzi?",
+   "side": "Victoria Bosio +1.50 (Games)",
+   "open_chance": 35,
+   "now_chance": 27,
+   "open_odds": "+186",
+   "now_odds": "+270",
+   "edge": 8,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-10-26T05:34:16.720Z",
+   "context": "Jazmin Ortenzi 0 · Victoria Bosio 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T16:40:28.419Z",
    "status": "open",
    "kalshi": null
   },
@@ -467,13 +571,55 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Jazmin Ortenzi 0 · Victoria Bosio 0 · 1st Set (games by set)",
    "first_seen": "2026-10-26T13:00:13.746Z",
    "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "news:1809708:1",
+   "key": "1809708:1",
+   "at": "2026-10-26T16:40:28.419Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+186",
+   "now_chance": 35,
+   "edge": 31,
+   "text": "Big move, likely news: Under 17.5 (Games) (Games total) is 31 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-vicbos-jazort-2026-10-26"
+  },
+  {
+   "id": "new_edge:1808315:0:big",
+   "key": "1808315:0",
+   "at": "2026-10-26T16:40:28.419Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Victoria Bosio win",
+   "market": "Moneyline",
+   "now_odds": "+400",
+   "now_chance": 20,
+   "edge": 12,
+   "text": "New big edge: Victoria Bosio win (Moneyline), 12 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-vicbos-jazort-2026-10-26"
+  },
+  {
+   "id": "new_edge:1809701:0:slight",
+   "key": "1809701:0",
+   "at": "2026-10-26T16:40:28.419Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Victoria Bosio +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+270",
+   "now_chance": 27,
+   "edge": 8,
+   "text": "New slight edge: Victoria Bosio +1.50 (Games) (Games spread), 8 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-vicbos-jazort-2026-10-26"
+  },
   {
    "id": "new_edge:1808315:0:slight",
    "key": "1808315:0",
@@ -505,7 +651,10 @@
  ],
  "alert_seen": [
   "new_edge:1808315:0:slight",
-  "new_edge:1809703:0:slight"
+  "new_edge:1809703:0:slight",
+  "news:1809708:1",
+  "new_edge:1808315:0:big",
+  "new_edge:1809701:0:slight"
  ],
  "kalshi_checked": null
 }
