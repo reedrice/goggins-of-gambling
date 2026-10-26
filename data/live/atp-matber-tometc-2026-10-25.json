@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185182",
-  "fetched_at": "2026-10-26T12:41:35.025Z",
+  "fetched_at": "2026-10-26T12:47:28.144Z",
   "tennis": true,
   "tennis_match": {
    "id": "185182",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Mon, October 26th at 8:40 AM EDT",
-     "shortDetail": "10/26 - 8:40 AM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Matteo Berrettini (ITA) leads Tomas Martin Etcheverry (ARG) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "b058324c-2f80-73a2-2e25-82b8abe00a76",
       "displayName": "Tomas Martin Etcheverry",
@@ -87,6 +98,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "874554f7-7862-cfa9-36d5-5ef4d437f407",
       "displayName": "Matteo Berrettini",
@@ -119,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 10,
    "type": {
     "id": "1",
@@ -135,10 +157,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Mon, October 26th at 8:40 AM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Tomas Martin Etcheverry",
@@ -156,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T12:41:34.944Z",
+ "updated": "2026-10-26T12:47:28.088Z",
  "open_taken_at": "2026-10-24T11:16:09.617Z",
  "thresholds": {
   "big": 10,
@@ -227,50 +249,6 @@
    "mid": 79.5,
    "yes_buy": 81,
    "no_buy": 22,
-   "taken_at": "2026-10-26T12:38:04.373Z"
-  },
-  {
-   "market_id": "1749668",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Matteo Berrettini cover 4.5 vs the Tomas Martin Etcheverry in Matteo Berrettini vs. Tomas Martin Etcheverry?",
-   "sides": [
-    "Matteo Berrettini +4.50 (Games)",
-    "Tomas Etcheverry -4.50 (Games)"
-   ],
-   "teams": [
-    "Matteo Berrettini",
-    "Tomas Etcheverry"
-   ],
-   "player": null,
-   "mid": 77.5,
-   "yes_buy": 78,
-   "no_buy": 23,
-   "taken_at": "2026-10-26T12:38:04.373Z"
-  },
-  {
-   "market_id": "1749670",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Matteo Berrettini cover 7.5 vs the Tomas Martin Etcheverry in Matteo Berrettini vs. Tomas Martin Etcheverry?",
-   "sides": [
-    "Matteo Berrettini +7.50 (Games)",
-    "Tomas Etcheverry -7.50 (Games)"
-   ],
-   "teams": [
-    "Matteo Berrettini",
-    "Tomas Etcheverry"
-   ],
-   "player": null,
-   "mid": 77.5,
-   "yes_buy": 78,
-   "no_buy": 23,
    "taken_at": "2026-10-26T12:38:04.373Z"
   },
   {
@@ -450,28 +428,6 @@
    "taken_at": "2026-10-25T16:43:54.145Z"
   },
   {
-   "market_id": "1749669",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Matteo Berrettini cover -7.5 vs the Tomas Martin Etcheverry in Matteo Berrettini vs. Tomas Martin Etcheverry?",
-   "sides": [
-    "Matteo Berrettini -7.50 (Games)",
-    "Tomas Etcheverry +7.50 (Games)"
-   ],
-   "teams": [
-    "Matteo Berrettini",
-    "Tomas Etcheverry"
-   ],
-   "player": null,
-   "mid": 24.5,
-   "yes_buy": 25,
-   "no_buy": 76,
-   "taken_at": "2026-10-26T12:38:04.373Z"
-  },
-  {
    "market_id": "1749667",
    "market": "Games spread",
    "group": "game",
@@ -492,6 +448,72 @@
    "yes_buy": 22,
    "no_buy": 79,
    "taken_at": "2026-10-26T12:38:04.373Z"
+  },
+  {
+   "market_id": "1749668",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Matteo Berrettini cover 4.5 vs the Tomas Martin Etcheverry in Matteo Berrettini vs. Tomas Martin Etcheverry?",
+   "sides": [
+    "Matteo Berrettini +4.50 (Games)",
+    "Tomas Etcheverry -4.50 (Games)"
+   ],
+   "teams": [
+    "Matteo Berrettini",
+    "Tomas Etcheverry"
+   ],
+   "player": null,
+   "mid": 77.5,
+   "yes_buy": 78,
+   "no_buy": 23,
+   "taken_at": "2026-10-26T12:38:04.373Z"
+  },
+  {
+   "market_id": "1749670",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Matteo Berrettini cover 7.5 vs the Tomas Martin Etcheverry in Matteo Berrettini vs. Tomas Martin Etcheverry?",
+   "sides": [
+    "Matteo Berrettini +7.50 (Games)",
+    "Tomas Etcheverry -7.50 (Games)"
+   ],
+   "teams": [
+    "Matteo Berrettini",
+    "Tomas Etcheverry"
+   ],
+   "player": null,
+   "mid": 77.5,
+   "yes_buy": 78,
+   "no_buy": 23,
+   "taken_at": "2026-10-26T12:38:04.373Z"
+  },
+  {
+   "market_id": "1749669",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Matteo Berrettini cover -7.5 vs the Tomas Martin Etcheverry in Matteo Berrettini vs. Tomas Martin Etcheverry?",
+   "sides": [
+    "Matteo Berrettini -7.50 (Games)",
+    "Tomas Etcheverry +7.50 (Games)"
+   ],
+   "teams": [
+    "Matteo Berrettini",
+    "Tomas Etcheverry"
+   ],
+   "player": null,
+   "mid": 24.5,
+   "yes_buy": 25,
+   "no_buy": 76,
+   "taken_at": "2026-10-26T12:38:04.373Z"
   }
  ],
  "edges": [
@@ -510,8 +532,28 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Tomas Martin Etcheverry 0 · Matteo Berrettini 1 · 1st Set (games by set)",
    "first_seen": "2026-10-26T12:32:39.708Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1749674:1",
+   "market_id": "1749674",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Matteo Berrettini vs. Tomas Martin Etcheverry be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 45,
+   "now_chance": 39,
+   "open_odds": "+122",
+   "now_odds": "+156",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Tomas Martin Etcheverry 0 · Matteo Berrettini 1 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T12:38:04.373Z",
    "status": "open",
    "kalshi": null
   },
@@ -523,14 +565,14 @@
    "question": "Who will win in the upcoming atp event Matteo Berrettini vs Tomas Martin Etcheverry scheduled for October 25, 2026 at 9:00 AM UTC?",
    "side": "Matteo Berrettini win",
    "open_chance": 68,
-   "now_chance": 63,
+   "now_chance": 64,
    "open_odds": "-213",
-   "now_odds": "-170",
-   "edge": 5,
+   "now_odds": "-178",
+   "edge": 4,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Tomas Martin Etcheverry 0 · Matteo Berrettini 1 · 1st Set (games by set)",
    "first_seen": "2026-10-25T16:43:54.145Z",
    "status": "open",
    "kalshi": null
@@ -550,28 +592,8 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Tomas Martin Etcheverry 0 · Matteo Berrettini 1 · 1st Set (games by set)",
    "first_seen": "2026-10-26T12:26:45.354Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1749674:1",
-   "market_id": "1749674",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Matteo Berrettini vs. Tomas Martin Etcheverry be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 45,
-   "now_chance": 41,
-   "open_odds": "+122",
-   "now_odds": "+144",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-10-26T12:38:04.373Z",
    "status": "open",
    "kalshi": null
   }
