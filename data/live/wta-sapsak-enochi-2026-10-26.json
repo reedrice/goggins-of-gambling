@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187277",
-  "fetched_at": "2026-10-26T15:09:49.481Z",
+  "fetched_at": "2026-10-26T15:16:21.364Z",
   "tennis": true,
   "tennis_match": {
    "id": "187277",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Enola Chiesa (ITA) leads Sapfo Sakellaridi (GRE) 5-2",
+     "text": "Sapfo Sakellaridi (GRE) is tied with Enola Chiesa (ITA) 2-6 1-0",
      "type": "event"
     }
    ],
@@ -55,9 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -97,9 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
-       "value": 2
+       "value": 2,
+       "winner": false
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -134,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1081,
    "type": {
     "id": "2",
@@ -152,14 +167,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Enola Chiesa",
    "alias": "Enola Chiesa",
    "name": "Enola Chiesa",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Sapfo Sakellaridi",
@@ -171,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T15:09:49.334Z",
+ "updated": "2026-10-26T15:16:21.301Z",
  "open_taken_at": "2026-10-25T17:49:41.480Z",
  "thresholds": {
   "big": 10,
@@ -223,48 +238,26 @@
    "taken_at": "2026-10-26T13:32:23.049Z"
   },
   {
-   "market_id": "1807505",
+   "market_id": "1807506",
    "market": "Games total",
    "group": "game",
    "mtype": "total",
    "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Sapfo Sakellaridi vs. Enola Chiesa be more than 17.5?",
+   "line": 22.5,
+   "question": "Will the total in Sapfo Sakellaridi vs. Enola Chiesa be more than 22.5?",
    "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
    ],
    "teams": [
     null,
     null
    ],
    "player": null,
-   "mid": 77.5,
-   "yes_buy": 78,
-   "no_buy": 23,
-   "taken_at": "2026-10-26T13:45:29.898Z"
-  },
-  {
-   "market_id": "1807504",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Sapfo Sakellaridi cover 1.5 vs the Enola Chiesa in Sapfo Sakellaridi vs. Enola Chiesa?",
-   "sides": [
-    "Sapfo Sakellaridi +1.50 (Sets)",
-    "Enola Chiesa -1.50 (Sets)"
-   ],
-   "teams": [
-    "Sapfo Sakellaridi",
-    "Enola Chiesa"
-   ],
-   "player": null,
-   "mid": 54.5,
-   "yes_buy": 55,
-   "no_buy": 46,
-   "taken_at": "2026-10-26T13:32:23.049Z"
+   "mid": 41,
+   "yes_buy": 42,
+   "no_buy": 60,
+   "taken_at": "2026-10-26T07:18:57.846Z"
   },
   {
    "market_id": "1807508",
@@ -289,28 +282,6 @@
    "taken_at": "2026-10-26T13:32:23.049Z"
   },
   {
-   "market_id": "1807506",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Sapfo Sakellaridi vs. Enola Chiesa be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 41,
-   "yes_buy": 42,
-   "no_buy": 60,
-   "taken_at": "2026-10-26T07:18:57.846Z"
-  },
-  {
    "market_id": "1807500",
    "market": "Games spread",
    "group": "game",
@@ -331,28 +302,6 @@
    "yes_buy": 62,
    "no_buy": 39,
    "taken_at": "2026-10-26T13:32:23.049Z"
-  },
-  {
-   "market_id": "1807507",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Sapfo Sakellaridi vs. Enola Chiesa be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 24.5,
-   "yes_buy": 26,
-   "no_buy": 77,
-   "taken_at": "2026-10-26T13:12:07.955Z"
   },
   {
    "market_id": "1807501",
@@ -397,6 +346,72 @@
    "yes_buy": 33,
    "no_buy": 68,
    "taken_at": "2026-10-26T13:32:23.049Z"
+  },
+  {
+   "market_id": "1807505",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Sapfo Sakellaridi vs. Enola Chiesa be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 77.5,
+   "yes_buy": 78,
+   "no_buy": 23,
+   "taken_at": "2026-10-26T13:45:29.898Z"
+  },
+  {
+   "market_id": "1807504",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Sapfo Sakellaridi cover 1.5 vs the Enola Chiesa in Sapfo Sakellaridi vs. Enola Chiesa?",
+   "sides": [
+    "Sapfo Sakellaridi +1.50 (Sets)",
+    "Enola Chiesa -1.50 (Sets)"
+   ],
+   "teams": [
+    "Sapfo Sakellaridi",
+    "Enola Chiesa"
+   ],
+   "player": null,
+   "mid": 54.5,
+   "yes_buy": 55,
+   "no_buy": 46,
+   "taken_at": "2026-10-26T13:32:23.049Z"
+  },
+  {
+   "market_id": "1807507",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Sapfo Sakellaridi vs. Enola Chiesa be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 24.5,
+   "yes_buy": 26,
+   "no_buy": 77,
+   "taken_at": "2026-10-26T13:12:07.955Z"
   },
   {
    "market_id": "1807498",
@@ -496,14 +511,14 @@
    "question": "Who will win in the upcoming wta event Sapfo Sakellaridi vs Enola Chiesa scheduled for October 26, 2026 at 9:00 AM UTC?",
    "side": "Sapfo Sakellaridi win",
    "open_chance": 58,
-   "now_chance": 22,
+   "now_chance": 28,
    "open_odds": "-138",
-   "now_odds": "+355",
-   "edge": 36,
+   "now_odds": "+257",
+   "edge": 30,
    "tier": "big",
-   "class": "news",
-   "reason": "Big move (36 pts), likely news",
-   "context": "Enola Chiesa 5 · Sapfo Sakellaridi 2 · 1st Set (games by set)",
+   "class": "score",
+   "reason": "Explained by score: Sapfo Sakellaridi trailing in sets",
+   "context": "Enola Chiesa 6, 0 · Sapfo Sakellaridi 2, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T07:18:57.846Z",
    "status": "open",
    "kalshi": null
@@ -516,14 +531,14 @@
    "question": "Will the Sapfo Sakellaridi cover 4.5 vs the Enola Chiesa in Sapfo Sakellaridi vs. Enola Chiesa?",
    "side": "Sapfo Sakellaridi +4.50 (Games)",
    "open_chance": 62,
-   "now_chance": 39,
+   "now_chance": 42,
    "open_odds": "-163",
-   "now_odds": "+156",
-   "edge": 23,
+   "now_odds": "+138",
+   "edge": 20,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Enola Chiesa 5 · Sapfo Sakellaridi 2 · 1st Set (games by set)",
+   "context": "Enola Chiesa 6, 0 · Sapfo Sakellaridi 2, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T14:51:58.294Z",
    "status": "open",
    "kalshi": null
@@ -536,35 +551,15 @@
    "question": "Will the Sapfo Sakellaridi cover 7.5 vs the Enola Chiesa in Sapfo Sakellaridi vs. Enola Chiesa?",
    "side": "Enola Chiesa -7.50 (Games)",
    "open_chance": 39,
-   "now_chance": 21,
+   "now_chance": 23,
    "open_odds": "+156",
-   "now_odds": "+376",
-   "edge": 18,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Enola Chiesa not above the games spread right now",
-   "context": "Enola Chiesa 5 · Sapfo Sakellaridi 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T13:57:49.679Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1807504:1",
-   "market_id": "1807504",
-   "market": "Sets spread",
-   "group": "game",
-   "question": "Will the Sapfo Sakellaridi cover 1.5 vs the Enola Chiesa in Sapfo Sakellaridi vs. Enola Chiesa?",
-   "side": "Enola Chiesa -1.50 (Sets)",
-   "open_chance": 46,
-   "now_chance": 30,
-   "open_odds": "+117",
-   "now_odds": "+233",
+   "now_odds": "+335",
    "edge": 16,
    "tier": "big",
    "class": "score",
-   "reason": "Explained by score: Enola Chiesa not above the sets spread right now",
-   "context": "Enola Chiesa 5 · Sapfo Sakellaridi 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T13:45:29.898Z",
+   "reason": "Explained by score: Enola Chiesa not above the games spread right now",
+   "context": "Enola Chiesa 6, 0 · Sapfo Sakellaridi 2, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T13:57:49.679Z",
    "status": "open",
    "kalshi": null
   },
@@ -576,15 +571,35 @@
    "question": "Will the total in Sapfo Sakellaridi vs. Enola Chiesa be more than 2.5?",
    "side": "Under 2.5 (Sets)",
    "open_chance": 74,
-   "now_chance": 61,
+   "now_chance": 60,
    "open_odds": "-285",
-   "now_odds": "-156",
-   "edge": 13,
+   "now_odds": "-150",
+   "edge": 14,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Enola Chiesa 5 · Sapfo Sakellaridi 2 · 1st Set (games by set)",
+   "context": "Enola Chiesa 6, 0 · Sapfo Sakellaridi 2, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T14:04:49.469Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1807506:1",
+   "market_id": "1807506",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Sapfo Sakellaridi vs. Enola Chiesa be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 60,
+   "now_chance": 55,
+   "open_odds": "-150",
+   "now_odds": "-122",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Enola Chiesa 6, 0 · Sapfo Sakellaridi 2, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T15:16:21.301Z",
    "status": "open",
    "kalshi": null
   },
@@ -605,6 +620,26 @@
    "reason": "Explained by score: Sapfo Sakellaridi not above the games spread right now",
    "context": "Enola Chiesa 2 · Sapfo Sakellaridi 0 · 1st Set (games by set)",
    "first_seen": "2026-10-26T07:12:51.164Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1807504:1",
+   "market_id": "1807504",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Sapfo Sakellaridi cover 1.5 vs the Enola Chiesa in Sapfo Sakellaridi vs. Enola Chiesa?",
+   "side": "Enola Chiesa -1.50 (Sets)",
+   "open_chance": 46,
+   "now_chance": 30,
+   "open_odds": "+117",
+   "now_odds": "+233",
+   "edge": 16,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Enola Chiesa not above the sets spread right now",
+   "context": "Enola Chiesa 5 · Sapfo Sakellaridi 2 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T13:45:29.898Z",
    "status": "gone",
    "kalshi": null
   },
@@ -710,6 +745,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1807506:1:slight",
+   "key": "1807506:1",
+   "at": "2026-10-26T15:16:21.301Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-122",
+   "now_chance": 55,
+   "edge": 5,
+   "text": "New slight edge: Under 22.5 (Games) (Games total), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-sapsak-enochi-2026-10-26"
+  },
   {
    "id": "gone:1807505:1:2026-10-26T15:03:23.867Z",
    "key": "1807505:1",
@@ -971,7 +1020,8 @@
   "gone:1807498:0:2026-10-26T12:38:15.786Z",
   "new_edge:1807505:1:slight",
   "gone:1807505:0:2026-10-26T14:57:55.574Z",
-  "gone:1807505:1:2026-10-26T15:03:23.867Z"
+  "gone:1807505:1:2026-10-26T15:03:23.867Z",
+  "new_edge:1807506:1:slight"
  ],
  "kalshi_checked": null
 }
