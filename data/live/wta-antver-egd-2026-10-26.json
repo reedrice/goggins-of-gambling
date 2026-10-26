@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185762",
-  "fetched_at": "2026-10-26T14:52:00.335Z",
+  "fetched_at": "2026-10-26T14:57:57.674Z",
   "tennis": true,
   "tennis_match": {
    "id": "185762",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Antonia Vergara Rivera (CHI) leads Eduarda Gomes (BRA) 6-3",
+     "text": "Antonia Vergara Rivera (CHI) is tied with Eduarda Gomes (BRA) 6-3 0-0",
      "type": "event"
     }
    ],
@@ -55,9 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
-       "value": 3
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -97,9 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -134,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1080,
    "type": {
     "id": "2",
@@ -152,8 +167,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Eduarda Gomes",
@@ -165,13 +180,13 @@
    "abbr": "Antonia Vergara Rivera",
    "alias": "Antonia Vergara Rivera",
    "name": "Antonia Vergara Rivera",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T14:52:00.238Z",
+ "updated": "2026-10-26T14:57:57.567Z",
  "open_taken_at": "2026-10-25T20:17:31.470Z",
  "thresholds": {
   "big": 10,
@@ -267,6 +282,28 @@
    "taken_at": "2026-10-26T14:15:39.205Z"
   },
   {
+   "market_id": "1810694",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Antonia Vergara Rivera cover -4.5 vs the Eduarda Gomes in Antonia Vergara Rivera vs. Eduarda Gomes?",
+   "sides": [
+    "Antonia Vergara -4.50 (Games)",
+    "Eduarda Gomes +4.50 (Games)"
+   ],
+   "teams": [
+    "Antonia Vergara",
+    "Eduarda Gomes"
+   ],
+   "player": null,
+   "mid": 69.5,
+   "yes_buy": 72,
+   "no_buy": 33,
+   "taken_at": "2026-10-26T08:38:37.433Z"
+  },
+  {
    "market_id": "1810698",
    "market": "Sets spread",
    "group": "game",
@@ -287,6 +324,50 @@
    "yes_buy": 73,
    "no_buy": 31,
    "taken_at": "2026-10-25T23:01:51.417Z"
+  },
+  {
+   "market_id": "1810701",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Antonia Vergara Rivera vs. Eduarda Gomes be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 30.5,
+   "yes_buy": 31,
+   "no_buy": 70,
+   "taken_at": "2026-10-26T14:04:51.241Z"
+  },
+  {
+   "market_id": "1810702",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Antonia Vergara Rivera vs. Eduarda Gomes be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 9,
+   "yes_buy": 11,
+   "no_buy": 93,
+   "taken_at": "2026-10-26T14:10:57.556Z"
   },
   {
    "market_id": "1810700",
@@ -355,72 +436,6 @@
    "taken_at": "2026-10-26T14:32:45.414Z"
   },
   {
-   "market_id": "1810701",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Antonia Vergara Rivera vs. Eduarda Gomes be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 30.5,
-   "yes_buy": 31,
-   "no_buy": 70,
-   "taken_at": "2026-10-26T14:04:51.241Z"
-  },
-  {
-   "market_id": "1810702",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Antonia Vergara Rivera vs. Eduarda Gomes be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 9,
-   "yes_buy": 11,
-   "no_buy": 93,
-   "taken_at": "2026-10-26T14:10:57.556Z"
-  },
-  {
-   "market_id": "1810694",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Antonia Vergara Rivera cover -4.5 vs the Eduarda Gomes in Antonia Vergara Rivera vs. Eduarda Gomes?",
-   "sides": [
-    "Antonia Vergara -4.50 (Games)",
-    "Eduarda Gomes +4.50 (Games)"
-   ],
-   "teams": [
-    "Antonia Vergara",
-    "Eduarda Gomes"
-   ],
-   "player": null,
-   "mid": 69.5,
-   "yes_buy": 72,
-   "no_buy": 33,
-   "taken_at": "2026-10-26T08:38:37.433Z"
-  },
-  {
    "market_id": "1810708",
    "market": "Set 1 winner",
    "group": "game",
@@ -467,6 +482,26 @@
  ],
  "edges": [
   {
+   "key": "1810694:1",
+   "market_id": "1810694",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Antonia Vergara Rivera cover -4.5 vs the Eduarda Gomes in Antonia Vergara Rivera vs. Eduarda Gomes?",
+   "side": "Eduarda Gomes +4.50 (Games)",
+   "open_chance": 33,
+   "now_chance": 22,
+   "open_odds": "+203",
+   "now_odds": "+355",
+   "edge": 11,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Eduarda Gomes 3, 0 · Antonia Vergara Rivera 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T14:04:51.241Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1810701:0",
    "market_id": "1810701",
    "market": "Games total",
@@ -474,74 +509,14 @@
    "question": "Will the total in Antonia Vergara Rivera vs. Eduarda Gomes be more than 22.5?",
    "side": "Over 22.5 (Games)",
    "open_chance": 31,
-   "now_chance": 19,
+   "now_chance": 22,
    "open_odds": "+223",
-   "now_odds": "+426",
-   "edge": 12,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Eduarda Gomes 3 · Antonia Vergara Rivera 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T14:10:57.556Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1810700:0",
-   "market_id": "1810700",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Antonia Vergara Rivera vs. Eduarda Gomes be more than 17.5?",
-   "side": "Over 17.5 (Games)",
-   "open_chance": 60,
-   "now_chance": 50,
-   "open_odds": "-150",
-   "now_odds": "+100",
-   "edge": 10,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Eduarda Gomes 3 · Antonia Vergara Rivera 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T14:10:57.556Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1810703:0",
-   "market_id": "1810703",
-   "market": "Sets total",
-   "group": "game",
-   "question": "Will the total in Antonia Vergara Rivera vs. Eduarda Gomes be more than 2.5?",
-   "side": "Over 2.5 (Sets)",
-   "open_chance": 27,
-   "now_chance": 19,
-   "open_odds": "+270",
-   "now_odds": "+426",
-   "edge": 8,
+   "now_odds": "+355",
+   "edge": 9,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Eduarda Gomes 3 · Antonia Vergara Rivera 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T14:45:52.221Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1810698:1",
-   "market_id": "1810698",
-   "market": "Sets spread",
-   "group": "game",
-   "question": "Will the Antonia Vergara Rivera cover -1.5 vs the Eduarda Gomes in Antonia Vergara Rivera vs. Eduarda Gomes?",
-   "side": "Eduarda Gomes +1.50 (Sets)",
-   "open_chance": 31,
-   "now_chance": 25,
-   "open_odds": "+223",
-   "now_odds": "+300",
-   "edge": 6,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Eduarda Gomes 3 · Antonia Vergara Rivera 6 · 1st Set (games by set)",
+   "context": "Eduarda Gomes 3, 0 · Antonia Vergara Rivera 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T14:10:57.556Z",
    "status": "open",
    "kalshi": null
@@ -567,22 +542,42 @@
    "kalshi": null
   },
   {
-   "key": "1810694:1",
-   "market_id": "1810694",
-   "market": "Games spread",
+   "key": "1810700:0",
+   "market_id": "1810700",
+   "market": "Games total",
    "group": "game",
-   "question": "Will the Antonia Vergara Rivera cover -4.5 vs the Eduarda Gomes in Antonia Vergara Rivera vs. Eduarda Gomes?",
-   "side": "Eduarda Gomes +4.50 (Games)",
-   "open_chance": 33,
-   "now_chance": 18,
-   "open_odds": "+203",
-   "now_odds": "+456",
-   "edge": 15,
+   "question": "Will the total in Antonia Vergara Rivera vs. Eduarda Gomes be more than 17.5?",
+   "side": "Over 17.5 (Games)",
+   "open_chance": 60,
+   "now_chance": 50,
+   "open_odds": "-150",
+   "now_odds": "+100",
+   "edge": 10,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Eduarda Gomes 2 · Antonia Vergara Rivera 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T14:04:51.241Z",
+   "context": "Eduarda Gomes 3 · Antonia Vergara Rivera 6 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T14:10:57.556Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1810703:0",
+   "market_id": "1810703",
+   "market": "Sets total",
+   "group": "game",
+   "question": "Will the total in Antonia Vergara Rivera vs. Eduarda Gomes be more than 2.5?",
+   "side": "Over 2.5 (Sets)",
+   "open_chance": 27,
+   "now_chance": 19,
+   "open_odds": "+270",
+   "now_odds": "+426",
+   "edge": 8,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Eduarda Gomes 3 · Antonia Vergara Rivera 6 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T14:45:52.221Z",
    "status": "gone",
    "kalshi": null
   },
@@ -603,6 +598,26 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-26T14:04:51.241Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1810698:1",
+   "market_id": "1810698",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Antonia Vergara Rivera cover -1.5 vs the Eduarda Gomes in Antonia Vergara Rivera vs. Eduarda Gomes?",
+   "side": "Eduarda Gomes +1.50 (Sets)",
+   "open_chance": 31,
+   "now_chance": 25,
+   "open_odds": "+223",
+   "now_odds": "+300",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Eduarda Gomes 3 · Antonia Vergara Rivera 6 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T14:10:57.556Z",
    "status": "gone",
    "kalshi": null
   },
@@ -668,6 +683,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1810703:0:2026-10-26T14:45:52.221Z",
+   "key": "1810703:0",
+   "at": "2026-10-26T14:57:57.567Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 2.5 (Sets)",
+   "market": "Sets total",
+   "now_odds": "+426",
+   "now_chance": 19,
+   "edge": 8,
+   "text": "Edge gone: Over 2.5 (Sets) (Sets total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-antver-egd-2026-10-26"
+  },
+  {
+   "id": "gone:1810698:1:2026-10-26T14:10:57.556Z",
+   "key": "1810698:1",
+   "at": "2026-10-26T14:57:57.567Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Eduarda Gomes +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+300",
+   "now_chance": 25,
+   "edge": 6,
+   "text": "Edge gone: Eduarda Gomes +1.50 (Sets) (Sets spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-antver-egd-2026-10-26"
+  },
   {
    "id": "new_edge:1810703:0:slight",
    "key": "1810703:0",
@@ -939,7 +982,9 @@
   "gone:1810700:0:2026-10-26T14:10:57.556Z",
   "new_edge:1810694:1:big",
   "new_edge:1810701:0:big",
-  "new_edge:1810703:0:slight"
+  "new_edge:1810703:0:slight",
+  "gone:1810703:0:2026-10-26T14:45:52.221Z",
+  "gone:1810698:1:2026-10-26T14:10:57.556Z"
  ],
  "kalshi_checked": null
 }
