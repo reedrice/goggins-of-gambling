@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185756",
-  "fetched_at": "2026-10-26T18:53:57.800Z",
+  "fetched_at": "2026-10-26T18:57:57.930Z",
   "tennis": true,
   "tennis_match": {
    "id": "185756",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Luiza Fullana (BRA) leads Lourdes Ayala (ARG) 4-6 4-4",
+     "text": "Luiza Fullana (BRA) is tied with Lourdes Ayala (ARG) 4-6 5-4",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
        "value": 6,
@@ -102,14 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
        "value": 4,
        "winner": false
       },
       {
-       "value": 4
+       "value": 5
       }
      ],
      "athlete": {
@@ -186,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T18:53:57.610Z",
+ "updated": "2026-10-26T18:57:57.756Z",
  "open_taken_at": "2026-10-25T18:32:51.187Z",
  "thresholds": {
   "big": 10,
@@ -533,15 +533,35 @@
    "question": "Who will win in the upcoming wta event Luiza Fullana vs Lourdes Ayala scheduled for October 26, 2026 at 1:00 PM UTC?",
    "side": "Luiza Fullana win",
    "open_chance": 85,
-   "now_chance": 42,
+   "now_chance": 44,
    "open_odds": "-567",
-   "now_odds": "+138",
-   "edge": 43,
+   "now_odds": "+127",
+   "edge": 41,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Luiza Fullana trailing in sets",
-   "context": "Lourdes Ayala 6, 4 · Luiza Fullana 4, 4 · 2nd Set (games by set)",
+   "context": "Lourdes Ayala 6, 4 · Luiza Fullana 4, 5 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T04:53:30.285Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1809735:1",
+   "market_id": "1809735",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Luiza Fullana win set 2 against Lourdes Ayala?",
+   "side": "No: Luiza Fullana win set 2 against Lourdes Ayala",
+   "open_chance": 65,
+   "now_chance": 40,
+   "open_odds": "-186",
+   "now_odds": "+150",
+   "edge": 25,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (25 pts), likely news",
+   "context": "Lourdes Ayala 6, 4 · Luiza Fullana 4, 5 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T18:57:57.756Z",
    "status": "open",
    "kalshi": null
   },
@@ -807,6 +827,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "news:1809735:1",
+   "key": "1809735:1",
+   "at": "2026-10-26T18:57:57.756Z",
+   "type": "news",
+   "tier": "big",
+   "side": "No: Luiza Fullana win set 2 against Lourdes Ayala",
+   "market": "Set 2 winner",
+   "now_odds": "+150",
+   "now_chance": 40,
+   "edge": 25,
+   "text": "Big move, likely news: No: Luiza Fullana win set 2 against Lourdes Ayala (Set 2 winner) is 25 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-luiful-louaya-2026-10-26"
+  },
   {
    "id": "news:1809728:1",
    "key": "1809728:1",
@@ -1126,7 +1160,8 @@
   "gone:1809729:1:2026-10-26T17:33:24.800Z",
   "new_edge:1809721:0:big",
   "gone:1809721:0:2026-10-26T18:23:23.204Z",
-  "news:1809728:1"
+  "news:1809728:1",
+  "news:1809735:1"
  ],
  "kalshi_checked": null
 }
