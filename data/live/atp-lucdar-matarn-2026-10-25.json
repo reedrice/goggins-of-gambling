@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185177",
-  "fetched_at": "2026-10-26T17:59:52.969Z",
+  "fetched_at": "2026-10-26T18:05:42.772Z",
   "tennis": true,
   "tennis_match": {
    "id": "185177",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Matteo Arnaldi (ITA) leads Luciano Darderi (ITA) 2-1",
+     "text": "Luciano Darderi (ITA) leads Matteo Arnaldi (ITA) 2-2",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
        "value": 2
@@ -98,10 +98,10 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -178,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T17:59:52.850Z",
+ "updated": "2026-10-26T18:05:42.689Z",
  "open_taken_at": "2026-10-24T11:16:09.052Z",
  "thresholds": {
   "big": 10,
@@ -362,28 +362,6 @@
    "taken_at": "2026-10-26T13:23:37.882Z"
   },
   {
-   "market_id": "1749658",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Luciano Darderi vs. Matteo Arnaldi be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 49.5,
-   "yes_buy": 50,
-   "no_buy": 51,
-   "taken_at": "2026-10-26T17:59:52.850Z"
-  },
-  {
    "market_id": "1749664",
    "market": "Set 2 winner",
    "group": "game",
@@ -404,6 +382,28 @@
    "yes_buy": 49,
    "no_buy": 57,
    "taken_at": "2026-10-26T16:11:43.183Z"
+  },
+  {
+   "market_id": "1749658",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Luciano Darderi vs. Matteo Arnaldi be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 49.5,
+   "yes_buy": 50,
+   "no_buy": 51,
+   "taken_at": "2026-10-26T17:59:52.850Z"
   },
   {
    "market_id": "1749647",
@@ -496,6 +496,26 @@
  ],
  "edges": [
   {
+   "key": "1749650:1",
+   "market_id": "1749650",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Luciano Darderi cover 4.5 vs the Matteo Arnaldi in Luciano Darderi vs. Matteo Arnaldi?",
+   "side": "Matteo Arnaldi -4.50 (Games)",
+   "open_chance": 27,
+   "now_chance": 18,
+   "open_odds": "+270",
+   "now_odds": "+456",
+   "edge": 9,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Matteo Arnaldi not above the games spread right now",
+   "context": "Matteo Arnaldi 2 · Luciano Darderi 2 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T18:05:42.689Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1749663:1",
    "market_id": "1749663",
    "market": "Set 1 winner",
@@ -503,14 +523,14 @@
    "question": "Will Luciano Darderi win set 1 against Matteo Arnaldi?",
    "side": "No: Luciano Darderi win set 1 against Matteo Arnaldi",
    "open_chance": 57,
-   "now_chance": 46,
+   "now_chance": 49,
    "open_odds": "-133",
-   "now_odds": "+117",
-   "edge": 11,
-   "tier": "big",
+   "now_odds": "+104",
+   "edge": 8,
+   "tier": "slight",
    "class": "score",
    "reason": "Explained by score: Luciano Darderi not above the games spread right now",
-   "context": "Matteo Arnaldi 2 · Luciano Darderi 1 · 1st Set (games by set)",
+   "context": "Matteo Arnaldi 2 · Luciano Darderi 2 · 1st Set (games by set)",
    "first_seen": "2026-10-26T17:59:52.850Z",
    "status": "open",
    "kalshi": null
@@ -530,7 +550,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Matteo Arnaldi 2 · Luciano Darderi 1 · 1st Set (games by set)",
+   "context": "Matteo Arnaldi 2 · Luciano Darderi 2 · 1st Set (games by set)",
    "first_seen": "2026-10-26T17:59:52.850Z",
    "status": "open",
    "kalshi": null
@@ -543,14 +563,14 @@
    "question": "Will Luciano Darderi win set 2 against Matteo Arnaldi?",
    "side": "No: Luciano Darderi win set 2 against Matteo Arnaldi",
    "open_chance": 57,
-   "now_chance": 52,
+   "now_chance": 50,
    "open_odds": "-133",
-   "now_odds": "-108",
-   "edge": 5,
+   "now_odds": "+100",
+   "edge": 7,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Matteo Arnaldi 2 · Luciano Darderi 1 · 1st Set (games by set)",
+   "context": "Matteo Arnaldi 2 · Luciano Darderi 2 · 1st Set (games by set)",
    "first_seen": "2026-10-26T17:59:52.850Z",
    "status": "open",
    "kalshi": null
@@ -563,15 +583,35 @@
    "question": "Who will win in the upcoming atp event Luciano Darderi vs Matteo Arnaldi scheduled for October 25, 2026 at 9:00 AM UTC?",
    "side": "Matteo Arnaldi win",
    "open_chance": 53,
-   "now_chance": 49,
+   "now_chance": 47,
    "open_odds": "-113",
-   "now_odds": "+104",
-   "edge": 4,
+   "now_odds": "+113",
+   "edge": 6,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Matteo Arnaldi 2 · Luciano Darderi 1 · 1st Set (games by set)",
+   "context": "Matteo Arnaldi 2 · Luciano Darderi 2 · 1st Set (games by set)",
    "first_seen": "2026-10-25T09:03:57.703Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1749647:1",
+   "market_id": "1749647",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Luciano Darderi cover -1.5 vs the Matteo Arnaldi in Luciano Darderi vs. Matteo Arnaldi?",
+   "side": "Matteo Arnaldi +1.50 (Games)",
+   "open_chance": 59,
+   "now_chance": 54,
+   "open_odds": "-144",
+   "now_odds": "-117",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Matteo Arnaldi 2 · Luciano Darderi 2 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T18:05:42.689Z",
    "status": "open",
    "kalshi": null
   },
@@ -657,6 +697,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1749647:1:slight",
+   "key": "1749647:1",
+   "at": "2026-10-26T18:05:42.689Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Matteo Arnaldi +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-117",
+   "now_chance": 54,
+   "edge": 5,
+   "text": "New slight edge: Matteo Arnaldi +1.50 (Games) (Games spread), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-lucdar-matarn-2026-10-25"
+  },
   {
    "id": "new_edge:1749656:1:slight",
    "key": "1749656:1",
@@ -795,7 +849,8 @@
   "new_edge:1749664:1:slight",
   "new_edge:1749398:1:slight",
   "gone:1749648:0:2026-10-26T17:52:36.665Z",
-  "gone:1749664:0:2026-10-26T17:42:50.635Z"
+  "gone:1749664:0:2026-10-26T17:42:50.635Z",
+  "new_edge:1749647:1:slight"
  ],
  "kalshi_checked": null
 }
