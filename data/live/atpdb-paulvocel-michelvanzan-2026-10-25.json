@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-26T11:19:34.418Z"
+  "fetched_at": "2026-10-26T11:25:45.646Z"
  },
- "updated": "2026-10-26T11:19:34.255Z",
+ "updated": "2026-10-26T11:25:45.599Z",
  "open_taken_at": "2026-10-24T12:44:23.956Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-26T11:14:27.061Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1753562:0:2026-10-26T11:14:27.061Z",
+   "key": "1753562:0",
+   "at": "2026-10-26T11:25:45.599Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Paul / Vocel win",
+   "market": "Moneyline",
+   "now_odds": "+100",
+   "now_chance": 50,
+   "edge": 6,
+   "text": "Edge gone: Paul / Vocel win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-paulvocel-michelvanzan-2026-10-25"
+  },
   {
    "id": "new_edge:1753562:0:slight",
    "key": "1753562:0",
@@ -80,7 +94,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1753562:0:slight"
+  "new_edge:1753562:0:slight",
+  "gone:1753562:0:2026-10-26T11:14:27.061Z"
  ],
  "kalshi_checked": null
 }
