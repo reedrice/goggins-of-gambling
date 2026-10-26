@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187293",
-  "fetched_at": "2026-10-26T22:13:26.631Z",
+  "fetched_at": "2026-10-26T22:19:59.256Z",
   "tennis": true,
   "tennis_match": {
    "id": "187293",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Victoria Rodriguez (MEX) is tied with Jessica Hinojosa Gomez (MEX) 1-6 1-0",
+     "text": "Victoria Rodriguez (MEX) is tied with Jessica Hinojosa Gomez (MEX) 1-6 2-0",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
        "value": 6,
@@ -102,14 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
        "value": 1,
        "winner": false
       },
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -186,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T22:13:26.583Z",
+ "updated": "2026-10-26T22:19:59.130Z",
  "open_taken_at": "2026-10-26T20:02:31.623Z",
  "thresholds": {
   "big": 10,
@@ -214,28 +214,6 @@
    "yes_buy": 69,
    "no_buy": 36,
    "taken_at": "2026-10-26T20:23:54.470Z"
-  },
-  {
-   "market_id": "1845735",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Victoria Rodriguez vs. Jessica Hinojosa Gomez be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 57.5,
-   "yes_buy": 58,
-   "no_buy": 43,
-   "taken_at": "2026-10-26T21:36:56.555Z"
   },
   {
    "market_id": "1845736",
@@ -282,6 +260,28 @@
    "taken_at": "2026-10-26T21:36:56.555Z"
   },
   {
+   "market_id": "1845728",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Victoria Rodriguez cover 1.5 vs the Jessica Hinojosa Gomez in Victoria Rodriguez vs. Jessica Hinojosa Gomez?",
+   "sides": [
+    "Victoria Rodriguez +1.50 (Games)",
+    "Jessica Hinojosa -1.50 (Games)"
+   ],
+   "teams": [
+    "Victoria Rodriguez",
+    "Jessica Hinojosa"
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-10-26T21:36:56.555Z"
+  },
+  {
    "market_id": "1845737",
    "market": "Games total",
    "group": "game",
@@ -301,6 +301,28 @@
    "mid": 37.5,
    "yes_buy": 38,
    "no_buy": 63,
+   "taken_at": "2026-10-26T21:36:56.555Z"
+  },
+  {
+   "market_id": "1845735",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Victoria Rodriguez vs. Jessica Hinojosa Gomez be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 57.5,
+   "yes_buy": 58,
+   "no_buy": 43,
    "taken_at": "2026-10-26T21:36:56.555Z"
   },
   {
@@ -478,31 +500,29 @@
    "yes_buy": 34,
    "no_buy": 67,
    "taken_at": "2026-10-26T21:36:56.555Z"
-  },
-  {
-   "market_id": "1845728",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Victoria Rodriguez cover 1.5 vs the Jessica Hinojosa Gomez in Victoria Rodriguez vs. Jessica Hinojosa Gomez?",
-   "sides": [
-    "Victoria Rodriguez +1.50 (Games)",
-    "Jessica Hinojosa -1.50 (Games)"
-   ],
-   "teams": [
-    "Victoria Rodriguez",
-    "Jessica Hinojosa"
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-10-26T21:36:56.555Z"
   }
  ],
  "edges": [
+  {
+   "key": "1845736:1",
+   "market_id": "1845736",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Victoria Rodriguez vs. Jessica Hinojosa Gomez be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 63,
+   "now_chance": 38,
+   "open_odds": "-170",
+   "now_odds": "+163",
+   "edge": 25,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (25 pts), likely news",
+   "context": "Jessica Hinojosa Gomez 6, 0 · Victoria Rodriguez 1, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T21:51:53.213Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1844634:0",
    "market_id": "1844634",
@@ -511,14 +531,14 @@
    "question": "Who will win in the upcoming wta event Victoria Rodriguez vs Jessica Hinojosa Gomez scheduled for October 27, 2026 at 4:00 PM UTC?",
    "side": "Victoria Rodriguez win",
    "open_chance": 69,
-   "now_chance": 31,
+   "now_chance": 51,
    "open_odds": "-223",
-   "now_odds": "+223",
-   "edge": 38,
+   "now_odds": "-104",
+   "edge": 18,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Victoria Rodriguez trailing in sets",
-   "context": "Jessica Hinojosa Gomez 6, 0 · Victoria Rodriguez 1, 1 · 2nd Set (games by set)",
+   "context": "Jessica Hinojosa Gomez 6, 0 · Victoria Rodriguez 1, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T21:51:53.213Z",
    "status": "open",
    "kalshi": null
@@ -531,55 +551,35 @@
    "question": "Will the Victoria Rodriguez cover 4.5 vs the Jessica Hinojosa Gomez in Victoria Rodriguez vs. Jessica Hinojosa Gomez?",
    "side": "Victoria Rodriguez +4.50 (Games)",
    "open_chance": 71,
-   "now_chance": 39,
+   "now_chance": 59,
    "open_odds": "-245",
-   "now_odds": "+156",
-   "edge": 32,
+   "now_odds": "-144",
+   "edge": 12,
    "tier": "big",
-   "class": "news",
-   "reason": "Big move (32 pts), likely news",
-   "context": "Jessica Hinojosa Gomez 6, 0 · Victoria Rodriguez 1, 1 · 2nd Set (games by set)",
+   "class": "edge",
+   "reason": null,
+   "context": "Jessica Hinojosa Gomez 6, 0 · Victoria Rodriguez 1, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T21:57:41.618Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1845736:1",
-   "market_id": "1845736",
-   "market": "Games total",
+   "key": "1845728:1",
+   "market_id": "1845728",
+   "market": "Games spread",
    "group": "game",
-   "question": "Will the total in Victoria Rodriguez vs. Jessica Hinojosa Gomez be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 63,
-   "now_chance": 53,
-   "open_odds": "-170",
-   "now_odds": "-113",
-   "edge": 10,
+   "question": "Will the Victoria Rodriguez cover 1.5 vs the Jessica Hinojosa Gomez in Victoria Rodriguez vs. Jessica Hinojosa Gomez?",
+   "side": "Jessica Hinojosa -1.50 (Games)",
+   "open_chance": 67,
+   "now_chance": 56,
+   "open_odds": "-203",
+   "now_odds": "-127",
+   "edge": 11,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Jessica Hinojosa Gomez 6, 0 · Victoria Rodriguez 1, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-26T21:51:53.213Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1845735:1",
-   "market_id": "1845735",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Victoria Rodriguez vs. Jessica Hinojosa Gomez be more than 17.5?",
-   "side": "Under 17.5 (Games)",
-   "open_chance": 43,
-   "now_chance": 35,
-   "open_odds": "+133",
-   "now_odds": "+186",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Jessica Hinojosa Gomez 6, 0 · Victoria Rodriguez 1, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-26T21:51:53.213Z",
+   "context": "Jessica Hinojosa Gomez 6, 0 · Victoria Rodriguez 1, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T22:19:59.130Z",
    "status": "open",
    "kalshi": null
   },
@@ -664,6 +664,26 @@
    "kalshi": null
   },
   {
+   "key": "1845735:1",
+   "market_id": "1845735",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Victoria Rodriguez vs. Jessica Hinojosa Gomez be more than 17.5?",
+   "side": "Under 17.5 (Games)",
+   "open_chance": 43,
+   "now_chance": 35,
+   "open_odds": "+133",
+   "now_odds": "+186",
+   "edge": 8,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Jessica Hinojosa Gomez 6, 0 · Victoria Rodriguez 1, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T21:51:53.213Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1844634:1",
    "market_id": "1844634",
    "market": "Moneyline",
@@ -705,6 +725,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "news:1845736:1",
+   "key": "1845736:1",
+   "at": "2026-10-26T22:19:59.130Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+163",
+   "now_chance": 38,
+   "edge": 25,
+   "text": "Big move, likely news: Under 22.5 (Games) (Games total) is 25 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-vicrod-jeshin-2026-10-27"
+  },
+  {
+   "id": "new_edge:1845728:1:big",
+   "key": "1845728:1",
+   "at": "2026-10-26T22:19:59.130Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Jessica Hinojosa -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-127",
+   "now_chance": 56,
+   "edge": 11,
+   "text": "New big edge: Jessica Hinojosa -1.50 (Games) (Games spread), 11 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-vicrod-jeshin-2026-10-27"
+  },
   {
    "id": "news:1845730:0",
    "key": "1845730:0",
@@ -1038,7 +1086,9 @@
   "new_edge:1845732:1:slight",
   "news:1845730:0",
   "new_edge:1845735:1:slight",
-  "gone:1845732:1:2026-10-26T22:07:28.931Z"
+  "gone:1845732:1:2026-10-26T22:07:28.931Z",
+  "news:1845736:1",
+  "new_edge:1845728:1:big"
  ],
  "kalshi_checked": null
 }
