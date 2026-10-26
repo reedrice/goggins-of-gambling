@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-26T10:18:57.080Z"
+  "fetched_at": "2026-10-26T10:22:33.535Z"
  },
- "updated": "2026-10-26T10:18:56.960Z",
+ "updated": "2026-10-26T10:22:33.468Z",
  "open_taken_at": "2026-10-25T10:46:13.681Z",
  "thresholds": {
   "big": 10,
@@ -151,6 +151,28 @@
    "taken_at": "2026-10-25T23:28:43.092Z"
   },
   {
+   "market_id": "1794997",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Michael Geerts win set 1 against Niels McDonald?",
+   "sides": [
+    "Yes: Michael Geerts win set 1 against Niels McDonald",
+    "No: Michael Geerts win set 1 against Niels McDonald"
+   ],
+   "teams": [
+    "Michael Geerts",
+    null
+   ],
+   "player": null,
+   "mid": 57,
+   "yes_buy": 59,
+   "no_buy": 45,
+   "taken_at": "2026-10-26T10:12:49.636Z"
+  },
+  {
    "market_id": "1794981",
    "market": "Games spread",
    "group": "game",
@@ -281,31 +303,29 @@
    "yes_buy": 31,
    "no_buy": 70,
    "taken_at": "2026-10-26T10:03:42.206Z"
-  },
-  {
-   "market_id": "1794997",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Michael Geerts win set 1 against Niels McDonald?",
-   "sides": [
-    "Yes: Michael Geerts win set 1 against Niels McDonald",
-    "No: Michael Geerts win set 1 against Niels McDonald"
-   ],
-   "teams": [
-    "Michael Geerts",
-    null
-   ],
-   "player": null,
-   "mid": 57,
-   "yes_buy": 59,
-   "no_buy": 45,
-   "taken_at": "2026-10-26T10:12:49.636Z"
   }
  ],
  "edges": [
+  {
+   "key": "1794997:0",
+   "market_id": "1794997",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Michael Geerts win set 1 against Niels McDonald?",
+   "side": "Yes: Michael Geerts win set 1 against Niels McDonald",
+   "open_chance": 59,
+   "now_chance": 48,
+   "open_odds": "-144",
+   "now_odds": "+108",
+   "edge": 11,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-26T10:22:33.468Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1794982:0",
    "market_id": "1794982",
@@ -314,35 +334,15 @@
    "question": "Will the Michael Geerts cover 1.5 vs the Niels McDonald in Michael Geerts vs. Niels McDonald?",
    "side": "Michael Geerts +1.50 (Games)",
    "open_chance": 59,
-   "now_chance": 46,
+   "now_chance": 50,
    "open_odds": "-144",
-   "now_odds": "+117",
-   "edge": 13,
-   "tier": "big",
+   "now_odds": "+100",
+   "edge": 9,
+   "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-26T10:18:56.960Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1794172:0",
-   "market_id": "1794172",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Michael Geerts vs Niels McDonald scheduled for October 26, 2026 at 9:00 AM UTC?",
-   "side": "Michael Geerts win",
-   "open_chance": 56,
-   "now_chance": 45,
-   "open_odds": "-127",
-   "now_odds": "+122",
-   "edge": 11,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-25T23:43:14.895Z",
    "status": "open",
    "kalshi": null
   },
@@ -407,6 +407,26 @@
    "kalshi": null
   },
   {
+   "key": "1794172:0",
+   "market_id": "1794172",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Michael Geerts vs Niels McDonald scheduled for October 26, 2026 at 9:00 AM UTC?",
+   "side": "Michael Geerts win",
+   "open_chance": 56,
+   "now_chance": 45,
+   "open_odds": "-127",
+   "now_odds": "+122",
+   "edge": 11,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-25T23:43:14.895Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1794981:1",
    "market_id": "1794981",
    "market": "Games spread",
@@ -428,6 +448,48 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1794997:0:big",
+   "key": "1794997:0",
+   "at": "2026-10-26T10:22:33.468Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Yes: Michael Geerts win set 1 against Niels McDonald",
+   "market": "Set 1 winner",
+   "now_odds": "+108",
+   "now_chance": 48,
+   "edge": 11,
+   "text": "New big edge: Yes: Michael Geerts win set 1 against Niels McDonald (Set 1 winner), 11 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-micgee-niemcd-2026-10-26"
+  },
+  {
+   "id": "new_edge:1794982:0:slight",
+   "key": "1794982:0",
+   "at": "2026-10-26T10:22:33.468Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Michael Geerts +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+100",
+   "now_chance": 50,
+   "edge": 9,
+   "text": "New slight edge: Michael Geerts +1.50 (Games) (Games spread), 9 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-micgee-niemcd-2026-10-26"
+  },
+  {
+   "id": "gone:1794172:0:2026-10-25T23:43:14.895Z",
+   "key": "1794172:0",
+   "at": "2026-10-26T10:22:33.468Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Michael Geerts win",
+   "market": "Moneyline",
+   "now_odds": "+122",
+   "now_chance": 45,
+   "edge": 11,
+   "text": "Edge gone: Michael Geerts win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-micgee-niemcd-2026-10-26"
+  },
   {
    "id": "new_edge:1794982:0:big",
    "key": "1794982:0",
@@ -549,7 +611,10 @@
   "new_edge:1794172:0:big",
   "new_edge:1794981:0:slight",
   "gone:1794982:1:2026-10-26T10:09:33.218Z",
-  "gone:1794981:1:2026-10-26T10:12:49.636Z"
+  "gone:1794981:1:2026-10-26T10:12:49.636Z",
+  "new_edge:1794997:0:big",
+  "new_edge:1794982:0:slight",
+  "gone:1794172:0:2026-10-25T23:43:14.895Z"
  ],
  "kalshi_checked": null
 }
