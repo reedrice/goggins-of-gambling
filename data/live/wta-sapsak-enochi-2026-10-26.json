@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187277",
-  "fetched_at": "2026-10-26T16:27:17.274Z",
+  "fetched_at": "2026-10-26T16:34:02.892Z",
   "tennis": true,
   "tennis_match": {
    "id": "187277",
@@ -17,17 +17,17 @@
    "date": "2026-10-26T14:45Z",
    "startDate": "2026-10-26T14:45Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Enola Chiesa (ITA) leads Sapfo Sakellaridi (GRE) 6-2 3-6 6-3",
+     "text": "Enola Chiesa (ITA) bt Sapfo Sakellaridi (GRE) 6-2 3-6 6-3",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "linescores": [
       {
        "value": 6,
@@ -65,7 +66,8 @@
        "winner": false
       },
       {
-       "value": 6
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -105,6 +107,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "linescores": [
       {
        "value": 2,
@@ -115,7 +118,8 @@
        "winner": true
       },
       {
-       "value": 3
+       "value": 3,
+       "winner": false
       }
      ],
      "athlete": {
@@ -166,16 +170,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Enola Chiesa",
    "alias": "Enola Chiesa",
    "name": "Enola Chiesa",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Sapfo Sakellaridi",
@@ -187,7 +191,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T16:27:17.164Z",
+ "updated": "2026-10-26T16:34:02.715Z",
  "open_taken_at": "2026-10-25T17:49:41.480Z",
  "thresholds": {
   "big": 10,
