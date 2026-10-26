@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892592",
-  "fetched_at": "2026-10-26T14:45:33.310Z",
+  "fetched_at": "2026-10-26T14:51:42.082Z",
   "game_state": "pre",
   "espn_status": "STATUS_SCHEDULED",
   "period": 0,
@@ -121,7 +121,7 @@
    }
   ]
  },
- "updated": "2026-10-26T14:45:33.043Z",
+ "updated": "2026-10-26T14:51:41.976Z",
  "open_taken_at": "2026-10-26T05:02:30.581Z",
  "thresholds": {
   "big": 10,
@@ -173,26 +173,26 @@
    "taken_at": "2026-10-26T07:12:30.003Z"
   },
   {
-   "market_id": "1700350",
-   "market": "Alt spread",
+   "market_id": "1700367",
+   "market": "Main total",
    "group": "game",
-   "mtype": "spread",
+   "mtype": "total",
    "period": "full_game",
-   "line": -2.5,
-   "question": "Will the MIN Wild cover -2.5 vs the UTA Mammoth in MIN vs UTA?",
+   "line": 5.5,
+   "question": "Will the total in MIN vs UTA be more than 5.5?",
    "sides": [
-    "Wild -2.50",
-    "Mammoth +2.50"
+    "Over 5.5",
+    "Under 5.5"
    ],
    "teams": [
-    "Wild",
-    "Mammoth"
+    null,
+    null
    ],
    "player": null,
-   "mid": 15.5,
-   "yes_buy": 18,
-   "no_buy": 87,
-   "taken_at": "2026-10-26T05:18:25.204Z"
+   "mid": 60,
+   "yes_buy": 62,
+   "no_buy": 42,
+   "taken_at": "2026-10-26T14:51:41.976Z"
   },
   {
    "market_id": "1700356",
@@ -237,9 +237,52 @@
    "yes_buy": 29,
    "no_buy": 77,
    "taken_at": "2026-10-26T07:12:30.003Z"
+  },
+  {
+   "market_id": "1700350",
+   "market": "Alt spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": -2.5,
+   "question": "Will the MIN Wild cover -2.5 vs the UTA Mammoth in MIN vs UTA?",
+   "sides": [
+    "Wild -2.50",
+    "Mammoth +2.50"
+   ],
+   "teams": [
+    "Wild",
+    "Mammoth"
+   ],
+   "player": null,
+   "mid": 15.5,
+   "yes_buy": 18,
+   "no_buy": 87,
+   "taken_at": "2026-10-26T05:18:25.204Z"
   }
  ],
- "edges": [],
+ "edges": [
+  {
+   "key": "1700356:0",
+   "market_id": "1700356",
+   "market": "Alt spread",
+   "group": "game",
+   "question": "Will the MIN Wild cover 2.5 vs the UTA Mammoth in MIN vs UTA?",
+   "side": "Wild +2.50",
+   "open_chance": 84,
+   "now_chance": 80,
+   "open_odds": "-525",
+   "now_odds": "-400",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-10-26T14:51:41.976Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
  "alerts": [],
  "alert_seen": [],
  "kalshi_checked": null
