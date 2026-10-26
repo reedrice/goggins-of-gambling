@@ -4,14 +4,14 @@
  "game": "Rigele TE vs. Mert Alkaya",
  "url": "https://polymarket.us/sports/atp/atp-rigte-meralk-2026-10-25",
  "start_time": "2026-10-26T09:50:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-26T09:48:12.816Z"
+  "fetched_at": "2026-10-26T09:52:11.039Z"
  },
- "updated": "2026-10-26T09:48:12.703Z",
+ "updated": "2026-10-26T09:52:10.971Z",
  "open_taken_at": "2026-10-24T13:01:21.717Z",
  "thresholds": {
   "big": 10,
@@ -60,6 +60,28 @@
    "mid": 74.5,
    "yes_buy": 75,
    "no_buy": 26,
+   "taken_at": "2026-10-26T09:17:35.003Z"
+  },
+  {
+   "market_id": "1773125",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Rigele TE cover 1.5 vs the Mert Alkaya in Rigele TE vs. Mert Alkaya?",
+   "sides": [
+    "Rigele Te +1.50 (Sets)",
+    "Mert Alkaya -1.50 (Sets)"
+   ],
+   "teams": [
+    "Rigele Te",
+    "Mert Alkaya"
+   ],
+   "player": null,
+   "mid": 64.5,
+   "yes_buy": 65,
+   "no_buy": 36,
    "taken_at": "2026-10-26T09:17:35.003Z"
   },
   {
@@ -195,28 +217,6 @@
    "taken_at": "2026-10-25T18:32:39.176Z"
   },
   {
-   "market_id": "1773129",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Rigele TE vs. Mert Alkaya be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 31.5,
-   "yes_buy": 32,
-   "no_buy": 69,
-   "taken_at": "2026-10-26T09:17:35.003Z"
-  },
-  {
    "market_id": "1773128",
    "market": "Games total",
    "group": "game",
@@ -327,25 +327,25 @@
    "taken_at": "2026-10-26T09:17:35.003Z"
   },
   {
-   "market_id": "1773125",
-   "market": "Sets spread",
+   "market_id": "1773129",
+   "market": "Sets total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Rigele TE cover 1.5 vs the Mert Alkaya in Rigele TE vs. Mert Alkaya?",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Rigele TE vs. Mert Alkaya be more than 2.5?",
    "sides": [
-    "Rigele Te +1.50 (Sets)",
-    "Mert Alkaya -1.50 (Sets)"
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
    ],
    "teams": [
-    "Rigele Te",
-    "Mert Alkaya"
+    null,
+    null
    ],
    "player": null,
-   "mid": 64.5,
-   "yes_buy": 65,
-   "no_buy": 36,
+   "mid": 31.5,
+   "yes_buy": 32,
+   "no_buy": 69,
    "taken_at": "2026-10-26T09:17:35.003Z"
   }
  ],
@@ -453,6 +453,34 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1773124:1:big",
+   "key": "1773124:1",
+   "at": "2026-10-26T09:52:10.971Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Mert Alkaya +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "-245",
+   "now_chance": 71,
+   "edge": 10,
+   "text": "New big edge: Mert Alkaya +1.50 (Sets) (Sets spread), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-rigte-meralk-2026-10-25"
+  },
+  {
+   "id": "new_edge:1773126:1:slight",
+   "key": "1773126:1",
+   "at": "2026-10-26T09:52:10.971Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+456",
+   "now_chance": 18,
+   "edge": 8,
+   "text": "New slight edge: Under 17.5 (Games) (Games total), 8 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-rigte-meralk-2026-10-25"
+  },
+  {
    "id": "new_edge:1754038:1:slight",
    "key": "1754038:1",
    "at": "2026-10-26T09:11:39.195Z",
@@ -483,7 +511,9 @@
  ],
  "alert_seen": [
   "new_edge:1754038:1:slight",
-  "new_edge:1773119:1:slight"
+  "new_edge:1773119:1:slight",
+  "new_edge:1773124:1:big",
+  "new_edge:1773126:1:slight"
  ],
  "kalshi_checked": null
 }
