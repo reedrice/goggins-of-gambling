@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187290",
-  "fetched_at": "2026-10-26T23:07:58.465Z",
+  "fetched_at": "2026-10-26T23:15:15.986Z",
   "tennis": true,
   "tennis_match": {
    "id": "187290",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Victoria Hu (USA) leads Dasha Plekhanova (CAN) 2-6 2-2",
+     "text": "Dasha Plekhanova (CAN) leads Victoria Hu (USA) 6-2 3-2",
      "type": "event"
     }
    ],
@@ -55,13 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 2
+       "value": 3
       }
      ],
      "athlete": {
@@ -101,6 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 2,
@@ -142,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1034,
    "type": {
     "id": "2",
@@ -179,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T23:07:58.293Z",
+ "updated": "2026-10-26T23:15:15.864Z",
  "open_taken_at": "2026-10-26T20:02:31.497Z",
  "thresholds": {
   "big": 10,
@@ -206,6 +213,28 @@
    "mid": 56.5,
    "yes_buy": 59,
    "no_buy": 46,
+   "taken_at": "2026-10-26T22:07:28.833Z"
+  },
+  {
+   "market_id": "1845717",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Victoria Hu vs. Dasha Plekhanova be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
    "taken_at": "2026-10-26T22:07:28.833Z"
   },
   {
@@ -338,28 +367,6 @@
    "mid": 36.5,
    "yes_buy": 37,
    "no_buy": 64,
-   "taken_at": "2026-10-26T22:07:28.833Z"
-  },
-  {
-   "market_id": "1845717",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Victoria Hu vs. Dasha Plekhanova be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
    "taken_at": "2026-10-26T22:07:28.833Z"
   },
   {
@@ -519,22 +526,22 @@
  ],
  "edges": [
   {
-   "key": "1844631:0",
-   "market_id": "1844631",
-   "market": "Moneyline",
+   "key": "1845717:1",
+   "market_id": "1845717",
+   "market": "Games total",
    "group": "game",
-   "question": "Who will win in the upcoming wta event Victoria Hu vs Dasha Plekhanova scheduled for October 27, 2026 at 4:00 PM UTC?",
-   "side": "Victoria Hu win",
-   "open_chance": 59,
-   "now_chance": 23,
-   "open_odds": "-144",
-   "now_odds": "+335",
-   "edge": 36,
+   "question": "Will the total in Victoria Hu vs. Dasha Plekhanova be more than 17.5?",
+   "side": "Under 17.5 (Games)",
+   "open_chance": 67,
+   "now_chance": 39,
+   "open_odds": "-203",
+   "now_odds": "+156",
+   "edge": 28,
    "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Victoria Hu trailing in sets",
-   "context": "Dasha Plekhanova 6, 2 · Victoria Hu 2, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-10-26T22:13:26.372Z",
+   "class": "news",
+   "reason": "Big move (28 pts), likely news",
+   "context": "Dasha Plekhanova 6, 3 · Victoria Hu 2, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T22:31:40.506Z",
    "status": "open",
    "kalshi": null
   },
@@ -555,66 +562,6 @@
    "reason": "Big move (25 pts), likely news",
    "context": "Dasha Plekhanova 6, 2 · Victoria Hu 2, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T22:37:58.438Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1845720:1",
-   "market_id": "1845720",
-   "market": "Sets total",
-   "group": "game",
-   "question": "Will the total in Victoria Hu vs. Dasha Plekhanova be more than 2.5?",
-   "side": "Under 2.5 (Sets)",
-   "open_chance": 64,
-   "now_chance": 54,
-   "open_odds": "-178",
-   "now_odds": "-117",
-   "edge": 10,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Dasha Plekhanova 6, 2 · Victoria Hu 2, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-10-26T22:43:38.812Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1845718:1",
-   "market_id": "1845718",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Victoria Hu vs. Dasha Plekhanova be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 64,
-   "now_chance": 54,
-   "open_odds": "-178",
-   "now_odds": "-117",
-   "edge": 10,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Dasha Plekhanova 6, 2 · Victoria Hu 2, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-10-26T22:26:04.828Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1845717:1",
-   "market_id": "1845717",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Victoria Hu vs. Dasha Plekhanova be more than 17.5?",
-   "side": "Under 17.5 (Games)",
-   "open_chance": 67,
-   "now_chance": 19,
-   "open_odds": "-203",
-   "now_odds": "+426",
-   "edge": 48,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (48 pts), likely news",
-   "context": "Dasha Plekhanova 6, 0 · Victoria Hu 2, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-26T22:31:40.506Z",
    "status": "gone",
    "kalshi": null
   },
@@ -699,6 +646,46 @@
    "kalshi": null
   },
   {
+   "key": "1845720:1",
+   "market_id": "1845720",
+   "market": "Sets total",
+   "group": "game",
+   "question": "Will the total in Victoria Hu vs. Dasha Plekhanova be more than 2.5?",
+   "side": "Under 2.5 (Sets)",
+   "open_chance": 64,
+   "now_chance": 54,
+   "open_odds": "-178",
+   "now_odds": "-117",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Dasha Plekhanova 6, 2 · Victoria Hu 2, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T22:43:38.812Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1845718:1",
+   "market_id": "1845718",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Victoria Hu vs. Dasha Plekhanova be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 64,
+   "now_chance": 54,
+   "open_odds": "-178",
+   "now_odds": "-117",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Dasha Plekhanova 6, 2 · Victoria Hu 2, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T22:26:04.828Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1845710:0",
    "market_id": "1845710",
    "market": "Games spread",
@@ -760,6 +747,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1845718:1:2026-10-26T22:26:04.828Z",
+   "key": "1845718:1",
+   "at": "2026-10-26T23:15:15.864Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-117",
+   "now_chance": 54,
+   "edge": 10,
+   "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-vichu-dasple-2026-10-27"
+  },
   {
    "id": "gone:1845719:0:2026-10-26T22:37:58.438Z",
    "key": "1845719:0",
@@ -873,20 +874,6 @@
    "url": "https://polymarket.us/sports/wta/wta-vichu-dasple-2026-10-27"
   },
   {
-   "id": "news:1844631:0",
-   "key": "1844631:0",
-   "at": "2026-10-26T22:37:58.438Z",
-   "type": "news",
-   "tier": "big",
-   "side": "Victoria Hu win",
-   "market": "Moneyline",
-   "now_odds": "+245",
-   "now_chance": 29,
-   "edge": 30,
-   "text": "Big move, likely news: Victoria Hu win (Moneyline) is 30 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-vichu-dasple-2026-10-27"
-  },
-  {
    "id": "new_edge:1845712:0:big",
    "key": "1845712:0",
    "at": "2026-10-26T22:37:58.438Z",
@@ -926,20 +913,6 @@
    "now_chance": 25,
    "edge": 42,
    "text": "Big move, likely news: Under 17.5 (Games) (Games total) is 42 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-vichu-dasple-2026-10-27"
-  },
-  {
-   "id": "gone:1844631:0:2026-10-26T22:13:26.372Z",
-   "key": "1844631:0",
-   "at": "2026-10-26T22:31:40.506Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Victoria Hu win",
-   "market": "Moneyline",
-   "now_odds": "+150",
-   "now_chance": 40,
-   "edge": 19,
-   "text": "Edge gone: Victoria Hu win (Moneyline) is no longer 4+ points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-vichu-dasple-2026-10-27"
   },
   {
@@ -983,20 +956,6 @@
    "edge": 6,
    "text": "New slight edge: Under 22.5 (Games) (Games total), 6 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-vichu-dasple-2026-10-27"
-  },
-  {
-   "id": "new_edge:1844631:0:big",
-   "key": "1844631:0",
-   "at": "2026-10-26T22:13:26.372Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Victoria Hu win",
-   "market": "Moneyline",
-   "now_odds": "+113",
-   "now_chance": 47,
-   "edge": 12,
-   "text": "New big edge: Victoria Hu win (Moneyline), 12 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-vichu-dasple-2026-10-27"
   }
  ],
  "alert_seen": [
@@ -1020,7 +979,8 @@
   "gone:1845720:1:2026-10-26T22:43:38.812Z",
   "new_edge:1845726:1:slight",
   "gone:1845719:0:2026-10-26T22:37:58.438Z",
-  "gone:1845726:1:2026-10-26T23:02:07.085Z"
+  "gone:1845726:1:2026-10-26T23:02:07.085Z",
+  "gone:1845718:1:2026-10-26T22:26:04.828Z"
  ],
  "kalshi_checked": null
 }

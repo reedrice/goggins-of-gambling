@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187292",
-  "fetched_at": "2026-10-26T23:07:58.787Z",
+  "fetched_at": "2026-10-26T23:15:16.345Z",
   "tennis": true,
   "tennis_match": {
    "id": "187292",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Valeriya Strakhova (UKR) leads Amelie Van Impe (BEL) 5-1",
+     "text": "Valeriya Strakhova (UKR) is tied with Amelie Van Impe (BEL) 6-1 0-0",
      "type": "event"
     }
    ],
@@ -55,10 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
-       "value": 1
+       "value": 1,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -98,10 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -159,8 +167,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Amelie Van Impe",
@@ -172,13 +180,13 @@
    "abbr": "Valeriya Strakhova",
    "alias": "Valeriya Strakhova",
    "name": "Valeriya Strakhova",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T23:07:58.690Z",
+ "updated": "2026-10-26T23:15:16.236Z",
  "open_taken_at": "2026-10-26T22:31:40.911Z",
  "thresholds": {
   "big": 10,
@@ -226,7 +234,7 @@
    "reason": null,
    "context": "Amelie Van Impe 1 · Valeriya Strakhova 5 · 1st Set (games by set)",
    "first_seen": "2026-10-26T23:07:58.690Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -251,6 +259,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1850549:1:2026-10-26T23:07:58.690Z",
+   "key": "1850549:1",
+   "at": "2026-10-26T23:15:16.236Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Amelie van Impe win",
+   "market": "Moneyline",
+   "now_odds": "+285",
+   "now_chance": 26,
+   "edge": 8,
+   "text": "Edge gone: Amelie van Impe win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-valstr-ameimp-2026-10-27"
+  },
   {
    "id": "new_edge:1850549:1:slight",
    "key": "1850549:1",
@@ -297,7 +319,8 @@
  "alert_seen": [
   "new_edge:1850549:0:slight",
   "new_edge:1850549:1:slight",
-  "gone:1850549:0:2026-10-26T23:02:07.542Z"
+  "gone:1850549:0:2026-10-26T23:02:07.542Z",
+  "gone:1850549:1:2026-10-26T23:07:58.690Z"
  ],
  "kalshi_checked": null
 }
