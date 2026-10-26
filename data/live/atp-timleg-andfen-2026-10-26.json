@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-26T18:47:53.348Z"
+  "fetched_at": "2026-10-26T18:53:59.770Z"
  },
- "updated": "2026-10-26T18:47:53.182Z",
+ "updated": "2026-10-26T18:53:59.604Z",
  "open_taken_at": "2026-10-25T22:34:33.194Z",
  "thresholds": {
   "big": 10,
@@ -39,6 +39,28 @@
    "yes_buy": 68,
    "no_buy": 33,
    "taken_at": "2026-10-25T23:43:19.541Z"
+  },
+  {
+   "market_id": "1815911",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Timo Legout cover 1.5 vs the Andrew Fenty in Timo Legout vs. Andrew Fenty?",
+   "sides": [
+    "Timo Legout +1.50 (Sets)",
+    "Andrew Fenty -1.50 (Sets)"
+   ],
+   "teams": [
+    "Timo Legout",
+    "Andrew Fenty"
+   ],
+   "player": null,
+   "mid": 78.5,
+   "yes_buy": 79,
+   "no_buy": 22,
+   "taken_at": "2026-10-26T17:33:26.532Z"
   },
   {
    "market_id": "1815907",
@@ -283,28 +305,6 @@
    "taken_at": "2026-10-26T17:28:40.192Z"
   },
   {
-   "market_id": "1815911",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Timo Legout cover 1.5 vs the Andrew Fenty in Timo Legout vs. Andrew Fenty?",
-   "sides": [
-    "Timo Legout +1.50 (Sets)",
-    "Andrew Fenty -1.50 (Sets)"
-   ],
-   "teams": [
-    "Timo Legout",
-    "Andrew Fenty"
-   ],
-   "player": null,
-   "mid": 78.5,
-   "yes_buy": 79,
-   "no_buy": 22,
-   "taken_at": "2026-10-26T17:33:26.532Z"
-  },
-  {
    "market_id": "1815910",
    "market": "Sets spread",
    "group": "game",
@@ -391,6 +391,46 @@
    "kalshi": null
   },
   {
+   "key": "1814147:0",
+   "market_id": "1814147",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Timo Legout vs Andrew Fenty scheduled for October 26, 2026 at 5:10 PM UTC?",
+   "side": "Timo Legout win",
+   "open_chance": 68,
+   "now_chance": 61,
+   "open_odds": "-213",
+   "now_odds": "-156",
+   "edge": 7,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-26T18:53:59.604Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1815911:0",
+   "market_id": "1815911",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Timo Legout cover 1.5 vs the Andrew Fenty in Timo Legout vs. Andrew Fenty?",
+   "side": "Timo Legout +1.50 (Sets)",
+   "open_chance": 79,
+   "now_chance": 75,
+   "open_odds": "-376",
+   "now_odds": "-300",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-26T18:53:59.604Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1815914:1",
    "market_id": "1815914",
    "market": "Games total",
@@ -452,6 +492,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1814147:0:slight",
+   "key": "1814147:0",
+   "at": "2026-10-26T18:53:59.604Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Timo Legout win",
+   "market": "Moneyline",
+   "now_odds": "-156",
+   "now_chance": 61,
+   "edge": 7,
+   "text": "New slight edge: Timo Legout win (Moneyline), 7 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-timleg-andfen-2026-10-26"
+  },
+  {
+   "id": "new_edge:1815911:0:slight",
+   "key": "1815911:0",
+   "at": "2026-10-26T18:53:59.604Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Timo Legout +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "-300",
+   "now_chance": 75,
+   "edge": 4,
+   "text": "New slight edge: Timo Legout +1.50 (Sets) (Sets spread), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-timleg-andfen-2026-10-26"
+  },
   {
    "id": "new_edge:1815907:1:big",
    "key": "1815907:1",
@@ -528,7 +596,9 @@
   "new_edge:1815912:0:big",
   "gone:1815909:0:2026-10-26T17:36:53.384Z",
   "new_edge:1815911:1:slight",
-  "new_edge:1815907:1:big"
+  "new_edge:1815907:1:big",
+  "new_edge:1814147:0:slight",
+  "new_edge:1815911:0:slight"
  ],
  "kalshi_checked": null
 }

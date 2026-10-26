@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187289",
-  "fetched_at": "2026-10-26T18:47:47.614Z",
+  "fetched_at": "2026-10-26T18:53:52.128Z",
   "tennis": true,
   "tennis_match": {
    "id": "187289",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Jessica Hinojosa Gomez (MEX) leads Alexandra Osborne (AUS) 5-0",
+     "text": "Alexandra Osborne (AUS) leads Jessica Hinojosa Gomez (MEX) 0-6 0-0",
      "type": "event"
     }
    ],
@@ -55,10 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -98,8 +102,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "possession": true,
      "linescores": [
+      {
+       "value": 0,
+       "winner": false
+      },
       {
        "value": 0
       }
@@ -159,14 +167,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Jessica Hinojosa Gomez",
    "alias": "Jessica Hinojosa Gomez",
    "name": "Jessica Hinojosa Gomez",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Alexandra Osborne",
@@ -178,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T18:47:47.465Z",
+ "updated": "2026-10-26T18:53:51.987Z",
  "open_taken_at": "2026-10-25T00:16:50.067Z",
  "thresholds": {
   "big": 10,
@@ -206,6 +214,50 @@
    "yes_buy": 53,
    "no_buy": 52,
    "taken_at": "2026-10-25T01:00:29.389Z"
+  },
+  {
+   "market_id": "1773904",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Alexandra Osborne win set 2 against Jessica Hinojosa Gomez?",
+   "sides": [
+    "Yes: Alexandra Osborne win set 2 against Jessica Hinojosa Gomez",
+    "No: Alexandra Osborne win set 2 against Jessica Hinojosa Gomez"
+   ],
+   "teams": [
+    "Alexandra Osborne",
+    null
+   ],
+   "player": null,
+   "mid": 22.5,
+   "yes_buy": 23,
+   "no_buy": 78,
+   "taken_at": "2026-10-26T18:53:51.987Z"
+  },
+  {
+   "market_id": "1773897",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Alexandra Osborne vs. Jessica Hinojosa Gomez be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 16.5,
+   "yes_buy": 17,
+   "no_buy": 84,
+   "taken_at": "2026-10-26T17:04:03.408Z"
   },
   {
    "market_id": "1773895",
@@ -250,28 +302,6 @@
    "yes_buy": 61,
    "no_buy": 40,
    "taken_at": "2026-10-26T18:29:59.588Z"
-  },
-  {
-   "market_id": "1773897",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Alexandra Osborne vs. Jessica Hinojosa Gomez be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 16.5,
-   "yes_buy": 17,
-   "no_buy": 84,
-   "taken_at": "2026-10-26T17:04:03.408Z"
   },
   {
    "market_id": "1773890",
@@ -446,27 +476,7 @@
    "reason": null,
    "context": "Jessica Hinojosa Gomez 5 · Alexandra Osborne 0 · 1st Set (games by set)",
    "first_seen": "2026-10-26T18:41:46.943Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1773895:1",
-   "market_id": "1773895",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Alexandra Osborne vs. Jessica Hinojosa Gomez be more than 17.5?",
-   "side": "Under 17.5 (Games)",
-   "open_chance": 66,
-   "now_chance": 61,
-   "open_odds": "-194",
-   "now_odds": "-156",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Jessica Hinojosa Gomez 5 · Alexandra Osborne 0 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T18:29:59.588Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -530,6 +540,26 @@
    "kalshi": null
   },
   {
+   "key": "1773895:1",
+   "market_id": "1773895",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Alexandra Osborne vs. Jessica Hinojosa Gomez be more than 17.5?",
+   "side": "Under 17.5 (Games)",
+   "open_chance": 66,
+   "now_chance": 61,
+   "open_odds": "-194",
+   "now_odds": "-156",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Jessica Hinojosa Gomez 5 · Alexandra Osborne 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T18:29:59.588Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1773896:1",
    "market_id": "1773896",
    "market": "Games total",
@@ -571,6 +601,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1773892:0:2026-10-26T18:41:46.943Z",
+   "key": "1773892:0",
+   "at": "2026-10-26T18:53:51.987Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Alexandra Osborne +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+163",
+   "now_chance": 38,
+   "edge": 23,
+   "text": "Edge gone: Alexandra Osborne +7.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-aleosb-jeshin-2026-10-25"
+  },
+  {
+   "id": "gone:1773895:1:2026-10-26T18:29:59.588Z",
+   "key": "1773895:1",
+   "at": "2026-10-26T18:53:51.987Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-156",
+   "now_chance": 61,
+   "edge": 5,
+   "text": "Edge gone: Under 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-aleosb-jeshin-2026-10-25"
+  },
   {
    "id": "new_edge:1773892:0:big",
    "key": "1773892:0",
@@ -754,7 +812,9 @@
   "gone:1773893:1:2026-10-26T17:49:09.413Z",
   "news:1773892:0",
   "new_edge:1773895:1:slight",
-  "new_edge:1773892:0:big"
+  "new_edge:1773892:0:big",
+  "gone:1773892:0:2026-10-26T18:41:46.943Z",
+  "gone:1773895:1:2026-10-26T18:29:59.588Z"
  ],
  "kalshi_checked": null
 }
