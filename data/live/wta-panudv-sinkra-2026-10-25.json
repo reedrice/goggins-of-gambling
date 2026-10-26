@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185716",
-  "fetched_at": "2026-10-26T03:27:22.751Z",
+  "fetched_at": "2026-10-26T03:33:02.132Z",
   "tennis": true,
   "tennis_match": {
    "id": "185716",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Sinja Kraus (AUT) leads Panna Udvardy (HUN) 3-2",
+     "text": "Sinja Kraus (AUT) leads Panna Udvardy (HUN) 4-2",
      "type": "event"
     }
    ],
@@ -55,9 +55,10 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
-       "value": 3
+       "value": 4
       }
      ],
      "athlete": {
@@ -97,6 +98,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 2
@@ -134,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 232,
    "type": {
     "id": "2",
@@ -171,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T03:27:22.687Z",
+ "updated": "2026-10-26T03:33:01.998Z",
  "open_taken_at": "2026-10-24T09:49:56.799Z",
  "thresholds": {
   "big": 10,
@@ -221,6 +228,28 @@
    "yes_buy": 84,
    "no_buy": 20,
    "taken_at": "2026-10-26T03:11:32.139Z"
+  },
+  {
+   "market_id": "1773621",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Panna Udvardy vs. Sinja Kraus be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 74.5,
+   "yes_buy": 77,
+   "no_buy": 28,
+   "taken_at": "2026-10-26T01:31:04.131Z"
   },
   {
    "market_id": "1773616",
@@ -443,28 +472,6 @@
    "taken_at": "2026-10-26T02:52:31.587Z"
   },
   {
-   "market_id": "1773621",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Panna Udvardy vs. Sinja Kraus be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 74.5,
-   "yes_buy": 77,
-   "no_buy": 28,
-   "taken_at": "2026-10-26T01:31:04.131Z"
-  },
-  {
    "market_id": "1773619",
    "market": "Sets spread",
    "group": "game",
@@ -511,26 +518,6 @@
  ],
  "edges": [
   {
-   "key": "1773629:0",
-   "market_id": "1773629",
-   "market": "Set 1 winner",
-   "group": "game",
-   "question": "Will Panna Udvardy win set 1 against Sinja Kraus?",
-   "side": "Yes: Panna Udvardy win set 1 against Sinja Kraus",
-   "open_chance": 43,
-   "now_chance": 20,
-   "open_odds": "+133",
-   "now_odds": "+400",
-   "edge": 23,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Panna Udvardy not above the games spread right now",
-   "context": "Sinja Kraus 3 · Panna Udvardy 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T03:18:29.614Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1773614:0",
    "market_id": "1773614",
    "market": "Games spread",
@@ -543,9 +530,9 @@
    "now_odds": "+270",
    "edge": 16,
    "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Sinja Kraus 3 · Panna Udvardy 2 · 1st Set (games by set)",
+   "class": "score",
+   "reason": "Explained by score: Panna Udvardy not above the games spread right now",
+   "context": "Sinja Kraus 4 · Panna Udvardy 2 · 1st Set (games by set)",
    "first_seen": "2026-10-26T03:18:29.614Z",
    "status": "open",
    "kalshi": null
@@ -565,7 +552,7 @@
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Panna Udvardy not above the games spread right now",
-   "context": "Sinja Kraus 3 · Panna Udvardy 2 · 1st Set (games by set)",
+   "context": "Sinja Kraus 4 · Panna Udvardy 2 · 1st Set (games by set)",
    "first_seen": "2026-10-26T03:18:29.614Z",
    "status": "open",
    "kalshi": null
@@ -578,14 +565,14 @@
    "question": "Who will win in the upcoming wta event Panna Udvardy vs Sinja Kraus scheduled for October 26, 2026 at 3:00 AM UTC?",
    "side": "Panna Udvardy win",
    "open_chance": 35,
-   "now_chance": 25,
+   "now_chance": 22,
    "open_odds": "+186",
-   "now_odds": "+300",
-   "edge": 10,
+   "now_odds": "+355",
+   "edge": 13,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Sinja Kraus 3 · Panna Udvardy 2 · 1st Set (games by set)",
+   "context": "Sinja Kraus 4 · Panna Udvardy 2 · 1st Set (games by set)",
    "first_seen": "2026-10-26T03:18:29.614Z",
    "status": "open",
    "kalshi": null
@@ -598,15 +585,35 @@
    "question": "Will the Panna Udvardy cover 4.5 vs the Sinja Kraus in Panna Udvardy vs. Sinja Kraus?",
    "side": "Panna Udvardy +4.50 (Games)",
    "open_chance": 62,
-   "now_chance": 55,
+   "now_chance": 54,
    "open_odds": "-163",
-   "now_odds": "-122",
-   "edge": 7,
+   "now_odds": "-117",
+   "edge": 8,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Sinja Kraus 3 · Panna Udvardy 2 · 1st Set (games by set)",
+   "context": "Sinja Kraus 4 · Panna Udvardy 2 · 1st Set (games by set)",
    "first_seen": "2026-10-26T03:18:29.614Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1773621:1",
+   "market_id": "1773621",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Panna Udvardy vs. Sinja Kraus be more than 17.5?",
+   "side": "Under 17.5 (Games)",
+   "open_chance": 28,
+   "now_chance": 22,
+   "open_odds": "+257",
+   "now_odds": "+355",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Sinja Kraus 4 · Panna Udvardy 2 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T03:13:38.799Z",
    "status": "open",
    "kalshi": null
   },
@@ -625,7 +632,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Sinja Kraus 3 · Panna Udvardy 2 · 1st Set (games by set)",
+   "context": "Sinja Kraus 4 · Panna Udvardy 2 · 1st Set (games by set)",
    "first_seen": "2026-10-26T03:13:38.799Z",
    "status": "open",
    "kalshi": null
@@ -645,7 +652,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Sinja Kraus 3 · Panna Udvardy 2 · 1st Set (games by set)",
+   "context": "Sinja Kraus 4 · Panna Udvardy 2 · 1st Set (games by set)",
    "first_seen": "2026-10-26T03:27:22.687Z",
    "status": "open",
    "kalshi": null
@@ -671,26 +678,6 @@
    "kalshi": null
   },
   {
-   "key": "1773621:1",
-   "market_id": "1773621",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Panna Udvardy vs. Sinja Kraus be more than 17.5?",
-   "side": "Under 17.5 (Games)",
-   "open_chance": 28,
-   "now_chance": 20,
-   "open_odds": "+257",
-   "now_odds": "+400",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Sinja Kraus 2 · Panna Udvardy 1 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T03:13:38.799Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "1773614:1",
    "market_id": "1773614",
    "market": "Games spread",
@@ -705,26 +692,6 @@
    "tier": "slight",
    "class": "score",
    "reason": "Explained by score: Sinja Kraus not above the games spread right now",
-   "context": "Sinja Kraus 0 · Panna Udvardy 1 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T03:13:38.799Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1773629:1",
-   "market_id": "1773629",
-   "market": "Set 1 winner",
-   "group": "game",
-   "question": "Will Panna Udvardy win set 1 against Sinja Kraus?",
-   "side": "No: Panna Udvardy win set 1 against Sinja Kraus",
-   "open_chance": 63,
-   "now_chance": 55,
-   "open_odds": "-170",
-   "now_odds": "-122",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
    "context": "Sinja Kraus 0 · Panna Udvardy 1 · 1st Set (games by set)",
    "first_seen": "2026-10-26T03:13:38.799Z",
    "status": "gone",
@@ -939,20 +906,6 @@
    "url": "https://polymarket.us/sports/wta/wta-panudv-sinkra-2026-10-25"
   },
   {
-   "id": "gone:1773629:1:2026-10-26T03:13:38.799Z",
-   "key": "1773629:1",
-   "at": "2026-10-26T03:18:29.614Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "No: Panna Udvardy win set 1 against Sinja Kraus",
-   "market": "Set 1 winner",
-   "now_odds": "-122",
-   "now_chance": 55,
-   "edge": 8,
-   "text": "Edge gone: No: Panna Udvardy win set 1 against Sinja Kraus (Set 1 winner) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-panudv-sinkra-2026-10-25"
-  },
-  {
    "id": "gone:1773613:1:2026-10-26T03:05:10.879Z",
    "key": "1773613:1",
    "at": "2026-10-26T03:18:29.614Z",
@@ -992,20 +945,6 @@
    "now_chance": 20,
    "edge": 8,
    "text": "New slight edge: Under 17.5 (Games) (Games total), 8 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-panudv-sinkra-2026-10-25"
-  },
-  {
-   "id": "new_edge:1773629:1:slight",
-   "key": "1773629:1",
-   "at": "2026-10-26T03:13:38.799Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "No: Panna Udvardy win set 1 against Sinja Kraus",
-   "market": "Set 1 winner",
-   "now_odds": "-122",
-   "now_chance": 55,
-   "edge": 8,
-   "text": "New slight edge: No: Panna Udvardy win set 1 against Sinja Kraus (Set 1 winner), 8 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-panudv-sinkra-2026-10-25"
   },
   {
