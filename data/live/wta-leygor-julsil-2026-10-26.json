@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185760",
-  "fetched_at": "2026-10-26T15:53:09.756Z",
+  "fetched_at": "2026-10-26T15:59:19.417Z",
   "tennis": true,
   "tennis_match": {
    "id": "185760",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(5) Leyre Romero Gormaz (ESP) leads Julia Konishi Camargo Silva (BRA) 5-2",
+     "text": "(5) Leyre Romero Gormaz (ESP) leads Julia Konishi Camargo Silva (BRA) 6-2 1-0",
      "type": "event"
     }
    ],
@@ -55,10 +55,13 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
      "linescores": [
       {
-       "value": 2
+       "value": 2,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -98,13 +101,16 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
      "curatedRank": {
       "current": 5
      },
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -139,11 +145,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 1080,
    "type": {
     "id": "2",
@@ -162,8 +163,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Julia Konishi Camargo Silva",
@@ -175,19 +176,41 @@
    "abbr": "Leyre Romero Gormaz",
    "alias": "Leyre Romero Gormaz",
    "name": "Leyre Romero Gormaz",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T15:53:09.677Z",
+ "updated": "2026-10-26T15:59:19.283Z",
  "open_taken_at": "2026-10-25T20:17:31.589Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1810658",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Leyre Romero Gormaz cover -4.5 vs the Julia Konishi Camargo Silva in Leyre Romero Gormaz vs. Julia Konishi Camargo Silva?",
+   "sides": [
+    "Leyre Romero Gormaz -4.50 (Games)",
+    "Julia Konishi Camargo Silva +4.50 (Games)"
+   ],
+   "teams": [
+    "Leyre Romero Gormaz",
+    "Julia Konishi Camargo Silva"
+   ],
+   "player": null,
+   "mid": 36.5,
+   "yes_buy": 37,
+   "no_buy": 64,
+   "taken_at": "2026-10-26T15:21:49.194Z"
+  },
   {
    "market_id": "1810656",
    "market": "Games spread",
@@ -255,6 +278,28 @@
    "taken_at": "2026-10-26T15:21:49.194Z"
   },
   {
+   "market_id": "1810673",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Leyre Romero Gormaz win set 2 against Julia Konishi Camargo Silva?",
+   "sides": [
+    "Yes: Leyre Romero Gormaz win set 2 against Julia Konishi Camargo Silva",
+    "No: Leyre Romero Gormaz win set 2 against Julia Konishi Camargo Silva"
+   ],
+   "teams": [
+    "Leyre Romero Gormaz",
+    null
+   ],
+   "player": null,
+   "mid": 93.5,
+   "yes_buy": 95,
+   "no_buy": 8,
+   "taken_at": "2026-10-26T15:59:19.283Z"
+  },
+  {
    "market_id": "1810657",
    "market": "Games spread",
    "group": "game",
@@ -275,50 +320,6 @@
    "yes_buy": 34,
    "no_buy": 67,
    "taken_at": "2026-10-26T15:21:49.194Z"
-  },
-  {
-   "market_id": "1810660",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Leyre Romero Gormaz cover -7.5 vs the Julia Konishi Camargo Silva in Leyre Romero Gormaz vs. Julia Konishi Camargo Silva?",
-   "sides": [
-    "Leyre Romero Gormaz -7.50 (Games)",
-    "Julia Konishi Camargo Silva +7.50 (Games)"
-   ],
-   "teams": [
-    "Leyre Romero Gormaz",
-    "Julia Konishi Camargo Silva"
-   ],
-   "player": null,
-   "mid": 54.5,
-   "yes_buy": 57,
-   "no_buy": 48,
-   "taken_at": "2026-10-25T23:01:51.466Z"
-  },
-  {
-   "market_id": "1810662",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Leyre Romero Gormaz cover -1.5 vs the Julia Konishi Camargo Silva in Leyre Romero Gormaz vs. Julia Konishi Camargo Silva?",
-   "sides": [
-    "Leyre Romero Gormaz -1.50 (Sets)",
-    "Julia Konishi Camargo Silva +1.50 (Sets)"
-   ],
-   "teams": [
-    "Leyre Romero Gormaz",
-    "Julia Konishi Camargo Silva"
-   ],
-   "player": null,
-   "mid": 86.5,
-   "yes_buy": 89,
-   "no_buy": 16,
-   "taken_at": "2026-10-25T23:01:51.466Z"
   },
   {
    "market_id": "1810664",
@@ -387,6 +388,50 @@
    "taken_at": "2026-10-26T15:21:49.194Z"
   },
   {
+   "market_id": "1810660",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Leyre Romero Gormaz cover -7.5 vs the Julia Konishi Camargo Silva in Leyre Romero Gormaz vs. Julia Konishi Camargo Silva?",
+   "sides": [
+    "Leyre Romero Gormaz -7.50 (Games)",
+    "Julia Konishi Camargo Silva +7.50 (Games)"
+   ],
+   "teams": [
+    "Leyre Romero Gormaz",
+    "Julia Konishi Camargo Silva"
+   ],
+   "player": null,
+   "mid": 54.5,
+   "yes_buy": 57,
+   "no_buy": 48,
+   "taken_at": "2026-10-25T23:01:51.466Z"
+  },
+  {
+   "market_id": "1810662",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Leyre Romero Gormaz cover -1.5 vs the Julia Konishi Camargo Silva in Leyre Romero Gormaz vs. Julia Konishi Camargo Silva?",
+   "sides": [
+    "Leyre Romero Gormaz -1.50 (Sets)",
+    "Julia Konishi Camargo Silva +1.50 (Sets)"
+   ],
+   "teams": [
+    "Leyre Romero Gormaz",
+    "Julia Konishi Camargo Silva"
+   ],
+   "player": null,
+   "mid": 86.5,
+   "yes_buy": 89,
+   "no_buy": 16,
+   "taken_at": "2026-10-25T23:01:51.466Z"
+  },
+  {
    "market_id": "1810617",
    "market": "Moneyline",
    "group": "game",
@@ -429,28 +474,6 @@
    "yes_buy": 89,
    "no_buy": 12,
    "taken_at": "2026-10-26T15:28:56.274Z"
-  },
-  {
-   "market_id": "1810658",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Leyre Romero Gormaz cover -4.5 vs the Julia Konishi Camargo Silva in Leyre Romero Gormaz vs. Julia Konishi Camargo Silva?",
-   "sides": [
-    "Leyre Romero Gormaz -4.50 (Games)",
-    "Julia Konishi Camargo Silva +4.50 (Games)"
-   ],
-   "teams": [
-    "Leyre Romero Gormaz",
-    "Julia Konishi Camargo Silva"
-   ],
-   "player": null,
-   "mid": 36.5,
-   "yes_buy": 37,
-   "no_buy": 64,
-   "taken_at": "2026-10-26T15:21:49.194Z"
   },
   {
    "market_id": "1810663",
@@ -515,7 +538,7 @@
    "reason": "Explained by score: Leyre Romero Gormaz not above the sets spread right now",
    "context": "Julia Konishi Camargo Silva 2 · Leyre Romero Gormaz 5 · 1st Set (games by set)",
    "first_seen": "2026-10-26T15:21:49.194Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -535,7 +558,7 @@
    "reason": null,
    "context": "Julia Konishi Camargo Silva 2 · Leyre Romero Gormaz 5 · 1st Set (games by set)",
    "first_seen": "2026-10-26T15:46:49.933Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -560,6 +583,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1810660:1:2026-10-26T15:46:49.933Z",
+   "key": "1810660:1",
+   "at": "2026-10-26T15:59:19.283Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Julia Konishi Camargo Silva +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+213",
+   "now_chance": 32,
+   "edge": 16,
+   "text": "Edge gone: Julia Konishi Camargo Silva +7.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-leygor-julsil-2026-10-26"
+  },
   {
    "id": "new_edge:1810660:1:big",
    "key": "1810660:1",
@@ -624,7 +661,8 @@
   "new_edge:1810664:0:slight",
   "new_edge:1810660:1:slight",
   "gone:1810664:1:2026-10-26T15:35:07.868Z",
-  "new_edge:1810660:1:big"
+  "new_edge:1810660:1:big",
+  "gone:1810660:1:2026-10-26T15:46:49.933Z"
  ],
  "kalshi_checked": null
 }
