@@ -4,14 +4,14 @@
  "game": "Timo Legout vs. Andrew Fenty",
  "url": "https://polymarket.us/sports/atp/atp-timleg-andfen-2026-10-26",
  "start_time": "2026-10-26T18:10:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-26T18:05:54.556Z"
+  "fetched_at": "2026-10-26T18:11:38.784Z"
  },
- "updated": "2026-10-26T18:05:54.475Z",
+ "updated": "2026-10-26T18:11:38.702Z",
  "open_taken_at": "2026-10-25T22:34:33.194Z",
  "thresholds": {
   "big": 10,
@@ -195,28 +195,6 @@
    "taken_at": "2026-10-26T17:28:40.192Z"
   },
   {
-   "market_id": "1815915",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Timo Legout vs. Andrew Fenty be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 49,
-   "yes_buy": 50,
-   "no_buy": 52,
-   "taken_at": "2026-10-26T18:05:54.475Z"
-  },
-  {
    "market_id": "1815913",
    "market": "Games total",
    "group": "game",
@@ -237,6 +215,28 @@
    "yes_buy": 44,
    "no_buy": 58,
    "taken_at": "2026-10-26T00:34:47.717Z"
+  },
+  {
+   "market_id": "1815910",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Timo Legout cover -1.5 vs the Andrew Fenty in Timo Legout vs. Andrew Fenty?",
+   "sides": [
+    "Timo Legout -1.50 (Sets)",
+    "Andrew Fenty +1.50 (Sets)"
+   ],
+   "teams": [
+    "Timo Legout",
+    "Andrew Fenty"
+   ],
+   "player": null,
+   "mid": 40.5,
+   "yes_buy": 41,
+   "no_buy": 60,
+   "taken_at": "2026-10-26T17:43:06.061Z"
   },
   {
    "market_id": "1815906",
@@ -305,26 +305,26 @@
    "taken_at": "2026-10-26T17:28:40.192Z"
   },
   {
-   "market_id": "1815910",
-   "market": "Sets spread",
+   "market_id": "1815915",
+   "market": "Sets total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Timo Legout cover -1.5 vs the Andrew Fenty in Timo Legout vs. Andrew Fenty?",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Timo Legout vs. Andrew Fenty be more than 2.5?",
    "sides": [
-    "Timo Legout -1.50 (Sets)",
-    "Andrew Fenty +1.50 (Sets)"
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
    ],
    "teams": [
-    "Timo Legout",
-    "Andrew Fenty"
+    null,
+    null
    ],
    "player": null,
-   "mid": 40.5,
-   "yes_buy": 41,
-   "no_buy": 60,
-   "taken_at": "2026-10-26T17:43:06.061Z"
+   "mid": 49,
+   "yes_buy": 50,
+   "no_buy": 52,
+   "taken_at": "2026-10-26T18:05:54.475Z"
   },
   {
    "market_id": "1815907",
@@ -433,6 +433,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1815911:1:slight",
+   "key": "1815911:1",
+   "at": "2026-10-26T18:11:38.702Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Andrew Fenty -1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+456",
+   "now_chance": 18,
+   "edge": 4,
+   "text": "New slight edge: Andrew Fenty -1.50 (Sets) (Sets spread), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-timleg-andfen-2026-10-26"
+  },
+  {
    "id": "new_edge:1815912:0:big",
    "key": "1815912:0",
    "at": "2026-10-26T17:43:06.061Z",
@@ -478,7 +492,8 @@
  "alert_seen": [
   "new_edge:1815914:1:big",
   "new_edge:1815912:0:big",
-  "gone:1815909:0:2026-10-26T17:36:53.384Z"
+  "gone:1815909:0:2026-10-26T17:36:53.384Z",
+  "new_edge:1815911:1:slight"
  ],
  "kalshi_checked": null
 }
