@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185136",
-  "fetched_at": "2026-10-26T13:32:23.663Z",
+  "fetched_at": "2026-10-26T13:40:06.347Z",
   "tennis": true,
   "tennis_match": {
    "id": "185136",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Nuno Borges (POR) leads Mika Brunold (SUI) 6-3 3-1",
+     "text": "Nuno Borges (POR) leads Mika Brunold (SUI) 6-3 4-1",
      "type": "event"
     }
    ],
@@ -55,13 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 3
+       "value": 4
       }
      ],
      "athlete": {
@@ -101,6 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 3,
@@ -142,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 23,
    "type": {
     "id": "1",
@@ -179,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T13:32:23.609Z",
+ "updated": "2026-10-26T13:40:06.278Z",
  "open_taken_at": "2026-10-25T18:16:22.900Z",
  "thresholds": {
   "big": 10,
@@ -209,28 +216,6 @@
    "taken_at": "2026-10-26T12:41:47.816Z"
   },
   {
-   "market_id": "1807469",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Mika Brunold vs. Nuno Borges be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 89,
-   "yes_buy": 91,
-   "no_buy": 13,
-   "taken_at": "2026-10-26T04:38:34.575Z"
-  },
-  {
    "market_id": "1807464",
    "market": "Games spread",
    "group": "game",
@@ -251,6 +236,28 @@
    "yes_buy": 67,
    "no_buy": 38,
    "taken_at": "2026-10-25T21:02:18.166Z"
+  },
+  {
+   "market_id": "1807469",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Mika Brunold vs. Nuno Borges be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 89,
+   "yes_buy": 91,
+   "no_buy": 13,
+   "taken_at": "2026-10-26T04:38:34.575Z"
   },
   {
    "market_id": "1807470",
@@ -519,26 +526,6 @@
  ],
  "edges": [
   {
-   "key": "1807469:0",
-   "market_id": "1807469",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Mika Brunold vs. Nuno Borges be more than 17.5?",
-   "side": "Over 17.5 (Games)",
-   "open_chance": 91,
-   "now_chance": 40,
-   "open_odds": "-1011",
-   "now_odds": "+150",
-   "edge": 51,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (51 pts), likely news",
-   "context": "Nuno Borges 6, 3 · Mika Brunold 3, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-26T13:12:08.570Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1807464:0",
    "market_id": "1807464",
    "market": "Games spread",
@@ -546,14 +533,14 @@
    "question": "Will the Mika Brunold cover 4.5 vs the Nuno Borges in Mika Brunold vs. Nuno Borges?",
    "side": "Mika Brunold +4.50 (Games)",
    "open_chance": 67,
-   "now_chance": 22,
+   "now_chance": 20,
    "open_odds": "-203",
-   "now_odds": "+355",
-   "edge": 45,
+   "now_odds": "+400",
+   "edge": 47,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Mika Brunold not above the games spread right now",
-   "context": "Nuno Borges 6, 3 · Mika Brunold 3, 1 · 2nd Set (games by set)",
+   "context": "Nuno Borges 6, 4 · Mika Brunold 3, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T13:12:08.570Z",
    "status": "open",
    "kalshi": null
@@ -701,20 +688,6 @@
  ],
  "alerts": [
   {
-   "id": "news:1807469:0",
-   "key": "1807469:0",
-   "at": "2026-10-26T13:23:53.351Z",
-   "type": "news",
-   "tier": "big",
-   "side": "Over 17.5 (Games)",
-   "market": "Games total",
-   "now_odds": "-117",
-   "now_chance": 54,
-   "edge": 37,
-   "text": "Big move, likely news: Over 17.5 (Games) (Games total) is 37 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-mikbru-nunbor-2026-10-26"
-  },
-  {
    "id": "gone:1807472:0:2026-10-26T13:12:08.570Z",
    "key": "1807472:0",
    "at": "2026-10-26T13:23:53.351Z",
@@ -768,20 +741,6 @@
    "now_chance": 27,
    "edge": 15,
    "text": "New big edge: Over 2.5 (Sets) (Sets total), 15 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-mikbru-nunbor-2026-10-26"
-  },
-  {
-   "id": "new_edge:1807469:0:big",
-   "key": "1807469:0",
-   "at": "2026-10-26T13:12:08.570Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Over 17.5 (Games)",
-   "market": "Games total",
-   "now_odds": "-376",
-   "now_chance": 79,
-   "edge": 12,
-   "text": "New big edge: Over 17.5 (Games) (Games total), 12 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-mikbru-nunbor-2026-10-26"
   },
   {
