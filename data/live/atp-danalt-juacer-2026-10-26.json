@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185141",
-  "fetched_at": "2026-10-26T14:57:56.063Z",
+  "fetched_at": "2026-10-26T15:03:24.523Z",
   "tennis": true,
   "tennis_match": {
    "id": "185141",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Daniel Altmaier (GER) leads Juan Manuel Cerundolo (ARG) 6-6 (5-6)",
+     "text": "Daniel Altmaier (GER) is tied with Juan Manuel Cerundolo (ARG) 6-7 (5-7) 1-0",
      "type": "event"
     }
    ],
@@ -57,8 +57,12 @@
      "homeAway": "away",
      "linescores": [
       {
-       "value": 6,
-       "tiebreak": 6
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -101,7 +105,11 @@
      "linescores": [
       {
        "value": 6,
-       "tiebreak": 5
+       "tiebreak": 5,
+       "winner": false
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -154,14 +162,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Juan Manuel Cerundolo",
    "alias": "Juan Manuel Cerundolo",
    "name": "Juan Manuel Cerundolo",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Daniel Altmaier",
@@ -173,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T14:57:55.976Z",
+ "updated": "2026-10-26T15:03:24.423Z",
  "open_taken_at": "2026-10-25T18:16:23.132Z",
  "thresholds": {
   "big": 10,
@@ -203,6 +211,28 @@
    "taken_at": "2026-10-25T20:14:26.173Z"
   },
   {
+   "market_id": "1807452",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Daniel Altmaier vs. Juan Manuel Cerundolo be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 57,
+   "yes_buy": 59,
+   "no_buy": 45,
+   "taken_at": "2026-10-26T01:49:26.065Z"
+  },
+  {
    "market_id": "1807446",
    "market": "Games spread",
    "group": "game",
@@ -225,48 +255,26 @@
    "taken_at": "2026-10-25T21:02:18.190Z"
   },
   {
-   "market_id": "1807448",
-   "market": "Games spread",
+   "market_id": "1807460",
+   "market": "Set 2 winner",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Daniel Altmaier cover 7.5 vs the Juan Manuel Cerundolo in Daniel Altmaier vs. Juan Manuel Cerundolo?",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Daniel Altmaier win set 2 against Juan Manuel Cerundolo?",
    "sides": [
-    "Daniel Altmaier +7.50 (Games)",
-    "Juan Manuel Cerundolo -7.50 (Games)"
+    "Yes: Daniel Altmaier win set 2 against Juan Manuel Cerundolo",
+    "No: Daniel Altmaier win set 2 against Juan Manuel Cerundolo"
    ],
    "teams": [
     "Daniel Altmaier",
-    "Juan Manuel Cerundolo"
-   ],
-   "player": null,
-   "mid": 81.5,
-   "yes_buy": 82,
-   "no_buy": 19,
-   "taken_at": "2026-10-26T13:51:51.154Z"
-  },
-  {
-   "market_id": "1807454",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Daniel Altmaier vs. Juan Manuel Cerundolo be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
     null
    ],
    "player": null,
-   "mid": 43.5,
-   "yes_buy": 46,
-   "no_buy": 59,
-   "taken_at": "2026-10-26T00:40:17.689Z"
+   "mid": 45.5,
+   "yes_buy": 48,
+   "no_buy": 57,
+   "taken_at": "2026-10-26T13:40:06.422Z"
   },
   {
    "market_id": "1807453",
@@ -289,28 +297,6 @@
    "yes_buy": 39,
    "no_buy": 65,
    "taken_at": "2026-10-26T04:32:08.548Z"
-  },
-  {
-   "market_id": "1807460",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Daniel Altmaier win set 2 against Juan Manuel Cerundolo?",
-   "sides": [
-    "Yes: Daniel Altmaier win set 2 against Juan Manuel Cerundolo",
-    "No: Daniel Altmaier win set 2 against Juan Manuel Cerundolo"
-   ],
-   "teams": [
-    "Daniel Altmaier",
-    null
-   ],
-   "player": null,
-   "mid": 45.5,
-   "yes_buy": 48,
-   "no_buy": 57,
-   "taken_at": "2026-10-26T13:40:06.422Z"
   },
   {
    "market_id": "1807444",
@@ -401,26 +387,48 @@
    "taken_at": "2026-10-26T05:02:53.418Z"
   },
   {
-   "market_id": "1807452",
-   "market": "Games total",
+   "market_id": "1807448",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Daniel Altmaier cover 7.5 vs the Juan Manuel Cerundolo in Daniel Altmaier vs. Juan Manuel Cerundolo?",
+   "sides": [
+    "Daniel Altmaier +7.50 (Games)",
+    "Juan Manuel Cerundolo -7.50 (Games)"
+   ],
+   "teams": [
+    "Daniel Altmaier",
+    "Juan Manuel Cerundolo"
+   ],
+   "player": null,
+   "mid": 81.5,
+   "yes_buy": 82,
+   "no_buy": 19,
+   "taken_at": "2026-10-26T13:51:51.154Z"
+  },
+  {
+   "market_id": "1807454",
+   "market": "Sets total",
    "group": "game",
    "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Daniel Altmaier vs. Juan Manuel Cerundolo be more than 22.5?",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Daniel Altmaier vs. Juan Manuel Cerundolo be more than 2.5?",
    "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
    ],
    "teams": [
     null,
     null
    ],
    "player": null,
-   "mid": 57,
-   "yes_buy": 59,
-   "no_buy": 45,
-   "taken_at": "2026-10-26T01:49:26.065Z"
+   "mid": 43.5,
+   "yes_buy": 46,
+   "no_buy": 59,
+   "taken_at": "2026-10-26T00:40:17.689Z"
   },
   {
    "market_id": "1807459",
@@ -513,6 +521,46 @@
  ],
  "edges": [
   {
+   "key": "1807453:1",
+   "market_id": "1807453",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Daniel Altmaier vs. Juan Manuel Cerundolo be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 65,
+   "now_chance": 48,
+   "open_odds": "-186",
+   "now_odds": "+108",
+   "edge": 17,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Juan Manuel Cerundolo 7, 0 · Daniel Altmaier 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T13:51:51.154Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1807460:1",
+   "market_id": "1807460",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Daniel Altmaier win set 2 against Juan Manuel Cerundolo?",
+   "side": "No: Daniel Altmaier win set 2 against Juan Manuel Cerundolo",
+   "open_chance": 57,
+   "now_chance": 42,
+   "open_odds": "-133",
+   "now_odds": "+138",
+   "edge": 15,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Juan Manuel Cerundolo 7, 0 · Daniel Altmaier 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T15:03:24.423Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1807404:0",
    "market_id": "1807404",
    "market": "Moneyline",
@@ -520,14 +568,14 @@
    "question": "Who will win in the upcoming atp event Daniel Altmaier vs Juan Manuel Cerundolo scheduled for October 26, 2026 at 1:40 PM UTC?",
    "side": "Daniel Altmaier win",
    "open_chance": 43,
-   "now_chance": 24,
+   "now_chance": 31,
    "open_odds": "+133",
-   "now_odds": "+317",
-   "edge": 19,
+   "now_odds": "+223",
+   "edge": 12,
    "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Juan Manuel Cerundolo 6 · Daniel Altmaier 6 · 1st Set (games by set)",
+   "class": "score",
+   "reason": "Explained by score: Daniel Altmaier trailing in sets",
+   "context": "Juan Manuel Cerundolo 7, 0 · Daniel Altmaier 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T14:51:58.588Z",
    "status": "open",
    "kalshi": null
@@ -540,14 +588,14 @@
    "question": "Will the Daniel Altmaier cover -1.5 vs the Juan Manuel Cerundolo in Daniel Altmaier vs. Juan Manuel Cerundolo?",
    "side": "Daniel Altmaier -1.50 (Games)",
    "open_chance": 39,
-   "now_chance": 21,
+   "now_chance": 27,
    "open_odds": "+156",
-   "now_odds": "+376",
-   "edge": 18,
+   "now_odds": "+270",
+   "edge": 12,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Daniel Altmaier not above the games spread right now",
-   "context": "Juan Manuel Cerundolo 6 · Daniel Altmaier 6 · 1st Set (games by set)",
+   "context": "Juan Manuel Cerundolo 7, 0 · Daniel Altmaier 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T14:21:15.922Z",
    "status": "open",
    "kalshi": null
@@ -560,76 +608,16 @@
    "question": "Will the Daniel Altmaier cover 1.5 vs the Juan Manuel Cerundolo in Daniel Altmaier vs. Juan Manuel Cerundolo?",
    "side": "Daniel Altmaier +1.50 (Games)",
    "open_chance": 51,
-   "now_chance": 37,
+   "now_chance": 45,
    "open_odds": "-104",
-   "now_odds": "+170",
-   "edge": 14,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Juan Manuel Cerundolo 6 · Daniel Altmaier 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T14:51:58.588Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1807453:1",
-   "market_id": "1807453",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Daniel Altmaier vs. Juan Manuel Cerundolo be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 65,
-   "now_chance": 53,
-   "open_odds": "-186",
-   "now_odds": "-113",
-   "edge": 12,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Juan Manuel Cerundolo 6 · Daniel Altmaier 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T13:51:51.154Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1807454:1",
-   "market_id": "1807454",
-   "market": "Sets total",
-   "group": "game",
-   "question": "Will the total in Daniel Altmaier vs. Juan Manuel Cerundolo be more than 2.5?",
-   "side": "Under 2.5 (Sets)",
-   "open_chance": 59,
-   "now_chance": 53,
-   "open_odds": "-144",
-   "now_odds": "-113",
+   "now_odds": "+122",
    "edge": 6,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Juan Manuel Cerundolo 6 · Daniel Altmaier 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T14:45:50.663Z",
+   "context": "Juan Manuel Cerundolo 7, 0 · Daniel Altmaier 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T14:51:58.588Z",
    "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1807452:1",
-   "market_id": "1807452",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Daniel Altmaier vs. Juan Manuel Cerundolo be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 45,
-   "now_chance": 17,
-   "open_odds": "+122",
-   "now_odds": "+488",
-   "edge": 28,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (28 pts), likely news",
-   "context": "Juan Manuel Cerundolo 6 · Daniel Altmaier 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T14:15:37.807Z",
-   "status": "gone",
    "kalshi": null
   },
   {
@@ -649,6 +637,26 @@
    "reason": "Explained by score: Daniel Altmaier not above the sets spread right now",
    "context": "Juan Manuel Cerundolo 5 · Daniel Altmaier 4 · 1st Set (games by set)",
    "first_seen": "2026-10-26T14:32:43.640Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1807454:1",
+   "market_id": "1807454",
+   "market": "Sets total",
+   "group": "game",
+   "question": "Will the total in Daniel Altmaier vs. Juan Manuel Cerundolo be more than 2.5?",
+   "side": "Under 2.5 (Sets)",
+   "open_chance": 59,
+   "now_chance": 53,
+   "open_odds": "-144",
+   "now_odds": "-113",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Juan Manuel Cerundolo 6 · Daniel Altmaier 6 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T14:45:50.663Z",
    "status": "gone",
    "kalshi": null
   },
@@ -715,6 +723,34 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1807460:1:big",
+   "key": "1807460:1",
+   "at": "2026-10-26T15:03:24.423Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "No: Daniel Altmaier win set 2 against Juan Manuel Cerundolo",
+   "market": "Set 2 winner",
+   "now_odds": "+138",
+   "now_chance": 42,
+   "edge": 15,
+   "text": "New big edge: No: Daniel Altmaier win set 2 against Juan Manuel Cerundolo (Set 2 winner), 15 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-danalt-juacer-2026-10-26"
+  },
+  {
+   "id": "gone:1807454:1:2026-10-26T14:45:50.663Z",
+   "key": "1807454:1",
+   "at": "2026-10-26T15:03:24.423Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 2.5 (Sets)",
+   "market": "Sets total",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 6,
+   "text": "Edge gone: Under 2.5 (Sets) (Sets total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-danalt-juacer-2026-10-26"
+  },
+  {
    "id": "new_edge:1807444:0:big",
    "key": "1807444:0",
    "at": "2026-10-26T14:57:55.976Z",
@@ -740,20 +776,6 @@
    "now_chance": 53,
    "edge": 6,
    "text": "New slight edge: Under 2.5 (Sets) (Sets total), 6 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-danalt-juacer-2026-10-26"
-  },
-  {
-   "id": "news:1807452:1",
-   "key": "1807452:1",
-   "at": "2026-10-26T14:51:58.588Z",
-   "type": "news",
-   "tier": "big",
-   "side": "Under 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+488",
-   "now_chance": 17,
-   "edge": 28,
-   "text": "Big move, likely news: Under 22.5 (Games) (Games total) is 28 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-danalt-juacer-2026-10-26"
   },
   {
@@ -813,20 +835,6 @@
    "url": "https://polymarket.us/sports/atp/atp-danalt-juacer-2026-10-26"
   },
   {
-   "id": "new_edge:1807452:1:big",
-   "key": "1807452:1",
-   "at": "2026-10-26T14:21:15.922Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Under 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+213",
-   "now_chance": 32,
-   "edge": 13,
-   "text": "New big edge: Under 22.5 (Games) (Games total), 13 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-danalt-juacer-2026-10-26"
-  },
-  {
    "id": "gone:1807443:1:2026-10-26T14:10:55.749Z",
    "key": "1807443:1",
    "at": "2026-10-26T14:21:15.922Z",
@@ -838,20 +846,6 @@
    "now_chance": 61,
    "edge": 4,
    "text": "Edge gone: Juan Manuel Cerundolo +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-danalt-juacer-2026-10-26"
-  },
-  {
-   "id": "new_edge:1807452:1:slight",
-   "key": "1807452:1",
-   "at": "2026-10-26T14:15:37.807Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Under 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+156",
-   "now_chance": 39,
-   "edge": 6,
-   "text": "New slight edge: Under 22.5 (Games) (Games total), 6 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-danalt-juacer-2026-10-26"
   },
   {
@@ -945,7 +939,9 @@
   "new_edge:1807404:0:big",
   "new_edge:1807444:0:slight",
   "new_edge:1807444:0:big",
-  "new_edge:1807454:1:slight"
+  "new_edge:1807454:1:slight",
+  "new_edge:1807460:1:big",
+  "gone:1807454:1:2026-10-26T14:45:50.663Z"
  ],
  "kalshi_checked": null
 }
