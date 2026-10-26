@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185723",
-  "fetched_at": "2026-10-26T09:33:28.450Z",
+  "fetched_at": "2026-10-26T09:36:50.894Z",
   "tennis": true,
   "tennis_match": {
    "id": "185723",
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 2
@@ -97,6 +98,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 3
@@ -134,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 232,
    "type": {
     "id": "2",
@@ -171,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T09:33:28.373Z",
+ "updated": "2026-10-26T09:36:50.812Z",
  "open_taken_at": "2026-10-25T11:04:28.584Z",
  "thresholds": {
   "big": 10,
@@ -267,72 +274,6 @@
    "taken_at": "2026-10-26T09:06:18.433Z"
   },
   {
-   "market_id": "1795015",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Harriet Dart win set 1 against Tatiana Prozorova?",
-   "sides": [
-    "Yes: Harriet Dart win set 1 against Tatiana Prozorova",
-    "No: Harriet Dart win set 1 against Tatiana Prozorova"
-   ],
-   "teams": [
-    "Harriet Dart",
-    null
-   ],
-   "player": null,
-   "mid": 49,
-   "yes_buy": 52,
-   "no_buy": 54,
-   "taken_at": "2026-10-25T19:53:35.624Z"
-  },
-  {
-   "market_id": "1795008",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Harriet Dart vs. Tatiana Prozorova be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 46,
-   "yes_buy": 47,
-   "no_buy": 55,
-   "taken_at": "2026-10-25T16:44:08.996Z"
-  },
-  {
-   "market_id": "1795000",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Harriet Dart cover 1.5 vs the Tatiana Prozorova in Harriet Dart vs. Tatiana Prozorova?",
-   "sides": [
-    "Harriet Dart +1.50 (Games)",
-    "Tatiana Prozorova -1.50 (Games)"
-   ],
-   "teams": [
-    "Harriet Dart",
-    "Tatiana Prozorova"
-   ],
-   "player": null,
-   "mid": 53.5,
-   "yes_buy": 55,
-   "no_buy": 48,
-   "taken_at": "2026-10-25T16:44:08.996Z"
-  },
-  {
    "market_id": "1794999",
    "market": "Games spread",
    "group": "game",
@@ -355,26 +296,26 @@
    "taken_at": "2026-10-25T16:44:08.996Z"
   },
   {
-   "market_id": "1795016",
-   "market": "Set 2 winner",
+   "market_id": "1795008",
+   "market": "Games total",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Harriet Dart win set 2 against Tatiana Prozorova?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Harriet Dart vs. Tatiana Prozorova be more than 22.5?",
    "sides": [
-    "Yes: Harriet Dart win set 2 against Tatiana Prozorova",
-    "No: Harriet Dart win set 2 against Tatiana Prozorova"
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
    ],
    "teams": [
-    "Harriet Dart",
+    null,
     null
    ],
    "player": null,
-   "mid": 44.5,
+   "mid": 46,
    "yes_buy": 47,
-   "no_buy": 58,
-   "taken_at": "2026-10-26T08:41:33.656Z"
+   "no_buy": 55,
+   "taken_at": "2026-10-25T16:44:08.996Z"
   },
   {
    "market_id": "1795010",
@@ -441,6 +382,72 @@
    "yes_buy": 32,
    "no_buy": 69,
    "taken_at": "2026-10-26T09:06:18.433Z"
+  },
+  {
+   "market_id": "1795015",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Harriet Dart win set 1 against Tatiana Prozorova?",
+   "sides": [
+    "Yes: Harriet Dart win set 1 against Tatiana Prozorova",
+    "No: Harriet Dart win set 1 against Tatiana Prozorova"
+   ],
+   "teams": [
+    "Harriet Dart",
+    null
+   ],
+   "player": null,
+   "mid": 49,
+   "yes_buy": 52,
+   "no_buy": 54,
+   "taken_at": "2026-10-25T19:53:35.624Z"
+  },
+  {
+   "market_id": "1795000",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Harriet Dart cover 1.5 vs the Tatiana Prozorova in Harriet Dart vs. Tatiana Prozorova?",
+   "sides": [
+    "Harriet Dart +1.50 (Games)",
+    "Tatiana Prozorova -1.50 (Games)"
+   ],
+   "teams": [
+    "Harriet Dart",
+    "Tatiana Prozorova"
+   ],
+   "player": null,
+   "mid": 53.5,
+   "yes_buy": 55,
+   "no_buy": 48,
+   "taken_at": "2026-10-25T16:44:08.996Z"
+  },
+  {
+   "market_id": "1795016",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Harriet Dart win set 2 against Tatiana Prozorova?",
+   "sides": [
+    "Yes: Harriet Dart win set 2 against Tatiana Prozorova",
+    "No: Harriet Dart win set 2 against Tatiana Prozorova"
+   ],
+   "teams": [
+    "Harriet Dart",
+    null
+   ],
+   "player": null,
+   "mid": 44.5,
+   "yes_buy": 47,
+   "no_buy": 58,
+   "taken_at": "2026-10-26T08:41:33.656Z"
   },
   {
    "market_id": "1795005",
@@ -531,26 +538,6 @@
    "kalshi": null
   },
   {
-   "key": "1795015:1",
-   "market_id": "1795015",
-   "market": "Set 1 winner",
-   "group": "game",
-   "question": "Will Harriet Dart win set 1 against Tatiana Prozorova?",
-   "side": "No: Harriet Dart win set 1 against Tatiana Prozorova",
-   "open_chance": 54,
-   "now_chance": 36,
-   "open_odds": "-117",
-   "now_odds": "+178",
-   "edge": 18,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Tatiana Prozorova 2 · Harriet Dart 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T09:17:42.027Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1795010:0",
    "market_id": "1795010",
    "market": "Sets total",
@@ -578,10 +565,30 @@
    "question": "Who will win in the upcoming wta event Harriet Dart vs Tatiana Prozorova scheduled for October 26, 2026 at 9:00 AM UTC?",
    "side": "Tatiana Prozorova win",
    "open_chance": 54,
-   "now_chance": 48,
+   "now_chance": 45,
    "open_odds": "-117",
-   "now_odds": "+108",
-   "edge": 6,
+   "now_odds": "+122",
+   "edge": 9,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Tatiana Prozorova 2 · Harriet Dart 3 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T09:23:22.946Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1794999:1",
+   "market_id": "1794999",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Harriet Dart cover -1.5 vs the Tatiana Prozorova in Harriet Dart vs. Tatiana Prozorova?",
+   "side": "Tatiana Prozorova +1.50 (Games)",
+   "open_chance": 58,
+   "now_chance": 50,
+   "open_odds": "-138",
+   "now_odds": "+100",
+   "edge": 8,
    "tier": "slight",
    "class": "edge",
    "reason": null,
@@ -611,26 +618,6 @@
    "kalshi": null
   },
   {
-   "key": "1795000:0",
-   "market_id": "1795000",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Harriet Dart cover 1.5 vs the Tatiana Prozorova in Harriet Dart vs. Tatiana Prozorova?",
-   "side": "Harriet Dart +1.50 (Games)",
-   "open_chance": 55,
-   "now_chance": 49,
-   "open_odds": "-122",
-   "now_odds": "+104",
-   "edge": 6,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Tatiana Prozorova 2 · Harriet Dart 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T04:03:42.878Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1795001:0",
    "market_id": "1795001",
    "market": "Games spread",
@@ -651,23 +638,23 @@
    "kalshi": null
   },
   {
-   "key": "1794999:1",
-   "market_id": "1794999",
-   "market": "Games spread",
+   "key": "1795015:1",
+   "market_id": "1795015",
+   "market": "Set 1 winner",
    "group": "game",
-   "question": "Will the Harriet Dart cover -1.5 vs the Tatiana Prozorova in Harriet Dart vs. Tatiana Prozorova?",
-   "side": "Tatiana Prozorova +1.50 (Games)",
-   "open_chance": 58,
-   "now_chance": 54,
-   "open_odds": "-138",
-   "now_odds": "-117",
-   "edge": 4,
-   "tier": "slight",
+   "question": "Will Harriet Dart win set 1 against Tatiana Prozorova?",
+   "side": "No: Harriet Dart win set 1 against Tatiana Prozorova",
+   "open_chance": 54,
+   "now_chance": 36,
+   "open_odds": "-117",
+   "now_odds": "+178",
+   "edge": 18,
+   "tier": "big",
    "class": "edge",
    "reason": null,
    "context": "Tatiana Prozorova 2 · Harriet Dart 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T09:23:22.946Z",
-   "status": "open",
+   "first_seen": "2026-10-26T09:17:42.027Z",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -687,6 +674,26 @@
    "reason": null,
    "context": "Tatiana Prozorova 2 · Harriet Dart 2 · 1st Set (games by set)",
    "first_seen": "2026-10-26T03:13:47.548Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1795000:0",
+   "market_id": "1795000",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Harriet Dart cover 1.5 vs the Tatiana Prozorova in Harriet Dart vs. Tatiana Prozorova?",
+   "side": "Harriet Dart +1.50 (Games)",
+   "open_chance": 55,
+   "now_chance": 49,
+   "open_odds": "-122",
+   "now_odds": "+104",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Tatiana Prozorova 2 · Harriet Dart 3 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T04:03:42.878Z",
    "status": "gone",
    "kalshi": null
   },
