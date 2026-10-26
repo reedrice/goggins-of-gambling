@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185663",
-  "fetched_at": "2026-10-26T02:07:41.047Z",
+  "fetched_at": "2026-10-26T02:13:14.846Z",
   "tennis": true,
   "tennis_match": {
    "id": "185663",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Alycia Parks (USA) leads Wang Xinyu (CHN) 5-1",
+     "text": "Wang Xinyu (CHN) is tied with Alycia Parks (USA) 1-6 1-0",
      "type": "event"
     }
    ],
@@ -55,10 +55,13 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -98,8 +101,11 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
      "linescores": [
+      {
+       "value": 1,
+       "winner": false
+      },
       {
        "value": 1
       }
@@ -136,11 +142,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 264,
    "type": {
     "id": "2",
@@ -159,14 +160,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Alycia Parks",
    "alias": "Alycia Parks",
    "name": "Alycia Parks",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Wang Xinyu",
@@ -178,7 +179,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T02:07:40.982Z",
+ "updated": "2026-10-26T02:13:14.753Z",
  "open_taken_at": "2026-10-25T11:33:18.426Z",
  "thresholds": {
   "big": 10,
@@ -206,6 +207,50 @@
    "yes_buy": 74,
    "no_buy": 30,
    "taken_at": "2026-10-25T13:33:46.584Z"
+  },
+  {
+   "market_id": "1796191",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Xinyu Wang cover 7.5 vs the Alycia Parks in Xinyu Wang vs. Alycia Parks?",
+   "sides": [
+    "Xinyu Wang +7.50 (Games)",
+    "Alycia Parks -7.50 (Games)"
+   ],
+   "teams": [
+    "Xinyu Wang",
+    "Alycia Parks"
+   ],
+   "player": null,
+   "mid": 70.5,
+   "yes_buy": 71,
+   "no_buy": 30,
+   "taken_at": "2026-10-26T01:37:40.392Z"
+  },
+  {
+   "market_id": "1796203",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Xinyu Wang win set 2 against Alycia Parks?",
+   "sides": [
+    "Yes: Xinyu Wang win set 2 against Alycia Parks",
+    "No: Xinyu Wang win set 2 against Alycia Parks"
+   ],
+   "teams": [
+    "Xinyu Wang",
+    null
+   ],
+   "player": null,
+   "mid": 58.5,
+   "yes_buy": 61,
+   "no_buy": 44,
+   "taken_at": "2026-10-26T01:43:44.669Z"
   },
   {
    "market_id": "1796193",
@@ -252,6 +297,28 @@
    "taken_at": "2026-10-25T19:32:38.269Z"
   },
   {
+   "market_id": "1796194",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Xinyu Wang vs. Alycia Parks be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 76.5,
+   "yes_buy": 79,
+   "no_buy": 26,
+   "taken_at": "2026-10-25T21:02:16.066Z"
+  },
+  {
    "market_id": "1796195",
    "market": "Games total",
    "group": "game",
@@ -294,50 +361,6 @@
    "yes_buy": 70,
    "no_buy": 31,
    "taken_at": "2026-10-26T01:37:40.392Z"
-  },
-  {
-   "market_id": "1796194",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Xinyu Wang vs. Alycia Parks be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 76.5,
-   "yes_buy": 79,
-   "no_buy": 26,
-   "taken_at": "2026-10-25T21:02:16.066Z"
-  },
-  {
-   "market_id": "1796203",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Xinyu Wang win set 2 against Alycia Parks?",
-   "sides": [
-    "Yes: Xinyu Wang win set 2 against Alycia Parks",
-    "No: Xinyu Wang win set 2 against Alycia Parks"
-   ],
-   "teams": [
-    "Xinyu Wang",
-    null
-   ],
-   "player": null,
-   "mid": 58.5,
-   "yes_buy": 61,
-   "no_buy": 44,
-   "taken_at": "2026-10-26T01:43:44.669Z"
   },
   {
    "market_id": "1796187",
@@ -450,28 +473,6 @@
    "taken_at": "2026-10-25T20:23:23.765Z"
   },
   {
-   "market_id": "1796191",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Xinyu Wang cover 7.5 vs the Alycia Parks in Xinyu Wang vs. Alycia Parks?",
-   "sides": [
-    "Xinyu Wang +7.50 (Games)",
-    "Alycia Parks -7.50 (Games)"
-   ],
-   "teams": [
-    "Xinyu Wang",
-    "Alycia Parks"
-   ],
-   "player": null,
-   "mid": 70.5,
-   "yes_buy": 71,
-   "no_buy": 30,
-   "taken_at": "2026-10-26T01:37:40.392Z"
-  },
-  {
    "market_id": "1796188",
    "market": "Games spread",
    "group": "game",
@@ -518,6 +519,26 @@
  ],
  "edges": [
   {
+   "key": "1796187:0",
+   "market_id": "1796187",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Xinyu Wang cover 1.5 vs the Alycia Parks in Xinyu Wang vs. Alycia Parks?",
+   "side": "Xinyu Wang +1.50 (Games)",
+   "open_chance": 73,
+   "now_chance": 28,
+   "open_odds": "-270",
+   "now_odds": "+257",
+   "edge": 45,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Wang Xinyu not above the games spread right now",
+   "context": "Alycia Parks 6, 0 · Wang Xinyu 1, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T01:37:40.392Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1795076:0",
    "market_id": "1795076",
    "market": "Moneyline",
@@ -525,14 +546,14 @@
    "question": "Who will win in the upcoming wta event Xinyu Wang vs Alycia Parks scheduled for October 26, 2026 at 1:30 AM UTC?",
    "side": "Xinyu Wang win",
    "open_chance": 74,
-   "now_chance": 26,
+   "now_chance": 31,
    "open_odds": "-285",
-   "now_odds": "+285",
-   "edge": 48,
+   "now_odds": "+223",
+   "edge": 43,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (48 pts), likely news",
-   "context": "Alycia Parks 5 · Wang Xinyu 1 · 1st Set (games by set)",
+   "reason": "Big move (43 pts), likely news",
+   "context": "Alycia Parks 6, 0 · Wang Xinyu 1, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-25T14:03:43.350Z",
    "status": "open",
    "kalshi": null
@@ -545,14 +566,14 @@
    "question": "Will the Xinyu Wang cover 1.5 vs the Alycia Parks in Xinyu Wang vs. Alycia Parks?",
    "side": "Xinyu Wang +1.50 (Sets)",
    "open_chance": 84,
-   "now_chance": 50,
+   "now_chance": 52,
    "open_odds": "-525",
-   "now_odds": "+100",
-   "edge": 34,
+   "now_odds": "-108",
+   "edge": 32,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (34 pts), likely news",
-   "context": "Alycia Parks 5 · Wang Xinyu 1 · 1st Set (games by set)",
+   "reason": "Big move (32 pts), likely news",
+   "context": "Alycia Parks 6, 0 · Wang Xinyu 1, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T01:37:40.392Z",
    "status": "open",
    "kalshi": null
@@ -572,8 +593,28 @@
    "tier": "big",
    "class": "news",
    "reason": "Big move (32 pts), likely news",
-   "context": "Alycia Parks 5 · Wang Xinyu 1 · 1st Set (games by set)",
+   "context": "Alycia Parks 6, 0 · Wang Xinyu 1, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T01:58:47.151Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1796194:0",
+   "market_id": "1796194",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Xinyu Wang vs. Alycia Parks be more than 17.5?",
+   "side": "Over 17.5 (Games)",
+   "open_chance": 79,
+   "now_chance": 51,
+   "open_odds": "-376",
+   "now_odds": "-104",
+   "edge": 28,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (28 pts), likely news",
+   "context": "Alycia Parks 6, 0 · Wang Xinyu 1, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T02:13:14.753Z",
    "status": "open",
    "kalshi": null
   },
@@ -585,76 +626,56 @@
    "question": "Will the total in Xinyu Wang vs. Alycia Parks be more than 2.5?",
    "side": "Under 2.5 (Sets)",
    "open_chance": 64,
-   "now_chance": 52,
+   "now_chance": 50,
    "open_odds": "-178",
-   "now_odds": "-108",
-   "edge": 12,
+   "now_odds": "+100",
+   "edge": 14,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Alycia Parks 5 · Wang Xinyu 1 · 1st Set (games by set)",
+   "context": "Alycia Parks 6, 0 · Wang Xinyu 1, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T01:58:47.151Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1796195:0",
+   "key": "1796195:1",
    "market_id": "1796195",
    "market": "Games total",
    "group": "game",
    "question": "Will the total in Xinyu Wang vs. Alycia Parks be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 44,
-   "now_chance": 39,
-   "open_odds": "+127",
-   "now_odds": "+156",
-   "edge": 5,
+   "side": "Under 22.5 (Games)",
+   "open_chance": 58,
+   "now_chance": 51,
+   "open_odds": "-138",
+   "now_odds": "-104",
+   "edge": 7,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Alycia Parks 5 · Wang Xinyu 1 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T02:07:40.982Z",
+   "context": "Alycia Parks 6, 0 · Wang Xinyu 1, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T01:43:44.669Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1796186:0",
-   "market_id": "1796186",
-   "market": "Games spread",
+   "key": "1796203:0",
+   "market_id": "1796203",
+   "market": "Set 2 winner",
    "group": "game",
-   "question": "Will the Xinyu Wang cover -1.5 vs the Alycia Parks in Xinyu Wang vs. Alycia Parks?",
-   "side": "Xinyu Wang -1.50 (Games)",
-   "open_chance": 60,
-   "now_chance": 22,
-   "open_odds": "-150",
-   "now_odds": "+355",
-   "edge": 38,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Wang Xinyu not above the games spread right now",
-   "context": "Alycia Parks 4 · Wang Xinyu 1 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T01:49:23.126Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1796187:0",
-   "market_id": "1796187",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Xinyu Wang cover 1.5 vs the Alycia Parks in Xinyu Wang vs. Alycia Parks?",
-   "side": "Xinyu Wang +1.50 (Games)",
-   "open_chance": 73,
-   "now_chance": 36,
-   "open_odds": "-270",
-   "now_odds": "+178",
-   "edge": 37,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Wang Xinyu not above the games spread right now",
-   "context": "Alycia Parks 4 · Wang Xinyu 1 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T01:37:40.392Z",
-   "status": "gone",
+   "question": "Will Xinyu Wang win set 2 against Alycia Parks?",
+   "side": "Yes: Xinyu Wang win set 2 against Alycia Parks",
+   "open_chance": 61,
+   "now_chance": 55,
+   "open_odds": "-156",
+   "now_odds": "-122",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Alycia Parks 6, 0 · Wang Xinyu 1, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T01:52:42.455Z",
+   "status": "open",
    "kalshi": null
   },
   {
@@ -674,26 +695,6 @@
    "reason": "Explained by score: Wang Xinyu not above the games spread right now",
    "context": "Alycia Parks 2 · Wang Xinyu 1 · 1st Set (games by set)",
    "first_seen": "2026-10-26T01:43:44.669Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1796196:1",
-   "market_id": "1796196",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Xinyu Wang vs. Alycia Parks be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 77,
-   "now_chance": 66,
-   "open_odds": "-335",
-   "now_odds": "-194",
-   "edge": 11,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Alycia Parks 3 · Wang Xinyu 1 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T01:37:40.392Z",
    "status": "gone",
    "kalshi": null
   },
@@ -718,46 +719,6 @@
    "kalshi": null
   },
   {
-   "key": "1796195:1",
-   "market_id": "1796195",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Xinyu Wang vs. Alycia Parks be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 58,
-   "now_chance": 49,
-   "open_odds": "-138",
-   "now_odds": "+104",
-   "edge": 9,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Alycia Parks 4 · Wang Xinyu 1 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T01:43:44.669Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1796203:0",
-   "market_id": "1796203",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Xinyu Wang win set 2 against Alycia Parks?",
-   "side": "Yes: Xinyu Wang win set 2 against Alycia Parks",
-   "open_chance": 61,
-   "now_chance": 53,
-   "open_odds": "-156",
-   "now_odds": "-113",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Alycia Parks 4 · Wang Xinyu 1 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T01:52:42.455Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "1796189:1",
    "market_id": "1796189",
    "market": "Games spread",
@@ -774,6 +735,26 @@
    "reason": "Explained by score: Alycia Parks not above the games spread right now",
    "context": "Alycia Parks 2 · Wang Xinyu 1 · 1st Set (games by set)",
    "first_seen": "2026-10-26T01:43:44.669Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1796195:0",
+   "market_id": "1796195",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Xinyu Wang vs. Alycia Parks be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 44,
+   "now_chance": 39,
+   "open_odds": "+127",
+   "now_odds": "+156",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Alycia Parks 5 · Wang Xinyu 1 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T02:07:40.982Z",
    "status": "gone",
    "kalshi": null
   },
@@ -819,6 +800,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "news:1796194:0",
+   "key": "1796194:0",
+   "at": "2026-10-26T02:13:14.753Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-104",
+   "now_chance": 51,
+   "edge": 28,
+   "text": "Big move, likely news: Over 17.5 (Games) (Games total) is 28 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-xinwan-alypar-2026-10-25"
+  },
+  {
+   "id": "gone:1796195:0:2026-10-26T02:07:40.982Z",
+   "key": "1796195:0",
+   "at": "2026-10-26T02:13:14.753Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+156",
+   "now_chance": 39,
+   "edge": 5,
+   "text": "Edge gone: Over 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-xinwan-alypar-2026-10-25"
+  },
   {
    "id": "news:1796193:0",
    "key": "1796193:0",
@@ -915,20 +924,6 @@
    "now_chance": 52,
    "edge": 12,
    "text": "New big edge: Under 2.5 (Sets) (Sets total), 12 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-xinwan-alypar-2026-10-25"
-  },
-  {
-   "id": "gone:1796196:1:2026-10-26T01:37:40.392Z",
-   "key": "1796196:1",
-   "at": "2026-10-26T02:04:26.184Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Under 27.5 (Games)",
-   "market": "Games total",
-   "now_odds": "-194",
-   "now_chance": 66,
-   "edge": 11,
-   "text": "Edge gone: Under 27.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-xinwan-alypar-2026-10-25"
   },
   {
@@ -1072,20 +1067,6 @@
    "url": "https://polymarket.us/sports/wta/wta-xinwan-alypar-2026-10-25"
   },
   {
-   "id": "new_edge:1796196:1:big",
-   "key": "1796196:1",
-   "at": "2026-10-26T01:37:40.392Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Under 27.5 (Games)",
-   "market": "Games total",
-   "now_odds": "-194",
-   "now_chance": 66,
-   "edge": 11,
-   "text": "New big edge: Under 27.5 (Games) (Games total), 11 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-xinwan-alypar-2026-10-25"
-  },
-  {
    "id": "new_edge:1796197:0:big",
    "key": "1796197:0",
    "at": "2026-10-26T01:37:40.392Z",
@@ -1183,7 +1164,9 @@
   "new_edge:1796195:0:slight",
   "gone:1796195:1:2026-10-26T01:43:44.669Z",
   "gone:1796203:0:2026-10-26T01:52:42.455Z",
-  "gone:1796194:1:2026-10-26T02:04:26.184Z"
+  "gone:1796194:1:2026-10-26T02:04:26.184Z",
+  "news:1796194:0",
+  "gone:1796195:0:2026-10-26T02:07:40.982Z"
  ],
  "kalshi_checked": null
 }
