@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185131",
-  "fetched_at": "2026-10-26T13:57:38.793Z",
+  "fetched_at": "2026-10-26T14:04:39.531Z",
   "tennis": true,
   "tennis_match": {
    "id": "185131",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Mariano Navone (ARG) is tied with Valentin Vacherot (MON) 3-6 3-1",
+     "text": "Mariano Navone (ARG) is tied with Valentin Vacherot (MON) 3-6 4-1",
      "type": "event"
     }
    ],
@@ -55,14 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
        "value": 3,
        "winner": false
       },
       {
-       "value": 3
+       "value": 4
       }
      ],
      "athlete": {
@@ -102,7 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
        "value": 6,
@@ -186,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T13:57:38.732Z",
+ "updated": "2026-10-26T14:04:39.471Z",
  "open_taken_at": "2026-10-24T12:32:02.932Z",
  "thresholds": {
   "big": 10,
@@ -260,6 +260,28 @@
    "taken_at": "2026-10-26T11:19:33.530Z"
   },
   {
+   "market_id": "1754957",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Valentin Vacherot vs. Mariano Navone be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 54,
+   "yes_buy": 56,
+   "no_buy": 48,
+   "taken_at": "2026-10-25T14:03:32.301Z"
+  },
+  {
    "market_id": "1754949",
    "market": "Games spread",
    "group": "game",
@@ -302,28 +324,6 @@
    "yes_buy": 58,
    "no_buy": 44,
    "taken_at": "2026-10-25T16:43:55.814Z"
-  },
-  {
-   "market_id": "1754950",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Valentin Vacherot cover -4.5 vs the Mariano Navone in Valentin Vacherot vs. Mariano Navone?",
-   "sides": [
-    "Valentin Vacherot -4.50 (Games)",
-    "Mariano Navone +4.50 (Games)"
-   ],
-   "teams": [
-    "Valentin Vacherot",
-    "Mariano Navone"
-   ],
-   "player": null,
-   "mid": 30.5,
-   "yes_buy": 31,
-   "no_buy": 70,
-   "taken_at": "2026-10-26T12:38:05.338Z"
   },
   {
    "market_id": "1754958",
@@ -370,6 +370,28 @@
    "taken_at": "2026-10-26T12:02:14.784Z"
   },
   {
+   "market_id": "1754950",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Valentin Vacherot cover -4.5 vs the Mariano Navone in Valentin Vacherot vs. Mariano Navone?",
+   "sides": [
+    "Valentin Vacherot -4.50 (Games)",
+    "Mariano Navone +4.50 (Games)"
+   ],
+   "teams": [
+    "Valentin Vacherot",
+    "Mariano Navone"
+   ],
+   "player": null,
+   "mid": 30.5,
+   "yes_buy": 31,
+   "no_buy": 70,
+   "taken_at": "2026-10-26T12:38:05.338Z"
+  },
+  {
    "market_id": "1754956",
    "market": "Games total",
    "group": "game",
@@ -390,28 +412,6 @@
    "yes_buy": 96,
    "no_buy": 5,
    "taken_at": "2026-10-26T12:38:05.338Z"
-  },
-  {
-   "market_id": "1754957",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Valentin Vacherot vs. Mariano Navone be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 54,
-   "yes_buy": 56,
-   "no_buy": 48,
-   "taken_at": "2026-10-25T14:03:32.301Z"
   },
   {
    "market_id": "1754959",
@@ -526,22 +526,22 @@
  ],
  "edges": [
   {
-   "key": "1754965:0",
-   "market_id": "1754965",
-   "market": "Set 2 winner",
+   "key": "1754958:1",
+   "market_id": "1754958",
+   "market": "Games total",
    "group": "game",
-   "question": "Will Valentin Vacherot win set 2 against Mariano Navone?",
-   "side": "Yes: Valentin Vacherot win set 2 against Mariano Navone",
-   "open_chance": 62,
-   "now_chance": 30,
-   "open_odds": "-163",
-   "now_odds": "+233",
-   "edge": 32,
+   "question": "Will the total in Valentin Vacherot vs. Mariano Navone be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 69,
+   "now_chance": 55,
+   "open_odds": "-223",
+   "now_odds": "-122",
+   "edge": 14,
    "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Valentin Vacherot not above the games spread right now",
-   "context": "Mariano Navone 3, 3 · Valentin Vacherot 6, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-26T13:39:53.963Z",
+   "class": "edge",
+   "reason": null,
+   "context": "Mariano Navone 3, 4 · Valentin Vacherot 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T13:45:21.115Z",
    "status": "open",
    "kalshi": null
   },
@@ -553,15 +553,55 @@
    "question": "Will the Valentin Vacherot cover 1.5 vs the Mariano Navone in Valentin Vacherot vs. Mariano Navone?",
    "side": "Mariano Navone -1.50 (Games)",
    "open_chance": 32,
-   "now_chance": 20,
+   "now_chance": 24,
    "open_odds": "+213",
-   "now_odds": "+400",
-   "edge": 12,
-   "tier": "big",
+   "now_odds": "+317",
+   "edge": 8,
+   "tier": "slight",
    "class": "score",
    "reason": "Explained by score: Mariano Navone not above the games spread right now",
-   "context": "Mariano Navone 3, 3 · Valentin Vacherot 6, 1 · 2nd Set (games by set)",
+   "context": "Mariano Navone 3, 4 · Valentin Vacherot 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T13:45:21.115Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1754948:0",
+   "market_id": "1754948",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Valentin Vacherot cover -1.5 vs the Mariano Navone in Valentin Vacherot vs. Mariano Navone?",
+   "side": "Valentin Vacherot -1.50 (Games)",
+   "open_chance": 58,
+   "now_chance": 52,
+   "open_odds": "-138",
+   "now_odds": "-108",
+   "edge": 6,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Valentin Vacherot not above the games spread right now",
+   "context": "Mariano Navone 3, 4 · Valentin Vacherot 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T14:04:39.471Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1753305:0",
+   "market_id": "1753305",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Valentin Vacherot vs Mariano Navone scheduled for October 25, 2026 at 9:00 AM UTC?",
+   "side": "Valentin Vacherot win",
+   "open_chance": 71,
+   "now_chance": 67,
+   "open_odds": "-245",
+   "now_odds": "-203",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Mariano Navone 3, 4 · Valentin Vacherot 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T14:04:39.471Z",
    "status": "open",
    "kalshi": null
   },
@@ -582,66 +622,6 @@
    "reason": null,
    "context": "Mariano Navone 3, 3 · Valentin Vacherot 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T12:47:28.924Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1754958:1",
-   "market_id": "1754958",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Valentin Vacherot vs. Mariano Navone be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 69,
-   "now_chance": 58,
-   "open_odds": "-223",
-   "now_odds": "-138",
-   "edge": 11,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Mariano Navone 3, 3 · Valentin Vacherot 6, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-26T13:45:21.115Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1754957:0",
-   "market_id": "1754957",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Valentin Vacherot vs. Mariano Navone be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 56,
-   "now_chance": 36,
-   "open_odds": "-127",
-   "now_odds": "+178",
-   "edge": 20,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Mariano Navone 3 · Valentin Vacherot 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T12:47:28.924Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1754957:1",
-   "market_id": "1754957",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Valentin Vacherot vs. Mariano Navone be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 48,
-   "now_chance": 31,
-   "open_odds": "+108",
-   "now_odds": "+223",
-   "edge": 17,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Mariano Navone 3, 2 · Valentin Vacherot 6, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-10-26T13:11:57.805Z",
    "status": "gone",
    "kalshi": null
   },
@@ -662,26 +642,6 @@
    "reason": null,
    "context": "Mariano Navone 2 · Valentin Vacherot 3 · 1st Set (games by set)",
    "first_seen": "2026-10-26T12:53:15.140Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1754965:1",
-   "market_id": "1754965",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Valentin Vacherot win set 2 against Mariano Navone?",
-   "side": "No: Valentin Vacherot win set 2 against Mariano Navone",
-   "open_chance": 43,
-   "now_chance": 36,
-   "open_odds": "+133",
-   "now_odds": "+178",
-   "edge": 7,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Mariano Navone 3 · Valentin Vacherot 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T12:47:28.924Z",
    "status": "gone",
    "kalshi": null
   },
@@ -790,20 +750,6 @@
    "url": "https://polymarket.us/sports/atp/atp-valvac-marnav-2026-10-25"
   },
   {
-   "id": "new_edge:1754957:1:big",
-   "key": "1754957:1",
-   "at": "2026-10-26T13:45:21.115Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Under 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+223",
-   "now_chance": 31,
-   "edge": 17,
-   "text": "New big edge: Under 22.5 (Games) (Games total), 17 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-valvac-marnav-2026-10-25"
-  },
-  {
    "id": "new_edge:1754958:1:slight",
    "key": "1754958:1",
    "at": "2026-10-26T13:45:21.115Z",
@@ -860,20 +806,6 @@
    "url": "https://polymarket.us/sports/atp/atp-valvac-marnav-2026-10-25"
   },
   {
-   "id": "new_edge:1754957:0:big",
-   "key": "1754957:0",
-   "at": "2026-10-26T13:23:39.700Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Over 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+163",
-   "now_chance": 38,
-   "edge": 18,
-   "text": "New big edge: Over 22.5 (Games) (Games total), 18 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-valvac-marnav-2026-10-25"
-  },
-  {
    "id": "new_edge:1754958:0:big",
    "key": "1754958:0",
    "at": "2026-10-26T13:23:39.700Z",
@@ -916,34 +848,6 @@
    "url": "https://polymarket.us/sports/atp/atp-valvac-marnav-2026-10-25"
   },
   {
-   "id": "gone:1754957:1:2026-10-26T13:11:57.805Z",
-   "key": "1754957:1",
-   "at": "2026-10-26T13:17:52.500Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Under 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+133",
-   "now_chance": 43,
-   "edge": 5,
-   "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-valvac-marnav-2026-10-25"
-  },
-  {
-   "id": "new_edge:1754957:1:slight",
-   "key": "1754957:1",
-   "at": "2026-10-26T13:11:57.805Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Under 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+133",
-   "now_chance": 43,
-   "edge": 5,
-   "text": "New slight edge: Under 22.5 (Games) (Games total), 5 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-valvac-marnav-2026-10-25"
-  },
-  {
    "id": "new_edge:1754950:1:slight",
    "key": "1754950:1",
    "at": "2026-10-26T12:59:59.283Z",
@@ -972,34 +876,6 @@
    "url": "https://polymarket.us/sports/atp/atp-valvac-marnav-2026-10-25"
   },
   {
-   "id": "gone:1754957:0:2026-10-26T12:47:28.924Z",
-   "key": "1754957:0",
-   "at": "2026-10-26T12:53:15.140Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Over 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+104",
-   "now_chance": 49,
-   "edge": 7,
-   "text": "Edge gone: Over 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-valvac-marnav-2026-10-25"
-  },
-  {
-   "id": "gone:1754965:1:2026-10-26T12:47:28.924Z",
-   "key": "1754965:1",
-   "at": "2026-10-26T12:53:15.140Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "No: Valentin Vacherot win set 2 against Mariano Navone",
-   "market": "Set 2 winner",
-   "now_odds": "+163",
-   "now_chance": 38,
-   "edge": 5,
-   "text": "Edge gone: No: Valentin Vacherot win set 2 against Mariano Navone (Set 2 winner) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-valvac-marnav-2026-10-25"
-  },
-  {
    "id": "new_edge:1754950:1:big",
    "key": "1754950:1",
    "at": "2026-10-26T12:47:28.924Z",
@@ -1011,34 +887,6 @@
    "now_chance": 57,
    "edge": 13,
    "text": "New big edge: Mariano Navone +4.50 (Games) (Games spread), 13 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-valvac-marnav-2026-10-25"
-  },
-  {
-   "id": "new_edge:1754957:0:slight",
-   "key": "1754957:0",
-   "at": "2026-10-26T12:47:28.924Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Over 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+104",
-   "now_chance": 49,
-   "edge": 7,
-   "text": "New slight edge: Over 22.5 (Games) (Games total), 7 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-valvac-marnav-2026-10-25"
-  },
-  {
-   "id": "new_edge:1754965:1:slight",
-   "key": "1754965:1",
-   "at": "2026-10-26T12:47:28.924Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "No: Valentin Vacherot win set 2 against Mariano Navone",
-   "market": "Set 2 winner",
-   "now_odds": "+163",
-   "now_chance": 38,
-   "edge": 5,
-   "text": "New slight edge: No: Valentin Vacherot win set 2 against Mariano Navone (Set 2 winner), 5 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-valvac-marnav-2026-10-25"
   }
  ],
