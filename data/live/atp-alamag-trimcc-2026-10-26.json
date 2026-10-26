@@ -3,15 +3,15 @@
  "slug": "atp-alamag-trimcc-2026-10-26",
  "game": "Alan Magadan vs. Tristan McCormick",
  "url": "https://polymarket.us/sports/atp/atp-alamag-trimcc-2026-10-26",
- "start_time": "2026-10-26T19:55:00Z",
+ "start_time": "2026-10-26T20:10:00Z",
  "status": "live",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-26T20:11:55.848Z"
+  "fetched_at": "2026-10-26T20:17:38.420Z"
  },
- "updated": "2026-10-26T20:11:55.743Z",
+ "updated": "2026-10-26T20:17:38.339Z",
  "open_taken_at": "2026-10-25T22:49:47.838Z",
  "thresholds": {
   "big": 10,
@@ -39,28 +39,6 @@
    "yes_buy": 59,
    "no_buy": 45,
    "taken_at": "2026-10-25T23:43:19.529Z"
-  },
-  {
-   "market_id": "1815947",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Alan Magadan cover 1.5 vs the Tristan McCormick in Alan Magadan vs. Tristan McCormick?",
-   "sides": [
-    "Alan Magadan +1.50 (Sets)",
-    "Tristan McCormick -1.50 (Sets)"
-   ],
-   "teams": [
-    "Alan Magadan",
-    "Tristan McCormick"
-   ],
-   "player": null,
-   "mid": 72,
-   "yes_buy": 74,
-   "no_buy": 30,
-   "taken_at": "2026-10-26T19:54:03.112Z"
   },
   {
    "market_id": "1815945",
@@ -127,6 +105,28 @@
    "yes_buy": 87,
    "no_buy": 18,
    "taken_at": "2026-10-26T11:19:52.237Z"
+  },
+  {
+   "market_id": "1815956",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Alan Magadan win set 1 against Tristan McCormick?",
+   "sides": [
+    "Yes: Alan Magadan win set 1 against Tristan McCormick",
+    "No: Alan Magadan win set 1 against Tristan McCormick"
+   ],
+   "teams": [
+    "Alan Magadan",
+    null
+   ],
+   "player": null,
+   "mid": 60,
+   "yes_buy": 62,
+   "no_buy": 42,
+   "taken_at": "2026-10-26T20:17:38.339Z"
   },
   {
    "market_id": "1815941",
@@ -261,6 +261,28 @@
    "taken_at": "2026-10-26T16:34:05.934Z"
   },
   {
+   "market_id": "1815947",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Alan Magadan cover 1.5 vs the Tristan McCormick in Alan Magadan vs. Tristan McCormick?",
+   "sides": [
+    "Alan Magadan +1.50 (Sets)",
+    "Tristan McCormick -1.50 (Sets)"
+   ],
+   "teams": [
+    "Alan Magadan",
+    "Tristan McCormick"
+   ],
+   "player": null,
+   "mid": 72,
+   "yes_buy": 74,
+   "no_buy": 30,
+   "taken_at": "2026-10-26T19:54:03.112Z"
+  },
+  {
    "market_id": "1815946",
    "market": "Sets spread",
    "group": "game",
@@ -381,11 +403,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-26T20:11:55.743Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1815946:0:2026-10-26T20:11:55.743Z",
+   "key": "1815946:0",
+   "at": "2026-10-26T20:17:38.339Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Alan Magadan -1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+335",
+   "now_chance": 23,
+   "edge": 7,
+   "text": "Edge gone: Alan Magadan -1.50 (Sets) (Sets spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-alamag-trimcc-2026-10-26"
+  },
   {
    "id": "new_edge:1815946:0:slight",
    "key": "1815946:0",
@@ -462,7 +498,8 @@
   "new_edge:1815948:0:big",
   "new_edge:1815616:0:big",
   "new_edge:1815941:0:slight",
-  "new_edge:1815946:0:slight"
+  "new_edge:1815946:0:slight",
+  "gone:1815946:0:2026-10-26T20:11:55.743Z"
  ],
  "kalshi_checked": null
 }
