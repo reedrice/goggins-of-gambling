@@ -4,12 +4,12 @@
  "game": "Dasha Plekhanova vs. Demi Tran",
  "url": "https://polymarket.us/sports/wta/wta-dasple-demtra-2026-10-25",
  "start_time": "2026-10-26T18:20:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187283",
-  "fetched_at": "2026-10-26T19:35:52.942Z",
+  "fetched_at": "2026-10-26T19:41:50.961Z",
   "tennis": true,
   "tennis_match": {
    "id": "187283",
@@ -17,17 +17,17 @@
    "date": "2026-10-26T18:25Z",
    "startDate": "2026-10-26T18:25Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Dasha Plekhanova (CAN) leads Demi Tran (NED) 6-3 5-1",
+     "text": "Dasha Plekhanova (CAN) bt Demi Tran (NED) 6-3 6-1",
      "type": "event"
     }
    ],
@@ -55,13 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
      "linescores": [
       {
        "value": 3,
        "winner": false
       },
       {
-       "value": 1
+       "value": 1,
+       "winner": false
       }
      ],
      "athlete": {
@@ -101,13 +103,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 5
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -158,10 +162,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Demi Tran",
@@ -173,13 +177,13 @@
    "abbr": "Dasha Plekhanova",
    "alias": "Dasha Plekhanova",
    "name": "Dasha Plekhanova",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T19:35:52.881Z",
+ "updated": "2026-10-26T19:41:50.873Z",
  "open_taken_at": "2026-10-25T00:16:50.175Z",
  "thresholds": {
   "big": 10,
@@ -519,26 +523,6 @@
  ],
  "edges": [
   {
-   "key": "1774743:1",
-   "market_id": "1774743",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Dasha Plekhanova cover -7.5 vs the Demi Tran in Dasha Plekhanova vs. Demi Tran?",
-   "side": "Demi Tran +7.50 (Games)",
-   "open_chance": 66,
-   "now_chance": 44,
-   "open_odds": "-194",
-   "now_odds": "+127",
-   "edge": 22,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Demi Tran 3, 1 · Dasha Plekhanova 6, 5 · 2nd Set (games by set)",
-   "first_seen": "2026-10-26T19:29:45.905Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1774751:0",
    "market_id": "1774751",
    "market": "Games total",
@@ -555,6 +539,26 @@
    "reason": "Big move (39 pts), likely news",
    "context": "Demi Tran 3, 1 · Dasha Plekhanova 6, 4 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T17:36:46.680Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1774743:1",
+   "market_id": "1774743",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Dasha Plekhanova cover -7.5 vs the Demi Tran in Dasha Plekhanova vs. Demi Tran?",
+   "side": "Demi Tran +7.50 (Games)",
+   "open_chance": 66,
+   "now_chance": 44,
+   "open_odds": "-194",
+   "now_odds": "+127",
+   "edge": 22,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Demi Tran 3, 1 · Dasha Plekhanova 6, 5 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T19:29:45.905Z",
    "status": "gone",
    "kalshi": null
   },
@@ -740,6 +744,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1774743:1:2026-10-26T19:29:45.905Z",
+   "key": "1774743:1",
+   "at": "2026-10-26T19:41:50.873Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Demi Tran +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+127",
+   "now_chance": 44,
+   "edge": 22,
+   "text": "Edge gone: Demi Tran +7.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-dasple-demtra-2026-10-25"
+  },
   {
    "id": "new_edge:1774743:1:big",
    "key": "1774743:1",
@@ -1034,7 +1052,8 @@
   "gone:1774755:0:2026-10-26T19:18:58.302Z",
   "news:1774751:0",
   "new_edge:1774743:1:slight",
-  "new_edge:1774743:1:big"
+  "new_edge:1774743:1:big",
+  "gone:1774743:1:2026-10-26T19:29:45.905Z"
  ],
  "kalshi_checked": null
 }
