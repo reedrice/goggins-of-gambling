@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-26T14:10:55.867Z"
+  "fetched_at": "2026-10-26T14:15:37.811Z"
  },
- "updated": "2026-10-26T14:10:55.707Z",
+ "updated": "2026-10-26T14:15:37.689Z",
  "open_taken_at": "2026-10-25T18:16:22.800Z",
  "thresholds": {
   "big": 10,
@@ -107,50 +107,6 @@
    "taken_at": "2026-10-26T11:19:48.843Z"
   },
   {
-   "market_id": "1807408",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Kilian Feldbausch cover 1.5 vs the Tom Paris in Kilian Feldbausch vs. Tom Paris?",
-   "sides": [
-    "Kilian Feldbausch +1.50 (Games)",
-    "Tom Paris -1.50 (Games)"
-   ],
-   "teams": [
-    "Kilian Feldbausch",
-    "Tom Paris"
-   ],
-   "player": null,
-   "mid": 68.5,
-   "yes_buy": 69,
-   "no_buy": 32,
-   "taken_at": "2026-10-26T13:45:30.492Z"
-  },
-  {
-   "market_id": "1807410",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Kilian Feldbausch cover 4.5 vs the Tom Paris in Kilian Feldbausch vs. Tom Paris?",
-   "sides": [
-    "Kilian Feldbausch +4.50 (Games)",
-    "Tom Paris -4.50 (Games)"
-   ],
-   "teams": [
-    "Kilian Feldbausch",
-    "Tom Paris"
-   ],
-   "player": null,
-   "mid": 63.5,
-   "yes_buy": 66,
-   "no_buy": 39,
-   "taken_at": "2026-10-26T13:45:30.492Z"
-  },
-  {
    "market_id": "1807407",
    "market": "Games spread",
    "group": "game",
@@ -171,6 +127,28 @@
    "yes_buy": 61,
    "no_buy": 42,
    "taken_at": "2026-10-26T13:32:23.448Z"
+  },
+  {
+   "market_id": "1807408",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Kilian Feldbausch cover 1.5 vs the Tom Paris in Kilian Feldbausch vs. Tom Paris?",
+   "sides": [
+    "Kilian Feldbausch +1.50 (Games)",
+    "Tom Paris -1.50 (Games)"
+   ],
+   "teams": [
+    "Kilian Feldbausch",
+    "Tom Paris"
+   ],
+   "player": null,
+   "mid": 68.5,
+   "yes_buy": 69,
+   "no_buy": 32,
+   "taken_at": "2026-10-26T13:45:30.492Z"
   },
   {
    "market_id": "1807423",
@@ -347,9 +325,51 @@
    "yes_buy": 28,
    "no_buy": 76,
    "taken_at": "2026-10-26T11:19:48.843Z"
+  },
+  {
+   "market_id": "1807410",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Kilian Feldbausch cover 4.5 vs the Tom Paris in Kilian Feldbausch vs. Tom Paris?",
+   "sides": [
+    "Kilian Feldbausch +4.50 (Games)",
+    "Tom Paris -4.50 (Games)"
+   ],
+   "teams": [
+    "Kilian Feldbausch",
+    "Tom Paris"
+   ],
+   "player": null,
+   "mid": 63.5,
+   "yes_buy": 66,
+   "no_buy": 39,
+   "taken_at": "2026-10-26T13:45:30.492Z"
   }
  ],
  "edges": [
+  {
+   "key": "1807407:1",
+   "market_id": "1807407",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Kilian Feldbausch cover -1.5 vs the Tom Paris in Kilian Feldbausch vs. Tom Paris?",
+   "side": "Tom Paris +1.50 (Games)",
+   "open_chance": 42,
+   "now_chance": 31,
+   "open_odds": "+138",
+   "now_odds": "+223",
+   "edge": 11,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-26T14:15:37.689Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1807415:0",
    "market_id": "1807415",
@@ -413,6 +433,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1807407:1:big",
+   "key": "1807407:1",
+   "at": "2026-10-26T14:15:37.689Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Tom Paris +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+223",
+   "now_chance": 31,
+   "edge": 11,
+   "text": "New big edge: Tom Paris +1.50 (Games) (Games spread), 11 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-kilfel-tompar-2026-10-26"
+  },
+  {
    "id": "new_edge:1807415:0:slight",
    "key": "1807415:0",
    "at": "2026-10-26T14:10:55.707Z",
@@ -473,7 +507,8 @@
   "new_edge:1807409:0:slight",
   "new_edge:1807409:1:slight",
   "gone:1807409:0:2026-10-26T07:50:16.053Z",
-  "new_edge:1807415:0:slight"
+  "new_edge:1807415:0:slight",
+  "new_edge:1807407:1:big"
  ],
  "kalshi_checked": null
 }
