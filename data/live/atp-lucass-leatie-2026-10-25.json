@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185175",
-  "fetched_at": "2026-10-26T20:29:50.861Z",
+  "fetched_at": "2026-10-26T20:36:16.954Z",
   "tennis": true,
   "tennis_match": {
    "id": "185175",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Learner Tien (USA) leads Luca Van Assche (FRA) 6-3 2-1",
+     "text": "Learner Tien (USA) leads Luca Van Assche (FRA) 6-3 3-1",
      "type": "event"
     }
    ],
@@ -55,14 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 2
+       "value": 3
       }
      ],
      "athlete": {
@@ -102,7 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
        "value": 3,
@@ -186,35 +186,13 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T20:29:50.688Z",
+ "updated": "2026-10-26T20:36:16.856Z",
  "open_taken_at": "2026-10-24T11:16:09.379Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "1749406",
-   "market": "Moneyline",
-   "group": "game",
-   "mtype": "winner",
-   "period": "full_game",
-   "line": null,
-   "question": "Who will win in the upcoming atp event Luca Van Assche vs Learner Tien scheduled for October 25, 2026 at 9:00 AM UTC?",
-   "sides": [
-    "Luca Van Assche win",
-    "Learner Tien win"
-   ],
-   "teams": [
-    "Luca Van Assche",
-    "Learner Tien"
-   ],
-   "player": null,
-   "mid": 26,
-   "yes_buy": 29,
-   "no_buy": 77,
-   "taken_at": "2026-10-24T16:08:13.381Z"
-  },
   {
    "market_id": "1749706",
    "market": "Games spread",
@@ -280,6 +258,28 @@
    "yes_buy": 52,
    "no_buy": 51,
    "taken_at": "2026-10-25T19:13:25.788Z"
+  },
+  {
+   "market_id": "1749406",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming atp event Luca Van Assche vs Learner Tien scheduled for October 25, 2026 at 9:00 AM UTC?",
+   "sides": [
+    "Luca Van Assche win",
+    "Learner Tien win"
+   ],
+   "teams": [
+    "Luca Van Assche",
+    "Learner Tien"
+   ],
+   "player": null,
+   "mid": 26,
+   "yes_buy": 29,
+   "no_buy": 77,
+   "taken_at": "2026-10-24T16:08:13.381Z"
   },
   {
    "market_id": "1749708",
@@ -526,26 +526,6 @@
  ],
  "edges": [
   {
-   "key": "1749710:0",
-   "market_id": "1749710",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Luca Van Assche vs. Learner Tien be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 52,
-   "now_chance": 17,
-   "open_odds": "-108",
-   "now_odds": "+488",
-   "edge": 35,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (35 pts), likely news",
-   "context": "Learner Tien 6, 2 · Luca Van Assche 3, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-26T20:29:50.688Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1749709:0",
    "market_id": "1749709",
    "market": "Games total",
@@ -553,15 +533,35 @@
    "question": "Will the total in Luca Van Assche vs. Learner Tien be more than 17.5?",
    "side": "Over 17.5 (Games)",
    "open_chance": 69,
-   "now_chance": 65,
+   "now_chance": 35,
    "open_odds": "-223",
-   "now_odds": "-186",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Learner Tien 6, 2 · Luca Van Assche 3, 1 · 2nd Set (games by set)",
+   "now_odds": "+186",
+   "edge": 34,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (34 pts), likely news",
+   "context": "Learner Tien 6, 3 · Luca Van Assche 3, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T20:11:45.015Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1749706:0",
+   "market_id": "1749706",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Luca Van Assche cover 7.5 vs the Learner Tien in Luca Van Assche vs. Learner Tien?",
+   "side": "Luca Van Assche +7.50 (Games)",
+   "open_chance": 95,
+   "now_chance": 68,
+   "open_odds": "-1900",
+   "now_odds": "-213",
+   "edge": 27,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (27 pts), likely news",
+   "context": "Learner Tien 6, 3 · Luca Van Assche 3, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T20:36:16.856Z",
    "status": "open",
    "kalshi": null
   },
@@ -667,6 +667,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "news:1749709:0",
+   "key": "1749709:0",
+   "at": "2026-10-26T20:36:16.856Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+186",
+   "now_chance": 35,
+   "edge": 34,
+   "text": "Big move, likely news: Over 17.5 (Games) (Games total) is 34 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-lucass-leatie-2026-10-25"
+  },
+  {
+   "id": "news:1749706:0",
+   "key": "1749706:0",
+   "at": "2026-10-26T20:36:16.856Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Luca Van Assche +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-213",
+   "now_chance": 68,
+   "edge": 27,
+   "text": "Big move, likely news: Luca Van Assche +7.50 (Games) (Games spread) is 27 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-lucass-leatie-2026-10-25"
+  },
   {
    "id": "new_edge:1749709:0:slight",
    "key": "1749709:0",
@@ -842,7 +870,9 @@
   "new_edge:1749709:0:big",
   "gone:1749709:1:2026-10-26T19:57:28.976Z",
   "new_edge:1749706:0:big",
-  "new_edge:1749709:0:slight"
+  "new_edge:1749709:0:slight",
+  "news:1749709:0",
+  "news:1749706:0"
  ],
  "kalshi_checked": null
 }
