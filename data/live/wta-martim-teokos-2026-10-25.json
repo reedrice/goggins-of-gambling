@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185712",
-  "fetched_at": "2026-10-26T04:03:42.939Z",
+  "fetched_at": "2026-10-26T04:08:12.783Z",
   "tennis": true,
   "tennis_match": {
    "id": "185712",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(7) Maria Timofeeva (UZB) leads Teodora Kostovic (SER) 6-4",
+     "text": "(7) Maria Timofeeva (UZB) is tied with Teodora Kostovic (SER) 6-4 0-0",
      "type": "event"
     }
    ],
@@ -55,9 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
-       "value": 4
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -97,12 +102,17 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 7
      },
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -137,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 232,
    "type": {
     "id": "2",
@@ -155,8 +170,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Teodora Kostovic",
@@ -168,13 +183,13 @@
    "abbr": "Maria Timofeeva",
    "alias": "Maria Timofeeva",
    "name": "Maria Timofeeva",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-26T04:03:42.813Z",
+ "updated": "2026-10-26T04:08:12.635Z",
  "open_taken_at": "2026-10-25T11:04:28.440Z",
  "thresholds": {
   "big": 10,
@@ -226,28 +241,6 @@
    "taken_at": "2026-10-26T03:05:16.724Z"
   },
   {
-   "market_id": "1795054",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Maria Timofeeva cover 1.5 vs the Teodora Kostovic in Maria Timofeeva vs. Teodora Kostovic?",
-   "sides": [
-    "Maria Timofeeva +1.50 (Games)",
-    "Teodora Kostovic -1.50 (Games)"
-   ],
-   "teams": [
-    "Maria Timofeeva",
-    "Teodora Kostovic"
-   ],
-   "player": null,
-   "mid": 66.5,
-   "yes_buy": 69,
-   "no_buy": 36,
-   "taken_at": "2026-10-25T17:49:37.863Z"
-  },
-  {
    "market_id": "1795053",
    "market": "Games spread",
    "group": "game",
@@ -268,28 +261,6 @@
    "yes_buy": 59,
    "no_buy": 43,
    "taken_at": "2026-10-25T16:44:08.775Z"
-  },
-  {
-   "market_id": "1795059",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Maria Timofeeva cover -1.5 vs the Teodora Kostovic in Maria Timofeeva vs. Teodora Kostovic?",
-   "sides": [
-    "Maria Timofeeva -1.50 (Sets)",
-    "Teodora Kostovic +1.50 (Sets)"
-   ],
-   "teams": [
-    "Maria Timofeeva",
-    "Teodora Kostovic"
-   ],
-   "player": null,
-   "mid": 40.5,
-   "yes_buy": 43,
-   "no_buy": 62,
-   "taken_at": "2026-10-25T16:50:11.733Z"
   },
   {
    "market_id": "1795070",
@@ -314,6 +285,28 @@
    "taken_at": "2026-10-26T02:37:48.052Z"
   },
   {
+   "market_id": "1795059",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Maria Timofeeva cover -1.5 vs the Teodora Kostovic in Maria Timofeeva vs. Teodora Kostovic?",
+   "sides": [
+    "Maria Timofeeva -1.50 (Sets)",
+    "Teodora Kostovic +1.50 (Sets)"
+   ],
+   "teams": [
+    "Maria Timofeeva",
+    "Teodora Kostovic"
+   ],
+   "player": null,
+   "mid": 40.5,
+   "yes_buy": 43,
+   "no_buy": 62,
+   "taken_at": "2026-10-25T16:50:11.733Z"
+  },
+  {
    "market_id": "1795062",
    "market": "Games total",
    "group": "game",
@@ -333,28 +326,6 @@
    "mid": 42,
    "yes_buy": 43,
    "no_buy": 59,
-   "taken_at": "2026-10-25T16:44:08.775Z"
-  },
-  {
-   "market_id": "1795055",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Maria Timofeeva cover -4.5 vs the Teodora Kostovic in Maria Timofeeva vs. Teodora Kostovic?",
-   "sides": [
-    "Maria Timofeeva -4.50 (Games)",
-    "Teodora Kostovic +4.50 (Games)"
-   ],
-   "teams": [
-    "Maria Timofeeva",
-    "Teodora Kostovic"
-   ],
-   "player": null,
-   "mid": 36.5,
-   "yes_buy": 37,
-   "no_buy": 64,
    "taken_at": "2026-10-25T16:44:08.775Z"
   },
   {
@@ -380,28 +351,6 @@
    "taken_at": "2026-10-25T16:50:11.733Z"
   },
   {
-   "market_id": "1795063",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Maria Timofeeva vs. Teodora Kostovic be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 25,
-   "yes_buy": 27,
-   "no_buy": 77,
-   "taken_at": "2026-10-25T17:49:37.863Z"
-  },
-  {
    "market_id": "1795057",
    "market": "Games spread",
    "group": "game",
@@ -422,6 +371,72 @@
    "yes_buy": 16,
    "no_buy": 88,
    "taken_at": "2026-10-26T02:59:44.924Z"
+  },
+  {
+   "market_id": "1795054",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Maria Timofeeva cover 1.5 vs the Teodora Kostovic in Maria Timofeeva vs. Teodora Kostovic?",
+   "sides": [
+    "Maria Timofeeva +1.50 (Games)",
+    "Teodora Kostovic -1.50 (Games)"
+   ],
+   "teams": [
+    "Maria Timofeeva",
+    "Teodora Kostovic"
+   ],
+   "player": null,
+   "mid": 66.5,
+   "yes_buy": 69,
+   "no_buy": 36,
+   "taken_at": "2026-10-25T17:49:37.863Z"
+  },
+  {
+   "market_id": "1795055",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Maria Timofeeva cover -4.5 vs the Teodora Kostovic in Maria Timofeeva vs. Teodora Kostovic?",
+   "sides": [
+    "Maria Timofeeva -4.50 (Games)",
+    "Teodora Kostovic +4.50 (Games)"
+   ],
+   "teams": [
+    "Maria Timofeeva",
+    "Teodora Kostovic"
+   ],
+   "player": null,
+   "mid": 36.5,
+   "yes_buy": 37,
+   "no_buy": 64,
+   "taken_at": "2026-10-25T16:44:08.775Z"
+  },
+  {
+   "market_id": "1795063",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Maria Timofeeva vs. Teodora Kostovic be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 25,
+   "yes_buy": 27,
+   "no_buy": 77,
+   "taken_at": "2026-10-25T17:49:37.863Z"
   },
   {
    "market_id": "1795060",
@@ -528,7 +543,7 @@
    "tier": "big",
    "class": "news",
    "reason": "Big move (32 pts), likely news",
-   "context": "Teodora Kostovic 4 · Maria Timofeeva 6 · 1st Set (games by set)",
+   "context": "Teodora Kostovic 4, 0 · Maria Timofeeva 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T03:51:29.332Z",
    "status": "open",
    "kalshi": null
@@ -541,15 +556,35 @@
    "question": "Will the Maria Timofeeva cover -1.5 vs the Teodora Kostovic in Maria Timofeeva vs. Teodora Kostovic?",
    "side": "Teodora Kostovic +1.50 (Games)",
    "open_chance": 43,
-   "now_chance": 25,
+   "now_chance": 23,
    "open_odds": "+133",
-   "now_odds": "+300",
-   "edge": 18,
+   "now_odds": "+335",
+   "edge": 20,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Teodora Kostovic not above the games spread right now",
-   "context": "Teodora Kostovic 4 · Maria Timofeeva 6 · 1st Set (games by set)",
+   "context": "Teodora Kostovic 4, 0 · Maria Timofeeva 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T03:05:16.724Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1795070:1",
+   "market_id": "1795070",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Maria Timofeeva win set 2 against Teodora Kostovic?",
+   "side": "No: Maria Timofeeva win set 2 against Teodora Kostovic",
+   "open_chance": 42,
+   "now_chance": 25,
+   "open_odds": "+138",
+   "now_odds": "+300",
+   "edge": 17,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Maria Timofeeva not above the games spread right now",
+   "context": "Teodora Kostovic 4, 0 · Maria Timofeeva 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T03:39:34.578Z",
    "status": "open",
    "kalshi": null
   },
@@ -568,28 +603,28 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Teodora Kostovic 4 · Maria Timofeeva 6 · 1st Set (games by set)",
+   "context": "Teodora Kostovic 4, 0 · Maria Timofeeva 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T03:21:19.396Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1795070:1",
-   "market_id": "1795070",
-   "market": "Set 2 winner",
+   "key": "1795062:0",
+   "market_id": "1795062",
+   "market": "Games total",
    "group": "game",
-   "question": "Will Maria Timofeeva win set 2 against Teodora Kostovic?",
-   "side": "No: Maria Timofeeva win set 2 against Teodora Kostovic",
-   "open_chance": 42,
-   "now_chance": 35,
-   "open_odds": "+138",
-   "now_odds": "+186",
-   "edge": 7,
+   "question": "Will the total in Maria Timofeeva vs. Teodora Kostovic be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 43,
+   "now_chance": 39,
+   "open_odds": "+133",
+   "now_odds": "+156",
+   "edge": 4,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Teodora Kostovic 4 · Maria Timofeeva 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T03:39:34.578Z",
+   "context": "Teodora Kostovic 4, 0 · Maria Timofeeva 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-26T04:08:12.635Z",
    "status": "open",
    "kalshi": null
   },
@@ -735,6 +770,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1795062:0:slight",
+   "key": "1795062:0",
+   "at": "2026-10-26T04:08:12.635Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+156",
+   "now_chance": 39,
+   "edge": 4,
+   "text": "New slight edge: Over 22.5 (Games) (Games total), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-martim-teokos-2026-10-25"
+  },
   {
    "id": "news:1795059:1",
    "key": "1795059:1",
@@ -1020,7 +1069,8 @@
   "gone:1795070:1:2026-10-26T03:39:34.578Z",
   "gone:1795055:1:2026-10-26T03:39:34.578Z",
   "news:1795059:1",
-  "gone:1795063:1:2026-10-26T03:05:16.724Z"
+  "gone:1795063:1:2026-10-26T03:05:16.724Z",
+  "new_edge:1795062:0:slight"
  ],
  "kalshi_checked": null
 }
