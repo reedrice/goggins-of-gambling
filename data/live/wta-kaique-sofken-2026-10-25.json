@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185711",
-  "fetched_at": "2026-10-27T04:02:26.162Z",
+  "fetched_at": "2026-10-27T04:08:51.179Z",
   "tennis": true,
   "tennis_match": {
    "id": "185711",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Kaitlin Quevedo (ESP) is tied with Sofia Kenin (USA) 6-4 1-1",
+     "text": "Kaitlin Quevedo (ESP) leads Sofia Kenin (USA) 6-4 2-1",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
        "value": 4,
@@ -102,14 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -186,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T04:02:26.075Z",
+ "updated": "2026-10-27T04:08:51.009Z",
  "open_taken_at": "2026-10-24T09:49:57.637Z",
  "thresholds": {
   "big": 10,
@@ -258,28 +258,6 @@
    "yes_buy": 83,
    "no_buy": 23,
    "taken_at": "2026-10-27T00:53:43.932Z"
-  },
-  {
-   "market_id": "1773725",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Kaitlin Quevedo cover -1.5 vs the Sofia Kenin in Kaitlin Quevedo vs. Sofia Kenin?",
-   "sides": [
-    "Kaitlin Quevedo -1.50 (Games)",
-    "Sofia Kenin +1.50 (Games)"
-   ],
-   "teams": [
-    "Kaitlin Quevedo",
-    "Sofia Kenin"
-   ],
-   "player": null,
-   "mid": 46.5,
-   "yes_buy": 48,
-   "no_buy": 55,
-   "taken_at": "2026-10-26T03:57:04.664Z"
   },
   {
    "market_id": "1773742",
@@ -390,6 +368,28 @@
    "yes_buy": 29,
    "no_buy": 77,
    "taken_at": "2026-10-26T03:05:11.398Z"
+  },
+  {
+   "market_id": "1773725",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Kaitlin Quevedo cover -1.5 vs the Sofia Kenin in Kaitlin Quevedo vs. Sofia Kenin?",
+   "sides": [
+    "Kaitlin Quevedo -1.50 (Games)",
+    "Sofia Kenin +1.50 (Games)"
+   ],
+   "teams": [
+    "Kaitlin Quevedo",
+    "Sofia Kenin"
+   ],
+   "player": null,
+   "mid": 46.5,
+   "yes_buy": 48,
+   "no_buy": 55,
+   "taken_at": "2026-10-26T03:57:04.664Z"
   },
   {
    "market_id": "1773729",
@@ -504,26 +504,6 @@
  ],
  "edges": [
   {
-   "key": "1773725:1",
-   "market_id": "1773725",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Kaitlin Quevedo cover -1.5 vs the Sofia Kenin in Kaitlin Quevedo vs. Sofia Kenin?",
-   "side": "Sofia Kenin +1.50 (Games)",
-   "open_chance": 55,
-   "now_chance": 20,
-   "open_odds": "-122",
-   "now_odds": "+400",
-   "edge": 35,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Sofia Kenin not above the games spread right now",
-   "context": "Sofia Kenin 4, 1 · Kaitlin Quevedo 6, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-26T23:07:45.673Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1746824:1",
    "market_id": "1746824",
    "market": "Moneyline",
@@ -531,15 +511,35 @@
    "question": "Who will win in the upcoming wta event Kaitlin Quevedo vs Sofia Kenin scheduled for October 26, 2026 at 3:00 AM UTC?",
    "side": "Sofia Kenin win",
    "open_chance": 50,
-   "now_chance": 20,
+   "now_chance": 19,
    "open_odds": "+100",
-   "now_odds": "+400",
-   "edge": 30,
+   "now_odds": "+426",
+   "edge": 31,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Sofia Kenin trailing in sets",
-   "context": "Sofia Kenin 4, 1 · Kaitlin Quevedo 6, 1 · 2nd Set (games by set)",
+   "context": "Sofia Kenin 4, 1 · Kaitlin Quevedo 6, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-25T05:23:09.967Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1773742:1",
+   "market_id": "1773742",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Kaitlin Quevedo win set 2 against Sofia Kenin?",
+   "side": "No: Kaitlin Quevedo win set 2 against Sofia Kenin",
+   "open_chance": 50,
+   "now_chance": 38,
+   "open_odds": "+100",
+   "now_odds": "+163",
+   "edge": 12,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Sofia Kenin 4, 1 · Kaitlin Quevedo 6, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T03:56:43.963Z",
    "status": "open",
    "kalshi": null
   },
@@ -558,48 +558,8 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Sofia Kenin 4, 1 · Kaitlin Quevedo 6, 1 · 2nd Set (games by set)",
+   "context": "Sofia Kenin 4, 1 · Kaitlin Quevedo 6, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T03:32:43.580Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1773742:1",
-   "market_id": "1773742",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Kaitlin Quevedo win set 2 against Sofia Kenin?",
-   "side": "No: Kaitlin Quevedo win set 2 against Sofia Kenin",
-   "open_chance": 50,
-   "now_chance": 42,
-   "open_odds": "+100",
-   "now_odds": "+138",
-   "edge": 8,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Kaitlin Quevedo not above the games spread right now",
-   "context": "Sofia Kenin 4, 1 · Kaitlin Quevedo 6, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T03:56:43.963Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1773734:1",
-   "market_id": "1773734",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Kaitlin Quevedo vs. Sofia Kenin be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 59,
-   "now_chance": 51,
-   "open_odds": "-144",
-   "now_odds": "-104",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Sofia Kenin 4, 1 · Kaitlin Quevedo 6, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T03:02:09.914Z",
    "status": "open",
    "kalshi": null
   },
@@ -611,36 +571,36 @@
    "question": "Will the Kaitlin Quevedo cover -4.5 vs the Sofia Kenin in Kaitlin Quevedo vs. Sofia Kenin?",
    "side": "Sofia Kenin +4.50 (Games)",
    "open_chance": 70,
-   "now_chance": 64,
+   "now_chance": 63,
    "open_odds": "-233",
-   "now_odds": "-178",
-   "edge": 6,
+   "now_odds": "-170",
+   "edge": 7,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Sofia Kenin 4, 1 · Kaitlin Quevedo 6, 1 · 2nd Set (games by set)",
+   "context": "Sofia Kenin 4, 1 · Kaitlin Quevedo 6, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T03:32:43.580Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1773736:1",
-   "market_id": "1773736",
-   "market": "Sets total",
+   "key": "1773725:1",
+   "market_id": "1773725",
+   "market": "Games spread",
    "group": "game",
-   "question": "Will the total in Kaitlin Quevedo vs. Sofia Kenin be more than 2.5?",
-   "side": "Under 2.5 (Sets)",
-   "open_chance": 63,
-   "now_chance": 58,
-   "open_odds": "-170",
-   "now_odds": "-138",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
+   "question": "Will the Kaitlin Quevedo cover -1.5 vs the Sofia Kenin in Kaitlin Quevedo vs. Sofia Kenin?",
+   "side": "Sofia Kenin +1.50 (Games)",
+   "open_chance": 55,
+   "now_chance": 20,
+   "open_odds": "-122",
+   "now_odds": "+400",
+   "edge": 35,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Sofia Kenin not above the games spread right now",
    "context": "Sofia Kenin 4, 1 · Kaitlin Quevedo 6, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T03:26:18.893Z",
-   "status": "open",
+   "first_seen": "2026-10-26T23:07:45.673Z",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -684,6 +644,26 @@
    "kalshi": null
   },
   {
+   "key": "1773734:1",
+   "market_id": "1773734",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Kaitlin Quevedo vs. Sofia Kenin be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 59,
+   "now_chance": 51,
+   "open_odds": "-144",
+   "now_odds": "-104",
+   "edge": 8,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Sofia Kenin 4, 1 · Kaitlin Quevedo 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T03:02:09.914Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1773734:0",
    "market_id": "1773734",
    "market": "Games total",
@@ -700,6 +680,26 @@
    "reason": null,
    "context": "Sofia Kenin 4, 0 · Kaitlin Quevedo 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T03:56:43.963Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1773736:1",
+   "market_id": "1773736",
+   "market": "Sets total",
+   "group": "game",
+   "question": "Will the total in Kaitlin Quevedo vs. Sofia Kenin be more than 2.5?",
+   "side": "Under 2.5 (Sets)",
+   "open_chance": 63,
+   "now_chance": 58,
+   "open_odds": "-170",
+   "now_odds": "-138",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Sofia Kenin 4, 1 · Kaitlin Quevedo 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T03:26:18.893Z",
    "status": "gone",
    "kalshi": null
   },
