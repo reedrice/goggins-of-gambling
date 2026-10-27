@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185740",
-  "fetched_at": "2026-10-27T07:52:35.153Z",
+  "fetched_at": "2026-10-27T07:58:49.659Z",
   "tennis": true,
   "tennis_match": {
    "id": "185740",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(4) Eri Hozumi (JPN) & Andreja Klepac (SLO) is tied with Harriet Dart (GBR) & Naima Karamoko (SUI) 3-6 3-2",
+     "text": "(4) Eri Hozumi (JPN) & Andreja Klepac (SLO) is tied with Harriet Dart (GBR) & Naima Karamoko (SUI) 3-6 4-2",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "curatedRank": {
       "current": 4
      },
@@ -64,7 +65,7 @@
        "winner": false
       },
       {
-       "value": 3
+       "value": 4
       }
      ],
      "roster": {
@@ -139,6 +140,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 6,
@@ -215,6 +217,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 232,
    "type": {
     "id": "4",
@@ -252,7 +259,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T07:52:35.092Z",
+ "updated": "2026-10-27T07:58:49.576Z",
  "open_taken_at": "2026-10-24T12:44:24.288Z",
  "thresholds": {
   "big": 10,
@@ -300,11 +307,25 @@
    "reason": null,
    "context": "Eri Hozumi / Andreja Klepac 3, 3 · Harriet Dart / Naima Karamoko 6, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T07:02:49.889Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1753774:1:2026-10-27T07:02:49.889Z",
+   "key": "1753774:1",
+   "at": "2026-10-27T07:58:49.576Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Hozumi / Klepac win",
+   "market": "Moneyline",
+   "now_odds": "+233",
+   "now_chance": 30,
+   "edge": 24,
+   "text": "Edge gone: Hozumi / Klepac win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-dartkaramo-hozumiklepac-2026-10-25"
+  },
   {
    "id": "news:1753774:1",
    "key": "1753774:1",
@@ -353,7 +374,8 @@
   "new_edge:1753774:1:slight",
   "gone:1753774:0:2026-10-26T20:17:29.721Z",
   "new_edge:1753774:1:big",
-  "news:1753774:1"
+  "news:1753774:1",
+  "gone:1753774:1:2026-10-27T07:02:49.889Z"
  ],
  "kalshi_checked": null
 }
