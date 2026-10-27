@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-27T20:13:28.948Z"
+  "fetched_at": "2026-10-27T20:20:35.183Z"
  },
- "updated": "2026-10-27T20:13:28.719Z",
+ "updated": "2026-10-27T20:20:35.097Z",
  "open_taken_at": "2026-10-25T05:02:15.879Z",
  "thresholds": {
   "big": 10,
@@ -107,6 +107,28 @@
    "taken_at": "2026-10-25T17:02:32.111Z"
   },
   {
+   "market_id": "1774430",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Nicolas Jarry win set 1 against Hugo Dellien?",
+   "sides": [
+    "Yes: Nicolas Jarry win set 1 against Hugo Dellien",
+    "No: Nicolas Jarry win set 1 against Hugo Dellien"
+   ],
+   "teams": [
+    "Nicolas Jarry",
+    null
+   ],
+   "player": null,
+   "mid": 51.5,
+   "yes_buy": 54,
+   "no_buy": 51,
+   "taken_at": "2026-10-27T20:20:35.097Z"
+  },
+  {
    "market_id": "1774423",
    "market": "Games total",
    "group": "game",
@@ -127,6 +149,28 @@
    "yes_buy": 51,
    "no_buy": 51,
    "taken_at": "2026-10-27T09:58:43.517Z"
+  },
+  {
+   "market_id": "1774414",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Nicolas Jarry cover -1.5 vs the Hugo Dellien in Nicolas Jarry vs. Hugo Dellien?",
+   "sides": [
+    "Nicolas Jarry -1.50 (Games)",
+    "Hugo Dellien +1.50 (Games)"
+   ],
+   "teams": [
+    "Nicolas Jarry",
+    "Hugo Dellien"
+   ],
+   "player": null,
+   "mid": 43.5,
+   "yes_buy": 46,
+   "no_buy": 59,
+   "taken_at": "2026-10-26T20:02:23.952Z"
   },
   {
    "market_id": "1774425",
@@ -171,28 +215,6 @@
    "yes_buy": 36,
    "no_buy": 68,
    "taken_at": "2026-10-27T19:57:46.837Z"
-  },
-  {
-   "market_id": "1774414",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Nicolas Jarry cover -1.5 vs the Hugo Dellien in Nicolas Jarry vs. Hugo Dellien?",
-   "sides": [
-    "Nicolas Jarry -1.50 (Games)",
-    "Hugo Dellien +1.50 (Games)"
-   ],
-   "teams": [
-    "Nicolas Jarry",
-    "Hugo Dellien"
-   ],
-   "player": null,
-   "mid": 43.5,
-   "yes_buy": 46,
-   "no_buy": 59,
-   "taken_at": "2026-10-26T20:02:23.952Z"
   },
   {
    "market_id": "1774416",
@@ -307,22 +329,42 @@
  ],
  "edges": [
   {
-   "key": "1774414:0",
+   "key": "1774414:1",
    "market_id": "1774414",
    "market": "Games spread",
    "group": "game",
    "question": "Will the Nicolas Jarry cover -1.5 vs the Hugo Dellien in Nicolas Jarry vs. Hugo Dellien?",
-   "side": "Nicolas Jarry -1.50 (Games)",
-   "open_chance": 46,
-   "now_chance": 31,
-   "open_odds": "+117",
-   "now_odds": "+223",
-   "edge": 15,
-   "tier": "big",
+   "side": "Hugo Dellien +1.50 (Games)",
+   "open_chance": 59,
+   "now_chance": 53,
+   "open_odds": "-144",
+   "now_odds": "-113",
+   "edge": 6,
+   "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-27T19:18:32.605Z",
+   "first_seen": "2026-10-27T20:20:35.097Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1774415:1",
+   "market_id": "1774415",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Nicolas Jarry cover 1.5 vs the Hugo Dellien in Nicolas Jarry vs. Hugo Dellien?",
+   "side": "Hugo Dellien -1.50 (Games)",
+   "open_chance": 52,
+   "now_chance": 47,
+   "open_odds": "-108",
+   "now_odds": "+113",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-27T09:12:48.890Z",
    "status": "open",
    "kalshi": null
   },
@@ -344,6 +386,26 @@
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-27T19:52:46.172Z",
    "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1774414:0",
+   "market_id": "1774414",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Nicolas Jarry cover -1.5 vs the Hugo Dellien in Nicolas Jarry vs. Hugo Dellien?",
+   "side": "Nicolas Jarry -1.50 (Games)",
+   "open_chance": 46,
+   "now_chance": 31,
+   "open_odds": "+117",
+   "now_odds": "+223",
+   "edge": 15,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-27T19:18:32.605Z",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -385,29 +447,51 @@
    "first_seen": "2026-10-27T16:47:02.167Z",
    "status": "gone",
    "kalshi": null
-  },
-  {
-   "key": "1774415:1",
-   "market_id": "1774415",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Nicolas Jarry cover 1.5 vs the Hugo Dellien in Nicolas Jarry vs. Hugo Dellien?",
-   "side": "Hugo Dellien -1.50 (Games)",
-   "open_chance": 52,
-   "now_chance": 48,
-   "open_odds": "-108",
-   "now_odds": "+108",
-   "edge": 4,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-27T09:12:48.890Z",
-   "status": "gone",
-   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1774414:1:slight",
+   "key": "1774414:1",
+   "at": "2026-10-27T20:20:35.097Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Hugo Dellien +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 6,
+   "text": "New slight edge: Hugo Dellien +1.50 (Games) (Games spread), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-nicjar-hugdel-2026-10-26"
+  },
+  {
+   "id": "new_edge:1774415:1:slight",
+   "key": "1774415:1",
+   "at": "2026-10-27T20:20:35.097Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Hugo Dellien -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+113",
+   "now_chance": 47,
+   "edge": 5,
+   "text": "New slight edge: Hugo Dellien -1.50 (Games) (Games spread), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-nicjar-hugdel-2026-10-26"
+  },
+  {
+   "id": "gone:1774414:0:2026-10-27T19:18:32.605Z",
+   "key": "1774414:0",
+   "at": "2026-10-27T20:20:35.097Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Nicolas Jarry -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+223",
+   "now_chance": 31,
+   "edge": 15,
+   "text": "Edge gone: Nicolas Jarry -1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-nicjar-hugdel-2026-10-26"
+  },
   {
    "id": "new_edge:1774425:1:slight",
    "key": "1774425:1",
@@ -439,7 +523,10 @@
  ],
  "alert_seen": [
   "new_edge:1774414:0:big",
-  "new_edge:1774425:1:slight"
+  "new_edge:1774425:1:slight",
+  "new_edge:1774414:1:slight",
+  "new_edge:1774415:1:slight",
+  "gone:1774414:0:2026-10-27T19:18:32.605Z"
  ],
  "kalshi_checked": null
 }
