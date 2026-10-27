@@ -4,12 +4,12 @@
  "game": "Carolina Alves vs. Julia Grabher",
  "url": "https://polymarket.us/sports/wta/wta-caralv-julgra-2026-10-26",
  "start_time": "2026-10-27T21:35:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185766",
-  "fetched_at": "2026-10-27T23:50:06.598Z",
+  "fetched_at": "2026-10-27T23:55:50.503Z",
   "tennis": true,
   "tennis_match": {
    "id": "185766",
@@ -17,17 +17,17 @@
    "date": "2026-10-27T21:40Z",
    "startDate": "2026-10-27T21:40Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Carolina Alves (BRA) leads (2) Julia Grabher (AUT) 5-7 6-6",
+     "text": "(2) Julia Grabher (AUT) bt Carolina Alves (BRA) 7-5 7-6 (7-1)",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "curatedRank": {
       "current": 2
      },
@@ -64,7 +65,9 @@
        "winner": true
       },
       {
-       "value": 6
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
       }
      ],
      "athlete": {
@@ -104,13 +107,16 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "linescores": [
       {
        "value": 5,
        "winner": false
       },
       {
-       "value": 6
+       "value": 6,
+       "tiebreak": 1,
+       "winner": false
       }
      ],
      "athlete": {
@@ -161,16 +167,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Julia Grabher",
    "alias": "Julia Grabher",
    "name": "Julia Grabher",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Carolina Alves",
@@ -182,7 +188,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T23:50:06.489Z",
+ "updated": "2026-10-27T23:55:50.177Z",
  "open_taken_at": "2026-10-25T18:32:50.771Z",
  "thresholds": {
   "big": 10,
