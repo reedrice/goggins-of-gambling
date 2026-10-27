@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185143",
-  "fetched_at": "2026-10-27T21:54:27.858Z",
+  "fetched_at": "2026-10-27T22:01:07.097Z",
   "tennis": true,
   "tennis_match": {
    "id": "185143",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Stan Wawrinka (SUI) is tied with (8) Jiri Lehecka (CZE) 5-7 6-5",
+     "text": "Stan Wawrinka (SUI) leads (8) Jiri Lehecka (CZE) 5-7 6-6 (2-4)",
      "type": "event"
     }
    ],
@@ -55,7 +55,6 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
      "curatedRank": {
       "current": 8
      },
@@ -65,7 +64,8 @@
        "winner": true
       },
       {
-       "value": 5
+       "value": 6,
+       "tiebreak": 4
       }
      ],
      "athlete": {
@@ -105,14 +105,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
      "linescores": [
       {
        "value": 5,
        "winner": false
       },
       {
-       "value": 6
+       "value": 6,
+       "tiebreak": 2
       }
      ],
      "athlete": {
@@ -147,11 +147,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 23,
    "type": {
     "id": "1",
@@ -189,35 +184,13 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T21:54:27.641Z",
+ "updated": "2026-10-27T22:01:06.960Z",
  "open_taken_at": "2026-10-24T12:32:03.384Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "1753330",
-   "market": "Moneyline",
-   "group": "game",
-   "mtype": "winner",
-   "period": "full_game",
-   "line": null,
-   "question": "Who will win in the upcoming atp event Stan Wawrinka vs Jiri Lehecka scheduled for October 25, 2026 at 9:00 AM UTC?",
-   "sides": [
-    "Stan Wawrinka win",
-    "Jiri Lehecka win"
-   ],
-   "teams": [
-    "Stan Wawrinka",
-    "Jiri Lehecka"
-   ],
-   "player": null,
-   "mid": 18,
-   "yes_buy": 20,
-   "no_buy": 84,
-   "taken_at": "2026-10-24T15:47:29.480Z"
-  },
   {
    "market_id": "1755041",
    "market": "Games spread",
@@ -239,6 +212,50 @@
    "yes_buy": 67,
    "no_buy": 38,
    "taken_at": "2026-10-25T13:48:35.695Z"
+  },
+  {
+   "market_id": "1755055",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Stan Wawrinka win set 2 against Jiri Lehecka?",
+   "sides": [
+    "Yes: Stan Wawrinka win set 2 against Jiri Lehecka",
+    "No: Stan Wawrinka win set 2 against Jiri Lehecka"
+   ],
+   "teams": [
+    "Stan Wawrinka",
+    null
+   ],
+   "player": null,
+   "mid": 23.5,
+   "yes_buy": 26,
+   "no_buy": 79,
+   "taken_at": "2026-10-27T16:46:58.227Z"
+  },
+  {
+   "market_id": "1753330",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming atp event Stan Wawrinka vs Jiri Lehecka scheduled for October 25, 2026 at 9:00 AM UTC?",
+   "sides": [
+    "Stan Wawrinka win",
+    "Jiri Lehecka win"
+   ],
+   "teams": [
+    "Stan Wawrinka",
+    "Jiri Lehecka"
+   ],
+   "player": null,
+   "mid": 18,
+   "yes_buy": 20,
+   "no_buy": 84,
+   "taken_at": "2026-10-24T15:47:29.480Z"
   },
   {
    "market_id": "1755048",
@@ -283,28 +300,6 @@
    "yes_buy": 27,
    "no_buy": 78,
    "taken_at": "2026-10-27T07:58:49.202Z"
-  },
-  {
-   "market_id": "1755055",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Stan Wawrinka win set 2 against Jiri Lehecka?",
-   "sides": [
-    "Yes: Stan Wawrinka win set 2 against Jiri Lehecka",
-    "No: Stan Wawrinka win set 2 against Jiri Lehecka"
-   ],
-   "teams": [
-    "Stan Wawrinka",
-    null
-   ],
-   "player": null,
-   "mid": 23.5,
-   "yes_buy": 26,
-   "no_buy": 79,
-   "taken_at": "2026-10-27T16:46:58.227Z"
   },
   {
    "market_id": "1755045",
@@ -507,26 +502,6 @@
  ],
  "edges": [
   {
-   "key": "1755048:1",
-   "market_id": "1755048",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Stan Wawrinka vs. Jiri Lehecka be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 79,
-   "now_chance": 72,
-   "open_odds": "-376",
-   "now_odds": "-257",
-   "edge": 7,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Jiri Lehecka 7, 5 · Stan Wawrinka 5, 6 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T18:42:36.134Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1755047:1",
    "market_id": "1755047",
    "market": "Games total",
@@ -563,26 +538,6 @@
    "reason": null,
    "context": "Jiri Lehecka 7, 3 · Stan Wawrinka 5, 4 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T18:08:24.261Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1755055:1",
-   "market_id": "1755055",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Stan Wawrinka win set 2 against Jiri Lehecka?",
-   "side": "No: Stan Wawrinka win set 2 against Jiri Lehecka",
-   "open_chance": 79,
-   "now_chance": 64,
-   "open_odds": "-376",
-   "now_odds": "-178",
-   "edge": 15,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Stan Wawrinka not above the games spread right now",
-   "context": "Jiri Lehecka 7, 5 · Stan Wawrinka 5, 5 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T18:42:36.134Z",
    "status": "gone",
    "kalshi": null
   },
@@ -627,6 +582,26 @@
    "kalshi": null
   },
   {
+   "key": "1755048:1",
+   "market_id": "1755048",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Stan Wawrinka vs. Jiri Lehecka be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 79,
+   "now_chance": 72,
+   "open_odds": "-376",
+   "now_odds": "-257",
+   "edge": 7,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Jiri Lehecka 7, 5 · Stan Wawrinka 5, 6 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T18:42:36.134Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1755049:1",
    "market_id": "1755049",
    "market": "Sets total",
@@ -643,26 +618,6 @@
    "reason": null,
    "context": "Jiri Lehecka 5 · Stan Wawrinka 5 · 1st Set (games by set)",
    "first_seen": "2026-10-27T17:13:10.004Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1755055:0",
-   "market_id": "1755055",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Stan Wawrinka win set 2 against Jiri Lehecka?",
-   "side": "Yes: Stan Wawrinka win set 2 against Jiri Lehecka",
-   "open_chance": 26,
-   "now_chance": 22,
-   "open_odds": "+285",
-   "now_odds": "+355",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Jiri Lehecka 7, 0 · Stan Wawrinka 5, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T20:28:38.251Z",
    "status": "gone",
    "kalshi": null
   },
@@ -688,20 +643,6 @@
   }
  ],
  "alerts": [
-  {
-   "id": "new_edge:1755055:1:big",
-   "key": "1755055:1",
-   "at": "2026-10-27T21:43:00.100Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "No: Stan Wawrinka win set 2 against Jiri Lehecka",
-   "market": "Set 2 winner",
-   "now_odds": "-203",
-   "now_chance": 67,
-   "edge": 12,
-   "text": "New big edge: No: Stan Wawrinka win set 2 against Jiri Lehecka (Set 2 winner), 12 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-stawaw-jirleh-2026-10-25"
-  },
   {
    "id": "news:1755047:1",
    "key": "1755047:1",
@@ -829,34 +770,6 @@
    "url": "https://polymarket.us/sports/atp/atp-stawaw-jirleh-2026-10-25"
   },
   {
-   "id": "gone:1755055:0:2026-10-27T20:28:38.251Z",
-   "key": "1755055:0",
-   "at": "2026-10-27T20:34:59.222Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Yes: Stan Wawrinka win set 2 against Jiri Lehecka",
-   "market": "Set 2 winner",
-   "now_odds": "+355",
-   "now_chance": 22,
-   "edge": 4,
-   "text": "Edge gone: Yes: Stan Wawrinka win set 2 against Jiri Lehecka (Set 2 winner) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-stawaw-jirleh-2026-10-25"
-  },
-  {
-   "id": "new_edge:1755055:0:slight",
-   "key": "1755055:0",
-   "at": "2026-10-27T20:28:38.251Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Yes: Stan Wawrinka win set 2 against Jiri Lehecka",
-   "market": "Set 2 winner",
-   "now_odds": "+355",
-   "now_chance": 22,
-   "edge": 4,
-   "text": "New slight edge: Yes: Stan Wawrinka win set 2 against Jiri Lehecka (Set 2 winner), 4 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-stawaw-jirleh-2026-10-25"
-  },
-  {
    "id": "gone:1755048:1:2026-10-27T18:42:36.134Z",
    "key": "1755048:1",
    "at": "2026-10-27T20:28:38.251Z",
@@ -896,20 +809,6 @@
    "now_chance": 68,
    "edge": 4,
    "text": "Edge gone: Under 2.5 (Sets) (Sets total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-stawaw-jirleh-2026-10-25"
-  },
-  {
-   "id": "gone:1755055:1:2026-10-27T18:42:36.134Z",
-   "key": "1755055:1",
-   "at": "2026-10-27T20:20:31.654Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "No: Stan Wawrinka win set 2 against Jiri Lehecka",
-   "market": "Set 2 winner",
-   "now_odds": "-300",
-   "now_chance": 75,
-   "edge": 4,
-   "text": "Edge gone: No: Stan Wawrinka win set 2 against Jiri Lehecka (Set 2 winner) is no longer 4+ points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-stawaw-jirleh-2026-10-25"
   },
   {
@@ -966,20 +865,6 @@
    "now_chance": 75,
    "edge": 4,
    "text": "New slight edge: Under 27.5 (Games) (Games total), 4 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-stawaw-jirleh-2026-10-25"
-  },
-  {
-   "id": "new_edge:1755055:1:slight",
-   "key": "1755055:1",
-   "at": "2026-10-27T18:42:36.134Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "No: Stan Wawrinka win set 2 against Jiri Lehecka",
-   "market": "Set 2 winner",
-   "now_odds": "-300",
-   "now_chance": 75,
-   "edge": 4,
-   "text": "New slight edge: No: Stan Wawrinka win set 2 against Jiri Lehecka (Set 2 winner), 4 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-stawaw-jirleh-2026-10-25"
   }
  ],
