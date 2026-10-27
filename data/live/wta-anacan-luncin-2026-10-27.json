@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185755",
-  "fetched_at": "2026-10-27T17:21:19.109Z",
+  "fetched_at": "2026-10-27T17:29:38.412Z",
   "tennis": true,
   "tennis_match": {
    "id": "185755",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Luna Maria Cinalli (ARG) leads Ana Candiotto (BRA) 6-2 4-2",
+     "text": "Luna Maria Cinalli (ARG) leads Ana Candiotto (BRA) 6-2 5-3",
      "type": "event"
     }
    ],
@@ -62,7 +62,7 @@
        "winner": true
       },
       {
-       "value": 4
+       "value": 5
       }
      ],
      "athlete": {
@@ -109,7 +109,7 @@
        "winner": false
       },
       {
-       "value": 2
+       "value": 3
       }
      ],
      "athlete": {
@@ -186,35 +186,13 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T17:21:18.937Z",
+ "updated": "2026-10-27T17:29:38.305Z",
  "open_taken_at": "2026-10-26T05:02:54.739Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "1817855",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Ana Candiotto cover 7.5 vs the Luna Maria Cinalli in Ana Candiotto vs. Luna Maria Cinalli?",
-   "sides": [
-    "Ana Candiotto +7.50 (Games)",
-    "Luna Cinalli -7.50 (Games)"
-   ],
-   "teams": [
-    "Ana Candiotto",
-    "Luna Cinalli"
-   ],
-   "player": null,
-   "mid": 74.5,
-   "yes_buy": 75,
-   "no_buy": 26,
-   "taken_at": "2026-10-27T15:15:51.145Z"
-  },
   {
    "market_id": "1817852",
    "market": "Games spread",
@@ -236,6 +214,28 @@
    "yes_buy": 34,
    "no_buy": 67,
    "taken_at": "2026-10-27T15:22:28.087Z"
+  },
+  {
+   "market_id": "1817855",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Ana Candiotto cover 7.5 vs the Luna Maria Cinalli in Ana Candiotto vs. Luna Maria Cinalli?",
+   "sides": [
+    "Ana Candiotto +7.50 (Games)",
+    "Luna Cinalli -7.50 (Games)"
+   ],
+   "teams": [
+    "Ana Candiotto",
+    "Luna Cinalli"
+   ],
+   "player": null,
+   "mid": 74.5,
+   "yes_buy": 75,
+   "no_buy": 26,
+   "taken_at": "2026-10-27T15:15:51.145Z"
   },
   {
    "market_id": "1817871",
@@ -526,26 +526,6 @@
  ],
  "edges": [
   {
-   "key": "1817855:0",
-   "market_id": "1817855",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Ana Candiotto cover 7.5 vs the Luna Maria Cinalli in Ana Candiotto vs. Luna Maria Cinalli?",
-   "side": "Ana Candiotto +7.50 (Games)",
-   "open_chance": 75,
-   "now_chance": 55,
-   "open_odds": "-300",
-   "now_odds": "-122",
-   "edge": 20,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Luna Maria Cinalli 6, 4 · Ana Candiotto 2, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T16:15:10.714Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1817858:1",
    "market_id": "1817858",
    "market": "Games total",
@@ -562,6 +542,26 @@
    "reason": null,
    "context": "Luna Maria Cinalli 1 · Ana Candiotto 0 · 1st Set (games by set)",
    "first_seen": "2026-10-27T16:08:30.089Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1817855:0",
+   "market_id": "1817855",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Ana Candiotto cover 7.5 vs the Luna Maria Cinalli in Ana Candiotto vs. Luna Maria Cinalli?",
+   "side": "Ana Candiotto +7.50 (Games)",
+   "open_chance": 75,
+   "now_chance": 55,
+   "open_odds": "-300",
+   "now_odds": "-122",
+   "edge": 20,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Luna Maria Cinalli 6, 4 · Ana Candiotto 2, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T16:15:10.714Z",
    "status": "gone",
    "kalshi": null
   },
@@ -667,6 +667,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1817855:0:2026-10-27T16:15:10.714Z",
+   "key": "1817855:0",
+   "at": "2026-10-27T17:29:38.305Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Ana Candiotto +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-122",
+   "now_chance": 55,
+   "edge": 20,
+   "text": "Edge gone: Ana Candiotto +7.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-anacan-luncin-2026-10-27"
+  },
   {
    "id": "news:1817855:0",
    "key": "1817855:0",
@@ -900,7 +914,8 @@
   "gone:1817853:0:2026-10-27T16:15:10.714Z",
   "new_edge:1817858:0:slight",
   "news:1817855:0",
-  "gone:1817858:0:2026-10-27T16:30:03.442Z"
+  "gone:1817858:0:2026-10-27T16:30:03.442Z",
+  "gone:1817855:0:2026-10-27T16:15:10.714Z"
  ],
  "kalshi_checked": null
 }

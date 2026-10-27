@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-27T17:21:27.003Z"
+  "fetched_at": "2026-10-27T17:29:45.058Z"
  },
- "updated": "2026-10-27T17:21:26.826Z",
+ "updated": "2026-10-27T17:29:44.977Z",
  "open_taken_at": "2026-10-25T20:47:39.605Z",
  "thresholds": {
   "big": 10,
@@ -61,6 +61,28 @@
    "yes_buy": 56,
    "no_buy": 47,
    "taken_at": "2026-10-26T18:23:24.202Z"
+  },
+  {
+   "market_id": "1813661",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Lucio Ratti cover -4.5 vs the Mateo Del Pino in Lucio Ratti vs. Mateo Del Pino?",
+   "sides": [
+    "Lucio Ratti -4.50 (Games)",
+    "Mateo Del Pino +4.50 (Games)"
+   ],
+   "teams": [
+    "Lucio Ratti",
+    "Mateo Del Pino"
+   ],
+   "player": null,
+   "mid": 70.5,
+   "yes_buy": 73,
+   "no_buy": 32,
+   "taken_at": "2026-10-26T18:36:18.340Z"
   },
   {
    "market_id": "1813678",
@@ -193,28 +215,6 @@
    "yes_buy": 21,
    "no_buy": 83,
    "taken_at": "2026-10-26T15:06:57.971Z"
-  },
-  {
-   "market_id": "1813661",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Lucio Ratti cover -4.5 vs the Mateo Del Pino in Lucio Ratti vs. Mateo Del Pino?",
-   "sides": [
-    "Lucio Ratti -4.50 (Games)",
-    "Mateo Del Pino +4.50 (Games)"
-   ],
-   "teams": [
-    "Lucio Ratti",
-    "Mateo Del Pino"
-   ],
-   "player": null,
-   "mid": 70.5,
-   "yes_buy": 73,
-   "no_buy": 32,
-   "taken_at": "2026-10-26T18:36:18.340Z"
   },
   {
    "market_id": "1813665",
@@ -350,6 +350,46 @@
   }
  ],
  "edges": [
+  {
+   "key": "1813661:0",
+   "market_id": "1813661",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Lucio Ratti cover -4.5 vs the Mateo Del Pino in Lucio Ratti vs. Mateo Del Pino?",
+   "side": "Lucio Ratti -4.50 (Games)",
+   "open_chance": 73,
+   "now_chance": 23,
+   "open_odds": "-270",
+   "now_odds": "+335",
+   "edge": 50,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-27T17:29:44.977Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1812137:0",
+   "market_id": "1812137",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Lucio Ratti vs Mateo Del Pino scheduled for October 26, 2026 at 4:00 PM UTC?",
+   "side": "Lucio Ratti win",
+   "open_chance": 94,
+   "now_chance": 76,
+   "open_odds": "-1567",
+   "now_odds": "-317",
+   "edge": 18,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-27T17:29:44.977Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1813657:1",
    "market_id": "1813657",
@@ -532,6 +572,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1813661:0:big",
+   "key": "1813661:0",
+   "at": "2026-10-27T17:29:44.977Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Lucio Ratti -4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+335",
+   "now_chance": 23,
+   "edge": 50,
+   "text": "New big edge: Lucio Ratti -4.50 (Games) (Games spread), 50 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-lucrat-matpin-2026-10-26"
+  },
+  {
+   "id": "new_edge:1812137:0:big",
+   "key": "1812137:0",
+   "at": "2026-10-27T17:29:44.977Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Lucio Ratti win",
+   "market": "Moneyline",
+   "now_odds": "-317",
+   "now_chance": 76,
+   "edge": 18,
+   "text": "New big edge: Lucio Ratti win (Moneyline), 18 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-lucrat-matpin-2026-10-26"
+  },
   {
    "id": "gone:1813691:0:2026-10-26T19:03:31.401Z",
    "key": "1813691:0",
@@ -852,7 +920,9 @@
   "new_edge:1813680:0:slight",
   "gone:1813661:1:2026-10-26T19:19:03.788Z",
   "gone:1813680:0:2026-10-26T19:23:48.162Z",
-  "gone:1813691:0:2026-10-26T19:03:31.401Z"
+  "gone:1813691:0:2026-10-26T19:03:31.401Z",
+  "new_edge:1813661:0:big",
+  "new_edge:1812137:0:big"
  ],
  "kalshi_checked": null
 }

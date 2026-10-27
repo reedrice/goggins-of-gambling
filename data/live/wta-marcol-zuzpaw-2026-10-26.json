@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185802",
-  "fetched_at": "2026-10-27T17:21:19.967Z",
+  "fetched_at": "2026-10-27T17:29:39.164Z",
   "tennis": true,
   "tennis_match": {
    "id": "185802",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Martina Colmegna (ITA) leads Zuzanna Pawlikowska (POL) 6-4 0-6 2-1",
+     "text": "Martina Colmegna (ITA) leads Zuzanna Pawlikowska (POL) 6-4 0-6 3-1",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 4,
@@ -105,6 +106,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 6,
@@ -115,7 +117,7 @@
        "winner": false
       },
       {
-       "value": 2
+       "value": 3
       }
      ],
      "athlete": {
@@ -150,6 +152,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1034,
    "type": {
     "id": "2",
@@ -187,7 +194,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T17:21:19.824Z",
+ "updated": "2026-10-27T17:29:39.093Z",
  "open_taken_at": "2026-10-25T23:34:41.097Z",
  "thresholds": {
   "big": 10,
@@ -527,6 +534,26 @@
  ],
  "edges": [
   {
+   "key": "1816669:1",
+   "market_id": "1816669",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Martina Colmegna vs Zuzanna Pawlikowska scheduled for October 27, 2026 at 12:00 AM UTC?",
+   "side": "Zuzanna Pawlikowska win",
+   "open_chance": 51,
+   "now_chance": 17,
+   "open_odds": "-104",
+   "now_odds": "+488",
+   "edge": 34,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (34 pts), likely news",
+   "context": "Zuzanna Pawlikowska 4, 6, 1 · Martina Colmegna 6, 0, 3 · 3rd Set (games by set)",
+   "first_seen": "2026-10-27T15:41:30.319Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1817965:0",
    "market_id": "1817965",
    "market": "Games spread",
@@ -543,27 +570,7 @@
    "reason": null,
    "context": "Zuzanna Pawlikowska 4, 6, 1 · Martina Colmegna 6, 0, 2 · 3rd Set (games by set)",
    "first_seen": "2026-10-27T17:00:43.532Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1816669:1",
-   "market_id": "1816669",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Martina Colmegna vs Zuzanna Pawlikowska scheduled for October 27, 2026 at 12:00 AM UTC?",
-   "side": "Zuzanna Pawlikowska win",
-   "open_chance": 51,
-   "now_chance": 43,
-   "open_odds": "-104",
-   "now_odds": "+133",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Zuzanna Pawlikowska 4, 6, 1 · Martina Colmegna 6, 0, 2 · 3rd Set (games by set)",
-   "first_seen": "2026-10-27T15:41:30.319Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -583,26 +590,6 @@
    "reason": "Explained by score: Zuzanna Pawlikowska not above the games spread right now",
    "context": "Zuzanna Pawlikowska 4, 2 · Martina Colmegna 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T16:08:30.978Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1816669:0",
-   "market_id": "1816669",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Martina Colmegna vs Zuzanna Pawlikowska scheduled for October 27, 2026 at 12:00 AM UTC?",
-   "side": "Martina Colmegna win",
-   "open_chance": 50,
-   "now_chance": 32,
-   "open_odds": "+100",
-   "now_odds": "+213",
-   "edge": 18,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Zuzanna Pawlikowska 4, 6, 0 · Martina Colmegna 6, 0, 0 · 3rd Set (games by set)",
-   "first_seen": "2026-10-27T17:00:43.532Z",
    "status": "gone",
    "kalshi": null
   },
@@ -769,6 +756,20 @@
  ],
  "alerts": [
   {
+   "id": "gone:1817965:0:2026-10-27T17:00:43.532Z",
+   "key": "1817965:0",
+   "at": "2026-10-27T17:29:39.093Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Martina Colmegna +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-108",
+   "now_chance": 52,
+   "edge": 21,
+   "text": "Edge gone: Martina Colmegna +4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-marcol-zuzpaw-2026-10-26"
+  },
+  {
    "id": "new_edge:1817965:0:big",
    "key": "1817965:0",
    "at": "2026-10-27T17:21:19.824Z",
@@ -783,34 +784,6 @@
    "url": "https://polymarket.us/sports/wta/wta-marcol-zuzpaw-2026-10-26"
   },
   {
-   "id": "gone:1816669:0:2026-10-27T17:00:43.532Z",
-   "key": "1816669:0",
-   "at": "2026-10-27T17:21:19.824Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Martina Colmegna win",
-   "market": "Moneyline",
-   "now_odds": "+213",
-   "now_chance": 32,
-   "edge": 18,
-   "text": "Edge gone: Martina Colmegna win (Moneyline) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-marcol-zuzpaw-2026-10-26"
-  },
-  {
-   "id": "new_edge:1816669:0:big",
-   "key": "1816669:0",
-   "at": "2026-10-27T17:07:13.412Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Martina Colmegna win",
-   "market": "Moneyline",
-   "now_odds": "+163",
-   "now_chance": 38,
-   "edge": 12,
-   "text": "New big edge: Martina Colmegna win (Moneyline), 12 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-marcol-zuzpaw-2026-10-26"
-  },
-  {
    "id": "news:1817965:0",
    "key": "1817965:0",
    "at": "2026-10-27T17:00:43.532Z",
@@ -822,20 +795,6 @@
    "now_chance": 48,
    "edge": 25,
    "text": "Big move, likely news: Martina Colmegna +4.50 (Games) (Games spread) is 25 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-marcol-zuzpaw-2026-10-26"
-  },
-  {
-   "id": "new_edge:1816669:0:slight",
-   "key": "1816669:0",
-   "at": "2026-10-27T17:00:43.532Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Martina Colmegna win",
-   "market": "Moneyline",
-   "now_odds": "+138",
-   "now_chance": 42,
-   "edge": 8,
-   "text": "New slight edge: Martina Colmegna win (Moneyline), 8 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-marcol-zuzpaw-2026-10-26"
   },
   {
@@ -1114,7 +1073,8 @@
   "gone:1817972:1:2026-10-27T16:47:05.848Z",
   "new_edge:1816669:0:big",
   "new_edge:1817965:0:big",
-  "gone:1816669:0:2026-10-27T17:00:43.532Z"
+  "gone:1816669:0:2026-10-27T17:00:43.532Z",
+  "gone:1817965:0:2026-10-27T17:00:43.532Z"
  ],
  "kalshi_checked": null
 }

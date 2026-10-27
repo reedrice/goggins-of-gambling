@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185139",
-  "fetched_at": "2026-10-27T17:21:18.279Z",
+  "fetched_at": "2026-10-27T17:29:38.005Z",
   "tennis": true,
   "tennis_match": {
    "id": "185139",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Ben Shelton (USA) leads Aleksandar Kovacevic (USA) 2-1",
+     "text": "(1) Ben Shelton (USA) leads Aleksandar Kovacevic (USA) 3-2",
      "type": "event"
     }
    ],
@@ -58,7 +58,7 @@
      "possession": true,
      "linescores": [
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -104,7 +104,7 @@
      },
      "linescores": [
       {
-       "value": 2
+       "value": 3
       }
      ],
      "athlete": {
@@ -181,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T17:21:18.156Z",
+ "updated": "2026-10-27T17:29:37.920Z",
  "open_taken_at": "2026-10-26T05:02:53.079Z",
  "thresholds": {
   "big": 10,
@@ -233,6 +233,28 @@
    "taken_at": "2026-10-27T06:03:13.756Z"
   },
   {
+   "market_id": "1817706",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Ben Shelton cover -1.5 vs the Aleksandar Kovacevic in Ben Shelton vs. Aleksandar Kovacevic?",
+   "sides": [
+    "Ben Shelton -1.50 (Games)",
+    "Aleksandar Kovacevic +1.50 (Games)"
+   ],
+   "teams": [
+    "Ben Shelton",
+    "Aleksandar Kovacevic"
+   ],
+   "player": null,
+   "mid": 79.5,
+   "yes_buy": 80,
+   "no_buy": 21,
+   "taken_at": "2026-10-27T17:29:37.920Z"
+  },
+  {
    "market_id": "1817723",
    "market": "Set 2 winner",
    "group": "game",
@@ -277,6 +299,28 @@
    "taken_at": "2026-10-27T08:47:48.655Z"
   },
   {
+   "market_id": "1817716",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Ben Shelton vs. Aleksandar Kovacevic be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-10-27T17:13:16.841Z"
+  },
+  {
    "market_id": "1817715",
    "market": "Games total",
    "group": "game",
@@ -319,31 +363,49 @@
    "yes_buy": 35,
    "no_buy": 66,
    "taken_at": "2026-10-27T17:13:16.841Z"
-  },
-  {
-   "market_id": "1817716",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Ben Shelton vs. Aleksandar Kovacevic be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-10-27T17:13:16.841Z"
   }
  ],
  "edges": [
+  {
+   "key": "1817722:0",
+   "market_id": "1817722",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Ben Shelton win set 1 against Aleksandar Kovacevic?",
+   "side": "Yes: Ben Shelton win set 1 against Aleksandar Kovacevic",
+   "open_chance": 77,
+   "now_chance": 71,
+   "open_odds": "-335",
+   "now_odds": "-245",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Aleksandar Kovacevic 2 · Ben Shelton 3 · 1st Set (games by set)",
+   "first_seen": "2026-10-27T17:29:37.920Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1817716:1",
+   "market_id": "1817716",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Ben Shelton vs. Aleksandar Kovacevic be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 67,
+   "now_chance": 62,
+   "open_odds": "-203",
+   "now_odds": "-163",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Aleksandar Kovacevic 2 · Ben Shelton 3 · 1st Set (games by set)",
+   "first_seen": "2026-10-27T17:21:18.156Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1817715:0",
    "market_id": "1817715",
@@ -361,27 +423,7 @@
    "reason": null,
    "context": "Aleksandar Kovacevic 1 · Ben Shelton 2 · 1st Set (games by set)",
    "first_seen": "2026-10-26T10:19:00.807Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1817716:1",
-   "market_id": "1817716",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Ben Shelton vs. Aleksandar Kovacevic be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 67,
-   "now_chance": 63,
-   "open_odds": "-203",
-   "now_odds": "-170",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Aleksandar Kovacevic 1 · Ben Shelton 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-27T17:21:18.156Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -406,6 +448,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1817722:0:slight",
+   "key": "1817722:0",
+   "at": "2026-10-27T17:29:37.920Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Yes: Ben Shelton win set 1 against Aleksandar Kovacevic",
+   "market": "Set 1 winner",
+   "now_odds": "-245",
+   "now_chance": 71,
+   "edge": 6,
+   "text": "New slight edge: Yes: Ben Shelton win set 1 against Aleksandar Kovacevic (Set 1 winner), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-benshe-alekov-2026-10-27"
+  },
   {
    "id": "new_edge:1817715:0:big",
    "key": "1817715:0",
@@ -497,7 +553,8 @@
   "gone:1817715:0:2026-10-26T10:19:00.807Z",
   "new_edge:1817715:0:big",
   "new_edge:1817716:1:slight",
-  "gone:1817722:1:2026-10-27T17:13:16.841Z"
+  "gone:1817722:1:2026-10-27T17:13:16.841Z",
+  "new_edge:1817722:0:slight"
  ],
  "kalshi_checked": null
 }
