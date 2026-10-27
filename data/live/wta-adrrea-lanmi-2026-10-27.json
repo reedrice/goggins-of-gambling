@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185793",
-  "fetched_at": "2026-10-27T16:30:04.839Z",
+  "fetched_at": "2026-10-27T16:38:50.377Z",
   "tennis": true,
   "tennis_match": {
    "id": "185793",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Adriana Reami (USA) is tied with Lan Mi (CHN) 6-1 2-2",
+     "text": "Adriana Reami (USA) leads Lan Mi (CHN) 6-1 4-2",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
        "value": 1,
@@ -101,13 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 2
+       "value": 4
       }
      ],
      "athlete": {
@@ -142,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1034,
    "type": {
     "id": "2",
@@ -179,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T16:30:04.739Z",
+ "updated": "2026-10-27T16:38:50.271Z",
  "open_taken_at": "2026-10-26T05:02:57.168Z",
  "thresholds": {
   "big": 10,
@@ -187,26 +194,26 @@
  },
  "open": [
   {
-   "market_id": "1816848",
-   "market": "Moneyline",
+   "market_id": "1817961",
+   "market": "Set 2 winner",
    "group": "game",
    "mtype": "winner",
-   "period": "full_game",
+   "period": "tennis_set_2_winner",
    "line": null,
-   "question": "Who will win in the upcoming wta event Adriana Reami vs Lan Mi scheduled for October 27, 2026 at 4:00 PM UTC?",
+   "question": "Will Adriana Reami win set 2 against Lan Mi?",
    "sides": [
-    "Adriana Reami win",
-    "Lan Mi win"
+    "Yes: Adriana Reami win set 2 against Lan Mi",
+    "No: Adriana Reami win set 2 against Lan Mi"
    ],
    "teams": [
     "Adriana Reami",
-    "Lan Mi"
+    null
    ],
    "player": null,
-   "mid": 54.5,
-   "yes_buy": 55,
-   "no_buy": 46,
-   "taken_at": "2026-10-26T11:26:01.442Z"
+   "mid": 95.5,
+   "yes_buy": 98,
+   "no_buy": 7,
+   "taken_at": "2026-10-27T16:38:50.271Z"
   },
   {
    "market_id": "1817945",
@@ -229,6 +236,28 @@
    "yes_buy": 58,
    "no_buy": 44,
    "taken_at": "2026-10-27T15:28:18.657Z"
+  },
+  {
+   "market_id": "1816848",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming wta event Adriana Reami vs Lan Mi scheduled for October 27, 2026 at 4:00 PM UTC?",
+   "sides": [
+    "Adriana Reami win",
+    "Lan Mi win"
+   ],
+   "teams": [
+    "Adriana Reami",
+    "Lan Mi"
+   ],
+   "player": null,
+   "mid": 54.5,
+   "yes_buy": 55,
+   "no_buy": 46,
+   "taken_at": "2026-10-26T11:26:01.442Z"
   },
   {
    "market_id": "1817944",
@@ -491,47 +520,7 @@
    "reason": "Big move (38 pts), likely news",
    "context": "Lan Mi 1, 2 · Adriana Reami 6, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T16:00:39.299Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1816848:1",
-   "market_id": "1816848",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Adriana Reami vs Lan Mi scheduled for October 27, 2026 at 4:00 PM UTC?",
-   "side": "Lan Mi win",
-   "open_chance": 46,
-   "now_chance": 17,
-   "open_odds": "+117",
-   "now_odds": "+488",
-   "edge": 29,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Lan Mi trailing in sets",
-   "context": "Lan Mi 1, 2 · Adriana Reami 6, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T16:15:11.958Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1817953:0",
-   "market_id": "1817953",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Adriana Reami vs. Lan Mi be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 38,
-   "now_chance": 28,
-   "open_odds": "+163",
-   "now_odds": "+257",
-   "edge": 10,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Lan Mi 1, 2 · Adriana Reami 6, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T16:00:39.299Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -575,6 +564,46 @@
    "kalshi": null
   },
   {
+   "key": "1816848:1",
+   "market_id": "1816848",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Adriana Reami vs Lan Mi scheduled for October 27, 2026 at 4:00 PM UTC?",
+   "side": "Lan Mi win",
+   "open_chance": 46,
+   "now_chance": 17,
+   "open_odds": "+117",
+   "now_odds": "+488",
+   "edge": 29,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Lan Mi trailing in sets",
+   "context": "Lan Mi 1, 2 · Adriana Reami 6, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T16:15:11.958Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1817953:0",
+   "market_id": "1817953",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Adriana Reami vs. Lan Mi be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 38,
+   "now_chance": 28,
+   "open_odds": "+163",
+   "now_odds": "+257",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Lan Mi 1, 2 · Adriana Reami 6, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T16:00:39.299Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1817955:0",
    "market_id": "1817955",
    "market": "Sets total",
@@ -596,6 +625,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1817953:0:2026-10-27T16:00:39.299Z",
+   "key": "1817953:0",
+   "at": "2026-10-27T16:38:50.271Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+257",
+   "now_chance": 28,
+   "edge": 10,
+   "text": "Edge gone: Over 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-adrrea-lanmi-2026-10-27"
+  },
   {
    "id": "gone:1817955:0:2026-10-27T16:15:11.958Z",
    "key": "1817955:0",
@@ -726,7 +769,8 @@
   "new_edge:1817953:0:slight",
   "new_edge:1817953:0:big",
   "new_edge:1817955:0:slight",
-  "gone:1817955:0:2026-10-27T16:15:11.958Z"
+  "gone:1817955:0:2026-10-27T16:15:11.958Z",
+  "gone:1817953:0:2026-10-27T16:00:39.299Z"
  ],
  "kalshi_checked": null
 }

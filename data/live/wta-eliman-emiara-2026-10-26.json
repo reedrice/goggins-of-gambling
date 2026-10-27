@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185805",
-  "fetched_at": "2026-10-27T16:30:04.106Z",
+  "fetched_at": "2026-10-27T16:38:49.688Z",
   "tennis": true,
   "tennis_match": {
    "id": "185805",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Tue, October 27th at 12:30 PM EDT",
-     "shortDetail": "10/27 - 12:30 PM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Elizabeth Mandlik (USA) leads (7) Emiliana Arango (COL) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 7
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "b3ab143f-9634-2e5e-7d58-23bf73021c67",
       "displayName": "Emiliana Arango",
@@ -90,6 +101,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "52c9e741-3a8f-34c5-8ef5-c8c203b81469",
       "displayName": "Elizabeth Mandlik",
@@ -122,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1034,
    "type": {
     "id": "2",
@@ -138,10 +160,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Tue, October 27th at 12:30 PM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Emiliana Arango",
@@ -159,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T16:30:03.912Z",
+ "updated": "2026-10-27T16:38:49.597Z",
  "open_taken_at": "2026-10-25T21:02:19.754Z",
  "thresholds": {
   "big": 10,
@@ -187,6 +209,28 @@
    "yes_buy": 45,
    "no_buy": 58,
    "taken_at": "2026-10-26T11:32:03.445Z"
+  },
+  {
+   "market_id": "1813874",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Elizabeth Mandlik cover -1.5 vs the Emiliana Arango in Elizabeth Mandlik vs. Emiliana Arango?",
+   "sides": [
+    "Elizabeth Mandlik -1.50 (Games)",
+    "Emiliana Arango +1.50 (Games)"
+   ],
+   "teams": [
+    "Elizabeth Mandlik",
+    "Emiliana Arango"
+   ],
+   "player": null,
+   "mid": 39.5,
+   "yes_buy": 42,
+   "no_buy": 63,
+   "taken_at": "2026-10-27T06:32:26.205Z"
   },
   {
    "market_id": "1813875",
@@ -231,28 +275,6 @@
    "yes_buy": 44,
    "no_buy": 58,
    "taken_at": "2026-10-27T09:49:04.428Z"
-  },
-  {
-   "market_id": "1813874",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Elizabeth Mandlik cover -1.5 vs the Emiliana Arango in Elizabeth Mandlik vs. Emiliana Arango?",
-   "sides": [
-    "Elizabeth Mandlik -1.50 (Games)",
-    "Emiliana Arango +1.50 (Games)"
-   ],
-   "teams": [
-    "Elizabeth Mandlik",
-    "Emiliana Arango"
-   ],
-   "player": null,
-   "mid": 39.5,
-   "yes_buy": 42,
-   "no_buy": 63,
-   "taken_at": "2026-10-27T06:32:26.205Z"
   },
   {
    "market_id": "1813881",
@@ -345,6 +367,26 @@
  ],
  "edges": [
   {
+   "key": "1813874:1",
+   "market_id": "1813874",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Elizabeth Mandlik cover -1.5 vs the Emiliana Arango in Elizabeth Mandlik vs. Emiliana Arango?",
+   "side": "Emiliana Arango +1.50 (Games)",
+   "open_chance": 63,
+   "now_chance": 54,
+   "open_odds": "-170",
+   "now_odds": "-117",
+   "edge": 9,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Emiliana Arango 0 · Elizabeth Mandlik 1 · 1st Set (games by set)",
+   "first_seen": "2026-10-27T16:38:49.597Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1813874:0",
    "market_id": "1813874",
    "market": "Games spread",
@@ -361,7 +403,7 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-27T16:22:13.597Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -381,7 +423,7 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-27T13:46:14.437Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {

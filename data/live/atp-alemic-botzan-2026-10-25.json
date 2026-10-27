@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185144",
-  "fetched_at": "2026-10-27T16:29:55.039Z",
+  "fetched_at": "2026-10-27T16:38:41.582Z",
   "tennis": true,
   "tennis_match": {
    "id": "185144",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Botic Van De Zandschulp (NED) leads Alex Michelsen (USA) 6-5",
+     "text": "Alex Michelsen (USA) leads Botic Van De Zandschulp (NED) 5-7 0-0",
      "type": "event"
     }
    ],
@@ -55,9 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
-       "value": 6
+       "value": 7,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -97,9 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
-       "value": 5
+       "value": 5,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -134,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 23,
    "type": {
     "id": "1",
@@ -152,14 +167,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Botic Van De Zandschulp",
    "alias": "Botic Van De Zandschulp",
    "name": "Botic Van De Zandschulp",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Alex Michelsen",
@@ -171,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T16:29:54.936Z",
+ "updated": "2026-10-27T16:38:41.498Z",
  "open_taken_at": "2026-10-24T12:32:02.726Z",
  "thresholds": {
   "big": 10,
@@ -267,28 +282,6 @@
    "taken_at": "2026-10-27T05:47:48.177Z"
   },
   {
-   "market_id": "1755012",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Alex Michelsen vs. Botic Van de Zandschulp be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 39.5,
-   "yes_buy": 40,
-   "no_buy": 61,
-   "taken_at": "2026-10-27T15:28:07.237Z"
-  },
-  {
    "market_id": "1755013",
    "market": "Sets total",
    "group": "game",
@@ -311,26 +304,26 @@
    "taken_at": "2026-10-27T16:00:30.239Z"
   },
   {
-   "market_id": "1755002",
-   "market": "Games spread",
+   "market_id": "1755012",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Alex Michelsen cover -1.5 vs the Botic Van de Zandschulp in Alex Michelsen vs. Botic Van de Zandschulp?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Alex Michelsen vs. Botic Van de Zandschulp be more than 27.5?",
    "sides": [
-    "Alex Michelsen -1.50 (Games)",
-    "Botic van de Zandschulp +1.50 (Games)"
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
    ],
    "teams": [
-    "Alex Michelsen",
-    "Botic van de Zandschulp"
+    null,
+    null
    ],
    "player": null,
-   "mid": 58.5,
-   "yes_buy": 60,
-   "no_buy": 43,
-   "taken_at": "2026-10-25T16:43:55.393Z"
+   "mid": 39.5,
+   "yes_buy": 40,
+   "no_buy": 61,
+   "taken_at": "2026-10-27T15:28:07.237Z"
   },
   {
    "market_id": "1755003",
@@ -353,6 +346,28 @@
    "yes_buy": 73,
    "no_buy": 33,
    "taken_at": "2026-10-26T20:05:20.787Z"
+  },
+  {
+   "market_id": "1755002",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Alex Michelsen cover -1.5 vs the Botic Van de Zandschulp in Alex Michelsen vs. Botic Van de Zandschulp?",
+   "sides": [
+    "Alex Michelsen -1.50 (Games)",
+    "Botic van de Zandschulp +1.50 (Games)"
+   ],
+   "teams": [
+    "Alex Michelsen",
+    "Botic van de Zandschulp"
+   ],
+   "player": null,
+   "mid": 58.5,
+   "yes_buy": 60,
+   "no_buy": 43,
+   "taken_at": "2026-10-25T16:43:55.393Z"
   },
   {
    "market_id": "1755018",
@@ -518,14 +533,14 @@
    "question": "Who will win in the upcoming atp event Alex Michelsen vs Botic Van de Zandschulp scheduled for October 25, 2026 at 9:00 AM UTC?",
    "side": "Alex Michelsen win",
    "open_chance": 69,
-   "now_chance": 31,
+   "now_chance": 30,
    "open_odds": "-223",
-   "now_odds": "+223",
-   "edge": 38,
+   "now_odds": "+233",
+   "edge": 39,
    "tier": "big",
-   "class": "news",
-   "reason": "Big move (38 pts), likely news",
-   "context": "Botic Van De Zandschulp 6 · Alex Michelsen 5 · 1st Set (games by set)",
+   "class": "score",
+   "reason": "Explained by score: Alex Michelsen trailing in sets",
+   "context": "Botic Van De Zandschulp 7, 0 · Alex Michelsen 5, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-25T05:23:14.245Z",
    "status": "open",
    "kalshi": null
@@ -538,35 +553,35 @@
    "question": "Will the Alex Michelsen cover 1.5 vs the Botic Van de Zandschulp in Alex Michelsen vs. Botic Van de Zandschulp?",
    "side": "Alex Michelsen +1.50 (Games)",
    "open_chance": 73,
-   "now_chance": 40,
+   "now_chance": 38,
    "open_odds": "-270",
-   "now_odds": "+150",
-   "edge": 33,
+   "now_odds": "+163",
+   "edge": 35,
    "tier": "big",
-   "class": "news",
-   "reason": "Big move (33 pts), likely news",
-   "context": "Botic Van De Zandschulp 6 · Alex Michelsen 5 · 1st Set (games by set)",
+   "class": "score",
+   "reason": "Explained by score: Alex Michelsen not above the games spread right now",
+   "context": "Botic Van De Zandschulp 7, 0 · Alex Michelsen 5, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T15:28:07.237Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1755002:0",
-   "market_id": "1755002",
-   "market": "Games spread",
+   "key": "1755019:0",
+   "market_id": "1755019",
+   "market": "Set 2 winner",
    "group": "game",
-   "question": "Will the Alex Michelsen cover -1.5 vs the Botic Van de Zandschulp in Alex Michelsen vs. Botic Van de Zandschulp?",
-   "side": "Alex Michelsen -1.50 (Games)",
-   "open_chance": 60,
-   "now_chance": 45,
-   "open_odds": "-150",
-   "now_odds": "+122",
-   "edge": 15,
+   "question": "Will Alex Michelsen win set 2 against Botic Van de Zandschulp?",
+   "side": "Yes: Alex Michelsen win set 2 against Botic Van de Zandschulp",
+   "open_chance": 64,
+   "now_chance": 52,
+   "open_odds": "-178",
+   "now_odds": "-108",
+   "edge": 12,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Alex Michelsen not above the games spread right now",
-   "context": "Botic Van De Zandschulp 6 · Alex Michelsen 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-27T14:03:18.800Z",
+   "context": "Botic Van De Zandschulp 7, 0 · Alex Michelsen 5, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T15:22:20.404Z",
    "status": "open",
    "kalshi": null
   },
@@ -585,28 +600,8 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Botic Van De Zandschulp 6 · Alex Michelsen 5 · 1st Set (games by set)",
+   "context": "Botic Van De Zandschulp 7, 0 · Alex Michelsen 5, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T16:29:54.936Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1755019:0",
-   "market_id": "1755019",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Alex Michelsen win set 2 against Botic Van de Zandschulp?",
-   "side": "Yes: Alex Michelsen win set 2 against Botic Van de Zandschulp",
-   "open_chance": 64,
-   "now_chance": 53,
-   "open_odds": "-178",
-   "now_odds": "-113",
-   "edge": 11,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Botic Van De Zandschulp 6 · Alex Michelsen 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-27T15:22:20.404Z",
    "status": "open",
    "kalshi": null
   },
@@ -881,20 +876,6 @@
    "url": "https://polymarket.us/sports/atp/atp-alemic-botzan-2026-10-25"
   },
   {
-   "id": "gone:1755002:0:2026-10-27T14:03:18.800Z",
-   "key": "1755002:0",
-   "at": "2026-10-27T15:34:37.731Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Alex Michelsen -1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-127",
-   "now_chance": 56,
-   "edge": 4,
-   "text": "Edge gone: Alex Michelsen -1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-alemic-botzan-2026-10-25"
-  },
-  {
    "id": "new_edge:1755019:0:slight",
    "key": "1755019:0",
    "at": "2026-10-27T15:28:07.237Z",
@@ -948,20 +929,6 @@
    "now_chance": 40,
    "edge": 4,
    "text": "New slight edge: No: Alex Michelsen win set 1 against Botic Van de Zandschulp (Set 1 winner), 4 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-alemic-botzan-2026-10-25"
-  },
-  {
-   "id": "new_edge:1755002:0:slight",
-   "key": "1755002:0",
-   "at": "2026-10-27T15:28:07.237Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Alex Michelsen -1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-127",
-   "now_chance": 56,
-   "edge": 4,
-   "text": "New slight edge: Alex Michelsen -1.50 (Games) (Games spread), 4 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-alemic-botzan-2026-10-25"
   },
   {
