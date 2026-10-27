@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-27T22:23:19.079Z"
+  "fetched_at": "2026-10-27T22:29:03.395Z"
  },
- "updated": "2026-10-27T22:23:18.961Z",
+ "updated": "2026-10-27T22:29:03.329Z",
  "open_taken_at": "2026-10-25T05:02:16.447Z",
  "thresholds": {
   "big": 10,
@@ -358,10 +358,10 @@
    "question": "Will the Marcelo Tomas Barrios Vera cover -4.5 vs the Juan Estevez in Marcelo Tomas Barrios Vera vs. Juan Estevez?",
    "side": "Tomas Barrios -4.50 (Games)",
    "open_chance": 62,
-   "now_chance": 48,
+   "now_chance": 46,
    "open_odds": "-163",
-   "now_odds": "+108",
-   "edge": 14,
+   "now_odds": "+117",
+   "edge": 16,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -371,22 +371,22 @@
    "kalshi": null
   },
   {
-   "key": "1774594:1",
-   "market_id": "1774594",
-   "market": "Set 1 winner",
+   "key": "1774580:1",
+   "market_id": "1774580",
+   "market": "Games total",
    "group": "game",
-   "question": "Will Marcelo Tomas Barrios Vera win set 1 against Juan Estevez?",
-   "side": "No: Marcelo Tomas Barrios Vera win set 1 against Juan Estevez",
-   "open_chance": 34,
-   "now_chance": 29,
-   "open_odds": "+194",
-   "now_odds": "+245",
-   "edge": 5,
-   "tier": "slight",
+   "question": "Will the total in Marcelo Tomas Barrios Vera vs. Juan Estevez be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 69,
+   "now_chance": 59,
+   "open_odds": "-223",
+   "now_odds": "-144",
+   "edge": 10,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-27T22:23:18.961Z",
+   "first_seen": "2026-10-27T22:29:03.329Z",
    "status": "open",
    "kalshi": null
   },
@@ -491,6 +491,26 @@
    "kalshi": null
   },
   {
+   "key": "1774594:1",
+   "market_id": "1774594",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Marcelo Tomas Barrios Vera win set 1 against Juan Estevez?",
+   "side": "No: Marcelo Tomas Barrios Vera win set 1 against Juan Estevez",
+   "open_chance": 34,
+   "now_chance": 29,
+   "open_odds": "+194",
+   "now_odds": "+245",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-27T22:23:18.961Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1774219:1",
    "market_id": "1774219",
    "market": "Moneyline",
@@ -532,6 +552,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1774580:1:big",
+   "key": "1774580:1",
+   "at": "2026-10-27T22:29:03.329Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-144",
+   "now_chance": 59,
+   "edge": 10,
+   "text": "New big edge: Under 22.5 (Games) (Games total), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-tombar-juaest-2026-10-26"
+  },
+  {
+   "id": "gone:1774594:1:2026-10-27T22:23:18.961Z",
+   "key": "1774594:1",
+   "at": "2026-10-27T22:29:03.329Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "No: Marcelo Tomas Barrios Vera win set 1 against Juan Estevez",
+   "market": "Set 1 winner",
+   "now_odds": "+245",
+   "now_chance": 29,
+   "edge": 5,
+   "text": "Edge gone: No: Marcelo Tomas Barrios Vera win set 1 against Juan Estevez (Set 1 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-tombar-juaest-2026-10-26"
+  },
   {
    "id": "new_edge:1774565:0:big",
    "key": "1774565:0",
@@ -698,7 +746,9 @@
   "gone:1774584:1:2026-10-26T20:36:22.554Z",
   "gone:1774563:0:2026-10-26T20:47:20.725Z",
   "new_edge:1774565:0:big",
-  "new_edge:1774594:1:slight"
+  "new_edge:1774594:1:slight",
+  "new_edge:1774580:1:big",
+  "gone:1774594:1:2026-10-27T22:23:18.961Z"
  ],
  "kalshi_checked": null
 }
