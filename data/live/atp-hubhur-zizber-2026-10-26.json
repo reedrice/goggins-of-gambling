@@ -4,12 +4,12 @@
  "game": "Hubert Hurkacz vs. Zizou Bergs",
  "url": "https://polymarket.us/sports/atp/atp-hubhur-zizber-2026-10-26",
  "start_time": "2026-10-27T11:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185129",
-  "fetched_at": "2026-10-27T12:20:04.396Z",
+  "fetched_at": "2026-10-27T12:26:05.021Z",
   "tennis": true,
   "tennis_match": {
    "id": "185129",
@@ -17,17 +17,17 @@
    "date": "2026-10-27T11:05Z",
    "startDate": "2026-10-27T11:05Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
+     "id": "8",
+     "name": "STATUS_SUSPENDED",
+     "state": "post",
      "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "description": "Suspended",
+     "detail": "Suspended",
+     "shortDetail": "Suspended"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(10) Hubert Hurkacz (POL) is tied with Zizou Bergs (BEL) 3-6 5-3",
+     "text": "(10) Hubert Hurkacz (POL) bt Zizou Bergs (BEL) 3-6 6-3",
      "type": "event"
     }
    ],
@@ -55,14 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 3
+       "value": 3,
+       "winner": false
       }
      ],
      "athlete": {
@@ -102,7 +102,6 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
      "curatedRank": {
       "current": 10
      },
@@ -112,7 +111,8 @@
        "winner": false
       },
       {
-       "value": 5
+       "value": 6,
+       "winner": false
       }
      ],
      "athlete": {
@@ -147,11 +147,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 23,
    "type": {
     "id": "1",
@@ -168,10 +163,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_SUSPENDED",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Suspended",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Zizou Bergs",
@@ -189,7 +184,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T12:20:04.324Z",
+ "updated": "2026-10-27T12:26:04.934Z",
  "open_taken_at": "2026-10-26T05:02:50.828Z",
  "thresholds": {
   "big": 10,
@@ -263,28 +258,6 @@
    "taken_at": "2026-10-26T05:02:50.828Z"
   },
   {
-   "market_id": "1803039",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Hubert Hurkacz cover 4.5 vs the Zizou Bergs in Hubert Hurkacz vs. Zizou Bergs?",
-   "sides": [
-    "Hubert Hurkacz +4.50 (Games)",
-    "Zizou Bergs -4.50 (Games)"
-   ],
-   "teams": [
-    "Hubert Hurkacz",
-    "Zizou Bergs"
-   ],
-   "player": null,
-   "mid": 92,
-   "yes_buy": 94,
-   "no_buy": 10,
-   "taken_at": "2026-10-27T08:54:46.588Z"
-  },
-  {
    "market_id": "1803046",
    "market": "Games total",
    "group": "game",
@@ -327,6 +300,28 @@
    "yes_buy": 56,
    "no_buy": 49,
    "taken_at": "2026-10-26T05:02:50.828Z"
+  },
+  {
+   "market_id": "1803039",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Hubert Hurkacz cover 4.5 vs the Zizou Bergs in Hubert Hurkacz vs. Zizou Bergs?",
+   "sides": [
+    "Hubert Hurkacz +4.50 (Games)",
+    "Zizou Bergs -4.50 (Games)"
+   ],
+   "teams": [
+    "Hubert Hurkacz",
+    "Zizou Bergs"
+   ],
+   "player": null,
+   "mid": 92,
+   "yes_buy": 94,
+   "no_buy": 10,
+   "taken_at": "2026-10-27T08:54:46.588Z"
   },
   {
    "market_id": "1803053",
@@ -514,35 +509,15 @@
    "question": "Will the total in Hubert Hurkacz vs. Zizou Bergs be more than 27.5?",
    "side": "Under 27.5 (Games)",
    "open_chance": 64,
-   "now_chance": 32,
+   "now_chance": 28,
    "open_odds": "-178",
-   "now_odds": "+213",
-   "edge": 32,
+   "now_odds": "+257",
+   "edge": 36,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (32 pts), likely news",
-   "context": "Zizou Bergs 6, 3 · Hubert Hurkacz 3, 5 · 2nd Set (games by set)",
+   "reason": "Big move (36 pts), likely news",
+   "context": "Zizou Bergs 6, 3 · Hubert Hurkacz 3, 6 · Suspended (games by set)",
    "first_seen": "2026-10-26T19:19:01.095Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1803039:0",
-   "market_id": "1803039",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Hubert Hurkacz cover 4.5 vs the Zizou Bergs in Hubert Hurkacz vs. Zizou Bergs?",
-   "side": "Hubert Hurkacz +4.50 (Games)",
-   "open_chance": 94,
-   "now_chance": 73,
-   "open_odds": "-1567",
-   "now_odds": "-270",
-   "edge": 21,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Zizou Bergs 6, 3 · Hubert Hurkacz 3, 5 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T11:06:51.729Z",
    "status": "open",
    "kalshi": null
   },
@@ -559,9 +534,9 @@
    "now_odds": "+150",
    "edge": 16,
    "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Hubert Hurkacz not above the games spread right now",
-   "context": "Zizou Bergs 6, 3 · Hubert Hurkacz 3, 5 · 2nd Set (games by set)",
+   "class": "edge",
+   "reason": null,
+   "context": "Zizou Bergs 6, 3 · Hubert Hurkacz 3, 6 · Suspended (games by set)",
    "first_seen": "2026-10-27T12:20:04.324Z",
    "status": "open",
    "kalshi": null
@@ -574,14 +549,14 @@
    "question": "Will the Hubert Hurkacz cover 1.5 vs the Zizou Bergs in Hubert Hurkacz vs. Zizou Bergs?",
    "side": "Zizou Bergs -1.50 (Games)",
    "open_chance": 36,
-   "now_chance": 28,
+   "now_chance": 32,
    "open_odds": "+178",
-   "now_odds": "+257",
-   "edge": 8,
+   "now_odds": "+213",
+   "edge": 4,
    "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Zizou Bergs not above the games spread right now",
-   "context": "Zizou Bergs 6, 3 · Hubert Hurkacz 3, 5 · 2nd Set (games by set)",
+   "class": "edge",
+   "reason": null,
+   "context": "Zizou Bergs 6, 3 · Hubert Hurkacz 3, 6 · Suspended (games by set)",
    "first_seen": "2026-10-27T06:03:12.446Z",
    "status": "open",
    "kalshi": null
@@ -643,6 +618,26 @@
    "reason": "Explained by score: Hubert Hurkacz trailing in sets",
    "context": "Zizou Bergs 6, 3 · Hubert Hurkacz 3, 4 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T11:23:02.193Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1803039:0",
+   "market_id": "1803039",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Hubert Hurkacz cover 4.5 vs the Zizou Bergs in Hubert Hurkacz vs. Zizou Bergs?",
+   "side": "Hubert Hurkacz +4.50 (Games)",
+   "open_chance": 94,
+   "now_chance": 73,
+   "open_odds": "-1567",
+   "now_odds": "-270",
+   "edge": 21,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Zizou Bergs 6, 3 · Hubert Hurkacz 3, 5 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T11:06:51.729Z",
    "status": "gone",
    "kalshi": null
   },
@@ -788,6 +783,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1803036:0:big",
+   "key": "1803036:0",
+   "at": "2026-10-27T12:26:04.934Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Hubert Hurkacz -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+150",
+   "now_chance": 40,
+   "edge": 16,
+   "text": "New big edge: Hubert Hurkacz -1.50 (Games) (Games spread), 16 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-hubhur-zizber-2026-10-26"
+  },
+  {
+   "id": "gone:1803039:0:2026-10-27T11:06:51.729Z",
+   "key": "1803039:0",
+   "at": "2026-10-27T12:26:04.934Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Hubert Hurkacz +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-270",
+   "now_chance": 73,
+   "edge": 21,
+   "text": "Edge gone: Hubert Hurkacz +4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-hubhur-zizber-2026-10-26"
+  },
   {
    "id": "news:1803046:1",
    "key": "1803046:1",
@@ -1201,7 +1224,9 @@
   "gone:1803047:1:2026-10-27T11:06:51.729Z",
   "new_edge:1803053:1:slight",
   "news:1803046:1",
-  "gone:1803053:1:2026-10-27T11:55:01.158Z"
+  "gone:1803053:1:2026-10-27T11:55:01.158Z",
+  "new_edge:1803036:0:big",
+  "gone:1803039:0:2026-10-27T11:06:51.729Z"
  ],
  "kalshi_checked": null
 }
