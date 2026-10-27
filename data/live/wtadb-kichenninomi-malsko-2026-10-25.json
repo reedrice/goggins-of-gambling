@@ -4,12 +4,12 @@
  "game": "Kichenok / Ninomiya vs. Maleckova / Skoch",
  "url": "https://polymarket.us/sports/wtadb/wtadb-kichenninomi-malsko-2026-10-25",
  "start_time": "2026-10-27T05:05:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185746",
-  "fetched_at": "2026-10-27T06:39:12.708Z",
+  "fetched_at": "2026-10-27T06:44:36.986Z",
   "tennis": true,
   "tennis_match": {
    "id": "185746",
@@ -17,17 +17,17 @@
    "date": "2026-10-27T05:10Z",
    "startDate": "2026-10-27T05:10Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Lyudmyla Kichenok (UKR) & Makoto Ninomiya (JPN) leads (2) Miriam Skoch (CZE) & Jesika Maleckova (CZE) 3-6 6-4 0-0",
+     "text": "Lyudmyla Kichenok (UKR) & Makoto Ninomiya (JPN) bt (2) Miriam Skoch (CZE) & Jesika Maleckova (CZE) 3-6 6-4 1-0 (10-8)",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
      "curatedRank": {
       "current": 2
      },
@@ -68,7 +69,9 @@
        "winner": false
       },
       {
-       "value": 0
+       "value": 0,
+       "tiebreak": 8,
+       "winner": false
       }
      ],
      "roster": {
@@ -143,6 +146,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
      "linescores": [
       {
        "value": 3,
@@ -153,7 +157,9 @@
        "winner": true
       },
       {
-       "value": 0
+       "value": 1,
+       "tiebreak": 10,
+       "winner": true
       }
      ],
      "roster": {
@@ -239,10 +245,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Miriam Skoch / Jesika Maleckova",
@@ -254,13 +260,13 @@
    "abbr": "Lyudmyla Kichenok / Makoto Ninomiya",
    "alias": "Lyudmyla Kichenok / Makoto Ninomiya",
    "name": "Lyudmyla Kichenok / Makoto Ninomiya",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T06:39:12.609Z",
+ "updated": "2026-10-27T06:44:36.923Z",
  "open_taken_at": "2026-10-24T12:44:24.277Z",
  "thresholds": {
   "big": 10,
@@ -308,7 +314,7 @@
    "reason": "Big move (29 pts), likely news",
    "context": "Miriam Skoch / Jesika Maleckova 6, 4, 0 · Lyudmyla Kichenok / Makoto Ninomiya 3, 6, 0 · 3rd Set (games by set)",
    "first_seen": "2026-10-27T06:32:17.789Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],

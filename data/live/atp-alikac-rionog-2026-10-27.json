@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-27T06:39:24.440Z"
+  "fetched_at": "2026-10-27T06:44:46.877Z"
  },
- "updated": "2026-10-27T06:39:24.347Z",
+ "updated": "2026-10-27T06:44:46.821Z",
  "open_taken_at": "2026-10-26T08:47:36.421Z",
  "thresholds": {
   "big": 10,
@@ -39,6 +39,28 @@
    "yes_buy": 72,
    "no_buy": 29,
    "taken_at": "2026-10-26T11:43:39.447Z"
+  },
+  {
+   "market_id": "1830393",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Alibek Kachmazov vs. Rio Noguchi be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 66.5,
+   "yes_buy": 67,
+   "no_buy": 34,
+   "taken_at": "2026-10-27T06:03:16.335Z"
   },
   {
    "market_id": "1830390",
@@ -173,25 +195,25 @@
    "taken_at": "2026-10-27T06:09:08.126Z"
   },
   {
-   "market_id": "1830401",
-   "market": "Set 1 winner",
+   "market_id": "1830387",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Alibek Kachmazov win set 1 against Rio Noguchi?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Alibek Kachmazov cover -4.5 vs the Rio Noguchi in Alibek Kachmazov vs. Rio Noguchi?",
    "sides": [
-    "Yes: Alibek Kachmazov win set 1 against Rio Noguchi",
-    "No: Alibek Kachmazov win set 1 against Rio Noguchi"
+    "Alibek Kachmazov -4.50 (Games)",
+    "Rio Noguchi +4.50 (Games)"
    ],
    "teams": [
     "Alibek Kachmazov",
-    null
+    "Rio Noguchi"
    ],
    "player": null,
-   "mid": 52.5,
-   "yes_buy": 54,
-   "no_buy": 49,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
    "taken_at": "2026-10-27T06:03:16.335Z"
   },
   {
@@ -261,28 +283,6 @@
    "taken_at": "2026-10-27T06:03:16.335Z"
   },
   {
-   "market_id": "1830387",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Alibek Kachmazov cover -4.5 vs the Rio Noguchi in Alibek Kachmazov vs. Rio Noguchi?",
-   "sides": [
-    "Alibek Kachmazov -4.50 (Games)",
-    "Rio Noguchi +4.50 (Games)"
-   ],
-   "teams": [
-    "Alibek Kachmazov",
-    "Rio Noguchi"
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-10-27T06:03:16.335Z"
-  },
-  {
    "market_id": "1830395",
    "market": "Games total",
    "group": "game",
@@ -327,29 +327,49 @@
    "taken_at": "2026-10-27T06:03:16.335Z"
   },
   {
-   "market_id": "1830393",
-   "market": "Games total",
+   "market_id": "1830401",
+   "market": "Set 1 winner",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Alibek Kachmazov vs. Rio Noguchi be more than 17.5?",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Alibek Kachmazov win set 1 against Rio Noguchi?",
    "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
+    "Yes: Alibek Kachmazov win set 1 against Rio Noguchi",
+    "No: Alibek Kachmazov win set 1 against Rio Noguchi"
    ],
    "teams": [
-    null,
+    "Alibek Kachmazov",
     null
    ],
    "player": null,
-   "mid": 66.5,
-   "yes_buy": 67,
-   "no_buy": 34,
+   "mid": 52.5,
+   "yes_buy": 54,
+   "no_buy": 49,
    "taken_at": "2026-10-27T06:03:16.335Z"
   }
  ],
  "edges": [
+  {
+   "key": "1830387:1",
+   "market_id": "1830387",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Alibek Kachmazov cover -4.5 vs the Rio Noguchi in Alibek Kachmazov vs. Rio Noguchi?",
+   "side": "Rio Noguchi +4.50 (Games)",
+   "open_chance": 67,
+   "now_chance": 52,
+   "open_odds": "-203",
+   "now_odds": "-108",
+   "edge": 15,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-27T06:44:46.821Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1830389:0",
    "market_id": "1830389",
@@ -393,6 +413,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1830387:1:big",
+   "key": "1830387:1",
+   "at": "2026-10-27T06:44:46.821Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Rio Noguchi +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-108",
+   "now_chance": 52,
+   "edge": 15,
+   "text": "New big edge: Rio Noguchi +4.50 (Games) (Games spread), 15 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-alikac-rionog-2026-10-27"
+  },
+  {
    "id": "new_edge:1830389:0:big",
    "key": "1830389:0",
    "at": "2026-10-27T06:39:24.347Z",
@@ -423,7 +457,8 @@
  ],
  "alert_seen": [
   "new_edge:1830255:0:big",
-  "new_edge:1830389:0:big"
+  "new_edge:1830389:0:big",
+  "new_edge:1830387:1:big"
  ],
  "kalshi_checked": null
 }
