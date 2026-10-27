@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185835",
-  "fetched_at": "2026-10-27T10:29:18.813Z",
+  "fetched_at": "2026-10-27T10:33:23.559Z",
   "tennis": true,
   "tennis_match": {
    "id": "185835",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(6) Noma Noha Akugue (GER) leads Danka Kovinic (MNE) 3-2",
+     "text": "Danka Kovinic (MNE) leads (6) Noma Noha Akugue (GER) 3-3",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "possession": false,
      "curatedRank": {
       "current": 6
      },
@@ -101,10 +101,10 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
-       "value": 2
+       "value": 3
       }
      ],
      "athlete": {
@@ -181,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T10:29:18.681Z",
+ "updated": "2026-10-27T10:33:23.485Z",
  "open_taken_at": "2026-10-25T20:17:31.646Z",
  "thresholds": {
   "big": 10,
@@ -211,28 +211,6 @@
    "taken_at": "2026-10-26T08:12:00.687Z"
   },
   {
-   "market_id": "1810643",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Danka Kovinic cover 7.5 vs the Noma Noha Akugue in Danka Kovinic vs. Noma Noha Akugue?",
-   "sides": [
-    "Danka Kovinic +7.50 (Games)",
-    "Noma Noha Akugue -7.50 (Games)"
-   ],
-   "teams": [
-    "Danka Kovinic",
-    "Noma Noha Akugue"
-   ],
-   "player": null,
-   "mid": 66,
-   "yes_buy": 68,
-   "no_buy": 36,
-   "taken_at": "2026-10-26T15:06:57.331Z"
-  },
-  {
    "market_id": "1810646",
    "market": "Games total",
    "group": "game",
@@ -253,6 +231,28 @@
    "yes_buy": 63,
    "no_buy": 39,
    "taken_at": "2026-10-26T09:06:23.226Z"
+  },
+  {
+   "market_id": "1810643",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Danka Kovinic cover 7.5 vs the Noma Noha Akugue in Danka Kovinic vs. Noma Noha Akugue?",
+   "sides": [
+    "Danka Kovinic +7.50 (Games)",
+    "Noma Noha Akugue -7.50 (Games)"
+   ],
+   "teams": [
+    "Danka Kovinic",
+    "Noma Noha Akugue"
+   ],
+   "player": null,
+   "mid": 66,
+   "yes_buy": 68,
+   "no_buy": 36,
+   "taken_at": "2026-10-26T15:06:57.331Z"
   },
   {
    "market_id": "1810641",
@@ -319,6 +319,28 @@
    "yes_buy": 27,
    "no_buy": 78,
    "taken_at": "2026-10-26T20:42:08.123Z"
+  },
+  {
+   "market_id": "1810654",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Danka Kovinic win set 1 against Noma Noha Akugue?",
+   "sides": [
+    "Yes: Danka Kovinic win set 1 against Noma Noha Akugue",
+    "No: Danka Kovinic win set 1 against Noma Noha Akugue"
+   ],
+   "teams": [
+    "Danka Kovinic",
+    null
+   ],
+   "player": null,
+   "mid": 31.5,
+   "yes_buy": 33,
+   "no_buy": 70,
+   "taken_at": "2026-10-27T10:17:10.365Z"
   },
   {
    "market_id": "1810639",
@@ -409,28 +431,6 @@
    "taken_at": "2026-10-27T10:11:07.452Z"
   },
   {
-   "market_id": "1810654",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Danka Kovinic win set 1 against Noma Noha Akugue?",
-   "sides": [
-    "Yes: Danka Kovinic win set 1 against Noma Noha Akugue",
-    "No: Danka Kovinic win set 1 against Noma Noha Akugue"
-   ],
-   "teams": [
-    "Danka Kovinic",
-    null
-   ],
-   "player": null,
-   "mid": 31.5,
-   "yes_buy": 33,
-   "no_buy": 70,
-   "taken_at": "2026-10-27T10:17:10.365Z"
-  },
-  {
    "market_id": "1810648",
    "market": "Games total",
    "group": "game",
@@ -499,6 +499,26 @@
  ],
  "edges": [
   {
+   "key": "1810646:1",
+   "market_id": "1810646",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Danka Kovinic vs. Noma Noha Akugue be more than 17.5?",
+   "side": "Under 17.5 (Games)",
+   "open_chance": 39,
+   "now_chance": 20,
+   "open_odds": "+156",
+   "now_odds": "+400",
+   "edge": 19,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Noma Noha Akugue 3 · Danka Kovinic 3 · 1st Set (games by set)",
+   "first_seen": "2026-10-27T10:11:07.452Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1810643:1",
    "market_id": "1810643",
    "market": "Games spread",
@@ -513,28 +533,68 @@
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Noma Noha Akugue not above the games spread right now",
-   "context": "Noma Noha Akugue 3 · Danka Kovinic 2 · 1st Set (games by set)",
+   "context": "Noma Noha Akugue 3 · Danka Kovinic 3 · 1st Set (games by set)",
    "first_seen": "2026-10-27T10:17:10.365Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1810646:1",
-   "market_id": "1810646",
+   "key": "1810654:0",
+   "market_id": "1810654",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Danka Kovinic win set 1 against Noma Noha Akugue?",
+   "side": "Yes: Danka Kovinic win set 1 against Noma Noha Akugue",
+   "open_chance": 33,
+   "now_chance": 21,
+   "open_odds": "+203",
+   "now_odds": "+376",
+   "edge": 12,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Danka Kovinic not above the games spread right now",
+   "context": "Noma Noha Akugue 3 · Danka Kovinic 3 · 1st Set (games by set)",
+   "first_seen": "2026-10-27T10:22:44.797Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1810647:1",
+   "market_id": "1810647",
    "market": "Games total",
    "group": "game",
-   "question": "Will the total in Danka Kovinic vs. Noma Noha Akugue be more than 17.5?",
-   "side": "Under 17.5 (Games)",
-   "open_chance": 39,
-   "now_chance": 31,
-   "open_odds": "+156",
-   "now_odds": "+223",
-   "edge": 8,
+   "question": "Will the total in Danka Kovinic vs. Noma Noha Akugue be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 74,
+   "now_chance": 65,
+   "open_odds": "-285",
+   "now_odds": "-186",
+   "edge": 9,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Noma Noha Akugue 3 · Danka Kovinic 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-27T10:11:07.452Z",
+   "context": "Noma Noha Akugue 3 · Danka Kovinic 3 · 1st Set (games by set)",
+   "first_seen": "2026-10-27T10:22:44.797Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1810641:1",
+   "market_id": "1810641",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Danka Kovinic cover 4.5 vs the Noma Noha Akugue in Danka Kovinic vs. Noma Noha Akugue?",
+   "side": "Noma Noha Akugue -4.50 (Games)",
+   "open_chance": 61,
+   "now_chance": 55,
+   "open_odds": "-156",
+   "now_odds": "-122",
+   "edge": 6,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Noma Noha Akugue not above the games spread right now",
+   "context": "Noma Noha Akugue 3 · Danka Kovinic 3 · 1st Set (games by set)",
+   "first_seen": "2026-10-27T10:22:44.797Z",
    "status": "open",
    "kalshi": null
   },
@@ -553,28 +613,8 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Noma Noha Akugue 3 · Danka Kovinic 2 · 1st Set (games by set)",
+   "context": "Noma Noha Akugue 3 · Danka Kovinic 3 · 1st Set (games by set)",
    "first_seen": "2026-10-27T10:17:10.365Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1810647:1",
-   "market_id": "1810647",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Danka Kovinic vs. Noma Noha Akugue be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 74,
-   "now_chance": 70,
-   "open_odds": "-285",
-   "now_odds": "-233",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Noma Noha Akugue 3 · Danka Kovinic 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-27T10:22:44.797Z",
    "status": "open",
    "kalshi": null
   },
@@ -639,46 +679,6 @@
    "kalshi": null
   },
   {
-   "key": "1810641:1",
-   "market_id": "1810641",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Danka Kovinic cover 4.5 vs the Noma Noha Akugue in Danka Kovinic vs. Noma Noha Akugue?",
-   "side": "Noma Noha Akugue -4.50 (Games)",
-   "open_chance": 61,
-   "now_chance": 54,
-   "open_odds": "-156",
-   "now_odds": "-117",
-   "edge": 7,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Noma Noha Akugue not above the games spread right now",
-   "context": "Noma Noha Akugue 2 · Danka Kovinic 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-27T10:22:44.797Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1810654:0",
-   "market_id": "1810654",
-   "market": "Set 1 winner",
-   "group": "game",
-   "question": "Will Danka Kovinic win set 1 against Noma Noha Akugue?",
-   "side": "Yes: Danka Kovinic win set 1 against Noma Noha Akugue",
-   "open_chance": 33,
-   "now_chance": 28,
-   "open_odds": "+203",
-   "now_odds": "+257",
-   "edge": 5,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Danka Kovinic not above the games spread right now",
-   "context": "Noma Noha Akugue 2 · Danka Kovinic 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-27T10:22:44.797Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "1810646:0",
    "market_id": "1810646",
    "market": "Games total",
@@ -700,6 +700,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1810646:1:big",
+   "key": "1810646:1",
+   "at": "2026-10-27T10:33:23.485Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+400",
+   "now_chance": 20,
+   "edge": 19,
+   "text": "New big edge: Under 17.5 (Games) (Games total), 19 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-dankov-nomaku-2026-10-26"
+  },
   {
    "id": "gone:1810648:1:2026-10-27T10:04:43.155Z",
    "key": "1810648:1",
@@ -821,7 +835,8 @@
   "gone:1810646:0:2026-10-26T22:19:55.526Z",
   "new_edge:1810639:0:slight",
   "new_edge:1810647:1:slight",
-  "gone:1810648:1:2026-10-27T10:04:43.155Z"
+  "gone:1810648:1:2026-10-27T10:04:43.155Z",
+  "new_edge:1810646:1:big"
  ],
  "kalshi_checked": null
 }
