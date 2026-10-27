@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-27T05:42:14.013Z"
+  "fetched_at": "2026-10-27T05:48:00.652Z"
  },
- "updated": "2026-10-27T05:42:13.937Z",
+ "updated": "2026-10-27T05:48:00.570Z",
  "open_taken_at": "2026-10-26T10:32:25.207Z",
  "thresholds": {
   "big": 10,
@@ -85,28 +85,6 @@
    "taken_at": "2026-10-27T04:14:16.982Z"
   },
   {
-   "market_id": "1832791",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Jake Delaney cover -1.5 vs the Alexander Binda in Jake Delaney vs. Alexander Binda?",
-   "sides": [
-    "Jake Delaney -1.50 (Games)",
-    "Alexander Binda +1.50 (Games)"
-   ],
-   "teams": [
-    "Jake Delaney",
-    "Alexander Binda"
-   ],
-   "player": null,
-   "mid": 50.5,
-   "yes_buy": 52,
-   "no_buy": 51,
-   "taken_at": "2026-10-26T18:11:40.681Z"
-  },
-  {
    "market_id": "1832792",
    "market": "Games spread",
    "group": "game",
@@ -129,26 +107,26 @@
    "taken_at": "2026-10-27T04:14:16.982Z"
   },
   {
-   "market_id": "1832801",
-   "market": "Games total",
+   "market_id": "1832791",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Jake Delaney vs. Alexander Binda be more than 27.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Jake Delaney cover -1.5 vs the Alexander Binda in Jake Delaney vs. Alexander Binda?",
    "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
+    "Jake Delaney -1.50 (Games)",
+    "Alexander Binda +1.50 (Games)"
    ],
    "teams": [
-    null,
-    null
+    "Jake Delaney",
+    "Alexander Binda"
    ],
    "player": null,
-   "mid": 30.5,
-   "yes_buy": 31,
-   "no_buy": 70,
-   "taken_at": "2026-10-27T04:14:16.982Z"
+   "mid": 50.5,
+   "yes_buy": 52,
+   "no_buy": 51,
+   "taken_at": "2026-10-26T18:11:40.681Z"
   },
   {
    "market_id": "1832793",
@@ -187,6 +165,28 @@
    "teams": [
     "Jake Delaney",
     "Alexander Binda"
+   ],
+   "player": null,
+   "mid": 30.5,
+   "yes_buy": 31,
+   "no_buy": 70,
+   "taken_at": "2026-10-27T04:14:16.982Z"
+  },
+  {
+   "market_id": "1832801",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Jake Delaney vs. Alexander Binda be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
    ],
    "player": null,
    "mid": 30.5,
@@ -351,26 +351,6 @@
  ],
  "edges": [
   {
-   "key": "1832801:1",
-   "market_id": "1832801",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Jake Delaney vs. Alexander Binda be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 70,
-   "now_chance": 43,
-   "open_odds": "-233",
-   "now_odds": "+133",
-   "edge": 27,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-27T05:42:13.937Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1832794:1",
    "market_id": "1832794",
    "market": "Games spread",
@@ -391,42 +371,22 @@
    "kalshi": null
   },
   {
-   "key": "1832791:1",
-   "market_id": "1832791",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Jake Delaney cover -1.5 vs the Alexander Binda in Jake Delaney vs. Alexander Binda?",
-   "side": "Alexander Binda +1.50 (Games)",
-   "open_chance": 51,
-   "now_chance": 40,
-   "open_odds": "-104",
-   "now_odds": "+150",
-   "edge": 11,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-27T04:53:39.117Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1831904:1",
+   "key": "1831904:0",
    "market_id": "1831904",
    "market": "Moneyline",
    "group": "game",
    "question": "Who will win in the upcoming atp event Jake Delaney vs Alexander Binda scheduled for October 27, 2026 at 4:30 AM UTC?",
-   "side": "Alexander Binda win",
-   "open_chance": 49,
-   "now_chance": 44,
-   "open_odds": "+104",
-   "now_odds": "+127",
-   "edge": 5,
+   "side": "Jake Delaney win",
+   "open_chance": 56,
+   "now_chance": 49,
+   "open_odds": "-127",
+   "now_odds": "+104",
+   "edge": 7,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-26T14:45:55.967Z",
+   "first_seen": "2026-10-26T19:03:33.667Z",
    "status": "open",
    "kalshi": null
   },
@@ -451,6 +411,26 @@
    "kalshi": null
   },
   {
+   "key": "1832791:0",
+   "market_id": "1832791",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Jake Delaney cover -1.5 vs the Alexander Binda in Jake Delaney vs. Alexander Binda?",
+   "side": "Jake Delaney -1.50 (Games)",
+   "open_chance": 52,
+   "now_chance": 48,
+   "open_odds": "-108",
+   "now_odds": "+108",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-27T03:44:54.657Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1832800:1",
    "market_id": "1832800",
    "market": "Games total",
@@ -467,6 +447,26 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-27T05:00:10.862Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1832801:1",
+   "market_id": "1832801",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Jake Delaney vs. Alexander Binda be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 70,
+   "now_chance": 43,
+   "open_odds": "-233",
+   "now_odds": "+133",
+   "edge": 27,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-27T05:42:13.937Z",
    "status": "gone",
    "kalshi": null
   },
@@ -511,6 +511,26 @@
    "kalshi": null
   },
   {
+   "key": "1832791:1",
+   "market_id": "1832791",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Jake Delaney cover -1.5 vs the Alexander Binda in Jake Delaney vs. Alexander Binda?",
+   "side": "Alexander Binda +1.50 (Games)",
+   "open_chance": 51,
+   "now_chance": 40,
+   "open_odds": "-104",
+   "now_odds": "+150",
+   "edge": 11,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-27T04:53:39.117Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1832802:1",
    "market_id": "1832802",
    "market": "Sets total",
@@ -551,22 +571,22 @@
    "kalshi": null
   },
   {
-   "key": "1831904:0",
+   "key": "1831904:1",
    "market_id": "1831904",
    "market": "Moneyline",
    "group": "game",
    "question": "Who will win in the upcoming atp event Jake Delaney vs Alexander Binda scheduled for October 27, 2026 at 4:30 AM UTC?",
-   "side": "Jake Delaney win",
-   "open_chance": 56,
-   "now_chance": 50,
-   "open_odds": "-127",
-   "now_odds": "+100",
-   "edge": 6,
+   "side": "Alexander Binda win",
+   "open_chance": 49,
+   "now_chance": 44,
+   "open_odds": "+104",
+   "now_odds": "+127",
+   "edge": 5,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-26T19:03:33.667Z",
+   "first_seen": "2026-10-26T14:45:55.967Z",
    "status": "gone",
    "kalshi": null
   },
@@ -589,29 +609,37 @@
    "first_seen": "2026-10-27T04:35:35.188Z",
    "status": "gone",
    "kalshi": null
-  },
-  {
-   "key": "1832791:0",
-   "market_id": "1832791",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Jake Delaney cover -1.5 vs the Alexander Binda in Jake Delaney vs. Alexander Binda?",
-   "side": "Jake Delaney -1.50 (Games)",
-   "open_chance": 52,
-   "now_chance": 48,
-   "open_odds": "-108",
-   "now_odds": "+108",
-   "edge": 4,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-27T03:44:54.657Z",
-   "status": "gone",
-   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1832801:1:2026-10-27T05:42:13.937Z",
+   "key": "1832801:1",
+   "at": "2026-10-27T05:48:00.570Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+133",
+   "now_chance": 43,
+   "edge": 27,
+   "text": "Edge gone: Under 27.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-jakdel-abl-2026-10-27"
+  },
+  {
+   "id": "gone:1831904:1:2026-10-26T14:45:55.967Z",
+   "key": "1831904:1",
+   "at": "2026-10-27T05:48:00.570Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Alexander Binda win",
+   "market": "Moneyline",
+   "now_odds": "+127",
+   "now_chance": 44,
+   "edge": 5,
+   "text": "Edge gone: Alexander Binda win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-jakdel-abl-2026-10-27"
+  },
   {
    "id": "new_edge:1832801:1:big",
    "key": "1832801:1",
@@ -1008,7 +1036,9 @@
   "gone:1832800:1:2026-10-27T05:00:10.862Z",
   "new_edge:1832800:1:big",
   "new_edge:1832801:1:big",
-  "new_edge:1831904:1:slight"
+  "new_edge:1831904:1:slight",
+  "gone:1832801:1:2026-10-27T05:42:13.937Z",
+  "gone:1831904:1:2026-10-26T14:45:55.967Z"
  ],
  "kalshi_checked": null
 }
