@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185673",
-  "fetched_at": "2026-10-27T03:38:50.245Z",
+  "fetched_at": "2026-10-27T03:44:50.574Z",
   "tennis": true,
   "tennis_match": {
    "id": "185673",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Maria Sakkari (GRE) leads Yulia Putintseva (KAZ) 1-0",
+     "text": "Maria Sakkari (GRE) leads Yulia Putintseva (KAZ) 2-0",
      "type": "event"
     }
    ],
@@ -55,10 +55,10 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -98,7 +98,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
        "value": 0
@@ -178,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T03:38:50.129Z",
+ "updated": "2026-10-27T03:44:50.471Z",
  "open_taken_at": "2026-10-25T11:33:18.778Z",
  "thresholds": {
   "big": 10,
@@ -274,26 +274,26 @@
    "taken_at": "2026-10-26T08:11:55.770Z"
   },
   {
-   "market_id": "1817812",
-   "market": "Set 1 winner",
+   "market_id": "1817797",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Yulia Putintseva win set 1 against Maria Sakkari?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Yulia Putintseva cover 1.5 vs the Maria Sakkari in Yulia Putintseva vs. Maria Sakkari?",
    "sides": [
-    "Yes: Yulia Putintseva win set 1 against Maria Sakkari",
-    "No: Yulia Putintseva win set 1 against Maria Sakkari"
+    "Yulia Putintseva +1.50 (Games)",
+    "Maria Sakkari -1.50 (Games)"
    ],
    "teams": [
     "Yulia Putintseva",
-    null
+    "Maria Sakkari"
    ],
    "player": null,
-   "mid": 41.5,
-   "yes_buy": 44,
-   "no_buy": 61,
-   "taken_at": "2026-10-26T17:09:51.340Z"
+   "mid": 45,
+   "yes_buy": 46,
+   "no_buy": 56,
+   "taken_at": "2026-10-26T08:11:55.770Z"
   },
   {
    "market_id": "1817807",
@@ -318,26 +318,26 @@
    "taken_at": "2026-10-27T02:48:55.016Z"
   },
   {
-   "market_id": "1817802",
-   "market": "Sets spread",
+   "market_id": "1817812",
+   "market": "Set 1 winner",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Yulia Putintseva cover -1.5 vs the Maria Sakkari in Yulia Putintseva vs. Maria Sakkari?",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Yulia Putintseva win set 1 against Maria Sakkari?",
    "sides": [
-    "Yulia Putintseva -1.50 (Sets)",
-    "Maria Sakkari +1.50 (Sets)"
+    "Yes: Yulia Putintseva win set 1 against Maria Sakkari",
+    "No: Yulia Putintseva win set 1 against Maria Sakkari"
    ],
    "teams": [
     "Yulia Putintseva",
-    "Maria Sakkari"
+    null
    ],
    "player": null,
-   "mid": 23.5,
-   "yes_buy": 24,
-   "no_buy": 77,
-   "taken_at": "2026-10-27T02:48:55.016Z"
+   "mid": 41.5,
+   "yes_buy": 44,
+   "no_buy": 61,
+   "taken_at": "2026-10-26T17:09:51.340Z"
   },
   {
    "market_id": "1817806",
@@ -360,6 +360,28 @@
    "yes_buy": 27,
    "no_buy": 78,
    "taken_at": "2026-10-26T06:37:54.872Z"
+  },
+  {
+   "market_id": "1817802",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Yulia Putintseva cover -1.5 vs the Maria Sakkari in Yulia Putintseva vs. Maria Sakkari?",
+   "sides": [
+    "Yulia Putintseva -1.50 (Sets)",
+    "Maria Sakkari +1.50 (Sets)"
+   ],
+   "teams": [
+    "Yulia Putintseva",
+    "Maria Sakkari"
+   ],
+   "player": null,
+   "mid": 23.5,
+   "yes_buy": 24,
+   "no_buy": 77,
+   "taken_at": "2026-10-27T02:48:55.016Z"
   },
   {
    "market_id": "1817798",
@@ -426,28 +448,6 @@
    "yes_buy": 48,
    "no_buy": 57,
    "taken_at": "2026-10-27T03:32:48.901Z"
-  },
-  {
-   "market_id": "1817797",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Yulia Putintseva cover 1.5 vs the Maria Sakkari in Yulia Putintseva vs. Maria Sakkari?",
-   "sides": [
-    "Yulia Putintseva +1.50 (Games)",
-    "Maria Sakkari -1.50 (Games)"
-   ],
-   "teams": [
-    "Yulia Putintseva",
-    "Maria Sakkari"
-   ],
-   "player": null,
-   "mid": 45,
-   "yes_buy": 46,
-   "no_buy": 56,
-   "taken_at": "2026-10-26T08:11:55.770Z"
   },
   {
    "market_id": "1817800",
@@ -518,6 +518,46 @@
  ],
  "edges": [
   {
+   "key": "1817812:0",
+   "market_id": "1817812",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Yulia Putintseva win set 1 against Maria Sakkari?",
+   "side": "Yes: Yulia Putintseva win set 1 against Maria Sakkari",
+   "open_chance": 44,
+   "now_chance": 33,
+   "open_odds": "+127",
+   "now_odds": "+203",
+   "edge": 11,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Yulia Putintseva not above the games spread right now",
+   "context": "Maria Sakkari 2 · Yulia Putintseva 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-27T03:44:50.471Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1817799:0",
+   "market_id": "1817799",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Yulia Putintseva cover 4.5 vs the Maria Sakkari in Yulia Putintseva vs. Maria Sakkari?",
+   "side": "Yulia Putintseva +4.50 (Games)",
+   "open_chance": 64,
+   "now_chance": 55,
+   "open_odds": "-178",
+   "now_odds": "-122",
+   "edge": 9,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Maria Sakkari 2 · Yulia Putintseva 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-27T03:44:50.471Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1817804:0",
    "market_id": "1817804",
    "market": "Games total",
@@ -525,55 +565,35 @@
    "question": "Will the total in Yulia Putintseva vs. Maria Sakkari be more than 17.5?",
    "side": "Over 17.5 (Games)",
    "open_chance": 83,
-   "now_chance": 78,
+   "now_chance": 76,
    "open_odds": "-488",
-   "now_odds": "-355",
-   "edge": 5,
+   "now_odds": "-317",
+   "edge": 7,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Maria Sakkari 1 · Yulia Putintseva 0 · 1st Set (games by set)",
+   "context": "Maria Sakkari 2 · Yulia Putintseva 0 · 1st Set (games by set)",
    "first_seen": "2026-10-27T02:43:27.306Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1795081:1",
-   "market_id": "1795081",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Yulia Putintseva vs Maria Sakkari scheduled for October 27, 2026 at 1:30 AM UTC?",
-   "side": "Maria Sakkari win",
-   "open_chance": 64,
-   "now_chance": 60,
-   "open_odds": "-178",
-   "now_odds": "-150",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Maria Sakkari 1 · Yulia Putintseva 0 · 1st Set (games by set)",
-   "first_seen": "2026-10-26T01:23:54.771Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1817798:1",
-   "market_id": "1817798",
+   "key": "1817797:0",
+   "market_id": "1817797",
    "market": "Games spread",
    "group": "game",
-   "question": "Will the Yulia Putintseva cover -4.5 vs the Maria Sakkari in Yulia Putintseva vs. Maria Sakkari?",
-   "side": "Maria Sakkari +4.50 (Games)",
-   "open_chance": 84,
-   "now_chance": 80,
-   "open_odds": "-525",
-   "now_odds": "-400",
-   "edge": 4,
+   "question": "Will the Yulia Putintseva cover 1.5 vs the Maria Sakkari in Yulia Putintseva vs. Maria Sakkari?",
+   "side": "Yulia Putintseva +1.50 (Games)",
+   "open_chance": 46,
+   "now_chance": 39,
+   "open_odds": "+117",
+   "now_odds": "+156",
+   "edge": 7,
    "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Maria Sakkari 1 · Yulia Putintseva 0 · 1st Set (games by set)",
-   "first_seen": "2026-10-27T03:32:48.901Z",
+   "class": "score",
+   "reason": "Explained by score: Yulia Putintseva not above the games spread right now",
+   "context": "Maria Sakkari 2 · Yulia Putintseva 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-27T03:44:50.471Z",
    "status": "open",
    "kalshi": null
   },
@@ -593,6 +613,46 @@
    "class": "score",
    "reason": "Explained by score: Yulia Putintseva not above the games spread right now",
    "context": "Maria Sakkari 0 · Yulia Putintseva 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-27T03:32:48.901Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1795081:1",
+   "market_id": "1795081",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Yulia Putintseva vs Maria Sakkari scheduled for October 27, 2026 at 1:30 AM UTC?",
+   "side": "Maria Sakkari win",
+   "open_chance": 64,
+   "now_chance": 60,
+   "open_odds": "-178",
+   "now_odds": "-150",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Maria Sakkari 1 · Yulia Putintseva 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-26T01:23:54.771Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1817798:1",
+   "market_id": "1817798",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Yulia Putintseva cover -4.5 vs the Maria Sakkari in Yulia Putintseva vs. Maria Sakkari?",
+   "side": "Maria Sakkari +4.50 (Games)",
+   "open_chance": 84,
+   "now_chance": 80,
+   "open_odds": "-525",
+   "now_odds": "-400",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Maria Sakkari 1 · Yulia Putintseva 0 · 1st Set (games by set)",
    "first_seen": "2026-10-27T03:32:48.901Z",
    "status": "gone",
    "kalshi": null
@@ -619,6 +679,48 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1817799:0:slight",
+   "key": "1817799:0",
+   "at": "2026-10-27T03:44:50.471Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Yulia Putintseva +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-122",
+   "now_chance": 55,
+   "edge": 9,
+   "text": "New slight edge: Yulia Putintseva +4.50 (Games) (Games spread), 9 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-yulput-marsak-2026-10-26"
+  },
+  {
+   "id": "gone:1795081:1:2026-10-26T01:23:54.771Z",
+   "key": "1795081:1",
+   "at": "2026-10-27T03:44:50.471Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Maria Sakkari win",
+   "market": "Moneyline",
+   "now_odds": "-150",
+   "now_chance": 60,
+   "edge": 4,
+   "text": "Edge gone: Maria Sakkari win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-yulput-marsak-2026-10-26"
+  },
+  {
+   "id": "gone:1817798:1:2026-10-27T03:32:48.901Z",
+   "key": "1817798:1",
+   "at": "2026-10-27T03:44:50.471Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Maria Sakkari +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-400",
+   "now_chance": 80,
+   "edge": 4,
+   "text": "Edge gone: Maria Sakkari +4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-yulput-marsak-2026-10-26"
+  },
   {
    "id": "new_edge:1795081:1:slight",
    "key": "1795081:1",
@@ -665,7 +767,10 @@
  "alert_seen": [
   "new_edge:1817804:0:slight",
   "new_edge:1795081:1:slight",
-  "new_edge:1817798:1:slight"
+  "new_edge:1817798:1:slight",
+  "new_edge:1817799:0:slight",
+  "gone:1795081:1:2026-10-26T01:23:54.771Z",
+  "gone:1817798:1:2026-10-27T03:32:48.901Z"
  ],
  "kalshi_checked": null
 }
