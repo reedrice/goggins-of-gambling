@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185842",
-  "fetched_at": "2026-10-27T14:30:19.922Z",
+  "fetched_at": "2026-10-27T14:36:34.887Z",
   "tennis": true,
   "tennis_match": {
    "id": "185842",
@@ -17,17 +17,17 @@
    "date": "2026-10-27T13:25Z",
    "startDate": "2026-10-27T13:25Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(2) Alina Charaeva (ARM) leads Enola Chiesa (ITA) 6-4 6-1",
+     "text": "(2) Alina Charaeva (ARM) bt Enola Chiesa (ITA) 6-4 6-1",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "curatedRank": {
       "current": 2
      },
@@ -64,7 +65,8 @@
        "winner": true
       },
       {
-       "value": 6
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -104,13 +106,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "linescores": [
       {
        "value": 4,
        "winner": false
       },
       {
-       "value": 1
+       "value": 1,
+       "winner": false
       }
      ],
      "athlete": {
@@ -161,16 +165,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Alina Charaeva",
    "alias": "Alina Charaeva",
    "name": "Alina Charaeva",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Enola Chiesa",
@@ -182,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T14:30:19.788Z",
+ "updated": "2026-10-27T14:36:34.777Z",
  "open_taken_at": "2026-10-26T20:47:27.964Z",
  "thresholds": {
   "big": 10,
