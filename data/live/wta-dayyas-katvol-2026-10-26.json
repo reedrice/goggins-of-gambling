@@ -4,12 +4,12 @@
  "game": "Dayana Yastremska vs. Katie Volynets",
  "url": "https://polymarket.us/sports/wta/wta-dayyas-katvol-2026-10-26",
  "start_time": "2026-10-27T06:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185718",
-  "fetched_at": "2026-10-27T08:47:47.414Z",
+  "fetched_at": "2026-10-27T08:54:55.828Z",
   "tennis": true,
   "tennis_match": {
    "id": "185718",
@@ -17,17 +17,17 @@
    "date": "2026-10-27T06:05Z",
    "startDate": "2026-10-27T06:05Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Dayana Yastremska (UKR) leads (8) Katie Volynets (USA) 7-5 1-6 6-6",
+     "text": "Dayana Yastremska (UKR) bt (8) Katie Volynets (USA) 7-5 1-6 7-6 (9-7)",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
      "curatedRank": {
       "current": 8
      },
@@ -68,7 +69,9 @@
        "winner": true
       },
       {
-       "value": 6
+       "value": 6,
+       "tiebreak": 7,
+       "winner": false
       }
      ],
      "athlete": {
@@ -108,6 +111,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
      "linescores": [
       {
        "value": 7,
@@ -118,7 +122,9 @@
        "winner": false
       },
       {
-       "value": 6
+       "value": 7,
+       "tiebreak": 9,
+       "winner": true
       }
      ],
      "athlete": {
@@ -169,10 +175,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Katie Volynets",
@@ -184,13 +190,13 @@
    "abbr": "Dayana Yastremska",
    "alias": "Dayana Yastremska",
    "name": "Dayana Yastremska",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T08:47:47.243Z",
+ "updated": "2026-10-27T08:54:55.632Z",
  "open_taken_at": "2026-10-25T11:21:35.550Z",
  "thresholds": {
   "big": 10,
@@ -530,26 +536,6 @@
  ],
  "edges": [
   {
-   "key": "1794978:1",
-   "market_id": "1794978",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Dayana Yastremska vs Katie Volynets scheduled for October 27, 2026 at 3:00 AM UTC?",
-   "side": "Katie Volynets win",
-   "open_chance": 59,
-   "now_chance": 28,
-   "open_odds": "-144",
-   "now_odds": "+257",
-   "edge": 31,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (31 pts), likely news",
-   "context": "Katie Volynets 5, 6, 6 · Dayana Yastremska 7, 1, 6 · 3rd Set (games by set)",
-   "first_seen": "2026-10-27T08:28:42.600Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1817745:0",
    "market_id": "1817745",
    "market": "Games spread",
@@ -566,6 +552,26 @@
    "reason": "Big move (32 pts), likely news",
    "context": "Katie Volynets 5, 6, 6 · Dayana Yastremska 7, 1, 5 · 3rd Set (games by set)",
    "first_seen": "2026-10-27T07:18:03.491Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1794978:1",
+   "market_id": "1794978",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Dayana Yastremska vs Katie Volynets scheduled for October 27, 2026 at 3:00 AM UTC?",
+   "side": "Katie Volynets win",
+   "open_chance": 59,
+   "now_chance": 28,
+   "open_odds": "-144",
+   "now_odds": "+257",
+   "edge": 31,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (31 pts), likely news",
+   "context": "Katie Volynets 5, 6, 6 · Dayana Yastremska 7, 1, 6 · 3rd Set (games by set)",
+   "first_seen": "2026-10-27T08:28:42.600Z",
    "status": "gone",
    "kalshi": null
   },
