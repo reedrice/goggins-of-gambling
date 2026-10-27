@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185725",
-  "fetched_at": "2026-10-27T09:52:29.527Z",
+  "fetched_at": "2026-10-27T09:58:37.630Z",
   "tennis": true,
   "tennis_match": {
    "id": "185725",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(2) Janice Tjen (INA) leads Polina Kudermetova (UZB) 6-2 4-1",
+     "text": "(2) Janice Tjen (INA) leads Polina Kudermetova (UZB) 6-2 5-1",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "curatedRank": {
       "current": 2
      },
@@ -64,7 +65,7 @@
        "winner": true
       },
       {
-       "value": 4
+       "value": 5
       }
      ],
      "athlete": {
@@ -104,6 +105,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 2,
@@ -145,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 232,
    "type": {
     "id": "2",
@@ -182,13 +189,35 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T09:52:29.425Z",
+ "updated": "2026-10-27T09:58:37.527Z",
  "open_taken_at": "2026-10-24T09:49:56.739Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1773600",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Polina Kudermetova cover 7.5 vs the Janice Tjen in Polina Kudermetova vs. Janice Tjen?",
+   "sides": [
+    "Polina Kudermetova +7.50 (Games)",
+    "Janice Tjen -7.50 (Games)"
+   ],
+   "teams": [
+    "Polina Kudermetova",
+    "Janice Tjen"
+   ],
+   "player": null,
+   "mid": 88,
+   "yes_buy": 90,
+   "no_buy": 14,
+   "taken_at": "2026-10-27T04:14:08.161Z"
+  },
   {
    "market_id": "1773603",
    "market": "Games total",
@@ -212,28 +241,6 @@
    "taken_at": "2026-10-27T00:08:15.122Z"
   },
   {
-   "market_id": "1773602",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Polina Kudermetova cover 1.5 vs the Janice Tjen in Polina Kudermetova vs. Janice Tjen?",
-   "sides": [
-    "Polina Kudermetova +1.50 (Sets)",
-    "Janice Tjen -1.50 (Sets)"
-   ],
-   "teams": [
-    "Polina Kudermetova",
-    "Janice Tjen"
-   ],
-   "player": null,
-   "mid": 61.5,
-   "yes_buy": 64,
-   "no_buy": 41,
-   "taken_at": "2026-10-26T05:02:34.086Z"
-  },
-  {
    "market_id": "1773604",
    "market": "Games total",
    "group": "game",
@@ -254,6 +261,28 @@
    "yes_buy": 45,
    "no_buy": 57,
    "taken_at": "2026-10-25T11:35:52.651Z"
+  },
+  {
+   "market_id": "1773602",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Polina Kudermetova cover 1.5 vs the Janice Tjen in Polina Kudermetova vs. Janice Tjen?",
+   "sides": [
+    "Polina Kudermetova +1.50 (Sets)",
+    "Janice Tjen -1.50 (Sets)"
+   ],
+   "teams": [
+    "Polina Kudermetova",
+    "Janice Tjen"
+   ],
+   "player": null,
+   "mid": 61.5,
+   "yes_buy": 64,
+   "no_buy": 41,
+   "taken_at": "2026-10-26T05:02:34.086Z"
   },
   {
    "market_id": "1773605",
@@ -410,28 +439,6 @@
    "taken_at": "2026-10-27T09:09:35.950Z"
   },
   {
-   "market_id": "1773600",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Polina Kudermetova cover 7.5 vs the Janice Tjen in Polina Kudermetova vs. Janice Tjen?",
-   "sides": [
-    "Polina Kudermetova +7.50 (Games)",
-    "Janice Tjen -7.50 (Games)"
-   ],
-   "teams": [
-    "Polina Kudermetova",
-    "Janice Tjen"
-   ],
-   "player": null,
-   "mid": 88,
-   "yes_buy": 90,
-   "no_buy": 14,
-   "taken_at": "2026-10-27T04:14:08.161Z"
-  },
-  {
    "market_id": "1773611",
    "market": "Set 1 winner",
    "group": "game",
@@ -542,26 +549,6 @@
    "kalshi": null
   },
   {
-   "key": "1773600:0",
-   "market_id": "1773600",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Polina Kudermetova cover 7.5 vs the Janice Tjen in Polina Kudermetova vs. Janice Tjen?",
-   "side": "Polina Kudermetova +7.50 (Games)",
-   "open_chance": 90,
-   "now_chance": 67,
-   "open_odds": "-900",
-   "now_odds": "-203",
-   "edge": 23,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Janice Tjen 5 · Polina Kudermetova 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-27T09:19:13.362Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "1773612:0",
    "market_id": "1773612",
    "market": "Set 2 winner",
@@ -623,20 +610,6 @@
   }
  ],
  "alerts": [
-  {
-   "id": "gone:1773600:0:2026-10-27T09:19:13.362Z",
-   "key": "1773600:0",
-   "at": "2026-10-27T09:36:38.740Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Polina Kudermetova +7.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-203",
-   "now_chance": 67,
-   "edge": 23,
-   "text": "Edge gone: Polina Kudermetova +7.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-polkud-jantje-2026-10-25"
-  },
   {
    "id": "new_edge:1773612:0:big",
    "key": "1773612:0",
