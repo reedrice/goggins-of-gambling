@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-27T10:33:25.340Z"
+  "fetched_at": "2026-10-27T10:38:29.513Z"
  },
- "updated": "2026-10-27T10:33:25.255Z",
+ "updated": "2026-10-27T10:38:29.407Z",
  "open_taken_at": "2026-10-26T10:32:24.920Z",
  "thresholds": {
   "big": 10,
@@ -39,28 +39,6 @@
    "yes_buy": 76,
    "no_buy": 29,
    "taken_at": "2026-10-26T14:15:42.241Z"
-  },
-  {
-   "market_id": "1832724",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the James McCabe cover 7.5 vs the Hiroki Moriya in James McCabe vs. Hiroki Moriya?",
-   "sides": [
-    "James McCabe +7.50 (Games)",
-    "Hiroki Moriya -7.50 (Games)"
-   ],
-   "teams": [
-    "James McCabe",
-    "Hiroki Moriya"
-   ],
-   "player": null,
-   "mid": 76.5,
-   "yes_buy": 77,
-   "no_buy": 24,
-   "taken_at": "2026-10-27T04:14:16.794Z"
   },
   {
    "market_id": "1832729",
@@ -104,6 +82,28 @@
    "mid": 22.5,
    "yes_buy": 23,
    "no_buy": 78,
+   "taken_at": "2026-10-27T04:14:16.794Z"
+  },
+  {
+   "market_id": "1832724",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the James McCabe cover 7.5 vs the Hiroki Moriya in James McCabe vs. Hiroki Moriya?",
+   "sides": [
+    "James McCabe +7.50 (Games)",
+    "Hiroki Moriya -7.50 (Games)"
+   ],
+   "teams": [
+    "James McCabe",
+    "Hiroki Moriya"
+   ],
+   "player": null,
+   "mid": 76.5,
+   "yes_buy": 77,
+   "no_buy": 24,
    "taken_at": "2026-10-27T04:14:16.794Z"
   },
   {
@@ -371,26 +371,6 @@
    "kalshi": null
   },
   {
-   "key": "1832724:0",
-   "market_id": "1832724",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the James McCabe cover 7.5 vs the Hiroki Moriya in James McCabe vs. Hiroki Moriya?",
-   "side": "James McCabe +7.50 (Games)",
-   "open_chance": 77,
-   "now_chance": 63,
-   "open_odds": "-335",
-   "now_odds": "-170",
-   "edge": 14,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-27T07:12:02.477Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1832729:1",
    "market_id": "1832729",
    "market": "Games total",
@@ -507,6 +487,26 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-27T06:57:10.044Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1832724:0",
+   "market_id": "1832724",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the James McCabe cover 7.5 vs the Hiroki Moriya in James McCabe vs. Hiroki Moriya?",
+   "side": "James McCabe +7.50 (Games)",
+   "open_chance": 77,
+   "now_chance": 63,
+   "open_odds": "-335",
+   "now_odds": "-170",
+   "edge": 14,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-27T07:12:02.477Z",
    "status": "gone",
    "kalshi": null
   },
@@ -632,6 +632,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1832724:0:2026-10-27T07:12:02.477Z",
+   "key": "1832724:0",
+   "at": "2026-10-27T10:38:29.407Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "James McCabe +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-170",
+   "now_chance": 63,
+   "edge": 14,
+   "text": "Edge gone: James McCabe +7.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-jammcc-hirmor-2026-10-27"
+  },
   {
    "id": "new_edge:1832724:0:big",
    "key": "1832724:0",
@@ -1059,7 +1073,8 @@
   "new_edge:1832736:0:slight",
   "new_edge:1832728:1:slight",
   "new_edge:1832736:1:big",
-  "new_edge:1832724:0:big"
+  "new_edge:1832724:0:big",
+  "gone:1832724:0:2026-10-27T07:12:02.477Z"
  ],
  "kalshi_checked": null
 }
