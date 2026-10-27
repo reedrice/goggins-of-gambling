@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-27T07:11:48.521Z"
+  "fetched_at": "2026-10-27T07:17:53.279Z"
  },
- "updated": "2026-10-27T07:11:48.442Z",
+ "updated": "2026-10-27T07:17:52.538Z",
  "open_taken_at": "2026-10-24T07:46:07.531Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-27T06:19:51.618Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1745795:1:2026-10-27T06:19:51.618Z",
+   "key": "1745795:1",
+   "at": "2026-10-27T07:17:52.538Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Tang Q / Xu Y win",
+   "market": "Moneyline",
+   "now_odds": "+400",
+   "now_chance": 20,
+   "edge": 19,
+   "text": "Edge gone: Tang Q / Xu Y win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-perezschuur-tangxu-2026-10-25"
+  },
   {
    "id": "new_edge:1745795:1:big",
    "key": "1745795:1",
@@ -95,7 +109,8 @@
  ],
  "alert_seen": [
   "new_edge:1745795:1:slight",
-  "new_edge:1745795:1:big"
+  "new_edge:1745795:1:big",
+  "gone:1745795:1:2026-10-27T06:19:51.618Z"
  ],
  "kalshi_checked": null
 }
