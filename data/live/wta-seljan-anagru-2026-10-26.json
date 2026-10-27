@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185795",
-  "fetched_at": "2026-10-27T00:35:26.913Z",
+  "fetched_at": "2026-10-27T00:42:01.366Z",
   "tennis": true,
   "tennis_match": {
    "id": "185795",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Selena Janicijevic (FRA) is tied with Ana Grubor (CAN) 6-0 0-0",
+     "text": "Selena Janicijevic (FRA) leads Ana Grubor (CAN) 6-0 1-0",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
        "value": 0,
@@ -102,14 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 0
+       "value": 1
       }
      ],
      "athlete": {
@@ -186,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T00:35:26.804Z",
+ "updated": "2026-10-27T00:42:01.233Z",
  "open_taken_at": "2026-10-25T21:02:19.869Z",
  "thresholds": {
   "big": 10,
@@ -194,26 +194,26 @@
  },
  "open": [
   {
-   "market_id": "1813823",
-   "market": "Games spread",
+   "market_id": "1813837",
+   "market": "Set 2 winner",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Selena Janicijevic cover -7.5 vs the Ana Grubor in Selena Janicijevic vs. Ana Grubor?",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Selena Janicijevic win set 2 against Ana Grubor?",
    "sides": [
-    "Selena Janicijevic -7.50 (Games)",
-    "Ana Grubor +7.50 (Games)"
+    "Yes: Selena Janicijevic win set 2 against Ana Grubor",
+    "No: Selena Janicijevic win set 2 against Ana Grubor"
    ],
    "teams": [
     "Selena Janicijevic",
-    "Ana Grubor"
+    null
    ],
    "player": null,
-   "mid": 41.5,
-   "yes_buy": 44,
-   "no_buy": 61,
-   "taken_at": "2026-10-26T05:02:56.385Z"
+   "mid": 94,
+   "yes_buy": 97,
+   "no_buy": 9,
+   "taken_at": "2026-10-27T00:42:01.233Z"
   },
   {
    "market_id": "1813828",
@@ -236,6 +236,28 @@
    "yes_buy": 57,
    "no_buy": 45,
    "taken_at": "2026-10-26T09:17:48.069Z"
+  },
+  {
+   "market_id": "1813823",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Selena Janicijevic cover -7.5 vs the Ana Grubor in Selena Janicijevic vs. Ana Grubor?",
+   "sides": [
+    "Selena Janicijevic -7.50 (Games)",
+    "Ana Grubor +7.50 (Games)"
+   ],
+   "teams": [
+    "Selena Janicijevic",
+    "Ana Grubor"
+   ],
+   "player": null,
+   "mid": 41.5,
+   "yes_buy": 44,
+   "no_buy": 61,
+   "taken_at": "2026-10-26T05:02:56.385Z"
   },
   {
    "market_id": "1813831",
@@ -518,7 +540,7 @@
    "tier": "big",
    "class": "news",
    "reason": "Big move (39 pts), likely news",
-   "context": "Ana Grubor 0, 0 · Selena Janicijevic 6, 0 · 2nd Set (games by set)",
+   "context": "Ana Grubor 0, 0 · Selena Janicijevic 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T00:03:44.843Z",
    "status": "open",
    "kalshi": null
