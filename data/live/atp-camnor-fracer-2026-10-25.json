@@ -4,12 +4,12 @@
  "game": "Cameron Norrie vs. Francisco Cerundolo",
  "url": "https://polymarket.us/sports/atp/atp-camnor-fracer-2026-10-25",
  "start_time": "2026-10-27T17:10:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185186",
-  "fetched_at": "2026-10-27T18:42:35.517Z",
+  "fetched_at": "2026-10-27T18:50:05.953Z",
   "tennis": true,
   "tennis_match": {
    "id": "185186",
@@ -17,17 +17,17 @@
    "date": "2026-10-27T17:15Z",
    "startDate": "2026-10-27T17:15Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Cameron Norrie (GBR) leads Francisco Cerundolo (ARG) 6-4 4-1",
+     "text": "Cameron Norrie (GBR) bt Francisco Cerundolo (ARG) 6-4 6-1",
      "type": "event"
     }
    ],
@@ -55,14 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "winner": false,
      "linescores": [
       {
        "value": 4,
        "winner": false
       },
       {
-       "value": 1
+       "value": 1,
+       "winner": false
       }
      ],
      "athlete": {
@@ -102,14 +103,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "winner": true,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 4
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -144,11 +146,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 10,
    "type": {
     "id": "1",
@@ -165,10 +162,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Francisco Cerundolo",
@@ -180,13 +177,13 @@
    "abbr": "Cameron Norrie",
    "alias": "Cameron Norrie",
    "name": "Cameron Norrie",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T18:42:35.375Z",
+ "updated": "2026-10-27T18:50:05.872Z",
  "open_taken_at": "2026-10-24T11:16:09.402Z",
  "thresholds": {
   "big": 10,
@@ -498,27 +495,7 @@
    "reason": "Explained by score: Francisco Cerundolo not above the games spread right now",
    "context": "Francisco Cerundolo 4, 1 · Cameron Norrie 6, 4 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T18:33:22.504Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1749637:0",
-   "market_id": "1749637",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Cameron Norrie vs. Francisco Cerundolo be more than 17.5?",
-   "side": "Over 17.5 (Games)",
-   "open_chance": 88,
-   "now_chance": 83,
-   "open_odds": "-733",
-   "now_odds": "-488",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Francisco Cerundolo 4, 1 · Cameron Norrie 6, 4 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T18:42:35.375Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -600,9 +577,43 @@
    "first_seen": "2026-10-27T17:29:31.191Z",
    "status": "gone",
    "kalshi": null
+  },
+  {
+   "key": "1749637:0",
+   "market_id": "1749637",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Cameron Norrie vs. Francisco Cerundolo be more than 17.5?",
+   "side": "Over 17.5 (Games)",
+   "open_chance": 88,
+   "now_chance": 83,
+   "open_odds": "-733",
+   "now_odds": "-488",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Francisco Cerundolo 4, 1 · Cameron Norrie 6, 4 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T18:42:35.375Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1749637:0:2026-10-27T18:42:35.375Z",
+   "key": "1749637:0",
+   "at": "2026-10-27T18:50:05.872Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-488",
+   "now_chance": 83,
+   "edge": 5,
+   "text": "Edge gone: Over 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-camnor-fracer-2026-10-25"
+  },
   {
    "id": "new_edge:1749637:0:slight",
    "key": "1749637:0",
@@ -696,7 +707,8 @@
   "new_edge:1749638:0:big",
   "new_edge:1749639:0:big",
   "gone:1749639:1:2026-10-27T17:57:47.587Z",
-  "new_edge:1749637:0:slight"
+  "new_edge:1749637:0:slight",
+  "gone:1749637:0:2026-10-27T18:42:35.375Z"
  ],
  "kalshi_checked": null
 }
