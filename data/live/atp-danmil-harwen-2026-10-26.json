@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-27T00:30:04.027Z"
+  "fetched_at": "2026-10-27T00:35:23.760Z"
  },
- "updated": "2026-10-27T00:30:03.859Z",
+ "updated": "2026-10-27T00:35:23.583Z",
  "open_taken_at": "2026-10-25T05:02:17.955Z",
  "thresholds": {
   "big": 10,
@@ -39,28 +39,6 @@
    "yes_buy": 50,
    "no_buy": 53,
    "taken_at": "2026-10-26T03:45:09.764Z"
-  },
-  {
-   "market_id": "1778519",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Daniel Milavsky cover 4.5 vs the Harry Wendelken in Daniel Milavsky vs. Harry Wendelken?",
-   "sides": [
-    "Daniel Milavsky +4.50 (Games)",
-    "Harry Wendelken -4.50 (Games)"
-   ],
-   "teams": [
-    "Daniel Milavsky",
-    "Harry Wendelken"
-   ],
-   "player": null,
-   "mid": 71.5,
-   "yes_buy": 72,
-   "no_buy": 29,
-   "taken_at": "2026-10-26T22:07:23.361Z"
   },
   {
    "market_id": "1778517",
@@ -105,6 +83,28 @@
    "yes_buy": 46,
    "no_buy": 56,
    "taken_at": "2026-10-26T09:42:46.279Z"
+  },
+  {
+   "market_id": "1778519",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Daniel Milavsky cover 4.5 vs the Harry Wendelken in Daniel Milavsky vs. Harry Wendelken?",
+   "sides": [
+    "Daniel Milavsky +4.50 (Games)",
+    "Harry Wendelken -4.50 (Games)"
+   ],
+   "teams": [
+    "Daniel Milavsky",
+    "Harry Wendelken"
+   ],
+   "player": null,
+   "mid": 71.5,
+   "yes_buy": 72,
+   "no_buy": 29,
+   "taken_at": "2026-10-26T22:07:23.361Z"
   },
   {
    "market_id": "1778526",
@@ -371,6 +371,26 @@
    "kalshi": null
   },
   {
+   "key": "1778517:1",
+   "market_id": "1778517",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Daniel Milavsky cover 1.5 vs the Harry Wendelken in Daniel Milavsky vs. Harry Wendelken?",
+   "side": "Harry Wendelken -1.50 (Games)",
+   "open_chance": 46,
+   "now_chance": 41,
+   "open_odds": "+117",
+   "now_odds": "+144",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-26T23:15:09.022Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1778526:1",
    "market_id": "1778526",
    "market": "Games total",
@@ -427,26 +447,6 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-26T23:42:55.763Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1778517:1",
-   "market_id": "1778517",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Daniel Milavsky cover 1.5 vs the Harry Wendelken in Daniel Milavsky vs. Harry Wendelken?",
-   "side": "Harry Wendelken -1.50 (Games)",
-   "open_chance": 46,
-   "now_chance": 30,
-   "open_odds": "+117",
-   "now_odds": "+233",
-   "edge": 16,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-26T23:15:09.022Z",
    "status": "gone",
    "kalshi": null
   },
@@ -552,6 +552,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1778517:1:slight",
+   "key": "1778517:1",
+   "at": "2026-10-27T00:35:23.583Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Harry Wendelken -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+144",
+   "now_chance": 41,
+   "edge": 5,
+   "text": "New slight edge: Harry Wendelken -1.50 (Games) (Games spread), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-danmil-harwen-2026-10-26"
+  },
   {
    "id": "gone:1778526:1:2026-10-26T23:32:19.885Z",
    "key": "1778526:1",
@@ -937,7 +951,8 @@
   "gone:1778517:1:2026-10-26T23:15:09.022Z",
   "gone:1778522:0:2026-10-26T23:42:55.763Z",
   "gone:1778533:0:2026-10-26T23:26:55.505Z",
-  "gone:1778526:1:2026-10-26T23:32:19.885Z"
+  "gone:1778526:1:2026-10-26T23:32:19.885Z",
+  "new_edge:1778517:1:slight"
  ],
  "kalshi_checked": null
 }
