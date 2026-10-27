@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-27T03:26:20.684Z"
+  "fetched_at": "2026-10-27T03:32:45.422Z"
  },
- "updated": "2026-10-27T03:26:20.581Z",
+ "updated": "2026-10-27T03:32:45.342Z",
  "open_taken_at": "2026-10-24T13:01:21.711Z",
  "thresholds": {
   "big": 10,
@@ -151,28 +151,6 @@
    "taken_at": "2026-10-27T03:26:20.581Z"
   },
   {
-   "market_id": "1773116",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Yu Hsiou Hsu win set 1 against Keegan Smith?",
-   "sides": [
-    "Yes: Yu Hsiou Hsu win set 1 against Keegan Smith",
-    "No: Yu Hsiou Hsu win set 1 against Keegan Smith"
-   ],
-   "teams": [
-    "Yu-Hsiou Hsu",
-    null
-   ],
-   "player": null,
-   "mid": 47.5,
-   "yes_buy": 49,
-   "no_buy": 54,
-   "taken_at": "2026-10-27T03:15:05.697Z"
-  },
-  {
    "market_id": "1773117",
    "market": "Set 2 winner",
    "group": "game",
@@ -259,6 +237,28 @@
    "yes_buy": 30,
    "no_buy": 71,
    "taken_at": "2026-10-27T03:08:48.306Z"
+  },
+  {
+   "market_id": "1773116",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Yu Hsiou Hsu win set 1 against Keegan Smith?",
+   "sides": [
+    "Yes: Yu Hsiou Hsu win set 1 against Keegan Smith",
+    "No: Yu Hsiou Hsu win set 1 against Keegan Smith"
+   ],
+   "teams": [
+    "Yu-Hsiou Hsu",
+    null
+   ],
+   "player": null,
+   "mid": 47.5,
+   "yes_buy": 49,
+   "no_buy": 54,
+   "taken_at": "2026-10-27T03:15:05.697Z"
   },
   {
    "market_id": "1773107",
@@ -358,11 +358,11 @@
    "question": "Who will win in the upcoming atp event Yu Hsiou Hsu vs Keegan Smith scheduled for October 26, 2026 at 3:00 AM UTC?",
    "side": "Keegan Smith win",
    "open_chance": 71,
-   "now_chance": 55,
+   "now_chance": 64,
    "open_odds": "-245",
-   "now_odds": "-122",
-   "edge": 16,
-   "tier": "big",
+   "now_odds": "-178",
+   "edge": 7,
+   "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -427,11 +427,39 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-27T03:20:55.417Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1754034:1:slight",
+   "key": "1754034:1",
+   "at": "2026-10-27T03:32:45.342Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Keegan Smith win",
+   "market": "Moneyline",
+   "now_odds": "-178",
+   "now_chance": 64,
+   "edge": 7,
+   "text": "New slight edge: Keegan Smith win (Moneyline), 7 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-yuhhsu-keesmi-2026-10-25"
+  },
+  {
+   "id": "gone:1773116:1:2026-10-27T03:20:55.417Z",
+   "key": "1773116:1",
+   "at": "2026-10-27T03:32:45.342Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "No: Yu Hsiou Hsu win set 1 against Keegan Smith",
+   "market": "Set 1 winner",
+   "now_odds": "+100",
+   "now_chance": 50,
+   "edge": 4,
+   "text": "Edge gone: No: Yu Hsiou Hsu win set 1 against Keegan Smith (Set 1 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-yuhhsu-keesmi-2026-10-25"
+  },
   {
    "id": "new_edge:1773109:1:slight",
    "key": "1773109:1",
@@ -493,7 +521,9 @@
   "new_edge:1754034:1:big",
   "new_edge:1773110:1:slight",
   "new_edge:1773116:1:slight",
-  "new_edge:1773109:1:slight"
+  "new_edge:1773109:1:slight",
+  "new_edge:1754034:1:slight",
+  "gone:1773116:1:2026-10-27T03:20:55.417Z"
  ],
  "kalshi_checked": null
 }
