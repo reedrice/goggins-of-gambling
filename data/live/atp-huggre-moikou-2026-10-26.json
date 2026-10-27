@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-27T17:57:49.553Z"
+  "fetched_at": "2026-10-27T18:08:25.904Z"
  },
- "updated": "2026-10-27T17:57:49.476Z",
+ "updated": "2026-10-27T18:08:25.810Z",
  "open_taken_at": "2026-10-25T05:02:12.085Z",
  "thresholds": {
   "big": 10,
@@ -129,26 +129,48 @@
    "taken_at": "2026-10-26T17:49:07.558Z"
   },
   {
-   "market_id": "1773477",
-   "market": "Games total",
+   "market_id": "1773486",
+   "market": "Set 2 winner",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Hugo Grenier vs. Moise Kouame be more than 17.5?",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Hugo Grenier win set 2 against Moise Kouame?",
    "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
+    "Yes: Hugo Grenier win set 2 against Moise Kouame",
+    "No: Hugo Grenier win set 2 against Moise Kouame"
    ],
    "teams": [
-    null,
+    "Hugo Grenier",
     null
    ],
    "player": null,
-   "mid": 84.5,
-   "yes_buy": 86,
-   "no_buy": 17,
-   "taken_at": "2026-10-27T00:08:19.011Z"
+   "mid": 33.5,
+   "yes_buy": 36,
+   "no_buy": 69,
+   "taken_at": "2026-10-27T18:08:25.810Z"
+  },
+  {
+   "market_id": "1773485",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Hugo Grenier win set 1 against Moise Kouame?",
+   "sides": [
+    "Yes: Hugo Grenier win set 1 against Moise Kouame",
+    "No: Hugo Grenier win set 1 against Moise Kouame"
+   ],
+   "teams": [
+    "Hugo Grenier",
+    null
+   ],
+   "player": null,
+   "mid": 32,
+   "yes_buy": 35,
+   "no_buy": 71,
+   "taken_at": "2026-10-27T18:08:25.810Z"
   },
   {
    "market_id": "1773479",
@@ -171,6 +193,28 @@
    "yes_buy": 33,
    "no_buy": 72,
    "taken_at": "2026-10-26T21:05:30.296Z"
+  },
+  {
+   "market_id": "1773477",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Hugo Grenier vs. Moise Kouame be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 84.5,
+   "yes_buy": 86,
+   "no_buy": 17,
+   "taken_at": "2026-10-27T00:08:19.011Z"
   }
  ],
  "edges": [
@@ -182,15 +226,35 @@
    "question": "Will the Hugo Grenier cover 4.5 vs the Moise Kouame in Hugo Grenier vs. Moise Kouame?",
    "side": "Hugo Grenier +4.50 (Games)",
    "open_chance": 65,
-   "now_chance": 61,
+   "now_chance": 53,
    "open_odds": "-186",
-   "now_odds": "-156",
-   "edge": 4,
-   "tier": "slight",
+   "now_odds": "-113",
+   "edge": 12,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-27T12:49:00.230Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1773479:0",
+   "market_id": "1773479",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Hugo Grenier vs. Moise Kouame be more than 27.5?",
+   "side": "Over 27.5 (Games)",
+   "open_chance": 33,
+   "now_chance": 22,
+   "open_odds": "+203",
+   "now_odds": "+355",
+   "edge": 11,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-27T18:08:25.810Z",
    "status": "open",
    "kalshi": null
   },
@@ -217,6 +281,34 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1773472:0:big",
+   "key": "1773472:0",
+   "at": "2026-10-27T18:08:25.810Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Hugo Grenier +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 12,
+   "text": "New big edge: Hugo Grenier +4.50 (Games) (Games spread), 12 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-huggre-moikou-2026-10-26"
+  },
+  {
+   "id": "new_edge:1773479:0:big",
+   "key": "1773479:0",
+   "at": "2026-10-27T18:08:25.810Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Over 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+355",
+   "now_chance": 22,
+   "edge": 11,
+   "text": "New big edge: Over 27.5 (Games) (Games total), 11 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-huggre-moikou-2026-10-26"
+  },
+  {
    "id": "new_edge:1773472:0:slight",
    "key": "1773472:0",
    "at": "2026-10-27T17:38:49.996Z",
@@ -232,7 +324,9 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1773472:0:slight"
+  "new_edge:1773472:0:slight",
+  "new_edge:1773472:0:big",
+  "new_edge:1773479:0:big"
  ],
  "kalshi_checked": null
 }
