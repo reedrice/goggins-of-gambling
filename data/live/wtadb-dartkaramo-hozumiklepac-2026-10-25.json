@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185740",
-  "fetched_at": "2026-10-27T08:03:00.738Z",
+  "fetched_at": "2026-10-27T08:08:53.188Z",
   "tennis": true,
   "tennis_match": {
    "id": "185740",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "detail": "3rd Set",
+     "shortDetail": "3rd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(4) Eri Hozumi (JPN) & Andreja Klepac (SLO) is tied with Harriet Dart (GBR) & Naima Karamoko (SUI) 3-6 5-2",
+     "text": "Harriet Dart (GBR) & Naima Karamoko (SUI) leads (4) Eri Hozumi (JPN) & Andreja Klepac (SLO) 6-3 2-6 0-0",
      "type": "event"
     }
    ],
@@ -55,7 +55,6 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
      "curatedRank": {
       "current": 4
      },
@@ -65,7 +64,11 @@
        "winner": false
       },
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "roster": {
@@ -140,14 +143,17 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 2
+       "value": 2,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "roster": {
@@ -217,11 +223,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 232,
    "type": {
     "id": "4",
@@ -240,14 +241,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "period": 3,
+  "clock": "3rd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Eri Hozumi / Andreja Klepac",
    "alias": "Eri Hozumi / Andreja Klepac",
    "name": "Eri Hozumi / Andreja Klepac",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Harriet Dart / Naima Karamoko",
@@ -259,7 +260,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T08:03:00.652Z",
+ "updated": "2026-10-27T08:08:53.085Z",
  "open_taken_at": "2026-10-24T12:44:24.288Z",
  "thresholds": {
   "big": 10,
@@ -298,14 +299,14 @@
    "question": "Who will win in the upcoming wtadb event Dart / Karamoko vs Hozumi / Klepac scheduled for October 26, 2026 at 3:00 AM UTC?",
    "side": "Dart H / Karamoko N win",
    "open_chance": 49,
-   "now_chance": 44,
+   "now_chance": 27,
    "open_odds": "+104",
-   "now_odds": "+127",
-   "edge": 5,
-   "tier": "slight",
+   "now_odds": "+270",
+   "edge": 22,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Eri Hozumi / Andreja Klepac 3, 5 · Harriet Dart / Naima Karamoko 6, 2 · 2nd Set (games by set)",
+   "context": "Eri Hozumi / Andreja Klepac 3, 6, 0 · Harriet Dart / Naima Karamoko 6, 2, 0 · 3rd Set (games by set)",
    "first_seen": "2026-10-27T08:03:00.652Z",
    "status": "open",
    "kalshi": null
@@ -332,6 +333,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1753774:0:big",
+   "key": "1753774:0",
+   "at": "2026-10-27T08:08:53.085Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Dart H / Karamoko N win",
+   "market": "Moneyline",
+   "now_odds": "+270",
+   "now_chance": 27,
+   "edge": 22,
+   "text": "New big edge: Dart H / Karamoko N win (Moneyline), 22 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-dartkaramo-hozumiklepac-2026-10-25"
+  },
   {
    "id": "gone:1753774:1:2026-10-27T07:02:49.889Z",
    "key": "1753774:1",
@@ -395,7 +410,8 @@
   "gone:1753774:0:2026-10-26T20:17:29.721Z",
   "new_edge:1753774:1:big",
   "news:1753774:1",
-  "gone:1753774:1:2026-10-27T07:02:49.889Z"
+  "gone:1753774:1:2026-10-27T07:02:49.889Z",
+  "new_edge:1753774:0:big"
  ],
  "kalshi_checked": null
 }

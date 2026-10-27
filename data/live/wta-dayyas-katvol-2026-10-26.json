@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185718",
-  "fetched_at": "2026-10-27T08:03:08.026Z",
+  "fetched_at": "2026-10-27T08:09:00.054Z",
   "tennis": true,
   "tennis_match": {
    "id": "185718",
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 8
      },
@@ -108,6 +109,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 7,
@@ -153,6 +155,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 232,
    "type": {
     "id": "2",
@@ -190,13 +197,57 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T08:03:07.924Z",
+ "updated": "2026-10-27T08:08:59.928Z",
  "open_taken_at": "2026-10-25T11:21:35.550Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1817752",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Dayana Yastremska vs. Katie Volynets be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 19.5,
+   "yes_buy": 20,
+   "no_buy": 81,
+   "taken_at": "2026-10-27T04:23:56.713Z"
+  },
+  {
+   "market_id": "1817743",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Dayana Yastremska cover 1.5 vs the Katie Volynets in Dayana Yastremska vs. Katie Volynets?",
+   "sides": [
+    "Dayana Yastremska +1.50 (Games)",
+    "Katie Volynets -1.50 (Games)"
+   ],
+   "teams": [
+    "Dayana Yastremska",
+    "Katie Volynets"
+   ],
+   "player": null,
+   "mid": 47.5,
+   "yes_buy": 50,
+   "no_buy": 55,
+   "taken_at": "2026-10-26T02:31:05.794Z"
+  },
   {
    "market_id": "1794978",
    "market": "Moneyline",
@@ -242,28 +293,6 @@
    "taken_at": "2026-10-27T04:23:56.713Z"
   },
   {
-   "market_id": "1817752",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Dayana Yastremska vs. Katie Volynets be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 19.5,
-   "yes_buy": 20,
-   "no_buy": 81,
-   "taken_at": "2026-10-27T04:23:56.713Z"
-  },
-  {
    "market_id": "1817745",
    "market": "Games spread",
    "group": "game",
@@ -284,28 +313,6 @@
    "yes_buy": 70,
    "no_buy": 31,
    "taken_at": "2026-10-27T04:23:56.713Z"
-  },
-  {
-   "market_id": "1817743",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Dayana Yastremska cover 1.5 vs the Katie Volynets in Dayana Yastremska vs. Katie Volynets?",
-   "sides": [
-    "Dayana Yastremska +1.50 (Games)",
-    "Katie Volynets -1.50 (Games)"
-   ],
-   "teams": [
-    "Dayana Yastremska",
-    "Katie Volynets"
-   ],
-   "player": null,
-   "mid": 47.5,
-   "yes_buy": 50,
-   "no_buy": 55,
-   "taken_at": "2026-10-26T02:31:05.794Z"
   },
   {
    "market_id": "1817744",
@@ -537,16 +544,16 @@
    "question": "Will the total in Dayana Yastremska vs. Katie Volynets be more than 27.5?",
    "side": "Under 27.5 (Games)",
    "open_chance": 81,
-   "now_chance": 35,
+   "now_chance": 68,
    "open_odds": "-426",
-   "now_odds": "+186",
-   "edge": 46,
+   "now_odds": "-213",
+   "edge": 13,
    "tier": "big",
-   "class": "news",
-   "reason": "Big move (46 pts), likely news",
-   "context": "Katie Volynets 5, 6, 3 · Dayana Yastremska 7, 1, 1 · 3rd Set (games by set)",
+   "class": "edge",
+   "reason": null,
+   "context": "Katie Volynets 5, 6, 5 · Dayana Yastremska 7, 1, 2 · 3rd Set (games by set)",
    "first_seen": "2026-10-27T06:20:03.698Z",
-   "status": "gone",
+   "status": "open",
    "kalshi": null
   },
   {
@@ -586,26 +593,6 @@
    "reason": "Explained by score: Katie Volynets not above the games spread right now",
    "context": "Katie Volynets 5 · Dayana Yastremska 7 · 1st Set (games by set)",
    "first_seen": "2026-10-27T04:35:31.606Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1817743:0",
-   "market_id": "1817743",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Dayana Yastremska cover 1.5 vs the Katie Volynets in Dayana Yastremska vs. Katie Volynets?",
-   "side": "Dayana Yastremska +1.50 (Games)",
-   "open_chance": 50,
-   "now_chance": 24,
-   "open_odds": "+100",
-   "now_odds": "+317",
-   "edge": 26,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Dayana Yastremska not above the games spread right now",
-   "context": "Katie Volynets 5, 6, 2 · Dayana Yastremska 7, 1, 1 · 3rd Set (games by set)",
-   "first_seen": "2026-10-27T06:09:03.287Z",
    "status": "gone",
    "kalshi": null
   },
@@ -686,26 +673,6 @@
    "reason": "Explained by score: Dayana Yastremska not above the games spread right now",
    "context": "Katie Volynets 5 · Dayana Yastremska 4 · 1st Set (games by set)",
    "first_seen": "2026-10-27T06:09:03.287Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1817743:1",
-   "market_id": "1817743",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Dayana Yastremska cover 1.5 vs the Katie Volynets in Dayana Yastremska vs. Katie Volynets?",
-   "side": "Katie Volynets -1.50 (Games)",
-   "open_chance": 55,
-   "now_chance": 44,
-   "open_odds": "-122",
-   "now_odds": "+127",
-   "edge": 11,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Katie Volynets not above the games spread right now",
-   "context": "Katie Volynets 5, 1 · Dayana Yastremska 7, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-10-26T23:15:09.570Z",
    "status": "gone",
    "kalshi": null
   },
@@ -914,20 +881,6 @@
    "url": "https://polymarket.us/sports/wta/wta-dayyas-katvol-2026-10-26"
   },
   {
-   "id": "gone:1817743:0:2026-10-27T06:09:03.287Z",
-   "key": "1817743:0",
-   "at": "2026-10-27T06:26:24.662Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Dayana Yastremska +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+138",
-   "now_chance": 42,
-   "edge": 8,
-   "text": "Edge gone: Dayana Yastremska +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-dayyas-katvol-2026-10-26"
-  },
-  {
    "id": "new_edge:1817752:1:big",
    "key": "1817752:1",
    "at": "2026-10-27T06:20:03.698Z",
@@ -984,34 +937,6 @@
    "url": "https://polymarket.us/sports/wta/wta-dayyas-katvol-2026-10-26"
   },
   {
-   "id": "new_edge:1817743:0:slight",
-   "key": "1817743:0",
-   "at": "2026-10-27T06:13:03.918Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Dayana Yastremska +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+127",
-   "now_chance": 44,
-   "edge": 6,
-   "text": "New slight edge: Dayana Yastremska +1.50 (Games) (Games spread), 6 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-dayyas-katvol-2026-10-26"
-  },
-  {
-   "id": "new_edge:1817743:0:big",
-   "key": "1817743:0",
-   "at": "2026-10-27T06:09:03.287Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Dayana Yastremska +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+170",
-   "now_chance": 37,
-   "edge": 13,
-   "text": "New big edge: Dayana Yastremska +1.50 (Games) (Games spread), 13 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-dayyas-katvol-2026-10-26"
-  },
-  {
    "id": "new_edge:1794978:0:slight",
    "key": "1794978:0",
    "at": "2026-10-27T06:09:03.287Z",
@@ -1040,20 +965,6 @@
    "url": "https://polymarket.us/sports/wta/wta-dayyas-katvol-2026-10-26"
   },
   {
-   "id": "gone:1817743:1:2026-10-26T23:15:09.570Z",
-   "key": "1817743:1",
-   "at": "2026-10-27T06:09:03.287Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Katie Volynets -1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+100",
-   "now_chance": 50,
-   "edge": 5,
-   "text": "Edge gone: Katie Volynets -1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-dayyas-katvol-2026-10-26"
-  },
-  {
    "id": "new_edge:1817742:1:big",
    "key": "1817742:1",
    "at": "2026-10-27T04:41:46.920Z",
@@ -1065,20 +976,6 @@
    "now_chance": 61,
    "edge": 11,
    "text": "New big edge: Katie Volynets +1.50 (Games) (Games spread), 11 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-dayyas-katvol-2026-10-26"
-  },
-  {
-   "id": "new_edge:1817743:1:slight",
-   "key": "1817743:1",
-   "at": "2026-10-27T04:41:46.920Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Katie Volynets -1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+100",
-   "now_chance": 50,
-   "edge": 5,
-   "text": "New slight edge: Katie Volynets -1.50 (Games) (Games spread), 5 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-dayyas-katvol-2026-10-26"
   }
  ],
