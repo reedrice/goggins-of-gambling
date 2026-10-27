@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185188",
-  "fetched_at": "2026-10-27T19:44:53.778Z",
+  "fetched_at": "2026-10-27T19:52:41.901Z",
   "tennis": true,
   "tennis_match": {
    "id": "185188",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Alexander Zverev (GER) leads Martin Landaluce (ESP) 7-5 3-6 6-5",
+     "text": "(1) Alexander Zverev (GER) leads Martin Landaluce (ESP) 7-5 3-6 6-6 (2-5)",
      "type": "event"
     }
    ],
@@ -55,7 +55,6 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
      "linescores": [
       {
        "value": 5,
@@ -66,7 +65,8 @@
        "winner": true
       },
       {
-       "value": 5
+       "value": 6,
+       "tiebreak": 5
       }
      ],
      "athlete": {
@@ -106,7 +106,6 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
      "curatedRank": {
       "current": 1
      },
@@ -120,7 +119,8 @@
        "winner": false
       },
       {
-       "value": 6
+       "value": 6,
+       "tiebreak": 2
       }
      ],
      "athlete": {
@@ -155,11 +155,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 10,
    "type": {
     "id": "1",
@@ -197,7 +192,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T19:44:53.687Z",
+ "updated": "2026-10-27T19:52:41.810Z",
  "open_taken_at": "2026-10-24T11:21:59.762Z",
  "thresholds": {
   "big": 10,
@@ -390,14 +385,14 @@
    "question": "Who will win in the upcoming atp event Alexander Zverev vs Martin Landaluce scheduled for October 25, 2026 at 9:00 AM UTC?",
    "side": "Alexander Zverev win",
    "open_chance": 90,
-   "now_chance": 70,
+   "now_chance": 18,
    "open_odds": "-900",
-   "now_odds": "-233",
-   "edge": 20,
+   "now_odds": "+456",
+   "edge": 72,
    "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Martin Landaluce 5, 6, 5 · Alexander Zverev 7, 3, 6 · 3rd Set (games by set)",
+   "class": "news",
+   "reason": "Big move (72 pts), likely news",
+   "context": "Martin Landaluce 5, 6, 6 · Alexander Zverev 7, 3, 6 · 3rd Set (games by set)",
    "first_seen": "2026-10-27T18:15:13.318Z",
    "status": "open",
    "kalshi": null
@@ -417,7 +412,7 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Martin Landaluce 5, 6, 5 · Alexander Zverev 7, 3, 6 · 3rd Set (games by set)",
+   "context": "Martin Landaluce 5, 6, 6 · Alexander Zverev 7, 3, 6 · 3rd Set (games by set)",
    "first_seen": "2026-10-27T19:44:53.687Z",
    "status": "open",
    "kalshi": null
@@ -544,6 +539,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "news:1749418:0",
+   "key": "1749418:0",
+   "at": "2026-10-27T19:52:41.810Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Alexander Zverev win",
+   "market": "Moneyline",
+   "now_odds": "+456",
+   "now_chance": 18,
+   "edge": 72,
+   "text": "Big move, likely news: Alexander Zverev win (Moneyline) is 72 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-alezve-marlan-2026-10-25"
+  },
   {
    "id": "new_edge:1749803:0:big",
    "key": "1749803:0",
@@ -682,7 +691,8 @@
   "new_edge:1749418:0:big",
   "new_edge:1749802:1:big",
   "gone:1749802:1:2026-10-27T18:33:22.917Z",
-  "new_edge:1749803:0:big"
+  "new_edge:1749803:0:big",
+  "news:1749418:0"
  ],
  "kalshi_checked": null
 }
