@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185188",
-  "fetched_at": "2026-10-27T18:33:23.030Z",
+  "fetched_at": "2026-10-27T18:42:35.813Z",
   "tennis": true,
   "tennis_match": {
    "id": "185188",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "detail": "3rd Set",
+     "shortDetail": "3rd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Martin Landaluce (ESP) is tied with (1) Alexander Zverev (GER) 5-7 6-3",
+     "text": "(1) Alexander Zverev (GER) leads Martin Landaluce (ESP) 7-5 3-6 1-1",
      "type": "event"
     }
    ],
@@ -55,13 +55,18 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 5,
        "winner": false
       },
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -101,6 +106,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "curatedRank": {
       "current": 1
      },
@@ -110,7 +116,11 @@
        "winner": true
       },
       {
-       "value": 3
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -145,6 +155,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 10,
    "type": {
     "id": "1",
@@ -163,14 +178,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "period": 3,
+  "clock": "3rd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Martin Landaluce",
    "alias": "Martin Landaluce",
    "name": "Martin Landaluce",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Alexander Zverev",
@@ -182,7 +197,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T18:33:22.917Z",
+ "updated": "2026-10-27T18:42:35.714Z",
  "open_taken_at": "2026-10-24T11:21:59.762Z",
  "thresholds": {
   "big": 10,
@@ -375,35 +390,15 @@
    "question": "Who will win in the upcoming atp event Alexander Zverev vs Martin Landaluce scheduled for October 25, 2026 at 9:00 AM UTC?",
    "side": "Alexander Zverev win",
    "open_chance": 90,
-   "now_chance": 75,
+   "now_chance": 74,
    "open_odds": "-900",
-   "now_odds": "-300",
-   "edge": 15,
+   "now_odds": "-285",
+   "edge": 16,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Martin Landaluce 5, 6 · Alexander Zverev 7, 3 · 2nd Set (games by set)",
+   "context": "Martin Landaluce 5, 6, 1 · Alexander Zverev 7, 3, 1 · 3rd Set (games by set)",
    "first_seen": "2026-10-27T18:15:13.318Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1749802:1",
-   "market_id": "1749802",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Alexander Zverev cover -1.5 vs the Martin Landaluce in Alexander Zverev vs. Martin Landaluce?",
-   "side": "Martin Landaluce +1.50 (Games)",
-   "open_chance": 36,
-   "now_chance": 26,
-   "open_odds": "+178",
-   "now_odds": "+285",
-   "edge": 10,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Martin Landaluce 5, 6 · Alexander Zverev 7, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T18:33:22.917Z",
    "status": "open",
    "kalshi": null
   },
@@ -488,6 +483,26 @@
    "kalshi": null
   },
   {
+   "key": "1749802:1",
+   "market_id": "1749802",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Alexander Zverev cover -1.5 vs the Martin Landaluce in Alexander Zverev vs. Martin Landaluce?",
+   "side": "Martin Landaluce +1.50 (Games)",
+   "open_chance": 36,
+   "now_chance": 26,
+   "open_odds": "+178",
+   "now_odds": "+285",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Martin Landaluce 5, 6 · Alexander Zverev 7, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T18:33:22.917Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1749812:0",
    "market_id": "1749812",
    "market": "Games total",
@@ -509,6 +524,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1749802:1:2026-10-27T18:33:22.917Z",
+   "key": "1749802:1",
+   "at": "2026-10-27T18:42:35.714Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Martin Landaluce +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+285",
+   "now_chance": 26,
+   "edge": 10,
+   "text": "Edge gone: Martin Landaluce +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-alezve-marlan-2026-10-25"
+  },
   {
    "id": "new_edge:1749802:1:big",
    "key": "1749802:1",
@@ -617,7 +646,8 @@
   "news:1749812:1",
   "gone:1749812:0:2026-10-27T17:57:47.925Z",
   "new_edge:1749418:0:big",
-  "new_edge:1749802:1:big"
+  "new_edge:1749802:1:big",
+  "gone:1749802:1:2026-10-27T18:33:22.917Z"
  ],
  "kalshi_checked": null
 }
