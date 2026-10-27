@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185132",
-  "fetched_at": "2026-10-27T13:06:23.440Z",
+  "fetched_at": "2026-10-27T13:12:22.157Z",
   "tennis": true,
   "tennis_match": {
    "id": "185132",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Tue, October 27th at 9:10 AM EDT",
-     "shortDetail": "10/27 - 9:10 AM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Alejandro Tabilo (CHI) is tied with (3) Rafael Jodar (ESP)",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -138,10 +143,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Tue, October 27th at 9:10 AM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Rafael Jodar",
@@ -159,7 +164,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T13:06:23.309Z",
+ "updated": "2026-10-27T13:12:22.041Z",
  "open_taken_at": "2026-10-24T12:32:02.756Z",
  "thresholds": {
   "big": 10,
@@ -255,6 +260,28 @@
    "taken_at": "2026-10-25T13:03:29.443Z"
   },
   {
+   "market_id": "1754937",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Alejandro Tabilo cover 1.5 vs the Rafael Jodar in Alejandro Tabilo vs. Rafael Jodar?",
+   "sides": [
+    "Alejandro Tabilo +1.50 (Sets)",
+    "Rafael Jodar -1.50 (Sets)"
+   ],
+   "teams": [
+    "Alejandro Tabilo",
+    "Rafael Jodar"
+   ],
+   "player": null,
+   "mid": 45,
+   "yes_buy": 47,
+   "no_buy": 57,
+   "taken_at": "2026-10-27T13:12:22.041Z"
+  },
+  {
    "market_id": "1754939",
    "market": "Games total",
    "group": "game",
@@ -299,26 +326,26 @@
    "taken_at": "2026-10-27T13:06:23.309Z"
   },
   {
-   "market_id": "1754946",
-   "market": "Set 1 winner",
+   "market_id": "1754940",
+   "market": "Games total",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Alejandro Tabilo win set 1 against Rafael Jodar?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Alejandro Tabilo vs. Rafael Jodar be more than 27.5?",
    "sides": [
-    "Yes: Alejandro Tabilo win set 1 against Rafael Jodar",
-    "No: Alejandro Tabilo win set 1 against Rafael Jodar"
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
    ],
    "teams": [
-    "Alejandro Tabilo",
+    null,
     null
    ],
    "player": null,
-   "mid": 30,
+   "mid": 32.5,
    "yes_buy": 33,
-   "no_buy": 73,
-   "taken_at": "2026-10-27T05:00:02.482Z"
+   "no_buy": 68,
+   "taken_at": "2026-10-27T13:12:22.041Z"
   },
   {
    "market_id": "1754931",
@@ -363,6 +390,28 @@
    "yes_buy": 32,
    "no_buy": 69,
    "taken_at": "2026-10-27T13:00:57.373Z"
+  },
+  {
+   "market_id": "1754946",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Alejandro Tabilo win set 1 against Rafael Jodar?",
+   "sides": [
+    "Yes: Alejandro Tabilo win set 1 against Rafael Jodar",
+    "No: Alejandro Tabilo win set 1 against Rafael Jodar"
+   ],
+   "teams": [
+    "Alejandro Tabilo",
+    null
+   ],
+   "player": null,
+   "mid": 30,
+   "yes_buy": 33,
+   "no_buy": 73,
+   "taken_at": "2026-10-27T05:00:02.482Z"
   },
   {
    "market_id": "1754930",
@@ -462,14 +511,14 @@
    "question": "Who will win in the upcoming atp event Alejandro Tabilo vs Rafael Jodar scheduled for October 25, 2026 at 9:00 AM UTC?",
    "side": "Rafael Jodar win",
    "open_chance": 83,
-   "now_chance": 75,
+   "now_chance": 76,
    "open_odds": "-488",
-   "now_odds": "-300",
-   "edge": 8,
+   "now_odds": "-317",
+   "edge": 7,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Rafael Jodar  · Alejandro Tabilo  · 1st Set (games by set)",
    "first_seen": "2026-10-25T11:27:34.669Z",
    "status": "open",
    "kalshi": null
@@ -489,8 +538,28 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Rafael Jodar  · Alejandro Tabilo  · 1st Set (games by set)",
    "first_seen": "2026-10-25T16:43:55.664Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1754931:1",
+   "market_id": "1754931",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Alejandro Tabilo cover 1.5 vs the Rafael Jodar in Alejandro Tabilo vs. Rafael Jodar?",
+   "side": "Rafael Jodar -1.50 (Games)",
+   "open_chance": 74,
+   "now_chance": 69,
+   "open_odds": "-285",
+   "now_odds": "-223",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Rafael Jodar  · Alejandro Tabilo  · 1st Set (games by set)",
+   "first_seen": "2026-10-27T02:17:22.757Z",
    "status": "open",
    "kalshi": null
   },
@@ -511,31 +580,25 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-27T13:00:57.373Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1754931:1",
-   "market_id": "1754931",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Alejandro Tabilo cover 1.5 vs the Rafael Jodar in Alejandro Tabilo vs. Rafael Jodar?",
-   "side": "Rafael Jodar -1.50 (Games)",
-   "open_chance": 74,
-   "now_chance": 69,
-   "open_odds": "-285",
-   "now_odds": "-223",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-10-27T02:17:22.757Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1754946:1:2026-10-27T13:00:57.373Z",
+   "key": "1754946:1",
+   "at": "2026-10-27T13:12:22.041Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "No: Alejandro Tabilo win set 1 against Rafael Jodar",
+   "market": "Set 1 winner",
+   "now_odds": "-213",
+   "now_chance": 68,
+   "edge": 5,
+   "text": "Edge gone: No: Alejandro Tabilo win set 1 against Rafael Jodar (Set 1 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-aletab-rafjod-2026-10-25"
+  },
   {
    "id": "new_edge:1753301:1:slight",
    "key": "1753301:1",
@@ -597,7 +660,8 @@
   "new_edge:1753301:1:slight",
   "new_edge:1754933:1:slight",
   "new_edge:1754946:1:slight",
-  "new_edge:1754931:1:slight"
+  "new_edge:1754931:1:slight",
+  "gone:1754946:1:2026-10-27T13:00:57.373Z"
  ],
  "kalshi_checked": null
 }
