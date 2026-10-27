@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185746",
-  "fetched_at": "2026-10-27T05:11:53.191Z",
+  "fetched_at": "2026-10-27T05:17:15.459Z",
   "tennis": true,
   "tennis_match": {
    "id": "185746",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Tue, October 26th at 1:10 AM EDT",
-     "shortDetail": "10/27 - 1:10 AM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(2) Miriam Skoch (CZE) & Jesika Maleckova (CZE) leads Lyudmyla Kichenok (UKR) & Makoto Ninomiya (JPN) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -53,6 +58,11 @@
      "curatedRank": {
       "current": 2
      },
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "roster": {
       "displayName": "Miriam Skoch / Jesika Maleckova",
       "shortDisplayName": "M. Skoch / J. Maleckova",
@@ -125,6 +135,11 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "roster": {
       "displayName": "Lyudmyla Kichenok / Makoto Ninomiya",
       "shortDisplayName": "L. Kichenok / M. Ninomiya",
@@ -208,10 +223,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Tue, October 26th at 1:10 AM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Miriam Skoch / Jesika Maleckova",
@@ -229,7 +244,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T05:11:53.099Z",
+ "updated": "2026-10-27T05:17:15.296Z",
  "open_taken_at": "2026-10-24T12:44:24.277Z",
  "thresholds": {
   "big": 10,
@@ -268,20 +283,34 @@
    "question": "Who will win in the upcoming wtadb event Kichenok / Ninomiya vs Maleckova / Skoch scheduled for October 26, 2026 at 3:00 AM UTC?",
    "side": "Kichenok L / Ninomiya M win",
    "open_chance": 50,
-   "now_chance": 41,
+   "now_chance": 40,
    "open_odds": "+100",
-   "now_odds": "+144",
-   "edge": 9,
-   "tier": "slight",
+   "now_odds": "+150",
+   "edge": 10,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Miriam Skoch / Jesika Maleckova 1 · Lyudmyla Kichenok / Makoto Ninomiya 0 · 1st Set (games by set)",
    "first_seen": "2026-10-26T16:27:07.194Z",
-   "status": "gone",
+   "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1753770:0:big",
+   "key": "1753770:0",
+   "at": "2026-10-27T05:17:15.296Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Kichenok L / Ninomiya M win",
+   "market": "Moneyline",
+   "now_odds": "+150",
+   "now_chance": 40,
+   "edge": 10,
+   "text": "New big edge: Kichenok L / Ninomiya M win (Moneyline), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-kichenninomi-malsko-2026-10-25"
+  },
   {
    "id": "gone:1753770:0:2026-10-26T16:27:07.194Z",
    "key": "1753770:0",
@@ -313,7 +342,8 @@
  ],
  "alert_seen": [
   "new_edge:1753770:0:slight",
-  "gone:1753770:0:2026-10-26T16:27:07.194Z"
+  "gone:1753770:0:2026-10-26T16:27:07.194Z",
+  "new_edge:1753770:0:big"
  ],
  "kalshi_checked": null
 }
