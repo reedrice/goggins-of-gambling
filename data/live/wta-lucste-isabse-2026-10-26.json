@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185841",
-  "fetched_at": "2026-10-27T11:33:02.035Z",
+  "fetched_at": "2026-10-27T11:38:46.323Z",
   "tennis": true,
   "tennis_match": {
    "id": "185841",
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 3,
@@ -101,6 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "curatedRank": {
       "current": 4
      },
@@ -145,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1081,
    "type": {
     "id": "2",
@@ -182,35 +189,13 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T11:33:01.903Z",
+ "updated": "2026-10-27T11:38:46.119Z",
  "open_taken_at": "2026-10-25T16:44:11.913Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "1805329",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Lucrezia Stefanini win set 2 against Isabella Maria Serban?",
-   "sides": [
-    "Yes: Lucrezia Stefanini win set 2 against Isabella Maria Serban",
-    "No: Lucrezia Stefanini win set 2 against Isabella Maria Serban"
-   ],
-   "teams": [
-    "Lucrezia Stefanini",
-    null
-   ],
-   "player": null,
-   "mid": 88.5,
-   "yes_buy": 90,
-   "no_buy": 13,
-   "taken_at": "2026-10-27T11:06:52.152Z"
-  },
   {
    "market_id": "1805313",
    "market": "Games spread",
@@ -256,28 +241,6 @@
    "taken_at": "2026-10-27T10:11:05.678Z"
   },
   {
-   "market_id": "1805312",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Lucrezia Stefanini cover -1.5 vs the Isabella Maria Serban in Lucrezia Stefanini vs. Isabella Maria Serban?",
-   "sides": [
-    "Lucrezia Stefanini -1.50 (Games)",
-    "Isabella Maria Serban +1.50 (Games)"
-   ],
-   "teams": [
-    "Lucrezia Stefanini",
-    "Isabella Maria Serban"
-   ],
-   "player": null,
-   "mid": 58.5,
-   "yes_buy": 59,
-   "no_buy": 42,
-   "taken_at": "2026-10-27T10:11:05.678Z"
-  },
-  {
    "market_id": "1805314",
    "market": "Games spread",
    "group": "game",
@@ -298,6 +261,50 @@
    "yes_buy": 75,
    "no_buy": 30,
    "taken_at": "2026-10-26T21:05:34.449Z"
+  },
+  {
+   "market_id": "1805320",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Lucrezia Stefanini vs. Isabella Maria Serban be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 55,
+   "yes_buy": 56,
+   "no_buy": 46,
+   "taken_at": "2026-10-26T16:51:55.507Z"
+  },
+  {
+   "market_id": "1805321",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Lucrezia Stefanini vs. Isabella Maria Serban be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 26,
+   "yes_buy": 28,
+   "no_buy": 76,
+   "taken_at": "2026-10-26T16:57:18.529Z"
   },
   {
    "market_id": "1805316",
@@ -344,6 +351,50 @@
    "taken_at": "2026-10-26T21:27:55.931Z"
   },
   {
+   "market_id": "1805329",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Lucrezia Stefanini win set 2 against Isabella Maria Serban?",
+   "sides": [
+    "Yes: Lucrezia Stefanini win set 2 against Isabella Maria Serban",
+    "No: Lucrezia Stefanini win set 2 against Isabella Maria Serban"
+   ],
+   "teams": [
+    "Lucrezia Stefanini",
+    null
+   ],
+   "player": null,
+   "mid": 88.5,
+   "yes_buy": 90,
+   "no_buy": 13,
+   "taken_at": "2026-10-27T11:06:52.152Z"
+  },
+  {
+   "market_id": "1805312",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Lucrezia Stefanini cover -1.5 vs the Isabella Maria Serban in Lucrezia Stefanini vs. Isabella Maria Serban?",
+   "sides": [
+    "Lucrezia Stefanini -1.50 (Games)",
+    "Isabella Maria Serban +1.50 (Games)"
+   ],
+   "teams": [
+    "Lucrezia Stefanini",
+    "Isabella Maria Serban"
+   ],
+   "player": null,
+   "mid": 58.5,
+   "yes_buy": 59,
+   "no_buy": 42,
+   "taken_at": "2026-10-27T10:11:05.678Z"
+  },
+  {
    "market_id": "1803166",
    "market": "Moneyline",
    "group": "game",
@@ -388,28 +439,6 @@
    "taken_at": "2026-10-27T10:11:05.678Z"
   },
   {
-   "market_id": "1805321",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Lucrezia Stefanini vs. Isabella Maria Serban be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 26,
-   "yes_buy": 28,
-   "no_buy": 76,
-   "taken_at": "2026-10-26T16:57:18.529Z"
-  },
-  {
    "market_id": "1805323",
    "market": "Sets total",
    "group": "game",
@@ -430,28 +459,6 @@
    "yes_buy": 26,
    "no_buy": 79,
    "taken_at": "2026-10-26T22:19:53.911Z"
-  },
-  {
-   "market_id": "1805320",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Lucrezia Stefanini vs. Isabella Maria Serban be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 55,
-   "yes_buy": 56,
-   "no_buy": 46,
-   "taken_at": "2026-10-26T16:51:55.507Z"
   },
   {
    "market_id": "1805318",
@@ -542,22 +549,42 @@
    "kalshi": null
   },
   {
-   "key": "1805314:1",
-   "market_id": "1805314",
-   "market": "Games spread",
+   "key": "1805320:1",
+   "market_id": "1805320",
+   "market": "Games total",
    "group": "game",
-   "question": "Will the Lucrezia Stefanini cover -4.5 vs the Isabella Maria Serban in Lucrezia Stefanini vs. Isabella Maria Serban?",
-   "side": "Isabella Maria Serban +4.50 (Games)",
-   "open_chance": 30,
-   "now_chance": 26,
-   "open_odds": "+233",
-   "now_odds": "+285",
-   "edge": 4,
+   "question": "Will the total in Lucrezia Stefanini vs. Isabella Maria Serban be more than 17.5?",
+   "side": "Under 17.5 (Games)",
+   "open_chance": 46,
+   "now_chance": 21,
+   "open_odds": "+117",
+   "now_odds": "+376",
+   "edge": 25,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (25 pts), likely news",
+   "context": "Isabella Maria Serban 3, 2 · Lucrezia Stefanini 6, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T10:22:43.104Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1805321:0",
+   "market_id": "1805321",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Lucrezia Stefanini vs. Isabella Maria Serban be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 28,
+   "now_chance": 19,
+   "open_odds": "+257",
+   "now_odds": "+426",
+   "edge": 9,
    "tier": "slight",
    "class": "edge",
    "reason": null,
    "context": "Isabella Maria Serban 3, 2 · Lucrezia Stefanini 6, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T10:49:00.209Z",
+   "first_seen": "2026-10-27T11:13:03.075Z",
    "status": "open",
    "kalshi": null
   },
@@ -598,66 +625,6 @@
    "reason": null,
    "context": "Isabella Maria Serban 3, 2 · Lucrezia Stefanini 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T10:42:08.697Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1805320:1",
-   "market_id": "1805320",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Lucrezia Stefanini vs. Isabella Maria Serban be more than 17.5?",
-   "side": "Under 17.5 (Games)",
-   "open_chance": 46,
-   "now_chance": 30,
-   "open_odds": "+117",
-   "now_odds": "+233",
-   "edge": 16,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Isabella Maria Serban 3, 1 · Lucrezia Stefanini 6, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T10:22:43.104Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1805314:0",
-   "market_id": "1805314",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Lucrezia Stefanini cover -4.5 vs the Isabella Maria Serban in Lucrezia Stefanini vs. Isabella Maria Serban?",
-   "side": "Lucrezia Stefanini -4.50 (Games)",
-   "open_chance": 75,
-   "now_chance": 63,
-   "open_odds": "-300",
-   "now_odds": "-170",
-   "edge": 12,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Lucrezia Stefanini not above the games spread right now",
-   "context": "Isabella Maria Serban 3, 2 · Lucrezia Stefanini 6, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T10:11:05.678Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1805321:0",
-   "market_id": "1805321",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Lucrezia Stefanini vs. Isabella Maria Serban be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 28,
-   "now_chance": 20,
-   "open_odds": "+257",
-   "now_odds": "+400",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Isabella Maria Serban 3, 1 · Lucrezia Stefanini 6, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T11:13:03.075Z",
    "status": "gone",
    "kalshi": null
   },
@@ -723,6 +690,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "news:1805320:1",
+   "key": "1805320:1",
+   "at": "2026-10-27T11:38:46.119Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+376",
+   "now_chance": 21,
+   "edge": 25,
+   "text": "Big move, likely news: Under 17.5 (Games) (Games total) is 25 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-lucste-isabse-2026-10-26"
+  },
   {
    "id": "gone:1805323:1:2026-10-27T10:42:08.697Z",
    "key": "1805323:1",
@@ -794,20 +775,6 @@
    "url": "https://polymarket.us/sports/wta/wta-lucste-isabse-2026-10-26"
   },
   {
-   "id": "gone:1805314:1:2026-10-27T10:49:00.209Z",
-   "key": "1805314:1",
-   "at": "2026-10-27T11:19:09.664Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Isabella Maria Serban +4.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+300",
-   "now_chance": 25,
-   "edge": 5,
-   "text": "Edge gone: Isabella Maria Serban +4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-lucste-isabse-2026-10-26"
-  },
-  {
    "id": "gone:1805320:0:2026-10-26T17:36:50.217Z",
    "key": "1805320:0",
    "at": "2026-10-27T10:55:02.166Z",
@@ -833,20 +800,6 @@
    "now_chance": 49,
    "edge": 7,
    "text": "New slight edge: Over 17.5 (Games) (Games total), 7 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-lucste-isabse-2026-10-26"
-  },
-  {
-   "id": "new_edge:1805314:1:slight",
-   "key": "1805314:1",
-   "at": "2026-10-27T10:49:00.209Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Isabella Maria Serban +4.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+300",
-   "now_chance": 25,
-   "edge": 5,
-   "text": "New slight edge: Isabella Maria Serban +4.50 (Games) (Games spread), 5 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-lucste-isabse-2026-10-26"
   },
   {
@@ -971,7 +924,8 @@
   "gone:1805314:1:2026-10-27T10:49:00.209Z",
   "new_edge:1805323:1:big",
   "gone:1805321:1:2026-10-27T11:19:09.664Z",
-  "gone:1805323:1:2026-10-27T10:42:08.697Z"
+  "gone:1805323:1:2026-10-27T10:42:08.697Z",
+  "news:1805320:1"
  ],
  "kalshi_checked": null
 }
