@@ -4,12 +4,12 @@
  "game": "Aoyama / Liang vs. Neel / Olmos",
  "url": "https://polymarket.us/sports/wtadb/wtadb-aoyamaliang-neeolm-2026-10-25",
  "start_time": "2026-10-27T04:05:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185701",
-  "fetched_at": "2026-10-27T05:53:33.178Z",
+  "fetched_at": "2026-10-27T05:57:00.432Z",
   "tennis": true,
   "tennis_match": {
    "id": "185701",
@@ -17,17 +17,17 @@
    "date": "2026-10-27T04:10Z",
    "startDate": "2026-10-27T04:10Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Shuko Aoyama (JPN) & En-Shuo Liang (TPO) leads Ingrid Neel (EST) & Giuliana Olmos (MEX) 6-4 4-6 0-0",
+     "text": "Ingrid Neel (EST) & Giuliana Olmos (MEX) bt Shuko Aoyama (JPN) & En-Shuo Liang (TPO) 4-6 6-4 1-0 (10-8)",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "linescores": [
       {
        "value": 4,
@@ -65,7 +66,9 @@
        "winner": true
       },
       {
-       "value": 0
+       "value": 1,
+       "tiebreak": 10,
+       "winner": true
       }
      ],
      "roster": {
@@ -140,6 +143,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "linescores": [
       {
        "value": 6,
@@ -150,7 +154,9 @@
        "winner": false
       },
       {
-       "value": 0
+       "value": 0,
+       "tiebreak": 8,
+       "winner": false
       }
      ],
      "roster": {
@@ -236,16 +242,16 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Ingrid Neel / Giuliana Olmos",
    "alias": "Ingrid Neel / Giuliana Olmos",
    "name": "Ingrid Neel / Giuliana Olmos",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Shuko Aoyama / En-Shuo Liang",
@@ -257,7 +263,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T05:53:33.055Z",
+ "updated": "2026-10-27T05:57:00.357Z",
  "open_taken_at": "2026-10-24T07:46:07.449Z",
  "thresholds": {
   "big": 10,
