@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185184",
-  "fetched_at": "2026-10-27T14:49:02.416Z",
+  "fetched_at": "2026-10-27T14:55:26.438Z",
   "tennis": true,
   "tennis_match": {
    "id": "185184",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Ignacio Buse (PER) leads Adrian Mannarino (FRA) 5-0",
+     "text": "Adrian Mannarino (FRA) leads Ignacio Buse (PER) 0-6 0-0",
      "type": "event"
     }
    ],
@@ -55,9 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -97,7 +102,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
+      {
+       "value": 0,
+       "winner": false
+      },
       {
        "value": 0
       }
@@ -134,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 10,
    "type": {
     "id": "1",
@@ -152,14 +167,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Ignacio Buse",
    "alias": "Ignacio Buse",
    "name": "Ignacio Buse",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Adrian Mannarino",
@@ -171,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T14:49:02.359Z",
+ "updated": "2026-10-27T14:55:26.371Z",
  "open_taken_at": "2026-10-26T05:02:52.046Z",
  "thresholds": {
   "big": 10,
@@ -223,6 +238,182 @@
    "taken_at": "2026-10-27T14:36:31.270Z"
   },
   {
+   "market_id": "1817620",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Adrian Mannarino cover 7.5 vs the Ignacio Buse in Adrian Mannarino vs. Ignacio Buse?",
+   "sides": [
+    "Adrian Mannarino +7.50 (Games)",
+    "Ignacio Buse -7.50 (Games)"
+   ],
+   "teams": [
+    "Adrian Mannarino",
+    "Ignacio Buse"
+   ],
+   "player": null,
+   "mid": 47.5,
+   "yes_buy": 48,
+   "no_buy": 53,
+   "taken_at": "2026-10-27T14:55:26.371Z"
+  },
+  {
+   "market_id": "1817632",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Adrian Mannarino win set 2 against Ignacio Buse?",
+   "sides": [
+    "Yes: Adrian Mannarino win set 2 against Ignacio Buse",
+    "No: Adrian Mannarino win set 2 against Ignacio Buse"
+   ],
+   "teams": [
+    "Adrian Mannarino",
+    null
+   ],
+   "player": null,
+   "mid": 59,
+   "yes_buy": 62,
+   "no_buy": 44,
+   "taken_at": "2026-10-27T06:57:06.858Z"
+  },
+  {
+   "market_id": "1817624",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Adrian Mannarino vs. Ignacio Buse be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 48.5,
+   "yes_buy": 49,
+   "no_buy": 52,
+   "taken_at": "2026-10-26T12:38:15.161Z"
+  },
+  {
+   "market_id": "1817618",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Adrian Mannarino cover 4.5 vs the Ignacio Buse in Adrian Mannarino vs. Ignacio Buse?",
+   "sides": [
+    "Adrian Mannarino +4.50 (Games)",
+    "Ignacio Buse -4.50 (Games)"
+   ],
+   "teams": [
+    "Adrian Mannarino",
+    "Ignacio Buse"
+   ],
+   "player": null,
+   "mid": 73,
+   "yes_buy": 74,
+   "no_buy": 28,
+   "taken_at": "2026-10-27T14:36:31.270Z"
+  },
+  {
+   "market_id": "1817616",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Adrian Mannarino cover 1.5 vs the Ignacio Buse in Adrian Mannarino vs. Ignacio Buse?",
+   "sides": [
+    "Adrian Mannarino +1.50 (Games)",
+    "Ignacio Buse -1.50 (Games)"
+   ],
+   "teams": [
+    "Adrian Mannarino",
+    "Ignacio Buse"
+   ],
+   "player": null,
+   "mid": 67.5,
+   "yes_buy": 70,
+   "no_buy": 35,
+   "taken_at": "2026-10-27T04:47:53.335Z"
+  },
+  {
+   "market_id": "1817625",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Adrian Mannarino vs. Ignacio Buse be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 32.5,
+   "yes_buy": 33,
+   "no_buy": 68,
+   "taken_at": "2026-10-27T14:23:08.070Z"
+  },
+  {
+   "market_id": "1817615",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Adrian Mannarino cover -1.5 vs the Ignacio Buse in Adrian Mannarino vs. Ignacio Buse?",
+   "sides": [
+    "Adrian Mannarino -1.50 (Games)",
+    "Ignacio Buse +1.50 (Games)"
+   ],
+   "teams": [
+    "Adrian Mannarino",
+    "Ignacio Buse"
+   ],
+   "player": null,
+   "mid": 55,
+   "yes_buy": 56,
+   "no_buy": 46,
+   "taken_at": "2026-10-26T12:38:15.161Z"
+  },
+  {
+   "market_id": "1817617",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Adrian Mannarino cover -4.5 vs the Ignacio Buse in Adrian Mannarino vs. Ignacio Buse?",
+   "sides": [
+    "Adrian Mannarino -4.50 (Games)",
+    "Ignacio Buse +4.50 (Games)"
+   ],
+   "teams": [
+    "Adrian Mannarino",
+    "Ignacio Buse"
+   ],
+   "player": null,
+   "mid": 32.5,
+   "yes_buy": 35,
+   "no_buy": 70,
+   "taken_at": "2026-10-27T06:09:04.862Z"
+  },
+  {
    "market_id": "1817622",
    "market": "Sets spread",
    "group": "game",
@@ -267,138 +458,6 @@
    "taken_at": "2026-10-27T14:30:15.377Z"
   },
   {
-   "market_id": "1817632",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Adrian Mannarino win set 2 against Ignacio Buse?",
-   "sides": [
-    "Yes: Adrian Mannarino win set 2 against Ignacio Buse",
-    "No: Adrian Mannarino win set 2 against Ignacio Buse"
-   ],
-   "teams": [
-    "Adrian Mannarino",
-    null
-   ],
-   "player": null,
-   "mid": 59,
-   "yes_buy": 62,
-   "no_buy": 44,
-   "taken_at": "2026-10-27T06:57:06.858Z"
-  },
-  {
-   "market_id": "1817618",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Adrian Mannarino cover 4.5 vs the Ignacio Buse in Adrian Mannarino vs. Ignacio Buse?",
-   "sides": [
-    "Adrian Mannarino +4.50 (Games)",
-    "Ignacio Buse -4.50 (Games)"
-   ],
-   "teams": [
-    "Adrian Mannarino",
-    "Ignacio Buse"
-   ],
-   "player": null,
-   "mid": 73,
-   "yes_buy": 74,
-   "no_buy": 28,
-   "taken_at": "2026-10-27T14:36:31.270Z"
-  },
-  {
-   "market_id": "1817624",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Adrian Mannarino vs. Ignacio Buse be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 48.5,
-   "yes_buy": 49,
-   "no_buy": 52,
-   "taken_at": "2026-10-26T12:38:15.161Z"
-  },
-  {
-   "market_id": "1817625",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Adrian Mannarino vs. Ignacio Buse be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 32.5,
-   "yes_buy": 33,
-   "no_buy": 68,
-   "taken_at": "2026-10-27T14:23:08.070Z"
-  },
-  {
-   "market_id": "1817616",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Adrian Mannarino cover 1.5 vs the Ignacio Buse in Adrian Mannarino vs. Ignacio Buse?",
-   "sides": [
-    "Adrian Mannarino +1.50 (Games)",
-    "Ignacio Buse -1.50 (Games)"
-   ],
-   "teams": [
-    "Adrian Mannarino",
-    "Ignacio Buse"
-   ],
-   "player": null,
-   "mid": 67.5,
-   "yes_buy": 70,
-   "no_buy": 35,
-   "taken_at": "2026-10-27T04:47:53.335Z"
-  },
-  {
-   "market_id": "1817615",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Adrian Mannarino cover -1.5 vs the Ignacio Buse in Adrian Mannarino vs. Ignacio Buse?",
-   "sides": [
-    "Adrian Mannarino -1.50 (Games)",
-    "Ignacio Buse +1.50 (Games)"
-   ],
-   "teams": [
-    "Adrian Mannarino",
-    "Ignacio Buse"
-   ],
-   "player": null,
-   "mid": 55,
-   "yes_buy": 56,
-   "no_buy": 46,
-   "taken_at": "2026-10-26T12:38:15.161Z"
-  },
-  {
    "market_id": "1817631",
    "market": "Set 1 winner",
    "group": "game",
@@ -441,48 +500,26 @@
    "yes_buy": 40,
    "no_buy": 65,
    "taken_at": "2026-10-27T14:12:47.215Z"
-  },
-  {
-   "market_id": "1817617",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Adrian Mannarino cover -4.5 vs the Ignacio Buse in Adrian Mannarino vs. Ignacio Buse?",
-   "sides": [
-    "Adrian Mannarino -4.50 (Games)",
-    "Ignacio Buse +4.50 (Games)"
-   ],
-   "teams": [
-    "Adrian Mannarino",
-    "Ignacio Buse"
-   ],
-   "player": null,
-   "mid": 32.5,
-   "yes_buy": 35,
-   "no_buy": 70,
-   "taken_at": "2026-10-27T06:09:04.862Z"
   }
  ],
  "edges": [
   {
-   "key": "1817616:0",
-   "market_id": "1817616",
+   "key": "1817618:0",
+   "market_id": "1817618",
    "market": "Games spread",
    "group": "game",
-   "question": "Will the Adrian Mannarino cover 1.5 vs the Ignacio Buse in Adrian Mannarino vs. Ignacio Buse?",
-   "side": "Adrian Mannarino +1.50 (Games)",
-   "open_chance": 70,
-   "now_chance": 23,
-   "open_odds": "-233",
-   "now_odds": "+335",
-   "edge": 47,
+   "question": "Will the Adrian Mannarino cover 4.5 vs the Ignacio Buse in Adrian Mannarino vs. Ignacio Buse?",
+   "side": "Adrian Mannarino +4.50 (Games)",
+   "open_chance": 74,
+   "now_chance": 32,
+   "open_odds": "-285",
+   "now_odds": "+213",
+   "edge": 42,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Adrian Mannarino not above the games spread right now",
-   "context": "Ignacio Buse 5 · Adrian Mannarino 0 · 1st Set (games by set)",
-   "first_seen": "2026-10-27T14:36:31.270Z",
+   "context": "Ignacio Buse 6, 0 · Adrian Mannarino 0, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T14:42:29.922Z",
    "status": "open",
    "kalshi": null
   },
@@ -494,55 +531,15 @@
    "question": "Will the total in Adrian Mannarino vs. Ignacio Buse be more than 17.5?",
    "side": "Over 17.5 (Games)",
    "open_chance": 90,
-   "now_chance": 58,
+   "now_chance": 57,
    "open_odds": "-900",
-   "now_odds": "-138",
-   "edge": 32,
+   "now_odds": "-133",
+   "edge": 33,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (32 pts), likely news",
-   "context": "Ignacio Buse 5 · Adrian Mannarino 0 · 1st Set (games by set)",
+   "reason": "Big move (33 pts), likely news",
+   "context": "Ignacio Buse 6, 0 · Adrian Mannarino 0, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T14:49:02.359Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1817618:0",
-   "market_id": "1817618",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Adrian Mannarino cover 4.5 vs the Ignacio Buse in Adrian Mannarino vs. Ignacio Buse?",
-   "side": "Adrian Mannarino +4.50 (Games)",
-   "open_chance": 74,
-   "now_chance": 42,
-   "open_odds": "-285",
-   "now_odds": "+138",
-   "edge": 32,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Adrian Mannarino not above the games spread right now",
-   "context": "Ignacio Buse 5 · Adrian Mannarino 0 · 1st Set (games by set)",
-   "first_seen": "2026-10-27T14:42:29.922Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1817622:0",
-   "market_id": "1817622",
-   "market": "Sets spread",
-   "group": "game",
-   "question": "Will the Adrian Mannarino cover 1.5 vs the Ignacio Buse in Adrian Mannarino vs. Ignacio Buse?",
-   "side": "Adrian Mannarino +1.50 (Sets)",
-   "open_chance": 79,
-   "now_chance": 50,
-   "open_odds": "-376",
-   "now_odds": "+100",
-   "edge": 29,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (29 pts), likely news",
-   "context": "Ignacio Buse 5 · Adrian Mannarino 0 · 1st Set (games by set)",
-   "first_seen": "2026-10-27T14:42:29.922Z",
    "status": "open",
    "kalshi": null
   },
@@ -554,14 +551,14 @@
    "question": "Who will win in the upcoming atp event Adrian Mannarino vs Ignacio Buse scheduled for October 27, 2026 at 12:30 PM UTC?",
    "side": "Adrian Mannarino win",
    "open_chance": 51,
-   "now_chance": 27,
+   "now_chance": 26,
    "open_odds": "-104",
-   "now_odds": "+270",
-   "edge": 24,
+   "now_odds": "+285",
+   "edge": 25,
    "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Ignacio Buse 5 · Adrian Mannarino 0 · 1st Set (games by set)",
+   "class": "score",
+   "reason": "Explained by score: Adrian Mannarino trailing in sets",
+   "context": "Ignacio Buse 6, 0 · Adrian Mannarino 0, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T14:42:29.922Z",
    "status": "open",
    "kalshi": null
@@ -574,55 +571,15 @@
    "question": "Will Adrian Mannarino win set 2 against Ignacio Buse?",
    "side": "Yes: Adrian Mannarino win set 2 against Ignacio Buse",
    "open_chance": 62,
-   "now_chance": 47,
+   "now_chance": 45,
    "open_odds": "-163",
-   "now_odds": "+113",
-   "edge": 15,
+   "now_odds": "+122",
+   "edge": 17,
    "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Ignacio Buse 5 · Adrian Mannarino 0 · 1st Set (games by set)",
+   "class": "score",
+   "reason": "Explained by score: Adrian Mannarino not above the games spread right now",
+   "context": "Ignacio Buse 6, 0 · Adrian Mannarino 0, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T14:36:31.270Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1817626:1",
-   "market_id": "1817626",
-   "market": "Sets total",
-   "group": "game",
-   "question": "Will the total in Adrian Mannarino vs. Ignacio Buse be more than 2.5?",
-   "side": "Under 2.5 (Sets)",
-   "open_chance": 61,
-   "now_chance": 52,
-   "open_odds": "-156",
-   "now_odds": "-108",
-   "edge": 9,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Ignacio Buse 5 · Adrian Mannarino 0 · 1st Set (games by set)",
-   "first_seen": "2026-10-27T14:42:29.922Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1817625:0",
-   "market_id": "1817625",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Adrian Mannarino vs. Ignacio Buse be more than 27.5?",
-   "side": "Over 27.5 (Games)",
-   "open_chance": 33,
-   "now_chance": 24,
-   "open_odds": "+203",
-   "now_odds": "+317",
-   "edge": 9,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Ignacio Buse 5 · Adrian Mannarino 0 · 1st Set (games by set)",
-   "first_seen": "2026-10-27T14:49:02.359Z",
    "status": "open",
    "kalshi": null
   },
@@ -634,14 +591,14 @@
    "question": "Will the total in Adrian Mannarino vs. Ignacio Buse be more than 22.5?",
    "side": "Over 22.5 (Games)",
    "open_chance": 49,
-   "now_chance": 41,
+   "now_chance": 39,
    "open_odds": "+104",
-   "now_odds": "+144",
-   "edge": 8,
-   "tier": "slight",
+   "now_odds": "+156",
+   "edge": 10,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Ignacio Buse 5 · Adrian Mannarino 0 · 1st Set (games by set)",
+   "context": "Ignacio Buse 6, 0 · Adrian Mannarino 0, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T14:49:02.359Z",
    "status": "open",
    "kalshi": null
@@ -667,6 +624,46 @@
    "kalshi": null
   },
   {
+   "key": "1817622:0",
+   "market_id": "1817622",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Adrian Mannarino cover 1.5 vs the Ignacio Buse in Adrian Mannarino vs. Ignacio Buse?",
+   "side": "Adrian Mannarino +1.50 (Sets)",
+   "open_chance": 79,
+   "now_chance": 50,
+   "open_odds": "-376",
+   "now_odds": "+100",
+   "edge": 29,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (29 pts), likely news",
+   "context": "Ignacio Buse 5 · Adrian Mannarino 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-27T14:42:29.922Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1817626:1",
+   "market_id": "1817626",
+   "market": "Sets total",
+   "group": "game",
+   "question": "Will the total in Adrian Mannarino vs. Ignacio Buse be more than 2.5?",
+   "side": "Under 2.5 (Sets)",
+   "open_chance": 61,
+   "now_chance": 52,
+   "open_odds": "-156",
+   "now_odds": "-108",
+   "edge": 9,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Ignacio Buse 5 · Adrian Mannarino 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-27T14:42:29.922Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1804818:1",
    "market_id": "1804818",
    "market": "Moneyline",
@@ -683,26 +680,6 @@
    "reason": null,
    "context": "Ignacio Buse 0 · Adrian Mannarino 0 · 1st Set (games by set)",
    "first_seen": "2026-10-26T06:01:46.665Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1817616:1",
-   "market_id": "1817616",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Adrian Mannarino cover 1.5 vs the Ignacio Buse in Adrian Mannarino vs. Ignacio Buse?",
-   "side": "Ignacio Buse -1.50 (Games)",
-   "open_chance": 35,
-   "now_chance": 30,
-   "open_odds": "+186",
-   "now_odds": "+233",
-   "edge": 5,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Ignacio Buse not above the games spread right now",
-   "context": "Ignacio Buse 0 · Adrian Mannarino 0 · 1st Set (games by set)",
-   "first_seen": "2026-10-27T14:19:19.952Z",
    "status": "gone",
    "kalshi": null
   },
@@ -728,6 +705,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1817624:0:big",
+   "key": "1817624:0",
+   "at": "2026-10-27T14:55:26.371Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+156",
+   "now_chance": 39,
+   "edge": 10,
+   "text": "New big edge: Over 22.5 (Games) (Games total), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-adrman-ignbus-2026-10-27"
+  },
+  {
+   "id": "gone:1817626:1:2026-10-27T14:42:29.922Z",
+   "key": "1817626:1",
+   "at": "2026-10-27T14:55:26.371Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 2.5 (Sets)",
+   "market": "Sets total",
+   "now_odds": "-108",
+   "now_chance": 52,
+   "edge": 9,
+   "text": "Edge gone: Under 2.5 (Sets) (Sets total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-adrman-ignbus-2026-10-27"
+  },
   {
    "id": "news:1817623:0",
    "key": "1817623:0",
@@ -782,20 +787,6 @@
    "now_chance": 52,
    "edge": 9,
    "text": "New slight edge: Under 2.5 (Sets) (Sets total), 9 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-adrman-ignbus-2026-10-27"
-  },
-  {
-   "id": "new_edge:1817625:0:slight",
-   "key": "1817625:0",
-   "at": "2026-10-27T14:49:02.359Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Over 27.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+317",
-   "now_chance": 24,
-   "edge": 9,
-   "text": "New slight edge: Over 27.5 (Games) (Games total), 9 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-adrman-ignbus-2026-10-27"
   },
   {
@@ -866,20 +857,6 @@
    "now_chance": 40,
    "edge": 11,
    "text": "New big edge: Adrian Mannarino win (Moneyline), 11 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-adrman-ignbus-2026-10-27"
-  },
-  {
-   "id": "new_edge:1817616:0:big",
-   "key": "1817616:0",
-   "at": "2026-10-27T14:36:31.270Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Adrian Mannarino +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-133",
-   "now_chance": 57,
-   "edge": 13,
-   "text": "New big edge: Adrian Mannarino +1.50 (Games) (Games spread), 13 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-adrman-ignbus-2026-10-27"
   },
   {
@@ -969,7 +946,9 @@
   "new_edge:1817632:0:big",
   "new_edge:1817626:1:slight",
   "new_edge:1817625:0:slight",
-  "new_edge:1817624:0:slight"
+  "new_edge:1817624:0:slight",
+  "new_edge:1817624:0:big",
+  "gone:1817626:1:2026-10-27T14:42:29.922Z"
  ],
  "kalshi_checked": null
 }
