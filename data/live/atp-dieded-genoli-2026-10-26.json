@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-27T21:22:00.817Z"
+  "fetched_at": "2026-10-27T21:27:46.909Z"
  },
- "updated": "2026-10-27T21:22:00.696Z",
+ "updated": "2026-10-27T21:27:46.797Z",
  "open_taken_at": "2026-10-25T05:02:16.436Z",
  "thresholds": {
   "big": 10,
@@ -19,26 +19,48 @@
  },
  "open": [
   {
-   "market_id": "1774216",
-   "market": "Moneyline",
+   "market_id": "1774520",
+   "market": "Set 1 winner",
    "group": "game",
    "mtype": "winner",
-   "period": "full_game",
+   "period": "tennis_set_1_winner",
    "line": null,
-   "question": "Who will win in the upcoming atp event Diego Dedura vs Genaro Alberto Olivieri scheduled for October 26, 2026 at 3:00 PM UTC?",
+   "question": "Will Diego Dedura win set 1 against Genaro Alberto Olivieri?",
    "sides": [
-    "Diego Dedura-Palomero win",
-    "Genaro Alberto Olivieri win"
+    "Yes: Diego Dedura win set 1 against Genaro Alberto Olivieri",
+    "No: Diego Dedura win set 1 against Genaro Alberto Olivieri"
+   ],
+   "teams": [
+    "Diego Dedura-Palomero",
+    null
+   ],
+   "player": null,
+   "mid": 69.5,
+   "yes_buy": 71,
+   "no_buy": 32,
+   "taken_at": "2026-10-27T20:20:35.442Z"
+  },
+  {
+   "market_id": "1774488",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Diego Dedura cover -1.5 vs the Genaro Alberto Olivieri in Diego Dedura vs. Genaro Alberto Olivieri?",
+   "sides": [
+    "Diego Dedura-Palomero -1.50 (Games)",
+    "Genaro Alberto Olivieri +1.50 (Games)"
    ],
    "teams": [
     "Diego Dedura-Palomero",
     "Genaro Alberto Olivieri"
    ],
    "player": null,
-   "mid": 61.5,
-   "yes_buy": 62,
-   "no_buy": 39,
-   "taken_at": "2026-10-26T05:37:40.724Z"
+   "mid": 55.5,
+   "yes_buy": 58,
+   "no_buy": 47,
+   "taken_at": "2026-10-26T05:02:46.929Z"
   },
   {
    "market_id": "1774489",
@@ -83,28 +105,6 @@
    "yes_buy": 43,
    "no_buy": 58,
    "taken_at": "2026-10-26T09:33:27.066Z"
-  },
-  {
-   "market_id": "1774488",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Diego Dedura cover -1.5 vs the Genaro Alberto Olivieri in Diego Dedura vs. Genaro Alberto Olivieri?",
-   "sides": [
-    "Diego Dedura-Palomero -1.50 (Games)",
-    "Genaro Alberto Olivieri +1.50 (Games)"
-   ],
-   "teams": [
-    "Diego Dedura-Palomero",
-    "Genaro Alberto Olivieri"
-   ],
-   "player": null,
-   "mid": 55.5,
-   "yes_buy": 58,
-   "no_buy": 47,
-   "taken_at": "2026-10-26T05:02:46.929Z"
   },
   {
    "market_id": "1774510",
@@ -173,6 +173,28 @@
    "taken_at": "2026-10-26T09:33:27.066Z"
   },
   {
+   "market_id": "1774216",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming atp event Diego Dedura vs Genaro Alberto Olivieri scheduled for October 26, 2026 at 3:00 PM UTC?",
+   "sides": [
+    "Diego Dedura-Palomero win",
+    "Genaro Alberto Olivieri win"
+   ],
+   "teams": [
+    "Diego Dedura-Palomero",
+    "Genaro Alberto Olivieri"
+   ],
+   "player": null,
+   "mid": 61.5,
+   "yes_buy": 62,
+   "no_buy": 39,
+   "taken_at": "2026-10-26T05:37:40.724Z"
+  },
+  {
    "market_id": "1774493",
    "market": "Games spread",
    "group": "game",
@@ -193,28 +215,6 @@
    "yes_buy": 74,
    "no_buy": 27,
    "taken_at": "2026-10-26T20:05:25.827Z"
-  },
-  {
-   "market_id": "1774520",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Diego Dedura win set 1 against Genaro Alberto Olivieri?",
-   "sides": [
-    "Yes: Diego Dedura win set 1 against Genaro Alberto Olivieri",
-    "No: Diego Dedura win set 1 against Genaro Alberto Olivieri"
-   ],
-   "teams": [
-    "Diego Dedura-Palomero",
-    null
-   ],
-   "player": null,
-   "mid": 69.5,
-   "yes_buy": 71,
-   "no_buy": 32,
-   "taken_at": "2026-10-27T20:20:35.442Z"
   },
   {
    "market_id": "1774502",
@@ -358,10 +358,10 @@
    "question": "Will the Diego Dedura cover 1.5 vs the Genaro Alberto Olivieri in Diego Dedura vs. Genaro Alberto Olivieri?",
    "side": "Diego Dedura-Palomero +1.50 (Games)",
    "open_chance": 74,
-   "now_chance": 60,
+   "now_chance": 59,
    "open_odds": "-285",
-   "now_odds": "-150",
-   "edge": 14,
+   "now_odds": "-144",
+   "edge": 15,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -431,42 +431,22 @@
    "kalshi": null
   },
   {
-   "key": "1774216:0",
-   "market_id": "1774216",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Diego Dedura vs Genaro Alberto Olivieri scheduled for October 26, 2026 at 3:00 PM UTC?",
-   "side": "Diego Dedura-Palomero win",
-   "open_chance": 62,
-   "now_chance": 55,
-   "open_odds": "-163",
-   "now_odds": "-122",
-   "edge": 7,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-27T21:08:24.393Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1774488:0",
+   "key": "1774488:1",
    "market_id": "1774488",
    "market": "Games spread",
    "group": "game",
    "question": "Will the Diego Dedura cover -1.5 vs the Genaro Alberto Olivieri in Diego Dedura vs. Genaro Alberto Olivieri?",
-   "side": "Diego Dedura-Palomero -1.50 (Games)",
-   "open_chance": 58,
-   "now_chance": 53,
-   "open_odds": "-138",
-   "now_odds": "-113",
+   "side": "Genaro Alberto Olivieri +1.50 (Games)",
+   "open_chance": 47,
+   "now_chance": 42,
+   "open_odds": "+113",
+   "now_odds": "+138",
    "edge": 5,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-27T21:22:00.696Z",
+   "first_seen": "2026-10-26T13:00:07.341Z",
    "status": "open",
    "kalshi": null
   },
@@ -491,26 +471,6 @@
    "kalshi": null
   },
   {
-   "key": "1774520:0",
-   "market_id": "1774520",
-   "market": "Set 1 winner",
-   "group": "game",
-   "question": "Will Diego Dedura win set 1 against Genaro Alberto Olivieri?",
-   "side": "Yes: Diego Dedura win set 1 against Genaro Alberto Olivieri",
-   "open_chance": 71,
-   "now_chance": 52,
-   "open_odds": "-245",
-   "now_odds": "-108",
-   "edge": 19,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-27T20:47:14.316Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "1774491:1",
    "market_id": "1774491",
    "market": "Games spread",
@@ -531,22 +491,22 @@
    "kalshi": null
   },
   {
-   "key": "1774520:1",
-   "market_id": "1774520",
-   "market": "Set 1 winner",
+   "key": "1774216:0",
+   "market_id": "1774216",
+   "market": "Moneyline",
    "group": "game",
-   "question": "Will Diego Dedura win set 1 against Genaro Alberto Olivieri?",
-   "side": "No: Diego Dedura win set 1 against Genaro Alberto Olivieri",
-   "open_chance": 32,
-   "now_chance": 25,
-   "open_odds": "+213",
-   "now_odds": "+300",
+   "question": "Who will win in the upcoming atp event Diego Dedura vs Genaro Alberto Olivieri scheduled for October 26, 2026 at 3:00 PM UTC?",
+   "side": "Diego Dedura-Palomero win",
+   "open_chance": 62,
+   "now_chance": 55,
+   "open_odds": "-163",
+   "now_odds": "-122",
    "edge": 7,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-27T20:35:02.704Z",
+   "first_seen": "2026-10-27T21:08:24.393Z",
    "status": "gone",
    "kalshi": null
   },
@@ -567,6 +527,26 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-27T20:47:14.316Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1774488:0",
+   "market_id": "1774488",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Diego Dedura cover -1.5 vs the Genaro Alberto Olivieri in Diego Dedura vs. Genaro Alberto Olivieri?",
+   "side": "Diego Dedura-Palomero -1.50 (Games)",
+   "open_chance": 58,
+   "now_chance": 53,
+   "open_odds": "-138",
+   "now_odds": "-113",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-27T21:22:00.696Z",
    "status": "gone",
    "kalshi": null
   },
@@ -607,26 +587,6 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-26T20:05:25.827Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1774488:1",
-   "market_id": "1774488",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Diego Dedura cover -1.5 vs the Genaro Alberto Olivieri in Diego Dedura vs. Genaro Alberto Olivieri?",
-   "side": "Genaro Alberto Olivieri +1.50 (Games)",
-   "open_chance": 47,
-   "now_chance": 42,
-   "open_odds": "+113",
-   "now_odds": "+138",
-   "edge": 5,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-26T13:00:07.341Z",
    "status": "gone",
    "kalshi": null
   },
@@ -672,6 +632,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1774488:0:2026-10-27T21:22:00.696Z",
+   "key": "1774488:0",
+   "at": "2026-10-27T21:27:46.797Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Diego Dedura-Palomero -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 5,
+   "text": "Edge gone: Diego Dedura-Palomero -1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-dieded-genoli-2026-10-26"
+  },
   {
    "id": "new_edge:1774489:0:big",
    "key": "1774489:0",
@@ -740,20 +714,6 @@
    "now_chance": 55,
    "edge": 7,
    "text": "Edge gone: Diego Dedura-Palomero win (Moneyline) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-dieded-genoli-2026-10-26"
-  },
-  {
-   "id": "new_edge:1774520:0:big",
-   "key": "1774520:0",
-   "at": "2026-10-27T21:08:24.393Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Yes: Diego Dedura win set 1 against Genaro Alberto Olivieri",
-   "market": "Set 1 winner",
-   "now_odds": "-108",
-   "now_chance": 52,
-   "edge": 19,
-   "text": "New big edge: Yes: Diego Dedura win set 1 against Genaro Alberto Olivieri (Set 1 winner), 19 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-dieded-genoli-2026-10-26"
   },
   {
@@ -841,20 +801,6 @@
    "url": "https://polymarket.us/sports/atp/atp-dieded-genoli-2026-10-26"
   },
   {
-   "id": "gone:1774520:0:2026-10-27T20:47:14.316Z",
-   "key": "1774520:0",
-   "at": "2026-10-27T20:59:10.014Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Yes: Diego Dedura win set 1 against Genaro Alberto Olivieri",
-   "market": "Set 1 winner",
-   "now_odds": "-186",
-   "now_chance": 65,
-   "edge": 6,
-   "text": "Edge gone: Yes: Diego Dedura win set 1 against Genaro Alberto Olivieri (Set 1 winner) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-dieded-genoli-2026-10-26"
-  },
-  {
    "id": "gone:1774216:1:2026-10-26T06:46:35.205Z",
    "key": "1774216:1",
    "at": "2026-10-27T20:59:10.014Z",
@@ -939,20 +885,6 @@
    "url": "https://polymarket.us/sports/atp/atp-dieded-genoli-2026-10-26"
   },
   {
-   "id": "new_edge:1774520:0:slight",
-   "key": "1774520:0",
-   "at": "2026-10-27T20:47:14.316Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Yes: Diego Dedura win set 1 against Genaro Alberto Olivieri",
-   "market": "Set 1 winner",
-   "now_odds": "-203",
-   "now_chance": 67,
-   "edge": 4,
-   "text": "New slight edge: Yes: Diego Dedura win set 1 against Genaro Alberto Olivieri (Set 1 winner), 4 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-dieded-genoli-2026-10-26"
-  },
-  {
    "id": "new_edge:1774491:0:slight",
    "key": "1774491:0",
    "at": "2026-10-27T20:47:14.316Z",
@@ -981,20 +913,6 @@
    "url": "https://polymarket.us/sports/atp/atp-dieded-genoli-2026-10-26"
   },
   {
-   "id": "gone:1774520:1:2026-10-27T20:35:02.704Z",
-   "key": "1774520:1",
-   "at": "2026-10-27T20:47:14.316Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "No: Diego Dedura win set 1 against Genaro Alberto Olivieri",
-   "market": "Set 1 winner",
-   "now_odds": "+300",
-   "now_chance": 25,
-   "edge": 7,
-   "text": "Edge gone: No: Diego Dedura win set 1 against Genaro Alberto Olivieri (Set 1 winner) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-dieded-genoli-2026-10-26"
-  },
-  {
    "id": "new_edge:1774216:1:big",
    "key": "1774216:1",
    "at": "2026-10-27T20:41:11.613Z",
@@ -1020,20 +938,6 @@
    "now_chance": 49,
    "edge": 12,
    "text": "New big edge: Genaro Alberto Olivieri +4.50 (Games) (Games spread), 12 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-dieded-genoli-2026-10-26"
-  },
-  {
-   "id": "new_edge:1774520:1:slight",
-   "key": "1774520:1",
-   "at": "2026-10-27T20:35:02.704Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "No: Diego Dedura win set 1 against Genaro Alberto Olivieri",
-   "market": "Set 1 winner",
-   "now_odds": "+317",
-   "now_chance": 24,
-   "edge": 8,
-   "text": "New slight edge: No: Diego Dedura win set 1 against Genaro Alberto Olivieri (Set 1 winner), 8 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-dieded-genoli-2026-10-26"
   },
   {
@@ -1201,7 +1105,8 @@
   "gone:1774216:0:2026-10-27T21:08:24.393Z",
   "new_edge:1774489:0:big",
   "new_edge:1774488:0:slight",
-  "gone:1774502:1:2026-10-27T21:12:23.644Z"
+  "gone:1774502:1:2026-10-27T21:12:23.644Z",
+  "gone:1774488:0:2026-10-27T21:22:00.696Z"
  ],
  "kalshi_checked": null
 }
