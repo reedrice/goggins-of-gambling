@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185180",
-  "fetched_at": "2026-10-27T21:33:04.716Z",
+  "fetched_at": "2026-10-27T21:37:01.201Z",
   "tennis": true,
   "tennis_match": {
    "id": "185180",
@@ -189,7 +189,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T21:33:04.585Z",
+ "updated": "2026-10-27T21:37:01.081Z",
  "open_taken_at": "2026-10-24T11:21:59.372Z",
  "thresholds": {
   "big": 10,
@@ -219,26 +219,26 @@
    "taken_at": "2026-10-25T05:02:04.536Z"
   },
   {
-   "market_id": "1749775",
-   "market": "Games total",
+   "market_id": "1749767",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Flavio Cobolli vs. Grigor Dimitrov be more than 22.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Flavio Cobolli cover 1.5 vs the Grigor Dimitrov in Flavio Cobolli vs. Grigor Dimitrov?",
    "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
+    "Flavio Cobolli +1.50 (Games)",
+    "Grigor Dimitrov -1.50 (Games)"
    ],
    "teams": [
-    null,
-    null
+    "Flavio Cobolli",
+    "Grigor Dimitrov"
    ],
    "player": null,
-   "mid": 53.5,
-   "yes_buy": 56,
-   "no_buy": 49,
-   "taken_at": "2026-10-25T16:50:00.575Z"
+   "mid": 74,
+   "yes_buy": 76,
+   "no_buy": 28,
+   "taken_at": "2026-10-27T18:24:48.147Z"
   },
   {
    "market_id": "1749766",
@@ -261,28 +261,6 @@
    "yes_buy": 60,
    "no_buy": 43,
    "taken_at": "2026-10-27T02:58:47.304Z"
-  },
-  {
-   "market_id": "1749783",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Flavio Cobolli win set 2 against Grigor Dimitrov?",
-   "sides": [
-    "Yes: Flavio Cobolli win set 2 against Grigor Dimitrov",
-    "No: Flavio Cobolli win set 2 against Grigor Dimitrov"
-   ],
-   "teams": [
-    "Flavio Cobolli",
-    null
-   ],
-   "player": null,
-   "mid": 62.5,
-   "yes_buy": 63,
-   "no_buy": 38,
-   "taken_at": "2026-10-27T19:07:19.141Z"
   },
   {
    "market_id": "1749776",
@@ -329,26 +307,48 @@
    "taken_at": "2026-10-27T19:07:19.141Z"
   },
   {
-   "market_id": "1749767",
-   "market": "Games spread",
+   "market_id": "1749775",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Flavio Cobolli cover 1.5 vs the Grigor Dimitrov in Flavio Cobolli vs. Grigor Dimitrov?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Flavio Cobolli vs. Grigor Dimitrov be more than 22.5?",
    "sides": [
-    "Flavio Cobolli +1.50 (Games)",
-    "Grigor Dimitrov -1.50 (Games)"
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 53.5,
+   "yes_buy": 56,
+   "no_buy": 49,
+   "taken_at": "2026-10-25T16:50:00.575Z"
+  },
+  {
+   "market_id": "1749783",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Flavio Cobolli win set 2 against Grigor Dimitrov?",
+   "sides": [
+    "Yes: Flavio Cobolli win set 2 against Grigor Dimitrov",
+    "No: Flavio Cobolli win set 2 against Grigor Dimitrov"
    ],
    "teams": [
     "Flavio Cobolli",
-    "Grigor Dimitrov"
+    null
    ],
    "player": null,
-   "mid": 74,
-   "yes_buy": 76,
-   "no_buy": 28,
-   "taken_at": "2026-10-27T18:24:48.147Z"
+   "mid": 62.5,
+   "yes_buy": 63,
+   "no_buy": 38,
+   "taken_at": "2026-10-27T19:07:19.141Z"
   },
   {
    "market_id": "1749774",
@@ -529,46 +529,6 @@
  ],
  "edges": [
   {
-   "key": "1749775:1",
-   "market_id": "1749775",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Flavio Cobolli vs. Grigor Dimitrov be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 49,
-   "now_chance": 28,
-   "open_odds": "+104",
-   "now_odds": "+257",
-   "edge": 21,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Grigor Dimitrov 4, 2 · Flavio Cobolli 6, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T20:41:05.494Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1749783:0",
-   "market_id": "1749783",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Flavio Cobolli win set 2 against Grigor Dimitrov?",
-   "side": "Yes: Flavio Cobolli win set 2 against Grigor Dimitrov",
-   "open_chance": 63,
-   "now_chance": 42,
-   "open_odds": "-170",
-   "now_odds": "+138",
-   "edge": 21,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Flavio Cobolli not above the games spread right now",
-   "context": "Grigor Dimitrov 4, 2 · Flavio Cobolli 6, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T21:27:41.911Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1749766:1",
    "market_id": "1749766",
    "market": "Games spread",
@@ -589,6 +549,46 @@
    "kalshi": null
   },
   {
+   "key": "1749767:1",
+   "market_id": "1749767",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Flavio Cobolli cover 1.5 vs the Grigor Dimitrov in Flavio Cobolli vs. Grigor Dimitrov?",
+   "side": "Grigor Dimitrov -1.50 (Games)",
+   "open_chance": 28,
+   "now_chance": 18,
+   "open_odds": "+257",
+   "now_odds": "+456",
+   "edge": 10,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Grigor Dimitrov not above the games spread right now",
+   "context": "Grigor Dimitrov 4, 2 · Flavio Cobolli 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T21:37:01.081Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1749776:1",
+   "market_id": "1749776",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Flavio Cobolli vs. Grigor Dimitrov be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 64,
+   "now_chance": 56,
+   "open_odds": "-178",
+   "now_odds": "-127",
+   "edge": 8,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Grigor Dimitrov 4, 2 · Flavio Cobolli 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T21:37:01.081Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1749411:1",
    "market_id": "1749411",
    "market": "Moneyline",
@@ -596,10 +596,10 @@
    "question": "Who will win in the upcoming atp event Flavio Cobolli vs Grigor Dimitrov scheduled for October 25, 2026 at 9:00 AM UTC?",
    "side": "Grigor Dimitrov win",
    "open_chance": 35,
-   "now_chance": 31,
+   "now_chance": 29,
    "open_odds": "+186",
-   "now_odds": "+223",
-   "edge": 4,
+   "now_odds": "+245",
+   "edge": 6,
    "tier": "slight",
    "class": "score",
    "reason": "Explained by score: Grigor Dimitrov trailing in sets",
@@ -625,6 +625,46 @@
    "reason": null,
    "context": "Grigor Dimitrov 3 · Flavio Cobolli 4 · 1st Set (games by set)",
    "first_seen": "2026-10-27T21:08:19.772Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1749775:1",
+   "market_id": "1749775",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Flavio Cobolli vs. Grigor Dimitrov be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 49,
+   "now_chance": 28,
+   "open_odds": "+104",
+   "now_odds": "+257",
+   "edge": 21,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Grigor Dimitrov 4, 2 · Flavio Cobolli 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T20:41:05.494Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1749783:0",
+   "market_id": "1749783",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Flavio Cobolli win set 2 against Grigor Dimitrov?",
+   "side": "Yes: Flavio Cobolli win set 2 against Grigor Dimitrov",
+   "open_chance": 63,
+   "now_chance": 42,
+   "open_odds": "-170",
+   "now_odds": "+138",
+   "edge": 21,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Flavio Cobolli not above the games spread right now",
+   "context": "Grigor Dimitrov 4, 2 · Flavio Cobolli 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T21:27:41.911Z",
    "status": "gone",
    "kalshi": null
   },
@@ -790,6 +830,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1749776:1:slight",
+   "key": "1749776:1",
+   "at": "2026-10-27T21:37:01.081Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Under 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-127",
+   "now_chance": 56,
+   "edge": 8,
+   "text": "New slight edge: Under 27.5 (Games) (Games total), 8 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-flacob-gridim-2026-10-25"
+  },
   {
    "id": "new_edge:1749775:1:big",
    "key": "1749775:1",
@@ -1083,7 +1137,8 @@
   "gone:1749772:1:2026-10-27T21:08:19.772Z",
   "gone:1749775:0:2026-10-27T21:08:19.772Z",
   "gone:1749776:0:2026-10-27T21:08:19.772Z",
-  "new_edge:1749775:1:big"
+  "new_edge:1749775:1:big",
+  "new_edge:1749776:1:slight"
  ],
  "kalshi_checked": null
 }
