@@ -4,12 +4,12 @@
  "game": "Carole Monnet vs. Leolia Jeanjean",
  "url": "https://polymarket.us/sports/wta/wta-carmon-leojea-2026-10-26",
  "start_time": "2026-10-27T19:20:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185792",
-  "fetched_at": "2026-10-27T21:08:26.187Z",
+  "fetched_at": "2026-10-27T21:12:24.820Z",
   "tennis": true,
   "tennis_match": {
    "id": "185792",
@@ -17,17 +17,17 @@
    "date": "2026-10-27T19:25Z",
    "startDate": "2026-10-27T19:25Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Carole Monnet (FRA) leads (2) Leolia Jeanjean (FRA) 6-4 5-1",
+     "text": "Carole Monnet (FRA) bt (2) Leolia Jeanjean (FRA) 6-4 6-1",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "winner": false,
      "curatedRank": {
       "current": 2
      },
@@ -65,7 +65,8 @@
        "winner": false
       },
       {
-       "value": 1
+       "value": 1,
+       "winner": false
       }
      ],
      "athlete": {
@@ -105,14 +106,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "winner": true,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 5
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -147,11 +149,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 1034,
    "type": {
     "id": "2",
@@ -168,10 +165,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Leolia Jeanjean",
@@ -183,13 +180,13 @@
    "abbr": "Carole Monnet",
    "alias": "Carole Monnet",
    "name": "Carole Monnet",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T21:08:26.001Z",
+ "updated": "2026-10-27T21:12:24.770Z",
  "open_taken_at": "2026-10-25T21:02:19.526Z",
  "thresholds": {
   "big": 10,
@@ -545,27 +542,7 @@
    "reason": "Explained by score: Leolia Jeanjean not above the games spread right now",
    "context": "Leolia Jeanjean 4, 1 · Carole Monnet 6, 5 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T20:53:08.671Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1813756:0",
-   "market_id": "1813756",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Carole Monnet vs. Leolia Jeanjean be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 42,
-   "now_chance": 26,
-   "open_odds": "+138",
-   "now_odds": "+285",
-   "edge": 16,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Leolia Jeanjean 4, 1 · Carole Monnet 6, 5 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T21:08:26.001Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -605,6 +582,26 @@
    "reason": null,
    "context": "Leolia Jeanjean 4 · Carole Monnet 6 · 1st Set (games by set)",
    "first_seen": "2026-10-27T19:45:01.042Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1813756:0",
+   "market_id": "1813756",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Carole Monnet vs. Leolia Jeanjean be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 42,
+   "now_chance": 26,
+   "open_odds": "+138",
+   "now_odds": "+285",
+   "edge": 16,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Leolia Jeanjean 4, 1 · Carole Monnet 6, 5 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T21:08:26.001Z",
    "status": "gone",
    "kalshi": null
   },
@@ -770,6 +767,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1813756:0:2026-10-27T21:08:26.001Z",
+   "key": "1813756:0",
+   "at": "2026-10-27T21:12:24.770Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+285",
+   "now_chance": 26,
+   "edge": 16,
+   "text": "Edge gone: Over 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-carmon-leojea-2026-10-26"
+  },
   {
    "id": "new_edge:1813756:0:big",
    "key": "1813756:0",
@@ -1033,7 +1044,8 @@
   "news:1813749:1",
   "new_edge:1813764:1:big",
   "gone:1813764:1:2026-10-27T20:28:43.487Z",
-  "new_edge:1813756:0:big"
+  "new_edge:1813756:0:big",
+  "gone:1813756:0:2026-10-27T21:08:26.001Z"
  ],
  "kalshi_checked": null
 }
