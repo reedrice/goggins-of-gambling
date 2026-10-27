@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185715",
-  "fetched_at": "2026-10-27T04:29:51.338Z",
+  "fetched_at": "2026-10-27T04:35:28.030Z",
   "tennis": true,
   "tennis_match": {
    "id": "185715",
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 7,
@@ -101,6 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 5,
@@ -142,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 232,
    "type": {
     "id": "2",
@@ -179,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T04:29:51.279Z",
+ "updated": "2026-10-27T04:35:27.928Z",
  "open_taken_at": "2026-10-24T09:49:57.590Z",
  "thresholds": {
   "big": 10,
@@ -253,28 +260,6 @@
    "taken_at": "2026-10-26T03:57:04.526Z"
   },
   {
-   "market_id": "1773753",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Simona Waltert vs. Jil Teichmann be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 26.5,
-   "yes_buy": 29,
-   "no_buy": 76,
-   "taken_at": "2026-10-26T11:19:30.705Z"
-  },
-  {
    "market_id": "1773760",
    "market": "Set 2 winner",
    "group": "game",
@@ -295,6 +280,28 @@
    "yes_buy": 55,
    "no_buy": 49,
    "taken_at": "2026-10-27T03:15:03.432Z"
+  },
+  {
+   "market_id": "1773753",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Simona Waltert vs. Jil Teichmann be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 26.5,
+   "yes_buy": 29,
+   "no_buy": 76,
+   "taken_at": "2026-10-26T11:19:30.705Z"
   },
   {
    "market_id": "1773748",
@@ -526,10 +533,10 @@
    "question": "Who will win in the upcoming wta event Simona Waltert vs Jil Teichmann scheduled for October 26, 2026 at 3:00 AM UTC?",
    "side": "Simona Waltert win",
    "open_chance": 55,
-   "now_chance": 21,
+   "now_chance": 20,
    "open_odds": "-122",
-   "now_odds": "+376",
-   "edge": 34,
+   "now_odds": "+400",
+   "edge": 35,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Simona Waltert trailing in sets",
@@ -546,35 +553,15 @@
    "question": "Will Simona Waltert win set 2 against Jil Teichmann?",
    "side": "Yes: Simona Waltert win set 2 against Jil Teichmann",
    "open_chance": 55,
-   "now_chance": 36,
+   "now_chance": 35,
    "open_odds": "-122",
-   "now_odds": "+178",
-   "edge": 19,
+   "now_odds": "+186",
+   "edge": 20,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Simona Waltert not above the games spread right now",
    "context": "Jil Teichmann 7, 2 · Simona Waltert 5, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T03:50:29.359Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1773753:1",
-   "market_id": "1773753",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Simona Waltert vs. Jil Teichmann be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 76,
-   "now_chance": 64,
-   "open_odds": "-317",
-   "now_odds": "-178",
-   "edge": 12,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Jil Teichmann 7, 2 · Simona Waltert 5, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T03:38:45.076Z",
    "status": "open",
    "kalshi": null
   },
@@ -586,35 +573,15 @@
    "question": "Will the Simona Waltert cover 4.5 vs the Jil Teichmann in Simona Waltert vs. Jil Teichmann?",
    "side": "Simona Waltert +4.50 (Games)",
    "open_chance": 71,
-   "now_chance": 61,
+   "now_chance": 58,
    "open_odds": "-245",
-   "now_odds": "-156",
-   "edge": 10,
+   "now_odds": "-138",
+   "edge": 13,
    "tier": "big",
    "class": "edge",
    "reason": null,
    "context": "Jil Teichmann 7, 2 · Simona Waltert 5, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T04:17:39.625Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1773752:1",
-   "market_id": "1773752",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Simona Waltert vs. Jil Teichmann be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 56,
-   "now_chance": 48,
-   "open_odds": "-127",
-   "now_odds": "+108",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Jil Teichmann 7, 2 · Simona Waltert 5, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T03:44:45.151Z",
    "status": "open",
    "kalshi": null
   },
@@ -719,6 +686,26 @@
    "kalshi": null
   },
   {
+   "key": "1773753:1",
+   "market_id": "1773753",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Simona Waltert vs. Jil Teichmann be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 76,
+   "now_chance": 64,
+   "open_odds": "-317",
+   "now_odds": "-178",
+   "edge": 12,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Jil Teichmann 7, 2 · Simona Waltert 5, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T03:38:45.076Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1773744:0",
    "market_id": "1773744",
    "market": "Games spread",
@@ -775,6 +762,26 @@
    "reason": null,
    "context": "Jil Teichmann 6 · Simona Waltert 5 · 1st Set (games by set)",
    "first_seen": "2026-10-27T03:08:46.300Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1773752:1",
+   "market_id": "1773752",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Simona Waltert vs. Jil Teichmann be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 56,
+   "now_chance": 48,
+   "open_odds": "-127",
+   "now_odds": "+108",
+   "edge": 8,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Jil Teichmann 7, 2 · Simona Waltert 5, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T03:44:45.151Z",
    "status": "gone",
    "kalshi": null
   },
@@ -940,6 +947,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1773753:1:2026-10-27T03:38:45.076Z",
+   "key": "1773753:1",
+   "at": "2026-10-27T04:35:27.928Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-178",
+   "now_chance": 64,
+   "edge": 12,
+   "text": "Edge gone: Under 27.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-simwal-jiltei-2026-10-25"
+  },
+  {
+   "id": "gone:1773752:1:2026-10-27T03:44:45.151Z",
+   "key": "1773752:1",
+   "at": "2026-10-27T04:35:27.928Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+108",
+   "now_chance": 48,
+   "edge": 8,
+   "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-simwal-jiltei-2026-10-25"
+  },
   {
    "id": "news:1773750:0",
    "key": "1773750:0",
@@ -1589,7 +1624,9 @@
   "new_edge:1773746:0:slight",
   "gone:1773754:0:2026-10-27T03:08:46.300Z",
   "news:1773750:0",
-  "new_edge:1773746:0:big"
+  "new_edge:1773746:0:big",
+  "gone:1773753:1:2026-10-27T03:38:45.076Z",
+  "gone:1773752:1:2026-10-27T03:44:45.151Z"
  ],
  "kalshi_checked": null
 }
