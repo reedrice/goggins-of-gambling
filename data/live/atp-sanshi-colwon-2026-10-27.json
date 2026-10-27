@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-27T07:08:32.829Z"
+  "fetched_at": "2026-10-27T07:12:05.803Z"
  },
- "updated": "2026-10-27T07:08:32.736Z",
+ "updated": "2026-10-27T07:12:05.732Z",
  "open_taken_at": "2026-10-27T06:03:19.882Z",
  "thresholds": {
   "big": 10,
@@ -41,26 +41,26 @@
    "taken_at": "2026-10-27T06:20:13.159Z"
   },
   {
-   "market_id": "1862604",
-   "market": "Games total",
+   "market_id": "1862599",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Sanhui Shin vs. Coleman Wong be more than 17.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Sanhui Shin cover 4.5 vs the Coleman Wong in Sanhui Shin vs. Coleman Wong?",
    "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
+    "San-Hui Shin +4.50 (Games)",
+    "Coleman Wong -4.50 (Games)"
    ],
    "teams": [
-    null,
-    null
+    "San-Hui Shin",
+    "Coleman Wong"
    ],
    "player": null,
-   "mid": 33,
-   "yes_buy": 35,
-   "no_buy": 69,
-   "taken_at": "2026-10-27T06:57:13.365Z"
+   "mid": 36,
+   "yes_buy": 38,
+   "no_buy": 66,
+   "taken_at": "2026-10-27T07:12:05.732Z"
   },
   {
    "market_id": "1862612",
@@ -83,6 +83,28 @@
    "yes_buy": 10,
    "no_buy": 94,
    "taken_at": "2026-10-27T07:03:04.077Z"
+  },
+  {
+   "market_id": "1862604",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Sanhui Shin vs. Coleman Wong be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 33,
+   "yes_buy": 35,
+   "no_buy": 69,
+   "taken_at": "2026-10-27T06:57:13.365Z"
   },
   {
    "market_id": "1862601",
@@ -125,11 +147,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-27T07:08:32.736Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1862604:1:2026-10-27T07:08:32.736Z",
+   "key": "1862604:1",
+   "at": "2026-10-27T07:12:05.732Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+186",
+   "now_chance": 35,
+   "edge": 34,
+   "text": "Edge gone: Under 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-sanshi-colwon-2026-10-27"
+  },
   {
    "id": "new_edge:1862604:1:big",
    "key": "1862604:1",
@@ -146,7 +182,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1862604:1:big"
+  "new_edge:1862604:1:big",
+  "gone:1862604:1:2026-10-27T07:08:32.736Z"
  ],
  "kalshi_checked": null
 }
