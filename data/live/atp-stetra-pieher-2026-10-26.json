@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-27T20:47:11.143Z"
+  "fetched_at": "2026-10-27T20:53:04.322Z"
  },
- "updated": "2026-10-27T20:47:11.006Z",
+ "updated": "2026-10-27T20:53:04.210Z",
  "open_taken_at": "2026-10-25T05:02:11.876Z",
  "thresholds": {
   "big": 10,
@@ -107,6 +107,28 @@
    "taken_at": "2026-10-26T17:49:07.240Z"
   },
   {
+   "market_id": "1773377",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Stefano Travaglia cover 1.5 vs the Pierre-Hugues Herbert in Stefano Travaglia vs. Pierre-Hugues Herbert?",
+   "sides": [
+    "Stefano Travaglia +1.50 (Sets)",
+    "Pierre-Hugues Herbert -1.50 (Sets)"
+   ],
+   "teams": [
+    "Stefano Travaglia",
+    "Pierre-Hugues Herbert"
+   ],
+   "player": null,
+   "mid": 54.5,
+   "yes_buy": 57,
+   "no_buy": 48,
+   "taken_at": "2026-10-27T20:53:04.210Z"
+  },
+  {
    "market_id": "1773381",
    "market": "Sets total",
    "group": "game",
@@ -127,6 +149,28 @@
    "yes_buy": 42,
    "no_buy": 64,
    "taken_at": "2026-10-27T19:39:28.071Z"
+  },
+  {
+   "market_id": "1773371",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Stefano Travaglia cover 1.5 vs the Pierre-Hugues Herbert in Stefano Travaglia vs. Pierre-Hugues Herbert?",
+   "sides": [
+    "Stefano Travaglia +1.50 (Games)",
+    "Pierre-Hugues Herbert -1.50 (Games)"
+   ],
+   "teams": [
+    "Stefano Travaglia",
+    "Pierre-Hugues Herbert"
+   ],
+   "player": null,
+   "mid": 37.5,
+   "yes_buy": 39,
+   "no_buy": 64,
+   "taken_at": "2026-10-26T17:49:07.240Z"
   },
   {
    "market_id": "1773387",
@@ -239,28 +283,6 @@
    "taken_at": "2026-10-27T20:20:32.719Z"
   },
   {
-   "market_id": "1773371",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Stefano Travaglia cover 1.5 vs the Pierre-Hugues Herbert in Stefano Travaglia vs. Pierre-Hugues Herbert?",
-   "sides": [
-    "Stefano Travaglia +1.50 (Games)",
-    "Pierre-Hugues Herbert -1.50 (Games)"
-   ],
-   "teams": [
-    "Stefano Travaglia",
-    "Pierre-Hugues Herbert"
-   ],
-   "player": null,
-   "mid": 37.5,
-   "yes_buy": 39,
-   "no_buy": 64,
-   "taken_at": "2026-10-26T17:49:07.240Z"
-  },
-  {
    "market_id": "1773372",
    "market": "Games spread",
    "group": "game",
@@ -306,26 +328,6 @@
   }
  ],
  "edges": [
-  {
-   "key": "1773376:1",
-   "market_id": "1773376",
-   "market": "Sets spread",
-   "group": "game",
-   "question": "Will the Stefano Travaglia cover -1.5 vs the Pierre-Hugues Herbert in Stefano Travaglia vs. Pierre-Hugues Herbert?",
-   "side": "Pierre-Hugues Herbert +1.50 (Sets)",
-   "open_chance": 88,
-   "now_chance": 79,
-   "open_odds": "-733",
-   "now_odds": "-376",
-   "edge": 9,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-27T20:47:11.006Z",
-   "status": "open",
-   "kalshi": null
-  },
   {
    "key": "1773373:1",
    "market_id": "1773373",
@@ -447,6 +449,26 @@
    "kalshi": null
   },
   {
+   "key": "1773376:1",
+   "market_id": "1773376",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Stefano Travaglia cover -1.5 vs the Pierre-Hugues Herbert in Stefano Travaglia vs. Pierre-Hugues Herbert?",
+   "side": "Pierre-Hugues Herbert +1.50 (Sets)",
+   "open_chance": 88,
+   "now_chance": 79,
+   "open_odds": "-733",
+   "now_odds": "-376",
+   "edge": 9,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-27T20:47:11.006Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1773379:0",
    "market_id": "1773379",
    "market": "Games total",
@@ -508,6 +530,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1773376:1:2026-10-27T20:47:11.006Z",
+   "key": "1773376:1",
+   "at": "2026-10-27T20:53:04.210Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Pierre-Hugues Herbert +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "-376",
+   "now_chance": 79,
+   "edge": 9,
+   "text": "Edge gone: Pierre-Hugues Herbert +1.50 (Sets) (Sets spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-stetra-pieher-2026-10-26"
+  },
   {
    "id": "new_edge:1773376:1:slight",
    "key": "1773376:1",
@@ -779,7 +815,8 @@
   "gone:1773373:0:2026-10-27T20:20:32.719Z",
   "new_edge:1760937:1:big",
   "new_edge:1773376:1:slight",
-  "gone:1760937:1:2026-10-27T20:41:08.058Z"
+  "gone:1760937:1:2026-10-27T20:41:08.058Z",
+  "gone:1773376:1:2026-10-27T20:47:11.006Z"
  ],
  "kalshi_checked": null
 }
