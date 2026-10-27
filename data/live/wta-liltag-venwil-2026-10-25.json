@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185724",
-  "fetched_at": "2026-10-27T11:12:54.796Z",
+  "fetched_at": "2026-10-27T11:19:01.518Z",
   "tennis": true,
   "tennis_match": {
    "id": "185724",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(4) Lilli Tagger (AUT) leads Venus Williams (USA) 6-2 2-1",
+     "text": "(4) Lilli Tagger (AUT) leads Venus Williams (USA) 6-2 3-1",
      "type": "event"
     }
    ],
@@ -110,7 +110,7 @@
        "winner": true
       },
       {
-       "value": 2
+       "value": 3
       }
      ],
      "athlete": {
@@ -182,7 +182,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T11:12:54.708Z",
+ "updated": "2026-10-27T11:19:01.450Z",
  "open_taken_at": "2026-10-24T12:17:15.573Z",
  "thresholds": {
   "big": 10,
@@ -212,26 +212,26 @@
    "taken_at": "2026-10-26T21:27:48.272Z"
   },
   {
-   "market_id": "1773788",
-   "market": "Games total",
+   "market_id": "1773783",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Lilli Tagger vs. Venus Williams be more than 22.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Lilli Tagger cover -7.5 vs the Venus Williams in Lilli Tagger vs. Venus Williams?",
    "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
+    "Lilli Tagger -7.50 (Games)",
+    "Venus Williams +7.50 (Games)"
    ],
    "teams": [
-    null,
-    null
+    "Lilli Tagger",
+    "Venus Williams"
    ],
    "player": null,
-   "mid": 23,
-   "yes_buy": 26,
-   "no_buy": 80,
-   "taken_at": "2026-10-25T05:26:00.363Z"
+   "mid": 42.5,
+   "yes_buy": 45,
+   "no_buy": 60,
+   "taken_at": "2026-10-25T23:01:41.369Z"
   },
   {
    "market_id": "1773787",
@@ -254,6 +254,28 @@
    "yes_buy": 54,
    "no_buy": 51,
    "taken_at": "2026-10-25T20:35:32.388Z"
+  },
+  {
+   "market_id": "1773788",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Lilli Tagger vs. Venus Williams be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 23,
+   "yes_buy": 26,
+   "no_buy": 80,
+   "taken_at": "2026-10-25T05:26:00.363Z"
   },
   {
    "market_id": "1773779",
@@ -388,28 +410,6 @@
    "taken_at": "2026-10-27T10:17:01.056Z"
   },
   {
-   "market_id": "1773783",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Lilli Tagger cover -7.5 vs the Venus Williams in Lilli Tagger vs. Venus Williams?",
-   "sides": [
-    "Lilli Tagger -7.50 (Games)",
-    "Venus Williams +7.50 (Games)"
-   ],
-   "teams": [
-    "Lilli Tagger",
-    "Venus Williams"
-   ],
-   "player": null,
-   "mid": 42.5,
-   "yes_buy": 45,
-   "no_buy": 60,
-   "taken_at": "2026-10-25T23:01:41.369Z"
-  },
-  {
    "market_id": "1751223",
    "market": "Moneyline",
    "group": "game",
@@ -522,6 +522,46 @@
  ],
  "edges": [
   {
+   "key": "1773787:0",
+   "market_id": "1773787",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Lilli Tagger vs. Venus Williams be more than 17.5?",
+   "side": "Over 17.5 (Games)",
+   "open_chance": 54,
+   "now_chance": 27,
+   "open_odds": "-117",
+   "now_odds": "+270",
+   "edge": 27,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (27 pts), likely news",
+   "context": "Venus Williams 2, 1 · Lilli Tagger 6, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T11:19:01.450Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1773783:1",
+   "market_id": "1773783",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Lilli Tagger cover -7.5 vs the Venus Williams in Lilli Tagger vs. Venus Williams?",
+   "side": "Venus Williams +7.50 (Games)",
+   "open_chance": 60,
+   "now_chance": 40,
+   "open_odds": "-150",
+   "now_odds": "+150",
+   "edge": 20,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Venus Williams 2, 1 · Lilli Tagger 6, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T10:22:35.753Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1773783:0",
    "market_id": "1773783",
    "market": "Games spread",
@@ -538,26 +578,6 @@
    "reason": "Explained by score: Lilli Tagger not above the games spread right now",
    "context": "Venus Williams 2 · Lilli Tagger 4 · 1st Set (games by set)",
    "first_seen": "2026-10-26T03:21:14.226Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1773783:1",
-   "market_id": "1773783",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Lilli Tagger cover -7.5 vs the Venus Williams in Lilli Tagger vs. Venus Williams?",
-   "side": "Venus Williams +7.50 (Games)",
-   "open_chance": 60,
-   "now_chance": 50,
-   "open_odds": "-150",
-   "now_odds": "+100",
-   "edge": 10,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Venus Williams 2 · Lilli Tagger 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-27T10:22:35.753Z",
    "status": "gone",
    "kalshi": null
   }

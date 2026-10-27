@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-27T11:12:56.766Z"
+  "fetched_at": "2026-10-27T11:19:03.530Z"
  },
- "updated": "2026-10-27T11:12:56.712Z",
+ "updated": "2026-10-27T11:19:03.464Z",
  "open_taken_at": "2026-10-24T13:01:22.447Z",
  "thresholds": {
   "big": 10,
@@ -83,28 +83,6 @@
    "yes_buy": 84,
    "no_buy": 17,
    "taken_at": "2026-10-27T07:38:00.562Z"
-  },
-  {
-   "market_id": "1773249",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Tristan Schoolkate cover 7.5 vs the Masamichi Imamura in Tristan Schoolkate vs. Masamichi Imamura?",
-   "sides": [
-    "Tristan Schoolkate +7.50 (Games)",
-    "Masamichi Imamura -7.50 (Games)"
-   ],
-   "teams": [
-    "Tristan Schoolkate",
-    "Masamichi Imamura"
-   ],
-   "player": null,
-   "mid": 75.5,
-   "yes_buy": 76,
-   "no_buy": 25,
-   "taken_at": "2026-10-27T06:56:59.548Z"
   },
   {
    "market_id": "1773245",
@@ -283,6 +261,28 @@
    "taken_at": "2026-10-27T06:56:59.548Z"
   },
   {
+   "market_id": "1773249",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Tristan Schoolkate cover 7.5 vs the Masamichi Imamura in Tristan Schoolkate vs. Masamichi Imamura?",
+   "sides": [
+    "Tristan Schoolkate +7.50 (Games)",
+    "Masamichi Imamura -7.50 (Games)"
+   ],
+   "teams": [
+    "Tristan Schoolkate",
+    "Masamichi Imamura"
+   ],
+   "player": null,
+   "mid": 75.5,
+   "yes_buy": 76,
+   "no_buy": 25,
+   "taken_at": "2026-10-27T06:56:59.548Z"
+  },
+  {
    "market_id": "1773254",
    "market": "Games total",
    "group": "game",
@@ -387,7 +387,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-27T11:12:56.712Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -412,6 +412,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1773249:1:2026-10-27T11:12:56.712Z",
+   "key": "1773249:1",
+   "at": "2026-10-27T11:19:03.464Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Masamichi Imamura -7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+400",
+   "now_chance": 20,
+   "edge": 5,
+   "text": "Edge gone: Masamichi Imamura -7.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-trisch-masima-2026-10-25"
+  },
   {
    "id": "gone:1773254:1:2026-10-27T08:03:01.840Z",
    "key": "1773254:1",
@@ -475,7 +489,8 @@
   "new_edge:1773247:1:slight",
   "new_edge:1773249:1:slight",
   "new_edge:1773254:1:slight",
-  "gone:1773254:1:2026-10-27T08:03:01.840Z"
+  "gone:1773254:1:2026-10-27T08:03:01.840Z",
+  "gone:1773249:1:2026-10-27T11:12:56.712Z"
  ],
  "kalshi_checked": null
 }
