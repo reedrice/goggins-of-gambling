@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185800",
-  "fetched_at": "2026-10-27T23:07:08.239Z",
+  "fetched_at": "2026-10-27T23:12:09.386Z",
   "tennis": true,
   "tennis_match": {
    "id": "185800",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Tue, October 27th at 7:05 PM EDT",
-     "shortDetail": "10/27 - 7:05 PM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Katherine Hui (USA) leads (4) Bianca Andreescu (CAN) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -53,6 +58,11 @@
      "curatedRank": {
       "current": 4
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "6fd6b28f-61b2-9ac1-4a0e-cd5bd4a3aa20",
       "displayName": "Bianca Andreescu",
@@ -90,6 +100,11 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "b94967a6-68ad-3418-975f-247cb2225c28",
       "displayName": "Katherine Hui",
@@ -138,10 +153,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Tue, October 27th at 7:05 PM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Bianca Andreescu",
@@ -159,7 +174,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T23:07:08.136Z",
+ "updated": "2026-10-27T23:12:09.287Z",
  "open_taken_at": "2026-10-26T05:02:56.993Z",
  "thresholds": {
   "big": 10,
@@ -187,6 +202,28 @@
    "yes_buy": 10,
    "no_buy": 94,
    "taken_at": "2026-10-26T13:40:10.259Z"
+  },
+  {
+   "market_id": "1818024",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Katherine Hui vs. Bianca Andreescu be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 58.5,
+   "yes_buy": 60,
+   "no_buy": 43,
+   "taken_at": "2026-10-27T23:12:09.287Z"
   }
  ],
  "edges": [],
