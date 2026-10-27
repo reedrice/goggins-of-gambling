@@ -1,8 +1,25 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-27T04:49:25.687Z",
+ "updated_at": "2026-10-27T04:55:15.315Z",
  "source": "ESPN public roster API (site.api.espn.com), matched to Polymarket US player names",
  "leagues": {
+  "sea": {
+   "names": {
+    "M": "Midfielder",
+    "F": "Forward"
+   },
+   "players": {
+    "laz|davide frattesi": "M",
+    "sas|armand lauriente": "F",
+    "laz|mattia zaccagni": "M",
+    "cag|daniel maldini": "F",
+    "rom|donyell malen": "F",
+    "com|nico paz": "M",
+    "com|anastasios douvikas": "F",
+    "tor|nikola vlasic": "M",
+    "tor|giovanni simeone": "F"
+   }
+  },
   "nhl": {
    "names": {
     "C": "Center",
@@ -11,24 +28,6 @@
     "D": "Defense"
    },
    "players": {
-    "edm|ryan shea": "D",
-    "edm|vasily podkolzin": "RW",
-    "edm|zach hyman": "LW",
-    "edm|connor mcdavid": "C",
-    "edm|kasperi kapanen": "RW",
-    "edm|leon draisaitl": "C",
-    "edm|evan bouchard": "D",
-    "edm|ryan nugent hopkins": "C",
-    "det|alex debrincat": "RW",
-    "det|dylan larkin": "C",
-    "det|emmitt finnie": "C",
-    "det|justin faulk": "D",
-    "det|lucas raymond": "LW",
-    "det|michael brandsegg nygard": "RW",
-    "det|moritz seider": "D",
-    "det|viktor arvidsson": "LW",
-    "edm|alex formenton": "LW",
-    "det|andrew copp": "C",
     "cbj|zach werenski": "D",
     "cbj|adam fantilli": "C",
     "phi|matvei michkov": "RW",
@@ -223,23 +222,6 @@
     "sj|michael misa": "C"
    }
   },
-  "sea": {
-   "names": {
-    "M": "Midfielder",
-    "F": "Forward"
-   },
-   "players": {
-    "laz|davide frattesi": "M",
-    "sas|armand lauriente": "F",
-    "laz|mattia zaccagni": "M",
-    "cag|daniel maldini": "F",
-    "rom|donyell malen": "F",
-    "com|nico paz": "M",
-    "com|anastasios douvikas": "F",
-    "tor|nikola vlasic": "M",
-    "tor|giovanni simeone": "F"
-   }
-  },
   "nba": {
    "names": {
     "PF": "Power Forward",
@@ -257,15 +239,18 @@
     "bkn|noah clowney": "PF",
     "ny|jalen brunson": "PG",
     "ny|og anunoby": "PF",
+    "det|duncan robinson": "SG",
     "ny|josh hart": "SG",
+    "det|john collins": "PF",
     "ny|karl anthony towns": "C",
     "ny|mikal bridges": "SF",
+    "det|cade cunningham": "PG",
     "ny|landry shamet": "SF",
     "det|paul reed": "C",
     "sa|stephon castle": "SG",
     "sa|victor wembanyama": "C",
-    "sa|dylan harper": "SF",
     "sa|devin vassell": "PF",
+    "sa|dylan harper": "SF",
     "sa|deaaron fox": "PG",
     "lal|sandro mamukelashvili": "PF",
     "lal|austin reaves": "SG",
@@ -273,7 +258,10 @@
     "lal|luka doncic": "PG",
     "lal|quentin grimes": "SG",
     "lal|matisse thybulle": "PF",
-    "lal|ziaire williams": "SF"
+    "por|deni avdija": "PF",
+    "por|damian lillard": "SG",
+    "lal|ziaire williams": "SF",
+    "por|donovan clingan": "C"
    }
   },
   "mlb": {
@@ -288,9 +276,9 @@
    "players": {
     "tb|griffin jax": "SP",
     "tb|yandy diaz": "DH",
+    "tb|jonathan aranda": "1B",
     "tb|chandler simpson": "LF",
     "tb|junior caminero": "3B",
-    "tb|jonathan aranda": "1B",
     "tb|jonny deluca": "RF"
    }
   },
@@ -302,7 +290,6 @@
     "QB": "Quarterback"
    },
    "players": {
-    "gb|josh jacobs": "RB",
     "gb|christian watson": "WR",
     "car|jalen coker": "WR",
     "gb|matthew golden": "WR",
@@ -311,6 +298,7 @@
     "car|brycen tremayne": "WR",
     "gb|savion williams": "WR",
     "car|tommy tremble": "TE",
+    "gb|josh jacobs": "RB",
     "car|chuba hubbard": "RB",
     "car|bryce young": "QB",
     "gb|jordan love": "QB",
@@ -331,14 +319,6 @@
   }
  },
  "stats": {
-  "nhl": {
-   "players": 211,
-   "matched": 210,
-   "rate": 0.995,
-   "by": {
-    "team": 210
-   }
-  },
   "sea": {
    "players": 9,
    "matched": 9,
@@ -347,12 +327,20 @@
     "team": 9
    }
   },
+  "nhl": {
+   "players": 193,
+   "matched": 192,
+   "rate": 0.995,
+   "by": {
+    "team": 192
+   }
+  },
   "nba": {
-   "players": 25,
-   "matched": 25,
+   "players": 31,
+   "matched": 31,
    "rate": 1,
    "by": {
-    "team": 25
+    "team": 31
    }
   },
   "mlb": {
