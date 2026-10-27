@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185701",
-  "fetched_at": "2026-10-27T05:00:00.560Z",
+  "fetched_at": "2026-10-27T05:05:49.336Z",
   "tennis": true,
   "tennis_match": {
    "id": "185701",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Shuko Aoyama (JPN) & En-Shuo Liang (TPO) leads Ingrid Neel (EST) & Giuliana Olmos (MEX) 6-4",
+     "text": "Ingrid Neel (EST) & Giuliana Olmos (MEX) is tied with Shuko Aoyama (JPN) & En-Shuo Liang (TPO) 4-6 1-0",
      "type": "event"
     }
    ],
@@ -55,9 +55,14 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
-       "value": 4
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 1
       }
      ],
      "roster": {
@@ -132,9 +137,14 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "roster": {
@@ -204,6 +214,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 264,
    "type": {
     "id": "4",
@@ -222,8 +237,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Ingrid Neel / Giuliana Olmos",
@@ -235,13 +250,13 @@
    "abbr": "Shuko Aoyama / En-Shuo Liang",
    "alias": "Shuko Aoyama / En-Shuo Liang",
    "name": "Shuko Aoyama / En-Shuo Liang",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T05:00:00.496Z",
+ "updated": "2026-10-27T05:05:49.217Z",
  "open_taken_at": "2026-10-24T07:46:07.449Z",
  "thresholds": {
   "big": 10,
@@ -280,14 +295,14 @@
    "question": "Who will win in the upcoming wtadb event Aoyama / Liang vs Neel / Olmos scheduled for October 26, 2026 at 1:30 AM UTC?",
    "side": "Neel / Olmos win",
    "open_chance": 48,
-   "now_chance": 23,
+   "now_chance": 25,
    "open_odds": "+108",
-   "now_odds": "+335",
-   "edge": 25,
+   "now_odds": "+300",
+   "edge": 23,
    "tier": "big",
-   "class": "news",
-   "reason": "Big move (25 pts), likely news",
-   "context": "Ingrid Neel / Giuliana Olmos 4 · Shuko Aoyama / En-Shuo Liang 6 · 1st Set (games by set)",
+   "class": "edge",
+   "reason": null,
+   "context": "Ingrid Neel / Giuliana Olmos 4, 1 · Shuko Aoyama / En-Shuo Liang 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T04:03:34.632Z",
    "status": "open",
    "kalshi": null
