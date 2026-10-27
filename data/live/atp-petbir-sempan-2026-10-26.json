@@ -4,14 +4,14 @@
  "game": "Petr Bar Biryukov vs. Semen Pankin",
  "url": "https://polymarket.us/sports/atp/atp-petbir-sempan-2026-10-26",
  "start_time": "2026-10-27T03:00:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-27T02:58:56.453Z"
+  "fetched_at": "2026-10-27T03:02:18.583Z"
  },
- "updated": "2026-10-27T02:58:56.348Z",
+ "updated": "2026-10-27T03:02:18.455Z",
  "open_taken_at": "2026-10-26T10:32:24.891Z",
  "thresholds": {
   "big": 10,
@@ -39,6 +39,28 @@
    "yes_buy": 50,
    "no_buy": 51,
    "taken_at": "2026-10-26T14:11:01.277Z"
+  },
+  {
+   "market_id": "1832756",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Petr Bar Biryukov cover 1.5 vs the Semen Pankin in Petr Bar Biryukov vs. Semen Pankin?",
+   "sides": [
+    "Petr Bar Biryukov +1.50 (Games)",
+    "Semen Pankin -1.50 (Games)"
+   ],
+   "teams": [
+    "Petr Bar Biryukov",
+    "Semen Pankin"
+   ],
+   "player": null,
+   "mid": 55.5,
+   "yes_buy": 57,
+   "no_buy": 46,
+   "taken_at": "2026-10-26T17:52:48.972Z"
   },
   {
    "market_id": "1832764",
@@ -83,28 +105,6 @@
    "yes_buy": 46,
    "no_buy": 57,
    "taken_at": "2026-10-26T17:52:48.972Z"
-  },
-  {
-   "market_id": "1832756",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Petr Bar Biryukov cover 1.5 vs the Semen Pankin in Petr Bar Biryukov vs. Semen Pankin?",
-   "sides": [
-    "Petr Bar Biryukov +1.50 (Games)",
-    "Semen Pankin -1.50 (Games)"
-   ],
-   "teams": [
-    "Petr Bar Biryukov",
-    "Semen Pankin"
-   ],
-   "player": null,
-   "mid": 55.5,
-   "yes_buy": 57,
-   "no_buy": 46,
-   "taken_at": "2026-10-26T17:52:48.972Z"
   }
  ],
  "edges": [
@@ -129,6 +129,26 @@
    "kalshi": null
   },
   {
+   "key": "1832756:1",
+   "market_id": "1832756",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Petr Bar Biryukov cover 1.5 vs the Semen Pankin in Petr Bar Biryukov vs. Semen Pankin?",
+   "side": "Semen Pankin -1.50 (Games)",
+   "open_chance": 46,
+   "now_chance": 41,
+   "open_odds": "+117",
+   "now_odds": "+144",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-27T03:02:18.455Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1832755:1",
    "market_id": "1832755",
    "market": "Games spread",
@@ -145,11 +165,58 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-26T22:26:03.907Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "new_edge:1831901:1:slight",
+   "key": "1831901:1",
+   "at": "2026-10-27T03:02:18.455Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Semen Pankin win",
+   "market": "Moneyline",
+   "now_odds": "+117",
+   "now_chance": 46,
+   "edge": 5,
+   "text": "New slight edge: Semen Pankin win (Moneyline), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-petbir-sempan-2026-10-26"
+  },
+  {
+   "id": "new_edge:1832756:1:slight",
+   "key": "1832756:1",
+   "at": "2026-10-27T03:02:18.455Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Semen Pankin -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+144",
+   "now_chance": 41,
+   "edge": 5,
+   "text": "New slight edge: Semen Pankin -1.50 (Games) (Games spread), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-petbir-sempan-2026-10-26"
+  },
+  {
+   "id": "gone:1832755:1:2026-10-26T22:26:03.907Z",
+   "key": "1832755:1",
+   "at": "2026-10-27T03:02:18.455Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Semen Pankin +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 4,
+   "text": "Edge gone: Semen Pankin +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-petbir-sempan-2026-10-26"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:1831901:1:slight",
+  "new_edge:1832756:1:slight",
+  "gone:1832755:1:2026-10-26T22:26:03.907Z"
+ ],
  "kalshi_checked": null
 }
