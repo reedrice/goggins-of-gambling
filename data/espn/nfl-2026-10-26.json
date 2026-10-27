@@ -3,45 +3,286 @@
   "league": "nfl",
   "query_date": "2026-10-26",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261026&limit=1000",
-  "fetched_at": "2026-10-27T00:11:01.848Z",
+  "fetched_at": "2026-10-27T00:16:52.964Z",
   "events": [
     {
       "id": "401873009",
       "name": "Dallas Cowboys at Philadelphia Eagles",
       "date": "2026-10-27T00:15Z",
       "status": {
-        "clock": 0,
-        "displayClock": "0:00",
-        "period": 0,
+        "clock": 900,
+        "displayClock": "15:00",
+        "period": 1,
         "type": {
-          "id": "1",
-          "name": "STATUS_SCHEDULED",
-          "state": "pre",
+          "id": "2",
+          "name": "STATUS_IN_PROGRESS",
+          "state": "in",
           "completed": false,
-          "description": "Scheduled",
-          "detail": "Mon, October 26th at 8:15 PM EDT",
-          "shortDetail": "10/26 - 8:15 PM EDT"
+          "description": "In Progress",
+          "detail": "15:00 - 1st Quarter",
+          "shortDetail": "15:00 - 1st"
         }
       },
       "boxscore": {
-        "players": []
+        "players": [
+          {
+            "team": {
+              "abbreviation": "DAL"
+            },
+            "statistics": [
+              {
+                "name": "passing",
+                "keys": [
+                  "completions/passingAttempts",
+                  "passingYards",
+                  "yardsPerPassAttempt",
+                  "passingTouchdowns",
+                  "interceptions",
+                  "sacks-sackYardsLost",
+                  "adjQBR",
+                  "QBRating"
+                ],
+                "athletes": []
+              },
+              {
+                "name": "rushing",
+                "keys": [
+                  "rushingAttempts",
+                  "rushingYards",
+                  "yardsPerRushAttempt",
+                  "rushingTouchdowns",
+                  "longRushing"
+                ],
+                "athletes": []
+              },
+              {
+                "name": "receiving",
+                "keys": [
+                  "receptions",
+                  "receivingYards",
+                  "yardsPerReception",
+                  "receivingTouchdowns",
+                  "longReception",
+                  "receivingTargets"
+                ],
+                "athletes": []
+              },
+              {
+                "name": "fumbles",
+                "keys": [
+                  "fumbles",
+                  "fumblesLost",
+                  "fumblesRecovered"
+                ],
+                "athletes": []
+              },
+              {
+                "name": "defensive",
+                "keys": [
+                  "totalTackles",
+                  "soloTackles",
+                  "sacks",
+                  "tacklesForLoss",
+                  "passesDefended",
+                  "QBHits",
+                  "defensiveTouchdowns"
+                ],
+                "athletes": []
+              },
+              {
+                "name": "interceptions",
+                "keys": [
+                  "interceptions",
+                  "interceptionYards",
+                  "interceptionTouchdowns"
+                ],
+                "athletes": []
+              },
+              {
+                "name": "kickReturns",
+                "keys": [
+                  "kickReturns",
+                  "kickReturnYards",
+                  "yardsPerKickReturn",
+                  "longKickReturn",
+                  "kickReturnTouchdowns"
+                ],
+                "athletes": []
+              },
+              {
+                "name": "puntReturns",
+                "keys": [
+                  "puntReturns",
+                  "puntReturnYards",
+                  "yardsPerPuntReturn",
+                  "longPuntReturn",
+                  "puntReturnTouchdowns"
+                ],
+                "athletes": []
+              },
+              {
+                "name": "kicking",
+                "keys": [
+                  "fieldGoalsMade/fieldGoalAttempts",
+                  "fieldGoalPct",
+                  "longFieldGoalMade",
+                  "extraPointsMade/extraPointAttempts",
+                  "totalKickingPoints"
+                ],
+                "athletes": []
+              },
+              {
+                "name": "punting",
+                "keys": [
+                  "punts",
+                  "puntYards",
+                  "grossAvgPuntYards",
+                  "touchbacks",
+                  "puntsInside20",
+                  "longPunt"
+                ],
+                "athletes": []
+              }
+            ]
+          },
+          {
+            "team": {
+              "abbreviation": "PHI"
+            },
+            "statistics": [
+              {
+                "name": "passing",
+                "keys": [
+                  "completions/passingAttempts",
+                  "passingYards",
+                  "yardsPerPassAttempt",
+                  "passingTouchdowns",
+                  "interceptions",
+                  "sacks-sackYardsLost",
+                  "adjQBR",
+                  "QBRating"
+                ],
+                "athletes": []
+              },
+              {
+                "name": "rushing",
+                "keys": [
+                  "rushingAttempts",
+                  "rushingYards",
+                  "yardsPerRushAttempt",
+                  "rushingTouchdowns",
+                  "longRushing"
+                ],
+                "athletes": []
+              },
+              {
+                "name": "receiving",
+                "keys": [
+                  "receptions",
+                  "receivingYards",
+                  "yardsPerReception",
+                  "receivingTouchdowns",
+                  "longReception",
+                  "receivingTargets"
+                ],
+                "athletes": []
+              },
+              {
+                "name": "fumbles",
+                "keys": [
+                  "fumbles",
+                  "fumblesLost",
+                  "fumblesRecovered"
+                ],
+                "athletes": []
+              },
+              {
+                "name": "defensive",
+                "keys": [
+                  "totalTackles",
+                  "soloTackles",
+                  "sacks",
+                  "tacklesForLoss",
+                  "passesDefended",
+                  "QBHits",
+                  "defensiveTouchdowns"
+                ],
+                "athletes": []
+              },
+              {
+                "name": "interceptions",
+                "keys": [
+                  "interceptions",
+                  "interceptionYards",
+                  "interceptionTouchdowns"
+                ],
+                "athletes": []
+              },
+              {
+                "name": "kickReturns",
+                "keys": [
+                  "kickReturns",
+                  "kickReturnYards",
+                  "yardsPerKickReturn",
+                  "longKickReturn",
+                  "kickReturnTouchdowns"
+                ],
+                "athletes": []
+              },
+              {
+                "name": "puntReturns",
+                "keys": [
+                  "puntReturns",
+                  "puntReturnYards",
+                  "yardsPerPuntReturn",
+                  "longPuntReturn",
+                  "puntReturnTouchdowns"
+                ],
+                "athletes": []
+              },
+              {
+                "name": "kicking",
+                "keys": [
+                  "fieldGoalsMade/fieldGoalAttempts",
+                  "fieldGoalPct",
+                  "longFieldGoalMade",
+                  "extraPointsMade/extraPointAttempts",
+                  "totalKickingPoints"
+                ],
+                "athletes": []
+              },
+              {
+                "name": "punting",
+                "keys": [
+                  "punts",
+                  "puntYards",
+                  "grossAvgPuntYards",
+                  "touchbacks",
+                  "puntsInside20",
+                  "longPunt"
+                ],
+                "athletes": []
+              }
+            ]
+          }
+        ]
       },
       "competitions": [
         {
           "id": "401873009",
           "date": "2026-10-27T00:15Z",
           "status": {
-            "clock": 0,
-            "displayClock": "0:00",
-            "period": 0,
+            "clock": 900,
+            "displayClock": "15:00",
+            "period": 1,
             "type": {
-              "id": "1",
-              "name": "STATUS_SCHEDULED",
-              "state": "pre",
+              "id": "2",
+              "name": "STATUS_IN_PROGRESS",
+              "state": "in",
               "completed": false,
-              "description": "Scheduled",
-              "detail": "Mon, October 26th at 8:15 PM EDT",
-              "shortDetail": "10/26 - 8:15 PM EDT"
+              "description": "In Progress",
+              "detail": "15:00 - 1st Quarter",
+              "shortDetail": "15:00 - 1st"
             },
             "isTBDFlex": false
           },
@@ -50,6 +291,13 @@
               "id": "21",
               "homeAway": "home",
               "score": "0",
+              "linescores": [
+                {
+                  "value": 0,
+                  "displayValue": "0",
+                  "period": 1
+                }
+              ],
               "team": {
                 "id": "21",
                 "abbreviation": "PHI",
@@ -63,6 +311,13 @@
               "id": "6",
               "homeAway": "away",
               "score": "0",
+              "linescores": [
+                {
+                  "value": 0,
+                  "displayValue": "0",
+                  "period": 1
+                }
+              ],
               "team": {
                 "id": "6",
                 "abbreviation": "DAL",
@@ -141,14 +396,7 @@
       "starters": [],
       "starting_goalies": [],
       "probables": [],
-      "book_lines": [
-        {
-          "provider": "DraftKings",
-          "details": "DAL -4.5",
-          "spread": 4.5,
-          "total": 43.5
-        }
-      ],
+      "book_lines": [],
       "coverage": {
         "injuries": "published_report",
         "starters": "unverified",
@@ -157,9 +405,9 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261026&limit=1000",
-      "fetched_at": "2026-10-27T00:11:01.848Z",
+      "fetched_at": "2026-10-27T00:16:52.964Z",
       "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873009",
-      "details_checked_at": "2026-10-27T00:11:01.848Z",
+      "details_checked_at": "2026-10-27T00:16:52.964Z",
       "details_available": true
     }
   ]
