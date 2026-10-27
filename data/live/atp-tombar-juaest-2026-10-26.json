@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-27T23:24:20.584Z"
+  "fetched_at": "2026-10-27T23:28:12.480Z"
  },
- "updated": "2026-10-27T23:24:20.214Z",
+ "updated": "2026-10-27T23:28:12.351Z",
  "open_taken_at": "2026-10-25T05:02:16.447Z",
  "thresholds": {
   "big": 10,
@@ -63,28 +63,6 @@
    "taken_at": "2026-10-26T19:18:59.154Z"
   },
   {
-   "market_id": "1774561",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Marcelo Tomas Barrios Vera cover -1.5 vs the Juan Estevez in Marcelo Tomas Barrios Vera vs. Juan Estevez?",
-   "sides": [
-    "Tomas Barrios -1.50 (Games)",
-    "Juan Estevez +1.50 (Games)"
-   ],
-   "teams": [
-    "Tomas Barrios",
-    "Juan Estevez"
-   ],
-   "player": null,
-   "mid": 75.5,
-   "yes_buy": 76,
-   "no_buy": 25,
-   "taken_at": "2026-10-26T19:18:59.154Z"
-  },
-  {
    "market_id": "1774580",
    "market": "Games total",
    "group": "game",
@@ -104,6 +82,50 @@
    "mid": 31.5,
    "yes_buy": 32,
    "no_buy": 69,
+   "taken_at": "2026-10-26T19:18:59.154Z"
+  },
+  {
+   "market_id": "1774582",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Marcelo Tomas Barrios Vera vs. Juan Estevez be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 17.5,
+   "yes_buy": 18,
+   "no_buy": 83,
+   "taken_at": "2026-10-26T19:18:59.154Z"
+  },
+  {
+   "market_id": "1774561",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Marcelo Tomas Barrios Vera cover -1.5 vs the Juan Estevez in Marcelo Tomas Barrios Vera vs. Juan Estevez?",
+   "sides": [
+    "Tomas Barrios -1.50 (Games)",
+    "Juan Estevez +1.50 (Games)"
+   ],
+   "teams": [
+    "Tomas Barrios",
+    "Juan Estevez"
+   ],
+   "player": null,
+   "mid": 75.5,
+   "yes_buy": 76,
+   "no_buy": 25,
    "taken_at": "2026-10-26T19:18:59.154Z"
   },
   {
@@ -127,28 +149,6 @@
    "yes_buy": 62,
    "no_buy": 42,
    "taken_at": "2026-10-25T17:02:32.798Z"
-  },
-  {
-   "market_id": "1774582",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Marcelo Tomas Barrios Vera vs. Juan Estevez be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 17.5,
-   "yes_buy": 18,
-   "no_buy": 83,
-   "taken_at": "2026-10-26T19:18:59.154Z"
   },
   {
    "market_id": "1774578",
@@ -371,6 +371,26 @@
    "kalshi": null
   },
   {
+   "key": "1774219:0",
+   "market_id": "1774219",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Marcelo Tomas Barrios Vera vs Juan Estevez scheduled for October 26, 2026 at 3:00 PM UTC?",
+   "side": "Tomas Barrios win",
+   "open_chance": 81,
+   "now_chance": 71,
+   "open_odds": "-426",
+   "now_odds": "-245",
+   "edge": 10,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-27T23:28:12.351Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1774565:0",
    "market_id": "1774565",
    "market": "Games spread",
@@ -387,7 +407,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-27T22:23:18.961Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -492,6 +512,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1774219:0:big",
+   "key": "1774219:0",
+   "at": "2026-10-27T23:28:12.351Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Tomas Barrios win",
+   "market": "Moneyline",
+   "now_odds": "-245",
+   "now_chance": 71,
+   "edge": 10,
+   "text": "New big edge: Tomas Barrios win (Moneyline), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-tombar-juaest-2026-10-26"
+  },
   {
    "id": "gone:1774569:1:2026-10-26T19:18:59.154Z",
    "key": "1774569:1",
@@ -697,7 +731,8 @@
   "new_edge:1774569:1:big",
   "new_edge:1774565:1:slight",
   "gone:1774569:1:2026-10-26T19:18:59.154Z",
-  "gone:1774565:1:2026-10-27T23:07:06.615Z"
+  "gone:1774565:1:2026-10-27T23:07:06.615Z",
+  "new_edge:1774219:0:big"
  ],
  "kalshi_checked": null
 }
