@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185799",
-  "fetched_at": "2026-10-27T15:34:45.710Z",
+  "fetched_at": "2026-10-27T15:41:30.634Z",
   "tennis": true,
   "tennis_match": {
    "id": "185799",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Tue, October 27th at 11:35 AM EDT",
-     "shortDetail": "10/27 - 11:35 AM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(1) Tatjana Maria (GER) leads Carlota Garibay Romero (MEX) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "ab798c20-9336-3981-83be-b07ec35b24de",
       "displayName": "Carlota Garibay Romero",
@@ -87,9 +98,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 1
      },
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "4cb15c03-61f2-2d31-26af-bf7a35f85051",
       "displayName": "Tatjana Maria",
@@ -122,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1034,
    "type": {
     "id": "2",
@@ -138,10 +160,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Tue, October 27th at 11:35 AM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Carlota Garibay Romero",
@@ -159,13 +181,123 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T15:34:45.637Z",
+ "updated": "2026-10-27T15:41:30.576Z",
  "open_taken_at": "2026-10-26T05:02:57.104Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1817996",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Tatjana Maria win set 1 against Carlota Garibay Romero?",
+   "sides": [
+    "Yes: Tatjana Maria win set 1 against Carlota Garibay Romero",
+    "No: Tatjana Maria win set 1 against Carlota Garibay Romero"
+   ],
+   "teams": [
+    "Tatjana Maria",
+    null
+   ],
+   "player": null,
+   "mid": 92.5,
+   "yes_buy": 94,
+   "no_buy": 9,
+   "taken_at": "2026-10-27T15:41:30.576Z"
+  },
+  {
+   "market_id": "1817986",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Tatjana Maria cover -1.5 vs the Carlota Garibay Romero in Tatjana Maria vs. Carlota Garibay Romero?",
+   "sides": [
+    "Tatjana Maria -1.50 (Sets)",
+    "Carlota Garibay Romero +1.50 (Sets)"
+   ],
+   "teams": [
+    "Tatjana Maria",
+    "Carlota Garibay Romero"
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-10-27T15:41:30.576Z"
+  },
+  {
+   "market_id": "1817991",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Tatjana Maria vs. Carlota Garibay Romero be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-10-27T15:41:30.576Z"
+  },
+  {
+   "market_id": "1817989",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Tatjana Maria vs. Carlota Garibay Romero be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-10-27T15:41:30.576Z"
+  },
+  {
+   "market_id": "1817990",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Tatjana Maria vs. Carlota Garibay Romero be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-10-27T15:41:30.576Z"
+  },
   {
    "market_id": "1817984",
    "market": "Games spread",
