@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185800",
-  "fetched_at": "2026-10-27T23:44:32.709Z",
+  "fetched_at": "2026-10-27T23:50:06.626Z",
   "tennis": true,
   "tennis_match": {
    "id": "185800",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(4) Bianca Andreescu (CAN) leads Katherine Hui (USA) 5-3",
+     "text": "Katherine Hui (USA) leads (4) Bianca Andreescu (CAN) 3-6 0-0",
      "type": "event"
     }
    ],
@@ -55,13 +55,17 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "possession": true,
      "curatedRank": {
       "current": 4
      },
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -101,10 +105,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
-       "value": 3
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -162,14 +170,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Bianca Andreescu",
    "alias": "Bianca Andreescu",
    "name": "Bianca Andreescu",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Katherine Hui",
@@ -181,7 +189,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T23:44:32.562Z",
+ "updated": "2026-10-27T23:50:06.514Z",
  "open_taken_at": "2026-10-26T05:02:56.993Z",
  "thresholds": {
   "big": 10,
@@ -233,28 +241,6 @@
    "taken_at": "2026-10-27T23:37:51.822Z"
   },
   {
-   "market_id": "1818017",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Katherine Hui cover 1.5 vs the Bianca Andreescu in Katherine Hui vs. Bianca Andreescu?",
-   "sides": [
-    "Katherine Hui +1.50 (Games)",
-    "Bianca Andreescu -1.50 (Games)"
-   ],
-   "teams": [
-    "Katherine Hui",
-    "Bianca Andreescu"
-   ],
-   "player": null,
-   "mid": 12.5,
-   "yes_buy": 14,
-   "no_buy": 89,
-   "taken_at": "2026-10-27T23:37:51.822Z"
-  },
-  {
    "market_id": "1818018",
    "market": "Games spread",
    "group": "game",
@@ -274,6 +260,50 @@
    "mid": 8.5,
    "yes_buy": 9,
    "no_buy": 92,
+   "taken_at": "2026-10-27T23:37:51.822Z"
+  },
+  {
+   "market_id": "1818033",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Katherine Hui win set 2 against Bianca Andreescu?",
+   "sides": [
+    "Yes: Katherine Hui win set 2 against Bianca Andreescu",
+    "No: Katherine Hui win set 2 against Bianca Andreescu"
+   ],
+   "teams": [
+    "Katherine Hui",
+    null
+   ],
+   "player": null,
+   "mid": 10,
+   "yes_buy": 12,
+   "no_buy": 92,
+   "taken_at": "2026-10-27T23:50:06.514Z"
+  },
+  {
+   "market_id": "1818017",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Katherine Hui cover 1.5 vs the Bianca Andreescu in Katherine Hui vs. Bianca Andreescu?",
+   "sides": [
+    "Katherine Hui +1.50 (Games)",
+    "Bianca Andreescu -1.50 (Games)"
+   ],
+   "teams": [
+    "Katherine Hui",
+    "Bianca Andreescu"
+   ],
+   "player": null,
+   "mid": 12.5,
+   "yes_buy": 14,
+   "no_buy": 89,
    "taken_at": "2026-10-27T23:37:51.822Z"
   },
   {
