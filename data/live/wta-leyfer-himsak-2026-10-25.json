@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185659",
-  "fetched_at": "2026-10-27T07:37:56.556Z",
+  "fetched_at": "2026-10-27T07:43:33.138Z",
   "tennis": true,
   "tennis_match": {
    "id": "185659",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Leylah Fernandez (CAN) leads Himeno Sakatsume (JPN) 6-2 5-3",
+     "text": "Leylah Fernandez (CAN) leads Himeno Sakatsume (JPN) 6-2 5-4",
      "type": "event"
     }
    ],
@@ -55,14 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
        "value": 2,
        "winner": false
       },
       {
-       "value": 3
+       "value": 4
       }
      ],
      "athlete": {
@@ -102,7 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
        "value": 6,
@@ -186,35 +186,13 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T07:37:56.396Z",
+ "updated": "2026-10-27T07:43:33.021Z",
  "open_taken_at": "2026-10-24T07:03:04.177Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "1773583",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Leylah Fernandez cover -1.5 vs the Himeno Sakatsume in Leylah Fernandez vs. Himeno Sakatsume?",
-   "sides": [
-    "Leylah Fernandez -1.50 (Sets)",
-    "Himeno Sakatsume +1.50 (Sets)"
-   ],
-   "teams": [
-    "Leylah Fernandez",
-    "Himeno Sakatsume"
-   ],
-   "player": null,
-   "mid": 61.5,
-   "yes_buy": 64,
-   "no_buy": 41,
-   "taken_at": "2026-10-26T21:05:26.272Z"
-  },
   {
    "market_id": "1773594",
    "market": "Set 2 winner",
@@ -236,6 +214,50 @@
    "yes_buy": 85,
    "no_buy": 19,
    "taken_at": "2026-10-27T06:26:15.821Z"
+  },
+  {
+   "market_id": "1773581",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Leylah Fernandez cover -7.5 vs the Himeno Sakatsume in Leylah Fernandez vs. Himeno Sakatsume?",
+   "sides": [
+    "Leylah Fernandez -7.50 (Games)",
+    "Himeno Sakatsume +7.50 (Games)"
+   ],
+   "teams": [
+    "Leylah Fernandez",
+    "Himeno Sakatsume"
+   ],
+   "player": null,
+   "mid": 27.5,
+   "yes_buy": 30,
+   "no_buy": 75,
+   "taken_at": "2026-10-26T21:05:26.272Z"
+  },
+  {
+   "market_id": "1773583",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Leylah Fernandez cover -1.5 vs the Himeno Sakatsume in Leylah Fernandez vs. Himeno Sakatsume?",
+   "sides": [
+    "Leylah Fernandez -1.50 (Sets)",
+    "Himeno Sakatsume +1.50 (Sets)"
+   ],
+   "teams": [
+    "Leylah Fernandez",
+    "Himeno Sakatsume"
+   ],
+   "player": null,
+   "mid": 61.5,
+   "yes_buy": 64,
+   "no_buy": 41,
+   "taken_at": "2026-10-26T21:05:26.272Z"
   },
   {
    "market_id": "1773585",
@@ -392,28 +414,6 @@
    "taken_at": "2026-10-25T09:33:06.580Z"
   },
   {
-   "market_id": "1773581",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Leylah Fernandez cover -7.5 vs the Himeno Sakatsume in Leylah Fernandez vs. Himeno Sakatsume?",
-   "sides": [
-    "Leylah Fernandez -7.50 (Games)",
-    "Himeno Sakatsume +7.50 (Games)"
-   ],
-   "teams": [
-    "Leylah Fernandez",
-    "Himeno Sakatsume"
-   ],
-   "player": null,
-   "mid": 27.5,
-   "yes_buy": 30,
-   "no_buy": 75,
-   "taken_at": "2026-10-26T21:05:26.272Z"
-  },
-  {
    "market_id": "1773586",
    "market": "Games total",
    "group": "game",
@@ -520,7 +520,7 @@
    "reason": null,
    "context": "Himeno Sakatsume 2, 3 · Leylah Fernandez 6, 5 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T06:19:51.338Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -540,46 +540,6 @@
    "reason": null,
    "context": "Himeno Sakatsume 2, 1 · Leylah Fernandez 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T07:08:17.740Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1773581:1",
-   "market_id": "1773581",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Leylah Fernandez cover -7.5 vs the Himeno Sakatsume in Leylah Fernandez vs. Himeno Sakatsume?",
-   "side": "Himeno Sakatsume +7.50 (Games)",
-   "open_chance": 75,
-   "now_chance": 67,
-   "open_odds": "-300",
-   "now_odds": "-203",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Himeno Sakatsume 2, 1 · Leylah Fernandez 6, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T06:50:49.678Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1773581:0",
-   "market_id": "1773581",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Leylah Fernandez cover -7.5 vs the Himeno Sakatsume in Leylah Fernandez vs. Himeno Sakatsume?",
-   "side": "Leylah Fernandez -7.50 (Games)",
-   "open_chance": 30,
-   "now_chance": 24,
-   "open_odds": "+233",
-   "now_odds": "+317",
-   "edge": 6,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Leylah Fernandez not above the games spread right now",
-   "context": "Himeno Sakatsume 2, 2 · Leylah Fernandez 6, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T07:17:52.485Z",
    "status": "gone",
    "kalshi": null
   },
@@ -631,34 +591,6 @@
    "now_chance": 59,
    "edge": 8,
    "text": "Edge gone: Over 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-leyfer-himsak-2026-10-25"
-  },
-  {
-   "id": "gone:1773581:1:2026-10-27T06:50:49.678Z",
-   "key": "1773581:1",
-   "at": "2026-10-27T07:11:48.102Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Himeno Sakatsume +7.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-203",
-   "now_chance": 67,
-   "edge": 8,
-   "text": "Edge gone: Himeno Sakatsume +7.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-leyfer-himsak-2026-10-25"
-  },
-  {
-   "id": "new_edge:1773581:1:big",
-   "key": "1773581:1",
-   "at": "2026-10-27T07:02:47.004Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Himeno Sakatsume +7.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-156",
-   "now_chance": 61,
-   "edge": 14,
-   "text": "New big edge: Himeno Sakatsume +7.50 (Games) (Games spread), 14 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-leyfer-himsak-2026-10-25"
   },
   {
