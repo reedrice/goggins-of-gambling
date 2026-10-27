@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892598",
-  "fetched_at": "2026-10-27T11:38:34.390Z",
+  "fetched_at": "2026-10-27T11:41:52.333Z",
   "game_state": "pre",
   "espn_status": "STATUS_SCHEDULED",
   "period": 0,
@@ -100,7 +100,7 @@
    }
   ]
  },
- "updated": "2026-10-27T11:38:34.121Z",
+ "updated": "2026-10-27T11:41:52.249Z",
  "open_taken_at": "2026-10-27T05:05:47.094Z",
  "thresholds": {
   "big": 10,
@@ -152,8 +152,30 @@
    "taken_at": "2026-10-27T11:00:57.748Z"
   },
   {
-   "market_id": "1739698",
+   "market_id": "1739697",
    "market": "Main total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 6.5,
+   "question": "Will the total in NJD vs COL be more than 6.5?",
+   "sides": [
+    "Over 6.5",
+    "Under 6.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 49.5,
+   "yes_buy": 50,
+   "no_buy": 51,
+   "taken_at": "2026-10-27T05:11:47.617Z"
+  },
+  {
+   "market_id": "1739698",
+   "market": "Alt total",
    "group": "game",
    "mtype": "total",
    "period": "full_game",
@@ -194,35 +216,13 @@
    "yes_buy": 13,
    "no_buy": 90,
    "taken_at": "2026-10-27T05:05:47.094Z"
-  },
-  {
-   "market_id": "1739697",
-   "market": "Main total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 6.5,
-   "question": "Will the total in NJD vs COL be more than 6.5?",
-   "sides": [
-    "Over 6.5",
-    "Under 6.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 49.5,
-   "yes_buy": 50,
-   "no_buy": 51,
-   "taken_at": "2026-10-27T05:11:47.617Z"
   }
  ],
  "edges": [
   {
    "key": "1739698:1",
    "market_id": "1739698",
-   "market": "Main total",
+   "market": "Alt total",
    "group": "game",
    "question": "Will the total in NJD vs COL be more than 7.5?",
    "side": "Under 7.5",
@@ -237,7 +237,7 @@
    "context": "Pregame",
    "first_seen": "2026-10-27T11:38:34.121Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1739686:0",
@@ -263,7 +263,7 @@
  "alerts": [],
  "alert_seen": [],
  "kalshi_checked": {
-  "at": "2026-10-27T11:38:34.600Z",
+  "at": "2026-10-27T11:41:52.446Z",
   "event": "26OCT28NJCOL"
  }
 }
