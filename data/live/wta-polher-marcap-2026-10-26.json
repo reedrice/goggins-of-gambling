@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185804",
-  "fetched_at": "2026-10-27T18:15:22.531Z",
+  "fetched_at": "2026-10-27T18:24:55.739Z",
   "tennis": true,
   "tennis_match": {
    "id": "185804",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Polona Hercog (SLO) leads Martina Capurro Taborda (ARG) 7-6 (7-4)",
+     "text": "Martina Capurro Taborda (ARG) is tied with Polona Hercog (SLO) 6-7 (4-7) 1-0",
      "type": "event"
     }
    ],
@@ -55,10 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 6,
-       "tiebreak": 4
+       "tiebreak": 4,
+       "winner": false
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -98,10 +103,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 7,
-       "tiebreak": 7
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -136,6 +146,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1034,
    "type": {
     "id": "2",
@@ -154,8 +169,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Martina Capurro Taborda",
@@ -167,13 +182,13 @@
    "abbr": "Polona Hercog",
    "alias": "Polona Hercog",
    "name": "Polona Hercog",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T18:15:22.407Z",
+ "updated": "2026-10-27T18:24:55.652Z",
  "open_taken_at": "2026-10-25T23:34:40.900Z",
  "thresholds": {
   "big": 10,
@@ -201,182 +216,6 @@
    "yes_buy": 79,
    "no_buy": 22,
    "taken_at": "2026-10-26T17:04:11.158Z"
-  },
-  {
-   "market_id": "1818001",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Polona Hercog cover 4.5 vs the Martina Capurro Taborda in Polona Hercog vs. Martina Capurro Taborda?",
-   "sides": [
-    "Polona Hercog +4.50 (Games)",
-    "Martina Capurro -4.50 (Games)"
-   ],
-   "teams": [
-    "Polona Hercog",
-    "Martina Capurro"
-   ],
-   "player": null,
-   "mid": 77.5,
-   "yes_buy": 78,
-   "no_buy": 23,
-   "taken_at": "2026-10-27T16:47:05.745Z"
-  },
-  {
-   "market_id": "1818007",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Polona Hercog vs. Martina Capurro Taborda be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 36.5,
-   "yes_buy": 37,
-   "no_buy": 64,
-   "taken_at": "2026-10-27T16:47:05.745Z"
-  },
-  {
-   "market_id": "1818000",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Polona Hercog cover -4.5 vs the Martina Capurro Taborda in Polona Hercog vs. Martina Capurro Taborda?",
-   "sides": [
-    "Polona Hercog -4.50 (Games)",
-    "Martina Capurro +4.50 (Games)"
-   ],
-   "teams": [
-    "Polona Hercog",
-    "Martina Capurro"
-   ],
-   "player": null,
-   "mid": 57.5,
-   "yes_buy": 59,
-   "no_buy": 44,
-   "taken_at": "2026-10-27T09:43:02.972Z"
-  },
-  {
-   "market_id": "1817998",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Polona Hercog cover -1.5 vs the Martina Capurro Taborda in Polona Hercog vs. Martina Capurro Taborda?",
-   "sides": [
-    "Polona Hercog -1.50 (Games)",
-    "Martina Capurro +1.50 (Games)"
-   ],
-   "teams": [
-    "Polona Hercog",
-    "Martina Capurro"
-   ],
-   "player": null,
-   "mid": 67.5,
-   "yes_buy": 68,
-   "no_buy": 33,
-   "taken_at": "2026-10-27T16:47:05.745Z"
-  },
-  {
-   "market_id": "1818009",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Polona Hercog vs. Martina Capurro Taborda be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 40.5,
-   "yes_buy": 41,
-   "no_buy": 60,
-   "taken_at": "2026-10-27T16:47:05.745Z"
-  },
-  {
-   "market_id": "1818008",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Polona Hercog vs. Martina Capurro Taborda be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 24,
-   "yes_buy": 25,
-   "no_buy": 77,
-   "taken_at": "2026-10-27T17:21:19.777Z"
-  },
-  {
-   "market_id": "1818014",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Polona Hercog win set 1 against Martina Capurro Taborda?",
-   "sides": [
-    "Yes: Polona Hercog win set 1 against Martina Capurro Taborda",
-    "No: Polona Hercog win set 1 against Martina Capurro Taborda"
-   ],
-   "teams": [
-    "Polona Hercog",
-    null
-   ],
-   "player": null,
-   "mid": 78,
-   "yes_buy": 79,
-   "no_buy": 23,
-   "taken_at": "2026-10-27T17:13:18.309Z"
-  },
-  {
-   "market_id": "1818005",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Polona Hercog cover 1.5 vs the Martina Capurro Taborda in Polona Hercog vs. Martina Capurro Taborda?",
-   "sides": [
-    "Polona Hercog +1.50 (Sets)",
-    "Martina Capurro -1.50 (Sets)"
-   ],
-   "teams": [
-    "Polona Hercog",
-    "Martina Capurro"
-   ],
-   "player": null,
-   "mid": 82.5,
-   "yes_buy": 83,
-   "no_buy": 18,
-   "taken_at": "2026-10-27T16:47:05.745Z"
   },
   {
    "market_id": "1818003",
@@ -420,6 +259,204 @@
    "mid": 71.5,
    "yes_buy": 72,
    "no_buy": 29,
+   "taken_at": "2026-10-27T16:47:05.745Z"
+  },
+  {
+   "market_id": "1817998",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Polona Hercog cover -1.5 vs the Martina Capurro Taborda in Polona Hercog vs. Martina Capurro Taborda?",
+   "sides": [
+    "Polona Hercog -1.50 (Games)",
+    "Martina Capurro +1.50 (Games)"
+   ],
+   "teams": [
+    "Polona Hercog",
+    "Martina Capurro"
+   ],
+   "player": null,
+   "mid": 67.5,
+   "yes_buy": 68,
+   "no_buy": 33,
+   "taken_at": "2026-10-27T16:47:05.745Z"
+  },
+  {
+   "market_id": "1818015",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Polona Hercog win set 2 against Martina Capurro Taborda?",
+   "sides": [
+    "Yes: Polona Hercog win set 2 against Martina Capurro Taborda",
+    "No: Polona Hercog win set 2 against Martina Capurro Taborda"
+   ],
+   "teams": [
+    "Polona Hercog",
+    null
+   ],
+   "player": null,
+   "mid": 65.5,
+   "yes_buy": 66,
+   "no_buy": 35,
+   "taken_at": "2026-10-27T18:24:55.652Z"
+  },
+  {
+   "market_id": "1818007",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Polona Hercog vs. Martina Capurro Taborda be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 36.5,
+   "yes_buy": 37,
+   "no_buy": 64,
+   "taken_at": "2026-10-27T16:47:05.745Z"
+  },
+  {
+   "market_id": "1818008",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Polona Hercog vs. Martina Capurro Taborda be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 24,
+   "yes_buy": 25,
+   "no_buy": 77,
+   "taken_at": "2026-10-27T17:21:19.777Z"
+  },
+  {
+   "market_id": "1818001",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Polona Hercog cover 4.5 vs the Martina Capurro Taborda in Polona Hercog vs. Martina Capurro Taborda?",
+   "sides": [
+    "Polona Hercog +4.50 (Games)",
+    "Martina Capurro -4.50 (Games)"
+   ],
+   "teams": [
+    "Polona Hercog",
+    "Martina Capurro"
+   ],
+   "player": null,
+   "mid": 77.5,
+   "yes_buy": 78,
+   "no_buy": 23,
+   "taken_at": "2026-10-27T16:47:05.745Z"
+  },
+  {
+   "market_id": "1818000",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Polona Hercog cover -4.5 vs the Martina Capurro Taborda in Polona Hercog vs. Martina Capurro Taborda?",
+   "sides": [
+    "Polona Hercog -4.50 (Games)",
+    "Martina Capurro +4.50 (Games)"
+   ],
+   "teams": [
+    "Polona Hercog",
+    "Martina Capurro"
+   ],
+   "player": null,
+   "mid": 57.5,
+   "yes_buy": 59,
+   "no_buy": 44,
+   "taken_at": "2026-10-27T09:43:02.972Z"
+  },
+  {
+   "market_id": "1818009",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Polona Hercog vs. Martina Capurro Taborda be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 40.5,
+   "yes_buy": 41,
+   "no_buy": 60,
+   "taken_at": "2026-10-27T16:47:05.745Z"
+  },
+  {
+   "market_id": "1818014",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Polona Hercog win set 1 against Martina Capurro Taborda?",
+   "sides": [
+    "Yes: Polona Hercog win set 1 against Martina Capurro Taborda",
+    "No: Polona Hercog win set 1 against Martina Capurro Taborda"
+   ],
+   "teams": [
+    "Polona Hercog",
+    null
+   ],
+   "player": null,
+   "mid": 78,
+   "yes_buy": 79,
+   "no_buy": 23,
+   "taken_at": "2026-10-27T17:13:18.309Z"
+  },
+  {
+   "market_id": "1818005",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Polona Hercog cover 1.5 vs the Martina Capurro Taborda in Polona Hercog vs. Martina Capurro Taborda?",
+   "sides": [
+    "Polona Hercog +1.50 (Sets)",
+    "Martina Capurro -1.50 (Sets)"
+   ],
+   "teams": [
+    "Polona Hercog",
+    "Martina Capurro"
+   ],
+   "player": null,
+   "mid": 82.5,
+   "yes_buy": 83,
+   "no_buy": 18,
    "taken_at": "2026-10-27T16:47:05.745Z"
   },
   {
@@ -476,55 +513,35 @@
    "question": "Will the total in Polona Hercog vs. Martina Capurro Taborda be more than 22.5?",
    "side": "Under 22.5 (Games)",
    "open_chance": 64,
-   "now_chance": 48,
+   "now_chance": 38,
    "open_odds": "-178",
-   "now_odds": "+108",
-   "edge": 16,
+   "now_odds": "+163",
+   "edge": 26,
    "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Martina Capurro Taborda 6 · Polona Hercog 7 · 1st Set (games by set)",
+   "class": "news",
+   "reason": "Big move (26 pts), likely news",
+   "context": "Martina Capurro Taborda 6, 1 · Polona Hercog 7, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T17:38:56.529Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1818000:0",
-   "market_id": "1818000",
+   "key": "1817998:1",
+   "market_id": "1817998",
    "market": "Games spread",
    "group": "game",
-   "question": "Will the Polona Hercog cover -4.5 vs the Martina Capurro Taborda in Polona Hercog vs. Martina Capurro Taborda?",
-   "side": "Polona Hercog -4.50 (Games)",
-   "open_chance": 59,
-   "now_chance": 46,
-   "open_odds": "-144",
-   "now_odds": "+117",
+   "question": "Will the Polona Hercog cover -1.5 vs the Martina Capurro Taborda in Polona Hercog vs. Martina Capurro Taborda?",
+   "side": "Martina Capurro +1.50 (Games)",
+   "open_chance": 33,
+   "now_chance": 20,
+   "open_odds": "+203",
+   "now_odds": "+400",
    "edge": 13,
    "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Polona Hercog not above the games spread right now",
-   "context": "Martina Capurro Taborda 6 · Polona Hercog 7 · 1st Set (games by set)",
-   "first_seen": "2026-10-27T17:29:39.050Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1818001:1",
-   "market_id": "1818001",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Polona Hercog cover 4.5 vs the Martina Capurro Taborda in Polona Hercog vs. Martina Capurro Taborda?",
-   "side": "Martina Capurro -4.50 (Games)",
-   "open_chance": 23,
-   "now_chance": 17,
-   "open_odds": "+335",
-   "now_odds": "+488",
-   "edge": 6,
-   "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Martina Capurro Taborda 6 · Polona Hercog 7 · 1st Set (games by set)",
-   "first_seen": "2026-10-27T17:49:47.161Z",
+   "context": "Martina Capurro Taborda 6, 1 · Polona Hercog 7, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T18:08:31.929Z",
    "status": "open",
    "kalshi": null
   },
@@ -569,22 +586,22 @@
    "kalshi": null
   },
   {
-   "key": "1817998:1",
-   "market_id": "1817998",
+   "key": "1818000:0",
+   "market_id": "1818000",
    "market": "Games spread",
    "group": "game",
-   "question": "Will the Polona Hercog cover -1.5 vs the Martina Capurro Taborda in Polona Hercog vs. Martina Capurro Taborda?",
-   "side": "Martina Capurro +1.50 (Games)",
-   "open_chance": 33,
-   "now_chance": 25,
-   "open_odds": "+203",
-   "now_odds": "+300",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Martina Capurro Taborda 6 · Polona Hercog 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-27T18:08:31.929Z",
+   "question": "Will the Polona Hercog cover -4.5 vs the Martina Capurro Taborda in Polona Hercog vs. Martina Capurro Taborda?",
+   "side": "Polona Hercog -4.50 (Games)",
+   "open_chance": 59,
+   "now_chance": 46,
+   "open_odds": "-144",
+   "now_odds": "+117",
+   "edge": 13,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Polona Hercog not above the games spread right now",
+   "context": "Martina Capurro Taborda 6 · Polona Hercog 7 · 1st Set (games by set)",
+   "first_seen": "2026-10-27T17:29:39.050Z",
    "status": "gone",
    "kalshi": null
   },
@@ -605,6 +622,26 @@
    "reason": null,
    "context": "Martina Capurro Taborda 0 · Polona Hercog 1 · 1st Set (games by set)",
    "first_seen": "2026-10-27T17:13:18.309Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1818001:1",
+   "market_id": "1818001",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Polona Hercog cover 4.5 vs the Martina Capurro Taborda in Polona Hercog vs. Martina Capurro Taborda?",
+   "side": "Martina Capurro -4.50 (Games)",
+   "open_chance": 23,
+   "now_chance": 17,
+   "open_odds": "+335",
+   "now_odds": "+488",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Martina Capurro Taborda 6 · Polona Hercog 7 · 1st Set (games by set)",
+   "first_seen": "2026-10-27T17:49:47.161Z",
    "status": "gone",
    "kalshi": null
   },
@@ -630,6 +667,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1817998:1:big",
+   "key": "1817998:1",
+   "at": "2026-10-27T18:24:55.652Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Martina Capurro +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+400",
+   "now_chance": 20,
+   "edge": 13,
+   "text": "New big edge: Martina Capurro +1.50 (Games) (Games spread), 13 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-polher-marcap-2026-10-26"
+  },
+  {
+   "id": "gone:1818001:1:2026-10-27T17:49:47.161Z",
+   "key": "1818001:1",
+   "at": "2026-10-27T18:24:55.652Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Martina Capurro -4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+488",
+   "now_chance": 17,
+   "edge": 6,
+   "text": "Edge gone: Martina Capurro -4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-polher-marcap-2026-10-26"
+  },
   {
    "id": "gone:1817998:1:2026-10-27T18:08:31.929Z",
    "key": "1817998:1",
@@ -801,7 +866,9 @@
   "new_edge:1818008:1:slight",
   "gone:1816668:0:2026-10-27T17:38:56.529Z",
   "gone:1817998:1:2026-10-27T18:08:31.929Z",
-  "gone:1818008:1:2026-10-27T18:08:31.929Z"
+  "gone:1818008:1:2026-10-27T18:08:31.929Z",
+  "new_edge:1817998:1:big",
+  "gone:1818001:1:2026-10-27T17:49:47.161Z"
  ],
  "kalshi_checked": null
 }
