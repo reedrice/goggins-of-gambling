@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185162",
-  "fetched_at": "2026-10-27T20:07:27.473Z",
+  "fetched_at": "2026-10-27T20:13:30.424Z",
   "tennis": true,
   "tennis_match": {
    "id": "185162",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Arthur Reymond (FRA) & Luca Sanchez (FRA) leads (4) Francisco Cabral (POR) & JJ Tracy (USA) 1-0",
+     "text": "(4) Francisco Cabral (POR) & JJ Tracy (USA) leads Arthur Reymond (FRA) & Luca Sanchez (FRA) 1-1",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
        "value": 1
@@ -132,12 +133,13 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 4
      },
      "linescores": [
       {
-       "value": 0
+       "value": 1
       }
      ],
      "roster": {
@@ -207,6 +209,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 23,
    "type": {
     "id": "3",
@@ -244,7 +251,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T20:07:27.375Z",
+ "updated": "2026-10-27T20:13:30.327Z",
  "open_taken_at": "2026-10-26T05:02:53.322Z",
  "thresholds": {
   "big": 10,
@@ -292,11 +299,25 @@
    "reason": null,
    "context": "Arthur Reymond / Luca Sanchez 1 · Francisco Cabral / JJ Tracy 0 · 1st Set (games by set)",
    "first_seen": "2026-10-26T15:16:21.596Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1807399:0:2026-10-26T15:16:21.596Z",
+   "key": "1807399:0",
+   "at": "2026-10-27T20:13:30.327Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Cabral / Tracy win",
+   "market": "Moneyline",
+   "now_odds": "-233",
+   "now_chance": 70,
+   "edge": 7,
+   "text": "Edge gone: Cabral / Tracy win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-cabtra-reysan-2026-10-27"
+  },
   {
    "id": "new_edge:1807399:0:slight",
    "key": "1807399:0",
@@ -313,7 +334,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1807399:0:slight"
+  "new_edge:1807399:0:slight",
+  "gone:1807399:0:2026-10-26T15:16:21.596Z"
  ],
  "kalshi_checked": null
 }
