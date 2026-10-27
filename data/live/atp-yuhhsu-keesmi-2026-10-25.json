@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-27T04:35:29.420Z"
+  "fetched_at": "2026-10-27T04:41:44.493Z"
  },
- "updated": "2026-10-27T04:35:29.368Z",
+ "updated": "2026-10-27T04:41:44.418Z",
  "open_taken_at": "2026-10-24T13:01:21.711Z",
  "thresholds": {
   "big": 10,
@@ -83,6 +83,28 @@
    "yes_buy": 67,
    "no_buy": 34,
    "taken_at": "2026-10-27T03:08:48.306Z"
+  },
+  {
+   "market_id": "1773101",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Yu Hsiou Hsu cover 1.5 vs the Keegan Smith in Yu Hsiou Hsu vs. Keegan Smith?",
+   "sides": [
+    "Yu-Hsiou Hsu +1.50 (Games)",
+    "Keegan Smith -1.50 (Games)"
+   ],
+   "teams": [
+    "Yu-Hsiou Hsu",
+    "Keegan Smith"
+   ],
+   "player": null,
+   "mid": 47.5,
+   "yes_buy": 49,
+   "no_buy": 54,
+   "taken_at": "2026-10-26T18:05:44.461Z"
   },
   {
    "market_id": "1773109",
@@ -305,28 +327,6 @@
    "taken_at": "2026-10-27T03:08:48.306Z"
   },
   {
-   "market_id": "1773101",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Yu Hsiou Hsu cover 1.5 vs the Keegan Smith in Yu Hsiou Hsu vs. Keegan Smith?",
-   "sides": [
-    "Yu-Hsiou Hsu +1.50 (Games)",
-    "Keegan Smith -1.50 (Games)"
-   ],
-   "teams": [
-    "Yu-Hsiou Hsu",
-    "Keegan Smith"
-   ],
-   "player": null,
-   "mid": 47.5,
-   "yes_buy": 49,
-   "no_buy": 54,
-   "taken_at": "2026-10-26T18:05:44.461Z"
-  },
-  {
    "market_id": "1773106",
    "market": "Sets spread",
    "group": "game",
@@ -358,15 +358,35 @@
    "question": "Who will win in the upcoming atp event Yu Hsiou Hsu vs Keegan Smith scheduled for October 26, 2026 at 3:00 AM UTC?",
    "side": "Keegan Smith win",
    "open_chance": 71,
-   "now_chance": 53,
+   "now_chance": 36,
    "open_odds": "-245",
-   "now_odds": "-113",
-   "edge": 18,
+   "now_odds": "+178",
+   "edge": 35,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-27T04:35:29.368Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1773101:1",
+   "market_id": "1773101",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Yu Hsiou Hsu cover 1.5 vs the Keegan Smith in Yu Hsiou Hsu vs. Keegan Smith?",
+   "side": "Keegan Smith -1.50 (Games)",
+   "open_chance": 54,
+   "now_chance": 46,
+   "open_odds": "-117",
+   "now_odds": "+117",
+   "edge": 8,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-27T04:41:44.418Z",
    "status": "open",
    "kalshi": null
   },
@@ -532,6 +552,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1773101:1:slight",
+   "key": "1773101:1",
+   "at": "2026-10-27T04:41:44.418Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Keegan Smith -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+117",
+   "now_chance": 46,
+   "edge": 8,
+   "text": "New slight edge: Keegan Smith -1.50 (Games) (Games spread), 8 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-yuhhsu-keesmi-2026-10-25"
+  },
   {
    "id": "gone:1773104:0:2026-10-27T04:08:53.087Z",
    "key": "1773104:0",
@@ -795,7 +829,8 @@
   "gone:1773107:0:2026-10-27T04:08:53.087Z",
   "gone:1773117:0:2026-10-27T04:08:53.087Z",
   "gone:1773104:0:2026-10-27T04:08:53.087Z",
-  "gone:1754034:0:2026-10-27T04:08:53.087Z"
+  "gone:1754034:0:2026-10-27T04:08:53.087Z",
+  "new_edge:1773101:1:slight"
  ],
  "kalshi_checked": null
 }
