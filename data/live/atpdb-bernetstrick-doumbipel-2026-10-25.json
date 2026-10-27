@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185167",
-  "fetched_at": "2026-10-27T18:24:48.986Z",
+  "fetched_at": "2026-10-27T18:33:23.777Z",
   "tennis": true,
   "tennis_match": {
    "id": "185167",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Tue, October 27th at 2:20 PM EDT",
-     "shortDetail": "10/27 - 2:20 PM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Henry Bernet (SUI) & Dominic Stricker (SUI) leads Sadio Doumbia (FRA) & David Pel (NED) 1-1",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "roster": {
       "displayName": "Sadio Doumbia / David Pel",
       "shortDisplayName": "S. Doumbia / D. Pel",
@@ -122,6 +133,12 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "roster": {
       "displayName": "Henry Bernet / Dominic Stricker",
       "shortDisplayName": "H. Bernet / D. Stricker",
@@ -189,6 +206,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 23,
    "type": {
     "id": "3",
@@ -205,10 +227,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Tue, October 27th at 2:20 PM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Sadio Doumbia / David Pel",
@@ -226,7 +248,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T18:24:48.900Z",
+ "updated": "2026-10-27T18:33:23.634Z",
  "open_taken_at": "2026-10-24T12:44:24.253Z",
  "thresholds": {
   "big": 10,
@@ -258,6 +280,26 @@
  ],
  "edges": [
   {
+   "key": "1753563:1",
+   "market_id": "1753563",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atpdb event Bernet / Stricker vs Doumbia / Pel scheduled for October 25, 2026 at 9:00 AM UTC?",
+   "side": "Doumbia S / Pel D win",
+   "open_chance": 57,
+   "now_chance": 46,
+   "open_odds": "-133",
+   "now_odds": "+117",
+   "edge": 11,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Sadio Doumbia / David Pel 1 · Henry Bernet / Dominic Stricker 1 · 1st Set (games by set)",
+   "first_seen": "2026-10-27T18:33:23.634Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1753563:0",
    "market_id": "1753563",
    "market": "Moneyline",
@@ -274,11 +316,39 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-26T18:57:47.663Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1753563:1:big",
+   "key": "1753563:1",
+   "at": "2026-10-27T18:33:23.634Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Doumbia S / Pel D win",
+   "market": "Moneyline",
+   "now_odds": "+117",
+   "now_chance": 46,
+   "edge": 11,
+   "text": "New big edge: Doumbia S / Pel D win (Moneyline), 11 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-bernetstrick-doumbipel-2026-10-25"
+  },
+  {
+   "id": "gone:1753563:0:2026-10-26T18:57:47.663Z",
+   "key": "1753563:0",
+   "at": "2026-10-27T18:33:23.634Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Bernet H / Stricker D win",
+   "market": "Moneyline",
+   "now_odds": "+178",
+   "now_chance": 36,
+   "edge": 8,
+   "text": "Edge gone: Bernet H / Stricker D win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-bernetstrick-doumbipel-2026-10-25"
+  },
   {
    "id": "new_edge:1753563:0:slight",
    "key": "1753563:0",
@@ -295,7 +365,9 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1753563:0:slight"
+  "new_edge:1753563:0:slight",
+  "new_edge:1753563:1:big",
+  "gone:1753563:0:2026-10-26T18:57:47.663Z"
  ],
  "kalshi_checked": null
 }

@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185790",
-  "fetched_at": "2026-10-27T18:24:58.065Z",
+  "fetched_at": "2026-10-27T18:33:33.602Z",
   "tennis": true,
   "tennis_match": {
    "id": "185790",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Tue, October 27th at 2:20 PM EDT",
-     "shortDetail": "10/27 - 2:20 PM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Marian Gomez Pezuela Cano (MEX) leads Carmen Andreea Herea (ROM) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "90dfdb27-b663-3533-a273-44885cf7b691",
       "displayName": "Carmen Andreea Herea",
@@ -87,6 +98,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "65091b47-eee0-34a2-bfd8-5c9af208a33f",
       "displayName": "Marian Gomez Pezuela Cano",
@@ -119,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1034,
    "type": {
     "id": "2",
@@ -135,10 +157,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Tue, October 27th at 2:20 PM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Carmen Andreea Herea",
@@ -156,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T18:24:57.959Z",
+ "updated": "2026-10-27T18:33:33.491Z",
  "open_taken_at": "2026-10-27T04:17:48.462Z",
  "thresholds": {
   "big": 10,
@@ -184,6 +206,72 @@
    "yes_buy": 9,
    "no_buy": 96,
    "taken_at": "2026-10-27T07:12:05.269Z"
+  },
+  {
+   "market_id": "1859209",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Marian Gomez Pezuela Cano cover 1.5 vs the Carmen Andreea Herea in Marian Gomez Pezuela Cano vs. Carmen Andreea Herea?",
+   "sides": [
+    "Marian Gomez Pezuela Cano +1.50 (Sets)",
+    "Carmen Andreea Herea -1.50 (Sets)"
+   ],
+   "teams": [
+    "Marian Gomez Pezuela Cano",
+    "Carmen Andreea Herea"
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-10-27T18:08:34.251Z"
+  },
+  {
+   "market_id": "1859201",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Marian Gomez Pezuela Cano cover 4.5 vs the Carmen Andreea Herea in Marian Gomez Pezuela Cano vs. Carmen Andreea Herea?",
+   "sides": [
+    "Marian Gomez Pezuela Cano +4.50 (Games)",
+    "Carmen Andreea Herea -4.50 (Games)"
+   ],
+   "teams": [
+    "Marian Gomez Pezuela Cano",
+    "Carmen Andreea Herea"
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-10-27T18:08:34.251Z"
+  },
+  {
+   "market_id": "1859218",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Marian Gomez Pezuela Cano vs. Carmen Andreea Herea be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-10-27T18:08:34.251Z"
   },
   {
    "market_id": "1859205",
@@ -252,28 +340,6 @@
    "taken_at": "2026-10-27T18:08:34.251Z"
   },
   {
-   "market_id": "1859201",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Marian Gomez Pezuela Cano cover 4.5 vs the Carmen Andreea Herea in Marian Gomez Pezuela Cano vs. Carmen Andreea Herea?",
-   "sides": [
-    "Marian Gomez Pezuela Cano +4.50 (Games)",
-    "Carmen Andreea Herea -4.50 (Games)"
-   ],
-   "teams": [
-    "Marian Gomez Pezuela Cano",
-    "Carmen Andreea Herea"
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-10-27T18:08:34.251Z"
-  },
-  {
    "market_id": "1859211",
    "market": "Games total",
    "group": "game",
@@ -284,50 +350,6 @@
    "sides": [
     "Over 17.5 (Games)",
     "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-10-27T18:08:34.251Z"
-  },
-  {
-   "market_id": "1859209",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Marian Gomez Pezuela Cano cover 1.5 vs the Carmen Andreea Herea in Marian Gomez Pezuela Cano vs. Carmen Andreea Herea?",
-   "sides": [
-    "Marian Gomez Pezuela Cano +1.50 (Sets)",
-    "Carmen Andreea Herea -1.50 (Sets)"
-   ],
-   "teams": [
-    "Marian Gomez Pezuela Cano",
-    "Carmen Andreea Herea"
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-10-27T18:08:34.251Z"
-  },
-  {
-   "market_id": "1859218",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Marian Gomez Pezuela Cano vs. Carmen Andreea Herea be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
    ],
    "teams": [
     null,
@@ -430,22 +452,22 @@
  ],
  "edges": [
   {
-   "key": "1859205:1",
-   "market_id": "1859205",
+   "key": "1859201:0",
+   "market_id": "1859201",
    "market": "Games spread",
    "group": "game",
-   "question": "Will the Marian Gomez Pezuela Cano cover 7.5 vs the Carmen Andreea Herea in Marian Gomez Pezuela Cano vs. Carmen Andreea Herea?",
-   "side": "Carmen Andreea Herea -7.50 (Games)",
-   "open_chance": 59,
-   "now_chance": 54,
-   "open_odds": "-144",
-   "now_odds": "-117",
-   "edge": 5,
-   "tier": "slight",
+   "question": "Will the Marian Gomez Pezuela Cano cover 4.5 vs the Carmen Andreea Herea in Marian Gomez Pezuela Cano vs. Carmen Andreea Herea?",
+   "side": "Marian Gomez Pezuela Cano +4.50 (Games)",
+   "open_chance": 34,
+   "now_chance": 21,
+   "open_odds": "+194",
+   "now_odds": "+376",
+   "edge": 13,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-10-27T18:24:57.959Z",
+   "context": "Carmen Andreea Herea 0 · Marian Gomez Pezuela Cano 1 · 1st Set (games by set)",
+   "first_seen": "2026-10-27T18:33:33.491Z",
    "status": "open",
    "kalshi": null
   },
@@ -464,7 +486,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Carmen Andreea Herea 0 · Marian Gomez Pezuela Cano 1 · 1st Set (games by set)",
    "first_seen": "2026-10-27T18:24:57.959Z",
    "status": "open",
    "kalshi": null
@@ -488,9 +510,57 @@
    "first_seen": "2026-10-27T18:08:34.251Z",
    "status": "gone",
    "kalshi": null
+  },
+  {
+   "key": "1859205:1",
+   "market_id": "1859205",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Marian Gomez Pezuela Cano cover 7.5 vs the Carmen Andreea Herea in Marian Gomez Pezuela Cano vs. Carmen Andreea Herea?",
+   "side": "Carmen Andreea Herea -7.50 (Games)",
+   "open_chance": 59,
+   "now_chance": 54,
+   "open_odds": "-144",
+   "now_odds": "-117",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-10-27T18:24:57.959Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1859201:0:big",
+   "key": "1859201:0",
+   "at": "2026-10-27T18:33:33.491Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Marian Gomez Pezuela Cano +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+376",
+   "now_chance": 21,
+   "edge": 13,
+   "text": "New big edge: Marian Gomez Pezuela Cano +4.50 (Games) (Games spread), 13 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-marcan-carher-2026-10-27"
+  },
+  {
+   "id": "gone:1859205:1:2026-10-27T18:24:57.959Z",
+   "key": "1859205:1",
+   "at": "2026-10-27T18:33:33.491Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Carmen Andreea Herea -7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-117",
+   "now_chance": 54,
+   "edge": 5,
+   "text": "Edge gone: Carmen Andreea Herea -7.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-marcan-carher-2026-10-27"
+  },
   {
    "id": "new_edge:1859205:1:slight",
    "key": "1859205:1",
@@ -537,7 +607,9 @@
  "alert_seen": [
   "gone:1859205:0:2026-10-27T18:08:34.251Z",
   "new_edge:1859205:1:slight",
-  "new_edge:1859209:0:slight"
+  "new_edge:1859209:0:slight",
+  "new_edge:1859201:0:big",
+  "gone:1859205:1:2026-10-27T18:24:57.959Z"
  ],
  "kalshi_checked": null
 }

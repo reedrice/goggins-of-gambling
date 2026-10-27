@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185751",
-  "fetched_at": "2026-10-27T18:24:55.000Z",
+  "fetched_at": "2026-10-27T18:33:30.292Z",
   "tennis": true,
   "tennis_match": {
    "id": "185751",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Yasmine Kabbaj (LAO) leads Rebeca Pereira (BRA) 6-1",
+     "text": "Rebeca Pereira (BRA) is tied with Yasmine Kabbaj (LAO) 1-6 1-0",
      "type": "event"
     }
    ],
@@ -57,7 +57,11 @@
      "homeAway": "away",
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -98,6 +102,10 @@
      "order": 1,
      "homeAway": "home",
      "linescores": [
+      {
+       "value": 1,
+       "winner": false
+      },
       {
        "value": 1
       }
@@ -152,14 +160,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Yasmine Kabbaj",
    "alias": "Yasmine Kabbaj",
    "name": "Yasmine Kabbaj",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Rebeca Pereira",
@@ -171,13 +179,35 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-27T18:24:54.920Z",
+ "updated": "2026-10-27T18:33:30.128Z",
  "open_taken_at": "2026-10-26T05:02:54.551Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1817913",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Rebeca Pereira cover 7.5 vs the Yasmine Kabbaj in Rebeca Pereira vs. Yasmine Kabbaj?",
+   "sides": [
+    "Rebeca Pereira +7.50 (Games)",
+    "Yasmine Kabbaj -7.50 (Games)"
+   ],
+   "teams": [
+    "Rebeca Pereira",
+    "Yasmine Kabbaj"
+   ],
+   "player": null,
+   "mid": 17,
+   "yes_buy": 18,
+   "no_buy": 84,
+   "taken_at": "2026-10-27T18:33:30.128Z"
+  },
   {
    "market_id": "1817915",
    "market": "Sets spread",
