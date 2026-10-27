@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-27T13:46:15.872Z"
+  "fetched_at": "2026-10-27T13:52:27.038Z"
  },
- "updated": "2026-10-27T13:46:15.792Z",
+ "updated": "2026-10-27T13:52:26.961Z",
  "open_taken_at": "2026-10-26T17:04:13.390Z",
  "thresholds": {
   "big": 10,
@@ -41,28 +41,6 @@
    "taken_at": "2026-10-26T18:23:26.969Z"
   },
   {
-   "market_id": "1839153",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Tom Paris cover 4.5 vs the Borna Gojo in Tom Paris vs. Borna Gojo?",
-   "sides": [
-    "Tom Paris +4.50 (Games)",
-    "Borna Gojo -4.50 (Games)"
-   ],
-   "teams": [
-    "Tom Paris",
-    "Borna Gojo"
-   ],
-   "player": null,
-   "mid": 65,
-   "yes_buy": 66,
-   "no_buy": 36,
-   "taken_at": "2026-10-26T22:13:26.132Z"
-  },
-  {
    "market_id": "1839151",
    "market": "Games spread",
    "group": "game",
@@ -83,6 +61,28 @@
    "yes_buy": 33,
    "no_buy": 68,
    "taken_at": "2026-10-27T11:38:50.338Z"
+  },
+  {
+   "market_id": "1839153",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Tom Paris cover 4.5 vs the Borna Gojo in Tom Paris vs. Borna Gojo?",
+   "sides": [
+    "Tom Paris +4.50 (Games)",
+    "Borna Gojo -4.50 (Games)"
+   ],
+   "teams": [
+    "Tom Paris",
+    "Borna Gojo"
+   ],
+   "player": null,
+   "mid": 65,
+   "yes_buy": 66,
+   "no_buy": 36,
+   "taken_at": "2026-10-26T22:13:26.132Z"
   },
   {
    "market_id": "1839152",
@@ -351,26 +351,6 @@
  ],
  "edges": [
   {
-   "key": "1839153:1",
-   "market_id": "1839153",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Tom Paris cover 4.5 vs the Borna Gojo in Tom Paris vs. Borna Gojo?",
-   "side": "Borna Gojo -4.50 (Games)",
-   "open_chance": 36,
-   "now_chance": 22,
-   "open_odds": "+178",
-   "now_odds": "+355",
-   "edge": 14,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-27T12:20:08.662Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1839151:0",
    "market_id": "1839151",
    "market": "Games spread",
@@ -398,10 +378,10 @@
    "question": "Who will win in the upcoming atp event Tom Paris vs Borna Gojo scheduled for October 27, 2026 at 10:00 AM UTC?",
    "side": "Tom Paris win",
    "open_chance": 26,
-   "now_chance": 21,
+   "now_chance": 22,
    "open_odds": "+285",
-   "now_odds": "+376",
-   "edge": 5,
+   "now_odds": "+355",
+   "edge": 4,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -531,6 +511,26 @@
    "kalshi": null
   },
   {
+   "key": "1839153:1",
+   "market_id": "1839153",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Tom Paris cover 4.5 vs the Borna Gojo in Tom Paris vs. Borna Gojo?",
+   "side": "Borna Gojo -4.50 (Games)",
+   "open_chance": 36,
+   "now_chance": 22,
+   "open_odds": "+178",
+   "now_odds": "+355",
+   "edge": 14,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-27T12:20:08.662Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1839150:1",
    "market_id": "1839150",
    "market": "Games spread",
@@ -632,6 +632,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1839153:1:2026-10-27T12:20:08.662Z",
+   "key": "1839153:1",
+   "at": "2026-10-27T13:52:26.961Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Borna Gojo -4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+355",
+   "now_chance": 22,
+   "edge": 14,
+   "text": "Edge gone: Borna Gojo -4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-tompar-borgoj-2026-10-27"
+  },
   {
    "id": "gone:1839090:0:2026-10-27T13:32:10.017Z",
    "key": "1839090:0",
@@ -1061,7 +1075,8 @@
   "new_edge:1839090:0:slight",
   "gone:1839090:1:2026-10-27T11:01:15.932Z",
   "gone:1839150:1:2026-10-27T12:54:53.511Z",
-  "gone:1839090:0:2026-10-27T13:32:10.017Z"
+  "gone:1839090:0:2026-10-27T13:32:10.017Z",
+  "gone:1839153:1:2026-10-27T12:20:08.662Z"
  ],
  "kalshi_checked": null
 }
