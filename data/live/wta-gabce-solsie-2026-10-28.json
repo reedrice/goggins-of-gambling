@@ -4,12 +4,12 @@
  "game": "Gabriela CE vs. Solana Sierra",
  "url": "https://polymarket.us/sports/wta/wta-gabce-solsie-2026-10-28",
  "start_time": "2026-10-28T17:05:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185768",
-  "fetched_at": "2026-10-28T19:59:42.052Z",
+  "fetched_at": "2026-10-28T20:07:30.350Z",
   "tennis": true,
   "tennis_match": {
    "id": "185768",
@@ -17,17 +17,17 @@
    "date": "2026-10-28T17:10Z",
    "startDate": "2026-10-28T17:10Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(3) Solana Sierra (ARG) leads Gabriela Ce (BRA) 7-6 (7-2) 3-6 5-4",
+     "text": "(3) Solana Sierra (ARG) bt Gabriela Ce (BRA) 7-6 (7-2) 3-6 6-4",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "winner": true,
      "curatedRank": {
       "current": 3
      },
@@ -70,7 +70,8 @@
        "winner": false
       },
       {
-       "value": 5
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -110,7 +111,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "winner": false,
      "linescores": [
       {
        "value": 6,
@@ -122,7 +123,8 @@
        "winner": true
       },
       {
-       "value": 4
+       "value": 4,
+       "winner": false
       }
      ],
      "athlete": {
@@ -157,11 +159,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 1080,
    "type": {
     "id": "2",
@@ -178,16 +175,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Solana Sierra",
    "alias": "Solana Sierra",
    "name": "Solana Sierra",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Gabriela Ce",
@@ -199,7 +196,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T19:59:41.914Z",
+ "updated": "2026-10-28T20:07:30.202Z",
  "open_taken_at": "2026-10-27T17:49:54.415Z",
  "thresholds": {
   "big": 10,
@@ -517,26 +514,6 @@
  ],
  "edges": [
   {
-   "key": "1873382:0",
-   "market_id": "1873382",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Gabriela CE vs Solana Sierra scheduled for October 28, 2026 at 2:00 PM UTC?",
-   "side": "Gabriela Ce win",
-   "open_chance": 27,
-   "now_chance": 20,
-   "open_odds": "+270",
-   "now_odds": "+400",
-   "edge": 7,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Solana Sierra 7, 3, 5 · Gabriela Ce 6, 6, 4 · 3rd Set (games by set)",
-   "first_seen": "2026-10-28T19:59:41.914Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1875335:1",
    "market_id": "1875335",
    "market": "Games total",
@@ -677,6 +654,26 @@
    "kalshi": null
   },
   {
+   "key": "1873382:0",
+   "market_id": "1873382",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Gabriela CE vs Solana Sierra scheduled for October 28, 2026 at 2:00 PM UTC?",
+   "side": "Gabriela Ce win",
+   "open_chance": 27,
+   "now_chance": 20,
+   "open_odds": "+270",
+   "now_odds": "+400",
+   "edge": 7,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Solana Sierra 7, 3, 5 · Gabriela Ce 6, 6, 4 · 3rd Set (games by set)",
+   "first_seen": "2026-10-28T19:59:41.914Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1875327:1",
    "market_id": "1875327",
    "market": "Games spread",
@@ -738,6 +735,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1873382:0:2026-10-28T19:59:41.914Z",
+   "key": "1873382:0",
+   "at": "2026-10-28T20:07:30.202Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Gabriela Ce win",
+   "market": "Moneyline",
+   "now_odds": "+400",
+   "now_chance": 20,
+   "edge": 7,
+   "text": "Edge gone: Gabriela Ce win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-gabce-solsie-2026-10-28"
+  },
   {
    "id": "gone:1875327:1:2026-10-28T19:14:43.706Z",
    "key": "1875327:1",
@@ -958,7 +969,8 @@
   "new_edge:1875327:1:slight",
   "gone:1873382:1:2026-10-28T19:07:37.283Z",
   "gone:1875327:1:2026-10-28T19:14:43.706Z",
-  "gone:1873382:0:2026-10-28T19:25:06.541Z"
+  "gone:1873382:0:2026-10-28T19:25:06.541Z",
+  "gone:1873382:0:2026-10-28T19:59:41.914Z"
  ],
  "kalshi_checked": null
 }

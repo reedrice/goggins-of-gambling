@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-28T19:59:36.264Z"
+  "fetched_at": "2026-10-28T20:07:23.289Z"
  },
- "updated": "2026-10-28T19:59:36.131Z",
+ "updated": "2026-10-28T20:07:23.164Z",
  "open_taken_at": "2026-10-24T20:13:10.122Z",
  "thresholds": {
   "big": 10,
@@ -43,6 +43,26 @@
  ],
  "edges": [
   {
+   "key": "1766014:0",
+   "market_id": "1766014",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atpdb event Kiger / Smith vs Jung / Sheehy scheduled for October 25, 2026 at 3:00 PM UTC?",
+   "side": "Kiger M / Smith J-P win",
+   "open_chance": 51,
+   "now_chance": 29,
+   "open_odds": "-104",
+   "now_odds": "+245",
+   "edge": 22,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-28T20:07:23.164Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1766014:1",
    "market_id": "1766014",
    "market": "Moneyline",
@@ -59,11 +79,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-28T11:23:43.921Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1766014:0:big",
+   "key": "1766014:0",
+   "at": "2026-10-28T20:07:23.164Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Kiger M / Smith J-P win",
+   "market": "Moneyline",
+   "now_odds": "+245",
+   "now_chance": 29,
+   "edge": 22,
+   "text": "New big edge: Kiger M / Smith J-P win (Moneyline), 22 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-kigersmith-jungsheehy-2026-10-25"
+  },
   {
    "id": "gone:1766014:1:2026-10-28T11:23:43.921Z",
    "key": "1766014:1",
@@ -95,7 +129,8 @@
  ],
  "alert_seen": [
   "new_edge:1766014:1:big",
-  "gone:1766014:1:2026-10-28T11:23:43.921Z"
+  "gone:1766014:1:2026-10-28T11:23:43.921Z",
+  "new_edge:1766014:0:big"
  ],
  "kalshi_checked": null
 }
