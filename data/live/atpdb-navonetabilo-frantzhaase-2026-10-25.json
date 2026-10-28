@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185168",
-  "fetched_at": "2026-10-28T10:02:21.636Z",
+  "fetched_at": "2026-10-28T10:09:25.174Z",
   "tennis": true,
   "tennis_match": {
    "id": "185168",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Wed, October 28th at 6:05 AM EDT",
-     "shortDetail": "10/28 - 6:05 AM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Mariano Navone (ARG) & Alejandro Tabilo (CHI) is tied with Constantin Frantzén (GER) & Robin Haase (NED)",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -205,10 +210,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Wed, October 28th at 6:05 AM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Constantin Frantzén / Robin Haase",
@@ -226,7 +231,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T10:02:21.501Z",
+ "updated": "2026-10-28T10:09:25.070Z",
  "open_taken_at": "2026-10-24T12:44:23.897Z",
  "thresholds": {
   "big": 10,
@@ -265,20 +270,34 @@
    "question": "Who will win in the upcoming atpdb event Navone / Tabilo vs Frantzen / Haase scheduled for October 25, 2026 at 9:00 AM UTC?",
    "side": "Navone M / Tabilo A win",
    "open_chance": 33,
-   "now_chance": 26,
+   "now_chance": 22,
    "open_odds": "+203",
-   "now_odds": "+285",
-   "edge": 7,
-   "tier": "slight",
+   "now_odds": "+355",
+   "edge": 11,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Constantin Frantzén / Robin Haase  · Mariano Navone / Alejandro Tabilo  · 1st Set (games by set)",
    "first_seen": "2026-10-28T04:06:24.583Z",
    "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1753561:0:big",
+   "key": "1753561:0",
+   "at": "2026-10-28T10:09:25.070Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Navone M / Tabilo A win",
+   "market": "Moneyline",
+   "now_odds": "+355",
+   "now_chance": 22,
+   "edge": 11,
+   "text": "New big edge: Navone M / Tabilo A win (Moneyline), 11 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-navonetabilo-frantzhaase-2026-10-25"
+  },
   {
    "id": "new_edge:1753561:0:slight",
    "key": "1753561:0",
@@ -295,7 +314,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1753561:0:slight"
+  "new_edge:1753561:0:slight",
+  "new_edge:1753561:0:big"
  ],
  "kalshi_checked": null
 }
