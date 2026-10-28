@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185797",
-  "fetched_at": "2026-10-28T22:22:22.605Z",
+  "fetched_at": "2026-10-28T22:28:25.728Z",
   "tennis": true,
   "tennis_match": {
    "id": "185797",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Carole Monnet (FRA) leads Carmen Andreea Herea (ROM) 6-2",
+     "text": "Carole Monnet (FRA) leads Carmen Andreea Herea (ROM) 6-2 1-0",
      "type": "event"
     }
    ],
@@ -55,9 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -97,9 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
-       "value": 2
+       "value": 2,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -134,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1034,
    "type": {
     "id": "2",
@@ -152,14 +167,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Carole Monnet",
    "alias": "Carole Monnet",
    "name": "Carole Monnet",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Carmen Andreea Herea",
@@ -171,13 +186,145 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T22:22:22.519Z",
+ "updated": "2026-10-28T22:28:25.602Z",
  "open_taken_at": "2026-10-27T21:33:20.044Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1885780",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Carmen Andreea Herea cover 4.5 vs the Carole Monnet in Carmen Andreea Herea vs. Carole Monnet?",
+   "sides": [
+    "Carmen Andreea Herea +4.50 (Games)",
+    "Carole Monnet -4.50 (Games)"
+   ],
+   "teams": [
+    "Carmen Andreea Herea",
+    "Carole Monnet"
+   ],
+   "player": null,
+   "mid": 42.5,
+   "yes_buy": 44,
+   "no_buy": 59,
+   "taken_at": "2026-10-28T15:27:48.005Z"
+  },
+  {
+   "market_id": "1885786",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Carmen Andreea Herea vs. Carole Monnet be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 38.5,
+   "yes_buy": 39,
+   "no_buy": 62,
+   "taken_at": "2026-10-28T21:41:58.312Z"
+  },
+  {
+   "market_id": "1885778",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Carmen Andreea Herea cover 1.5 vs the Carole Monnet in Carmen Andreea Herea vs. Carole Monnet?",
+   "sides": [
+    "Carmen Andreea Herea +1.50 (Games)",
+    "Carole Monnet -1.50 (Games)"
+   ],
+   "teams": [
+    "Carmen Andreea Herea",
+    "Carole Monnet"
+   ],
+   "player": null,
+   "mid": 26.5,
+   "yes_buy": 27,
+   "no_buy": 74,
+   "taken_at": "2026-10-28T21:41:58.312Z"
+  },
+  {
+   "market_id": "1885787",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Carmen Andreea Herea vs. Carole Monnet be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 29.5,
+   "yes_buy": 30,
+   "no_buy": 71,
+   "taken_at": "2026-10-28T21:41:58.312Z"
+  },
+  {
+   "market_id": "1885777",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Carmen Andreea Herea cover -1.5 vs the Carole Monnet in Carmen Andreea Herea vs. Carole Monnet?",
+   "sides": [
+    "Carmen Andreea Herea -1.50 (Games)",
+    "Carole Monnet +1.50 (Games)"
+   ],
+   "teams": [
+    "Carmen Andreea Herea",
+    "Carole Monnet"
+   ],
+   "player": null,
+   "mid": 28.5,
+   "yes_buy": 29,
+   "no_buy": 72,
+   "taken_at": "2026-10-28T21:41:58.312Z"
+  },
+  {
+   "market_id": "1885779",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Carmen Andreea Herea cover -4.5 vs the Carole Monnet in Carmen Andreea Herea vs. Carole Monnet?",
+   "sides": [
+    "Carmen Andreea Herea -4.50 (Games)",
+    "Carole Monnet +4.50 (Games)"
+   ],
+   "teams": [
+    "Carmen Andreea Herea",
+    "Carole Monnet"
+   ],
+   "player": null,
+   "mid": 18.5,
+   "yes_buy": 19,
+   "no_buy": 82,
+   "taken_at": "2026-10-28T21:41:58.312Z"
+  },
   {
    "market_id": "1884423",
    "market": "Moneyline",
@@ -242,138 +389,6 @@
    "mid": 40.5,
    "yes_buy": 41,
    "no_buy": 60,
-   "taken_at": "2026-10-28T21:41:58.312Z"
-  },
-  {
-   "market_id": "1885780",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Carmen Andreea Herea cover 4.5 vs the Carole Monnet in Carmen Andreea Herea vs. Carole Monnet?",
-   "sides": [
-    "Carmen Andreea Herea +4.50 (Games)",
-    "Carole Monnet -4.50 (Games)"
-   ],
-   "teams": [
-    "Carmen Andreea Herea",
-    "Carole Monnet"
-   ],
-   "player": null,
-   "mid": 42.5,
-   "yes_buy": 44,
-   "no_buy": 59,
-   "taken_at": "2026-10-28T15:27:48.005Z"
-  },
-  {
-   "market_id": "1885786",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Carmen Andreea Herea vs. Carole Monnet be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 38.5,
-   "yes_buy": 39,
-   "no_buy": 62,
-   "taken_at": "2026-10-28T21:41:58.312Z"
-  },
-  {
-   "market_id": "1885787",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Carmen Andreea Herea vs. Carole Monnet be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 29.5,
-   "yes_buy": 30,
-   "no_buy": 71,
-   "taken_at": "2026-10-28T21:41:58.312Z"
-  },
-  {
-   "market_id": "1885777",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Carmen Andreea Herea cover -1.5 vs the Carole Monnet in Carmen Andreea Herea vs. Carole Monnet?",
-   "sides": [
-    "Carmen Andreea Herea -1.50 (Games)",
-    "Carole Monnet +1.50 (Games)"
-   ],
-   "teams": [
-    "Carmen Andreea Herea",
-    "Carole Monnet"
-   ],
-   "player": null,
-   "mid": 28.5,
-   "yes_buy": 29,
-   "no_buy": 72,
-   "taken_at": "2026-10-28T21:41:58.312Z"
-  },
-  {
-   "market_id": "1885778",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Carmen Andreea Herea cover 1.5 vs the Carole Monnet in Carmen Andreea Herea vs. Carole Monnet?",
-   "sides": [
-    "Carmen Andreea Herea +1.50 (Games)",
-    "Carole Monnet -1.50 (Games)"
-   ],
-   "teams": [
-    "Carmen Andreea Herea",
-    "Carole Monnet"
-   ],
-   "player": null,
-   "mid": 26.5,
-   "yes_buy": 27,
-   "no_buy": 74,
-   "taken_at": "2026-10-28T21:41:58.312Z"
-  },
-  {
-   "market_id": "1885779",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Carmen Andreea Herea cover -4.5 vs the Carole Monnet in Carmen Andreea Herea vs. Carole Monnet?",
-   "sides": [
-    "Carmen Andreea Herea -4.50 (Games)",
-    "Carole Monnet +4.50 (Games)"
-   ],
-   "teams": [
-    "Carmen Andreea Herea",
-    "Carole Monnet"
-   ],
-   "player": null,
-   "mid": 18.5,
-   "yes_buy": 19,
-   "no_buy": 82,
    "taken_at": "2026-10-28T21:41:58.312Z"
   },
   {
@@ -445,86 +460,6 @@
  ],
  "edges": [
   {
-   "key": "1885780:0",
-   "market_id": "1885780",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Carmen Andreea Herea cover 4.5 vs the Carole Monnet in Carmen Andreea Herea vs. Carole Monnet?",
-   "side": "Carmen Andreea Herea +4.50 (Games)",
-   "open_chance": 44,
-   "now_chance": 20,
-   "open_odds": "+127",
-   "now_odds": "+400",
-   "edge": 24,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Carole Monnet 6 · Carmen Andreea Herea 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T22:09:33.839Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1885786:0",
-   "market_id": "1885786",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Carmen Andreea Herea vs. Carole Monnet be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 39,
-   "now_chance": 18,
-   "open_odds": "+156",
-   "now_odds": "+456",
-   "edge": 21,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Carole Monnet 6 · Carmen Andreea Herea 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T22:09:33.839Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1885782:0",
-   "market_id": "1885782",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Carmen Andreea Herea cover 7.5 vs the Carole Monnet in Carmen Andreea Herea vs. Carole Monnet?",
-   "side": "Carmen Andreea Herea +7.50 (Games)",
-   "open_chance": 68,
-   "now_chance": 58,
-   "open_odds": "-213",
-   "now_odds": "-138",
-   "edge": 10,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Carole Monnet 6 · Carmen Andreea Herea 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T22:22:22.519Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1885785:1",
-   "market_id": "1885785",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Carmen Andreea Herea vs. Carole Monnet be more than 17.5?",
-   "side": "Under 17.5 (Games)",
-   "open_chance": 60,
-   "now_chance": 53,
-   "open_odds": "-150",
-   "now_odds": "-113",
-   "edge": 7,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Carole Monnet 6 · Carmen Andreea Herea 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T21:48:22.348Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1885784:1",
    "market_id": "1885784",
    "market": "Sets spread",
@@ -545,6 +480,26 @@
    "kalshi": null
   },
   {
+   "key": "1885782:0",
+   "market_id": "1885782",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Carmen Andreea Herea cover 7.5 vs the Carole Monnet in Carmen Andreea Herea vs. Carole Monnet?",
+   "side": "Carmen Andreea Herea +7.50 (Games)",
+   "open_chance": 68,
+   "now_chance": 58,
+   "open_odds": "-213",
+   "now_odds": "-138",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Carole Monnet 6 · Carmen Andreea Herea 2 · 1st Set (games by set)",
+   "first_seen": "2026-10-28T22:22:22.519Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1885782:1",
    "market_id": "1885782",
    "market": "Games spread",
@@ -561,6 +516,26 @@
    "reason": "Explained by score: Carole Monnet not above the games spread right now",
    "context": "Carole Monnet 5 · Carmen Andreea Herea 2 · 1st Set (games by set)",
    "first_seen": "2026-10-28T22:02:35.180Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1885785:1",
+   "market_id": "1885785",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Carmen Andreea Herea vs. Carole Monnet be more than 17.5?",
+   "side": "Under 17.5 (Games)",
+   "open_chance": 60,
+   "now_chance": 53,
+   "open_odds": "-150",
+   "now_odds": "-113",
+   "edge": 7,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Carole Monnet 6 · Carmen Andreea Herea 2 · 1st Set (games by set)",
+   "first_seen": "2026-10-28T21:48:22.348Z",
    "status": "gone",
    "kalshi": null
   },
@@ -586,6 +561,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1885782:0:2026-10-28T22:22:22.519Z",
+   "key": "1885782:0",
+   "at": "2026-10-28T22:28:25.602Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Carmen Andreea Herea +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-138",
+   "now_chance": 58,
+   "edge": 10,
+   "text": "Edge gone: Carmen Andreea Herea +7.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-carher-carmon-2026-10-28"
+  },
+  {
+   "id": "gone:1885785:1:2026-10-28T21:48:22.348Z",
+   "key": "1885785:1",
+   "at": "2026-10-28T22:28:25.602Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 7,
+   "text": "Edge gone: Under 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-carher-carmon-2026-10-28"
+  },
   {
    "id": "new_edge:1885782:0:big",
    "key": "1885782:0",
@@ -615,34 +618,6 @@
    "url": "https://polymarket.us/sports/wta/wta-carher-carmon-2026-10-28"
   },
   {
-   "id": "new_edge:1885780:0:big",
-   "key": "1885780:0",
-   "at": "2026-10-28T22:16:01.707Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Carmen Andreea Herea +4.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+223",
-   "now_chance": 31,
-   "edge": 13,
-   "text": "New big edge: Carmen Andreea Herea +4.50 (Games) (Games spread), 13 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-carher-carmon-2026-10-28"
-  },
-  {
-   "id": "new_edge:1885786:0:big",
-   "key": "1885786:0",
-   "at": "2026-10-28T22:16:01.707Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Over 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+285",
-   "now_chance": 26,
-   "edge": 13,
-   "text": "New big edge: Over 22.5 (Games) (Games total), 13 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-carher-carmon-2026-10-28"
-  },
-  {
    "id": "new_edge:1885788:1:slight",
    "key": "1885788:1",
    "at": "2026-10-28T22:16:01.707Z",
@@ -654,34 +629,6 @@
    "now_chance": 68,
    "edge": 4,
    "text": "New slight edge: Under 2.5 (Sets) (Sets total), 4 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-carher-carmon-2026-10-28"
-  },
-  {
-   "id": "new_edge:1885786:0:slight",
-   "key": "1885786:0",
-   "at": "2026-10-28T22:09:33.839Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Over 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+233",
-   "now_chance": 30,
-   "edge": 9,
-   "text": "New slight edge: Over 22.5 (Games) (Games total), 9 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-carher-carmon-2026-10-28"
-  },
-  {
-   "id": "new_edge:1885780:0:slight",
-   "key": "1885780:0",
-   "at": "2026-10-28T22:09:33.839Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Carmen Andreea Herea +4.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+178",
-   "now_chance": 36,
-   "edge": 8,
-   "text": "New slight edge: Carmen Andreea Herea +4.50 (Games) (Games spread), 8 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-carher-carmon-2026-10-28"
   },
   {
@@ -770,7 +717,9 @@
   "new_edge:1885786:0:big",
   "new_edge:1885788:1:slight",
   "new_edge:1885782:0:big",
-  "new_edge:1885785:1:slight"
+  "new_edge:1885785:1:slight",
+  "gone:1885782:0:2026-10-28T22:22:22.519Z",
+  "gone:1885785:1:2026-10-28T21:48:22.348Z"
  ],
  "kalshi_checked": null
 }
