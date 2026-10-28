@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-28T04:49:26.819Z"
+  "fetched_at": "2026-10-28T04:53:10.895Z"
  },
- "updated": "2026-10-28T04:49:26.733Z",
+ "updated": "2026-10-28T04:53:10.833Z",
  "open_taken_at": "2026-10-27T05:36:14.613Z",
  "thresholds": {
   "big": 10,
@@ -151,6 +151,28 @@
    "taken_at": "2026-10-28T04:06:30.269Z"
   },
   {
+   "market_id": "1862579",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Kaichi Uchida cover 1.5 vs the Harold Mayot in Kaichi Uchida vs. Harold Mayot?",
+   "sides": [
+    "Kaichi Uchida +1.50 (Games)",
+    "Harold Mayot -1.50 (Games)"
+   ],
+   "teams": [
+    "Kaichi Uchida",
+    "Harold Mayot"
+   ],
+   "player": null,
+   "mid": 25.5,
+   "yes_buy": 26,
+   "no_buy": 75,
+   "taken_at": "2026-10-28T04:06:30.269Z"
+  },
+  {
    "market_id": "1862582",
    "market": "Games spread",
    "group": "game",
@@ -215,28 +237,6 @@
    "yes_buy": 22,
    "no_buy": 79,
    "taken_at": "2026-10-28T04:12:54.025Z"
-  },
-  {
-   "market_id": "1862579",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Kaichi Uchida cover 1.5 vs the Harold Mayot in Kaichi Uchida vs. Harold Mayot?",
-   "sides": [
-    "Kaichi Uchida +1.50 (Games)",
-    "Harold Mayot -1.50 (Games)"
-   ],
-   "teams": [
-    "Kaichi Uchida",
-    "Harold Mayot"
-   ],
-   "player": null,
-   "mid": 25.5,
-   "yes_buy": 26,
-   "no_buy": 75,
-   "taken_at": "2026-10-28T04:06:30.269Z"
   },
   {
    "market_id": "1862587",
@@ -387,9 +387,43 @@
    "first_seen": "2026-10-28T04:12:54.025Z",
    "status": "open",
    "kalshi": null
+  },
+  {
+   "key": "1862579:1",
+   "market_id": "1862579",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Kaichi Uchida cover 1.5 vs the Harold Mayot in Kaichi Uchida vs. Harold Mayot?",
+   "side": "Harold Mayot -1.50 (Games)",
+   "open_chance": 75,
+   "now_chance": 71,
+   "open_odds": "-300",
+   "now_odds": "-245",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-28T04:53:10.833Z",
+   "status": "open",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1862579:1:slight",
+   "key": "1862579:1",
+   "at": "2026-10-28T04:53:10.833Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Harold Mayot -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-245",
+   "now_chance": 71,
+   "edge": 4,
+   "text": "New slight edge: Harold Mayot -1.50 (Games) (Games spread), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-kaiuch-harmay-2026-10-27"
+  },
   {
    "id": "new_edge:1862586:1:slight",
    "key": "1862586:1",
@@ -481,7 +515,8 @@
   "new_edge:1862589:1:slight",
   "new_edge:1862589:1:big",
   "gone:1862586:1:2026-10-28T04:12:54.025Z",
-  "new_edge:1862586:1:slight"
+  "new_edge:1862586:1:slight",
+  "new_edge:1862579:1:slight"
  ],
  "kalshi_checked": null
 }
