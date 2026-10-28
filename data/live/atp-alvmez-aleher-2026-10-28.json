@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-28T20:29:37.291Z"
+  "fetched_at": "2026-10-28T20:43:43.135Z"
  },
- "updated": "2026-10-28T20:29:37.133Z",
+ "updated": "2026-10-28T20:43:43.017Z",
  "open_taken_at": "2026-10-27T20:35:10.413Z",
  "thresholds": {
   "big": 10,
@@ -41,25 +41,25 @@
    "taken_at": "2026-10-27T22:32:39.687Z"
   },
   {
-   "market_id": "1884322",
-   "market": "Games total",
+   "market_id": "1884317",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Alvaro Guillen Meza vs. Alex Hernandez be more than 17.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Alvaro Guillen Meza cover 4.5 vs the Alex Hernandez in Alvaro Guillen Meza vs. Alex Hernandez?",
    "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
+    "Alvaro Guillen Meza +4.50 (Games)",
+    "Alex Hernandez -4.50 (Games)"
    ],
    "teams": [
-    null,
-    null
+    "Alvaro Guillen Meza",
+    "Alex Hernandez"
    ],
    "player": null,
-   "mid": 47.5,
-   "yes_buy": 48,
-   "no_buy": 53,
+   "mid": 65.5,
+   "yes_buy": 66,
+   "no_buy": 35,
    "taken_at": "2026-10-28T18:25:38.672Z"
   },
   {
@@ -83,6 +83,28 @@
    "yes_buy": 41,
    "no_buy": 60,
    "taken_at": "2026-10-28T09:50:22.526Z"
+  },
+  {
+   "market_id": "1884322",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Alvaro Guillen Meza vs. Alex Hernandez be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 47.5,
+   "yes_buy": 48,
+   "no_buy": 53,
+   "taken_at": "2026-10-28T18:25:38.672Z"
   },
   {
    "market_id": "1884315",
@@ -127,28 +149,6 @@
    "yes_buy": 58,
    "no_buy": 43,
    "taken_at": "2026-10-28T18:42:15.137Z"
-  },
-  {
-   "market_id": "1884317",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Alvaro Guillen Meza cover 4.5 vs the Alex Hernandez in Alvaro Guillen Meza vs. Alex Hernandez?",
-   "sides": [
-    "Alvaro Guillen Meza +4.50 (Games)",
-    "Alex Hernandez -4.50 (Games)"
-   ],
-   "teams": [
-    "Alvaro Guillen Meza",
-    "Alex Hernandez"
-   ],
-   "player": null,
-   "mid": 65.5,
-   "yes_buy": 66,
-   "no_buy": 35,
-   "taken_at": "2026-10-28T18:25:38.672Z"
   },
   {
    "market_id": "1884324",
@@ -351,6 +351,46 @@
  ],
  "edges": [
   {
+   "key": "1884317:0",
+   "market_id": "1884317",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Alvaro Guillen Meza cover 4.5 vs the Alex Hernandez in Alvaro Guillen Meza vs. Alex Hernandez?",
+   "side": "Alvaro Guillen Meza +4.50 (Games)",
+   "open_chance": 66,
+   "now_chance": 42,
+   "open_odds": "-194",
+   "now_odds": "+138",
+   "edge": 24,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-28T20:14:54.534Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1884323:0",
+   "market_id": "1884323",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Alvaro Guillen Meza vs. Alex Hernandez be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 41,
+   "now_chance": 30,
+   "open_odds": "+144",
+   "now_odds": "+233",
+   "edge": 11,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-28T20:29:37.133Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1884344:0",
    "market_id": "1884344",
    "market": "Set 2 winner",
@@ -367,7 +407,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-28T20:07:31.102Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -387,7 +427,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-28T19:43:39.407Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -407,27 +447,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-28T18:59:19.838Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1884323:0",
-   "market_id": "1884323",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Alvaro Guillen Meza vs. Alex Hernandez be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 41,
-   "now_chance": 36,
-   "open_odds": "+144",
-   "now_odds": "+178",
-   "edge": 5,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-28T20:29:37.133Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -527,26 +547,6 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-28T18:59:19.838Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1884317:0",
-   "market_id": "1884317",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Alvaro Guillen Meza cover 4.5 vs the Alex Hernandez in Alvaro Guillen Meza vs. Alex Hernandez?",
-   "side": "Alvaro Guillen Meza +4.50 (Games)",
-   "open_chance": 66,
-   "now_chance": 51,
-   "open_odds": "-194",
-   "now_odds": "-104",
-   "edge": 15,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-28T20:14:54.534Z",
    "status": "gone",
    "kalshi": null
   },
@@ -732,6 +732,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1884323:0:big",
+   "key": "1884323:0",
+   "at": "2026-10-28T20:43:43.017Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+233",
+   "now_chance": 30,
+   "edge": 11,
+   "text": "New big edge: Over 22.5 (Games) (Games total), 11 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-alvmez-aleher-2026-10-28"
+  },
+  {
+   "id": "gone:1884322:1:2026-10-28T18:59:19.838Z",
+   "key": "1884322:1",
+   "at": "2026-10-28T20:43:43.017Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+426",
+   "now_chance": 19,
+   "edge": 34,
+   "text": "Edge gone: Under 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-alvmez-aleher-2026-10-28"
+  },
   {
    "id": "new_edge:1884323:0:slight",
    "key": "1884323:0",
@@ -1355,7 +1383,9 @@
   "gone:1884324:1:2026-10-28T20:14:54.534Z",
   "new_edge:1884323:0:slight",
   "gone:1884317:0:2026-10-28T20:14:54.534Z",
-  "gone:1884324:0:2026-10-28T20:24:02.999Z"
+  "gone:1884324:0:2026-10-28T20:24:02.999Z",
+  "new_edge:1884323:0:big",
+  "gone:1884322:1:2026-10-28T18:59:19.838Z"
  ],
  "kalshi_checked": null
 }
