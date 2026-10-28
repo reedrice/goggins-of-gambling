@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185768",
-  "fetched_at": "2026-10-28T17:11:26.078Z",
+  "fetched_at": "2026-10-28T17:22:41.393Z",
   "tennis": true,
   "tennis_match": {
    "id": "185768",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Wed, October 28th at 1:10 PM EDT",
-     "shortDetail": "10/28 - 1:10 PM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Gabriela Ce (BRA) leads (3) Solana Sierra (ARG) 1-1",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "curatedRank": {
       "current": 3
      },
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "31cbb00a-2dc3-3125-9f59-806fb020e7c4",
       "displayName": "Solana Sierra",
@@ -90,6 +101,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "63b88b7f-d444-51ac-45cd-6e06ef9ea8a3",
       "displayName": "Gabriela Ce",
@@ -122,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1080,
    "type": {
     "id": "2",
@@ -138,10 +160,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Wed, October 28th at 1:10 PM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Solana Sierra",
@@ -159,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T17:11:25.957Z",
+ "updated": "2026-10-28T17:22:41.232Z",
  "open_taken_at": "2026-10-27T17:49:54.415Z",
  "thresholds": {
   "big": 10,
@@ -211,28 +233,6 @@
    "taken_at": "2026-10-28T17:03:30.741Z"
   },
   {
-   "market_id": "1875328",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Gabriela CE cover 4.5 vs the Solana Sierra in Gabriela CE vs. Solana Sierra?",
-   "sides": [
-    "Gabriela Ce +4.50 (Games)",
-    "Solana Sierra -4.50 (Games)"
-   ],
-   "teams": [
-    "Gabriela Ce",
-    "Solana Sierra"
-   ],
-   "player": null,
-   "mid": 50.5,
-   "yes_buy": 52,
-   "no_buy": 51,
-   "taken_at": "2026-10-28T09:19:41.313Z"
-  },
-  {
    "market_id": "1875333",
    "market": "Games total",
    "group": "game",
@@ -253,6 +253,28 @@
    "yes_buy": 34,
    "no_buy": 67,
    "taken_at": "2026-10-28T17:03:30.741Z"
+  },
+  {
+   "market_id": "1875328",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Gabriela CE cover 4.5 vs the Solana Sierra in Gabriela CE vs. Solana Sierra?",
+   "sides": [
+    "Gabriela Ce +4.50 (Games)",
+    "Solana Sierra -4.50 (Games)"
+   ],
+   "teams": [
+    "Gabriela Ce",
+    "Solana Sierra"
+   ],
+   "player": null,
+   "mid": 50.5,
+   "yes_buy": 52,
+   "no_buy": 51,
+   "taken_at": "2026-10-28T09:19:41.313Z"
   },
   {
    "market_id": "1875334",
@@ -277,25 +299,25 @@
    "taken_at": "2026-10-28T17:03:30.741Z"
   },
   {
-   "market_id": "1875335",
-   "market": "Games total",
+   "market_id": "1875326",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Gabriela CE vs. Solana Sierra be more than 27.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Gabriela CE cover 1.5 vs the Solana Sierra in Gabriela CE vs. Solana Sierra?",
    "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
+    "Gabriela Ce +1.50 (Games)",
+    "Solana Sierra -1.50 (Games)"
    ],
    "teams": [
-    null,
-    null
+    "Gabriela Ce",
+    "Solana Sierra"
    ],
    "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
+   "mid": 27.5,
+   "yes_buy": 28,
+   "no_buy": 73,
    "taken_at": "2026-10-28T17:03:30.741Z"
   },
   {
@@ -321,26 +343,48 @@
    "taken_at": "2026-10-28T17:03:30.741Z"
   },
   {
-   "market_id": "1875326",
-   "market": "Games spread",
+   "market_id": "1875335",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Gabriela CE vs. Solana Sierra be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-10-28T17:03:30.741Z"
+  },
+  {
+   "market_id": "1875331",
+   "market": "Sets spread",
    "group": "game",
    "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Gabriela CE cover 1.5 vs the Solana Sierra in Gabriela CE vs. Solana Sierra?",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Gabriela CE cover -1.5 vs the Solana Sierra in Gabriela CE vs. Solana Sierra?",
    "sides": [
-    "Gabriela Ce +1.50 (Games)",
-    "Solana Sierra -1.50 (Games)"
+    "Gabriela Ce -1.50 (Sets)",
+    "Solana Sierra +1.50 (Sets)"
    ],
    "teams": [
     "Gabriela Ce",
     "Solana Sierra"
    ],
    "player": null,
-   "mid": 27.5,
-   "yes_buy": 28,
-   "no_buy": 73,
-   "taken_at": "2026-10-28T17:03:30.741Z"
+   "mid": 14.5,
+   "yes_buy": 16,
+   "no_buy": 87,
+   "taken_at": "2026-10-28T17:22:41.232Z"
   },
   {
    "market_id": "1875327",
@@ -433,6 +477,126 @@
  ],
  "edges": [
   {
+   "key": "1875333:1",
+   "market_id": "1875333",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Gabriela CE vs. Solana Sierra be more than 17.5?",
+   "side": "Under 17.5 (Games)",
+   "open_chance": 67,
+   "now_chance": 23,
+   "open_odds": "-203",
+   "now_odds": "+335",
+   "edge": 44,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (44 pts), likely news",
+   "context": "Solana Sierra 1 · Gabriela Ce 1 · 1st Set (games by set)",
+   "first_seen": "2026-10-28T17:22:41.232Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1875326:1",
+   "market_id": "1875326",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Gabriela CE cover 1.5 vs the Solana Sierra in Gabriela CE vs. Solana Sierra?",
+   "side": "Solana Sierra -1.50 (Games)",
+   "open_chance": 73,
+   "now_chance": 62,
+   "open_odds": "-270",
+   "now_odds": "-163",
+   "edge": 11,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Solana Sierra not above the games spread right now",
+   "context": "Solana Sierra 1 · Gabriela Ce 1 · 1st Set (games by set)",
+   "first_seen": "2026-10-28T17:22:41.232Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1875335:0",
+   "market_id": "1875335",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Gabriela CE vs. Solana Sierra be more than 27.5?",
+   "side": "Over 27.5 (Games)",
+   "open_chance": 34,
+   "now_chance": 24,
+   "open_odds": "+194",
+   "now_odds": "+317",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Solana Sierra 1 · Gabriela Ce 1 · 1st Set (games by set)",
+   "first_seen": "2026-10-28T17:22:41.232Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1875328:1",
+   "market_id": "1875328",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Gabriela CE cover 4.5 vs the Solana Sierra in Gabriela CE vs. Solana Sierra?",
+   "side": "Solana Sierra -4.50 (Games)",
+   "open_chance": 51,
+   "now_chance": 43,
+   "open_odds": "-104",
+   "now_odds": "+133",
+   "edge": 8,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Solana Sierra not above the games spread right now",
+   "context": "Solana Sierra 1 · Gabriela Ce 1 · 1st Set (games by set)",
+   "first_seen": "2026-10-28T17:22:41.232Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1875334:1",
+   "market_id": "1875334",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Gabriela CE vs. Solana Sierra be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 67,
+   "now_chance": 60,
+   "open_odds": "-203",
+   "now_odds": "-150",
+   "edge": 7,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Solana Sierra 1 · Gabriela Ce 1 · 1st Set (games by set)",
+   "first_seen": "2026-10-28T17:22:41.232Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1873382:1",
+   "market_id": "1873382",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Gabriela CE vs Solana Sierra scheduled for October 28, 2026 at 2:00 PM UTC?",
+   "side": "Solana Sierra win",
+   "open_chance": 74,
+   "now_chance": 70,
+   "open_odds": "-285",
+   "now_odds": "-233",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Solana Sierra 1 · Gabriela Ce 1 · 1st Set (games by set)",
+   "first_seen": "2026-10-28T17:22:41.232Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1875328:0",
    "market_id": "1875328",
    "market": "Games spread",
@@ -449,11 +613,81 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-28T09:39:08.932Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "news:1875333:1",
+   "key": "1875333:1",
+   "at": "2026-10-28T17:22:41.232Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+335",
+   "now_chance": 23,
+   "edge": 44,
+   "text": "Big move, likely news: Under 17.5 (Games) (Games total) is 44 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-gabce-solsie-2026-10-28"
+  },
+  {
+   "id": "new_edge:1875335:0:big",
+   "key": "1875335:0",
+   "at": "2026-10-28T17:22:41.232Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Over 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+317",
+   "now_chance": 24,
+   "edge": 10,
+   "text": "New big edge: Over 27.5 (Games) (Games total), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-gabce-solsie-2026-10-28"
+  },
+  {
+   "id": "new_edge:1875334:1:slight",
+   "key": "1875334:1",
+   "at": "2026-10-28T17:22:41.232Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-150",
+   "now_chance": 60,
+   "edge": 7,
+   "text": "New slight edge: Under 22.5 (Games) (Games total), 7 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-gabce-solsie-2026-10-28"
+  },
+  {
+   "id": "new_edge:1873382:1:slight",
+   "key": "1873382:1",
+   "at": "2026-10-28T17:22:41.232Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Solana Sierra win",
+   "market": "Moneyline",
+   "now_odds": "-233",
+   "now_chance": 70,
+   "edge": 4,
+   "text": "New slight edge: Solana Sierra win (Moneyline), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-gabce-solsie-2026-10-28"
+  },
+  {
+   "id": "gone:1875328:0:2026-10-28T09:39:08.932Z",
+   "key": "1875328:0",
+   "at": "2026-10-28T17:22:41.232Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Gabriela Ce +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+122",
+   "now_chance": 45,
+   "edge": 7,
+   "text": "Edge gone: Gabriela Ce +4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-gabce-solsie-2026-10-28"
+  },
   {
    "id": "new_edge:1875328:0:slight",
    "key": "1875328:0",
@@ -470,7 +704,12 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1875328:0:slight"
+  "new_edge:1875328:0:slight",
+  "news:1875333:1",
+  "new_edge:1875335:0:big",
+  "new_edge:1875334:1:slight",
+  "new_edge:1873382:1:slight",
+  "gone:1875328:0:2026-10-28T09:39:08.932Z"
  ],
  "kalshi_checked": null
 }
