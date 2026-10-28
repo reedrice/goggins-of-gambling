@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185844",
-  "fetched_at": "2026-10-28T17:03:29.878Z",
+  "fetched_at": "2026-10-28T17:11:25.286Z",
   "tennis": true,
   "tennis_match": {
    "id": "185844",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Elizara Yaneva (BUL) leads (3) Oksana Selekhmeteva (ESP) 6-3",
+     "text": "Elizara Yaneva (BUL) is tied with (3) Oksana Selekhmeteva (ESP) 6-3 0-0",
      "type": "event"
     }
    ],
@@ -55,12 +55,17 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 3
      },
      "linescores": [
       {
-       "value": 3
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -100,9 +105,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -137,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1081,
    "type": {
     "id": "2",
@@ -155,8 +170,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Oksana Selekhmeteva",
@@ -168,13 +183,13 @@
    "abbr": "Elizara Yaneva",
    "alias": "Elizara Yaneva",
    "name": "Elizara Yaneva",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T17:03:29.781Z",
+ "updated": "2026-10-28T17:11:25.115Z",
  "open_taken_at": "2026-10-27T15:07:07.045Z",
  "thresholds": {
   "big": 10,
@@ -204,26 +219,26 @@
    "taken_at": "2026-10-27T17:00:49.234Z"
   },
   {
-   "market_id": "1870946",
-   "market": "Games total",
+   "market_id": "1870941",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Elizara Yaneva vs. Oksana Selekhmeteva be more than 17.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Elizara Yaneva cover 4.5 vs the Oksana Selekhmeteva in Elizara Yaneva vs. Oksana Selekhmeteva?",
    "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
+    "Elizara Yaneva +4.50 (Games)",
+    "Oksana Selekhmeteva -4.50 (Games)"
    ],
    "teams": [
-    null,
-    null
+    "Elizara Yaneva",
+    "Oksana Selekhmeteva"
    ],
    "player": null,
-   "mid": 71,
-   "yes_buy": 74,
-   "no_buy": 32,
-   "taken_at": "2026-10-28T16:33:51.814Z"
+   "mid": 55,
+   "yes_buy": 56,
+   "no_buy": 46,
+   "taken_at": "2026-10-28T15:27:45.552Z"
   },
   {
    "market_id": "1870940",
@@ -248,6 +263,28 @@
    "taken_at": "2026-10-27T18:50:19.585Z"
   },
   {
+   "market_id": "1870944",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Elizara Yaneva cover -1.5 vs the Oksana Selekhmeteva in Elizara Yaneva vs. Oksana Selekhmeteva?",
+   "sides": [
+    "Elizara Yaneva -1.50 (Sets)",
+    "Oksana Selekhmeteva +1.50 (Sets)"
+   ],
+   "teams": [
+    "Elizara Yaneva",
+    "Oksana Selekhmeteva"
+   ],
+   "player": null,
+   "mid": 44,
+   "yes_buy": 46,
+   "no_buy": 58,
+   "taken_at": "2026-10-28T16:42:03.275Z"
+  },
+  {
    "market_id": "1870947",
    "market": "Games total",
    "group": "game",
@@ -268,6 +305,50 @@
    "yes_buy": 44,
    "no_buy": 58,
    "taken_at": "2026-10-27T18:50:19.585Z"
+  },
+  {
+   "market_id": "1870948",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Elizara Yaneva vs. Oksana Selekhmeteva be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 21.5,
+   "yes_buy": 24,
+   "no_buy": 81,
+   "taken_at": "2026-10-28T15:51:18.756Z"
+  },
+  {
+   "market_id": "1870946",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Elizara Yaneva vs. Oksana Selekhmeteva be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 71,
+   "yes_buy": 74,
+   "no_buy": 32,
+   "taken_at": "2026-10-28T16:33:51.814Z"
   },
   {
    "market_id": "1870949",
@@ -333,28 +414,6 @@
    "mid": 58.5,
    "yes_buy": 59,
    "no_buy": 42,
-   "taken_at": "2026-10-28T15:27:45.552Z"
-  },
-  {
-   "market_id": "1870941",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Elizara Yaneva cover 4.5 vs the Oksana Selekhmeteva in Elizara Yaneva vs. Oksana Selekhmeteva?",
-   "sides": [
-    "Elizara Yaneva +4.50 (Games)",
-    "Oksana Selekhmeteva -4.50 (Games)"
-   ],
-   "teams": [
-    "Elizara Yaneva",
-    "Oksana Selekhmeteva"
-   ],
-   "player": null,
-   "mid": 55,
-   "yes_buy": 56,
-   "no_buy": 46,
    "taken_at": "2026-10-28T15:27:45.552Z"
   },
   {
@@ -424,50 +483,6 @@
    "taken_at": "2026-10-27T18:50:19.585Z"
   },
   {
-   "market_id": "1870944",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Elizara Yaneva cover -1.5 vs the Oksana Selekhmeteva in Elizara Yaneva vs. Oksana Selekhmeteva?",
-   "sides": [
-    "Elizara Yaneva -1.50 (Sets)",
-    "Oksana Selekhmeteva +1.50 (Sets)"
-   ],
-   "teams": [
-    "Elizara Yaneva",
-    "Oksana Selekhmeteva"
-   ],
-   "player": null,
-   "mid": 44,
-   "yes_buy": 46,
-   "no_buy": 58,
-   "taken_at": "2026-10-28T16:42:03.275Z"
-  },
-  {
-   "market_id": "1870948",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Elizara Yaneva vs. Oksana Selekhmeteva be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 21.5,
-   "yes_buy": 24,
-   "no_buy": 81,
-   "taken_at": "2026-10-28T15:51:18.756Z"
-  },
-  {
    "market_id": "1870954",
    "market": "Set 1 winner",
    "group": "game",
@@ -499,14 +514,54 @@
    "question": "Will the Elizara Yaneva cover -4.5 vs the Oksana Selekhmeteva in Elizara Yaneva vs. Oksana Selekhmeteva?",
    "side": "Oksana Selekhmeteva +4.50 (Games)",
    "open_chance": 63,
-   "now_chance": 31,
+   "now_chance": 27,
    "open_odds": "-170",
-   "now_odds": "+223",
-   "edge": 32,
+   "now_odds": "+270",
+   "edge": 36,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (32 pts), likely news",
-   "context": "Oksana Selekhmeteva 3 · Elizara Yaneva 6 · 1st Set (games by set)",
+   "reason": "Big move (36 pts), likely news",
+   "context": "Oksana Selekhmeteva 3, 0 · Elizara Yaneva 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T17:03:29.781Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1870944:1",
+   "market_id": "1870944",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Elizara Yaneva cover -1.5 vs the Oksana Selekhmeteva in Elizara Yaneva vs. Oksana Selekhmeteva?",
+   "side": "Oksana Selekhmeteva +1.50 (Sets)",
+   "open_chance": 58,
+   "now_chance": 34,
+   "open_odds": "-138",
+   "now_odds": "+194",
+   "edge": 24,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Oksana Selekhmeteva 3, 0 · Elizara Yaneva 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T17:11:25.115Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1870947:0",
+   "market_id": "1870947",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Elizara Yaneva vs. Oksana Selekhmeteva be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 44,
+   "now_chance": 33,
+   "open_odds": "+127",
+   "now_odds": "+203",
+   "edge": 11,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Oksana Selekhmeteva 3, 0 · Elizara Yaneva 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T17:03:29.781Z",
    "status": "open",
    "kalshi": null
@@ -528,47 +583,7 @@
    "reason": "Big move (28 pts), likely news",
    "context": "Oksana Selekhmeteva 3 · Elizara Yaneva 6 · 1st Set (games by set)",
    "first_seen": "2026-10-28T16:42:03.275Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1870947:0",
-   "market_id": "1870947",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Elizara Yaneva vs. Oksana Selekhmeteva be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 44,
-   "now_chance": 27,
-   "open_odds": "+127",
-   "now_odds": "+270",
-   "edge": 17,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Oksana Selekhmeteva 3 · Elizara Yaneva 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T17:03:29.781Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1870946:1",
-   "market_id": "1870946",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Elizara Yaneva vs. Oksana Selekhmeteva be more than 17.5?",
-   "side": "Under 17.5 (Games)",
-   "open_chance": 32,
-   "now_chance": 25,
-   "open_odds": "+213",
-   "now_odds": "+300",
-   "edge": 7,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Oksana Selekhmeteva 3 · Elizara Yaneva 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T17:03:29.781Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -608,6 +623,26 @@
    "reason": "Explained by score: Oksana Selekhmeteva not above the games spread right now",
    "context": "Oksana Selekhmeteva 3 · Elizara Yaneva 3 · 1st Set (games by set)",
    "first_seen": "2026-10-28T16:08:28.161Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1870946:1",
+   "market_id": "1870946",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Elizara Yaneva vs. Oksana Selekhmeteva be more than 17.5?",
+   "side": "Under 17.5 (Games)",
+   "open_chance": 32,
+   "now_chance": 25,
+   "open_odds": "+213",
+   "now_odds": "+300",
+   "edge": 7,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Oksana Selekhmeteva 3 · Elizara Yaneva 6 · 1st Set (games by set)",
+   "first_seen": "2026-10-28T17:03:29.781Z",
    "status": "gone",
    "kalshi": null
   },
@@ -673,6 +708,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1870944:1:big",
+   "key": "1870944:1",
+   "at": "2026-10-28T17:11:25.115Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Oksana Selekhmeteva +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+194",
+   "now_chance": 34,
+   "edge": 24,
+   "text": "New big edge: Oksana Selekhmeteva +1.50 (Sets) (Sets spread), 24 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-eliyan-okssel-2026-10-28"
+  },
+  {
+   "id": "gone:1870946:1:2026-10-28T17:03:29.781Z",
+   "key": "1870946:1",
+   "at": "2026-10-28T17:11:25.115Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+300",
+   "now_chance": 25,
+   "edge": 7,
+   "text": "Edge gone: Under 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-eliyan-okssel-2026-10-28"
+  },
   {
    "id": "news:1870940:1",
    "key": "1870940:1",
@@ -842,7 +905,9 @@
   "news:1870949:0",
   "new_edge:1870947:0:big",
   "gone:1870948:1:2026-10-28T16:08:28.161Z",
-  "gone:1870947:1:2026-10-28T16:55:55.305Z"
+  "gone:1870947:1:2026-10-28T16:55:55.305Z",
+  "new_edge:1870944:1:big",
+  "gone:1870946:1:2026-10-28T17:03:29.781Z"
  ],
  "kalshi_checked": null
 }

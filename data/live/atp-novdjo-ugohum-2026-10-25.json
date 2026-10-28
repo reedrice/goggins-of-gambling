@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185133",
-  "fetched_at": "2026-10-28T17:03:20.631Z",
+  "fetched_at": "2026-10-28T17:11:16.409Z",
   "tennis": true,
   "tennis_match": {
    "id": "185133",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "detail": "3rd Set",
+     "shortDetail": "3rd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(4) Novak Djokovic (SER) is tied with Ugo Humbert (FRA) 4-6 6-3",
+     "text": "Ugo Humbert (FRA) leads (4) Novak Djokovic (SER) 6-4 3-6 1-0",
      "type": "event"
     }
    ],
@@ -55,13 +55,18 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 3
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -101,6 +106,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "curatedRank": {
       "current": 4
      },
@@ -110,7 +116,11 @@
        "winner": false
       },
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -145,6 +155,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 23,
    "type": {
     "id": "1",
@@ -163,8 +178,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "period": 3,
+  "clock": "3rd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Ugo Humbert",
@@ -176,13 +191,13 @@
    "abbr": "Novak Djokovic",
    "alias": "Novak Djokovic",
    "name": "Novak Djokovic",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T17:03:20.540Z",
+ "updated": "2026-10-28T17:11:16.343Z",
  "open_taken_at": "2026-10-24T12:32:03.322Z",
  "thresholds": {
   "big": 10,
@@ -232,6 +247,28 @@
    "yes_buy": 32,
    "no_buy": 69,
    "taken_at": "2026-10-28T15:27:38.136Z"
+  },
+  {
+   "market_id": "1754985",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Novak Djokovic cover 1.5 vs the Ugo Humbert in Novak Djokovic vs. Ugo Humbert?",
+   "sides": [
+    "Novak Djokovic +1.50 (Games)",
+    "Ugo Humbert -1.50 (Games)"
+   ],
+   "teams": [
+    "Novak Djokovic",
+    "Ugo Humbert"
+   ],
+   "player": null,
+   "mid": 76,
+   "yes_buy": 78,
+   "no_buy": 26,
+   "taken_at": "2026-10-28T13:13:11.877Z"
   },
   {
    "market_id": "1754986",
@@ -298,28 +335,6 @@
    "yes_buy": 87,
    "no_buy": 17,
    "taken_at": "2026-10-28T15:27:38.136Z"
-  },
-  {
-   "market_id": "1754985",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Novak Djokovic cover 1.5 vs the Ugo Humbert in Novak Djokovic vs. Ugo Humbert?",
-   "sides": [
-    "Novak Djokovic +1.50 (Games)",
-    "Ugo Humbert -1.50 (Games)"
-   ],
-   "teams": [
-    "Novak Djokovic",
-    "Ugo Humbert"
-   ],
-   "player": null,
-   "mid": 76,
-   "yes_buy": 78,
-   "no_buy": 26,
-   "taken_at": "2026-10-28T13:13:11.877Z"
   },
   {
    "market_id": "1754984",
@@ -522,62 +537,22 @@
  ],
  "edges": [
   {
-   "key": "1754994:1",
-   "market_id": "1754994",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Novak Djokovic vs. Ugo Humbert be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 69,
-   "now_chance": 24,
-   "open_odds": "-223",
-   "now_odds": "+317",
-   "edge": 45,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (45 pts), likely news",
-   "context": "Ugo Humbert 6, 3 · Novak Djokovic 4, 6 · 2nd Set (games by set)",
-   "first_seen": "2026-10-28T15:34:11.886Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1754986:1",
-   "market_id": "1754986",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Novak Djokovic cover -4.5 vs the Ugo Humbert in Novak Djokovic vs. Ugo Humbert?",
-   "side": "Ugo Humbert +4.50 (Games)",
-   "open_chance": 90,
-   "now_chance": 76,
-   "open_odds": "-900",
-   "now_odds": "-317",
-   "edge": 14,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Ugo Humbert 6, 3 · Novak Djokovic 4, 6 · 2nd Set (games by set)",
-   "first_seen": "2026-10-28T16:33:44.257Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1753326:1",
+   "key": "1753326:0",
    "market_id": "1753326",
    "market": "Moneyline",
    "group": "game",
    "question": "Who will win in the upcoming atp event Novak Djokovic vs Ugo Humbert scheduled for October 25, 2026 at 9:00 AM UTC?",
-   "side": "Ugo Humbert win",
-   "open_chance": 29,
-   "now_chance": 22,
-   "open_odds": "+245",
-   "now_odds": "+355",
-   "edge": 7,
-   "tier": "slight",
+   "side": "Novak Djokovic win",
+   "open_chance": 76,
+   "now_chance": 54,
+   "open_odds": "-317",
+   "now_odds": "-117",
+   "edge": 22,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Ugo Humbert 6, 3 · Novak Djokovic 4, 6 · 2nd Set (games by set)",
-   "first_seen": "2026-10-28T16:41:55.355Z",
+   "context": "Ugo Humbert 6, 3, 1 · Novak Djokovic 4, 6, 0 · 3rd Set (games by set)",
+   "first_seen": "2026-10-25T05:02:06.730Z",
    "status": "open",
    "kalshi": null
   },
@@ -602,22 +577,22 @@
    "kalshi": null
   },
   {
-   "key": "1753326:0",
-   "market_id": "1753326",
-   "market": "Moneyline",
+   "key": "1754986:1",
+   "market_id": "1754986",
+   "market": "Games spread",
    "group": "game",
-   "question": "Who will win in the upcoming atp event Novak Djokovic vs Ugo Humbert scheduled for October 25, 2026 at 9:00 AM UTC?",
-   "side": "Novak Djokovic win",
-   "open_chance": 76,
-   "now_chance": 66,
-   "open_odds": "-317",
-   "now_odds": "-194",
-   "edge": 10,
+   "question": "Will the Novak Djokovic cover -4.5 vs the Ugo Humbert in Novak Djokovic vs. Ugo Humbert?",
+   "side": "Ugo Humbert +4.50 (Games)",
+   "open_chance": 90,
+   "now_chance": 76,
+   "open_odds": "-900",
+   "now_odds": "-317",
+   "edge": 14,
    "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Novak Djokovic trailing in sets",
-   "context": "Ugo Humbert 6, 1 · Novak Djokovic 4, 4 · 2nd Set (games by set)",
-   "first_seen": "2026-10-25T05:02:06.730Z",
+   "class": "edge",
+   "reason": null,
+   "context": "Ugo Humbert 6, 3 · Novak Djokovic 4, 6 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T16:33:44.257Z",
    "status": "gone",
    "kalshi": null
   },
@@ -658,6 +633,26 @@
    "reason": null,
    "context": "Ugo Humbert 6, 0 · Novak Djokovic 4, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T15:27:38.136Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1753326:1",
+   "market_id": "1753326",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Novak Djokovic vs Ugo Humbert scheduled for October 25, 2026 at 9:00 AM UTC?",
+   "side": "Ugo Humbert win",
+   "open_chance": 29,
+   "now_chance": 22,
+   "open_odds": "+245",
+   "now_odds": "+355",
+   "edge": 7,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Ugo Humbert 6, 3 · Novak Djokovic 4, 6 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T16:41:55.355Z",
    "status": "gone",
    "kalshi": null
   },
@@ -704,6 +699,20 @@
  ],
  "alerts": [
   {
+   "id": "gone:1753326:1:2026-10-28T16:41:55.355Z",
+   "key": "1753326:1",
+   "at": "2026-10-28T17:11:16.343Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Ugo Humbert win",
+   "market": "Moneyline",
+   "now_odds": "+355",
+   "now_chance": 22,
+   "edge": 7,
+   "text": "Edge gone: Ugo Humbert win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-novdjo-ugohum-2026-10-25"
+  },
+  {
    "id": "new_edge:1753326:1:slight",
    "key": "1753326:1",
    "at": "2026-10-28T16:41:55.355Z",
@@ -746,20 +755,6 @@
    "url": "https://polymarket.us/sports/atp/atp-novdjo-ugohum-2026-10-25"
   },
   {
-   "id": "news:1754994:1",
-   "key": "1754994:1",
-   "at": "2026-10-28T16:22:39.421Z",
-   "type": "news",
-   "tier": "big",
-   "side": "Under 27.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+186",
-   "now_chance": 35,
-   "edge": 34,
-   "text": "Big move, likely news: Under 27.5 (Games) (Games total) is 34 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-novdjo-ugohum-2026-10-25"
-  },
-  {
    "id": "gone:1754993:1:2026-10-28T15:27:38.136Z",
    "key": "1754993:1",
    "at": "2026-10-28T16:22:39.421Z",
@@ -771,20 +766,6 @@
    "now_chance": 41,
    "edge": 8,
    "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-novdjo-ugohum-2026-10-25"
-  },
-  {
-   "id": "gone:1754994:1:2026-10-28T15:34:11.886Z",
-   "key": "1754994:1",
-   "at": "2026-10-28T16:08:18.806Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Under 27.5 (Games)",
-   "market": "Games total",
-   "now_odds": "-104",
-   "now_chance": 51,
-   "edge": 18,
-   "text": "Edge gone: Under 27.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-novdjo-ugohum-2026-10-25"
   },
   {
@@ -827,20 +808,6 @@
    "now_chance": 56,
    "edge": 20,
    "text": "New big edge: Novak Djokovic win (Moneyline), 20 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-novdjo-ugohum-2026-10-25"
-  },
-  {
-   "id": "new_edge:1754994:1:big",
-   "key": "1754994:1",
-   "at": "2026-10-28T15:34:11.886Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Under 27.5 (Games)",
-   "market": "Games total",
-   "now_odds": "-127",
-   "now_chance": 56,
-   "edge": 13,
-   "text": "New big edge: Under 27.5 (Games) (Games total), 13 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-novdjo-ugohum-2026-10-25"
   },
   {
@@ -916,7 +883,8 @@
   "gone:1754993:1:2026-10-28T15:27:38.136Z",
   "new_edge:1754986:1:big",
   "new_edge:1753326:1:slight",
-  "gone:1754986:1:2026-10-28T16:33:44.257Z"
+  "gone:1754986:1:2026-10-28T16:33:44.257Z",
+  "gone:1753326:1:2026-10-28T16:41:55.355Z"
  ],
  "kalshi_checked": null
 }
