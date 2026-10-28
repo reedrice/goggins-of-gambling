@@ -4,12 +4,12 @@
  "game": "Kozyreva / Lumsden vs. Haverlag / Kulambayeva",
  "url": "https://polymarket.us/sports/wtadb/wtadb-kozyrelumsde-haverlkulamb-2026-10-28",
  "start_time": "2026-10-28T08:15:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185747",
-  "fetched_at": "2026-10-28T09:43:28.489Z",
+  "fetched_at": "2026-10-28T09:50:15.988Z",
   "tennis": true,
   "tennis_match": {
    "id": "185747",
@@ -17,17 +17,17 @@
    "date": "2026-10-28T08:25Z",
    "startDate": "2026-10-28T08:25Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Mariia Kozyreva (RUS) & Maia Lumsden (GBR) leads Isabelle Haverlag (NED) & Zhibek Kulambayeva (KAZ) 6-3 3-6 0-0",
+     "text": "Isabelle Haverlag (NED) & Zhibek Kulambayeva (KAZ) bt (1) Mariia Kozyreva (RUS) & Maia Lumsden (GBR) 3-6 6-3 1-0 (10-8)",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "linescores": [
       {
        "value": 3,
@@ -65,7 +66,9 @@
        "winner": true
       },
       {
-       "value": 0
+       "value": 1,
+       "tiebreak": 10,
+       "winner": true
       }
      ],
      "roster": {
@@ -140,6 +143,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "curatedRank": {
       "current": 1
      },
@@ -153,7 +157,9 @@
        "winner": false
       },
       {
-       "value": 0
+       "value": 0,
+       "tiebreak": 8,
+       "winner": false
       }
      ],
      "roster": {
@@ -239,16 +245,16 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Isabelle Haverlag / Zhibek Kulambayeva",
    "alias": "Isabelle Haverlag / Zhibek Kulambayeva",
    "name": "Isabelle Haverlag / Zhibek Kulambayeva",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Mariia Kozyreva / Maia Lumsden",
@@ -260,7 +266,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T09:43:28.295Z",
+ "updated": "2026-10-28T09:50:15.922Z",
  "open_taken_at": "2026-10-27T05:06:05.347Z",
  "thresholds": {
   "big": 10,
@@ -308,7 +314,7 @@
    "reason": null,
    "context": "Isabelle Haverlag / Zhibek Kulambayeva 3, 6, 0 · Mariia Kozyreva / Maia Lumsden 6, 3, 0 · 3rd Set (games by set)",
    "first_seen": "2026-10-28T09:39:04.537Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -333,6 +339,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1829120:0:2026-10-28T09:39:04.537Z",
+   "key": "1829120:0",
+   "at": "2026-10-28T09:50:15.922Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Kozyreva M / Lumsden M win",
+   "market": "Moneyline",
+   "now_odds": "+150",
+   "now_chance": 40,
+   "edge": 11,
+   "text": "Edge gone: Kozyreva M / Lumsden M win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-kozyrelumsde-haverlkulamb-2026-10-28"
+  },
   {
    "id": "new_edge:1829120:0:big",
    "key": "1829120:0",
@@ -368,7 +388,8 @@
   "gone:1829120:1:2026-10-27T06:26:28.247Z",
   "news:1829120:1",
   "new_edge:1829120:0:big",
-  "gone:1829120:1:2026-10-28T09:26:27.131Z"
+  "gone:1829120:1:2026-10-28T09:26:27.131Z",
+  "gone:1829120:0:2026-10-28T09:39:04.537Z"
  ],
  "kalshi_checked": null
 }
