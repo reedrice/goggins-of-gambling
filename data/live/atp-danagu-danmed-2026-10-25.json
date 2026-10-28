@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185189",
-  "fetched_at": "2026-10-28T13:33:45.093Z",
+  "fetched_at": "2026-10-28T13:38:22.230Z",
   "tennis": true,
   "tennis_match": {
    "id": "185189",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Daniel Merida (ESP) leads (3) Daniil Medvedev (RUS) 6-6 (5-7)",
+     "text": "Daniel Merida (ESP) leads (3) Daniil Medvedev (RUS) 6-7 (5-7) 0-0",
      "type": "event"
     }
    ],
@@ -55,13 +55,18 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 3
      },
      "linescores": [
       {
-       "value": 6,
-       "tiebreak": 7
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -101,10 +106,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 6,
-       "tiebreak": 5
+       "tiebreak": 5,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -139,6 +149,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 10,
    "type": {
     "id": "1",
@@ -157,14 +172,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Daniil Medvedev",
    "alias": "Daniil Medvedev",
    "name": "Daniil Medvedev",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Daniel Merida",
@@ -176,7 +191,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T13:33:45.003Z",
+ "updated": "2026-10-28T13:38:21.972Z",
  "open_taken_at": "2026-10-24T11:16:09.334Z",
  "thresholds": {
   "big": 10,
@@ -206,6 +221,28 @@
    "taken_at": "2026-10-24T14:02:11.068Z"
   },
   {
+   "market_id": "1749751",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Daniel Merida cover 4.5 vs the Daniil Medvedev in Daniel Merida vs. Daniil Medvedev?",
+   "sides": [
+    "Daniel Merida Aguilar +4.50 (Games)",
+    "Daniil Medvedev -4.50 (Games)"
+   ],
+   "teams": [
+    "Daniel Merida Aguilar",
+    "Daniil Medvedev"
+   ],
+   "player": null,
+   "mid": 54,
+   "yes_buy": 55,
+   "no_buy": 47,
+   "taken_at": "2026-10-26T10:32:08.652Z"
+  },
+  {
    "market_id": "1749757",
    "market": "Games total",
    "group": "game",
@@ -228,26 +265,26 @@
    "taken_at": "2026-10-26T10:32:08.652Z"
   },
   {
-   "market_id": "1749758",
-   "market": "Games total",
+   "market_id": "1749765",
+   "market": "Set 2 winner",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Daniel Merida vs. Daniil Medvedev be more than 27.5?",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Daniel Merida win set 2 against Daniil Medvedev?",
    "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
+    "Yes: Daniel Merida win set 2 against Daniil Medvedev",
+    "No: Daniel Merida win set 2 against Daniil Medvedev"
    ],
    "teams": [
-    null,
+    "Daniel Merida Aguilar",
     null
    ],
    "player": null,
-   "mid": 26.5,
-   "yes_buy": 27,
-   "no_buy": 74,
-   "taken_at": "2026-10-28T12:38:46.533Z"
+   "mid": 28.5,
+   "yes_buy": 29,
+   "no_buy": 72,
+   "taken_at": "2026-10-28T12:33:07.952Z"
   },
   {
    "market_id": "1749747",
@@ -270,28 +307,6 @@
    "yes_buy": 18,
    "no_buy": 83,
    "taken_at": "2026-10-28T12:38:46.533Z"
-  },
-  {
-   "market_id": "1749765",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Daniel Merida win set 2 against Daniil Medvedev?",
-   "sides": [
-    "Yes: Daniel Merida win set 2 against Daniil Medvedev",
-    "No: Daniel Merida win set 2 against Daniil Medvedev"
-   ],
-   "teams": [
-    "Daniel Merida Aguilar",
-    null
-   ],
-   "player": null,
-   "mid": 28.5,
-   "yes_buy": 29,
-   "no_buy": 72,
-   "taken_at": "2026-10-28T12:33:07.952Z"
   },
   {
    "market_id": "1749750",
@@ -338,26 +353,26 @@
    "taken_at": "2026-10-28T12:38:46.533Z"
   },
   {
-   "market_id": "1749751",
-   "market": "Games spread",
+   "market_id": "1749758",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Daniel Merida cover 4.5 vs the Daniil Medvedev in Daniel Merida vs. Daniil Medvedev?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Daniel Merida vs. Daniil Medvedev be more than 27.5?",
    "sides": [
-    "Daniel Merida Aguilar +4.50 (Games)",
-    "Daniil Medvedev -4.50 (Games)"
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
    ],
    "teams": [
-    "Daniel Merida Aguilar",
-    "Daniil Medvedev"
+    null,
+    null
    ],
    "player": null,
-   "mid": 54,
-   "yes_buy": 55,
-   "no_buy": 47,
-   "taken_at": "2026-10-26T10:32:08.652Z"
+   "mid": 26.5,
+   "yes_buy": 27,
+   "no_buy": 74,
+   "taken_at": "2026-10-28T12:38:46.533Z"
   },
   {
    "market_id": "1749754",
@@ -516,46 +531,6 @@
  ],
  "edges": [
   {
-   "key": "1749757:1",
-   "market_id": "1749757",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Daniel Merida vs. Daniil Medvedev be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 60,
-   "now_chance": 53,
-   "open_odds": "-150",
-   "now_odds": "-113",
-   "edge": 7,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Daniil Medvedev 6 · Daniel Merida 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T00:38:06.711Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1749747:1",
-   "market_id": "1749747",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Daniel Merida cover -1.5 vs the Daniil Medvedev in Daniel Merida vs. Daniil Medvedev?",
-   "side": "Daniil Medvedev +1.50 (Games)",
-   "open_chance": 83,
-   "now_chance": 76,
-   "open_odds": "-488",
-   "now_odds": "-317",
-   "edge": 7,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Daniil Medvedev 6 · Daniel Merida 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T13:13:11.358Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1749751:1",
    "market_id": "1749751",
    "market": "Games spread",
@@ -563,16 +538,56 @@
    "question": "Will the Daniel Merida cover 4.5 vs the Daniil Medvedev in Daniel Merida vs. Daniil Medvedev?",
    "side": "Daniil Medvedev -4.50 (Games)",
    "open_chance": 47,
-   "now_chance": 23,
+   "now_chance": 28,
    "open_odds": "+113",
-   "now_odds": "+335",
-   "edge": 24,
+   "now_odds": "+257",
+   "edge": 19,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Daniil Medvedev not above the games spread right now",
-   "context": "Daniil Medvedev 6 · Daniel Merida 6 · 1st Set (games by set)",
+   "context": "Daniil Medvedev 7, 0 · Daniel Merida 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T23:37:46.577Z",
-   "status": "gone",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1749757:1",
+   "market_id": "1749757",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Daniel Merida vs. Daniil Medvedev be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 60,
+   "now_chance": 42,
+   "open_odds": "-150",
+   "now_odds": "+138",
+   "edge": 18,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Daniil Medvedev 7, 0 · Daniel Merida 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T00:38:06.711Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1749765:1",
+   "market_id": "1749765",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Daniel Merida win set 2 against Daniil Medvedev?",
+   "side": "No: Daniel Merida win set 2 against Daniil Medvedev",
+   "open_chance": 72,
+   "now_chance": 68,
+   "open_odds": "-257",
+   "now_odds": "-213",
+   "edge": 4,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Daniel Merida not above the games spread right now",
+   "context": "Daniil Medvedev 7, 0 · Daniel Merida 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T13:38:21.972Z",
+   "status": "open",
    "kalshi": null
   },
   {
@@ -783,34 +798,6 @@
    "now_chance": 24,
    "edge": 5,
    "text": "Edge gone: Yes: Daniel Merida win set 2 against Daniil Medvedev (Set 2 winner) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-danagu-danmed-2026-10-25"
-  },
-  {
-   "id": "new_edge:1749747:1:slight",
-   "key": "1749747:1",
-   "at": "2026-10-28T13:27:16.693Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Daniil Medvedev +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-317",
-   "now_chance": 76,
-   "edge": 7,
-   "text": "New slight edge: Daniil Medvedev +1.50 (Games) (Games spread), 7 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-danagu-danmed-2026-10-25"
-  },
-  {
-   "id": "new_edge:1749747:1:big",
-   "key": "1749747:1",
-   "at": "2026-10-28T13:20:15.173Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Daniil Medvedev +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-233",
-   "now_chance": 70,
-   "edge": 13,
-   "text": "New big edge: Daniil Medvedev +1.50 (Games) (Games spread), 13 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-danagu-danmed-2026-10-25"
   },
   {
