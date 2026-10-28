@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185803",
-  "fetched_at": "2026-10-28T00:47:44.783Z",
+  "fetched_at": "2026-10-28T00:53:40.700Z",
   "tennis": true,
   "tennis_match": {
    "id": "185803",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(8) Nadia Podoroska (ARG) leads Alice Rame (FRA) 3-0",
+     "text": "(8) Nadia Podoroska (ARG) leads Alice Rame (FRA) 4-0",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
        "value": 0
@@ -97,12 +98,13 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 8
      },
      "linescores": [
       {
-       "value": 3
+       "value": 4
       }
      ],
      "athlete": {
@@ -137,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1034,
    "type": {
     "id": "2",
@@ -174,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T00:47:44.637Z",
+ "updated": "2026-10-28T00:53:40.589Z",
  "open_taken_at": "2026-10-25T21:02:19.383Z",
  "thresholds": {
   "big": 10,
@@ -226,28 +233,6 @@
    "taken_at": "2026-10-27T13:25:21.869Z"
   },
   {
-   "market_id": "1813773",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Nadia Podoroska vs. Alice Rame be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-10-28T00:08:46.995Z"
-  },
-  {
    "market_id": "1813771",
    "market": "Sets spread",
    "group": "game",
@@ -284,6 +269,28 @@
    "teams": [
     "Nadia Podoroska",
     "Alice Rame"
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-10-28T00:08:46.995Z"
+  },
+  {
+   "market_id": "1813773",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Nadia Podoroska vs. Alice Rame be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
    ],
    "player": null,
    "mid": 33.5,
@@ -470,26 +477,6 @@
  ],
  "edges": [
   {
-   "key": "1813773:1",
-   "market_id": "1813773",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Nadia Podoroska vs. Alice Rame be more than 17.5?",
-   "side": "Under 17.5 (Games)",
-   "open_chance": 67,
-   "now_chance": 46,
-   "open_odds": "-203",
-   "now_odds": "+117",
-   "edge": 21,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Alice Rame 0 · Nadia Podoroska 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T00:44:09.222Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1813769:1",
    "market_id": "1813769",
    "market": "Games spread",
@@ -497,14 +484,34 @@
    "question": "Will the Nadia Podoroska cover -7.5 vs the Alice Rame in Nadia Podoroska vs. Alice Rame?",
    "side": "Alice Rame +7.50 (Games)",
    "open_chance": 67,
-   "now_chance": 60,
+   "now_chance": 50,
    "open_odds": "-203",
-   "now_odds": "-150",
-   "edge": 7,
+   "now_odds": "+100",
+   "edge": 17,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Alice Rame 0 · Nadia Podoroska 4 · 1st Set (games by set)",
+   "first_seen": "2026-10-28T00:44:09.222Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1813773:1",
+   "market_id": "1813773",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Nadia Podoroska vs. Alice Rame be more than 17.5?",
+   "side": "Under 17.5 (Games)",
+   "open_chance": 67,
+   "now_chance": 59,
+   "open_odds": "-203",
+   "now_odds": "-144",
+   "edge": 8,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Alice Rame 0 · Nadia Podoroska 3 · 1st Set (games by set)",
+   "context": "Alice Rame 0 · Nadia Podoroska 4 · 1st Set (games by set)",
    "first_seen": "2026-10-28T00:44:09.222Z",
    "status": "open",
    "kalshi": null
@@ -591,6 +598,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1813769:1:big",
+   "key": "1813769:1",
+   "at": "2026-10-28T00:53:40.589Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Alice Rame +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+100",
+   "now_chance": 50,
+   "edge": 17,
+   "text": "New big edge: Alice Rame +7.50 (Games) (Games spread), 17 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-nadpod-aliram-2026-10-26"
+  },
+  {
+   "id": "new_edge:1813773:1:slight",
+   "key": "1813773:1",
+   "at": "2026-10-28T00:53:40.589Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-144",
+   "now_chance": 59,
+   "edge": 8,
+   "text": "New slight edge: Under 17.5 (Games) (Games total), 8 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-nadpod-aliram-2026-10-26"
+  },
   {
    "id": "gone:1813767:1:2026-10-27T18:08:31.307Z",
    "key": "1813767:1",
@@ -759,7 +794,9 @@
   "new_edge:1813769:1:slight",
   "gone:1813776:1:2026-10-28T00:08:46.995Z",
   "gone:1813767:1:2026-10-27T18:08:31.307Z",
-  "gone:1813774:1:2026-10-28T00:33:38.942Z"
+  "gone:1813774:1:2026-10-28T00:33:38.942Z",
+  "new_edge:1813769:1:big",
+  "new_edge:1813773:1:slight"
  ],
  "kalshi_checked": null
 }
