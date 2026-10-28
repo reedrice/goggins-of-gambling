@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-28T07:06:45.105Z"
+  "fetched_at": "2026-10-28T07:16:12.912Z"
  },
- "updated": "2026-10-28T07:06:45.057Z",
+ "updated": "2026-10-28T07:16:12.861Z",
  "open_taken_at": "2026-10-24T05:01:12.685Z",
  "thresholds": {
   "big": 10,
@@ -43,26 +43,6 @@
  ],
  "edges": [
   {
-   "key": "1740830:0",
-   "market_id": "1740830",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atpdb event Chung / Kim vs Kim / Park scheduled for October 26, 2026 at 2:00 AM UTC?",
-   "side": "Chung Y S / Kim J win",
-   "open_chance": 55,
-   "now_chance": 44,
-   "open_odds": "-122",
-   "now_odds": "+127",
-   "edge": 11,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-28T07:06:45.057Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1740830:1",
    "market_id": "1740830",
    "market": "Moneyline",
@@ -81,9 +61,43 @@
    "first_seen": "2026-10-28T06:54:46.157Z",
    "status": "gone",
    "kalshi": null
+  },
+  {
+   "key": "1740830:0",
+   "market_id": "1740830",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atpdb event Chung / Kim vs Kim / Park scheduled for October 26, 2026 at 2:00 AM UTC?",
+   "side": "Chung Y S / Kim J win",
+   "open_chance": 55,
+   "now_chance": 44,
+   "open_odds": "-122",
+   "now_odds": "+127",
+   "edge": 11,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-28T07:06:45.057Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1740830:0:2026-10-28T07:06:45.057Z",
+   "key": "1740830:0",
+   "at": "2026-10-28T07:16:12.861Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Chung Y S / Kim J win",
+   "market": "Moneyline",
+   "now_odds": "+127",
+   "now_chance": 44,
+   "edge": 11,
+   "text": "Edge gone: Chung Y S / Kim J win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-chungkim-kimpark-2026-10-25"
+  },
   {
    "id": "new_edge:1740830:0:big",
    "key": "1740830:0",
@@ -130,7 +144,8 @@
  "alert_seen": [
   "new_edge:1740830:1:big",
   "new_edge:1740830:0:big",
-  "gone:1740830:1:2026-10-28T06:54:46.157Z"
+  "gone:1740830:1:2026-10-28T06:54:46.157Z",
+  "gone:1740830:0:2026-10-28T07:06:45.057Z"
  ],
  "kalshi_checked": null
 }
