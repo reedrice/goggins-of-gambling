@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-28T19:52:05.319Z"
+  "fetched_at": "2026-10-28T19:59:42.879Z"
  },
- "updated": "2026-10-28T19:52:05.216Z",
+ "updated": "2026-10-28T19:59:42.723Z",
  "open_taken_at": "2026-10-27T20:35:10.183Z",
  "thresholds": {
   "big": 10,
@@ -19,26 +19,26 @@
  },
  "open": [
   {
-   "market_id": "1881844",
-   "market": "Moneyline",
+   "market_id": "1884302",
+   "market": "Sets spread",
    "group": "game",
-   "mtype": "winner",
-   "period": "full_game",
-   "line": null,
-   "question": "Who will win in the upcoming atp event Joaquin Aguilar Cardozo vs Miguel Tobon scheduled for October 28, 2026 at 5:00 PM UTC?",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Joaquin Aguilar Cardozo cover -1.5 vs the Miguel Tobon in Joaquin Aguilar Cardozo vs. Miguel Tobon?",
    "sides": [
-    "Joaquin Aguilar win",
-    "Miguel Tobon win"
+    "Joaquin Aguilar -1.50 (Sets)",
+    "Miguel Tobon +1.50 (Sets)"
    ],
    "teams": [
     "Joaquin Aguilar",
     "Miguel Tobon"
    ],
    "player": null,
-   "mid": 60.5,
-   "yes_buy": 63,
-   "no_buy": 42,
-   "taken_at": "2026-10-27T22:07:20.157Z"
+   "mid": 20,
+   "yes_buy": 23,
+   "no_buy": 83,
+   "taken_at": "2026-10-28T17:22:42.631Z"
   },
   {
    "market_id": "1884313",
@@ -107,6 +107,28 @@
    "taken_at": "2026-10-28T17:11:27.107Z"
   },
   {
+   "market_id": "1884307",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Joaquin Aguilar Cardozo vs. Miguel Tobon be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 37.5,
+   "yes_buy": 38,
+   "no_buy": 63,
+   "taken_at": "2026-10-28T17:11:27.107Z"
+  },
+  {
    "market_id": "1884305",
    "market": "Games total",
    "group": "game",
@@ -149,6 +171,28 @@
    "yes_buy": 28,
    "no_buy": 76,
    "taken_at": "2026-10-28T17:11:27.107Z"
+  },
+  {
+   "market_id": "1881844",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming atp event Joaquin Aguilar Cardozo vs Miguel Tobon scheduled for October 28, 2026 at 5:00 PM UTC?",
+   "sides": [
+    "Joaquin Aguilar win",
+    "Miguel Tobon win"
+   ],
+   "teams": [
+    "Joaquin Aguilar",
+    "Miguel Tobon"
+   ],
+   "player": null,
+   "mid": 60.5,
+   "yes_buy": 63,
+   "no_buy": 42,
+   "taken_at": "2026-10-27T22:07:20.157Z"
   },
   {
    "market_id": "1884301",
@@ -239,50 +283,6 @@
    "taken_at": "2026-10-28T09:32:36.942Z"
   },
   {
-   "market_id": "1884302",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Joaquin Aguilar Cardozo cover -1.5 vs the Miguel Tobon in Joaquin Aguilar Cardozo vs. Miguel Tobon?",
-   "sides": [
-    "Joaquin Aguilar -1.50 (Sets)",
-    "Miguel Tobon +1.50 (Sets)"
-   ],
-   "teams": [
-    "Joaquin Aguilar",
-    "Miguel Tobon"
-   ],
-   "player": null,
-   "mid": 20,
-   "yes_buy": 23,
-   "no_buy": 83,
-   "taken_at": "2026-10-28T17:22:42.631Z"
-  },
-  {
-   "market_id": "1884307",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Joaquin Aguilar Cardozo vs. Miguel Tobon be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 37.5,
-   "yes_buy": 38,
-   "no_buy": 63,
-   "taken_at": "2026-10-28T17:11:27.107Z"
-  },
-  {
    "market_id": "1884296",
    "market": "Games spread",
    "group": "game",
@@ -351,6 +351,26 @@
  ],
  "edges": [
   {
+   "key": "1884302:1",
+   "market_id": "1884302",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Joaquin Aguilar Cardozo cover -1.5 vs the Miguel Tobon in Joaquin Aguilar Cardozo vs. Miguel Tobon?",
+   "side": "Miguel Tobon +1.50 (Sets)",
+   "open_chance": 83,
+   "now_chance": 21,
+   "open_odds": "-488",
+   "now_odds": "+376",
+   "edge": 62,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-28T17:49:21.274Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1884305:0",
    "market_id": "1884305",
    "market": "Games total",
@@ -391,22 +411,22 @@
    "kalshi": null
   },
   {
-   "key": "1884304:0",
-   "market_id": "1884304",
-   "market": "Games total",
+   "key": "1884307:0",
+   "market_id": "1884307",
+   "market": "Sets total",
    "group": "game",
-   "question": "Will the total in Joaquin Aguilar Cardozo vs. Miguel Tobon be more than 17.5?",
-   "side": "Over 17.5 (Games)",
-   "open_chance": 69,
-   "now_chance": 58,
-   "open_odds": "-223",
-   "now_odds": "-138",
-   "edge": 11,
+   "question": "Will the total in Joaquin Aguilar Cardozo vs. Miguel Tobon be more than 2.5?",
+   "side": "Over 2.5 (Sets)",
+   "open_chance": 38,
+   "now_chance": 20,
+   "open_odds": "+163",
+   "now_odds": "+400",
+   "edge": 18,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-28T19:43:39.393Z",
+   "first_seen": "2026-10-28T19:59:42.723Z",
    "status": "open",
    "kalshi": null
   },
@@ -431,23 +451,23 @@
    "kalshi": null
   },
   {
-   "key": "1884302:1",
-   "market_id": "1884302",
-   "market": "Sets spread",
+   "key": "1884304:0",
+   "market_id": "1884304",
+   "market": "Games total",
    "group": "game",
-   "question": "Will the Joaquin Aguilar Cardozo cover -1.5 vs the Miguel Tobon in Joaquin Aguilar Cardozo vs. Miguel Tobon?",
-   "side": "Miguel Tobon +1.50 (Sets)",
-   "open_chance": 83,
-   "now_chance": 49,
-   "open_odds": "-488",
-   "now_odds": "+104",
-   "edge": 34,
-   "tier": "big",
+   "question": "Will the total in Joaquin Aguilar Cardozo vs. Miguel Tobon be more than 17.5?",
+   "side": "Over 17.5 (Games)",
+   "open_chance": 69,
+   "now_chance": 64,
+   "open_odds": "-223",
+   "now_odds": "-178",
+   "edge": 5,
+   "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-28T17:49:21.274Z",
-   "status": "gone",
+   "first_seen": "2026-10-28T19:43:39.393Z",
+   "status": "open",
    "kalshi": null
   },
   {
@@ -552,6 +572,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1884307:0:big",
+   "key": "1884307:0",
+   "at": "2026-10-28T19:59:42.723Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Over 2.5 (Sets)",
+   "market": "Sets total",
+   "now_odds": "+400",
+   "now_chance": 20,
+   "edge": 18,
+   "text": "New big edge: Over 2.5 (Sets) (Sets total), 18 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-joaagu-migtob-2026-10-28"
+  },
+  {
+   "id": "new_edge:1884304:0:slight",
+   "key": "1884304:0",
+   "at": "2026-10-28T19:59:42.723Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-178",
+   "now_chance": 64,
+   "edge": 5,
+   "text": "New slight edge: Over 17.5 (Games) (Games total), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-joaagu-migtob-2026-10-28"
+  },
   {
    "id": "new_edge:1884300:1:big",
    "key": "1884300:1",
@@ -841,7 +889,9 @@
   "new_edge:1884304:0:big",
   "gone:1884298:1:2026-10-28T17:56:45.279Z",
   "gone:1884297:1:2026-10-28T19:25:07.212Z",
-  "new_edge:1884300:1:big"
+  "new_edge:1884300:1:big",
+  "new_edge:1884307:0:big",
+  "new_edge:1884304:0:slight"
  ],
  "kalshi_checked": null
 }
