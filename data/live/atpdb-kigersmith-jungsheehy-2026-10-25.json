@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-28T19:43:32.778Z"
+  "fetched_at": "2026-10-28T19:51:57.792Z"
  },
- "updated": "2026-10-28T19:43:32.659Z",
+ "updated": "2026-10-28T19:51:57.675Z",
  "open_taken_at": "2026-10-24T20:13:10.122Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-28T11:23:43.921Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1766014:1:2026-10-28T11:23:43.921Z",
+   "key": "1766014:1",
+   "at": "2026-10-28T19:51:57.675Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Jung J / Sheehy J win",
+   "market": "Moneyline",
+   "now_odds": "+163",
+   "now_chance": 38,
+   "edge": 13,
+   "text": "Edge gone: Jung J / Sheehy J win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-kigersmith-jungsheehy-2026-10-25"
+  },
   {
    "id": "new_edge:1766014:1:big",
    "key": "1766014:1",
@@ -80,7 +94,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1766014:1:big"
+  "new_edge:1766014:1:big",
+  "gone:1766014:1:2026-10-28T11:23:43.921Z"
  ],
  "kalshi_checked": null
 }
