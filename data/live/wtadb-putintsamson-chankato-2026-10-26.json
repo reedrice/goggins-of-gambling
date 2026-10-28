@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185704",
-  "fetched_at": "2026-10-28T06:27:42.490Z",
+  "fetched_at": "2026-10-28T06:34:45.433Z",
   "tennis": true,
   "tennis_match": {
    "id": "185704",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Hao-Ching Chan (TPO) & Miyu Kato (JPN) leads Yulia Putintseva (KAZ) & Liudmila Samsonova (RUS) 6-3",
+     "text": "Hao-Ching Chan (TPO) & Miyu Kato (JPN) leads Yulia Putintseva (KAZ) & Liudmila Samsonova (RUS) 6-3 1-0",
      "type": "event"
     }
    ],
@@ -55,9 +55,14 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "roster": {
@@ -132,9 +137,14 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
-       "value": 3
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "roster": {
@@ -204,6 +214,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 264,
    "type": {
     "id": "4",
@@ -222,14 +237,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Hao-Ching Chan / Miyu Kato",
    "alias": "Hao-Ching Chan / Miyu Kato",
    "name": "Hao-Ching Chan / Miyu Kato",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Yulia Putintseva / Liudmila Samsonova",
@@ -241,7 +256,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T06:27:42.423Z",
+ "updated": "2026-10-28T06:34:45.351Z",
  "open_taken_at": "2026-10-26T02:31:10.019Z",
  "thresholds": {
   "big": 10,
@@ -271,72 +286,8 @@
    "taken_at": "2026-10-27T03:38:53.060Z"
   }
  ],
- "edges": [
-  {
-   "key": "1819870:0",
-   "market_id": "1819870",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wtadb event Putintseva / Samsonova vs Chan / Kato scheduled for October 27, 2026 at 1:30 AM UTC?",
-   "side": "Putintseva Y / Samsonova L win",
-   "open_chance": 52,
-   "now_chance": 17,
-   "open_odds": "-108",
-   "now_odds": "+488",
-   "edge": 35,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (35 pts), likely news",
-   "context": "Hao-Ching Chan / Miyu Kato 6 · Yulia Putintseva / Liudmila Samsonova 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-27T06:44:46.588Z",
-   "status": "open",
-   "kalshi": null
-  }
- ],
- "alerts": [
-  {
-   "id": "news:1819870:0",
-   "key": "1819870:0",
-   "at": "2026-10-28T06:09:21.073Z",
-   "type": "news",
-   "tier": "big",
-   "side": "Putintseva Y / Samsonova L win",
-   "market": "Moneyline",
-   "now_odds": "+270",
-   "now_chance": 27,
-   "edge": 25,
-   "text": "Big move, likely news: Putintseva Y / Samsonova L win (Moneyline) is 25 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wtadb/wtadb-putintsamson-chankato-2026-10-26"
-  },
-  {
-   "id": "gone:1819870:0:2026-10-27T06:44:46.588Z",
-   "key": "1819870:0",
-   "at": "2026-10-28T05:59:14.029Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Putintseva Y / Samsonova L win",
-   "market": "Moneyline",
-   "now_odds": "+156",
-   "now_chance": 39,
-   "edge": 13,
-   "text": "Edge gone: Putintseva Y / Samsonova L win (Moneyline) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wtadb/wtadb-putintsamson-chankato-2026-10-26"
-  },
-  {
-   "id": "new_edge:1819870:0:big",
-   "key": "1819870:0",
-   "at": "2026-10-28T05:53:12.474Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Putintseva Y / Samsonova L win",
-   "market": "Moneyline",
-   "now_odds": "+156",
-   "now_chance": 39,
-   "edge": 13,
-   "text": "New big edge: Putintseva Y / Samsonova L win (Moneyline), 13 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wtadb/wtadb-putintsamson-chankato-2026-10-26"
-  }
- ],
+ "edges": [],
+ "alerts": [],
  "alert_seen": [
   "new_edge:1819870:0:big",
   "new_edge:1819870:1:slight",
