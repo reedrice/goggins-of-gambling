@@ -4,12 +4,12 @@
  "game": "Alice Tubello vs. Luna Maria Cinalli",
  "url": "https://polymarket.us/sports/wta/wta-alitub-luncin-2026-10-28",
  "start_time": "2026-10-28T14:30:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185772",
-  "fetched_at": "2026-10-28T13:38:33.792Z",
+  "fetched_at": "2026-10-28T15:27:46.420Z",
   "tennis": true,
   "tennis_match": {
    "id": "185772",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Wed, October 28th at 10:30 AM EDT",
-     "shortDetail": "10/28 - 10:30 AM EDT"
+     "description": "In Progress",
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Alice Tubello (FRA) leads Luna Maria Cinalli (ARG) 6-4 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,16 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "a0d48c25-57ac-3e06-81d4-97eba5bc06ce",
       "displayName": "Luna Maria Cinalli",
@@ -87,6 +102,16 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "0d54348a-f88f-3110-a913-5b9381e2a9c3",
       "displayName": "Alice Tubello",
@@ -119,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1080,
    "type": {
     "id": "2",
@@ -135,10 +165,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Wed, October 28th at 10:30 AM EDT",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Luna Maria Cinalli",
@@ -150,13 +180,13 @@
    "abbr": "Alice Tubello",
    "alias": "Alice Tubello",
    "name": "Alice Tubello",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T13:38:33.647Z",
+ "updated": "2026-10-28T15:27:46.297Z",
  "open_taken_at": "2026-10-27T17:49:54.332Z",
  "thresholds": {
   "big": 10,
@@ -164,26 +194,136 @@
  },
  "open": [
   {
-   "market_id": "1873381",
-   "market": "Moneyline",
+   "market_id": "1875310",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "winner",
-   "period": "full_game",
-   "line": null,
-   "question": "Who will win in the upcoming wta event Alice Tubello vs Luna Maria Cinalli scheduled for October 28, 2026 at 2:00 PM UTC?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Alice Tubello cover 4.5 vs the Luna Maria Cinalli in Alice Tubello vs. Luna Maria Cinalli?",
    "sides": [
-    "Alice Tubello win",
-    "Luna Cinalli win"
+    "Alice Tubello +4.50 (Games)",
+    "Luna Cinalli -4.50 (Games)"
    ],
    "teams": [
     "Alice Tubello",
     "Luna Cinalli"
    ],
    "player": null,
-   "mid": 88.5,
-   "yes_buy": 91,
-   "no_buy": 14,
-   "taken_at": "2026-10-28T03:04:14.723Z"
+   "mid": 95.5,
+   "yes_buy": 97,
+   "no_buy": 6,
+   "taken_at": "2026-10-28T15:27:46.297Z"
+  },
+  {
+   "market_id": "1875324",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Alice Tubello win set 2 against Luna Maria Cinalli?",
+   "sides": [
+    "Yes: Alice Tubello win set 2 against Luna Maria Cinalli",
+    "No: Alice Tubello win set 2 against Luna Maria Cinalli"
+   ],
+   "teams": [
+    "Alice Tubello",
+    null
+   ],
+   "player": null,
+   "mid": 94,
+   "yes_buy": 96,
+   "no_buy": 8,
+   "taken_at": "2026-10-28T15:27:46.297Z"
+  },
+  {
+   "market_id": "1875307",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Alice Tubello cover -1.5 vs the Luna Maria Cinalli in Alice Tubello vs. Luna Maria Cinalli?",
+   "sides": [
+    "Alice Tubello -1.50 (Games)",
+    "Luna Cinalli +1.50 (Games)"
+   ],
+   "teams": [
+    "Alice Tubello",
+    "Luna Cinalli"
+   ],
+   "player": null,
+   "mid": 93.5,
+   "yes_buy": 94,
+   "no_buy": 7,
+   "taken_at": "2026-10-28T15:27:46.297Z"
+  },
+  {
+   "market_id": "1875312",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Alice Tubello cover 7.5 vs the Luna Maria Cinalli in Alice Tubello vs. Luna Maria Cinalli?",
+   "sides": [
+    "Alice Tubello +7.50 (Games)",
+    "Luna Cinalli -7.50 (Games)"
+   ],
+   "teams": [
+    "Alice Tubello",
+    "Luna Cinalli"
+   ],
+   "player": null,
+   "mid": 93.5,
+   "yes_buy": 94,
+   "no_buy": 7,
+   "taken_at": "2026-10-28T15:27:46.297Z"
+  },
+  {
+   "market_id": "1875308",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Alice Tubello cover 1.5 vs the Luna Maria Cinalli in Alice Tubello vs. Luna Maria Cinalli?",
+   "sides": [
+    "Alice Tubello +1.50 (Games)",
+    "Luna Cinalli -1.50 (Games)"
+   ],
+   "teams": [
+    "Alice Tubello",
+    "Luna Cinalli"
+   ],
+   "player": null,
+   "mid": 92.5,
+   "yes_buy": 93,
+   "no_buy": 8,
+   "taken_at": "2026-10-28T15:27:46.297Z"
+  },
+  {
+   "market_id": "1875309",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Alice Tubello cover -4.5 vs the Luna Maria Cinalli in Alice Tubello vs. Luna Maria Cinalli?",
+   "sides": [
+    "Alice Tubello -4.50 (Games)",
+    "Luna Cinalli +4.50 (Games)"
+   ],
+   "teams": [
+    "Alice Tubello",
+    "Luna Cinalli"
+   ],
+   "player": null,
+   "mid": 74,
+   "yes_buy": 75,
+   "no_buy": 27,
+   "taken_at": "2026-10-28T15:27:46.297Z"
   },
   {
    "market_id": "1875315",
@@ -206,6 +346,50 @@
    "yes_buy": 56,
    "no_buy": 48,
    "taken_at": "2026-10-28T09:16:34.078Z"
+  },
+  {
+   "market_id": "1875317",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Alice Tubello vs. Luna Maria Cinalli be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 10,
+   "yes_buy": 11,
+   "no_buy": 91,
+   "taken_at": "2026-10-28T15:27:46.297Z"
+  },
+  {
+   "market_id": "1873381",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming wta event Alice Tubello vs Luna Maria Cinalli scheduled for October 28, 2026 at 2:00 PM UTC?",
+   "sides": [
+    "Alice Tubello win",
+    "Luna Cinalli win"
+   ],
+   "teams": [
+    "Alice Tubello",
+    "Luna Cinalli"
+   ],
+   "player": null,
+   "mid": 88.5,
+   "yes_buy": 91,
+   "no_buy": 14,
+   "taken_at": "2026-10-28T03:04:14.723Z"
   },
   {
    "market_id": "1875311",
