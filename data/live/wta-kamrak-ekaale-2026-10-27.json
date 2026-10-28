@@ -4,12 +4,12 @@
  "game": "Kamilla Rakhimova vs. Ekaterina Alexandrova",
  "url": "https://polymarket.us/sports/wta/wta-kamrak-ekaale-2026-10-27",
  "start_time": "2026-10-28T01:30:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185680",
-  "fetched_at": "2026-10-28T04:25:08.112Z",
+  "fetched_at": "2026-10-28T04:31:22.765Z",
   "tennis": true,
   "tennis_match": {
    "id": "185680",
@@ -17,17 +17,17 @@
    "date": "2026-10-28T01:35Z",
    "startDate": "2026-10-28T01:35Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Kamilla Rakhimova (UZB) leads Ekaterina Alexandrova (RUS) 6-4 4-6 6-6",
+     "text": "Kamilla Rakhimova (UZB) bt Ekaterina Alexandrova (RUS) 6-4 4-6 7-6 (7-5)",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
      "linescores": [
       {
        "value": 4,
@@ -65,7 +66,9 @@
        "winner": true
       },
       {
-       "value": 6
+       "value": 6,
+       "tiebreak": 5,
+       "winner": false
       }
      ],
      "athlete": {
@@ -105,6 +108,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
      "linescores": [
       {
        "value": 6,
@@ -115,7 +119,9 @@
        "winner": false
       },
       {
-       "value": 6
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
       }
      ],
      "athlete": {
@@ -166,10 +172,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Ekaterina Alexandrova",
@@ -181,13 +187,13 @@
    "abbr": "Kamilla Rakhimova",
    "alias": "Kamilla Rakhimova",
    "name": "Kamilla Rakhimova",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T04:25:08.024Z",
+ "updated": "2026-10-28T04:31:22.674Z",
  "open_taken_at": "2026-10-27T03:50:40.617Z",
  "thresholds": {
   "big": 10,
@@ -527,26 +533,6 @@
  ],
  "edges": [
   {
-   "key": "1857965:1",
-   "market_id": "1857965",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Kamilla Rakhimova vs Ekaterina Alexandrova scheduled for October 28, 2026 at 1:00 AM UTC?",
-   "side": "Ekaterina Alexandrova win",
-   "open_chance": 76,
-   "now_chance": 54,
-   "open_odds": "-317",
-   "now_odds": "-117",
-   "edge": 22,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Ekaterina Alexandrova 4, 6, 6 · Kamilla Rakhimova 6, 4, 6 · 3rd Set (games by set)",
-   "first_seen": "2026-10-27T08:44:26.336Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1859190:1",
    "market_id": "1859190",
    "market": "Set 1 winner",
@@ -583,6 +569,26 @@
    "reason": "Big move (32 pts), likely news",
    "context": "Ekaterina Alexandrova 4, 3 · Kamilla Rakhimova 6, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T01:45:09.591Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1857965:1",
+   "market_id": "1857965",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Kamilla Rakhimova vs Ekaterina Alexandrova scheduled for October 28, 2026 at 1:00 AM UTC?",
+   "side": "Ekaterina Alexandrova win",
+   "open_chance": 76,
+   "now_chance": 54,
+   "open_odds": "-317",
+   "now_odds": "-117",
+   "edge": 22,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Ekaterina Alexandrova 4, 6, 6 · Kamilla Rakhimova 6, 4, 6 · 3rd Set (games by set)",
+   "first_seen": "2026-10-27T08:44:26.336Z",
    "status": "gone",
    "kalshi": null
   },
