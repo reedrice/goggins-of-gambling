@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185808",
-  "fetched_at": "2026-10-28T23:38:30.865Z",
+  "fetched_at": "2026-10-28T23:45:28.749Z",
   "tennis": true,
   "tennis_match": {
    "id": "185808",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Selena Janicijevic (FRA) leads Elizabeth Mandlik (USA) 6-2",
+     "text": "Elizabeth Mandlik (USA) is tied with Selena Janicijevic (FRA) 2-6 1-0",
      "type": "event"
     }
    ],
@@ -55,9 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
-       "value": 2
+       "value": 2,
+       "winner": false
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -97,9 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -134,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1034,
    "type": {
     "id": "2",
@@ -152,8 +167,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Elizabeth Mandlik",
@@ -165,13 +180,13 @@
    "abbr": "Selena Janicijevic",
    "alias": "Selena Janicijevic",
    "name": "Selena Janicijevic",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T23:38:30.763Z",
+ "updated": "2026-10-28T23:45:27.879Z",
  "open_taken_at": "2026-10-27T18:33:38.393Z",
  "thresholds": {
   "big": 10,
@@ -223,6 +238,28 @@
    "taken_at": "2026-10-28T23:12:21.490Z"
   },
   {
+   "market_id": "1879917",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Selena Janicijevic cover 1.5 vs the Elizabeth Mandlik in Selena Janicijevic vs. Elizabeth Mandlik?",
+   "sides": [
+    "Selena Janicijevic +1.50 (Games)",
+    "Elizabeth Mandlik -1.50 (Games)"
+   ],
+   "teams": [
+    "Selena Janicijevic",
+    "Elizabeth Mandlik"
+   ],
+   "player": null,
+   "mid": 39.5,
+   "yes_buy": 41,
+   "no_buy": 62,
+   "taken_at": "2026-10-28T22:58:25.648Z"
+  },
+  {
    "market_id": "1879915",
    "market": "Games spread",
    "group": "game",
@@ -243,28 +280,6 @@
    "yes_buy": 33,
    "no_buy": 69,
    "taken_at": "2026-10-28T23:05:22.422Z"
-  },
-  {
-   "market_id": "1879919",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Selena Janicijevic cover -4.5 vs the Elizabeth Mandlik in Selena Janicijevic vs. Elizabeth Mandlik?",
-   "sides": [
-    "Selena Janicijevic -4.50 (Games)",
-    "Elizabeth Mandlik +4.50 (Games)"
-   ],
-   "teams": [
-    "Selena Janicijevic",
-    "Elizabeth Mandlik"
-   ],
-   "player": null,
-   "mid": 22.5,
-   "yes_buy": 25,
-   "no_buy": 80,
-   "taken_at": "2026-10-28T23:17:58.752Z"
   },
   {
    "market_id": "1879933",
@@ -289,26 +304,26 @@
    "taken_at": "2026-10-28T15:27:46.768Z"
   },
   {
-   "market_id": "1879937",
-   "market": "Sets total",
+   "market_id": "1879919",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Selena Janicijevic vs. Elizabeth Mandlik be more than 2.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Selena Janicijevic cover -4.5 vs the Elizabeth Mandlik in Selena Janicijevic vs. Elizabeth Mandlik?",
    "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
+    "Selena Janicijevic -4.50 (Games)",
+    "Elizabeth Mandlik +4.50 (Games)"
    ],
    "teams": [
-    null,
-    null
+    "Selena Janicijevic",
+    "Elizabeth Mandlik"
    ],
    "player": null,
-   "mid": 39.5,
-   "yes_buy": 40,
-   "no_buy": 61,
-   "taken_at": "2026-10-28T23:12:21.490Z"
+   "mid": 22.5,
+   "yes_buy": 25,
+   "no_buy": 80,
+   "taken_at": "2026-10-28T23:17:58.752Z"
   },
   {
    "market_id": "1879935",
@@ -333,6 +348,28 @@
    "taken_at": "2026-10-28T23:12:21.490Z"
   },
   {
+   "market_id": "1879937",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Selena Janicijevic vs. Elizabeth Mandlik be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 39.5,
+   "yes_buy": 40,
+   "no_buy": 61,
+   "taken_at": "2026-10-28T23:12:21.490Z"
+  },
+  {
    "market_id": "1879947",
    "market": "Set 1 winner",
    "group": "game",
@@ -353,28 +390,6 @@
    "yes_buy": 80,
    "no_buy": 25,
    "taken_at": "2026-10-28T23:24:32.590Z"
-  },
-  {
-   "market_id": "1879917",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Selena Janicijevic cover 1.5 vs the Elizabeth Mandlik in Selena Janicijevic vs. Elizabeth Mandlik?",
-   "sides": [
-    "Selena Janicijevic +1.50 (Games)",
-    "Elizabeth Mandlik -1.50 (Games)"
-   ],
-   "teams": [
-    "Selena Janicijevic",
-    "Elizabeth Mandlik"
-   ],
-   "player": null,
-   "mid": 39.5,
-   "yes_buy": 41,
-   "no_buy": 62,
-   "taken_at": "2026-10-28T22:58:25.648Z"
   },
   {
    "market_id": "1879926",
@@ -445,42 +460,22 @@
  ],
  "edges": [
   {
-   "key": "1876035:1",
-   "market_id": "1876035",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Selena Janicijevic vs Elizabeth Mandlik scheduled for October 28, 2026 at 8:00 PM UTC?",
-   "side": "Elizabeth Mandlik win",
-   "open_chance": 68,
-   "now_chance": 28,
-   "open_odds": "-213",
-   "now_odds": "+257",
-   "edge": 40,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (40 pts), likely news",
-   "context": "Elizabeth Mandlik 2 · Selena Janicijevic 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T23:12:21.490Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1879919:1",
-   "market_id": "1879919",
+   "key": "1879917:1",
+   "market_id": "1879917",
    "market": "Games spread",
    "group": "game",
-   "question": "Will the Selena Janicijevic cover -4.5 vs the Elizabeth Mandlik in Selena Janicijevic vs. Elizabeth Mandlik?",
-   "side": "Elizabeth Mandlik +4.50 (Games)",
-   "open_chance": 80,
-   "now_chance": 42,
-   "open_odds": "-400",
-   "now_odds": "+138",
-   "edge": 38,
+   "question": "Will the Selena Janicijevic cover 1.5 vs the Elizabeth Mandlik in Selena Janicijevic vs. Elizabeth Mandlik?",
+   "side": "Elizabeth Mandlik -1.50 (Games)",
+   "open_chance": 62,
+   "now_chance": 28,
+   "open_odds": "-163",
+   "now_odds": "+257",
+   "edge": 34,
    "tier": "big",
-   "class": "news",
-   "reason": "Big move (38 pts), likely news",
-   "context": "Elizabeth Mandlik 2 · Selena Janicijevic 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T23:24:32.590Z",
+   "class": "score",
+   "reason": "Explained by score: Elizabeth Mandlik not above the games spread right now",
+   "context": "Elizabeth Mandlik 2, 1 · Selena Janicijevic 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T23:12:21.490Z",
    "status": "open",
    "kalshi": null
   },
@@ -499,8 +494,48 @@
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Elizabeth Mandlik not above the games spread right now",
-   "context": "Elizabeth Mandlik 2 · Selena Janicijevic 6 · 1st Set (games by set)",
+   "context": "Elizabeth Mandlik 2, 1 · Selena Janicijevic 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T23:12:21.490Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1876035:1",
+   "market_id": "1876035",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Selena Janicijevic vs Elizabeth Mandlik scheduled for October 28, 2026 at 8:00 PM UTC?",
+   "side": "Elizabeth Mandlik win",
+   "open_chance": 68,
+   "now_chance": 39,
+   "open_odds": "-213",
+   "now_odds": "+156",
+   "edge": 29,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Elizabeth Mandlik trailing in sets",
+   "context": "Elizabeth Mandlik 2, 1 · Selena Janicijevic 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T23:12:21.490Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1879919:1",
+   "market_id": "1879919",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Selena Janicijevic cover -4.5 vs the Elizabeth Mandlik in Selena Janicijevic vs. Elizabeth Mandlik?",
+   "side": "Elizabeth Mandlik +4.50 (Games)",
+   "open_chance": 80,
+   "now_chance": 51,
+   "open_odds": "-400",
+   "now_odds": "-104",
+   "edge": 29,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (29 pts), likely news",
+   "context": "Elizabeth Mandlik 2, 1 · Selena Janicijevic 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T23:24:32.590Z",
    "status": "open",
    "kalshi": null
   },
@@ -512,36 +547,16 @@
    "question": "Will the total in Selena Janicijevic vs. Elizabeth Mandlik be more than 22.5?",
    "side": "Under 22.5 (Games)",
    "open_chance": 59,
-   "now_chance": 52,
+   "now_chance": 45,
    "open_odds": "-144",
-   "now_odds": "-108",
-   "edge": 7,
-   "tier": "slight",
+   "now_odds": "+122",
+   "edge": 14,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Elizabeth Mandlik 2 · Selena Janicijevic 6 · 1st Set (games by set)",
+   "context": "Elizabeth Mandlik 2, 1 · Selena Janicijevic 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T23:12:21.490Z",
    "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1879917:1",
-   "market_id": "1879917",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Selena Janicijevic cover 1.5 vs the Elizabeth Mandlik in Selena Janicijevic vs. Elizabeth Mandlik?",
-   "side": "Elizabeth Mandlik -1.50 (Games)",
-   "open_chance": 62,
-   "now_chance": 39,
-   "open_odds": "-163",
-   "now_odds": "+156",
-   "edge": 23,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Elizabeth Mandlik not above the games spread right now",
-   "context": "Elizabeth Mandlik 2 · Selena Janicijevic 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T23:12:21.490Z",
-   "status": "gone",
    "kalshi": null
   },
   {
@@ -646,6 +661,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1879933:1:big",
+   "key": "1879933:1",
+   "at": "2026-10-28T23:45:27.879Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+122",
+   "now_chance": 45,
+   "edge": 14,
+   "text": "New big edge: Under 22.5 (Games) (Games total), 14 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-seljan-eliman-2026-10-28"
+  },
   {
    "id": "news:1876035:1",
    "key": "1876035:1",
@@ -842,7 +871,8 @@
   "new_edge:1879931:1:slight",
   "news:1876035:1",
   "news:1879919:1",
-  "gone:1879931:1:2026-10-28T23:31:49.075Z"
+  "gone:1879931:1:2026-10-28T23:31:49.075Z",
+  "new_edge:1879933:1:big"
  ],
  "kalshi_checked": null
 }
