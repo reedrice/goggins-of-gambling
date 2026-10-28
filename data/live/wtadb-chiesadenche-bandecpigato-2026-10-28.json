@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185859",
-  "fetched_at": "2026-10-28T15:27:44.690Z",
+  "fetched_at": "2026-10-28T15:34:20.119Z",
   "tennis": true,
   "tennis_match": {
    "id": "185859",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Enola Chiesa (ITA) & Rositsa Dencheva (BUL) leads Susan Bandecchi (SUI) & Lisa Pigato (ITA) 6-6",
+     "text": "Enola Chiesa (ITA) & Rositsa Dencheva (BUL) leads Susan Bandecchi (SUI) & Lisa Pigato (ITA) 7-6 (9-7)",
      "type": "event"
     }
    ],
@@ -57,7 +57,8 @@
      "homeAway": "away",
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "tiebreak": 7
       }
      ],
      "roster": {
@@ -134,7 +135,8 @@
      "homeAway": "home",
      "linescores": [
       {
-       "value": 6
+       "value": 7,
+       "tiebreak": 9
       }
      ],
      "roster": {
@@ -241,7 +243,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T15:27:44.529Z",
+ "updated": "2026-10-28T15:34:20.035Z",
  "open_taken_at": "2026-10-27T13:01:15.215Z",
  "thresholds": {
   "big": 10,
@@ -289,11 +291,25 @@
    "reason": null,
    "context": "Susan Bandecchi / Lisa Pigato 6 · Enola Chiesa / Rositsa Dencheva 6 · 1st Set (games by set)",
    "first_seen": "2026-10-28T12:10:10.451Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1869002:0:2026-10-28T12:10:10.451Z",
+   "key": "1869002:0",
+   "at": "2026-10-28T15:34:20.035Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Chiesa E / Dencheva R win",
+   "market": "Moneyline",
+   "now_odds": "+233",
+   "now_chance": 30,
+   "edge": 12,
+   "text": "Edge gone: Chiesa E / Dencheva R win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-chiesadenche-bandecpigato-2026-10-28"
+  },
   {
    "id": "new_edge:1869002:0:big",
    "key": "1869002:0",
@@ -310,7 +326,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1869002:0:big"
+  "new_edge:1869002:0:big",
+  "gone:1869002:0:2026-10-28T12:10:10.451Z"
  ],
  "kalshi_checked": null
 }
