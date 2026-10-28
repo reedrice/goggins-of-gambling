@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185769",
-  "fetched_at": "2026-10-28T18:05:13.003Z",
+  "fetched_at": "2026-10-28T18:12:07.929Z",
   "tennis": true,
   "tennis_match": {
    "id": "185769",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(5) Leyre Romero Gormaz (ESP) leads Antonia Vergara Rivera (CHI) 7-5 4-1",
+     "text": "(5) Leyre Romero Gormaz (ESP) leads Antonia Vergara Rivera (CHI) 7-5 4-2",
      "type": "event"
     }
    ],
@@ -55,14 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
        "value": 5,
        "winner": false
       },
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -102,7 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "possession": true,
      "curatedRank": {
       "current": 5
      },
@@ -189,7 +189,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T18:05:12.735Z",
+ "updated": "2026-10-28T18:12:07.708Z",
  "open_taken_at": "2026-10-27T05:06:06.628Z",
  "thresholds": {
   "big": 10,
@@ -263,28 +263,6 @@
    "taken_at": "2026-10-28T16:08:24.580Z"
   },
   {
-   "market_id": "1854252",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Leyre Romero Gormaz vs. Antonia Vergara Rivera be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 14.5,
-   "yes_buy": 15,
-   "no_buy": 86,
-   "taken_at": "2026-10-28T16:22:43.624Z"
-  },
-  {
    "market_id": "1854251",
    "market": "Games total",
    "group": "game",
@@ -305,6 +283,28 @@
    "yes_buy": 30,
    "no_buy": 71,
    "taken_at": "2026-10-28T16:08:24.580Z"
+  },
+  {
+   "market_id": "1854252",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Leyre Romero Gormaz vs. Antonia Vergara Rivera be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 14.5,
+   "yes_buy": 15,
+   "no_buy": 86,
+   "taken_at": "2026-10-28T16:22:43.624Z"
   },
   {
    "market_id": "1854247",
@@ -507,46 +507,6 @@
  ],
  "edges": [
   {
-   "key": "1854251:1",
-   "market_id": "1854251",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Leyre Romero Gormaz vs. Antonia Vergara Rivera be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 71,
-   "now_chance": 58,
-   "open_odds": "-245",
-   "now_odds": "-138",
-   "edge": 13,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Antonia Vergara Rivera 5 · Leyre Romero Gormaz 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T16:33:49.014Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1854251:0",
-   "market_id": "1854251",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Leyre Romero Gormaz vs. Antonia Vergara Rivera be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 30,
-   "now_chance": 20,
-   "open_odds": "+233",
-   "now_odds": "+400",
-   "edge": 10,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Antonia Vergara Rivera 5, 1 · Leyre Romero Gormaz 7, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-10-28T16:22:43.624Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "1854253:0",
    "market_id": "1854253",
    "market": "Sets total",
@@ -609,20 +569,6 @@
  ],
  "alerts": [
   {
-   "id": "new_edge:1854251:0:big",
-   "key": "1854251:0",
-   "at": "2026-10-28T17:40:10.043Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Over 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+400",
-   "now_chance": 20,
-   "edge": 10,
-   "text": "New big edge: Over 22.5 (Games) (Games total), 10 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-leygor-antver-2026-10-28"
-  },
-  {
    "id": "gone:1854253:0:2026-10-28T16:22:43.624Z",
    "key": "1854253:0",
    "at": "2026-10-28T17:22:36.930Z",
@@ -634,20 +580,6 @@
    "now_chance": 31,
    "edge": 10,
    "text": "Edge gone: Over 2.5 (Sets) (Sets total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-leygor-antver-2026-10-28"
-  },
-  {
-   "id": "new_edge:1854251:1:slight",
-   "key": "1854251:1",
-   "at": "2026-10-28T17:03:26.442Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Under 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "-194",
-   "now_chance": 66,
-   "edge": 5,
-   "text": "New slight edge: Under 22.5 (Games) (Games total), 5 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-leygor-antver-2026-10-28"
   },
   {
@@ -665,34 +597,6 @@
    "url": "https://polymarket.us/sports/wta/wta-leygor-antver-2026-10-28"
   },
   {
-   "id": "gone:1854251:1:2026-10-28T16:33:49.014Z",
-   "key": "1854251:1",
-   "at": "2026-10-28T16:42:00.289Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Under 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "-133",
-   "now_chance": 57,
-   "edge": 14,
-   "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-leygor-antver-2026-10-28"
-  },
-  {
-   "id": "new_edge:1854251:1:big",
-   "key": "1854251:1",
-   "at": "2026-10-28T16:33:49.014Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Under 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "-133",
-   "now_chance": 57,
-   "edge": 14,
-   "text": "New big edge: Under 22.5 (Games) (Games total), 14 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-leygor-antver-2026-10-28"
-  },
-  {
    "id": "gone:1854250:1:2026-10-28T16:22:43.624Z",
    "key": "1854250:1",
    "at": "2026-10-28T16:33:49.014Z",
@@ -704,20 +608,6 @@
    "now_chance": 40,
    "edge": 10,
    "text": "Edge gone: Under 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-leygor-antver-2026-10-28"
-  },
-  {
-   "id": "gone:1854251:0:2026-10-28T16:22:43.624Z",
-   "key": "1854251:0",
-   "at": "2026-10-28T16:33:49.014Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Over 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+317",
-   "now_chance": 24,
-   "edge": 6,
-   "text": "Edge gone: Over 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-leygor-antver-2026-10-28"
   },
   {
@@ -746,20 +636,6 @@
    "now_chance": 34,
    "edge": 7,
    "text": "New slight edge: Over 2.5 (Sets) (Sets total), 7 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-leygor-antver-2026-10-28"
-  },
-  {
-   "id": "new_edge:1854251:0:slight",
-   "key": "1854251:0",
-   "at": "2026-10-28T16:22:43.624Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Over 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+317",
-   "now_chance": 24,
-   "edge": 6,
-   "text": "New slight edge: Over 22.5 (Games) (Games total), 6 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-leygor-antver-2026-10-28"
   },
   {
