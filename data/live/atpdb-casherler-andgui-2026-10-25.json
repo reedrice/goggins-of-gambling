@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185215",
-  "fetched_at": "2026-10-28T19:25:00.047Z",
+  "fetched_at": "2026-10-28T19:43:31.832Z",
   "tennis": true,
   "tennis_match": {
    "id": "185215",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Guido Andreozzi (ARG) & Manuel Guinard (FRA) leads Robert Cash (USA) & Alexander Erler (AUT) 3-2",
+     "text": "Robert Cash (USA) & Alexander Erler (AUT) leads Guido Andreozzi (ARG) & Manuel Guinard (FRA) 4-6 0-0",
      "type": "event"
     }
    ],
@@ -55,10 +55,14 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
-       "value": 3
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "roster": {
@@ -133,10 +137,14 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
-       "value": 2
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "roster": {
@@ -229,14 +237,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Guido Andreozzi / Manuel Guinard",
    "alias": "Guido Andreozzi / Manuel Guinard",
    "name": "Guido Andreozzi / Manuel Guinard",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Robert Cash / Alexander Erler",
@@ -248,7 +256,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T19:24:59.992Z",
+ "updated": "2026-10-28T19:43:31.655Z",
  "open_taken_at": "2026-10-24T13:28:22.226Z",
  "thresholds": {
   "big": 10,
@@ -280,26 +288,6 @@
  ],
  "edges": [
   {
-   "key": "1755066:1",
-   "market_id": "1755066",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atpdb event Cash / Erler vs Andreozzi / Guinard scheduled for October 25, 2026 at 9:00 AM UTC?",
-   "side": "Andreozzi / Guinard win",
-   "open_chance": 63,
-   "now_chance": 44,
-   "open_odds": "-170",
-   "now_odds": "+127",
-   "edge": 19,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Guido Andreozzi / Manuel Guinard 3 · Robert Cash / Alexander Erler 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T10:02:22.080Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1755066:0",
    "market_id": "1755066",
    "market": "Moneyline",
@@ -307,34 +295,20 @@
    "question": "Who will win in the upcoming atpdb event Cash / Erler vs Andreozzi / Guinard scheduled for October 25, 2026 at 9:00 AM UTC?",
    "side": "Cash / Erler win",
    "open_chance": 40,
-   "now_chance": 26,
+   "now_chance": 17,
    "open_odds": "+150",
-   "now_odds": "+285",
-   "edge": 14,
+   "now_odds": "+488",
+   "edge": 23,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Guido Andreozzi / Manuel Guinard 1 · Robert Cash / Alexander Erler 1 · 1st Set (games by set)",
+   "context": "Guido Andreozzi / Manuel Guinard 6, 0 · Robert Cash / Alexander Erler 4, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T19:14:35.422Z",
-   "status": "gone",
+   "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
-  {
-   "id": "new_edge:1755066:1:big",
-   "key": "1755066:1",
-   "at": "2026-10-28T19:24:59.992Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Andreozzi / Guinard win",
-   "market": "Moneyline",
-   "now_odds": "+127",
-   "now_chance": 44,
-   "edge": 19,
-   "text": "New big edge: Andreozzi / Guinard win (Moneyline), 19 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atpdb/atpdb-casherler-andgui-2026-10-25"
-  },
   {
    "id": "gone:1755066:0:2026-10-28T19:14:35.422Z",
    "key": "1755066:0",

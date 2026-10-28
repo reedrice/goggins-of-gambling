@@ -4,12 +4,12 @@
  "game": "Pavlasek / Rikl vs. Cash / Glasspool",
  "url": "https://polymarket.us/sports/atpdb/atpdb-pavrik-cashglassp-2026-10-25",
  "start_time": "2026-10-28T18:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185163",
-  "fetched_at": "2026-10-28T19:24:59.717Z",
+  "fetched_at": "2026-10-28T19:43:45.739Z",
   "tennis": true,
   "tennis_match": {
    "id": "185163",
@@ -17,17 +17,17 @@
    "date": "2026-10-28T18:05Z",
    "startDate": "2026-10-28T18:05Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Adam Pavlasek (CZE) & Patrik Rikl (CZE) leads (2) Julian Cash (GBR) & Lloyd Glasspool (GBR) 5-7 6-6 (1-1)",
+     "text": "(2) Julian Cash (GBR) & Lloyd Glasspool (GBR) bt Adam Pavlasek (CZE) & Patrik Rikl (CZE) 7-5 7-6 (7-5)",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "curatedRank": {
       "current": 2
      },
@@ -64,8 +65,9 @@
        "winner": true
       },
       {
-       "value": 6,
-       "tiebreak": 1
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
       }
      ],
      "roster": {
@@ -140,6 +142,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "linescores": [
       {
        "value": 5,
@@ -147,7 +150,8 @@
       },
       {
        "value": 6,
-       "tiebreak": 1
+       "tiebreak": 5,
+       "winner": false
       }
      ],
      "roster": {
@@ -233,16 +237,16 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Julian Cash / Lloyd Glasspool",
    "alias": "Julian Cash / Lloyd Glasspool",
    "name": "Julian Cash / Lloyd Glasspool",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Adam Pavlasek / Patrik Rikl",
@@ -254,7 +258,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T19:24:59.620Z",
+ "updated": "2026-10-28T19:43:45.570Z",
  "open_taken_at": "2026-10-24T12:29:25.703Z",
  "thresholds": {
   "big": 10,
@@ -302,11 +306,25 @@
    "reason": null,
    "context": "Julian Cash / Lloyd Glasspool 7, 6 · Adam Pavlasek / Patrik Rikl 5, 6 · 2nd Set (games by set)",
    "first_seen": "2026-10-27T17:49:38.558Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1752666:0:2026-10-27T17:49:38.558Z",
+   "key": "1752666:0",
+   "at": "2026-10-28T19:43:45.570Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Pavlasek / Rikl win",
+   "market": "Moneyline",
+   "now_odds": "+317",
+   "now_chance": 24,
+   "edge": 19,
+   "text": "Edge gone: Pavlasek / Rikl win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-pavrik-cashglassp-2026-10-25"
+  },
   {
    "id": "news:1752666:0",
    "key": "1752666:0",
@@ -353,7 +371,8 @@
  "alert_seen": [
   "new_edge:1752666:0:slight",
   "new_edge:1752666:0:big",
-  "news:1752666:0"
+  "news:1752666:0",
+  "gone:1752666:0:2026-10-27T17:49:38.558Z"
  ],
  "kalshi_checked": null
 }
