@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185680",
-  "fetched_at": "2026-10-28T01:32:06.756Z",
+  "fetched_at": "2026-10-28T01:38:53.092Z",
   "tennis": true,
   "tennis_match": {
    "id": "185680",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Tue, October 27th at 9:35 PM EDT",
-     "shortDetail": "10/27 - 9:35 PM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Kamilla Rakhimova (UZB) leads Ekaterina Alexandrova (RUS) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "b4dc27b2-146b-000e-3f5d-5e1431231999",
       "displayName": "Ekaterina Alexandrova",
@@ -87,6 +98,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "3daf9333-e5be-5f0f-68d5-d2cbddca79a7",
       "displayName": "Kamilla Rakhimova",
@@ -119,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 264,
    "type": {
     "id": "2",
@@ -135,10 +157,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Tue, October 27th at 9:35 PM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Ekaterina Alexandrova",
@@ -156,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T01:32:06.677Z",
+ "updated": "2026-10-28T01:38:53.031Z",
  "open_taken_at": "2026-10-27T03:50:40.617Z",
  "thresholds": {
   "big": 10,
@@ -227,28 +249,6 @@
    "mid": 58.5,
    "yes_buy": 59,
    "no_buy": 42,
-   "taken_at": "2026-10-28T01:32:06.677Z"
-  },
-  {
-   "market_id": "1859167",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Kamilla Rakhimova cover 7.5 vs the Ekaterina Alexandrova in Kamilla Rakhimova vs. Ekaterina Alexandrova?",
-   "sides": [
-    "Kamilla Rakhimova +7.50 (Games)",
-    "Ekaterina Alexandrova -7.50 (Games)"
-   ],
-   "teams": [
-    "Kamilla Rakhimova",
-    "Ekaterina Alexandrova"
-   ],
-   "player": null,
-   "mid": 55.5,
-   "yes_buy": 56,
-   "no_buy": 45,
    "taken_at": "2026-10-28T01:32:06.677Z"
   },
   {
@@ -340,26 +340,26 @@
    "taken_at": "2026-10-28T01:32:06.677Z"
   },
   {
-   "market_id": "1859190",
-   "market": "Set 1 winner",
+   "market_id": "1859177",
+   "market": "Games total",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Kamilla Rakhimova win set 1 against Ekaterina Alexandrova?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Kamilla Rakhimova vs. Ekaterina Alexandrova be more than 27.5?",
    "sides": [
-    "Yes: Kamilla Rakhimova win set 1 against Ekaterina Alexandrova",
-    "No: Kamilla Rakhimova win set 1 against Ekaterina Alexandrova"
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
    ],
    "teams": [
-    "Kamilla Rakhimova",
+    null,
     null
    ],
    "player": null,
-   "mid": 32,
-   "yes_buy": 34,
-   "no_buy": 70,
-   "taken_at": "2026-10-28T00:44:10.949Z"
+   "mid": 28.5,
+   "yes_buy": 29,
+   "no_buy": 72,
+   "taken_at": "2026-10-28T01:32:06.677Z"
   },
   {
    "market_id": "1859156",
@@ -381,28 +381,6 @@
    "mid": 32.5,
    "yes_buy": 33,
    "no_buy": 68,
-   "taken_at": "2026-10-28T01:32:06.677Z"
-  },
-  {
-   "market_id": "1859192",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Kamilla Rakhimova win set 2 against Ekaterina Alexandrova?",
-   "sides": [
-    "Yes: Kamilla Rakhimova win set 2 against Ekaterina Alexandrova",
-    "No: Kamilla Rakhimova win set 2 against Ekaterina Alexandrova"
-   ],
-   "teams": [
-    "Kamilla Rakhimova",
-    null
-   ],
-   "player": null,
-   "mid": 30.5,
-   "yes_buy": 33,
-   "no_buy": 72,
    "taken_at": "2026-10-28T01:32:06.677Z"
   },
   {
@@ -428,6 +406,28 @@
    "taken_at": "2026-10-28T01:32:06.677Z"
   },
   {
+   "market_id": "1859169",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Kamilla Rakhimova cover -1.5 vs the Ekaterina Alexandrova in Kamilla Rakhimova vs. Ekaterina Alexandrova?",
+   "sides": [
+    "Kamilla Rakhimova -1.50 (Sets)",
+    "Ekaterina Alexandrova +1.50 (Sets)"
+   ],
+   "teams": [
+    "Kamilla Rakhimova",
+    "Ekaterina Alexandrova"
+   ],
+   "player": null,
+   "mid": 15.5,
+   "yes_buy": 16,
+   "no_buy": 85,
+   "taken_at": "2026-10-28T01:32:06.677Z"
+  },
+  {
    "market_id": "1859165",
    "market": "Games spread",
    "group": "game",
@@ -450,51 +450,113 @@
    "taken_at": "2026-10-28T01:32:06.677Z"
   },
   {
-   "market_id": "1859177",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Kamilla Rakhimova vs. Ekaterina Alexandrova be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 28.5,
-   "yes_buy": 29,
-   "no_buy": 72,
-   "taken_at": "2026-10-28T01:32:06.677Z"
-  },
-  {
-   "market_id": "1859169",
-   "market": "Sets spread",
+   "market_id": "1859167",
+   "market": "Games spread",
    "group": "game",
    "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Kamilla Rakhimova cover -1.5 vs the Ekaterina Alexandrova in Kamilla Rakhimova vs. Ekaterina Alexandrova?",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Kamilla Rakhimova cover 7.5 vs the Ekaterina Alexandrova in Kamilla Rakhimova vs. Ekaterina Alexandrova?",
    "sides": [
-    "Kamilla Rakhimova -1.50 (Sets)",
-    "Ekaterina Alexandrova +1.50 (Sets)"
+    "Kamilla Rakhimova +7.50 (Games)",
+    "Ekaterina Alexandrova -7.50 (Games)"
    ],
    "teams": [
     "Kamilla Rakhimova",
     "Ekaterina Alexandrova"
    ],
    "player": null,
-   "mid": 15.5,
-   "yes_buy": 16,
-   "no_buy": 85,
+   "mid": 55.5,
+   "yes_buy": 56,
+   "no_buy": 45,
+   "taken_at": "2026-10-28T01:32:06.677Z"
+  },
+  {
+   "market_id": "1859190",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Kamilla Rakhimova win set 1 against Ekaterina Alexandrova?",
+   "sides": [
+    "Yes: Kamilla Rakhimova win set 1 against Ekaterina Alexandrova",
+    "No: Kamilla Rakhimova win set 1 against Ekaterina Alexandrova"
+   ],
+   "teams": [
+    "Kamilla Rakhimova",
+    null
+   ],
+   "player": null,
+   "mid": 32,
+   "yes_buy": 34,
+   "no_buy": 70,
+   "taken_at": "2026-10-28T00:44:10.949Z"
+  },
+  {
+   "market_id": "1859192",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Kamilla Rakhimova win set 2 against Ekaterina Alexandrova?",
+   "sides": [
+    "Yes: Kamilla Rakhimova win set 2 against Ekaterina Alexandrova",
+    "No: Kamilla Rakhimova win set 2 against Ekaterina Alexandrova"
+   ],
+   "teams": [
+    "Kamilla Rakhimova",
+    null
+   ],
+   "player": null,
+   "mid": 30.5,
+   "yes_buy": 33,
+   "no_buy": 72,
    "taken_at": "2026-10-28T01:32:06.677Z"
   }
  ],
  "edges": [
+  {
+   "key": "1859159:0",
+   "market_id": "1859159",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Kamilla Rakhimova cover -4.5 vs the Ekaterina Alexandrova in Kamilla Rakhimova vs. Ekaterina Alexandrova?",
+   "side": "Kamilla Rakhimova -4.50 (Games)",
+   "open_chance": 32,
+   "now_chance": 17,
+   "open_odds": "+213",
+   "now_odds": "+488",
+   "edge": 15,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Kamilla Rakhimova not above the games spread right now",
+   "context": "Ekaterina Alexandrova 0 · Kamilla Rakhimova 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-28T01:38:53.031Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1859156:0",
+   "market_id": "1859156",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Kamilla Rakhimova cover -1.5 vs the Ekaterina Alexandrova in Kamilla Rakhimova vs. Ekaterina Alexandrova?",
+   "side": "Kamilla Rakhimova -1.50 (Games)",
+   "open_chance": 33,
+   "now_chance": 24,
+   "open_odds": "+203",
+   "now_odds": "+317",
+   "edge": 9,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Kamilla Rakhimova not above the games spread right now",
+   "context": "Ekaterina Alexandrova 0 · Kamilla Rakhimova 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-28T01:38:53.031Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1859162:0",
    "market_id": "1859162",
@@ -503,14 +565,14 @@
    "question": "Will the Kamilla Rakhimova cover 4.5 vs the Ekaterina Alexandrova in Kamilla Rakhimova vs. Ekaterina Alexandrova?",
    "side": "Kamilla Rakhimova +4.50 (Games)",
    "open_chance": 54,
-   "now_chance": 49,
+   "now_chance": 48,
    "open_odds": "-117",
-   "now_odds": "+104",
-   "edge": 5,
+   "now_odds": "+108",
+   "edge": 6,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Ekaterina Alexandrova 0 · Kamilla Rakhimova 0 · 1st Set (games by set)",
    "first_seen": "2026-10-28T01:32:06.677Z",
    "status": "open",
    "kalshi": null
