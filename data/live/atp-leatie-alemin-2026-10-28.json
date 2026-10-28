@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185198",
-  "fetched_at": "2026-10-28T20:14:51.300Z",
+  "fetched_at": "2026-10-28T20:24:00.079Z",
   "tennis": true,
   "tennis_match": {
    "id": "185198",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(5) Alex de Minaur (AUS) leads Learner Tien (USA) 6-4 2-0",
+     "text": "(5) Alex de Minaur (AUS) leads Learner Tien (USA) 6-4 4-1",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "possession": true,
      "curatedRank": {
       "current": 5
      },
@@ -65,7 +65,7 @@
        "winner": true
       },
       {
-       "value": 2
+       "value": 4
       }
      ],
      "athlete": {
@@ -105,14 +105,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
        "value": 4,
        "winner": false
       },
       {
-       "value": 0
+       "value": 1
       }
      ],
      "athlete": {
@@ -189,35 +189,13 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T20:14:51.121Z",
+ "updated": "2026-10-28T20:24:00.022Z",
  "open_taken_at": "2026-10-27T05:06:07.640Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "1854192",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Learner Tien cover 7.5 vs the Alex de Minaur in Learner Tien vs. Alex de Minaur?",
-   "sides": [
-    "Learner Tien +7.50 (Games)",
-    "Alex de Minaur -7.50 (Games)"
-   ],
-   "teams": [
-    "Learner Tien",
-    "Alex de Minaur"
-   ],
-   "player": null,
-   "mid": 90.5,
-   "yes_buy": 91,
-   "no_buy": 10,
-   "taken_at": "2026-10-28T19:07:33.810Z"
-  },
   {
    "market_id": "1854195",
    "market": "Games total",
@@ -260,6 +238,50 @@
    "mid": 76.5,
    "yes_buy": 77,
    "no_buy": 24,
+   "taken_at": "2026-10-28T19:07:33.810Z"
+  },
+  {
+   "market_id": "1854204",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Learner Tien win set 2 against Alex de Minaur?",
+   "sides": [
+    "Yes: Learner Tien win set 2 against Alex de Minaur",
+    "No: Learner Tien win set 2 against Alex de Minaur"
+   ],
+   "teams": [
+    "Learner Tien",
+    null
+   ],
+   "player": null,
+   "mid": 49,
+   "yes_buy": 51,
+   "no_buy": 53,
+   "taken_at": "2026-10-28T18:59:15.153Z"
+  },
+  {
+   "market_id": "1854192",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Learner Tien cover 7.5 vs the Alex de Minaur in Learner Tien vs. Alex de Minaur?",
+   "sides": [
+    "Learner Tien +7.50 (Games)",
+    "Alex de Minaur -7.50 (Games)"
+   ],
+   "teams": [
+    "Learner Tien",
+    "Alex de Minaur"
+   ],
+   "player": null,
+   "mid": 90.5,
+   "yes_buy": 91,
+   "no_buy": 10,
    "taken_at": "2026-10-28T19:07:33.810Z"
   },
   {
@@ -349,28 +371,6 @@
    "yes_buy": 51,
    "no_buy": 55,
    "taken_at": "2026-10-27T06:26:29.954Z"
-  },
-  {
-   "market_id": "1854204",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Learner Tien win set 2 against Alex de Minaur?",
-   "sides": [
-    "Yes: Learner Tien win set 2 against Alex de Minaur",
-    "No: Learner Tien win set 2 against Alex de Minaur"
-   ],
-   "teams": [
-    "Learner Tien",
-    null
-   ],
-   "player": null,
-   "mid": 49,
-   "yes_buy": 51,
-   "no_buy": 53,
-   "taken_at": "2026-10-28T18:59:15.153Z"
   },
   {
    "market_id": "1854197",
@@ -536,14 +536,14 @@
    "question": "Will the Learner Tien cover 4.5 vs the Alex de Minaur in Learner Tien vs. Alex de Minaur?",
    "side": "Learner Tien +4.50 (Games)",
    "open_chance": 77,
-   "now_chance": 19,
+   "now_chance": 21,
    "open_odds": "-335",
-   "now_odds": "+426",
-   "edge": 58,
+   "now_odds": "+376",
+   "edge": 56,
    "tier": "big",
-   "class": "news",
-   "reason": "Big move (58 pts), likely news",
-   "context": "Alex de Minaur 6, 2 · Learner Tien 4, 0 · 2nd Set (games by set)",
+   "class": "score",
+   "reason": "Explained by score: Learner Tien not above the games spread right now",
+   "context": "Alex de Minaur 6, 4 · Learner Tien 4, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T19:52:01.236Z",
    "status": "open",
    "kalshi": null
@@ -556,36 +556,16 @@
    "question": "Will the total in Learner Tien vs. Alex de Minaur be more than 17.5?",
    "side": "Over 17.5 (Games)",
    "open_chance": 83,
-   "now_chance": 58,
+   "now_chance": 71,
    "open_odds": "-488",
-   "now_odds": "-138",
-   "edge": 25,
+   "now_odds": "-245",
+   "edge": 12,
    "tier": "big",
-   "class": "news",
-   "reason": "Big move (25 pts), likely news",
-   "context": "Alex de Minaur 6, 2 · Learner Tien 4, 0 · 2nd Set (games by set)",
+   "class": "edge",
+   "reason": null,
+   "context": "Alex de Minaur 6, 4 · Learner Tien 4, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T20:14:51.121Z",
    "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1854204:0",
-   "market_id": "1854204",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Learner Tien win set 2 against Alex de Minaur?",
-   "side": "Yes: Learner Tien win set 2 against Alex de Minaur",
-   "open_chance": 51,
-   "now_chance": 21,
-   "open_odds": "-104",
-   "now_odds": "+376",
-   "edge": 30,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Learner Tien not above the games spread right now",
-   "context": "Alex de Minaur 6, 1 · Learner Tien 4, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-10-28T19:43:35.642Z",
-   "status": "gone",
    "kalshi": null
   },
   {
@@ -691,6 +671,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1854195:0:big",
+   "key": "1854195:0",
+   "at": "2026-10-28T20:24:00.022Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-245",
+   "now_chance": 71,
+   "edge": 12,
+   "text": "New big edge: Over 17.5 (Games) (Games total), 12 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-leatie-alemin-2026-10-28"
+  },
+  {
    "id": "news:1854190:0",
    "key": "1854190:0",
    "at": "2026-10-28T20:14:51.121Z",
@@ -775,20 +769,6 @@
    "url": "https://polymarket.us/sports/atp/atp-leatie-alemin-2026-10-28"
   },
   {
-   "id": "new_edge:1854204:0:big",
-   "key": "1854204:0",
-   "at": "2026-10-28T19:52:01.236Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Yes: Learner Tien win set 2 against Alex de Minaur",
-   "market": "Set 2 winner",
-   "now_odds": "+144",
-   "now_chance": 41,
-   "edge": 10,
-   "text": "New big edge: Yes: Learner Tien win set 2 against Alex de Minaur (Set 2 winner), 10 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-leatie-alemin-2026-10-28"
-  },
-  {
    "id": "new_edge:1854190:0:slight",
    "key": "1854190:0",
    "at": "2026-10-28T19:52:01.236Z",
@@ -859,20 +839,6 @@
    "url": "https://polymarket.us/sports/atp/atp-leatie-alemin-2026-10-28"
   },
   {
-   "id": "new_edge:1854204:0:slight",
-   "key": "1854204:0",
-   "at": "2026-10-28T19:43:35.642Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Yes: Learner Tien win set 2 against Alex de Minaur",
-   "market": "Set 2 winner",
-   "now_odds": "+113",
-   "now_chance": 47,
-   "edge": 4,
-   "text": "New slight edge: Yes: Learner Tien win set 2 against Alex de Minaur (Set 2 winner), 4 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-leatie-alemin-2026-10-28"
-  },
-  {
    "id": "gone:1854198:0:2026-10-28T19:07:33.810Z",
    "key": "1854198:0",
    "at": "2026-10-28T19:25:04.068Z",
@@ -927,7 +893,8 @@
   "gone:1854198:1:2026-10-28T19:52:01.236Z",
   "news:1854190:0",
   "news:1854195:0",
-  "gone:1854197:0:2026-10-28T19:52:01.236Z"
+  "gone:1854197:0:2026-10-28T19:52:01.236Z",
+  "new_edge:1854195:0:big"
  ],
  "kalshi_checked": null
 }
