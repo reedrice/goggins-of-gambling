@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185800",
-  "fetched_at": "2026-10-28T00:08:47.227Z",
+  "fetched_at": "2026-10-28T00:14:14.244Z",
   "tennis": true,
   "tennis_match": {
    "id": "185800",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(4) Bianca Andreescu (CAN) leads Katherine Hui (USA) 6-3 3-2",
+     "text": "(4) Bianca Andreescu (CAN) leads Katherine Hui (USA) 6-3 5-2",
      "type": "event"
     }
    ],
@@ -55,7 +55,6 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
      "curatedRank": {
       "current": 4
      },
@@ -65,7 +64,7 @@
        "winner": true
       },
       {
-       "value": 3
+       "value": 5
       }
      ],
      "athlete": {
@@ -105,7 +104,6 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
      "linescores": [
       {
        "value": 3,
@@ -147,11 +145,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 1034,
    "type": {
     "id": "2",
@@ -189,7 +182,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T00:08:47.169Z",
+ "updated": "2026-10-28T00:14:14.107Z",
  "open_taken_at": "2026-10-26T05:02:56.993Z",
  "thresholds": {
   "big": 10,
@@ -217,6 +210,28 @@
    "yes_buy": 84,
    "no_buy": 17,
    "taken_at": "2026-10-28T00:02:14.710Z"
+  },
+  {
+   "market_id": "1818026",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Katherine Hui vs. Bianca Andreescu be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 13.5,
+   "yes_buy": 15,
+   "no_buy": 88,
+   "taken_at": "2026-10-27T23:44:32.562Z"
   },
   {
    "market_id": "1818024",
@@ -261,28 +276,6 @@
    "yes_buy": 14,
    "no_buy": 89,
    "taken_at": "2026-10-27T23:37:51.822Z"
-  },
-  {
-   "market_id": "1818026",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Katherine Hui vs. Bianca Andreescu be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 13.5,
-   "yes_buy": 15,
-   "no_buy": 88,
-   "taken_at": "2026-10-27T23:44:32.562Z"
   },
   {
    "market_id": "1818025",
@@ -463,26 +456,6 @@
  ],
  "edges": [
   {
-   "key": "1818024:0",
-   "market_id": "1818024",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Katherine Hui vs. Bianca Andreescu be more than 17.5?",
-   "side": "Over 17.5 (Games)",
-   "open_chance": 60,
-   "now_chance": 38,
-   "open_odds": "-150",
-   "now_odds": "+163",
-   "edge": 22,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Bianca Andreescu 6, 3 · Katherine Hui 3, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-10-28T00:08:47.169Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1818024:1",
    "market_id": "1818024",
    "market": "Games total",
@@ -501,9 +474,43 @@
    "first_seen": "2026-10-28T00:02:14.710Z",
    "status": "gone",
    "kalshi": null
+  },
+  {
+   "key": "1818024:0",
+   "market_id": "1818024",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Katherine Hui vs. Bianca Andreescu be more than 17.5?",
+   "side": "Over 17.5 (Games)",
+   "open_chance": 60,
+   "now_chance": 38,
+   "open_odds": "-150",
+   "now_odds": "+163",
+   "edge": 22,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Bianca Andreescu 6, 3 · Katherine Hui 3, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T00:08:47.169Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1818024:0:2026-10-28T00:08:47.169Z",
+   "key": "1818024:0",
+   "at": "2026-10-28T00:14:14.107Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+163",
+   "now_chance": 38,
+   "edge": 22,
+   "text": "Edge gone: Over 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-kathui-biaand-2026-10-27"
+  },
   {
    "id": "new_edge:1818024:0:big",
    "key": "1818024:0",
@@ -550,7 +557,8 @@
  "alert_seen": [
   "new_edge:1818024:1:big",
   "new_edge:1818024:0:big",
-  "gone:1818024:1:2026-10-28T00:02:14.710Z"
+  "gone:1818024:1:2026-10-28T00:02:14.710Z",
+  "gone:1818024:0:2026-10-28T00:08:47.169Z"
  ],
  "kalshi_checked": null
 }
