@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185146",
-  "fetched_at": "2026-10-28T20:50:44.126Z",
+  "fetched_at": "2026-10-28T20:57:27.460Z",
   "tennis": true,
   "tennis_match": {
    "id": "185146",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(10) Hubert Hurkacz (POL) leads Holger Rune (DEN) 5-2",
+     "text": "(10) Hubert Hurkacz (POL) is tied with Holger Rune (DEN) 6-3 0-0",
      "type": "event"
     }
    ],
@@ -58,7 +58,11 @@
      "possession": true,
      "linescores": [
       {
-       "value": 2
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -104,7 +108,11 @@
      },
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -162,8 +170,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Holger Rune",
@@ -175,13 +183,13 @@
    "abbr": "Hubert Hurkacz",
    "alias": "Hubert Hurkacz",
    "name": "Hubert Hurkacz",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T20:50:44.036Z",
+ "updated": "2026-10-28T20:57:27.385Z",
  "open_taken_at": "2026-10-27T13:19:09.520Z",
  "thresholds": {
   "big": 10,
@@ -211,26 +219,26 @@
    "taken_at": "2026-10-27T15:54:19.275Z"
   },
   {
-   "market_id": "1869096",
-   "market": "Sets spread",
+   "market_id": "1869097",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Hubert Hurkacz cover 1.5 vs the Holger Rune in Hubert Hurkacz vs. Holger Rune?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Hubert Hurkacz vs. Holger Rune be more than 17.5?",
    "sides": [
-    "Hubert Hurkacz +1.50 (Sets)",
-    "Holger Rune -1.50 (Sets)"
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
    ],
    "teams": [
-    "Hubert Hurkacz",
-    "Holger Rune"
+    null,
+    null
    ],
    "player": null,
-   "mid": 77.5,
-   "yes_buy": 78,
-   "no_buy": 23,
-   "taken_at": "2026-10-28T19:14:42.713Z"
+   "mid": 95,
+   "yes_buy": 98,
+   "no_buy": 8,
+   "taken_at": "2026-10-28T05:34:45.989Z"
   },
   {
    "market_id": "1869092",
@@ -253,28 +261,6 @@
    "yes_buy": 86,
    "no_buy": 16,
    "taken_at": "2026-10-28T19:14:42.713Z"
-  },
-  {
-   "market_id": "1869097",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Hubert Hurkacz vs. Holger Rune be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 95,
-   "yes_buy": 98,
-   "no_buy": 8,
-   "taken_at": "2026-10-28T05:34:45.989Z"
   },
   {
    "market_id": "1869094",
@@ -343,28 +329,6 @@
    "taken_at": "2026-10-27T16:15:18.470Z"
   },
   {
-   "market_id": "1869106",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Hubert Hurkacz win set 2 against Holger Rune?",
-   "sides": [
-    "Yes: Hubert Hurkacz win set 2 against Holger Rune",
-    "No: Hubert Hurkacz win set 2 against Holger Rune"
-   ],
-   "teams": [
-    "Hubert Hurkacz",
-    null
-   ],
-   "player": null,
-   "mid": 59,
-   "yes_buy": 62,
-   "no_buy": 44,
-   "taken_at": "2026-10-28T16:55:54.401Z"
-  },
-  {
    "market_id": "1869095",
    "market": "Sets spread",
    "group": "game",
@@ -387,26 +351,26 @@
    "taken_at": "2026-10-28T16:55:54.401Z"
   },
   {
-   "market_id": "1869091",
-   "market": "Games spread",
+   "market_id": "1869106",
+   "market": "Set 2 winner",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Hubert Hurkacz cover -4.5 vs the Holger Rune in Hubert Hurkacz vs. Holger Rune?",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Hubert Hurkacz win set 2 against Holger Rune?",
    "sides": [
-    "Hubert Hurkacz -4.50 (Games)",
-    "Holger Rune +4.50 (Games)"
+    "Yes: Hubert Hurkacz win set 2 against Holger Rune",
+    "No: Hubert Hurkacz win set 2 against Holger Rune"
    ],
    "teams": [
     "Hubert Hurkacz",
-    "Holger Rune"
+    null
    ],
    "player": null,
-   "mid": 26.5,
-   "yes_buy": 27,
-   "no_buy": 74,
-   "taken_at": "2026-10-28T19:43:37.591Z"
+   "mid": 59,
+   "yes_buy": 62,
+   "no_buy": 44,
+   "taken_at": "2026-10-28T16:55:54.401Z"
   },
   {
    "market_id": "1869098",
@@ -453,6 +417,28 @@
    "taken_at": "2026-10-28T17:40:12.216Z"
   },
   {
+   "market_id": "1869091",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Hubert Hurkacz cover -4.5 vs the Holger Rune in Hubert Hurkacz vs. Holger Rune?",
+   "sides": [
+    "Hubert Hurkacz -4.50 (Games)",
+    "Holger Rune +4.50 (Games)"
+   ],
+   "teams": [
+    "Hubert Hurkacz",
+    "Holger Rune"
+   ],
+   "player": null,
+   "mid": 26.5,
+   "yes_buy": 27,
+   "no_buy": 74,
+   "taken_at": "2026-10-28T19:43:37.591Z"
+  },
+  {
    "market_id": "1869099",
    "market": "Games total",
    "group": "game",
@@ -497,6 +483,28 @@
    "taken_at": "2026-10-28T19:25:05.718Z"
   },
   {
+   "market_id": "1869096",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Hubert Hurkacz cover 1.5 vs the Holger Rune in Hubert Hurkacz vs. Holger Rune?",
+   "sides": [
+    "Hubert Hurkacz +1.50 (Sets)",
+    "Holger Rune -1.50 (Sets)"
+   ],
+   "teams": [
+    "Hubert Hurkacz",
+    "Holger Rune"
+   ],
+   "player": null,
+   "mid": 77.5,
+   "yes_buy": 78,
+   "no_buy": 23,
+   "taken_at": "2026-10-28T19:14:42.713Z"
+  },
+  {
    "market_id": "1869105",
    "market": "Set 1 winner",
    "group": "game",
@@ -521,26 +529,6 @@
  ],
  "edges": [
   {
-   "key": "1869095:1",
-   "market_id": "1869095",
-   "market": "Sets spread",
-   "group": "game",
-   "question": "Will the Hubert Hurkacz cover -1.5 vs the Holger Rune in Hubert Hurkacz vs. Holger Rune?",
-   "side": "Holger Rune +1.50 (Sets)",
-   "open_chance": 66,
-   "now_chance": 44,
-   "open_odds": "-194",
-   "now_odds": "+127",
-   "edge": 22,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Holger Rune 2 · Hubert Hurkacz 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T20:24:01.650Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1869089:1",
    "market_id": "1869089",
    "market": "Games spread",
@@ -555,28 +543,28 @@
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Holger Rune not above the games spread right now",
-   "context": "Holger Rune 2 · Hubert Hurkacz 5 · 1st Set (games by set)",
+   "context": "Holger Rune 3, 0 · Hubert Hurkacz 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T20:43:41.190Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1869091:1",
-   "market_id": "1869091",
-   "market": "Games spread",
+   "key": "1869095:1",
+   "market_id": "1869095",
+   "market": "Sets spread",
    "group": "game",
-   "question": "Will the Hubert Hurkacz cover -4.5 vs the Holger Rune in Hubert Hurkacz vs. Holger Rune?",
-   "side": "Holger Rune +4.50 (Games)",
-   "open_chance": 74,
-   "now_chance": 54,
-   "open_odds": "-285",
-   "now_odds": "-117",
+   "question": "Will the Hubert Hurkacz cover -1.5 vs the Holger Rune in Hubert Hurkacz vs. Holger Rune?",
+   "side": "Holger Rune +1.50 (Sets)",
+   "open_chance": 66,
+   "now_chance": 46,
+   "open_odds": "-194",
+   "now_odds": "+117",
    "edge": 20,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Holger Rune 2 · Hubert Hurkacz 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T20:43:41.190Z",
+   "context": "Holger Rune 3, 0 · Hubert Hurkacz 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T20:24:01.650Z",
    "status": "open",
    "kalshi": null
   },
@@ -588,14 +576,14 @@
    "question": "Who will win in the upcoming atp event Hubert Hurkacz vs Holger Rune scheduled for October 28, 2026 at 11:00 AM UTC?",
    "side": "Holger Rune win",
    "open_chance": 39,
-   "now_chance": 20,
+   "now_chance": 21,
    "open_odds": "+156",
-   "now_odds": "+400",
-   "edge": 19,
+   "now_odds": "+376",
+   "edge": 18,
    "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Holger Rune 2 · Hubert Hurkacz 5 · 1st Set (games by set)",
+   "class": "score",
+   "reason": "Explained by score: Holger Rune trailing in sets",
+   "context": "Holger Rune 3, 0 · Hubert Hurkacz 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T20:43:41.190Z",
    "status": "open",
    "kalshi": null
@@ -608,34 +596,54 @@
    "question": "Will the total in Hubert Hurkacz vs. Holger Rune be more than 22.5?",
    "side": "Over 22.5 (Games)",
    "open_chance": 62,
-   "now_chance": 44,
+   "now_chance": 46,
    "open_odds": "-163",
-   "now_odds": "+127",
-   "edge": 18,
+   "now_odds": "+117",
+   "edge": 16,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Holger Rune 2 · Hubert Hurkacz 5 · 1st Set (games by set)",
+   "context": "Holger Rune 3, 0 · Hubert Hurkacz 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T20:43:41.190Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1869099:0",
-   "market_id": "1869099",
-   "market": "Games total",
+   "key": "1869091:1",
+   "market_id": "1869091",
+   "market": "Games spread",
    "group": "game",
-   "question": "Will the total in Hubert Hurkacz vs. Holger Rune be more than 27.5?",
-   "side": "Over 27.5 (Games)",
-   "open_chance": 40,
-   "now_chance": 30,
-   "open_odds": "+150",
-   "now_odds": "+233",
-   "edge": 10,
+   "question": "Will the Hubert Hurkacz cover -4.5 vs the Holger Rune in Hubert Hurkacz vs. Holger Rune?",
+   "side": "Holger Rune +4.50 (Games)",
+   "open_chance": 74,
+   "now_chance": 59,
+   "open_odds": "-285",
+   "now_odds": "-144",
+   "edge": 15,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Holger Rune 2 · Hubert Hurkacz 5 · 1st Set (games by set)",
+   "context": "Holger Rune 3, 0 · Hubert Hurkacz 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T20:43:41.190Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1869106:0",
+   "market_id": "1869106",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Hubert Hurkacz win set 2 against Holger Rune?",
+   "side": "Yes: Hubert Hurkacz win set 2 against Holger Rune",
+   "open_chance": 62,
+   "now_chance": 56,
+   "open_odds": "-163",
+   "now_odds": "-127",
+   "edge": 6,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Hubert Hurkacz not above the games spread right now",
+   "context": "Holger Rune 3, 0 · Hubert Hurkacz 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T19:07:35.940Z",
    "status": "open",
    "kalshi": null
@@ -655,8 +663,28 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Holger Rune 2 · Hubert Hurkacz 5 · 1st Set (games by set)",
+   "context": "Holger Rune 3, 0 · Hubert Hurkacz 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T19:14:42.713Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1869099:0",
+   "market_id": "1869099",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Hubert Hurkacz vs. Holger Rune be more than 27.5?",
+   "side": "Over 27.5 (Games)",
+   "open_chance": 40,
+   "now_chance": 35,
+   "open_odds": "+150",
+   "now_odds": "+186",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Holger Rune 3, 0 · Hubert Hurkacz 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T19:07:35.940Z",
    "status": "open",
    "kalshi": null
   },
@@ -797,26 +825,6 @@
    "reason": null,
    "context": "Holger Rune 1 · Hubert Hurkacz 1 · 1st Set (games by set)",
    "first_seen": "2026-10-28T20:24:01.650Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1869106:0",
-   "market_id": "1869106",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Hubert Hurkacz win set 2 against Holger Rune?",
-   "side": "Yes: Hubert Hurkacz win set 2 against Holger Rune",
-   "open_chance": 62,
-   "now_chance": 58,
-   "open_odds": "-163",
-   "now_odds": "-138",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Holger Rune 1 · Hubert Hurkacz 1 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T19:07:35.940Z",
    "status": "gone",
    "kalshi": null
   },
