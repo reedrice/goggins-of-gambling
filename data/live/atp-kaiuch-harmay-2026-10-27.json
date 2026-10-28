@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-28T04:43:28.641Z"
+  "fetched_at": "2026-10-28T04:49:26.819Z"
  },
- "updated": "2026-10-28T04:43:28.493Z",
+ "updated": "2026-10-28T04:49:26.733Z",
  "open_taken_at": "2026-10-27T05:36:14.613Z",
  "thresholds": {
   "big": 10,
@@ -195,28 +195,6 @@
    "taken_at": "2026-10-28T04:06:30.269Z"
   },
   {
-   "market_id": "1862579",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Kaichi Uchida cover 1.5 vs the Harold Mayot in Kaichi Uchida vs. Harold Mayot?",
-   "sides": [
-    "Kaichi Uchida +1.50 (Games)",
-    "Harold Mayot -1.50 (Games)"
-   ],
-   "teams": [
-    "Kaichi Uchida",
-    "Harold Mayot"
-   ],
-   "player": null,
-   "mid": 25.5,
-   "yes_buy": 26,
-   "no_buy": 75,
-   "taken_at": "2026-10-28T04:06:30.269Z"
-  },
-  {
    "market_id": "1862595",
    "market": "Set 2 winner",
    "group": "game",
@@ -237,6 +215,28 @@
    "yes_buy": 22,
    "no_buy": 79,
    "taken_at": "2026-10-28T04:12:54.025Z"
+  },
+  {
+   "market_id": "1862579",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Kaichi Uchida cover 1.5 vs the Harold Mayot in Kaichi Uchida vs. Harold Mayot?",
+   "sides": [
+    "Kaichi Uchida +1.50 (Games)",
+    "Harold Mayot -1.50 (Games)"
+   ],
+   "teams": [
+    "Kaichi Uchida",
+    "Harold Mayot"
+   ],
+   "player": null,
+   "mid": 25.5,
+   "yes_buy": 26,
+   "no_buy": 75,
+   "taken_at": "2026-10-28T04:06:30.269Z"
   },
   {
    "market_id": "1862587",
@@ -376,20 +376,34 @@
    "question": "Will the total in Kaichi Uchida vs. Harold Mayot be more than 17.5?",
    "side": "Under 17.5 (Games)",
    "open_chance": 65,
-   "now_chance": 35,
+   "now_chance": 61,
    "open_odds": "-186",
-   "now_odds": "+186",
-   "edge": 30,
-   "tier": "big",
+   "now_odds": "-156",
+   "edge": 4,
+   "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-28T04:12:54.025Z",
-   "status": "gone",
+   "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1862586:1:slight",
+   "key": "1862586:1",
+   "at": "2026-10-28T04:49:26.733Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-156",
+   "now_chance": 61,
+   "edge": 4,
+   "text": "New slight edge: Under 17.5 (Games) (Games total), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-kaiuch-harmay-2026-10-27"
+  },
   {
    "id": "gone:1862586:1:2026-10-28T04:12:54.025Z",
    "key": "1862586:1",
@@ -466,7 +480,8 @@
   "new_edge:1862586:1:big",
   "new_edge:1862589:1:slight",
   "new_edge:1862589:1:big",
-  "gone:1862586:1:2026-10-28T04:12:54.025Z"
+  "gone:1862586:1:2026-10-28T04:12:54.025Z",
+  "new_edge:1862586:1:slight"
  ],
  "kalshi_checked": null
 }
