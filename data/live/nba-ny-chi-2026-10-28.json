@@ -6,12 +6,101 @@
  "start_time": "2026-10-29T00:00:00Z",
  "status": "pregame",
  "game_context": {
-  "available": false,
+  "available": true,
   "source": "ESPN site.api.espn.com",
-  "error": "Unexpected end of JSON input",
-  "fetched_at": "2026-10-28T01:00:05.986Z"
+  "event_id": "401909886",
+  "fetched_at": "2026-10-28T01:05:59.089Z",
+  "game_state": "pre",
+  "espn_status": "STATUS_SCHEDULED",
+  "period": 0,
+  "clock": null,
+  "regulation_secs_left": 3600,
+  "home": {
+   "abbr": "CHI",
+   "alias": "Bulls",
+   "name": "Chicago Bulls",
+   "score": null,
+   "id": "4"
+  },
+  "away": {
+   "abbr": "NY",
+   "alias": "Knicks",
+   "name": "New York Knicks",
+   "score": null,
+   "id": "18"
+  },
+  "possession": null,
+  "injuries": [
+   {
+    "team": "CHI",
+    "player": "Patrick Williams",
+    "short": "P. Williams",
+    "pos": "F",
+    "status": "Day-To-Day"
+   },
+   {
+    "team": "CHI",
+    "player": "Tobe Awaka",
+    "short": "T. Awaka",
+    "pos": "F",
+    "status": "Day-To-Day"
+   },
+   {
+    "team": "CHI",
+    "player": "Nic Claxton",
+    "short": "N. Claxton",
+    "pos": "C",
+    "status": "Out"
+   },
+   {
+    "team": "NY",
+    "player": "Jose Alvarado",
+    "short": "J. Alvarado",
+    "pos": "G",
+    "status": "Out"
+   }
+  ],
+  "in_game_injuries": [],
+  "leaders": [
+   {
+    "team": "CHI",
+    "player": "Caleb Wilson",
+    "short": "C. Wilson",
+    "pos": "F"
+   },
+   {
+    "team": "CHI",
+    "player": "Josh Giddey",
+    "short": "J. Giddey",
+    "pos": "G"
+   },
+   {
+    "team": "CHI",
+    "player": "Jalen Smith",
+    "short": "J. Smith",
+    "pos": "F"
+   },
+   {
+    "team": "NY",
+    "player": "Jalen Brunson",
+    "short": "J. Brunson",
+    "pos": "G"
+   },
+   {
+    "team": "NY",
+    "player": "Jalen Brunson",
+    "short": "J. Brunson",
+    "pos": "G"
+   },
+   {
+    "team": "NY",
+    "player": "Karl-Anthony Towns",
+    "short": "K. Towns",
+    "pos": "C"
+   }
+  ]
  },
- "updated": "2026-10-28T01:00:05.941Z",
+ "updated": "2026-10-28T01:05:58.853Z",
  "open_taken_at": "2026-10-27T05:05:43.301Z",
  "thresholds": {
   "big": 10,
@@ -149,6 +238,28 @@
    "yes_buy": 54,
    "no_buy": 50,
    "taken_at": "2026-10-28T00:43:57.050Z"
+  },
+  {
+   "market_id": "1879934",
+   "market": "Alt spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": -8.5,
+   "question": "Will the NY Knicks cover -8.5 vs the CHI Bulls in NY Knicks vs. CHI Bulls?",
+   "sides": [
+    "New York Knicks -8.50",
+    "Chicago Bulls +8.50"
+   ],
+   "teams": [
+    "New York Knicks",
+    "Chicago Bulls"
+   ],
+   "player": null,
+   "mid": 44.5,
+   "yes_buy": 47,
+   "no_buy": 58,
+   "taken_at": "2026-10-28T01:05:58.853Z"
   }
  ],
  "edges": [
@@ -165,10 +276,30 @@
    "now_odds": "-233",
    "edge": 9,
    "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
    "first_seen": "2026-10-27T07:33:41.706Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1879940:0",
+   "market_id": "1879940",
+   "market": "Alt spread",
+   "group": "game",
+   "question": "Will the NY Knicks cover -4.5 vs the CHI Bulls in NY Knicks vs. CHI Bulls?",
+   "side": "New York Knicks -4.50",
+   "open_chance": 62,
+   "now_chance": 58,
+   "open_odds": "-163",
+   "now_odds": "-138",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-10-28T01:05:58.853Z",
    "status": "open",
    "kalshi": null
   }

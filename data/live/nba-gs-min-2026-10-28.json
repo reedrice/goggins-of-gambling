@@ -6,12 +6,115 @@
  "start_time": "2026-10-29T00:00:00Z",
  "status": "pregame",
  "game_context": {
-  "available": false,
+  "available": true,
   "source": "ESPN site.api.espn.com",
-  "error": "Unexpected end of JSON input",
-  "fetched_at": "2026-10-28T01:00:05.840Z"
+  "event_id": "401909888",
+  "fetched_at": "2026-10-28T01:05:59.037Z",
+  "game_state": "pre",
+  "espn_status": "STATUS_SCHEDULED",
+  "period": 0,
+  "clock": null,
+  "regulation_secs_left": 3600,
+  "home": {
+   "abbr": "MIN",
+   "alias": "Timberwolves",
+   "name": "Minnesota Timberwolves",
+   "score": null,
+   "id": "16"
+  },
+  "away": {
+   "abbr": "GS",
+   "alias": "Warriors",
+   "name": "Golden State Warriors",
+   "score": null,
+   "id": "9"
+  },
+  "possession": null,
+  "injuries": [
+   {
+    "team": "MIN",
+    "player": "Anthony Edwards",
+    "short": "A. Edwards",
+    "pos": "G",
+    "status": "Out"
+   },
+   {
+    "team": "MIN",
+    "player": "Donte DiVincenzo",
+    "short": "D. DiVincenzo",
+    "pos": "G",
+    "status": "Out"
+   },
+   {
+    "team": "GS",
+    "player": "Yaxel Lendeborg",
+    "short": "Y. Lendeborg",
+    "pos": "F",
+    "status": "Day-To-Day"
+   },
+   {
+    "team": "GS",
+    "player": "Kristaps Porzingis",
+    "short": "K. Porzingis",
+    "pos": "C",
+    "status": "Out"
+   },
+   {
+    "team": "GS",
+    "player": "Moses Moody",
+    "short": "M. Moody",
+    "pos": "G",
+    "status": "Out"
+   },
+   {
+    "team": "GS",
+    "player": "Jimmy Butler III",
+    "short": "J. Butler III",
+    "pos": "F",
+    "status": "Out"
+   }
+  ],
+  "in_game_injuries": [],
+  "leaders": [
+   {
+    "team": "MIN",
+    "player": "Anthony Edwards",
+    "short": "A. Edwards",
+    "pos": "G"
+   },
+   {
+    "team": "MIN",
+    "player": "LaMelo Ball",
+    "short": "L. Ball",
+    "pos": "G"
+   },
+   {
+    "team": "MIN",
+    "player": "Rudy Gobert",
+    "short": "R. Gobert",
+    "pos": "C"
+   },
+   {
+    "team": "GS",
+    "player": "Stephen Curry",
+    "short": "S. Curry",
+    "pos": "G"
+   },
+   {
+    "team": "GS",
+    "player": "Draymond Green",
+    "short": "D. Green",
+    "pos": "F"
+   },
+   {
+    "team": "GS",
+    "player": "Yaxel Lendeborg",
+    "short": "Y. Lendeborg",
+    "pos": "F"
+   }
+  ]
  },
- "updated": "2026-10-28T01:00:05.790Z",
+ "updated": "2026-10-28T01:05:58.623Z",
  "open_taken_at": "2026-10-27T05:05:43.072Z",
  "thresholds": {
   "big": 10,
@@ -151,28 +254,6 @@
    "taken_at": "2026-10-27T22:44:57.643Z"
   },
   {
-   "market_id": "1879806",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": 4.5,
-   "question": "Will the GS Warriors cover 4.5 vs the MIN Timberwolves in GS Warriors vs. MIN Timberwolves?",
-   "sides": [
-    "Golden State Warriors +4.50",
-    "Minnesota Timberwolves -4.50"
-   ],
-   "teams": [
-    "Golden State Warriors",
-    "Minnesota Timberwolves"
-   ],
-   "player": null,
-   "mid": 53.5,
-   "yes_buy": 54,
-   "no_buy": 47,
-   "taken_at": "2026-10-28T00:18:23.120Z"
-  },
-  {
    "market_id": "1879820",
    "market": "Alt spread",
    "group": "game",
@@ -215,6 +296,28 @@
    "yes_buy": 48,
    "no_buy": 58,
    "taken_at": "2026-10-28T00:27:57.700Z"
+  },
+  {
+   "market_id": "1879806",
+   "market": "Alt spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 4.5,
+   "question": "Will the GS Warriors cover 4.5 vs the MIN Timberwolves in GS Warriors vs. MIN Timberwolves?",
+   "sides": [
+    "Golden State Warriors +4.50",
+    "Minnesota Timberwolves -4.50"
+   ],
+   "teams": [
+    "Golden State Warriors",
+    "Minnesota Timberwolves"
+   ],
+   "player": null,
+   "mid": 53.5,
+   "yes_buy": 54,
+   "no_buy": 47,
+   "taken_at": "2026-10-28T00:18:23.120Z"
   },
   {
    "market_id": "1884892",
@@ -275,9 +378,9 @@
    "now_odds": "-150",
    "edge": 14,
    "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
    "first_seen": "2026-10-27T05:30:02.151Z",
    "status": "open",
    "kalshi": null
@@ -295,9 +398,9 @@
    "now_odds": "+133",
    "edge": 9,
    "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
    "first_seen": "2026-10-28T00:33:29.081Z",
    "status": "open",
    "kalshi": null

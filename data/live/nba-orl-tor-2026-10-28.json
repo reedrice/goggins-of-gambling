@@ -6,12 +6,122 @@
  "start_time": "2026-10-28T23:30:00Z",
  "status": "pregame",
  "game_context": {
-  "available": false,
+  "available": true,
   "source": "ESPN site.api.espn.com",
-  "error": "Unexpected end of JSON input",
-  "fetched_at": "2026-10-28T01:00:05.587Z"
+  "event_id": "401909885",
+  "fetched_at": "2026-10-28T01:05:58.777Z",
+  "game_state": "pre",
+  "espn_status": "STATUS_SCHEDULED",
+  "period": 0,
+  "clock": null,
+  "regulation_secs_left": 3600,
+  "home": {
+   "abbr": "TOR",
+   "alias": "Raptors",
+   "name": "Toronto Raptors",
+   "score": null,
+   "id": "28"
+  },
+  "away": {
+   "abbr": "ORL",
+   "alias": "Magic",
+   "name": "Orlando Magic",
+   "score": null,
+   "id": "19"
+  },
+  "possession": null,
+  "injuries": [
+   {
+    "team": "TOR",
+    "player": "Nate Bittle",
+    "short": "N. Bittle",
+    "pos": "C",
+    "status": "Out"
+   },
+   {
+    "team": "TOR",
+    "player": "Kawhi Leonard",
+    "short": "K. Leonard",
+    "pos": "F",
+    "status": "Out"
+   },
+   {
+    "team": "ORL",
+    "player": "Jonathan Isaac",
+    "short": "J. Isaac",
+    "pos": "F",
+    "status": "Out"
+   },
+   {
+    "team": "ORL",
+    "player": "Jalen Suggs",
+    "short": "J. Suggs",
+    "pos": "G",
+    "status": "Out"
+   },
+   {
+    "team": "ORL",
+    "player": "Paolo Banchero",
+    "short": "P. Banchero",
+    "pos": "F",
+    "status": "Out"
+   },
+   {
+    "team": "ORL",
+    "player": "Noah Penda",
+    "short": "N. Penda",
+    "pos": "F",
+    "status": "Out"
+   },
+   {
+    "team": "ORL",
+    "player": "Izaiyah Nelson",
+    "short": "I. Nelson",
+    "pos": "F",
+    "status": "Out"
+   }
+  ],
+  "in_game_injuries": [],
+  "leaders": [
+   {
+    "team": "TOR",
+    "player": "RJ Barrett",
+    "short": "R. Barrett",
+    "pos": "F"
+   },
+   {
+    "team": "TOR",
+    "player": "Immanuel Quickley",
+    "short": "I. Quickley",
+    "pos": "G"
+   },
+   {
+    "team": "TOR",
+    "player": "Scottie Barnes",
+    "short": "S. Barnes",
+    "pos": "F"
+   },
+   {
+    "team": "ORL",
+    "player": "Paolo Banchero",
+    "short": "P. Banchero",
+    "pos": "F"
+   },
+   {
+    "team": "ORL",
+    "player": "Paolo Banchero",
+    "short": "P. Banchero",
+    "pos": "F"
+   },
+   {
+    "team": "ORL",
+    "player": "Wendell Carter Jr.",
+    "short": "W. Carter Jr.",
+    "pos": "C"
+   }
+  ]
  },
- "updated": "2026-10-28T01:00:05.550Z",
+ "updated": "2026-10-28T01:05:58.584Z",
  "open_taken_at": "2026-10-27T05:05:43.027Z",
  "thresholds": {
   "big": 10,
@@ -151,28 +261,6 @@
    "taken_at": "2026-10-28T00:18:22.812Z"
   },
   {
-   "market_id": "1884877",
-   "market": "Alt total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 221.5,
-   "question": "Will the total in ORL Magic vs. TOR Raptors be more than 221.5?",
-   "sides": [
-    "Over 221.5",
-    "Under 221.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 55,
-   "yes_buy": 58,
-   "no_buy": 48,
-   "taken_at": "2026-10-28T00:14:01.358Z"
-  },
-  {
    "market_id": "1884802",
    "market": "Alt spread",
    "group": "game",
@@ -193,6 +281,28 @@
    "yes_buy": 54,
    "no_buy": 50,
    "taken_at": "2026-10-27T23:37:41.201Z"
+  },
+  {
+   "market_id": "1884877",
+   "market": "Alt total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 221.5,
+   "question": "Will the total in ORL Magic vs. TOR Raptors be more than 221.5?",
+   "sides": [
+    "Over 221.5",
+    "Under 221.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 55,
+   "yes_buy": 58,
+   "no_buy": 48,
+   "taken_at": "2026-10-28T00:14:01.358Z"
   },
   {
    "market_id": "1884878",
@@ -341,16 +451,19 @@
    "now_odds": "-186",
    "edge": 4,
    "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
    "first_seen": "2026-10-27T15:34:32.266Z",
    "status": "open",
-   "kalshi": null
+   "kalshi": false
   }
  ],
  "alerts": [],
  "alert_seen": [],
  "prop_test_candidates": [],
- "kalshi_checked": null
+ "kalshi_checked": {
+  "at": "2026-10-28T01:05:58.904Z",
+  "event": "26OCT28ORLTOR"
+ }
 }
