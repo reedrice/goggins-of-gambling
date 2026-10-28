@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-28T06:34:47.714Z"
+  "fetched_at": "2026-10-28T06:40:56.681Z"
  },
- "updated": "2026-10-28T06:34:47.646Z",
+ "updated": "2026-10-28T06:40:56.532Z",
  "open_taken_at": "2026-10-27T08:32:02.416Z",
  "thresholds": {
   "big": 10,
@@ -85,28 +85,6 @@
    "taken_at": "2026-10-28T05:19:17.400Z"
   },
   {
-   "market_id": "1865322",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Charles Broom cover -1.5 vs the Yaroslav Demin in Charles Broom vs. Yaroslav Demin?",
-   "sides": [
-    "Charles Broom -1.50 (Games)",
-    "Yaroslav Demin +1.50 (Games)"
-   ],
-   "teams": [
-    "Charles Broom",
-    "Yaroslav Demin"
-   ],
-   "player": null,
-   "mid": 61.5,
-   "yes_buy": 63,
-   "no_buy": 40,
-   "taken_at": "2026-10-27T18:15:26.244Z"
-  },
-  {
    "market_id": "1865325",
    "market": "Games spread",
    "group": "game",
@@ -173,6 +151,28 @@
    "taken_at": "2026-10-28T05:19:17.400Z"
   },
   {
+   "market_id": "1865322",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Charles Broom cover -1.5 vs the Yaroslav Demin in Charles Broom vs. Yaroslav Demin?",
+   "sides": [
+    "Charles Broom -1.50 (Games)",
+    "Yaroslav Demin +1.50 (Games)"
+   ],
+   "teams": [
+    "Charles Broom",
+    "Yaroslav Demin"
+   ],
+   "player": null,
+   "mid": 61.5,
+   "yes_buy": 63,
+   "no_buy": 40,
+   "taken_at": "2026-10-27T18:15:26.244Z"
+  },
+  {
    "market_id": "1865338",
    "market": "Set 1 winner",
    "group": "game",
@@ -237,28 +237,6 @@
    "yes_buy": 45,
    "no_buy": 56,
    "taken_at": "2026-10-28T05:19:17.400Z"
-  },
-  {
-   "market_id": "1865331",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Charles Broom vs. Yaroslav Demin be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 46.5,
-   "yes_buy": 48,
-   "no_buy": 55,
-   "taken_at": "2026-10-27T18:15:26.244Z"
   },
   {
    "market_id": "1865333",
@@ -347,9 +325,51 @@
    "yes_buy": 30,
    "no_buy": 71,
    "taken_at": "2026-10-28T05:19:17.400Z"
+  },
+  {
+   "market_id": "1865331",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Charles Broom vs. Yaroslav Demin be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 46.5,
+   "yes_buy": 48,
+   "no_buy": 55,
+   "taken_at": "2026-10-27T18:15:26.244Z"
   }
  ],
  "edges": [
+  {
+   "key": "1865322:0",
+   "market_id": "1865322",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Charles Broom cover -1.5 vs the Yaroslav Demin in Charles Broom vs. Yaroslav Demin?",
+   "side": "Charles Broom -1.50 (Games)",
+   "open_chance": 63,
+   "now_chance": 53,
+   "open_odds": "-170",
+   "now_odds": "-113",
+   "edge": 10,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-28T06:40:56.532Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1865328:1",
    "market_id": "1865328",
@@ -427,7 +447,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-28T05:19:17.400Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -452,6 +472,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1865322:0:big",
+   "key": "1865322:0",
+   "at": "2026-10-28T06:40:56.532Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Charles Broom -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 10,
+   "text": "New big edge: Charles Broom -1.50 (Games) (Games spread), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-chabro-yardem-2026-10-27"
+  },
+  {
+   "id": "gone:1865322:1:2026-10-28T05:19:17.400Z",
+   "key": "1865322:1",
+   "at": "2026-10-28T06:40:56.532Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Yaroslav Demin +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+178",
+   "now_chance": 36,
+   "edge": 4,
+   "text": "Edge gone: Yaroslav Demin +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-chabro-yardem-2026-10-27"
+  },
   {
    "id": "new_edge:1865328:1:slight",
    "key": "1865328:1",
@@ -513,7 +561,9 @@
   "new_edge:1865328:1:slight",
   "new_edge:1865333:0:slight",
   "new_edge:1865329:0:slight",
-  "new_edge:1865322:1:slight"
+  "new_edge:1865322:1:slight",
+  "new_edge:1865322:0:big",
+  "gone:1865322:1:2026-10-28T05:19:17.400Z"
  ],
  "kalshi_checked": null
 }
