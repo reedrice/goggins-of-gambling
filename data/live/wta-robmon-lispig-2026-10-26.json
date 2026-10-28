@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185840",
-  "fetched_at": "2026-10-28T11:43:29.179Z",
+  "fetched_at": "2026-10-28T11:47:11.545Z",
   "tennis": true,
   "tennis_match": {
    "id": "185840",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(5) Lisa Pigato (ITA) leads Robin Montgomery (USA) 6-0 1-0",
+     "text": "(5) Lisa Pigato (ITA) leads Robin Montgomery (USA) 6-0 2-0",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "possession": true,
      "curatedRank": {
       "current": 5
      },
@@ -65,7 +65,7 @@
        "winner": true
       },
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -105,7 +105,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
        "value": 0,
@@ -189,7 +189,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T11:43:29.109Z",
+ "updated": "2026-10-28T11:47:11.416Z",
  "open_taken_at": "2026-10-25T16:44:12.069Z",
  "thresholds": {
   "big": 10,
@@ -217,6 +217,50 @@
    "yes_buy": 70,
    "no_buy": 36,
    "taken_at": "2026-10-26T11:25:56.177Z"
+  },
+  {
+   "market_id": "1805341",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Robin Montgomery vs. Lisa Pigato be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 31.5,
+   "yes_buy": 32,
+   "no_buy": 69,
+   "taken_at": "2026-10-28T11:10:28.882Z"
+  },
+  {
+   "market_id": "1805330",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Robin Montgomery cover -1.5 vs the Lisa Pigato in Robin Montgomery vs. Lisa Pigato?",
+   "sides": [
+    "Robin Montgomery -1.50 (Games)",
+    "Lisa Pigato +1.50 (Games)"
+   ],
+   "teams": [
+    "Robin Montgomery",
+    "Lisa Pigato"
+   ],
+   "player": null,
+   "mid": 64.5,
+   "yes_buy": 67,
+   "no_buy": 38,
+   "taken_at": "2026-10-26T15:03:23.038Z"
   },
   {
    "market_id": "1805340",
@@ -261,28 +305,6 @@
    "yes_buy": 38,
    "no_buy": 63,
    "taken_at": "2026-10-28T11:34:23.137Z"
-  },
-  {
-   "market_id": "1805341",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Robin Montgomery vs. Lisa Pigato be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 31.5,
-   "yes_buy": 32,
-   "no_buy": 69,
-   "taken_at": "2026-10-28T11:10:28.882Z"
   },
   {
    "market_id": "1805336",
@@ -439,28 +461,6 @@
    "taken_at": "2026-10-27T05:06:01.832Z"
   },
   {
-   "market_id": "1805330",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Robin Montgomery cover -1.5 vs the Lisa Pigato in Robin Montgomery vs. Lisa Pigato?",
-   "sides": [
-    "Robin Montgomery -1.50 (Games)",
-    "Lisa Pigato +1.50 (Games)"
-   ],
-   "teams": [
-    "Robin Montgomery",
-    "Lisa Pigato"
-   ],
-   "player": null,
-   "mid": 64.5,
-   "yes_buy": 67,
-   "no_buy": 38,
-   "taken_at": "2026-10-26T15:03:23.038Z"
-  },
-  {
    "market_id": "1805332",
    "market": "Games spread",
    "group": "game",
@@ -485,46 +485,6 @@
  ],
  "edges": [
   {
-   "key": "1805348:0",
-   "market_id": "1805348",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Robin Montgomery win set 2 against Lisa Pigato?",
-   "side": "Yes: Robin Montgomery win set 2 against Lisa Pigato",
-   "open_chance": 38,
-   "now_chance": 19,
-   "open_odds": "+163",
-   "now_odds": "+426",
-   "edge": 19,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Robin Montgomery not above the games spread right now",
-   "context": "Lisa Pigato 6, 1 · Robin Montgomery 0, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-10-28T11:43:29.109Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1805340:0",
-   "market_id": "1805340",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Robin Montgomery vs. Lisa Pigato be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 43,
-   "now_chance": 32,
-   "open_odds": "+133",
-   "now_odds": "+213",
-   "edge": 11,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Lisa Pigato 6, 1 · Robin Montgomery 0, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-10-28T10:51:14.511Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1805334:0",
    "market_id": "1805334",
    "market": "Games spread",
@@ -541,26 +501,6 @@
    "reason": "Explained by score: Robin Montgomery not above the games spread right now",
    "context": "Lisa Pigato 6, 0 · Robin Montgomery 0, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T11:17:20.962Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1805330:0",
-   "market_id": "1805330",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Robin Montgomery cover -1.5 vs the Lisa Pigato in Robin Montgomery vs. Lisa Pigato?",
-   "side": "Robin Montgomery -1.50 (Games)",
-   "open_chance": 67,
-   "now_chance": 27,
-   "open_odds": "-203",
-   "now_odds": "+270",
-   "edge": 40,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Robin Montgomery not above the games spread right now",
-   "context": "Lisa Pigato 3 · Robin Montgomery 0 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T11:10:28.882Z",
    "status": "gone",
    "kalshi": null
   },
@@ -625,6 +565,26 @@
    "kalshi": null
   },
   {
+   "key": "1805348:0",
+   "market_id": "1805348",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Robin Montgomery win set 2 against Lisa Pigato?",
+   "side": "Yes: Robin Montgomery win set 2 against Lisa Pigato",
+   "open_chance": 38,
+   "now_chance": 19,
+   "open_odds": "+163",
+   "now_odds": "+426",
+   "edge": 19,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Robin Montgomery not above the games spread right now",
+   "context": "Lisa Pigato 6, 1 · Robin Montgomery 0, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T11:43:29.109Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1805332:0",
    "market_id": "1805332",
    "market": "Games spread",
@@ -641,6 +601,26 @@
    "reason": "Explained by score: Robin Montgomery not above the games spread right now",
    "context": "Lisa Pigato 0 · Robin Montgomery 0 · 1st Set (games by set)",
    "first_seen": "2026-10-26T17:09:52.168Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1805340:0",
+   "market_id": "1805340",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Robin Montgomery vs. Lisa Pigato be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 43,
+   "now_chance": 32,
+   "open_odds": "+133",
+   "now_odds": "+213",
+   "edge": 11,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Lisa Pigato 6, 1 · Robin Montgomery 0, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T10:51:14.511Z",
    "status": "gone",
    "kalshi": null
   },
