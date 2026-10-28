@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185142",
-  "fetched_at": "2026-10-28T13:20:22.408Z",
+  "fetched_at": "2026-10-28T13:27:22.809Z",
   "tennis": true,
   "tennis_match": {
    "id": "185142",
@@ -178,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T13:20:22.122Z",
+ "updated": "2026-10-28T13:27:22.756Z",
  "open_taken_at": "2026-10-26T05:02:52.912Z",
  "thresholds": {
   "big": 10,
@@ -318,6 +318,28 @@
    "taken_at": "2026-10-26T10:12:52.584Z"
   },
   {
+   "market_id": "1817681",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Remy Bertola vs. Denis Shapovalov be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 36.5,
+   "yes_buy": 37,
+   "no_buy": 64,
+   "taken_at": "2026-10-28T12:43:15.616Z"
+  },
+  {
    "market_id": "1817670",
    "market": "Games spread",
    "group": "game",
@@ -338,6 +360,28 @@
    "yes_buy": 31,
    "no_buy": 70,
    "taken_at": "2026-10-28T12:43:15.616Z"
+  },
+  {
+   "market_id": "1817686",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Remy Bertola win set 1 against Denis Shapovalov?",
+   "sides": [
+    "Yes: Remy Bertola win set 1 against Denis Shapovalov",
+    "No: Remy Bertola win set 1 against Denis Shapovalov"
+   ],
+   "teams": [
+    "Remy Bertola",
+    null
+   ],
+   "player": null,
+   "mid": 33,
+   "yes_buy": 36,
+   "no_buy": 70,
+   "taken_at": "2026-10-27T10:22:43.629Z"
   },
   {
    "market_id": "1817687",
@@ -382,28 +426,6 @@
    "yes_buy": 35,
    "no_buy": 70,
    "taken_at": "2026-10-27T11:06:52.864Z"
-  },
-  {
-   "market_id": "1817686",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Remy Bertola win set 1 against Denis Shapovalov?",
-   "sides": [
-    "Yes: Remy Bertola win set 1 against Denis Shapovalov",
-    "No: Remy Bertola win set 1 against Denis Shapovalov"
-   ],
-   "teams": [
-    "Remy Bertola",
-    null
-   ],
-   "player": null,
-   "mid": 33,
-   "yes_buy": 36,
-   "no_buy": 70,
-   "taken_at": "2026-10-27T10:22:43.629Z"
   },
   {
    "market_id": "1817669",
@@ -492,48 +514,26 @@
    "yes_buy": 14,
    "no_buy": 87,
    "taken_at": "2026-10-28T12:49:13.870Z"
-  },
-  {
-   "market_id": "1817681",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Remy Bertola vs. Denis Shapovalov be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 36.5,
-   "yes_buy": 37,
-   "no_buy": 64,
-   "taken_at": "2026-10-28T12:43:15.616Z"
   }
  ],
  "edges": [
   {
-   "key": "1817686:0",
-   "market_id": "1817686",
-   "market": "Set 1 winner",
+   "key": "1817681:1",
+   "market_id": "1817681",
+   "market": "Sets total",
    "group": "game",
-   "question": "Will Remy Bertola win set 1 against Denis Shapovalov?",
-   "side": "Yes: Remy Bertola win set 1 against Denis Shapovalov",
-   "open_chance": 36,
-   "now_chance": 26,
-   "open_odds": "+178",
-   "now_odds": "+285",
-   "edge": 10,
+   "question": "Will the total in Remy Bertola vs. Denis Shapovalov be more than 2.5?",
+   "side": "Under 2.5 (Sets)",
+   "open_chance": 64,
+   "now_chance": 51,
+   "open_odds": "-178",
+   "now_odds": "-104",
+   "edge": 13,
    "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Remy Bertola not above the games spread right now",
+   "class": "edge",
+   "reason": null,
    "context": "Denis Shapovalov 2 · Remy Bertola 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T13:06:17.526Z",
+   "first_seen": "2026-10-28T13:27:22.756Z",
    "status": "open",
    "kalshi": null
   },
@@ -565,16 +565,76 @@
    "question": "Who will win in the upcoming atp event Remy Bertola vs Denis Shapovalov scheduled for October 27, 2026 at 11:00 AM UTC?",
    "side": "Remy Bertola win",
    "open_chance": 30,
-   "now_chance": 24,
+   "now_chance": 25,
    "open_odds": "+233",
-   "now_odds": "+317",
-   "edge": 6,
+   "now_odds": "+300",
+   "edge": 5,
    "tier": "slight",
    "class": "edge",
    "reason": null,
    "context": "Denis Shapovalov 2 · Remy Bertola 2 · 1st Set (games by set)",
    "first_seen": "2026-10-28T13:06:17.526Z",
    "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1817676:1",
+   "market_id": "1817676",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Remy Bertola cover 1.5 vs the Denis Shapovalov in Remy Bertola vs. Denis Shapovalov?",
+   "side": "Denis Shapovalov -1.50 (Sets)",
+   "open_chance": 51,
+   "now_chance": 47,
+   "open_odds": "-104",
+   "now_odds": "+113",
+   "edge": 4,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Denis Shapovalov not above the sets spread right now",
+   "context": "Denis Shapovalov 2 · Remy Bertola 2 · 1st Set (games by set)",
+   "first_seen": "2026-10-28T13:27:22.756Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1817678:1",
+   "market_id": "1817678",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Remy Bertola vs. Denis Shapovalov be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 50,
+   "now_chance": 46,
+   "open_odds": "+100",
+   "now_odds": "+117",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Denis Shapovalov 2 · Remy Bertola 2 · 1st Set (games by set)",
+   "first_seen": "2026-10-28T13:27:22.756Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1817686:0",
+   "market_id": "1817686",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Remy Bertola win set 1 against Denis Shapovalov?",
+   "side": "Yes: Remy Bertola win set 1 against Denis Shapovalov",
+   "open_chance": 36,
+   "now_chance": 26,
+   "open_odds": "+178",
+   "now_odds": "+285",
+   "edge": 10,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Remy Bertola not above the games spread right now",
+   "context": "Denis Shapovalov 2 · Remy Bertola 2 · 1st Set (games by set)",
+   "first_seen": "2026-10-28T13:06:17.526Z",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -679,6 +739,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1817681:1:big",
+   "key": "1817681:1",
+   "at": "2026-10-28T13:27:22.756Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 2.5 (Sets)",
+   "market": "Sets total",
+   "now_odds": "-104",
+   "now_chance": 51,
+   "edge": 13,
+   "text": "New big edge: Under 2.5 (Sets) (Sets total), 13 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-rember-densha-2026-10-27"
+  },
+  {
+   "id": "new_edge:1817678:1:slight",
+   "key": "1817678:1",
+   "at": "2026-10-28T13:27:22.756Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+117",
+   "now_chance": 46,
+   "edge": 4,
+   "text": "New slight edge: Under 22.5 (Games) (Games total), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-rember-densha-2026-10-27"
+  },
   {
    "id": "gone:1817672:0:2026-10-28T13:13:18.945Z",
    "key": "1817672:0",
@@ -860,7 +948,9 @@
   "gone:1817669:0:2026-10-28T12:43:15.616Z",
   "gone:1807348:0:2026-10-28T13:06:17.526Z",
   "gone:1817672:0:2026-10-28T13:13:18.945Z",
-  "gone:1817679:0:2026-10-28T12:43:15.616Z"
+  "gone:1817679:0:2026-10-28T12:43:15.616Z",
+  "new_edge:1817681:1:big",
+  "new_edge:1817678:1:slight"
  ],
  "kalshi_checked": null
 }
