@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-10-28T05:14:53.774Z",
+ "updated_at": "2026-10-28T05:24:35.825Z",
  "source": "ESPN public roster API (site.api.espn.com), matched to Polymarket US player names",
  "leagues": {
   "nhl": {
@@ -20,7 +20,6 @@
     "ana|alex killorn": "LW",
     "ana|judd caulfield": "RW",
     "ana|leo carlsson": "C",
-    "van|zeev buium": "D",
     "van|jake debrusk": "LW",
     "van|filip chytil": "C",
     "ana|beckett sennecke": "RW",
@@ -31,6 +30,7 @@
     "ana|jackson lacombe": "D",
     "van|drew oconnor": "LW",
     "van|paul cotter": "LW",
+    "van|zeev buium": "D",
     "veg|trevor connelly": "LW",
     "ott|drake batherson": "RW",
     "veg|jack eichel": "C",
@@ -50,26 +50,26 @@
     "veg|brett howden": "C",
     "ott|fabian zetterlund": "LW",
     "ott|warren foegele": "LW",
-    "sj|macklin celebrini": "C",
-    "sj|ivar stenberg": "LW",
     "buf|tage thompson": "C",
     "buf|zach benson": "LW",
-    "sj|will smith": "C",
-    "buf|jack quinn": "RW",
-    "buf|noah ostlund": "C",
-    "sj|dmitry orlov": "D",
-    "sj|jacob trouba": "D",
+    "buf|jason zucker": "LW",
     "sj|mason marchment": "LW",
+    "buf|jack quinn": "RW",
+    "sj|dmitry orlov": "D",
+    "sj|macklin celebrini": "C",
+    "buf|josh doan": "RW",
+    "buf|rasmus dahlin": "D",
+    "sj|will smith": "C",
+    "buf|noah ostlund": "C",
     "buf|ryan mcleod": "C",
     "sj|tyler toffoli": "C",
-    "buf|josh doan": "RW",
-    "sj|collin graf": "RW",
-    "buf|jason zucker": "LW",
-    "buf|rasmus dahlin": "D",
     "buf|josh norris": "C",
-    "buf|owen power": "D",
+    "sj|jacob trouba": "D",
+    "sj|ivar stenberg": "LW",
+    "sj|collin graf": "RW",
     "sj|kiefer sherwood": "LW",
     "sj|michael misa": "C",
+    "buf|owen power": "D",
     "was|dylan strome": "C",
     "was|jordan kyrou": "RW",
     "was|tom wilson": "RW",
@@ -107,9 +107,9 @@
     "edm|alex formenton": "LW",
     "edm|colton dach": "C",
     "cgy|ryan strome": "C",
+    "col|cale makar": "D",
     "col|martin necas": "C",
     "col|nathan mackinnon": "C",
-    "col|cale makar": "D",
     "col|nazem kadri": "C",
     "col|brock nelson": "C",
     "col|artturi lehkonen": "LW",
@@ -145,50 +145,57 @@
   },
   "nba": {
    "names": {
-    "SG": "Shooting Guard",
-    "PG": "Point Guard",
-    "SF": "Small Forward",
     "PF": "Power Forward",
-    "C": "Center"
+    "SF": "Small Forward",
+    "C": "Center",
+    "PG": "Point Guard",
+    "SG": "Shooting Guard"
    },
    "players": {
+    "por|donovan clingan": "C",
     "lal|walker kessler": "C",
     "lal|austin reaves": "SG",
+    "por|ja morant": "PG",
+    "por|jrue holiday": "SG",
     "lal|quentin grimes": "SG",
+    "por|damian lillard": "SG",
     "lal|luka doncic": "PG",
     "lal|matisse thybulle": "PF",
     "lal|ziaire williams": "SF",
+    "por|toumani camara": "SF",
+    "por|deni avdija": "PF",
     "lal|sandro mamukelashvili": "PF",
+    "por|scoot henderson": "PG",
+    "phi|anfernee simons": "PG",
+    "phi|vj edgecombe": "SG",
     "phi|tyrese maxey": "PG",
     "phi|dean wade": "PF",
     "phi|joel embiid": "C",
-    "phi|vj edgecombe": "SG",
     "phi|lebron james": "PF",
     "phi|jaylen brown": "SF",
-    "phi|anfernee simons": "PG",
     "ind|pascal siakam": "PF",
+    "atl|onyeka okongwu": "C",
     "mia|giannis antetokounmpo": "PF",
     "mia|klay thompson": "SG",
     "atl|dyson daniels": "SF",
-    "atl|cj mccollum": "PG",
     "mia|bam adebayo": "C",
+    "atl|cj mccollum": "PG",
     "mia|andrew wiggins": "SF",
     "atl|nickeil alexander walker": "SG",
     "mia|tim hardaway": "SG",
     "atl|jalen johnson": "PF",
-    "atl|onyeka okongwu": "C",
     "mia|bobby portis": "PF",
     "mia|davion mitchell": "PG",
     "cle|jarrett allen": "C",
     "cle|donovan mitchell": "SG",
-    "was|trae young": "PG",
     "cle|peyton watson": "SF",
+    "was|trae young": "PG",
     "was|anthony davis": "PF",
     "cle|evan mobley": "PF",
     "cle|james harden": "PG",
-    "cle|jaylon tyson": "SF",
     "was|kyshawn george": "SG",
     "was|tre johnson": "SG",
+    "cle|jaylon tyson": "SF",
     "cle|sam merrill": "SG",
     "tor|scottie barnes": "PF",
     "tor|immanuel quickley": "PG",
@@ -234,6 +241,26 @@
     "gen|milutin osmajic": "F"
    }
   },
+  "wnba": {
+   "names": {
+    "F": "Forward",
+    "G": "Guard",
+    "C": "Center"
+   },
+   "players": {
+    "atl|jordin canada": "G",
+    "gsv|kaila charles": "G",
+    "atl|angel reese": "F",
+    "gsv|kiah stokes": "C",
+    "gsv|tiffany hayes": "G",
+    "atl|allisha gray": "G",
+    "gsv|gabby williams": "F",
+    "atl|rhyne howard": "G",
+    "atl|naz hillmon": "F",
+    "gsv|veronica burton": "G",
+    "gsv|cecilia zandalasini": "F"
+   }
+  },
   "nfl": {
    "names": {
     "WR": "Wide Receiver",
@@ -247,9 +274,9 @@
     "car|jalen coker": "WR",
     "gb|jordan love": "QB",
     "gb|tucker kraft": "TE",
-    "gb|savion williams": "WR",
     "car|chuba hubbard": "RB",
     "car|darren waller": "TE",
+    "gb|savion williams": "WR",
     "car|tetairoa mcmillan": "WR",
     "gb|matthew golden": "WR",
     "gb|marshawn lloyd": "RB",
@@ -283,10 +310,10 @@
   },
   "nba": {
    "players": 62,
-   "matched": 55,
-   "rate": 0.887,
+   "matched": 62,
+   "rate": 1,
    "by": {
-    "team": 55
+    "team": 62
    }
   },
   "sea": {
@@ -295,6 +322,14 @@
    "rate": 1,
    "by": {
     "team": 17
+   }
+  },
+  "wnba": {
+   "players": 11,
+   "matched": 11,
+   "rate": 1,
+   "by": {
+    "team": 11
    }
   },
   "nfl": {
@@ -306,16 +341,6 @@
    }
   }
  },
- "unmatched": {
-  "nba": [
-   "Damian Lillard (por)",
-   "Deni Avdija (por)",
-   "Donovan Clingan (por)",
-   "Ja Morant (por)",
-   "Jrue Holiday (por)",
-   "Scoot Henderson (por)",
-   "Toumani Camara (por)"
-  ]
- },
+ "unmatched": {},
  "skipped_leagues": []
 }
