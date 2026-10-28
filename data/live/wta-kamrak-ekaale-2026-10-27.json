@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185680",
-  "fetched_at": "2026-10-28T03:33:52.922Z",
+  "fetched_at": "2026-10-28T03:38:37.226Z",
   "tennis": true,
   "tennis_match": {
    "id": "185680",
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 4,
@@ -105,6 +106,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 6,
@@ -150,6 +152,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 264,
    "type": {
     "id": "2",
@@ -187,7 +194,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T03:33:52.795Z",
+ "updated": "2026-10-28T03:38:37.097Z",
  "open_taken_at": "2026-10-27T03:50:40.617Z",
  "thresholds": {
   "big": 10,
@@ -217,28 +224,6 @@
    "taken_at": "2026-10-27T04:47:57.634Z"
   },
   {
-   "market_id": "1859158",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Kamilla Rakhimova cover 1.5 vs the Ekaterina Alexandrova in Kamilla Rakhimova vs. Ekaterina Alexandrova?",
-   "sides": [
-    "Kamilla Rakhimova +1.50 (Games)",
-    "Ekaterina Alexandrova -1.50 (Games)"
-   ],
-   "teams": [
-    "Kamilla Rakhimova",
-    "Ekaterina Alexandrova"
-   ],
-   "player": null,
-   "mid": 45.5,
-   "yes_buy": 47,
-   "no_buy": 56,
-   "taken_at": "2026-10-28T01:32:06.677Z"
-  },
-  {
    "market_id": "1859156",
    "market": "Games spread",
    "group": "game",
@@ -258,6 +243,28 @@
    "mid": 32.5,
    "yes_buy": 33,
    "no_buy": 68,
+   "taken_at": "2026-10-28T01:32:06.677Z"
+  },
+  {
+   "market_id": "1859158",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Kamilla Rakhimova cover 1.5 vs the Ekaterina Alexandrova in Kamilla Rakhimova vs. Ekaterina Alexandrova?",
+   "sides": [
+    "Kamilla Rakhimova +1.50 (Games)",
+    "Ekaterina Alexandrova -1.50 (Games)"
+   ],
+   "teams": [
+    "Kamilla Rakhimova",
+    "Ekaterina Alexandrova"
+   ],
+   "player": null,
+   "mid": 45.5,
+   "yes_buy": 47,
+   "no_buy": 56,
    "taken_at": "2026-10-28T01:32:06.677Z"
   },
   {
@@ -527,46 +534,6 @@
  ],
  "edges": [
   {
-   "key": "1859158:0",
-   "market_id": "1859158",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Kamilla Rakhimova cover 1.5 vs the Ekaterina Alexandrova in Kamilla Rakhimova vs. Ekaterina Alexandrova?",
-   "side": "Kamilla Rakhimova +1.50 (Games)",
-   "open_chance": 47,
-   "now_chance": 34,
-   "open_odds": "+113",
-   "now_odds": "+194",
-   "edge": 13,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Ekaterina Alexandrova 4, 6, 2 · Kamilla Rakhimova 6, 4, 1 · 3rd Set (games by set)",
-   "first_seen": "2026-10-28T01:45:09.591Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1859156:0",
-   "market_id": "1859156",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Kamilla Rakhimova cover -1.5 vs the Ekaterina Alexandrova in Kamilla Rakhimova vs. Ekaterina Alexandrova?",
-   "side": "Kamilla Rakhimova -1.50 (Games)",
-   "open_chance": 33,
-   "now_chance": 22,
-   "open_odds": "+203",
-   "now_odds": "+355",
-   "edge": 11,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Kamilla Rakhimova not above the games spread right now",
-   "context": "Ekaterina Alexandrova 4, 6, 2 · Kamilla Rakhimova 6, 4, 1 · 3rd Set (games by set)",
-   "first_seen": "2026-10-28T01:38:53.031Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1857965:0",
    "market_id": "1857965",
    "market": "Moneyline",
@@ -574,10 +541,10 @@
    "question": "Who will win in the upcoming wta event Kamilla Rakhimova vs Ekaterina Alexandrova scheduled for October 28, 2026 at 1:00 AM UTC?",
    "side": "Kamilla Rakhimova win",
    "open_chance": 29,
-   "now_chance": 24,
+   "now_chance": 21,
    "open_odds": "+245",
-   "now_odds": "+317",
-   "edge": 5,
+   "now_odds": "+376",
+   "edge": 8,
    "tier": "slight",
    "class": "edge",
    "reason": null,
@@ -687,22 +654,22 @@
    "kalshi": null
   },
   {
-   "key": "1859156:1",
-   "market_id": "1859156",
+   "key": "1859158:0",
+   "market_id": "1859158",
    "market": "Games spread",
    "group": "game",
-   "question": "Will the Kamilla Rakhimova cover -1.5 vs the Ekaterina Alexandrova in Kamilla Rakhimova vs. Ekaterina Alexandrova?",
-   "side": "Ekaterina Alexandrova +1.50 (Games)",
-   "open_chance": 68,
-   "now_chance": 55,
-   "open_odds": "-213",
-   "now_odds": "-122",
+   "question": "Will the Kamilla Rakhimova cover 1.5 vs the Ekaterina Alexandrova in Kamilla Rakhimova vs. Ekaterina Alexandrova?",
+   "side": "Kamilla Rakhimova +1.50 (Games)",
+   "open_chance": 47,
+   "now_chance": 34,
+   "open_odds": "+113",
+   "now_odds": "+194",
    "edge": 13,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Ekaterina Alexandrova 4, 6, 0 · Kamilla Rakhimova 6, 4, 1 · 3rd Set (games by set)",
-   "first_seen": "2026-10-28T02:27:22.566Z",
+   "context": "Ekaterina Alexandrova 4, 6, 2 · Kamilla Rakhimova 6, 4, 1 · 3rd Set (games by set)",
+   "first_seen": "2026-10-28T01:45:09.591Z",
    "status": "gone",
    "kalshi": null
   },
@@ -783,20 +750,6 @@
    "url": "https://polymarket.us/sports/wta/wta-kamrak-ekaale-2026-10-27"
   },
   {
-   "id": "gone:1859156:1:2026-10-28T02:27:22.566Z",
-   "key": "1859156:1",
-   "at": "2026-10-28T03:09:55.657Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Ekaterina Alexandrova +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+104",
-   "now_chance": 49,
-   "edge": 19,
-   "text": "Edge gone: Ekaterina Alexandrova +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-kamrak-ekaale-2026-10-27"
-  },
-  {
    "id": "gone:1859179:1:2026-10-28T02:21:35.859Z",
    "key": "1859179:1",
    "at": "2026-10-28T02:58:13.287Z",
@@ -836,20 +789,6 @@
    "now_chance": 29,
    "edge": 29,
    "text": "Big move, likely news: Under 22.5 (Games) (Games total) is 29 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-kamrak-ekaale-2026-10-27"
-  },
-  {
-   "id": "new_edge:1859156:1:big",
-   "key": "1859156:1",
-   "at": "2026-10-28T02:32:30.242Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Ekaterina Alexandrova +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-127",
-   "now_chance": 56,
-   "edge": 12,
-   "text": "New big edge: Ekaterina Alexandrova +1.50 (Games) (Games spread), 12 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-kamrak-ekaale-2026-10-27"
   },
   {
