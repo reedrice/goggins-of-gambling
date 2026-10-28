@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-28T16:55:54.697Z"
+  "fetched_at": "2026-10-28T17:03:29.222Z"
  },
- "updated": "2026-10-28T16:55:54.582Z",
+ "updated": "2026-10-28T17:03:29.148Z",
  "open_taken_at": "2026-10-27T14:19:29.840Z",
  "thresholds": {
   "big": 10,
@@ -63,25 +63,25 @@
    "taken_at": "2026-10-27T18:50:19.108Z"
   },
   {
-   "market_id": "1870501",
-   "market": "Games spread",
+   "market_id": "1870508",
+   "market": "Sets total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Matisse Bobichon cover -7.5 vs the Otto Virtanen in Matisse Bobichon vs. Otto Virtanen?",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Matisse Bobichon vs. Otto Virtanen be more than 2.5?",
    "sides": [
-    "Matisse Bobichon -7.50 (Games)",
-    "Otto Virtanen +7.50 (Games)"
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
    ],
    "teams": [
-    "Matisse Bobichon",
-    "Otto Virtanen"
+    null,
+    null
    ],
    "player": null,
-   "mid": 32.5,
-   "yes_buy": 33,
-   "no_buy": 68,
+   "mid": 39.5,
+   "yes_buy": 40,
+   "no_buy": 61,
    "taken_at": "2026-10-28T13:33:51.946Z"
   },
   {
@@ -95,6 +95,28 @@
    "sides": [
     "Matisse Bobichon -1.50 (Games)",
     "Otto Virtanen +1.50 (Games)"
+   ],
+   "teams": [
+    "Matisse Bobichon",
+    "Otto Virtanen"
+   ],
+   "player": null,
+   "mid": 32.5,
+   "yes_buy": 33,
+   "no_buy": 68,
+   "taken_at": "2026-10-28T13:33:51.946Z"
+  },
+  {
+   "market_id": "1870501",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Matisse Bobichon cover -7.5 vs the Otto Virtanen in Matisse Bobichon vs. Otto Virtanen?",
+   "sides": [
+    "Matisse Bobichon -7.50 (Games)",
+    "Otto Virtanen +7.50 (Games)"
    ],
    "teams": [
     "Matisse Bobichon",
@@ -239,28 +261,6 @@
    "taken_at": "2026-10-28T13:33:51.946Z"
   },
   {
-   "market_id": "1870508",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Matisse Bobichon vs. Otto Virtanen be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 39.5,
-   "yes_buy": 40,
-   "no_buy": 61,
-   "taken_at": "2026-10-28T13:33:51.946Z"
-  },
-  {
    "market_id": "1870507",
    "market": "Games total",
    "group": "game",
@@ -351,26 +351,6 @@
  ],
  "edges": [
   {
-   "key": "1870500:0",
-   "market_id": "1870500",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Matisse Bobichon cover 4.5 vs the Otto Virtanen in Matisse Bobichon vs. Otto Virtanen?",
-   "side": "Matisse Bobichon +4.50 (Games)",
-   "open_chance": 62,
-   "now_chance": 52,
-   "open_odds": "-163",
-   "now_odds": "-108",
-   "edge": 10,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-28T15:51:18.204Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1870506:1",
    "market_id": "1870506",
    "market": "Games total",
@@ -378,16 +358,16 @@
    "question": "Will the total in Matisse Bobichon vs. Otto Virtanen be more than 22.5?",
    "side": "Under 22.5 (Games)",
    "open_chance": 60,
-   "now_chance": 36,
+   "now_chance": 56,
    "open_odds": "-150",
-   "now_odds": "+178",
-   "edge": 24,
-   "tier": "big",
+   "now_odds": "-127",
+   "edge": 4,
+   "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-28T13:33:51.946Z",
-   "status": "gone",
+   "status": "open",
    "kalshi": null
   },
   {
@@ -411,22 +391,22 @@
    "kalshi": null
   },
   {
-   "key": "1870508:0",
-   "market_id": "1870508",
-   "market": "Sets total",
+   "key": "1870500:0",
+   "market_id": "1870500",
+   "market": "Games spread",
    "group": "game",
-   "question": "Will the total in Matisse Bobichon vs. Otto Virtanen be more than 2.5?",
-   "side": "Over 2.5 (Sets)",
-   "open_chance": 40,
-   "now_chance": 33,
-   "open_odds": "+150",
-   "now_odds": "+203",
-   "edge": 7,
-   "tier": "slight",
+   "question": "Will the Matisse Bobichon cover 4.5 vs the Otto Virtanen in Matisse Bobichon vs. Otto Virtanen?",
+   "side": "Matisse Bobichon +4.50 (Games)",
+   "open_chance": 62,
+   "now_chance": 52,
+   "open_odds": "-163",
+   "now_odds": "-108",
+   "edge": 10,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-28T15:27:45.112Z",
+   "first_seen": "2026-10-28T15:51:18.204Z",
    "status": "gone",
    "kalshi": null
   },
@@ -549,20 +529,6 @@
    "url": "https://polymarket.us/sports/atp/atp-matbob-ottvir-2026-10-28"
   },
   {
-   "id": "new_edge:1870508:0:slight",
-   "key": "1870508:0",
-   "at": "2026-10-28T16:33:51.446Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Over 2.5 (Sets)",
-   "market": "Sets total",
-   "now_odds": "+203",
-   "now_chance": 33,
-   "edge": 7,
-   "text": "New slight edge: Over 2.5 (Sets) (Sets total), 7 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-matbob-ottvir-2026-10-28"
-  },
-  {
    "id": "gone:1870500:1:2026-10-28T16:22:45.512Z",
    "key": "1870500:1",
    "at": "2026-10-28T16:33:51.446Z",
@@ -588,20 +554,6 @@
    "now_chance": 34,
    "edge": 26,
    "text": "New big edge: Under 22.5 (Games) (Games total), 26 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-matbob-ottvir-2026-10-28"
-  },
-  {
-   "id": "new_edge:1870508:0:big",
-   "key": "1870508:0",
-   "at": "2026-10-28T16:22:45.512Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Over 2.5 (Sets)",
-   "market": "Sets total",
-   "now_odds": "+245",
-   "now_chance": 29,
-   "edge": 11,
-   "text": "New big edge: Over 2.5 (Sets) (Sets total), 11 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-matbob-ottvir-2026-10-28"
   },
   {
@@ -714,20 +666,6 @@
    "now_chance": 28,
    "edge": 6,
    "text": "New slight edge: Yes: Matisse Bobichon win set 1 against Otto Virtanen (Set 1 winner), 6 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-matbob-ottvir-2026-10-28"
-  },
-  {
-   "id": "gone:1870508:0:2026-10-28T15:27:45.112Z",
-   "key": "1870508:0",
-   "at": "2026-10-28T15:41:16.405Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Over 2.5 (Sets)",
-   "market": "Sets total",
-   "now_odds": "+203",
-   "now_chance": 33,
-   "edge": 7,
-   "text": "Edge gone: Over 2.5 (Sets) (Sets total) is no longer 4+ points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-matbob-ottvir-2026-10-28"
   },
   {
