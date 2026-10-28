@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185210",
-  "fetched_at": "2026-10-28T16:33:44.773Z",
+  "fetched_at": "2026-10-28T16:41:55.921Z",
   "tennis": true,
   "tennis_match": {
    "id": "185210",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Harri Heliovaara (FIN) & Henry Patten (GBR) leads Austin Krajicek (USA) & Nikola Mektic (CRO) 1-0",
+     "text": "(1) Harri Heliovaara (FIN) & Henry Patten (GBR) leads Austin Krajicek (USA) & Nikola Mektic (CRO) 2-1",
      "type": "event"
     }
    ],
@@ -58,7 +58,7 @@
      "possession": true,
      "linescores": [
       {
-       "value": 0
+       "value": 1
       }
      ],
      "roster": {
@@ -139,7 +139,7 @@
      },
      "linescores": [
       {
-       "value": 1
+       "value": 2
       }
      ],
      "roster": {
@@ -251,7 +251,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T16:33:44.679Z",
+ "updated": "2026-10-28T16:41:55.778Z",
  "open_taken_at": "2026-10-24T13:28:22.279Z",
  "thresholds": {
   "big": 10,
@@ -299,11 +299,25 @@
    "reason": null,
    "context": "Austin Krajicek / Nikola Mektic 0 · Harri Heliovaara / Henry Patten 1 · 1st Set (games by set)",
    "first_seen": "2026-10-27T11:12:57.608Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1755072:1:2026-10-27T11:12:57.608Z",
+   "key": "1755072:1",
+   "at": "2026-10-28T16:41:55.778Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Krajicek / Mektic win",
+   "market": "Moneyline",
+   "now_odds": "+186",
+   "now_chance": 35,
+   "edge": 6,
+   "text": "Edge gone: Krajicek / Mektic win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-heliovpatten-krajicmektic-2026-10-25"
+  },
   {
    "id": "new_edge:1755072:1:slight",
    "key": "1755072:1",
@@ -320,7 +334,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1755072:1:slight"
+  "new_edge:1755072:1:slight",
+  "gone:1755072:1:2026-10-27T11:12:57.608Z"
  ],
  "kalshi_checked": null
 }
