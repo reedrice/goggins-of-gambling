@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-28T03:09:48.695Z"
+  "fetched_at": "2026-10-28T03:16:12.061Z"
  },
- "updated": "2026-10-28T03:09:48.620Z",
+ "updated": "2026-10-28T03:16:11.984Z",
  "open_taken_at": "2026-10-24T07:58:17.233Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-26T14:32:20.884Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1745981:1:2026-10-26T14:32:20.884Z",
+   "key": "1745981:1",
+   "at": "2026-10-28T03:16:11.984Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Muhammad A / Zhang S win",
+   "market": "Moneyline",
+   "now_odds": "-104",
+   "now_chance": 51,
+   "edge": 4,
+   "text": "Edge gone: Muhammad A / Zhang S win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-eikerigleaso-muhammzhang-2026-10-25"
+  },
   {
    "id": "new_edge:1745981:1:slight",
    "key": "1745981:1",
@@ -80,7 +94,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1745981:1:slight"
+  "new_edge:1745981:1:slight",
+  "gone:1745981:1:2026-10-26T14:32:20.884Z"
  ],
  "kalshi_checked": null
 }
