@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185859",
-  "fetched_at": "2026-10-28T15:34:20.119Z",
+  "fetched_at": "2026-10-28T15:41:15.846Z",
   "tennis": true,
   "tennis_match": {
    "id": "185859",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Enola Chiesa (ITA) & Rositsa Dencheva (BUL) leads Susan Bandecchi (SUI) & Lisa Pigato (ITA) 7-6 (9-7)",
+     "text": "Enola Chiesa (ITA) & Rositsa Dencheva (BUL) is tied with Susan Bandecchi (SUI) & Lisa Pigato (ITA) 7-6 (9-7) 1-1",
      "type": "event"
     }
    ],
@@ -55,10 +55,15 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
        "value": 6,
-       "tiebreak": 7
+       "tiebreak": 7,
+       "winner": false
+      },
+      {
+       "value": 1
       }
      ],
      "roster": {
@@ -133,10 +138,15 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 7,
-       "tiebreak": 9
+       "tiebreak": 9,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "roster": {
@@ -206,6 +216,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1081,
    "type": {
     "id": "4",
@@ -224,8 +239,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Susan Bandecchi / Lisa Pigato",
@@ -237,13 +252,13 @@
    "abbr": "Enola Chiesa / Rositsa Dencheva",
    "alias": "Enola Chiesa / Rositsa Dencheva",
    "name": "Enola Chiesa / Rositsa Dencheva",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T15:34:20.035Z",
+ "updated": "2026-10-28T15:41:15.697Z",
  "open_taken_at": "2026-10-27T13:01:15.215Z",
  "thresholds": {
   "big": 10,
