@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185210",
-  "fetched_at": "2026-10-28T16:22:39.871Z",
+  "fetched_at": "2026-10-28T16:33:44.773Z",
   "tennis": true,
   "tennis_match": {
    "id": "185210",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Wed, October 28th at 12:25 PM EDT",
-     "shortDetail": "10/28 - 12:25 PM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(1) Harri Heliovaara (FIN) & Henry Patten (GBR) leads Austin Krajicek (USA) & Nikola Mektic (CRO) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "roster": {
       "displayName": "Austin Krajicek / Nikola Mektic",
       "shortDisplayName": "A. Krajicek / N. Mektic",
@@ -122,9 +133,15 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 1
      },
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "roster": {
       "displayName": "Harri Heliovaara / Henry Patten",
       "shortDisplayName": "H. Heliovaara / H. Patten",
@@ -192,6 +209,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 10,
    "type": {
     "id": "3",
@@ -208,10 +230,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Wed, October 28th at 12:25 PM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Austin Krajicek / Nikola Mektic",
@@ -229,7 +251,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T16:22:39.815Z",
+ "updated": "2026-10-28T16:33:44.679Z",
  "open_taken_at": "2026-10-24T13:28:22.279Z",
  "thresholds": {
   "big": 10,
@@ -268,20 +290,37 @@
    "question": "Who will win in the upcoming atpdb event Heliovaara / Patten vs Krajicek / Mektic scheduled for October 25, 2026 at 9:00 AM UTC?",
    "side": "Krajicek / Mektic win",
    "open_chance": 41,
-   "now_chance": 37,
+   "now_chance": 35,
    "open_odds": "+144",
-   "now_odds": "+170",
-   "edge": 4,
+   "now_odds": "+186",
+   "edge": 6,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Austin Krajicek / Nikola Mektic 0 · Harri Heliovaara / Henry Patten 1 · 1st Set (games by set)",
    "first_seen": "2026-10-27T11:12:57.608Z",
-   "status": "gone",
+   "status": "open",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "new_edge:1755072:1:slight",
+   "key": "1755072:1",
+   "at": "2026-10-28T16:33:44.679Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Krajicek / Mektic win",
+   "market": "Moneyline",
+   "now_odds": "+186",
+   "now_chance": 35,
+   "edge": 6,
+   "text": "New slight edge: Krajicek / Mektic win (Moneyline), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-heliovpatten-krajicmektic-2026-10-25"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:1755072:1:slight"
+ ],
  "kalshi_checked": null
 }
