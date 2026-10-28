@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185690",
-  "fetched_at": "2026-10-28T08:36:10.025Z",
+  "fetched_at": "2026-10-28T08:41:33.506Z",
   "tennis": true,
   "tennis_match": {
    "id": "185690",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Wed, October 28th at 4:35 AM EDT",
-     "shortDetail": "10/28 - 4:35 AM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Storm Hunter (AUS) & Maya Joint (AUS) leads Momoko Kobori (JPN) & Ayano Shimizu (JPN) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,11 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "roster": {
       "displayName": "Momoko Kobori / Ayano Shimizu",
       "shortDisplayName": "M. Kobori / A. Shimizu",
@@ -122,6 +132,11 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "roster": {
       "displayName": "Storm Hunter / Maya Joint",
       "shortDisplayName": "S. Hunter / M. Joint",
@@ -205,10 +220,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Wed, October 28th at 4:35 AM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Momoko Kobori / Ayano Shimizu",
@@ -226,7 +241,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T08:36:09.864Z",
+ "updated": "2026-10-28T08:41:33.313Z",
  "open_taken_at": "2026-10-24T07:58:17.571Z",
  "thresholds": {
   "big": 10,
@@ -265,20 +280,34 @@
    "question": "Who will win in the upcoming wtadb event Hunter / Joint vs Kobori / Shimizu scheduled for October 26, 2026 at 1:30 AM UTC?",
    "side": "Kobori M / Shimizu A win",
    "open_chance": 33,
-   "now_chance": 29,
+   "now_chance": 21,
    "open_odds": "+203",
-   "now_odds": "+245",
-   "edge": 4,
-   "tier": "slight",
+   "now_odds": "+376",
+   "edge": 12,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Momoko Kobori / Ayano Shimizu 0 · Storm Hunter / Maya Joint 1 · 1st Set (games by set)",
    "first_seen": "2026-10-27T00:11:19.962Z",
    "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1745982:1:big",
+   "key": "1745982:1",
+   "at": "2026-10-28T08:41:33.313Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Kobori M / Shimizu A win",
+   "market": "Moneyline",
+   "now_odds": "+376",
+   "now_chance": 21,
+   "edge": 12,
+   "text": "New big edge: Kobori M / Shimizu A win (Moneyline), 12 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-hunterjoint-koborishimiz-2026-10-25"
+  },
   {
    "id": "new_edge:1745982:1:slight",
    "key": "1745982:1",
@@ -295,7 +324,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1745982:1:slight"
+  "new_edge:1745982:1:slight",
+  "new_edge:1745982:1:big"
  ],
  "kalshi_checked": null
 }
