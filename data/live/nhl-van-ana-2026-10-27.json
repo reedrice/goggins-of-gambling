@@ -9,12 +9,12 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892594",
-  "fetched_at": "2026-10-28T02:58:05.858Z",
+  "fetched_at": "2026-10-28T03:04:01.460Z",
   "game_state": "in",
-  "espn_status": "STATUS_END_PERIOD",
-  "period": 1,
-  "clock": "0:00",
-  "regulation_secs_left": 2700,
+  "espn_status": "STATUS_IN_PROGRESS",
+  "period": 2,
+  "clock": "18:04",
+  "regulation_secs_left": 2884,
   "home": {
    "abbr": "ANA",
    "alias": "Ducks",
@@ -103,7 +103,7 @@
    }
   ]
  },
- "updated": "2026-10-28T02:58:05.704Z",
+ "updated": "2026-10-28T03:04:01.290Z",
  "open_taken_at": "2026-10-26T05:02:30.707Z",
  "thresholds": {
   "big": 10,
@@ -395,6 +395,28 @@
    "yes_buy": 14,
    "no_buy": 91,
    "taken_at": "2026-10-26T05:02:30.707Z"
+  },
+  {
+   "market_id": "1856907",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Jackson LaCombe record at least 1 assists in VAN vs ANA?",
+   "sides": [
+    "Yes: Jackson LaCombe record at least 1 assists in VAN vs ANA",
+    "No: Jackson LaCombe record at least 1 assists in VAN vs ANA"
+   ],
+   "teams": [
+    "Ducks",
+    "Ducks"
+   ],
+   "player": "Jackson LaCombe",
+   "mid": 57,
+   "yes_buy": 60,
+   "no_buy": 46,
+   "taken_at": "2026-10-27T03:14:59.833Z"
   },
   {
    "market_id": "1856880",
@@ -1871,28 +1893,6 @@
    "taken_at": "2026-10-27T11:18:57.905Z"
   },
   {
-   "market_id": "1856907",
-   "market": "Player prop",
-   "group": "prop",
-   "mtype": "prop",
-   "period": "full_game",
-   "line": 1,
-   "question": "Will Jackson LaCombe record at least 1 assists in VAN vs ANA?",
-   "sides": [
-    "Yes: Jackson LaCombe record at least 1 assists in VAN vs ANA",
-    "No: Jackson LaCombe record at least 1 assists in VAN vs ANA"
-   ],
-   "teams": [
-    "Ducks",
-    "Ducks"
-   ],
-   "player": "Jackson LaCombe",
-   "mid": 57,
-   "yes_buy": 60,
-   "no_buy": 46,
-   "taken_at": "2026-10-27T03:14:59.833Z"
-  },
-  {
    "market_id": "1862136",
    "market": "Player prop",
    "group": "prop",
@@ -2458,8 +2458,8 @@
    "edge": 20,
    "tier": "big",
    "class": "score",
-   "reason": "Explained by score: scoring below pace (1 pts, pace 2)",
-   "context": "VAN 0, ANA 1, End of Q1",
+   "reason": "Explained by score: scoring below pace (1 pts, pace 1)",
+   "context": "VAN 0, ANA 1, Q2 18:04",
    "first_seen": "2026-10-26T15:09:32.623Z",
    "status": "open",
    "kalshi": null
@@ -2479,7 +2479,7 @@
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: scoring below pace (1 pts, pace 1)",
-   "context": "VAN 0, ANA 1, End of Q1",
+   "context": "VAN 0, ANA 1, Q2 18:04",
    "first_seen": "2026-10-28T02:21:27.135Z",
    "status": "open",
    "kalshi": null
@@ -2498,29 +2498,9 @@
    "edge": 13,
    "tier": "big",
    "class": "score",
-   "reason": "Explained by score: scoring below pace (1 pts, pace 2)",
-   "context": "VAN 0, ANA 1, End of Q1",
+   "reason": "Explained by score: scoring below pace (1 pts, pace 1)",
+   "context": "VAN 0, ANA 1, Q2 18:04",
    "first_seen": "2026-10-28T02:21:27.135Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1700465:0",
-   "market_id": "1700465",
-   "market": "Main spread",
-   "group": "game",
-   "question": "Will the VAN Canucks cover 1.5 vs the ANA Ducks in VAN vs ANA?",
-   "side": "Canucks +1.50",
-   "open_chance": 57,
-   "now_chance": 45,
-   "open_odds": "-133",
-   "now_odds": "+122",
-   "edge": 12,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "VAN down 1, End of Q1",
-   "first_seen": "2026-10-28T02:39:00.562Z",
    "status": "open",
    "kalshi": null
   },
@@ -2539,10 +2519,30 @@
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: VAN trailing by 1",
-   "context": "VAN down 1, End of Q1",
+   "context": "VAN down 1, Q2 18:04",
    "first_seen": "2026-10-28T02:39:00.562Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
+  },
+  {
+   "key": "1700465:0",
+   "market_id": "1700465",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will the VAN Canucks cover 1.5 vs the ANA Ducks in VAN vs ANA?",
+   "side": "Canucks +1.50",
+   "open_chance": 57,
+   "now_chance": 46,
+   "open_odds": "-133",
+   "now_odds": "+117",
+   "edge": 11,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "VAN down 1, Q2 18:04",
+   "first_seen": "2026-10-28T02:39:00.562Z",
+   "status": "open",
+   "kalshi": null
   },
   {
    "key": "1700466:0",
@@ -2559,7 +2559,7 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "VAN down 1, End of Q1",
+   "context": "VAN down 1, Q2 18:04",
    "first_seen": "2026-10-28T02:39:00.562Z",
    "status": "open",
    "kalshi": null
@@ -2577,9 +2577,9 @@
    "now_odds": "-317",
    "edge": 9,
    "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: scoring below pace (1 pts, pace 1)",
-   "context": "VAN 0, ANA 1, End of Q1",
+   "class": "edge",
+   "reason": null,
+   "context": "VAN 0, ANA 1, Q2 18:04",
    "first_seen": "2026-10-28T02:21:27.135Z",
    "status": "open",
    "kalshi": null
@@ -2599,10 +2599,10 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "ANA up 1, End of Q1",
+   "context": "ANA up 1, Q2 18:04",
    "first_seen": "2026-10-27T05:17:10.383Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1868646:1",
@@ -2619,10 +2619,10 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "VAN down 1, End of Q1",
+   "context": "VAN down 1, Q2 18:04",
    "first_seen": "2026-10-27T23:06:59.836Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1700467:0",
@@ -2639,7 +2639,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "VAN down 1, End of Q1",
+   "context": "VAN down 1, Q2 18:04",
    "first_seen": "2026-10-28T02:39:00.562Z",
    "status": "open",
    "kalshi": null
@@ -2659,7 +2659,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "VAN down 1, End of Q1",
+   "context": "VAN down 1, Q2 18:04",
    "first_seen": "2026-10-27T17:49:34.951Z",
    "status": "open",
    "kalshi": null
@@ -2679,7 +2679,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "ANA up 1, End of Q1",
+   "context": "ANA up 1, Q2 18:04",
    "first_seen": "2026-10-27T15:06:48.995Z",
    "status": "open",
    "kalshi": null
@@ -2699,10 +2699,10 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "ANA up 1, End of Q1",
+   "context": "ANA up 1, Q2 18:04",
    "first_seen": "2026-10-27T19:25:21.592Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1855797:0",
@@ -2719,7 +2719,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "VAN down 1, End of Q1",
+   "context": "VAN down 1, Q2 18:04",
    "first_seen": "2026-10-27T16:29:51.270Z",
    "status": "open",
    "kalshi": null
@@ -2739,10 +2739,10 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "ANA up 1, End of Q1",
+   "context": "ANA up 1, Q2 18:04",
    "first_seen": "2026-10-27T14:42:20.574Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1868634:0",
@@ -2759,7 +2759,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "VAN down 1, End of Q1",
+   "context": "VAN down 1, Q2 18:04",
    "first_seen": "2026-10-27T17:49:34.951Z",
    "status": "open",
    "kalshi": null
@@ -2779,10 +2779,10 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "VAN down 1, End of Q1",
+   "context": "VAN down 1, Q2 18:04",
    "first_seen": "2026-10-27T19:32:50.880Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1856880:1",
@@ -2799,7 +2799,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "VAN down 1, End of Q1",
+   "context": "VAN down 1, Q2 18:04",
    "first_seen": "2026-10-27T20:28:34.998Z",
    "status": "open",
    "kalshi": null
@@ -2819,10 +2819,10 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "ANA up 1, End of Q1",
+   "context": "ANA up 1, Q2 18:04",
    "first_seen": "2026-10-27T19:32:50.880Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1862130:0",
@@ -2839,7 +2839,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "VAN down 1, End of Q1",
+   "context": "VAN down 1, Q2 18:04",
    "first_seen": "2026-10-27T19:32:50.880Z",
    "status": "open",
    "kalshi": null
@@ -2859,10 +2859,10 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "VAN down 1, End of Q1",
+   "context": "VAN down 1, Q2 18:04",
    "first_seen": "2026-10-27T16:46:54.596Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1862138:0",
@@ -2879,7 +2879,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "ANA up 1, End of Q1",
+   "context": "ANA up 1, Q2 18:04",
    "first_seen": "2026-10-27T19:32:50.880Z",
    "status": "open",
    "kalshi": null
@@ -2899,10 +2899,10 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "VAN down 1, End of Q1",
+   "context": "VAN down 1, Q2 18:04",
    "first_seen": "2026-10-27T19:32:50.880Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1862144:1",
@@ -2919,10 +2919,10 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "ANA up 1, End of Q1",
+   "context": "ANA up 1, Q2 18:04",
    "first_seen": "2026-10-27T17:49:34.951Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1862142:1",
@@ -2939,10 +2939,10 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "VAN down 1, End of Q1",
+   "context": "VAN down 1, Q2 18:04",
    "first_seen": "2026-10-27T19:32:50.880Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1862032:1",
@@ -3003,26 +3003,6 @@
    "first_seen": "2026-10-28T02:32:21.819Z",
    "status": "gone",
    "kalshi": null
-  },
-  {
-   "key": "1856907:0",
-   "market_id": "1856907",
-   "market": "Player prop",
-   "group": "prop",
-   "question": "Will Jackson LaCombe record at least 1 assists in VAN vs ANA?",
-   "side": "Yes: Jackson LaCombe record at least 1 assists in VAN vs ANA",
-   "open_chance": 60,
-   "now_chance": 55,
-   "open_odds": "-150",
-   "now_odds": "-122",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "ANA tied, Q1 6:03",
-   "first_seen": "2026-10-27T13:46:02.519Z",
-   "status": "gone",
-   "kalshi": true
   },
   {
    "key": "1856899:0",
@@ -3182,7 +3162,7 @@
    "context": "ANA tied, Q1 6:03",
    "first_seen": "2026-10-27T20:13:21.356Z",
    "status": "gone",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1700472:1",
@@ -3413,20 +3393,6 @@
    "url": "https://polymarket.us/sports/nhl/nhl-van-ana-2026-10-27"
   },
   {
-   "id": "gone:1856907:0:2026-10-27T13:46:02.519Z",
-   "key": "1856907:0",
-   "at": "2026-10-28T02:39:00.562Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Yes: Jackson LaCombe record at least 1 assists in VAN vs ANA",
-   "market": "Player prop",
-   "now_odds": "-122",
-   "now_chance": 55,
-   "edge": 5,
-   "text": "Edge gone: Yes: Jackson LaCombe record at least 1 assists in VAN vs ANA (Player prop) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/nhl/nhl-van-ana-2026-10-27"
-  },
-  {
    "id": "gone:1856899:0:2026-10-27T20:07:19.475Z",
    "key": "1856899:0",
    "at": "2026-10-28T02:39:00.562Z",
@@ -3606,20 +3572,6 @@
    "now_chance": 67,
    "edge": 5,
    "text": "New slight edge: Under 7.5 (Alt total), 5 points cheaper than open.",
-   "url": "https://polymarket.us/sports/nhl/nhl-van-ana-2026-10-27"
-  },
-  {
-   "id": "new_edge:1856907:0:slight",
-   "key": "1856907:0",
-   "at": "2026-10-28T02:04:50.712Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Yes: Jackson LaCombe record at least 1 assists in VAN vs ANA",
-   "market": "Player prop",
-   "now_odds": "-122",
-   "now_chance": 55,
-   "edge": 5,
-   "text": "New slight edge: Yes: Jackson LaCombe record at least 1 assists in VAN vs ANA (Player prop), 5 points cheaper than open.",
    "url": "https://polymarket.us/sports/nhl/nhl-van-ana-2026-10-27"
   },
   {
@@ -3937,8 +3889,5 @@
   "gone:1855816:0:2026-10-28T00:28:00.673Z",
   "gone:1856895:0:2026-10-27T19:32:50.880Z"
  ],
- "kalshi_checked": {
-  "at": "2026-10-28T02:58:06.321Z",
-  "event": "26OCT27VANANA"
- }
+ "kalshi_checked": null
 }
