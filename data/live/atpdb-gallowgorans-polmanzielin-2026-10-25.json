@@ -4,12 +4,12 @@
  "game": "Galloway / Goransson vs. Polmans / Zielinski",
  "url": "https://polymarket.us/sports/atpdb/atpdb-gallowgorans-polmanzielin-2026-10-25",
  "start_time": "2026-10-28T16:15:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185173",
-  "fetched_at": "2026-10-28T17:49:11.522Z",
+  "fetched_at": "2026-10-28T17:56:52.194Z",
   "tennis": true,
   "tennis_match": {
    "id": "185173",
@@ -17,17 +17,17 @@
    "date": "2026-10-28T16:15Z",
    "startDate": "2026-10-28T16:15Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Robert Galloway (USA) & Andre Goransson (SWE) leads Marc Polmans (AUS) & Jan Zielinski (POL) 6-4 6-7 (4-7) 0-0 (5-8)",
+     "text": "Marc Polmans (AUS) & Jan Zielinski (POL) bt Robert Galloway (USA) & Andre Goransson (SWE) 4-6 7-6 (7-4) 1-0 (10-6)",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "linescores": [
       {
        "value": 4,
@@ -66,8 +67,9 @@
        "winner": true
       },
       {
-       "value": 0,
-       "tiebreak": 8
+       "value": 1,
+       "tiebreak": 10,
+       "winner": true
       }
      ],
      "roster": {
@@ -142,6 +144,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "linescores": [
       {
        "value": 6,
@@ -154,7 +157,8 @@
       },
       {
        "value": 0,
-       "tiebreak": 5
+       "tiebreak": 6,
+       "winner": false
       }
      ],
      "roster": {
@@ -240,16 +244,16 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Marc Polmans / Jan Zielinski",
    "alias": "Marc Polmans / Jan Zielinski",
    "name": "Marc Polmans / Jan Zielinski",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Robert Galloway / Andre Goransson",
@@ -261,7 +265,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T17:49:11.439Z",
+ "updated": "2026-10-28T17:56:52.051Z",
  "open_taken_at": "2026-10-24T12:29:26.127Z",
  "thresholds": {
   "big": 10,

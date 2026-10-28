@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185185",
-  "fetched_at": "2026-10-28T17:49:19.672Z",
+  "fetched_at": "2026-10-28T17:56:43.533Z",
   "tennis": true,
   "tennis_match": {
    "id": "185185",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(8) Jakub Mensik (CZE) is tied with Adrian Mannarino (FRA) 4-6 2-1",
+     "text": "(8) Jakub Mensik (CZE) leads Adrian Mannarino (FRA) 4-6 2-2",
      "type": "event"
     }
    ],
@@ -55,13 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -101,6 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "curatedRank": {
       "current": 8
      },
@@ -145,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 10,
    "type": {
     "id": "1",
@@ -182,7 +189,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T17:49:19.553Z",
+ "updated": "2026-10-28T17:56:43.380Z",
  "open_taken_at": "2026-10-27T17:21:26.512Z",
  "thresholds": {
   "big": 10,
@@ -234,28 +241,6 @@
    "taken_at": "2026-10-27T20:28:49.697Z"
   },
   {
-   "market_id": "1873057",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Jakub Mensik cover 1.5 vs the Adrian Mannarino in Jakub Mensik vs. Adrian Mannarino?",
-   "sides": [
-    "Jakub Mensik +1.50 (Sets)",
-    "Adrian Mannarino -1.50 (Sets)"
-   ],
-   "teams": [
-    "Jakub Mensik",
-    "Adrian Mannarino"
-   ],
-   "player": null,
-   "mid": 89,
-   "yes_buy": 91,
-   "no_buy": 13,
-   "taken_at": "2026-10-28T15:41:17.169Z"
-  },
-  {
    "market_id": "1873067",
    "market": "Set 2 winner",
    "group": "game",
@@ -278,26 +263,26 @@
    "taken_at": "2026-10-28T16:22:45.962Z"
   },
   {
-   "market_id": "1873051",
-   "market": "Games spread",
+   "market_id": "1873057",
+   "market": "Sets spread",
    "group": "game",
    "mtype": "spread",
-   "period": "tennis_match_games_spread",
+   "period": "tennis_match_sets_spread",
    "line": 1.5,
    "question": "Will the Jakub Mensik cover 1.5 vs the Adrian Mannarino in Jakub Mensik vs. Adrian Mannarino?",
    "sides": [
-    "Jakub Mensik +1.50 (Games)",
-    "Adrian Mannarino -1.50 (Games)"
+    "Jakub Mensik +1.50 (Sets)",
+    "Adrian Mannarino -1.50 (Sets)"
    ],
    "teams": [
     "Jakub Mensik",
     "Adrian Mannarino"
    ],
    "player": null,
-   "mid": 81.5,
-   "yes_buy": 82,
-   "no_buy": 19,
-   "taken_at": "2026-10-28T16:22:45.962Z"
+   "mid": 89,
+   "yes_buy": 91,
+   "no_buy": 13,
+   "taken_at": "2026-10-28T15:41:17.169Z"
   },
   {
    "market_id": "1873060",
@@ -320,6 +305,28 @@
    "yes_buy": 31,
    "no_buy": 75,
    "taken_at": "2026-10-27T20:35:09.129Z"
+  },
+  {
+   "market_id": "1873051",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Jakub Mensik cover 1.5 vs the Adrian Mannarino in Jakub Mensik vs. Adrian Mannarino?",
+   "sides": [
+    "Jakub Mensik +1.50 (Games)",
+    "Adrian Mannarino -1.50 (Games)"
+   ],
+   "teams": [
+    "Jakub Mensik",
+    "Adrian Mannarino"
+   ],
+   "player": null,
+   "mid": 81.5,
+   "yes_buy": 82,
+   "no_buy": 19,
+   "taken_at": "2026-10-28T16:22:45.962Z"
   },
   {
    "market_id": "1873050",
@@ -522,6 +529,26 @@
  ],
  "edges": [
   {
+   "key": "1873050:0",
+   "market_id": "1873050",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Jakub Mensik cover -1.5 vs the Adrian Mannarino in Jakub Mensik vs. Adrian Mannarino?",
+   "side": "Jakub Mensik -1.50 (Games)",
+   "open_chance": 79,
+   "now_chance": 38,
+   "open_odds": "-376",
+   "now_odds": "+163",
+   "edge": 41,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Jakub Mensik not above the games spread right now",
+   "context": "Adrian Mannarino 6, 2 · Jakub Mensik 4, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T15:59:36.028Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1873059:1",
    "market_id": "1873059",
    "market": "Games total",
@@ -536,7 +563,7 @@
    "tier": "big",
    "class": "news",
    "reason": "Big move (38 pts), likely news",
-   "context": "Adrian Mannarino 6, 1 · Jakub Mensik 4, 2 · 2nd Set (games by set)",
+   "context": "Adrian Mannarino 6, 2 · Jakub Mensik 4, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T17:22:40.623Z",
    "status": "open",
    "kalshi": null
@@ -549,55 +576,15 @@
    "question": "Will the total in Jakub Mensik vs. Adrian Mannarino be more than 27.5?",
    "side": "Under 27.5 (Games)",
    "open_chance": 75,
-   "now_chance": 44,
+   "now_chance": 43,
    "open_odds": "-300",
-   "now_odds": "+127",
-   "edge": 31,
+   "now_odds": "+133",
+   "edge": 32,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (31 pts), likely news",
-   "context": "Adrian Mannarino 6, 1 · Jakub Mensik 4, 2 · 2nd Set (games by set)",
+   "reason": "Big move (32 pts), likely news",
+   "context": "Adrian Mannarino 6, 2 · Jakub Mensik 4, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T16:22:45.962Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1873050:0",
-   "market_id": "1873050",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Jakub Mensik cover -1.5 vs the Adrian Mannarino in Jakub Mensik vs. Adrian Mannarino?",
-   "side": "Jakub Mensik -1.50 (Games)",
-   "open_chance": 79,
-   "now_chance": 50,
-   "open_odds": "-376",
-   "now_odds": "+100",
-   "edge": 29,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Jakub Mensik not above the games spread right now",
-   "context": "Adrian Mannarino 6, 1 · Jakub Mensik 4, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-10-28T15:59:36.028Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1873052:0",
-   "market_id": "1873052",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Jakub Mensik cover -4.5 vs the Adrian Mannarino in Jakub Mensik vs. Adrian Mannarino?",
-   "side": "Jakub Mensik -4.50 (Games)",
-   "open_chance": 48,
-   "now_chance": 19,
-   "open_odds": "+108",
-   "now_odds": "+426",
-   "edge": 29,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Jakub Mensik not above the games spread right now",
-   "context": "Adrian Mannarino 6, 1 · Jakub Mensik 4, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-10-28T17:22:40.623Z",
    "status": "open",
    "kalshi": null
   },
@@ -609,14 +596,14 @@
    "question": "Who will win in the upcoming atp event Jakub Mensik vs Adrian Mannarino scheduled for October 28, 2026 at 2:50 PM UTC?",
    "side": "Jakub Mensik win",
    "open_chance": 82,
-   "now_chance": 54,
+   "now_chance": 51,
    "open_odds": "-456",
-   "now_odds": "-117",
-   "edge": 28,
+   "now_odds": "-104",
+   "edge": 31,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Jakub Mensik trailing in sets",
-   "context": "Adrian Mannarino 6, 1 · Jakub Mensik 4, 2 · 2nd Set (games by set)",
+   "context": "Adrian Mannarino 6, 2 · Jakub Mensik 4, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T17:40:13.217Z",
    "status": "open",
    "kalshi": null
@@ -629,14 +616,14 @@
    "question": "Will the Jakub Mensik cover 1.5 vs the Adrian Mannarino in Jakub Mensik vs. Adrian Mannarino?",
    "side": "Jakub Mensik +1.50 (Games)",
    "open_chance": 82,
-   "now_chance": 57,
+   "now_chance": 53,
    "open_odds": "-456",
-   "now_odds": "-133",
-   "edge": 25,
+   "now_odds": "-113",
+   "edge": 29,
    "tier": "big",
-   "class": "news",
-   "reason": "Big move (25 pts), likely news",
-   "context": "Adrian Mannarino 6, 1 · Jakub Mensik 4, 2 · 2nd Set (games by set)",
+   "class": "score",
+   "reason": "Explained by score: Jakub Mensik not above the games spread right now",
+   "context": "Adrian Mannarino 6, 2 · Jakub Mensik 4, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T17:40:13.217Z",
    "status": "open",
    "kalshi": null
@@ -649,56 +636,36 @@
    "question": "Will the Jakub Mensik cover 1.5 vs the Adrian Mannarino in Jakub Mensik vs. Adrian Mannarino?",
    "side": "Jakub Mensik +1.50 (Sets)",
    "open_chance": 91,
-   "now_chance": 76,
+   "now_chance": 68,
    "open_odds": "-1011",
-   "now_odds": "-317",
-   "edge": 15,
+   "now_odds": "-213",
+   "edge": 23,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Adrian Mannarino 6, 1 · Jakub Mensik 4, 2 · 2nd Set (games by set)",
+   "context": "Adrian Mannarino 6, 2 · Jakub Mensik 4, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T17:49:19.553Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1873052:1",
-   "market_id": "1873052",
-   "market": "Games spread",
+   "key": "1873067:0",
+   "market_id": "1873067",
+   "market": "Set 2 winner",
    "group": "game",
-   "question": "Will the Jakub Mensik cover -4.5 vs the Adrian Mannarino in Jakub Mensik vs. Adrian Mannarino?",
-   "side": "Adrian Mannarino +4.50 (Games)",
-   "open_chance": 58,
-   "now_chance": 39,
-   "open_odds": "-138",
-   "now_odds": "+156",
-   "edge": 19,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Adrian Mannarino 1 · Jakub Mensik 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T12:49:18.178Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1873059:0",
-   "market_id": "1873059",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Jakub Mensik vs. Adrian Mannarino be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 49,
-   "now_chance": 35,
-   "open_odds": "+104",
-   "now_odds": "+186",
-   "edge": 14,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Adrian Mannarino 1 · Jakub Mensik 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T12:59:41.783Z",
-   "status": "gone",
+   "question": "Will Jakub Mensik win set 2 against Adrian Mannarino?",
+   "side": "Yes: Jakub Mensik win set 2 against Adrian Mannarino",
+   "open_chance": 76,
+   "now_chance": 70,
+   "open_odds": "-317",
+   "now_odds": "-233",
+   "edge": 6,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Jakub Mensik not above the games spread right now",
+   "context": "Adrian Mannarino 6, 2 · Jakub Mensik 4, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T17:40:13.217Z",
+   "status": "open",
    "kalshi": null
   },
   {
@@ -718,26 +685,6 @@
    "reason": null,
    "context": "Adrian Mannarino 1 · Jakub Mensik 3 · 1st Set (games by set)",
    "first_seen": "2026-10-28T16:55:55.440Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1873067:0",
-   "market_id": "1873067",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Jakub Mensik win set 2 against Adrian Mannarino?",
-   "side": "Yes: Jakub Mensik win set 2 against Adrian Mannarino",
-   "open_chance": 76,
-   "now_chance": 67,
-   "open_odds": "-317",
-   "now_odds": "-203",
-   "edge": 9,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Jakub Mensik not above the games spread right now",
-   "context": "Adrian Mannarino 6, 0 · Jakub Mensik 4, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-10-28T17:40:13.217Z",
    "status": "gone",
    "kalshi": null
   },
@@ -950,34 +897,6 @@
    "url": "https://polymarket.us/sports/atp/atp-jakmen-adrman-2026-10-28"
   },
   {
-   "id": "gone:1873052:1:2026-10-28T12:49:18.178Z",
-   "key": "1873052:1",
-   "at": "2026-10-28T17:22:40.623Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Adrian Mannarino +4.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+156",
-   "now_chance": 39,
-   "edge": 19,
-   "text": "Edge gone: Adrian Mannarino +4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-jakmen-adrman-2026-10-28"
-  },
-  {
-   "id": "gone:1873059:0:2026-10-28T12:59:41.783Z",
-   "key": "1873059:0",
-   "at": "2026-10-28T17:22:40.623Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Over 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+186",
-   "now_chance": 35,
-   "edge": 14,
-   "text": "Edge gone: Over 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-jakmen-adrman-2026-10-28"
-  },
-  {
    "id": "gone:1873060:0:2026-10-28T16:55:55.440Z",
    "key": "1873060:0",
    "at": "2026-10-28T17:22:40.623Z",
@@ -1017,34 +936,6 @@
    "now_chance": 39,
    "edge": 4,
    "text": "Edge gone: Adrian Mannarino +1.50 (Sets) (Sets spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-jakmen-adrman-2026-10-28"
-  },
-  {
-   "id": "new_edge:1873052:1:big",
-   "key": "1873052:1",
-   "at": "2026-10-28T16:55:55.440Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Adrian Mannarino +4.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+156",
-   "now_chance": 39,
-   "edge": 19,
-   "text": "New big edge: Adrian Mannarino +4.50 (Games) (Games spread), 19 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-jakmen-adrman-2026-10-28"
-  },
-  {
-   "id": "new_edge:1873059:0:big",
-   "key": "1873059:0",
-   "at": "2026-10-28T16:55:55.440Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Over 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+170",
-   "now_chance": 37,
-   "edge": 12,
-   "text": "New big edge: Over 22.5 (Games) (Games total), 12 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-jakmen-adrman-2026-10-28"
   },
   {
@@ -1101,34 +992,6 @@
    "now_chance": 38,
    "edge": 5,
    "text": "New slight edge: Adrian Mannarino +1.50 (Sets) (Sets spread), 5 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-jakmen-adrman-2026-10-28"
-  },
-  {
-   "id": "new_edge:1873052:1:slight",
-   "key": "1873052:1",
-   "at": "2026-10-28T16:42:03.629Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Adrian Mannarino +4.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-117",
-   "now_chance": 54,
-   "edge": 4,
-   "text": "New slight edge: Adrian Mannarino +4.50 (Games) (Games spread), 4 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-jakmen-adrman-2026-10-28"
-  },
-  {
-   "id": "new_edge:1873059:0:slight",
-   "key": "1873059:0",
-   "at": "2026-10-28T16:42:03.629Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Over 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+122",
-   "now_chance": 45,
-   "edge": 4,
-   "text": "New slight edge: Over 22.5 (Games) (Games total), 4 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-jakmen-adrman-2026-10-28"
   },
   {
