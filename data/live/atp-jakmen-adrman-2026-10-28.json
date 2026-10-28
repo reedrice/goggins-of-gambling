@@ -4,12 +4,12 @@
  "game": "Jakub Mensik vs. Adrian Mannarino",
  "url": "https://polymarket.us/sports/atp/atp-jakmen-adrman-2026-10-28",
  "start_time": "2026-10-28T16:35:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185185",
-  "fetched_at": "2026-10-28T18:33:39.405Z",
+  "fetched_at": "2026-10-28T18:42:13.299Z",
   "tennis": true,
   "tennis_match": {
    "id": "185185",
@@ -17,17 +17,17 @@
    "date": "2026-10-28T16:45Z",
    "startDate": "2026-10-28T16:45Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Adrian Mannarino (FRA) leads (8) Jakub Mensik (CZE) 6-4 6-5",
+     "text": "Adrian Mannarino (FRA) bt (8) Jakub Mensik (CZE) 6-4 7-5",
      "type": "event"
     }
    ],
@@ -55,13 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 6
+       "value": 7,
+       "winner": true
       }
      ],
      "athlete": {
@@ -101,6 +103,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "curatedRank": {
       "current": 8
      },
@@ -110,7 +113,8 @@
        "winner": false
       },
       {
-       "value": 5
+       "value": 5,
+       "winner": false
       }
      ],
      "athlete": {
@@ -161,16 +165,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Adrian Mannarino",
    "alias": "Adrian Mannarino",
    "name": "Adrian Mannarino",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Jakub Mensik",
@@ -182,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T18:33:39.346Z",
+ "updated": "2026-10-28T18:42:13.166Z",
  "open_taken_at": "2026-10-27T17:21:26.512Z",
  "thresholds": {
   "big": 10,
@@ -522,26 +526,6 @@
  ],
  "edges": [
   {
-   "key": "1873059:0",
-   "market_id": "1873059",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Jakub Mensik vs. Adrian Mannarino be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 49,
-   "now_chance": 20,
-   "open_odds": "+104",
-   "now_odds": "+400",
-   "edge": 29,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (29 pts), likely news",
-   "context": "Adrian Mannarino 6, 6 · Jakub Mensik 4, 5 · 2nd Set (games by set)",
-   "first_seen": "2026-10-28T18:33:39.346Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1873060:1",
    "market_id": "1873060",
    "market": "Games total",
@@ -578,6 +562,26 @@
    "reason": "Big move (32 pts), likely news",
    "context": "Adrian Mannarino 6, 4 · Jakub Mensik 4, 5 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T17:40:13.217Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1873059:0",
+   "market_id": "1873059",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Jakub Mensik vs. Adrian Mannarino be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 49,
+   "now_chance": 20,
+   "open_odds": "+104",
+   "now_odds": "+400",
+   "edge": 29,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (29 pts), likely news",
+   "context": "Adrian Mannarino 6, 6 · Jakub Mensik 4, 5 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T18:33:39.346Z",
    "status": "gone",
    "kalshi": null
   },
