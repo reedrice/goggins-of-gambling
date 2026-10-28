@@ -4,12 +4,12 @@
  "game": "Nadia Podoroska vs. Alice Rame",
  "url": "https://polymarket.us/sports/wta/wta-nadpod-aliram-2026-10-26",
  "start_time": "2026-10-28T00:25:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185803",
-  "fetched_at": "2026-10-28T02:04:58.392Z",
+  "fetched_at": "2026-10-28T02:11:12.260Z",
   "tennis": true,
   "tennis_match": {
    "id": "185803",
@@ -17,17 +17,17 @@
    "date": "2026-10-28T00:30Z",
    "startDate": "2026-10-28T00:30Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(8) Nadia Podoroska (ARG) leads Alice Rame (FRA) 6-4 5-3",
+     "text": "(8) Nadia Podoroska (ARG) bt Alice Rame (FRA) 6-4 6-3",
      "type": "event"
     }
    ],
@@ -55,14 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "winner": false,
      "linescores": [
       {
        "value": 4,
        "winner": false
       },
       {
-       "value": 3
+       "value": 3,
+       "winner": false
       }
      ],
      "athlete": {
@@ -102,7 +103,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "winner": true,
      "curatedRank": {
       "current": 8
      },
@@ -112,7 +113,8 @@
        "winner": true
       },
       {
-       "value": 5
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -147,11 +149,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 1034,
    "type": {
     "id": "2",
@@ -168,10 +165,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Alice Rame",
@@ -183,13 +180,13 @@
    "abbr": "Nadia Podoroska",
    "alias": "Nadia Podoroska",
    "name": "Nadia Podoroska",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T02:04:58.296Z",
+ "updated": "2026-10-28T02:11:12.148Z",
  "open_taken_at": "2026-10-25T21:02:19.383Z",
  "thresholds": {
   "big": 10,
@@ -507,26 +504,6 @@
  ],
  "edges": [
   {
-   "key": "1813767:1",
-   "market_id": "1813767",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Nadia Podoroska cover -4.5 vs the Alice Rame in Nadia Podoroska vs. Alice Rame?",
-   "side": "Alice Rame +4.50 (Games)",
-   "open_chance": 49,
-   "now_chance": 43,
-   "open_odds": "+104",
-   "now_odds": "+133",
-   "edge": 6,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Alice Rame 4, 3 · Nadia Podoroska 6, 5 · 2nd Set (games by set)",
-   "first_seen": "2026-10-27T18:08:31.307Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1813774:1",
    "market_id": "1813774",
    "market": "Games total",
@@ -623,6 +600,26 @@
    "reason": "Explained by score: Nadia Podoroska not above the games spread right now",
    "context": "Alice Rame 4, 3 · Nadia Podoroska 6, 3 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T01:56:28.697Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1813767:1",
+   "market_id": "1813767",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Nadia Podoroska cover -4.5 vs the Alice Rame in Nadia Podoroska vs. Alice Rame?",
+   "side": "Alice Rame +4.50 (Games)",
+   "open_chance": 49,
+   "now_chance": 43,
+   "open_odds": "+104",
+   "now_odds": "+133",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Alice Rame 4, 3 · Nadia Podoroska 6, 5 · 2nd Set (games by set)",
+   "first_seen": "2026-10-27T18:08:31.307Z",
    "status": "gone",
    "kalshi": null
   },
