@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187265",
-  "fetched_at": "2026-10-28T13:13:23.020Z",
+  "fetched_at": "2026-10-28T13:20:25.722Z",
   "tennis": true,
   "tennis_match": {
    "id": "187265",
@@ -226,7 +226,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T13:13:22.901Z",
+ "updated": "2026-10-28T13:20:25.640Z",
  "open_taken_at": "2026-10-27T14:30:26.286Z",
  "thresholds": {
   "big": 10,
@@ -258,6 +258,26 @@
  ],
  "edges": [
   {
+   "key": "1870515:0",
+   "market_id": "1870515",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atpdb event Arends / Johnson vs Gonzalez / Molteni scheduled for October 28, 2026 at 9:00 AM UTC?",
+   "side": "Arends S / Johnson L win",
+   "open_chance": 52,
+   "now_chance": 28,
+   "open_odds": "-108",
+   "now_odds": "+257",
+   "edge": 24,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-10-28T13:20:25.640Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1870515:1",
    "market_id": "1870515",
    "market": "Moneyline",
@@ -279,6 +299,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1870515:0:big",
+   "key": "1870515:0",
+   "at": "2026-10-28T13:20:25.640Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Arends S / Johnson L win",
+   "market": "Moneyline",
+   "now_odds": "+257",
+   "now_chance": 28,
+   "edge": 24,
+   "text": "New big edge: Arends S / Johnson L win (Moneyline), 24 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-arendsjohnso-gonmol-2026-10-28"
+  },
   {
    "id": "new_edge:1870515:1:slight",
    "key": "1870515:1",
@@ -325,7 +359,8 @@
  "alert_seen": [
   "new_edge:1870515:1:big",
   "gone:1870515:1:2026-10-28T03:09:58.599Z",
-  "new_edge:1870515:1:slight"
+  "new_edge:1870515:1:slight",
+  "new_edge:1870515:0:big"
  ],
  "kalshi_checked": null
 }

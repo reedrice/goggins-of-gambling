@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185191",
-  "fetched_at": "2026-10-28T13:13:11.578Z",
+  "fetched_at": "2026-10-28T13:20:15.324Z",
   "tennis": true,
   "tennis_match": {
    "id": "185191",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Tallon Griekspoor (NED) leads Brandon Nakashima (USA) 5-1",
+     "text": "Tallon Griekspoor (NED) leads Brandon Nakashima (USA) 6-1 1-0",
      "type": "event"
     }
    ],
@@ -58,7 +58,11 @@
      "possession": true,
      "linescores": [
       {
-       "value": 1
+       "value": 1,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -101,7 +105,11 @@
      "possession": false,
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -159,8 +167,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Brandon Nakashima",
@@ -172,13 +180,13 @@
    "abbr": "Tallon Griekspoor",
    "alias": "Tallon Griekspoor",
    "name": "Tallon Griekspoor",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-28T13:13:11.442Z",
+ "updated": "2026-10-28T13:20:15.250Z",
  "open_taken_at": "2026-10-24T11:21:59.622Z",
  "thresholds": {
   "big": 10,
@@ -228,6 +236,28 @@
    "yes_buy": 77,
    "no_buy": 27,
    "taken_at": "2026-10-27T10:33:13.498Z"
+  },
+  {
+   "market_id": "1749820",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Tallon Griekspoor cover -1.5 vs the Brandon Nakashima in Tallon Griekspoor vs. Brandon Nakashima?",
+   "sides": [
+    "Tallon Griekspoor -1.50 (Games)",
+    "Brandon Nakashima +1.50 (Games)"
+   ],
+   "teams": [
+    "Tallon Griekspoor",
+    "Brandon Nakashima"
+   ],
+   "player": null,
+   "mid": 26,
+   "yes_buy": 29,
+   "no_buy": 77,
+   "taken_at": "2026-10-26T10:18:44.725Z"
   },
   {
    "market_id": "1749828",
@@ -318,28 +348,6 @@
    "taken_at": "2026-10-25T13:21:24.336Z"
   },
   {
-   "market_id": "1749830",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Tallon Griekspoor vs. Brandon Nakashima be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 36,
-   "yes_buy": 39,
-   "no_buy": 67,
-   "taken_at": "2026-10-26T06:58:16.149Z"
-  },
-  {
    "market_id": "1749824",
    "market": "Games spread",
    "group": "game",
@@ -362,6 +370,28 @@
    "taken_at": "2026-10-28T12:38:46.544Z"
   },
   {
+   "market_id": "1749830",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Tallon Griekspoor vs. Brandon Nakashima be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 36,
+   "yes_buy": 39,
+   "no_buy": 67,
+   "taken_at": "2026-10-26T06:58:16.149Z"
+  },
+  {
    "market_id": "1749836",
    "market": "Set 1 winner",
    "group": "game",
@@ -382,28 +412,6 @@
    "yes_buy": 41,
    "no_buy": 65,
    "taken_at": "2026-10-28T09:50:08.803Z"
-  },
-  {
-   "market_id": "1749820",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Tallon Griekspoor cover -1.5 vs the Brandon Nakashima in Tallon Griekspoor vs. Brandon Nakashima?",
-   "sides": [
-    "Tallon Griekspoor -1.50 (Games)",
-    "Brandon Nakashima +1.50 (Games)"
-   ],
-   "teams": [
-    "Tallon Griekspoor",
-    "Brandon Nakashima"
-   ],
-   "player": null,
-   "mid": 26,
-   "yes_buy": 29,
-   "no_buy": 77,
-   "taken_at": "2026-10-26T10:18:44.725Z"
   },
   {
    "market_id": "1749827",
@@ -496,6 +504,26 @@
  ],
  "edges": [
   {
+   "key": "1749820:1",
+   "market_id": "1749820",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Tallon Griekspoor cover -1.5 vs the Brandon Nakashima in Tallon Griekspoor vs. Brandon Nakashima?",
+   "side": "Brandon Nakashima +1.50 (Games)",
+   "open_chance": 77,
+   "now_chance": 17,
+   "open_odds": "-335",
+   "now_odds": "+488",
+   "edge": 60,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Brandon Nakashima not above the games spread right now",
+   "context": "Brandon Nakashima 1, 0 · Tallon Griekspoor 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T12:49:08.090Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1749416:1",
    "market_id": "1749416",
    "market": "Moneyline",
@@ -503,14 +531,14 @@
    "question": "Who will win in the upcoming atp event Tallon Griekspoor vs Brandon Nakashima scheduled for October 25, 2026 at 9:00 AM UTC?",
    "side": "Brandon Nakashima win",
    "open_chance": 71,
-   "now_chance": 23,
+   "now_chance": 24,
    "open_odds": "-245",
-   "now_odds": "+335",
-   "edge": 48,
+   "now_odds": "+317",
+   "edge": 47,
    "tier": "big",
-   "class": "news",
-   "reason": "Big move (48 pts), likely news",
-   "context": "Brandon Nakashima 1 · Tallon Griekspoor 5 · 1st Set (games by set)",
+   "class": "score",
+   "reason": "Explained by score: Brandon Nakashima trailing in sets",
+   "context": "Brandon Nakashima 1, 0 · Tallon Griekspoor 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-26T05:02:37.172Z",
    "status": "open",
    "kalshi": null
@@ -523,14 +551,14 @@
    "question": "Will the total in Tallon Griekspoor vs. Brandon Nakashima be more than 17.5?",
    "side": "Over 17.5 (Games)",
    "open_chance": 95,
-   "now_chance": 74,
+   "now_chance": 71,
    "open_odds": "-1900",
-   "now_odds": "-285",
-   "edge": 21,
+   "now_odds": "-245",
+   "edge": 24,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Brandon Nakashima 1 · Tallon Griekspoor 5 · 1st Set (games by set)",
+   "context": "Brandon Nakashima 1, 0 · Tallon Griekspoor 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T13:13:11.442Z",
    "status": "open",
    "kalshi": null
@@ -543,6 +571,26 @@
    "question": "Will the total in Tallon Griekspoor vs. Brandon Nakashima be more than 22.5?",
    "side": "Over 22.5 (Games)",
    "open_chance": 58,
+   "now_chance": 42,
+   "open_odds": "-138",
+   "now_odds": "+138",
+   "edge": 16,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Brandon Nakashima 1, 0 · Tallon Griekspoor 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T13:06:11.935Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1749837:1",
+   "market_id": "1749837",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Tallon Griekspoor win set 2 against Brandon Nakashima?",
+   "side": "No: Tallon Griekspoor win set 2 against Brandon Nakashima",
+   "open_chance": 58,
    "now_chance": 46,
    "open_odds": "-138",
    "now_odds": "+117",
@@ -550,8 +598,8 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Brandon Nakashima 1 · Tallon Griekspoor 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T13:06:11.935Z",
+   "context": "Brandon Nakashima 1, 0 · Tallon Griekspoor 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T12:53:16.156Z",
    "status": "open",
    "kalshi": null
   },
@@ -568,30 +616,10 @@
    "now_odds": "+170",
    "edge": 11,
    "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Brandon Nakashima 1 · Tallon Griekspoor 5 · 1st Set (games by set)",
+   "class": "score",
+   "reason": "Explained by score: Brandon Nakashima not above the games spread right now",
+   "context": "Brandon Nakashima 1, 0 · Tallon Griekspoor 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T13:13:11.442Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1749837:1",
-   "market_id": "1749837",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Tallon Griekspoor win set 2 against Brandon Nakashima?",
-   "side": "No: Tallon Griekspoor win set 2 against Brandon Nakashima",
-   "open_chance": 58,
-   "now_chance": 48,
-   "open_odds": "-138",
-   "now_odds": "+108",
-   "edge": 10,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Brandon Nakashima 1 · Tallon Griekspoor 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T12:53:16.156Z",
    "status": "open",
    "kalshi": null
   },
@@ -603,36 +631,36 @@
    "question": "Will the total in Tallon Griekspoor vs. Brandon Nakashima be more than 27.5?",
    "side": "Over 27.5 (Games)",
    "open_chance": 39,
-   "now_chance": 30,
+   "now_chance": 28,
    "open_odds": "+156",
-   "now_odds": "+233",
-   "edge": 9,
-   "tier": "slight",
+   "now_odds": "+257",
+   "edge": 11,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Brandon Nakashima 1 · Tallon Griekspoor 5 · 1st Set (games by set)",
+   "context": "Brandon Nakashima 1, 0 · Tallon Griekspoor 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-28T13:13:11.442Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1749820:1",
-   "market_id": "1749820",
+   "key": "1749824:1",
+   "market_id": "1749824",
    "market": "Games spread",
    "group": "game",
-   "question": "Will the Tallon Griekspoor cover -1.5 vs the Brandon Nakashima in Tallon Griekspoor vs. Brandon Nakashima?",
-   "side": "Brandon Nakashima +1.50 (Games)",
-   "open_chance": 77,
-   "now_chance": 39,
-   "open_odds": "-335",
-   "now_odds": "+156",
-   "edge": 38,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Brandon Nakashima not above the games spread right now",
-   "context": "Brandon Nakashima 1 · Tallon Griekspoor 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-28T12:49:08.090Z",
-   "status": "gone",
+   "question": "Will the Tallon Griekspoor cover -7.5 vs the Brandon Nakashima in Tallon Griekspoor vs. Brandon Nakashima?",
+   "side": "Brandon Nakashima +7.50 (Games)",
+   "open_chance": 79,
+   "now_chance": 71,
+   "open_odds": "-376",
+   "now_odds": "-245",
+   "edge": 8,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Brandon Nakashima 1, 0 · Tallon Griekspoor 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T13:20:15.250Z",
+   "status": "open",
    "kalshi": null
   },
   {
@@ -737,6 +765,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1749830:0:big",
+   "key": "1749830:0",
+   "at": "2026-10-28T13:20:15.250Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Over 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+257",
+   "now_chance": 28,
+   "edge": 11,
+   "text": "New big edge: Over 27.5 (Games) (Games total), 11 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-talgri-branak-2026-10-25"
+  },
+  {
+   "id": "new_edge:1749824:1:slight",
+   "key": "1749824:1",
+   "at": "2026-10-28T13:20:15.250Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Brandon Nakashima +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-245",
+   "now_chance": 71,
+   "edge": 8,
+   "text": "New slight edge: Brandon Nakashima +7.50 (Games) (Games spread), 8 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-talgri-branak-2026-10-25"
+  },
   {
    "id": "new_edge:1749828:0:big",
    "key": "1749828:0",
@@ -1101,7 +1157,9 @@
   "new_edge:1749829:0:big",
   "new_edge:1749822:1:big",
   "new_edge:1749837:1:big",
-  "new_edge:1749830:0:slight"
+  "new_edge:1749830:0:slight",
+  "new_edge:1749830:0:big",
+  "new_edge:1749824:1:slight"
  ],
  "kalshi_checked": null
 }
