@@ -4,17 +4,17 @@
  "game": "BOS Bruins vs. CAR Hurricanes",
  "url": "https://polymarket.us/sports/nhl/nhl-bos-car-2026-10-27",
  "start_time": "2026-10-28T00:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892586",
-  "fetched_at": "2026-10-28T02:38:59.957Z",
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
-  "period": 3,
-  "clock": "1:56",
-  "regulation_secs_left": 1016,
+  "fetched_at": "2026-10-28T02:46:53.433Z",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 0,
+  "clock": null,
+  "regulation_secs_left": 0,
   "home": {
    "abbr": "CAR",
    "alias": "Hurricanes",
@@ -93,13 +93,57 @@
    }
   ]
  },
- "updated": "2026-10-28T02:38:59.832Z",
+ "updated": "2026-10-28T02:46:53.259Z",
  "open_taken_at": "2026-10-26T05:02:30.079Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1864158",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Logan Stankoven record at least 1 assists in BOS vs CAR?",
+   "sides": [
+    "Yes: Logan Stankoven record at least 1 assists in BOS vs CAR",
+    "No: Logan Stankoven record at least 1 assists in BOS vs CAR"
+   ],
+   "teams": [
+    "Hurricanes",
+    "Hurricanes"
+   ],
+   "player": "Logan Stankoven",
+   "mid": 27,
+   "yes_buy": 30,
+   "no_buy": 76,
+   "taken_at": "2026-10-27T08:08:47.686Z"
+  },
+  {
+   "market_id": "1864156",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Nikolaj Ehlers record at least 2 assists in BOS vs CAR?",
+   "sides": [
+    "Yes: Nikolaj Ehlers record at least 2 assists in BOS vs CAR",
+    "No: Nikolaj Ehlers record at least 2 assists in BOS vs CAR"
+   ],
+   "teams": [
+    "Hurricanes",
+    "Hurricanes"
+   ],
+   "player": "Nikolaj Ehlers",
+   "mid": 8.5,
+   "yes_buy": 10,
+   "no_buy": 93,
+   "taken_at": "2026-10-27T13:39:51.711Z"
+  },
   {
    "market_id": "1699922",
    "market": "Moneyline",
@@ -187,28 +231,6 @@
    "yes_buy": 73,
    "no_buy": 30,
    "taken_at": "2026-10-26T10:53:28.117Z"
-  },
-  {
-   "market_id": "1864158",
-   "market": "Player prop",
-   "group": "prop",
-   "mtype": "prop",
-   "period": "full_game",
-   "line": 1,
-   "question": "Will Logan Stankoven record at least 1 assists in BOS vs CAR?",
-   "sides": [
-    "Yes: Logan Stankoven record at least 1 assists in BOS vs CAR",
-    "No: Logan Stankoven record at least 1 assists in BOS vs CAR"
-   ],
-   "teams": [
-    "Hurricanes",
-    "Hurricanes"
-   ],
-   "player": "Logan Stankoven",
-   "mid": 27,
-   "yes_buy": 30,
-   "no_buy": 76,
-   "taken_at": "2026-10-27T08:08:47.686Z"
   },
   {
    "market_id": "1864160",
@@ -559,28 +581,6 @@
    "player": "Jackson Blake",
    "mid": 10,
    "yes_buy": 13,
-   "no_buy": 93,
-   "taken_at": "2026-10-27T13:39:51.711Z"
-  },
-  {
-   "market_id": "1864156",
-   "market": "Player prop",
-   "group": "prop",
-   "mtype": "prop",
-   "period": "full_game",
-   "line": 2,
-   "question": "Will Nikolaj Ehlers record at least 2 assists in BOS vs CAR?",
-   "sides": [
-    "Yes: Nikolaj Ehlers record at least 2 assists in BOS vs CAR",
-    "No: Nikolaj Ehlers record at least 2 assists in BOS vs CAR"
-   ],
-   "teams": [
-    "Hurricanes",
-    "Hurricanes"
-   ],
-   "player": "Nikolaj Ehlers",
-   "mid": 8.5,
-   "yes_buy": 10,
    "no_buy": 93,
    "taken_at": "2026-10-27T13:39:51.711Z"
   },
@@ -2567,6 +2567,26 @@
  ],
  "edges": [
   {
+   "key": "1864158:1",
+   "market_id": "1864158",
+   "market": "Player prop",
+   "group": "prop",
+   "question": "Will Logan Stankoven record at least 1 assists in BOS vs CAR?",
+   "side": "No: Logan Stankoven record at least 1 assists in BOS vs CAR",
+   "open_chance": 76,
+   "now_chance": 70,
+   "open_odds": "-317",
+   "now_odds": "-233",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "CAR up 1, Final",
+   "first_seen": "2026-10-27T12:39:00.763Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1699941:0",
    "market_id": "1699941",
    "market": "Main total",
@@ -2583,67 +2603,7 @@
    "reason": "Explained by score: scoring below pace (3 pts, pace 3)",
    "context": "BOS 1, CAR 2, Q3 1:56",
    "first_seen": "2026-10-28T01:31:56.882Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1864274:1",
-   "market_id": "1864274",
-   "market": "Player prop",
-   "group": "prop",
-   "question": "Will Casey Mittelstadt record at least 1 assists in BOS vs CAR?",
-   "side": "No: Casey Mittelstadt record at least 1 assists in BOS vs CAR",
-   "open_chance": 84,
-   "now_chance": 77,
-   "open_odds": "-525",
-   "now_odds": "-335",
-   "edge": 7,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "BOS down 1, Q3 1:56",
-   "first_seen": "2026-10-27T16:29:50.434Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1864276:1",
-   "market_id": "1864276",
-   "market": "Player prop",
-   "group": "prop",
-   "question": "Will Fraser Minten record at least 1 assists in BOS vs CAR?",
-   "side": "No: Fraser Minten record at least 1 assists in BOS vs CAR",
-   "open_chance": 84,
-   "now_chance": 77,
-   "open_odds": "-525",
-   "now_odds": "-335",
-   "edge": 7,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "BOS down 1, Q3 1:56",
-   "first_seen": "2026-10-27T17:21:05.822Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1864158:1",
-   "market_id": "1864158",
-   "market": "Player prop",
-   "group": "prop",
-   "question": "Will Logan Stankoven record at least 1 assists in BOS vs CAR?",
-   "side": "No: Logan Stankoven record at least 1 assists in BOS vs CAR",
-   "open_chance": 76,
-   "now_chance": 70,
-   "open_odds": "-317",
-   "now_odds": "-233",
-   "edge": 6,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "CAR up 1, Q3 1:56",
-   "first_seen": "2026-10-27T12:39:00.763Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -2743,6 +2703,46 @@
    "reason": null,
    "context": "BOS tied, Q1 20:00",
    "first_seen": "2026-10-27T08:23:09.717Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1864274:1",
+   "market_id": "1864274",
+   "market": "Player prop",
+   "group": "prop",
+   "question": "Will Casey Mittelstadt record at least 1 assists in BOS vs CAR?",
+   "side": "No: Casey Mittelstadt record at least 1 assists in BOS vs CAR",
+   "open_chance": 84,
+   "now_chance": 77,
+   "open_odds": "-525",
+   "now_odds": "-335",
+   "edge": 7,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "BOS down 1, Q3 1:56",
+   "first_seen": "2026-10-27T16:29:50.434Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1864276:1",
+   "market_id": "1864276",
+   "market": "Player prop",
+   "group": "prop",
+   "question": "Will Fraser Minten record at least 1 assists in BOS vs CAR?",
+   "side": "No: Fraser Minten record at least 1 assists in BOS vs CAR",
+   "open_chance": 84,
+   "now_chance": 77,
+   "open_odds": "-525",
+   "now_odds": "-335",
+   "edge": 7,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "BOS down 1, Q3 1:56",
+   "first_seen": "2026-10-27T17:21:05.822Z",
    "status": "gone",
    "kalshi": null
   },
@@ -3328,6 +3328,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1864274:1:2026-10-27T16:29:50.434Z",
+   "key": "1864274:1",
+   "at": "2026-10-28T02:46:53.259Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "No: Casey Mittelstadt record at least 1 assists in BOS vs CAR",
+   "market": "Player prop",
+   "now_odds": "-335",
+   "now_chance": 77,
+   "edge": 7,
+   "text": "Edge gone: No: Casey Mittelstadt record at least 1 assists in BOS vs CAR (Player prop) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-bos-car-2026-10-27"
+  },
+  {
+   "id": "gone:1864276:1:2026-10-27T17:21:05.822Z",
+   "key": "1864276:1",
+   "at": "2026-10-28T02:46:53.259Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "No: Fraser Minten record at least 1 assists in BOS vs CAR",
+   "market": "Player prop",
+   "now_odds": "-335",
+   "now_chance": 77,
+   "edge": 7,
+   "text": "Edge gone: No: Fraser Minten record at least 1 assists in BOS vs CAR (Player prop) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-bos-car-2026-10-27"
+  },
   {
    "id": "gone:1699939:0:2026-10-28T01:38:41.983Z",
    "key": "1699939:0",
@@ -4059,7 +4087,9 @@
   "news:1699941:0",
   "new_edge:1699931:0:slight",
   "gone:1699931:0:2026-10-28T02:27:11.453Z",
-  "gone:1699939:0:2026-10-28T01:38:41.983Z"
+  "gone:1699939:0:2026-10-28T01:38:41.983Z",
+  "gone:1864274:1:2026-10-27T16:29:50.434Z",
+  "gone:1864276:1:2026-10-27T17:21:05.822Z"
  ],
  "kalshi_checked": null
 }
