@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185806",
-  "fetched_at": "2026-10-29T01:46:44.080Z",
+  "fetched_at": "2026-10-29T01:52:36.518Z",
   "tennis": true,
   "tennis_match": {
    "id": "185806",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(3) Fiona Ferro (FRA) leads Adriana Reami (USA) 5-0",
+     "text": "(3) Fiona Ferro (FRA) is tied with Adriana Reami (USA) 6-0 0-0",
      "type": "event"
     }
    ],
@@ -55,7 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
+      {
+       "value": 0,
+       "winner": false
+      },
       {
        "value": 0
       }
@@ -97,12 +102,17 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 3
      },
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -137,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1034,
    "type": {
     "id": "2",
@@ -155,8 +170,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Adriana Reami",
@@ -168,19 +183,41 @@
    "abbr": "Fiona Ferro",
    "alias": "Fiona Ferro",
    "name": "Fiona Ferro",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T01:46:43.964Z",
+ "updated": "2026-10-29T01:52:36.426Z",
  "open_taken_at": "2026-10-27T20:35:10.453Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1884355",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Fiona Ferro cover -4.5 vs the Adriana Reami in Fiona Ferro vs. Adriana Reami?",
+   "sides": [
+    "Fiona Ferro -4.50 (Games)",
+    "Adriana Reami +4.50 (Games)"
+   ],
+   "teams": [
+    "Fiona Ferro",
+    "Adriana Reami"
+   ],
+   "player": null,
+   "mid": 72.5,
+   "yes_buy": 73,
+   "no_buy": 28,
+   "taken_at": "2026-10-29T00:25:29.369Z"
+  },
   {
    "market_id": "1884351",
    "market": "Games spread",
@@ -201,28 +238,6 @@
    "mid": 72.5,
    "yes_buy": 73,
    "no_buy": 28,
-   "taken_at": "2026-10-29T00:25:29.369Z"
-  },
-  {
-   "market_id": "1884365",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Fiona Ferro cover -1.5 vs the Adriana Reami in Fiona Ferro vs. Adriana Reami?",
-   "sides": [
-    "Fiona Ferro -1.50 (Sets)",
-    "Adriana Reami +1.50 (Sets)"
-   ],
-   "teams": [
-    "Fiona Ferro",
-    "Adriana Reami"
-   ],
-   "player": null,
-   "mid": 16.5,
-   "yes_buy": 17,
-   "no_buy": 84,
    "taken_at": "2026-10-29T00:25:29.369Z"
   },
   {
@@ -292,25 +307,25 @@
    "taken_at": "2026-10-29T00:25:29.369Z"
   },
   {
-   "market_id": "1884355",
-   "market": "Games spread",
+   "market_id": "1884365",
+   "market": "Sets spread",
    "group": "game",
    "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Fiona Ferro cover -4.5 vs the Adriana Reami in Fiona Ferro vs. Adriana Reami?",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Fiona Ferro cover -1.5 vs the Adriana Reami in Fiona Ferro vs. Adriana Reami?",
    "sides": [
-    "Fiona Ferro -4.50 (Games)",
-    "Adriana Reami +4.50 (Games)"
+    "Fiona Ferro -1.50 (Sets)",
+    "Adriana Reami +1.50 (Sets)"
    ],
    "teams": [
     "Fiona Ferro",
     "Adriana Reami"
    ],
    "player": null,
-   "mid": 72.5,
-   "yes_buy": 73,
-   "no_buy": 28,
+   "mid": 16.5,
+   "yes_buy": 17,
+   "no_buy": 84,
    "taken_at": "2026-10-29T00:25:29.369Z"
   },
   {
