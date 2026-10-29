@@ -9,15 +9,59 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-29T21:04:54.710Z"
+  "fetched_at": "2026-10-29T21:11:41.673Z"
  },
- "updated": "2026-10-29T21:04:54.650Z",
+ "updated": "2026-10-29T21:11:41.536Z",
  "open_taken_at": "2026-10-28T19:07:44.964Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1915499",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Emilio Camacho vs. Joao Lucas Reis Da Silva be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 17.5,
+   "yes_buy": 18,
+   "no_buy": 83,
+   "taken_at": "2026-10-29T21:11:41.536Z"
+  },
+  {
+   "market_id": "1915495",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Emilio Camacho cover -1.5 vs the Joao Lucas Reis Da Silva in Emilio Camacho vs. Joao Lucas Reis Da Silva?",
+   "sides": [
+    "Emilio Camacho -1.50 (Sets)",
+    "Joao Lucas Da Silva +1.50 (Sets)"
+   ],
+   "teams": [
+    "Emilio Camacho",
+    "Joao Lucas Da Silva"
+   ],
+   "player": null,
+   "mid": 4,
+   "yes_buy": 5,
+   "no_buy": 97,
+   "taken_at": "2026-10-29T21:11:41.536Z"
+  },
   {
    "market_id": "1915152",
    "market": "Moneyline",
@@ -125,7 +169,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-29T09:32:39.610Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -150,6 +194,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1915494:0:2026-10-29T09:32:39.610Z",
+   "key": "1915494:0",
+   "at": "2026-10-29T21:11:41.536Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Emilio Camacho +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+100",
+   "now_chance": 50,
+   "edge": 6,
+   "text": "Edge gone: Emilio Camacho +7.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-emicam-joasil-2026-10-29"
+  },
   {
    "id": "new_edge:1915494:0:slight",
    "key": "1915494:0",
@@ -181,7 +239,8 @@
  ],
  "alert_seen": [
   "new_edge:1915494:0:slight",
-  "gone:1915497:0:2026-10-29T09:32:39.610Z"
+  "gone:1915497:0:2026-10-29T09:32:39.610Z",
+  "gone:1915494:0:2026-10-29T09:32:39.610Z"
  ],
  "kalshi_checked": null
 }
