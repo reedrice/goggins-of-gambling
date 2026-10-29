@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185183",
-  "fetched_at": "2026-10-29T18:47:56.930Z",
+  "fetched_at": "2026-10-29T18:54:06.978Z",
   "tennis": true,
   "tennis_match": {
    "id": "185183",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Alexander Zverev (GER) is tied with Tallon Griekspoor (NED) 6-4 2-2",
+     "text": "(1) Alexander Zverev (GER) is tied with Tallon Griekspoor (NED) 6-4 3-3",
      "type": "event"
     }
    ],
@@ -62,7 +62,7 @@
        "winner": false
       },
       {
-       "value": 2
+       "value": 3
       }
      ],
      "athlete": {
@@ -112,7 +112,7 @@
        "winner": true
       },
       {
-       "value": 2
+       "value": 3
       }
      ],
      "athlete": {
@@ -189,7 +189,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T18:47:56.802Z",
+ "updated": "2026-10-29T18:54:06.883Z",
  "open_taken_at": "2026-10-28T15:27:52.201Z",
  "thresholds": {
   "big": 10,
@@ -239,28 +239,6 @@
    "yes_buy": 72,
    "no_buy": 34,
    "taken_at": "2026-10-29T14:34:33.343Z"
-  },
-  {
-   "market_id": "1910670",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Alexander Zverev cover -1.5 vs the Tallon Griekspoor in Alexander Zverev vs. Tallon Griekspoor?",
-   "sides": [
-    "Alexander Zverev -1.50 (Sets)",
-    "Tallon Griekspoor +1.50 (Sets)"
-   ],
-   "teams": [
-    "Alexander Zverev",
-    "Tallon Griekspoor"
-   ],
-   "player": null,
-   "mid": 52,
-   "yes_buy": 53,
-   "no_buy": 49,
-   "taken_at": "2026-10-29T16:04:07.984Z"
   },
   {
    "market_id": "1910673",
@@ -349,6 +327,28 @@
    "yes_buy": 29,
    "no_buy": 77,
    "taken_at": "2026-10-29T05:51:43.433Z"
+  },
+  {
+   "market_id": "1910670",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Alexander Zverev cover -1.5 vs the Tallon Griekspoor in Alexander Zverev vs. Tallon Griekspoor?",
+   "sides": [
+    "Alexander Zverev -1.50 (Sets)",
+    "Tallon Griekspoor +1.50 (Sets)"
+   ],
+   "teams": [
+    "Alexander Zverev",
+    "Tallon Griekspoor"
+   ],
+   "player": null,
+   "mid": 52,
+   "yes_buy": 53,
+   "no_buy": 49,
+   "taken_at": "2026-10-29T16:04:07.984Z"
   },
   {
    "market_id": "1910675",
@@ -529,6 +529,86 @@
  ],
  "edges": [
   {
+   "key": "1910673:1",
+   "market_id": "1910673",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Alexander Zverev vs. Tallon Griekspoor be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 50,
+   "now_chance": 25,
+   "open_odds": "+100",
+   "now_odds": "+300",
+   "edge": 25,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (25 pts), likely news",
+   "context": "Tallon Griekspoor 4, 3 · Alexander Zverev 6, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-10-28T21:54:55.054Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1910674:1",
+   "market_id": "1910674",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Alexander Zverev vs. Tallon Griekspoor be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 78,
+   "now_chance": 63,
+   "open_odds": "-355",
+   "now_odds": "-170",
+   "edge": 15,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Tallon Griekspoor 4, 3 · Alexander Zverev 6, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-10-29T16:46:37.675Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1910681:0",
+   "market_id": "1910681",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Alexander Zverev win set 2 against Tallon Griekspoor?",
+   "side": "Yes: Alexander Zverev win set 2 against Tallon Griekspoor",
+   "open_chance": 73,
+   "now_chance": 59,
+   "open_odds": "-270",
+   "now_odds": "-144",
+   "edge": 14,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Alexander Zverev not above the games spread right now",
+   "context": "Tallon Griekspoor 4, 3 · Alexander Zverev 6, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-10-29T17:13:38.023Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1910664:1",
+   "market_id": "1910664",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Alexander Zverev cover -1.5 vs the Tallon Griekspoor in Alexander Zverev vs. Tallon Griekspoor?",
+   "side": "Tallon Griekspoor +1.50 (Games)",
+   "open_chance": 34,
+   "now_chance": 21,
+   "open_odds": "+194",
+   "now_odds": "+376",
+   "edge": 13,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Tallon Griekspoor not above the games spread right now",
+   "context": "Tallon Griekspoor 4, 3 · Alexander Zverev 6, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-10-29T18:47:56.802Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1910670:1",
    "market_id": "1910670",
    "market": "Sets spread",
@@ -545,87 +625,7 @@
    "reason": null,
    "context": "Tallon Griekspoor 4, 2 · Alexander Zverev 6, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-29T17:55:35.960Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1910673:1",
-   "market_id": "1910673",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Alexander Zverev vs. Tallon Griekspoor be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 50,
-   "now_chance": 35,
-   "open_odds": "+100",
-   "now_odds": "+186",
-   "edge": 15,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Tallon Griekspoor 4, 2 · Alexander Zverev 6, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-10-28T21:54:55.054Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1910664:1",
-   "market_id": "1910664",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Alexander Zverev cover -1.5 vs the Tallon Griekspoor in Alexander Zverev vs. Tallon Griekspoor?",
-   "side": "Tallon Griekspoor +1.50 (Games)",
-   "open_chance": 34,
-   "now_chance": 20,
-   "open_odds": "+194",
-   "now_odds": "+400",
-   "edge": 14,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Tallon Griekspoor not above the games spread right now",
-   "context": "Tallon Griekspoor 4, 2 · Alexander Zverev 6, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-10-29T18:47:56.802Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1910674:1",
-   "market_id": "1910674",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Alexander Zverev vs. Tallon Griekspoor be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 78,
-   "now_chance": 67,
-   "open_odds": "-355",
-   "now_odds": "-203",
-   "edge": 11,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Tallon Griekspoor 4, 2 · Alexander Zverev 6, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-10-29T16:46:37.675Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1910681:0",
-   "market_id": "1910681",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Alexander Zverev win set 2 against Tallon Griekspoor?",
-   "side": "Yes: Alexander Zverev win set 2 against Tallon Griekspoor",
-   "open_chance": 73,
-   "now_chance": 63,
-   "open_odds": "-270",
-   "now_odds": "-170",
-   "edge": 10,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Alexander Zverev not above the games spread right now",
-   "context": "Tallon Griekspoor 4, 2 · Alexander Zverev 6, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-10-29T17:13:38.023Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -710,6 +710,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "news:1910673:1",
+   "key": "1910673:1",
+   "at": "2026-10-29T18:54:06.883Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+300",
+   "now_chance": 25,
+   "edge": 25,
+   "text": "Big move, likely news: Under 22.5 (Games) (Games total) is 25 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-alezve-talgri-2026-10-29"
+  },
   {
    "id": "new_edge:1910673:1:big",
    "key": "1910673:1",
@@ -990,7 +1004,8 @@
   "gone:1910670:1:2026-10-29T17:55:35.960Z",
   "gone:1910675:0:2026-10-29T18:15:46.648Z",
   "new_edge:1910673:1:big",
-  "new_edge:1910674:1:big"
+  "new_edge:1910674:1:big",
+  "news:1910673:1"
  ],
  "kalshi_checked": null
 }
