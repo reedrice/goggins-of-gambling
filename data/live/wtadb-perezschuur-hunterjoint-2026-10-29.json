@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185697",
-  "fetched_at": "2026-10-29T05:13:42.362Z",
+  "fetched_at": "2026-10-29T05:17:07.257Z",
   "tennis": true,
   "tennis_match": {
    "id": "185697",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(4) Ellen Perez (AUS) & Demi Schuurs (NED) is tied with Storm Hunter (AUS) & Maya Joint (AUS) 1-6 4-3",
+     "text": "(4) Ellen Perez (AUS) & Demi Schuurs (NED) is tied with Storm Hunter (AUS) & Maya Joint (AUS) 1-6 6-3",
      "type": "event"
     }
    ],
@@ -55,7 +55,6 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
      "linescores": [
       {
        "value": 6,
@@ -137,7 +136,6 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
      "curatedRank": {
       "current": 4
      },
@@ -147,7 +145,7 @@
        "winner": false
       },
       {
-       "value": 4
+       "value": 6
       }
      ],
      "roster": {
@@ -217,11 +215,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 264,
    "type": {
     "id": "4",
@@ -259,7 +252,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T05:13:42.246Z",
+ "updated": "2026-10-29T05:17:07.169Z",
  "open_taken_at": "2026-10-28T09:43:39.918Z",
  "thresholds": {
   "big": 10,
@@ -307,17 +300,33 @@
    "reason": null,
    "context": "Storm Hunter / Maya Joint 6, 3 · Ellen Perez / Demi  Schuurs 1, 4 · 2nd Set (games by set)",
    "first_seen": "2026-10-29T05:07:34.967Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
+ "alerts": [
+  {
+   "id": "gone:1902605:0:2026-10-29T05:07:34.967Z",
+   "key": "1902605:0",
+   "at": "2026-10-29T05:17:07.169Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Perez / Schuurs win",
+   "market": "Moneyline",
+   "now_odds": "+245",
+   "now_chance": 29,
+   "edge": 20,
+   "text": "Edge gone: Perez / Schuurs win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-perezschuur-hunterjoint-2026-10-29"
+  }
+ ],
  "alert_seen": [
   "new_edge:1902605:1:slight",
   "new_edge:1902605:0:slight",
   "gone:1902605:1:2026-10-28T11:47:21.365Z",
   "new_edge:1902605:0:big",
-  "news:1902605:0"
+  "news:1902605:0",
+  "gone:1902605:0:2026-10-29T05:07:34.967Z"
  ],
  "kalshi_checked": null
 }
