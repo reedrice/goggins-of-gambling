@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185194",
-  "fetched_at": "2026-10-29T16:53:55.536Z",
+  "fetched_at": "2026-10-29T16:59:43.674Z",
   "tennis": true,
   "tennis_match": {
    "id": "185194",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Arthur Fery (GBR) leads Lorenzo Musetti (ITA) 5-3",
+     "text": "Arthur Fery (GBR) leads Lorenzo Musetti (ITA) 5-4",
      "type": "event"
     }
    ],
@@ -55,9 +55,10 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
-       "value": 3
+       "value": 4
       }
      ],
      "athlete": {
@@ -97,6 +98,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 5
@@ -134,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 10,
    "type": {
     "id": "1",
@@ -171,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T16:53:55.475Z",
+ "updated": "2026-10-29T16:59:43.494Z",
  "open_taken_at": "2026-10-28T16:56:04.198Z",
  "thresholds": {
   "big": 10,
@@ -223,26 +230,26 @@
    "taken_at": "2026-10-29T16:04:08.447Z"
   },
   {
-   "market_id": "1913130",
-   "market": "Set 1 winner",
+   "market_id": "1913116",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Arthur Fery win set 1 against Lorenzo Musetti?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Arthur Fery cover 4.5 vs the Lorenzo Musetti in Arthur Fery vs. Lorenzo Musetti?",
    "sides": [
-    "Yes: Arthur Fery win set 1 against Lorenzo Musetti",
-    "No: Arthur Fery win set 1 against Lorenzo Musetti"
+    "Arthur Fery +4.50 (Games)",
+    "Lorenzo Musetti -4.50 (Games)"
    ],
    "teams": [
     "Arthur Fery",
-    null
+    "Lorenzo Musetti"
    ],
    "player": null,
-   "mid": 31,
-   "yes_buy": 33,
-   "no_buy": 71,
-   "taken_at": "2026-10-29T04:58:27.440Z"
+   "mid": 60,
+   "yes_buy": 61,
+   "no_buy": 41,
+   "taken_at": "2026-10-28T19:59:47.654Z"
   },
   {
    "market_id": "1913122",
@@ -355,28 +362,6 @@
    "taken_at": "2026-10-29T15:48:07.683Z"
   },
   {
-   "market_id": "1913119",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Arthur Fery cover -1.5 vs the Lorenzo Musetti in Arthur Fery vs. Lorenzo Musetti?",
-   "sides": [
-    "Arthur Fery -1.50 (Sets)",
-    "Lorenzo Musetti +1.50 (Sets)"
-   ],
-   "teams": [
-    "Arthur Fery",
-    "Lorenzo Musetti"
-   ],
-   "player": null,
-   "mid": 10.5,
-   "yes_buy": 13,
-   "no_buy": 92,
-   "taken_at": "2026-10-29T16:04:08.447Z"
-  },
-  {
    "market_id": "1913117",
    "market": "Games spread",
    "group": "game",
@@ -419,6 +404,50 @@
    "yes_buy": 15,
    "no_buy": 86,
    "taken_at": "2026-10-29T16:10:11.356Z"
+  },
+  {
+   "market_id": "1913130",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Arthur Fery win set 1 against Lorenzo Musetti?",
+   "sides": [
+    "Yes: Arthur Fery win set 1 against Lorenzo Musetti",
+    "No: Arthur Fery win set 1 against Lorenzo Musetti"
+   ],
+   "teams": [
+    "Arthur Fery",
+    null
+   ],
+   "player": null,
+   "mid": 31,
+   "yes_buy": 33,
+   "no_buy": 71,
+   "taken_at": "2026-10-29T04:58:27.440Z"
+  },
+  {
+   "market_id": "1913119",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Arthur Fery cover -1.5 vs the Lorenzo Musetti in Arthur Fery vs. Lorenzo Musetti?",
+   "sides": [
+    "Arthur Fery -1.50 (Sets)",
+    "Lorenzo Musetti +1.50 (Sets)"
+   ],
+   "teams": [
+    "Arthur Fery",
+    "Lorenzo Musetti"
+   ],
+   "player": null,
+   "mid": 10.5,
+   "yes_buy": 13,
+   "no_buy": 92,
+   "taken_at": "2026-10-29T16:04:08.447Z"
   },
   {
    "market_id": "1913118",
@@ -465,28 +494,6 @@
    "taken_at": "2026-10-29T02:08:43.418Z"
   },
   {
-   "market_id": "1913116",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Arthur Fery cover 4.5 vs the Lorenzo Musetti in Arthur Fery vs. Lorenzo Musetti?",
-   "sides": [
-    "Arthur Fery +4.50 (Games)",
-    "Lorenzo Musetti -4.50 (Games)"
-   ],
-   "teams": [
-    "Arthur Fery",
-    "Lorenzo Musetti"
-   ],
-   "player": null,
-   "mid": 60,
-   "yes_buy": 61,
-   "no_buy": 41,
-   "taken_at": "2026-10-28T19:59:47.654Z"
-  },
-  {
    "market_id": "1913120",
    "market": "Sets spread",
    "group": "game",
@@ -511,22 +518,22 @@
  ],
  "edges": [
   {
-   "key": "1913112:1",
-   "market_id": "1913112",
-   "market": "Games spread",
+   "key": "1912386:1",
+   "market_id": "1912386",
+   "market": "Moneyline",
    "group": "game",
-   "question": "Will the Arthur Fery cover -1.5 vs the Lorenzo Musetti in Arthur Fery vs. Lorenzo Musetti?",
-   "side": "Lorenzo Musetti +1.50 (Games)",
-   "open_chance": 80,
-   "now_chance": 52,
-   "open_odds": "-400",
-   "now_odds": "-108",
-   "edge": 28,
+   "question": "Who will win in the upcoming atp event Arthur Fery vs Lorenzo Musetti scheduled for October 29, 2026 at 12:30 PM UTC?",
+   "side": "Lorenzo Musetti win",
+   "open_chance": 70,
+   "now_chance": 44,
+   "open_odds": "-233",
+   "now_odds": "+127",
+   "edge": 26,
    "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Lorenzo Musetti not above the games spread right now",
-   "context": "Lorenzo Musetti 3 · Arthur Fery 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-29T16:46:38.097Z",
+   "class": "news",
+   "reason": "Big move (26 pts), likely news",
+   "context": "Lorenzo Musetti 4 · Arthur Fery 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-29T16:53:55.475Z",
    "status": "open",
    "kalshi": null
   },
@@ -545,8 +552,28 @@
    "tier": "big",
    "class": "news",
    "reason": "Big move (25 pts), likely news",
-   "context": "Lorenzo Musetti 3 · Arthur Fery 5 · 1st Set (games by set)",
+   "context": "Lorenzo Musetti 4 · Arthur Fery 5 · 1st Set (games by set)",
    "first_seen": "2026-10-29T16:17:52.636Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1913112:1",
+   "market_id": "1913112",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Arthur Fery cover -1.5 vs the Lorenzo Musetti in Arthur Fery vs. Lorenzo Musetti?",
+   "side": "Lorenzo Musetti +1.50 (Games)",
+   "open_chance": 80,
+   "now_chance": 55,
+   "open_odds": "-400",
+   "now_odds": "-122",
+   "edge": 25,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (25 pts), likely news",
+   "context": "Lorenzo Musetti 4 · Arthur Fery 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-29T16:46:38.097Z",
    "status": "open",
    "kalshi": null
   },
@@ -565,28 +592,68 @@
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Lorenzo Musetti not above the games spread right now",
-   "context": "Lorenzo Musetti 3 · Arthur Fery 5 · 1st Set (games by set)",
+   "context": "Lorenzo Musetti 4 · Arthur Fery 5 · 1st Set (games by set)",
    "first_seen": "2026-10-29T16:17:52.636Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1912386:1",
-   "market_id": "1912386",
-   "market": "Moneyline",
+   "key": "1913123:1",
+   "market_id": "1913123",
+   "market": "Games total",
    "group": "game",
-   "question": "Who will win in the upcoming atp event Arthur Fery vs Lorenzo Musetti scheduled for October 29, 2026 at 12:30 PM UTC?",
-   "side": "Lorenzo Musetti win",
-   "open_chance": 70,
-   "now_chance": 49,
-   "open_odds": "-233",
-   "now_odds": "+104",
-   "edge": 21,
+   "question": "Will the total in Arthur Fery vs. Lorenzo Musetti be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 74,
+   "now_chance": 55,
+   "open_odds": "-285",
+   "now_odds": "-122",
+   "edge": 19,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Lorenzo Musetti 3 · Arthur Fery 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-29T16:53:55.475Z",
+   "context": "Lorenzo Musetti 4 · Arthur Fery 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-29T16:25:43.319Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1913116:1",
+   "market_id": "1913116",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Arthur Fery cover 4.5 vs the Lorenzo Musetti in Arthur Fery vs. Lorenzo Musetti?",
+   "side": "Lorenzo Musetti -4.50 (Games)",
+   "open_chance": 41,
+   "now_chance": 23,
+   "open_odds": "+144",
+   "now_odds": "+335",
+   "edge": 18,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Lorenzo Musetti not above the games spread right now",
+   "context": "Lorenzo Musetti 4 · Arthur Fery 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-29T16:59:43.494Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1913131:1",
+   "market_id": "1913131",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Arthur Fery win set 2 against Lorenzo Musetti?",
+   "side": "No: Arthur Fery win set 2 against Lorenzo Musetti",
+   "open_chance": 72,
+   "now_chance": 63,
+   "open_odds": "-257",
+   "now_odds": "-170",
+   "edge": 9,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Lorenzo Musetti 4 · Arthur Fery 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-29T16:04:08.447Z",
    "status": "open",
    "kalshi": null
   },
@@ -607,47 +674,7 @@
    "reason": null,
    "context": "Lorenzo Musetti 3 · Arthur Fery 5 · 1st Set (games by set)",
    "first_seen": "2026-10-29T16:53:55.475Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1913123:1",
-   "market_id": "1913123",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Arthur Fery vs. Lorenzo Musetti be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 74,
-   "now_chance": 58,
-   "open_odds": "-285",
-   "now_odds": "-138",
-   "edge": 16,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Lorenzo Musetti 3 · Arthur Fery 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-29T16:25:43.319Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1913131:1",
-   "market_id": "1913131",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Arthur Fery win set 2 against Lorenzo Musetti?",
-   "side": "No: Arthur Fery win set 2 against Lorenzo Musetti",
-   "open_chance": 72,
-   "now_chance": 64,
-   "open_odds": "-257",
-   "now_odds": "-178",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Lorenzo Musetti 3 · Arthur Fery 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-29T16:04:08.447Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -772,6 +799,48 @@
   }
  ],
  "alerts": [
+  {
+   "id": "news:1912386:1",
+   "key": "1912386:1",
+   "at": "2026-10-29T16:59:43.494Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Lorenzo Musetti win",
+   "market": "Moneyline",
+   "now_odds": "+127",
+   "now_chance": 44,
+   "edge": 26,
+   "text": "Big move, likely news: Lorenzo Musetti win (Moneyline) is 26 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-artfer-lormus-2026-10-29"
+  },
+  {
+   "id": "news:1913112:1",
+   "key": "1913112:1",
+   "at": "2026-10-29T16:59:43.494Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Lorenzo Musetti +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-122",
+   "now_chance": 55,
+   "edge": 25,
+   "text": "Big move, likely news: Lorenzo Musetti +1.50 (Games) (Games spread) is 25 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-artfer-lormus-2026-10-29"
+  },
+  {
+   "id": "gone:1913119:1:2026-10-29T16:53:55.475Z",
+   "key": "1913119:1",
+   "at": "2026-10-29T16:59:43.494Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Lorenzo Musetti +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "-245",
+   "now_chance": 71,
+   "edge": 21,
+   "text": "Edge gone: Lorenzo Musetti +1.50 (Sets) (Sets spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-artfer-lormus-2026-10-29"
+  },
   {
    "id": "news:1913122:1",
    "key": "1913122:1",
@@ -1104,7 +1173,10 @@
   "news:1913122:1",
   "new_edge:1912386:1:big",
   "new_edge:1913119:1:big",
-  "gone:1913124:1:2026-10-29T16:25:43.319Z"
+  "gone:1913124:1:2026-10-29T16:25:43.319Z",
+  "news:1912386:1",
+  "news:1913112:1",
+  "gone:1913119:1:2026-10-29T16:53:55.475Z"
  ],
  "kalshi_checked": null
 }
