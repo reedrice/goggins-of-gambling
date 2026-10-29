@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185850",
-  "fetched_at": "2026-10-29T14:46:38.167Z",
+  "fetched_at": "2026-10-29T14:53:37.676Z",
   "tennis": true,
   "tennis_match": {
    "id": "185850",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(8) Susan Bandecchi (SUI) leads Elsa Jacquemot (FRA) 2-1",
+     "text": "(8) Susan Bandecchi (SUI) leads Elsa Jacquemot (FRA) 2-2",
      "type": "event"
     }
    ],
@@ -55,10 +55,10 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -98,7 +98,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "possession": true,
      "curatedRank": {
       "current": 8
      },
@@ -181,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T14:46:38.004Z",
+ "updated": "2026-10-29T14:53:37.565Z",
  "open_taken_at": "2026-10-28T16:22:51.933Z",
  "thresholds": {
   "big": 10,
@@ -211,28 +211,6 @@
    "taken_at": "2026-10-28T23:24:38.880Z"
   },
   {
-   "market_id": "1911593",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Susan Bandecchi cover -1.5 vs the Elsa Jacquemot in Susan Bandecchi vs. Elsa Jacquemot?",
-   "sides": [
-    "Susan Bandecchi -1.50 (Games)",
-    "Elsa Jacquemot +1.50 (Games)"
-   ],
-   "teams": [
-    "Susan Bandecchi",
-    "Elsa Jacquemot"
-   ],
-   "player": null,
-   "mid": 56,
-   "yes_buy": 58,
-   "no_buy": 46,
-   "taken_at": "2026-10-29T14:46:38.004Z"
-  },
-  {
    "market_id": "1911602",
    "market": "Games total",
    "group": "game",
@@ -253,6 +231,28 @@
    "yes_buy": 49,
    "no_buy": 53,
    "taken_at": "2026-10-28T23:24:38.880Z"
+  },
+  {
+   "market_id": "1911593",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Susan Bandecchi cover -1.5 vs the Elsa Jacquemot in Susan Bandecchi vs. Elsa Jacquemot?",
+   "sides": [
+    "Susan Bandecchi -1.50 (Games)",
+    "Elsa Jacquemot +1.50 (Games)"
+   ],
+   "teams": [
+    "Susan Bandecchi",
+    "Elsa Jacquemot"
+   ],
+   "player": null,
+   "mid": 56,
+   "yes_buy": 58,
+   "no_buy": 46,
+   "taken_at": "2026-10-29T14:46:38.004Z"
   },
   {
    "market_id": "1911594",
@@ -345,6 +345,26 @@
  ],
  "edges": [
   {
+   "key": "1911602:1",
+   "market_id": "1911602",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Susan Bandecchi vs. Elsa Jacquemot be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 53,
+   "now_chance": 48,
+   "open_odds": "-113",
+   "now_odds": "+108",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Elsa Jacquemot 2 · Susan Bandecchi 2 · 1st Set (games by set)",
+   "first_seen": "2026-10-29T14:53:37.565Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1911582:1",
    "market_id": "1911582",
    "market": "Moneyline",
@@ -361,7 +381,7 @@
    "reason": null,
    "context": "Elsa Jacquemot 1 · Susan Bandecchi 2 · 1st Set (games by set)",
    "first_seen": "2026-10-29T03:12:05.234Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -387,6 +407,34 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1911602:1:slight",
+   "key": "1911602:1",
+   "at": "2026-10-29T14:53:37.565Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+108",
+   "now_chance": 48,
+   "edge": 5,
+   "text": "New slight edge: Under 22.5 (Games) (Games total), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-susban-elsjac-2026-10-29"
+  },
+  {
+   "id": "gone:1911582:1:2026-10-29T03:12:05.234Z",
+   "key": "1911582:1",
+   "at": "2026-10-29T14:53:37.565Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Elsa Jacquemot win",
+   "market": "Moneyline",
+   "now_odds": "+150",
+   "now_chance": 40,
+   "edge": 17,
+   "text": "Edge gone: Elsa Jacquemot win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-susban-elsjac-2026-10-29"
+  },
+  {
    "id": "new_edge:1911582:1:big",
    "key": "1911582:1",
    "at": "2026-10-29T14:46:38.004Z",
@@ -402,7 +450,9 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1911582:1:big"
+  "new_edge:1911582:1:big",
+  "new_edge:1911602:1:slight",
+  "gone:1911582:1:2026-10-29T03:12:05.234Z"
  ],
  "kalshi_checked": null
 }
