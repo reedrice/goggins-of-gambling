@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for mls",
-  "fetched_at": "2026-10-29T02:30:47.133Z"
+  "fetched_at": "2026-10-29T02:37:30.776Z"
  },
- "updated": "2026-10-29T02:30:47.129Z",
+ "updated": "2026-10-29T02:37:30.772Z",
  "open_taken_at": "2026-10-27T05:05:59.802Z",
  "thresholds": {
   "big": 10,
@@ -151,28 +151,6 @@
    "taken_at": "2026-10-28T03:38:34.956Z"
   },
   {
-   "market_id": "1892959",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": -2.5,
-   "question": "Will the Seattle Sounders FC cover -2.5 vs the Houston Dynamo in SEA vs HOU?",
-   "sides": [
-    "Rave Green -2.50",
-    "Dynamo +2.50"
-   ],
-   "teams": [
-    "Rave Green",
-    "Dynamo"
-   ],
-   "player": null,
-   "mid": 16,
-   "yes_buy": 19,
-   "no_buy": 87,
-   "taken_at": "2026-10-28T03:38:34.956Z"
-  },
-  {
    "market_id": "1892974",
    "market": "Alt total",
    "group": "game",
@@ -193,28 +171,6 @@
    "yes_buy": 82,
    "no_buy": 22,
    "taken_at": "2026-10-28T03:38:34.956Z"
-  },
-  {
-   "market_id": "1892976",
-   "market": "Alt total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 3.5,
-   "question": "Will the total in SEA vs HOU be more than 3.5?",
-   "sides": [
-    "Over 3.5",
-    "Under 3.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 36,
-   "yes_buy": 38,
-   "no_buy": 66,
-   "taken_at": "2026-10-28T03:33:50.622Z"
   },
   {
    "market_id": "1892978",
@@ -261,6 +217,28 @@
    "taken_at": "2026-10-28T03:54:11.046Z"
   },
   {
+   "market_id": "1892959",
+   "market": "Alt spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": -2.5,
+   "question": "Will the Seattle Sounders FC cover -2.5 vs the Houston Dynamo in SEA vs HOU?",
+   "sides": [
+    "Rave Green -2.50",
+    "Dynamo +2.50"
+   ],
+   "teams": [
+    "Rave Green",
+    "Dynamo"
+   ],
+   "player": null,
+   "mid": 16,
+   "yes_buy": 19,
+   "no_buy": 87,
+   "taken_at": "2026-10-28T03:38:34.956Z"
+  },
+  {
    "market_id": "1892961",
    "market": "Alt spread",
    "group": "game",
@@ -281,6 +259,28 @@
    "yes_buy": 93,
    "no_buy": 10,
    "taken_at": "2026-10-28T03:54:11.046Z"
+  },
+  {
+   "market_id": "1892976",
+   "market": "Alt total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 3.5,
+   "question": "Will the total in SEA vs HOU be more than 3.5?",
+   "sides": [
+    "Over 3.5",
+    "Under 3.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 36,
+   "yes_buy": 38,
+   "no_buy": 66,
+   "taken_at": "2026-10-28T03:33:50.622Z"
   },
   {
    "market_id": "1893049",
@@ -865,7 +865,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-29T02:18:04.449Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -890,6 +890,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1893048:1:2026-10-29T02:18:04.449Z",
+   "key": "1893048:1",
+   "at": "2026-10-29T02:37:30.772Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "No: Seattle Sounders FC lead Houston Dynamo at halftime",
+   "market": "1st half winner",
+   "now_odds": "-127",
+   "now_chance": 56,
+   "edge": 4,
+   "text": "Edge gone: No: Seattle Sounders FC lead Houston Dynamo at halftime (1st half winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/mls/mls-sea-hou-2026-10-28"
+  },
   {
    "id": "new_edge:1777837:1:slight",
    "key": "1777837:1",
@@ -966,7 +980,8 @@
   "new_edge:1777844:0:slight",
   "new_edge:1892960:1:slight",
   "new_edge:1893050:0:slight",
-  "new_edge:1893048:1:slight"
+  "new_edge:1893048:1:slight",
+  "gone:1893048:1:2026-10-29T02:18:04.449Z"
  ],
  "kalshi_checked": null
 }
