@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185676",
-  "fetched_at": "2026-10-29T09:12:22.961Z",
+  "fetched_at": "2026-10-29T09:19:22.516Z",
   "tennis": true,
   "tennis_match": {
    "id": "185676",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Elena Rybakina (KAZ) leads Yulia Putintseva (KAZ) 6-2 5-2",
+     "text": "(1) Elena Rybakina (KAZ) leads Yulia Putintseva (KAZ) 6-2 5-3",
      "type": "event"
     }
    ],
@@ -55,13 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 2,
        "winner": false
       },
       {
-       "value": 2
+       "value": 3
       }
      ],
      "athlete": {
@@ -101,6 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "curatedRank": {
       "current": 1
      },
@@ -145,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 264,
    "type": {
     "id": "2",
@@ -182,7 +189,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T09:12:22.868Z",
+ "updated": "2026-10-29T09:19:22.416Z",
  "open_taken_at": "2026-10-27T06:03:19.834Z",
  "thresholds": {
   "big": 10,
@@ -254,6 +261,28 @@
    "yes_buy": 66,
    "no_buy": 36,
    "taken_at": "2026-10-28T19:22:13.441Z"
+  },
+  {
+   "market_id": "1862642",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Elena Rybakina vs. Yulia Putintseva be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 21.5,
+   "yes_buy": 22,
+   "no_buy": 79,
+   "taken_at": "2026-10-29T08:07:33.710Z"
   },
   {
    "market_id": "1862636",
@@ -410,28 +439,6 @@
    "taken_at": "2026-10-29T08:07:33.710Z"
   },
   {
-   "market_id": "1862642",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Elena Rybakina vs. Yulia Putintseva be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 21.5,
-   "yes_buy": 22,
-   "no_buy": 79,
-   "taken_at": "2026-10-29T08:07:33.710Z"
-  },
-  {
    "market_id": "1862643",
    "market": "Sets total",
    "group": "game",
@@ -522,26 +529,6 @@
  ],
  "edges": [
   {
-   "key": "1862636:1",
-   "market_id": "1862636",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Elena Rybakina cover -7.5 vs the Yulia Putintseva in Elena Rybakina vs. Yulia Putintseva?",
-   "side": "Yulia Putintseva +7.50 (Games)",
-   "open_chance": 71,
-   "now_chance": 64,
-   "open_odds": "-245",
-   "now_odds": "-178",
-   "edge": 7,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Yulia Putintseva 2, 2 · Elena Rybakina 6, 5 · 2nd Set (games by set)",
-   "first_seen": "2026-10-29T08:28:36.916Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1862640:0",
    "market_id": "1862640",
    "market": "Games total",
@@ -598,6 +585,26 @@
    "reason": "Explained by score: Elena Rybakina not above the games spread right now",
    "context": "Yulia Putintseva 2 · Elena Rybakina 5 · 1st Set (games by set)",
    "first_seen": "2026-10-29T08:15:08.709Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1862636:1",
+   "market_id": "1862636",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Elena Rybakina cover -7.5 vs the Yulia Putintseva in Elena Rybakina vs. Yulia Putintseva?",
+   "side": "Yulia Putintseva +7.50 (Games)",
+   "open_chance": 71,
+   "now_chance": 64,
+   "open_odds": "-245",
+   "now_odds": "-178",
+   "edge": 7,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Yulia Putintseva 2, 2 · Elena Rybakina 6, 5 · 2nd Set (games by set)",
+   "first_seen": "2026-10-29T08:28:36.916Z",
    "status": "gone",
    "kalshi": null
   },
