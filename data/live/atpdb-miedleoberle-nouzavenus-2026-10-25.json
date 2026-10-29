@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185206",
-  "fetched_at": "2026-10-29T20:17:33.553Z",
+  "fetched_at": "2026-10-29T20:24:07.812Z",
   "tennis": true,
   "tennis_match": {
    "id": "185206",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "detail": "3rd Set",
+     "shortDetail": "3rd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Petr Nouza (CZE) & Michael Venus (NZL) is tied with Lucas Miedler (AUT) & Neil Oberleitner (AUT) 4-6 6-4",
+     "text": "Lucas Miedler (AUT) & Neil Oberleitner (AUT) leads Petr Nouza (CZE) & Michael Venus (NZL) 6-4 4-6 0-0 (4-2)",
      "type": "event"
     }
    ],
@@ -61,7 +61,12 @@
        "winner": false
       },
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0,
+       "tiebreak": 2
       }
      ],
      "roster": {
@@ -142,7 +147,12 @@
        "winner": true
       },
       {
-       "value": 4
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 0,
+       "tiebreak": 4
       }
      ],
      "roster": {
@@ -230,14 +240,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "period": 3,
+  "clock": "3rd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Petr Nouza / Michael Venus",
    "alias": "Petr Nouza / Michael Venus",
    "name": "Petr Nouza / Michael Venus",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Lucas Miedler / Neil Oberleitner",
@@ -249,7 +259,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T20:17:33.358Z",
+ "updated": "2026-10-29T20:24:07.673Z",
  "open_taken_at": "2026-10-24T13:28:22.288Z",
  "thresholds": {
   "big": 10,
@@ -297,11 +307,25 @@
    "reason": null,
    "context": "Petr Nouza / Michael Venus 4, 6 · Lucas Miedler / Neil Oberleitner 6, 4 · 2nd Set (games by set)",
    "first_seen": "2026-10-29T20:17:33.358Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1755070:0:2026-10-29T20:17:33.358Z",
+   "key": "1755070:0",
+   "at": "2026-10-29T20:24:07.673Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Miedler L / Oberleitner N win",
+   "market": "Moneyline",
+   "now_odds": "-138",
+   "now_chance": 58,
+   "edge": 12,
+   "text": "Edge gone: Miedler L / Oberleitner N win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-miedleoberle-nouzavenus-2026-10-25"
+  },
   {
    "id": "new_edge:1755070:0:big",
    "key": "1755070:0",
@@ -321,7 +345,8 @@
   "new_edge:1755070:1:slight",
   "gone:1755070:1:2026-10-29T18:15:41.816Z",
   "new_edge:1755070:1:big",
-  "new_edge:1755070:0:big"
+  "new_edge:1755070:0:big",
+  "gone:1755070:0:2026-10-29T20:17:33.358Z"
  ],
  "kalshi_checked": null
 }
