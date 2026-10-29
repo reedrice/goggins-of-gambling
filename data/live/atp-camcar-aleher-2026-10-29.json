@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-29T20:10:37.030Z"
+  "fetched_at": "2026-10-29T20:17:40.398Z"
  },
- "updated": "2026-10-29T20:10:36.958Z",
+ "updated": "2026-10-29T20:17:40.234Z",
  "open_taken_at": "2026-10-28T23:05:29.113Z",
  "thresholds": {
   "big": 10,
@@ -241,6 +241,26 @@
  ],
  "edges": [
   {
+   "key": "1923525:1",
+   "market_id": "1923525",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Camilo Ugo Carabelli vs. Alex Hernandez be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 85,
+   "now_chance": 75,
+   "open_odds": "-567",
+   "now_odds": "-300",
+   "edge": 10,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-29T20:17:40.234Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1923522:0",
    "market_id": "1923522",
    "market": "Games total",
@@ -282,6 +302,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1923525:1:big",
+   "key": "1923525:1",
+   "at": "2026-10-29T20:17:40.234Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-300",
+   "now_chance": 75,
+   "edge": 10,
+   "text": "New big edge: Under 22.5 (Games) (Games total), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-camcar-aleher-2026-10-29"
+  },
   {
    "id": "gone:1923518:0:2026-10-29T19:23:38.124Z",
    "key": "1923518:0",
@@ -328,7 +362,8 @@
  "alert_seen": [
   "new_edge:1923522:0:slight",
   "new_edge:1923518:0:big",
-  "gone:1923518:0:2026-10-29T19:23:38.124Z"
+  "gone:1923518:0:2026-10-29T19:23:38.124Z",
+  "new_edge:1923525:1:big"
  ],
  "kalshi_checked": null
 }
