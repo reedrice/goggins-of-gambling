@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185861",
-  "fetched_at": "2026-10-29T13:53:55.473Z",
+  "fetched_at": "2026-10-29T13:59:34.933Z",
   "tennis": true,
   "tennis_match": {
    "id": "185861",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Anastasiia Sobolieva (UKR) & Elizara Yaneva (BUL) is tied with (1) Catherine Harrison (USA) & Dalayna Hewitt (USA) 1-6 4-2",
+     "text": "Anastasiia Sobolieva (UKR) & Elizara Yaneva (BUL) is tied with (1) Catherine Harrison (USA) & Dalayna Hewitt (USA) 1-6 5-2",
      "type": "event"
     }
    ],
@@ -55,14 +55,14 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
        "value": 1,
        "winner": false
       },
       {
-       "value": 4
+       "value": 5
       }
      ],
      "roster": {
@@ -137,7 +137,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "possession": true,
      "curatedRank": {
       "current": 1
      },
@@ -259,7 +259,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T13:53:55.217Z",
+ "updated": "2026-10-29T13:59:34.728Z",
  "open_taken_at": "2026-10-27T13:01:15.372Z",
  "thresholds": {
   "big": 10,
@@ -307,11 +307,25 @@
    "reason": null,
    "context": "Anastasiia Sobolieva / Elizara Yaneva 1, 4 · Catherine Harrison / Dalayna Hewitt 6, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-29T13:48:41.108Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1869004:1:2026-10-29T13:48:41.108Z",
+   "key": "1869004:1",
+   "at": "2026-10-29T13:59:34.728Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Sobolieva A / Yaneva E win",
+   "market": "Moneyline",
+   "now_odds": "+426",
+   "now_chance": 19,
+   "edge": 10,
+   "text": "Edge gone: Sobolieva A / Yaneva E win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-harrishewitt-soboliyaneva-2026-10-28"
+  },
   {
    "id": "new_edge:1869004:1:big",
    "key": "1869004:1",
@@ -328,7 +342,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1869004:1:big"
+  "new_edge:1869004:1:big",
+  "gone:1869004:1:2026-10-29T13:48:41.108Z"
  ],
  "kalshi_checked": null
 }
