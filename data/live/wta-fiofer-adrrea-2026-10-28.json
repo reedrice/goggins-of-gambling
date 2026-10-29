@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185806",
-  "fetched_at": "2026-10-29T01:17:28.270Z",
+  "fetched_at": "2026-10-29T01:24:45.956Z",
   "tennis": true,
   "tennis_match": {
    "id": "185806",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Wed, October 28th at 9:20 PM EDT",
-     "shortDetail": "10/28 - 9:20 PM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(3) Fiona Ferro (FRA) leads Adriana Reami (USA) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "94d2adc3-532c-322b-8b41-de58033655f0",
       "displayName": "Adriana Reami",
@@ -87,9 +98,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 3
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "4104b06c-452e-b422-7d78-87a3d833c15f",
       "displayName": "Fiona Ferro",
@@ -122,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1034,
    "type": {
     "id": "2",
@@ -138,10 +160,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Wed, October 28th at 9:20 PM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Adriana Reami",
@@ -159,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T01:17:28.204Z",
+ "updated": "2026-10-29T01:24:45.879Z",
  "open_taken_at": "2026-10-27T20:35:10.453Z",
  "thresholds": {
   "big": 10,
@@ -189,6 +211,28 @@
    "taken_at": "2026-10-28T05:12:54.372Z"
   },
   {
+   "market_id": "1884375",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Fiona Ferro win set 1 against Adriana Reami?",
+   "sides": [
+    "Yes: Fiona Ferro win set 1 against Adriana Reami",
+    "No: Fiona Ferro win set 1 against Adriana Reami"
+   ],
+   "teams": [
+    "Fiona Ferro",
+    null
+   ],
+   "player": null,
+   "mid": 95,
+   "yes_buy": 97,
+   "no_buy": 7,
+   "taken_at": "2026-10-29T01:24:45.879Z"
+  },
+  {
    "market_id": "1884358",
    "market": "Games spread",
    "group": "game",
@@ -211,16 +255,16 @@
    "taken_at": "2026-10-29T00:19:51.610Z"
   },
   {
-   "market_id": "1884355",
+   "market_id": "1884351",
    "market": "Games spread",
    "group": "game",
    "mtype": "spread",
    "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Fiona Ferro cover -4.5 vs the Adriana Reami in Fiona Ferro vs. Adriana Reami?",
+   "line": -1.5,
+   "question": "Will the Fiona Ferro cover -1.5 vs the Adriana Reami in Fiona Ferro vs. Adriana Reami?",
    "sides": [
-    "Fiona Ferro -4.50 (Games)",
-    "Adriana Reami +4.50 (Games)"
+    "Fiona Ferro -1.50 (Games)",
+    "Adriana Reami +1.50 (Games)"
    ],
    "teams": [
     "Fiona Ferro",
@@ -230,6 +274,28 @@
    "mid": 72.5,
    "yes_buy": 73,
    "no_buy": 28,
+   "taken_at": "2026-10-29T00:25:29.369Z"
+  },
+  {
+   "market_id": "1884365",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Fiona Ferro cover -1.5 vs the Adriana Reami in Fiona Ferro vs. Adriana Reami?",
+   "sides": [
+    "Fiona Ferro -1.50 (Sets)",
+    "Adriana Reami +1.50 (Sets)"
+   ],
+   "teams": [
+    "Fiona Ferro",
+    "Adriana Reami"
+   ],
+   "player": null,
+   "mid": 16.5,
+   "yes_buy": 17,
+   "no_buy": 84,
    "taken_at": "2026-10-29T00:25:29.369Z"
   },
   {
@@ -299,6 +365,28 @@
    "taken_at": "2026-10-29T00:25:29.369Z"
   },
   {
+   "market_id": "1884370",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Fiona Ferro vs. Adriana Reami be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 13,
+   "yes_buy": 16,
+   "no_buy": 90,
+   "taken_at": "2026-10-28T23:52:26.325Z"
+  },
+  {
    "market_id": "1884369",
    "market": "Games total",
    "group": "game",
@@ -321,38 +409,16 @@
    "taken_at": "2026-10-29T00:25:29.369Z"
   },
   {
-   "market_id": "1884365",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Fiona Ferro cover -1.5 vs the Adriana Reami in Fiona Ferro vs. Adriana Reami?",
-   "sides": [
-    "Fiona Ferro -1.50 (Sets)",
-    "Adriana Reami +1.50 (Sets)"
-   ],
-   "teams": [
-    "Fiona Ferro",
-    "Adriana Reami"
-   ],
-   "player": null,
-   "mid": 16.5,
-   "yes_buy": 17,
-   "no_buy": 84,
-   "taken_at": "2026-10-29T00:25:29.369Z"
-  },
-  {
-   "market_id": "1884351",
+   "market_id": "1884355",
    "market": "Games spread",
    "group": "game",
    "mtype": "spread",
    "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Fiona Ferro cover -1.5 vs the Adriana Reami in Fiona Ferro vs. Adriana Reami?",
+   "line": -4.5,
+   "question": "Will the Fiona Ferro cover -4.5 vs the Adriana Reami in Fiona Ferro vs. Adriana Reami?",
    "sides": [
-    "Fiona Ferro -1.50 (Games)",
-    "Adriana Reami +1.50 (Games)"
+    "Fiona Ferro -4.50 (Games)",
+    "Adriana Reami +4.50 (Games)"
    ],
    "teams": [
     "Fiona Ferro",
@@ -385,28 +451,6 @@
    "yes_buy": 73,
    "no_buy": 28,
    "taken_at": "2026-10-29T00:25:29.369Z"
-  },
-  {
-   "market_id": "1884370",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Fiona Ferro vs. Adriana Reami be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 13,
-   "yes_buy": 16,
-   "no_buy": 90,
-   "taken_at": "2026-10-28T23:52:26.325Z"
   }
  ],
  "edges": [
@@ -418,40 +462,88 @@
    "question": "Will the Fiona Ferro cover -1.5 vs the Adriana Reami in Fiona Ferro vs. Adriana Reami?",
    "side": "Adriana Reami +1.50 (Sets)",
    "open_chance": 84,
-   "now_chance": 26,
+   "now_chance": 17,
    "open_odds": "-525",
-   "now_odds": "+285",
-   "edge": 58,
+   "now_odds": "+488",
+   "edge": 67,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (58 pts), likely news",
-   "context": "Pregame",
+   "reason": "Big move (67 pts), likely news",
+   "context": "Adriana Reami 0 · Fiona Ferro 0 · 1st Set (games by set)",
    "first_seen": "2026-10-29T01:10:32.109Z",
-   "status": "gone",
+   "status": "open",
    "kalshi": null
   },
   {
-   "key": "1884370:1",
-   "market_id": "1884370",
-   "market": "Sets total",
+   "key": "1884368:0",
+   "market_id": "1884368",
+   "market": "Games total",
    "group": "game",
-   "question": "Will the total in Fiona Ferro vs. Adriana Reami be more than 2.5?",
-   "side": "Under 2.5 (Sets)",
-   "open_chance": 90,
-   "now_chance": 54,
-   "open_odds": "-900",
-   "now_odds": "-117",
-   "edge": 36,
+   "question": "Will the total in Fiona Ferro vs. Adriana Reami be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 32,
+   "now_chance": 17,
+   "open_odds": "+213",
+   "now_odds": "+488",
+   "edge": 15,
    "tier": "big",
-   "class": "news",
-   "reason": "Big move (36 pts), likely news",
-   "context": "Pregame",
-   "first_seen": "2026-10-29T00:25:29.369Z",
-   "status": "gone",
+   "class": "edge",
+   "reason": null,
+   "context": "Adriana Reami 0 · Fiona Ferro 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-29T01:24:45.879Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1884351:1",
+   "market_id": "1884351",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Fiona Ferro cover -1.5 vs the Adriana Reami in Fiona Ferro vs. Adriana Reami?",
+   "side": "Adriana Reami +1.50 (Games)",
+   "open_chance": 28,
+   "now_chance": 17,
+   "open_odds": "+257",
+   "now_odds": "+488",
+   "edge": 11,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Adriana Reami 0 · Fiona Ferro 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-29T01:24:45.879Z",
+   "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1884368:0:big",
+   "key": "1884368:0",
+   "at": "2026-10-29T01:24:45.879Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+488",
+   "now_chance": 17,
+   "edge": 15,
+   "text": "New big edge: Over 22.5 (Games) (Games total), 15 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-fiofer-adrrea-2026-10-28"
+  },
+  {
+   "id": "new_edge:1884351:1:big",
+   "key": "1884351:1",
+   "at": "2026-10-29T01:24:45.879Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Adriana Reami +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+488",
+   "now_chance": 17,
+   "edge": 11,
+   "text": "New big edge: Adriana Reami +1.50 (Games) (Games spread), 11 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-fiofer-adrrea-2026-10-28"
+  },
   {
    "id": "news:1884365:1",
    "key": "1884365:1",
@@ -469,7 +561,9 @@
  ],
  "alert_seen": [
   "new_edge:1884368:0:slight",
-  "news:1884365:1"
+  "news:1884365:1",
+  "new_edge:1884368:0:big",
+  "new_edge:1884351:1:big"
  ],
  "kalshi_checked": null
 }

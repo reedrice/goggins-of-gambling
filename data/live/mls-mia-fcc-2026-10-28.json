@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for mls",
-  "fetched_at": "2026-10-29T01:17:22.072Z"
+  "fetched_at": "2026-10-29T01:24:39.868Z"
  },
- "updated": "2026-10-29T01:17:22.068Z",
+ "updated": "2026-10-29T01:24:39.861Z",
  "open_taken_at": "2026-10-27T05:05:57.681Z",
  "thresholds": {
   "big": 10,
@@ -38,6 +38,28 @@
    "mid": 66,
    "yes_buy": 67,
    "no_buy": 35,
+   "taken_at": "2026-10-27T05:05:57.681Z"
+  },
+  {
+   "market_id": "1771667",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Will FC Cincinnati win against Inter Miami CF in the MLS match scheduled for Oct 28, 2026?",
+   "sides": [
+    "Yes: FC Cincinnati win against Inter Miami CF in the MLS match scheduled for Oct 28, 2026",
+    "No: FC Cincinnati win against Inter Miami CF in the MLS match scheduled for Oct 28, 2026"
+   ],
+   "teams": [
+    "FC Cincinnati",
+    null
+   ],
+   "player": null,
+   "mid": 16.5,
+   "yes_buy": 17,
+   "no_buy": 84,
    "taken_at": "2026-10-27T05:05:57.681Z"
   },
   {
@@ -193,28 +215,6 @@
    "yes_buy": 63,
    "no_buy": 41,
    "taken_at": "2026-10-28T00:33:37.225Z"
-  },
-  {
-   "market_id": "1771667",
-   "market": "Moneyline",
-   "group": "game",
-   "mtype": "winner",
-   "period": "full_game",
-   "line": null,
-   "question": "Will FC Cincinnati win against Inter Miami CF in the MLS match scheduled for Oct 28, 2026?",
-   "sides": [
-    "Yes: FC Cincinnati win against Inter Miami CF in the MLS match scheduled for Oct 28, 2026",
-    "No: FC Cincinnati win against Inter Miami CF in the MLS match scheduled for Oct 28, 2026"
-   ],
-   "teams": [
-    "FC Cincinnati",
-    null
-   ],
-   "player": null,
-   "mid": 16.5,
-   "yes_buy": 17,
-   "no_buy": 84,
-   "taken_at": "2026-10-27T05:05:57.681Z"
   },
   {
    "market_id": "1888491",
@@ -835,22 +835,22 @@
  ],
  "edges": [
   {
-   "key": "1888489:0",
-   "market_id": "1888489",
-   "market": "Main spread",
+   "key": "1771667:1",
+   "market_id": "1771667",
+   "market": "Moneyline",
    "group": "game",
-   "question": "Will the Inter Miami CF cover -1.5 vs the FC Cincinnati in MIA vs FCC?",
-   "side": "Inter Miami CF -1.50",
-   "open_chance": 47,
+   "question": "Will FC Cincinnati win against Inter Miami CF in the MLS match scheduled for Oct 28, 2026?",
+   "side": "No: FC Cincinnati win against Inter Miami CF in the MLS match scheduled for Oct 28, 2026",
+   "open_chance": 84,
    "now_chance": 29,
-   "open_odds": "+113",
+   "open_odds": "-525",
    "now_odds": "+245",
-   "edge": 18,
+   "edge": 55,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-28T16:08:21.407Z",
+   "first_seen": "2026-10-29T01:24:39.861Z",
    "status": "open",
    "kalshi": null
   },
@@ -935,6 +935,26 @@
    "kalshi": null
   },
   {
+   "key": "1888489:0",
+   "market_id": "1888489",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will the Inter Miami CF cover -1.5 vs the FC Cincinnati in MIA vs FCC?",
+   "side": "Inter Miami CF -1.50",
+   "open_chance": 47,
+   "now_chance": 29,
+   "open_odds": "+113",
+   "now_odds": "+245",
+   "edge": 18,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-28T16:08:21.407Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1888532:0",
    "market_id": "1888532",
    "market": "Alt total",
@@ -976,6 +996,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1771667:1:big",
+   "key": "1771667:1",
+   "at": "2026-10-29T01:24:39.861Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "No: FC Cincinnati win against Inter Miami CF in the MLS match scheduled for Oct 28, 2026",
+   "market": "Moneyline",
+   "now_odds": "+245",
+   "now_chance": 29,
+   "edge": 55,
+   "text": "New big edge: No: FC Cincinnati win against Inter Miami CF in the MLS match scheduled for Oct 28, 2026 (Moneyline), 55 points cheaper than open.",
+   "url": "https://polymarket.us/sports/mls/mls-mia-fcc-2026-10-28"
+  },
   {
    "id": "gone:1888533:0:2026-10-29T00:06:35.968Z",
    "key": "1888533:0",
@@ -1253,7 +1287,8 @@
   "gone:1771656:0:2026-10-28T16:55:48.546Z",
   "gone:1771661:1:2026-10-29T00:12:55.671Z",
   "gone:1888532:0:2026-10-29T00:56:33.052Z",
-  "gone:1888533:0:2026-10-29T00:06:35.968Z"
+  "gone:1888533:0:2026-10-29T00:06:35.968Z",
+  "new_edge:1771667:1:big"
  ],
  "kalshi_checked": null
 }
