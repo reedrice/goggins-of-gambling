@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-29T22:01:40.175Z"
+  "fetched_at": "2026-10-29T22:09:37.268Z"
  },
- "updated": "2026-10-29T22:01:40.059Z",
+ "updated": "2026-10-29T22:09:37.080Z",
  "open_taken_at": "2026-10-28T00:33:46.055Z",
  "thresholds": {
   "big": 10,
@@ -39,6 +39,28 @@
    "yes_buy": 76,
    "no_buy": 25,
    "taken_at": "2026-10-29T08:28:39.868Z"
+  },
+  {
+   "market_id": "1889430",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Liam Draxl cover -1.5 vs the Daniil Ostapenkov in Liam Draxl vs. Daniil Ostapenkov?",
+   "sides": [
+    "Liam Draxl -1.50 (Games)",
+    "Daniil Ostapenkov +1.50 (Games)"
+   ],
+   "teams": [
+    "Liam Draxl",
+    "Daniil Ostapenkov"
+   ],
+   "player": null,
+   "mid": 67.5,
+   "yes_buy": 68,
+   "no_buy": 33,
+   "taken_at": "2026-10-29T22:09:37.080Z"
   },
   {
    "market_id": "1889432",
@@ -83,10 +105,70 @@
    "yes_buy": 42,
    "no_buy": 60,
    "taken_at": "2026-10-29T08:28:39.868Z"
+  },
+  {
+   "market_id": "1889440",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Liam Draxl vs. Daniil Ostapenkov be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 26,
+   "yes_buy": 28,
+   "no_buy": 76,
+   "taken_at": "2026-10-29T22:09:37.080Z"
   }
  ],
- "edges": [],
- "alerts": [],
- "alert_seen": [],
+ "edges": [
+  {
+   "key": "1889432:0",
+   "market_id": "1889432",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Liam Draxl cover -4.5 vs the Daniil Ostapenkov in Liam Draxl vs. Daniil Ostapenkov?",
+   "side": "Liam Draxl -4.50 (Games)",
+   "open_chance": 47,
+   "now_chance": 42,
+   "open_odds": "+113",
+   "now_odds": "+138",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-29T22:09:37.080Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
+ "alerts": [
+  {
+   "id": "new_edge:1889432:0:slight",
+   "key": "1889432:0",
+   "at": "2026-10-29T22:09:37.080Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Liam Draxl -4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+138",
+   "now_chance": 42,
+   "edge": 5,
+   "text": "New slight edge: Liam Draxl -4.50 (Games) (Games spread), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-liadra-danost-2026-10-28"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:1889432:0:slight"
+ ],
  "kalshi_checked": null
 }
