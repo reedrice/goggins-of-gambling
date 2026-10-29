@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-29T07:03:25.081Z"
+  "fetched_at": "2026-10-29T07:07:36.162Z"
  },
- "updated": "2026-10-29T07:03:24.992Z",
+ "updated": "2026-10-29T07:07:36.089Z",
  "open_taken_at": "2026-10-27T14:36:39.885Z",
  "thresholds": {
   "big": 10,
@@ -261,6 +261,28 @@
    "taken_at": "2026-10-29T06:44:25.039Z"
   },
   {
+   "market_id": "1888288",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Naoya Honda vs. Liam Broady be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 40.5,
+   "yes_buy": 42,
+   "no_buy": 61,
+   "taken_at": "2026-10-28T17:18:45.807Z"
+  },
+  {
    "market_id": "1888289",
    "market": "Games total",
    "group": "game",
@@ -305,28 +327,6 @@
    "taken_at": "2026-10-29T06:44:25.039Z"
   },
   {
-   "market_id": "1888288",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Naoya Honda vs. Liam Broady be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 40.5,
-   "yes_buy": 42,
-   "no_buy": 61,
-   "taken_at": "2026-10-28T17:18:45.807Z"
-  },
-  {
    "market_id": "1888295",
    "market": "Set 1 winner",
    "group": "game",
@@ -358,10 +358,10 @@
    "question": "Will the total in Naoya Honda vs. Liam Broady be more than 27.5?",
    "side": "Over 27.5 (Games)",
    "open_chance": 44,
-   "now_chance": 28,
+   "now_chance": 17,
    "open_odds": "+127",
-   "now_odds": "+257",
-   "edge": 16,
+   "now_odds": "+488",
+   "edge": 27,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -378,20 +378,34 @@
    "question": "Will the total in Naoya Honda vs. Liam Broady be more than 22.5?",
    "side": "Over 22.5 (Games)",
    "open_chance": 42,
-   "now_chance": 38,
+   "now_chance": 24,
    "open_odds": "+138",
-   "now_odds": "+163",
-   "edge": 4,
-   "tier": "slight",
+   "now_odds": "+317",
+   "edge": 18,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-29T06:57:06.145Z",
-   "status": "gone",
+   "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1888288:0:big",
+   "key": "1888288:0",
+   "at": "2026-10-29T07:07:36.089Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+317",
+   "now_chance": 24,
+   "edge": 18,
+   "text": "New big edge: Over 22.5 (Games) (Games total), 18 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-naohon-liabro-2026-10-29"
+  },
   {
    "id": "gone:1888288:0:2026-10-29T06:57:06.145Z",
    "key": "1888288:0",
@@ -440,7 +454,8 @@
   "new_edge:1870532:0:big",
   "new_edge:1888289:0:big",
   "new_edge:1888288:0:slight",
-  "gone:1888288:0:2026-10-29T06:57:06.145Z"
+  "gone:1888288:0:2026-10-29T06:57:06.145Z",
+  "new_edge:1888288:0:big"
  ],
  "kalshi_checked": null
 }
