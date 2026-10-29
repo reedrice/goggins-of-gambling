@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185717",
-  "fetched_at": "2026-10-29T06:11:35.450Z",
+  "fetched_at": "2026-10-29T06:17:31.541Z",
   "tennis": true,
   "tennis_match": {
    "id": "185717",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Jil Teichmann (SUI) is tied with (6) Zeynep Sonmez (TUR) 4-6 3-2",
+     "text": "Jil Teichmann (SUI) is tied with (6) Zeynep Sonmez (TUR) 4-6 4-2",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 6
      },
@@ -104,13 +105,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 4,
        "winner": false
       },
       {
-       "value": 3
+       "value": 4
       }
      ],
      "athlete": {
@@ -145,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 232,
    "type": {
     "id": "2",
@@ -182,7 +189,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T06:11:35.241Z",
+ "updated": "2026-10-29T06:17:31.393Z",
  "open_taken_at": "2026-10-27T07:34:04.889Z",
  "thresholds": {
   "big": 10,
@@ -212,26 +219,26 @@
    "taken_at": "2026-10-27T08:44:27.364Z"
   },
   {
-   "market_id": "1864343",
-   "market": "Set 2 winner",
+   "market_id": "1864335",
+   "market": "Games total",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Jil Teichmann win set 2 against Zeynep Sonmez?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Jil Teichmann vs. Zeynep Sonmez be more than 22.5?",
    "sides": [
-    "Yes: Jil Teichmann win set 2 against Zeynep Sonmez",
-    "No: Jil Teichmann win set 2 against Zeynep Sonmez"
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
    ],
    "teams": [
-    "Jil Teichmann",
+    null,
     null
    ],
    "player": null,
-   "mid": 44,
-   "yes_buy": 46,
-   "no_buy": 58,
-   "taken_at": "2026-10-29T05:17:02.621Z"
+   "mid": 47,
+   "yes_buy": 48,
+   "no_buy": 54,
+   "taken_at": "2026-10-29T04:36:59.393Z"
   },
   {
    "market_id": "1864336",
@@ -254,6 +261,50 @@
    "yes_buy": 33,
    "no_buy": 68,
    "taken_at": "2026-10-29T05:03:37.366Z"
+  },
+  {
+   "market_id": "1864327",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Jil Teichmann cover 1.5 vs the Zeynep Sonmez in Jil Teichmann vs. Zeynep Sonmez?",
+   "sides": [
+    "Jil Teichmann +1.50 (Games)",
+    "Zeynep Sonmez -1.50 (Games)"
+   ],
+   "teams": [
+    "Jil Teichmann",
+    "Zeynep Sonmez"
+   ],
+   "player": null,
+   "mid": 45.5,
+   "yes_buy": 48,
+   "no_buy": 57,
+   "taken_at": "2026-10-29T05:03:37.366Z"
+  },
+  {
+   "market_id": "1864326",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Jil Teichmann cover -1.5 vs the Zeynep Sonmez in Jil Teichmann vs. Zeynep Sonmez?",
+   "sides": [
+    "Jil Teichmann -1.50 (Games)",
+    "Zeynep Sonmez +1.50 (Games)"
+   ],
+   "teams": [
+    "Jil Teichmann",
+    "Zeynep Sonmez"
+   ],
+   "player": null,
+   "mid": 32.5,
+   "yes_buy": 33,
+   "no_buy": 68,
+   "taken_at": "2026-10-29T05:07:29.102Z"
   },
   {
    "market_id": "1864328",
@@ -300,6 +351,28 @@
    "taken_at": "2026-10-29T05:13:37.584Z"
   },
   {
+   "market_id": "1864343",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Jil Teichmann win set 2 against Zeynep Sonmez?",
+   "sides": [
+    "Yes: Jil Teichmann win set 2 against Zeynep Sonmez",
+    "No: Jil Teichmann win set 2 against Zeynep Sonmez"
+   ],
+   "teams": [
+    "Jil Teichmann",
+    null
+   ],
+   "player": null,
+   "mid": 44,
+   "yes_buy": 46,
+   "no_buy": 58,
+   "taken_at": "2026-10-29T05:17:02.621Z"
+  },
+  {
    "market_id": "1864334",
    "market": "Games total",
    "group": "game",
@@ -344,28 +417,6 @@
    "taken_at": "2026-10-28T05:04:17.238Z"
   },
   {
-   "market_id": "1864335",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Jil Teichmann vs. Zeynep Sonmez be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 47,
-   "yes_buy": 48,
-   "no_buy": 54,
-   "taken_at": "2026-10-29T04:36:59.393Z"
-  },
-  {
    "market_id": "1864337",
    "market": "Sets total",
    "group": "game",
@@ -408,50 +459,6 @@
    "yes_buy": 58,
    "no_buy": 48,
    "taken_at": "2026-10-28T19:14:41.201Z"
-  },
-  {
-   "market_id": "1864327",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Jil Teichmann cover 1.5 vs the Zeynep Sonmez in Jil Teichmann vs. Zeynep Sonmez?",
-   "sides": [
-    "Jil Teichmann +1.50 (Games)",
-    "Zeynep Sonmez -1.50 (Games)"
-   ],
-   "teams": [
-    "Jil Teichmann",
-    "Zeynep Sonmez"
-   ],
-   "player": null,
-   "mid": 45.5,
-   "yes_buy": 48,
-   "no_buy": 57,
-   "taken_at": "2026-10-29T05:03:37.366Z"
-  },
-  {
-   "market_id": "1864326",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Jil Teichmann cover -1.5 vs the Zeynep Sonmez in Jil Teichmann vs. Zeynep Sonmez?",
-   "sides": [
-    "Jil Teichmann -1.50 (Games)",
-    "Zeynep Sonmez +1.50 (Games)"
-   ],
-   "teams": [
-    "Jil Teichmann",
-    "Zeynep Sonmez"
-   ],
-   "player": null,
-   "mid": 32.5,
-   "yes_buy": 33,
-   "no_buy": 68,
-   "taken_at": "2026-10-29T05:07:29.102Z"
   },
   {
    "market_id": "1864331",
@@ -522,22 +529,22 @@
  ],
  "edges": [
   {
-   "key": "1864343:1",
-   "market_id": "1864343",
-   "market": "Set 2 winner",
+   "key": "1864335:1",
+   "market_id": "1864335",
+   "market": "Games total",
    "group": "game",
-   "question": "Will Jil Teichmann win set 2 against Zeynep Sonmez?",
-   "side": "No: Jil Teichmann win set 2 against Zeynep Sonmez",
-   "open_chance": 58,
-   "now_chance": 44,
-   "open_odds": "-138",
-   "now_odds": "+127",
-   "edge": 14,
+   "question": "Will the total in Jil Teichmann vs. Zeynep Sonmez be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 54,
+   "now_chance": 20,
+   "open_odds": "-117",
+   "now_odds": "+400",
+   "edge": 34,
    "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Zeynep Sonmez 6, 2 · Jil Teichmann 4, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-10-29T05:58:31.203Z",
+   "class": "news",
+   "reason": "Big move (34 pts), likely news",
+   "context": "Zeynep Sonmez 6, 2 · Jil Teichmann 4, 4 · 2nd Set (games by set)",
+   "first_seen": "2026-10-29T05:23:22.100Z",
    "status": "open",
    "kalshi": null
   },
@@ -549,35 +556,75 @@
    "question": "Will the total in Jil Teichmann vs. Zeynep Sonmez be more than 27.5?",
    "side": "Under 27.5 (Games)",
    "open_chance": 68,
-   "now_chance": 58,
+   "now_chance": 49,
    "open_odds": "-213",
-   "now_odds": "-138",
-   "edge": 10,
+   "now_odds": "+104",
+   "edge": 19,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Zeynep Sonmez 6, 2 · Jil Teichmann 4, 3 · 2nd Set (games by set)",
+   "context": "Zeynep Sonmez 6, 2 · Jil Teichmann 4, 4 · 2nd Set (games by set)",
    "first_seen": "2026-10-29T06:11:35.241Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1864140:0",
+   "key": "1864326:0",
+   "market_id": "1864326",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Jil Teichmann cover -1.5 vs the Zeynep Sonmez in Jil Teichmann vs. Zeynep Sonmez?",
+   "side": "Jil Teichmann -1.50 (Games)",
+   "open_chance": 33,
+   "now_chance": 26,
+   "open_odds": "+203",
+   "now_odds": "+285",
+   "edge": 7,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Jil Teichmann not above the games spread right now",
+   "context": "Zeynep Sonmez 6, 2 · Jil Teichmann 4, 4 · 2nd Set (games by set)",
+   "first_seen": "2026-10-29T05:58:31.203Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1864327:0",
+   "market_id": "1864327",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Jil Teichmann cover 1.5 vs the Zeynep Sonmez in Jil Teichmann vs. Zeynep Sonmez?",
+   "side": "Jil Teichmann +1.50 (Games)",
+   "open_chance": 48,
+   "now_chance": 42,
+   "open_odds": "+108",
+   "now_odds": "+138",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Zeynep Sonmez 6, 2 · Jil Teichmann 4, 4 · 2nd Set (games by set)",
+   "first_seen": "2026-10-29T05:23:22.100Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1864140:1",
    "market_id": "1864140",
    "market": "Moneyline",
    "group": "game",
    "question": "Who will win in the upcoming wta event Jil Teichmann vs Zeynep Sonmez scheduled for October 28, 2026 at 5:00 AM UTC?",
-   "side": "Jil Teichmann win",
-   "open_chance": 28,
-   "now_chance": 24,
-   "open_odds": "+257",
-   "now_odds": "+317",
-   "edge": 4,
+   "side": "Zeynep Sonmez win",
+   "open_chance": 75,
+   "now_chance": 70,
+   "open_odds": "-300",
+   "now_odds": "-233",
+   "edge": 5,
    "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Jil Teichmann trailing in sets",
-   "context": "Zeynep Sonmez 6, 2 · Jil Teichmann 4, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-10-29T06:11:35.241Z",
+   "class": "edge",
+   "reason": null,
+   "context": "Zeynep Sonmez 6, 2 · Jil Teichmann 4, 4 · 2nd Set (games by set)",
+   "first_seen": "2026-10-29T06:17:31.393Z",
    "status": "open",
    "kalshi": null
   },
@@ -618,26 +665,6 @@
    "reason": "Explained by score: Jil Teichmann not above the games spread right now",
    "context": "Zeynep Sonmez 5 · Jil Teichmann 4 · 1st Set (games by set)",
    "first_seen": "2026-10-29T05:42:37.191Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1864327:0",
-   "market_id": "1864327",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Jil Teichmann cover 1.5 vs the Zeynep Sonmez in Jil Teichmann vs. Zeynep Sonmez?",
-   "side": "Jil Teichmann +1.50 (Games)",
-   "open_chance": 48,
-   "now_chance": 30,
-   "open_odds": "+108",
-   "now_odds": "+233",
-   "edge": 18,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Zeynep Sonmez 6, 0 · Jil Teichmann 4, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-29T05:23:22.100Z",
    "status": "gone",
    "kalshi": null
   },
@@ -702,6 +729,26 @@
    "kalshi": null
   },
   {
+   "key": "1864343:1",
+   "market_id": "1864343",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Jil Teichmann win set 2 against Zeynep Sonmez?",
+   "side": "No: Jil Teichmann win set 2 against Zeynep Sonmez",
+   "open_chance": 58,
+   "now_chance": 44,
+   "open_odds": "-138",
+   "now_odds": "+127",
+   "edge": 14,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Zeynep Sonmez 6, 2 · Jil Teichmann 4, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-10-29T05:58:31.203Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1864336:0",
    "market_id": "1864336",
    "market": "Games total",
@@ -762,26 +809,6 @@
    "kalshi": null
   },
   {
-   "key": "1864326:0",
-   "market_id": "1864326",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Jil Teichmann cover -1.5 vs the Zeynep Sonmez in Jil Teichmann vs. Zeynep Sonmez?",
-   "side": "Jil Teichmann -1.50 (Games)",
-   "open_chance": 33,
-   "now_chance": 22,
-   "open_odds": "+203",
-   "now_odds": "+355",
-   "edge": 11,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Jil Teichmann not above the games spread right now",
-   "context": "Zeynep Sonmez 6, 0 · Jil Teichmann 4, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-29T05:58:31.203Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "1864335:0",
    "market_id": "1864335",
    "market": "Games total",
@@ -798,26 +825,6 @@
    "reason": null,
    "context": "Zeynep Sonmez 6 · Jil Teichmann 4 · 1st Set (games by set)",
    "first_seen": "2026-10-29T05:51:37.713Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1864335:1",
-   "market_id": "1864335",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Jil Teichmann vs. Zeynep Sonmez be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 54,
-   "now_chance": 46,
-   "open_odds": "-117",
-   "now_odds": "+117",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Zeynep Sonmez 6, 0 · Jil Teichmann 4, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-29T05:23:22.100Z",
    "status": "gone",
    "kalshi": null
   },
@@ -860,9 +867,43 @@
    "first_seen": "2026-10-29T05:13:37.584Z",
    "status": "gone",
    "kalshi": null
+  },
+  {
+   "key": "1864140:0",
+   "market_id": "1864140",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Jil Teichmann vs Zeynep Sonmez scheduled for October 28, 2026 at 5:00 AM UTC?",
+   "side": "Jil Teichmann win",
+   "open_chance": 28,
+   "now_chance": 24,
+   "open_odds": "+257",
+   "now_odds": "+317",
+   "edge": 4,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Jil Teichmann trailing in sets",
+   "context": "Zeynep Sonmez 6, 2 · Jil Teichmann 4, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-10-29T06:11:35.241Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "news:1864335:1",
+   "key": "1864335:1",
+   "at": "2026-10-29T06:17:31.393Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+400",
+   "now_chance": 20,
+   "edge": 34,
+   "text": "Big move, likely news: Under 22.5 (Games) (Games total) is 34 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-jiltei-zeyson-2026-10-28"
+  },
   {
    "id": "new_edge:1864343:1:big",
    "key": "1864343:1",
@@ -1233,7 +1274,8 @@
   "gone:1864337:1:2026-10-29T05:58:31.203Z",
   "gone:1864343:1:2026-10-29T05:58:31.203Z",
   "new_edge:1864343:1:big",
-  "new_edge:1864336:1:big"
+  "new_edge:1864336:1:big",
+  "news:1864335:1"
  ],
  "kalshi_checked": null
 }
