@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185850",
-  "fetched_at": "2026-10-29T14:27:34.145Z",
+  "fetched_at": "2026-10-29T14:34:33.843Z",
   "tennis": true,
   "tennis_match": {
    "id": "185850",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Thu, October 29th at 10:30 AM EDT",
-     "shortDetail": "10/29 - 10:30 AM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(8) Susan Bandecchi (SUI) leads Elsa Jacquemot (FRA) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "950bb889-e4d2-33ec-9ff6-3b0f34ec4168",
       "displayName": "Elsa Jacquemot",
@@ -87,9 +98,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "curatedRank": {
       "current": 8
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "969fb920-541b-3fce-b281-f9dd532fed01",
       "displayName": "Susan Bandecchi",
@@ -122,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1081,
    "type": {
     "id": "2",
@@ -138,10 +160,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Thu, October 29th at 10:30 AM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Elsa Jacquemot",
@@ -159,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T14:27:34.051Z",
+ "updated": "2026-10-29T14:34:33.722Z",
  "open_taken_at": "2026-10-28T16:22:51.933Z",
  "thresholds": {
   "big": 10,
@@ -317,7 +339,7 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-29T03:12:05.234Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
