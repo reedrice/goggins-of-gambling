@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for mls",
-  "fetched_at": "2026-10-29T00:12:55.480Z"
+  "fetched_at": "2026-10-29T00:19:45.176Z"
  },
- "updated": "2026-10-29T00:12:55.478Z",
+ "updated": "2026-10-29T00:19:45.172Z",
  "open_taken_at": "2026-10-27T05:05:57.669Z",
  "thresholds": {
   "big": 10,
@@ -63,6 +63,28 @@
    "taken_at": "2026-10-27T05:05:57.669Z"
   },
   {
+   "market_id": "1771652",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Will CF Montreal win against Charlotte FC in the MLS match scheduled for Oct 28, 2026?",
+   "sides": [
+    "Yes: CF Montreal win against Charlotte FC in the MLS match scheduled for Oct 28, 2026",
+    "No: CF Montreal win against Charlotte FC in the MLS match scheduled for Oct 28, 2026"
+   ],
+   "teams": [
+    "CF Montreal",
+    null
+   ],
+   "player": null,
+   "mid": 16,
+   "yes_buy": 17,
+   "no_buy": 85,
+   "taken_at": "2026-10-27T05:05:57.669Z"
+  },
+  {
    "market_id": "1888481",
    "market": "Main spread",
    "group": "game",
@@ -105,28 +127,6 @@
    "yes_buy": 88,
    "no_buy": 15,
    "taken_at": "2026-10-28T00:53:38.935Z"
-  },
-  {
-   "market_id": "1771652",
-   "market": "Moneyline",
-   "group": "game",
-   "mtype": "winner",
-   "period": "full_game",
-   "line": null,
-   "question": "Will CF Montreal win against Charlotte FC in the MLS match scheduled for Oct 28, 2026?",
-   "sides": [
-    "Yes: CF Montreal win against Charlotte FC in the MLS match scheduled for Oct 28, 2026",
-    "No: CF Montreal win against Charlotte FC in the MLS match scheduled for Oct 28, 2026"
-   ],
-   "teams": [
-    "CF Montreal",
-    null
-   ],
-   "player": null,
-   "mid": 16,
-   "yes_buy": 17,
-   "no_buy": 85,
-   "taken_at": "2026-10-27T05:05:57.669Z"
   },
   {
    "market_id": "1888526",
@@ -747,17 +747,17 @@
  ],
  "edges": [
   {
-   "key": "1888481:1",
-   "market_id": "1888481",
-   "market": "Main spread",
+   "key": "1771645:1",
+   "market_id": "1771645",
+   "market": "Moneyline",
    "group": "game",
-   "question": "Will the Charlotte FC cover -1.5 vs the CF Montreal in CLT vs MIM?",
-   "side": "CF Montreal +1.50",
-   "open_chance": 60,
-   "now_chance": 54,
-   "open_odds": "-150",
-   "now_odds": "-117",
-   "edge": 6,
+   "question": "Will Charlotte FC win against CF Montreal in the MLS match scheduled for Oct 28, 2026?",
+   "side": "No: Charlotte FC win against CF Montreal in the MLS match scheduled for Oct 28, 2026",
+   "open_chance": 36,
+   "now_chance": 27,
+   "open_odds": "+178",
+   "now_odds": "+270",
+   "edge": 9,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -847,26 +847,6 @@
    "kalshi": null
   },
   {
-   "key": "1771645:1",
-   "market_id": "1771645",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Will Charlotte FC win against CF Montreal in the MLS match scheduled for Oct 28, 2026?",
-   "side": "No: Charlotte FC win against CF Montreal in the MLS match scheduled for Oct 28, 2026",
-   "open_chance": 36,
-   "now_chance": 25,
-   "open_odds": "+178",
-   "now_odds": "+300",
-   "edge": 11,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-28T23:52:20.054Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "1888526:1",
    "market_id": "1888526",
    "market": "Main total",
@@ -943,6 +923,26 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-28T04:59:09.563Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1888481:1",
+   "market_id": "1888481",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will the Charlotte FC cover -1.5 vs the CF Montreal in CLT vs MIM?",
+   "side": "CF Montreal +1.50",
+   "open_chance": 60,
+   "now_chance": 54,
+   "open_odds": "-150",
+   "now_odds": "-117",
+   "edge": 6,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-28T23:52:20.054Z",
    "status": "gone",
    "kalshi": null
   },
@@ -1028,6 +1028,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1771645:1:slight",
+   "key": "1771645:1",
+   "at": "2026-10-29T00:19:45.172Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "No: Charlotte FC win against CF Montreal in the MLS match scheduled for Oct 28, 2026",
+   "market": "Moneyline",
+   "now_odds": "+270",
+   "now_chance": 27,
+   "edge": 9,
+   "text": "New slight edge: No: Charlotte FC win against CF Montreal in the MLS match scheduled for Oct 28, 2026 (Moneyline), 9 points cheaper than open.",
+   "url": "https://polymarket.us/sports/mls/mls-clt-mim-2026-10-28"
+  },
+  {
+   "id": "gone:1888481:1:2026-10-28T23:52:20.054Z",
+   "key": "1888481:1",
+   "at": "2026-10-29T00:19:45.172Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "CF Montreal +1.50",
+   "market": "Main spread",
+   "now_odds": "-117",
+   "now_chance": 54,
+   "edge": 6,
+   "text": "Edge gone: CF Montreal +1.50 (Main spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/mls/mls-clt-mim-2026-10-28"
+  },
   {
    "id": "new_edge:1888481:1:slight",
    "key": "1888481:1",
@@ -1502,7 +1530,9 @@
   "gone:1888715:1:2026-10-28T23:52:20.054Z",
   "gone:1771645:1:2026-10-28T23:52:20.054Z",
   "gone:1888479:1:2026-10-28T23:52:20.054Z",
-  "gone:1888528:1:2026-10-28T23:52:20.054Z"
+  "gone:1888528:1:2026-10-28T23:52:20.054Z",
+  "new_edge:1771645:1:slight",
+  "gone:1888481:1:2026-10-28T23:52:20.054Z"
  ],
  "kalshi_checked": null
 }
