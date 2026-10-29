@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-29T19:23:38.231Z"
+  "fetched_at": "2026-10-29T19:30:16.733Z"
  },
- "updated": "2026-10-29T19:23:38.124Z",
+ "updated": "2026-10-29T19:30:16.673Z",
  "open_taken_at": "2026-10-28T23:05:29.113Z",
  "thresholds": {
   "big": 10,
@@ -197,26 +197,6 @@
  ],
  "edges": [
   {
-   "key": "1923518:0",
-   "market_id": "1923518",
-   "market": "Sets spread",
-   "group": "game",
-   "question": "Will the Camilo Ugo Carabelli cover -1.5 vs the Alex Hernandez in Camilo Ugo Carabelli vs. Alex Hernandez?",
-   "side": "Camilo Ugo Carabelli -1.50 (Sets)",
-   "open_chance": 78,
-   "now_chance": 35,
-   "open_odds": "-355",
-   "now_odds": "+186",
-   "edge": 43,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-29T19:23:38.124Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1923522:0",
    "market_id": "1923522",
    "market": "Games total",
@@ -235,9 +215,43 @@
    "first_seen": "2026-10-29T12:02:38.481Z",
    "status": "open",
    "kalshi": null
+  },
+  {
+   "key": "1923518:0",
+   "market_id": "1923518",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Camilo Ugo Carabelli cover -1.5 vs the Alex Hernandez in Camilo Ugo Carabelli vs. Alex Hernandez?",
+   "side": "Camilo Ugo Carabelli -1.50 (Sets)",
+   "open_chance": 78,
+   "now_chance": 35,
+   "open_odds": "-355",
+   "now_odds": "+186",
+   "edge": 43,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-29T19:23:38.124Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1923518:0:2026-10-29T19:23:38.124Z",
+   "key": "1923518:0",
+   "at": "2026-10-29T19:30:16.673Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Camilo Ugo Carabelli -1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+186",
+   "now_chance": 35,
+   "edge": 43,
+   "text": "Edge gone: Camilo Ugo Carabelli -1.50 (Sets) (Sets spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-camcar-aleher-2026-10-29"
+  },
   {
    "id": "new_edge:1923518:0:big",
    "key": "1923518:0",
@@ -269,7 +283,8 @@
  ],
  "alert_seen": [
   "new_edge:1923522:0:slight",
-  "new_edge:1923518:0:big"
+  "new_edge:1923518:0:big",
+  "gone:1923518:0:2026-10-29T19:23:38.124Z"
  ],
  "kalshi_checked": null
 }
