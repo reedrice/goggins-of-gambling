@@ -4,14 +4,14 @@
  "game": "Gonzalo Bueno vs. Carlos Maria Zarate",
  "url": "https://polymarket.us/sports/atp/atp-gonbue-carzar-2026-10-29",
  "start_time": "2026-10-29T18:30:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-29T18:27:49.205Z"
+  "fetched_at": "2026-10-29T18:34:39.516Z"
  },
- "updated": "2026-10-29T18:27:49.059Z",
+ "updated": "2026-10-29T18:34:39.367Z",
  "open_taken_at": "2026-10-28T18:59:26.103Z",
  "thresholds": {
   "big": 10,
@@ -129,6 +129,28 @@
    "taken_at": "2026-10-29T17:48:38.498Z"
   },
   {
+   "market_id": "1915459",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Gonzalo Bueno cover -1.5 vs the Carlos Maria Zarate in Gonzalo Bueno vs. Carlos Maria Zarate?",
+   "sides": [
+    "Gonzalo Bueno -1.50 (Sets)",
+    "Carlos Maria Zarate +1.50 (Sets)"
+   ],
+   "teams": [
+    "Gonzalo Bueno",
+    "Carlos Maria Zarate"
+   ],
+   "player": null,
+   "mid": 46.5,
+   "yes_buy": 47,
+   "no_buy": 54,
+   "taken_at": "2026-10-29T17:13:38.568Z"
+  },
+  {
    "market_id": "1915462",
    "market": "Games total",
    "group": "game",
@@ -171,28 +193,6 @@
    "yes_buy": 43,
    "no_buy": 58,
    "taken_at": "2026-10-29T17:34:36.961Z"
-  },
-  {
-   "market_id": "1915459",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Gonzalo Bueno cover -1.5 vs the Carlos Maria Zarate in Gonzalo Bueno vs. Carlos Maria Zarate?",
-   "sides": [
-    "Gonzalo Bueno -1.50 (Sets)",
-    "Carlos Maria Zarate +1.50 (Sets)"
-   ],
-   "teams": [
-    "Gonzalo Bueno",
-    "Carlos Maria Zarate"
-   ],
-   "player": null,
-   "mid": 46.5,
-   "yes_buy": 47,
-   "no_buy": 54,
-   "taken_at": "2026-10-29T17:13:38.568Z"
   },
   {
    "market_id": "1915455",
@@ -263,26 +263,6 @@
  ],
  "edges": [
   {
-   "key": "1915459:0",
-   "market_id": "1915459",
-   "market": "Sets spread",
-   "group": "game",
-   "question": "Will the Gonzalo Bueno cover -1.5 vs the Carlos Maria Zarate in Gonzalo Bueno vs. Carlos Maria Zarate?",
-   "side": "Gonzalo Bueno -1.50 (Sets)",
-   "open_chance": 47,
-   "now_chance": 40,
-   "open_odds": "+113",
-   "now_odds": "+150",
-   "edge": 7,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-29T18:09:36.245Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1915032:0",
    "market_id": "1915032",
    "market": "Moneyline",
@@ -301,9 +281,43 @@
    "first_seen": "2026-10-29T04:01:34.037Z",
    "status": "open",
    "kalshi": null
+  },
+  {
+   "key": "1915459:0",
+   "market_id": "1915459",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Gonzalo Bueno cover -1.5 vs the Carlos Maria Zarate in Gonzalo Bueno vs. Carlos Maria Zarate?",
+   "side": "Gonzalo Bueno -1.50 (Sets)",
+   "open_chance": 47,
+   "now_chance": 40,
+   "open_odds": "+113",
+   "now_odds": "+150",
+   "edge": 7,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-29T18:09:36.245Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1915459:0:2026-10-29T18:09:36.245Z",
+   "key": "1915459:0",
+   "at": "2026-10-29T18:34:39.367Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Gonzalo Bueno -1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+150",
+   "now_chance": 40,
+   "edge": 7,
+   "text": "Edge gone: Gonzalo Bueno -1.50 (Sets) (Sets spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-gonbue-carzar-2026-10-29"
+  },
   {
    "id": "new_edge:1915032:0:slight",
    "key": "1915032:0",
@@ -320,7 +334,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1915032:0:slight"
+  "new_edge:1915032:0:slight",
+  "gone:1915459:0:2026-10-29T18:09:36.245Z"
  ],
  "kalshi_checked": null
 }
