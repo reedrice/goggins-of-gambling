@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185147",
-  "fetched_at": "2026-10-29T12:29:50.307Z",
+  "fetched_at": "2026-10-29T12:35:38.968Z",
   "tennis": true,
   "tennis_match": {
    "id": "185147",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(3) Rafael Jodar (ESP) is tied with Valentin Vacherot (MON) 6-7 (4-7) 3-1",
+     "text": "(3) Rafael Jodar (ESP) is tied with Valentin Vacherot (MON) 6-7 (4-7) 4-1",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "possession": true,
      "curatedRank": {
       "current": 3
      },
@@ -66,7 +66,7 @@
        "winner": false
       },
       {
-       "value": 3
+       "value": 4
       }
      ],
      "athlete": {
@@ -106,7 +106,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
        "value": 7,
@@ -191,7 +191,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T12:29:50.186Z",
+ "updated": "2026-10-29T12:35:38.848Z",
  "open_taken_at": "2026-10-28T05:04:19.979Z",
  "thresholds": {
   "big": 10,
@@ -219,6 +219,50 @@
    "yes_buy": 29,
    "no_buy": 73,
    "taken_at": "2026-10-28T05:04:19.979Z"
+  },
+  {
+   "market_id": "1888325",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Valentin Vacherot vs. Rafael Jodar be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 30,
+   "yes_buy": 33,
+   "no_buy": 73,
+   "taken_at": "2026-10-29T10:00:08.516Z"
+  },
+  {
+   "market_id": "1888316",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Valentin Vacherot cover 1.5 vs the Rafael Jodar in Valentin Vacherot vs. Rafael Jodar?",
+   "sides": [
+    "Valentin Vacherot +1.50 (Games)",
+    "Rafael Jodar -1.50 (Games)"
+   ],
+   "teams": [
+    "Valentin Vacherot",
+    "Rafael Jodar"
+   ],
+   "player": null,
+   "mid": 36,
+   "yes_buy": 38,
+   "no_buy": 66,
+   "taken_at": "2026-10-29T02:24:38.874Z"
   },
   {
    "market_id": "1888315",
@@ -263,28 +307,6 @@
    "yes_buy": 64,
    "no_buy": 38,
    "taken_at": "2026-10-28T10:02:29.851Z"
-  },
-  {
-   "market_id": "1888316",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Valentin Vacherot cover 1.5 vs the Rafael Jodar in Valentin Vacherot vs. Rafael Jodar?",
-   "sides": [
-    "Valentin Vacherot +1.50 (Games)",
-    "Rafael Jodar -1.50 (Games)"
-   ],
-   "teams": [
-    "Valentin Vacherot",
-    "Rafael Jodar"
-   ],
-   "player": null,
-   "mid": 36,
-   "yes_buy": 38,
-   "no_buy": 66,
-   "taken_at": "2026-10-29T02:24:38.874Z"
   },
   {
    "market_id": "1888332",
@@ -353,28 +375,6 @@
    "taken_at": "2026-10-29T02:18:08.384Z"
   },
   {
-   "market_id": "1888325",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Valentin Vacherot vs. Rafael Jodar be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 30,
-   "yes_buy": 33,
-   "no_buy": 73,
-   "taken_at": "2026-10-29T10:00:08.516Z"
-  },
-  {
    "market_id": "1888326",
    "market": "Sets total",
    "group": "game",
@@ -399,22 +399,42 @@
  ],
  "edges": [
   {
-   "key": "1888315:0",
-   "market_id": "1888315",
+   "key": "1888316:0",
+   "market_id": "1888316",
    "market": "Games spread",
    "group": "game",
-   "question": "Will the Valentin Vacherot cover -1.5 vs the Rafael Jodar in Valentin Vacherot vs. Rafael Jodar?",
-   "side": "Valentin Vacherot -1.50 (Games)",
-   "open_chance": 26,
-   "now_chance": 22,
-   "open_odds": "+285",
-   "now_odds": "+355",
+   "question": "Will the Valentin Vacherot cover 1.5 vs the Rafael Jodar in Valentin Vacherot vs. Rafael Jodar?",
+   "side": "Valentin Vacherot +1.50 (Games)",
+   "open_chance": 38,
+   "now_chance": 24,
+   "open_odds": "+163",
+   "now_odds": "+317",
+   "edge": 14,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Valentin Vacherot not above the games spread right now",
+   "context": "Rafael Jodar 6, 4 · Valentin Vacherot 7, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-29T12:35:38.848Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1870629:1",
+   "market_id": "1870629",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Valentin Vacherot vs Rafael Jodar scheduled for October 29, 2026 at 10:00 AM UTC?",
+   "side": "Rafael Jodar win",
+   "open_chance": 73,
+   "now_chance": 69,
+   "open_odds": "-270",
+   "now_odds": "-223",
    "edge": 4,
    "tier": "slight",
    "class": "score",
-   "reason": "Explained by score: Valentin Vacherot not above the games spread right now",
-   "context": "Rafael Jodar 6, 3 · Valentin Vacherot 7, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-29T12:29:50.186Z",
+   "reason": "Explained by score: Rafael Jodar trailing in sets",
+   "context": "Rafael Jodar 6, 4 · Valentin Vacherot 7, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-29T12:02:30.774Z",
    "status": "open",
    "kalshi": null
   },
@@ -499,22 +519,22 @@
    "kalshi": null
   },
   {
-   "key": "1870629:1",
-   "market_id": "1870629",
-   "market": "Moneyline",
+   "key": "1888315:0",
+   "market_id": "1888315",
+   "market": "Games spread",
    "group": "game",
-   "question": "Who will win in the upcoming atp event Valentin Vacherot vs Rafael Jodar scheduled for October 29, 2026 at 10:00 AM UTC?",
-   "side": "Rafael Jodar win",
-   "open_chance": 73,
-   "now_chance": 66,
-   "open_odds": "-270",
-   "now_odds": "-194",
-   "edge": 7,
+   "question": "Will the Valentin Vacherot cover -1.5 vs the Rafael Jodar in Valentin Vacherot vs. Rafael Jodar?",
+   "side": "Valentin Vacherot -1.50 (Games)",
+   "open_chance": 26,
+   "now_chance": 22,
+   "open_odds": "+285",
+   "now_odds": "+355",
+   "edge": 4,
    "tier": "slight",
    "class": "score",
-   "reason": "Explained by score: Rafael Jodar trailing in sets",
-   "context": "Rafael Jodar 6, 2 · Valentin Vacherot 7, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-10-29T12:02:30.774Z",
+   "reason": "Explained by score: Valentin Vacherot not above the games spread right now",
+   "context": "Rafael Jodar 6, 3 · Valentin Vacherot 7, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-29T12:29:50.186Z",
    "status": "gone",
    "kalshi": null
   }
