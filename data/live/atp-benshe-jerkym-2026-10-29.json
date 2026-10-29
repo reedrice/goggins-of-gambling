@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185149",
-  "fetched_at": "2026-10-29T23:33:42.729Z",
+  "fetched_at": "2026-10-29T23:40:37.976Z",
   "tennis": true,
   "tennis_match": {
    "id": "185149",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Ben Shelton (USA) leads Jerome Kym (SUI) 3-6 7-6 (7-4) 6-5",
+     "text": "(1) Ben Shelton (USA) leads Jerome Kym (SUI) 3-6 7-6 (7-4) 6-6 (1-5)",
      "type": "event"
     }
    ],
@@ -66,7 +66,8 @@
        "winner": false
       },
       {
-       "value": 5
+       "value": 6,
+       "tiebreak": 5
       }
      ],
      "athlete": {
@@ -120,7 +121,8 @@
        "winner": true
       },
       {
-       "value": 6
+       "value": 6,
+       "tiebreak": 1
       }
      ],
      "athlete": {
@@ -192,7 +194,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T23:33:42.524Z",
+ "updated": "2026-10-29T23:40:37.890Z",
  "open_taken_at": "2026-10-28T05:04:22.019Z",
  "thresholds": {
   "big": 10,
@@ -510,46 +512,6 @@
  ],
  "edges": [
   {
-   "key": "1888352:0",
-   "market_id": "1888352",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Ben Shelton cover 1.5 vs the Jerome Kym in Ben Shelton vs. Jerome Kym?",
-   "side": "Ben Shelton +1.50 (Games)",
-   "open_chance": 83,
-   "now_chance": 77,
-   "open_odds": "-488",
-   "now_odds": "-335",
-   "edge": 6,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Jerome Kym 6, 6, 5 · Ben Shelton 3, 7, 6 · 3rd Set (games by set)",
-   "first_seen": "2026-10-29T23:33:42.524Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1881411:0",
-   "market_id": "1881411",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Ben Shelton vs Jerome Kym scheduled for October 29, 2026 at 10:00 AM UTC?",
-   "side": "Ben Shelton win",
-   "open_chance": 80,
-   "now_chance": 76,
-   "open_odds": "-400",
-   "now_odds": "-317",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Jerome Kym 6, 6, 5 · Ben Shelton 3, 7, 6 · 3rd Set (games by set)",
-   "first_seen": "2026-10-29T23:33:42.524Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1888354:0",
    "market_id": "1888354",
    "market": "Games spread",
@@ -710,6 +672,26 @@
    "kalshi": null
   },
   {
+   "key": "1888352:0",
+   "market_id": "1888352",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Ben Shelton cover 1.5 vs the Jerome Kym in Ben Shelton vs. Jerome Kym?",
+   "side": "Ben Shelton +1.50 (Games)",
+   "open_chance": 83,
+   "now_chance": 77,
+   "open_odds": "-488",
+   "now_odds": "-335",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Jerome Kym 6, 6, 5 · Ben Shelton 3, 7, 6 · 3rd Set (games by set)",
+   "first_seen": "2026-10-29T23:33:42.524Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1888368:1",
    "market_id": "1888368",
    "market": "Set 2 winner",
@@ -790,6 +772,26 @@
    "kalshi": null
   },
   {
+   "key": "1881411:0",
+   "market_id": "1881411",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Ben Shelton vs Jerome Kym scheduled for October 29, 2026 at 10:00 AM UTC?",
+   "side": "Ben Shelton win",
+   "open_chance": 80,
+   "now_chance": 76,
+   "open_odds": "-400",
+   "now_odds": "-317",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Jerome Kym 6, 6, 5 · Ben Shelton 3, 7, 6 · 3rd Set (games by set)",
+   "first_seen": "2026-10-29T23:33:42.524Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1888360:1",
    "market_id": "1888360",
    "market": "Games total",
@@ -811,6 +813,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1888352:0:2026-10-29T23:33:42.524Z",
+   "key": "1888352:0",
+   "at": "2026-10-29T23:40:37.890Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Ben Shelton +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-335",
+   "now_chance": 77,
+   "edge": 6,
+   "text": "Edge gone: Ben Shelton +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-benshe-jerkym-2026-10-29"
+  },
+  {
+   "id": "gone:1881411:0:2026-10-29T23:33:42.524Z",
+   "key": "1881411:0",
+   "at": "2026-10-29T23:40:37.890Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Ben Shelton win",
+   "market": "Moneyline",
+   "now_odds": "-317",
+   "now_chance": 76,
+   "edge": 4,
+   "text": "Edge gone: Ben Shelton win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-benshe-jerkym-2026-10-29"
+  },
   {
    "id": "new_edge:1881411:0:slight",
    "key": "1881411:0",
@@ -1273,7 +1303,9 @@
   "news:1888361:1",
   "new_edge:1888362:1:big",
   "news:1888354:0",
-  "new_edge:1881411:0:slight"
+  "new_edge:1881411:0:slight",
+  "gone:1888352:0:2026-10-29T23:33:42.524Z",
+  "gone:1881411:0:2026-10-29T23:33:42.524Z"
  ],
  "kalshi_checked": null
 }
