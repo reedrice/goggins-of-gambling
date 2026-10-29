@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-29T04:58:25.473Z"
+  "fetched_at": "2026-10-29T05:03:41.610Z"
  },
- "updated": "2026-10-29T04:58:25.378Z",
+ "updated": "2026-10-29T05:03:41.495Z",
  "open_taken_at": "2026-10-28T06:55:03.718Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-29T04:25:24.104Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1899825:0:2026-10-29T04:25:24.104Z",
+   "key": "1899825:0",
+   "at": "2026-10-29T05:03:41.495Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Ichikawa T / Shimizu Y win",
+   "market": "Moneyline",
+   "now_odds": "+270",
+   "now_chance": 27,
+   "edge": 28,
+   "text": "Edge gone: Ichikawa T / Shimizu Y win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-ichikashimiz-milicpoljic-2026-10-28"
+  },
   {
    "id": "new_edge:1899825:0:big",
    "key": "1899825:0",
@@ -80,7 +94,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1899825:0:big"
+  "new_edge:1899825:0:big",
+  "gone:1899825:0:2026-10-29T04:25:24.104Z"
  ],
  "kalshi_checked": null
 }
