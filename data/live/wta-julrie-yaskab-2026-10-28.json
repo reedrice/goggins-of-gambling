@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185767",
-  "fetched_at": "2026-10-29T15:48:04.187Z",
+  "fetched_at": "2026-10-29T15:55:46.848Z",
   "tennis": true,
   "tennis_match": {
    "id": "185767",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(7) Julia Riera (ARG) leads Yasmine Kabbaj (LAO) 6-2",
+     "text": "(7) Julia Riera (ARG) leads Yasmine Kabbaj (LAO) 6-2 1-0",
      "type": "event"
     }
    ],
@@ -55,9 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
-       "value": 2
+       "value": 2,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -97,12 +102,17 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "curatedRank": {
       "current": 7
      },
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -137,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1080,
    "type": {
     "id": "2",
@@ -155,8 +170,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Yasmine Kabbaj",
@@ -168,13 +183,13 @@
    "abbr": "Julia Riera",
    "alias": "Julia Riera",
    "name": "Julia Riera",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T15:48:04.078Z",
+ "updated": "2026-10-29T15:55:46.699Z",
  "open_taken_at": "2026-10-27T19:18:42.869Z",
  "thresholds": {
   "big": 10,
@@ -202,6 +217,138 @@
    "yes_buy": 68,
    "no_buy": 37,
    "taken_at": "2026-10-29T00:50:37.767Z"
+  },
+  {
+   "market_id": "1879957",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Julia Riera cover 4.5 vs the Yasmine Kabbaj in Julia Riera vs. Yasmine Kabbaj?",
+   "sides": [
+    "Julia Riera +4.50 (Games)",
+    "Yasmine Kabbaj -4.50 (Games)"
+   ],
+   "teams": [
+    "Julia Riera",
+    "Yasmine Kabbaj"
+   ],
+   "player": null,
+   "mid": 78.5,
+   "yes_buy": 79,
+   "no_buy": 22,
+   "taken_at": "2026-10-29T15:08:00.712Z"
+  },
+  {
+   "market_id": "1879963",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Julia Riera cover -1.5 vs the Yasmine Kabbaj in Julia Riera vs. Yasmine Kabbaj?",
+   "sides": [
+    "Julia Riera -1.50 (Sets)",
+    "Yasmine Kabbaj +1.50 (Sets)"
+   ],
+   "teams": [
+    "Julia Riera",
+    "Yasmine Kabbaj"
+   ],
+   "player": null,
+   "mid": 47,
+   "yes_buy": 49,
+   "no_buy": 55,
+   "taken_at": "2026-10-29T14:53:33.972Z"
+  },
+  {
+   "market_id": "1879959",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Julia Riera cover -7.5 vs the Yasmine Kabbaj in Julia Riera vs. Yasmine Kabbaj?",
+   "sides": [
+    "Julia Riera -7.50 (Games)",
+    "Yasmine Kabbaj +7.50 (Games)"
+   ],
+   "teams": [
+    "Julia Riera",
+    "Yasmine Kabbaj"
+   ],
+   "player": null,
+   "mid": 14.5,
+   "yes_buy": 15,
+   "no_buy": 86,
+   "taken_at": "2026-10-29T15:08:00.712Z"
+  },
+  {
+   "market_id": "1879967",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Julia Riera vs. Yasmine Kabbaj be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 84.5,
+   "yes_buy": 85,
+   "no_buy": 16,
+   "taken_at": "2026-10-29T15:08:00.712Z"
+  },
+  {
+   "market_id": "1879969",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Julia Riera vs. Yasmine Kabbaj be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 39,
+   "yes_buy": 40,
+   "no_buy": 62,
+   "taken_at": "2026-10-29T14:53:33.972Z"
+  },
+  {
+   "market_id": "1879971",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Julia Riera vs. Yasmine Kabbaj be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 20.5,
+   "yes_buy": 21,
+   "no_buy": 80,
+   "taken_at": "2026-10-29T15:08:00.712Z"
   },
   {
    "market_id": "1879961",
@@ -270,116 +417,6 @@
    "taken_at": "2026-10-29T08:15:10.515Z"
   },
   {
-   "market_id": "1879967",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Julia Riera vs. Yasmine Kabbaj be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 84.5,
-   "yes_buy": 85,
-   "no_buy": 16,
-   "taken_at": "2026-10-29T15:08:00.712Z"
-  },
-  {
-   "market_id": "1879959",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Julia Riera cover -7.5 vs the Yasmine Kabbaj in Julia Riera vs. Yasmine Kabbaj?",
-   "sides": [
-    "Julia Riera -7.50 (Games)",
-    "Yasmine Kabbaj +7.50 (Games)"
-   ],
-   "teams": [
-    "Julia Riera",
-    "Yasmine Kabbaj"
-   ],
-   "player": null,
-   "mid": 14.5,
-   "yes_buy": 15,
-   "no_buy": 86,
-   "taken_at": "2026-10-29T15:08:00.712Z"
-  },
-  {
-   "market_id": "1879969",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Julia Riera vs. Yasmine Kabbaj be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 39,
-   "yes_buy": 40,
-   "no_buy": 62,
-   "taken_at": "2026-10-29T14:53:33.972Z"
-  },
-  {
-   "market_id": "1879971",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Julia Riera vs. Yasmine Kabbaj be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 20.5,
-   "yes_buy": 21,
-   "no_buy": 80,
-   "taken_at": "2026-10-29T15:08:00.712Z"
-  },
-  {
-   "market_id": "1879957",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Julia Riera cover 4.5 vs the Yasmine Kabbaj in Julia Riera vs. Yasmine Kabbaj?",
-   "sides": [
-    "Julia Riera +4.50 (Games)",
-    "Yasmine Kabbaj -4.50 (Games)"
-   ],
-   "teams": [
-    "Julia Riera",
-    "Yasmine Kabbaj"
-   ],
-   "player": null,
-   "mid": 78.5,
-   "yes_buy": 79,
-   "no_buy": 22,
-   "taken_at": "2026-10-29T15:08:00.712Z"
-  },
-  {
    "market_id": "1879953",
    "market": "Games spread",
    "group": "game",
@@ -444,28 +481,6 @@
    "yes_buy": 79,
    "no_buy": 22,
    "taken_at": "2026-10-29T15:08:00.712Z"
-  },
-  {
-   "market_id": "1879963",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Julia Riera cover -1.5 vs the Yasmine Kabbaj in Julia Riera vs. Yasmine Kabbaj?",
-   "sides": [
-    "Julia Riera -1.50 (Sets)",
-    "Yasmine Kabbaj +1.50 (Sets)"
-   ],
-   "teams": [
-    "Julia Riera",
-    "Yasmine Kabbaj"
-   ],
-   "player": null,
-   "mid": 47,
-   "yes_buy": 49,
-   "no_buy": 55,
-   "taken_at": "2026-10-29T14:53:33.972Z"
   }
  ],
  "edges": [
@@ -477,15 +492,35 @@
    "question": "Will the total in Julia Riera vs. Yasmine Kabbaj be more than 17.5?",
    "side": "Over 17.5 (Games)",
    "open_chance": 85,
-   "now_chance": 52,
+   "now_chance": 39,
    "open_odds": "-567",
-   "now_odds": "-108",
-   "edge": 33,
+   "now_odds": "+156",
+   "edge": 46,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (33 pts), likely news",
-   "context": "Yasmine Kabbaj 2 · Julia Riera 6 · 1st Set (games by set)",
+   "reason": "Big move (46 pts), likely news",
+   "context": "Yasmine Kabbaj 2, 0 · Julia Riera 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-29T15:16:35.347Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1879963:1",
+   "market_id": "1879963",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Julia Riera cover -1.5 vs the Yasmine Kabbaj in Julia Riera vs. Yasmine Kabbaj?",
+   "side": "Yasmine Kabbaj +1.50 (Sets)",
+   "open_chance": 55,
+   "now_chance": 21,
+   "open_odds": "-122",
+   "now_odds": "+376",
+   "edge": 34,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (34 pts), likely news",
+   "context": "Yasmine Kabbaj 2, 0 · Julia Riera 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-29T15:55:46.699Z",
    "status": "open",
    "kalshi": null
   },
@@ -497,14 +532,14 @@
    "question": "Will the Julia Riera cover -7.5 vs the Yasmine Kabbaj in Julia Riera vs. Yasmine Kabbaj?",
    "side": "Yasmine Kabbaj +7.50 (Games)",
    "open_chance": 86,
-   "now_chance": 65,
+   "now_chance": 53,
    "open_odds": "-614",
-   "now_odds": "-186",
-   "edge": 21,
+   "now_odds": "-113",
+   "edge": 33,
    "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Yasmine Kabbaj 2 · Julia Riera 6 · 1st Set (games by set)",
+   "class": "news",
+   "reason": "Big move (33 pts), likely news",
+   "context": "Yasmine Kabbaj 2, 0 · Julia Riera 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-29T15:41:33.148Z",
    "status": "open",
    "kalshi": null
@@ -526,7 +561,7 @@
    "reason": null,
    "context": "Yasmine Kabbaj 2 · Julia Riera 6 · 1st Set (games by set)",
    "first_seen": "2026-10-29T14:40:41.938Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -546,46 +581,6 @@
    "reason": "Explained by score: Yasmine Kabbaj not above the games spread right now",
    "context": "Yasmine Kabbaj 2 · Julia Riera 6 · 1st Set (games by set)",
    "first_seen": "2026-10-29T15:23:34.527Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1879969:0",
-   "market_id": "1879969",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Julia Riera vs. Yasmine Kabbaj be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 40,
-   "now_chance": 26,
-   "open_odds": "+150",
-   "now_odds": "+285",
-   "edge": 14,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Yasmine Kabbaj 2 · Julia Riera 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-29T15:41:33.148Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1879969:1",
-   "market_id": "1879969",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Julia Riera vs. Yasmine Kabbaj be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 62,
-   "now_chance": 55,
-   "open_odds": "-163",
-   "now_odds": "-122",
-   "edge": 7,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Yasmine Kabbaj 2 · Julia Riera 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-29T15:30:33.638Z",
    "status": "gone",
    "kalshi": null
   },
@@ -632,6 +627,34 @@
  ],
  "alerts": [
   {
+   "id": "news:1879963:1",
+   "key": "1879963:1",
+   "at": "2026-10-29T15:55:46.699Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Yasmine Kabbaj +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+376",
+   "now_chance": 21,
+   "edge": 34,
+   "text": "Big move, likely news: Yasmine Kabbaj +1.50 (Sets) (Sets spread) is 34 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-julrie-yaskab-2026-10-28"
+  },
+  {
+   "id": "news:1879959:1",
+   "key": "1879959:1",
+   "at": "2026-10-29T15:55:46.699Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Yasmine Kabbaj +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 33,
+   "text": "Big move, likely news: Yasmine Kabbaj +7.50 (Games) (Games spread) is 33 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-julrie-yaskab-2026-10-28"
+  },
+  {
    "id": "news:1879967:0",
    "key": "1879967:0",
    "at": "2026-10-29T15:48:04.078Z",
@@ -674,20 +697,6 @@
    "url": "https://polymarket.us/sports/wta/wta-julrie-yaskab-2026-10-28"
   },
   {
-   "id": "new_edge:1879969:0:big",
-   "key": "1879969:0",
-   "at": "2026-10-29T15:48:04.078Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Over 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+285",
-   "now_chance": 26,
-   "edge": 14,
-   "text": "New big edge: Over 22.5 (Games) (Games total), 14 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-julrie-yaskab-2026-10-28"
-  },
-  {
    "id": "new_edge:1879967:0:big",
    "key": "1879967:0",
    "at": "2026-10-29T15:41:33.148Z",
@@ -713,48 +722,6 @@
    "now_chance": 77,
    "edge": 9,
    "text": "New slight edge: Yasmine Kabbaj +7.50 (Games) (Games spread), 9 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-julrie-yaskab-2026-10-28"
-  },
-  {
-   "id": "new_edge:1879969:0:slight",
-   "key": "1879969:0",
-   "at": "2026-10-29T15:41:33.148Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Over 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+178",
-   "now_chance": 36,
-   "edge": 4,
-   "text": "New slight edge: Over 22.5 (Games) (Games total), 4 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-julrie-yaskab-2026-10-28"
-  },
-  {
-   "id": "gone:1879969:1:2026-10-29T15:30:33.638Z",
-   "key": "1879969:1",
-   "at": "2026-10-29T15:41:33.148Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Under 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "-122",
-   "now_chance": 55,
-   "edge": 7,
-   "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-julrie-yaskab-2026-10-28"
-  },
-  {
-   "id": "new_edge:1879969:1:slight",
-   "key": "1879969:1",
-   "at": "2026-10-29T15:30:33.638Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Under 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "-122",
-   "now_chance": 55,
-   "edge": 7,
-   "text": "New slight edge: Under 22.5 (Games) (Games total), 7 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-julrie-yaskab-2026-10-28"
   },
   {
@@ -860,7 +827,9 @@
   "news:1879967:0",
   "new_edge:1879959:1:big",
   "new_edge:1879954:1:big",
-  "new_edge:1879969:0:big"
+  "new_edge:1879969:0:big",
+  "news:1879963:1",
+  "news:1879959:1"
  ],
  "kalshi_checked": null
 }

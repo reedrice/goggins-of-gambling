@@ -4,12 +4,12 @@
  "game": "Krawietz / Puetz vs. Polmans / Zielinski",
  "url": "https://polymarket.us/sports/atpdb/atpdb-krawiepuetz-polmanzielin-2026-10-29",
  "start_time": "2026-10-29T14:05:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185166",
-  "fetched_at": "2026-10-29T15:48:08.106Z",
+  "fetched_at": "2026-10-29T15:55:51.428Z",
   "tennis": true,
   "tennis_match": {
    "id": "185166",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Kevin Krawietz (GER) & Tim Puetz (GER) leads Marc Polmans (AUS) & Jan Zielinski (POL) 7-6 (7-3) 6-5",
+     "text": "(1) Kevin Krawietz (GER) & Tim Puetz (GER) is tied with Marc Polmans (AUS) & Jan Zielinski (POL) 7-6 (7-3) 6-6 (6-5)",
      "type": "event"
     }
    ],
@@ -55,7 +55,6 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
      "linescores": [
       {
        "value": 6,
@@ -63,7 +62,8 @@
        "winner": false
       },
       {
-       "value": 5
+       "value": 6,
+       "tiebreak": 5
       }
      ],
      "roster": {
@@ -138,7 +138,6 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
      "curatedRank": {
       "current": 1
      },
@@ -149,7 +148,8 @@
        "winner": true
       },
       {
-       "value": 6
+       "value": 6,
+       "tiebreak": 6
       }
      ],
      "roster": {
@@ -219,11 +219,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 23,
    "type": {
     "id": "3",
@@ -261,7 +256,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T15:48:08.047Z",
+ "updated": "2026-10-29T15:55:51.284Z",
  "open_taken_at": "2026-10-28T18:12:18.144Z",
  "thresholds": {
   "big": 10,
@@ -309,17 +304,33 @@
    "reason": null,
    "context": "Marc Polmans / Jan Zielinski 6, 5 · Kevin Krawietz / Tim Puetz 7, 6 · 2nd Set (games by set)",
    "first_seen": "2026-10-29T15:30:37.963Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
+ "alerts": [
+  {
+   "id": "gone:1913405:1:2026-10-29T15:30:37.963Z",
+   "key": "1913405:1",
+   "at": "2026-10-29T15:55:51.284Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Polmans M / Zielinski J win",
+   "market": "Moneyline",
+   "now_odds": "+400",
+   "now_chance": 20,
+   "edge": 20,
+   "text": "Edge gone: Polmans M / Zielinski J win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-krawiepuetz-polmanzielin-2026-10-29"
+  }
+ ],
  "alert_seen": [
   "new_edge:1913405:0:slight",
   "new_edge:1913405:1:slight",
   "gone:1913405:0:2026-10-29T14:20:32.921Z",
   "gone:1913405:1:2026-10-29T14:34:34.303Z",
-  "new_edge:1913405:1:big"
+  "new_edge:1913405:1:big",
+  "gone:1913405:1:2026-10-29T15:30:37.963Z"
  ],
  "kalshi_checked": null
 }
