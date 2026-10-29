@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185697",
-  "fetched_at": "2026-10-29T04:19:25.758Z",
+  "fetched_at": "2026-10-29T04:25:24.978Z",
   "tennis": true,
   "tennis_match": {
    "id": "185697",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(4) Ellen Perez (AUS) & Demi Schuurs (NED) leads Storm Hunter (AUS) & Maya Joint (AUS) 0-0",
+     "text": "Storm Hunter (AUS) & Maya Joint (AUS) leads (4) Ellen Perez (AUS) & Demi Schuurs (NED) 2-1",
      "type": "event"
     }
    ],
@@ -55,10 +55,9 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
      "linescores": [
       {
-       "value": 0
+       "value": 2
       }
      ],
      "roster": {
@@ -133,13 +132,12 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
      "curatedRank": {
       "current": 4
      },
      "linescores": [
       {
-       "value": 0
+       "value": 1
       }
      ],
      "roster": {
@@ -209,11 +207,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 264,
    "type": {
     "id": "4",
@@ -251,7 +244,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T04:19:25.665Z",
+ "updated": "2026-10-29T04:25:24.879Z",
  "open_taken_at": "2026-10-28T09:43:39.918Z",
  "thresholds": {
   "big": 10,
@@ -283,6 +276,26 @@
  ],
  "edges": [
   {
+   "key": "1902605:0",
+   "market_id": "1902605",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wtadb event Perez / Schuurs vs Hunter / Joint scheduled for October 29, 2026 at 4:00 AM UTC?",
+   "side": "Perez / Schuurs win",
+   "open_chance": 49,
+   "now_chance": 41,
+   "open_odds": "+104",
+   "now_odds": "+144",
+   "edge": 8,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Storm Hunter / Maya Joint 2 · Ellen Perez / Demi  Schuurs 1 · 1st Set (games by set)",
+   "first_seen": "2026-10-28T11:37:41.724Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1902605:1",
    "market_id": "1902605",
    "market": "Moneyline",
@@ -299,31 +312,39 @@
    "reason": null,
    "context": "Storm Hunter / Maya Joint 0 · Ellen Perez / Demi  Schuurs 0 · 1st Set (games by set)",
    "first_seen": "2026-10-28T11:47:21.365Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1902605:0",
-   "market_id": "1902605",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wtadb event Perez / Schuurs vs Hunter / Joint scheduled for October 29, 2026 at 4:00 AM UTC?",
-   "side": "Perez / Schuurs win",
-   "open_chance": 49,
-   "now_chance": 43,
-   "open_odds": "+104",
-   "now_odds": "+133",
-   "edge": 6,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-28T11:37:41.724Z",
    "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1902605:0:slight",
+   "key": "1902605:0",
+   "at": "2026-10-29T04:25:24.879Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Perez / Schuurs win",
+   "market": "Moneyline",
+   "now_odds": "+144",
+   "now_chance": 41,
+   "edge": 8,
+   "text": "New slight edge: Perez / Schuurs win (Moneyline), 8 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-perezschuur-hunterjoint-2026-10-29"
+  },
+  {
+   "id": "gone:1902605:1:2026-10-28T11:47:21.365Z",
+   "key": "1902605:1",
+   "at": "2026-10-29T04:25:24.879Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Hunter S / Joint M win",
+   "market": "Moneyline",
+   "now_odds": "+108",
+   "now_chance": 48,
+   "edge": 4,
+   "text": "Edge gone: Hunter S / Joint M win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-perezschuur-hunterjoint-2026-10-29"
+  },
   {
    "id": "new_edge:1902605:1:slight",
    "key": "1902605:1",
@@ -340,7 +361,9 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1902605:1:slight"
+  "new_edge:1902605:1:slight",
+  "new_edge:1902605:0:slight",
+  "gone:1902605:1:2026-10-28T11:47:21.365Z"
  ],
  "kalshi_checked": null
 }
