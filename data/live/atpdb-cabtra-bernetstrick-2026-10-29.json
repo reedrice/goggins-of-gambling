@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185164",
-  "fetched_at": "2026-10-29T13:48:42.457Z",
+  "fetched_at": "2026-10-29T13:53:56.538Z",
   "tennis": true,
   "tennis_match": {
    "id": "185164",
@@ -17,17 +17,17 @@
    "date": "2026-10-29T12:05Z",
    "startDate": "2026-10-29T12:05Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Henry Bernet (SUI) & Dominic Stricker (SUI) leads (4) Francisco Cabral (POR) & JJ Tracy (USA) 2-6 7-6 (7-5) 1-0 (14-12)",
+     "text": "Henry Bernet (SUI) & Dominic Stricker (SUI) bt (4) Francisco Cabral (POR) & JJ Tracy (USA) 2-6 7-6 (7-5) 1-0 (14-12)",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "linescores": [
       {
        "value": 2,
@@ -67,7 +68,8 @@
       },
       {
        "value": 1,
-       "tiebreak": 14
+       "tiebreak": 14,
+       "winner": true
       }
      ],
      "roster": {
@@ -142,6 +144,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "curatedRank": {
       "current": 4
      },
@@ -157,7 +160,8 @@
       },
       {
        "value": 0,
-       "tiebreak": 12
+       "tiebreak": 12,
+       "winner": false
       }
      ],
      "roster": {
@@ -243,16 +247,16 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Henry Bernet / Dominic Stricker",
    "alias": "Henry Bernet / Dominic Stricker",
    "name": "Henry Bernet / Dominic Stricker",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Francisco Cabral / JJ Tracy",
@@ -264,7 +268,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T13:48:42.250Z",
+ "updated": "2026-10-29T13:53:56.484Z",
  "open_taken_at": "2026-10-28T05:04:23.084Z",
  "thresholds": {
   "big": 10,
