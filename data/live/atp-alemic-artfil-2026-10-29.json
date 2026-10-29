@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185152",
-  "fetched_at": "2026-10-29T15:23:34.621Z",
+  "fetched_at": "2026-10-29T15:30:33.468Z",
   "tennis": true,
   "tennis_match": {
    "id": "185152",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(2) Arthur Fils (FRA) is tied with Alex Michelsen (USA) 4-6 5-2",
+     "text": "(2) Arthur Fils (FRA) is tied with Alex Michelsen (USA) 4-6 5-3",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 2
      },
@@ -104,13 +105,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 2
+       "value": 3
       }
      ],
      "athlete": {
@@ -145,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 23,
    "type": {
     "id": "1",
@@ -182,7 +189,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T15:23:34.467Z",
+ "updated": "2026-10-29T15:30:33.328Z",
  "open_taken_at": "2026-10-28T05:04:21.332Z",
  "thresholds": {
   "big": 10,
@@ -529,15 +536,35 @@
    "question": "Will the total in Alex Michelsen vs. Arthur Fils be more than 27.5?",
    "side": "Under 27.5 (Games)",
    "open_chance": 69,
-   "now_chance": 30,
+   "now_chance": 22,
    "open_odds": "-223",
-   "now_odds": "+233",
-   "edge": 39,
+   "now_odds": "+355",
+   "edge": 47,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (39 pts), likely news",
-   "context": "Arthur Fils 4, 5 · Alex Michelsen 6, 2 · 2nd Set (games by set)",
+   "reason": "Big move (47 pts), likely news",
+   "context": "Arthur Fils 4, 5 · Alex Michelsen 6, 3 · 2nd Set (games by set)",
    "first_seen": "2026-10-29T14:20:28.597Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1888333:0",
+   "market_id": "1888333",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Alex Michelsen cover -1.5 vs the Arthur Fils in Alex Michelsen vs. Arthur Fils?",
+   "side": "Alex Michelsen -1.50 (Games)",
+   "open_chance": 28,
+   "now_chance": 20,
+   "open_odds": "+257",
+   "now_odds": "+400",
+   "edge": 8,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Alex Michelsen not above the games spread right now",
+   "context": "Arthur Fils 4, 5 · Alex Michelsen 6, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-10-29T14:34:29.559Z",
    "status": "open",
    "kalshi": null
   },
@@ -778,26 +805,6 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-29T13:12:05.519Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1888333:0",
-   "market_id": "1888333",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Alex Michelsen cover -1.5 vs the Arthur Fils in Alex Michelsen vs. Arthur Fils?",
-   "side": "Alex Michelsen -1.50 (Games)",
-   "open_chance": 28,
-   "now_chance": 24,
-   "open_odds": "+257",
-   "now_odds": "+317",
-   "edge": 4,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Alex Michelsen not above the games spread right now",
-   "context": "Arthur Fils 4 · Alex Michelsen 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-29T14:34:29.559Z",
    "status": "gone",
    "kalshi": null
   }
