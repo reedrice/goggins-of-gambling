@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185151",
-  "fetched_at": "2026-10-29T19:05:07.412Z",
+  "fetched_at": "2026-10-29T19:11:13.008Z",
   "tennis": true,
   "tennis_match": {
    "id": "185151",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(4) Novak Djokovic (SER) leads Jan-Lennard Struff (GER) 6-5",
+     "text": "(4) Novak Djokovic (SER) leads Jan-Lennard Struff (GER) 6-6 (4-3)",
      "type": "event"
     }
    ],
@@ -55,10 +55,10 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "tiebreak": 3
       }
      ],
      "athlete": {
@@ -98,13 +98,13 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
      "curatedRank": {
       "current": 4
      },
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "tiebreak": 4
       }
      ],
      "athlete": {
@@ -139,11 +139,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 23,
    "type": {
     "id": "1",
@@ -181,7 +176,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T19:05:07.324Z",
+ "updated": "2026-10-29T19:11:12.882Z",
  "open_taken_at": "2026-10-28T18:05:26.087Z",
  "thresholds": {
   "big": 10,
@@ -255,26 +250,26 @@
    "taken_at": "2026-10-29T15:00:12.543Z"
   },
   {
-   "market_id": "1913419",
-   "market": "Sets spread",
+   "market_id": "1913421",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Novak Djokovic cover 1.5 vs the Jan-Lennard Struff in Novak Djokovic vs. Jan-Lennard Struff?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Novak Djokovic vs. Jan-Lennard Struff be more than 22.5?",
    "sides": [
-    "Novak Djokovic +1.50 (Sets)",
-    "Jan-Lennard Struff -1.50 (Sets)"
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
    ],
    "teams": [
-    "Novak Djokovic",
-    "Jan-Lennard Struff"
+    null,
+    null
    ],
    "player": null,
-   "mid": 90,
-   "yes_buy": 91,
-   "no_buy": 11,
-   "taken_at": "2026-10-29T17:48:38.475Z"
+   "mid": 53,
+   "yes_buy": 54,
+   "no_buy": 48,
+   "taken_at": "2026-10-28T19:59:47.922Z"
   },
   {
    "market_id": "1913413",
@@ -299,6 +294,28 @@
    "taken_at": "2026-10-29T15:08:05.688Z"
   },
   {
+   "market_id": "1913412",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Novak Djokovic cover -1.5 vs the Jan-Lennard Struff in Novak Djokovic vs. Jan-Lennard Struff?",
+   "sides": [
+    "Novak Djokovic -1.50 (Games)",
+    "Jan-Lennard Struff +1.50 (Games)"
+   ],
+   "teams": [
+    "Novak Djokovic",
+    "Jan-Lennard Struff"
+   ],
+   "player": null,
+   "mid": 67.5,
+   "yes_buy": 68,
+   "no_buy": 33,
+   "taken_at": "2026-10-29T17:48:38.475Z"
+  },
+  {
    "market_id": "1913430",
    "market": "Set 2 winner",
    "group": "game",
@@ -321,25 +338,91 @@
    "taken_at": "2026-10-29T13:12:10.009Z"
   },
   {
-   "market_id": "1913412",
+   "market_id": "1913424",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Novak Djokovic vs. Jan-Lennard Struff be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 36,
+   "yes_buy": 39,
+   "no_buy": 67,
+   "taken_at": "2026-10-29T02:59:35.271Z"
+  },
+  {
+   "market_id": "1913422",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Novak Djokovic vs. Jan-Lennard Struff be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 35.5,
+   "yes_buy": 36,
+   "no_buy": 65,
+   "taken_at": "2026-10-29T17:48:38.475Z"
+  },
+  {
+   "market_id": "1913416",
    "market": "Games spread",
    "group": "game",
    "mtype": "spread",
    "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Novak Djokovic cover -1.5 vs the Jan-Lennard Struff in Novak Djokovic vs. Jan-Lennard Struff?",
+   "line": -7.5,
+   "question": "Will the Novak Djokovic cover -7.5 vs the Jan-Lennard Struff in Novak Djokovic vs. Jan-Lennard Struff?",
    "sides": [
-    "Novak Djokovic -1.50 (Games)",
-    "Jan-Lennard Struff +1.50 (Games)"
+    "Novak Djokovic -7.50 (Games)",
+    "Jan-Lennard Struff +7.50 (Games)"
    ],
    "teams": [
     "Novak Djokovic",
     "Jan-Lennard Struff"
    ],
    "player": null,
-   "mid": 67.5,
-   "yes_buy": 68,
-   "no_buy": 33,
+   "mid": 6,
+   "yes_buy": 7,
+   "no_buy": 95,
+   "taken_at": "2026-10-29T17:48:38.475Z"
+  },
+  {
+   "market_id": "1913419",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Novak Djokovic cover 1.5 vs the Jan-Lennard Struff in Novak Djokovic vs. Jan-Lennard Struff?",
+   "sides": [
+    "Novak Djokovic +1.50 (Sets)",
+    "Jan-Lennard Struff -1.50 (Sets)"
+   ],
+   "teams": [
+    "Novak Djokovic",
+    "Jan-Lennard Struff"
+   ],
+   "player": null,
+   "mid": 90,
+   "yes_buy": 91,
+   "no_buy": 11,
    "taken_at": "2026-10-29T17:48:38.475Z"
   },
   {
@@ -365,72 +448,6 @@
    "taken_at": "2026-10-29T04:58:27.664Z"
   },
   {
-   "market_id": "1913422",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Novak Djokovic vs. Jan-Lennard Struff be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 35.5,
-   "yes_buy": 36,
-   "no_buy": 65,
-   "taken_at": "2026-10-29T17:48:38.475Z"
-  },
-  {
-   "market_id": "1913424",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Novak Djokovic vs. Jan-Lennard Struff be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 36,
-   "yes_buy": 39,
-   "no_buy": 67,
-   "taken_at": "2026-10-29T02:59:35.271Z"
-  },
-  {
-   "market_id": "1913416",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Novak Djokovic cover -7.5 vs the Jan-Lennard Struff in Novak Djokovic vs. Jan-Lennard Struff?",
-   "sides": [
-    "Novak Djokovic -7.50 (Games)",
-    "Jan-Lennard Struff +7.50 (Games)"
-   ],
-   "teams": [
-    "Novak Djokovic",
-    "Jan-Lennard Struff"
-   ],
-   "player": null,
-   "mid": 6,
-   "yes_buy": 7,
-   "no_buy": 95,
-   "taken_at": "2026-10-29T17:48:38.475Z"
-  },
-  {
    "market_id": "1913420",
    "market": "Games total",
    "group": "game",
@@ -451,28 +468,6 @@
    "yes_buy": 83,
    "no_buy": 18,
    "taken_at": "2026-10-29T17:48:38.475Z"
-  },
-  {
-   "market_id": "1913421",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Novak Djokovic vs. Jan-Lennard Struff be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 53,
-   "yes_buy": 54,
-   "no_buy": 48,
-   "taken_at": "2026-10-28T19:59:47.922Z"
   },
   {
    "market_id": "1913418",
@@ -521,82 +516,22 @@
  ],
  "edges": [
   {
-   "key": "1913429:0",
-   "market_id": "1913429",
-   "market": "Set 1 winner",
+   "key": "1913430:0",
+   "market_id": "1913430",
+   "market": "Set 2 winner",
    "group": "game",
-   "question": "Will Novak Djokovic win set 1 against Jan-Lennard Struff?",
-   "side": "Yes: Novak Djokovic win set 1 against Jan-Lennard Struff",
-   "open_chance": 72,
-   "now_chance": 57,
-   "open_odds": "-257",
-   "now_odds": "-133",
-   "edge": 15,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Jan-Lennard Struff 5 · Novak Djokovic 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-29T18:41:11.428Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1913363:0",
-   "market_id": "1913363",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Novak Djokovic vs Jan-Lennard Struff scheduled for October 29, 2026 at 10:00 AM UTC?",
-   "side": "Novak Djokovic win",
-   "open_chance": 78,
-   "now_chance": 64,
-   "open_odds": "-355",
-   "now_odds": "-178",
-   "edge": 14,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Jan-Lennard Struff 5 · Novak Djokovic 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-29T18:41:11.428Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1913412:0",
-   "market_id": "1913412",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Novak Djokovic cover -1.5 vs the Jan-Lennard Struff in Novak Djokovic vs. Jan-Lennard Struff?",
-   "side": "Novak Djokovic -1.50 (Games)",
-   "open_chance": 68,
-   "now_chance": 57,
-   "open_odds": "-213",
-   "now_odds": "-133",
+   "question": "Will Novak Djokovic win set 2 against Jan-Lennard Struff?",
+   "side": "Yes: Novak Djokovic win set 2 against Jan-Lennard Struff",
+   "open_chance": 73,
+   "now_chance": 62,
+   "open_odds": "-270",
+   "now_odds": "-163",
    "edge": 11,
    "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Novak Djokovic not above the games spread right now",
-   "context": "Jan-Lennard Struff 5 · Novak Djokovic 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-29T18:47:57.174Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1913419:0",
-   "market_id": "1913419",
-   "market": "Sets spread",
-   "group": "game",
-   "question": "Will the Novak Djokovic cover 1.5 vs the Jan-Lennard Struff in Novak Djokovic vs. Jan-Lennard Struff?",
-   "side": "Novak Djokovic +1.50 (Sets)",
-   "open_chance": 91,
-   "now_chance": 81,
-   "open_odds": "-1011",
-   "now_odds": "-426",
-   "edge": 10,
-   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Jan-Lennard Struff 5 · Novak Djokovic 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-29T19:05:07.324Z",
+   "context": "Jan-Lennard Struff 6 · Novak Djokovic 6 · 1st Set (games by set)",
+   "first_seen": "2026-10-29T18:47:57.174Z",
    "status": "open",
    "kalshi": null
   },
@@ -615,27 +550,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Jan-Lennard Struff 5 · Novak Djokovic 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-29T18:47:57.174Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1913430:0",
-   "market_id": "1913430",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Novak Djokovic win set 2 against Jan-Lennard Struff?",
-   "side": "Yes: Novak Djokovic win set 2 against Jan-Lennard Struff",
-   "open_chance": 73,
-   "now_chance": 64,
-   "open_odds": "-270",
-   "now_odds": "-178",
-   "edge": 9,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Jan-Lennard Struff 5 · Novak Djokovic 6 · 1st Set (games by set)",
+   "context": "Jan-Lennard Struff 6 · Novak Djokovic 6 · 1st Set (games by set)",
    "first_seen": "2026-10-29T18:47:57.174Z",
    "status": "open",
    "kalshi": null
@@ -655,7 +570,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Jan-Lennard Struff 5 · Novak Djokovic 6 · 1st Set (games by set)",
+   "context": "Jan-Lennard Struff 6 · Novak Djokovic 6 · 1st Set (games by set)",
    "first_seen": "2026-10-29T17:48:38.475Z",
    "status": "open",
    "kalshi": null
@@ -668,35 +583,75 @@
    "question": "Will the total in Novak Djokovic vs. Jan-Lennard Struff be more than 27.5?",
    "side": "Under 27.5 (Games)",
    "open_chance": 65,
-   "now_chance": 57,
+   "now_chance": 60,
    "open_odds": "-186",
-   "now_odds": "-133",
-   "edge": 8,
+   "now_odds": "-150",
+   "edge": 5,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Jan-Lennard Struff 5 · Novak Djokovic 6 · 1st Set (games by set)",
+   "context": "Jan-Lennard Struff 6 · Novak Djokovic 6 · 1st Set (games by set)",
    "first_seen": "2026-10-29T18:47:57.174Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1913421:1",
-   "market_id": "1913421",
-   "market": "Games total",
+   "key": "1913363:0",
+   "market_id": "1913363",
+   "market": "Moneyline",
    "group": "game",
-   "question": "Will the total in Novak Djokovic vs. Jan-Lennard Struff be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 48,
-   "now_chance": 22,
-   "open_odds": "+108",
-   "now_odds": "+355",
-   "edge": 26,
+   "question": "Who will win in the upcoming atp event Novak Djokovic vs Jan-Lennard Struff scheduled for October 29, 2026 at 10:00 AM UTC?",
+   "side": "Novak Djokovic win",
+   "open_chance": 78,
+   "now_chance": 74,
+   "open_odds": "-355",
+   "now_odds": "-285",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Jan-Lennard Struff 6 · Novak Djokovic 6 · 1st Set (games by set)",
+   "first_seen": "2026-10-29T18:41:11.428Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1913429:0",
+   "market_id": "1913429",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Novak Djokovic win set 1 against Jan-Lennard Struff?",
+   "side": "Yes: Novak Djokovic win set 1 against Jan-Lennard Struff",
+   "open_chance": 72,
+   "now_chance": 57,
+   "open_odds": "-257",
+   "now_odds": "-133",
+   "edge": 15,
    "tier": "big",
-   "class": "news",
-   "reason": "Big move (26 pts), likely news",
-   "context": "Jan-Lennard Struff 4 · Novak Djokovic 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-29T18:27:49.064Z",
+   "class": "edge",
+   "reason": null,
+   "context": "Jan-Lennard Struff 5 · Novak Djokovic 6 · 1st Set (games by set)",
+   "first_seen": "2026-10-29T18:41:11.428Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1913412:0",
+   "market_id": "1913412",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Novak Djokovic cover -1.5 vs the Jan-Lennard Struff in Novak Djokovic vs. Jan-Lennard Struff?",
+   "side": "Novak Djokovic -1.50 (Games)",
+   "open_chance": 68,
+   "now_chance": 57,
+   "open_odds": "-213",
+   "now_odds": "-133",
+   "edge": 11,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Novak Djokovic not above the games spread right now",
+   "context": "Jan-Lennard Struff 5 · Novak Djokovic 6 · 1st Set (games by set)",
+   "first_seen": "2026-10-29T18:47:57.174Z",
    "status": "gone",
    "kalshi": null
   },
@@ -717,6 +672,26 @@
    "reason": "Explained by score: Novak Djokovic not above the games spread right now",
    "context": "Jan-Lennard Struff 4 · Novak Djokovic 5 · 1st Set (games by set)",
    "first_seen": "2026-10-29T18:47:57.174Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1913419:0",
+   "market_id": "1913419",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Novak Djokovic cover 1.5 vs the Jan-Lennard Struff in Novak Djokovic vs. Jan-Lennard Struff?",
+   "side": "Novak Djokovic +1.50 (Sets)",
+   "open_chance": 91,
+   "now_chance": 81,
+   "open_odds": "-1011",
+   "now_odds": "-426",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Jan-Lennard Struff 5 · Novak Djokovic 6 · 1st Set (games by set)",
+   "first_seen": "2026-10-29T19:05:07.324Z",
    "status": "gone",
    "kalshi": null
   },
@@ -823,6 +798,48 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1913430:0:big",
+   "key": "1913430:0",
+   "at": "2026-10-29T19:11:12.882Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Yes: Novak Djokovic win set 2 against Jan-Lennard Struff",
+   "market": "Set 2 winner",
+   "now_odds": "-163",
+   "now_chance": 62,
+   "edge": 11,
+   "text": "New big edge: Yes: Novak Djokovic win set 2 against Jan-Lennard Struff (Set 2 winner), 11 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-novdjo-janstr-2026-10-29"
+  },
+  {
+   "id": "gone:1913429:0:2026-10-29T18:41:11.428Z",
+   "key": "1913429:0",
+   "at": "2026-10-29T19:11:12.882Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Yes: Novak Djokovic win set 1 against Jan-Lennard Struff",
+   "market": "Set 1 winner",
+   "now_odds": "-133",
+   "now_chance": 57,
+   "edge": 15,
+   "text": "Edge gone: Yes: Novak Djokovic win set 1 against Jan-Lennard Struff (Set 1 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-novdjo-janstr-2026-10-29"
+  },
+  {
+   "id": "gone:1913419:0:2026-10-29T19:05:07.324Z",
+   "key": "1913419:0",
+   "at": "2026-10-29T19:11:12.882Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Novak Djokovic +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "-426",
+   "now_chance": 81,
+   "edge": 10,
+   "text": "Edge gone: Novak Djokovic +1.50 (Sets) (Sets spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-novdjo-janstr-2026-10-29"
+  },
+  {
    "id": "new_edge:1913419:0:big",
    "key": "1913419:0",
    "at": "2026-10-29T19:05:07.324Z",
@@ -848,20 +865,6 @@
    "now_chance": 75,
    "edge": 9,
    "text": "New slight edge: Novak Djokovic +1.50 (Games) (Games spread), 9 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-novdjo-janstr-2026-10-29"
-  },
-  {
-   "id": "news:1913421:1",
-   "key": "1913421:1",
-   "at": "2026-10-29T18:58:39.759Z",
-   "type": "news",
-   "tier": "big",
-   "side": "Under 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+355",
-   "now_chance": 22,
-   "edge": 26,
-   "text": "Big move, likely news: Under 22.5 (Games) (Games total) is 26 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-novdjo-janstr-2026-10-29"
   },
   {
@@ -946,20 +949,6 @@
    "now_chance": 60,
    "edge": 5,
    "text": "New slight edge: Under 27.5 (Games) (Games total), 5 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-novdjo-janstr-2026-10-29"
-  },
-  {
-   "id": "new_edge:1913421:1:big",
-   "key": "1913421:1",
-   "at": "2026-10-29T18:41:11.428Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Under 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+213",
-   "now_chance": 32,
-   "edge": 16,
-   "text": "New big edge: Under 22.5 (Games) (Games total), 16 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-novdjo-janstr-2026-10-29"
   },
   {
@@ -1075,20 +1064,6 @@
    "url": "https://polymarket.us/sports/atp/atp-novdjo-janstr-2026-10-29"
   },
   {
-   "id": "new_edge:1913421:1:slight",
-   "key": "1913421:1",
-   "at": "2026-10-29T18:27:49.064Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Under 22.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+127",
-   "now_chance": 44,
-   "edge": 4,
-   "text": "New slight edge: Under 22.5 (Games) (Games total), 4 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-novdjo-janstr-2026-10-29"
-  },
-  {
    "id": "new_edge:1913424:0:slight",
    "key": "1913424:0",
    "at": "2026-10-29T18:27:49.064Z",
@@ -1138,7 +1113,10 @@
   "news:1913421:1",
   "new_edge:1913429:0:big",
   "new_edge:1913419:0:big",
-  "new_edge:1913413:0:slight"
+  "new_edge:1913413:0:slight",
+  "new_edge:1913430:0:big",
+  "gone:1913429:0:2026-10-29T18:41:11.428Z",
+  "gone:1913419:0:2026-10-29T19:05:07.324Z"
  ],
  "kalshi_checked": null
 }
