@@ -4,12 +4,12 @@
  "game": "Anna Bondar vs. Kaitlin Quevedo",
  "url": "https://polymarket.us/sports/wta/wta-annbon-kaique-2026-10-28",
  "start_time": "2026-10-29T10:10:00Z",
- "status": "final",
+ "status": "live",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185727",
-  "fetched_at": "2026-10-29T10:13:41.421Z",
+  "fetched_at": "2026-10-29T12:02:30.057Z",
   "tennis": true,
   "tennis_match": {
    "id": "185727",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Thu, October 29th at 6:15 AM EDT",
-     "shortDetail": "10/29 - 6:15 AM EDT"
+     "description": "In Progress",
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Kaitlin Quevedo (ESP) leads Anna Bondar (HUN) 7-5 5-3",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,16 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 7,
+       "winner": true
+      },
+      {
+       "value": 5
+      }
+     ],
      "athlete": {
       "guid": "dd910467-923d-35e9-a3fd-a2f884b49732",
       "displayName": "Kaitlin Quevedo",
@@ -87,6 +102,16 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 5,
+       "winner": false
+      },
+      {
+       "value": 3
+      }
+     ],
      "athlete": {
       "guid": "3d6592e8-e814-f21e-468a-c184a4662c35",
       "displayName": "Anna Bondar",
@@ -119,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 232,
    "type": {
     "id": "2",
@@ -135,16 +165,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Thu, October 29th at 6:15 AM EDT",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Kaitlin Quevedo",
    "alias": "Kaitlin Quevedo",
    "name": "Kaitlin Quevedo",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Anna Bondar",
@@ -156,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T10:13:41.330Z",
+ "updated": "2026-10-29T12:02:29.915Z",
  "open_taken_at": "2026-10-27T06:03:19.924Z",
  "thresholds": {
   "big": 10,
@@ -474,26 +504,6 @@
  ],
  "edges": [
   {
-   "key": "1862425:0",
-   "market_id": "1862425",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Anna Bondar vs Kaitlin Quevedo scheduled for October 28, 2026 at 5:00 AM UTC?",
-   "side": "Anna Bondar win",
-   "open_chance": 59,
-   "now_chance": 51,
-   "open_odds": "-144",
-   "now_odds": "-104",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-10-27T09:19:29.748Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "1862660:0",
    "market_id": "1862660",
    "market": "Games total",
@@ -556,20 +566,6 @@
  ],
  "alerts": [
   {
-   "id": "gone:1862425:0:2026-10-27T09:19:29.748Z",
-   "key": "1862425:0",
-   "at": "2026-10-29T10:13:41.330Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Anna Bondar win",
-   "market": "Moneyline",
-   "now_odds": "-104",
-   "now_chance": 51,
-   "edge": 8,
-   "text": "Edge gone: Anna Bondar win (Moneyline) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-annbon-kaique-2026-10-28"
-  },
-  {
    "id": "gone:1862658:0:2026-10-29T08:36:40.346Z",
    "key": "1862658:0",
    "at": "2026-10-29T10:13:41.330Z",
@@ -609,20 +605,6 @@
    "now_chance": 65,
    "edge": 20,
    "text": "New big edge: Over 17.5 (Games) (Games total), 20 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-annbon-kaique-2026-10-28"
-  },
-  {
-   "id": "new_edge:1862425:0:slight",
-   "key": "1862425:0",
-   "at": "2026-10-29T08:43:24.001Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Anna Bondar win",
-   "market": "Moneyline",
-   "now_odds": "+100",
-   "now_chance": 50,
-   "edge": 9,
-   "text": "New slight edge: Anna Bondar win (Moneyline), 9 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-annbon-kaique-2026-10-28"
   }
  ],
