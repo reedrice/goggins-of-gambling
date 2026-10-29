@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185858",
-  "fetched_at": "2026-10-29T17:20:41.493Z",
+  "fetched_at": "2026-10-29T17:27:37.893Z",
   "tennis": true,
   "tennis_match": {
    "id": "185858",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Hiroko Kuwata (JPN) & Ankita Raina (IND) leads Laura Mair (ITA) & Isabella Maria Serban (ITA) 2-1",
+     "text": "Hiroko Kuwata (JPN) & Ankita Raina (IND) leads Laura Mair (ITA) & Isabella Maria Serban (ITA) 3-2",
      "type": "event"
     }
    ],
@@ -58,7 +58,7 @@
      "possession": true,
      "linescores": [
       {
-       "value": 1
+       "value": 2
       }
      ],
      "roster": {
@@ -136,7 +136,7 @@
      "possession": false,
      "linescores": [
       {
-       "value": 2
+       "value": 3
       }
      ],
      "roster": {
@@ -248,7 +248,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T17:20:41.337Z",
+ "updated": "2026-10-29T17:27:37.778Z",
  "open_taken_at": "2026-10-27T13:01:15.326Z",
  "thresholds": {
   "big": 10,
@@ -296,11 +296,25 @@
    "reason": null,
    "context": "Laura Mair / Isabella Maria Serban 1 · Hiroko Kuwata / Ankita Raina 2 · 1st Set (games by set)",
    "first_seen": "2026-10-29T14:53:33.276Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1869003:1:2026-10-29T14:53:33.276Z",
+   "key": "1869003:1",
+   "at": "2026-10-29T17:27:37.778Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Mair L / Serban I M win",
+   "market": "Moneyline",
+   "now_odds": "+400",
+   "now_chance": 20,
+   "edge": 4,
+   "text": "Edge gone: Mair L / Serban I M win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-kuwataraina-mairserban-2026-10-28"
+  },
   {
    "id": "new_edge:1869003:1:slight",
    "key": "1869003:1",
@@ -317,7 +331,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1869003:1:slight"
+  "new_edge:1869003:1:slight",
+  "gone:1869003:1:2026-10-29T14:53:33.276Z"
  ],
  "kalshi_checked": null
 }
