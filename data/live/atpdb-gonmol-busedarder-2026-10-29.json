@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185207",
-  "fetched_at": "2026-10-29T17:06:46.086Z",
+  "fetched_at": "2026-10-29T17:13:38.983Z",
   "tennis": true,
   "tennis_match": {
    "id": "185207",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Maximo Gonzalez (ARG) & Andres Molteni (ARG) leads Ignacio Buse (PER) & Luciano Darderi (ITA) 7-6 (7-4)",
+     "text": "Maximo Gonzalez (ARG) & Andres Molteni (ARG) is tied with Ignacio Buse (PER) & Luciano Darderi (ITA) 7-6 (7-4) 0-0",
      "type": "event"
     }
    ],
@@ -55,10 +55,15 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 6,
-       "tiebreak": 4
+       "tiebreak": 4,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "roster": {
@@ -133,10 +138,15 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 7,
-       "tiebreak": 7
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "roster": {
@@ -206,6 +216,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 10,
    "type": {
     "id": "3",
@@ -224,8 +239,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Ignacio Buse / Luciano Darderi",
@@ -237,13 +252,13 @@
    "abbr": "Maximo Gonzalez / Andres Molteni",
    "alias": "Maximo Gonzalez / Andres Molteni",
    "name": "Maximo Gonzalez / Andres Molteni",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T17:06:45.985Z",
+ "updated": "2026-10-29T17:13:38.918Z",
  "open_taken_at": "2026-10-28T19:25:12.150Z",
  "thresholds": {
   "big": 10,
