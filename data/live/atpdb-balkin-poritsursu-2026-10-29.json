@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-29T13:05:48.520Z"
+  "fetched_at": "2026-10-29T13:12:08.701Z"
  },
- "updated": "2026-10-29T13:05:48.335Z",
+ "updated": "2026-10-29T13:12:08.542Z",
  "open_taken_at": "2026-10-28T12:10:17.820Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-29T13:05:48.335Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1905149:0:2026-10-29T13:05:48.335Z",
+   "key": "1905149:0",
+   "at": "2026-10-29T13:12:08.542Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Balaji / King win",
+   "market": "Moneyline",
+   "now_odds": "-245",
+   "now_chance": 71,
+   "edge": 11,
+   "text": "Edge gone: Balaji / King win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-balkin-poritsursu-2026-10-29"
+  },
   {
    "id": "new_edge:1905149:0:big",
    "key": "1905149:0",
@@ -80,7 +94,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1905149:0:big"
+  "new_edge:1905149:0:big",
+  "gone:1905149:0:2026-10-29T13:05:48.335Z"
  ],
  "kalshi_checked": null
 }
