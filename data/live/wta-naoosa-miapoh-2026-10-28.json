@@ -4,12 +4,12 @@
  "game": "Naomi Osaka vs. Mia Pohankova",
  "url": "https://polymarket.us/sports/wta/wta-naoosa-miapoh-2026-10-28",
  "start_time": "2026-10-29T05:40:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185672",
-  "fetched_at": "2026-10-29T07:17:38.027Z",
+  "fetched_at": "2026-10-29T07:24:16.984Z",
   "tennis": true,
   "tennis_match": {
    "id": "185672",
@@ -17,17 +17,17 @@
    "date": "2026-10-29T05:45Z",
    "startDate": "2026-10-29T05:45Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Mia Pohankova (SVK) leads (7) Naomi Osaka (JPN) 6-3 6-5",
+     "text": "Mia Pohankova (SVK) bt (7) Naomi Osaka (JPN) 6-3 7-5",
      "type": "event"
     }
    ],
@@ -55,13 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 6
+       "value": 7,
+       "winner": true
       }
      ],
      "athlete": {
@@ -101,6 +103,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "curatedRank": {
       "current": 7
      },
@@ -110,7 +113,8 @@
        "winner": false
       },
       {
-       "value": 5
+       "value": 5,
+       "winner": false
       }
      ],
      "athlete": {
@@ -161,16 +165,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Mia Pohankova",
    "alias": "Mia Pohankova",
    "name": "Mia Pohankova",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Naomi Osaka",
@@ -182,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T07:17:37.956Z",
+ "updated": "2026-10-29T07:24:16.895Z",
  "open_taken_at": "2026-10-27T10:04:48.633Z",
  "thresholds": {
   "big": 10,
@@ -522,6 +526,26 @@
  ],
  "edges": [
   {
+   "key": "1888507:0",
+   "market_id": "1888507",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Naomi Osaka win set 1 against Mia Pohankova?",
+   "side": "Yes: Naomi Osaka win set 1 against Mia Pohankova",
+   "open_chance": 75,
+   "now_chance": 20,
+   "open_odds": "-300",
+   "now_odds": "+400",
+   "edge": 55,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Naomi Osaka not above the games spread right now",
+   "context": "Mia Pohankova 5 · Naomi Osaka 3 · 1st Set (games by set)",
+   "first_seen": "2026-10-29T06:05:10.865Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1865881:0",
    "market_id": "1865881",
    "market": "Moneyline",
@@ -538,7 +562,7 @@
    "reason": "Explained by score: Naomi Osaka trailing in sets",
    "context": "Mia Pohankova 6, 6 · Naomi Osaka 3, 5 · 2nd Set (games by set)",
    "first_seen": "2026-10-29T06:17:31.678Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -558,7 +582,7 @@
    "reason": "Big move (35 pts), likely news",
    "context": "Mia Pohankova 6, 6 · Naomi Osaka 3, 5 · 2nd Set (games by set)",
    "first_seen": "2026-10-29T05:51:37.987Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -578,66 +602,6 @@
    "reason": "Explained by score: Naomi Osaka not above the games spread right now",
    "context": "Mia Pohankova 6, 6 · Naomi Osaka 3, 5 · 2nd Set (games by set)",
    "first_seen": "2026-10-29T06:17:31.678Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1888509:0",
-   "market_id": "1888509",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Naomi Osaka win set 2 against Mia Pohankova?",
-   "side": "Yes: Naomi Osaka win set 2 against Mia Pohankova",
-   "open_chance": 75,
-   "now_chance": 51,
-   "open_odds": "-300",
-   "now_odds": "-104",
-   "edge": 24,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Naomi Osaka not above the games spread right now",
-   "context": "Mia Pohankova 6, 6 · Naomi Osaka 3, 5 · 2nd Set (games by set)",
-   "first_seen": "2026-10-29T06:17:31.678Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1888494:1",
-   "market_id": "1888494",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Naomi Osaka vs. Mia Pohankova be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 62,
-   "now_chance": 49,
-   "open_odds": "-163",
-   "now_odds": "+104",
-   "edge": 13,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Mia Pohankova 6, 6 · Naomi Osaka 3, 5 · 2nd Set (games by set)",
-   "first_seen": "2026-10-29T06:05:10.865Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1888507:0",
-   "market_id": "1888507",
-   "market": "Set 1 winner",
-   "group": "game",
-   "question": "Will Naomi Osaka win set 1 against Mia Pohankova?",
-   "side": "Yes: Naomi Osaka win set 1 against Mia Pohankova",
-   "open_chance": 75,
-   "now_chance": 20,
-   "open_odds": "-300",
-   "now_odds": "+400",
-   "edge": 55,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Naomi Osaka not above the games spread right now",
-   "context": "Mia Pohankova 5 · Naomi Osaka 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-29T06:05:10.865Z",
    "status": "gone",
    "kalshi": null
   },
@@ -682,6 +646,26 @@
    "kalshi": null
   },
   {
+   "key": "1888509:0",
+   "market_id": "1888509",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Naomi Osaka win set 2 against Mia Pohankova?",
+   "side": "Yes: Naomi Osaka win set 2 against Mia Pohankova",
+   "open_chance": 75,
+   "now_chance": 51,
+   "open_odds": "-300",
+   "now_odds": "-104",
+   "edge": 24,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Naomi Osaka not above the games spread right now",
+   "context": "Mia Pohankova 6, 6 · Naomi Osaka 3, 5 · 2nd Set (games by set)",
+   "first_seen": "2026-10-29T06:17:31.678Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1888498:1",
    "market_id": "1888498",
    "market": "Sets total",
@@ -718,6 +702,26 @@
    "reason": null,
    "context": "Mia Pohankova 0 · Naomi Osaka 2 · 1st Set (games by set)",
    "first_seen": "2026-10-29T05:58:31.334Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1888494:1",
+   "market_id": "1888494",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Naomi Osaka vs. Mia Pohankova be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 62,
+   "now_chance": 49,
+   "open_odds": "-163",
+   "now_odds": "+104",
+   "edge": 13,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Mia Pohankova 6, 6 · Naomi Osaka 3, 5 · 2nd Set (games by set)",
+   "first_seen": "2026-10-29T06:05:10.865Z",
    "status": "gone",
    "kalshi": null
   },
