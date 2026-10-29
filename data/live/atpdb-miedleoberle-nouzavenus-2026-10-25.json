@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185206",
-  "fetched_at": "2026-10-29T19:16:38.306Z",
+  "fetched_at": "2026-10-29T19:23:32.025Z",
   "tennis": true,
   "tennis_match": {
    "id": "185206",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Lucas Miedler (AUT) & Neil Oberleitner (AUT) leads Petr Nouza (CZE) & Michael Venus (NZL) 1-1",
+     "text": "Lucas Miedler (AUT) & Neil Oberleitner (AUT) leads Petr Nouza (CZE) & Michael Venus (NZL) 2-1",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
        "value": 1
@@ -133,10 +133,10 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
-       "value": 1
+       "value": 2
       }
      ],
      "roster": {
@@ -248,7 +248,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T19:16:38.141Z",
+ "updated": "2026-10-29T19:23:31.926Z",
  "open_taken_at": "2026-10-24T13:28:22.288Z",
  "thresholds": {
   "big": 10,
@@ -287,40 +287,34 @@
    "question": "Who will win in the upcoming atpdb event Miedler / Oberleitner vs Nouza / Venus scheduled for October 25, 2026 at 9:00 AM UTC?",
    "side": "Nouza P / Venus M win",
    "open_chance": 33,
-   "now_chance": 29,
+   "now_chance": 17,
    "open_odds": "+203",
-   "now_odds": "+245",
-   "edge": 4,
-   "tier": "slight",
+   "now_odds": "+488",
+   "edge": 16,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Petr Nouza / Michael Venus 1 · Lucas Miedler / Neil Oberleitner 2 · 1st Set (games by set)",
    "first_seen": "2026-10-29T18:15:41.816Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1755070:0",
-   "market_id": "1755070",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atpdb event Miedler / Oberleitner vs Nouza / Venus scheduled for October 25, 2026 at 9:00 AM UTC?",
-   "side": "Miedler L / Oberleitner N win",
-   "open_chance": 70,
-   "now_chance": 66,
-   "open_odds": "-233",
-   "now_odds": "-194",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-10-28T05:19:09.781Z",
-   "status": "gone",
+   "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1755070:1:big",
+   "key": "1755070:1",
+   "at": "2026-10-29T19:23:31.926Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Nouza P / Venus M win",
+   "market": "Moneyline",
+   "now_odds": "+488",
+   "now_chance": 17,
+   "edge": 16,
+   "text": "New big edge: Nouza P / Venus M win (Moneyline), 16 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-miedleoberle-nouzavenus-2026-10-25"
+  },
   {
    "id": "gone:1755070:1:2026-10-29T18:15:41.816Z",
    "key": "1755070:1",
@@ -352,7 +346,8 @@
  ],
  "alert_seen": [
   "new_edge:1755070:1:slight",
-  "gone:1755070:1:2026-10-29T18:15:41.816Z"
+  "gone:1755070:1:2026-10-29T18:15:41.816Z",
+  "new_edge:1755070:1:big"
  ],
  "kalshi_checked": null
 }
