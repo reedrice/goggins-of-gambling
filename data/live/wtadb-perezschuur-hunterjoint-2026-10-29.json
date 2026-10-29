@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185697",
-  "fetched_at": "2026-10-29T04:12:40.849Z",
+  "fetched_at": "2026-10-29T04:19:25.758Z",
   "tennis": true,
   "tennis_match": {
    "id": "185697",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Thu, October 28th at 12:15 AM EDT",
-     "shortDetail": "10/29 - 12:15 AM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(4) Ellen Perez (AUS) & Demi Schuurs (NED) leads Storm Hunter (AUS) & Maya Joint (AUS) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "roster": {
       "displayName": "Storm Hunter / Maya Joint",
       "shortDisplayName": "S. Hunter / M. Joint",
@@ -122,9 +133,15 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 4
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "roster": {
       "displayName": "Ellen Perez / Demi  Schuurs",
       "shortDisplayName": "E. Perez / D. Schuurs",
@@ -192,6 +209,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 264,
    "type": {
     "id": "4",
@@ -208,10 +230,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Thu, October 28th at 12:15 AM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Storm Hunter / Maya Joint",
@@ -229,7 +251,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-29T04:12:40.732Z",
+ "updated": "2026-10-29T04:19:25.665Z",
  "open_taken_at": "2026-10-28T09:43:39.918Z",
  "thresholds": {
   "big": 10,
@@ -268,16 +290,16 @@
    "question": "Who will win in the upcoming wtadb event Perez / Schuurs vs Hunter / Joint scheduled for October 29, 2026 at 4:00 AM UTC?",
    "side": "Hunter S / Joint M win",
    "open_chance": 52,
-   "now_chance": 43,
+   "now_chance": 48,
    "open_odds": "-108",
-   "now_odds": "+133",
-   "edge": 9,
+   "now_odds": "+108",
+   "edge": 4,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Storm Hunter / Maya Joint 0 · Ellen Perez / Demi  Schuurs 0 · 1st Set (games by set)",
    "first_seen": "2026-10-28T11:47:21.365Z",
-   "status": "gone",
+   "status": "open",
    "kalshi": null
   },
   {
@@ -301,7 +323,24 @@
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "new_edge:1902605:1:slight",
+   "key": "1902605:1",
+   "at": "2026-10-29T04:19:25.665Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Hunter S / Joint M win",
+   "market": "Moneyline",
+   "now_odds": "+108",
+   "now_chance": 48,
+   "edge": 4,
+   "text": "New slight edge: Hunter S / Joint M win (Moneyline), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-perezschuur-hunterjoint-2026-10-29"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:1902605:1:slight"
+ ],
  "kalshi_checked": null
 }

@@ -9,15 +9,59 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for mls",
-  "fetched_at": "2026-10-29T04:12:33.954Z"
+  "fetched_at": "2026-10-29T04:19:18.407Z"
  },
- "updated": "2026-10-29T04:12:33.951Z",
+ "updated": "2026-10-29T04:19:18.404Z",
  "open_taken_at": "2026-10-27T05:06:00.307Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1892983",
+   "market": "Main total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 4.5,
+   "question": "Will the total in VWH vs SDG be more than 4.5?",
+   "sides": [
+    "Over 4.5",
+    "Under 4.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 36,
+   "no_buy": 69,
+   "taken_at": "2026-10-28T03:38:35.129Z"
+  },
+  {
+   "market_id": "1892984",
+   "market": "Alt total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 5.5,
+   "question": "Will the total in VWH vs SDG be more than 5.5?",
+   "sides": [
+    "Over 5.5",
+    "Under 5.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 18.5,
+   "yes_buy": 21,
+   "no_buy": 84,
+   "taken_at": "2026-10-28T03:48:10.864Z"
+  },
   {
    "market_id": "1892982",
    "market": "Main total",
@@ -61,50 +105,6 @@
    "yes_buy": 30,
    "no_buy": 75,
    "taken_at": "2026-10-28T03:33:50.746Z"
-  },
-  {
-   "market_id": "1892984",
-   "market": "Alt total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 5.5,
-   "question": "Will the total in VWH vs SDG be more than 5.5?",
-   "sides": [
-    "Over 5.5",
-    "Under 5.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 18.5,
-   "yes_buy": 21,
-   "no_buy": 84,
-   "taken_at": "2026-10-28T03:48:10.864Z"
-  },
-  {
-   "market_id": "1892983",
-   "market": "Alt total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 4.5,
-   "question": "Will the total in VWH vs SDG be more than 4.5?",
-   "sides": [
-    "Over 4.5",
-    "Under 4.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 36,
-   "no_buy": 69,
-   "taken_at": "2026-10-28T03:38:35.129Z"
   },
   {
    "market_id": "1892964",
@@ -593,6 +593,26 @@
  ],
  "edges": [
   {
+   "key": "1892983:1",
+   "market_id": "1892983",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in VWH vs SDG be more than 4.5?",
+   "side": "Under 4.5",
+   "open_chance": 69,
+   "now_chance": 50,
+   "open_odds": "-223",
+   "now_odds": "+100",
+   "edge": 19,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-29T04:19:18.404Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1892963:1",
    "market_id": "1892963",
    "market": "Main spread",
@@ -609,47 +629,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-29T03:06:24.069Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1892983:0",
-   "market_id": "1892983",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in VWH vs SDG be more than 4.5?",
-   "side": "Over 4.5",
-   "open_chance": 36,
-   "now_chance": 24,
-   "open_odds": "+178",
-   "now_odds": "+317",
-   "edge": 12,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-29T04:06:35.677Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1892982:1",
-   "market_id": "1892982",
-   "market": "Main total",
-   "group": "game",
-   "question": "Will the total in VWH vs SDG be more than 3.5?",
-   "side": "Under 3.5",
-   "open_chance": 50,
-   "now_chance": 39,
-   "open_odds": "+100",
-   "now_odds": "+156",
-   "edge": 11,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-29T02:08:34.506Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -669,6 +649,46 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-28T04:12:52.101Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1892983:0",
+   "market_id": "1892983",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in VWH vs SDG be more than 4.5?",
+   "side": "Over 4.5",
+   "open_chance": 36,
+   "now_chance": 24,
+   "open_odds": "+178",
+   "now_odds": "+317",
+   "edge": 12,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-29T04:06:35.677Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1892982:1",
+   "market_id": "1892982",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in VWH vs SDG be more than 3.5?",
+   "side": "Under 3.5",
+   "open_chance": 50,
+   "now_chance": 39,
+   "open_odds": "+100",
+   "now_odds": "+156",
+   "edge": 11,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-29T02:08:34.506Z",
    "status": "gone",
    "kalshi": null
   },
@@ -774,6 +794,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1892983:1:big",
+   "key": "1892983:1",
+   "at": "2026-10-29T04:19:18.404Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 4.5",
+   "market": "Main total",
+   "now_odds": "+100",
+   "now_chance": 50,
+   "edge": 19,
+   "text": "New big edge: Under 4.5 (Main total), 19 points cheaper than open.",
+   "url": "https://polymarket.us/sports/mls/mls-vwh-sdg-2026-10-28"
+  },
+  {
+   "id": "gone:1892983:0:2026-10-29T04:06:35.677Z",
+   "key": "1892983:0",
+   "at": "2026-10-29T04:19:18.404Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 4.5",
+   "market": "Alt total",
+   "now_odds": "+317",
+   "now_chance": 24,
+   "edge": 12,
+   "text": "Edge gone: Over 4.5 (Alt total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/mls/mls-vwh-sdg-2026-10-28"
+  },
   {
    "id": "new_edge:1892983:0:big",
    "key": "1892983:0",
@@ -1087,7 +1135,9 @@
   "gone:1892964:1:2026-10-29T03:06:24.069Z",
   "new_edge:1892982:0:big",
   "gone:1892981:1:2026-10-29T04:01:25.246Z",
-  "new_edge:1892983:0:big"
+  "new_edge:1892983:0:big",
+  "new_edge:1892983:1:big",
+  "gone:1892983:0:2026-10-29T04:06:35.677Z"
  ],
  "kalshi_checked": null
 }
