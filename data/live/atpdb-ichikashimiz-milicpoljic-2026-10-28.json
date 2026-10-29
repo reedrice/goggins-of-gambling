@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-29T05:03:41.610Z"
+  "fetched_at": "2026-10-29T05:07:34.187Z"
  },
- "updated": "2026-10-29T05:03:41.495Z",
+ "updated": "2026-10-29T05:07:34.072Z",
  "open_taken_at": "2026-10-28T06:55:03.718Z",
  "thresholds": {
   "big": 10,
@@ -43,6 +43,26 @@
  ],
  "edges": [
   {
+   "key": "1899825:1",
+   "market_id": "1899825",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atpdb event Ichikawa / Shimizu vs Milic / Poljicak scheduled for October 29, 2026 at 2:00 AM UTC?",
+   "side": "Milic O / Poljicak M win",
+   "open_chance": 46,
+   "now_chance": 25,
+   "open_odds": "+117",
+   "now_odds": "+300",
+   "edge": 21,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-29T05:07:34.072Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1899825:0",
    "market_id": "1899825",
    "market": "Moneyline",
@@ -64,6 +84,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1899825:1:big",
+   "key": "1899825:1",
+   "at": "2026-10-29T05:07:34.072Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Milic O / Poljicak M win",
+   "market": "Moneyline",
+   "now_odds": "+300",
+   "now_chance": 25,
+   "edge": 21,
+   "text": "New big edge: Milic O / Poljicak M win (Moneyline), 21 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-ichikashimiz-milicpoljic-2026-10-28"
+  },
   {
    "id": "gone:1899825:0:2026-10-29T04:25:24.104Z",
    "key": "1899825:0",
@@ -95,7 +129,8 @@
  ],
  "alert_seen": [
   "new_edge:1899825:0:big",
-  "gone:1899825:0:2026-10-29T04:25:24.104Z"
+  "gone:1899825:0:2026-10-29T04:25:24.104Z",
+  "new_edge:1899825:1:big"
  ],
  "kalshi_checked": null
 }
