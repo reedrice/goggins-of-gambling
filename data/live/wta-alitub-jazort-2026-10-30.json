@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185777",
-  "fetched_at": "2026-10-30T21:40:13.976Z",
+  "fetched_at": "2026-10-30T21:47:37.069Z",
   "tennis": true,
   "tennis_match": {
    "id": "185777",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Alice Tubello (FRA) leads (8) Jazmin Ortenzi (ARG) 2-6 6-2 0-0",
+     "text": "Alice Tubello (FRA) leads (8) Jazmin Ortenzi (ARG) 2-6 6-2 1-1",
      "type": "event"
     }
    ],
@@ -69,7 +69,7 @@
        "winner": false
       },
       {
-       "value": 0
+       "value": 1
       }
      ],
      "athlete": {
@@ -120,7 +120,7 @@
        "winner": true
       },
       {
-       "value": 0
+       "value": 1
       }
      ],
      "athlete": {
@@ -197,7 +197,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T21:40:13.859Z",
+ "updated": "2026-10-30T21:47:36.972Z",
  "open_taken_at": "2026-10-29T05:03:43.752Z",
  "thresholds": {
   "big": 10,
@@ -205,25 +205,25 @@
  },
  "open": [
   {
-   "market_id": "1924963",
-   "market": "Games total",
+   "market_id": "1911585",
+   "market": "Moneyline",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Alice Tubello vs. Jazmin Ortenzi be more than 22.5?",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming wta event Alice Tubello vs Jazmin Ortenzi scheduled for October 30, 2026 at 2:00 PM UTC?",
    "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
+    "Alice Tubello win",
+    "Jazmin Ortenzi win"
    ],
    "teams": [
-    null,
-    null
+    "Alice Tubello",
+    "Jazmin Ortenzi"
    ],
    "player": null,
-   "mid": 43,
-   "yes_buy": 44,
-   "no_buy": 58,
+   "mid": 57.5,
+   "yes_buy": 59,
+   "no_buy": 44,
    "taken_at": "2026-10-29T18:54:07.007Z"
   },
   {
@@ -293,6 +293,28 @@
    "taken_at": "2026-10-30T20:20:22.301Z"
   },
   {
+   "market_id": "1924963",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Alice Tubello vs. Jazmin Ortenzi be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 43,
+   "yes_buy": 44,
+   "no_buy": 58,
+   "taken_at": "2026-10-29T18:54:07.007Z"
+  },
+  {
    "market_id": "1924956",
    "market": "Games spread",
    "group": "game",
@@ -313,28 +335,6 @@
    "yes_buy": 40,
    "no_buy": 63,
    "taken_at": "2026-10-29T20:50:38.209Z"
-  },
-  {
-   "market_id": "1911585",
-   "market": "Moneyline",
-   "group": "game",
-   "mtype": "winner",
-   "period": "full_game",
-   "line": null,
-   "question": "Who will win in the upcoming wta event Alice Tubello vs Jazmin Ortenzi scheduled for October 30, 2026 at 2:00 PM UTC?",
-   "sides": [
-    "Alice Tubello win",
-    "Jazmin Ortenzi win"
-   ],
-   "teams": [
-    "Alice Tubello",
-    "Jazmin Ortenzi"
-   ],
-   "player": null,
-   "mid": 57.5,
-   "yes_buy": 59,
-   "no_buy": 44,
-   "taken_at": "2026-10-29T18:54:07.007Z"
   },
   {
    "market_id": "1924955",
@@ -537,6 +537,26 @@
  ],
  "edges": [
   {
+   "key": "1911585:0",
+   "market_id": "1911585",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Alice Tubello vs Jazmin Ortenzi scheduled for October 30, 2026 at 2:00 PM UTC?",
+   "side": "Alice Tubello win",
+   "open_chance": 59,
+   "now_chance": 49,
+   "open_odds": "-144",
+   "now_odds": "+104",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Jazmin Ortenzi 6, 2, 1 · Alice Tubello 2, 6, 1 · 3rd Set (games by set)",
+   "first_seen": "2026-10-30T20:46:19.110Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1924964:1",
    "market_id": "1924964",
    "market": "Games total",
@@ -551,7 +571,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Jazmin Ortenzi 6, 2, 0 · Alice Tubello 2, 6, 0 · 3rd Set (games by set)",
+   "context": "Jazmin Ortenzi 6, 2, 1 · Alice Tubello 2, 6, 1 · 3rd Set (games by set)",
    "first_seen": "2026-10-30T21:18:25.316Z",
    "status": "open",
    "kalshi": null
@@ -733,26 +753,6 @@
    "reason": null,
    "context": "Jazmin Ortenzi 1 · Alice Tubello 2 · 1st Set (games by set)",
    "first_seen": "2026-10-30T20:35:23.050Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1911585:0",
-   "market_id": "1911585",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Alice Tubello vs Jazmin Ortenzi scheduled for October 30, 2026 at 2:00 PM UTC?",
-   "side": "Alice Tubello win",
-   "open_chance": 59,
-   "now_chance": 52,
-   "open_odds": "-144",
-   "now_odds": "-108",
-   "edge": 7,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Alice Tubello trailing in sets",
-   "context": "Jazmin Ortenzi 6, 2 · Alice Tubello 2, 4 · 2nd Set (games by set)",
-   "first_seen": "2026-10-30T20:46:19.110Z",
    "status": "gone",
    "kalshi": null
   }
