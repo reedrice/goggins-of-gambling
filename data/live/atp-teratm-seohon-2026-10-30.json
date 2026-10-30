@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-30T06:07:02.337Z"
+  "fetched_at": "2026-10-30T06:13:59.779Z"
  },
- "updated": "2026-10-30T06:07:02.253Z",
+ "updated": "2026-10-30T06:13:59.690Z",
  "open_taken_at": "2026-10-29T07:48:35.546Z",
  "thresholds": {
   "big": 10,
@@ -41,6 +41,28 @@
    "taken_at": "2026-10-29T17:06:48.346Z"
   },
   {
+   "market_id": "1934996",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Terence Atmane cover 4.5 vs the Seongchan Hong in Terence Atmane vs. Seongchan Hong?",
+   "sides": [
+    "Terence Atmane +4.50 (Games)",
+    "Seong-Chan Hong -4.50 (Games)"
+   ],
+   "teams": [
+    "Terence Atmane",
+    "Seong-Chan Hong"
+   ],
+   "player": null,
+   "mid": 86.5,
+   "yes_buy": 87,
+   "no_buy": 14,
+   "taken_at": "2026-10-30T06:13:59.690Z"
+  },
+  {
    "market_id": "1935000",
    "market": "Sets spread",
    "group": "game",
@@ -63,26 +85,48 @@
    "taken_at": "2026-10-30T05:15:43.407Z"
   },
   {
-   "market_id": "1934999",
-   "market": "Sets spread",
+   "market_id": "1934993",
+   "market": "Games spread",
    "group": "game",
    "mtype": "spread",
-   "period": "tennis_match_sets_spread",
+   "period": "tennis_match_games_spread",
    "line": -1.5,
    "question": "Will the Terence Atmane cover -1.5 vs the Seongchan Hong in Terence Atmane vs. Seongchan Hong?",
    "sides": [
-    "Terence Atmane -1.50 (Sets)",
-    "Seong-Chan Hong +1.50 (Sets)"
+    "Terence Atmane -1.50 (Games)",
+    "Seong-Chan Hong +1.50 (Games)"
    ],
    "teams": [
     "Terence Atmane",
     "Seong-Chan Hong"
    ],
    "player": null,
-   "mid": 49.5,
-   "yes_buy": 50,
-   "no_buy": 51,
-   "taken_at": "2026-10-30T06:07:02.253Z"
+   "mid": 35.5,
+   "yes_buy": 38,
+   "no_buy": 67,
+   "taken_at": "2026-10-30T05:29:57.840Z"
+  },
+  {
+   "market_id": "1935009",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Terence Atmane win set 1 against Seongchan Hong?",
+   "sides": [
+    "Yes: Terence Atmane win set 1 against Seongchan Hong",
+    "No: Terence Atmane win set 1 against Seongchan Hong"
+   ],
+   "teams": [
+    "Terence Atmane",
+    null
+   ],
+   "player": null,
+   "mid": 56.5,
+   "yes_buy": 57,
+   "no_buy": 44,
+   "taken_at": "2026-10-30T06:13:59.690Z"
   },
   {
    "market_id": "1935002",
@@ -105,6 +149,28 @@
    "yes_buy": 47,
    "no_buy": 55,
    "taken_at": "2026-10-29T18:58:41.683Z"
+  },
+  {
+   "market_id": "1934999",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Terence Atmane cover -1.5 vs the Seongchan Hong in Terence Atmane vs. Seongchan Hong?",
+   "sides": [
+    "Terence Atmane -1.50 (Sets)",
+    "Seong-Chan Hong +1.50 (Sets)"
+   ],
+   "teams": [
+    "Terence Atmane",
+    "Seong-Chan Hong"
+   ],
+   "player": null,
+   "mid": 49.5,
+   "yes_buy": 50,
+   "no_buy": 51,
+   "taken_at": "2026-10-30T06:07:02.253Z"
   },
   {
    "market_id": "1935004",
@@ -215,31 +281,29 @@
    "yes_buy": 77,
    "no_buy": 25,
    "taken_at": "2026-10-30T05:52:01.099Z"
-  },
-  {
-   "market_id": "1934993",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Terence Atmane cover -1.5 vs the Seongchan Hong in Terence Atmane vs. Seongchan Hong?",
-   "sides": [
-    "Terence Atmane -1.50 (Games)",
-    "Seong-Chan Hong +1.50 (Games)"
-   ],
-   "teams": [
-    "Terence Atmane",
-    "Seong-Chan Hong"
-   ],
-   "player": null,
-   "mid": 35.5,
-   "yes_buy": 38,
-   "no_buy": 67,
-   "taken_at": "2026-10-30T05:29:57.840Z"
   }
  ],
  "edges": [
+  {
+   "key": "1934993:1",
+   "market_id": "1934993",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Terence Atmane cover -1.5 vs the Seongchan Hong in Terence Atmane vs. Seongchan Hong?",
+   "side": "Seong-Chan Hong +1.50 (Games)",
+   "open_chance": 67,
+   "now_chance": 42,
+   "open_odds": "-203",
+   "now_odds": "+138",
+   "edge": 25,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-30T06:13:59.690Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1935000:0",
    "market_id": "1935000",
@@ -301,6 +365,26 @@
    "kalshi": null
   },
   {
+   "key": "1934897:0",
+   "market_id": "1934897",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Terence Atmane vs Seongchan Hong scheduled for October 30, 2026 at 4:20 AM UTC?",
+   "side": "Terence Atmane win",
+   "open_chance": 74,
+   "now_chance": 70,
+   "open_odds": "-285",
+   "now_odds": "-233",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-29T18:27:51.105Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1935002:1",
    "market_id": "1935002",
    "market": "Games total",
@@ -319,29 +403,37 @@
    "first_seen": "2026-10-30T05:22:31.123Z",
    "status": "gone",
    "kalshi": null
-  },
-  {
-   "key": "1934897:0",
-   "market_id": "1934897",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Terence Atmane vs Seongchan Hong scheduled for October 30, 2026 at 4:20 AM UTC?",
-   "side": "Terence Atmane win",
-   "open_chance": 74,
-   "now_chance": 70,
-   "open_odds": "-285",
-   "now_odds": "-233",
-   "edge": 4,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-29T18:27:51.105Z",
-   "status": "gone",
-   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1934993:1:big",
+   "key": "1934993:1",
+   "at": "2026-10-30T06:13:59.690Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Seong-Chan Hong +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+138",
+   "now_chance": 42,
+   "edge": 25,
+   "text": "New big edge: Seong-Chan Hong +1.50 (Games) (Games spread), 25 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-teratm-seohon-2026-10-30"
+  },
+  {
+   "id": "new_edge:1934897:0:slight",
+   "key": "1934897:0",
+   "at": "2026-10-30T06:13:59.690Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Terence Atmane win",
+   "market": "Moneyline",
+   "now_odds": "-233",
+   "now_chance": 70,
+   "edge": 4,
+   "text": "New slight edge: Terence Atmane win (Moneyline), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-teratm-seohon-2026-10-30"
+  },
   {
    "id": "new_edge:1935000:0:slight",
    "key": "1935000:0",
@@ -403,7 +495,9 @@
   "new_edge:1935004:0:big",
   "new_edge:1934995:0:slight",
   "new_edge:1935000:0:slight",
-  "new_edge:1935004:0:slight"
+  "new_edge:1935004:0:slight",
+  "new_edge:1934993:1:big",
+  "new_edge:1934897:0:slight"
  ],
  "kalshi_checked": null
 }
