@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185788",
-  "fetched_at": "2026-10-30T21:47:37.224Z",
+  "fetched_at": "2026-10-30T21:56:12.766Z",
   "tennis": true,
   "tennis_match": {
    "id": "185788",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "detail": "3rd Set",
+     "shortDetail": "3rd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Maria Lourdes Carle (ARG) & Julia Riera (ARG) is tied with (1) Dalila Jakupovic (SLO) & Nika Radisic (SLO) 6-7 (4-7) 6-1",
+     "text": "(1) Dalila Jakupovic (SLO) & Nika Radisic (SLO) leads Maria Lourdes Carle (ARG) & Julia Riera (ARG) 7-6 (7-4) 1-6 0-0",
      "type": "event"
     }
    ],
@@ -62,7 +62,11 @@
        "winner": false
       },
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "roster": {
@@ -147,7 +151,11 @@
        "winner": true
       },
       {
-       "value": 1
+       "value": 1,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "roster": {
@@ -235,14 +243,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "period": 3,
+  "clock": "3rd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Maria Lourdes Carle / Julia Riera",
    "alias": "Maria Lourdes Carle / Julia Riera",
    "name": "Maria Lourdes Carle / Julia Riera",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Dalila Jakupovic / Nika Radisic",
@@ -254,7 +262,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T21:47:37.127Z",
+ "updated": "2026-10-30T21:56:12.672Z",
  "open_taken_at": "2026-10-29T05:03:44.650Z",
  "thresholds": {
   "big": 10,
@@ -302,7 +310,7 @@
    "reason": null,
    "context": "Maria Lourdes Carle / Julia Riera 6, 6 · Dalila Jakupovic / Nika Radisic 7, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-30T21:47:37.127Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -327,6 +335,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1917738:0:2026-10-30T21:47:37.127Z",
+   "key": "1917738:0",
+   "at": "2026-10-30T21:56:12.672Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Jakupovic D / Radisic N win",
+   "market": "Moneyline",
+   "now_odds": "-104",
+   "now_chance": 51,
+   "edge": 15,
+   "text": "Edge gone: Jakupovic D / Radisic N win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-jakuporadisi-carleriera-2026-10-30"
+  },
   {
    "id": "new_edge:1917738:0:big",
    "key": "1917738:0",
@@ -388,7 +410,8 @@
   "new_edge:1917738:1:slight",
   "gone:1917738:1:2026-10-30T20:28:21.841Z",
   "new_edge:1917738:1:big",
-  "new_edge:1917738:0:big"
+  "new_edge:1917738:0:big",
+  "gone:1917738:0:2026-10-30T21:47:37.127Z"
  ],
  "kalshi_checked": null
 }
