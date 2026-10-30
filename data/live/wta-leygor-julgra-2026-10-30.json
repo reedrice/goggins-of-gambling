@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185775",
-  "fetched_at": "2026-10-30T16:30:13.626Z",
+  "fetched_at": "2026-10-30T16:38:14.895Z",
   "tennis": true,
   "tennis_match": {
    "id": "185775",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(5) Leyre Romero Gormaz (ESP) leads (2) Julia Grabher (AUT) 6-1 1-0",
+     "text": "(5) Leyre Romero Gormaz (ESP) leads (2) Julia Grabher (AUT) 6-1 2-1",
      "type": "event"
     }
    ],
@@ -65,7 +65,7 @@
        "winner": false
       },
       {
-       "value": 0
+       "value": 1
       }
      ],
      "athlete": {
@@ -115,7 +115,7 @@
        "winner": true
       },
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -192,7 +192,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T16:30:13.532Z",
+ "updated": "2026-10-30T16:38:14.801Z",
  "open_taken_at": "2026-10-29T21:21:48.486Z",
  "thresholds": {
   "big": 10,
@@ -288,6 +288,28 @@
    "taken_at": "2026-10-30T01:06:01.122Z"
   },
   {
+   "market_id": "1951891",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Leyre Romero Gormaz cover -4.5 vs the Julia Grabher in Leyre Romero Gormaz vs. Julia Grabher?",
+   "sides": [
+    "Leyre Romero Gormaz -4.50 (Games)",
+    "Julia Grabher +4.50 (Games)"
+   ],
+   "teams": [
+    "Leyre Romero Gormaz",
+    "Julia Grabher"
+   ],
+   "player": null,
+   "mid": 30.5,
+   "yes_buy": 31,
+   "no_buy": 70,
+   "taken_at": "2026-10-30T15:39:20.214Z"
+  },
+  {
    "market_id": "1951895",
    "market": "Sets spread",
    "group": "game",
@@ -376,28 +398,6 @@
    "taken_at": "2026-10-30T01:06:01.122Z"
   },
   {
-   "market_id": "1951900",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Leyre Romero Gormaz vs. Julia Grabher be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 46.5,
-   "yes_buy": 47,
-   "no_buy": 54,
-   "taken_at": "2026-10-30T15:39:20.214Z"
-  },
-  {
    "market_id": "1951899",
    "market": "Games total",
    "group": "game",
@@ -420,25 +420,25 @@
    "taken_at": "2026-10-30T15:39:20.214Z"
   },
   {
-   "market_id": "1951891",
-   "market": "Games spread",
+   "market_id": "1951900",
+   "market": "Sets total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Leyre Romero Gormaz cover -4.5 vs the Julia Grabher in Leyre Romero Gormaz vs. Julia Grabher?",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Leyre Romero Gormaz vs. Julia Grabher be more than 2.5?",
    "sides": [
-    "Leyre Romero Gormaz -4.50 (Games)",
-    "Julia Grabher +4.50 (Games)"
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
    ],
    "teams": [
-    "Leyre Romero Gormaz",
-    "Julia Grabher"
+    null,
+    null
    ],
    "player": null,
-   "mid": 30.5,
-   "yes_buy": 31,
-   "no_buy": 70,
+   "mid": 46.5,
+   "yes_buy": 47,
+   "no_buy": 54,
    "taken_at": "2026-10-30T15:39:20.214Z"
   },
   {
@@ -510,6 +510,26 @@
  ],
  "edges": [
   {
+   "key": "1951891:1",
+   "market_id": "1951891",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Leyre Romero Gormaz cover -4.5 vs the Julia Grabher in Leyre Romero Gormaz vs. Julia Grabher?",
+   "side": "Julia Grabher +4.50 (Games)",
+   "open_chance": 70,
+   "now_chance": 21,
+   "open_odds": "-233",
+   "now_odds": "+376",
+   "edge": 49,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Julia Grabher not above the games spread right now",
+   "context": "Julia Grabher 1, 1 · Leyre Romero Gormaz 6, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-30T16:14:01.024Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1951889:1",
    "market_id": "1951889",
    "market": "Games spread",
@@ -524,7 +544,7 @@
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Julia Grabher not above the games spread right now",
-   "context": "Julia Grabher 1, 0 · Leyre Romero Gormaz 6, 1 · 2nd Set (games by set)",
+   "context": "Julia Grabher 1, 1 · Leyre Romero Gormaz 6, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-30T16:09:08.026Z",
    "status": "open",
    "kalshi": null
@@ -537,14 +557,14 @@
    "question": "Will the Leyre Romero Gormaz cover -1.5 vs the Julia Grabher in Leyre Romero Gormaz vs. Julia Grabher?",
    "side": "Julia Grabher +1.50 (Sets)",
    "open_chance": 76,
-   "now_chance": 35,
+   "now_chance": 36,
    "open_odds": "-317",
-   "now_odds": "+186",
-   "edge": 41,
+   "now_odds": "+178",
+   "edge": 40,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (41 pts), likely news",
-   "context": "Julia Grabher 1, 0 · Leyre Romero Gormaz 6, 1 · 2nd Set (games by set)",
+   "reason": "Big move (40 pts), likely news",
+   "context": "Julia Grabher 1, 1 · Leyre Romero Gormaz 6, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-30T16:02:06.836Z",
    "status": "open",
    "kalshi": null
@@ -557,14 +577,14 @@
    "question": "Who will win in the upcoming wta event Leyre Romero Gormaz vs Julia Grabher scheduled for October 30, 2026 at 3:00 PM UTC?",
    "side": "Julia Grabher win",
    "open_chance": 52,
-   "now_chance": 22,
+   "now_chance": 23,
    "open_odds": "-108",
-   "now_odds": "+355",
-   "edge": 30,
+   "now_odds": "+335",
+   "edge": 29,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Julia Grabher trailing in sets",
-   "context": "Julia Grabher 1, 0 · Leyre Romero Gormaz 6, 1 · 2nd Set (games by set)",
+   "context": "Julia Grabher 1, 1 · Leyre Romero Gormaz 6, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-30T16:02:06.836Z",
    "status": "open",
    "kalshi": null
@@ -577,14 +597,54 @@
    "question": "Will the total in Leyre Romero Gormaz vs. Julia Grabher be more than 17.5?",
    "side": "Over 17.5 (Games)",
    "open_chance": 66,
-   "now_chance": 50,
+   "now_chance": 49,
    "open_odds": "-194",
-   "now_odds": "+100",
-   "edge": 16,
+   "now_odds": "+104",
+   "edge": 17,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Julia Grabher 1, 0 · Leyre Romero Gormaz 6, 1 · 2nd Set (games by set)",
+   "context": "Julia Grabher 1, 1 · Leyre Romero Gormaz 6, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-30T16:22:15.282Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1951893:1",
+   "market_id": "1951893",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Leyre Romero Gormaz cover -7.5 vs the Julia Grabher in Leyre Romero Gormaz vs. Julia Grabher?",
+   "side": "Julia Grabher +7.50 (Games)",
+   "open_chance": 70,
+   "now_chance": 61,
+   "open_odds": "-233",
+   "now_odds": "-156",
+   "edge": 9,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Julia Grabher 1, 1 · Leyre Romero Gormaz 6, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-10-30T16:22:15.282Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1951898:0",
+   "market_id": "1951898",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Leyre Romero Gormaz vs. Julia Grabher be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 46,
+   "now_chance": 40,
+   "open_odds": "+117",
+   "now_odds": "+150",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Julia Grabher 1, 1 · Leyre Romero Gormaz 6, 2 · 2nd Set (games by set)",
    "first_seen": "2026-10-30T16:22:15.282Z",
    "status": "open",
    "kalshi": null
@@ -606,66 +666,6 @@
    "reason": null,
    "context": "Julia Grabher 1, 0 · Leyre Romero Gormaz 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-30T16:30:13.532Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1951893:1",
-   "market_id": "1951893",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Leyre Romero Gormaz cover -7.5 vs the Julia Grabher in Leyre Romero Gormaz vs. Julia Grabher?",
-   "side": "Julia Grabher +7.50 (Games)",
-   "open_chance": 70,
-   "now_chance": 59,
-   "open_odds": "-233",
-   "now_odds": "-144",
-   "edge": 11,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Julia Grabher 1, 0 · Leyre Romero Gormaz 6, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-30T16:22:15.282Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1951898:0",
-   "market_id": "1951898",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Leyre Romero Gormaz vs. Julia Grabher be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 46,
-   "now_chance": 40,
-   "open_odds": "+117",
-   "now_odds": "+150",
-   "edge": 6,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Julia Grabher 1, 0 · Leyre Romero Gormaz 6, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-30T16:22:15.282Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1951891:1",
-   "market_id": "1951891",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Leyre Romero Gormaz cover -4.5 vs the Julia Grabher in Leyre Romero Gormaz vs. Julia Grabher?",
-   "side": "Julia Grabher +4.50 (Games)",
-   "open_chance": 70,
-   "now_chance": 30,
-   "open_odds": "-233",
-   "now_odds": "+233",
-   "edge": 40,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Julia Grabher not above the games spread right now",
-   "context": "Julia Grabher 1 · Leyre Romero Gormaz 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-30T16:14:01.024Z",
    "status": "gone",
    "kalshi": null
   },
@@ -751,6 +751,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1951893:1:slight",
+   "key": "1951893:1",
+   "at": "2026-10-30T16:38:14.801Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Julia Grabher +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-156",
+   "now_chance": 61,
+   "edge": 9,
+   "text": "New slight edge: Julia Grabher +7.50 (Games) (Games spread), 9 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-leygor-julgra-2026-10-30"
+  },
+  {
+   "id": "gone:1951900:0:2026-10-30T16:30:13.532Z",
+   "key": "1951900:0",
+   "at": "2026-10-30T16:38:14.801Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 2.5 (Sets)",
+   "market": "Sets total",
+   "now_odds": "+213",
+   "now_chance": 32,
+   "edge": 15,
+   "text": "Edge gone: Over 2.5 (Sets) (Sets total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-leygor-julgra-2026-10-30"
+  },
   {
    "id": "new_edge:1951897:0:big",
    "key": "1951897:0",
@@ -965,7 +993,9 @@
   "new_edge:1951897:0:slight",
   "gone:1951899:0:2026-10-30T16:09:08.026Z",
   "new_edge:1951897:0:big",
-  "new_edge:1951900:0:big"
+  "new_edge:1951900:0:big",
+  "new_edge:1951893:1:slight",
+  "gone:1951900:0:2026-10-30T16:30:13.532Z"
  ],
  "kalshi_checked": null
 }
