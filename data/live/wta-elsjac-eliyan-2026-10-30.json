@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185856",
-  "fetched_at": "2026-10-30T17:10:08.968Z",
+  "fetched_at": "2026-10-30T17:20:01.034Z",
   "tennis": true,
   "tennis_match": {
    "id": "185856",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Elsa Jacquemot (FRA) leads Elizara Yaneva (BUL) 5-7 6-6",
+     "text": "Elsa Jacquemot (FRA) is tied with Elizara Yaneva (BUL) 5-7 7-6 (7-4)",
      "type": "event"
     }
    ],
@@ -61,7 +61,8 @@
        "winner": true
       },
       {
-       "value": 6
+       "value": 6,
+       "tiebreak": 4
       }
      ],
      "athlete": {
@@ -107,7 +108,8 @@
        "winner": false
       },
       {
-       "value": 6
+       "value": 7,
+       "tiebreak": 7
       }
      ],
      "athlete": {
@@ -179,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T17:10:08.811Z",
+ "updated": "2026-10-30T17:20:00.926Z",
  "open_taken_at": "2026-10-29T17:20:49.013Z",
  "thresholds": {
   "big": 10,
@@ -250,6 +252,28 @@
    "mid": 53.5,
    "yes_buy": 55,
    "no_buy": 48,
+   "taken_at": "2026-10-29T23:09:10.011Z"
+  },
+  {
+   "market_id": "1945140",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Elsa Jacquemot cover -1.5 vs the Elizara Yaneva in Elsa Jacquemot vs. Elizara Yaneva?",
+   "sides": [
+    "Elsa Jacquemot -1.50 (Games)",
+    "Elizara Yaneva +1.50 (Games)"
+   ],
+   "teams": [
+    "Elsa Jacquemot",
+    "Elizara Yaneva"
+   ],
+   "player": null,
+   "mid": 43,
+   "yes_buy": 44,
+   "no_buy": 58,
    "taken_at": "2026-10-29T23:09:10.011Z"
   },
   {
@@ -493,48 +517,26 @@
    "yes_buy": 80,
    "no_buy": 21,
    "taken_at": "2026-10-30T15:39:18.594Z"
-  },
-  {
-   "market_id": "1945140",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Elsa Jacquemot cover -1.5 vs the Elizara Yaneva in Elsa Jacquemot vs. Elizara Yaneva?",
-   "sides": [
-    "Elsa Jacquemot -1.50 (Games)",
-    "Elizara Yaneva +1.50 (Games)"
-   ],
-   "teams": [
-    "Elsa Jacquemot",
-    "Elizara Yaneva"
-   ],
-   "player": null,
-   "mid": 43,
-   "yes_buy": 44,
-   "no_buy": 58,
-   "taken_at": "2026-10-29T23:09:10.011Z"
   }
  ],
  "edges": [
   {
-   "key": "1944781:1",
-   "market_id": "1944781",
-   "market": "Moneyline",
+   "key": "1945140:0",
+   "market_id": "1945140",
+   "market": "Games spread",
    "group": "game",
-   "question": "Who will win in the upcoming wta event Elsa Jacquemot vs Elizara Yaneva scheduled for October 30, 2026 at 9:00 AM UTC?",
-   "side": "Elizara Yaneva win",
-   "open_chance": 57,
-   "now_chance": 52,
-   "open_odds": "-133",
-   "now_odds": "-108",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Elizara Yaneva 7, 6 · Elsa Jacquemot 5, 6 · 2nd Set (games by set)",
-   "first_seen": "2026-10-30T17:10:08.811Z",
+   "question": "Will the Elsa Jacquemot cover -1.5 vs the Elizara Yaneva in Elsa Jacquemot vs. Elizara Yaneva?",
+   "side": "Elsa Jacquemot -1.50 (Games)",
+   "open_chance": 44,
+   "now_chance": 23,
+   "open_odds": "+127",
+   "now_odds": "+335",
+   "edge": 21,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Elsa Jacquemot not above the games spread right now",
+   "context": "Elizara Yaneva 7, 6 · Elsa Jacquemot 5, 7 · 2nd Set (games by set)",
+   "first_seen": "2026-10-30T17:20:00.926Z",
    "status": "open",
    "kalshi": null
   },
@@ -575,6 +577,26 @@
    "reason": null,
    "context": "Elizara Yaneva 3 · Elsa Jacquemot 4 · 1st Set (games by set)",
    "first_seen": "2026-10-30T15:39:18.594Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1944781:1",
+   "market_id": "1944781",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Elsa Jacquemot vs Elizara Yaneva scheduled for October 30, 2026 at 9:00 AM UTC?",
+   "side": "Elizara Yaneva win",
+   "open_chance": 57,
+   "now_chance": 52,
+   "open_odds": "-133",
+   "now_odds": "-108",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Elizara Yaneva 7, 6 · Elsa Jacquemot 5, 6 · 2nd Set (games by set)",
+   "first_seen": "2026-10-30T17:10:08.811Z",
    "status": "gone",
    "kalshi": null
   },
@@ -620,6 +642,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1944781:1:2026-10-30T17:10:08.811Z",
+   "key": "1944781:1",
+   "at": "2026-10-30T17:20:00.926Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Elizara Yaneva win",
+   "market": "Moneyline",
+   "now_odds": "-108",
+   "now_chance": 52,
+   "edge": 5,
+   "text": "Edge gone: Elizara Yaneva win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-elsjac-eliyan-2026-10-30"
+  },
   {
    "id": "gone:1945163:0:2026-10-30T16:22:13.750Z",
    "key": "1945163:0",
@@ -769,7 +805,8 @@
   "news:1945146:0",
   "new_edge:1945160:1:big",
   "new_edge:1945163:0:slight",
-  "gone:1945163:0:2026-10-30T16:22:13.750Z"
+  "gone:1945163:0:2026-10-30T16:22:13.750Z",
+  "gone:1944781:1:2026-10-30T17:10:08.811Z"
  ],
  "kalshi_checked": null
 }

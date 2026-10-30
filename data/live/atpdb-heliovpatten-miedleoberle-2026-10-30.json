@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185217",
-  "fetched_at": "2026-10-30T17:10:09.770Z",
+  "fetched_at": "2026-10-30T17:20:01.803Z",
   "tennis": true,
   "tennis_match": {
    "id": "185217",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "detail": "3rd Set",
+     "shortDetail": "3rd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Harri Heliovaara (FIN) & Henry Patten (GBR) is tied with Lucas Miedler (AUT) & Neil Oberleitner (AUT) 7-6 (7-5) 6-6 (1-5)",
+     "text": "(1) Harri Heliovaara (FIN) & Henry Patten (GBR) leads Lucas Miedler (AUT) & Neil Oberleitner (AUT) 7-6 (7-5) 6-7 (2-7) 0-0 (4-7)",
      "type": "event"
     }
    ],
@@ -62,8 +62,13 @@
        "winner": false
       },
       {
-       "value": 6,
-       "tiebreak": 5
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 0,
+       "tiebreak": 7
       }
      ],
      "roster": {
@@ -149,7 +154,12 @@
       },
       {
        "value": 6,
-       "tiebreak": 1
+       "tiebreak": 2,
+       "winner": false
+      },
+      {
+       "value": 0,
+       "tiebreak": 4
       }
      ],
      "roster": {
@@ -237,14 +247,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "period": 3,
+  "clock": "3rd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Lucas Miedler / Neil Oberleitner",
    "alias": "Lucas Miedler / Neil Oberleitner",
    "name": "Lucas Miedler / Neil Oberleitner",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Harri Heliovaara / Henry Patten",
@@ -256,7 +266,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T17:10:09.645Z",
+ "updated": "2026-10-30T17:20:01.744Z",
  "open_taken_at": "2026-10-29T20:43:44.500Z",
  "thresholds": {
   "big": 10,
@@ -288,6 +298,26 @@
  ],
  "edges": [
   {
+   "key": "1950132:0",
+   "market_id": "1950132",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atpdb event Heliovaara / Patten vs Miedler / Oberleitner scheduled for October 30, 2026 at 2:30 PM UTC?",
+   "side": "Heliovaara / Patten win",
+   "open_chance": 62,
+   "now_chance": 19,
+   "open_odds": "-163",
+   "now_odds": "+426",
+   "edge": 43,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (43 pts), likely news",
+   "context": "Lucas Miedler / Neil Oberleitner 6, 7, 0 · Harri Heliovaara / Henry Patten 7, 6, 0 · 3rd Set (games by set)",
+   "first_seen": "2026-10-30T17:20:01.744Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1950132:1",
    "market_id": "1950132",
    "market": "Moneyline",
@@ -309,6 +339,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "news:1950132:0",
+   "key": "1950132:0",
+   "at": "2026-10-30T17:20:01.744Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Heliovaara / Patten win",
+   "market": "Moneyline",
+   "now_odds": "+426",
+   "now_chance": 19,
+   "edge": 43,
+   "text": "Big move, likely news: Heliovaara / Patten win (Moneyline) is 43 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-heliovpatten-miedleoberle-2026-10-30"
+  },
   {
    "id": "new_edge:1950132:1:big",
    "key": "1950132:1",
@@ -355,7 +399,8 @@
  "alert_seen": [
   "new_edge:1950132:1:slight",
   "gone:1950132:1:2026-10-30T08:44:04.810Z",
-  "new_edge:1950132:1:big"
+  "new_edge:1950132:1:big",
+  "news:1950132:0"
  ],
  "kalshi_checked": null
 }
