@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185199",
-  "fetched_at": "2026-10-30T17:27:41.025Z",
+  "fetched_at": "2026-10-30T17:36:11.816Z",
   "tennis": true,
   "tennis_match": {
    "id": "185199",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Alexander Zverev (GER) is tied with Arthur Fery (GBR) 6-0 0-0",
+     "text": "(1) Alexander Zverev (GER) leads Arthur Fery (GBR) 6-0 2-0",
      "type": "event"
     }
    ],
@@ -112,7 +112,7 @@
        "winner": true
       },
       {
-       "value": 0
+       "value": 2
       }
      ],
      "athlete": {
@@ -189,13 +189,57 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T17:27:40.964Z",
+ "updated": "2026-10-30T17:36:11.732Z",
  "open_taken_at": "2026-10-29T19:37:30.302Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1948929",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Alexander Zverev cover -1.5 vs the Arthur Fery in Alexander Zverev vs. Arthur Fery?",
+   "sides": [
+    "Alexander Zverev -1.50 (Sets)",
+    "Arthur Fery +1.50 (Sets)"
+   ],
+   "teams": [
+    "Alexander Zverev",
+    "Arthur Fery"
+   ],
+   "player": null,
+   "mid": 61.5,
+   "yes_buy": 62,
+   "no_buy": 39,
+   "taken_at": "2026-10-30T16:38:14.054Z"
+  },
+  {
+   "market_id": "1948933",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Alexander Zverev vs. Arthur Fery be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 24.5,
+   "yes_buy": 25,
+   "no_buy": 76,
+   "taken_at": "2026-10-30T16:38:14.054Z"
+  },
   {
    "market_id": "1948923",
    "market": "Games spread",
@@ -307,28 +351,6 @@
    "taken_at": "2026-10-30T08:32:58.334Z"
   },
   {
-   "market_id": "1948933",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Alexander Zverev vs. Arthur Fery be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 24.5,
-   "yes_buy": 25,
-   "no_buy": 76,
-   "taken_at": "2026-10-30T16:38:14.054Z"
-  },
-  {
    "market_id": "1948926",
    "market": "Games spread",
    "group": "game",
@@ -348,28 +370,6 @@
    "mid": 86.5,
    "yes_buy": 87,
    "no_buy": 14,
-   "taken_at": "2026-10-30T16:38:14.054Z"
-  },
-  {
-   "market_id": "1948929",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Alexander Zverev cover -1.5 vs the Arthur Fery in Alexander Zverev vs. Arthur Fery?",
-   "sides": [
-    "Alexander Zverev -1.50 (Sets)",
-    "Arthur Fery +1.50 (Sets)"
-   ],
-   "teams": [
-    "Alexander Zverev",
-    "Arthur Fery"
-   ],
-   "player": null,
-   "mid": 61.5,
-   "yes_buy": 62,
-   "no_buy": 39,
    "taken_at": "2026-10-30T16:38:14.054Z"
   },
   {
@@ -529,26 +529,6 @@
  ],
  "edges": [
   {
-   "key": "1948929:1",
-   "market_id": "1948929",
-   "market": "Sets spread",
-   "group": "game",
-   "question": "Will the Alexander Zverev cover -1.5 vs the Arthur Fery in Alexander Zverev vs. Arthur Fery?",
-   "side": "Arthur Fery +1.50 (Sets)",
-   "open_chance": 39,
-   "now_chance": 18,
-   "open_odds": "+156",
-   "now_odds": "+456",
-   "edge": 21,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Arthur Fery 0 · Alexander Zverev 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-30T17:20:01.535Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "1948934:0",
    "market_id": "1948934",
    "market": "Sets total",
@@ -570,34 +550,6 @@
   }
  ],
  "alerts": [
-  {
-   "id": "gone:1948929:1:2026-10-30T17:20:01.535Z",
-   "key": "1948929:1",
-   "at": "2026-10-30T17:27:40.964Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Arthur Fery +1.50 (Sets)",
-   "market": "Sets spread",
-   "now_odds": "+456",
-   "now_chance": 18,
-   "edge": 21,
-   "text": "Edge gone: Arthur Fery +1.50 (Sets) (Sets spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-alezve-artfer-2026-10-30"
-  },
-  {
-   "id": "new_edge:1948929:1:big",
-   "key": "1948929:1",
-   "at": "2026-10-30T17:20:01.535Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Arthur Fery +1.50 (Sets)",
-   "market": "Sets spread",
-   "now_odds": "+456",
-   "now_chance": 18,
-   "edge": 21,
-   "text": "New big edge: Arthur Fery +1.50 (Sets) (Sets spread), 21 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-alezve-artfer-2026-10-30"
-  },
   {
    "id": "gone:1948934:0:2026-10-30T17:10:09.299Z",
    "key": "1948934:0",
