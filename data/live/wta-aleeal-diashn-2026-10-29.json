@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185685",
-  "fetched_at": "2026-10-30T10:30:09.123Z",
+  "fetched_at": "2026-10-30T10:38:32.766Z",
   "tennis": true,
   "tennis_match": {
    "id": "185685",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(3) Diana Shnaider (RUS) leads (8) Alexandra Eala (PHI) 2-6 7-6 (7-5) 3-1",
+     "text": "(3) Diana Shnaider (RUS) leads (8) Alexandra Eala (PHI) 2-6 7-6 (7-5) 3-2",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 3
      },
@@ -109,6 +110,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 8
      },
@@ -123,7 +125,7 @@
        "winner": false
       },
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -158,6 +160,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 264,
    "type": {
     "id": "2",
@@ -195,7 +202,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T10:30:08.915Z",
+ "updated": "2026-10-30T10:38:32.592Z",
  "open_taken_at": "2026-10-28T12:03:28.143Z",
  "thresholds": {
   "big": 10,
@@ -225,28 +232,6 @@
    "taken_at": "2026-10-28T15:27:51.367Z"
   },
   {
-   "market_id": "1924937",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Alexandra Eala cover 1.5 vs the Diana Shnaider in Alexandra Eala vs. Diana Shnaider?",
-   "sides": [
-    "Alexandra Eala +1.50 (Games)",
-    "Diana Shnaider -1.50 (Games)"
-   ],
-   "teams": [
-    "Alexandra Eala",
-    "Diana Shnaider"
-   ],
-   "player": null,
-   "mid": 46.5,
-   "yes_buy": 48,
-   "no_buy": 55,
-   "taken_at": "2026-10-29T02:08:42.408Z"
-  },
-  {
    "market_id": "1924936",
    "market": "Games spread",
    "group": "game",
@@ -267,6 +252,28 @@
    "yes_buy": 44,
    "no_buy": 59,
    "taken_at": "2026-10-30T03:39:48.039Z"
+  },
+  {
+   "market_id": "1924937",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Alexandra Eala cover 1.5 vs the Diana Shnaider in Alexandra Eala vs. Diana Shnaider?",
+   "sides": [
+    "Alexandra Eala +1.50 (Games)",
+    "Diana Shnaider -1.50 (Games)"
+   ],
+   "teams": [
+    "Alexandra Eala",
+    "Diana Shnaider"
+   ],
+   "player": null,
+   "mid": 46.5,
+   "yes_buy": 48,
+   "no_buy": 55,
+   "taken_at": "2026-10-29T02:08:42.408Z"
   },
   {
    "market_id": "1924938",
@@ -542,14 +549,14 @@
    "question": "Will the Alexandra Eala cover -1.5 vs the Diana Shnaider in Alexandra Eala vs. Diana Shnaider?",
    "side": "Alexandra Eala -1.50 (Games)",
    "open_chance": 44,
-   "now_chance": 26,
+   "now_chance": 25,
    "open_odds": "+127",
-   "now_odds": "+285",
-   "edge": 18,
+   "now_odds": "+300",
+   "edge": 19,
    "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Alexandra Eala not above the games spread right now",
-   "context": "Diana Shnaider 2, 7, 3 · Alexandra Eala 6, 6, 1 · 3rd Set (games by set)",
+   "class": "edge",
+   "reason": null,
+   "context": "Diana Shnaider 2, 7, 3 · Alexandra Eala 6, 6, 2 · 3rd Set (games by set)",
    "first_seen": "2026-10-30T08:03:30.250Z",
    "status": "open",
    "kalshi": null
@@ -736,6 +743,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1924936:0:big",
+   "key": "1924936:0",
+   "at": "2026-10-30T10:38:32.592Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Alexandra Eala -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+300",
+   "now_chance": 25,
+   "edge": 19,
+   "text": "New big edge: Alexandra Eala -1.50 (Games) (Games spread), 19 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-aleeal-diashn-2026-10-29"
+  },
   {
    "id": "news:1924946:1",
    "key": "1924946:1",
@@ -1089,7 +1110,8 @@
   "gone:1924938:1:2026-10-30T08:32:54.819Z",
   "gone:1924946:1:2026-10-30T09:21:04.454Z",
   "news:1924946:1",
-  "gone:1904927:1:2026-10-29T01:58:13.740Z"
+  "gone:1904927:1:2026-10-29T01:58:13.740Z",
+  "new_edge:1924936:0:big"
  ],
  "kalshi_checked": null
 }
