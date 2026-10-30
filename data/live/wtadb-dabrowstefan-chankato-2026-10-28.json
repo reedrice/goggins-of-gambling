@@ -4,12 +4,12 @@
  "game": "Dabrowski / Stefani vs. Chan / Kato",
  "url": "https://polymarket.us/sports/wtadb/wtadb-dabrowstefan-chankato-2026-10-28",
  "start_time": "2026-10-30T03:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185695",
-  "fetched_at": "2026-10-30T04:32:09.133Z",
+  "fetched_at": "2026-10-30T04:38:15.447Z",
   "tennis": true,
   "tennis_match": {
    "id": "185695",
@@ -17,17 +17,17 @@
    "date": "2026-10-30T03:10Z",
    "startDate": "2026-10-30T03:10Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Gabriela Dabrowski (CAN) & Luisa Stefani (BRA) leads Hao-Ching Chan (TPO) & Miyu Kato (JPN) 6-2 4-6 0-0",
+     "text": "(1) Gabriela Dabrowski (CAN) & Luisa Stefani (BRA) bt Hao-Ching Chan (TPO) & Miyu Kato (JPN) 6-2 4-6 1-0 (10-7)",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
      "linescores": [
       {
        "value": 2,
@@ -65,7 +66,9 @@
        "winner": true
       },
       {
-       "value": 0
+       "value": 0,
+       "tiebreak": 7,
+       "winner": false
       }
      ],
      "roster": {
@@ -140,6 +143,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
      "curatedRank": {
       "current": 1
      },
@@ -153,7 +157,9 @@
        "winner": false
       },
       {
-       "value": 0
+       "value": 1,
+       "tiebreak": 10,
+       "winner": true
       }
      ],
      "roster": {
@@ -239,10 +245,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Hao-Ching Chan / Miyu Kato",
@@ -254,13 +260,13 @@
    "abbr": "Gabriela Dabrowski / Luisa Stefani",
    "alias": "Gabriela Dabrowski / Luisa Stefani",
    "name": "Gabriela Dabrowski / Luisa Stefani",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T04:32:09.040Z",
+ "updated": "2026-10-30T04:38:15.226Z",
  "open_taken_at": "2026-10-28T07:13:05.259Z",
  "thresholds": {
   "big": 10,
@@ -308,11 +314,25 @@
    "reason": null,
    "context": "Hao-Ching Chan / Miyu Kato 2, 6, 0 · Gabriela Dabrowski / Luisa Stefani 6, 4, 0 · 3rd Set (games by set)",
    "first_seen": "2026-10-30T04:12:43.368Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1899886:0:2026-10-30T04:12:43.368Z",
+   "key": "1899886:0",
+   "at": "2026-10-30T04:38:15.226Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Dabrowski G / Stefani L win",
+   "market": "Moneyline",
+   "now_odds": "-194",
+   "now_chance": 66,
+   "edge": 17,
+   "text": "Edge gone: Dabrowski G / Stefani L win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-dabrowstefan-chankato-2026-10-28"
+  },
   {
    "id": "new_edge:1899886:0:big",
    "key": "1899886:0",
@@ -346,7 +366,8 @@
   "new_edge:1899886:1:slight",
   "gone:1899886:1:2026-10-29T19:05:06.400Z",
   "new_edge:1899886:0:slight",
-  "new_edge:1899886:0:big"
+  "new_edge:1899886:0:big",
+  "gone:1899886:0:2026-10-30T04:12:43.368Z"
  ],
  "kalshi_checked": null
 }

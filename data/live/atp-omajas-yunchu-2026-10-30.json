@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-30T04:32:09.000Z"
+  "fetched_at": "2026-10-30T04:38:15.253Z"
  },
- "updated": "2026-10-30T04:32:08.928Z",
+ "updated": "2026-10-30T04:38:15.082Z",
  "open_taken_at": "2026-10-28T05:19:24.466Z",
  "thresholds": {
   "big": 10,
@@ -63,28 +63,6 @@
    "taken_at": "2026-10-30T03:20:38.431Z"
   },
   {
-   "market_id": "1896679",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Omar Jasika vs. Yun Seong Chung be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 29.5,
-   "yes_buy": 30,
-   "no_buy": 71,
-   "taken_at": "2026-10-30T03:20:38.431Z"
-  },
-  {
    "market_id": "1896664",
    "market": "Games spread",
    "group": "game",
@@ -105,6 +83,28 @@
    "yes_buy": 64,
    "no_buy": 38,
    "taken_at": "2026-10-30T03:53:37.350Z"
+  },
+  {
+   "market_id": "1896665",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Omar Jasika cover -4.5 vs the Yun Seong Chung in Omar Jasika vs. Yun Seong Chung?",
+   "sides": [
+    "Omar Jasika -4.50 (Games)",
+    "Yun-Seong Chung +4.50 (Games)"
+   ],
+   "teams": [
+    "Omar Jasika",
+    "Yun-Seong Chung"
+   ],
+   "player": null,
+   "mid": 37.5,
+   "yes_buy": 39,
+   "no_buy": 64,
+   "taken_at": "2026-10-29T02:03:07.264Z"
   },
   {
    "market_id": "1896695",
@@ -129,26 +129,26 @@
    "taken_at": "2026-10-30T03:59:33.215Z"
   },
   {
-   "market_id": "1896665",
-   "market": "Games spread",
+   "market_id": "1896679",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Omar Jasika cover -4.5 vs the Yun Seong Chung in Omar Jasika vs. Yun Seong Chung?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Omar Jasika vs. Yun Seong Chung be more than 27.5?",
    "sides": [
-    "Omar Jasika -4.50 (Games)",
-    "Yun-Seong Chung +4.50 (Games)"
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
    ],
    "teams": [
-    "Omar Jasika",
-    "Yun-Seong Chung"
+    null,
+    null
    ],
    "player": null,
-   "mid": 37.5,
-   "yes_buy": 39,
-   "no_buy": 64,
-   "taken_at": "2026-10-29T02:03:07.264Z"
+   "mid": 29.5,
+   "yes_buy": 30,
+   "no_buy": 71,
+   "taken_at": "2026-10-30T03:20:38.431Z"
   },
   {
    "market_id": "1896677",
@@ -307,6 +307,46 @@
  ],
  "edges": [
   {
+   "key": "1896695:0",
+   "market_id": "1896695",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Omar Jasika win set 2 against Yun Seong Chung?",
+   "side": "Yes: Omar Jasika win set 2 against Yun Seong Chung",
+   "open_chance": 61,
+   "now_chance": 41,
+   "open_odds": "-156",
+   "now_odds": "+144",
+   "edge": 20,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-30T04:38:15.082Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1896664:1",
+   "market_id": "1896664",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Omar Jasika cover 1.5 vs the Yun Seong Chung in Omar Jasika vs. Yun Seong Chung?",
+   "side": "Yun-Seong Chung -1.50 (Games)",
+   "open_chance": 38,
+   "now_chance": 23,
+   "open_odds": "+163",
+   "now_odds": "+335",
+   "edge": 15,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-30T04:25:48.221Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1896374:1",
    "market_id": "1896374",
    "market": "Moneyline",
@@ -314,11 +354,11 @@
    "question": "Who will win in the upcoming atp event Omar Jasika vs Yun Seong Chung scheduled for October 30, 2026 at 5:00 AM UTC?",
    "side": "Yun-Seong Chung win",
    "open_chance": 34,
-   "now_chance": 17,
+   "now_chance": 28,
    "open_odds": "+194",
-   "now_odds": "+488",
-   "edge": 17,
-   "tier": "big",
+   "now_odds": "+257",
+   "edge": 6,
+   "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -343,26 +383,6 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-30T04:12:43.159Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1896664:1",
-   "market_id": "1896664",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Omar Jasika cover 1.5 vs the Yun Seong Chung in Omar Jasika vs. Yun Seong Chung?",
-   "side": "Yun-Seong Chung -1.50 (Games)",
-   "open_chance": 38,
-   "now_chance": 17,
-   "open_odds": "+163",
-   "now_odds": "+488",
-   "edge": 21,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-30T04:25:48.221Z",
    "status": "gone",
    "kalshi": null
   },
@@ -448,6 +468,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1896695:0:big",
+   "key": "1896695:0",
+   "at": "2026-10-30T04:38:15.082Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Yes: Omar Jasika win set 2 against Yun Seong Chung",
+   "market": "Set 2 winner",
+   "now_odds": "+144",
+   "now_chance": 41,
+   "edge": 20,
+   "text": "New big edge: Yes: Omar Jasika win set 2 against Yun Seong Chung (Set 2 winner), 20 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-omajas-yunchu-2026-10-30"
+  },
+  {
+   "id": "new_edge:1896374:1:slight",
+   "key": "1896374:1",
+   "at": "2026-10-30T04:38:15.082Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Yun-Seong Chung win",
+   "market": "Moneyline",
+   "now_odds": "+257",
+   "now_chance": 28,
+   "edge": 6,
+   "text": "New slight edge: Yun-Seong Chung win (Moneyline), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-omajas-yunchu-2026-10-30"
+  },
   {
    "id": "gone:1896664:1:2026-10-30T04:25:48.221Z",
    "key": "1896664:1",
@@ -694,7 +742,9 @@
   "gone:1896677:1:2026-10-30T04:12:43.159Z",
   "gone:1896665:0:2026-10-30T04:12:43.159Z",
   "gone:1896374:0:2026-10-29T01:03:32.014Z",
-  "gone:1896664:1:2026-10-30T04:25:48.221Z"
+  "gone:1896664:1:2026-10-30T04:25:48.221Z",
+  "new_edge:1896695:0:big",
+  "new_edge:1896374:1:slight"
  ],
  "kalshi_checked": null
 }
