@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185201",
-  "fetched_at": "2026-10-30T12:59:11.409Z",
+  "fetched_at": "2026-10-30T13:06:36.269Z",
   "tennis": true,
   "tennis_match": {
    "id": "185201",
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "curatedRank": {
       "current": 3
      },
@@ -100,6 +101,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 0
@@ -137,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 10,
    "type": {
     "id": "1",
@@ -174,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T12:59:11.344Z",
+ "updated": "2026-10-30T13:06:36.218Z",
  "open_taken_at": "2026-10-29T15:30:42.214Z",
  "thresholds": {
   "big": 10,
@@ -248,28 +255,6 @@
    "taken_at": "2026-10-30T12:42:16.595Z"
   },
   {
-   "market_id": "1943353",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Adrian Mannarino cover 4.5 vs the Daniil Medvedev in Adrian Mannarino vs. Daniil Medvedev?",
-   "sides": [
-    "Adrian Mannarino +4.50 (Games)",
-    "Daniil Medvedev -4.50 (Games)"
-   ],
-   "teams": [
-    "Adrian Mannarino",
-    "Daniil Medvedev"
-   ],
-   "player": null,
-   "mid": 42.5,
-   "yes_buy": 45,
-   "no_buy": 60,
-   "taken_at": "2026-10-29T17:27:44.861Z"
-  },
-  {
    "market_id": "1943360",
    "market": "Games total",
    "group": "game",
@@ -290,6 +275,28 @@
    "yes_buy": 40,
    "no_buy": 62,
    "taken_at": "2026-10-29T18:02:45.173Z"
+  },
+  {
+   "market_id": "1943353",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Adrian Mannarino cover 4.5 vs the Daniil Medvedev in Adrian Mannarino vs. Daniil Medvedev?",
+   "sides": [
+    "Adrian Mannarino +4.50 (Games)",
+    "Daniil Medvedev -4.50 (Games)"
+   ],
+   "teams": [
+    "Adrian Mannarino",
+    "Daniil Medvedev"
+   ],
+   "player": null,
+   "mid": 42.5,
+   "yes_buy": 45,
+   "no_buy": 60,
+   "taken_at": "2026-10-29T17:27:44.861Z"
   },
   {
    "market_id": "1943357",
@@ -336,28 +343,6 @@
    "taken_at": "2026-10-30T09:13:35.824Z"
   },
   {
-   "market_id": "1943361",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Adrian Mannarino vs. Daniil Medvedev be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 26.5,
-   "yes_buy": 27,
-   "no_buy": 74,
-   "taken_at": "2026-10-30T12:42:16.595Z"
-  },
-  {
    "market_id": "1943351",
    "market": "Games spread",
    "group": "game",
@@ -378,6 +363,28 @@
    "yes_buy": 29,
    "no_buy": 77,
    "taken_at": "2026-10-30T11:44:12.392Z"
+  },
+  {
+   "market_id": "1943361",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Adrian Mannarino vs. Daniil Medvedev be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 26.5,
+   "yes_buy": 27,
+   "no_buy": 74,
+   "taken_at": "2026-10-30T12:42:16.595Z"
   },
   {
    "market_id": "1943367",
@@ -541,10 +548,10 @@
    "question": "Will the Adrian Mannarino cover 1.5 vs the Daniil Medvedev in Adrian Mannarino vs. Daniil Medvedev?",
    "side": "Adrian Mannarino +1.50 (Sets)",
    "open_chance": 49,
-   "now_chance": 31,
+   "now_chance": 33,
    "open_odds": "+104",
-   "now_odds": "+223",
-   "edge": 18,
+   "now_odds": "+203",
+   "edge": 16,
    "tier": "big",
    "class": "edge",
    "reason": null,
@@ -561,10 +568,10 @@
    "question": "Will the Adrian Mannarino cover 1.5 vs the Daniil Medvedev in Adrian Mannarino vs. Daniil Medvedev?",
    "side": "Adrian Mannarino +1.50 (Games)",
    "open_chance": 29,
-   "now_chance": 19,
+   "now_chance": 17,
    "open_odds": "+245",
-   "now_odds": "+426",
-   "edge": 10,
+   "now_odds": "+488",
+   "edge": 12,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Adrian Mannarino not above the games spread right now",
@@ -610,26 +617,6 @@
    "reason": null,
    "context": "Daniil Medvedev 2 · Adrian Mannarino 0 · 1st Set (games by set)",
    "first_seen": "2026-10-30T03:47:11.290Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1943361:0",
-   "market_id": "1943361",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Adrian Mannarino vs. Daniil Medvedev be more than 27.5?",
-   "side": "Over 27.5 (Games)",
-   "open_chance": 27,
-   "now_chance": 23,
-   "open_odds": "+270",
-   "now_odds": "+335",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Daniil Medvedev 2 · Adrian Mannarino 0 · 1st Set (games by set)",
-   "first_seen": "2026-10-30T12:59:11.344Z",
    "status": "open",
    "kalshi": null
   },
@@ -715,20 +702,6 @@
    "now_chance": 66,
    "edge": 9,
    "text": "New slight edge: Over 17.5 (Games) (Games total), 9 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-adrman-danmed-2026-10-30"
-  },
-  {
-   "id": "new_edge:1943361:0:slight",
-   "key": "1943361:0",
-   "at": "2026-10-30T12:59:11.344Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Over 27.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+335",
-   "now_chance": 23,
-   "edge": 4,
-   "text": "New slight edge: Over 27.5 (Games) (Games total), 4 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-adrman-danmed-2026-10-30"
   },
   {
