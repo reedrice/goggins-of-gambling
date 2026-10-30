@@ -9,12 +9,12 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892601",
-  "fetched_at": "2026-10-30T01:34:48.814Z",
+  "fetched_at": "2026-10-30T01:41:44.096Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 3,
-  "clock": "7:26",
-  "regulation_secs_left": 1346,
+  "clock": "4:00",
+  "regulation_secs_left": 1140,
   "home": {
    "abbr": "TB",
    "alias": "Lightning",
@@ -114,7 +114,7 @@
    }
   ]
  },
- "updated": "2026-10-30T01:34:48.679Z",
+ "updated": "2026-10-30T01:41:43.989Z",
  "open_taken_at": "2026-10-28T05:04:13.170Z",
  "thresholds": {
   "big": 10,
@@ -208,28 +208,6 @@
    "yes_buy": 19,
    "no_buy": 87,
    "taken_at": "2026-10-28T15:34:16.059Z"
-  },
-  {
-   "market_id": "1780157",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": 1.5,
-   "question": "Will the WPG Jets cover 1.5 vs the TBL Lightning in WPG vs TBL?",
-   "sides": [
-    "Jets +1.50",
-    "Lightning -1.50"
-   ],
-   "teams": [
-    "Jets",
-    "Lightning"
-   ],
-   "player": null,
-   "mid": 55.5,
-   "yes_buy": 58,
-   "no_buy": 47,
-   "taken_at": "2026-10-28T15:27:41.159Z"
   },
   {
    "market_id": "1930198",
@@ -802,6 +780,28 @@
    "yes_buy": 10,
    "no_buy": 94,
    "taken_at": "2026-10-29T12:08:36.258Z"
+  },
+  {
+   "market_id": "1780157",
+   "market": "Alt spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 1.5,
+   "question": "Will the WPG Jets cover 1.5 vs the TBL Lightning in WPG vs TBL?",
+   "sides": [
+    "Jets +1.50",
+    "Lightning -1.50"
+   ],
+   "teams": [
+    "Jets",
+    "Lightning"
+   ],
+   "player": null,
+   "mid": 55.5,
+   "yes_buy": 58,
+   "no_buy": 47,
+   "taken_at": "2026-10-28T15:27:41.159Z"
   },
   {
    "market_id": "1922733",
@@ -2302,6 +2302,26 @@
  ],
  "edges": [
   {
+   "key": "1780200:1",
+   "market_id": "1780200",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in WPG vs TBL be more than 8.5?",
+   "side": "Under 8.5",
+   "open_chance": 87,
+   "now_chance": 19,
+   "open_odds": "-669",
+   "now_odds": "+426",
+   "edge": 68,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: scoring above pace (8 pts, pace 6)",
+   "context": "WPG 3, TB 5, Q3 4:00",
+   "first_seen": "2026-10-30T01:41:43.989Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
    "key": "1780161:0",
    "market_id": "1780161",
    "market": "Main spread",
@@ -2309,37 +2329,17 @@
    "question": "Will the WPG Jets cover 2.5 vs the TBL Lightning in WPG vs TBL?",
    "side": "Jets +2.50",
    "open_chance": 71,
-   "now_chance": 43,
+   "now_chance": 46,
    "open_odds": "-245",
-   "now_odds": "+133",
-   "edge": 28,
+   "now_odds": "+117",
+   "edge": 25,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (28 pts), likely news",
-   "context": "WPG down 2, Q3 7:26",
+   "reason": "Big move (25 pts), likely news",
+   "context": "WPG down 2, Q3 4:00",
    "first_seen": "2026-10-30T01:27:57.230Z",
    "status": "open",
    "kalshi": false
-  },
-  {
-   "key": "1780204:1",
-   "market_id": "1780204",
-   "market": "Main total",
-   "group": "game",
-   "question": "Will the total in WPG vs TBL be more than 9.5?",
-   "side": "Under 9.5",
-   "open_chance": 95,
-   "now_chance": 69,
-   "open_odds": "-1900",
-   "now_odds": "-223",
-   "edge": 26,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: scoring above pace (8 pts, pace 6)",
-   "context": "WPG 3, TB 5, Q3 7:26",
-   "first_seen": "2026-10-30T01:27:57.230Z",
-   "status": "open",
-   "kalshi": true
   },
   {
    "key": "1940836:1",
@@ -2359,7 +2359,7 @@
    "context": "TB up 4, Q3 16:43",
    "first_seen": "2026-10-29T15:00:04.945Z",
    "status": "gone",
-   "kalshi": null
+   "kalshi": true
   },
   {
    "key": "1780191:1",
@@ -2419,7 +2419,7 @@
    "context": "TB tied, Q1 20:00",
    "first_seen": "2026-10-29T16:04:02.115Z",
    "status": "gone",
-   "kalshi": null
+   "kalshi": true
   },
   {
    "key": "1929323:0",
@@ -2439,7 +2439,7 @@
    "context": "WPG down 1, Q1 3:40",
    "first_seen": "2026-10-29T16:04:02.115Z",
    "status": "gone",
-   "kalshi": null
+   "kalshi": true
   },
   {
    "key": "1930202:0",
@@ -2459,7 +2459,7 @@
    "context": "WPG down 1, Q1 3:40",
    "first_seen": "2026-10-29T04:48:39.434Z",
    "status": "gone",
-   "kalshi": null
+   "kalshi": true
   },
   {
    "key": "1929331:0",
@@ -2479,7 +2479,7 @@
    "context": "TB up 1, Q1 3:40",
    "first_seen": "2026-10-29T13:26:39.439Z",
    "status": "gone",
-   "kalshi": null
+   "kalshi": true
   },
   {
    "key": "1930192:0",
@@ -2499,7 +2499,7 @@
    "context": "WPG down 4, End of Q2",
    "first_seen": "2026-10-29T16:39:41.231Z",
    "status": "gone",
-   "kalshi": null
+   "kalshi": true
   },
   {
    "key": "1940847:0",
@@ -2519,7 +2519,7 @@
    "context": "TB tied, End of Q1",
    "first_seen": "2026-10-29T15:00:04.945Z",
    "status": "gone",
-   "kalshi": null
+   "kalshi": true
   },
   {
    "key": "1935688:1",
@@ -2539,7 +2539,7 @@
    "context": "TB up 1, Q1 3:40",
    "first_seen": "2026-10-29T13:34:28.862Z",
    "status": "gone",
-   "kalshi": null
+   "kalshi": true
   },
   {
    "key": "1935682:1",
@@ -2559,7 +2559,7 @@
    "context": "TB tied, Q2 13:46",
    "first_seen": "2026-10-29T19:48:46.542Z",
    "status": "gone",
-   "kalshi": null
+   "kalshi": true
   },
   {
    "key": "1929328:1",
@@ -2579,7 +2579,7 @@
    "context": "Pregame",
    "first_seen": "2026-10-29T17:20:39.137Z",
    "status": "gone",
-   "kalshi": null
+   "kalshi": true
   },
   {
    "key": "1930195:0",
@@ -2599,7 +2599,7 @@
    "context": "WPG down 1, Q1 3:40",
    "first_seen": "2026-10-29T16:39:41.231Z",
    "status": "gone",
-   "kalshi": null
+   "kalshi": true
   },
   {
    "key": "1930208:1",
@@ -2619,7 +2619,7 @@
    "context": "TB tied, Q1 20:00",
    "first_seen": "2026-10-29T19:16:38.101Z",
    "status": "gone",
-   "kalshi": null
+   "kalshi": true
   }
  ],
  "alerts": [
@@ -2985,7 +2985,7 @@
   "news:1780161:0"
  ],
  "kalshi_checked": {
-  "at": "2026-10-30T01:34:49.144Z",
+  "at": "2026-10-30T01:41:44.251Z",
   "event": "26OCT29WPGTB"
  }
 }
