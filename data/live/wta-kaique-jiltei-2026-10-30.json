@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185730",
-  "fetched_at": "2026-10-30T08:52:00.291Z",
+  "fetched_at": "2026-10-30T08:59:33.510Z",
   "tennis": true,
   "tennis_match": {
    "id": "185730",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Kaitlin Quevedo (ESP) leads Jil Teichmann (SUI) 7-6 (7-2)",
+     "text": "Kaitlin Quevedo (ESP) is tied with Jil Teichmann (SUI) 7-6 (7-2) 0-0",
      "type": "event"
     }
    ],
@@ -55,10 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
        "value": 6,
-       "tiebreak": 2
+       "tiebreak": 2,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -98,10 +103,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 7,
-       "tiebreak": 7
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -136,6 +146,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 232,
    "type": {
     "id": "2",
@@ -154,8 +169,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Jil Teichmann",
@@ -167,13 +182,13 @@
    "abbr": "Kaitlin Quevedo",
    "alias": "Kaitlin Quevedo",
    "name": "Kaitlin Quevedo",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T08:52:00.189Z",
+ "updated": "2026-10-30T08:59:33.430Z",
  "open_taken_at": "2026-10-29T12:22:41.517Z",
  "thresholds": {
   "big": 10,
@@ -269,28 +284,6 @@
    "taken_at": "2026-10-30T06:44:01.844Z"
   },
   {
-   "market_id": "1938244",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Kaitlin Quevedo vs. Jil Teichmann be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 45,
-   "yes_buy": 46,
-   "no_buy": 56,
-   "taken_at": "2026-10-29T15:00:15.972Z"
-  },
-  {
    "market_id": "1938235",
    "market": "Games spread",
    "group": "game",
@@ -335,28 +328,6 @@
    "taken_at": "2026-10-29T20:24:14.871Z"
   },
   {
-   "market_id": "1938246",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Kaitlin Quevedo vs. Jil Teichmann be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 39,
-   "yes_buy": 42,
-   "no_buy": 64,
-   "taken_at": "2026-10-29T22:09:42.706Z"
-  },
-  {
    "market_id": "1938245",
    "market": "Games total",
    "group": "game",
@@ -379,28 +350,6 @@
    "taken_at": "2026-10-30T06:37:02.346Z"
   },
   {
-   "market_id": "1938252",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Kaitlin Quevedo win set 2 against Jil Teichmann?",
-   "sides": [
-    "Yes: Kaitlin Quevedo win set 2 against Jil Teichmann",
-    "No: Kaitlin Quevedo win set 2 against Jil Teichmann"
-   ],
-   "teams": [
-    "Kaitlin Quevedo",
-    null
-   ],
-   "player": null,
-   "mid": 56,
-   "yes_buy": 59,
-   "no_buy": 47,
-   "taken_at": "2026-10-30T05:44:10.142Z"
-  },
-  {
    "market_id": "1938237",
    "market": "Games spread",
    "group": "game",
@@ -421,6 +370,72 @@
    "yes_buy": 33,
    "no_buy": 68,
    "taken_at": "2026-10-30T06:37:02.346Z"
+  },
+  {
+   "market_id": "1938244",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Kaitlin Quevedo vs. Jil Teichmann be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 45,
+   "yes_buy": 46,
+   "no_buy": 56,
+   "taken_at": "2026-10-29T15:00:15.972Z"
+  },
+  {
+   "market_id": "1938246",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Kaitlin Quevedo vs. Jil Teichmann be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 39,
+   "yes_buy": 42,
+   "no_buy": 64,
+   "taken_at": "2026-10-29T22:09:42.706Z"
+  },
+  {
+   "market_id": "1938252",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Kaitlin Quevedo win set 2 against Jil Teichmann?",
+   "sides": [
+    "Yes: Kaitlin Quevedo win set 2 against Jil Teichmann",
+    "No: Kaitlin Quevedo win set 2 against Jil Teichmann"
+   ],
+   "teams": [
+    "Kaitlin Quevedo",
+    null
+   ],
+   "player": null,
+   "mid": 56,
+   "yes_buy": 59,
+   "no_buy": 47,
+   "taken_at": "2026-10-30T05:44:10.142Z"
   },
   {
    "market_id": "1938251",
@@ -513,26 +528,6 @@
  ],
  "edges": [
   {
-   "key": "1938244:1",
-   "market_id": "1938244",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Kaitlin Quevedo vs. Jil Teichmann be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 56,
-   "now_chance": 31,
-   "open_odds": "-127",
-   "now_odds": "+223",
-   "edge": 25,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (25 pts), likely news",
-   "context": "Jil Teichmann 6 · Kaitlin Quevedo 7 · 1st Set (games by set)",
-   "first_seen": "2026-10-30T08:25:04.808Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1938241:1",
    "market_id": "1938241",
    "market": "Sets spread",
@@ -540,14 +535,14 @@
    "question": "Will the Kaitlin Quevedo cover -1.5 vs the Jil Teichmann in Kaitlin Quevedo vs. Jil Teichmann?",
    "side": "Jil Teichmann +1.50 (Sets)",
    "open_chance": 67,
-   "now_chance": 42,
+   "now_chance": 46,
    "open_odds": "-203",
-   "now_odds": "+138",
-   "edge": 25,
+   "now_odds": "+117",
+   "edge": 21,
    "tier": "big",
-   "class": "news",
-   "reason": "Big move (25 pts), likely news",
-   "context": "Jil Teichmann 6 · Kaitlin Quevedo 7 · 1st Set (games by set)",
+   "class": "edge",
+   "reason": null,
+   "context": "Jil Teichmann 6, 0 · Kaitlin Quevedo 7, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-30T06:37:02.346Z",
    "status": "open",
    "kalshi": null
@@ -560,14 +555,14 @@
    "question": "Who will win in the upcoming wta event Kaitlin Quevedo vs Jil Teichmann scheduled for October 30, 2026 at 5:00 AM UTC?",
    "side": "Jil Teichmann win",
    "open_chance": 45,
-   "now_chance": 30,
+   "now_chance": 33,
    "open_odds": "+122",
-   "now_odds": "+233",
-   "edge": 15,
+   "now_odds": "+203",
+   "edge": 12,
    "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Jil Teichmann 6 · Kaitlin Quevedo 7 · 1st Set (games by set)",
+   "class": "score",
+   "reason": "Explained by score: Jil Teichmann trailing in sets",
+   "context": "Jil Teichmann 6, 0 · Kaitlin Quevedo 7, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-29T14:34:37.763Z",
    "status": "open",
    "kalshi": null
@@ -587,8 +582,48 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Jil Teichmann 6 · Kaitlin Quevedo 7 · 1st Set (games by set)",
+   "context": "Jil Teichmann 6, 0 · Kaitlin Quevedo 7, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-30T08:03:31.422Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1938245:1",
+   "market_id": "1938245",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Kaitlin Quevedo vs. Jil Teichmann be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 74,
+   "now_chance": 62,
+   "open_odds": "-285",
+   "now_odds": "-163",
+   "edge": 12,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Jil Teichmann 6, 0 · Kaitlin Quevedo 7, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-30T08:25:04.808Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1938237:0",
+   "market_id": "1938237",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Kaitlin Quevedo cover -4.5 vs the Jil Teichmann in Kaitlin Quevedo vs. Jil Teichmann?",
+   "side": "Kaitlin Quevedo -4.50 (Games)",
+   "open_chance": 33,
+   "now_chance": 23,
+   "open_odds": "+203",
+   "now_odds": "+335",
+   "edge": 10,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Kaitlin Quevedo not above the games spread right now",
+   "context": "Jil Teichmann 6, 0 · Kaitlin Quevedo 7, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-30T08:32:56.230Z",
    "status": "open",
    "kalshi": null
   },
@@ -607,68 +642,28 @@
    "tier": "slight",
    "class": "score",
    "reason": "Explained by score: Jil Teichmann not above the games spread right now",
-   "context": "Jil Teichmann 6 · Kaitlin Quevedo 7 · 1st Set (games by set)",
+   "context": "Jil Teichmann 6, 0 · Kaitlin Quevedo 7, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-30T08:52:00.189Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1938245:1",
-   "market_id": "1938245",
+   "key": "1938244:1",
+   "market_id": "1938244",
    "market": "Games total",
    "group": "game",
-   "question": "Will the total in Kaitlin Quevedo vs. Jil Teichmann be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 74,
-   "now_chance": 65,
-   "open_odds": "-285",
-   "now_odds": "-186",
-   "edge": 9,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
+   "question": "Will the total in Kaitlin Quevedo vs. Jil Teichmann be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 56,
+   "now_chance": 31,
+   "open_odds": "-127",
+   "now_odds": "+223",
+   "edge": 25,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (25 pts), likely news",
    "context": "Jil Teichmann 6 · Kaitlin Quevedo 7 · 1st Set (games by set)",
    "first_seen": "2026-10-30T08:25:04.808Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1938246:1",
-   "market_id": "1938246",
-   "market": "Sets total",
-   "group": "game",
-   "question": "Will the total in Kaitlin Quevedo vs. Jil Teichmann be more than 2.5?",
-   "side": "Under 2.5 (Sets)",
-   "open_chance": 64,
-   "now_chance": 59,
-   "open_odds": "-178",
-   "now_odds": "-144",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Jil Teichmann 6 · Kaitlin Quevedo 7 · 1st Set (games by set)",
-   "first_seen": "2026-10-30T06:37:02.346Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1938237:0",
-   "market_id": "1938237",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Kaitlin Quevedo cover -4.5 vs the Jil Teichmann in Kaitlin Quevedo vs. Jil Teichmann?",
-   "side": "Kaitlin Quevedo -4.50 (Games)",
-   "open_chance": 33,
-   "now_chance": 18,
-   "open_odds": "+203",
-   "now_odds": "+456",
-   "edge": 15,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Kaitlin Quevedo not above the games spread right now",
-   "context": "Jil Teichmann 6 · Kaitlin Quevedo 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-30T08:32:56.230Z",
    "status": "gone",
    "kalshi": null
   },
@@ -773,6 +768,26 @@
    "kalshi": null
   },
   {
+   "key": "1938246:1",
+   "market_id": "1938246",
+   "market": "Sets total",
+   "group": "game",
+   "question": "Will the total in Kaitlin Quevedo vs. Jil Teichmann be more than 2.5?",
+   "side": "Under 2.5 (Sets)",
+   "open_chance": 64,
+   "now_chance": 59,
+   "open_odds": "-178",
+   "now_odds": "-144",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Jil Teichmann 6 · Kaitlin Quevedo 7 · 1st Set (games by set)",
+   "first_seen": "2026-10-30T06:37:02.346Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1938252:0",
    "market_id": "1938252",
    "market": "Set 2 winner",
@@ -854,6 +869,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1938246:1:2026-10-30T06:37:02.346Z",
+   "key": "1938246:1",
+   "at": "2026-10-30T08:59:33.430Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 2.5 (Sets)",
+   "market": "Sets total",
+   "now_odds": "-144",
+   "now_chance": 59,
+   "edge": 5,
+   "text": "Edge gone: Under 2.5 (Sets) (Sets total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-kaique-jiltei-2026-10-30"
+  },
   {
    "id": "news:1938241:1",
    "key": "1938241:1",
@@ -1296,7 +1325,8 @@
   "gone:1938251:0:2026-10-30T08:32:56.230Z",
   "news:1938241:1",
   "new_edge:1938235:1:big",
-  "gone:1938252:0:2026-10-30T08:32:56.230Z"
+  "gone:1938252:0:2026-10-30T08:32:56.230Z",
+  "gone:1938246:1:2026-10-30T06:37:02.346Z"
  ],
  "kalshi_checked": null
 }
