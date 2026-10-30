@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185816",
-  "fetched_at": "2026-10-30T21:01:12.889Z",
+  "fetched_at": "2026-10-30T21:09:37.693Z",
   "tennis": true,
   "tennis_match": {
    "id": "185816",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Valeriya Strakhova (UKR) leads (1) Tatjana Maria (GER) 6-5",
+     "text": "(1) Tatjana Maria (GER) leads Valeriya Strakhova (UKR) 6-6",
      "type": "event"
     }
    ],
@@ -102,7 +102,7 @@
      },
      "linescores": [
       {
-       "value": 5
+       "value": 6
       }
      ],
      "athlete": {
@@ -174,7 +174,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T21:01:12.730Z",
+ "updated": "2026-10-30T21:09:37.515Z",
  "open_taken_at": "2026-10-29T23:48:05.161Z",
  "thresholds": {
   "big": 10,
@@ -226,6 +226,28 @@
    "taken_at": "2026-10-30T21:01:12.730Z"
   },
   {
+   "market_id": "1955256",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Tatjana Maria cover 1.5 vs the Valeriya Strakhova in Tatjana Maria vs. Valeriya Strakhova?",
+   "sides": [
+    "Tatjana Maria +1.50 (Games)",
+    "Valeriya Strakhova -1.50 (Games)"
+   ],
+   "teams": [
+    "Tatjana Maria",
+    "Valeriya Strakhova"
+   ],
+   "player": null,
+   "mid": 79.5,
+   "yes_buy": 80,
+   "no_buy": 21,
+   "taken_at": "2026-10-30T21:09:37.515Z"
+  },
+  {
    "market_id": "1955255",
    "market": "Games spread",
    "group": "game",
@@ -246,6 +268,28 @@
    "yes_buy": 87,
    "no_buy": 17,
    "taken_at": "2026-10-30T20:53:46.788Z"
+  },
+  {
+   "market_id": "1955265",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Tatjana Maria vs. Valeriya Strakhova be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 5.5,
+   "yes_buy": 6,
+   "no_buy": 95,
+   "taken_at": "2026-10-30T20:20:23.604Z"
   },
   {
    "market_id": "1955266",
@@ -380,28 +424,6 @@
    "taken_at": "2026-10-30T20:05:54.623Z"
   },
   {
-   "market_id": "1955265",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Tatjana Maria vs. Valeriya Strakhova be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 5.5,
-   "yes_buy": 6,
-   "no_buy": 95,
-   "taken_at": "2026-10-30T20:20:23.604Z"
-  },
-  {
    "market_id": "1955261",
    "market": "Sets spread",
    "group": "game",
@@ -426,6 +448,46 @@
  ],
  "edges": [
   {
+   "key": "1955265:1",
+   "market_id": "1955265",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Tatjana Maria vs. Valeriya Strakhova be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 95,
+   "now_chance": 68,
+   "open_odds": "-1900",
+   "now_odds": "-213",
+   "edge": 27,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (27 pts), likely news",
+   "context": "Valeriya Strakhova 6 · Tatjana Maria 6 · 1st Set (games by set)",
+   "first_seen": "2026-10-30T21:09:37.515Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1955255:0",
+   "market_id": "1955255",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Tatjana Maria cover -1.5 vs the Valeriya Strakhova in Tatjana Maria vs. Valeriya Strakhova?",
+   "side": "Tatjana Maria -1.50 (Games)",
+   "open_chance": 87,
+   "now_chance": 72,
+   "open_odds": "-669",
+   "now_odds": "-257",
+   "edge": 15,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Tatjana Maria not above the games spread right now",
+   "context": "Valeriya Strakhova 6 · Tatjana Maria 6 · 1st Set (games by set)",
+   "first_seen": "2026-10-30T21:09:37.515Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1954562:0",
    "market_id": "1954562",
    "market": "Moneyline",
@@ -433,14 +495,14 @@
    "question": "Who will win in the upcoming wta event Tatjana Maria vs Valeriya Strakhova scheduled for October 30, 2026 at 8:00 PM UTC?",
    "side": "Tatjana Maria win",
    "open_chance": 89,
-   "now_chance": 55,
+   "now_chance": 82,
    "open_odds": "-809",
-   "now_odds": "-122",
-   "edge": 34,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (34 pts), likely news",
-   "context": "Valeriya Strakhova 6 · Tatjana Maria 5 · 1st Set (games by set)",
+   "now_odds": "-456",
+   "edge": 7,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Valeriya Strakhova 6 · Tatjana Maria 6 · 1st Set (games by set)",
    "first_seen": "2026-10-30T20:46:21.008Z",
    "status": "open",
    "kalshi": null
@@ -547,6 +609,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "news:1955265:1",
+   "key": "1955265:1",
+   "at": "2026-10-30T21:09:37.515Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Under 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-213",
+   "now_chance": 68,
+   "edge": 27,
+   "text": "Big move, likely news: Under 27.5 (Games) (Games total) is 27 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-tatmar-valstr-2026-10-30"
+  },
   {
    "id": "news:1954562:0",
    "key": "1954562:0",
@@ -758,7 +834,8 @@
   "new_edge:1954562:0:slight",
   "gone:1955263:1:2026-10-30T20:46:21.008Z",
   "news:1954562:0",
-  "gone:1955266:1:2026-10-30T20:46:21.008Z"
+  "gone:1955266:1:2026-10-30T20:46:21.008Z",
+  "news:1955265:1"
  ],
  "kalshi_checked": null
 }
