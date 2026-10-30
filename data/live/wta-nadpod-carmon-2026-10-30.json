@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185815",
-  "fetched_at": "2026-10-30T23:00:21.566Z",
+  "fetched_at": "2026-10-30T23:08:49.130Z",
   "tennis": true,
   "tennis_match": {
    "id": "185815",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(8) Nadia Podoroska (ARG) leads Carole Monnet (FRA) 6-2 1-0",
+     "text": "(8) Nadia Podoroska (ARG) leads Carole Monnet (FRA) 6-2 2-1",
      "type": "event"
     }
    ],
@@ -62,7 +62,7 @@
        "winner": false
       },
       {
-       "value": 0
+       "value": 1
       }
      ],
      "athlete": {
@@ -112,7 +112,7 @@
        "winner": true
       },
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -189,7 +189,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T23:00:21.488Z",
+ "updated": "2026-10-30T23:08:48.969Z",
  "open_taken_at": "2026-10-29T21:35:17.629Z",
  "thresholds": {
   "big": 10,
@@ -261,6 +261,28 @@
    "yes_buy": 80,
    "no_buy": 21,
    "taken_at": "2026-10-30T22:44:20.082Z"
+  },
+  {
+   "market_id": "1952246",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Nadia Podoroska vs. Carole Monnet be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 25.5,
+   "yes_buy": 26,
+   "no_buy": 75,
+   "taken_at": "2026-10-30T21:40:14.868Z"
   },
   {
    "market_id": "1952253",
@@ -349,28 +371,6 @@
    "yes_buy": 40,
    "no_buy": 66,
    "taken_at": "2026-10-30T17:36:12.539Z"
-  },
-  {
-   "market_id": "1952246",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Nadia Podoroska vs. Carole Monnet be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 25.5,
-   "yes_buy": 26,
-   "no_buy": 75,
-   "taken_at": "2026-10-30T21:40:14.868Z"
   },
   {
    "market_id": "1952241",
@@ -523,7 +523,7 @@
    "reason": "Big move (50 pts), likely news",
    "context": "Carole Monnet 2, 0 · Nadia Podoroska 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-30T23:00:21.488Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -543,7 +543,7 @@
    "reason": null,
    "context": "Carole Monnet 2, 0 · Nadia Podoroska 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-30T21:40:14.868Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -563,7 +563,7 @@
    "reason": null,
    "context": "Carole Monnet 2, 0 · Nadia Podoroska 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-30T23:00:21.488Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -628,6 +628,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1952247:0:2026-10-30T21:40:14.868Z",
+   "key": "1952247:0",
+   "at": "2026-10-30T23:08:48.969Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 2.5 (Sets)",
+   "market": "Sets total",
+   "now_odds": "+317",
+   "now_chance": 24,
+   "edge": 16,
+   "text": "Edge gone: Over 2.5 (Sets) (Sets total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-nadpod-carmon-2026-10-30"
+  },
+  {
+   "id": "gone:1952240:1:2026-10-30T23:00:21.488Z",
+   "key": "1952240:1",
+   "at": "2026-10-30T23:08:48.969Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Carole Monnet +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-144",
+   "now_chance": 59,
+   "edge": 14,
+   "text": "Edge gone: Carole Monnet +7.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-nadpod-carmon-2026-10-30"
+  },
   {
    "id": "news:1952244:0",
    "key": "1952244:0",
@@ -783,7 +811,9 @@
   "gone:1952246:0:2026-10-30T22:36:00.969Z",
   "news:1952244:0",
   "new_edge:1952247:0:big",
-  "new_edge:1952240:1:big"
+  "new_edge:1952240:1:big",
+  "gone:1952247:0:2026-10-30T21:40:14.868Z",
+  "gone:1952240:1:2026-10-30T23:00:21.488Z"
  ],
  "kalshi_checked": null
 }
