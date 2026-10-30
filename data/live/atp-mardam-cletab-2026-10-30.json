@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-30T15:54:06.429Z"
+  "fetched_at": "2026-10-30T16:02:05.267Z"
  },
- "updated": "2026-10-30T15:54:06.351Z",
+ "updated": "2026-10-30T16:02:05.102Z",
  "open_taken_at": "2026-10-29T16:46:43.170Z",
  "thresholds": {
   "big": 10,
@@ -129,28 +129,6 @@
    "taken_at": "2026-10-30T15:39:18.447Z"
   },
   {
-   "market_id": "1945076",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Martin Damm Jr vs. Clement Tabur be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 42.5,
-   "yes_buy": 43,
-   "no_buy": 58,
-   "taken_at": "2026-10-30T15:39:18.447Z"
-  },
-  {
    "market_id": "1945057",
    "market": "Games spread",
    "group": "game",
@@ -170,6 +148,28 @@
    "mid": 9.5,
    "yes_buy": 12,
    "no_buy": 93,
+   "taken_at": "2026-10-30T15:39:18.447Z"
+  },
+  {
+   "market_id": "1945076",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Martin Damm Jr vs. Clement Tabur be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 42.5,
+   "yes_buy": 43,
+   "no_buy": 58,
    "taken_at": "2026-10-30T15:39:18.447Z"
   },
   {
@@ -314,15 +314,35 @@
    "question": "Who will win in the upcoming atp event Martin Damm Jr vs Clement Tabur scheduled for October 30, 2026 at 1:50 PM UTC?",
    "side": "Clement Tabur win",
    "open_chance": 36,
-   "now_chance": 23,
+   "now_chance": 22,
    "open_odds": "+178",
-   "now_odds": "+335",
-   "edge": 13,
+   "now_odds": "+355",
+   "edge": 14,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-30T15:54:06.351Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1945094:1",
+   "market_id": "1945094",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Martin Damm Jr win set 2 against Clement Tabur?",
+   "side": "No: Martin Damm Jr win set 2 against Clement Tabur",
+   "open_chance": 44,
+   "now_chance": 40,
+   "open_odds": "+127",
+   "now_odds": "+150",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-30T16:02:05.102Z",
    "status": "open",
    "kalshi": null
   },
@@ -348,6 +368,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1945094:1:slight",
+   "key": "1945094:1",
+   "at": "2026-10-30T16:02:05.102Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "No: Martin Damm Jr win set 2 against Clement Tabur",
+   "market": "Set 2 winner",
+   "now_odds": "+150",
+   "now_chance": 40,
+   "edge": 4,
+   "text": "New slight edge: No: Martin Damm Jr win set 2 against Clement Tabur (Set 2 winner), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-mardam-cletab-2026-10-30"
+  },
   {
    "id": "new_edge:1943710:1:big",
    "key": "1943710:1",
@@ -395,7 +429,8 @@
   "new_edge:1945071:1:big",
   "new_edge:1943710:0:slight",
   "gone:1943710:0:2026-10-30T15:39:18.447Z",
-  "new_edge:1943710:1:big"
+  "new_edge:1943710:1:big",
+  "new_edge:1945094:1:slight"
  ],
  "kalshi_checked": null
 }
