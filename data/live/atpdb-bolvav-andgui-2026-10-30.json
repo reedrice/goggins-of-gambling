@@ -4,12 +4,12 @@
  "game": "Bolelli / Vavassori vs. Andreozzi / Guinard",
  "url": "https://polymarket.us/sports/atpdb/atpdb-bolvav-andgui-2026-10-30",
  "start_time": "2026-10-30T12:10:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185218",
-  "fetched_at": "2026-10-30T13:54:09.742Z",
+  "fetched_at": "2026-10-30T14:01:46.646Z",
   "tennis": true,
   "tennis_match": {
    "id": "185218",
@@ -17,17 +17,17 @@
    "date": "2026-10-30T12:10Z",
    "startDate": "2026-10-30T12:10Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(4) Simone Bolelli (ITA) & Andrea Vavassori (ITA) leads Guido Andreozzi (ARG) & Manuel Guinard (FRA) 7-6 (7-5) 2-6 0-0 (9-9)",
+     "text": "Guido Andreozzi (ARG) & Manuel Guinard (FRA) bt (4) Simone Bolelli (ITA) & Andrea Vavassori (ITA) 6-7 (5-7) 6-2 1-0 (11-9)",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "linescores": [
       {
        "value": 6,
@@ -66,8 +67,9 @@
        "winner": true
       },
       {
-       "value": 0,
-       "tiebreak": 9
+       "value": 1,
+       "tiebreak": 11,
+       "winner": true
       }
      ],
      "roster": {
@@ -142,6 +144,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "curatedRank": {
       "current": 4
      },
@@ -157,7 +160,8 @@
       },
       {
        "value": 0,
-       "tiebreak": 9
+       "tiebreak": 9,
+       "winner": false
       }
      ],
      "roster": {
@@ -243,16 +247,16 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Guido Andreozzi / Manuel Guinard",
    "alias": "Guido Andreozzi / Manuel Guinard",
    "name": "Guido Andreozzi / Manuel Guinard",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Simone Bolelli / Andrea Vavassori",
@@ -264,7 +268,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T13:54:09.627Z",
+ "updated": "2026-10-30T14:01:46.469Z",
  "open_taken_at": "2026-10-29T05:03:44.876Z",
  "thresholds": {
   "big": 10,
@@ -312,11 +316,26 @@
    "reason": null,
    "context": "Guido Andreozzi / Manuel Guinard 6, 6, 0 · Simone Bolelli / Andrea Vavassori 7, 2, 0 · 3rd Set (games by set)",
    "first_seen": "2026-10-30T13:54:09.627Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
+ "alerts": [
+  {
+   "id": "gone:1917831:0:2026-10-30T13:54:09.627Z",
+   "key": "1917831:0",
+   "at": "2026-10-30T14:01:46.469Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Bolelli / Vavassori win",
+   "market": "Moneyline",
+   "now_odds": "-104",
+   "now_chance": 51,
+   "edge": 9,
+   "text": "Edge gone: Bolelli / Vavassori win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-bolvav-andgui-2026-10-30"
+  }
+ ],
  "alert_seen": [
   "new_edge:1917831:1:slight",
   "new_edge:1917831:0:big",
@@ -324,7 +343,8 @@
   "gone:1917831:0:2026-10-30T12:19:01.674Z",
   "new_edge:1917831:0:slight",
   "news:1917831:1",
-  "new_edge:1917831:1:big"
+  "new_edge:1917831:1:big",
+  "gone:1917831:0:2026-10-30T13:54:09.627Z"
  ],
  "kalshi_checked": null
 }
