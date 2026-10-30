@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185218",
-  "fetched_at": "2026-10-30T12:19:01.737Z",
+  "fetched_at": "2026-10-30T12:26:35.633Z",
   "tennis": true,
   "tennis_match": {
    "id": "185218",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(4) Simone Bolelli (ITA) & Andrea Vavassori (ITA) leads Guido Andreozzi (ARG) & Manuel Guinard (FRA) 1-1",
+     "text": "(4) Simone Bolelli (ITA) & Andrea Vavassori (ITA) leads Guido Andreozzi (ARG) & Manuel Guinard (FRA) 2-2",
      "type": "event"
     }
    ],
@@ -55,10 +55,9 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
      "linescores": [
       {
-       "value": 1
+       "value": 2
       }
      ],
      "roster": {
@@ -133,13 +132,12 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
      "curatedRank": {
       "current": 4
      },
      "linescores": [
       {
-       "value": 1
+       "value": 2
       }
      ],
      "roster": {
@@ -209,11 +207,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 10,
    "type": {
     "id": "3",
@@ -251,7 +244,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T12:19:01.674Z",
+ "updated": "2026-10-30T12:26:35.575Z",
  "open_taken_at": "2026-10-29T05:03:44.876Z",
  "thresholds": {
   "big": 10,
@@ -299,7 +292,7 @@
    "reason": null,
    "context": "Guido Andreozzi / Manuel Guinard 1 · Simone Bolelli / Andrea Vavassori 1 · 1st Set (games by set)",
    "first_seen": "2026-10-30T12:19:01.674Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -324,6 +317,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1917831:0:2026-10-30T12:19:01.674Z",
+   "key": "1917831:0",
+   "at": "2026-10-30T12:26:35.575Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Bolelli / Vavassori win",
+   "market": "Moneyline",
+   "now_odds": "+100",
+   "now_chance": 50,
+   "edge": 10,
+   "text": "Edge gone: Bolelli / Vavassori win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-bolvav-andgui-2026-10-30"
+  },
   {
    "id": "new_edge:1917831:0:big",
    "key": "1917831:0",
@@ -370,7 +377,8 @@
  "alert_seen": [
   "new_edge:1917831:1:slight",
   "new_edge:1917831:0:big",
-  "gone:1917831:1:2026-10-29T16:25:44.487Z"
+  "gone:1917831:1:2026-10-29T16:25:44.487Z",
+  "gone:1917831:0:2026-10-30T12:19:01.674Z"
  ],
  "kalshi_checked": null
 }

@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185165",
-  "fetched_at": "2026-10-30T12:19:01.644Z",
+  "fetched_at": "2026-10-30T12:26:35.546Z",
   "tennis": true,
   "tennis_match": {
    "id": "185165",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Constantin Frantzén (GER) & Robin Haase (NED) is tied with (2) Julian Cash (GBR) & Lloyd Glasspool (GBR) 3-6 6-5",
+     "text": "Constantin Frantzén (GER) & Robin Haase (NED) leads (2) Julian Cash (GBR) & Lloyd Glasspool (GBR) 3-6 6-6 (1-5)",
      "type": "event"
     }
    ],
@@ -55,7 +55,6 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
      "curatedRank": {
       "current": 2
      },
@@ -65,7 +64,8 @@
        "winner": true
       },
       {
-       "value": 5
+       "value": 6,
+       "tiebreak": 5
       }
      ],
      "roster": {
@@ -140,14 +140,14 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
      "linescores": [
       {
        "value": 3,
        "winner": false
       },
       {
-       "value": 6
+       "value": 6,
+       "tiebreak": 1
       }
      ],
      "roster": {
@@ -217,11 +217,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 23,
    "type": {
     "id": "3",
@@ -259,7 +254,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T12:19:01.592Z",
+ "updated": "2026-10-30T12:26:35.487Z",
  "open_taken_at": "2026-10-28T19:43:45.549Z",
  "thresholds": {
   "big": 10,
@@ -307,11 +302,25 @@
    "reason": null,
    "context": "Julian Cash / Lloyd Glasspool 6, 5 · Constantin Frantzén / Robin Haase 3, 6 · 2nd Set (games by set)",
    "first_seen": "2026-10-30T12:14:00.311Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1916203:0:2026-10-30T12:14:00.311Z",
+   "key": "1916203:0",
+   "at": "2026-10-30T12:26:35.487Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Frantzen / Haase win",
+   "market": "Moneyline",
+   "now_odds": "+355",
+   "now_chance": 22,
+   "edge": 8,
+   "text": "Edge gone: Frantzen / Haase win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-frantzhaase-cashglassp-2026-10-29"
+  },
   {
    "id": "new_edge:1916203:0:big",
    "key": "1916203:0",
@@ -329,7 +338,8 @@
  ],
  "alert_seen": [
   "new_edge:1916203:0:slight",
-  "new_edge:1916203:0:big"
+  "new_edge:1916203:0:big",
+  "gone:1916203:0:2026-10-30T12:14:00.311Z"
  ],
  "kalshi_checked": null
 }
