@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185165",
-  "fetched_at": "2026-10-30T12:26:35.546Z",
+  "fetched_at": "2026-10-30T12:34:30.856Z",
   "tennis": true,
   "tennis_match": {
    "id": "185165",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "detail": "3rd Set",
+     "shortDetail": "3rd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Constantin Frantzén (GER) & Robin Haase (NED) leads (2) Julian Cash (GBR) & Lloyd Glasspool (GBR) 3-6 6-6 (1-5)",
+     "text": "Constantin Frantzén (GER) & Robin Haase (NED) leads (2) Julian Cash (GBR) & Lloyd Glasspool (GBR) 3-6 7-6 (8-6) 0-0 (1-2)",
      "type": "event"
     }
    ],
@@ -65,7 +65,12 @@
       },
       {
        "value": 6,
-       "tiebreak": 5
+       "tiebreak": 6,
+       "winner": false
+      },
+      {
+       "value": 0,
+       "tiebreak": 2
       }
      ],
      "roster": {
@@ -146,7 +151,12 @@
        "winner": false
       },
       {
-       "value": 6,
+       "value": 7,
+       "tiebreak": 8,
+       "winner": true
+      },
+      {
+       "value": 0,
        "tiebreak": 1
       }
      ],
@@ -235,8 +245,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "period": 3,
+  "clock": "3rd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Julian Cash / Lloyd Glasspool",
@@ -248,13 +258,13 @@
    "abbr": "Constantin Frantzén / Robin Haase",
    "alias": "Constantin Frantzén / Robin Haase",
    "name": "Constantin Frantzén / Robin Haase",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T12:26:35.487Z",
+ "updated": "2026-10-30T12:34:30.813Z",
  "open_taken_at": "2026-10-28T19:43:45.549Z",
  "thresholds": {
   "big": 10,
@@ -286,6 +296,26 @@
  ],
  "edges": [
   {
+   "key": "1916203:1",
+   "market_id": "1916203",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atpdb event Frantzen / Haase vs Cash / Glasspool scheduled for October 29, 2026 at 11:00 AM UTC?",
+   "side": "Cash / Glasspool win",
+   "open_chance": 74,
+   "now_chance": 60,
+   "open_odds": "-285",
+   "now_odds": "-150",
+   "edge": 14,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Julian Cash / Lloyd Glasspool 6, 6, 0 · Constantin Frantzén / Robin Haase 3, 7, 0 · 3rd Set (games by set)",
+   "first_seen": "2026-10-30T12:34:30.813Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1916203:0",
    "market_id": "1916203",
    "market": "Moneyline",
@@ -307,6 +337,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1916203:1:big",
+   "key": "1916203:1",
+   "at": "2026-10-30T12:34:30.813Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Cash / Glasspool win",
+   "market": "Moneyline",
+   "now_odds": "-150",
+   "now_chance": 60,
+   "edge": 14,
+   "text": "New big edge: Cash / Glasspool win (Moneyline), 14 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-frantzhaase-cashglassp-2026-10-29"
+  },
   {
    "id": "gone:1916203:0:2026-10-30T12:14:00.311Z",
    "key": "1916203:0",
@@ -339,7 +383,8 @@
  "alert_seen": [
   "new_edge:1916203:0:slight",
   "new_edge:1916203:0:big",
-  "gone:1916203:0:2026-10-30T12:14:00.311Z"
+  "gone:1916203:0:2026-10-30T12:14:00.311Z",
+  "new_edge:1916203:1:big"
  ],
  "kalshi_checked": null
 }
