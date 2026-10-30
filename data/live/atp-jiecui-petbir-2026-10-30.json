@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-30T12:00:02.334Z"
+  "fetched_at": "2026-10-30T12:07:04.075Z"
  },
- "updated": "2026-10-30T12:00:02.269Z",
+ "updated": "2026-10-30T12:07:03.927Z",
  "open_taken_at": "2026-10-29T12:22:41.355Z",
  "thresholds": {
   "big": 10,
@@ -41,25 +41,47 @@
    "taken_at": "2026-10-29T18:41:14.559Z"
   },
   {
-   "market_id": "1938200",
+   "market_id": "1938202",
    "market": "Games spread",
    "group": "game",
    "mtype": "spread",
    "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Jie Cui cover 1.5 vs the Petr Bar Biryukov in Jie Cui vs. Petr Bar Biryukov?",
+   "line": 4.5,
+   "question": "Will the Jie Cui cover 4.5 vs the Petr Bar Biryukov in Jie Cui vs. Petr Bar Biryukov?",
    "sides": [
-    "Jie Cui +1.50 (Games)",
-    "Petr Bar Biryukov -1.50 (Games)"
+    "Jie Cui +4.50 (Games)",
+    "Petr Bar Biryukov -4.50 (Games)"
    ],
    "teams": [
     "Jie Cui",
     "Petr Bar Biryukov"
    ],
    "player": null,
-   "mid": 34,
-   "yes_buy": 35,
-   "no_buy": 67,
+   "mid": 93.5,
+   "yes_buy": 94,
+   "no_buy": 7,
+   "taken_at": "2026-10-30T10:23:49.417Z"
+  },
+  {
+   "market_id": "1938209",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Jie Cui vs. Petr Bar Biryukov be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 31.5,
+   "yes_buy": 32,
+   "no_buy": 69,
    "taken_at": "2026-10-30T10:09:24.161Z"
   },
   {
@@ -85,25 +107,25 @@
    "taken_at": "2026-10-30T10:09:24.161Z"
   },
   {
-   "market_id": "1938209",
-   "market": "Games total",
+   "market_id": "1938200",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Jie Cui vs. Petr Bar Biryukov be more than 27.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Jie Cui cover 1.5 vs the Petr Bar Biryukov in Jie Cui vs. Petr Bar Biryukov?",
    "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
+    "Jie Cui +1.50 (Games)",
+    "Petr Bar Biryukov -1.50 (Games)"
    ],
    "teams": [
-    null,
-    null
+    "Jie Cui",
+    "Petr Bar Biryukov"
    ],
    "player": null,
-   "mid": 31.5,
-   "yes_buy": 32,
-   "no_buy": 69,
+   "mid": 34,
+   "yes_buy": 35,
+   "no_buy": 67,
    "taken_at": "2026-10-30T10:09:24.161Z"
   },
   {
@@ -217,28 +239,6 @@
    "taken_at": "2026-10-29T18:41:14.559Z"
   },
   {
-   "market_id": "1938202",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Jie Cui cover 4.5 vs the Petr Bar Biryukov in Jie Cui vs. Petr Bar Biryukov?",
-   "sides": [
-    "Jie Cui +4.50 (Games)",
-    "Petr Bar Biryukov -4.50 (Games)"
-   ],
-   "teams": [
-    "Jie Cui",
-    "Petr Bar Biryukov"
-   ],
-   "player": null,
-   "mid": 93.5,
-   "yes_buy": 94,
-   "no_buy": 7,
-   "taken_at": "2026-10-30T10:23:49.417Z"
-  },
-  {
    "market_id": "1938207",
    "market": "Games total",
    "group": "game",
@@ -329,46 +329,6 @@
  ],
  "edges": [
   {
-   "key": "1938200:1",
-   "market_id": "1938200",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Jie Cui cover 1.5 vs the Petr Bar Biryukov in Jie Cui vs. Petr Bar Biryukov?",
-   "side": "Petr Bar Biryukov -1.50 (Games)",
-   "open_chance": 67,
-   "now_chance": 34,
-   "open_odds": "-203",
-   "now_odds": "+194",
-   "edge": 33,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-30T11:44:11.744Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1938137:0",
-   "market_id": "1938137",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Jie Cui vs Petr Bar Biryukov scheduled for October 30, 2026 at 10:00 AM UTC?",
-   "side": "Jie Cui win",
-   "open_chance": 73,
-   "now_chance": 49,
-   "open_odds": "-270",
-   "now_odds": "+104",
-   "edge": 24,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-30T11:44:11.744Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1938209:0",
    "market_id": "1938209",
    "market": "Games total",
@@ -386,6 +346,26 @@
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-30T11:01:06.914Z",
    "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1938200:1",
+   "market_id": "1938200",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Jie Cui cover 1.5 vs the Petr Bar Biryukov in Jie Cui vs. Petr Bar Biryukov?",
+   "side": "Petr Bar Biryukov -1.50 (Games)",
+   "open_chance": 67,
+   "now_chance": 34,
+   "open_odds": "-203",
+   "now_odds": "+194",
+   "edge": 33,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-30T11:44:11.744Z",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -429,26 +409,6 @@
    "kalshi": null
   },
   {
-   "key": "1938137:1",
-   "market_id": "1938137",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Jie Cui vs Petr Bar Biryukov scheduled for October 30, 2026 at 10:00 AM UTC?",
-   "side": "Petr Bar Biryukov win",
-   "open_chance": 28,
-   "now_chance": 19,
-   "open_odds": "+257",
-   "now_odds": "+426",
-   "edge": 9,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-30T11:08:04.517Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "1938216:1",
    "market_id": "1938216",
    "market": "Set 2 winner",
@@ -465,26 +425,6 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-30T10:46:08.039Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1938199:1",
-   "market_id": "1938199",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Jie Cui cover -1.5 vs the Petr Bar Biryukov in Jie Cui vs. Petr Bar Biryukov?",
-   "side": "Petr Bar Biryukov +1.50 (Games)",
-   "open_chance": 67,
-   "now_chance": 60,
-   "open_odds": "-203",
-   "now_odds": "-150",
-   "edge": 7,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-30T10:53:25.338Z",
    "status": "gone",
    "kalshi": null
   },
@@ -571,31 +511,17 @@
  ],
  "alerts": [
   {
-   "id": "new_edge:1938199:1:slight",
-   "key": "1938199:1",
-   "at": "2026-10-30T11:52:02.406Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Petr Bar Biryukov +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-150",
-   "now_chance": 60,
-   "edge": 7,
-   "text": "New slight edge: Petr Bar Biryukov +1.50 (Games) (Games spread), 7 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-jiecui-petbir-2026-10-30"
-  },
-  {
-   "id": "new_edge:1938137:0:big",
-   "key": "1938137:0",
-   "at": "2026-10-30T11:44:11.744Z",
-   "type": "new_edge",
+   "id": "gone:1938200:1:2026-10-30T11:44:11.744Z",
+   "key": "1938200:1",
+   "at": "2026-10-30T12:07:03.927Z",
+   "type": "gone",
    "tier": "big",
-   "side": "Jie Cui win",
-   "market": "Moneyline",
-   "now_odds": "-150",
-   "now_chance": 60,
-   "edge": 13,
-   "text": "New big edge: Jie Cui win (Moneyline), 13 points cheaper than open.",
+   "side": "Petr Bar Biryukov -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+194",
+   "now_chance": 34,
+   "edge": 33,
+   "text": "Edge gone: Petr Bar Biryukov -1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-jiecui-petbir-2026-10-30"
   },
   {
@@ -610,34 +536,6 @@
    "now_chance": 55,
    "edge": 12,
    "text": "New big edge: Petr Bar Biryukov -1.50 (Games) (Games spread), 12 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-jiecui-petbir-2026-10-30"
-  },
-  {
-   "id": "gone:1938199:1:2026-10-30T10:53:25.338Z",
-   "key": "1938199:1",
-   "at": "2026-10-30T11:37:09.711Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Petr Bar Biryukov +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+376",
-   "now_chance": 21,
-   "edge": 46,
-   "text": "Edge gone: Petr Bar Biryukov +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-jiecui-petbir-2026-10-30"
-  },
-  {
-   "id": "gone:1938137:1:2026-10-30T11:08:04.517Z",
-   "key": "1938137:1",
-   "at": "2026-10-30T11:37:09.711Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Petr Bar Biryukov win",
-   "market": "Moneyline",
-   "now_odds": "+426",
-   "now_chance": 19,
-   "edge": 9,
-   "text": "Edge gone: Petr Bar Biryukov win (Moneyline) is no longer 4+ points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-jiecui-petbir-2026-10-30"
   },
   {
@@ -708,20 +606,6 @@
    "now_chance": 22,
    "edge": 10,
    "text": "New big edge: Over 27.5 (Games) (Games total), 10 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-jiecui-petbir-2026-10-30"
-  },
-  {
-   "id": "new_edge:1938199:1:big",
-   "key": "1938199:1",
-   "at": "2026-10-30T10:53:25.338Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Petr Bar Biryukov +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+456",
-   "now_chance": 18,
-   "edge": 49,
-   "text": "New big edge: Petr Bar Biryukov +1.50 (Games) (Games spread), 49 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-jiecui-petbir-2026-10-30"
   },
   {
@@ -904,7 +788,8 @@
   "gone:1938210:1:2026-10-30T11:15:05.577Z",
   "new_edge:1938137:0:big",
   "new_edge:1938200:1:big",
-  "new_edge:1938199:1:slight"
+  "new_edge:1938199:1:slight",
+  "gone:1938200:1:2026-10-30T11:44:11.744Z"
  ],
  "kalshi_checked": null
 }

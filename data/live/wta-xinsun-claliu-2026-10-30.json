@@ -4,12 +4,12 @@
  "game": "Xinran Sun vs. Claire Liu",
  "url": "https://polymarket.us/sports/wta/wta-xinsun-claliu-2026-10-30",
  "start_time": "2026-10-30T10:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185732",
-  "fetched_at": "2026-10-30T12:00:02.302Z",
+  "fetched_at": "2026-10-30T12:07:04.223Z",
   "tennis": true,
   "tennis_match": {
    "id": "185732",
@@ -17,17 +17,17 @@
    "date": "2026-10-30T10:00Z",
    "startDate": "2026-10-30T10:00Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Xinran Sun (CHN) is tied with Claire Liu (USA) 7-5 6-6",
+     "text": "Xinran Sun (CHN) bt Claire Liu (USA) 7-5 7-6 (7-2)",
      "type": "event"
     }
    ],
@@ -55,13 +55,16 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
      "linescores": [
       {
        "value": 5,
        "winner": false
       },
       {
-       "value": 6
+       "value": 6,
+       "tiebreak": 2,
+       "winner": false
       }
      ],
      "athlete": {
@@ -101,13 +104,16 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
      "linescores": [
       {
        "value": 7,
        "winner": true
       },
       {
-       "value": 6
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
       }
      ],
      "athlete": {
@@ -158,10 +164,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Claire Liu",
@@ -173,13 +179,13 @@
    "abbr": "Xinran Sun",
    "alias": "Xinran Sun",
    "name": "Xinran Sun",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T12:00:02.234Z",
+ "updated": "2026-10-30T12:07:03.953Z",
  "open_taken_at": "2026-10-29T12:29:58.726Z",
  "thresholds": {
   "big": 10,
@@ -535,7 +541,7 @@
    "reason": "Explained by score: Claire Liu not above the games spread right now",
    "context": "Claire Liu 5, 6 · Xinran Sun 7, 6 · 2nd Set (games by set)",
    "first_seen": "2026-10-30T10:09:24.251Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -555,27 +561,7 @@
    "reason": "Explained by score: Claire Liu trailing in sets",
    "context": "Claire Liu 5, 6 · Xinran Sun 7, 6 · 2nd Set (games by set)",
    "first_seen": "2026-10-30T10:09:24.251Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1938259:1",
-   "market_id": "1938259",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Xinran Sun win set 2 against Claire Liu?",
-   "side": "No: Xinran Sun win set 2 against Claire Liu",
-   "open_chance": 52,
-   "now_chance": 29,
-   "open_odds": "-108",
-   "now_odds": "+245",
-   "edge": 23,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Xinran Sun not above the games spread right now",
-   "context": "Claire Liu 5, 6 · Xinran Sun 7, 6 · 2nd Set (games by set)",
-   "first_seen": "2026-10-30T12:00:02.234Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -655,6 +641,26 @@
    "reason": "Big move (28 pts), likely news",
    "context": "Claire Liu 5, 2 · Xinran Sun 7, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-30T10:16:04.529Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1938259:1",
+   "market_id": "1938259",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Xinran Sun win set 2 against Claire Liu?",
+   "side": "No: Xinran Sun win set 2 against Claire Liu",
+   "open_chance": 52,
+   "now_chance": 29,
+   "open_odds": "-108",
+   "now_odds": "+245",
+   "edge": 23,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Xinran Sun not above the games spread right now",
+   "context": "Claire Liu 5, 6 · Xinran Sun 7, 6 · 2nd Set (games by set)",
+   "first_seen": "2026-10-30T12:00:02.234Z",
    "status": "gone",
    "kalshi": null
   },
