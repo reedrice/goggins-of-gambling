@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185695",
-  "fetched_at": "2026-10-30T03:15:15.264Z",
+  "fetched_at": "2026-10-30T03:20:38.861Z",
   "tennis": true,
   "tennis_match": {
    "id": "185695",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Gabriela Dabrowski (CAN) & Luisa Stefani (BRA) leads Hao-Ching Chan (TPO) & Miyu Kato (JPN) 1-0",
+     "text": "(1) Gabriela Dabrowski (CAN) & Luisa Stefani (BRA) leads Hao-Ching Chan (TPO) & Miyu Kato (JPN) 1-1",
      "type": "event"
     }
    ],
@@ -55,9 +55,10 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
-       "value": 0
+       "value": 1
       }
      ],
      "roster": {
@@ -132,6 +133,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "curatedRank": {
       "current": 1
      },
@@ -207,6 +209,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 264,
    "type": {
     "id": "4",
@@ -244,7 +251,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T03:15:15.140Z",
+ "updated": "2026-10-30T03:20:38.758Z",
  "open_taken_at": "2026-10-28T07:13:05.259Z",
  "thresholds": {
   "big": 10,
@@ -292,11 +299,25 @@
    "reason": null,
    "context": "Hao-Ching Chan / Miyu Kato 0 · Gabriela Dabrowski / Luisa Stefani 1 · 1st Set (games by set)",
    "first_seen": "2026-10-29T19:05:06.400Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1899886:1:2026-10-29T19:05:06.400Z",
+   "key": "1899886:1",
+   "at": "2026-10-30T03:20:38.758Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Chan H / Kato M win",
+   "market": "Moneyline",
+   "now_odds": "+456",
+   "now_chance": 18,
+   "edge": 4,
+   "text": "Edge gone: Chan H / Kato M win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-dabrowstefan-chankato-2026-10-28"
+  },
   {
    "id": "new_edge:1899886:1:slight",
    "key": "1899886:1",
@@ -313,7 +334,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1899886:1:slight"
+  "new_edge:1899886:1:slight",
+  "gone:1899886:1:2026-10-29T19:05:06.400Z"
  ],
  "kalshi_checked": null
 }
