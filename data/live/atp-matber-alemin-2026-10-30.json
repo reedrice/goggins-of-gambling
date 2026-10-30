@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185200",
-  "fetched_at": "2026-10-30T19:48:19.303Z",
+  "fetched_at": "2026-10-30T19:57:34.593Z",
   "tennis": true,
   "tennis_match": {
    "id": "185200",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Matteo Berrettini (ITA) leads (5) Alex de Minaur (AUS) 4-3",
+     "text": "Matteo Berrettini (ITA) leads (5) Alex de Minaur (AUS) 5-4",
      "type": "event"
     }
    ],
@@ -55,12 +55,13 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 5
      },
      "linescores": [
       {
-       "value": 3
+       "value": 4
       }
      ],
      "athlete": {
@@ -100,9 +101,10 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
-       "value": 4
+       "value": 5
       }
      ],
      "athlete": {
@@ -137,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 10,
    "type": {
     "id": "1",
@@ -174,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T19:48:19.246Z",
+ "updated": "2026-10-30T19:57:34.439Z",
  "open_taken_at": "2026-10-29T20:50:42.739Z",
  "thresholds": {
   "big": 10,
@@ -248,26 +255,48 @@
    "taken_at": "2026-10-29T22:37:18.401Z"
   },
   {
-   "market_id": "1951851",
-   "market": "Set 1 winner",
+   "market_id": "1951838",
+   "market": "Games total",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Matteo Berrettini win set 1 against Alex de Minaur?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Matteo Berrettini vs. Alex de Minaur be more than 22.5?",
    "sides": [
-    "Yes: Matteo Berrettini win set 1 against Alex de Minaur",
-    "No: Matteo Berrettini win set 1 against Alex de Minaur"
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
    ],
    "teams": [
-    "Matteo Berrettini",
+    null,
     null
    ],
    "player": null,
-   "mid": 37,
-   "yes_buy": 40,
-   "no_buy": 66,
-   "taken_at": "2026-10-30T06:37:05.054Z"
+   "mid": 52,
+   "yes_buy": 53,
+   "no_buy": 49,
+   "taken_at": "2026-10-30T00:44:45.074Z"
+  },
+  {
+   "market_id": "1951844",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Matteo Berrettini vs. Alex de Minaur be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-10-30T19:07:09.203Z"
   },
   {
    "market_id": "1951845",
@@ -292,6 +321,50 @@
    "taken_at": "2026-10-30T12:07:06.080Z"
   },
   {
+   "market_id": "1951851",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Matteo Berrettini win set 1 against Alex de Minaur?",
+   "sides": [
+    "Yes: Matteo Berrettini win set 1 against Alex de Minaur",
+    "No: Matteo Berrettini win set 1 against Alex de Minaur"
+   ],
+   "teams": [
+    "Matteo Berrettini",
+    null
+   ],
+   "player": null,
+   "mid": 37,
+   "yes_buy": 40,
+   "no_buy": 66,
+   "taken_at": "2026-10-30T06:37:05.054Z"
+  },
+  {
+   "market_id": "1951820",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Matteo Berrettini cover 1.5 vs the Alex de Minaur in Matteo Berrettini vs. Alex de Minaur?",
+   "sides": [
+    "Matteo Berrettini +1.50 (Games)",
+    "Alex de Minaur -1.50 (Games)"
+   ],
+   "teams": [
+    "Matteo Berrettini",
+    "Alex de Minaur"
+   ],
+   "player": null,
+   "mid": 38,
+   "yes_buy": 39,
+   "no_buy": 63,
+   "taken_at": "2026-10-30T00:44:45.074Z"
+  },
+  {
    "market_id": "1951852",
    "market": "Set 2 winner",
    "group": "game",
@@ -312,28 +385,6 @@
    "yes_buy": 40,
    "no_buy": 66,
    "taken_at": "2026-10-30T11:15:07.912Z"
-  },
-  {
-   "market_id": "1951844",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Matteo Berrettini vs. Alex de Minaur be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-10-30T19:07:09.203Z"
   },
   {
    "market_id": "1951819",
@@ -378,50 +429,6 @@
    "yes_buy": 12,
    "no_buy": 89,
    "taken_at": "2026-10-30T19:15:09.037Z"
-  },
-  {
-   "market_id": "1951838",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Matteo Berrettini vs. Alex de Minaur be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 52,
-   "yes_buy": 53,
-   "no_buy": 49,
-   "taken_at": "2026-10-30T00:44:45.074Z"
-  },
-  {
-   "market_id": "1951820",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Matteo Berrettini cover 1.5 vs the Alex de Minaur in Matteo Berrettini vs. Alex de Minaur?",
-   "sides": [
-    "Matteo Berrettini +1.50 (Games)",
-    "Alex de Minaur -1.50 (Games)"
-   ],
-   "teams": [
-    "Matteo Berrettini",
-    "Alex de Minaur"
-   ],
-   "player": null,
-   "mid": 38,
-   "yes_buy": 39,
-   "no_buy": 63,
-   "taken_at": "2026-10-30T00:44:45.074Z"
   },
   {
    "market_id": "1951836",
@@ -514,22 +521,42 @@
  ],
  "edges": [
   {
-   "key": "1951851:1",
-   "market_id": "1951851",
-   "market": "Set 1 winner",
+   "key": "1951838:1",
+   "market_id": "1951838",
+   "market": "Games total",
    "group": "game",
-   "question": "Will Matteo Berrettini win set 1 against Alex de Minaur?",
-   "side": "No: Matteo Berrettini win set 1 against Alex de Minaur",
-   "open_chance": 66,
-   "now_chance": 54,
-   "open_odds": "-194",
-   "now_odds": "-117",
-   "edge": 12,
+   "question": "Will the total in Matteo Berrettini vs. Alex de Minaur be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 49,
+   "now_chance": 29,
+   "open_odds": "+104",
+   "now_odds": "+245",
+   "edge": 20,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Alex de Minaur 3 · Matteo Berrettini 4 · 1st Set (games by set)",
+   "context": "Alex de Minaur 4 · Matteo Berrettini 5 · 1st Set (games by set)",
    "first_seen": "2026-10-30T19:23:39.494Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1951844:1",
+   "market_id": "1951844",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Matteo Berrettini vs. Alex de Minaur be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 67,
+   "now_chance": 54,
+   "open_odds": "-203",
+   "now_odds": "-117",
+   "edge": 13,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Alex de Minaur 4 · Matteo Berrettini 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-30T19:57:34.439Z",
    "status": "open",
    "kalshi": null
   },
@@ -548,7 +575,27 @@
    "tier": "slight",
    "class": "score",
    "reason": "Explained by score: Alex de Minaur not above the games spread right now",
-   "context": "Alex de Minaur 3 · Matteo Berrettini 4 · 1st Set (games by set)",
+   "context": "Alex de Minaur 4 · Matteo Berrettini 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-30T19:23:39.494Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1951851:1",
+   "market_id": "1951851",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Matteo Berrettini win set 1 against Alex de Minaur?",
+   "side": "No: Matteo Berrettini win set 1 against Alex de Minaur",
+   "open_chance": 66,
+   "now_chance": 58,
+   "open_odds": "-194",
+   "now_odds": "-138",
+   "edge": 8,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Alex de Minaur 4 · Matteo Berrettini 5 · 1st Set (games by set)",
    "first_seen": "2026-10-30T19:23:39.494Z",
    "status": "open",
    "kalshi": null
@@ -561,35 +608,15 @@
    "question": "Will the Matteo Berrettini cover -1.5 vs the Alex de Minaur in Matteo Berrettini vs. Alex de Minaur?",
    "side": "Alex de Minaur +1.50 (Games)",
    "open_chance": 79,
-   "now_chance": 71,
+   "now_chance": 72,
    "open_odds": "-376",
-   "now_odds": "-245",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Alex de Minaur 3 · Matteo Berrettini 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-30T19:15:09.037Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1951227:1",
-   "market_id": "1951227",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Matteo Berrettini vs Alex de Minaur scheduled for October 30, 2026 at 7:00 PM UTC?",
-   "side": "Alex de Minaur win",
-   "open_chance": 69,
-   "now_chance": 62,
-   "open_odds": "-223",
-   "now_odds": "-163",
+   "now_odds": "-257",
    "edge": 7,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Alex de Minaur 3 · Matteo Berrettini 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-30T19:23:39.494Z",
+   "context": "Alex de Minaur 4 · Matteo Berrettini 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-30T19:15:09.037Z",
    "status": "open",
    "kalshi": null
   },
@@ -608,29 +635,69 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Alex de Minaur 3 · Matteo Berrettini 4 · 1st Set (games by set)",
+   "context": "Alex de Minaur 4 · Matteo Berrettini 5 · 1st Set (games by set)",
    "first_seen": "2026-10-30T19:32:18.205Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1951838:1",
-   "market_id": "1951838",
-   "market": "Games total",
+   "key": "1951852:1",
+   "market_id": "1951852",
+   "market": "Set 2 winner",
    "group": "game",
-   "question": "Will the total in Matteo Berrettini vs. Alex de Minaur be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 49,
-   "now_chance": 34,
-   "open_odds": "+104",
-   "now_odds": "+194",
-   "edge": 15,
-   "tier": "big",
+   "question": "Will Matteo Berrettini win set 2 against Alex de Minaur?",
+   "side": "No: Matteo Berrettini win set 2 against Alex de Minaur",
+   "open_chance": 66,
+   "now_chance": 61,
+   "open_odds": "-194",
+   "now_odds": "-156",
+   "edge": 5,
+   "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Alex de Minaur 2 · Matteo Berrettini 3 · 1st Set (games by set)",
+   "context": "Alex de Minaur 4 · Matteo Berrettini 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-30T19:57:34.439Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1951227:1",
+   "market_id": "1951227",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Matteo Berrettini vs Alex de Minaur scheduled for October 30, 2026 at 7:00 PM UTC?",
+   "side": "Alex de Minaur win",
+   "open_chance": 69,
+   "now_chance": 65,
+   "open_odds": "-223",
+   "now_odds": "-186",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Alex de Minaur 4 · Matteo Berrettini 5 · 1st Set (games by set)",
    "first_seen": "2026-10-30T19:23:39.494Z",
-   "status": "gone",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1951820:1",
+   "market_id": "1951820",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Matteo Berrettini cover 1.5 vs the Alex de Minaur in Matteo Berrettini vs. Alex de Minaur?",
+   "side": "Alex de Minaur -1.50 (Games)",
+   "open_chance": 63,
+   "now_chance": 59,
+   "open_odds": "-170",
+   "now_odds": "-144",
+   "edge": 4,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Alex de Minaur not above the games spread right now",
+   "context": "Alex de Minaur 4 · Matteo Berrettini 5 · 1st Set (games by set)",
+   "first_seen": "2026-10-30T19:57:34.439Z",
+   "status": "open",
    "kalshi": null
   },
   {
@@ -715,6 +782,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1951844:1:big",
+   "key": "1951844:1",
+   "at": "2026-10-30T19:57:34.439Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-117",
+   "now_chance": 54,
+   "edge": 13,
+   "text": "New big edge: Under 27.5 (Games) (Games total), 13 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-matber-alemin-2026-10-30"
+  },
+  {
+   "id": "new_edge:1951852:1:slight",
+   "key": "1951852:1",
+   "at": "2026-10-30T19:57:34.439Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "No: Matteo Berrettini win set 2 against Alex de Minaur",
+   "market": "Set 2 winner",
+   "now_odds": "-156",
+   "now_chance": 61,
+   "edge": 5,
+   "text": "New slight edge: No: Matteo Berrettini win set 2 against Alex de Minaur (Set 2 winner), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-matber-alemin-2026-10-30"
+  },
   {
    "id": "gone:1951838:1:2026-10-30T19:23:39.494Z",
    "key": "1951838:1",
@@ -941,7 +1036,9 @@
   "new_edge:1951820:0:slight",
   "new_edge:1951851:1:slight",
   "gone:1951820:0:2026-10-30T19:32:18.205Z",
-  "gone:1951838:1:2026-10-30T19:23:39.494Z"
+  "gone:1951838:1:2026-10-30T19:23:39.494Z",
+  "new_edge:1951844:1:big",
+  "new_edge:1951852:1:slight"
  ],
  "kalshi_checked": null
 }
