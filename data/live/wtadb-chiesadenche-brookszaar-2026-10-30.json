@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185863",
-  "fetched_at": "2026-10-30T18:53:48.043Z",
+  "fetched_at": "2026-10-30T19:07:08.141Z",
   "tennis": true,
   "tennis_match": {
    "id": "185863",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "detail": "3rd Set",
+     "shortDetail": "3rd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Enola Chiesa (ITA) & Rositsa Dencheva (BUL) leads (2) Madeleine Brooks (GBR) & Lisa Zaar (SWE) 1-6 4-4",
+     "text": "Enola Chiesa (ITA) & Rositsa Dencheva (BUL) leads (2) Madeleine Brooks (GBR) & Lisa Zaar (SWE) 1-6 6-4 0-0",
      "type": "event"
     }
    ],
@@ -55,7 +55,6 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
      "curatedRank": {
       "current": 2
      },
@@ -65,7 +64,11 @@
        "winner": true
       },
       {
-       "value": 4
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "roster": {
@@ -140,14 +143,17 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
      "linescores": [
       {
        "value": 1,
        "winner": false
       },
       {
-       "value": 4
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "roster": {
@@ -217,11 +223,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 1081,
    "type": {
     "id": "4",
@@ -240,8 +241,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "period": 3,
+  "clock": "3rd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Madeleine Brooks / Lisa Zaar",
@@ -253,13 +254,13 @@
    "abbr": "Enola Chiesa / Rositsa Dencheva",
    "alias": "Enola Chiesa / Rositsa Dencheva",
    "name": "Enola Chiesa / Rositsa Dencheva",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T18:53:47.944Z",
+ "updated": "2026-10-30T19:07:08.032Z",
  "open_taken_at": "2026-10-29T05:03:45.115Z",
  "thresholds": {
   "big": 10,
@@ -307,14 +308,30 @@
    "reason": null,
    "context": "Madeleine Brooks / Lisa Zaar 6, 4 · Enola Chiesa / Rositsa Dencheva 1, 4 · 2nd Set (games by set)",
    "first_seen": "2026-10-30T18:45:14.184Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
+ "alerts": [
+  {
+   "id": "gone:1920061:0:2026-10-30T18:45:14.184Z",
+   "key": "1920061:0",
+   "at": "2026-10-30T19:07:08.032Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Chiesa E / Dencheva R win",
+   "market": "Moneyline",
+   "now_odds": "+317",
+   "now_chance": 24,
+   "edge": 7,
+   "text": "Edge gone: Chiesa E / Dencheva R win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-chiesadenche-brookszaar-2026-10-30"
+  }
+ ],
  "alert_seen": [
   "new_edge:1920061:0:slight",
-  "new_edge:1920061:0:big"
+  "new_edge:1920061:0:big",
+  "gone:1920061:0:2026-10-30T18:45:14.184Z"
  ],
  "kalshi_checked": null
 }
