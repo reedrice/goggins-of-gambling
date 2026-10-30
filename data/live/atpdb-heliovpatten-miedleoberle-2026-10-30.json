@@ -3,13 +3,13 @@
  "slug": "atpdb-heliovpatten-miedleoberle-2026-10-30",
  "game": "Heliovaara / Patten vs. Miedler / Oberleitner",
  "url": "https://polymarket.us/sports/atpdb/atpdb-heliovpatten-miedleoberle-2026-10-30",
- "start_time": "2026-10-30T15:30:00Z",
+ "start_time": "2026-10-30T15:40:00Z",
  "status": "live",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185217",
-  "fetched_at": "2026-10-30T15:39:19.744Z",
+  "fetched_at": "2026-10-30T15:46:26.137Z",
   "tennis": true,
   "tennis_match": {
    "id": "185217",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Fri, October 30th at 11:40 AM EDT",
-     "shortDetail": "10/30 - 11:40 AM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(1) Harri Heliovaara (FIN) & Henry Patten (GBR) leads Lucas Miedler (AUT) & Neil Oberleitner (AUT) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "roster": {
       "displayName": "Lucas Miedler / Neil Oberleitner",
       "shortDisplayName": "L. Miedler / N. Oberleitner",
@@ -122,9 +133,15 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 1
      },
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "roster": {
       "displayName": "Harri Heliovaara / Henry Patten",
       "shortDisplayName": "H. Heliovaara / H. Patten",
@@ -192,6 +209,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 10,
    "type": {
     "id": "3",
@@ -208,10 +230,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Fri, October 30th at 11:40 AM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Lucas Miedler / Neil Oberleitner",
@@ -229,7 +251,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T15:39:19.615Z",
+ "updated": "2026-10-30T15:46:26.034Z",
  "open_taken_at": "2026-10-29T20:43:44.500Z",
  "thresholds": {
   "big": 10,
@@ -268,20 +290,37 @@
    "question": "Who will win in the upcoming atpdb event Heliovaara / Patten vs Miedler / Oberleitner scheduled for October 30, 2026 at 2:30 PM UTC?",
    "side": "Miedler L / Oberleitner N win",
    "open_chance": 39,
-   "now_chance": 32,
+   "now_chance": 33,
    "open_odds": "+156",
-   "now_odds": "+213",
-   "edge": 7,
+   "now_odds": "+203",
+   "edge": 6,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Lucas Miedler / Neil Oberleitner 0 · Harri Heliovaara / Henry Patten 1 · 1st Set (games by set)",
    "first_seen": "2026-10-30T08:44:04.810Z",
-   "status": "gone",
+   "status": "open",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "new_edge:1950132:1:slight",
+   "key": "1950132:1",
+   "at": "2026-10-30T15:46:26.034Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Miedler L / Oberleitner N win",
+   "market": "Moneyline",
+   "now_odds": "+203",
+   "now_chance": 33,
+   "edge": 6,
+   "text": "New slight edge: Miedler L / Oberleitner N win (Moneyline), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-heliovpatten-miedleoberle-2026-10-30"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:1950132:1:slight"
+ ],
  "kalshi_checked": null
 }

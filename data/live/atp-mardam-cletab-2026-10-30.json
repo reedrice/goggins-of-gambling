@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-30T15:39:18.596Z"
+  "fetched_at": "2026-10-30T15:46:25.127Z"
  },
- "updated": "2026-10-30T15:39:18.447Z",
+ "updated": "2026-10-30T15:46:24.985Z",
  "open_taken_at": "2026-10-29T16:46:43.170Z",
  "thresholds": {
   "big": 10,
@@ -129,6 +129,50 @@
    "taken_at": "2026-10-30T15:39:18.447Z"
   },
   {
+   "market_id": "1945091",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Martin Damm Jr win set 1 against Clement Tabur?",
+   "sides": [
+    "Yes: Martin Damm Jr win set 1 against Clement Tabur",
+    "No: Martin Damm Jr win set 1 against Clement Tabur"
+   ],
+   "teams": [
+    "Martin Damm",
+    null
+   ],
+   "player": null,
+   "mid": 76.5,
+   "yes_buy": 77,
+   "no_buy": 24,
+   "taken_at": "2026-10-30T15:46:24.985Z"
+  },
+  {
+   "market_id": "1945055",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Martin Damm Jr cover 1.5 vs the Clement Tabur in Martin Damm Jr vs. Clement Tabur?",
+   "sides": [
+    "Martin Damm +1.50 (Games)",
+    "Clement Tabur -1.50 (Games)"
+   ],
+   "teams": [
+    "Martin Damm",
+    "Clement Tabur"
+   ],
+   "player": null,
+   "mid": 68,
+   "yes_buy": 70,
+   "no_buy": 34,
+   "taken_at": "2026-10-30T15:46:24.985Z"
+  },
+  {
    "market_id": "1945094",
    "market": "Set 2 winner",
    "group": "game",
@@ -195,28 +239,6 @@
    "taken_at": "2026-10-30T15:39:18.447Z"
   },
   {
-   "market_id": "1945061",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Martin Damm Jr cover -7.5 vs the Clement Tabur in Martin Damm Jr vs. Clement Tabur?",
-   "sides": [
-    "Martin Damm -7.50 (Games)",
-    "Clement Tabur +7.50 (Games)"
-   ],
-   "teams": [
-    "Martin Damm",
-    "Clement Tabur"
-   ],
-   "player": null,
-   "mid": 13,
-   "yes_buy": 15,
-   "no_buy": 89,
-   "taken_at": "2026-10-30T15:39:18.447Z"
-  },
-  {
    "market_id": "1945057",
    "market": "Games spread",
    "group": "game",
@@ -236,6 +258,28 @@
    "mid": 9.5,
    "yes_buy": 12,
    "no_buy": 93,
+   "taken_at": "2026-10-30T15:39:18.447Z"
+  },
+  {
+   "market_id": "1945061",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Martin Damm Jr cover -7.5 vs the Clement Tabur in Martin Damm Jr vs. Clement Tabur?",
+   "sides": [
+    "Martin Damm -7.50 (Games)",
+    "Clement Tabur +7.50 (Games)"
+   ],
+   "teams": [
+    "Martin Damm",
+    "Clement Tabur"
+   ],
+   "player": null,
+   "mid": 13,
+   "yes_buy": 15,
+   "no_buy": 89,
    "taken_at": "2026-10-30T15:39:18.447Z"
   },
   {
@@ -270,10 +314,10 @@
    "question": "Will the total in Martin Damm Jr vs. Clement Tabur be more than 22.5?",
    "side": "Under 22.5 (Games)",
    "open_chance": 46,
-   "now_chance": 22,
+   "now_chance": 18,
    "open_odds": "+117",
-   "now_odds": "+355",
-   "edge": 24,
+   "now_odds": "+456",
+   "edge": 28,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -299,11 +343,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-30T15:39:18.447Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1943710:0:2026-10-30T15:39:18.447Z",
+   "key": "1943710:0",
+   "at": "2026-10-30T15:46:24.985Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Martin Damm win",
+   "market": "Moneyline",
+   "now_odds": "-138",
+   "now_chance": 58,
+   "edge": 7,
+   "text": "Edge gone: Martin Damm win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-mardam-cletab-2026-10-30"
+  },
   {
    "id": "new_edge:1945071:1:big",
    "key": "1945071:1",
@@ -335,7 +393,8 @@
  ],
  "alert_seen": [
   "new_edge:1945071:1:big",
-  "new_edge:1943710:0:slight"
+  "new_edge:1943710:0:slight",
+  "gone:1943710:0:2026-10-30T15:39:18.447Z"
  ],
  "kalshi_checked": null
 }

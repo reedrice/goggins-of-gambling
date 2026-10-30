@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185852",
-  "fetched_at": "2026-10-30T15:39:20.557Z",
+  "fetched_at": "2026-10-30T15:46:27.050Z",
   "tennis": true,
   "tennis_match": {
    "id": "185852",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Anna Blinkova (FRA) leads Martyna Kubka (POL) 6-3 3-2",
+     "text": "(1) Anna Blinkova (FRA) leads Martyna Kubka (POL) 6-3 5-2",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
        "value": 3,
@@ -101,6 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 1
      },
@@ -110,7 +112,7 @@
        "winner": true
       },
       {
-       "value": 3
+       "value": 5
       }
      ],
      "athlete": {
@@ -145,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1081,
    "type": {
     "id": "2",
@@ -182,13 +189,35 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T15:39:20.416Z",
+ "updated": "2026-10-30T15:46:26.943Z",
  "open_taken_at": "2026-10-29T21:47:50.032Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1952228",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Anna Blinkova vs. Martyna Kubka be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 14.5,
+   "yes_buy": 15,
+   "no_buy": 86,
+   "taken_at": "2026-10-30T15:39:20.416Z"
+  },
   {
    "market_id": "1952079",
    "market": "Moneyline",
@@ -300,28 +329,6 @@
    "taken_at": "2026-10-30T15:39:20.416Z"
   },
   {
-   "market_id": "1952228",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Anna Blinkova vs. Martyna Kubka be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 14.5,
-   "yes_buy": 15,
-   "no_buy": 86,
-   "taken_at": "2026-10-30T15:39:20.416Z"
-  },
-  {
    "market_id": "1952214",
    "market": "Games spread",
    "group": "game",
@@ -390,26 +397,6 @@
  ],
  "edges": [
   {
-   "key": "1952227:0",
-   "market_id": "1952227",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Anna Blinkova vs. Martyna Kubka be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 43,
-   "now_chance": 39,
-   "open_odds": "+133",
-   "now_odds": "+156",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Martyna Kubka 3, 2 · Anna Blinkova 6, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-10-30T15:39:20.416Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1952217:0",
    "market_id": "1952217",
    "market": "Games spread",
@@ -428,9 +415,43 @@
    "first_seen": "2026-10-30T00:38:15.678Z",
    "status": "gone",
    "kalshi": null
+  },
+  {
+   "key": "1952227:0",
+   "market_id": "1952227",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Anna Blinkova vs. Martyna Kubka be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 43,
+   "now_chance": 39,
+   "open_odds": "+133",
+   "now_odds": "+156",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Martyna Kubka 3, 2 · Anna Blinkova 6, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-10-30T15:39:20.416Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1952227:0:2026-10-30T15:39:20.416Z",
+   "key": "1952227:0",
+   "at": "2026-10-30T15:46:26.943Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+156",
+   "now_chance": 39,
+   "edge": 4,
+   "text": "Edge gone: Over 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-annbli-markub-2026-10-30"
+  },
   {
    "id": "new_edge:1952227:0:slight",
    "key": "1952227:0",
@@ -448,7 +469,8 @@
  ],
  "alert_seen": [
   "new_edge:1952079:0:slight",
-  "new_edge:1952227:0:slight"
+  "new_edge:1952227:0:slight",
+  "gone:1952227:0:2026-10-30T15:39:20.416Z"
  ],
  "kalshi_checked": null
 }
