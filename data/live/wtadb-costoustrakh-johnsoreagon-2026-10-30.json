@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-30T23:33:17.569Z"
+  "fetched_at": "2026-10-30T23:40:12.832Z"
  },
- "updated": "2026-10-30T23:33:17.460Z",
+ "updated": "2026-10-30T23:40:12.664Z",
  "open_taken_at": "2026-10-29T05:03:45.892Z",
  "thresholds": {
   "big": 10,
@@ -43,6 +43,26 @@
  ],
  "edges": [
   {
+   "key": "1925791:1",
+   "market_id": "1925791",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wtadb event Costoulas / Strakhova vs Johnson / Reasco Gonzalez scheduled for October 30, 2026 at 8:00 PM UTC?",
+   "side": "Johnson S / Reasco Gonzalez M E win",
+   "open_chance": 32,
+   "now_chance": 20,
+   "open_odds": "+213",
+   "now_odds": "+400",
+   "edge": 12,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-30T23:40:12.664Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1925791:0",
    "market_id": "1925791",
    "market": "Moneyline",
@@ -64,6 +84,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1925791:1:big",
+   "key": "1925791:1",
+   "at": "2026-10-30T23:40:12.664Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Johnson S / Reasco Gonzalez M E win",
+   "market": "Moneyline",
+   "now_odds": "+400",
+   "now_chance": 20,
+   "edge": 12,
+   "text": "New big edge: Johnson S / Reasco Gonzalez M E win (Moneyline), 12 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-costoustrakh-johnsoreagon-2026-10-30"
+  },
   {
    "id": "gone:1925791:0:2026-10-30T12:07:03.619Z",
    "key": "1925791:0",
@@ -95,7 +129,8 @@
  ],
  "alert_seen": [
   "new_edge:1925791:0:slight",
-  "gone:1925791:0:2026-10-30T12:07:03.619Z"
+  "gone:1925791:0:2026-10-30T12:07:03.619Z",
+  "new_edge:1925791:1:big"
  ],
  "kalshi_checked": null
 }
