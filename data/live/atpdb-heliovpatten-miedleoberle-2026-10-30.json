@@ -4,12 +4,12 @@
  "game": "Heliovaara / Patten vs. Miedler / Oberleitner",
  "url": "https://polymarket.us/sports/atpdb/atpdb-heliovpatten-miedleoberle-2026-10-30",
  "start_time": "2026-10-30T15:40:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185217",
-  "fetched_at": "2026-10-30T17:20:01.803Z",
+  "fetched_at": "2026-10-30T17:27:41.313Z",
   "tennis": true,
   "tennis_match": {
    "id": "185217",
@@ -17,17 +17,17 @@
    "date": "2026-10-30T15:40Z",
    "startDate": "2026-10-30T15:40Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Harri Heliovaara (FIN) & Henry Patten (GBR) leads Lucas Miedler (AUT) & Neil Oberleitner (AUT) 7-6 (7-5) 6-7 (2-7) 0-0 (4-7)",
+     "text": "Lucas Miedler (AUT) & Neil Oberleitner (AUT) bt (1) Harri Heliovaara (FIN) & Henry Patten (GBR) 6-7 (5-7) 7-6 (7-2) 1-0 (10-5)",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "linescores": [
       {
        "value": 6,
@@ -67,8 +68,9 @@
        "winner": true
       },
       {
-       "value": 0,
-       "tiebreak": 7
+       "value": 1,
+       "tiebreak": 10,
+       "winner": true
       }
      ],
      "roster": {
@@ -143,6 +145,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "curatedRank": {
       "current": 1
      },
@@ -159,7 +162,8 @@
       },
       {
        "value": 0,
-       "tiebreak": 4
+       "tiebreak": 5,
+       "winner": false
       }
      ],
      "roster": {
@@ -245,16 +249,16 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Lucas Miedler / Neil Oberleitner",
    "alias": "Lucas Miedler / Neil Oberleitner",
    "name": "Lucas Miedler / Neil Oberleitner",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Harri Heliovaara / Henry Patten",
@@ -266,7 +270,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T17:20:01.744Z",
+ "updated": "2026-10-30T17:27:41.246Z",
  "open_taken_at": "2026-10-29T20:43:44.500Z",
  "thresholds": {
   "big": 10,
@@ -314,7 +318,7 @@
    "reason": "Big move (43 pts), likely news",
    "context": "Lucas Miedler / Neil Oberleitner 6, 7, 0 · Harri Heliovaara / Henry Patten 7, 6, 0 · 3rd Set (games by set)",
    "first_seen": "2026-10-30T17:20:01.744Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
