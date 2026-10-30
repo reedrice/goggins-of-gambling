@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-30T00:01:37.748Z"
+  "fetched_at": "2026-10-30T00:09:04.599Z"
  },
- "updated": "2026-10-30T00:01:37.635Z",
+ "updated": "2026-10-30T00:09:04.423Z",
  "open_taken_at": "2026-10-28T05:04:24.532Z",
  "thresholds": {
   "big": 10,
@@ -41,28 +41,6 @@
    "taken_at": "2026-10-29T12:02:33.403Z"
   },
   {
-   "market_id": "1889428",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Mitchell Krueger win set 1 against Darwin Blanch?",
-   "sides": [
-    "Yes: Mitchell Krueger win set 1 against Darwin Blanch",
-    "No: Mitchell Krueger win set 1 against Darwin Blanch"
-   ],
-   "teams": [
-    "Mitchell Krueger",
-    null
-   ],
-   "player": null,
-   "mid": 39.5,
-   "yes_buy": 40,
-   "no_buy": 61,
-   "taken_at": "2026-10-29T23:13:40.091Z"
-  },
-  {
    "market_id": "1889421",
    "market": "Games total",
    "group": "game",
@@ -85,6 +63,50 @@
    "taken_at": "2026-10-29T13:12:07.345Z"
   },
   {
+   "market_id": "1889422",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Mitchell Krueger vs. Darwin Blanch be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 27.5,
+   "yes_buy": 28,
+   "no_buy": 73,
+   "taken_at": "2026-10-29T23:13:40.091Z"
+  },
+  {
+   "market_id": "1889428",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Mitchell Krueger win set 1 against Darwin Blanch?",
+   "sides": [
+    "Yes: Mitchell Krueger win set 1 against Darwin Blanch",
+    "No: Mitchell Krueger win set 1 against Darwin Blanch"
+   ],
+   "teams": [
+    "Mitchell Krueger",
+    null
+   ],
+   "player": null,
+   "mid": 39.5,
+   "yes_buy": 40,
+   "no_buy": 61,
+   "taken_at": "2026-10-29T23:13:40.091Z"
+  },
+  {
    "market_id": "1889413",
    "market": "Games spread",
    "group": "game",
@@ -95,28 +117,6 @@
    "sides": [
     "Mitchell Krueger +1.50 (Games)",
     "Darwin Blanch -1.50 (Games)"
-   ],
-   "teams": [
-    "Mitchell Krueger",
-    "Darwin Blanch"
-   ],
-   "player": null,
-   "mid": 34.5,
-   "yes_buy": 35,
-   "no_buy": 66,
-   "taken_at": "2026-10-29T23:13:40.091Z"
-  },
-  {
-   "market_id": "1889412",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Mitchell Krueger cover -1.5 vs the Darwin Blanch in Mitchell Krueger vs. Darwin Blanch?",
-   "sides": [
-    "Mitchell Krueger -1.50 (Games)",
-    "Darwin Blanch +1.50 (Games)"
    ],
    "teams": [
     "Mitchell Krueger",
@@ -151,25 +151,25 @@
    "taken_at": "2026-10-29T23:13:40.091Z"
   },
   {
-   "market_id": "1889422",
-   "market": "Games total",
+   "market_id": "1889412",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Mitchell Krueger vs. Darwin Blanch be more than 27.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Mitchell Krueger cover -1.5 vs the Darwin Blanch in Mitchell Krueger vs. Darwin Blanch?",
    "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
+    "Mitchell Krueger -1.50 (Games)",
+    "Darwin Blanch +1.50 (Games)"
    ],
    "teams": [
-    null,
-    null
+    "Mitchell Krueger",
+    "Darwin Blanch"
    ],
    "player": null,
-   "mid": 27.5,
-   "yes_buy": 28,
-   "no_buy": 73,
+   "mid": 34.5,
+   "yes_buy": 35,
+   "no_buy": 66,
    "taken_at": "2026-10-29T23:13:40.091Z"
   },
   {
@@ -307,22 +307,42 @@
  ],
  "edges": [
   {
-   "key": "1889428:1",
-   "market_id": "1889428",
-   "market": "Set 1 winner",
+   "key": "1889421:1",
+   "market_id": "1889421",
+   "market": "Games total",
    "group": "game",
-   "question": "Will Mitchell Krueger win set 1 against Darwin Blanch?",
-   "side": "No: Mitchell Krueger win set 1 against Darwin Blanch",
-   "open_chance": 61,
-   "now_chance": 23,
-   "open_odds": "-156",
-   "now_odds": "+335",
-   "edge": 38,
+   "question": "Will the total in Mitchell Krueger vs. Darwin Blanch be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 56,
+   "now_chance": 32,
+   "open_odds": "-127",
+   "now_odds": "+213",
+   "edge": 24,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-30T00:01:37.635Z",
+   "first_seen": "2026-10-29T23:47:57.605Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1889422:1",
+   "market_id": "1889422",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Mitchell Krueger vs. Darwin Blanch be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 73,
+   "now_chance": 56,
+   "open_odds": "-270",
+   "now_odds": "-127",
+   "edge": 17,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-29T23:47:57.605Z",
    "status": "open",
    "kalshi": null
   },
@@ -334,10 +354,10 @@
    "question": "Who will win in the upcoming atp event Mitchell Krueger vs Darwin Blanch scheduled for October 29, 2026 at 3:00 PM UTC?",
    "side": "Darwin Blanch win",
    "open_chance": 80,
-   "now_chance": 51,
+   "now_chance": 66,
    "open_odds": "-400",
-   "now_odds": "-104",
-   "edge": 29,
+   "now_odds": "-194",
+   "edge": 14,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -354,76 +374,36 @@
    "question": "Will the Mitchell Krueger cover 1.5 vs the Darwin Blanch in Mitchell Krueger vs. Darwin Blanch?",
    "side": "Darwin Blanch -1.50 (Games)",
    "open_chance": 66,
-   "now_chance": 44,
-   "open_odds": "-194",
-   "now_odds": "+127",
-   "edge": 22,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-29T23:54:42.313Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1889421:1",
-   "market_id": "1889421",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Mitchell Krueger vs. Darwin Blanch be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 56,
-   "now_chance": 40,
-   "open_odds": "-127",
-   "now_odds": "+150",
-   "edge": 16,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-29T23:47:57.605Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1889412:1",
-   "market_id": "1889412",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Mitchell Krueger cover -1.5 vs the Darwin Blanch in Mitchell Krueger vs. Darwin Blanch?",
-   "side": "Darwin Blanch +1.50 (Games)",
-   "open_chance": 66,
-   "now_chance": 53,
-   "open_odds": "-194",
-   "now_odds": "-113",
-   "edge": 13,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-29T23:54:42.313Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1889422:1",
-   "market_id": "1889422",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Mitchell Krueger vs. Darwin Blanch be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 73,
    "now_chance": 61,
-   "open_odds": "-270",
+   "open_odds": "-194",
    "now_odds": "-156",
-   "edge": 12,
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-29T23:54:42.313Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1889428:1",
+   "market_id": "1889428",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Mitchell Krueger win set 1 against Darwin Blanch?",
+   "side": "No: Mitchell Krueger win set 1 against Darwin Blanch",
+   "open_chance": 61,
+   "now_chance": 23,
+   "open_odds": "-156",
+   "now_odds": "+335",
+   "edge": 38,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-29T23:47:57.605Z",
-   "status": "open",
+   "first_seen": "2026-10-30T00:01:37.635Z",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -443,6 +423,26 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-29T23:47:57.605Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1889412:1",
+   "market_id": "1889412",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Mitchell Krueger cover -1.5 vs the Darwin Blanch in Mitchell Krueger vs. Darwin Blanch?",
+   "side": "Darwin Blanch +1.50 (Games)",
+   "open_chance": 66,
+   "now_chance": 53,
+   "open_odds": "-194",
+   "now_odds": "-113",
+   "edge": 13,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-29T23:54:42.313Z",
    "status": "gone",
    "kalshi": null
   },
@@ -528,6 +528,48 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1889413:1:slight",
+   "key": "1889413:1",
+   "at": "2026-10-30T00:09:04.423Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Darwin Blanch -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-156",
+   "now_chance": 61,
+   "edge": 5,
+   "text": "New slight edge: Darwin Blanch -1.50 (Games) (Games spread), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-mitkru-darbla-2026-10-29"
+  },
+  {
+   "id": "gone:1889428:1:2026-10-30T00:01:37.635Z",
+   "key": "1889428:1",
+   "at": "2026-10-30T00:09:04.423Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "No: Mitchell Krueger win set 1 against Darwin Blanch",
+   "market": "Set 1 winner",
+   "now_odds": "+335",
+   "now_chance": 23,
+   "edge": 38,
+   "text": "Edge gone: No: Mitchell Krueger win set 1 against Darwin Blanch (Set 1 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-mitkru-darbla-2026-10-29"
+  },
+  {
+   "id": "gone:1889412:1:2026-10-29T23:54:42.313Z",
+   "key": "1889412:1",
+   "at": "2026-10-30T00:09:04.423Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Darwin Blanch +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 13,
+   "text": "Edge gone: Darwin Blanch +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-mitkru-darbla-2026-10-29"
+  },
   {
    "id": "new_edge:1889428:1:big",
    "key": "1889428:1",
@@ -833,7 +875,10 @@
   "gone:1889412:0:2026-10-29T23:47:57.605Z",
   "new_edge:1889428:1:big",
   "new_edge:1889422:1:big",
-  "gone:1889415:1:2026-10-29T23:47:57.605Z"
+  "gone:1889415:1:2026-10-29T23:47:57.605Z",
+  "new_edge:1889413:1:slight",
+  "gone:1889428:1:2026-10-30T00:01:37.635Z",
+  "gone:1889412:1:2026-10-29T23:54:42.313Z"
  ],
  "kalshi_checked": null
 }
