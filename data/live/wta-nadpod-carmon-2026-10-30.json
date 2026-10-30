@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185815",
-  "fetched_at": "2026-10-30T22:52:15.003Z",
+  "fetched_at": "2026-10-30T23:00:21.566Z",
   "tennis": true,
   "tennis_match": {
    "id": "185815",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(8) Nadia Podoroska (ARG) leads Carole Monnet (FRA) 6-2",
+     "text": "(8) Nadia Podoroska (ARG) leads Carole Monnet (FRA) 6-2 1-0",
      "type": "event"
     }
    ],
@@ -55,9 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
-       "value": 2
+       "value": 2,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -97,12 +102,17 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "curatedRank": {
       "current": 8
      },
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -137,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1034,
    "type": {
     "id": "2",
@@ -155,8 +170,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Carole Monnet",
@@ -168,13 +183,13 @@
    "abbr": "Nadia Podoroska",
    "alias": "Nadia Podoroska",
    "name": "Nadia Podoroska",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-30T22:52:14.897Z",
+ "updated": "2026-10-30T23:00:21.488Z",
  "open_taken_at": "2026-10-29T21:35:17.629Z",
  "thresholds": {
   "big": 10,
@@ -204,28 +219,6 @@
    "taken_at": "2026-10-29T23:09:11.580Z"
   },
   {
-   "market_id": "1952241",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Nadia Podoroska cover 7.5 vs the Carole Monnet in Nadia Podoroska vs. Carole Monnet?",
-   "sides": [
-    "Nadia Podoroska +7.50 (Games)",
-    "Carole Monnet -7.50 (Games)"
-   ],
-   "teams": [
-    "Nadia Podoroska",
-    "Carole Monnet"
-   ],
-   "player": null,
-   "mid": 72.5,
-   "yes_buy": 73,
-   "no_buy": 28,
-   "taken_at": "2026-10-30T21:40:14.868Z"
-  },
-  {
    "market_id": "1952239",
    "market": "Games spread",
    "group": "game",
@@ -245,6 +238,94 @@
    "mid": 72.5,
    "yes_buy": 73,
    "no_buy": 28,
+   "taken_at": "2026-10-30T21:40:14.868Z"
+  },
+  {
+   "market_id": "1952237",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Nadia Podoroska cover 1.5 vs the Carole Monnet in Nadia Podoroska vs. Carole Monnet?",
+   "sides": [
+    "Nadia Podoroska +1.50 (Games)",
+    "Carole Monnet -1.50 (Games)"
+   ],
+   "teams": [
+    "Nadia Podoroska",
+    "Carole Monnet"
+   ],
+   "player": null,
+   "mid": 79.5,
+   "yes_buy": 80,
+   "no_buy": 21,
+   "taken_at": "2026-10-30T22:44:20.082Z"
+  },
+  {
+   "market_id": "1952253",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Nadia Podoroska win set 2 against Carole Monnet?",
+   "sides": [
+    "Yes: Nadia Podoroska win set 2 against Carole Monnet",
+    "No: Nadia Podoroska win set 2 against Carole Monnet"
+   ],
+   "teams": [
+    "Nadia Podoroska",
+    null
+   ],
+   "player": null,
+   "mid": 76,
+   "yes_buy": 77,
+   "no_buy": 25,
+   "taken_at": "2026-10-30T23:00:21.488Z"
+  },
+  {
+   "market_id": "1952244",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Nadia Podoroska vs. Carole Monnet be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 95.5,
+   "yes_buy": 96,
+   "no_buy": 5,
+   "taken_at": "2026-10-30T21:47:37.877Z"
+  },
+  {
+   "market_id": "1952240",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Nadia Podoroska cover -7.5 vs the Carole Monnet in Nadia Podoroska vs. Carole Monnet?",
+   "sides": [
+    "Nadia Podoroska -7.50 (Games)",
+    "Carole Monnet +7.50 (Games)"
+   ],
+   "teams": [
+    "Nadia Podoroska",
+    "Carole Monnet"
+   ],
+   "player": null,
+   "mid": 27.5,
+   "yes_buy": 28,
+   "no_buy": 73,
    "taken_at": "2026-10-30T21:40:14.868Z"
   },
   {
@@ -270,50 +351,6 @@
    "taken_at": "2026-10-30T17:36:12.539Z"
   },
   {
-   "market_id": "1952244",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Nadia Podoroska vs. Carole Monnet be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 95.5,
-   "yes_buy": 96,
-   "no_buy": 5,
-   "taken_at": "2026-10-30T21:47:37.877Z"
-  },
-  {
-   "market_id": "1952237",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Nadia Podoroska cover 1.5 vs the Carole Monnet in Nadia Podoroska vs. Carole Monnet?",
-   "sides": [
-    "Nadia Podoroska +1.50 (Games)",
-    "Carole Monnet -1.50 (Games)"
-   ],
-   "teams": [
-    "Nadia Podoroska",
-    "Carole Monnet"
-   ],
-   "player": null,
-   "mid": 79.5,
-   "yes_buy": 80,
-   "no_buy": 21,
-   "taken_at": "2026-10-30T22:44:20.082Z"
-  },
-  {
    "market_id": "1952246",
    "market": "Games total",
    "group": "game",
@@ -333,6 +370,28 @@
    "mid": 25.5,
    "yes_buy": 26,
    "no_buy": 75,
+   "taken_at": "2026-10-30T21:40:14.868Z"
+  },
+  {
+   "market_id": "1952241",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Nadia Podoroska cover 7.5 vs the Carole Monnet in Nadia Podoroska vs. Carole Monnet?",
+   "sides": [
+    "Nadia Podoroska +7.50 (Games)",
+    "Carole Monnet -7.50 (Games)"
+   ],
+   "teams": [
+    "Nadia Podoroska",
+    "Carole Monnet"
+   ],
+   "player": null,
+   "mid": 72.5,
+   "yes_buy": 73,
+   "no_buy": 28,
    "taken_at": "2026-10-30T21:40:14.868Z"
   },
   {
@@ -356,28 +415,6 @@
    "yes_buy": 39,
    "no_buy": 63,
    "taken_at": "2026-10-30T04:54:49.008Z"
-  },
-  {
-   "market_id": "1952240",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Nadia Podoroska cover -7.5 vs the Carole Monnet in Nadia Podoroska vs. Carole Monnet?",
-   "sides": [
-    "Nadia Podoroska -7.50 (Games)",
-    "Carole Monnet +7.50 (Games)"
-   ],
-   "teams": [
-    "Nadia Podoroska",
-    "Carole Monnet"
-   ],
-   "player": null,
-   "mid": 27.5,
-   "yes_buy": 28,
-   "no_buy": 73,
-   "taken_at": "2026-10-30T21:40:14.868Z"
   },
   {
    "market_id": "1952243",
@@ -470,6 +507,26 @@
  ],
  "edges": [
   {
+   "key": "1952244:0",
+   "market_id": "1952244",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Nadia Podoroska vs. Carole Monnet be more than 17.5?",
+   "side": "Over 17.5 (Games)",
+   "open_chance": 96,
+   "now_chance": 46,
+   "open_odds": "-2400",
+   "now_odds": "+117",
+   "edge": 50,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (50 pts), likely news",
+   "context": "Carole Monnet 2, 0 · Nadia Podoroska 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-30T23:00:21.488Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1952247:0",
    "market_id": "1952247",
    "market": "Sets total",
@@ -477,15 +534,35 @@
    "question": "Will the total in Nadia Podoroska vs. Carole Monnet be more than 2.5?",
    "side": "Over 2.5 (Sets)",
    "open_chance": 40,
-   "now_chance": 35,
+   "now_chance": 24,
    "open_odds": "+150",
-   "now_odds": "+186",
-   "edge": 5,
-   "tier": "slight",
+   "now_odds": "+317",
+   "edge": 16,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Carole Monnet 2 · Nadia Podoroska 6 · 1st Set (games by set)",
+   "context": "Carole Monnet 2, 0 · Nadia Podoroska 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-30T21:40:14.868Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1952240:1",
+   "market_id": "1952240",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Nadia Podoroska cover -7.5 vs the Carole Monnet in Nadia Podoroska vs. Carole Monnet?",
+   "side": "Carole Monnet +7.50 (Games)",
+   "open_chance": 73,
+   "now_chance": 59,
+   "open_odds": "-270",
+   "now_odds": "-144",
+   "edge": 14,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Carole Monnet 2, 0 · Nadia Podoroska 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-30T23:00:21.488Z",
    "status": "open",
    "kalshi": null
   },
@@ -506,26 +583,6 @@
    "reason": null,
    "context": "Carole Monnet 0 · Nadia Podoroska 2 · 1st Set (games by set)",
    "first_seen": "2026-10-30T22:21:26.928Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1952246:0",
-   "market_id": "1952246",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Nadia Podoroska vs. Carole Monnet be more than 27.5?",
-   "side": "Over 27.5 (Games)",
-   "open_chance": 26,
-   "now_chance": 21,
-   "open_odds": "+285",
-   "now_odds": "+376",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Carole Monnet 1 · Nadia Podoroska 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-30T22:36:00.969Z",
    "status": "gone",
    "kalshi": null
   },
@@ -572,31 +629,45 @@
  ],
  "alerts": [
   {
-   "id": "gone:1952246:0:2026-10-30T22:36:00.969Z",
-   "key": "1952246:0",
-   "at": "2026-10-30T22:44:20.082Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Over 27.5 (Games)",
+   "id": "news:1952244:0",
+   "key": "1952244:0",
+   "at": "2026-10-30T23:00:21.488Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Over 17.5 (Games)",
    "market": "Games total",
-   "now_odds": "+376",
-   "now_chance": 21,
-   "edge": 5,
-   "text": "Edge gone: Over 27.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "now_odds": "+117",
+   "now_chance": 46,
+   "edge": 50,
+   "text": "Big move, likely news: Over 17.5 (Games) (Games total) is 50 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-nadpod-carmon-2026-10-30"
   },
   {
-   "id": "new_edge:1952246:0:slight",
-   "key": "1952246:0",
-   "at": "2026-10-30T22:36:00.969Z",
+   "id": "new_edge:1952247:0:big",
+   "key": "1952247:0",
+   "at": "2026-10-30T23:00:21.488Z",
    "type": "new_edge",
-   "tier": "slight",
-   "side": "Over 27.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+376",
-   "now_chance": 21,
-   "edge": 5,
-   "text": "New slight edge: Over 27.5 (Games) (Games total), 5 points cheaper than open.",
+   "tier": "big",
+   "side": "Over 2.5 (Sets)",
+   "market": "Sets total",
+   "now_odds": "+317",
+   "now_chance": 24,
+   "edge": 16,
+   "text": "New big edge: Over 2.5 (Sets) (Sets total), 16 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-nadpod-carmon-2026-10-30"
+  },
+  {
+   "id": "new_edge:1952240:1:big",
+   "key": "1952240:1",
+   "at": "2026-10-30T23:00:21.488Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Carole Monnet +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-144",
+   "now_chance": 59,
+   "edge": 14,
+   "text": "New big edge: Carole Monnet +7.50 (Games) (Games spread), 14 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-nadpod-carmon-2026-10-30"
   },
   {
@@ -709,7 +780,10 @@
   "gone:1952236:1:2026-10-30T16:22:15.229Z",
   "gone:1952238:1:2026-10-30T22:21:26.928Z",
   "new_edge:1952246:0:slight",
-  "gone:1952246:0:2026-10-30T22:36:00.969Z"
+  "gone:1952246:0:2026-10-30T22:36:00.969Z",
+  "news:1952244:0",
+  "new_edge:1952247:0:big",
+  "new_edge:1952240:1:big"
  ],
  "kalshi_checked": null
 }
