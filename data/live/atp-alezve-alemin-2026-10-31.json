@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185203",
-  "fetched_at": "2026-10-31T16:08:28.879Z",
+  "fetched_at": "2026-10-31T16:15:46.449Z",
   "tennis": true,
   "tennis_match": {
    "id": "185203",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, October 31st at 12:10 PM EDT",
-     "shortDetail": "10/31 - 12:10 PM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(1) Alexander Zverev (GER) leads (5) Alex de Minaur (AUS) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "curatedRank": {
       "current": 5
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "b44d8a17-3923-7f78-455a-9c7ca03388f4",
       "displayName": "Alex de Minaur",
@@ -90,9 +101,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "curatedRank": {
       "current": 1
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "fd06b6ea-593b-d5b3-da2b-767ec3e4232c",
       "displayName": "Alexander Zverev",
@@ -125,6 +142,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 10,
    "type": {
     "id": "1",
@@ -141,10 +163,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Sat, October 31st at 12:10 PM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Alex de Minaur",
@@ -162,7 +184,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T16:08:28.754Z",
+ "updated": "2026-10-31T16:15:46.278Z",
  "open_taken_at": "2026-10-30T21:18:33.238Z",
  "thresholds": {
   "big": 10,
@@ -192,26 +214,26 @@
    "taken_at": "2026-10-30T21:40:21.352Z"
   },
   {
-   "market_id": "1987401",
-   "market": "Games total",
+   "market_id": "1987398",
+   "market": "Sets spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Alexander Zverev vs. Alex de Minaur be more than 17.5?",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Alexander Zverev cover 1.5 vs the Alex de Minaur in Alexander Zverev vs. Alex de Minaur?",
    "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
+    "Alexander Zverev +1.50 (Sets)",
+    "Alex de Minaur -1.50 (Sets)"
    ],
    "teams": [
-    null,
-    null
+    "Alexander Zverev",
+    "Alex de Minaur"
    ],
    "player": null,
-   "mid": 88.5,
-   "yes_buy": 91,
-   "no_buy": 14,
-   "taken_at": "2026-10-31T02:22:24.974Z"
+   "mid": 82.5,
+   "yes_buy": 83,
+   "no_buy": 18,
+   "taken_at": "2026-10-31T15:33:00.893Z"
   },
   {
    "market_id": "1987390",
@@ -236,28 +258,6 @@
    "taken_at": "2026-10-31T14:58:08.792Z"
   },
   {
-   "market_id": "1987398",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Alexander Zverev cover 1.5 vs the Alex de Minaur in Alexander Zverev vs. Alex de Minaur?",
-   "sides": [
-    "Alexander Zverev +1.50 (Sets)",
-    "Alex de Minaur -1.50 (Sets)"
-   ],
-   "teams": [
-    "Alexander Zverev",
-    "Alex de Minaur"
-   ],
-   "player": null,
-   "mid": 82.5,
-   "yes_buy": 83,
-   "no_buy": 18,
-   "taken_at": "2026-10-31T15:33:00.893Z"
-  },
-  {
    "market_id": "1987386",
    "market": "Games spread",
    "group": "game",
@@ -278,28 +278,6 @@
    "yes_buy": 78,
    "no_buy": 23,
    "taken_at": "2026-10-31T15:42:14.414Z"
-  },
-  {
-   "market_id": "1987419",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Alexander Zverev win set 2 against Alex de Minaur?",
-   "sides": [
-    "Yes: Alexander Zverev win set 2 against Alex de Minaur",
-    "No: Alexander Zverev win set 2 against Alex de Minaur"
-   ],
-   "teams": [
-    "Alexander Zverev",
-    null
-   ],
-   "player": null,
-   "mid": 66,
-   "yes_buy": 68,
-   "no_buy": 36,
-   "taken_at": "2026-10-31T14:49:05.380Z"
   },
   {
    "market_id": "1987417",
@@ -324,48 +302,26 @@
    "taken_at": "2026-10-31T02:07:17.007Z"
   },
   {
-   "market_id": "1987384",
-   "market": "Games spread",
+   "market_id": "1987419",
+   "market": "Set 2 winner",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Alexander Zverev cover -1.5 vs the Alex de Minaur in Alexander Zverev vs. Alex de Minaur?",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Alexander Zverev win set 2 against Alex de Minaur?",
    "sides": [
-    "Alexander Zverev -1.50 (Games)",
-    "Alex de Minaur +1.50 (Games)"
+    "Yes: Alexander Zverev win set 2 against Alex de Minaur",
+    "No: Alexander Zverev win set 2 against Alex de Minaur"
    ],
    "teams": [
     "Alexander Zverev",
-    "Alex de Minaur"
-   ],
-   "player": null,
-   "mid": 60.5,
-   "yes_buy": 62,
-   "no_buy": 41,
-   "taken_at": "2026-10-31T03:39:23.528Z"
-  },
-  {
-   "market_id": "1987403",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Alexander Zverev vs. Alex de Minaur be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
     null
    ],
    "player": null,
-   "mid": 50.5,
-   "yes_buy": 53,
-   "no_buy": 52,
-   "taken_at": "2026-10-31T00:59:39.313Z"
+   "mid": 66,
+   "yes_buy": 68,
+   "no_buy": 36,
+   "taken_at": "2026-10-31T14:49:05.380Z"
   },
   {
    "market_id": "1987396",
@@ -387,28 +343,6 @@
    "mid": 46,
    "yes_buy": 48,
    "no_buy": 56,
-   "taken_at": "2026-10-31T05:37:37.690Z"
-  },
-  {
-   "market_id": "1987407",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Alexander Zverev vs. Alex de Minaur be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 38,
-   "yes_buy": 40,
-   "no_buy": 64,
    "taken_at": "2026-10-31T05:37:37.690Z"
   },
   {
@@ -478,6 +412,94 @@
    "taken_at": "2026-10-31T14:49:05.380Z"
   },
   {
+   "market_id": "1987401",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Alexander Zverev vs. Alex de Minaur be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 88.5,
+   "yes_buy": 91,
+   "no_buy": 14,
+   "taken_at": "2026-10-31T02:22:24.974Z"
+  },
+  {
+   "market_id": "1987384",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Alexander Zverev cover -1.5 vs the Alex de Minaur in Alexander Zverev vs. Alex de Minaur?",
+   "sides": [
+    "Alexander Zverev -1.50 (Games)",
+    "Alex de Minaur +1.50 (Games)"
+   ],
+   "teams": [
+    "Alexander Zverev",
+    "Alex de Minaur"
+   ],
+   "player": null,
+   "mid": 60.5,
+   "yes_buy": 62,
+   "no_buy": 41,
+   "taken_at": "2026-10-31T03:39:23.528Z"
+  },
+  {
+   "market_id": "1987403",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Alexander Zverev vs. Alex de Minaur be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 50.5,
+   "yes_buy": 53,
+   "no_buy": 52,
+   "taken_at": "2026-10-31T00:59:39.313Z"
+  },
+  {
+   "market_id": "1987407",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Alexander Zverev vs. Alex de Minaur be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 38,
+   "yes_buy": 40,
+   "no_buy": 64,
+   "taken_at": "2026-10-31T05:37:37.690Z"
+  },
+  {
    "market_id": "1987394",
    "market": "Games spread",
    "group": "game",
@@ -502,6 +524,46 @@
  ],
  "edges": [
   {
+   "key": "1987396:1",
+   "market_id": "1987396",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Alexander Zverev cover -1.5 vs the Alex de Minaur in Alexander Zverev vs. Alex de Minaur?",
+   "side": "Alex de Minaur +1.50 (Sets)",
+   "open_chance": 56,
+   "now_chance": 42,
+   "open_odds": "-127",
+   "now_odds": "+138",
+   "edge": 14,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Alex de Minaur 0 · Alexander Zverev 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-31T16:15:46.278Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1987417:1",
+   "market_id": "1987417",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Alexander Zverev win set 1 against Alex de Minaur?",
+   "side": "No: Alexander Zverev win set 1 against Alex de Minaur",
+   "open_chance": 38,
+   "now_chance": 26,
+   "open_odds": "+163",
+   "now_odds": "+285",
+   "edge": 12,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Alexander Zverev not above the games spread right now",
+   "context": "Alex de Minaur 0 · Alexander Zverev 0 · 1st Set (games by set)",
+   "first_seen": "2026-10-31T16:15:46.278Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1987388:1",
    "market_id": "1987388",
    "market": "Games spread",
@@ -509,14 +571,14 @@
    "question": "Will the Alexander Zverev cover -4.5 vs the Alex de Minaur in Alexander Zverev vs. Alex de Minaur?",
    "side": "Alex de Minaur +4.50 (Games)",
    "open_chance": 71,
-   "now_chance": 64,
+   "now_chance": 59,
    "open_odds": "-245",
-   "now_odds": "-178",
-   "edge": 7,
-   "tier": "slight",
+   "now_odds": "-144",
+   "edge": 12,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Alex de Minaur 0 · Alexander Zverev 0 · 1st Set (games by set)",
    "first_seen": "2026-10-31T16:08:28.754Z",
    "status": "open",
    "kalshi": null
@@ -529,14 +591,14 @@
    "question": "Who will win in the upcoming atp event Alexander Zverev vs Alex de Minaur scheduled for October 31, 2026 at 3:30 PM UTC?",
    "side": "Alex de Minaur win",
    "open_chance": 33,
-   "now_chance": 29,
+   "now_chance": 23,
    "open_odds": "+203",
-   "now_odds": "+245",
-   "edge": 4,
-   "tier": "slight",
+   "now_odds": "+335",
+   "edge": 10,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Alex de Minaur 0 · Alexander Zverev 0 · 1st Set (games by set)",
    "first_seen": "2026-10-30T22:36:07.466Z",
    "status": "open",
    "kalshi": null
@@ -563,6 +625,48 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1987396:1:big",
+   "key": "1987396:1",
+   "at": "2026-10-31T16:15:46.278Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Alex de Minaur +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+138",
+   "now_chance": 42,
+   "edge": 14,
+   "text": "New big edge: Alex de Minaur +1.50 (Sets) (Sets spread), 14 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-alezve-alemin-2026-10-31"
+  },
+  {
+   "id": "new_edge:1987388:1:big",
+   "key": "1987388:1",
+   "at": "2026-10-31T16:15:46.278Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Alex de Minaur +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-144",
+   "now_chance": 59,
+   "edge": 12,
+   "text": "New big edge: Alex de Minaur +4.50 (Games) (Games spread), 12 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-alezve-alemin-2026-10-31"
+  },
+  {
+   "id": "new_edge:1987039:1:big",
+   "key": "1987039:1",
+   "at": "2026-10-31T16:15:46.278Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Alex de Minaur win",
+   "market": "Moneyline",
+   "now_odds": "+335",
+   "now_chance": 23,
+   "edge": 10,
+   "text": "New big edge: Alex de Minaur win (Moneyline), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-alezve-alemin-2026-10-31"
+  },
   {
    "id": "new_edge:1987388:1:slight",
    "key": "1987388:1",
@@ -609,7 +713,10 @@
  "alert_seen": [
   "new_edge:1987039:1:slight",
   "gone:1987384:1:2026-10-31T15:33:00.893Z",
-  "new_edge:1987388:1:slight"
+  "new_edge:1987388:1:slight",
+  "new_edge:1987396:1:big",
+  "new_edge:1987388:1:big",
+  "new_edge:1987039:1:big"
  ],
  "kalshi_checked": null
 }
