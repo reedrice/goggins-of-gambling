@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187314",
-  "fetched_at": "2026-10-31T03:21:53.879Z",
+  "fetched_at": "2026-10-31T03:28:29.693Z",
   "tennis": true,
   "tennis_match": {
    "id": "187314",
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
        "value": 4,
@@ -101,6 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 6,
@@ -142,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 380,
    "type": {
     "id": "2",
@@ -179,35 +186,13 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T03:21:53.788Z",
+ "updated": "2026-10-31T03:28:29.599Z",
  "open_taken_at": "2026-10-30T10:01:33.142Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "1967902",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Himeno Sakatsume cover -1.5 vs the Hong Yi Cody Wong in Himeno Sakatsume vs. Hong Yi Cody Wong?",
-   "sides": [
-    "Himeno Sakatsume -1.50 (Sets)",
-    "Cody Wong +1.50 (Sets)"
-   ],
-   "teams": [
-    "Himeno Sakatsume",
-    "Cody Wong"
-   ],
-   "player": null,
-   "mid": 63.5,
-   "yes_buy": 66,
-   "no_buy": 39,
-   "taken_at": "2026-10-30T20:05:56.338Z"
-  },
   {
    "market_id": "1967895",
    "market": "Games spread",
@@ -229,6 +214,50 @@
    "yes_buy": 34,
    "no_buy": 67,
    "taken_at": "2026-10-31T02:07:13.598Z"
+  },
+  {
+   "market_id": "1967905",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Himeno Sakatsume vs. Hong Yi Cody Wong be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 24.5,
+   "yes_buy": 25,
+   "no_buy": 76,
+   "taken_at": "2026-10-31T02:07:13.598Z"
+  },
+  {
+   "market_id": "1967902",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Himeno Sakatsume cover -1.5 vs the Hong Yi Cody Wong in Himeno Sakatsume vs. Hong Yi Cody Wong?",
+   "sides": [
+    "Himeno Sakatsume -1.50 (Sets)",
+    "Cody Wong +1.50 (Sets)"
+   ],
+   "teams": [
+    "Himeno Sakatsume",
+    "Cody Wong"
+   ],
+   "player": null,
+   "mid": 63.5,
+   "yes_buy": 66,
+   "no_buy": 39,
+   "taken_at": "2026-10-30T20:05:56.338Z"
   },
   {
    "market_id": "1967896",
@@ -272,28 +301,6 @@
    "mid": 33.5,
    "yes_buy": 34,
    "no_buy": 67,
-   "taken_at": "2026-10-31T02:07:13.598Z"
-  },
-  {
-   "market_id": "1967905",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Himeno Sakatsume vs. Hong Yi Cody Wong be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 24.5,
-   "yes_buy": 25,
-   "no_buy": 76,
    "taken_at": "2026-10-31T02:07:13.598Z"
   },
   {
