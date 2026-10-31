@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-31T17:16:28.397Z"
+  "fetched_at": "2026-10-31T17:25:35.408Z"
  },
- "updated": "2026-10-31T17:16:28.285Z",
+ "updated": "2026-10-31T17:25:35.311Z",
  "open_taken_at": "2026-10-31T02:43:01.948Z",
  "thresholds": {
   "big": 10,
@@ -43,6 +43,26 @@
  ],
  "edges": [
   {
+   "key": "1995390:1",
+   "market_id": "1995390",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atpdb event Hidalgo / Kestelboim vs Drzewiecki / Matuszewski scheduled for October 31, 2026 at 4:30 PM UTC?",
+   "side": "Drzewiecki K / Matuszewski P win",
+   "open_chance": 41,
+   "now_chance": 22,
+   "open_odds": "+144",
+   "now_odds": "+355",
+   "edge": 19,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-31T15:42:15.044Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1995390:0",
    "market_id": "1995390",
    "market": "Moneyline",
@@ -59,31 +79,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-31T16:49:44.279Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1995390:1",
-   "market_id": "1995390",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atpdb event Hidalgo / Kestelboim vs Drzewiecki / Matuszewski scheduled for October 31, 2026 at 4:30 PM UTC?",
-   "side": "Drzewiecki K / Matuszewski P win",
-   "open_chance": 41,
-   "now_chance": 36,
-   "open_odds": "+144",
-   "now_odds": "+178",
-   "edge": 5,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-31T15:42:15.044Z",
    "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1995390:1:big",
+   "key": "1995390:1",
+   "at": "2026-10-31T17:25:35.311Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Drzewiecki K / Matuszewski P win",
+   "market": "Moneyline",
+   "now_odds": "+355",
+   "now_chance": 22,
+   "edge": 19,
+   "text": "New big edge: Drzewiecki K / Matuszewski P win (Moneyline), 19 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-hidalgkestel-drzewimatusz-2026-10-31"
+  },
   {
    "id": "new_edge:1995390:0:slight",
    "key": "1995390:0",
@@ -160,7 +174,8 @@
   "gone:1995390:1:2026-10-31T15:42:15.044Z",
   "new_edge:1995390:0:big",
   "gone:1995390:0:2026-10-31T16:49:44.279Z",
-  "new_edge:1995390:0:slight"
+  "new_edge:1995390:0:slight",
+  "new_edge:1995390:1:big"
  ],
  "kalshi_checked": null
 }
