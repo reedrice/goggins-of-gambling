@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-31T19:51:35.971Z"
+  "fetched_at": "2026-10-31T19:59:11.829Z"
  },
- "updated": "2026-10-31T19:51:35.855Z",
+ "updated": "2026-10-31T19:59:11.727Z",
  "open_taken_at": "2026-10-30T05:00:46.667Z",
  "thresholds": {
   "big": 10,
@@ -477,7 +477,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-31T15:32:41.951Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -523,6 +523,20 @@
  ],
  "alerts": [
   {
+   "id": "gone:1527753:0:2026-10-31T15:32:41.951Z",
+   "key": "1527753:0",
+   "at": "2026-10-31T19:59:11.727Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Phoenix win",
+   "market": "Moneyline",
+   "now_odds": "-141",
+   "now_chance": 58.5,
+   "edge": 21.5,
+   "text": "Edge gone: Phoenix win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-elon-ncat-2026-10-31"
+  },
+  {
    "id": "new_edge:1527753:0:big",
    "key": "1527753:0",
    "at": "2026-10-31T17:16:11.008Z",
@@ -553,7 +567,8 @@
  ],
  "alert_seen": [
   "new_edge:1527753:0:slight",
-  "new_edge:1527753:0:big"
+  "new_edge:1527753:0:big",
+  "gone:1527753:0:2026-10-31T15:32:41.951Z"
  ],
  "kalshi_checked": null
 }

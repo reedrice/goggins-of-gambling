@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-31T19:51:37.713Z"
+  "fetched_at": "2026-10-31T19:59:13.597Z"
  },
- "updated": "2026-10-31T19:51:37.570Z",
+ "updated": "2026-10-31T19:59:13.494Z",
  "open_taken_at": "2026-10-30T05:00:49.456Z",
  "thresholds": {
   "big": 10,
@@ -279,7 +279,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-31T19:05:01.326Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -304,6 +304,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1530521:0:2026-10-31T19:05:01.326Z",
+   "key": "1530521:0",
+   "at": "2026-10-31T19:59:13.494Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Bengals win",
+   "market": "Moneyline",
+   "now_odds": "-178",
+   "now_chance": 64,
+   "edge": 25.5,
+   "text": "Edge gone: Bengals win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-idhst-dxst-2026-10-31"
+  },
   {
    "id": "new_edge:1530521:0:big",
    "key": "1530521:0",
@@ -350,7 +364,8 @@
  "alert_seen": [
   "new_edge:1530521:0:slight",
   "gone:1979888:0:2026-10-31T15:24:11.464Z",
-  "new_edge:1530521:0:big"
+  "new_edge:1530521:0:big",
+  "gone:1530521:0:2026-10-31T19:05:01.326Z"
  ],
  "kalshi_checked": null
 }
