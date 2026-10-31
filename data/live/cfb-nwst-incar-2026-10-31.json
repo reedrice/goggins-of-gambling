@@ -9,15 +9,37 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-31T18:00:23.583Z"
+  "fetched_at": "2026-10-31T18:09:15.282Z"
  },
- "updated": "2026-10-31T18:00:23.501Z",
+ "updated": "2026-10-31T18:09:15.203Z",
  "open_taken_at": "2026-10-30T05:00:47.898Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1529375",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming football event Northwestern State vs Incarnate Word scheduled for October 31, 2026 at 6:00 PM UTC?",
+   "sides": [
+    "Demons win",
+    "Cardinals win"
+   ],
+   "teams": [
+    "Demons",
+    "Cardinals"
+   ],
+   "player": null,
+   "mid": 4.3,
+   "yes_buy": 4.5,
+   "no_buy": 96,
+   "taken_at": "2026-10-30T05:51:44.551Z"
+  },
   {
    "market_id": "1979668",
    "market": "Main total",
@@ -237,28 +259,6 @@
    "yes_buy": 39,
    "no_buy": 67,
    "taken_at": "2026-10-31T15:07:09.087Z"
-  },
-  {
-   "market_id": "1529375",
-   "market": "Moneyline",
-   "group": "game",
-   "mtype": "winner",
-   "period": "full_game",
-   "line": null,
-   "question": "Who will win in the upcoming football event Northwestern State vs Incarnate Word scheduled for October 31, 2026 at 6:00 PM UTC?",
-   "sides": [
-    "Demons win",
-    "Cardinals win"
-   ],
-   "teams": [
-    "Demons",
-    "Cardinals"
-   ],
-   "player": null,
-   "mid": 4.3,
-   "yes_buy": 4.5,
-   "no_buy": 96,
-   "taken_at": "2026-10-30T05:51:44.551Z"
   }
  ],
  "edges": [
@@ -279,7 +279,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-31T14:48:45.841Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -305,6 +305,20 @@
  ],
  "alerts": [
   {
+   "id": "gone:1979669:0:2026-10-31T14:48:45.841Z",
+   "key": "1979669:0",
+   "at": "2026-10-31T18:09:15.203Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 60.5",
+   "market": "Alt total",
+   "now_odds": "+113",
+   "now_chance": 47,
+   "edge": 5,
+   "text": "Edge gone: Over 60.5 (Alt total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-nwst-incar-2026-10-31"
+  },
+  {
    "id": "new_edge:1979669:0:slight",
    "key": "1979669:0",
    "at": "2026-10-31T18:00:23.501Z",
@@ -320,7 +334,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1979669:0:slight"
+  "new_edge:1979669:0:slight",
+  "gone:1979669:0:2026-10-31T14:48:45.841Z"
  ],
  "kalshi_checked": null
 }
