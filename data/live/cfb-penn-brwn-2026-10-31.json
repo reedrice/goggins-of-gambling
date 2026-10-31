@@ -9,15 +9,37 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-31T18:27:14.707Z"
+  "fetched_at": "2026-10-31T18:37:37.398Z"
  },
- "updated": "2026-10-31T18:27:14.637Z",
+ "updated": "2026-10-31T18:37:37.181Z",
  "open_taken_at": "2026-10-30T05:00:44.826Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1979461",
+   "market": "Main total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 43.5,
+   "question": "Will the total in Penn vs. Brown be more than 43.5?",
+   "sides": [
+    "Over 43.5",
+    "Under 43.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 42,
+   "yes_buy": 43,
+   "no_buy": 59,
+   "taken_at": "2026-10-31T14:48:44.090Z"
+  },
   {
    "market_id": "1526830",
    "market": "Moneyline",
@@ -193,28 +215,6 @@
    "yes_buy": 54,
    "no_buy": 51,
    "taken_at": "2026-10-31T04:28:07.536Z"
-  },
-  {
-   "market_id": "1979461",
-   "market": "Alt total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 43.5,
-   "question": "Will the total in Penn vs. Brown be more than 43.5?",
-   "sides": [
-    "Over 43.5",
-    "Under 43.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 42,
-   "yes_buy": 43,
-   "no_buy": 59,
-   "taken_at": "2026-10-31T14:48:44.090Z"
   },
   {
    "market_id": "1979462",
@@ -593,6 +593,26 @@
  ],
  "edges": [
   {
+   "key": "1979461:0",
+   "market_id": "1979461",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in Penn vs. Brown be more than 43.5?",
+   "side": "Over 43.5",
+   "open_chance": 43,
+   "now_chance": 33,
+   "open_odds": "+133",
+   "now_odds": "+203",
+   "edge": 10,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-31T18:37:37.181Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1977562:1",
    "market_id": "1977562",
    "market": "Alt spread",
@@ -653,9 +673,25 @@
    "kalshi": null
   }
  ],
- "alerts": [],
+ "alerts": [
+  {
+   "id": "new_edge:1979461:0:big",
+   "key": "1979461:0",
+   "at": "2026-10-31T18:37:37.181Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Over 43.5",
+   "market": "Main total",
+   "now_odds": "+203",
+   "now_chance": 33,
+   "edge": 10,
+   "text": "New big edge: Over 43.5 (Main total), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-penn-brwn-2026-10-31"
+  }
+ ],
  "alert_seen": [
-  "new_edge:1526830:0:big"
+  "new_edge:1526830:0:big",
+  "new_edge:1979461:0:big"
  ],
  "kalshi_checked": null
 }
