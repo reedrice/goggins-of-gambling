@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-31T01:45:19.038Z"
+  "fetched_at": "2026-10-31T01:52:53.549Z"
  },
- "updated": "2026-10-31T01:45:18.955Z",
+ "updated": "2026-10-31T01:52:53.488Z",
  "open_taken_at": "2026-10-30T20:28:29.739Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-31T01:07:40.380Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1984931:1:2026-10-31T01:07:40.380Z",
+   "key": "1984931:1",
+   "at": "2026-10-31T01:52:53.488Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Drzewiecki K / Matuszewski P win",
+   "market": "Moneyline",
+   "now_odds": "+194",
+   "now_chance": 34,
+   "edge": 33,
+   "text": "Edge gone: Drzewiecki K / Matuszewski P win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-bagnisgomez-drzewimatusz-2026-10-30"
+  },
   {
    "id": "new_edge:1984931:1:big",
    "key": "1984931:1",
@@ -80,7 +94,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1984931:1:big"
+  "new_edge:1984931:1:big",
+  "gone:1984931:1:2026-10-31T01:07:40.380Z"
  ],
  "kalshi_checked": null
 }
