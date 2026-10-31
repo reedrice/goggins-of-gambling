@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-31T19:43:15.455Z"
+  "fetched_at": "2026-10-31T19:51:37.730Z"
  },
- "updated": "2026-10-31T19:43:15.352Z",
+ "updated": "2026-10-31T19:51:37.539Z",
  "open_taken_at": "2026-10-30T05:00:49.444Z",
  "thresholds": {
   "big": 10,
@@ -301,7 +301,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-31T19:13:53.950Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -326,6 +326,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1530519:1:2026-10-31T19:13:53.950Z",
+   "key": "1530519:1",
+   "at": "2026-10-31T19:51:37.539Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Rattlers win",
+   "market": "Moneyline",
+   "now_odds": "+144",
+   "now_chance": 41,
+   "edge": 27,
+   "text": "Edge gone: Rattlers win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-south-flam-2026-10-31"
+  },
   {
    "id": "new_edge:1530519:1:big",
    "key": "1530519:1",
@@ -357,7 +371,8 @@
  ],
  "alert_seen": [
   "new_edge:1530519:1:slight",
-  "new_edge:1530519:1:big"
+  "new_edge:1530519:1:big",
+  "gone:1530519:1:2026-10-31T19:13:53.950Z"
  ],
  "kalshi_checked": null
 }
