@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185157",
-  "fetched_at": "2026-10-31T16:15:45.801Z",
+  "fetched_at": "2026-10-31T16:24:39.758Z",
   "tennis": true,
   "tennis_match": {
    "id": "185157",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Jan-Lennard Struff (GER) leads (8) Jiri Lehecka (CZE) 2-1",
+     "text": "Jan-Lennard Struff (GER) leads (8) Jiri Lehecka (CZE) 3-2",
      "type": "event"
     }
    ],
@@ -55,9 +55,10 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
-       "value": 2
+       "value": 3
       }
      ],
      "athlete": {
@@ -97,12 +98,13 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 8
      },
      "linescores": [
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -137,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 23,
    "type": {
     "id": "1",
@@ -174,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T16:15:45.650Z",
+ "updated": "2026-10-31T16:24:39.663Z",
  "open_taken_at": "2026-10-30T20:06:06.872Z",
  "thresholds": {
   "big": 10,
@@ -246,6 +253,28 @@
    "yes_buy": 86,
    "no_buy": 15,
    "taken_at": "2026-10-31T16:08:28.197Z"
+  },
+  {
+   "market_id": "1984911",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Jiri Lehecka vs. Jan-Lennard Struff be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 56.5,
+   "yes_buy": 59,
+   "no_buy": 46,
+   "taken_at": "2026-10-31T01:07:40.340Z"
   },
   {
    "market_id": "1984927",
@@ -466,28 +495,6 @@
    "yes_buy": 30,
    "no_buy": 71,
    "taken_at": "2026-10-31T16:08:28.197Z"
-  },
-  {
-   "market_id": "1984911",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Jiri Lehecka vs. Jan-Lennard Struff be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 56.5,
-   "yes_buy": 59,
-   "no_buy": 46,
-   "taken_at": "2026-10-31T01:07:40.340Z"
   }
  ],
  "edges": [
@@ -506,7 +513,7 @@
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Jiri Lehecka not above the games spread right now",
-   "context": "Jan-Lennard Struff 2 · Jiri Lehecka 1 · 1st Set (games by set)",
+   "context": "Jan-Lennard Struff 3 · Jiri Lehecka 2 · 1st Set (games by set)",
    "first_seen": "2026-10-31T16:15:45.650Z",
    "status": "open",
    "kalshi": null
@@ -519,14 +526,14 @@
    "question": "Who will win in the upcoming atp event Jiri Lehecka vs Jan-Lennard Struff scheduled for October 31, 2026 at 4:00 PM UTC?",
    "side": "Jiri Lehecka win",
    "open_chance": 68,
-   "now_chance": 45,
+   "now_chance": 47,
    "open_odds": "-213",
-   "now_odds": "+122",
-   "edge": 23,
+   "now_odds": "+113",
+   "edge": 21,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Jan-Lennard Struff 2 · Jiri Lehecka 1 · 1st Set (games by set)",
+   "context": "Jan-Lennard Struff 3 · Jiri Lehecka 2 · 1st Set (games by set)",
    "first_seen": "2026-10-31T16:15:45.650Z",
    "status": "open",
    "kalshi": null
@@ -546,8 +553,28 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Jan-Lennard Struff 2 · Jiri Lehecka 1 · 1st Set (games by set)",
+   "context": "Jan-Lennard Struff 3 · Jiri Lehecka 2 · 1st Set (games by set)",
    "first_seen": "2026-10-31T16:15:45.650Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1984911:1",
+   "market_id": "1984911",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Jiri Lehecka vs. Jan-Lennard Struff be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 46,
+   "now_chance": 36,
+   "open_odds": "+117",
+   "now_odds": "+178",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Jan-Lennard Struff 3 · Jiri Lehecka 2 · 1st Set (games by set)",
+   "first_seen": "2026-10-31T16:24:39.663Z",
    "status": "open",
    "kalshi": null
   },
@@ -566,13 +593,27 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Jan-Lennard Struff 2 · Jiri Lehecka 1 · 1st Set (games by set)",
+   "context": "Jan-Lennard Struff 3 · Jiri Lehecka 2 · 1st Set (games by set)",
    "first_seen": "2026-10-31T16:15:45.650Z",
    "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1984911:1:big",
+   "key": "1984911:1",
+   "at": "2026-10-31T16:24:39.663Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+178",
+   "now_chance": 36,
+   "edge": 10,
+   "text": "New big edge: Under 22.5 (Games) (Games total), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-jirleh-janstr-2026-10-31"
+  },
   {
    "id": "new_edge:1983816:0:big",
    "key": "1983816:0",
@@ -619,7 +660,8 @@
  "alert_seen": [
   "new_edge:1983816:0:big",
   "new_edge:1984913:1:big",
-  "new_edge:1984927:0:slight"
+  "new_edge:1984927:0:slight",
+  "new_edge:1984911:1:big"
  ],
  "kalshi_checked": null
 }
