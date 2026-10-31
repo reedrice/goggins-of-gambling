@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-31T20:25:23.563Z"
+  "fetched_at": "2026-10-31T20:33:19.999Z"
  },
- "updated": "2026-10-31T20:25:23.467Z",
+ "updated": "2026-10-31T20:33:19.833Z",
  "open_taken_at": "2026-10-30T05:00:51.841Z",
  "thresholds": {
   "big": 10,
@@ -367,7 +367,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-31T20:25:23.467Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -413,6 +413,20 @@
  ],
  "alerts": [
   {
+   "id": "gone:1533973:0:2026-10-31T20:25:23.467Z",
+   "key": "1533973:0",
+   "at": "2026-10-31T20:33:19.833Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Red Foxes win",
+   "market": "Moneyline",
+   "now_odds": "+199",
+   "now_chance": 33.5,
+   "edge": 4.5,
+   "text": "Edge gone: Red Foxes win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-mrst-usd-2026-10-31"
+  },
+  {
    "id": "new_edge:1533973:0:slight",
    "key": "1533973:0",
    "at": "2026-10-31T20:25:23.467Z",
@@ -428,7 +442,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1533973:0:slight"
+  "new_edge:1533973:0:slight",
+  "gone:1533973:0:2026-10-31T20:25:23.467Z"
  ],
  "kalshi_checked": null
 }
