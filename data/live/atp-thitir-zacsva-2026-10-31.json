@@ -4,30 +4,30 @@
  "game": "Thiago Agustin Tirante vs. Zachary Svajda",
  "url": "https://polymarket.us/sports/atp/atp-thitir-zacsva-2026-10-31",
  "start_time": "2026-10-31T10:00:00Z",
- "status": "pregame",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187338",
-  "fetched_at": "2026-10-31T08:54:38.096Z",
+  "fetched_at": "2026-10-31T14:49:14.614Z",
   "tennis": true,
   "tennis_match": {
    "id": "187338",
    "uid": "s:850~l:851~e:13-2026~c:187338",
-   "date": "2026-10-31T10:00Z",
-   "startDate": "2026-10-31T10:00Z",
+   "date": "2026-10-31T10:05Z",
+   "startDate": "2026-10-31T10:05Z",
    "timeValid": true,
    "recent": false,
    "status": {
-    "period": 1,
+    "period": 3,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, October 31st at 6:00 AM EDT",
-     "shortDetail": "10/31 - 6:00 AM EDT"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Thiago Agustin Tirante (ARG) bt Zachary Svajda (USA) 3-6 6-1 6-4",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,21 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1,
+       "winner": false
+      },
+      {
+       "value": 4,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "2b0c5073-0958-98b5-9936-06f464fc2e5f",
       "displayName": "Zachary Svajda",
@@ -87,6 +107,21 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "d7013896-f27c-1590-01c8-3df0a2781e16",
       "displayName": "Thiago Agustin Tirante",
@@ -135,28 +170,28 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sat, October 31st at 6:00 AM EDT",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Zachary Svajda",
    "alias": "Zachary Svajda",
    "name": "Zachary Svajda",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Thiago Agustin Tirante",
    "alias": "Thiago Agustin Tirante",
    "name": "Thiago Agustin Tirante",
-   "score": 0
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T08:54:38.008Z",
+ "updated": "2026-10-31T14:49:14.568Z",
  "open_taken_at": "2026-10-30T20:35:31.065Z",
  "thresholds": {
   "big": 10,
@@ -292,11 +327,28 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-31T04:46:58.259Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:1985201:1:2026-10-31T04:46:58.259Z",
+   "key": "1985201:1",
+   "at": "2026-10-31T14:49:14.568Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Zachary Svajda win",
+   "market": "Moneyline",
+   "now_odds": "-108",
+   "now_chance": 52,
+   "edge": 5,
+   "text": "Edge gone: Zachary Svajda win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-thitir-zacsva-2026-10-31"
+  }
+ ],
+ "alert_seen": [
+  "gone:1985201:1:2026-10-31T04:46:58.259Z"
+ ],
  "kalshi_checked": null
 }

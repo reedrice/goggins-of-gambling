@@ -4,30 +4,30 @@
  "game": "Jaime Faria vs. Rinky Hijikata",
  "url": "https://polymarket.us/sports/atp/atp-jaifar-rinhij-2026-10-31",
  "start_time": "2026-10-31T10:00:00Z",
- "status": "pregame",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187342",
-  "fetched_at": "2026-10-31T08:54:38.032Z",
+  "fetched_at": "2026-10-31T14:49:14.075Z",
   "tennis": true,
   "tennis_match": {
    "id": "187342",
    "uid": "s:850~l:851~e:13-2026~c:187342",
-   "date": "2026-10-31T10:00Z",
-   "startDate": "2026-10-31T10:00Z",
+   "date": "2026-10-31T10:10Z",
+   "startDate": "2026-10-31T10:10Z",
    "timeValid": true,
    "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, October 31st at 6:00 AM EDT",
-     "shortDetail": "10/31 - 6:00 AM EDT"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Rinky Hijikata (AUS) bt Jaime Faria (POR) 6-3 6-4",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,17 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "a3565a03-7c82-893a-9835-1731783c3e77",
       "displayName": "Rinky Hijikata",
@@ -87,6 +103,17 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 4,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "d91fc0db-42dd-3f31-8dde-d7bd806bba0e",
       "displayName": "Jaime Faria",
@@ -135,16 +162,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sat, October 31st at 6:00 AM EDT",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Rinky Hijikata",
    "alias": "Rinky Hijikata",
    "name": "Rinky Hijikata",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Jaime Faria",
@@ -156,7 +183,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T08:54:37.950Z",
+ "updated": "2026-10-31T14:49:14.011Z",
  "open_taken_at": "2026-10-30T20:35:30.975Z",
  "thresholds": {
   "big": 10,
@@ -270,11 +297,28 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-31T01:38:50.285Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:1985197:0:2026-10-31T01:38:50.285Z",
+   "key": "1985197:0",
+   "at": "2026-10-31T14:49:14.011Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Jaime Faria win",
+   "market": "Moneyline",
+   "now_odds": "+122",
+   "now_chance": 45,
+   "edge": 6,
+   "text": "Edge gone: Jaime Faria win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-jaifar-rinhij-2026-10-31"
+  }
+ ],
+ "alert_seen": [
+  "gone:1985197:0:2026-10-31T01:38:50.285Z"
+ ],
  "kalshi_checked": null
 }

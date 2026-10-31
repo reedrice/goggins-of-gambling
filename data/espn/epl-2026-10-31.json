@@ -3,43 +3,42 @@
   "league": "epl",
   "query_date": "2026-10-31",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20261031&limit=1000",
-  "fetched_at": "2026-10-31T08:53:56.092Z",
+  "fetched_at": "2026-10-31T14:48:30.587Z",
   "events": [
     {
       "id": "401879248",
       "name": "Manchester United at Chelsea",
       "date": "2026-10-31T12:30Z",
       "status": {
-        "clock": 0,
-        "displayClock": "0'",
+        "clock": 5400,
+        "displayClock": "90'+11'",
+        "period": 2,
         "type": {
-          "id": "1",
-          "name": "STATUS_SCHEDULED",
-          "state": "pre",
-          "completed": false,
-          "description": "Scheduled",
-          "detail": "Sat, October 31st at 8:30 AM EDT",
-          "shortDetail": "Scheduled"
+          "id": "28",
+          "name": "STATUS_FULL_TIME",
+          "state": "post",
+          "completed": true,
+          "description": "Full Time",
+          "detail": "FT",
+          "shortDetail": "FT"
         }
-      },
-      "boxscore": {
-        "players": []
       },
       "competitions": [
         {
           "id": "401879248",
           "date": "2026-10-31T12:30Z",
           "status": {
-            "clock": 0,
-            "displayClock": "0'",
+            "clock": 5400,
+            "displayClock": "90'+11'",
+            "period": 2,
             "type": {
-              "id": "1",
-              "name": "STATUS_SCHEDULED",
-              "state": "pre",
-              "completed": false,
-              "description": "Scheduled",
-              "detail": "Sat, October 31st at 8:30 AM EDT",
-              "shortDetail": "Scheduled"
+              "id": "28",
+              "name": "STATUS_FULL_TIME",
+              "state": "post",
+              "completed": true,
+              "description": "Full Time",
+              "detail": "FT",
+              "shortDetail": "FT"
             }
           },
           "wasSuspended": false,
@@ -47,7 +46,7 @@
             {
               "id": "363",
               "homeAway": "home",
-              "score": "0",
+              "score": "2",
               "team": {
                 "id": "363",
                 "abbreviation": "CHE",
@@ -78,14 +77,7 @@
       "starters": [],
       "starting_goalies": [],
       "probables": [],
-      "book_lines": [
-        {
-          "provider": "DraftKings",
-          "details": "CHE +100",
-          "spread": null,
-          "total": 2.5
-        }
-      ],
+      "book_lines": [],
       "coverage": {
         "injuries": "unavailable",
         "starters": "unverified",
@@ -94,10 +86,10 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T08:53:56.092Z",
-      "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/summary?event=401879248",
-      "details_checked_at": "2026-10-31T08:53:56.092Z",
-      "details_available": true
+      "fetched_at": "2026-10-31T14:48:30.587Z",
+      "details_source_url": null,
+      "details_checked_at": null,
+      "details_available": false
     },
     {
       "id": "401879251",
@@ -169,28 +161,183 @@
       ],
       "player_usage": [],
       "injuries": [],
-      "starters": [],
+      "starters": [
+        {
+          "player": "Djordje Petrovic",
+          "athlete_id": "289824",
+          "team": "BOU",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "António Silva",
+          "athlete_id": "346588",
+          "team": "BOU",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Adrien Truffert",
+          "athlete_id": "305684",
+          "team": "BOU",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "James Hill",
+          "athlete_id": "279155",
+          "team": "BOU",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Adam Smith",
+          "athlete_id": "122268",
+          "team": "BOU",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Marcus Tavernier",
+          "athlete_id": "243364",
+          "team": "BOU",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Justin Kluivert",
+          "athlete_id": "245916",
+          "team": "BOU",
+          "position": "F",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Rayan",
+          "athlete_id": "357719",
+          "team": "BOU",
+          "position": "F",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Tyler Adams",
+          "athlete_id": "222776",
+          "team": "BOU",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Ryan Christie",
+          "athlete_id": "93435",
+          "team": "BOU",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Evanilson",
+          "athlete_id": "102368",
+          "team": "BOU",
+          "position": "F",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "James Trafford",
+          "athlete_id": "307118",
+          "team": "LEE",
+          "position": "G",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "James Justin",
+          "athlete_id": "231863",
+          "team": "LEE",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Nico Elvedi",
+          "athlete_id": "212237",
+          "team": "LEE",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Tarik Muharemovic",
+          "athlete_id": "318390",
+          "team": "LEE",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Gabriel Gudmundsson",
+          "athlete_id": "250166",
+          "team": "LEE",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Ethan Ampadu",
+          "athlete_id": "241317",
+          "team": "LEE",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Daniel James",
+          "athlete_id": "203072",
+          "team": "LEE",
+          "position": "F",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Harry Wilson",
+          "athlete_id": "194801",
+          "team": "LEE",
+          "position": "F",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Jayden Bogle",
+          "athlete_id": "243408",
+          "team": "LEE",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Ao Tanaka",
+          "athlete_id": "253173",
+          "team": "LEE",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Dominic Calvert-Lewin",
+          "athlete_id": "197717",
+          "team": "LEE",
+          "position": "F",
+          "evidence": "rosters.roster.starter=true"
+        }
+      ],
       "starting_goalies": [],
       "probables": [],
       "book_lines": [
         {
           "provider": "DraftKings",
-          "details": "BOU +115",
+          "details": "BOU +105",
           "spread": null,
           "total": 2.5
         }
       ],
       "coverage": {
         "injuries": "unavailable",
-        "starters": "unverified",
+        "starters": "explicit_starter_flags",
         "goalies": "unverified",
         "hockey_lines": "unavailable",
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T08:53:56.092Z",
+      "fetched_at": "2026-10-31T14:48:30.587Z",
       "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/summary?event=401879251",
-      "details_checked_at": "2026-10-31T08:53:56.092Z",
+      "details_checked_at": "2026-10-31T14:48:30.587Z",
       "details_available": true
     },
     {
@@ -263,28 +410,183 @@
       ],
       "player_usage": [],
       "injuries": [],
-      "starters": [],
+      "starters": [
+        {
+          "player": "Caoimhín Kelleher",
+          "athlete_id": "275599",
+          "team": "BRE",
+          "position": "G",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Kristoffer Ajer",
+          "athlete_id": "206173",
+          "team": "BRE",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Sepp van den Berg",
+          "athlete_id": "270507",
+          "team": "BRE",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Keane Lewis-Potter",
+          "athlete_id": "284490",
+          "team": "BRE",
+          "position": "F",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Michael Kayode",
+          "athlete_id": "356640",
+          "team": "BRE",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Mathias Jensen",
+          "athlete_id": "227472",
+          "team": "BRE",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Vitaly Janelt",
+          "athlete_id": "225564",
+          "team": "BRE",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Mamadou Sangare",
+          "athlete_id": "228547",
+          "team": "BRE",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Igor Thiago",
+          "athlete_id": "301894",
+          "team": "BRE",
+          "position": "F",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Kevin Schade",
+          "athlete_id": "310958",
+          "team": "BRE",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Dango Ouattara",
+          "athlete_id": "315530",
+          "team": "BRE",
+          "position": "F",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Matz Sels",
+          "athlete_id": "179497",
+          "team": "NFO",
+          "position": "G",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Nikola Milenkovic",
+          "athlete_id": "238990",
+          "team": "NFO",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Murillo",
+          "athlete_id": "338894",
+          "team": "NFO",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Jair Paula",
+          "athlete_id": "338876",
+          "team": "NFO",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Xaver Schlager",
+          "athlete_id": "238886",
+          "team": "NFO",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "James McAtee",
+          "athlete_id": "298518",
+          "team": "NFO",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Neco Williams",
+          "athlete_id": "291638",
+          "team": "NFO",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Ola Aina",
+          "athlete_id": "206227",
+          "team": "NFO",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Liam Delap",
+          "athlete_id": "307114",
+          "team": "NFO",
+          "position": "F",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Dan Ndoye",
+          "athlete_id": "275842",
+          "team": "NFO",
+          "position": "F",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Morgan Gibbs-White",
+          "athlete_id": "243396",
+          "team": "NFO",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        }
+      ],
       "starting_goalies": [],
       "probables": [],
       "book_lines": [
         {
           "provider": "DraftKings",
-          "details": "BRE +115",
+          "details": "BRE +110",
           "spread": null,
           "total": 2.5
         }
       ],
       "coverage": {
         "injuries": "unavailable",
-        "starters": "unverified",
+        "starters": "explicit_starter_flags",
         "goalies": "unverified",
         "hockey_lines": "unavailable",
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T08:53:56.092Z",
+      "fetched_at": "2026-10-31T14:48:30.587Z",
       "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/summary?event=401879249",
-      "details_checked_at": "2026-10-31T08:53:56.092Z",
+      "details_checked_at": "2026-10-31T14:48:30.587Z",
       "details_available": true
     },
     {
@@ -357,28 +659,183 @@
       ],
       "player_usage": [],
       "injuries": [],
-      "starters": [],
+      "starters": [
+        {
+          "player": "Carl Rushworth",
+          "athlete_id": "307069",
+          "team": "COV",
+          "position": "G",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Stephen Mfuni",
+          "athlete_id": "374220",
+          "team": "COV",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Milan van Ewijk",
+          "athlete_id": "281139",
+          "team": "COV",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Jay Da Silva",
+          "athlete_id": "206172",
+          "team": "COV",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Ethan Pinnock",
+          "athlete_id": "241093",
+          "team": "COV",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Caleb Yirenkyi",
+          "athlete_id": "387659",
+          "team": "COV",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Tatsuhiro Sakamoto",
+          "athlete_id": "302002",
+          "team": "COV",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Jack Rudoni",
+          "athlete_id": "286967",
+          "team": "COV",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Victor Torp",
+          "athlete_id": "256015",
+          "team": "COV",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Yann Gboho",
+          "athlete_id": "277383",
+          "team": "COV",
+          "position": "F",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Taiwo Awoniyi",
+          "athlete_id": "194686",
+          "team": "COV",
+          "position": "F",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Robin Roefs",
+          "athlete_id": "301449",
+          "team": "SUN",
+          "position": "G",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Luke O'Nien",
+          "athlete_id": "191574",
+          "team": "SUN",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Trai Hume",
+          "athlete_id": "290207",
+          "team": "SUN",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Reinildo Mandava",
+          "athlete_id": "230081",
+          "team": "SUN",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Omar Alderete",
+          "athlete_id": "215401",
+          "team": "SUN",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Granit Xhaka",
+          "athlete_id": "149981",
+          "team": "SUN",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Noah Sadiki",
+          "athlete_id": "340240",
+          "team": "SUN",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Enzo Le Fée",
+          "athlete_id": "288340",
+          "team": "SUN",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Nilson Angulo",
+          "athlete_id": "318090",
+          "team": "SUN",
+          "position": "F",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Chris Rigg",
+          "athlete_id": "356295",
+          "team": "SUN",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Brian Brobbey",
+          "athlete_id": "282229",
+          "team": "SUN",
+          "position": "F",
+          "evidence": "rosters.roster.starter=true"
+        }
+      ],
       "starting_goalies": [],
       "probables": [],
       "book_lines": [
         {
           "provider": "DraftKings",
-          "details": "SUN +135",
+          "details": "SUN +145",
           "spread": null,
           "total": 2.5
         }
       ],
       "coverage": {
         "injuries": "unavailable",
-        "starters": "unverified",
+        "starters": "explicit_starter_flags",
         "goalies": "unverified",
         "hockey_lines": "unavailable",
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T08:53:56.092Z",
+      "fetched_at": "2026-10-31T14:48:30.587Z",
       "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/summary?event=401879247",
-      "details_checked_at": "2026-10-31T08:53:56.092Z",
+      "details_checked_at": "2026-10-31T14:48:30.587Z",
       "details_available": true
     },
     {
@@ -397,6 +854,9 @@
           "detail": "Sat, October 31st at 11:00 AM EDT",
           "shortDetail": "Scheduled"
         }
+      },
+      "boxscore": {
+        "players": []
       },
       "competitions": [
         {
@@ -448,29 +908,184 @@
       ],
       "player_usage": [],
       "injuries": [],
-      "starters": [],
+      "starters": [
+        {
+          "player": "Konstantinos Tzolakis",
+          "athlete_id": "284199",
+          "team": "HUL",
+          "position": "G",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Lewie Coyle",
+          "athlete_id": "231826",
+          "team": "HUL",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Semi Ajayi",
+          "athlete_id": "178051",
+          "team": "HUL",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Ryan Giles",
+          "athlete_id": "243576",
+          "team": "HUL",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "John Egan",
+          "athlete_id": "168424",
+          "team": "HUL",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Nobel Mendy",
+          "athlete_id": "356212",
+          "team": "HUL",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Elliot Stroud",
+          "athlete_id": "357145",
+          "team": "HUL",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Mohamed Belloumi",
+          "athlete_id": "320417",
+          "team": "HUL",
+          "position": "F",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Tim Iroegbunam",
+          "athlete_id": "310599",
+          "team": "HUL",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Regan Slater",
+          "athlete_id": "249851",
+          "team": "HUL",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Oliver McBurnie",
+          "athlete_id": "193010",
+          "team": "HUL",
+          "position": "F",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Christian Walton",
+          "athlete_id": "168746",
+          "team": "IPS",
+          "position": "G",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Leif Davis",
+          "athlete_id": "283086",
+          "team": "IPS",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Issa Diop",
+          "athlete_id": "230963",
+          "team": "IPS",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Dara O'Shea",
+          "athlete_id": "243440",
+          "team": "IPS",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Abdoul Ouattara",
+          "athlete_id": "336794",
+          "team": "IPS",
+          "position": "D",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Fatawu Issahaku",
+          "athlete_id": "318680",
+          "team": "IPS",
+          "position": "F",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Jaden Philogene",
+          "athlete_id": "295370",
+          "team": "IPS",
+          "position": "F",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Julio Enciso",
+          "athlete_id": "20975",
+          "team": "IPS",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Florentino",
+          "athlete_id": "256607",
+          "team": "IPS",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Exequiel Palacios",
+          "athlete_id": "228393",
+          "team": "IPS",
+          "position": "M",
+          "evidence": "rosters.roster.starter=true"
+        },
+        {
+          "player": "Emersonn",
+          "athlete_id": "322654",
+          "team": "IPS",
+          "position": "F",
+          "evidence": "rosters.roster.starter=true"
+        }
+      ],
       "starting_goalies": [],
       "probables": [],
       "book_lines": [
         {
           "provider": "DraftKings",
-          "details": "IPS +150",
+          "details": "IPS +135",
           "spread": null,
           "total": 2.5
         }
       ],
       "coverage": {
         "injuries": "unavailable",
-        "starters": "unverified",
+        "starters": "explicit_starter_flags",
         "goalies": "unverified",
         "hockey_lines": "unavailable",
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T08:53:56.092Z",
-      "details_source_url": null,
-      "details_checked_at": null,
-      "details_available": false
+      "fetched_at": "2026-10-31T14:48:30.587Z",
+      "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/summary?event=401878763",
+      "details_checked_at": "2026-10-31T14:48:30.587Z",
+      "details_available": true
     },
     {
       "id": "401879245",
@@ -545,7 +1160,7 @@
       "book_lines": [
         {
           "provider": "DraftKings",
-          "details": "MNC -150",
+          "details": "MNC -140",
           "spread": null,
           "total": 3.5
         }
@@ -558,7 +1173,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T08:53:56.092Z",
+      "fetched_at": "2026-10-31T14:48:30.587Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -636,7 +1251,7 @@
       "book_lines": [
         {
           "provider": "DraftKings",
-          "details": "TOT -155",
+          "details": "TOT -150",
           "spread": null,
           "total": 2.5
         }
@@ -649,7 +1264,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T08:53:56.092Z",
+      "fetched_at": "2026-10-31T14:48:30.587Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -727,7 +1342,7 @@
       "book_lines": [
         {
           "provider": "DraftKings",
-          "details": "AVL +105",
+          "details": "AVL +115",
           "spread": null,
           "total": 2.5
         }
@@ -740,7 +1355,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T08:53:56.092Z",
+      "fetched_at": "2026-10-31T14:48:30.587Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false

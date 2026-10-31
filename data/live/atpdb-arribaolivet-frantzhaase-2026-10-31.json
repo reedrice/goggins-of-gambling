@@ -4,30 +4,30 @@
  "game": "Arribage / Olivetti vs. Frantzen / Haase",
  "url": "https://polymarket.us/sports/atpdb/atpdb-arribaolivet-frantzhaase-2026-10-31",
  "start_time": "2026-10-31T12:00:00Z",
- "status": "pregame",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185170",
-  "fetched_at": "2026-10-31T08:54:34.174Z",
+  "fetched_at": "2026-10-31T14:49:14.776Z",
   "tennis": true,
   "tennis_match": {
    "id": "185170",
    "uid": "s:850~l:851~e:23-2026~c:185170",
-   "date": "2026-10-31T12:00Z",
-   "startDate": "2026-10-31T12:00Z",
+   "date": "2026-10-31T12:05Z",
+   "startDate": "2026-10-31T12:05Z",
    "timeValid": true,
    "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, October 31st at 8:00 AM EDT",
-     "shortDetail": "10/31 - 8:00 AM EDT"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(3) Theo Arribage (FRA) & Albano Olivetti (FRA) bt Constantin Frantzén (GER) & Robin Haase (NED) 7-6 (7-4) 7-6 (7-5)",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,19 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 6,
+       "tiebreak": 4,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "tiebreak": 5,
+       "winner": false
+      }
+     ],
      "roster": {
       "displayName": "Constantin Frantzén / Robin Haase",
       "shortDisplayName": "C. Frantzén / R. Haase",
@@ -122,9 +140,22 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
      "curatedRank": {
       "current": 3
      },
+     "linescores": [
+      {
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      }
+     ],
      "roster": {
       "displayName": "Theo Arribage / Albano Olivetti",
       "shortDisplayName": "T. Arribage / A. Olivetti",
@@ -208,10 +239,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sat, October 31st at 8:00 AM EDT",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Constantin Frantzén / Robin Haase",
@@ -223,13 +254,13 @@
    "abbr": "Theo Arribage / Albano Olivetti",
    "alias": "Theo Arribage / Albano Olivetti",
    "name": "Theo Arribage / Albano Olivetti",
-   "score": 0
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T08:54:34.076Z",
+ "updated": "2026-10-31T14:49:14.700Z",
  "open_taken_at": "2026-10-30T12:59:17.017Z",
  "thresholds": {
   "big": 10,
@@ -277,11 +308,28 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-31T07:20:40.365Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:1972455:1:2026-10-31T07:20:40.365Z",
+   "key": "1972455:1",
+   "at": "2026-10-31T14:49:14.700Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Frantzen / Haase win",
+   "market": "Moneyline",
+   "now_odds": "+178",
+   "now_chance": 36,
+   "edge": 4,
+   "text": "Edge gone: Frantzen / Haase win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-arribaolivet-frantzhaase-2026-10-31"
+  }
+ ],
+ "alert_seen": [
+  "gone:1972455:1:2026-10-31T07:20:40.365Z"
+ ],
  "kalshi_checked": null
 }

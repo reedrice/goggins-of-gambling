@@ -4,12 +4,12 @@
  "game": "Dabrowski / Stefani vs. Hunter / Joint",
  "url": "https://polymarket.us/sports/wtadb/wtadb-dabrowstefan-hunterjoint-2026-10-30",
  "start_time": "2026-10-31T07:25:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185699",
-  "fetched_at": "2026-10-31T08:54:33.425Z",
+  "fetched_at": "2026-10-31T14:49:16.502Z",
   "tennis": true,
   "tennis_match": {
    "id": "185699",
@@ -17,17 +17,17 @@
    "date": "2026-10-31T07:25Z",
    "startDate": "2026-10-31T07:25Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Gabriela Dabrowski (CAN) & Luisa Stefani (BRA) is tied with Storm Hunter (AUS) & Maya Joint (AUS) 5-7 5-4",
+     "text": "(1) Gabriela Dabrowski (CAN) & Luisa Stefani (BRA) bt Storm Hunter (AUS) & Maya Joint (AUS) 5-7 6-4 1-0 (10-3)",
      "type": "event"
     }
    ],
@@ -55,13 +55,20 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
      "linescores": [
       {
        "value": 7,
        "winner": true
       },
       {
-       "value": 4
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 0,
+       "tiebreak": 3,
+       "winner": false
       }
      ],
      "roster": {
@@ -136,6 +143,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
      "curatedRank": {
       "current": 1
      },
@@ -145,7 +153,13 @@
        "winner": false
       },
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1,
+       "tiebreak": 10,
+       "winner": true
       }
      ],
      "roster": {
@@ -231,10 +245,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Storm Hunter / Maya Joint",
@@ -246,13 +260,13 @@
    "abbr": "Gabriela Dabrowski / Luisa Stefani",
    "alias": "Gabriela Dabrowski / Luisa Stefani",
    "name": "Gabriela Dabrowski / Luisa Stefani",
-   "score": 0
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T08:54:33.335Z",
+ "updated": "2026-10-31T14:49:16.446Z",
  "open_taken_at": "2026-10-30T05:01:15.701Z",
  "thresholds": {
   "big": 10,
@@ -300,7 +314,7 @@
    "reason": "Big move (25 pts), likely news",
    "context": "Storm Hunter / Maya Joint 7, 4 · Gabriela Dabrowski / Luisa Stefani 5, 5 · 2nd Set (games by set)",
    "first_seen": "2026-10-31T08:33:23.650Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],

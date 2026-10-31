@@ -3,31 +3,31 @@
  "slug": "atp-tommac-marlan-2026-10-31",
  "game": "Tomas Machac vs. Martin Landaluce",
  "url": "https://polymarket.us/sports/atp/atp-tommac-marlan-2026-10-31",
- "start_time": "2026-10-31T11:10:00Z",
- "status": "pregame",
+ "start_time": "2026-10-31T11:50:00Z",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187347",
-  "fetched_at": "2026-10-31T08:54:38.528Z",
+  "fetched_at": "2026-10-31T14:49:14.747Z",
   "tennis": true,
   "tennis_match": {
    "id": "187347",
    "uid": "s:850~l:851~e:13-2026~c:187347",
-   "date": "2026-10-31T11:30Z",
-   "startDate": "2026-10-31T11:30Z",
+   "date": "2026-10-31T11:55Z",
+   "startDate": "2026-10-31T11:55Z",
    "timeValid": true,
    "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, October 31st at 7:30 AM EDT",
-     "shortDetail": "10/31 - 7:30 AM EDT"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Tomas Machac (CZE) bt Martin Landaluce (ESP) 6-4 6-3",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,17 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 3,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "7bfb16e7-c6b4-3fb1-9f48-09e851da9050",
       "displayName": "Martin Landaluce",
@@ -87,6 +103,17 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "58f555e2-4484-a162-83a7-ac86793d4ea7",
       "displayName": "Tomas Machac",
@@ -135,10 +162,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sat, October 31st at 7:30 AM EDT",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Martin Landaluce",
@@ -150,13 +177,13 @@
    "abbr": "Tomas Machac",
    "alias": "Tomas Machac",
    "name": "Tomas Machac",
-   "score": 0
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T08:54:38.437Z",
+ "updated": "2026-10-31T14:49:14.680Z",
  "open_taken_at": "2026-10-30T20:35:31.504Z",
  "thresholds": {
   "big": 10,
@@ -248,11 +275,28 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-31T01:31:21.746Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:1985211:1:2026-10-31T01:31:21.746Z",
+   "key": "1985211:1",
+   "at": "2026-10-31T14:49:14.680Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Martin Landaluce win",
+   "market": "Moneyline",
+   "now_odds": "+178",
+   "now_chance": 36,
+   "edge": 6,
+   "text": "Edge gone: Martin Landaluce win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-tommac-marlan-2026-10-31"
+  }
+ ],
+ "alert_seen": [
+  "gone:1985211:1:2026-10-31T01:31:21.746Z"
+ ],
  "kalshi_checked": null
 }

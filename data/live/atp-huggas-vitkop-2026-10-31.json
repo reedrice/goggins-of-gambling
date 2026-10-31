@@ -4,30 +4,30 @@
  "game": "Hugo Gaston vs. Vit Kopriva",
  "url": "https://polymarket.us/sports/atp/atp-huggas-vitkop-2026-10-31",
  "start_time": "2026-10-31T11:00:00Z",
- "status": "pregame",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187339",
-  "fetched_at": "2026-10-31T08:54:38.227Z",
+  "fetched_at": "2026-10-31T14:49:14.055Z",
   "tennis": true,
   "tennis_match": {
    "id": "187339",
    "uid": "s:850~l:851~e:13-2026~c:187339",
-   "date": "2026-10-31T11:00Z",
-   "startDate": "2026-10-31T11:00Z",
+   "date": "2026-10-31T11:05Z",
+   "startDate": "2026-10-31T11:05Z",
    "timeValid": true,
    "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, October 31st at 7:00 AM EDT",
-     "shortDetail": "10/31 - 7:00 AM EDT"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Vit Kopriva (CZE) bt Hugo Gaston (FRA) 6-4 7-6 (7-1)",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,18 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "010a9540-4ccc-f338-8e5d-49734a69e29f",
       "displayName": "Vit Kopriva",
@@ -87,6 +104,18 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "tiebreak": 1,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "abcbb823-1295-5536-7632-0e77e8890662",
       "displayName": "Hugo Gaston",
@@ -135,16 +164,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sat, October 31st at 7:00 AM EDT",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Vit Kopriva",
    "alias": "Vit Kopriva",
    "name": "Vit Kopriva",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Hugo Gaston",
@@ -156,7 +185,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T08:54:38.124Z",
+ "updated": "2026-10-31T14:49:13.979Z",
  "open_taken_at": "2026-10-30T20:35:31.300Z",
  "thresholds": {
   "big": 10,
@@ -248,11 +277,28 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-30T23:25:17.693Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:1985204:1:2026-10-30T23:25:17.693Z",
+   "key": "1985204:1",
+   "at": "2026-10-31T14:49:13.979Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Vit Kopriva win",
+   "market": "Moneyline",
+   "now_odds": "+203",
+   "now_chance": 33,
+   "edge": 10,
+   "text": "Edge gone: Vit Kopriva win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-huggas-vitkop-2026-10-31"
+  }
+ ],
+ "alert_seen": [
+  "gone:1985204:1:2026-10-30T23:25:17.693Z"
+ ],
  "kalshi_checked": null
 }

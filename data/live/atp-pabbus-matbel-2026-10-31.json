@@ -4,30 +4,30 @@
  "game": "Pablo Carreno Busta vs. Mattia Bellucci",
  "url": "https://polymarket.us/sports/atp/atp-pabbus-matbel-2026-10-31",
  "start_time": "2026-10-31T10:00:00Z",
- "status": "pregame",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187334",
-  "fetched_at": "2026-10-31T08:54:38.117Z",
+  "fetched_at": "2026-10-31T14:49:14.419Z",
   "tennis": true,
   "tennis_match": {
    "id": "187334",
    "uid": "s:850~l:851~e:13-2026~c:187334",
-   "date": "2026-10-31T10:00Z",
-   "startDate": "2026-10-31T10:00Z",
+   "date": "2026-10-31T10:05Z",
+   "startDate": "2026-10-31T10:05Z",
    "timeValid": true,
    "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, October 31st at 6:00 AM EDT",
-     "shortDetail": "10/31 - 6:00 AM EDT"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Mattia Bellucci (ITA) bt Pablo Carreno Busta (ESP) 6-1 7-6 (7-3)",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,18 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "cf0b31da-aa35-3e23-b986-0726c501656b",
       "displayName": "Mattia Bellucci",
@@ -87,6 +104,18 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 1,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "tiebreak": 3,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "7ba77580-4f3a-73fd-66f7-7354306769dd",
       "displayName": "Pablo Carreno Busta",
@@ -135,16 +164,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sat, October 31st at 6:00 AM EDT",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Mattia Bellucci",
    "alias": "Mattia Bellucci",
    "name": "Mattia Bellucci",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Pablo Carreno Busta",
@@ -156,7 +185,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T08:54:38.049Z",
+ "updated": "2026-10-31T14:49:14.354Z",
  "open_taken_at": "2026-10-30T20:35:31.083Z",
  "thresholds": {
   "big": 10,
@@ -292,27 +321,7 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-31T08:04:35.913Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1987162:1",
-   "market_id": "1987162",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Pablo Carreno Busta vs. Mattia Bellucci be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 56,
-   "now_chance": 52,
-   "open_odds": "-127",
-   "now_odds": "-108",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-10-31T08:04:35.913Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -334,9 +343,61 @@
    "first_seen": "2026-10-31T08:12:24.437Z",
    "status": "gone",
    "kalshi": null
+  },
+  {
+   "key": "1987162:1",
+   "market_id": "1987162",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Pablo Carreno Busta vs. Mattia Bellucci be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 56,
+   "now_chance": 52,
+   "open_odds": "-127",
+   "now_odds": "-108",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-10-31T08:04:35.913Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:1985199:0:2026-10-31T08:04:35.913Z",
+   "key": "1985199:0",
+   "at": "2026-10-31T14:49:14.354Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Pablo Carreno Busta win",
+   "market": "Moneyline",
+   "now_odds": "+163",
+   "now_chance": 38,
+   "edge": 8,
+   "text": "Edge gone: Pablo Carreno Busta win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-pabbus-matbel-2026-10-31"
+  },
+  {
+   "id": "gone:1987162:1:2026-10-31T08:04:35.913Z",
+   "key": "1987162:1",
+   "at": "2026-10-31T14:49:14.354Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-108",
+   "now_chance": 52,
+   "edge": 4,
+   "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-pabbus-matbel-2026-10-31"
+  }
+ ],
+ "alert_seen": [
+  "gone:1985199:0:2026-10-31T08:04:35.913Z",
+  "gone:1987162:1:2026-10-31T08:04:35.913Z"
+ ],
  "kalshi_checked": null
 }

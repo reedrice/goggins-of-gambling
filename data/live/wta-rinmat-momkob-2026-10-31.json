@@ -3,31 +3,31 @@
  "slug": "wta-rinmat-momkob-2026-10-31",
  "game": "Rinko Matsuda vs. Momoko Kobori",
  "url": "https://polymarket.us/sports/wta/wta-rinmat-momkob-2026-10-31",
- "start_time": "2026-10-31T10:40:00Z",
- "status": "pregame",
+ "start_time": "2026-10-31T11:00:00Z",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187326",
-  "fetched_at": "2026-10-31T08:54:34.374Z",
+  "fetched_at": "2026-10-31T14:49:16.172Z",
   "tennis": true,
   "tennis_match": {
    "id": "187326",
    "uid": "s:850~l:900~e:889-2026~c:187326",
-   "date": "2026-10-31T11:00Z",
-   "startDate": "2026-10-31T11:00Z",
+   "date": "2026-10-31T11:05Z",
+   "startDate": "2026-10-31T11:05Z",
    "timeValid": true,
    "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, October 31st at 7:00 AM EDT",
-     "shortDetail": "10/31 - 7:00 AM EDT"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Momoko Kobori (JPN) bt Rinko Matsuda (JPN) 6-4 6-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,17 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "29be7dc5-cbf2-763d-f7ec-f0058edaaa3d",
       "displayName": "Momoko Kobori",
@@ -87,6 +103,17 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 0,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "748d2ec7-3b73-377b-8056-25351ef72268",
       "displayName": "Rinko Matsuda",
@@ -135,16 +162,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sat, October 31st at 7:00 AM EDT",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Momoko Kobori",
    "alias": "Momoko Kobori",
    "name": "Momoko Kobori",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Rinko Matsuda",
@@ -156,7 +183,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T08:54:34.274Z",
+ "updated": "2026-10-31T14:49:16.095Z",
  "open_taken_at": "2026-10-30T15:39:23.218Z",
  "thresholds": {
   "big": 10,
@@ -270,7 +297,7 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-31T00:12:53.532Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -294,7 +321,24 @@
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:1973837:1:2026-10-31T00:12:53.532Z",
+   "key": "1973837:1",
+   "at": "2026-10-31T14:49:16.095Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Momoko Kobori +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+100",
+   "now_chance": 50,
+   "edge": 4,
+   "text": "Edge gone: Momoko Kobori +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-rinmat-momkob-2026-10-31"
+  }
+ ],
+ "alert_seen": [
+  "gone:1973837:1:2026-10-31T00:12:53.532Z"
+ ],
  "kalshi_checked": null
 }

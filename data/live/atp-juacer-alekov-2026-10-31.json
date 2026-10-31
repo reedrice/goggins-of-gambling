@@ -3,31 +3,31 @@
  "slug": "atp-juacer-alekov-2026-10-31",
  "game": "Juan Manuel Cerundolo vs. Aleksandar Kovacevic",
  "url": "https://polymarket.us/sports/atp/atp-juacer-alekov-2026-10-31",
- "start_time": "2026-10-31T11:10:00Z",
- "status": "pregame",
+ "start_time": "2026-10-31T12:05:00Z",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187340",
-  "fetched_at": "2026-10-31T08:54:38.440Z",
+  "fetched_at": "2026-10-31T14:49:14.371Z",
   "tennis": true,
   "tennis_match": {
    "id": "187340",
    "uid": "s:850~l:851~e:13-2026~c:187340",
-   "date": "2026-10-31T11:30Z",
-   "startDate": "2026-10-31T11:30Z",
+   "date": "2026-10-31T12:15Z",
+   "startDate": "2026-10-31T12:15Z",
    "timeValid": true,
    "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, October 31st at 7:30 AM EDT",
-     "shortDetail": "10/31 - 7:30 AM EDT"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Juan Manuel Cerundolo (ARG) bt Aleksandar Kovacevic (USA) 7-6 (7-5) 6-3",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,18 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 6,
+       "tiebreak": 5,
+       "winner": false
+      },
+      {
+       "value": 3,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "f223ecff-0900-f754-e359-5f79b740bb9b",
       "displayName": "Aleksandar Kovacevic",
@@ -87,6 +104,18 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "cede1b70-c5c9-9e18-9df8-47bde545ddd4",
       "displayName": "Juan Manuel Cerundolo",
@@ -135,10 +164,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sat, October 31st at 7:30 AM EDT",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Aleksandar Kovacevic",
@@ -150,13 +179,13 @@
    "abbr": "Juan Manuel Cerundolo",
    "alias": "Juan Manuel Cerundolo",
    "name": "Juan Manuel Cerundolo",
-   "score": 0
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T08:54:38.367Z",
+ "updated": "2026-10-31T14:49:14.299Z",
  "open_taken_at": "2026-10-30T20:35:31.451Z",
  "thresholds": {
   "big": 10,
@@ -270,11 +299,28 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-30T22:52:20.198Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:1985209:0:2026-10-30T22:52:20.198Z",
+   "key": "1985209:0",
+   "at": "2026-10-31T14:49:14.299Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Juan Manuel Cerundolo win",
+   "market": "Moneyline",
+   "now_odds": "+122",
+   "now_chance": 45,
+   "edge": 13,
+   "text": "Edge gone: Juan Manuel Cerundolo win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-juacer-alekov-2026-10-31"
+  }
+ ],
+ "alert_seen": [
+  "gone:1985209:0:2026-10-30T22:52:20.198Z"
+ ],
  "kalshi_checked": null
 }

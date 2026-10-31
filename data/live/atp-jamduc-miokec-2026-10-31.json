@@ -3,13 +3,13 @@
  "slug": "atp-jamduc-miokec-2026-10-31",
  "game": "James Duckworth vs. Miomir Kecmanovic",
  "url": "https://polymarket.us/sports/atp/atp-jamduc-miokec-2026-10-31",
- "start_time": "2026-10-31T11:10:00Z",
- "status": "pregame",
+ "start_time": "2026-10-31T11:25:00Z",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187345",
-  "fetched_at": "2026-10-31T08:54:38.462Z",
+  "fetched_at": "2026-10-31T14:49:14.260Z",
   "tennis": true,
   "tennis_match": {
    "id": "187345",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": false,
    "status": {
-    "period": 1,
+    "period": 3,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, October 31st at 7:30 AM EDT",
-     "shortDetail": "10/31 - 7:30 AM EDT"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Miomir Kecmanovic (SER) bt James Duckworth (AUS) 6-4 2-6 6-4",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,21 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 2,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "6972f310-caca-a4fc-3e06-78b5cefa7387",
       "displayName": "Miomir Kecmanovic",
@@ -87,6 +107,21 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 4,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "cd9ba86b-c611-51a5-7396-2cce4ff52ce1",
       "displayName": "James Duckworth",
@@ -135,28 +170,28 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sat, October 31st at 7:30 AM EDT",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Miomir Kecmanovic",
    "alias": "Miomir Kecmanovic",
    "name": "Miomir Kecmanovic",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "James Duckworth",
    "alias": "James Duckworth",
    "name": "James Duckworth",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T08:54:38.337Z",
+ "updated": "2026-10-31T14:49:14.213Z",
  "open_taken_at": "2026-10-30T20:35:31.392Z",
  "thresholds": {
   "big": 10,
@@ -270,11 +305,28 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-30T23:08:54.557Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:1985206:0:2026-10-30T23:08:54.557Z",
+   "key": "1985206:0",
+   "at": "2026-10-31T14:49:14.213Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "James Duckworth win",
+   "market": "Moneyline",
+   "now_odds": "+133",
+   "now_chance": 43,
+   "edge": 6,
+   "text": "Edge gone: James Duckworth win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-jamduc-miokec-2026-10-31"
+  }
+ ],
+ "alert_seen": [
+  "gone:1985206:0:2026-10-30T23:08:54.557Z"
+ ],
  "kalshi_checked": null
 }
