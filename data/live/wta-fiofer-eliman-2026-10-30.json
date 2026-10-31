@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185813",
-  "fetched_at": "2026-10-31T00:35:21.040Z",
+  "fetched_at": "2026-10-31T00:43:19.859Z",
   "tennis": true,
   "tennis_match": {
    "id": "185813",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Fri, October 30th at 8:40 PM EDT",
-     "shortDetail": "10/30 - 8:40 PM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(3) Fiona Ferro (FRA) leads Elizabeth Mandlik (USA) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "52c9e741-3a8f-34c5-8ef5-c8c203b81469",
       "displayName": "Elizabeth Mandlik",
@@ -87,9 +98,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "curatedRank": {
       "current": 3
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "4104b06c-452e-b422-7d78-87a3d833c15f",
       "displayName": "Fiona Ferro",
@@ -122,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1034,
    "type": {
     "id": "2",
@@ -138,10 +160,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Fri, October 30th at 8:40 PM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Elizabeth Mandlik",
@@ -159,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T00:35:20.958Z",
+ "updated": "2026-10-31T00:43:19.741Z",
  "open_taken_at": "2026-10-29T22:01:47.715Z",
  "thresholds": {
   "big": 10,
@@ -189,28 +211,6 @@
    "taken_at": "2026-10-29T23:09:11.936Z"
   },
   {
-   "market_id": "1952257",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Fiona Ferro cover 4.5 vs the Elizabeth Mandlik in Fiona Ferro vs. Elizabeth Mandlik?",
-   "sides": [
-    "Fiona Ferro +4.50 (Games)",
-    "Elizabeth Mandlik -4.50 (Games)"
-   ],
-   "teams": [
-    "Fiona Ferro",
-    "Elizabeth Mandlik"
-   ],
-   "player": null,
-   "mid": 77.5,
-   "yes_buy": 78,
-   "no_buy": 23,
-   "taken_at": "2026-10-31T00:12:50.994Z"
-  },
-  {
    "market_id": "1952259",
    "market": "Games spread",
    "group": "game",
@@ -230,28 +230,6 @@
    "mid": 77.5,
    "yes_buy": 78,
    "no_buy": 23,
-   "taken_at": "2026-10-31T00:12:50.994Z"
-  },
-  {
-   "market_id": "1952255",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Fiona Ferro cover 1.5 vs the Elizabeth Mandlik in Fiona Ferro vs. Elizabeth Mandlik?",
-   "sides": [
-    "Fiona Ferro +1.50 (Games)",
-    "Elizabeth Mandlik -1.50 (Games)"
-   ],
-   "teams": [
-    "Fiona Ferro",
-    "Elizabeth Mandlik"
-   ],
-   "player": null,
-   "mid": 69.5,
-   "yes_buy": 70,
-   "no_buy": 31,
    "taken_at": "2026-10-31T00:12:50.994Z"
   },
   {
@@ -297,6 +275,72 @@
    "yes_buy": 55,
    "no_buy": 48,
    "taken_at": "2026-10-29T23:54:48.847Z"
+  },
+  {
+   "market_id": "1952263",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Fiona Ferro vs. Elizabeth Mandlik be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 49.5,
+   "yes_buy": 50,
+   "no_buy": 51,
+   "taken_at": "2026-10-31T00:43:19.741Z"
+  },
+  {
+   "market_id": "1952257",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Fiona Ferro cover 4.5 vs the Elizabeth Mandlik in Fiona Ferro vs. Elizabeth Mandlik?",
+   "sides": [
+    "Fiona Ferro +4.50 (Games)",
+    "Elizabeth Mandlik -4.50 (Games)"
+   ],
+   "teams": [
+    "Fiona Ferro",
+    "Elizabeth Mandlik"
+   ],
+   "player": null,
+   "mid": 77.5,
+   "yes_buy": 78,
+   "no_buy": 23,
+   "taken_at": "2026-10-31T00:12:50.994Z"
+  },
+  {
+   "market_id": "1952255",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Fiona Ferro cover 1.5 vs the Elizabeth Mandlik in Fiona Ferro vs. Elizabeth Mandlik?",
+   "sides": [
+    "Fiona Ferro +1.50 (Games)",
+    "Elizabeth Mandlik -1.50 (Games)"
+   ],
+   "teams": [
+    "Fiona Ferro",
+    "Elizabeth Mandlik"
+   ],
+   "player": null,
+   "mid": 69.5,
+   "yes_buy": 70,
+   "no_buy": 31,
+   "taken_at": "2026-10-31T00:12:50.994Z"
   },
   {
    "market_id": "1952262",
@@ -403,7 +447,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Elizabeth Mandlik 0 · Fiona Ferro 0 · 1st Set (games by set)",
    "first_seen": "2026-10-31T00:12:50.994Z",
    "status": "open",
    "kalshi": null
