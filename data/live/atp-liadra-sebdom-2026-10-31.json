@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-31T21:52:29.247Z"
+  "fetched_at": "2026-10-31T22:01:53.895Z"
  },
- "updated": "2026-10-31T21:52:29.166Z",
+ "updated": "2026-10-31T22:01:53.771Z",
  "open_taken_at": "2026-10-31T02:22:25.361Z",
  "thresholds": {
   "big": 10,
@@ -60,6 +60,28 @@
    "mid": 33.5,
    "yes_buy": 34,
    "no_buy": 67,
+   "taken_at": "2026-10-31T20:16:45.710Z"
+  },
+  {
+   "market_id": "1994628",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Liam Draxl cover 1.5 vs the Sebastian Dominko in Liam Draxl vs. Sebastian Dominko?",
+   "sides": [
+    "Liam Draxl +1.50 (Games)",
+    "Sebastian Dominko -1.50 (Games)"
+   ],
+   "teams": [
+    "Liam Draxl",
+    "Sebastian Dominko"
+   ],
+   "player": null,
+   "mid": 32.5,
+   "yes_buy": 33,
+   "no_buy": 68,
    "taken_at": "2026-10-31T20:16:45.710Z"
   },
   {
@@ -195,28 +217,6 @@
    "taken_at": "2026-10-31T20:16:45.710Z"
   },
   {
-   "market_id": "1994628",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Liam Draxl cover 1.5 vs the Sebastian Dominko in Liam Draxl vs. Sebastian Dominko?",
-   "sides": [
-    "Liam Draxl +1.50 (Games)",
-    "Sebastian Dominko -1.50 (Games)"
-   ],
-   "teams": [
-    "Liam Draxl",
-    "Sebastian Dominko"
-   ],
-   "player": null,
-   "mid": 32.5,
-   "yes_buy": 33,
-   "no_buy": 68,
-   "taken_at": "2026-10-31T20:16:45.710Z"
-  },
-  {
    "market_id": "1994636",
    "market": "Games total",
    "group": "game",
@@ -270,10 +270,10 @@
    "question": "Who will win in the upcoming atp event Liam Draxl vs Sebastian Dominko scheduled for October 31, 2026 at 7:20 PM UTC?",
    "side": "Liam Draxl win",
    "open_chance": 64,
-   "now_chance": 42,
+   "now_chance": 34,
    "open_odds": "-178",
-   "now_odds": "+138",
-   "edge": 22,
+   "now_odds": "+194",
+   "edge": 30,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -290,15 +290,35 @@
    "question": "Will Liam Draxl win set 2 against Sebastian Dominko?",
    "side": "No: Liam Draxl win set 2 against Sebastian Dominko",
    "open_chance": 67,
-   "now_chance": 48,
+   "now_chance": 46,
    "open_odds": "-203",
-   "now_odds": "+108",
-   "edge": 19,
+   "now_odds": "+117",
+   "edge": 21,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-31T21:17:40.019Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1994628:1",
+   "market_id": "1994628",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Liam Draxl cover 1.5 vs the Sebastian Dominko in Liam Draxl vs. Sebastian Dominko?",
+   "side": "Sebastian Dominko -1.50 (Games)",
+   "open_chance": 68,
+   "now_chance": 48,
+   "open_odds": "-213",
+   "now_odds": "+108",
+   "edge": 20,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-31T22:01:53.771Z",
    "status": "open",
    "kalshi": null
   },
@@ -344,6 +364,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1994628:1:big",
+   "key": "1994628:1",
+   "at": "2026-10-31T22:01:53.771Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Sebastian Dominko -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+108",
+   "now_chance": 48,
+   "edge": 20,
+   "text": "New big edge: Sebastian Dominko -1.50 (Games) (Games spread), 20 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-liadra-sebdom-2026-10-31"
+  },
   {
    "id": "gone:1994638:1:2026-10-31T21:17:40.019Z",
    "key": "1994638:1",
@@ -465,7 +499,8 @@
   "new_edge:1994643:1:big",
   "gone:1994644:1:2026-10-31T21:17:40.019Z",
   "gone:1994643:1:2026-10-31T21:25:19.403Z",
-  "gone:1994638:1:2026-10-31T21:17:40.019Z"
+  "gone:1994638:1:2026-10-31T21:17:40.019Z",
+  "new_edge:1994628:1:big"
  ],
  "kalshi_checked": null
 }
