@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for eflch",
-  "fetched_at": "2026-10-31T16:24:34.572Z"
+  "fetched_at": "2026-10-31T16:33:28.958Z"
  },
- "updated": "2026-10-31T16:24:34.567Z",
+ "updated": "2026-10-31T16:33:28.953Z",
  "open_taken_at": "2026-10-30T05:01:05.399Z",
  "thresholds": {
   "big": 10,
@@ -323,7 +323,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-31T15:15:47.671Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -343,7 +343,27 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-31T16:15:40.891Z",
-   "status": "open",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1975337:0",
+   "market_id": "1975337",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in SOT vs QPR be more than 2.5?",
+   "side": "Over 2.5",
+   "open_chance": 62,
+   "now_chance": 52,
+   "open_odds": "-163",
+   "now_odds": "-108",
+   "edge": 10,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-31T15:07:24.111Z",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -363,7 +383,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-31T15:15:47.671Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -379,26 +399,6 @@
    "now_odds": "+233",
    "edge": 9,
    "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-31T15:07:24.111Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1975337:0",
-   "market_id": "1975337",
-   "market": "Main total",
-   "group": "game",
-   "question": "Will the total in SOT vs QPR be more than 2.5?",
-   "side": "Over 2.5",
-   "open_chance": 62,
-   "now_chance": 52,
-   "open_odds": "-163",
-   "now_odds": "-108",
-   "edge": 10,
-   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -448,6 +448,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1975296:1:2026-10-31T15:15:47.671Z",
+   "key": "1975296:1",
+   "at": "2026-10-31T16:33:28.953Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Queens Park Rangers FC +1.50",
+   "market": "Alt spread",
+   "now_odds": "+270",
+   "now_chance": 27,
+   "edge": 46,
+   "text": "Edge gone: Queens Park Rangers FC +1.50 (Alt spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/eflch/eflch-sot-qpr-2026-10-31"
+  },
+  {
+   "id": "gone:1975295:1:2026-10-31T16:15:40.891Z",
+   "key": "1975295:1",
+   "at": "2026-10-31T16:33:28.953Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Queens Park Rangers FC +2.50",
+   "market": "Main spread",
+   "now_odds": "-223",
+   "now_chance": 69,
+   "edge": 20,
+   "text": "Edge gone: Queens Park Rangers FC +2.50 (Main spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/eflch/eflch-sot-qpr-2026-10-31"
+  },
   {
    "id": "new_edge:1975295:1:big",
    "key": "1975295:1",
@@ -717,7 +745,9 @@
   "gone:1975337:1:2026-10-31T15:15:47.671Z",
   "new_edge:1975338:0:big",
   "new_edge:1975337:0:big",
-  "new_edge:1975295:1:big"
+  "new_edge:1975295:1:big",
+  "gone:1975296:1:2026-10-31T15:15:47.671Z",
+  "gone:1975295:1:2026-10-31T16:15:40.891Z"
  ],
  "kalshi_checked": null
 }

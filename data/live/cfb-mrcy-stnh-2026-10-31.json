@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-31T16:24:18.541Z"
+  "fetched_at": "2026-10-31T16:33:12.224Z"
  },
- "updated": "2026-10-31T16:24:18.435Z",
+ "updated": "2026-10-31T16:33:12.007Z",
  "open_taken_at": "2026-10-30T05:00:45.365Z",
  "thresholds": {
   "big": 10,
@@ -461,22 +461,22 @@
  ],
  "edges": [
   {
-   "key": "1526837:0",
+   "key": "1526837:1",
    "market_id": "1526837",
    "market": "Moneyline",
    "group": "game",
    "question": "Who will win in the upcoming football event Mercyhurst vs Stonehill scheduled for October 31, 2026 at 4:00 PM UTC?",
-   "side": "Lakers win",
-   "open_chance": 32,
-   "now_chance": 27.5,
-   "open_odds": "+213",
-   "now_odds": "+264",
-   "edge": 4.5,
+   "side": "Skyhawks win",
+   "open_chance": 70,
+   "now_chance": 65,
+   "open_odds": "-233",
+   "now_odds": "-186",
+   "edge": 5,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-31T16:08:07.160Z",
+   "first_seen": "2026-10-31T16:33:12.007Z",
    "status": "open",
    "kalshi": null
   },
@@ -701,6 +701,26 @@
    "kalshi": null
   },
   {
+   "key": "1526837:0",
+   "market_id": "1526837",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming football event Mercyhurst vs Stonehill scheduled for October 31, 2026 at 4:00 PM UTC?",
+   "side": "Lakers win",
+   "open_chance": 32,
+   "now_chance": 27.5,
+   "open_odds": "+213",
+   "now_odds": "+264",
+   "edge": 4.5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-31T16:08:07.160Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1977735:0",
    "market_id": "1977735",
    "market": "Alt spread",
@@ -742,6 +762,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1526837:1:slight",
+   "key": "1526837:1",
+   "at": "2026-10-31T16:33:12.007Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Skyhawks win",
+   "market": "Moneyline",
+   "now_odds": "-186",
+   "now_chance": 65,
+   "edge": 5,
+   "text": "New slight edge: Skyhawks win (Moneyline), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-mrcy-stnh-2026-10-31"
+  },
+  {
+   "id": "gone:1526837:0:2026-10-31T16:08:07.160Z",
+   "key": "1526837:0",
+   "at": "2026-10-31T16:33:12.007Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Lakers win",
+   "market": "Moneyline",
+   "now_odds": "+264",
+   "now_chance": 27.5,
+   "edge": 4.5,
+   "text": "Edge gone: Lakers win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-mrcy-stnh-2026-10-31"
+  },
   {
    "id": "new_edge:1526837:0:slight",
    "key": "1526837:0",
@@ -953,7 +1001,9 @@
   "gone:1979504:0:2026-10-31T14:48:44.203Z",
   "gone:1979505:0:2026-10-31T14:48:44.203Z",
   "gone:1977735:0:2026-10-31T15:32:41.141Z",
-  "gone:1979498:0:2026-10-31T14:48:44.203Z"
+  "gone:1979498:0:2026-10-31T14:48:44.203Z",
+  "new_edge:1526837:1:slight",
+  "gone:1526837:0:2026-10-31T16:08:07.160Z"
  ],
  "kalshi_checked": null
 }
