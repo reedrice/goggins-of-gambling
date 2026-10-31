@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-31T20:51:21.431Z"
+  "fetched_at": "2026-10-31T21:00:21.425Z"
  },
- "updated": "2026-10-31T20:51:21.324Z",
+ "updated": "2026-10-31T21:00:21.331Z",
  "open_taken_at": "2026-10-30T05:00:51.841Z",
  "thresholds": {
   "big": 10,
@@ -367,7 +367,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-31T20:42:05.802Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -433,6 +433,20 @@
  ],
  "alerts": [
   {
+   "id": "gone:1533973:1:2026-10-31T20:42:05.802Z",
+   "key": "1533973:1",
+   "at": "2026-10-31T21:00:21.331Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Toreros win",
+   "market": "Moneyline",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 11.5,
+   "text": "Edge gone: Toreros win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-mrst-usd-2026-10-31"
+  },
+  {
    "id": "new_edge:1533973:1:big",
    "key": "1533973:1",
    "at": "2026-10-31T20:42:05.802Z",
@@ -478,7 +492,8 @@
  "alert_seen": [
   "new_edge:1533973:0:slight",
   "gone:1533973:0:2026-10-31T20:25:23.467Z",
-  "new_edge:1533973:1:big"
+  "new_edge:1533973:1:big",
+  "gone:1533973:1:2026-10-31T20:42:05.802Z"
  ],
  "kalshi_checked": null
 }
