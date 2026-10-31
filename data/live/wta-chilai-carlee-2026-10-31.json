@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187313",
-  "fetched_at": "2026-10-31T05:08:44.078Z",
+  "fetched_at": "2026-10-31T05:14:31.489Z",
   "tennis": true,
   "tennis_match": {
    "id": "187313",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, October 30th at 1:10 AM EDT",
-     "shortDetail": "10/31 - 1:10 AM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Carol Young Suh Lee (USA) leads Ching Laam Lai (HKG) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "f70bb035-9f14-35cb-8ae9-53522d8a5308",
       "displayName": "Carol Young Suh Lee",
@@ -87,6 +98,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "fcba4802-7375-37b2-9c59-928c3950039d",
       "displayName": "Ching Laam Lai",
@@ -119,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 380,
    "type": {
     "id": "2",
@@ -135,10 +157,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Sat, October 30th at 1:10 AM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Carol Young Suh Lee",
@@ -156,13 +178,79 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T05:08:44.029Z",
+ "updated": "2026-10-31T05:14:31.377Z",
  "open_taken_at": "2026-10-30T12:19:07.990Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1970686",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Ching Laam Lai vs. Carol Young Suh Lee be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 13.5,
+   "yes_buy": 14,
+   "no_buy": 87,
+   "taken_at": "2026-10-31T05:08:44.029Z"
+  },
+  {
+   "market_id": "1970689",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Ching Laam Lai vs. Carol Young Suh Lee be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 5,
+   "yes_buy": 8,
+   "no_buy": 98,
+   "taken_at": "2026-10-31T00:20:14.261Z"
+  },
+  {
+   "market_id": "1970687",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Ching Laam Lai vs. Carol Young Suh Lee be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 4.5,
+   "yes_buy": 7,
+   "no_buy": 98,
+   "taken_at": "2026-10-31T01:31:18.771Z"
+  },
   {
    "market_id": "1970669",
    "market": "Games spread",
@@ -206,72 +294,6 @@
    "yes_buy": 36,
    "no_buy": 65,
    "taken_at": "2026-10-31T05:08:44.029Z"
-  },
-  {
-   "market_id": "1970686",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Ching Laam Lai vs. Carol Young Suh Lee be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 13.5,
-   "yes_buy": 14,
-   "no_buy": 87,
-   "taken_at": "2026-10-31T05:08:44.029Z"
-  },
-  {
-   "market_id": "1970687",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Ching Laam Lai vs. Carol Young Suh Lee be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 4.5,
-   "yes_buy": 7,
-   "no_buy": 98,
-   "taken_at": "2026-10-31T01:31:18.771Z"
-  },
-  {
-   "market_id": "1970689",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Ching Laam Lai vs. Carol Young Suh Lee be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 5,
-   "yes_buy": 8,
-   "no_buy": 98,
-   "taken_at": "2026-10-31T00:20:14.261Z"
   },
   {
    "market_id": "1969708",
