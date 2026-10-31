@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185813",
-  "fetched_at": "2026-10-31T00:59:33.192Z",
+  "fetched_at": "2026-10-31T01:07:36.403Z",
   "tennis": true,
   "tennis_match": {
    "id": "185813",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(3) Fiona Ferro (FRA) leads Elizabeth Mandlik (USA) 2-0",
+     "text": "(3) Fiona Ferro (FRA) leads Elizabeth Mandlik (USA) 4-0",
      "type": "event"
     }
    ],
@@ -104,7 +104,7 @@
      },
      "linescores": [
       {
-       "value": 2
+       "value": 4
       }
      ],
      "athlete": {
@@ -181,13 +181,57 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T00:59:33.095Z",
+ "updated": "2026-10-31T01:07:36.202Z",
  "open_taken_at": "2026-10-29T22:01:47.715Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1952108",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming wta event Fiona Ferro vs Elizabeth Mandlik scheduled for October 30, 2026 at 8:00 PM UTC?",
+   "sides": [
+    "Fiona Ferro win",
+    "Elizabeth Mandlik win"
+   ],
+   "teams": [
+    "Fiona Ferro",
+    "Elizabeth Mandlik"
+   ],
+   "player": null,
+   "mid": 76,
+   "yes_buy": 77,
+   "no_buy": 25,
+   "taken_at": "2026-10-29T23:09:11.936Z"
+  },
+  {
+   "market_id": "1952261",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Fiona Ferro cover 1.5 vs the Elizabeth Mandlik in Fiona Ferro vs. Elizabeth Mandlik?",
+   "sides": [
+    "Fiona Ferro +1.50 (Sets)",
+    "Elizabeth Mandlik -1.50 (Sets)"
+   ],
+   "teams": [
+    "Fiona Ferro",
+    "Elizabeth Mandlik"
+   ],
+   "player": null,
+   "mid": 95,
+   "yes_buy": 97,
+   "no_buy": 7,
+   "taken_at": "2026-10-31T01:07:36.202Z"
+  },
   {
    "market_id": "1952262",
    "market": "Games total",
@@ -231,28 +275,6 @@
    "yes_buy": 26,
    "no_buy": 75,
    "taken_at": "2026-10-31T00:59:33.095Z"
-  },
-  {
-   "market_id": "1952108",
-   "market": "Moneyline",
-   "group": "game",
-   "mtype": "winner",
-   "period": "full_game",
-   "line": null,
-   "question": "Who will win in the upcoming wta event Fiona Ferro vs Elizabeth Mandlik scheduled for October 30, 2026 at 8:00 PM UTC?",
-   "sides": [
-    "Fiona Ferro win",
-    "Elizabeth Mandlik win"
-   ],
-   "teams": [
-    "Fiona Ferro",
-    "Elizabeth Mandlik"
-   ],
-   "player": null,
-   "mid": 76,
-   "yes_buy": 77,
-   "no_buy": 25,
-   "taken_at": "2026-10-29T23:09:11.936Z"
   },
   {
    "market_id": "1952259",
@@ -471,7 +493,7 @@
    "reason": null,
    "context": "Elizabeth Mandlik 0 · Fiona Ferro 2 · 1st Set (games by set)",
    "first_seen": "2026-10-31T00:59:33.095Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -496,6 +518,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1952262:1:2026-10-31T00:59:33.095Z",
+   "key": "1952262:1",
+   "at": "2026-10-31T01:07:36.202Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+122",
+   "now_chance": 45,
+   "edge": 22,
+   "text": "Edge gone: Under 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-fiofer-eliman-2026-10-30"
+  },
   {
    "id": "new_edge:1952262:1:big",
    "key": "1952262:1",
@@ -542,7 +578,8 @@
  "alert_seen": [
   "new_edge:1952256:1:slight",
   "gone:1952256:1:2026-10-31T00:12:50.994Z",
-  "new_edge:1952262:1:big"
+  "new_edge:1952262:1:big",
+  "gone:1952262:1:2026-10-31T00:59:33.095Z"
  ],
  "kalshi_checked": null
 }
