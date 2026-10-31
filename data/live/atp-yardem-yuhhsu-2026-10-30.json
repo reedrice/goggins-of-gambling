@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-10-31T07:12:27.443Z"
+  "fetched_at": "2026-10-31T07:20:39.974Z"
  },
- "updated": "2026-10-31T07:12:27.354Z",
+ "updated": "2026-10-31T07:20:39.899Z",
  "open_taken_at": "2026-10-30T07:49:36.986Z",
  "thresholds": {
   "big": 10,
@@ -63,6 +63,28 @@
    "taken_at": "2026-10-31T06:47:17.848Z"
   },
   {
+   "market_id": "1965989",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Yaroslav Demin win set 2 against Yu Hsiou Hsu?",
+   "sides": [
+    "Yes: Yaroslav Demin win set 2 against Yu Hsiou Hsu",
+    "No: Yaroslav Demin win set 2 against Yu Hsiou Hsu"
+   ],
+   "teams": [
+    "Yaroslav Demin",
+    null
+   ],
+   "player": null,
+   "mid": 42,
+   "yes_buy": 44,
+   "no_buy": 60,
+   "taken_at": "2026-10-31T07:20:39.899Z"
+  },
+  {
    "market_id": "1965981",
    "market": "Games total",
    "group": "game",
@@ -83,6 +105,28 @@
    "yes_buy": 47,
    "no_buy": 54,
    "taken_at": "2026-10-30T19:32:19.952Z"
+  },
+  {
+   "market_id": "1965983",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Yaroslav Demin vs. Yu Hsiou Hsu be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 39.5,
+   "yes_buy": 40,
+   "no_buy": 61,
+   "taken_at": "2026-10-31T07:20:39.899Z"
   },
   {
    "market_id": "1965976",
@@ -191,11 +235,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-30T19:15:10.965Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1965871:1:2026-10-30T19:15:10.965Z",
+   "key": "1965871:1",
+   "at": "2026-10-31T07:20:39.899Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Yu-Hsiou Hsu win",
+   "market": "Moneyline",
+   "now_odds": "-127",
+   "now_chance": 56,
+   "edge": 4,
+   "text": "Edge gone: Yu-Hsiou Hsu win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-yardem-yuhhsu-2026-10-30"
+  },
   {
    "id": "new_edge:1965871:1:slight",
    "key": "1965871:1",
@@ -212,7 +270,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1965871:1:slight"
+  "new_edge:1965871:1:slight",
+  "gone:1965871:1:2026-10-30T19:15:10.965Z"
  ],
  "kalshi_checked": null
 }
