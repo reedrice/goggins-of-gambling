@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187337",
-  "fetched_at": "2026-10-31T18:09:30.775Z",
+  "fetched_at": "2026-10-31T18:17:58.931Z",
   "tennis": true,
   "tennis_match": {
    "id": "187337",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Adolfo Daniel Vallejo (PAR) leads Grigor Dimitrov (BUL) 6-6",
+     "text": "Adolfo Daniel Vallejo (PAR) is tied with Grigor Dimitrov (BUL) 7-6 (7-3) 0-0",
      "type": "event"
     }
    ],
@@ -57,7 +57,12 @@
      "homeAway": "away",
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "tiebreak": 3,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -99,7 +104,12 @@
      "homeAway": "home",
      "linescores": [
       {
-       "value": 6
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -152,8 +162,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Grigor Dimitrov",
@@ -165,13 +175,13 @@
    "abbr": "Adolfo Daniel Vallejo",
    "alias": "Adolfo Daniel Vallejo",
    "name": "Adolfo Daniel Vallejo",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T18:09:30.670Z",
+ "updated": "2026-10-31T18:17:58.873Z",
  "open_taken_at": "2026-10-30T20:35:32.072Z",
  "thresholds": {
   "big": 10,
@@ -221,6 +231,50 @@
    "yes_buy": 59,
    "no_buy": 45,
    "taken_at": "2026-10-31T15:42:13.953Z"
+  },
+  {
+   "market_id": "1987234",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Adolfo Daniel Vallejo vs. Grigor Dimitrov be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 47.5,
+   "yes_buy": 48,
+   "no_buy": 53,
+   "taken_at": "2026-10-31T15:51:21.712Z"
+  },
+  {
+   "market_id": "1987226",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Adolfo Daniel Vallejo cover 1.5 vs the Grigor Dimitrov in Adolfo Daniel Vallejo vs. Grigor Dimitrov?",
+   "sides": [
+    "Adolfo Vallejo +1.50 (Games)",
+    "Grigor Dimitrov -1.50 (Games)"
+   ],
+   "teams": [
+    "Adolfo Vallejo",
+    "Grigor Dimitrov"
+   ],
+   "player": null,
+   "mid": 45.5,
+   "yes_buy": 46,
+   "no_buy": 55,
+   "taken_at": "2026-10-31T15:24:30.439Z"
   },
   {
    "market_id": "1987236",
@@ -289,6 +343,28 @@
    "taken_at": "2026-10-31T15:15:54.465Z"
   },
   {
+   "market_id": "1987231",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Adolfo Daniel Vallejo cover -1.5 vs the Grigor Dimitrov in Adolfo Daniel Vallejo vs. Grigor Dimitrov?",
+   "sides": [
+    "Adolfo Vallejo -1.50 (Sets)",
+    "Grigor Dimitrov +1.50 (Sets)"
+   ],
+   "teams": [
+    "Adolfo Vallejo",
+    "Grigor Dimitrov"
+   ],
+   "player": null,
+   "mid": 33,
+   "yes_buy": 34,
+   "no_buy": 68,
+   "taken_at": "2026-10-31T15:33:00.577Z"
+  },
+  {
    "market_id": "1987225",
    "market": "Games spread",
    "group": "game",
@@ -355,50 +431,6 @@
    "taken_at": "2026-10-31T15:15:54.465Z"
   },
   {
-   "market_id": "1987234",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Adolfo Daniel Vallejo vs. Grigor Dimitrov be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 47.5,
-   "yes_buy": 48,
-   "no_buy": 53,
-   "taken_at": "2026-10-31T15:51:21.712Z"
-  },
-  {
-   "market_id": "1987226",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Adolfo Daniel Vallejo cover 1.5 vs the Grigor Dimitrov in Adolfo Daniel Vallejo vs. Grigor Dimitrov?",
-   "sides": [
-    "Adolfo Vallejo +1.50 (Games)",
-    "Grigor Dimitrov -1.50 (Games)"
-   ],
-   "teams": [
-    "Adolfo Vallejo",
-    "Grigor Dimitrov"
-   ],
-   "player": null,
-   "mid": 45.5,
-   "yes_buy": 46,
-   "no_buy": 55,
-   "taken_at": "2026-10-31T15:24:30.439Z"
-  },
-  {
    "market_id": "1987241",
    "market": "Set 1 winner",
    "group": "game",
@@ -441,28 +473,6 @@
    "yes_buy": 33,
    "no_buy": 68,
    "taken_at": "2026-10-31T15:15:54.465Z"
-  },
-  {
-   "market_id": "1987231",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Adolfo Daniel Vallejo cover -1.5 vs the Grigor Dimitrov in Adolfo Daniel Vallejo vs. Grigor Dimitrov?",
-   "sides": [
-    "Adolfo Vallejo -1.50 (Sets)",
-    "Grigor Dimitrov +1.50 (Sets)"
-   ],
-   "teams": [
-    "Adolfo Vallejo",
-    "Grigor Dimitrov"
-   ],
-   "player": null,
-   "mid": 33,
-   "yes_buy": 34,
-   "no_buy": 68,
-   "taken_at": "2026-10-31T15:33:00.577Z"
   },
   {
    "market_id": "1987232",
@@ -511,6 +521,26 @@
  ],
  "edges": [
   {
+   "key": "1987234:1",
+   "market_id": "1987234",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Adolfo Daniel Vallejo vs. Grigor Dimitrov be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 53,
+   "now_chance": 25,
+   "open_odds": "-113",
+   "now_odds": "+300",
+   "edge": 28,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (28 pts), likely news",
+   "context": "Grigor Dimitrov 6, 0 · Adolfo Daniel Vallejo 7, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-31T17:44:30.879Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1987228:1",
    "market_id": "1987228",
    "market": "Games spread",
@@ -525,8 +555,28 @@
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Grigor Dimitrov not above the games spread right now",
-   "context": "Grigor Dimitrov 6 · Adolfo Daniel Vallejo 6 · 1st Set (games by set)",
+   "context": "Grigor Dimitrov 6, 0 · Adolfo Daniel Vallejo 7, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-31T17:25:34.437Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1987226:1",
+   "market_id": "1987226",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Adolfo Daniel Vallejo cover 1.5 vs the Grigor Dimitrov in Adolfo Daniel Vallejo vs. Grigor Dimitrov?",
+   "side": "Grigor Dimitrov -1.50 (Games)",
+   "open_chance": 55,
+   "now_chance": 34,
+   "open_odds": "-122",
+   "now_odds": "+194",
+   "edge": 21,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Grigor Dimitrov not above the games spread right now",
+   "context": "Grigor Dimitrov 6, 0 · Adolfo Daniel Vallejo 7, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-31T18:17:58.873Z",
    "status": "open",
    "kalshi": null
   },
@@ -538,15 +588,55 @@
    "question": "Will the total in Adolfo Daniel Vallejo vs. Grigor Dimitrov be more than 27.5?",
    "side": "Under 27.5 (Games)",
    "open_chance": 68,
-   "now_chance": 52,
+   "now_chance": 50,
    "open_odds": "-213",
-   "now_odds": "-108",
-   "edge": 16,
+   "now_odds": "+100",
+   "edge": 18,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Grigor Dimitrov 6 · Adolfo Daniel Vallejo 6 · 1st Set (games by set)",
+   "context": "Grigor Dimitrov 6, 0 · Adolfo Daniel Vallejo 7, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-31T17:44:30.879Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1987231:1",
+   "market_id": "1987231",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Adolfo Daniel Vallejo cover -1.5 vs the Grigor Dimitrov in Adolfo Daniel Vallejo vs. Grigor Dimitrov?",
+   "side": "Grigor Dimitrov +1.50 (Sets)",
+   "open_chance": 68,
+   "now_chance": 55,
+   "open_odds": "-213",
+   "now_odds": "-122",
+   "edge": 13,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Grigor Dimitrov 6, 0 · Adolfo Daniel Vallejo 7, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-31T18:17:58.873Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1985222:1",
+   "market_id": "1985222",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Adolfo Daniel Vallejo vs Grigor Dimitrov scheduled for October 31, 2026 at 1:30 PM UTC?",
+   "side": "Grigor Dimitrov win",
+   "open_chance": 46,
+   "now_chance": 36,
+   "open_odds": "+117",
+   "now_odds": "+178",
+   "edge": 10,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Grigor Dimitrov trailing in sets",
+   "context": "Grigor Dimitrov 6, 0 · Adolfo Daniel Vallejo 7, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-31T18:17:58.873Z",
    "status": "open",
    "kalshi": null
   },
@@ -565,28 +655,28 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Grigor Dimitrov 6 · Adolfo Daniel Vallejo 6 · 1st Set (games by set)",
+   "context": "Grigor Dimitrov 6, 0 · Adolfo Daniel Vallejo 7, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-31T18:09:30.670Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1987242:0",
-   "market_id": "1987242",
-   "market": "Set 2 winner",
+   "key": "1987225:1",
+   "market_id": "1987225",
+   "market": "Games spread",
    "group": "game",
-   "question": "Will Adolfo Daniel Vallejo win set 2 against Grigor Dimitrov?",
-   "side": "Yes: Adolfo Daniel Vallejo win set 2 against Grigor Dimitrov",
-   "open_chance": 51,
-   "now_chance": 47,
-   "open_odds": "-104",
-   "now_odds": "+113",
-   "edge": 4,
+   "question": "Will the Adolfo Daniel Vallejo cover -1.5 vs the Grigor Dimitrov in Adolfo Daniel Vallejo vs. Grigor Dimitrov?",
+   "side": "Grigor Dimitrov +1.50 (Games)",
+   "open_chance": 61,
+   "now_chance": 56,
+   "open_odds": "-156",
+   "now_odds": "-127",
+   "edge": 5,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Grigor Dimitrov 6 · Adolfo Daniel Vallejo 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-31T17:16:27.333Z",
+   "context": "Grigor Dimitrov 6, 0 · Adolfo Daniel Vallejo 7, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-31T15:24:30.439Z",
    "status": "open",
    "kalshi": null
   },
@@ -627,26 +717,6 @@
    "reason": "Big move (28 pts), likely news",
    "context": "Grigor Dimitrov 3 · Adolfo Daniel Vallejo 2 · 1st Set (games by set)",
    "first_seen": "2026-10-31T17:25:34.437Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1987234:1",
-   "market_id": "1987234",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Adolfo Daniel Vallejo vs. Grigor Dimitrov be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 53,
-   "now_chance": 35,
-   "open_odds": "-113",
-   "now_odds": "+186",
-   "edge": 18,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Grigor Dimitrov 5 · Adolfo Daniel Vallejo 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-31T17:44:30.879Z",
    "status": "gone",
    "kalshi": null
   },
@@ -771,6 +841,26 @@
    "kalshi": null
   },
   {
+   "key": "1987242:0",
+   "market_id": "1987242",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Adolfo Daniel Vallejo win set 2 against Grigor Dimitrov?",
+   "side": "Yes: Adolfo Daniel Vallejo win set 2 against Grigor Dimitrov",
+   "open_chance": 51,
+   "now_chance": 47,
+   "open_odds": "-104",
+   "now_odds": "+113",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Grigor Dimitrov 6 · Adolfo Daniel Vallejo 6 · 1st Set (games by set)",
+   "first_seen": "2026-10-31T17:16:27.333Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1987236:0",
    "market_id": "1987236",
    "market": "Sets total",
@@ -789,29 +879,51 @@
    "first_seen": "2026-10-31T17:44:30.879Z",
    "status": "gone",
    "kalshi": null
-  },
-  {
-   "key": "1987225:1",
-   "market_id": "1987225",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Adolfo Daniel Vallejo cover -1.5 vs the Grigor Dimitrov in Adolfo Daniel Vallejo vs. Grigor Dimitrov?",
-   "side": "Grigor Dimitrov +1.50 (Games)",
-   "open_chance": 61,
-   "now_chance": 57,
-   "open_odds": "-156",
-   "now_odds": "-133",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-10-31T15:24:30.439Z",
-   "status": "gone",
-   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "news:1987234:1",
+   "key": "1987234:1",
+   "at": "2026-10-31T18:17:58.873Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+300",
+   "now_chance": 25,
+   "edge": 28,
+   "text": "Big move, likely news: Under 22.5 (Games) (Games total) is 28 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-adoval-gridim-2026-10-31"
+  },
+  {
+   "id": "new_edge:1987231:1:big",
+   "key": "1987231:1",
+   "at": "2026-10-31T18:17:58.873Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Grigor Dimitrov +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "-122",
+   "now_chance": 55,
+   "edge": 13,
+   "text": "New big edge: Grigor Dimitrov +1.50 (Sets) (Sets spread), 13 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-adoval-gridim-2026-10-31"
+  },
+  {
+   "id": "gone:1987242:0:2026-10-31T17:16:27.333Z",
+   "key": "1987242:0",
+   "at": "2026-10-31T18:17:58.873Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Yes: Adolfo Daniel Vallejo win set 2 against Grigor Dimitrov",
+   "market": "Set 2 winner",
+   "now_odds": "+113",
+   "now_chance": 47,
+   "edge": 4,
+   "text": "Edge gone: Yes: Adolfo Daniel Vallejo win set 2 against Grigor Dimitrov (Set 2 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-adoval-gridim-2026-10-31"
+  },
   {
    "id": "new_edge:1987236:1:slight",
    "key": "1987236:1",
@@ -1189,7 +1301,10 @@
   "gone:1987236:0:2026-10-31T17:44:30.879Z",
   "new_edge:1987236:1:slight",
   "gone:1987234:1:2026-10-31T17:44:30.879Z",
-  "gone:1985222:0:2026-10-31T01:23:27.249Z"
+  "gone:1985222:0:2026-10-31T01:23:27.249Z",
+  "news:1987234:1",
+  "new_edge:1987231:1:big",
+  "gone:1987242:0:2026-10-31T17:16:27.333Z"
  ],
  "kalshi_checked": null
 }
