@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-31T19:23:42.310Z"
+  "fetched_at": "2026-10-31T19:33:38.653Z"
  },
- "updated": "2026-10-31T19:23:42.202Z",
+ "updated": "2026-10-31T19:33:38.566Z",
  "open_taken_at": "2026-10-30T05:00:47.621Z",
  "thresholds": {
   "big": 10,
@@ -593,6 +593,26 @@
  ],
  "edges": [
   {
+   "key": "1529369:0",
+   "market_id": "1529369",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming football event Delaware State vs Norfolk State scheduled for October 31, 2026 at 6:00 PM UTC?",
+   "side": "Hornets win",
+   "open_chance": 43.5,
+   "now_chance": 29,
+   "open_odds": "+130",
+   "now_odds": "+245",
+   "edge": 14.5,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-31T19:33:38.566Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1978669:1",
    "market_id": "1978669",
    "market": "Alt spread",
@@ -735,6 +755,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1529369:0:big",
+   "key": "1529369:0",
+   "at": "2026-10-31T19:33:38.566Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Hornets win",
+   "market": "Moneyline",
+   "now_odds": "+245",
+   "now_chance": 29,
+   "edge": 14.5,
+   "text": "New big edge: Hornets win (Moneyline), 15 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-delst-norfst-2026-10-31"
+  },
+  {
    "id": "gone:1529369:1:2026-10-31T02:07:01.295Z",
    "key": "1529369:1",
    "at": "2026-10-31T19:23:42.202Z",
@@ -825,7 +859,8 @@
   "gone:1978668:1:2026-10-31T18:37:39.521Z",
   "gone:1978672:1:2026-10-31T18:09:14.802Z",
   "new_edge:1529369:1:slight",
-  "gone:1529369:1:2026-10-31T02:07:01.295Z"
+  "gone:1529369:1:2026-10-31T02:07:01.295Z",
+  "new_edge:1529369:0:big"
  ],
  "kalshi_checked": null
 }
