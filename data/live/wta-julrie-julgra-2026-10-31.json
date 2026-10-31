@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185780",
-  "fetched_at": "2026-10-31T14:58:05.894Z",
+  "fetched_at": "2026-10-31T15:07:28.036Z",
   "tennis": true,
   "tennis_match": {
    "id": "185780",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(2) Julia Grabher (AUT) leads (7) Julia Riera (ARG) 6-3",
+     "text": "(2) Julia Grabher (AUT) leads (7) Julia Riera (ARG) 6-3 3-0",
      "type": "event"
     }
    ],
@@ -60,7 +60,11 @@
      },
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 3
       }
      ],
      "athlete": {
@@ -105,7 +109,11 @@
      },
      "linescores": [
       {
-       "value": 3
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -158,14 +166,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Julia Grabher",
    "alias": "Julia Grabher",
    "name": "Julia Grabher",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Julia Riera",
@@ -177,35 +185,13 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T14:58:05.785Z",
+ "updated": "2026-10-31T15:07:27.922Z",
  "open_taken_at": "2026-10-30T18:53:54.461Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "1982178",
-   "market": "Moneyline",
-   "group": "game",
-   "mtype": "winner",
-   "period": "full_game",
-   "line": null,
-   "question": "Who will win in the upcoming wta event Julia Riera vs Julia Grabher scheduled for October 31, 2026 at 2:00 PM UTC?",
-   "sides": [
-    "Julia Riera win",
-    "Julia Grabher win"
-   ],
-   "teams": [
-    "Julia Riera",
-    "Julia Grabher"
-   ],
-   "player": null,
-   "mid": 46.5,
-   "yes_buy": 49,
-   "no_buy": 56,
-   "taken_at": "2026-10-30T19:48:23.998Z"
-  },
   {
    "market_id": "1983438",
    "market": "Games spread",
@@ -249,6 +235,50 @@
    "yes_buy": 81,
    "no_buy": 20,
    "taken_at": "2026-10-31T14:49:02.478Z"
+  },
+  {
+   "market_id": "1983429",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Julia Riera cover -4.5 vs the Julia Grabher in Julia Riera vs. Julia Grabher?",
+   "sides": [
+    "Julia Riera -4.50 (Games)",
+    "Julia Grabher +4.50 (Games)"
+   ],
+   "teams": [
+    "Julia Riera",
+    "Julia Grabher"
+   ],
+   "player": null,
+   "mid": 11.5,
+   "yes_buy": 12,
+   "no_buy": 89,
+   "taken_at": "2026-10-31T14:49:02.478Z"
+  },
+  {
+   "market_id": "1982178",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming wta event Julia Riera vs Julia Grabher scheduled for October 31, 2026 at 2:00 PM UTC?",
+   "sides": [
+    "Julia Riera win",
+    "Julia Grabher win"
+   ],
+   "teams": [
+    "Julia Riera",
+    "Julia Grabher"
+   ],
+   "player": null,
+   "mid": 46.5,
+   "yes_buy": 49,
+   "no_buy": 56,
+   "taken_at": "2026-10-30T19:48:23.998Z"
   },
   {
    "market_id": "1983432",
@@ -383,28 +413,6 @@
    "taken_at": "2026-10-31T14:49:02.478Z"
   },
   {
-   "market_id": "1983429",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Julia Riera cover -4.5 vs the Julia Grabher in Julia Riera vs. Julia Grabher?",
-   "sides": [
-    "Julia Riera -4.50 (Games)",
-    "Julia Grabher +4.50 (Games)"
-   ],
-   "teams": [
-    "Julia Riera",
-    "Julia Grabher"
-   ],
-   "player": null,
-   "mid": 11.5,
-   "yes_buy": 12,
-   "no_buy": 89,
-   "taken_at": "2026-10-31T14:49:02.478Z"
-  },
-  {
    "market_id": "1983456",
    "market": "Sets total",
    "group": "game",
@@ -473,6 +481,46 @@
  ],
  "edges": [
   {
+   "key": "1983447:0",
+   "market_id": "1983447",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Julia Riera vs. Julia Grabher be more than 17.5?",
+   "side": "Over 17.5 (Games)",
+   "open_chance": 81,
+   "now_chance": 25,
+   "open_odds": "-426",
+   "now_odds": "+300",
+   "edge": 56,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (56 pts), likely news",
+   "context": "Julia Grabher 6, 3 · Julia Riera 3, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-31T15:07:27.922Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1983438:0",
+   "market_id": "1983438",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Julia Riera cover 7.5 vs the Julia Grabher in Julia Riera vs. Julia Grabher?",
+   "side": "Julia Riera +7.50 (Games)",
+   "open_chance": 89,
+   "now_chance": 59,
+   "open_odds": "-809",
+   "now_odds": "-144",
+   "edge": 30,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (30 pts), likely news",
+   "context": "Julia Grabher 6, 3 · Julia Riera 3, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-31T15:07:27.922Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1982178:0",
    "market_id": "1982178",
    "market": "Moneyline",
@@ -489,7 +537,7 @@
    "reason": null,
    "context": "Julia Grabher 6 · Julia Riera 3 · 1st Set (games by set)",
    "first_seen": "2026-10-31T14:49:02.478Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -509,7 +557,7 @@
    "reason": "Explained by score: Julia Riera not above the games spread right now",
    "context": "Julia Grabher 6 · Julia Riera 3 · 1st Set (games by set)",
    "first_seen": "2026-10-31T14:49:02.478Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -529,7 +577,7 @@
    "reason": "Explained by score: Julia Grabher not above the games spread right now",
    "context": "Julia Grabher 6 · Julia Riera 3 · 1st Set (games by set)",
    "first_seen": "2026-10-31T14:58:05.785Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -549,7 +597,7 @@
    "reason": null,
    "context": "Julia Grabher 6 · Julia Riera 3 · 1st Set (games by set)",
    "first_seen": "2026-10-31T14:58:05.785Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -574,6 +622,62 @@
   }
  ],
  "alerts": [
+  {
+   "id": "news:1983447:0",
+   "key": "1983447:0",
+   "at": "2026-10-31T15:07:27.922Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+300",
+   "now_chance": 25,
+   "edge": 56,
+   "text": "Big move, likely news: Over 17.5 (Games) (Games total) is 56 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-julrie-julgra-2026-10-31"
+  },
+  {
+   "id": "news:1983438:0",
+   "key": "1983438:0",
+   "at": "2026-10-31T15:07:27.922Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Julia Riera +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-144",
+   "now_chance": 59,
+   "edge": 30,
+   "text": "Big move, likely news: Julia Riera +7.50 (Games) (Games spread) is 30 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-julrie-julgra-2026-10-31"
+  },
+  {
+   "id": "gone:1982178:0:2026-10-31T14:49:02.478Z",
+   "key": "1982178:0",
+   "at": "2026-10-31T15:07:27.922Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Julia Riera win",
+   "market": "Moneyline",
+   "now_odds": "+285",
+   "now_chance": 26,
+   "edge": 23,
+   "text": "Edge gone: Julia Riera win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-julrie-julgra-2026-10-31"
+  },
+  {
+   "id": "gone:1983454:0:2026-10-31T14:58:05.785Z",
+   "key": "1983454:0",
+   "at": "2026-10-31T15:07:27.922Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+300",
+   "now_chance": 25,
+   "edge": 4,
+   "text": "Edge gone: Over 27.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-julrie-julgra-2026-10-31"
+  },
   {
    "id": "new_edge:1983454:0:slight",
    "key": "1983454:0",
@@ -635,7 +739,11 @@
   "new_edge:1982178:0:big",
   "new_edge:1983451:1:slight",
   "new_edge:1983454:0:slight",
-  "gone:1983451:1:2026-10-31T14:49:02.478Z"
+  "gone:1983451:1:2026-10-31T14:49:02.478Z",
+  "news:1983447:0",
+  "news:1983438:0",
+  "gone:1982178:0:2026-10-31T14:49:02.478Z",
+  "gone:1983454:0:2026-10-31T14:58:05.785Z"
  ],
  "kalshi_checked": null
 }
