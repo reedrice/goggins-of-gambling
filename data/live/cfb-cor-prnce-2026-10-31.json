@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-31T16:33:12.227Z"
+  "fetched_at": "2026-10-31T16:41:03.780Z"
  },
- "updated": "2026-10-31T16:33:12.145Z",
+ "updated": "2026-10-31T16:41:03.576Z",
  "open_taken_at": "2026-10-30T05:00:45.553Z",
  "thresholds": {
   "big": 10,
@@ -433,7 +433,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-31T16:15:26.592Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -458,6 +458,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1526841:1:2026-10-31T16:15:26.592Z",
+   "key": "1526841:1",
+   "at": "2026-10-31T16:41:03.576Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Tigers win",
+   "market": "Moneyline",
+   "now_odds": "+106",
+   "now_chance": 48.5,
+   "edge": 7,
+   "text": "Edge gone: Tigers win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-cor-prnce-2026-10-31"
+  },
   {
    "id": "new_edge:1526841:1:slight",
    "key": "1526841:1",
@@ -504,7 +518,8 @@
  "alert_seen": [
   "gone:1979524:1:2026-10-31T14:48:44.384Z",
   "new_edge:1526841:1:big",
-  "new_edge:1526841:1:slight"
+  "new_edge:1526841:1:slight",
+  "gone:1526841:1:2026-10-31T16:15:26.592Z"
  ],
  "kalshi_checked": null
 }
