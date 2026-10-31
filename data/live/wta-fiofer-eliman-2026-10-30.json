@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185813",
-  "fetched_at": "2026-10-31T01:52:49.886Z",
+  "fetched_at": "2026-10-31T01:59:15.365Z",
   "tennis": true,
   "tennis_match": {
    "id": "185813",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(3) Fiona Ferro (FRA) leads Elizabeth Mandlik (USA) 6-2 4-2",
+     "text": "(3) Fiona Ferro (FRA) leads Elizabeth Mandlik (USA) 6-2 4-3",
      "type": "event"
     }
    ],
@@ -55,14 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
        "value": 2,
        "winner": false
       },
       {
-       "value": 2
+       "value": 3
       }
      ],
      "athlete": {
@@ -102,7 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "possession": false,
      "curatedRank": {
       "current": 3
      },
@@ -189,13 +189,35 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T01:52:49.813Z",
+ "updated": "2026-10-31T01:59:15.244Z",
  "open_taken_at": "2026-10-29T22:01:47.715Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1952108",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming wta event Fiona Ferro vs Elizabeth Mandlik scheduled for October 30, 2026 at 8:00 PM UTC?",
+   "sides": [
+    "Fiona Ferro win",
+    "Elizabeth Mandlik win"
+   ],
+   "teams": [
+    "Fiona Ferro",
+    "Elizabeth Mandlik"
+   ],
+   "player": null,
+   "mid": 76,
+   "yes_buy": 77,
+   "no_buy": 25,
+   "taken_at": "2026-10-29T23:09:11.936Z"
+  },
   {
    "market_id": "1952254",
    "market": "Games spread",
@@ -241,28 +263,6 @@
    "taken_at": "2026-10-29T23:54:48.847Z"
   },
   {
-   "market_id": "1952271",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Fiona Ferro win set 2 against Elizabeth Mandlik?",
-   "sides": [
-    "Yes: Fiona Ferro win set 2 against Elizabeth Mandlik",
-    "No: Fiona Ferro win set 2 against Elizabeth Mandlik"
-   ],
-   "teams": [
-    "Fiona Ferro",
-    null
-   ],
-   "player": null,
-   "mid": 91.5,
-   "yes_buy": 93,
-   "no_buy": 10,
-   "taken_at": "2026-10-31T01:52:49.813Z"
-  },
-  {
    "market_id": "1952255",
    "market": "Games spread",
    "group": "game",
@@ -285,6 +285,28 @@
    "taken_at": "2026-10-31T00:12:50.994Z"
   },
   {
+   "market_id": "1952271",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Fiona Ferro win set 2 against Elizabeth Mandlik?",
+   "sides": [
+    "Yes: Fiona Ferro win set 2 against Elizabeth Mandlik",
+    "No: Fiona Ferro win set 2 against Elizabeth Mandlik"
+   ],
+   "teams": [
+    "Fiona Ferro",
+    null
+   ],
+   "player": null,
+   "mid": 91.5,
+   "yes_buy": 93,
+   "no_buy": 10,
+   "taken_at": "2026-10-31T01:52:49.813Z"
+  },
+  {
    "market_id": "1952262",
    "market": "Games total",
    "group": "game",
@@ -305,28 +327,6 @@
    "yes_buy": 34,
    "no_buy": 67,
    "taken_at": "2026-10-31T00:12:50.994Z"
-  },
-  {
-   "market_id": "1952108",
-   "market": "Moneyline",
-   "group": "game",
-   "mtype": "winner",
-   "period": "full_game",
-   "line": null,
-   "question": "Who will win in the upcoming wta event Fiona Ferro vs Elizabeth Mandlik scheduled for October 30, 2026 at 8:00 PM UTC?",
-   "sides": [
-    "Fiona Ferro win",
-    "Elizabeth Mandlik win"
-   ],
-   "teams": [
-    "Fiona Ferro",
-    "Elizabeth Mandlik"
-   ],
-   "player": null,
-   "mid": 76,
-   "yes_buy": 77,
-   "no_buy": 25,
-   "taken_at": "2026-10-29T23:09:11.936Z"
   },
   {
    "market_id": "1952261",
@@ -507,26 +507,6 @@
  ],
  "edges": [
   {
-   "key": "1952262:0",
-   "market_id": "1952262",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Fiona Ferro vs. Elizabeth Mandlik be more than 17.5?",
-   "side": "Over 17.5 (Games)",
-   "open_chance": 34,
-   "now_chance": 19,
-   "open_odds": "+194",
-   "now_odds": "+426",
-   "edge": 15,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Elizabeth Mandlik 2, 2 · Fiona Ferro 6, 4 · 2nd Set (games by set)",
-   "first_seen": "2026-10-31T01:52:49.813Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1952262:1",
    "market_id": "1952262",
    "market": "Games total",
@@ -545,9 +525,43 @@
    "first_seen": "2026-10-31T00:59:33.095Z",
    "status": "gone",
    "kalshi": null
+  },
+  {
+   "key": "1952262:0",
+   "market_id": "1952262",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Fiona Ferro vs. Elizabeth Mandlik be more than 17.5?",
+   "side": "Over 17.5 (Games)",
+   "open_chance": 34,
+   "now_chance": 19,
+   "open_odds": "+194",
+   "now_odds": "+426",
+   "edge": 15,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Elizabeth Mandlik 2, 2 · Fiona Ferro 6, 4 · 2nd Set (games by set)",
+   "first_seen": "2026-10-31T01:52:49.813Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1952262:0:2026-10-31T01:52:49.813Z",
+   "key": "1952262:0",
+   "at": "2026-10-31T01:59:15.244Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+426",
+   "now_chance": 19,
+   "edge": 15,
+   "text": "Edge gone: Over 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-fiofer-eliman-2026-10-30"
+  },
   {
    "id": "new_edge:1952262:0:big",
    "key": "1952262:0",
@@ -596,7 +610,8 @@
   "gone:1952256:1:2026-10-31T00:12:50.994Z",
   "new_edge:1952262:1:big",
   "gone:1952262:1:2026-10-31T00:59:33.095Z",
-  "new_edge:1952262:0:big"
+  "new_edge:1952262:0:big",
+  "gone:1952262:0:2026-10-31T01:52:49.813Z"
  ],
  "kalshi_checked": null
 }
