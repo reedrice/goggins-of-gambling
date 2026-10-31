@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-31T18:37:39.352Z"
+  "fetched_at": "2026-10-31T18:47:14.754Z"
  },
- "updated": "2026-10-31T18:37:39.189Z",
+ "updated": "2026-10-31T18:47:14.677Z",
  "open_taken_at": "2026-10-30T05:00:47.440Z",
  "thresholds": {
   "big": 10,
@@ -477,7 +477,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-31T18:17:41.354Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -503,6 +503,20 @@
  ],
  "alerts": [
   {
+   "id": "gone:1529366:1:2026-10-31T18:17:41.354Z",
+   "key": "1529366:1",
+   "at": "2026-10-31T18:47:14.677Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Buccaneers win",
+   "market": "Moneyline",
+   "now_odds": "+135",
+   "now_chance": 42.5,
+   "edge": 11,
+   "text": "Edge gone: Buccaneers win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-will-chsou-2026-10-31"
+  },
+  {
    "id": "new_edge:1529366:1:big",
    "key": "1529366:1",
    "at": "2026-10-31T18:17:41.354Z",
@@ -518,7 +532,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1529366:1:big"
+  "new_edge:1529366:1:big",
+  "gone:1529366:1:2026-10-31T18:17:41.354Z"
  ],
  "kalshi_checked": null
 }

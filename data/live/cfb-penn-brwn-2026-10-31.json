@@ -9,37 +9,15 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-31T18:37:37.398Z"
+  "fetched_at": "2026-10-31T18:47:12.842Z"
  },
- "updated": "2026-10-31T18:37:37.181Z",
+ "updated": "2026-10-31T18:47:12.745Z",
  "open_taken_at": "2026-10-30T05:00:44.826Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "1979461",
-   "market": "Main total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 43.5,
-   "question": "Will the total in Penn vs. Brown be more than 43.5?",
-   "sides": [
-    "Over 43.5",
-    "Under 43.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 42,
-   "yes_buy": 43,
-   "no_buy": 59,
-   "taken_at": "2026-10-31T14:48:44.090Z"
-  },
   {
    "market_id": "1526830",
    "market": "Moneyline",
@@ -61,6 +39,50 @@
    "yes_buy": 42,
    "no_buy": 59,
    "taken_at": "2026-10-30T05:00:44.826Z"
+  },
+  {
+   "market_id": "1977558",
+   "market": "Main spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": -3.5,
+   "question": "Will the Penn cover -3.5 vs the Brown in Penn vs. Brown?",
+   "sides": [
+    "Quakers -3.50",
+    "Bears +3.50"
+   ],
+   "teams": [
+    "Quakers",
+    "Bears"
+   ],
+   "player": null,
+   "mid": 37.3,
+   "yes_buy": 37.5,
+   "no_buy": 63,
+   "taken_at": "2026-10-31T14:48:44.090Z"
+  },
+  {
+   "market_id": "1979461",
+   "market": "Main total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 43.5,
+   "question": "Will the total in Penn vs. Brown be more than 43.5?",
+   "sides": [
+    "Over 43.5",
+    "Under 43.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 42,
+   "yes_buy": 43,
+   "no_buy": 59,
+   "taken_at": "2026-10-31T14:48:44.090Z"
   },
   {
    "market_id": "1977560",
@@ -459,28 +481,6 @@
    "taken_at": "2026-10-31T14:48:44.090Z"
   },
   {
-   "market_id": "1977558",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": -3.5,
-   "question": "Will the Penn cover -3.5 vs the Brown in Penn vs. Brown?",
-   "sides": [
-    "Quakers -3.50",
-    "Bears +3.50"
-   ],
-   "teams": [
-    "Quakers",
-    "Bears"
-   ],
-   "player": null,
-   "mid": 37.3,
-   "yes_buy": 37.5,
-   "no_buy": 63,
-   "taken_at": "2026-10-31T14:48:44.090Z"
-  },
-  {
    "market_id": "1977557",
    "market": "Alt spread",
    "group": "game",
@@ -609,7 +609,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-31T18:37:37.181Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -675,6 +675,20 @@
  ],
  "alerts": [
   {
+   "id": "gone:1979461:0:2026-10-31T18:37:37.181Z",
+   "key": "1979461:0",
+   "at": "2026-10-31T18:47:12.745Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 43.5",
+   "market": "Main total",
+   "now_odds": "+203",
+   "now_chance": 33,
+   "edge": 10,
+   "text": "Edge gone: Over 43.5 (Main total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-penn-brwn-2026-10-31"
+  },
+  {
    "id": "new_edge:1979461:0:big",
    "key": "1979461:0",
    "at": "2026-10-31T18:37:37.181Z",
@@ -691,7 +705,8 @@
  ],
  "alert_seen": [
   "new_edge:1526830:0:big",
-  "new_edge:1979461:0:big"
+  "new_edge:1979461:0:big",
+  "gone:1979461:0:2026-10-31T18:37:37.181Z"
  ],
  "kalshi_checked": null
 }

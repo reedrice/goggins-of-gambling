@@ -4,12 +4,12 @@
  "game": "Alexander Zverev vs. Alex de Minaur",
  "url": "https://polymarket.us/sports/atp/atp-alezve-alemin-2026-10-31",
  "start_time": "2026-10-31T15:55:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185203",
-  "fetched_at": "2026-10-31T18:38:00.372Z",
+  "fetched_at": "2026-10-31T18:47:32.647Z",
   "tennis": true,
   "tennis_match": {
    "id": "185203",
@@ -17,17 +17,17 @@
    "date": "2026-10-31T16:10Z",
    "startDate": "2026-10-31T16:10Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Alexander Zverev (GER) leads (5) Alex de Minaur (AUS) 4-6 6-1 6-6 (0-3)",
+     "text": "(5) Alex de Minaur (AUS) bt (1) Alexander Zverev (GER) 6-4 1-6 7-6 (7-4)",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "curatedRank": {
       "current": 5
      },
@@ -68,8 +69,9 @@
        "winner": false
       },
       {
-       "value": 6,
-       "tiebreak": 3
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
       }
      ],
      "athlete": {
@@ -109,6 +111,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "curatedRank": {
       "current": 1
      },
@@ -123,7 +126,8 @@
       },
       {
        "value": 6,
-       "tiebreak": 0
+       "tiebreak": 4,
+       "winner": false
       }
      ],
      "athlete": {
@@ -174,16 +178,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Alex de Minaur",
    "alias": "Alex de Minaur",
    "name": "Alex de Minaur",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Alexander Zverev",
@@ -195,7 +199,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T18:38:00.246Z",
+ "updated": "2026-10-31T18:47:32.552Z",
  "open_taken_at": "2026-10-30T21:18:33.238Z",
  "thresholds": {
   "big": 10,
@@ -551,7 +555,7 @@
    "reason": "Big move (53 pts), likely news",
    "context": "Alex de Minaur 6, 1, 6 · Alexander Zverev 4, 6, 6 · 3rd Set (games by set)",
    "first_seen": "2026-10-31T16:24:40.392Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
