@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185174",
-  "fetched_at": "2026-10-31T18:56:44.957Z",
+  "fetched_at": "2026-10-31T19:05:14.284Z",
   "tennis": true,
   "tennis_match": {
    "id": "185174",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Henry Bernet (SUI) & Dominic Stricker (SUI) leads (1) Kevin Krawietz (GER) & Tim Puetz (GER) 5-4",
+     "text": "Henry Bernet (SUI) & Dominic Stricker (SUI) leads (1) Kevin Krawietz (GER) & Tim Puetz (GER) 6-4 1-0",
      "type": "event"
     }
    ],
@@ -55,9 +55,14 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "roster": {
@@ -132,12 +137,17 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 1
      },
      "linescores": [
       {
-       "value": 4
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "roster": {
@@ -207,6 +217,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 23,
    "type": {
     "id": "3",
@@ -225,14 +240,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Henry Bernet / Dominic Stricker",
    "alias": "Henry Bernet / Dominic Stricker",
    "name": "Henry Bernet / Dominic Stricker",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Kevin Krawietz / Tim Puetz",
@@ -244,7 +259,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T18:56:44.786Z",
+ "updated": "2026-10-31T19:05:14.180Z",
  "open_taken_at": "2026-10-29T16:10:14.862Z",
  "thresholds": {
   "big": 10,
@@ -283,14 +298,14 @@
    "question": "Who will win in the upcoming atpdb event Krawietz / Puetz vs Bernet / Stricker scheduled for October 30, 2026 at 11:00 AM UTC?",
    "side": "Krawietz / Puetz win",
    "open_chance": 75,
-   "now_chance": 42,
+   "now_chance": 21,
    "open_odds": "-300",
-   "now_odds": "+138",
-   "edge": 33,
+   "now_odds": "+376",
+   "edge": 54,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (33 pts), likely news",
-   "context": "Henry Bernet / Dominic Stricker 5 · Kevin Krawietz / Tim Puetz 4 · 1st Set (games by set)",
+   "reason": "Big move (54 pts), likely news",
+   "context": "Henry Bernet / Dominic Stricker 6, 1 · Kevin Krawietz / Tim Puetz 4, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-31T18:37:59.370Z",
    "status": "open",
    "kalshi": null
