@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892618",
-  "fetched_at": "2026-10-31T18:17:54.942Z",
+  "fetched_at": "2026-10-31T18:27:29.396Z",
   "game_state": "pre",
   "espn_status": "STATUS_SCHEDULED",
   "period": 0,
@@ -31,6 +31,13 @@
   },
   "possession": null,
   "injuries": [
+   {
+    "team": "LA",
+    "player": "Adrian Kempe",
+    "short": "A. Kempe",
+    "pos": "RW",
+    "status": "Out"
+   },
    {
     "team": "LA",
     "player": "Mats Zuccarello",
@@ -57,13 +64,6 @@
     "player": "Jakub Dvorak",
     "short": "J. Dvorak",
     "pos": "D",
-    "status": "Injured Reserve"
-   },
-   {
-    "team": "LA",
-    "player": "Jan Jenik",
-    "short": "J. Jenik",
-    "pos": "C",
     "status": "Injured Reserve"
    },
    {
@@ -142,7 +142,7 @@
    }
   ]
  },
- "updated": "2026-10-31T18:17:54.832Z",
+ "updated": "2026-10-31T18:27:29.230Z",
  "open_taken_at": "2026-10-30T05:01:03.717Z",
  "thresholds": {
   "big": 10,
@@ -810,28 +810,6 @@
    "taken_at": "2026-10-31T07:20:34.454Z"
   },
   {
-   "market_id": "1989397",
-   "market": "Player prop",
-   "group": "prop",
-   "mtype": "prop",
-   "period": "full_game",
-   "line": 1,
-   "question": "Will Alex Laferriere record at least 1 assists in BUF vs LAK?",
-   "sides": [
-    "Yes: Alex Laferriere record at least 1 assists in BUF vs LAK",
-    "No: Alex Laferriere record at least 1 assists in BUF vs LAK"
-   ],
-   "teams": [
-    "Kings",
-    "Kings"
-   ],
-   "player": "Alex Laferriere",
-   "mid": 39,
-   "yes_buy": 41,
-   "no_buy": 63,
-   "taken_at": "2026-10-31T08:28:11.800Z"
-  },
-  {
    "market_id": "2011441",
    "market": "Player prop",
    "group": "prop",
@@ -918,6 +896,28 @@
    "yes_buy": 40,
    "no_buy": 63,
    "taken_at": "2026-10-31T14:48:57.786Z"
+  },
+  {
+   "market_id": "1989397",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Alex Laferriere record at least 1 assists in BUF vs LAK?",
+   "sides": [
+    "Yes: Alex Laferriere record at least 1 assists in BUF vs LAK",
+    "No: Alex Laferriere record at least 1 assists in BUF vs LAK"
+   ],
+   "teams": [
+    "Kings",
+    "Kings"
+   ],
+   "player": "Alex Laferriere",
+   "mid": 39,
+   "yes_buy": 41,
+   "no_buy": 63,
+   "taken_at": "2026-10-31T08:28:11.800Z"
   },
   {
    "market_id": "1984847",
@@ -2457,7 +2457,7 @@
    "context": "Pregame",
    "first_seen": "2026-10-31T05:00:53.418Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1984916:1",
@@ -2477,7 +2477,7 @@
    "context": "Pregame",
    "first_seen": "2026-10-31T14:48:57.786Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1984920:1",
@@ -2497,7 +2497,7 @@
    "context": "Pregame",
    "first_seen": "2026-10-31T08:41:26.352Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1984847:1",
@@ -2517,7 +2517,7 @@
    "context": "Pregame",
    "first_seen": "2026-10-31T08:33:19.172Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1989374:1",
@@ -2557,7 +2557,7 @@
    "context": "Pregame",
    "first_seen": "2026-10-31T14:48:57.786Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1989387:1",
@@ -2617,7 +2617,7 @@
    "context": "Pregame",
    "first_seen": "2026-10-31T08:28:11.800Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1989510:0",
@@ -2777,7 +2777,7 @@
    "context": "Pregame",
    "first_seen": "2026-10-31T08:33:19.172Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1989558:1",
@@ -2792,8 +2792,8 @@
    "now_odds": "-355",
    "edge": 5,
    "tier": "slight",
-   "class": "edge",
-   "reason": null,
+   "class": "injury",
+   "reason": "Explained by injury: Adrian Kempe out",
    "context": "Pregame",
    "first_seen": "2026-10-31T14:58:00.591Z",
    "status": "open",
@@ -2817,7 +2817,7 @@
    "context": "Pregame",
    "first_seen": "2026-10-31T17:25:30.562Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "1858429:0",
@@ -2952,12 +2952,12 @@
    "now_odds": "-203",
    "edge": 4,
    "tier": "slight",
-   "class": "edge",
-   "reason": null,
+   "class": "injury",
+   "reason": "Explained by injury: Adrian Kempe out",
    "context": "Pregame",
    "first_seen": "2026-10-31T14:48:57.786Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "2013505:0",
@@ -3077,7 +3077,7 @@
    "context": "Pregame",
    "first_seen": "2026-10-31T14:48:57.786Z",
    "status": "open",
-   "kalshi": true
+   "kalshi": null
   },
   {
    "key": "2001759:0",
@@ -3142,8 +3142,5 @@
  ],
  "alerts": [],
  "alert_seen": [],
- "kalshi_checked": {
-  "at": "2026-10-31T18:17:55.525Z",
-  "event": "26OCT31BUFLA"
- }
+ "kalshi_checked": null
 }
