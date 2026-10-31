@@ -4,12 +4,12 @@
  "game": "Sebastian Baez vs. Damir Dzumhur",
  "url": "https://polymarket.us/sports/atp/atp-sebbae-damdzu-2026-10-31",
  "start_time": "2026-10-31T13:40:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187335",
-  "fetched_at": "2026-10-31T15:51:21.792Z",
+  "fetched_at": "2026-10-31T15:59:57.059Z",
   "tennis": true,
   "tennis_match": {
    "id": "187335",
@@ -17,17 +17,17 @@
    "date": "2026-10-31T13:45Z",
    "startDate": "2026-10-31T13:45Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Sebastian Baez (ARG) leads Damir Dzumhur (BIH) 7-6 (7-4) 6-5",
+     "text": "Sebastian Baez (ARG) bt Damir Dzumhur (BIH) 7-6 (7-4) 7-5",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
      "linescores": [
       {
        "value": 6,
@@ -62,7 +63,8 @@
        "winner": false
       },
       {
-       "value": 5
+       "value": 5,
+       "winner": false
       }
      ],
      "athlete": {
@@ -102,6 +104,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
      "linescores": [
       {
        "value": 7,
@@ -109,7 +112,8 @@
        "winner": true
       },
       {
-       "value": 6
+       "value": 7,
+       "winner": true
       }
      ],
      "athlete": {
@@ -160,10 +164,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Damir Dzumhur",
@@ -175,13 +179,13 @@
    "abbr": "Sebastian Baez",
    "alias": "Sebastian Baez",
    "name": "Sebastian Baez",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T15:51:21.682Z",
+ "updated": "2026-10-31T15:59:56.975Z",
  "open_taken_at": "2026-10-30T20:35:31.861Z",
  "thresholds": {
   "big": 10,
@@ -449,7 +453,7 @@
    "reason": "Explained by score: Damir Dzumhur trailing in sets",
    "context": "Damir Dzumhur 6, 5 · Sebastian Baez 7, 6 · 2nd Set (games by set)",
    "first_seen": "2026-10-31T14:58:08.211Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -469,7 +473,7 @@
    "reason": "Explained by score: Damir Dzumhur not above the games spread right now",
    "context": "Damir Dzumhur 6, 5 · Sebastian Baez 7, 6 · 2nd Set (games by set)",
    "first_seen": "2026-10-31T15:51:21.682Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -489,7 +493,7 @@
    "reason": null,
    "context": "Damir Dzumhur 6, 5 · Sebastian Baez 7, 6 · 2nd Set (games by set)",
    "first_seen": "2026-10-31T15:42:13.690Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -615,6 +619,20 @@
  ],
  "alerts": [
   {
+   "id": "gone:1987206:1:2026-10-31T15:42:13.690Z",
+   "key": "1987206:1",
+   "at": "2026-10-31T15:59:56.975Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "No: Sebastian Baez win set 2 against Damir Dzumhur",
+   "market": "Set 2 winner",
+   "now_odds": "+156",
+   "now_chance": 39,
+   "edge": 20,
+   "text": "Edge gone: No: Sebastian Baez win set 2 against Damir Dzumhur (Set 2 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-sebbae-damdzu-2026-10-31"
+  },
+  {
    "id": "gone:1987198:1:2026-10-31T15:15:54.408Z",
    "key": "1987198:1",
    "at": "2026-10-31T15:33:00.503Z",
@@ -738,7 +756,8 @@
   "gone:1987195:1:2026-10-31T15:07:30.223Z",
   "gone:1987206:1:2026-10-31T14:58:08.211Z",
   "gone:1987200:0:2026-10-31T15:15:54.408Z",
-  "gone:1987198:1:2026-10-31T15:15:54.408Z"
+  "gone:1987198:1:2026-10-31T15:15:54.408Z",
+  "gone:1987206:1:2026-10-31T15:42:13.690Z"
  ],
  "kalshi_checked": null
 }
