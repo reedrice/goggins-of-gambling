@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185688",
-  "fetched_at": "2026-10-31T06:11:24.252Z",
+  "fetched_at": "2026-10-31T06:18:56.643Z",
   "tennis": true,
   "tennis_match": {
    "id": "185688",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(3) Diana Shnaider (RUS) leads Mia Pohankova (SVK) 5-4",
+     "text": "(3) Diana Shnaider (RUS) leads Mia Pohankova (SVK) 6-4 1-0",
      "type": "event"
     }
    ],
@@ -58,7 +58,11 @@
      "possession": true,
      "linescores": [
       {
-       "value": 4
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -104,7 +108,11 @@
      },
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -162,8 +170,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Mia Pohankova",
@@ -175,13 +183,13 @@
    "abbr": "Diana Shnaider",
    "alias": "Diana Shnaider",
    "name": "Diana Shnaider",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T06:11:24.146Z",
+ "updated": "2026-10-31T06:18:56.575Z",
  "open_taken_at": "2026-10-30T11:23:17.308Z",
  "thresholds": {
   "big": 10,
@@ -211,6 +219,72 @@
    "taken_at": "2026-10-30T12:26:40.667Z"
   },
   {
+   "market_id": "1968433",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Diana Shnaider cover 1.5 vs the Mia Pohankova in Diana Shnaider vs. Mia Pohankova?",
+   "sides": [
+    "Diana Shnaider +1.50 (Games)",
+    "Mia Pohankova -1.50 (Games)"
+   ],
+   "teams": [
+    "Diana Shnaider",
+    "Mia Pohankova"
+   ],
+   "player": null,
+   "mid": 64.5,
+   "yes_buy": 65,
+   "no_buy": 36,
+   "taken_at": "2026-10-31T04:28:23.128Z"
+  },
+  {
+   "market_id": "1968435",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Diana Shnaider cover 4.5 vs the Mia Pohankova in Diana Shnaider vs. Mia Pohankova?",
+   "sides": [
+    "Diana Shnaider +4.50 (Games)",
+    "Mia Pohankova -4.50 (Games)"
+   ],
+   "teams": [
+    "Diana Shnaider",
+    "Mia Pohankova"
+   ],
+   "player": null,
+   "mid": 74.5,
+   "yes_buy": 75,
+   "no_buy": 26,
+   "taken_at": "2026-10-31T04:16:43.343Z"
+  },
+  {
+   "market_id": "1968438",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Diana Shnaider cover -1.5 vs the Mia Pohankova in Diana Shnaider vs. Mia Pohankova?",
+   "sides": [
+    "Diana Shnaider -1.50 (Sets)",
+    "Mia Pohankova +1.50 (Sets)"
+   ],
+   "teams": [
+    "Diana Shnaider",
+    "Mia Pohankova"
+   ],
+   "player": null,
+   "mid": 49.5,
+   "yes_buy": 52,
+   "no_buy": 53,
+   "taken_at": "2026-10-30T12:14:06.001Z"
+  },
+  {
    "market_id": "1968449",
    "market": "Set 2 winner",
    "group": "game",
@@ -231,6 +305,72 @@
    "yes_buy": 70,
    "no_buy": 36,
    "taken_at": "2026-10-31T03:55:01.597Z"
+  },
+  {
+   "market_id": "1968441",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Diana Shnaider vs. Mia Pohankova be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 40,
+   "yes_buy": 41,
+   "no_buy": 61,
+   "taken_at": "2026-10-30T16:14:03.364Z"
+  },
+  {
+   "market_id": "1968443",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Diana Shnaider vs. Mia Pohankova be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 38.5,
+   "yes_buy": 39,
+   "no_buy": 62,
+   "taken_at": "2026-10-31T04:16:43.343Z"
+  },
+  {
+   "market_id": "1968442",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Diana Shnaider vs. Mia Pohankova be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 21.5,
+   "yes_buy": 22,
+   "no_buy": 79,
+   "taken_at": "2026-10-31T04:16:43.343Z"
   },
   {
    "market_id": "1968434",
@@ -277,28 +417,6 @@
    "taken_at": "2026-10-31T04:53:12.493Z"
   },
   {
-   "market_id": "1968433",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Diana Shnaider cover 1.5 vs the Mia Pohankova in Diana Shnaider vs. Mia Pohankova?",
-   "sides": [
-    "Diana Shnaider +1.50 (Games)",
-    "Mia Pohankova -1.50 (Games)"
-   ],
-   "teams": [
-    "Diana Shnaider",
-    "Mia Pohankova"
-   ],
-   "player": null,
-   "mid": 64.5,
-   "yes_buy": 65,
-   "no_buy": 36,
-   "taken_at": "2026-10-31T04:28:23.128Z"
-  },
-  {
    "market_id": "1968448",
    "market": "Set 1 winner",
    "group": "game",
@@ -319,72 +437,6 @@
    "yes_buy": 68,
    "no_buy": 37,
    "taken_at": "2026-10-30T14:10:48.609Z"
-  },
-  {
-   "market_id": "1968441",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Diana Shnaider vs. Mia Pohankova be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 40,
-   "yes_buy": 41,
-   "no_buy": 61,
-   "taken_at": "2026-10-30T16:14:03.364Z"
-  },
-  {
-   "market_id": "1968438",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Diana Shnaider cover -1.5 vs the Mia Pohankova in Diana Shnaider vs. Mia Pohankova?",
-   "sides": [
-    "Diana Shnaider -1.50 (Sets)",
-    "Mia Pohankova +1.50 (Sets)"
-   ],
-   "teams": [
-    "Diana Shnaider",
-    "Mia Pohankova"
-   ],
-   "player": null,
-   "mid": 49.5,
-   "yes_buy": 52,
-   "no_buy": 53,
-   "taken_at": "2026-10-30T12:14:06.001Z"
-  },
-  {
-   "market_id": "1968442",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Diana Shnaider vs. Mia Pohankova be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 21.5,
-   "yes_buy": 22,
-   "no_buy": 79,
-   "taken_at": "2026-10-31T04:16:43.343Z"
   },
   {
    "market_id": "1968439",
@@ -453,28 +505,6 @@
    "taken_at": "2026-10-31T04:16:43.343Z"
   },
   {
-   "market_id": "1968443",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Diana Shnaider vs. Mia Pohankova be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 38.5,
-   "yes_buy": 39,
-   "no_buy": 62,
-   "taken_at": "2026-10-31T04:16:43.343Z"
-  },
-  {
    "market_id": "1968437",
    "market": "Games spread",
    "group": "game",
@@ -495,31 +525,49 @@
    "yes_buy": 75,
    "no_buy": 26,
    "taken_at": "2026-10-31T04:16:43.343Z"
-  },
-  {
-   "market_id": "1968435",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Diana Shnaider cover 4.5 vs the Mia Pohankova in Diana Shnaider vs. Mia Pohankova?",
-   "sides": [
-    "Diana Shnaider +4.50 (Games)",
-    "Mia Pohankova -4.50 (Games)"
-   ],
-   "teams": [
-    "Diana Shnaider",
-    "Mia Pohankova"
-   ],
-   "player": null,
-   "mid": 74.5,
-   "yes_buy": 75,
-   "no_buy": 26,
-   "taken_at": "2026-10-31T04:16:43.343Z"
   }
  ],
  "edges": [
+  {
+   "key": "1968438:1",
+   "market_id": "1968438",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Diana Shnaider cover -1.5 vs the Mia Pohankova in Diana Shnaider vs. Mia Pohankova?",
+   "side": "Mia Pohankova +1.50 (Sets)",
+   "open_chance": 53,
+   "now_chance": 26,
+   "open_odds": "-113",
+   "now_odds": "+285",
+   "edge": 27,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (27 pts), likely news",
+   "context": "Mia Pohankova 4, 0 · Diana Shnaider 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-31T04:53:12.493Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1968443:0",
+   "market_id": "1968443",
+   "market": "Sets total",
+   "group": "game",
+   "question": "Will the total in Diana Shnaider vs. Mia Pohankova be more than 2.5?",
+   "side": "Over 2.5 (Sets)",
+   "open_chance": 39,
+   "now_chance": 30,
+   "open_odds": "+156",
+   "now_odds": "+233",
+   "edge": 9,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Mia Pohankova 4, 0 · Diana Shnaider 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-31T05:29:46.415Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1968449:1",
    "market_id": "1968449",
@@ -528,14 +576,14 @@
    "question": "Will Diana Shnaider win set 2 against Mia Pohankova?",
    "side": "No: Diana Shnaider win set 2 against Mia Pohankova",
    "open_chance": 36,
-   "now_chance": 30,
+   "now_chance": 31,
    "open_odds": "+178",
-   "now_odds": "+233",
-   "edge": 6,
+   "now_odds": "+223",
+   "edge": 5,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Mia Pohankova 4 · Diana Shnaider 5 · 1st Set (games by set)",
+   "context": "Mia Pohankova 4, 0 · Diana Shnaider 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-10-31T06:11:24.146Z",
    "status": "open",
    "kalshi": null
@@ -661,26 +709,6 @@
    "kalshi": null
   },
   {
-   "key": "1968433:0",
-   "market_id": "1968433",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Diana Shnaider cover 1.5 vs the Mia Pohankova in Diana Shnaider vs. Mia Pohankova?",
-   "side": "Diana Shnaider +1.50 (Games)",
-   "open_chance": 65,
-   "now_chance": 54,
-   "open_odds": "-186",
-   "now_odds": "-117",
-   "edge": 11,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Mia Pohankova 4 · Diana Shnaider 3 · 1st Set (games by set)",
-   "first_seen": "2026-10-31T05:55:46.687Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "1968449:0",
    "market_id": "1968449",
    "market": "Set 2 winner",
@@ -697,66 +725,6 @@
    "reason": null,
    "context": "Mia Pohankova 4 · Diana Shnaider 3 · 1st Set (games by set)",
    "first_seen": "2026-10-31T05:37:31.667Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1968433:1",
-   "market_id": "1968433",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Diana Shnaider cover 1.5 vs the Mia Pohankova in Diana Shnaider vs. Mia Pohankova?",
-   "side": "Mia Pohankova -1.50 (Games)",
-   "open_chance": 36,
-   "now_chance": 30,
-   "open_odds": "+178",
-   "now_odds": "+233",
-   "edge": 6,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Mia Pohankova not above the games spread right now",
-   "context": "Mia Pohankova 4 · Diana Shnaider 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-31T05:01:00.548Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1968443:0",
-   "market_id": "1968443",
-   "market": "Sets total",
-   "group": "game",
-   "question": "Will the total in Diana Shnaider vs. Mia Pohankova be more than 2.5?",
-   "side": "Over 2.5 (Sets)",
-   "open_chance": 39,
-   "now_chance": 33,
-   "open_odds": "+156",
-   "now_odds": "+203",
-   "edge": 6,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Mia Pohankova 1 · Diana Shnaider 1 · 1st Set (games by set)",
-   "first_seen": "2026-10-31T05:29:46.415Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1968435:0",
-   "market_id": "1968435",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Diana Shnaider cover 4.5 vs the Mia Pohankova in Diana Shnaider vs. Mia Pohankova?",
-   "side": "Diana Shnaider +4.50 (Games)",
-   "open_chance": 75,
-   "now_chance": 69,
-   "open_odds": "-300",
-   "now_odds": "-223",
-   "edge": 6,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-10-31T05:22:23.792Z",
    "status": "gone",
    "kalshi": null
   },
@@ -779,29 +747,23 @@
    "first_seen": "2026-10-31T05:08:43.884Z",
    "status": "gone",
    "kalshi": null
-  },
-  {
-   "key": "1968438:1",
-   "market_id": "1968438",
-   "market": "Sets spread",
-   "group": "game",
-   "question": "Will the Diana Shnaider cover -1.5 vs the Mia Pohankova in Diana Shnaider vs. Mia Pohankova?",
-   "side": "Mia Pohankova +1.50 (Sets)",
-   "open_chance": 53,
-   "now_chance": 49,
-   "open_odds": "-113",
-   "now_odds": "+104",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Mia Pohankova 1 · Diana Shnaider 1 · 1st Set (games by set)",
-   "first_seen": "2026-10-31T04:53:12.493Z",
-   "status": "gone",
-   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "news:1968438:1",
+   "key": "1968438:1",
+   "at": "2026-10-31T06:18:56.575Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Mia Pohankova +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+285",
+   "now_chance": 26,
+   "edge": 27,
+   "text": "Big move, likely news: Mia Pohankova +1.50 (Sets) (Sets spread) is 27 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-diashn-miapoh-2026-10-31"
+  },
   {
    "id": "new_edge:1968449:1:slight",
    "key": "1968449:1",
@@ -845,20 +807,6 @@
    "url": "https://polymarket.us/sports/wta/wta-diashn-miapoh-2026-10-31"
   },
   {
-   "id": "gone:1968433:0:2026-10-31T05:55:46.687Z",
-   "key": "1968433:0",
-   "at": "2026-10-31T06:04:25.882Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Diana Shnaider +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-117",
-   "now_chance": 54,
-   "edge": 11,
-   "text": "Edge gone: Diana Shnaider +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-diashn-miapoh-2026-10-31"
-  },
-  {
    "id": "new_edge:1968441:1:big",
    "key": "1968441:1",
    "at": "2026-10-31T05:55:46.687Z",
@@ -884,20 +832,6 @@
    "now_chance": 73,
    "edge": 15,
    "text": "New big edge: Diana Shnaider +1.50 (Sets) (Sets spread), 15 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-diashn-miapoh-2026-10-31"
-  },
-  {
-   "id": "new_edge:1968433:0:big",
-   "key": "1968433:0",
-   "at": "2026-10-31T05:55:46.687Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Diana Shnaider +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-117",
-   "now_chance": 54,
-   "edge": 11,
-   "text": "New big edge: Diana Shnaider +1.50 (Games) (Games spread), 11 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-diashn-miapoh-2026-10-31"
   },
   {
@@ -1055,20 +989,6 @@
    "url": "https://polymarket.us/sports/wta/wta-diashn-miapoh-2026-10-31"
   },
   {
-   "id": "gone:1968435:0:2026-10-31T05:22:23.792Z",
-   "key": "1968435:0",
-   "at": "2026-10-31T05:29:46.415Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Diana Shnaider +4.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-223",
-   "now_chance": 69,
-   "edge": 6,
-   "text": "Edge gone: Diana Shnaider +4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-diashn-miapoh-2026-10-31"
-  },
-  {
    "id": "gone:1968441:1:2026-10-31T04:53:12.493Z",
    "key": "1968441:1",
    "at": "2026-10-31T05:29:46.415Z",
@@ -1097,20 +1017,6 @@
    "url": "https://polymarket.us/sports/wta/wta-diashn-miapoh-2026-10-31"
   },
   {
-   "id": "new_edge:1968435:0:slight",
-   "key": "1968435:0",
-   "at": "2026-10-31T05:22:23.792Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Diana Shnaider +4.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-223",
-   "now_chance": 69,
-   "edge": 6,
-   "text": "New slight edge: Diana Shnaider +4.50 (Games) (Games spread), 6 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-diashn-miapoh-2026-10-31"
-  },
-  {
    "id": "new_edge:1968434:0:slight",
    "key": "1968434:0",
    "at": "2026-10-31T05:22:23.792Z",
@@ -1136,20 +1042,6 @@
    "now_chance": 44,
    "edge": 8,
    "text": "New slight edge: Diana Shnaider -1.50 (Sets) (Sets spread), 8 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-diashn-miapoh-2026-10-31"
-  },
-  {
-   "id": "new_edge:1968433:1:slight",
-   "key": "1968433:1",
-   "at": "2026-10-31T05:14:31.438Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Mia Pohankova -1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+213",
-   "now_chance": 32,
-   "edge": 4,
-   "text": "New slight edge: Mia Pohankova -1.50 (Games) (Games spread), 4 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-diashn-miapoh-2026-10-31"
   },
   {
@@ -1210,7 +1102,8 @@
   "gone:1968430:0:2026-10-31T05:37:31.667Z",
   "gone:1968439:0:2026-10-31T05:55:46.687Z",
   "gone:1968433:0:2026-10-31T05:55:46.687Z",
-  "new_edge:1968449:1:slight"
+  "new_edge:1968449:1:slight",
+  "news:1968438:1"
  ],
  "kalshi_checked": null
 }
