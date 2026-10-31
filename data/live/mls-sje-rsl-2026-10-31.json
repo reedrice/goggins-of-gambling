@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for mls",
-  "fetched_at": "2026-10-31T21:00:30.981Z"
+  "fetched_at": "2026-10-31T21:08:53.961Z"
  },
- "updated": "2026-10-31T21:00:30.965Z",
+ "updated": "2026-10-31T21:08:53.958Z",
  "open_taken_at": "2026-10-30T05:01:06.558Z",
  "thresholds": {
   "big": 10,
@@ -393,28 +393,6 @@
    "taken_at": "2026-10-30T22:35:59.582Z"
   },
   {
-   "market_id": "1987484",
-   "market": "1st half total",
-   "group": "game",
-   "mtype": "total",
-   "period": "first_half",
-   "line": 0.5,
-   "question": "Will the total in SJE vs RSL be more than 0.5?",
-   "sides": [
-    "Over 0.5 (1st half)",
-    "Under 0.5 (1st half)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 77.5,
-   "yes_buy": 79,
-   "no_buy": 24,
-   "taken_at": "2026-10-30T22:35:59.582Z"
-  },
-  {
    "market_id": "1987476",
    "market": "1st half spread",
    "group": "game",
@@ -501,6 +479,28 @@
    "yes_buy": 35,
    "no_buy": 68,
    "taken_at": "2026-10-30T22:03:10.255Z"
+  },
+  {
+   "market_id": "1987484",
+   "market": "1st half total",
+   "group": "game",
+   "mtype": "total",
+   "period": "first_half",
+   "line": 0.5,
+   "question": "Will the total in SJE vs RSL be more than 0.5?",
+   "sides": [
+    "Over 0.5 (1st half)",
+    "Under 0.5 (1st half)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 77.5,
+   "yes_buy": 79,
+   "no_buy": 24,
+   "taken_at": "2026-10-30T22:35:59.582Z"
   },
   {
    "market_id": "2003554",
@@ -607,11 +607,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-31T20:25:32.643Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1883983:0:2026-10-31T20:25:32.643Z",
+   "key": "1883983:0",
+   "at": "2026-10-31T21:08:53.958Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Yes: San Jose Earthquakes win against Real Salt Lake in the MLS match scheduled for Oct 31, 2026",
+   "market": "Moneyline",
+   "now_odds": "+163",
+   "now_chance": 38,
+   "edge": 4,
+   "text": "Edge gone: Yes: San Jose Earthquakes win against Real Salt Lake in the MLS match scheduled for Oct 31, 2026 (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/mls/mls-sje-rsl-2026-10-31"
+  },
   {
    "id": "new_edge:1987365:0:slight",
    "key": "1987365:0",
@@ -643,7 +657,8 @@
  ],
  "alert_seen": [
   "new_edge:1987365:0:slight",
-  "new_edge:1883983:0:slight"
+  "new_edge:1883983:0:slight",
+  "gone:1883983:0:2026-10-31T20:25:32.643Z"
  ],
  "kalshi_checked": null
 }
