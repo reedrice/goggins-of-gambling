@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187316",
-  "fetched_at": "2026-10-31T02:35:48.834Z",
+  "fetched_at": "2026-10-31T02:42:57.820Z",
   "tennis": true,
   "tennis_match": {
    "id": "187316",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Tatiana Prozorova (RUS) leads Hayu Kinoshita (JPN) 5-1",
+     "text": "Tatiana Prozorova (RUS) leads Hayu Kinoshita (JPN) 6-1 1-0",
      "type": "event"
     }
    ],
@@ -55,10 +55,13 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
      "linescores": [
       {
-       "value": 1
+       "value": 1,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -98,10 +101,13 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -136,11 +142,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 380,
    "type": {
     "id": "2",
@@ -159,8 +160,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Hayu Kinoshita",
@@ -172,13 +173,13 @@
    "abbr": "Tatiana Prozorova",
    "alias": "Tatiana Prozorova",
    "name": "Tatiana Prozorova",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T02:35:48.771Z",
+ "updated": "2026-10-31T02:42:57.736Z",
  "open_taken_at": "2026-10-30T10:01:33.099Z",
  "thresholds": {
   "big": 10,
@@ -230,28 +231,6 @@
    "taken_at": "2026-10-31T02:07:13.494Z"
   },
   {
-   "market_id": "1967869",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Tatiana Prozorova vs. Hayu Kinoshita be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 29.5,
-   "yes_buy": 30,
-   "no_buy": 71,
-   "taken_at": "2026-10-31T02:07:13.494Z"
-  },
-  {
    "market_id": "1967870",
    "market": "Sets total",
    "group": "game",
@@ -271,6 +250,28 @@
    "mid": 22.5,
    "yes_buy": 23,
    "no_buy": 78,
+   "taken_at": "2026-10-31T02:07:13.494Z"
+  },
+  {
+   "market_id": "1967869",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Tatiana Prozorova vs. Hayu Kinoshita be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 29.5,
+   "yes_buy": 30,
+   "no_buy": 71,
    "taken_at": "2026-10-31T02:07:13.494Z"
   },
   {
@@ -518,26 +519,6 @@
  ],
  "edges": [
   {
-   "key": "1967869:0",
-   "market_id": "1967869",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Tatiana Prozorova vs. Hayu Kinoshita be more than 27.5?",
-   "side": "Over 27.5 (Games)",
-   "open_chance": 30,
-   "now_chance": 17,
-   "open_odds": "+233",
-   "now_odds": "+488",
-   "edge": 13,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Hayu Kinoshita 1 · Tatiana Prozorova 5 · 1st Set (games by set)",
-   "first_seen": "2026-10-31T02:35:48.771Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1967868:0",
    "market_id": "1967868",
    "market": "Games total",
@@ -559,20 +540,6 @@
   }
  ],
  "alerts": [
-  {
-   "id": "new_edge:1967869:0:big",
-   "key": "1967869:0",
-   "at": "2026-10-31T02:35:48.771Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Over 27.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+488",
-   "now_chance": 17,
-   "edge": 13,
-   "text": "New big edge: Over 27.5 (Games) (Games total), 13 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-tatpro-haykin-2026-10-30"
-  },
   {
    "id": "gone:1967868:0:2026-10-31T02:14:32.146Z",
    "key": "1967868:0",
