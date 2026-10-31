@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-31T06:55:23.262Z"
+  "fetched_at": "2026-10-31T07:03:29.086Z"
  },
- "updated": "2026-10-31T06:55:23.132Z",
+ "updated": "2026-10-31T07:03:28.969Z",
  "open_taken_at": "2026-10-30T05:00:58.445Z",
  "thresholds": {
   "big": 10,
@@ -346,6 +346,28 @@
    "mid": 4.3,
    "yes_buy": 6,
    "no_buy": 97.5,
+   "taken_at": "2026-10-30T05:00:58.445Z"
+  },
+  {
+   "market_id": "1805505",
+   "market": "Alt spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": -30.5,
+   "question": "Will the Marshall cover -30.5 vs the Old Dominion in Marshall vs. Old Dominion?",
+   "sides": [
+    "Thundering Herd -30.50",
+    "Monarchs +30.50"
+   ],
+   "teams": [
+    "Thundering Herd",
+    "Monarchs"
+   ],
+   "player": null,
+   "mid": 4.5,
+   "yes_buy": 7.5,
+   "no_buy": 98.5,
    "taken_at": "2026-10-30T05:00:58.445Z"
   },
   {
@@ -2505,28 +2527,6 @@
    "taken_at": "2026-10-30T05:29:49.802Z"
   },
   {
-   "market_id": "1803736",
-   "market": "1st half total",
-   "group": "game",
-   "mtype": "total",
-   "period": "first_half",
-   "line": 39.5,
-   "question": "Will the total in Marshall vs. Old Dominion be more than 39.5?",
-   "sides": [
-    "Over 39.5 (1st half)",
-    "Under 39.5 (1st half)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 8,
-   "yes_buy": 10,
-   "no_buy": 94,
-   "taken_at": "2026-10-31T05:00:47.956Z"
-  },
-  {
    "market_id": "1803725",
    "market": "1st half total",
    "group": "game",
@@ -2571,26 +2571,48 @@
    "taken_at": "2026-10-30T05:00:58.445Z"
   },
   {
-   "market_id": "1805505",
-   "market": "Alt spread",
+   "market_id": "1803997",
+   "market": "1st half total",
    "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": -30.5,
-   "question": "Will the Marshall cover -30.5 vs the Old Dominion in Marshall vs. Old Dominion?",
+   "mtype": "total",
+   "period": "first_half",
+   "line": 10.5,
+   "question": "Will the total in Marshall vs. Old Dominion be more than 10.5?",
    "sides": [
-    "Thundering Herd -30.50",
-    "Monarchs +30.50"
+    "Thundering Herd Over 10.5 (1st half)",
+    "Thundering Herd Under 10.5 (1st half)"
    ],
    "teams": [
     "Thundering Herd",
-    "Monarchs"
+    "Thundering Herd"
    ],
    "player": null,
-   "mid": 4.5,
-   "yes_buy": 7.5,
-   "no_buy": 98.5,
+   "mid": 49,
+   "yes_buy": 52,
+   "no_buy": 54,
    "taken_at": "2026-10-30T05:00:58.445Z"
+  },
+  {
+   "market_id": "1803736",
+   "market": "1st half total",
+   "group": "game",
+   "mtype": "total",
+   "period": "first_half",
+   "line": 39.5,
+   "question": "Will the total in Marshall vs. Old Dominion be more than 39.5?",
+   "sides": [
+    "Over 39.5 (1st half)",
+    "Under 39.5 (1st half)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 8,
+   "yes_buy": 10,
+   "no_buy": 94,
+   "taken_at": "2026-10-31T05:00:47.956Z"
   },
   {
    "market_id": "1803733",
@@ -2635,31 +2657,29 @@
    "yes_buy": 49,
    "no_buy": 57,
    "taken_at": "2026-10-30T09:28:23.668Z"
-  },
-  {
-   "market_id": "1803997",
-   "market": "1st half total",
-   "group": "game",
-   "mtype": "total",
-   "period": "first_half",
-   "line": 10.5,
-   "question": "Will the total in Marshall vs. Old Dominion be more than 10.5?",
-   "sides": [
-    "Thundering Herd Over 10.5 (1st half)",
-    "Thundering Herd Under 10.5 (1st half)"
-   ],
-   "teams": [
-    "Thundering Herd",
-    "Thundering Herd"
-   ],
-   "player": null,
-   "mid": 49,
-   "yes_buy": 52,
-   "no_buy": 54,
-   "taken_at": "2026-10-30T05:00:58.445Z"
   }
  ],
  "edges": [
+  {
+   "key": "1803997:1",
+   "market_id": "1803997",
+   "market": "1st half total",
+   "group": "game",
+   "question": "Will the total in Marshall vs. Old Dominion be more than 10.5?",
+   "side": "Thundering Herd Under 10.5 (1st half)",
+   "open_chance": 54,
+   "now_chance": 50,
+   "open_odds": "-117",
+   "now_odds": "+100",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-31T07:03:28.969Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1805934:1",
    "market_id": "1805934",
