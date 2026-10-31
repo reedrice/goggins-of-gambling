@@ -3,10 +3,10 @@
  "min_samples": 30,
  "note": "Learned only from real graded results. Adjustments stay at 0 (and trust at 1) until a bucket or category has 30 graded picks. Small samples are noisy.",
  "sample": {
-  "picks_logged": 2153,
-  "picks_graded": 2091,
+  "picks_logged": 2290,
+  "picks_graded": 2098,
   "predictions_graded": 117,
-  "clv_legs": 1961
+  "clv_legs": 1964
  },
  "calibration": {
   "picks": [
@@ -40,46 +40,46 @@
    {
     "lo": 30,
     "hi": 40,
-    "n": 286,
+    "n": 287,
     "avg_said": 35.1,
-    "actual": 27.6,
-    "adjustment_pts": -5.5,
+    "actual": 27.5,
+    "adjustment_pts": -5.6,
     "status": "applied"
    },
    {
     "lo": 40,
     "hi": 50,
-    "n": 444,
+    "n": 445,
     "avg_said": 44.8,
-    "actual": 34.7,
+    "actual": 34.6,
     "adjustment_pts": -8.3,
     "status": "applied"
    },
    {
     "lo": 50,
     "hi": 60,
-    "n": 485,
+    "n": 486,
     "avg_said": 54.2,
-    "actual": 48.2,
+    "actual": 48.1,
     "adjustment_pts": -5,
     "status": "applied"
    },
    {
     "lo": 60,
     "hi": 70,
-    "n": 369,
+    "n": 371,
     "avg_said": 64.6,
-    "actual": 58,
-    "adjustment_pts": -5.2,
+    "actual": 57.7,
+    "adjustment_pts": -5.4,
     "status": "applied"
    },
    {
     "lo": 70,
     "hi": 80,
-    "n": 220,
+    "n": 222,
     "avg_said": 73,
-    "actual": 71.8,
-    "adjustment_pts": -0.8,
+    "actual": 71.6,
+    "adjustment_pts": -0.9,
     "status": "applied"
    },
    {
@@ -150,13 +150,13 @@
   ]
  },
  "market_shrink": {
-  "n": 2091,
+  "n": 2098,
   "raw_weight": 0,
   "weight": 0.05,
   "status": "applied"
  },
  "clv": {
-  "n": 1961,
+  "n": 1964,
   "avg_pts": 0.7,
   "beat_close_pct": 33.1
  },
@@ -166,15 +166,15 @@
    "sport": "Tennis",
    "type": "spread",
    "stat": null,
-   "n": 573,
+   "n": 576,
    "w": 232,
-   "l": 341,
-   "hit_rate": 40.5,
-   "units": -41.15,
-   "roi": -7.2,
+   "l": 344,
+   "hit_rate": 40.3,
+   "units": -44.15,
+   "roi": -7.7,
    "avg_clv": 2.2,
-   "clv_n": 449,
-   "trust": 0.94,
+   "clv_n": 450,
+   "trust": 0.93,
    "status": "applied"
   },
   {
@@ -189,7 +189,7 @@
    "units": -8.86,
    "roi": -3.3,
    "avg_clv": -0.9,
-   "clv_n": 249,
+   "clv_n": 251,
    "trust": 0.98,
    "status": "applied"
   },
@@ -274,6 +274,22 @@
    "status": "applied"
   },
   {
+   "key": "NBA · prop · 3pm",
+   "sport": "NBA",
+   "type": "prop",
+   "stat": "3pm",
+   "n": 83,
+   "w": 47,
+   "l": 36,
+   "hit_rate": 56.6,
+   "units": -1.86,
+   "roi": -2.2,
+   "avg_clv": 1.7,
+   "clv_n": 83,
+   "trust": 0.99,
+   "status": "applied"
+  },
+  {
    "key": "NHL · total",
    "sport": "NHL",
    "type": "total",
@@ -290,35 +306,19 @@
    "status": "applied"
   },
   {
-   "key": "NBA · prop · 3pm",
-   "sport": "NBA",
-   "type": "prop",
-   "stat": "3pm",
-   "n": 81,
-   "w": 46,
-   "l": 35,
-   "hit_rate": 56.8,
-   "units": -1.35,
-   "roi": -1.7,
-   "avg_clv": 1.7,
-   "clv_n": 83,
-   "trust": 0.99,
-   "status": "applied"
-  },
-  {
    "key": "NBA · prop · reb",
    "sport": "NBA",
    "type": "prop",
    "stat": "reb",
-   "n": 77,
+   "n": 78,
    "w": 47,
-   "l": 30,
-   "hit_rate": 61,
-   "units": 3.45,
-   "roi": 4.5,
+   "l": 31,
+   "hit_rate": 60.3,
+   "units": 2.45,
+   "roi": 3.1,
    "avg_clv": -0.5,
    "clv_n": 75,
-   "trust": 1.02,
+   "trust": 1.01,
    "status": "applied"
   },
   {
@@ -502,12 +502,12 @@
    "sport": "NBA",
    "type": "prop",
    "stat": "blk",
-   "n": 13,
+   "n": 14,
    "w": 8,
-   "l": 5,
-   "hit_rate": 61.5,
-   "units": -0.43,
-   "roi": -3.3,
+   "l": 6,
+   "hit_rate": 57.1,
+   "units": -1.43,
+   "roi": -10.2,
    "avg_clv": 3.1,
    "clv_n": 14,
    "trust": 1,
@@ -940,5 +940,5 @@
   "NFL · spread",
   "NFL · prop · pyd"
  ],
- "updated_at": "2026-10-31T05:02:07.857Z"
+ "updated_at": "2026-10-31T05:09:20.322Z"
 }
