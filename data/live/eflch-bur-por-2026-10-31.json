@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for eflch",
-  "fetched_at": "2026-10-31T15:32:54.939Z"
+  "fetched_at": "2026-10-31T15:42:07.124Z"
  },
- "updated": "2026-10-31T15:32:54.937Z",
+ "updated": "2026-10-31T15:42:07.117Z",
  "open_taken_at": "2026-10-30T05:01:05.104Z",
  "thresholds": {
   "big": 10,
@@ -85,28 +85,6 @@
    "taken_at": "2026-10-30T05:01:05.104Z"
   },
   {
-   "market_id": "1975285",
-   "market": "Main spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": 1.5,
-   "question": "Will the Burnley FC cover 1.5 vs the Portsmouth FC in BUR vs POR?",
-   "sides": [
-    "Burnley FC +1.50",
-    "Portsmouth FC -1.50"
-   ],
-   "teams": [
-    "Burnley FC",
-    "Portsmouth FC"
-   ],
-   "player": null,
-   "mid": 88.5,
-   "yes_buy": 90,
-   "no_buy": 13,
-   "taken_at": "2026-10-30T16:30:09.020Z"
-  },
-  {
    "market_id": "1975284",
    "market": "Main spread",
    "group": "game",
@@ -129,26 +107,48 @@
    "taken_at": "2026-10-30T16:30:09.020Z"
   },
   {
-   "market_id": "1975319",
+   "market_id": "1975318",
    "market": "Main total",
    "group": "game",
    "mtype": "total",
    "period": "full_game",
-   "line": 2.5,
-   "question": "Will the total in BUR vs POR be more than 2.5?",
+   "line": 1.5,
+   "question": "Will the total in BUR vs POR be more than 1.5?",
    "sides": [
-    "Over 2.5",
-    "Under 2.5"
+    "Over 1.5",
+    "Under 1.5"
    ],
    "teams": [
     null,
     null
    ],
    "player": null,
-   "mid": 47,
-   "yes_buy": 48,
-   "no_buy": 54,
+   "mid": 73,
+   "yes_buy": 74,
+   "no_buy": 28,
    "taken_at": "2026-10-30T16:02:02.315Z"
+  },
+  {
+   "market_id": "1975285",
+   "market": "Alt spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 1.5,
+   "question": "Will the Burnley FC cover 1.5 vs the Portsmouth FC in BUR vs POR?",
+   "sides": [
+    "Burnley FC +1.50",
+    "Portsmouth FC -1.50"
+   ],
+   "teams": [
+    "Burnley FC",
+    "Portsmouth FC"
+   ],
+   "player": null,
+   "mid": 88.5,
+   "yes_buy": 90,
+   "no_buy": 13,
+   "taken_at": "2026-10-30T16:30:09.020Z"
   },
   {
    "market_id": "1975320",
@@ -195,25 +195,25 @@
    "taken_at": "2026-10-30T16:30:09.020Z"
   },
   {
-   "market_id": "1975318",
+   "market_id": "1975319",
    "market": "Alt total",
    "group": "game",
    "mtype": "total",
    "period": "full_game",
-   "line": 1.5,
-   "question": "Will the total in BUR vs POR be more than 1.5?",
+   "line": 2.5,
+   "question": "Will the total in BUR vs POR be more than 2.5?",
    "sides": [
-    "Over 1.5",
-    "Under 1.5"
+    "Over 2.5",
+    "Under 2.5"
    ],
    "teams": [
     null,
     null
    ],
    "player": null,
-   "mid": 73,
-   "yes_buy": 74,
-   "no_buy": 28,
+   "mid": 47,
+   "yes_buy": 48,
+   "no_buy": 54,
    "taken_at": "2026-10-30T16:02:02.315Z"
   },
   {
@@ -307,6 +307,46 @@
  ],
  "edges": [
   {
+   "key": "1975319:0",
+   "market_id": "1975319",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in BUR vs POR be more than 2.5?",
+   "side": "Over 2.5",
+   "open_chance": 48,
+   "now_chance": 28,
+   "open_odds": "+108",
+   "now_odds": "+257",
+   "edge": 20,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-31T15:24:24.269Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1975318:0",
+   "market_id": "1975318",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in BUR vs POR be more than 1.5?",
+   "side": "Over 1.5",
+   "open_chance": 74,
+   "now_chance": 55,
+   "open_odds": "-285",
+   "now_odds": "-122",
+   "edge": 19,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-31T15:24:24.269Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1870836:0",
    "market_id": "1870836",
    "market": "Moneyline",
@@ -314,10 +354,10 @@
    "question": "Will Portsmouth FC win against Burnley FC in the EFL Championship match scheduled for Oct 31, 2026?",
    "side": "Yes: Portsmouth FC win against Burnley FC in the EFL Championship match scheduled for Oct 31, 2026",
    "open_chance": 29,
-   "now_chance": 22,
+   "now_chance": 20,
    "open_odds": "+245",
-   "now_odds": "+355",
-   "edge": 7,
+   "now_odds": "+400",
+   "edge": 9,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -344,66 +384,6 @@
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-31T15:32:54.937Z",
    "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1975319:0",
-   "market_id": "1975319",
-   "market": "Main total",
-   "group": "game",
-   "question": "Will the total in BUR vs POR be more than 2.5?",
-   "side": "Over 2.5",
-   "open_chance": 48,
-   "now_chance": 39,
-   "open_odds": "+108",
-   "now_odds": "+156",
-   "edge": 9,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-31T15:24:24.269Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1975320:0",
-   "market_id": "1975320",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in BUR vs POR be more than 3.5?",
-   "side": "Over 3.5",
-   "open_chance": 27,
-   "now_chance": 19,
-   "open_odds": "+270",
-   "now_odds": "+426",
-   "edge": 8,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-31T15:24:24.269Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1975318:0",
-   "market_id": "1975318",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in BUR vs POR be more than 1.5?",
-   "side": "Over 1.5",
-   "open_chance": 74,
-   "now_chance": 66,
-   "open_odds": "-285",
-   "now_odds": "-194",
-   "edge": 8,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-10-31T15:24:24.269Z",
-   "status": "gone",
    "kalshi": null
   },
   {
@@ -469,6 +449,34 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1975319:0:big",
+   "key": "1975319:0",
+   "at": "2026-10-31T15:42:07.117Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Over 2.5",
+   "market": "Alt total",
+   "now_odds": "+257",
+   "now_chance": 28,
+   "edge": 20,
+   "text": "New big edge: Over 2.5 (Alt total), 20 points cheaper than open.",
+   "url": "https://polymarket.us/sports/eflch/eflch-bur-por-2026-10-31"
+  },
+  {
+   "id": "new_edge:1975318:0:big",
+   "key": "1975318:0",
+   "at": "2026-10-31T15:42:07.117Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Over 1.5",
+   "market": "Main total",
+   "now_odds": "-122",
+   "now_chance": 55,
+   "edge": 19,
+   "text": "New big edge: Over 1.5 (Main total), 19 points cheaper than open.",
+   "url": "https://polymarket.us/sports/eflch/eflch-bur-por-2026-10-31"
+  },
+  {
    "id": "new_edge:1870836:0:slight",
    "key": "1870836:0",
    "at": "2026-10-31T15:32:54.937Z",
@@ -511,20 +519,6 @@
    "url": "https://polymarket.us/sports/eflch/eflch-bur-por-2026-10-31"
   },
   {
-   "id": "gone:1975320:0:2026-10-31T15:24:24.269Z",
-   "key": "1975320:0",
-   "at": "2026-10-31T15:32:54.937Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Over 3.5",
-   "market": "Alt total",
-   "now_odds": "+426",
-   "now_chance": 19,
-   "edge": 8,
-   "text": "Edge gone: Over 3.5 (Alt total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/eflch/eflch-bur-por-2026-10-31"
-  },
-  {
    "id": "gone:1975318:0:2026-10-31T15:24:24.269Z",
    "key": "1975318:0",
    "at": "2026-10-31T15:32:54.937Z",
@@ -550,20 +544,6 @@
    "now_chance": 39,
    "edge": 9,
    "text": "New slight edge: Over 2.5 (Main total), 9 points cheaper than open.",
-   "url": "https://polymarket.us/sports/eflch/eflch-bur-por-2026-10-31"
-  },
-  {
-   "id": "new_edge:1975320:0:slight",
-   "key": "1975320:0",
-   "at": "2026-10-31T15:24:24.269Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Over 3.5",
-   "market": "Alt total",
-   "now_odds": "+426",
-   "now_chance": 19,
-   "edge": 8,
-   "text": "New slight edge: Over 3.5 (Alt total), 8 points cheaper than open.",
    "url": "https://polymarket.us/sports/eflch/eflch-bur-por-2026-10-31"
   },
   {
@@ -619,7 +599,9 @@
   "new_edge:1870832:1:slight",
   "gone:1975319:0:2026-10-31T15:24:24.269Z",
   "gone:1975320:0:2026-10-31T15:24:24.269Z",
-  "gone:1975318:0:2026-10-31T15:24:24.269Z"
+  "gone:1975318:0:2026-10-31T15:24:24.269Z",
+  "new_edge:1975319:0:big",
+  "new_edge:1975318:0:big"
  ],
  "kalshi_checked": null
 }

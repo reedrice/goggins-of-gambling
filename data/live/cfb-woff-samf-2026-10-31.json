@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-31T15:32:47.524Z"
+  "fetched_at": "2026-10-31T15:41:57.516Z"
  },
- "updated": "2026-10-31T15:32:47.446Z",
+ "updated": "2026-10-31T15:41:57.435Z",
  "open_taken_at": "2026-10-30T05:00:52.542Z",
  "thresholds": {
   "big": 10,
@@ -41,28 +41,6 @@
    "taken_at": "2026-10-30T05:00:52.542Z"
   },
   {
-   "market_id": "1980006",
-   "market": "Main total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 48.5,
-   "question": "Will the total in Wofford vs. Samford be more than 48.5?",
-   "sides": [
-    "Over 48.5",
-    "Under 48.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 49,
-   "yes_buy": 52,
-   "no_buy": 54,
-   "taken_at": "2026-10-30T23:25:03.535Z"
-  },
-  {
    "market_id": "1979314",
    "market": "Main spread",
    "group": "game",
@@ -83,9 +61,51 @@
    "yes_buy": 51.5,
    "no_buy": 52.5,
    "taken_at": "2026-10-30T19:48:06.910Z"
+  },
+  {
+   "market_id": "1980006",
+   "market": "Main total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 48.5,
+   "question": "Will the total in Wofford vs. Samford be more than 48.5?",
+   "sides": [
+    "Over 48.5",
+    "Under 48.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 49,
+   "yes_buy": 52,
+   "no_buy": 54,
+   "taken_at": "2026-10-30T23:25:03.535Z"
   }
  ],
  "edges": [
+  {
+   "key": "1980006:0",
+   "market_id": "1980006",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in Wofford vs. Samford be more than 48.5?",
+   "side": "Over 48.5",
+   "open_chance": 52,
+   "now_chance": 48,
+   "open_odds": "-108",
+   "now_odds": "+108",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-10-31T15:41:57.435Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1979314:0",
    "market_id": "1979314",
@@ -103,7 +123,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-31T14:48:50.691Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
