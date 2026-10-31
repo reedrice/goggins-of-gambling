@@ -3,15 +3,15 @@
   "league": "nhl",
   "query_date": "2026-10-31",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261031&limit=1000",
-  "fetched_at": "2026-10-31T19:33:02.802Z",
+  "fetched_at": "2026-10-31T19:42:58.731Z",
   "events": [
     {
       "id": "401892614",
       "name": "Chicago Blackhawks at Boston Bruins",
       "date": "2026-10-31T17:00Z",
       "status": {
-        "clock": 311,
-        "displayClock": "5:11",
+        "clock": 10,
+        "displayClock": "0:10",
         "period": 3,
         "type": {
           "id": "2",
@@ -19,8 +19,8 @@
           "state": "in",
           "completed": false,
           "description": "In Progress",
-          "detail": "5:11 - 3rd Period",
-          "shortDetail": "5:11 - 3rd"
+          "detail": "0:10 - 3rd Period",
+          "shortDetail": "0:10 - 3rd"
         }
       },
       "competitions": [
@@ -28,8 +28,8 @@
           "id": "401892614",
           "date": "2026-10-31T17:00Z",
           "status": {
-            "clock": 311,
-            "displayClock": "5:11",
+            "clock": 10,
+            "displayClock": "0:10",
             "period": 3,
             "type": {
               "id": "2",
@@ -37,8 +37,8 @@
               "state": "in",
               "completed": false,
               "description": "In Progress",
-              "detail": "5:11 - 3rd Period",
-              "shortDetail": "5:11 - 3rd"
+              "detail": "0:10 - 3rd Period",
+              "shortDetail": "0:10 - 3rd"
             }
           },
           "competitors": [
@@ -134,7 +134,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T19:33:02.802Z",
+      "fetched_at": "2026-10-31T19:42:58.731Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -144,17 +144,17 @@
       "name": "St. Louis Blues at Detroit Red Wings",
       "date": "2026-10-31T17:00Z",
       "status": {
-        "clock": 78,
-        "displayClock": "1:18",
+        "clock": 0,
+        "displayClock": "0:00",
         "period": 3,
         "type": {
-          "id": "2",
-          "name": "STATUS_IN_PROGRESS",
-          "state": "in",
-          "completed": false,
-          "description": "In Progress",
-          "detail": "1:18 - 3rd Period",
-          "shortDetail": "1:18 - 3rd"
+          "id": "3",
+          "name": "STATUS_FINAL",
+          "state": "post",
+          "completed": true,
+          "description": "Final",
+          "detail": "Final",
+          "shortDetail": "Final"
         }
       },
       "competitions": [
@@ -162,18 +162,236 @@
           "id": "401892615",
           "date": "2026-10-31T17:00Z",
           "status": {
-            "clock": 78,
-            "displayClock": "1:18",
+            "clock": 0,
+            "displayClock": "0:00",
             "period": 3,
             "type": {
-              "id": "2",
-              "name": "STATUS_IN_PROGRESS",
-              "state": "in",
-              "completed": false,
-              "description": "In Progress",
-              "detail": "1:18 - 3rd Period",
-              "shortDetail": "1:18 - 3rd"
-            }
+              "id": "3",
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            },
+            "featuredAthletes": [
+              {
+                "name": "firstStar",
+                "displayName": "First Star",
+                "shortDisplayName": "First Star",
+                "abbreviation": "FS",
+                "playerId": 4697408,
+                "athlete": {
+                  "id": "4697408",
+                  "fullName": "Justin Barron",
+                  "displayName": "Justin Barron",
+                  "shortName": "J. Barron",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/nhl/player/_/id/4697408"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/4697408.png",
+                  "jersey": "72",
+                  "position": "D",
+                  "team": {
+                    "id": "19"
+                  }
+                },
+                "team": {
+                  "id": "19"
+                },
+                "statistics": [
+                  {
+                    "name": "saves",
+                    "abbreviation": "SV",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "savePct",
+                    "abbreviation": "SV%",
+                    "displayValue": ".000"
+                  },
+                  {
+                    "name": "plusMinus",
+                    "abbreviation": "+/-",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "goals",
+                    "abbreviation": "G",
+                    "displayValue": "1"
+                  },
+                  {
+                    "name": "ytdGoals",
+                    "abbreviation": "YTDG",
+                    "displayValue": "2"
+                  },
+                  {
+                    "name": "assists",
+                    "abbreviation": "A",
+                    "displayValue": "1"
+                  },
+                  {
+                    "name": "points",
+                    "abbreviation": "PTS",
+                    "displayValue": "2"
+                  }
+                ],
+                "projections": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/hockey/leagues/nhl/events/401892615/competitions/401892615/competitors/19/roster/4697408/projections?lang=en&region=us"
+                }
+              },
+              {
+                "name": "secondStar",
+                "displayName": "Second Star",
+                "shortDisplayName": "Second Star",
+                "abbreviation": "SS",
+                "playerId": 4697385,
+                "athlete": {
+                  "id": "4697385",
+                  "fullName": "Lucas Raymond",
+                  "displayName": "Lucas Raymond",
+                  "shortName": "L. Raymond",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/nhl/player/_/id/4697385"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/4697385.png",
+                  "jersey": "23",
+                  "position": "LW",
+                  "team": {
+                    "id": "5"
+                  }
+                },
+                "team": {
+                  "id": "5"
+                },
+                "statistics": [
+                  {
+                    "name": "saves",
+                    "abbreviation": "SV",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "savePct",
+                    "abbreviation": "SV%",
+                    "displayValue": ".000"
+                  },
+                  {
+                    "name": "plusMinus",
+                    "abbreviation": "+/-",
+                    "displayValue": "1"
+                  },
+                  {
+                    "name": "goals",
+                    "abbreviation": "G",
+                    "displayValue": "1"
+                  },
+                  {
+                    "name": "ytdGoals",
+                    "abbreviation": "YTDG",
+                    "displayValue": "5"
+                  },
+                  {
+                    "name": "assists",
+                    "abbreviation": "A",
+                    "displayValue": "1"
+                  },
+                  {
+                    "name": "points",
+                    "abbreviation": "PTS",
+                    "displayValue": "2"
+                  }
+                ],
+                "projections": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/hockey/leagues/nhl/events/401892615/competitions/401892615/competitors/5/roster/4697385/projections?lang=en&region=us"
+                }
+              },
+              {
+                "name": "thirdStar",
+                "displayName": "Third Star",
+                "shortDisplayName": "Third Star",
+                "abbreviation": "TS",
+                "playerId": 5080171,
+                "athlete": {
+                  "id": "5080171",
+                  "fullName": "Jimmy Snuggerud",
+                  "displayName": "Jimmy Snuggerud",
+                  "shortName": "J. Snuggerud",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/nhl/player/_/id/5080171"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/5080171.png",
+                  "jersey": "21",
+                  "position": "RW",
+                  "team": {
+                    "id": "19"
+                  }
+                },
+                "team": {
+                  "id": "19"
+                },
+                "statistics": [
+                  {
+                    "name": "saves",
+                    "abbreviation": "SV",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "savePct",
+                    "abbreviation": "SV%",
+                    "displayValue": ".000"
+                  },
+                  {
+                    "name": "plusMinus",
+                    "abbreviation": "+/-",
+                    "displayValue": "2"
+                  },
+                  {
+                    "name": "goals",
+                    "abbreviation": "G",
+                    "displayValue": "1"
+                  },
+                  {
+                    "name": "ytdGoals",
+                    "abbreviation": "YTDG",
+                    "displayValue": "8"
+                  },
+                  {
+                    "name": "assists",
+                    "abbreviation": "A",
+                    "displayValue": "1"
+                  },
+                  {
+                    "name": "points",
+                    "abbreviation": "PTS",
+                    "displayValue": "2"
+                  }
+                ],
+                "projections": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/hockey/leagues/nhl/events/401892615/competitions/401892615/competitors/19/roster/5080171/projections?lang=en&region=us"
+                }
+              }
+            ]
           },
           "competitors": [
             {
@@ -268,7 +486,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T19:33:02.802Z",
+      "fetched_at": "2026-10-31T19:42:58.731Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -278,17 +496,17 @@
       "name": "Tampa Bay Lightning at Nashville Predators",
       "date": "2026-10-31T18:00Z",
       "status": {
-        "clock": 209,
-        "displayClock": "3:29",
+        "clock": 0,
+        "displayClock": "0:00",
         "period": 2,
         "type": {
-          "id": "2",
-          "name": "STATUS_IN_PROGRESS",
+          "id": "22",
+          "name": "STATUS_END_PERIOD",
           "state": "in",
           "completed": false,
-          "description": "In Progress",
-          "detail": "3:29 - 2nd Period",
-          "shortDetail": "3:29 - 2nd"
+          "description": "End of Period",
+          "detail": "End of 2nd Period",
+          "shortDetail": "End of 2nd"
         }
       },
       "competitions": [
@@ -296,24 +514,24 @@
           "id": "401892616",
           "date": "2026-10-31T18:00Z",
           "status": {
-            "clock": 209,
-            "displayClock": "3:29",
+            "clock": 0,
+            "displayClock": "0:00",
             "period": 2,
             "type": {
-              "id": "2",
-              "name": "STATUS_IN_PROGRESS",
+              "id": "22",
+              "name": "STATUS_END_PERIOD",
               "state": "in",
               "completed": false,
-              "description": "In Progress",
-              "detail": "3:29 - 2nd Period",
-              "shortDetail": "3:29 - 2nd"
+              "description": "End of Period",
+              "detail": "End of 2nd Period",
+              "shortDetail": "End of 2nd"
             }
           },
           "competitors": [
             {
               "id": "27",
               "homeAway": "home",
-              "score": "2",
+              "score": "3",
               "linescores": [
                 {
                   "value": 1,
@@ -321,8 +539,8 @@
                   "period": 1
                 },
                 {
-                  "value": 1,
-                  "displayValue": "1",
+                  "value": 2,
+                  "displayValue": "2",
                   "period": 2
                 }
               ],
@@ -392,7 +610,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T19:33:02.802Z",
+      "fetched_at": "2026-10-31T19:42:58.731Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -402,17 +620,17 @@
       "name": "Edmonton Oilers at New York Islanders",
       "date": "2026-10-31T18:00Z",
       "status": {
-        "clock": 200,
-        "displayClock": "3:20",
+        "clock": 0,
+        "displayClock": "0:00",
         "period": 2,
         "type": {
-          "id": "2",
-          "name": "STATUS_IN_PROGRESS",
+          "id": "22",
+          "name": "STATUS_END_PERIOD",
           "state": "in",
           "completed": false,
-          "description": "In Progress",
-          "detail": "3:20 - 2nd Period",
-          "shortDetail": "3:20 - 2nd"
+          "description": "End of Period",
+          "detail": "End of 2nd Period",
+          "shortDetail": "End of 2nd"
         }
       },
       "competitions": [
@@ -420,17 +638,17 @@
           "id": "401892617",
           "date": "2026-10-31T18:00Z",
           "status": {
-            "clock": 200,
-            "displayClock": "3:20",
+            "clock": 0,
+            "displayClock": "0:00",
             "period": 2,
             "type": {
-              "id": "2",
-              "name": "STATUS_IN_PROGRESS",
+              "id": "22",
+              "name": "STATUS_END_PERIOD",
               "state": "in",
               "completed": false,
-              "description": "In Progress",
-              "detail": "3:20 - 2nd Period",
-              "shortDetail": "3:20 - 2nd"
+              "description": "End of Period",
+              "detail": "End of 2nd Period",
+              "shortDetail": "End of 2nd"
             }
           },
           "competitors": [
@@ -462,7 +680,7 @@
             {
               "id": "6",
               "homeAway": "away",
-              "score": "2",
+              "score": "3",
               "linescores": [
                 {
                   "value": 0,
@@ -470,8 +688,8 @@
                   "period": 1
                 },
                 {
-                  "value": 2,
-                  "displayValue": "2",
+                  "value": 3,
+                  "displayValue": "3",
                   "period": 2
                 }
               ],
@@ -516,7 +734,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T19:33:02.802Z",
+      "fetched_at": "2026-10-31T19:42:58.731Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -623,7 +841,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T19:33:02.802Z",
+      "fetched_at": "2026-10-31T19:42:58.731Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -730,7 +948,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T19:33:02.802Z",
+      "fetched_at": "2026-10-31T19:42:58.731Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -837,7 +1055,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T19:33:02.802Z",
+      "fetched_at": "2026-10-31T19:42:58.731Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -944,7 +1162,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T19:33:02.802Z",
+      "fetched_at": "2026-10-31T19:42:58.731Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -1051,7 +1269,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T19:33:02.802Z",
+      "fetched_at": "2026-10-31T19:42:58.731Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -1158,7 +1376,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T19:33:02.802Z",
+      "fetched_at": "2026-10-31T19:42:58.731Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
