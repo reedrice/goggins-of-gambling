@@ -9,15 +9,37 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-10-31T18:47:13.135Z"
+  "fetched_at": "2026-10-31T18:56:23.913Z"
  },
- "updated": "2026-10-31T18:47:13.058Z",
+ "updated": "2026-10-31T18:56:23.716Z",
  "open_taken_at": "2026-10-30T05:00:45.064Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "1526833",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming football event Sacred Heart vs Stony Brook scheduled for October 31, 2026 at 4:00 PM UTC?",
+   "sides": [
+    "Pioneers win",
+    "Seawolves win"
+   ],
+   "teams": [
+    "Pioneers",
+    "Seawolves"
+   ],
+   "player": null,
+   "mid": 21,
+   "yes_buy": 21.5,
+   "no_buy": 79.5,
+   "taken_at": "2026-10-30T05:00:45.064Z"
+  },
   {
    "market_id": "1979484",
    "market": "Main total",
@@ -83,28 +105,6 @@
    "yes_buy": 64,
    "no_buy": 41,
    "taken_at": "2026-10-31T05:37:08.585Z"
-  },
-  {
-   "market_id": "1526833",
-   "market": "Moneyline",
-   "group": "game",
-   "mtype": "winner",
-   "period": "full_game",
-   "line": null,
-   "question": "Who will win in the upcoming football event Sacred Heart vs Stony Brook scheduled for October 31, 2026 at 4:00 PM UTC?",
-   "sides": [
-    "Pioneers win",
-    "Seawolves win"
-   ],
-   "teams": [
-    "Pioneers",
-    "Seawolves"
-   ],
-   "player": null,
-   "mid": 21,
-   "yes_buy": 21.5,
-   "no_buy": 79.5,
-   "taken_at": "2026-10-30T05:00:45.064Z"
   },
   {
    "market_id": "1977633",
@@ -477,7 +477,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-10-31T18:47:13.058Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -683,6 +683,20 @@
  ],
  "alerts": [
   {
+   "id": "gone:1979484:0:2026-10-31T18:47:13.058Z",
+   "key": "1979484:0",
+   "at": "2026-10-31T18:56:23.716Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 56.5",
+   "market": "Main total",
+   "now_odds": "+223",
+   "now_chance": 31,
+   "edge": 12,
+   "text": "Edge gone: Over 56.5 (Main total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-sacred-stbr-2026-10-31"
+  },
+  {
    "id": "new_edge:1979484:0:big",
    "key": "1979484:0",
    "at": "2026-10-31T18:47:13.058Z",
@@ -851,7 +865,8 @@
   "new_edge:1979484:1:slight",
   "gone:1979476:1:2026-10-31T18:27:14.946Z",
   "gone:1979484:1:2026-10-31T18:27:14.946Z",
-  "new_edge:1979484:0:big"
+  "new_edge:1979484:0:big",
+  "gone:1979484:0:2026-10-31T18:47:13.058Z"
  ],
  "kalshi_checked": null
 }
