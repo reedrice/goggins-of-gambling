@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187335",
-  "fetched_at": "2026-10-31T14:49:04.999Z",
+  "fetched_at": "2026-10-31T14:58:08.276Z",
   "tennis": true,
   "tennis_match": {
    "id": "187335",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Sebastian Baez (ARG) leads Damir Dzumhur (BIH) 6-6",
+     "text": "Sebastian Baez (ARG) is tied with Damir Dzumhur (BIH) 7-6 (7-4) 0-0",
      "type": "event"
     }
    ],
@@ -57,7 +57,12 @@
      "homeAway": "away",
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "tiebreak": 4,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -99,7 +104,12 @@
      "homeAway": "home",
      "linescores": [
       {
-       "value": 6
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -152,8 +162,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Damir Dzumhur",
@@ -165,13 +175,13 @@
    "abbr": "Sebastian Baez",
    "alias": "Sebastian Baez",
    "name": "Sebastian Baez",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T14:49:04.944Z",
+ "updated": "2026-10-31T14:58:08.211Z",
  "open_taken_at": "2026-10-30T20:35:31.861Z",
  "thresholds": {
   "big": 10,
@@ -245,6 +255,72 @@
    "taken_at": "2026-10-31T14:49:04.944Z"
   },
   {
+   "market_id": "1987195",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Sebastian Baez cover -1.5 vs the Damir Dzumhur in Sebastian Baez vs. Damir Dzumhur?",
+   "sides": [
+    "Sebastian Baez -1.50 (Sets)",
+    "Damir Dzumhur +1.50 (Sets)"
+   ],
+   "teams": [
+    "Sebastian Baez",
+    "Damir Dzumhur"
+   ],
+   "player": null,
+   "mid": 48.5,
+   "yes_buy": 49,
+   "no_buy": 52,
+   "taken_at": "2026-10-31T14:58:08.211Z"
+  },
+  {
+   "market_id": "1987206",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Sebastian Baez win set 2 against Damir Dzumhur?",
+   "sides": [
+    "Yes: Sebastian Baez win set 2 against Damir Dzumhur",
+    "No: Sebastian Baez win set 2 against Damir Dzumhur"
+   ],
+   "teams": [
+    "Sebastian Baez",
+    null
+   ],
+   "player": null,
+   "mid": 42,
+   "yes_buy": 43,
+   "no_buy": 59,
+   "taken_at": "2026-10-31T14:49:04.944Z"
+  },
+  {
+   "market_id": "1987191",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Sebastian Baez cover -4.5 vs the Damir Dzumhur in Sebastian Baez vs. Damir Dzumhur?",
+   "sides": [
+    "Sebastian Baez -4.50 (Games)",
+    "Damir Dzumhur +4.50 (Games)"
+   ],
+   "teams": [
+    "Sebastian Baez",
+    "Damir Dzumhur"
+   ],
+   "player": null,
+   "mid": 25.5,
+   "yes_buy": 26,
+   "no_buy": 75,
+   "taken_at": "2026-10-31T14:49:04.944Z"
+  },
+  {
    "market_id": "1987205",
    "market": "Set 1 winner",
    "group": "game",
@@ -289,28 +365,6 @@
    "taken_at": "2026-10-31T14:49:04.944Z"
   },
   {
-   "market_id": "1987206",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Sebastian Baez win set 2 against Damir Dzumhur?",
-   "sides": [
-    "Yes: Sebastian Baez win set 2 against Damir Dzumhur",
-    "No: Sebastian Baez win set 2 against Damir Dzumhur"
-   ],
-   "teams": [
-    "Sebastian Baez",
-    null
-   ],
-   "player": null,
-   "mid": 42,
-   "yes_buy": 43,
-   "no_buy": 59,
-   "taken_at": "2026-10-31T14:49:04.944Z"
-  },
-  {
    "market_id": "1987189",
    "market": "Games spread",
    "group": "game",
@@ -330,28 +384,6 @@
    "mid": 33.5,
    "yes_buy": 34,
    "no_buy": 67,
-   "taken_at": "2026-10-31T14:49:04.944Z"
-  },
-  {
-   "market_id": "1987191",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Sebastian Baez cover -4.5 vs the Damir Dzumhur in Sebastian Baez vs. Damir Dzumhur?",
-   "sides": [
-    "Sebastian Baez -4.50 (Games)",
-    "Damir Dzumhur +4.50 (Games)"
-   ],
-   "teams": [
-    "Sebastian Baez",
-    "Damir Dzumhur"
-   ],
-   "player": null,
-   "mid": 25.5,
-   "yes_buy": 26,
-   "no_buy": 75,
    "taken_at": "2026-10-31T14:49:04.944Z"
   },
   {
@@ -401,6 +433,46 @@
  ],
  "edges": [
   {
+   "key": "1985220:1",
+   "market_id": "1985220",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Sebastian Baez vs Damir Dzumhur scheduled for October 31, 2026 at 12:20 PM UTC?",
+   "side": "Damir Dzumhur win",
+   "open_chance": 56,
+   "now_chance": 34,
+   "open_odds": "-127",
+   "now_odds": "+194",
+   "edge": 22,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Damir Dzumhur trailing in sets",
+   "context": "Damir Dzumhur 6, 0 · Sebastian Baez 7, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-31T14:58:08.211Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1987206:1",
+   "market_id": "1987206",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Sebastian Baez win set 2 against Damir Dzumhur?",
+   "side": "No: Sebastian Baez win set 2 against Damir Dzumhur",
+   "open_chance": 59,
+   "now_chance": 54,
+   "open_odds": "-144",
+   "now_odds": "-117",
+   "edge": 5,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Sebastian Baez not above the games spread right now",
+   "context": "Damir Dzumhur 6, 0 · Sebastian Baez 7, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-31T14:58:08.211Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1985220:0",
    "market_id": "1985220",
    "market": "Moneyline",
@@ -417,27 +489,7 @@
    "reason": null,
    "context": "Damir Dzumhur 6 · Sebastian Baez 6 · 1st Set (games by set)",
    "first_seen": "2026-10-31T01:59:20.105Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1987205:1",
-   "market_id": "1987205",
-   "market": "Set 1 winner",
-   "group": "game",
-   "question": "Will Sebastian Baez win set 1 against Damir Dzumhur?",
-   "side": "No: Sebastian Baez win set 1 against Damir Dzumhur",
-   "open_chance": 58,
-   "now_chance": 54,
-   "open_odds": "-138",
-   "now_odds": "-117",
-   "edge": 4,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Sebastian Baez not above the games spread right now",
-   "context": "Damir Dzumhur 6 · Sebastian Baez 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-31T14:49:04.944Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -459,9 +511,43 @@
    "first_seen": "2026-10-31T08:12:25.064Z",
    "status": "gone",
    "kalshi": null
+  },
+  {
+   "key": "1987205:1",
+   "market_id": "1987205",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Sebastian Baez win set 1 against Damir Dzumhur?",
+   "side": "No: Sebastian Baez win set 1 against Damir Dzumhur",
+   "open_chance": 58,
+   "now_chance": 54,
+   "open_odds": "-138",
+   "now_odds": "-117",
+   "edge": 4,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Sebastian Baez not above the games spread right now",
+   "context": "Damir Dzumhur 6 · Sebastian Baez 6 · 1st Set (games by set)",
+   "first_seen": "2026-10-31T14:49:04.944Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1985220:0:2026-10-31T01:59:20.105Z",
+   "key": "1985220:0",
+   "at": "2026-10-31T14:58:08.211Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Sebastian Baez win",
+   "market": "Moneyline",
+   "now_odds": "+138",
+   "now_chance": 42,
+   "edge": 7,
+   "text": "Edge gone: Sebastian Baez win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-sebbae-damdzu-2026-10-31"
+  },
   {
    "id": "new_edge:1985220:0:slight",
    "key": "1985220:0",
@@ -478,7 +564,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1985220:0:slight"
+  "new_edge:1985220:0:slight",
+  "gone:1985220:0:2026-10-31T01:59:20.105Z"
  ],
  "kalshi_checked": null
 }

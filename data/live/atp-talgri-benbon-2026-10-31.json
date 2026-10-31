@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187341",
-  "fetched_at": "2026-10-31T14:49:04.719Z",
+  "fetched_at": "2026-10-31T14:58:08.143Z",
   "tennis": true,
   "tennis_match": {
    "id": "187341",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "detail": "3rd Set",
+     "shortDetail": "3rd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Tallon Griekspoor (NED) is tied with Benjamin Bonzi (FRA) 3-6 6-5",
+     "text": "Tallon Griekspoor (NED) leads Benjamin Bonzi (FRA) 3-6 7-6 (7-5) 0-0",
      "type": "event"
     }
    ],
@@ -61,7 +61,12 @@
        "winner": true
       },
       {
-       "value": 5
+       "value": 6,
+       "tiebreak": 5,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -107,7 +112,12 @@
        "winner": false
       },
       {
-       "value": 6
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -160,8 +170,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "period": 3,
+  "clock": "3rd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Benjamin Bonzi",
@@ -173,13 +183,13 @@
    "abbr": "Tallon Griekspoor",
    "alias": "Tallon Griekspoor",
    "name": "Tallon Griekspoor",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T14:49:04.637Z",
+ "updated": "2026-10-31T14:58:08.059Z",
  "open_taken_at": "2026-10-30T20:35:31.687Z",
  "thresholds": {
   "big": 10,
@@ -251,6 +261,50 @@
    "yes_buy": 76,
    "no_buy": 25,
    "taken_at": "2026-10-31T14:49:04.637Z"
+  },
+  {
+   "market_id": "1987208",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Tallon Griekspoor cover 1.5 vs the Benjamin Bonzi in Tallon Griekspoor vs. Benjamin Bonzi?",
+   "sides": [
+    "Tallon Griekspoor +1.50 (Games)",
+    "Benjamin Bonzi -1.50 (Games)"
+   ],
+   "teams": [
+    "Tallon Griekspoor",
+    "Benjamin Bonzi"
+   ],
+   "player": null,
+   "mid": 30.5,
+   "yes_buy": 31,
+   "no_buy": 70,
+   "taken_at": "2026-10-31T14:49:04.637Z"
+  },
+  {
+   "market_id": "1987207",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Tallon Griekspoor cover -1.5 vs the Benjamin Bonzi in Tallon Griekspoor vs. Benjamin Bonzi?",
+   "sides": [
+    "Tallon Griekspoor -1.50 (Games)",
+    "Benjamin Bonzi +1.50 (Games)"
+   ],
+   "teams": [
+    "Tallon Griekspoor",
+    "Benjamin Bonzi"
+   ],
+   "player": null,
+   "mid": 55,
+   "yes_buy": 57,
+   "no_buy": 47,
+   "taken_at": "2026-10-31T04:02:26.332Z"
   },
   {
    "market_id": "1987217",
@@ -341,28 +395,6 @@
    "taken_at": "2026-10-31T14:49:04.637Z"
   },
   {
-   "market_id": "1987208",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Tallon Griekspoor cover 1.5 vs the Benjamin Bonzi in Tallon Griekspoor vs. Benjamin Bonzi?",
-   "sides": [
-    "Tallon Griekspoor +1.50 (Games)",
-    "Benjamin Bonzi -1.50 (Games)"
-   ],
-   "teams": [
-    "Tallon Griekspoor",
-    "Benjamin Bonzi"
-   ],
-   "player": null,
-   "mid": 30.5,
-   "yes_buy": 31,
-   "no_buy": 70,
-   "taken_at": "2026-10-31T14:49:04.637Z"
-  },
-  {
    "market_id": "1987223",
    "market": "Set 1 winner",
    "group": "game",
@@ -383,31 +415,29 @@
    "yes_buy": 60,
    "no_buy": 45,
    "taken_at": "2026-10-31T02:50:06.065Z"
-  },
-  {
-   "market_id": "1987207",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Tallon Griekspoor cover -1.5 vs the Benjamin Bonzi in Tallon Griekspoor vs. Benjamin Bonzi?",
-   "sides": [
-    "Tallon Griekspoor -1.50 (Games)",
-    "Benjamin Bonzi +1.50 (Games)"
-   ],
-   "teams": [
-    "Tallon Griekspoor",
-    "Benjamin Bonzi"
-   ],
-   "player": null,
-   "mid": 55,
-   "yes_buy": 57,
-   "no_buy": 47,
-   "taken_at": "2026-10-31T04:02:26.332Z"
   }
  ],
  "edges": [
+  {
+   "key": "1987208:1",
+   "market_id": "1987208",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Tallon Griekspoor cover 1.5 vs the Benjamin Bonzi in Tallon Griekspoor vs. Benjamin Bonzi?",
+   "side": "Benjamin Bonzi -1.50 (Games)",
+   "open_chance": 70,
+   "now_chance": 44,
+   "open_odds": "-233",
+   "now_odds": "+127",
+   "edge": 26,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (26 pts), likely news",
+   "context": "Benjamin Bonzi 6, 6, 0 · Tallon Griekspoor 3, 7, 0 · 3rd Set (games by set)",
+   "first_seen": "2026-10-31T14:58:08.059Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "1985213:0",
    "market_id": "1985213",
@@ -416,14 +446,14 @@
    "question": "Who will win in the upcoming atp event Tallon Griekspoor vs Benjamin Bonzi scheduled for October 31, 2026 at 12:10 PM UTC?",
    "side": "Tallon Griekspoor win",
    "open_chance": 63,
-   "now_chance": 29,
+   "now_chance": 54,
    "open_odds": "-170",
-   "now_odds": "+245",
-   "edge": 34,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Tallon Griekspoor trailing in sets",
-   "context": "Benjamin Bonzi 6, 5 · Tallon Griekspoor 3, 6 · 2nd Set (games by set)",
+   "now_odds": "-117",
+   "edge": 9,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Benjamin Bonzi 6, 6, 0 · Tallon Griekspoor 3, 7, 0 · 3rd Set (games by set)",
    "first_seen": "2026-10-31T14:49:04.637Z",
    "status": "open",
    "kalshi": null
@@ -449,7 +479,39 @@
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "news:1987208:1",
+   "key": "1987208:1",
+   "at": "2026-10-31T14:58:08.059Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Benjamin Bonzi -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+127",
+   "now_chance": 44,
+   "edge": 26,
+   "text": "Big move, likely news: Benjamin Bonzi -1.50 (Games) (Games spread) is 26 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-talgri-benbon-2026-10-31"
+  },
+  {
+   "id": "new_edge:1985213:0:slight",
+   "key": "1985213:0",
+   "at": "2026-10-31T14:58:08.059Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Tallon Griekspoor win",
+   "market": "Moneyline",
+   "now_odds": "-117",
+   "now_chance": 54,
+   "edge": 9,
+   "text": "New slight edge: Tallon Griekspoor win (Moneyline), 9 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-talgri-benbon-2026-10-31"
+  }
+ ],
+ "alert_seen": [
+  "news:1987208:1",
+  "new_edge:1985213:0:slight"
+ ],
  "kalshi_checked": null
 }

@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185158",
-  "fetched_at": "2026-10-31T14:49:02.273Z",
+  "fetched_at": "2026-10-31T14:58:05.490Z",
   "tennis": true,
   "tennis_match": {
    "id": "185158",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(6) Taylor Fritz (USA) leads Valentin Vacherot (MON) 5-4",
+     "text": "Valentin Vacherot (MON) leads (6) Taylor Fritz (USA) 6-6 (0-1)",
      "type": "event"
     }
    ],
@@ -55,13 +55,13 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
      "curatedRank": {
       "current": 6
      },
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "tiebreak": 1
       }
      ],
      "athlete": {
@@ -101,10 +101,10 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
      "linescores": [
       {
-       "value": 4
+       "value": 6,
+       "tiebreak": 0
       }
      ],
      "athlete": {
@@ -139,11 +139,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 23,
    "type": {
     "id": "1",
@@ -181,7 +176,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T14:49:02.191Z",
+ "updated": "2026-10-31T14:58:05.377Z",
  "open_taken_at": "2026-10-30T16:38:19.327Z",
  "thresholds": {
   "big": 10,
@@ -233,28 +228,6 @@
    "taken_at": "2026-10-31T14:49:02.191Z"
   },
   {
-   "market_id": "1980120",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Valentin Vacherot cover 4.5 vs the Taylor Fritz in Valentin Vacherot vs. Taylor Fritz?",
-   "sides": [
-    "Valentin Vacherot +4.50 (Games)",
-    "Taylor Fritz -4.50 (Games)"
-   ],
-   "teams": [
-    "Valentin Vacherot",
-    "Taylor Fritz"
-   ],
-   "player": null,
-   "mid": 69.5,
-   "yes_buy": 72,
-   "no_buy": 33,
-   "taken_at": "2026-10-30T18:39:10.191Z"
-  },
-  {
    "market_id": "1980126",
    "market": "Games total",
    "group": "game",
@@ -275,6 +248,28 @@
    "yes_buy": 59,
    "no_buy": 42,
    "taken_at": "2026-10-30T19:32:22.466Z"
+  },
+  {
+   "market_id": "1980120",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Valentin Vacherot cover 4.5 vs the Taylor Fritz in Valentin Vacherot vs. Taylor Fritz?",
+   "sides": [
+    "Valentin Vacherot +4.50 (Games)",
+    "Taylor Fritz -4.50 (Games)"
+   ],
+   "teams": [
+    "Valentin Vacherot",
+    "Taylor Fritz"
+   ],
+   "player": null,
+   "mid": 69.5,
+   "yes_buy": 72,
+   "no_buy": 33,
+   "taken_at": "2026-10-30T18:39:10.191Z"
   },
   {
    "market_id": "1980124",
@@ -365,28 +360,6 @@
    "taken_at": "2026-10-31T14:49:02.191Z"
   },
   {
-   "market_id": "1980133",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Valentin Vacherot win set 1 against Taylor Fritz?",
-   "sides": [
-    "Yes: Valentin Vacherot win set 1 against Taylor Fritz",
-    "No: Valentin Vacherot win set 1 against Taylor Fritz"
-   ],
-   "teams": [
-    "Valentin Vacherot",
-    null
-   ],
-   "player": null,
-   "mid": 33,
-   "yes_buy": 36,
-   "no_buy": 70,
-   "taken_at": "2026-10-30T21:09:41.429Z"
-  },
-  {
    "market_id": "1980118",
    "market": "Games spread",
    "group": "game",
@@ -407,6 +380,28 @@
    "yes_buy": 31,
    "no_buy": 71,
    "taken_at": "2026-10-31T14:49:02.191Z"
+  },
+  {
+   "market_id": "1980133",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Valentin Vacherot win set 1 against Taylor Fritz?",
+   "sides": [
+    "Yes: Valentin Vacherot win set 1 against Taylor Fritz",
+    "No: Valentin Vacherot win set 1 against Taylor Fritz"
+   ],
+   "teams": [
+    "Valentin Vacherot",
+    null
+   ],
+   "player": null,
+   "mid": 33,
+   "yes_buy": 36,
+   "no_buy": 70,
+   "taken_at": "2026-10-30T21:09:41.429Z"
   },
   {
    "market_id": "1980117",
@@ -506,35 +501,15 @@
    "question": "Will the total in Valentin Vacherot vs. Taylor Fritz be more than 22.5?",
    "side": "Under 22.5 (Games)",
    "open_chance": 42,
-   "now_chance": 24,
+   "now_chance": 20,
    "open_odds": "+138",
-   "now_odds": "+317",
-   "edge": 18,
+   "now_odds": "+400",
+   "edge": 22,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Taylor Fritz 5 · Valentin Vacherot 4 · 1st Set (games by set)",
+   "context": "Taylor Fritz 6 · Valentin Vacherot 6 · 1st Set (games by set)",
    "first_seen": "2026-10-31T14:49:02.191Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1980120:1",
-   "market_id": "1980120",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Valentin Vacherot cover 4.5 vs the Taylor Fritz in Valentin Vacherot vs. Taylor Fritz?",
-   "side": "Taylor Fritz -4.50 (Games)",
-   "open_chance": 33,
-   "now_chance": 17,
-   "open_odds": "+203",
-   "now_odds": "+488",
-   "edge": 16,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Taylor Fritz not above the games spread right now",
-   "context": "Taylor Fritz 5 · Valentin Vacherot 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-31T02:14:34.467Z",
    "status": "open",
    "kalshi": null
   },
@@ -546,15 +521,55 @@
    "question": "Who will win in the upcoming atp event Valentin Vacherot vs Taylor Fritz scheduled for October 31, 2026 at 2:00 PM UTC?",
    "side": "Valentin Vacherot win",
    "open_chance": 35,
-   "now_chance": 29,
+   "now_chance": 23,
    "open_odds": "+186",
-   "now_odds": "+245",
-   "edge": 6,
-   "tier": "slight",
+   "now_odds": "+335",
+   "edge": 12,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Taylor Fritz 5 · Valentin Vacherot 4 · 1st Set (games by set)",
+   "context": "Taylor Fritz 6 · Valentin Vacherot 6 · 1st Set (games by set)",
    "first_seen": "2026-10-30T18:06:39.055Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1980133:0",
+   "market_id": "1980133",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Valentin Vacherot win set 1 against Taylor Fritz?",
+   "side": "Yes: Valentin Vacherot win set 1 against Taylor Fritz",
+   "open_chance": 36,
+   "now_chance": 24,
+   "open_odds": "+178",
+   "now_odds": "+317",
+   "edge": 12,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Valentin Vacherot not above the games spread right now",
+   "context": "Taylor Fritz 6 · Valentin Vacherot 6 · 1st Set (games by set)",
+   "first_seen": "2026-10-31T14:58:05.377Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1980120:1",
+   "market_id": "1980120",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Valentin Vacherot cover 4.5 vs the Taylor Fritz in Valentin Vacherot vs. Taylor Fritz?",
+   "side": "Taylor Fritz -4.50 (Games)",
+   "open_chance": 33,
+   "now_chance": 26,
+   "open_odds": "+203",
+   "now_odds": "+285",
+   "edge": 7,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Taylor Fritz not above the games spread right now",
+   "context": "Taylor Fritz 6 · Valentin Vacherot 6 · 1st Set (games by set)",
+   "first_seen": "2026-10-31T02:14:34.467Z",
    "status": "open",
    "kalshi": null
   },
@@ -573,8 +588,48 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Taylor Fritz 5 · Valentin Vacherot 4 · 1st Set (games by set)",
+   "context": "Taylor Fritz 6 · Valentin Vacherot 6 · 1st Set (games by set)",
    "first_seen": "2026-10-31T14:49:02.191Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1980134:0",
+   "market_id": "1980134",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Valentin Vacherot win set 2 against Taylor Fritz?",
+   "side": "Yes: Valentin Vacherot win set 2 against Taylor Fritz",
+   "open_chance": 37,
+   "now_chance": 33,
+   "open_odds": "+170",
+   "now_odds": "+203",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Taylor Fritz 6 · Valentin Vacherot 6 · 1st Set (games by set)",
+   "first_seen": "2026-10-31T14:58:05.377Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1980117:0",
+   "market_id": "1980117",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Valentin Vacherot cover -1.5 vs the Taylor Fritz in Valentin Vacherot vs. Taylor Fritz?",
+   "side": "Valentin Vacherot -1.50 (Games)",
+   "open_chance": 26,
+   "now_chance": 22,
+   "open_odds": "+285",
+   "now_odds": "+355",
+   "edge": 4,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Valentin Vacherot not above the games spread right now",
+   "context": "Taylor Fritz 6 · Valentin Vacherot 6 · 1st Set (games by set)",
+   "first_seen": "2026-10-31T14:58:05.377Z",
    "status": "open",
    "kalshi": null
   },
@@ -595,7 +650,7 @@
    "reason": "Explained by score: Valentin Vacherot not above the games spread right now",
    "context": "Taylor Fritz 5 · Valentin Vacherot 4 · 1st Set (games by set)",
    "first_seen": "2026-10-31T14:49:02.191Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -615,11 +670,39 @@
    "reason": "Explained by score: Taylor Fritz not above the sets spread right now",
    "context": "Taylor Fritz 5 · Valentin Vacherot 4 · 1st Set (games by set)",
    "first_seen": "2026-10-31T14:49:02.191Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1977415:0:big",
+   "key": "1977415:0",
+   "at": "2026-10-31T14:58:05.377Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Valentin Vacherot win",
+   "market": "Moneyline",
+   "now_odds": "+335",
+   "now_chance": 23,
+   "edge": 12,
+   "text": "New big edge: Valentin Vacherot win (Moneyline), 12 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-valvac-tayfri-2026-10-31"
+  },
+  {
+   "id": "new_edge:1980134:0:slight",
+   "key": "1980134:0",
+   "at": "2026-10-31T14:58:05.377Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Yes: Valentin Vacherot win set 2 against Taylor Fritz",
+   "market": "Set 2 winner",
+   "now_odds": "+203",
+   "now_chance": 33,
+   "edge": 4,
+   "text": "New slight edge: Yes: Valentin Vacherot win set 2 against Taylor Fritz (Set 2 winner), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-valvac-tayfri-2026-10-31"
+  },
   {
    "id": "new_edge:1980126:1:big",
    "key": "1980126:1",
@@ -666,7 +749,9 @@
  "alert_seen": [
   "new_edge:1980126:1:big",
   "new_edge:1977415:0:slight",
-  "new_edge:1980128:1:slight"
+  "new_edge:1980128:1:slight",
+  "new_edge:1977415:0:big",
+  "new_edge:1980134:0:slight"
  ],
  "kalshi_checked": null
 }
