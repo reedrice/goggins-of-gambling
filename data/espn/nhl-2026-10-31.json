@@ -3,45 +3,100 @@
   "league": "nhl",
   "query_date": "2026-10-31",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261031&limit=1000",
-  "fetched_at": "2026-10-31T16:58:06.613Z",
+  "fetched_at": "2026-10-31T17:07:50.541Z",
   "events": [
     {
       "id": "401892614",
       "name": "Chicago Blackhawks at Boston Bruins",
       "date": "2026-10-31T17:00Z",
       "status": {
-        "clock": 0,
-        "displayClock": "0:00",
-        "period": 0,
+        "clock": 1200,
+        "displayClock": "20:00",
+        "period": 1,
         "type": {
-          "id": "1",
-          "name": "STATUS_SCHEDULED",
-          "state": "pre",
+          "id": "2",
+          "name": "STATUS_IN_PROGRESS",
+          "state": "in",
           "completed": false,
-          "description": "Scheduled",
-          "detail": "Sat, October 31st at 1:00 PM EDT",
-          "shortDetail": "10/31 - 1:00 PM EDT"
+          "description": "In Progress",
+          "detail": "20:00 - 1st Period",
+          "shortDetail": "20:00 - 1st"
         }
       },
       "boxscore": {
-        "players": []
+        "players": [
+          {
+            "team": {
+              "abbreviation": "CHI"
+            },
+            "statistics": [
+              {
+                "name": "forwards",
+                "keys": [],
+                "athletes": []
+              },
+              {
+                "name": "defenses",
+                "keys": [],
+                "athletes": []
+              },
+              {
+                "name": "skaters",
+                "keys": [],
+                "athletes": []
+              },
+              {
+                "name": "goalies",
+                "keys": [],
+                "athletes": []
+              }
+            ]
+          },
+          {
+            "team": {
+              "abbreviation": "BOS"
+            },
+            "statistics": [
+              {
+                "name": "forwards",
+                "keys": [],
+                "athletes": []
+              },
+              {
+                "name": "defenses",
+                "keys": [],
+                "athletes": []
+              },
+              {
+                "name": "skaters",
+                "keys": [],
+                "athletes": []
+              },
+              {
+                "name": "goalies",
+                "keys": [],
+                "athletes": []
+              }
+            ]
+          }
+        ]
       },
       "competitions": [
         {
           "id": "401892614",
           "date": "2026-10-31T17:00Z",
           "status": {
-            "clock": 0,
-            "displayClock": "0:00",
-            "period": 0,
+            "clock": 1200,
+            "displayClock": "20:00",
+            "period": 1,
             "type": {
-              "id": "1",
-              "name": "STATUS_SCHEDULED",
-              "state": "pre",
+              "id": "2",
+              "name": "STATUS_IN_PROGRESS",
+              "state": "in",
               "completed": false,
-              "description": "Scheduled",
-              "detail": "Sat, October 31st at 1:00 PM EDT",
-              "shortDetail": "10/31 - 1:00 PM EDT"
+              "description": "In Progress",
+              "detail": "20:00 - 1st Period",
+              "shortDetail": "20:00 - 1st"
             }
           },
           "competitors": [
@@ -49,6 +104,13 @@
               "id": "1",
               "homeAway": "home",
               "score": "0",
+              "linescores": [
+                {
+                  "value": 0,
+                  "displayValue": "0",
+                  "period": 1
+                }
+              ],
               "team": {
                 "id": "1",
                 "abbreviation": "BOS",
@@ -62,6 +124,13 @@
               "id": "4",
               "homeAway": "away",
               "score": "0",
+              "linescores": [
+                {
+                  "value": 0,
+                  "displayValue": "0",
+                  "period": 1
+                }
+              ],
               "team": {
                 "id": "4",
                 "abbreviation": "CHI",
@@ -101,14 +170,7 @@
           "confirmed": false
         }
       ],
-      "book_lines": [
-        {
-          "provider": "DraftKings",
-          "details": "BOS -230",
-          "spread": -1.5,
-          "total": 6.5
-        }
-      ],
+      "book_lines": [],
       "coverage": {
         "injuries": "published_report",
         "starters": "unverified",
@@ -117,9 +179,9 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T16:58:06.613Z",
+      "fetched_at": "2026-10-31T17:07:50.541Z",
       "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/summary?event=401892614",
-      "details_checked_at": "2026-10-31T16:58:06.613Z",
+      "details_checked_at": "2026-10-31T17:07:50.541Z",
       "details_available": true
     },
     {
@@ -195,6 +257,12 @@
       "injuries": [
         {
           "team": "DET",
+          "player": "Dylan Larkin",
+          "position": "C",
+          "status": "Suspension"
+        },
+        {
+          "team": "DET",
           "player": "Mason Appleton",
           "position": "C",
           "status": "Injured Reserve"
@@ -210,12 +278,6 @@
           "player": "Albert Johansson",
           "position": "D",
           "status": "Out"
-        },
-        {
-          "team": "DET",
-          "player": "Dylan Larkin",
-          "position": "C",
-          "status": "Injured Reserve"
         },
         {
           "team": "DET",
@@ -288,9 +350,9 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T16:58:06.613Z",
+      "fetched_at": "2026-10-31T17:07:50.541Z",
       "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/summary?event=401892615",
-      "details_checked_at": "2026-10-31T16:58:06.613Z",
+      "details_checked_at": "2026-10-31T17:07:50.541Z",
       "details_available": true
     },
     {
@@ -411,9 +473,9 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T16:58:06.613Z",
+      "fetched_at": "2026-10-31T17:07:50.541Z",
       "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/summary?event=401892616",
-      "details_checked_at": "2026-10-31T16:58:06.613Z",
+      "details_checked_at": "2026-10-31T17:07:50.541Z",
       "details_available": true
     },
     {
@@ -491,7 +553,7 @@
           "team": "NYI",
           "player": "Ryan Pulock",
           "position": "D",
-          "status": "Day-To-Day"
+          "status": "Out"
         },
         {
           "team": "NYI",
@@ -582,9 +644,9 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T16:58:06.613Z",
+      "fetched_at": "2026-10-31T17:07:50.541Z",
       "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/summary?event=401892617",
-      "details_checked_at": "2026-10-31T16:58:06.613Z",
+      "details_checked_at": "2026-10-31T17:07:50.541Z",
       "details_available": true
     },
     {
@@ -753,9 +815,9 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T16:58:06.613Z",
+      "fetched_at": "2026-10-31T17:07:50.541Z",
       "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/summary?event=401892618",
-      "details_checked_at": "2026-10-31T16:58:06.613Z",
+      "details_checked_at": "2026-10-31T17:07:50.541Z",
       "details_available": true
     },
     {
@@ -918,9 +980,9 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T16:58:06.613Z",
+      "fetched_at": "2026-10-31T17:07:50.541Z",
       "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/summary?event=401892619",
-      "details_checked_at": "2026-10-31T16:58:06.613Z",
+      "details_checked_at": "2026-10-31T17:07:50.541Z",
       "details_available": true
     },
     {
@@ -1089,9 +1151,9 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T16:58:06.613Z",
+      "fetched_at": "2026-10-31T17:07:50.541Z",
       "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/summary?event=401892620",
-      "details_checked_at": "2026-10-31T16:58:06.613Z",
+      "details_checked_at": "2026-10-31T17:07:50.541Z",
       "details_available": true
     },
     {
@@ -1111,6 +1173,9 @@
           "detail": "Sat, October 31st at 7:00 PM EDT",
           "shortDetail": "10/31 - 7:00 PM EDT"
         }
+      },
+      "boxscore": {
+        "players": []
       },
       "competitions": [
         {
@@ -1161,7 +1226,62 @@
         }
       ],
       "player_usage": [],
-      "injuries": [],
+      "injuries": [
+        {
+          "team": "VAN",
+          "player": "Filip Chytil",
+          "position": "C",
+          "status": "Injured Reserve"
+        },
+        {
+          "team": "VAN",
+          "player": "Akil Thomas",
+          "position": "C",
+          "status": "Injured Reserve"
+        },
+        {
+          "team": "VAN",
+          "player": "Mackenzie MacEachern",
+          "position": "LW",
+          "status": "Injured Reserve"
+        },
+        {
+          "team": "VAN",
+          "player": "Thatcher Demko",
+          "position": "G",
+          "status": "Injured Reserve"
+        },
+        {
+          "team": "TOR",
+          "player": "Kirill Marchenko",
+          "position": "RW",
+          "status": "Injured Reserve"
+        },
+        {
+          "team": "TOR",
+          "player": "Miles Wood",
+          "position": "LW",
+          "status": "Injured Reserve"
+        },
+        {
+          "team": "TOR",
+          "player": "Nick Blankenburg",
+          "position": "D",
+          "status": "Injured Reserve"
+        },
+        {
+          "team": "TOR",
+          "player": "Marshall Rifai",
+          "position": "D",
+          "status": "Injured Reserve"
+        },
+        {
+          "team": "TOR",
+          "player": "John Tavares",
+          "position": "C",
+          "status": "Injured Reserve"
+        }
+      ],
       "starters": [],
       "starting_goalies": [],
       "probables": [
@@ -1189,17 +1309,17 @@
         }
       ],
       "coverage": {
-        "injuries": "unavailable",
+        "injuries": "published_report",
         "starters": "unverified",
         "goalies": "unverified",
         "hockey_lines": "unavailable",
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T16:58:06.613Z",
-      "details_source_url": null,
-      "details_checked_at": null,
-      "details_available": false
+      "fetched_at": "2026-10-31T17:07:50.541Z",
+      "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/summary?event=401892621",
+      "details_checked_at": "2026-10-31T17:07:50.541Z",
+      "details_available": true
     },
     {
       "id": "401892622",
@@ -1303,7 +1423,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T16:58:06.613Z",
+      "fetched_at": "2026-10-31T17:07:50.541Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -1410,7 +1530,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261031&limit=1000",
-      "fetched_at": "2026-10-31T16:58:06.613Z",
+      "fetched_at": "2026-10-31T17:07:50.541Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
