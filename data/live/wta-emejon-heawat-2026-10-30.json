@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187310",
-  "fetched_at": "2026-10-31T03:46:22.633Z",
+  "fetched_at": "2026-10-31T03:55:01.281Z",
   "tennis": true,
   "tennis_match": {
    "id": "187310",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Emerson Jones (AUS) leads Heather Watson (GBR) 4-1",
+     "text": "Emerson Jones (AUS) is tied with Heather Watson (GBR) 6-1 0-0",
      "type": "event"
     }
    ],
@@ -58,7 +58,11 @@
      "possession": true,
      "linescores": [
       {
-       "value": 1
+       "value": 1,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -101,7 +105,11 @@
      "possession": false,
      "linescores": [
       {
-       "value": 4
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -159,8 +167,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Heather Watson",
@@ -172,13 +180,13 @@
    "abbr": "Emerson Jones",
    "alias": "Emerson Jones",
    "name": "Emerson Jones",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T03:46:22.481Z",
+ "updated": "2026-10-31T03:55:01.169Z",
  "open_taken_at": "2026-10-30T10:01:32.884Z",
  "thresholds": {
   "big": 10,
@@ -206,28 +214,6 @@
    "yes_buy": 74,
    "no_buy": 31,
    "taken_at": "2026-10-30T13:14:33.367Z"
-  },
-  {
-   "market_id": "1967857",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Emerson Jones win set 1 against Heather Watson?",
-   "sides": [
-    "Yes: Emerson Jones win set 1 against Heather Watson",
-    "No: Emerson Jones win set 1 against Heather Watson"
-   ],
-   "teams": [
-    "Emerson Jones",
-    null
-   ],
-   "player": null,
-   "mid": 64.5,
-   "yes_buy": 67,
-   "no_buy": 38,
-   "taken_at": "2026-10-30T20:20:24.284Z"
   },
   {
    "market_id": "1967842",
@@ -272,6 +258,72 @@
    "yes_buy": 52,
    "no_buy": 49,
    "taken_at": "2026-10-31T03:14:57.844Z"
+  },
+  {
+   "market_id": "1967847",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Emerson Jones cover -1.5 vs the Heather Watson in Emerson Jones vs. Heather Watson?",
+   "sides": [
+    "Emerson Jones -1.50 (Sets)",
+    "Heather Watson +1.50 (Sets)"
+   ],
+   "teams": [
+    "Emerson Jones",
+    "Heather Watson"
+   ],
+   "player": null,
+   "mid": 46.5,
+   "yes_buy": 49,
+   "no_buy": 56,
+   "taken_at": "2026-10-30T21:09:38.748Z"
+  },
+  {
+   "market_id": "1967850",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Emerson Jones vs. Heather Watson be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 48.5,
+   "yes_buy": 49,
+   "no_buy": 52,
+   "taken_at": "2026-10-31T03:14:57.844Z"
+  },
+  {
+   "market_id": "1967857",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Emerson Jones win set 1 against Heather Watson?",
+   "sides": [
+    "Yes: Emerson Jones win set 1 against Heather Watson",
+    "No: Emerson Jones win set 1 against Heather Watson"
+   ],
+   "teams": [
+    "Emerson Jones",
+    null
+   ],
+   "player": null,
+   "mid": 64.5,
+   "yes_buy": 67,
+   "no_buy": 38,
+   "taken_at": "2026-10-30T20:20:24.284Z"
   },
   {
    "market_id": "1967858",
@@ -384,50 +436,6 @@
    "taken_at": "2026-10-30T18:06:36.385Z"
   },
   {
-   "market_id": "1967847",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Emerson Jones cover -1.5 vs the Heather Watson in Emerson Jones vs. Heather Watson?",
-   "sides": [
-    "Emerson Jones -1.50 (Sets)",
-    "Heather Watson +1.50 (Sets)"
-   ],
-   "teams": [
-    "Emerson Jones",
-    "Heather Watson"
-   ],
-   "player": null,
-   "mid": 46.5,
-   "yes_buy": 49,
-   "no_buy": 56,
-   "taken_at": "2026-10-30T21:09:38.748Z"
-  },
-  {
-   "market_id": "1967850",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Emerson Jones vs. Heather Watson be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 48.5,
-   "yes_buy": 49,
-   "no_buy": 52,
-   "taken_at": "2026-10-31T03:14:57.844Z"
-  },
-  {
    "market_id": "1967852",
    "market": "Sets total",
    "group": "game",
@@ -518,21 +526,41 @@
  ],
  "edges": [
   {
-   "key": "1967841:1",
-   "market_id": "1967841",
-   "market": "Games spread",
+   "key": "1967847:1",
+   "market_id": "1967847",
+   "market": "Sets spread",
    "group": "game",
    "question": "Will the Emerson Jones cover -1.5 vs the Heather Watson in Emerson Jones vs. Heather Watson?",
-   "side": "Heather Watson +1.50 (Games)",
-   "open_chance": 49,
-   "now_chance": 20,
-   "open_odds": "+104",
-   "now_odds": "+400",
-   "edge": 29,
+   "side": "Heather Watson +1.50 (Sets)",
+   "open_chance": 56,
+   "now_chance": 24,
+   "open_odds": "-127",
+   "now_odds": "+317",
+   "edge": 32,
    "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Heather Watson not above the games spread right now",
-   "context": "Heather Watson 1 · Emerson Jones 4 · 1st Set (games by set)",
+   "class": "news",
+   "reason": "Big move (32 pts), likely news",
+   "context": "Heather Watson 1, 0 · Emerson Jones 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-10-31T03:32:07.024Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1967850:0",
+   "market_id": "1967850",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Emerson Jones vs. Heather Watson be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 49,
+   "now_chance": 23,
+   "open_odds": "+104",
+   "now_odds": "+335",
+   "edge": 26,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (26 pts), likely news",
+   "context": "Heather Watson 1, 0 · Emerson Jones 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-10-31T03:21:53.452Z",
    "status": "open",
    "kalshi": null
@@ -554,27 +582,7 @@
    "reason": "Big move (25 pts), likely news",
    "context": "Heather Watson 1 · Emerson Jones 4 · 1st Set (games by set)",
    "first_seen": "2026-10-31T03:46:22.481Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1967858:1",
-   "market_id": "1967858",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Emerson Jones win set 2 against Heather Watson?",
-   "side": "No: Emerson Jones win set 2 against Heather Watson",
-   "open_chance": 40,
-   "now_chance": 30,
-   "open_odds": "+150",
-   "now_odds": "+233",
-   "edge": 10,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Heather Watson 1 · Emerson Jones 4 · 1st Set (games by set)",
-   "first_seen": "2026-10-31T03:46:22.481Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -618,6 +626,26 @@
    "kalshi": null
   },
   {
+   "key": "1967858:1",
+   "market_id": "1967858",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Emerson Jones win set 2 against Heather Watson?",
+   "side": "No: Emerson Jones win set 2 against Heather Watson",
+   "open_chance": 40,
+   "now_chance": 30,
+   "open_odds": "+150",
+   "now_odds": "+233",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Heather Watson 1 · Emerson Jones 4 · 1st Set (games by set)",
+   "first_seen": "2026-10-31T03:46:22.481Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1967851:1",
    "market_id": "1967851",
    "market": "Games total",
@@ -634,26 +662,6 @@
    "reason": null,
    "context": "Heather Watson 1 · Emerson Jones 2 · 1st Set (games by set)",
    "first_seen": "2026-10-31T03:32:07.024Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1967850:0",
-   "market_id": "1967850",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Emerson Jones vs. Heather Watson be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 49,
-   "now_chance": 44,
-   "open_odds": "+104",
-   "now_odds": "+127",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Heather Watson 1 · Emerson Jones 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-31T03:21:53.452Z",
    "status": "gone",
    "kalshi": null
   },
@@ -676,29 +684,51 @@
    "first_seen": "2026-10-31T03:14:57.844Z",
    "status": "gone",
    "kalshi": null
-  },
-  {
-   "key": "1967847:1",
-   "market_id": "1967847",
-   "market": "Sets spread",
-   "group": "game",
-   "question": "Will the Emerson Jones cover -1.5 vs the Heather Watson in Emerson Jones vs. Heather Watson?",
-   "side": "Heather Watson +1.50 (Sets)",
-   "open_chance": 56,
-   "now_chance": 52,
-   "open_odds": "-127",
-   "now_odds": "-108",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Heather Watson 1 · Emerson Jones 2 · 1st Set (games by set)",
-   "first_seen": "2026-10-31T03:32:07.024Z",
-   "status": "gone",
-   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "news:1967847:1",
+   "key": "1967847:1",
+   "at": "2026-10-31T03:55:01.169Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Heather Watson +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+317",
+   "now_chance": 24,
+   "edge": 32,
+   "text": "Big move, likely news: Heather Watson +1.50 (Sets) (Sets spread) is 32 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-emejon-heawat-2026-10-30"
+  },
+  {
+   "id": "news:1967850:0",
+   "key": "1967850:0",
+   "at": "2026-10-31T03:55:01.169Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+335",
+   "now_chance": 23,
+   "edge": 26,
+   "text": "Big move, likely news: Over 22.5 (Games) (Games total) is 26 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-emejon-heawat-2026-10-30"
+  },
+  {
+   "id": "gone:1967858:1:2026-10-31T03:46:22.481Z",
+   "key": "1967858:1",
+   "at": "2026-10-31T03:55:01.169Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "No: Emerson Jones win set 2 against Heather Watson",
+   "market": "Set 2 winner",
+   "now_odds": "+233",
+   "now_chance": 30,
+   "edge": 10,
+   "text": "Edge gone: No: Emerson Jones win set 2 against Heather Watson (Set 2 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-emejon-heawat-2026-10-30"
+  },
   {
    "id": "news:1967849:0",
    "key": "1967849:0",
@@ -812,34 +842,6 @@
    "url": "https://polymarket.us/sports/wta/wta-emejon-heawat-2026-10-30"
   },
   {
-   "id": "gone:1967841:1:2026-10-31T03:21:53.452Z",
-   "key": "1967841:1",
-   "at": "2026-10-31T03:32:07.024Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Heather Watson +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+213",
-   "now_chance": 32,
-   "edge": 17,
-   "text": "Edge gone: Heather Watson +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-emejon-heawat-2026-10-30"
-  },
-  {
-   "id": "new_edge:1967841:1:big",
-   "key": "1967841:1",
-   "at": "2026-10-31T03:28:29.339Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Heather Watson +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+213",
-   "now_chance": 32,
-   "edge": 17,
-   "text": "New big edge: Heather Watson +1.50 (Games) (Games spread), 17 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-emejon-heawat-2026-10-30"
-  },
-  {
    "id": "gone:1967843:1:2026-10-31T03:14:57.844Z",
    "key": "1967843:1",
    "at": "2026-10-31T03:28:29.339Z",
@@ -865,20 +867,6 @@
    "now_chance": 33,
    "edge": 19,
    "text": "New big edge: Over 2.5 (Sets) (Sets total), 19 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-emejon-heawat-2026-10-30"
-  },
-  {
-   "id": "new_edge:1967841:1:slight",
-   "key": "1967841:1",
-   "at": "2026-10-31T03:21:53.452Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Heather Watson +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+138",
-   "now_chance": 42,
-   "edge": 7,
-   "text": "New slight edge: Heather Watson +1.50 (Games) (Games spread), 7 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-emejon-heawat-2026-10-30"
   },
   {
@@ -977,7 +965,10 @@
   "gone:1967852:0:2026-10-31T03:21:53.452Z",
   "gone:1967851:1:2026-10-31T03:32:07.024Z",
   "gone:1967850:0:2026-10-31T03:21:53.452Z",
-  "gone:1967847:1:2026-10-31T03:32:07.024Z"
+  "gone:1967847:1:2026-10-31T03:32:07.024Z",
+  "news:1967847:1",
+  "news:1967850:0",
+  "gone:1967858:1:2026-10-31T03:46:22.481Z"
  ],
  "kalshi_checked": null
 }
