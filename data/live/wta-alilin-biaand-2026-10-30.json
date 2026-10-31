@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185814",
-  "fetched_at": "2026-10-31T04:16:42.257Z",
+  "fetched_at": "2026-10-31T04:28:22.345Z",
   "tennis": true,
   "tennis_match": {
    "id": "185814",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Alicia Herrero Linana (ESP) leads (4) Bianca Andreescu (CAN) 1-6 1-1",
+     "text": "(4) Bianca Andreescu (CAN) leads Alicia Herrero Linana (ESP) 6-1 4-1",
      "type": "event"
     }
    ],
@@ -55,7 +55,6 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
      "curatedRank": {
       "current": 4
      },
@@ -65,7 +64,7 @@
        "winner": true
       },
       {
-       "value": 1
+       "value": 4
       }
      ],
      "athlete": {
@@ -105,7 +104,6 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
      "linescores": [
       {
        "value": 1,
@@ -147,11 +145,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 1034,
    "type": {
     "id": "2",
@@ -189,7 +182,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-10-31T04:16:42.122Z",
+ "updated": "2026-10-31T04:28:22.181Z",
  "open_taken_at": "2026-10-30T05:01:15.803Z",
  "thresholds": {
   "big": 10,
@@ -529,26 +522,6 @@
  ],
  "edges": [
   {
-   "key": "1962029:0",
-   "market_id": "1962029",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Alicia Herrero Linana vs. Bianca Andreescu be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 27,
-   "now_chance": 21,
-   "open_odds": "+270",
-   "now_odds": "+376",
-   "edge": 6,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Bianca Andreescu 6, 1 · Alicia Herrero Linana 1, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-10-31T04:16:42.122Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1962028:1",
    "market_id": "1962028",
    "market": "Games total",
@@ -669,6 +642,26 @@
    "kalshi": null
   },
   {
+   "key": "1962029:0",
+   "market_id": "1962029",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Alicia Herrero Linana vs. Bianca Andreescu be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 27,
+   "now_chance": 21,
+   "open_odds": "+270",
+   "now_odds": "+376",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Bianca Andreescu 6, 1 · Alicia Herrero Linana 1, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-10-31T04:16:42.122Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1962029:1",
    "market_id": "1962029",
    "market": "Games total",
@@ -710,6 +703,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1962029:0:2026-10-31T04:16:42.122Z",
+   "key": "1962029:0",
+   "at": "2026-10-31T04:28:22.181Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+376",
+   "now_chance": 21,
+   "edge": 6,
+   "text": "Edge gone: Over 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-alilin-biaand-2026-10-30"
+  },
   {
    "id": "new_edge:1962029:0:slight",
    "key": "1962029:0",
@@ -954,7 +961,8 @@
   "new_edge:1962031:0:slight",
   "gone:1962030:0:2026-10-31T02:14:31.202Z",
   "news:1962023:0",
-  "new_edge:1962029:0:slight"
+  "new_edge:1962029:0:slight",
+  "gone:1962029:0:2026-10-31T04:16:42.122Z"
  ],
  "kalshi_checked": null
 }
