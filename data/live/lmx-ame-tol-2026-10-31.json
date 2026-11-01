@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for lmx",
-  "fetched_at": "2026-11-01T03:16:20.668Z"
+  "fetched_at": "2026-11-01T03:23:52.770Z"
  },
- "updated": "2026-11-01T03:16:20.655Z",
+ "updated": "2026-11-01T03:23:52.765Z",
  "open_taken_at": "2026-10-30T05:01:07.122Z",
  "thresholds": {
   "big": 10,
@@ -83,6 +83,28 @@
    "yes_buy": 34,
    "no_buy": 67,
    "taken_at": "2026-10-30T05:01:07.122Z"
+  },
+  {
+   "market_id": "1996242",
+   "market": "Main spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 2.5,
+   "question": "Will the CF America cover 2.5 vs the Deportivo Toluca FC in AME vs TOL?",
+   "sides": [
+    "CF América +2.50",
+    "Deportivo Toluca FC -2.50"
+   ],
+   "teams": [
+    "CF América",
+    "Deportivo Toluca FC"
+   ],
+   "player": null,
+   "mid": 93,
+   "yes_buy": 95,
+   "no_buy": 9,
+   "taken_at": "2026-10-31T04:02:20.747Z"
   },
   {
    "market_id": "1996240",
@@ -237,28 +259,6 @@
    "yes_buy": 98,
    "no_buy": 6,
    "taken_at": "2026-10-31T04:28:21.489Z"
-  },
-  {
-   "market_id": "1996242",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": 2.5,
-   "question": "Will the CF America cover 2.5 vs the Deportivo Toluca FC in AME vs TOL?",
-   "sides": [
-    "CF América +2.50",
-    "Deportivo Toluca FC -2.50"
-   ],
-   "teams": [
-    "CF América",
-    "Deportivo Toluca FC"
-   ],
-   "player": null,
-   "mid": 93,
-   "yes_buy": 95,
-   "no_buy": 9,
-   "taken_at": "2026-10-31T04:02:20.747Z"
   },
   {
    "market_id": "1996244",
@@ -653,7 +653,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-01T03:16:20.655Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -673,7 +673,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-01T02:52:22.583Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -693,7 +693,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-01T03:16:20.655Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -779,6 +779,48 @@
  ],
  "alerts": [
   {
+   "id": "gone:1894280:1:2026-11-01T03:16:20.655Z",
+   "key": "1894280:1",
+   "at": "2026-11-01T03:23:52.765Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "No: CF America win against Deportivo Toluca FC in the Liga MX match scheduled for Oct 31, 2026",
+   "market": "Moneyline",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 5,
+   "text": "Edge gone: No: CF America win against Deportivo Toluca FC in the Liga MX match scheduled for Oct 31, 2026 (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/lmx/lmx-ame-tol-2026-10-31"
+  },
+  {
+   "id": "gone:1996240:1:2026-11-01T02:52:22.583Z",
+   "key": "1996240:1",
+   "at": "2026-11-01T03:23:52.765Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Deportivo Toluca FC +1.50",
+   "market": "Main spread",
+   "now_odds": "-317",
+   "now_chance": 76,
+   "edge": 5,
+   "text": "Edge gone: Deportivo Toluca FC +1.50 (Main spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/lmx/lmx-ame-tol-2026-10-31"
+  },
+  {
+   "id": "gone:1894282:0:2026-11-01T03:16:20.655Z",
+   "key": "1894282:0",
+   "at": "2026-11-01T03:23:52.765Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Yes: Deportivo Toluca FC win against CF America in the Liga MX match scheduled for Oct 31, 2026",
+   "market": "Moneyline",
+   "now_odds": "+233",
+   "now_chance": 30,
+   "edge": 4,
+   "text": "Edge gone: Yes: Deportivo Toluca FC win against CF America in the Liga MX match scheduled for Oct 31, 2026 (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/lmx/lmx-ame-tol-2026-10-31"
+  },
+  {
    "id": "new_edge:1894280:1:slight",
    "key": "1894280:1",
    "at": "2026-11-01T03:16:20.655Z",
@@ -824,7 +866,10 @@
  "alert_seen": [
   "new_edge:1894280:1:slight",
   "new_edge:1996240:1:slight",
-  "new_edge:1894282:0:slight"
+  "new_edge:1894282:0:slight",
+  "gone:1894280:1:2026-11-01T03:16:20.655Z",
+  "gone:1996240:1:2026-11-01T02:52:22.583Z",
+  "gone:1894282:0:2026-11-01T03:16:20.655Z"
  ],
  "kalshi_checked": null
 }
