@@ -4,12 +4,12 @@
  "game": "Miedler / Oberleitner vs. Seggerman / Tien",
  "url": "https://polymarket.us/sports/atpdb/atpdb-miedleoberle-seggertien-2026-11-01",
  "start_time": "2026-11-01T10:30:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185220",
-  "fetched_at": "2026-11-01T11:30:29.686Z",
+  "fetched_at": "2026-11-01T11:39:57.294Z",
   "tennis": true,
   "tennis_match": {
    "id": "185220",
@@ -17,17 +17,17 @@
    "date": "2026-11-01T10:40Z",
    "startDate": "2026-11-01T10:40Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Lucas Miedler (AUT) & Neil Oberleitner (AUT) is tied with Ryan Seggerman (USA) & Learner Tien (USA) 6-1 4-4",
+     "text": "Lucas Miedler (AUT) & Neil Oberleitner (AUT) bt Ryan Seggerman (USA) & Learner Tien (USA) 6-1 7-5",
      "type": "event"
     }
    ],
@@ -55,14 +55,15 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "winner": false,
      "linescores": [
       {
        "value": 1,
        "winner": false
       },
       {
-       "value": 4
+       "value": 5,
+       "winner": false
       }
      ],
      "roster": {
@@ -137,14 +138,15 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "winner": true,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 4
+       "value": 7,
+       "winner": true
       }
      ],
      "roster": {
@@ -214,11 +216,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 10,
    "type": {
     "id": "3",
@@ -235,10 +232,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Ryan Seggerman / Learner Tien",
@@ -250,13 +247,13 @@
    "abbr": "Lucas Miedler / Neil Oberleitner",
    "alias": "Lucas Miedler / Neil Oberleitner",
    "name": "Lucas Miedler / Neil Oberleitner",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-01T11:30:29.638Z",
+ "updated": "2026-11-01T11:39:57.164Z",
  "open_taken_at": "2026-10-31T15:42:24.677Z",
  "thresholds": {
   "big": 10,
@@ -304,11 +301,25 @@
    "reason": null,
    "context": "Ryan Seggerman / Learner Tien 1, 4 · Lucas Miedler / Neil Oberleitner 6, 4 · 2nd Set (games by set)",
    "first_seen": "2026-11-01T11:21:12.654Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2013238:1:2026-11-01T11:21:12.654Z",
+   "key": "2013238:1",
+   "at": "2026-11-01T11:39:57.164Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Seggerman R / Tien L win",
+   "market": "Moneyline",
+   "now_odds": "+426",
+   "now_chance": 19,
+   "edge": 23,
+   "text": "Edge gone: Seggerman R / Tien L win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-miedleoberle-seggertien-2026-11-01"
+  },
   {
    "id": "news:2013238:1",
    "key": "2013238:1",
@@ -326,7 +337,8 @@
  ],
  "alert_seen": [
   "new_edge:2013238:1:big",
-  "news:2013238:1"
+  "news:2013238:1",
+  "gone:2013238:1:2026-11-01T11:21:12.654Z"
  ],
  "kalshi_checked": null
 }
