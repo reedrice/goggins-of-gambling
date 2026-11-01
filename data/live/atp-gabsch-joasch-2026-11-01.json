@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-01T20:52:08.872Z"
+  "fetched_at": "2026-11-01T20:59:47.655Z"
  },
- "updated": "2026-11-01T20:52:08.780Z",
+ "updated": "2026-11-01T20:59:47.506Z",
  "open_taken_at": "2026-10-31T22:19:27.466Z",
  "thresholds": {
   "big": 10,
@@ -85,6 +85,50 @@
    "taken_at": "2026-11-01T20:42:11.413Z"
   },
   {
+   "market_id": "2024263",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Gabriel Schenekenberg vs. Joao Eduardo Schiessl be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 23.5,
+   "yes_buy": 24,
+   "no_buy": 77,
+   "taken_at": "2026-11-01T20:59:47.506Z"
+  },
+  {
+   "market_id": "2024264",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Gabriel Schenekenberg vs. Joao Eduardo Schiessl be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 21.5,
+   "yes_buy": 22,
+   "no_buy": 79,
+   "taken_at": "2026-11-01T20:59:47.506Z"
+  },
+  {
    "market_id": "2024260",
    "market": "Sets spread",
    "group": "game",
@@ -129,8 +173,81 @@
    "taken_at": "2026-11-01T20:42:11.413Z"
   }
  ],
- "edges": [],
- "alerts": [],
- "alert_seen": [],
+ "edges": [
+  {
+   "key": "2024039:1",
+   "market_id": "2024039",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Gabriel Schenekenberg vs Joao Eduardo Schiessl scheduled for November 1, 2026 at 8:10 PM UTC?",
+   "side": "Joao Eduardo Schiessl win",
+   "open_chance": 92,
+   "now_chance": 83,
+   "open_odds": "-1150",
+   "now_odds": "-488",
+   "edge": 9,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-01T20:59:47.506Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2024270:1",
+   "market_id": "2024270",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Gabriel Schenekenberg win set 1 against Joao Eduardo Schiessl?",
+   "side": "No: Gabriel Schenekenberg win set 1 against Joao Eduardo Schiessl",
+   "open_chance": 68,
+   "now_chance": 63,
+   "open_odds": "-213",
+   "now_odds": "-170",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-01T20:59:47.506Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
+ "alerts": [
+  {
+   "id": "new_edge:2024039:1:slight",
+   "key": "2024039:1",
+   "at": "2026-11-01T20:59:47.506Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Joao Eduardo Schiessl win",
+   "market": "Moneyline",
+   "now_odds": "-488",
+   "now_chance": 83,
+   "edge": 9,
+   "text": "New slight edge: Joao Eduardo Schiessl win (Moneyline), 9 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-gabsch-joasch-2026-11-01"
+  },
+  {
+   "id": "new_edge:2024270:1:slight",
+   "key": "2024270:1",
+   "at": "2026-11-01T20:59:47.506Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "No: Gabriel Schenekenberg win set 1 against Joao Eduardo Schiessl",
+   "market": "Set 1 winner",
+   "now_odds": "-170",
+   "now_chance": 63,
+   "edge": 5,
+   "text": "New slight edge: No: Gabriel Schenekenberg win set 1 against Joao Eduardo Schiessl (Set 1 winner), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-gabsch-joasch-2026-11-01"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:2024039:1:slight",
+  "new_edge:2024270:1:slight"
+ ],
  "kalshi_checked": null
 }
