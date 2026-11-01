@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for bun",
-  "fetched_at": "2026-11-01T15:16:27.393Z"
+  "fetched_at": "2026-11-01T15:25:44.029Z"
  },
- "updated": "2026-11-01T15:16:27.385Z",
+ "updated": "2026-11-01T15:25:44.010Z",
  "open_taken_at": "2026-10-31T05:00:51.580Z",
  "thresholds": {
   "big": 10,
@@ -151,25 +151,25 @@
    "taken_at": "2026-10-31T05:00:51.580Z"
   },
   {
-   "market_id": "1757237",
-   "market": "Alt spread",
+   "market_id": "1757240",
+   "market": "Alt total",
    "group": "game",
-   "mtype": "spread",
+   "mtype": "total",
    "period": "full_game",
    "line": 1.5,
-   "question": "Will the 1. FC Union Berlin cover 1.5 vs the 1. FC Koln in UNB vs KOE?",
+   "question": "Will the total in UNB vs KOE be more than 1.5?",
    "sides": [
-    "Die Eisernen +1.50",
-    "Die Geißböcke -1.50"
+    "Over 1.5",
+    "Under 1.5"
    ],
    "teams": [
-    "Die Eisernen",
-    "Die Geißböcke"
+    null,
+    null
    ],
    "player": null,
-   "mid": 82,
-   "yes_buy": 83,
-   "no_buy": 19,
+   "mid": 81,
+   "yes_buy": 82,
+   "no_buy": 20,
    "taken_at": "2026-10-31T05:00:51.580Z"
   },
   {
@@ -283,26 +283,48 @@
    "taken_at": "2026-11-01T14:29:27.100Z"
   },
   {
-   "market_id": "1757271",
-   "market": "1st half total",
+   "market_id": "1757292",
+   "market": "2nd half winner",
    "group": "game",
-   "mtype": "total",
-   "period": "first_half",
-   "line": 1.5,
-   "question": "Will the total in UNB vs KOE be more than 1.5?",
+   "mtype": "winner",
+   "period": "second_half",
+   "line": null,
+   "question": "Will 1. FC Union Berlin win the second half against 1. FC Koln?",
    "sides": [
-    "Over 1.5 (1st half)",
-    "Under 1.5 (1st half)"
+    "Yes: 1. FC Union Berlin win the second half against 1. FC Koln",
+    "No: 1. FC Union Berlin win the second half against 1. FC Koln"
    ],
    "teams": [
-    null,
+    "Die Eisernen",
     null
    ],
    "player": null,
-   "mid": 39,
-   "yes_buy": 40,
-   "no_buy": 62,
-   "taken_at": "2026-10-31T05:00:51.580Z"
+   "mid": 26,
+   "yes_buy": 28,
+   "no_buy": 76,
+   "taken_at": "2026-11-01T15:25:44.010Z"
+  },
+  {
+   "market_id": "1757294",
+   "market": "2nd half winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "second_half",
+   "line": null,
+   "question": "Will 1. FC Koln win the second half against 1. FC Union Berlin?",
+   "sides": [
+    "Yes: 1. FC Koln win the second half against 1. FC Union Berlin",
+    "No: 1. FC Koln win the second half against 1. FC Union Berlin"
+   ],
+   "teams": [
+    "Die Geißböcke",
+    null
+   ],
+   "player": null,
+   "mid": 41.5,
+   "yes_buy": 44,
+   "no_buy": 61,
+   "taken_at": "2026-11-01T15:25:44.010Z"
   },
   {
    "market_id": "1757295",
@@ -371,26 +393,48 @@
    "taken_at": "2026-11-01T12:09:36.996Z"
   },
   {
-   "market_id": "1757276",
-   "market": "1st half spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "first_half",
-   "line": -1.5,
-   "question": "Will the 1. FC Union Berlin cover -1.5 vs the 1. FC Koln in UNB vs KOE?",
+   "market_id": "2054722",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Andras Schafer record at least 1 goals in UNB vs KOE?",
    "sides": [
-    "Die Eisernen -1.50 (1st half)",
-    "Die Geißböcke +1.50 (1st half)"
+    "Yes: Andras Schafer record at least 1 goals in UNB vs KOE",
+    "No: Andras Schafer record at least 1 goals in UNB vs KOE"
    ],
    "teams": [
     "Die Eisernen",
-    "Die Geißböcke"
+    "Die Eisernen"
    ],
-   "player": null,
+   "player": "Andras Schafer",
+   "mid": 8.5,
+   "yes_buy": 11,
+   "no_buy": 94,
+   "taken_at": "2026-11-01T15:25:44.010Z"
+  },
+  {
+   "market_id": "2054727",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Rani Khedira record at least 1 goals in UNB vs KOE?",
+   "sides": [
+    "Yes: Rani Khedira record at least 1 goals in UNB vs KOE",
+    "No: Rani Khedira record at least 1 goals in UNB vs KOE"
+   ],
+   "teams": [
+    "Die Eisernen",
+    "Die Eisernen"
+   ],
+   "player": "Rani Khedira",
    "mid": 8,
-   "yes_buy": 9,
-   "no_buy": 93,
-   "taken_at": "2026-10-31T05:00:51.580Z"
+   "yes_buy": 11,
+   "no_buy": 95,
+   "taken_at": "2026-11-01T15:25:44.010Z"
   },
   {
    "market_id": "2054791",
@@ -415,6 +459,138 @@
    "taken_at": "2026-11-01T15:16:27.385Z"
   },
   {
+   "market_id": "2054792",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Tom Krauss record at least 1 goals in UNB vs KOE?",
+   "sides": [
+    "Yes: Tom Krauss record at least 1 goals in UNB vs KOE",
+    "No: Tom Krauss record at least 1 goals in UNB vs KOE"
+   ],
+   "teams": [
+    "Die Geißböcke",
+    "Die Geißböcke"
+   ],
+   "player": "Tom Krauss",
+   "mid": 8,
+   "yes_buy": 10,
+   "no_buy": 94,
+   "taken_at": "2026-11-01T14:38:32.790Z"
+  },
+  {
+   "market_id": "2054785",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Linton Maina record at least 1 goals in UNB vs KOE?",
+   "sides": [
+    "Yes: Linton Maina record at least 1 goals in UNB vs KOE",
+    "No: Linton Maina record at least 1 goals in UNB vs KOE"
+   ],
+   "teams": [
+    "Die Geißböcke",
+    "Die Geißböcke"
+   ],
+   "player": "Linton Maina",
+   "mid": 15,
+   "yes_buy": 18,
+   "no_buy": 88,
+   "taken_at": "2026-11-01T14:38:32.790Z"
+  },
+  {
+   "market_id": "2054787",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Sebastian Sebulonsen record at least 1 goals in UNB vs KOE?",
+   "sides": [
+    "Yes: Sebastian Sebulonsen record at least 1 goals in UNB vs KOE",
+    "No: Sebastian Sebulonsen record at least 1 goals in UNB vs KOE"
+   ],
+   "teams": [
+    "Die Geißböcke",
+    "Die Geißböcke"
+   ],
+   "player": "Sebastian Sebulonsen",
+   "mid": 6,
+   "yes_buy": 8,
+   "no_buy": 96,
+   "taken_at": "2026-11-01T15:25:44.010Z"
+  },
+  {
+   "market_id": "1757237",
+   "market": "Alt spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 1.5,
+   "question": "Will the 1. FC Union Berlin cover 1.5 vs the 1. FC Koln in UNB vs KOE?",
+   "sides": [
+    "Die Eisernen +1.50",
+    "Die Geißböcke -1.50"
+   ],
+   "teams": [
+    "Die Eisernen",
+    "Die Geißböcke"
+   ],
+   "player": null,
+   "mid": 82,
+   "yes_buy": 83,
+   "no_buy": 19,
+   "taken_at": "2026-10-31T05:00:51.580Z"
+  },
+  {
+   "market_id": "1757271",
+   "market": "1st half total",
+   "group": "game",
+   "mtype": "total",
+   "period": "first_half",
+   "line": 1.5,
+   "question": "Will the total in UNB vs KOE be more than 1.5?",
+   "sides": [
+    "Over 1.5 (1st half)",
+    "Under 1.5 (1st half)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 39,
+   "yes_buy": 40,
+   "no_buy": 62,
+   "taken_at": "2026-10-31T05:00:51.580Z"
+  },
+  {
+   "market_id": "1757276",
+   "market": "1st half spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "first_half",
+   "line": -1.5,
+   "question": "Will the 1. FC Union Berlin cover -1.5 vs the 1. FC Koln in UNB vs KOE?",
+   "sides": [
+    "Die Eisernen -1.50 (1st half)",
+    "Die Geißböcke +1.50 (1st half)"
+   ],
+   "teams": [
+    "Die Eisernen",
+    "Die Geißböcke"
+   ],
+   "player": null,
+   "mid": 8,
+   "yes_buy": 9,
+   "no_buy": 93,
+   "taken_at": "2026-10-31T05:00:51.580Z"
+  },
+  {
    "market_id": "2054783",
    "market": "Player prop",
    "group": "prop",
@@ -435,28 +611,6 @@
    "yes_buy": 27,
    "no_buy": 78,
    "taken_at": "2026-11-01T14:38:32.790Z"
-  },
-  {
-   "market_id": "1757240",
-   "market": "Alt total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 1.5,
-   "question": "Will the total in UNB vs KOE be more than 1.5?",
-   "sides": [
-    "Over 1.5",
-    "Under 1.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 81,
-   "yes_buy": 82,
-   "no_buy": 20,
-   "taken_at": "2026-10-31T05:00:51.580Z"
   },
   {
    "market_id": "1757267",
@@ -613,28 +767,6 @@
    "taken_at": "2026-10-31T05:08:39.297Z"
   },
   {
-   "market_id": "2054792",
-   "market": "Player prop",
-   "group": "prop",
-   "mtype": "prop",
-   "period": "full_game",
-   "line": 1,
-   "question": "Will Tom Krauss record at least 1 goals in UNB vs KOE?",
-   "sides": [
-    "Yes: Tom Krauss record at least 1 goals in UNB vs KOE",
-    "No: Tom Krauss record at least 1 goals in UNB vs KOE"
-   ],
-   "teams": [
-    "Die Geißböcke",
-    "Die Geißböcke"
-   ],
-   "player": "Tom Krauss",
-   "mid": 8,
-   "yes_buy": 10,
-   "no_buy": 94,
-   "taken_at": "2026-11-01T14:38:32.790Z"
-  },
-  {
    "market_id": "1757274",
    "market": "1st half total",
    "group": "game",
@@ -789,28 +921,6 @@
    "taken_at": "2026-11-01T14:38:32.790Z"
   },
   {
-   "market_id": "2054785",
-   "market": "Player prop",
-   "group": "prop",
-   "mtype": "prop",
-   "period": "full_game",
-   "line": 1,
-   "question": "Will Linton Maina record at least 1 goals in UNB vs KOE?",
-   "sides": [
-    "Yes: Linton Maina record at least 1 goals in UNB vs KOE",
-    "No: Linton Maina record at least 1 goals in UNB vs KOE"
-   ],
-   "teams": [
-    "Die Geißböcke",
-    "Die Geißböcke"
-   ],
-   "player": "Linton Maina",
-   "mid": 15,
-   "yes_buy": 18,
-   "no_buy": 88,
-   "taken_at": "2026-11-01T14:38:32.790Z"
-  },
-  {
    "market_id": "1757278",
    "market": "1st half spread",
    "group": "game",
@@ -864,10 +974,10 @@
    "question": "Will 1. FC Union Berlin win against 1. FC Koln in the Bundesliga match scheduled for Nov 1, 2026?",
    "side": "No: 1. FC Union Berlin win against 1. FC Koln in the Bundesliga match scheduled for Nov 1, 2026",
    "open_chance": 65,
-   "now_chance": 39,
+   "now_chance": 40,
    "open_odds": "-186",
-   "now_odds": "+156",
-   "edge": 26,
+   "now_odds": "+150",
+   "edge": 25,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -884,10 +994,10 @@
    "question": "Will the total in UNB vs KOE be more than 3.5?",
    "side": "Over 3.5",
    "open_chance": 37,
-   "now_chance": 24,
+   "now_chance": 23,
    "open_odds": "+170",
-   "now_odds": "+317",
-   "edge": 13,
+   "now_odds": "+335",
+   "edge": 14,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -917,26 +1027,6 @@
    "kalshi": null
   },
   {
-   "key": "2054783:0",
-   "market_id": "2054783",
-   "market": "Player prop",
-   "group": "prop",
-   "question": "Will Marius Bulter record at least 1 goals in UNB vs KOE?",
-   "side": "Yes: Marius Bulter record at least 1 goals in UNB vs KOE",
-   "open_chance": 27,
-   "now_chance": 18,
-   "open_odds": "+270",
-   "now_odds": "+456",
-   "edge": 9,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-01T14:57:13.367Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1757241:0",
    "market_id": "1757241",
    "market": "Main total",
@@ -944,10 +1034,10 @@
    "question": "Will the total in UNB vs KOE be more than 2.5?",
    "side": "Over 2.5",
    "open_chance": 59,
-   "now_chance": 53,
+   "now_chance": 50,
    "open_odds": "-144",
-   "now_odds": "-113",
-   "edge": 6,
+   "now_odds": "+100",
+   "edge": 9,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -993,6 +1083,26 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-01T14:48:01.351Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "2054783:0",
+   "market_id": "2054783",
+   "market": "Player prop",
+   "group": "prop",
+   "question": "Will Marius Bulter record at least 1 goals in UNB vs KOE?",
+   "side": "Yes: Marius Bulter record at least 1 goals in UNB vs KOE",
+   "open_chance": 27,
+   "now_chance": 18,
+   "open_odds": "+270",
+   "now_odds": "+456",
+   "edge": 9,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-01T14:57:13.367Z",
    "status": "gone",
    "kalshi": null
   },
