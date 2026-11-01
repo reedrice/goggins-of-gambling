@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187370",
-  "fetched_at": "2026-11-01T20:42:12.296Z",
+  "fetched_at": "2026-11-01T20:52:09.593Z",
   "tennis": true,
   "tennis_match": {
    "id": "187370",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "detail": "3rd Set",
+     "shortDetail": "3rd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Elizabeth Mandlik (USA) is tied with Selena Janicijevic (FRA) 3-6 7-5",
+     "text": "Elizabeth Mandlik (USA) leads Selena Janicijevic (FRA) 3-6 7-5 1-0",
      "type": "event"
     }
    ],
@@ -55,13 +55,18 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 5
+       "value": 5,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -101,13 +106,18 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 3,
        "winner": false
       },
       {
-       "value": 7
+       "value": 7,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -142,6 +152,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1007,
    "type": {
     "id": "2",
@@ -160,8 +175,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "period": 3,
+  "clock": "3rd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Selena Janicijevic",
@@ -173,13 +188,13 @@
    "abbr": "Elizabeth Mandlik",
    "alias": "Elizabeth Mandlik",
    "name": "Elizabeth Mandlik",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-01T20:42:12.116Z",
+ "updated": "2026-11-01T20:52:09.491Z",
  "open_taken_at": "2026-10-31T22:19:27.504Z",
  "thresholds": {
   "big": 10,
@@ -453,22 +468,22 @@
  ],
  "edges": [
   {
-   "key": "2024085:0",
+   "key": "2024085:1",
    "market_id": "2024085",
    "market": "Moneyline",
    "group": "game",
    "question": "Who will win in the upcoming wta event Elizabeth Mandlik vs Selena Janicijevic scheduled for November 1, 2026 at 5:00 PM UTC?",
-   "side": "Elizabeth Mandlik win",
-   "open_chance": 65,
-   "now_chance": 58,
-   "open_odds": "-186",
-   "now_odds": "-138",
+   "side": "Selena Janicijevic win",
+   "open_chance": 36,
+   "now_chance": 29,
+   "open_odds": "+178",
+   "now_odds": "+245",
    "edge": 7,
    "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Elizabeth Mandlik trailing in sets",
-   "context": "Selena Janicijevic 6, 5 · Elizabeth Mandlik 3, 7 · 2nd Set (games by set)",
-   "first_seen": "2026-11-01T19:24:01.117Z",
+   "class": "edge",
+   "reason": null,
+   "context": "Selena Janicijevic 6, 5, 0 · Elizabeth Mandlik 3, 7, 1 · 3rd Set (games by set)",
+   "first_seen": "2026-11-01T20:52:09.491Z",
    "status": "open",
    "kalshi": null
   },
@@ -573,6 +588,26 @@
    "kalshi": null
   },
   {
+   "key": "2024085:0",
+   "market_id": "2024085",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Elizabeth Mandlik vs Selena Janicijevic scheduled for November 1, 2026 at 5:00 PM UTC?",
+   "side": "Elizabeth Mandlik win",
+   "open_chance": 65,
+   "now_chance": 58,
+   "open_odds": "-186",
+   "now_odds": "-138",
+   "edge": 7,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Elizabeth Mandlik trailing in sets",
+   "context": "Selena Janicijevic 6, 5 · Elizabeth Mandlik 3, 7 · 2nd Set (games by set)",
+   "first_seen": "2026-11-01T19:24:01.117Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "2024337:0",
    "market_id": "2024337",
    "market": "Games total",
@@ -594,6 +629,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2024085:1:slight",
+   "key": "2024085:1",
+   "at": "2026-11-01T20:52:09.491Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Selena Janicijevic win",
+   "market": "Moneyline",
+   "now_odds": "+245",
+   "now_chance": 29,
+   "edge": 7,
+   "text": "New slight edge: Selena Janicijevic win (Moneyline), 7 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-eliman-seljan-2026-11-01"
+  },
   {
    "id": "gone:2024337:1:2026-11-01T20:31:33.026Z",
    "key": "2024337:1",
@@ -745,7 +794,8 @@
   "gone:2024337:0:2026-11-01T20:11:32.529Z",
   "new_edge:2024337:1:big",
   "gone:2024344:0:2026-11-01T20:21:40.511Z",
-  "gone:2024337:1:2026-11-01T20:31:33.026Z"
+  "gone:2024337:1:2026-11-01T20:31:33.026Z",
+  "new_edge:2024085:1:slight"
  ],
  "kalshi_checked": null
 }
