@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401873033",
-  "fetched_at": "2026-11-01T12:26:56.811Z",
+  "fetched_at": "2026-11-01T12:35:15.522Z",
   "game_state": "pre",
   "espn_status": "STATUS_SCHEDULED",
   "period": 0,
@@ -31,6 +31,13 @@
   },
   "possession": null,
   "injuries": [
+   {
+    "team": "DEN",
+    "player": "Jaylen Waddle",
+    "short": "J. Waddle",
+    "pos": "WR",
+    "status": "Questionable"
+   },
    {
     "team": "DEN",
     "player": "RJ Harvey",
@@ -57,13 +64,6 @@
     "player": "Brandon Jones",
     "short": "B. Jones",
     "pos": "S",
-    "status": "Questionable"
-   },
-   {
-    "team": "DEN",
-    "player": "Jaylen Waddle",
-    "short": "J. Waddle",
-    "pos": "WR",
     "status": "Questionable"
    },
    {
@@ -166,7 +166,7 @@
    }
   ]
  },
- "updated": "2026-11-01T12:26:56.706Z",
+ "updated": "2026-11-01T12:35:15.289Z",
  "open_taken_at": "2026-10-31T05:00:41.982Z",
  "thresholds": {
   "big": 10,
@@ -810,28 +810,6 @@
    "yes_buy": 97.5,
    "no_buy": 6.5,
    "taken_at": "2026-10-31T05:00:41.982Z"
-  },
-  {
-   "market_id": "1625904",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": 23.5,
-   "question": "Will the Kansas City Chiefs cover 23.5 vs the Denver Broncos in KC Chiefs vs. DEN Broncos?",
-   "sides": [
-    "Chiefs +23.50",
-    "Broncos -23.50"
-   ],
-   "teams": [
-    "Chiefs",
-    "Broncos"
-   ],
-   "player": null,
-   "mid": 96,
-   "yes_buy": 97,
-   "no_buy": 5,
-   "taken_at": "2026-10-31T05:08:34.413Z"
   },
   {
    "market_id": "1625871",
@@ -6378,6 +6356,28 @@
    "taken_at": "2026-10-31T05:00:41.982Z"
   },
   {
+   "market_id": "1884586",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 4,
+   "question": "Will Patrick Mahomes record 4+ passing touchdowns?",
+   "sides": [
+    "Yes: Patrick Mahomes record 4+ passing touchdowns",
+    "No: Patrick Mahomes record 4+ passing touchdowns"
+   ],
+   "teams": [
+    "Chiefs",
+    "Chiefs"
+   ],
+   "player": "Patrick Mahomes",
+   "mid": 4,
+   "yes_buy": 6,
+   "no_buy": 98,
+   "taken_at": "2026-10-31T08:20:32.466Z"
+  },
+  {
    "market_id": "1884565",
    "market": "Player prop",
    "group": "prop",
@@ -6774,28 +6774,6 @@
    "taken_at": "2026-10-31T14:48:50.253Z"
   },
   {
-   "market_id": "1951957",
-   "market": "Player prop",
-   "group": "prop",
-   "mtype": "prop",
-   "period": "full_game",
-   "line": 2,
-   "question": "Will Evan Engram record 2+ receptions?",
-   "sides": [
-    "Yes: Evan Engram record 2+ receptions",
-    "No: Evan Engram record 2+ receptions"
-   ],
-   "teams": [
-    "Broncos",
-    "Broncos"
-   ],
-   "player": "Evan Engram",
-   "mid": 70,
-   "yes_buy": 73,
-   "no_buy": 33,
-   "taken_at": "2026-11-01T09:37:35.142Z"
-  },
-  {
    "market_id": "1951959",
    "market": "Player prop",
    "group": "prop",
@@ -7036,28 +7014,6 @@
    "yes_buy": 32,
    "no_buy": 74,
    "taken_at": "2026-10-31T21:34:18.263Z"
-  },
-  {
-   "market_id": "1951947",
-   "market": "Player prop",
-   "group": "prop",
-   "mtype": "prop",
-   "period": "full_game",
-   "line": 3,
-   "question": "Will Xavier Worthy record 3+ receptions?",
-   "sides": [
-    "Yes: Xavier Worthy record 3+ receptions",
-    "No: Xavier Worthy record 3+ receptions"
-   ],
-   "teams": [
-    "Chiefs",
-    "Chiefs"
-   ],
-   "player": "Xavier Worthy",
-   "mid": 62,
-   "yes_buy": 64,
-   "no_buy": 40,
-   "taken_at": "2026-11-01T10:14:49.908Z"
   },
   {
    "market_id": "1951949",
@@ -8798,6 +8754,72 @@
    "taken_at": "2026-10-31T05:00:41.982Z"
   },
   {
+   "market_id": "1625904",
+   "market": "Alt spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 23.5,
+   "question": "Will the Kansas City Chiefs cover 23.5 vs the Denver Broncos in KC Chiefs vs. DEN Broncos?",
+   "sides": [
+    "Chiefs +23.50",
+    "Broncos -23.50"
+   ],
+   "teams": [
+    "Chiefs",
+    "Broncos"
+   ],
+   "player": null,
+   "mid": 96,
+   "yes_buy": 97,
+   "no_buy": 5,
+   "taken_at": "2026-10-31T05:08:34.413Z"
+  },
+  {
+   "market_id": "1951957",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Evan Engram record 2+ receptions?",
+   "sides": [
+    "Yes: Evan Engram record 2+ receptions",
+    "No: Evan Engram record 2+ receptions"
+   ],
+   "teams": [
+    "Broncos",
+    "Broncos"
+   ],
+   "player": "Evan Engram",
+   "mid": 70,
+   "yes_buy": 73,
+   "no_buy": 33,
+   "taken_at": "2026-11-01T09:37:35.142Z"
+  },
+  {
+   "market_id": "1951947",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 3,
+   "question": "Will Xavier Worthy record 3+ receptions?",
+   "sides": [
+    "Yes: Xavier Worthy record 3+ receptions",
+    "No: Xavier Worthy record 3+ receptions"
+   ],
+   "teams": [
+    "Chiefs",
+    "Chiefs"
+   ],
+   "player": "Xavier Worthy",
+   "mid": 62,
+   "yes_buy": 64,
+   "no_buy": 40,
+   "taken_at": "2026-11-01T10:14:49.908Z"
+  },
+  {
    "market_id": "1884562",
    "market": "Player prop",
    "group": "prop",
@@ -8972,28 +8994,6 @@
    "yes_buy": 99,
    "no_buy": 7,
    "taken_at": "2026-11-01T03:32:22.226Z"
-  },
-  {
-   "market_id": "1884586",
-   "market": "Player prop",
-   "group": "prop",
-   "mtype": "prop",
-   "period": "full_game",
-   "line": 4,
-   "question": "Will Patrick Mahomes record 4+ passing touchdowns?",
-   "sides": [
-    "Yes: Patrick Mahomes record 4+ passing touchdowns",
-    "No: Patrick Mahomes record 4+ passing touchdowns"
-   ],
-   "teams": [
-    "Chiefs",
-    "Chiefs"
-   ],
-   "player": "Patrick Mahomes",
-   "mid": 4,
-   "yes_buy": 6,
-   "no_buy": 98,
-   "taken_at": "2026-10-31T08:20:32.466Z"
   },
   {
    "market_id": "1626703",
@@ -9946,5 +9946,8 @@
  ],
  "alerts": [],
  "alert_seen": [],
- "kalshi_checked": null
+ "kalshi_checked": {
+  "at": "2026-11-01T12:35:15.727Z",
+  "event": "26NOV01KCDEN"
+ }
 }
