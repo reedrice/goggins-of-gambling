@@ -9,25 +9,25 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187349",
-  "fetched_at": "2026-11-01T10:06:11.093Z",
+  "fetched_at": "2026-11-01T10:15:08.446Z",
   "tennis": true,
   "tennis_match": {
    "id": "187349",
    "uid": "s:850~l:851~e:13-2026~c:187349",
-   "date": "2026-11-01T10:00Z",
-   "startDate": "2026-11-01T10:00Z",
+   "date": "2026-11-01T10:05Z",
+   "startDate": "2026-11-01T10:05Z",
    "timeValid": true,
    "recent": true,
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Sun, November 1st at 5:00 AM EST",
-     "shortDetail": "11/1 - 5:00 AM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Thiago Agustin Tirante (ARG) leads Mattia Bellucci (ITA) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,11 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "cf0b31da-aa35-3e23-b986-0726c501656b",
       "displayName": "Mattia Bellucci",
@@ -87,6 +97,11 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "d7013896-f27c-1590-01c8-3df0a2781e16",
       "displayName": "Thiago Agustin Tirante",
@@ -135,10 +150,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Sun, November 1st at 5:00 AM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Mattia Bellucci",
@@ -156,7 +171,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-01T10:06:10.999Z",
+ "updated": "2026-11-01T10:15:08.339Z",
  "open_taken_at": "2026-10-31T14:49:13.509Z",
  "thresholds": {
   "big": 10,
@@ -208,26 +223,26 @@
    "taken_at": "2026-10-31T19:05:21.114Z"
   },
   {
-   "market_id": "2009124",
-   "market": "Sets spread",
+   "market_id": "2009126",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Thiago Agustin Tirante cover 1.5 vs the Mattia Bellucci in Thiago Agustin Tirante vs. Mattia Bellucci?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Thiago Agustin Tirante vs. Mattia Bellucci be more than 22.5?",
    "sides": [
-    "Thiago Agustin Tirante +1.50 (Sets)",
-    "Mattia Bellucci -1.50 (Sets)"
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
    ],
    "teams": [
-    "Thiago Agustin Tirante",
-    "Mattia Bellucci"
+    null,
+    null
    ],
    "player": null,
-   "mid": 59.5,
-   "yes_buy": 60,
-   "no_buy": 41,
-   "taken_at": "2026-11-01T10:06:10.999Z"
+   "mid": 52.5,
+   "yes_buy": 55,
+   "no_buy": 50,
+   "taken_at": "2026-11-01T00:07:01.134Z"
   },
   {
    "market_id": "2009133",
@@ -250,6 +265,28 @@
    "yes_buy": 41,
    "no_buy": 64,
    "taken_at": "2026-11-01T00:45:35.064Z"
+  },
+  {
+   "market_id": "2009118",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Thiago Agustin Tirante cover 1.5 vs the Mattia Bellucci in Thiago Agustin Tirante vs. Mattia Bellucci?",
+   "sides": [
+    "Thiago Agustin Tirante +1.50 (Games)",
+    "Mattia Bellucci -1.50 (Games)"
+   ],
+   "teams": [
+    "Thiago Agustin Tirante",
+    "Mattia Bellucci"
+   ],
+   "player": null,
+   "mid": 40,
+   "yes_buy": 43,
+   "no_buy": 63,
+   "taken_at": "2026-11-01T00:07:01.134Z"
   },
   {
    "market_id": "2009134",
@@ -318,26 +355,26 @@
    "taken_at": "2026-11-01T10:06:10.999Z"
   },
   {
-   "market_id": "2009126",
-   "market": "Games total",
+   "market_id": "2009124",
+   "market": "Sets spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Thiago Agustin Tirante vs. Mattia Bellucci be more than 22.5?",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Thiago Agustin Tirante cover 1.5 vs the Mattia Bellucci in Thiago Agustin Tirante vs. Mattia Bellucci?",
    "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
+    "Thiago Agustin Tirante +1.50 (Sets)",
+    "Mattia Bellucci -1.50 (Sets)"
    ],
    "teams": [
-    null,
-    null
+    "Thiago Agustin Tirante",
+    "Mattia Bellucci"
    ],
    "player": null,
-   "mid": 52.5,
-   "yes_buy": 55,
-   "no_buy": 50,
-   "taken_at": "2026-11-01T00:07:01.134Z"
+   "mid": 59.5,
+   "yes_buy": 60,
+   "no_buy": 41,
+   "taken_at": "2026-11-01T10:06:10.999Z"
   },
   {
    "market_id": "2009128",
@@ -360,28 +397,6 @@
    "yes_buy": 42,
    "no_buy": 64,
    "taken_at": "2026-11-01T09:38:02.888Z"
-  },
-  {
-   "market_id": "2009118",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Thiago Agustin Tirante cover 1.5 vs the Mattia Bellucci in Thiago Agustin Tirante vs. Mattia Bellucci?",
-   "sides": [
-    "Thiago Agustin Tirante +1.50 (Games)",
-    "Mattia Bellucci -1.50 (Games)"
-   ],
-   "teams": [
-    "Thiago Agustin Tirante",
-    "Mattia Bellucci"
-   ],
-   "player": null,
-   "mid": 40,
-   "yes_buy": 43,
-   "no_buy": 63,
-   "taken_at": "2026-11-01T00:07:01.134Z"
   }
  ],
  "edges": [
@@ -398,30 +413,90 @@
    "now_odds": "+426",
    "edge": 14,
    "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
+   "class": "score",
+   "reason": "Explained by score: Mattia Bellucci not above the games spread right now",
+   "context": "Mattia Bellucci 0 · Thiago Agustin Tirante 1 · 1st Set (games by set)",
    "first_seen": "2026-11-01T10:06:10.999Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "2009134:0",
-   "market_id": "2009134",
-   "market": "Set 2 winner",
+   "key": "2009133:1",
+   "market_id": "2009133",
+   "market": "Set 1 winner",
    "group": "game",
-   "question": "Will Thiago Agustin Tirante win set 2 against Mattia Bellucci?",
-   "side": "Yes: Thiago Agustin Tirante win set 2 against Mattia Bellucci",
-   "open_chance": 44,
-   "now_chance": 40,
-   "open_odds": "+127",
-   "now_odds": "+150",
+   "question": "Will Thiago Agustin Tirante win set 1 against Mattia Bellucci?",
+   "side": "No: Thiago Agustin Tirante win set 1 against Mattia Bellucci",
+   "open_chance": 64,
+   "now_chance": 54,
+   "open_odds": "-178",
+   "now_odds": "-117",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Mattia Bellucci 0 · Thiago Agustin Tirante 1 · 1st Set (games by set)",
+   "first_seen": "2026-11-01T10:15:08.339Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2009118:1",
+   "market_id": "2009118",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Thiago Agustin Tirante cover 1.5 vs the Mattia Bellucci in Thiago Agustin Tirante vs. Mattia Bellucci?",
+   "side": "Mattia Bellucci -1.50 (Games)",
+   "open_chance": 63,
+   "now_chance": 56,
+   "open_odds": "-170",
+   "now_odds": "-127",
+   "edge": 7,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Mattia Bellucci not above the games spread right now",
+   "context": "Mattia Bellucci 0 · Thiago Agustin Tirante 1 · 1st Set (games by set)",
+   "first_seen": "2026-11-01T03:49:34.817Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2009126:1",
+   "market_id": "2009126",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Thiago Agustin Tirante vs. Mattia Bellucci be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 50,
+   "now_chance": 46,
+   "open_odds": "+100",
+   "now_odds": "+117",
    "edge": 4,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-11-01T10:06:10.999Z",
+   "context": "Mattia Bellucci 0 · Thiago Agustin Tirante 1 · 1st Set (games by set)",
+   "first_seen": "2026-11-01T10:15:08.339Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2009134:1",
+   "market_id": "2009134",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Thiago Agustin Tirante win set 2 against Mattia Bellucci?",
+   "side": "No: Thiago Agustin Tirante win set 2 against Mattia Bellucci",
+   "open_chance": 62,
+   "now_chance": 58,
+   "open_odds": "-163",
+   "now_odds": "-138",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Mattia Bellucci 0 · Thiago Agustin Tirante 1 · 1st Set (games by set)",
+   "first_seen": "2026-11-01T10:15:08.339Z",
    "status": "open",
    "kalshi": null
   },
@@ -446,22 +521,22 @@
    "kalshi": null
   },
   {
-   "key": "2009118:1",
-   "market_id": "2009118",
-   "market": "Games spread",
+   "key": "2009134:0",
+   "market_id": "2009134",
+   "market": "Set 2 winner",
    "group": "game",
-   "question": "Will the Thiago Agustin Tirante cover 1.5 vs the Mattia Bellucci in Thiago Agustin Tirante vs. Mattia Bellucci?",
-   "side": "Mattia Bellucci -1.50 (Games)",
-   "open_chance": 63,
-   "now_chance": 58,
-   "open_odds": "-170",
-   "now_odds": "-138",
-   "edge": 5,
+   "question": "Will Thiago Agustin Tirante win set 2 against Mattia Bellucci?",
+   "side": "Yes: Thiago Agustin Tirante win set 2 against Mattia Bellucci",
+   "open_chance": 44,
+   "now_chance": 40,
+   "open_odds": "+127",
+   "now_odds": "+150",
+   "edge": 4,
    "tier": "slight",
    "class": "edge",
    "reason": null,
    "context": "Pregame",
-   "first_seen": "2026-11-01T03:49:34.817Z",
+   "first_seen": "2026-11-01T10:06:10.999Z",
    "status": "gone",
    "kalshi": null
   },
@@ -487,6 +562,62 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2009133:1:big",
+   "key": "2009133:1",
+   "at": "2026-11-01T10:15:08.339Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "No: Thiago Agustin Tirante win set 1 against Mattia Bellucci",
+   "market": "Set 1 winner",
+   "now_odds": "-117",
+   "now_chance": 54,
+   "edge": 10,
+   "text": "New big edge: No: Thiago Agustin Tirante win set 1 against Mattia Bellucci (Set 1 winner), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-thitir-matbel-2026-11-01"
+  },
+  {
+   "id": "new_edge:2009126:1:slight",
+   "key": "2009126:1",
+   "at": "2026-11-01T10:15:08.339Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+117",
+   "now_chance": 46,
+   "edge": 4,
+   "text": "New slight edge: Under 22.5 (Games) (Games total), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-thitir-matbel-2026-11-01"
+  },
+  {
+   "id": "new_edge:2009134:1:slight",
+   "key": "2009134:1",
+   "at": "2026-11-01T10:15:08.339Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "No: Thiago Agustin Tirante win set 2 against Mattia Bellucci",
+   "market": "Set 2 winner",
+   "now_odds": "-138",
+   "now_chance": 58,
+   "edge": 4,
+   "text": "New slight edge: No: Thiago Agustin Tirante win set 2 against Mattia Bellucci (Set 2 winner), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-thitir-matbel-2026-11-01"
+  },
+  {
+   "id": "gone:2009134:0:2026-11-01T10:06:10.999Z",
+   "key": "2009134:0",
+   "at": "2026-11-01T10:15:08.339Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Yes: Thiago Agustin Tirante win set 2 against Mattia Bellucci",
+   "market": "Set 2 winner",
+   "now_odds": "+150",
+   "now_chance": 40,
+   "edge": 4,
+   "text": "Edge gone: Yes: Thiago Agustin Tirante win set 2 against Mattia Bellucci (Set 2 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-thitir-matbel-2026-11-01"
+  },
   {
    "id": "new_edge:2009120:1:big",
    "key": "2009120:1",
@@ -533,7 +664,11 @@
  "alert_seen": [
   "new_edge:2009120:1:big",
   "new_edge:2009134:0:slight",
-  "gone:2008449:0:2026-10-31T18:09:37.714Z"
+  "gone:2008449:0:2026-10-31T18:09:37.714Z",
+  "new_edge:2009133:1:big",
+  "new_edge:2009126:1:slight",
+  "new_edge:2009134:1:slight",
+  "gone:2009134:0:2026-11-01T10:06:10.999Z"
  ],
  "kalshi_checked": null
 }

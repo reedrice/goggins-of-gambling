@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187355",
-  "fetched_at": "2026-11-01T10:06:19.425Z",
+  "fetched_at": "2026-11-01T10:15:16.178Z",
   "tennis": true,
   "tennis_match": {
    "id": "187355",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Sun, November 1st at 5:05 AM EST",
-     "shortDetail": "11/1 - 5:05 AM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Ashmitha Easwaramurthi (IND) leads Prathyusha Rachapudi (IND) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "8f8e25d4-09b6-3f4e-ac72-0fedda7cfcb5",
       "displayName": "Ashmitha Easwaramurthi",
@@ -87,6 +98,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "70f90739-d0b7-3af1-b835-7bdc9e6db49c",
       "displayName": "Prathyusha Rachapudi",
@@ -119,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1082,
    "type": {
     "id": "2",
@@ -135,10 +157,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Sun, November 1st at 5:05 AM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Ashmitha Easwaramurthi",
@@ -156,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-01T10:06:19.326Z",
+ "updated": "2026-11-01T10:15:16.097Z",
  "open_taken_at": "2026-10-31T20:16:55.870Z",
  "thresholds": {
   "big": 10,
@@ -252,26 +274,26 @@
    "taken_at": "2026-11-01T10:06:19.326Z"
   },
   {
-   "market_id": "2021632",
-   "market": "Games spread",
+   "market_id": "2021640",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Prathyusha Rachapudi cover -7.5 vs the Ashmitha Easwaramurthi in Prathyusha Rachapudi vs. Ashmitha Easwaramurthi?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Prathyusha Rachapudi vs. Ashmitha Easwaramurthi be more than 17.5?",
    "sides": [
-    "Prathyusha Rachapudi -7.50 (Games)",
-    "Ashmitha Easwaramurthi +7.50 (Games)"
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
    ],
    "teams": [
-    "Prathyusha Rachapudi",
-    "Ashmitha Easwaramurthi"
+    null,
+    null
    ],
    "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-11-01T10:06:19.326Z"
+   "mid": 64.5,
+   "yes_buy": 65,
+   "no_buy": 36,
+   "taken_at": "2026-11-01T10:15:16.097Z"
   },
   {
    "market_id": "2021637",
@@ -316,10 +338,90 @@
    "yes_buy": 34,
    "no_buy": 67,
    "taken_at": "2026-11-01T10:06:19.326Z"
+  },
+  {
+   "market_id": "2021632",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Prathyusha Rachapudi cover -7.5 vs the Ashmitha Easwaramurthi in Prathyusha Rachapudi vs. Ashmitha Easwaramurthi?",
+   "sides": [
+    "Prathyusha Rachapudi -7.50 (Games)",
+    "Ashmitha Easwaramurthi +7.50 (Games)"
+   ],
+   "teams": [
+    "Prathyusha Rachapudi",
+    "Ashmitha Easwaramurthi"
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-11-01T10:06:19.326Z"
   }
  ],
- "edges": [],
- "alerts": [],
- "alert_seen": [],
+ "edges": [
+  {
+   "key": "2021628:1",
+   "market_id": "2021628",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Prathyusha Rachapudi cover -4.5 vs the Ashmitha Easwaramurthi in Prathyusha Rachapudi vs. Ashmitha Easwaramurthi?",
+   "side": "Ashmitha Easwaramurthi +4.50 (Games)",
+   "open_chance": 67,
+   "now_chance": 33,
+   "open_odds": "-203",
+   "now_odds": "+203",
+   "edge": 34,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (34 pts), likely news",
+   "context": "Ashmitha Easwaramurthi 1 · Prathyusha Rachapudi 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-01T10:15:16.097Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2021632:0",
+   "market_id": "2021632",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Prathyusha Rachapudi cover -7.5 vs the Ashmitha Easwaramurthi in Prathyusha Rachapudi vs. Ashmitha Easwaramurthi?",
+   "side": "Prathyusha Rachapudi -7.50 (Games)",
+   "open_chance": 34,
+   "now_chance": 26,
+   "open_odds": "+194",
+   "now_odds": "+285",
+   "edge": 8,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Prathyusha Rachapudi not above the games spread right now",
+   "context": "Ashmitha Easwaramurthi 1 · Prathyusha Rachapudi 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-01T10:15:16.097Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
+ "alerts": [
+  {
+   "id": "news:2021628:1",
+   "key": "2021628:1",
+   "at": "2026-11-01T10:15:16.097Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Ashmitha Easwaramurthi +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+203",
+   "now_chance": 33,
+   "edge": 34,
+   "text": "Big move, likely news: Ashmitha Easwaramurthi +4.50 (Games) (Games spread) is 34 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-prarac-asheas-2026-11-01"
+  }
+ ],
+ "alert_seen": [
+  "news:2021628:1"
+ ],
  "kalshi_checked": null
 }
