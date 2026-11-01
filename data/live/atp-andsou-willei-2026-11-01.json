@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-01T19:34:27.324Z"
+  "fetched_at": "2026-11-01T19:42:54.457Z"
  },
- "updated": "2026-11-01T19:34:27.251Z",
+ "updated": "2026-11-01T19:42:54.331Z",
  "open_taken_at": "2026-11-01T00:17:17.565Z",
  "thresholds": {
   "big": 10,
@@ -63,26 +63,26 @@
    "taken_at": "2026-11-01T19:14:07.198Z"
   },
   {
-   "market_id": "2030441",
-   "market": "Set 1 winner",
+   "market_id": "2030432",
+   "market": "Sets spread",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Andre Souza win set 1 against Wilson Leite?",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Andre Souza cover 1.5 vs the Wilson Leite in Andre Souza vs. Wilson Leite?",
    "sides": [
-    "Yes: Andre Souza win set 1 against Wilson Leite",
-    "No: Andre Souza win set 1 against Wilson Leite"
+    "Andre Souza +1.50 (Sets)",
+    "Wilson Leite -1.50 (Sets)"
    ],
    "teams": [
     "Andre Souza",
-    null
+    "Wilson Leite"
    ],
    "player": null,
-   "mid": 28,
-   "yes_buy": 31,
-   "no_buy": 75,
-   "taken_at": "2026-11-01T19:14:07.198Z"
+   "mid": 46,
+   "yes_buy": 47,
+   "no_buy": 55,
+   "taken_at": "2026-11-01T19:42:54.331Z"
   },
   {
    "market_id": "2030442",
@@ -127,6 +127,50 @@
    "yes_buy": 25,
    "no_buy": 81,
    "taken_at": "2026-11-01T19:34:27.251Z"
+  },
+  {
+   "market_id": "2030427",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Andre Souza cover -4.5 vs the Wilson Leite in Andre Souza vs. Wilson Leite?",
+   "sides": [
+    "Andre Souza -4.50 (Games)",
+    "Wilson Leite +4.50 (Games)"
+   ],
+   "teams": [
+    "Andre Souza",
+    "Wilson Leite"
+   ],
+   "player": null,
+   "mid": 15.5,
+   "yes_buy": 16,
+   "no_buy": 85,
+   "taken_at": "2026-11-01T19:42:54.331Z"
+  },
+  {
+   "market_id": "2030441",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Andre Souza win set 1 against Wilson Leite?",
+   "sides": [
+    "Yes: Andre Souza win set 1 against Wilson Leite",
+    "No: Andre Souza win set 1 against Wilson Leite"
+   ],
+   "teams": [
+    "Andre Souza",
+    null
+   ],
+   "player": null,
+   "mid": 28,
+   "yes_buy": 31,
+   "no_buy": 75,
+   "taken_at": "2026-11-01T19:14:07.198Z"
   },
   {
    "market_id": "2030434",
@@ -182,10 +226,10 @@
    "question": "Will the Andre Souza cover 4.5 vs the Wilson Leite in Andre Souza vs. Wilson Leite?",
    "side": "Wilson Leite -4.50 (Games)",
    "open_chance": 66,
-   "now_chance": 53,
+   "now_chance": 52,
    "open_odds": "-194",
-   "now_odds": "-113",
-   "edge": 13,
+   "now_odds": "-108",
+   "edge": 14,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -211,11 +255,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-01T19:24:02.241Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2030441:1:2026-11-01T19:24:02.241Z",
+   "key": "2030441:1",
+   "at": "2026-11-01T19:42:54.331Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "No: Andre Souza win set 1 against Wilson Leite",
+   "market": "Set 1 winner",
+   "now_odds": "-213",
+   "now_chance": 68,
+   "edge": 7,
+   "text": "Edge gone: No: Andre Souza win set 1 against Wilson Leite (Set 1 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-andsou-willei-2026-11-01"
+  },
   {
    "id": "new_edge:2030428:1:big",
    "key": "2030428:1",
@@ -248,7 +306,8 @@
  "alert_seen": [
   "new_edge:2027429:1:slight",
   "new_edge:2030441:1:slight",
-  "new_edge:2030428:1:big"
+  "new_edge:2030428:1:big",
+  "gone:2030441:1:2026-11-01T19:24:02.241Z"
  ],
  "kalshi_checked": null
 }
