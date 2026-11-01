@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-11-01T04:29:47.994Z",
+ "updated_at": "2026-11-01T04:37:36.872Z",
  "source": "ESPN public roster API (site.api.espn.com), matched to Polymarket US player names",
  "leagues": {
   "nhl": {
@@ -14,10 +14,10 @@
     "cgy|matt coronato": "RW",
     "col|brock nelson": "C",
     "cgy|mikael backlund": "C",
+    "col|nathan mackinnon": "C",
     "col|cale makar": "D",
     "col|martin necas": "C",
     "col|gabriel landeskog": "LW",
-    "col|nathan mackinnon": "C",
     "col|artturi lehkonen": "LW",
     "col|nazem kadri": "C",
     "cgy|matvei gridin": "RW",
@@ -128,14 +128,18 @@
   },
   "lmx": {
    "names": {
+    "D": "Defender",
     "M": "Midfielder",
     "F": "Forward"
    },
    "players": {
-    "ame|carlos alvarez": "M",
+    "tol|nicolas castro": "M",
     "ame|isaias violante": "F",
+    "ame|franco rossano": "D",
+    "tol|jesus gallardo": "D",
     "tol|helinho": "F",
     "ame|erick sanchez": "M",
+    "tol|federico pereira": "D",
     "ame|henry martin": "F",
     "tol|federico vinas": "F"
    }
@@ -222,8 +226,8 @@
     "QB": "Quarterback"
    },
    "players": {
-    "ind|daniel jones": "QB",
     "jax|josh cameron": "WR",
+    "ind|daniel jones": "QB",
     "ind|laquon treadwell": "WR",
     "jax|trevor lawrence": "QB",
     "jax|bhayshul tuten": "RB",
@@ -305,31 +309,21 @@
     "min|tai felton": "WR",
     "min|gavin bartholomew": "TE",
     "det|jacob saylors": "RB",
-    "min|demond claiborne": "RB",
     "min|ben yurosek": "TE",
+    "min|demond claiborne": "RB",
     "min|myles price": "WR",
     "det|deandre carter": "WR",
     "tb|ted hurst": "WR",
-    "atl|bijan robinson": "RB",
-    "tb|bucky irving": "RB",
     "tb|tez johnson": "WR",
     "tb|baker mayfield": "QB",
+    "tb|bucky irving": "RB",
     "tb|chris godwin": "WR",
-    "atl|michael penix": "QB",
     "tb|cade otton": "TE",
-    "atl|drake london": "WR",
-    "atl|jahan dotson": "WR",
-    "atl|zachariah branch": "WR",
-    "atl|kyle pitts": "TE",
     "tb|sean tucker": "RB",
-    "atl|khalil herbert": "RB",
-    "atl|austin hooper": "TE",
     "tb|david sills": "WR",
-    "atl|charlie woerner": "TE",
     "tb|payne durham": "TE",
-    "atl|chris blair": "WR",
-    "tb|ko kieft": "TE",
     "tb|bauer sharp": "TE",
+    "tb|ko kieft": "TE",
     "dal|dak prescott": "QB",
     "dal|javonte williams": "RB",
     "ari|elijah higgins": "TE",
@@ -357,6 +351,7 @@
     "nyj|garrett wilson": "WR",
     "nyj|geno smith": "QB",
     "lv|kirk cousins": "QB",
+    "nyj|adonai mitchell": "WR",
     "lv|brock bowers": "TE",
     "nyj|kenyon sadiq": "TE",
     "lv|mike washington": "RB",
@@ -365,7 +360,6 @@
     "lv|michael mayer": "TE",
     "nyj|mason taylor": "TE",
     "nyj|omar cooper": "WR",
-    "nyj|adonai mitchell": "WR",
     "lv|tre tucker": "WR",
     "lv|cody white": "WR",
     "nyj|braelon allen": "RB",
@@ -410,9 +404,9 @@
     "lac|omarion hampton": "RB",
     "lac|justin herbert": "QB",
     "lar|tyler higbee": "TE",
-    "lar|puka nacua": "WR",
     "lar|blake corum": "RB",
     "lac|oronde gadsden": "TE",
+    "lar|puka nacua": "WR",
     "lar|kyren williams": "RB",
     "lar|konata mumpfield": "WR",
     "lac|ladd mcconkey": "WR",
@@ -446,9 +440,9 @@
     "mia|kevin coleman": "WR",
     "mia|will kacmarek": "TE",
     "ne|cameron latu": "TE",
-    "kc|patrick mahomes": "QB",
     "den|bo nix": "QB",
     "den|evan engram": "TE",
+    "kc|patrick mahomes": "QB",
     "den|courtland sutton": "WR",
     "den|jk dobbins": "RB",
     "kc|kenneth walker": "RB",
@@ -470,8 +464,8 @@
     "was|chig okonkwo": "TE",
     "phi|dallas goedert": "TE",
     "phi|makai lemon": "WR",
-    "was|jayden daniels": "QB",
     "was|stefon diggs": "WR",
+    "was|jayden daniels": "QB",
     "phi|tanner mckee": "QB",
     "phi|darius cooper": "WR",
     "was|rachaad white": "RB",
@@ -519,20 +513,29 @@
     "PF": "Power Forward"
    },
    "players": {
-    "bos|jayson tatum": "SF",
     "bos|derrick white": "PG",
-    "bos|payton pritchard": "PG",
+    "bos|jayson tatum": "SF",
     "bos|paul george": "SG",
-    "gs|yaxel lendeborg": "SF",
+    "bos|payton pritchard": "PG",
+    "bkn|nolan traore": "SG",
+    "bkn|dayron sharpe": "C",
+    "bkn|noah clowney": "PF",
+    "ind|pascal siakam": "PF",
+    "bkn|julius randle": "PF",
+    "bkn|michael porter": "SF",
+    "ind|andrew nembhard": "SG",
+    "bkn|keon ellis": "SG",
+    "ind|kelly oubre": "SG",
     "lac|darius garland": "PG",
-    "gs|brandin podziemski": "SG",
     "lac|rui hachimura": "PF",
+    "gs|yaxel lendeborg": "SF",
+    "gs|brandin podziemski": "SG",
     "lac|derrick jones": "SF",
+    "lal|walker kessler": "C",
     "lal|luka doncic": "PG",
     "tor|rj barrett": "SG",
     "tor|immanuel quickley": "PG",
     "lal|austin reaves": "SG",
-    "lal|walker kessler": "C",
     "tor|scottie barnes": "PF",
     "tor|jakobe walter": "SF",
     "tor|collin murray boyles": "PF",
@@ -553,11 +556,11 @@
    }
   },
   "lmx": {
-   "players": 6,
-   "matched": 6,
+   "players": 9,
+   "matched": 9,
    "rate": 1,
    "by": {
-    "team": 6
+    "team": 9
    }
   },
   "sea": {
@@ -595,19 +598,19 @@
   },
   "nfl": {
    "players": 286,
-   "matched": 286,
-   "rate": 1,
+   "matched": 276,
+   "rate": 0.965,
    "by": {
-    "team": 284,
+    "team": 274,
     "nickname": 2
    }
   },
   "nba": {
-   "players": 21,
-   "matched": 21,
+   "players": 30,
+   "matched": 30,
    "rate": 1,
    "by": {
-    "team": 21
+    "team": 30
    }
   }
  },
@@ -617,6 +620,18 @@
   ],
   "lal": [
    "Yassir Zabiri (rrc)"
+  ],
+  "nfl": [
+   "Austin Hooper (atl)",
+   "Bijan Robinson (atl)",
+   "Charlie Woerner (atl)",
+   "Chris Blair (atl)",
+   "Drake London (atl)",
+   "Jahan Dotson (atl)",
+   "Khalil Herbert (atl)",
+   "Kyle Pitts Sr. (atl)",
+   "Michael Penix Jr. (atl)",
+   "Zachariah Branch (atl)"
   ]
  },
  "skipped_leagues": []
