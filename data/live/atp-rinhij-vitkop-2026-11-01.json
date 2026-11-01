@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187354",
-  "fetched_at": "2026-11-01T10:55:08.205Z",
+  "fetched_at": "2026-11-01T11:02:26.266Z",
   "tennis": true,
   "tennis_match": {
    "id": "187354",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Rinky Hijikata (AUS) leads Vit Kopriva (CZE) 6-6",
+     "text": "Rinky Hijikata (AUS) is tied with Vit Kopriva (CZE) 7-6 (7-5) 0-0",
      "type": "event"
     }
    ],
@@ -57,7 +57,12 @@
      "homeAway": "away",
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "tiebreak": 5,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -99,7 +104,12 @@
      "homeAway": "home",
      "linescores": [
       {
-       "value": 6
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -152,8 +162,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Vit Kopriva",
@@ -165,13 +175,13 @@
    "abbr": "Rinky Hijikata",
    "alias": "Rinky Hijikata",
    "name": "Rinky Hijikata",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-01T10:55:08.129Z",
+ "updated": "2026-11-01T11:02:26.098Z",
  "open_taken_at": "2026-10-31T14:49:13.609Z",
  "thresholds": {
   "big": 10,
@@ -245,28 +255,6 @@
    "taken_at": "2026-11-01T10:15:08.357Z"
   },
   {
-   "market_id": "2009116",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Rinky Hijikata win set 2 against Vit Kopriva?",
-   "sides": [
-    "Yes: Rinky Hijikata win set 2 against Vit Kopriva",
-    "No: Rinky Hijikata win set 2 against Vit Kopriva"
-   ],
-   "teams": [
-    "Rinky Hijikata",
-    null
-   ],
-   "player": null,
-   "mid": 65.5,
-   "yes_buy": 66,
-   "no_buy": 35,
-   "taken_at": "2026-11-01T10:06:11.046Z"
-  },
-  {
    "market_id": "2009108",
    "market": "Games total",
    "group": "game",
@@ -311,26 +299,48 @@
    "taken_at": "2026-11-01T10:15:08.357Z"
   },
   {
-   "market_id": "2009109",
-   "market": "Games total",
+   "market_id": "2009116",
+   "market": "Set 2 winner",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Rinky Hijikata vs. Vit Kopriva be more than 27.5?",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Rinky Hijikata win set 2 against Vit Kopriva?",
    "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
+    "Yes: Rinky Hijikata win set 2 against Vit Kopriva",
+    "No: Rinky Hijikata win set 2 against Vit Kopriva"
    ],
    "teams": [
-    null,
+    "Rinky Hijikata",
     null
    ],
    "player": null,
-   "mid": 31,
-   "yes_buy": 32,
-   "no_buy": 70,
-   "taken_at": "2026-11-01T10:15:08.357Z"
+   "mid": 65.5,
+   "yes_buy": 66,
+   "no_buy": 35,
+   "taken_at": "2026-11-01T10:06:11.046Z"
+  },
+  {
+   "market_id": "2009105",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Rinky Hijikata cover -1.5 vs the Vit Kopriva in Rinky Hijikata vs. Vit Kopriva?",
+   "sides": [
+    "Rinky Hijikata -1.50 (Sets)",
+    "Vit Kopriva +1.50 (Sets)"
+   ],
+   "teams": [
+    "Rinky Hijikata",
+    "Vit Kopriva"
+   ],
+   "player": null,
+   "mid": 59.5,
+   "yes_buy": 60,
+   "no_buy": 41,
+   "taken_at": "2026-11-01T11:02:26.098Z"
   },
   {
    "market_id": "2009110",
@@ -353,6 +363,28 @@
    "yes_buy": 40,
    "no_buy": 63,
    "taken_at": "2026-11-01T04:14:12.566Z"
+  },
+  {
+   "market_id": "2009109",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Rinky Hijikata vs. Vit Kopriva be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 31,
+   "yes_buy": 32,
+   "no_buy": 70,
+   "taken_at": "2026-11-01T10:15:08.357Z"
   },
   {
    "market_id": "2009101",
@@ -445,26 +477,6 @@
  ],
  "edges": [
   {
-   "key": "2009070:0",
-   "market_id": "2009070",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Rinky Hijikata vs Vit Kopriva scheduled for November 1, 2026 at 10:00 AM UTC?",
-   "side": "Rinky Hijikata win",
-   "open_chance": 74,
-   "now_chance": 57,
-   "open_odds": "-285",
-   "now_odds": "-133",
-   "edge": 17,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Vit Kopriva 6 · Rinky Hijikata 6 · 1st Set (games by set)",
-   "first_seen": "2026-10-31T18:09:37.715Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "2009108:1",
    "market_id": "2009108",
    "market": "Games total",
@@ -479,48 +491,28 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Vit Kopriva 6 · Rinky Hijikata 6 · 1st Set (games by set)",
+   "context": "Vit Kopriva 6, 0 · Rinky Hijikata 7, 0 · 2nd Set (games by set)",
    "first_seen": "2026-11-01T10:15:08.357Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "2009109:1",
-   "market_id": "2009109",
-   "market": "Games total",
+   "key": "2009070:1",
+   "market_id": "2009070",
+   "market": "Moneyline",
    "group": "game",
-   "question": "Will the total in Rinky Hijikata vs. Vit Kopriva be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 70,
-   "now_chance": 55,
-   "open_odds": "-233",
-   "now_odds": "-122",
-   "edge": 15,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Vit Kopriva 6 · Rinky Hijikata 6 · 1st Set (games by set)",
-   "first_seen": "2026-11-01T10:45:09.529Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2009100:1",
-   "market_id": "2009100",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Rinky Hijikata cover 1.5 vs the Vit Kopriva in Rinky Hijikata vs. Vit Kopriva?",
-   "side": "Vit Kopriva -1.50 (Games)",
-   "open_chance": 35,
-   "now_chance": 23,
-   "open_odds": "+186",
-   "now_odds": "+335",
-   "edge": 12,
+   "question": "Who will win in the upcoming atp event Rinky Hijikata vs Vit Kopriva scheduled for November 1, 2026 at 10:00 AM UTC?",
+   "side": "Vit Kopriva win",
+   "open_chance": 32,
+   "now_chance": 18,
+   "open_odds": "+213",
+   "now_odds": "+456",
+   "edge": 14,
    "tier": "big",
    "class": "score",
-   "reason": "Explained by score: Vit Kopriva not above the games spread right now",
-   "context": "Vit Kopriva 6 · Rinky Hijikata 6 · 1st Set (games by set)",
-   "first_seen": "2026-11-01T10:34:52.504Z",
+   "reason": "Explained by score: Vit Kopriva trailing in sets",
+   "context": "Vit Kopriva 6, 0 · Rinky Hijikata 7, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-11-01T10:15:08.357Z",
    "status": "open",
    "kalshi": null
   },
@@ -539,7 +531,47 @@
    "tier": "slight",
    "class": "score",
    "reason": "Explained by score: Rinky Hijikata not above the games spread right now",
-   "context": "Vit Kopriva 6 · Rinky Hijikata 6 · 1st Set (games by set)",
+   "context": "Vit Kopriva 6, 0 · Rinky Hijikata 7, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-11-01T10:45:09.529Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2009116:0",
+   "market_id": "2009116",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Rinky Hijikata win set 2 against Vit Kopriva?",
+   "side": "Yes: Rinky Hijikata win set 2 against Vit Kopriva",
+   "open_chance": 66,
+   "now_chance": 61,
+   "open_odds": "-194",
+   "now_odds": "-156",
+   "edge": 5,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Rinky Hijikata not above the games spread right now",
+   "context": "Vit Kopriva 6, 0 · Rinky Hijikata 7, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-11-01T11:02:26.098Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2009109:1",
+   "market_id": "2009109",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Rinky Hijikata vs. Vit Kopriva be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 70,
+   "now_chance": 65,
+   "open_odds": "-233",
+   "now_odds": "-186",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Vit Kopriva 6, 0 · Rinky Hijikata 7, 0 · 2nd Set (games by set)",
    "first_seen": "2026-11-01T10:45:09.529Z",
    "status": "open",
    "kalshi": null
@@ -552,14 +584,14 @@
    "question": "Will the total in Rinky Hijikata vs. Vit Kopriva be more than 2.5?",
    "side": "Under 2.5 (Sets)",
    "open_chance": 63,
-   "now_chance": 58,
+   "now_chance": 59,
    "open_odds": "-170",
-   "now_odds": "-138",
-   "edge": 5,
+   "now_odds": "-144",
+   "edge": 4,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Vit Kopriva 6 · Rinky Hijikata 6 · 1st Set (games by set)",
+   "context": "Vit Kopriva 6, 0 · Rinky Hijikata 7, 0 · 2nd Set (games by set)",
    "first_seen": "2026-11-01T10:55:08.129Z",
    "status": "open",
    "kalshi": null
@@ -585,6 +617,26 @@
    "kalshi": null
   },
   {
+   "key": "2009070:0",
+   "market_id": "2009070",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Rinky Hijikata vs Vit Kopriva scheduled for November 1, 2026 at 10:00 AM UTC?",
+   "side": "Rinky Hijikata win",
+   "open_chance": 74,
+   "now_chance": 57,
+   "open_odds": "-285",
+   "now_odds": "-133",
+   "edge": 17,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Vit Kopriva 6 · Rinky Hijikata 6 · 1st Set (games by set)",
+   "first_seen": "2026-10-31T18:09:37.715Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "2009107:1",
    "market_id": "2009107",
    "market": "Games total",
@@ -605,22 +657,22 @@
    "kalshi": null
   },
   {
-   "key": "2009070:1",
-   "market_id": "2009070",
-   "market": "Moneyline",
+   "key": "2009100:1",
+   "market_id": "2009100",
+   "market": "Games spread",
    "group": "game",
-   "question": "Who will win in the upcoming atp event Rinky Hijikata vs Vit Kopriva scheduled for November 1, 2026 at 10:00 AM UTC?",
-   "side": "Vit Kopriva win",
-   "open_chance": 32,
-   "now_chance": 19,
-   "open_odds": "+213",
-   "now_odds": "+426",
-   "edge": 13,
+   "question": "Will the Rinky Hijikata cover 1.5 vs the Vit Kopriva in Rinky Hijikata vs. Vit Kopriva?",
+   "side": "Vit Kopriva -1.50 (Games)",
+   "open_chance": 35,
+   "now_chance": 23,
+   "open_odds": "+186",
+   "now_odds": "+335",
+   "edge": 12,
    "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Vit Kopriva 1 · Rinky Hijikata 3 · 1st Set (games by set)",
-   "first_seen": "2026-11-01T10:15:08.357Z",
+   "class": "score",
+   "reason": "Explained by score: Vit Kopriva not above the games spread right now",
+   "context": "Vit Kopriva 6 · Rinky Hijikata 6 · 1st Set (games by set)",
+   "first_seen": "2026-11-01T10:34:52.504Z",
    "status": "gone",
    "kalshi": null
   },
