@@ -4,12 +4,12 @@
  "game": "Benjamin Bonzi vs. Yannick Hanfmann",
  "url": "https://polymarket.us/sports/atp/atp-benbon-yanhan-2026-11-01",
  "start_time": "2026-11-01T11:30:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187350",
-  "fetched_at": "2026-11-01T11:21:12.757Z",
+  "fetched_at": "2026-11-01T11:30:29.776Z",
   "tennis": true,
   "tennis_match": {
    "id": "187350",
@@ -156,7 +156,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-01T11:21:12.686Z",
+ "updated": "2026-11-01T11:30:29.712Z",
  "open_taken_at": "2026-10-31T15:51:30.808Z",
  "thresholds": {
   "big": 10,
@@ -252,28 +252,6 @@
    "taken_at": "2026-11-01T06:35:37.263Z"
   },
   {
-   "market_id": "2014296",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Benjamin Bonzi cover 1.5 vs the Yannick Hanfmann in Benjamin Bonzi vs. Yannick Hanfmann?",
-   "sides": [
-    "Benjamin Bonzi +1.50 (Games)",
-    "Yannick Hanfmann -1.50 (Games)"
-   ],
-   "teams": [
-    "Benjamin Bonzi",
-    "Yannick Hanfmann"
-   ],
-   "player": null,
-   "mid": 54,
-   "yes_buy": 56,
-   "no_buy": 48,
-   "taken_at": "2026-11-01T11:21:12.686Z"
-  },
-  {
    "market_id": "2014311",
    "market": "Set 1 winner",
    "group": "game",
@@ -362,6 +340,28 @@
    "taken_at": "2026-11-01T11:21:12.686Z"
   },
   {
+   "market_id": "2014296",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Benjamin Bonzi cover 1.5 vs the Yannick Hanfmann in Benjamin Bonzi vs. Yannick Hanfmann?",
+   "sides": [
+    "Benjamin Bonzi +1.50 (Games)",
+    "Yannick Hanfmann -1.50 (Games)"
+   ],
+   "teams": [
+    "Benjamin Bonzi",
+    "Yannick Hanfmann"
+   ],
+   "player": null,
+   "mid": 54,
+   "yes_buy": 56,
+   "no_buy": 48,
+   "taken_at": "2026-11-01T11:21:12.686Z"
+  },
+  {
    "market_id": "2014303",
    "market": "Games total",
    "group": "game",
@@ -415,10 +415,10 @@
    "question": "Who will win in the upcoming atp event Benjamin Bonzi vs Yannick Hanfmann scheduled for November 1, 2026 at 10:00 AM UTC?",
    "side": "Yannick Hanfmann win",
    "open_chance": 55,
-   "now_chance": 45,
+   "now_chance": 44,
    "open_odds": "-122",
-   "now_odds": "+122",
-   "edge": 10,
+   "now_odds": "+127",
+   "edge": 11,
    "tier": "big",
    "class": "edge",
    "reason": null,
@@ -435,11 +435,11 @@
    "question": "Will the Benjamin Bonzi cover -1.5 vs the Yannick Hanfmann in Benjamin Bonzi vs. Yannick Hanfmann?",
    "side": "Yannick Hanfmann +1.50 (Games)",
    "open_chance": 54,
-   "now_chance": 44,
+   "now_chance": 49,
    "open_odds": "-117",
-   "now_odds": "+127",
-   "edge": 10,
-   "tier": "big",
+   "now_odds": "+104",
+   "edge": 5,
+   "tier": "slight",
    "class": "edge",
    "reason": null,
    "context": "Pregame",
@@ -469,6 +469,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2014295:1:slight",
+   "key": "2014295:1",
+   "at": "2026-11-01T11:30:29.712Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Yannick Hanfmann +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+104",
+   "now_chance": 49,
+   "edge": 5,
+   "text": "New slight edge: Yannick Hanfmann +1.50 (Games) (Games spread), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-benbon-yanhan-2026-11-01"
+  },
   {
    "id": "new_edge:2013494:1:big",
    "key": "2013494:1",
@@ -500,7 +514,8 @@
  ],
  "alert_seen": [
   "new_edge:2013494:1:big",
-  "new_edge:2014311:1:slight"
+  "new_edge:2014311:1:slight",
+  "new_edge:2014295:1:slight"
  ],
  "kalshi_checked": null
 }
