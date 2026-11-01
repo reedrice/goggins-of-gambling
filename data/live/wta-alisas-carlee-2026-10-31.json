@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187318",
-  "fetched_at": "2026-11-01T02:02:27.782Z",
+  "fetched_at": "2026-11-01T02:12:35.765Z",
   "tennis": true,
   "tennis_match": {
    "id": "187318",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, October 31st at 10:05 PM EDT",
-     "shortDetail": "10/31 - 10:05 PM EDT"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Carol Young Suh Lee (USA) leads Aliaksandra Sasnovich (BLR) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,11 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "f70bb035-9f14-35cb-8ae9-53522d8a5308",
       "displayName": "Carol Young Suh Lee",
@@ -87,6 +97,11 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "bceac310-4fcb-4ff3-30e4-65051f10b826",
       "displayName": "Aliaksandra Sasnovich",
@@ -135,10 +150,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Sat, October 31st at 10:05 PM EDT",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Carol Young Suh Lee",
@@ -156,7 +171,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-01T02:02:27.677Z",
+ "updated": "2026-11-01T02:12:35.636Z",
  "open_taken_at": "2026-10-31T07:36:39.744Z",
  "thresholds": {
   "big": 10,
@@ -314,7 +329,7 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-10-31T22:19:18.633Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -360,6 +375,20 @@
  ],
  "alerts": [
   {
+   "id": "gone:2001935:1:2026-10-31T22:19:18.633Z",
+   "key": "2001935:1",
+   "at": "2026-11-01T02:12:35.636Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Carol Young Suh Lee win",
+   "market": "Moneyline",
+   "now_odds": "+270",
+   "now_chance": 27,
+   "edge": 4,
+   "text": "Edge gone: Carol Young Suh Lee win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-alisas-carlee-2026-10-31"
+  },
+  {
    "id": "new_edge:2001935:1:slight",
    "key": "2001935:1",
    "at": "2026-11-01T02:02:27.677Z",
@@ -375,7 +404,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2001935:1:slight"
+  "new_edge:2001935:1:slight",
+  "gone:2001935:1:2026-10-31T22:19:18.633Z"
  ],
  "kalshi_checked": null
 }
