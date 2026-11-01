@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-01T18:16:08.189Z"
+  "fetched_at": "2026-11-01T18:25:36.927Z"
  },
- "updated": "2026-11-01T18:16:08.109Z",
+ "updated": "2026-11-01T18:25:36.694Z",
  "open_taken_at": "2026-11-01T15:07:04.063Z",
  "thresholds": {
   "big": 10,
@@ -41,26 +41,26 @@
    "taken_at": "2026-11-01T15:47:15.483Z"
   },
   {
-   "market_id": "2056070",
-   "market": "Set 1 winner",
+   "market_id": "2056059",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Oliver Okonkwo win set 1 against James Kent Trotter?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Oliver Okonkwo cover 7.5 vs the James Kent Trotter in Oliver Okonkwo vs. James Kent Trotter?",
    "sides": [
-    "Yes: Oliver Okonkwo win set 1 against James Kent Trotter",
-    "No: Oliver Okonkwo win set 1 against James Kent Trotter"
+    "Oliver Okonkwo +7.50 (Games)",
+    "James Kent Trotter -7.50 (Games)"
    ],
    "teams": [
     "Oliver Okonkwo",
-    null
+    "James Kent Trotter"
    ],
    "player": null,
-   "mid": 28.5,
-   "yes_buy": 29,
-   "no_buy": 72,
-   "taken_at": "2026-11-01T18:06:29.110Z"
+   "mid": 34.5,
+   "yes_buy": 35,
+   "no_buy": 66,
+   "taken_at": "2026-11-01T17:46:24.557Z"
   },
   {
    "market_id": "2056060",
@@ -82,6 +82,28 @@
    "mid": 8.5,
    "yes_buy": 11,
    "no_buy": 94,
+   "taken_at": "2026-11-01T18:06:29.110Z"
+  },
+  {
+   "market_id": "2056070",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Oliver Okonkwo win set 1 against James Kent Trotter?",
+   "sides": [
+    "Yes: Oliver Okonkwo win set 1 against James Kent Trotter",
+    "No: Oliver Okonkwo win set 1 against James Kent Trotter"
+   ],
+   "teams": [
+    "Oliver Okonkwo",
+    null
+   ],
+   "player": null,
+   "mid": 28.5,
+   "yes_buy": 29,
+   "no_buy": 72,
    "taken_at": "2026-11-01T18:06:29.110Z"
   },
   {
@@ -217,28 +239,6 @@
    "taken_at": "2026-11-01T17:46:24.557Z"
   },
   {
-   "market_id": "2056059",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Oliver Okonkwo cover 7.5 vs the James Kent Trotter in Oliver Okonkwo vs. James Kent Trotter?",
-   "sides": [
-    "Oliver Okonkwo +7.50 (Games)",
-    "James Kent Trotter -7.50 (Games)"
-   ],
-   "teams": [
-    "Oliver Okonkwo",
-    "James Kent Trotter"
-   ],
-   "player": null,
-   "mid": 34.5,
-   "yes_buy": 35,
-   "no_buy": 66,
-   "taken_at": "2026-11-01T17:46:24.557Z"
-  },
-  {
    "market_id": "2056063",
    "market": "Games total",
    "group": "game",
@@ -285,6 +285,26 @@
  ],
  "edges": [
   {
+   "key": "2056059:1",
+   "market_id": "2056059",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Oliver Okonkwo cover 7.5 vs the James Kent Trotter in Oliver Okonkwo vs. James Kent Trotter?",
+   "side": "James Kent Trotter -7.50 (Games)",
+   "open_chance": 66,
+   "now_chance": 48,
+   "open_odds": "-194",
+   "now_odds": "+108",
+   "edge": 18,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-01T18:25:36.694Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2056026:1",
    "market_id": "2056026",
    "market": "Moneyline",
@@ -301,11 +321,39 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-01T18:16:08.109Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2056059:1:big",
+   "key": "2056059:1",
+   "at": "2026-11-01T18:25:36.694Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "James Kent Trotter -7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+108",
+   "now_chance": 48,
+   "edge": 18,
+   "text": "New big edge: James Kent Trotter -7.50 (Games) (Games spread), 18 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-olioko-jamtro-2026-11-01"
+  },
+  {
+   "id": "gone:2056026:1:2026-11-01T18:16:08.109Z",
+   "key": "2056026:1",
+   "at": "2026-11-01T18:25:36.694Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "James Kent Trotter win",
+   "market": "Moneyline",
+   "now_odds": "-376",
+   "now_chance": 79,
+   "edge": 4,
+   "text": "Edge gone: James Kent Trotter win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-olioko-jamtro-2026-11-01"
+  },
   {
    "id": "new_edge:2056026:1:slight",
    "key": "2056026:1",
@@ -322,7 +370,9 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2056026:1:slight"
+  "new_edge:2056026:1:slight",
+  "new_edge:2056059:1:big",
+  "gone:2056026:1:2026-11-01T18:16:08.109Z"
  ],
  "kalshi_checked": null
 }
