@@ -4,14 +4,14 @@
  "game": "Kasidit Samrej vs. Koki Matsuda",
  "url": "https://polymarket.us/sports/atp/atp-kassam-kokmat-2026-11-01",
  "start_time": "2026-11-01T08:30:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-01T08:21:11.033Z"
+  "fetched_at": "2026-11-01T08:30:23.183Z"
  },
- "updated": "2026-11-01T08:21:10.861Z",
+ "updated": "2026-11-01T08:30:23.088Z",
  "open_taken_at": "2026-10-31T14:49:08.895Z",
  "thresholds": {
   "big": 10,
@@ -385,11 +385,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-01T06:45:58.736Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2005149:0:2026-11-01T06:45:58.736Z",
+   "key": "2005149:0",
+   "at": "2026-11-01T08:30:23.088Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Kasidit Samrej win",
+   "market": "Moneyline",
+   "now_odds": "-138",
+   "now_chance": 58,
+   "edge": 4,
+   "text": "Edge gone: Kasidit Samrej win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-kassam-kokmat-2026-11-01"
+  },
   {
    "id": "new_edge:2006948:0:slight",
    "key": "2006948:0",
@@ -436,7 +450,8 @@
  "alert_seen": [
   "new_edge:2006948:0:slight",
   "new_edge:2006939:1:slight",
-  "new_edge:2005149:0:slight"
+  "new_edge:2005149:0:slight",
+  "gone:2005149:0:2026-11-01T06:45:58.736Z"
  ],
  "kalshi_checked": null
 }
