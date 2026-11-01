@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-01T11:49:59.133Z"
+  "fetched_at": "2026-11-01T12:00:34.752Z"
  },
- "updated": "2026-11-01T11:49:59.046Z",
+ "updated": "2026-11-01T12:00:34.687Z",
  "open_taken_at": "2026-10-31T20:16:55.135Z",
  "thresholds": {
   "big": 10,
@@ -63,28 +63,6 @@
    "taken_at": "2026-11-01T08:30:36.254Z"
   },
   {
-   "market_id": "2021416",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Marco Bavaro cover 4.5 vs the Peter Makk in Marco Bavaro vs. Peter Makk?",
-   "sides": [
-    "Marco Bavaro +4.50 (Games)",
-    "Peter Makk -4.50 (Games)"
-   ],
-   "teams": [
-    "Marco Bavaro",
-    "Peter Makk"
-   ],
-   "player": null,
-   "mid": 31.5,
-   "yes_buy": 32,
-   "no_buy": 69,
-   "taken_at": "2026-11-01T10:15:15.488Z"
-  },
-  {
    "market_id": "2021421",
    "market": "Games total",
    "group": "game",
@@ -99,6 +77,28 @@
    "teams": [
     null,
     null
+   ],
+   "player": null,
+   "mid": 31.5,
+   "yes_buy": 32,
+   "no_buy": 69,
+   "taken_at": "2026-11-01T10:15:15.488Z"
+  },
+  {
+   "market_id": "2021416",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Marco Bavaro cover 4.5 vs the Peter Makk in Marco Bavaro vs. Peter Makk?",
+   "sides": [
+    "Marco Bavaro +4.50 (Games)",
+    "Peter Makk -4.50 (Games)"
+   ],
+   "teams": [
+    "Marco Bavaro",
+    "Peter Makk"
    ],
    "player": null,
    "mid": 31.5,
@@ -127,6 +127,28 @@
    "yes_buy": 24,
    "no_buy": 82,
    "taken_at": "2026-11-01T11:12:08.811Z"
+  },
+  {
+   "market_id": "2021429",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Marco Bavaro win set 1 against Peter Makk?",
+   "sides": [
+    "Yes: Marco Bavaro win set 1 against Peter Makk",
+    "No: Marco Bavaro win set 1 against Peter Makk"
+   ],
+   "teams": [
+    "Marco Bavaro",
+    null
+   ],
+   "player": null,
+   "mid": 32.5,
+   "yes_buy": 33,
+   "no_buy": 68,
+   "taken_at": "2026-11-01T10:15:15.488Z"
   },
   {
    "market_id": "2021414",
@@ -170,28 +192,6 @@
    "mid": 31.5,
    "yes_buy": 32,
    "no_buy": 69,
-   "taken_at": "2026-11-01T10:15:15.488Z"
-  },
-  {
-   "market_id": "2021429",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Marco Bavaro win set 1 against Peter Makk?",
-   "sides": [
-    "Yes: Marco Bavaro win set 1 against Peter Makk",
-    "No: Marco Bavaro win set 1 against Peter Makk"
-   ],
-   "teams": [
-    "Marco Bavaro",
-    null
-   ],
-   "player": null,
-   "mid": 32.5,
-   "yes_buy": 33,
-   "no_buy": 68,
    "taken_at": "2026-11-01T10:15:15.488Z"
   },
   {
@@ -285,6 +285,26 @@
  ],
  "edges": [
   {
+   "key": "2021421:1",
+   "market_id": "2021421",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Marco Bavaro vs. Peter Makk be more than 17.5?",
+   "side": "Under 17.5 (Games)",
+   "open_chance": 69,
+   "now_chance": 49,
+   "open_odds": "-223",
+   "now_odds": "+104",
+   "edge": 20,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-01T12:00:34.687Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2021418:1",
    "market_id": "2021418",
    "market": "Games spread",
@@ -292,11 +312,11 @@
    "question": "Will the Marco Bavaro cover 7.5 vs the Peter Makk in Marco Bavaro vs. Peter Makk?",
    "side": "Peter Makk -7.50 (Games)",
    "open_chance": 53,
-   "now_chance": 45,
+   "now_chance": 39,
    "open_odds": "-113",
-   "now_odds": "+122",
-   "edge": 8,
-   "tier": "slight",
+   "now_odds": "+156",
+   "edge": 14,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -306,6 +326,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2021421:1:big",
+   "key": "2021421:1",
+   "at": "2026-11-01T12:00:34.687Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+104",
+   "now_chance": 49,
+   "edge": 20,
+   "text": "New big edge: Under 17.5 (Games) (Games total), 20 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-marbav-petmak-2026-11-01"
+  },
+  {
+   "id": "new_edge:2021418:1:big",
+   "key": "2021418:1",
+   "at": "2026-11-01T12:00:34.687Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Peter Makk -7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+156",
+   "now_chance": 39,
+   "edge": 14,
+   "text": "New big edge: Peter Makk -7.50 (Games) (Games spread), 14 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-marbav-petmak-2026-11-01"
+  },
   {
    "id": "new_edge:2021418:1:slight",
    "key": "2021418:1",
@@ -322,7 +370,9 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2021418:1:slight"
+  "new_edge:2021418:1:slight",
+  "new_edge:2021421:1:big",
+  "new_edge:2021418:1:big"
  ],
  "kalshi_checked": null
 }
