@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187369",
-  "fetched_at": "2026-11-01T17:13:16.116Z",
+  "fetched_at": "2026-11-01T17:46:22.660Z",
   "tennis": true,
   "tennis_match": {
    "id": "187369",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Polona Hercog (SLO) leads Maria Jose Rico Sanchez (COL) 2-0",
+     "text": "Polona Hercog (SLO) leads Maria Jose Rico Sanchez (COL) 6-0 3-0",
      "type": "event"
     }
    ],
@@ -55,8 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "possession": false,
      "linescores": [
+      {
+       "value": 0,
+       "winner": false
+      },
       {
        "value": 0
       }
@@ -98,10 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
-       "value": 2
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 3
       }
      ],
      "athlete": {
@@ -159,8 +167,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Maria Jose Rico Sanchez",
@@ -172,19 +180,63 @@
    "abbr": "Polona Hercog",
    "alias": "Polona Hercog",
    "name": "Polona Hercog",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-01T17:13:16.032Z",
+ "updated": "2026-11-01T17:46:22.530Z",
  "open_taken_at": "2026-11-01T04:26:41.513Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "2037297",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Polona Hercog cover -7.5 vs the Maria Jose Rico Sanchez in Polona Hercog vs. Maria Jose Rico Sanchez?",
+   "sides": [
+    "Polona Hercog -7.50 (Games)",
+    "Maria Jose Rico Sanchez +7.50 (Games)"
+   ],
+   "teams": [
+    "Polona Hercog",
+    "Maria Jose Rico Sanchez"
+   ],
+   "player": null,
+   "mid": 79,
+   "yes_buy": 80,
+   "no_buy": 22,
+   "taken_at": "2026-11-01T17:46:22.530Z"
+  },
+  {
+   "market_id": "2037295",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Polona Hercog cover -4.5 vs the Maria Jose Rico Sanchez in Polona Hercog vs. Maria Jose Rico Sanchez?",
+   "sides": [
+    "Polona Hercog -4.50 (Games)",
+    "Maria Jose Rico Sanchez +4.50 (Games)"
+   ],
+   "teams": [
+    "Polona Hercog",
+    "Maria Jose Rico Sanchez"
+   ],
+   "player": null,
+   "mid": 77.5,
+   "yes_buy": 79,
+   "no_buy": 24,
+   "taken_at": "2026-11-01T17:46:22.530Z"
+  },
   {
    "market_id": "2037304",
    "market": "Sets total",
@@ -206,6 +258,28 @@
    "yes_buy": 34,
    "no_buy": 67,
    "taken_at": "2026-11-01T17:13:16.032Z"
+  },
+  {
+   "market_id": "2037302",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Polona Hercog vs. Maria Jose Rico Sanchez be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 20,
+   "yes_buy": 21,
+   "no_buy": 81,
+   "taken_at": "2026-11-01T17:46:22.530Z"
   },
   {
    "market_id": "2037301",

@@ -4,14 +4,14 @@
  "game": "Radovan Michalik vs. Vadym Ursu",
  "url": "https://polymarket.us/sports/atp/atp-radmic-vadurs-2026-11-01",
  "start_time": "2026-11-01T16:15:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-01T17:13:09.574Z"
+  "fetched_at": "2026-11-01T17:46:17.214Z"
  },
- "updated": "2026-11-01T17:13:09.495Z",
+ "updated": "2026-11-01T17:46:17.064Z",
  "open_taken_at": "2026-10-31T20:16:55.596Z",
  "thresholds": {
   "big": 10,
@@ -323,11 +323,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-01T17:13:09.495Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2021556:0:2026-11-01T17:13:09.495Z",
+   "key": "2021556:0",
+   "at": "2026-11-01T17:46:17.064Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Yes: Radovan Michalik win set 2 against Vadym Ursu",
+   "market": "Set 2 winner",
+   "now_odds": "+456",
+   "now_chance": 18,
+   "edge": 6,
+   "text": "Edge gone: Yes: Radovan Michalik win set 2 against Vadym Ursu (Set 2 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-radmic-vadurs-2026-11-01"
+  },
   {
    "id": "new_edge:2021556:0:slight",
    "key": "2021556:0",
@@ -344,7 +358,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2021556:0:slight"
+  "new_edge:2021556:0:slight",
+  "gone:2021556:0:2026-11-01T17:13:09.495Z"
  ],
  "kalshi_checked": null
 }
