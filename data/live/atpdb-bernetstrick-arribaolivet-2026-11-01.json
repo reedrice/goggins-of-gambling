@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185169",
-  "fetched_at": "2026-11-01T12:10:05.809Z",
+  "fetched_at": "2026-11-01T12:17:44.125Z",
   "tennis": true,
   "tennis_match": {
    "id": "185169",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Sun, November 1st at 7:05 AM EST",
-     "shortDetail": "11/1 - 7:05 AM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Henry Bernet (SUI) & Dominic Stricker (SUI) leads (3) Theo Arribage (FRA) & Albano Olivetti (FRA) 1-1",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,15 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 3
      },
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "roster": {
       "displayName": "Theo Arribage / Albano Olivetti",
       "shortDisplayName": "T. Arribage / A. Olivetti",
@@ -125,6 +136,12 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "roster": {
       "displayName": "Henry Bernet / Dominic Stricker",
       "shortDisplayName": "H. Bernet / D. Stricker",
@@ -192,6 +209,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 23,
    "type": {
     "id": "3",
@@ -208,10 +230,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Sun, November 1st at 7:05 AM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Theo Arribage / Albano Olivetti",
@@ -229,7 +251,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-01T12:10:05.706Z",
+ "updated": "2026-11-01T12:17:44.053Z",
  "open_taken_at": "2026-10-31T19:43:39.244Z",
  "thresholds": {
   "big": 10,
@@ -277,11 +299,25 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-01T04:42:33.221Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2019468:1:2026-11-01T04:42:33.221Z",
+   "key": "2019468:1",
+   "at": "2026-11-01T12:17:44.053Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Arribage / Olivetti win",
+   "market": "Moneyline",
+   "now_odds": "-194",
+   "now_chance": 66,
+   "edge": 5,
+   "text": "Edge gone: Arribage / Olivetti win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-bernetstrick-arribaolivet-2026-11-01"
+  },
   {
    "id": "new_edge:2019468:1:slight",
    "key": "2019468:1",
@@ -298,7 +334,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2019468:1:slight"
+  "new_edge:2019468:1:slight",
+  "gone:2019468:1:2026-11-01T04:42:33.221Z"
  ],
  "kalshi_checked": null
 }
