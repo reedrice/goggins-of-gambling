@@ -9,25 +9,25 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187363",
-  "fetched_at": "2026-11-01T13:30:22.564Z",
+  "fetched_at": "2026-11-01T13:40:43.872Z",
   "tennis": true,
   "tennis_match": {
    "id": "187363",
    "uid": "s:850~l:900~e:1082-2026~c:187363",
-   "date": "2026-11-01T13:25Z",
-   "startDate": "2026-11-01T13:25Z",
+   "date": "2026-11-01T13:30Z",
+   "startDate": "2026-11-01T13:30Z",
    "timeValid": true,
    "recent": true,
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Sun, November 1st at 8:25 AM EST",
-     "shortDetail": "11/1 - 8:25 AM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Darja Suvirdjonkova (SER) leads Emma Van Poppel (NED) 1-1",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "347682b3-955b-38a7-84a8-0705ceadee14",
       "displayName": "Emma Van Poppel",
@@ -87,6 +98,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "c8723c5f-047b-39d4-ab4c-9b202eff6c6c",
       "displayName": "Darja Suvirdjonkova",
@@ -119,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1082,
    "type": {
     "id": "2",
@@ -135,10 +157,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Sun, November 1st at 8:25 AM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Emma Van Poppel",
@@ -156,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-01T13:30:22.331Z",
+ "updated": "2026-11-01T13:40:43.762Z",
  "open_taken_at": "2026-10-31T20:16:56.032Z",
  "thresholds": {
   "big": 10,
@@ -208,6 +230,94 @@
    "taken_at": "2026-11-01T13:20:35.677Z"
   },
   {
+   "market_id": "2022293",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Darja Suvirdjonkova cover 7.5 vs the Emma van Poppel in Darja Suvirdjonkova vs. Emma van Poppel?",
+   "sides": [
+    "Darja Suvirdjonkova +7.50 (Games)",
+    "Emma van Poppel -7.50 (Games)"
+   ],
+   "teams": [
+    "Darja Suvirdjonkova",
+    "Emma van Poppel"
+   ],
+   "player": null,
+   "mid": 89.5,
+   "yes_buy": 90,
+   "no_buy": 11,
+   "taken_at": "2026-11-01T13:40:43.762Z"
+  },
+  {
+   "market_id": "2022287",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Darja Suvirdjonkova cover 4.5 vs the Emma van Poppel in Darja Suvirdjonkova vs. Emma van Poppel?",
+   "sides": [
+    "Darja Suvirdjonkova +4.50 (Games)",
+    "Emma van Poppel -4.50 (Games)"
+   ],
+   "teams": [
+    "Darja Suvirdjonkova",
+    "Emma van Poppel"
+   ],
+   "player": null,
+   "mid": 85.5,
+   "yes_buy": 86,
+   "no_buy": 15,
+   "taken_at": "2026-11-01T13:20:35.677Z"
+  },
+  {
+   "market_id": "2022318",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Darja Suvirdjonkova vs. Emma van Poppel be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-11-01T13:20:35.677Z"
+  },
+  {
+   "market_id": "2022307",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Darja Suvirdjonkova vs. Emma van Poppel be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-11-01T13:20:35.677Z"
+  },
+  {
    "market_id": "2022267",
    "market": "Games spread",
    "group": "game",
@@ -252,28 +362,6 @@
    "taken_at": "2026-11-01T13:20:35.677Z"
   },
   {
-   "market_id": "2022318",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Darja Suvirdjonkova vs. Emma van Poppel be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-11-01T13:20:35.677Z"
-  },
-  {
    "market_id": "2022301",
    "market": "Games total",
    "group": "game",
@@ -293,50 +381,6 @@
    "mid": 33.5,
    "yes_buy": 34,
    "no_buy": 67,
-   "taken_at": "2026-11-01T13:20:35.677Z"
-  },
-  {
-   "market_id": "2022307",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Darja Suvirdjonkova vs. Emma van Poppel be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-11-01T13:20:35.677Z"
-  },
-  {
-   "market_id": "2022287",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Darja Suvirdjonkova cover 4.5 vs the Emma van Poppel in Darja Suvirdjonkova vs. Emma van Poppel?",
-   "sides": [
-    "Darja Suvirdjonkova +4.50 (Games)",
-    "Emma van Poppel -4.50 (Games)"
-   ],
-   "teams": [
-    "Darja Suvirdjonkova",
-    "Emma van Poppel"
-   ],
-   "player": null,
-   "mid": 85.5,
-   "yes_buy": 86,
-   "no_buy": 15,
    "taken_at": "2026-11-01T13:20:35.677Z"
   },
   {
