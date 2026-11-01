@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185781",
-  "fetched_at": "2026-11-01T16:24:06.077Z",
+  "fetched_at": "2026-11-01T16:33:28.013Z",
   "tennis": true,
   "tennis_match": {
    "id": "185781",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Alice Tubello (FRA) leads (2) Julia Grabher (AUT) 3-6 6-6",
+     "text": "Alice Tubello (FRA) is tied with (2) Julia Grabher (AUT) 3-6 7-6 (7-5)",
      "type": "event"
     }
    ],
@@ -64,7 +64,8 @@
        "winner": true
       },
       {
-       "value": 6
+       "value": 6,
+       "tiebreak": 5
       }
      ],
      "athlete": {
@@ -110,7 +111,8 @@
        "winner": false
       },
       {
-       "value": 6
+       "value": 7,
+       "tiebreak": 7
       }
      ],
      "athlete": {
@@ -182,7 +184,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-01T16:24:05.925Z",
+ "updated": "2026-11-01T16:33:27.944Z",
  "open_taken_at": "2026-10-31T17:08:34.642Z",
  "thresholds": {
   "big": 10,
@@ -210,6 +212,50 @@
    "yes_buy": 46,
    "no_buy": 58,
    "taken_at": "2026-10-31T19:05:22.775Z"
+  },
+  {
+   "market_id": "2015548",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Alice Tubello cover 1.5 vs the Julia Grabher in Alice Tubello vs. Julia Grabher?",
+   "sides": [
+    "Alice Tubello +1.50 (Games)",
+    "Julia Grabher -1.50 (Games)"
+   ],
+   "teams": [
+    "Alice Tubello",
+    "Julia Grabher"
+   ],
+   "player": null,
+   "mid": 62.5,
+   "yes_buy": 63,
+   "no_buy": 38,
+   "taken_at": "2026-11-01T14:20:56.555Z"
+  },
+  {
+   "market_id": "2015546",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Alice Tubello cover -1.5 vs the Julia Grabher in Alice Tubello vs. Julia Grabher?",
+   "sides": [
+    "Alice Tubello -1.50 (Games)",
+    "Julia Grabher +1.50 (Games)"
+   ],
+   "teams": [
+    "Alice Tubello",
+    "Julia Grabher"
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 36,
+   "no_buy": 69,
+   "taken_at": "2026-11-01T14:08:22.718Z"
   },
   {
    "market_id": "2015564",
@@ -322,28 +368,6 @@
    "taken_at": "2026-11-01T14:08:22.718Z"
   },
   {
-   "market_id": "2015546",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Alice Tubello cover -1.5 vs the Julia Grabher in Alice Tubello vs. Julia Grabher?",
-   "sides": [
-    "Alice Tubello -1.50 (Games)",
-    "Julia Grabher +1.50 (Games)"
-   ],
-   "teams": [
-    "Alice Tubello",
-    "Julia Grabher"
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 36,
-   "no_buy": 69,
-   "taken_at": "2026-11-01T14:08:22.718Z"
-  },
-  {
    "market_id": "2015566",
    "market": "Games total",
    "group": "game",
@@ -408,28 +432,6 @@
    "yes_buy": 23,
    "no_buy": 79,
    "taken_at": "2026-11-01T14:08:22.718Z"
-  },
-  {
-   "market_id": "2015548",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Alice Tubello cover 1.5 vs the Julia Grabher in Alice Tubello vs. Julia Grabher?",
-   "sides": [
-    "Alice Tubello +1.50 (Games)",
-    "Julia Grabher -1.50 (Games)"
-   ],
-   "teams": [
-    "Alice Tubello",
-    "Julia Grabher"
-   ],
-   "player": null,
-   "mid": 62.5,
-   "yes_buy": 63,
-   "no_buy": 38,
-   "taken_at": "2026-11-01T14:20:56.555Z"
   },
   {
    "market_id": "2015550",
@@ -500,22 +502,42 @@
  ],
  "edges": [
   {
-   "key": "2015188:0",
+   "key": "2015548:0",
+   "market_id": "2015548",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Alice Tubello cover 1.5 vs the Julia Grabher in Alice Tubello vs. Julia Grabher?",
+   "side": "Alice Tubello +1.50 (Games)",
+   "open_chance": 63,
+   "now_chance": 39,
+   "open_odds": "-170",
+   "now_odds": "+156",
+   "edge": 24,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Alice Tubello not above the games spread right now",
+   "context": "Julia Grabher 6, 6 · Alice Tubello 3, 7 · 2nd Set (games by set)",
+   "first_seen": "2026-11-01T14:29:52.821Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2015188:1",
    "market_id": "2015188",
    "market": "Moneyline",
    "group": "game",
    "question": "Who will win in the upcoming wta event Alice Tubello vs Julia Grabher scheduled for November 1, 2026 at 2:00 PM UTC?",
-   "side": "Alice Tubello win",
-   "open_chance": 46,
-   "now_chance": 35,
-   "open_odds": "+117",
-   "now_odds": "+186",
-   "edge": 11,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Alice Tubello trailing in sets",
-   "context": "Julia Grabher 6, 6 · Alice Tubello 3, 6 · 2nd Set (games by set)",
-   "first_seen": "2026-11-01T16:13:26.341Z",
+   "side": "Julia Grabher win",
+   "open_chance": 58,
+   "now_chance": 53,
+   "open_odds": "-138",
+   "now_odds": "-113",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Julia Grabher 6, 6 · Alice Tubello 3, 7 · 2nd Set (games by set)",
+   "first_seen": "2026-11-01T16:33:27.944Z",
    "status": "open",
    "kalshi": null
   },
@@ -580,42 +602,22 @@
    "kalshi": null
   },
   {
-   "key": "2015548:0",
-   "market_id": "2015548",
-   "market": "Games spread",
+   "key": "2015188:0",
+   "market_id": "2015188",
+   "market": "Moneyline",
    "group": "game",
-   "question": "Will the Alice Tubello cover 1.5 vs the Julia Grabher in Alice Tubello vs. Julia Grabher?",
-   "side": "Alice Tubello +1.50 (Games)",
-   "open_chance": 63,
-   "now_chance": 48,
-   "open_odds": "-170",
-   "now_odds": "+108",
-   "edge": 15,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Julia Grabher 3 · Alice Tubello 3 · 1st Set (games by set)",
-   "first_seen": "2026-11-01T14:29:52.821Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "2015546:0",
-   "market_id": "2015546",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Alice Tubello cover -1.5 vs the Julia Grabher in Alice Tubello vs. Julia Grabher?",
-   "side": "Alice Tubello -1.50 (Games)",
-   "open_chance": 36,
-   "now_chance": 22,
-   "open_odds": "+178",
-   "now_odds": "+355",
-   "edge": 14,
+   "question": "Who will win in the upcoming wta event Alice Tubello vs Julia Grabher scheduled for November 1, 2026 at 2:00 PM UTC?",
+   "side": "Alice Tubello win",
+   "open_chance": 46,
+   "now_chance": 35,
+   "open_odds": "+117",
+   "now_odds": "+186",
+   "edge": 11,
    "tier": "big",
    "class": "score",
-   "reason": "Explained by score: Alice Tubello not above the games spread right now",
-   "context": "Julia Grabher 6, 1 · Alice Tubello 3, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-11-01T15:26:15.175Z",
+   "reason": "Explained by score: Alice Tubello trailing in sets",
+   "context": "Julia Grabher 6, 6 · Alice Tubello 3, 6 · 2nd Set (games by set)",
+   "first_seen": "2026-11-01T16:13:26.341Z",
    "status": "gone",
    "kalshi": null
   },
