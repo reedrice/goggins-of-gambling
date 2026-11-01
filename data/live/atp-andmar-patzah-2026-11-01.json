@@ -4,14 +4,14 @@
  "game": "Andres Martin vs. Patrick Zahraj",
  "url": "https://polymarket.us/sports/atp/atp-andmar-patzah-2026-11-01",
  "start_time": "2026-11-01T23:15:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-01T23:33:26.069Z"
+  "fetched_at": "2026-11-01T23:41:40.714Z"
  },
- "updated": "2026-11-01T23:33:25.988Z",
+ "updated": "2026-11-01T23:41:40.600Z",
  "open_taken_at": "2026-10-31T23:35:27.423Z",
  "thresholds": {
   "big": 10,
@@ -81,11 +81,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-01T23:25:14.204Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2026230:1:2026-11-01T23:25:14.204Z",
+   "key": "2026230:1",
+   "at": "2026-11-01T23:41:40.600Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Patrick Zahraj win",
+   "market": "Moneyline",
+   "now_odds": "+355",
+   "now_chance": 22,
+   "edge": 18,
+   "text": "Edge gone: Patrick Zahraj win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-andmar-patzah-2026-11-01"
+  },
   {
    "id": "new_edge:2026230:1:big",
    "key": "2026230:1",
@@ -117,7 +131,8 @@
  ],
  "alert_seen": [
   "new_edge:2026230:1:slight",
-  "new_edge:2026230:1:big"
+  "new_edge:2026230:1:big",
+  "gone:2026230:1:2026-11-01T23:25:14.204Z"
  ],
  "kalshi_checked": null
 }
