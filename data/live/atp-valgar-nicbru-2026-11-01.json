@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-01T20:02:13.147Z"
+  "fetched_at": "2026-11-01T20:11:31.819Z"
  },
- "updated": "2026-11-01T20:02:13.076Z",
+ "updated": "2026-11-01T20:11:31.560Z",
  "open_taken_at": "2026-10-31T21:34:38.880Z",
  "thresholds": {
   "big": 10,
@@ -55,6 +55,28 @@
    "teams": [
     null,
     null
+   ],
+   "player": null,
+   "mid": 34.5,
+   "yes_buy": 35,
+   "no_buy": 66,
+   "taken_at": "2026-11-01T18:35:34.644Z"
+  },
+  {
+   "market_id": "2024238",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Valentin Garay cover -4.5 vs the Nicolas Bruna in Valentin Garay vs. Nicolas Bruna?",
+   "sides": [
+    "Valentin Garay -4.50 (Games)",
+    "Nicolas Bruna +4.50 (Games)"
+   ],
+   "teams": [
+    "Valentin Garay",
+    "Nicolas Bruna"
    ],
    "player": null,
    "mid": 34.5,
@@ -117,28 +139,6 @@
    "sides": [
     "Valentin Garay -1.50 (Games)",
     "Nicolas Bruna +1.50 (Games)"
-   ],
-   "teams": [
-    "Valentin Garay",
-    "Nicolas Bruna"
-   ],
-   "player": null,
-   "mid": 34.5,
-   "yes_buy": 35,
-   "no_buy": 66,
-   "taken_at": "2026-11-01T18:35:34.644Z"
-  },
-  {
-   "market_id": "2024238",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Valentin Garay cover -4.5 vs the Nicolas Bruna in Valentin Garay vs. Nicolas Bruna?",
-   "sides": [
-    "Valentin Garay -4.50 (Games)",
-    "Nicolas Bruna +4.50 (Games)"
    ],
    "teams": [
     "Valentin Garay",
@@ -387,7 +387,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-01T19:53:14.259Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -472,6 +472,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2024236:0:2026-11-01T19:53:14.259Z",
+   "key": "2024236:0",
+   "at": "2026-11-01T20:11:31.560Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Valentin Garay -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+426",
+   "now_chance": 19,
+   "edge": 16,
+   "text": "Edge gone: Valentin Garay -1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-valgar-nicbru-2026-11-01"
+  },
   {
    "id": "new_edge:2024245:1:big",
    "key": "2024245:1",
@@ -653,7 +667,8 @@
   "new_edge:2024236:0:big",
   "gone:2024252:0:2026-11-01T19:42:52.266Z",
   "new_edge:2024245:1:big",
-  "gone:2023472:0:2026-11-01T19:23:59.873Z"
+  "gone:2023472:0:2026-11-01T19:23:59.873Z",
+  "gone:2024236:0:2026-11-01T19:53:14.259Z"
  ],
  "kalshi_checked": null
 }

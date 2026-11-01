@@ -9,15 +9,59 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-01T20:02:14.401Z"
+  "fetched_at": "2026-11-01T20:11:33.687Z"
  },
- "updated": "2026-11-01T20:02:14.293Z",
+ "updated": "2026-11-01T20:11:33.496Z",
  "open_taken_at": "2026-11-01T00:17:17.481Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "2030228",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Mitchell Krueger win set 2 against Marcel Latak?",
+   "sides": [
+    "Yes: Mitchell Krueger win set 2 against Marcel Latak",
+    "No: Mitchell Krueger win set 2 against Marcel Latak"
+   ],
+   "teams": [
+    "Mitchell Krueger",
+    null
+   ],
+   "player": null,
+   "mid": 92.5,
+   "yes_buy": 94,
+   "no_buy": 9,
+   "taken_at": "2026-11-01T20:11:33.496Z"
+  },
+  {
+   "market_id": "2030215",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Mitchell Krueger cover -7.5 vs the Marcel Latak in Mitchell Krueger vs. Marcel Latak?",
+   "sides": [
+    "Mitchell Krueger -7.50 (Games)",
+    "Marcel Latak +7.50 (Games)"
+   ],
+   "teams": [
+    "Mitchell Krueger",
+    "Marcel Latak"
+   ],
+   "player": null,
+   "mid": 34.5,
+   "yes_buy": 35,
+   "no_buy": 66,
+   "taken_at": "2026-11-01T19:24:02.004Z"
+  },
   {
    "market_id": "2027427",
    "market": "Moneyline",
@@ -151,28 +195,6 @@
    "taken_at": "2026-11-01T19:24:02.004Z"
   },
   {
-   "market_id": "2030215",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Mitchell Krueger cover -7.5 vs the Marcel Latak in Mitchell Krueger vs. Marcel Latak?",
-   "sides": [
-    "Mitchell Krueger -7.50 (Games)",
-    "Marcel Latak +7.50 (Games)"
-   ],
-   "teams": [
-    "Mitchell Krueger",
-    "Marcel Latak"
-   ],
-   "player": null,
-   "mid": 34.5,
-   "yes_buy": 35,
-   "no_buy": 66,
-   "taken_at": "2026-11-01T19:24:02.004Z"
-  },
-  {
    "market_id": "2030212",
    "market": "Games spread",
    "group": "game",
@@ -239,10 +261,47 @@
    "taken_at": "2026-11-01T19:24:02.004Z"
   }
  ],
- "edges": [],
- "alerts": [],
+ "edges": [
+  {
+   "key": "2030215:1",
+   "market_id": "2030215",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Mitchell Krueger cover -7.5 vs the Marcel Latak in Mitchell Krueger vs. Marcel Latak?",
+   "side": "Marcel Latak +7.50 (Games)",
+   "open_chance": 66,
+   "now_chance": 42,
+   "open_odds": "-194",
+   "now_odds": "+138",
+   "edge": 24,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-01T20:11:33.496Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
+ "alerts": [
+  {
+   "id": "new_edge:2030215:1:big",
+   "key": "2030215:1",
+   "at": "2026-11-01T20:11:33.496Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Marcel Latak +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+138",
+   "now_chance": 42,
+   "edge": 24,
+   "text": "New big edge: Marcel Latak +7.50 (Games) (Games spread), 24 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-mitkru-marlat-2026-11-01"
+  }
+ ],
  "alert_seen": [
-  "new_edge:2027427:0:slight"
+  "new_edge:2027427:0:slight",
+  "new_edge:2030215:1:big"
  ],
  "kalshi_checked": null
 }

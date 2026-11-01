@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-01T20:02:14.431Z"
+  "fetched_at": "2026-11-01T20:11:33.824Z"
  },
- "updated": "2026-11-01T20:02:14.345Z",
+ "updated": "2026-11-01T20:11:33.653Z",
  "open_taken_at": "2026-11-01T00:17:17.528Z",
  "thresholds": {
   "big": 10,
@@ -19,26 +19,26 @@
  },
  "open": [
   {
-   "market_id": "2030270",
-   "market": "Games spread",
+   "market_id": "2030297",
+   "market": "Set 2 winner",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Miguel Tobon cover -7.5 vs the Enrique Bogo in Miguel Tobon vs. Enrique Bogo?",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Miguel Tobon win set 2 against Enrique Bogo?",
    "sides": [
-    "Miguel Tobon -7.50 (Games)",
-    "Enrique Bogo +7.50 (Games)"
+    "Yes: Miguel Tobon win set 2 against Enrique Bogo",
+    "No: Miguel Tobon win set 2 against Enrique Bogo"
    ],
    "teams": [
     "Miguel Tobon",
-    "Enrique Bogo"
+    null
    ],
    "player": null,
-   "mid": 63,
-   "yes_buy": 64,
-   "no_buy": 38,
-   "taken_at": "2026-11-01T19:34:27.061Z"
+   "mid": 95,
+   "yes_buy": 96,
+   "no_buy": 6,
+   "taken_at": "2026-11-01T20:11:33.653Z"
   },
   {
    "market_id": "2030278",
@@ -61,6 +61,28 @@
    "yes_buy": 35,
    "no_buy": 66,
    "taken_at": "2026-11-01T19:14:07.028Z"
+  },
+  {
+   "market_id": "2030270",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Miguel Tobon cover -7.5 vs the Enrique Bogo in Miguel Tobon vs. Enrique Bogo?",
+   "sides": [
+    "Miguel Tobon -7.50 (Games)",
+    "Enrique Bogo +7.50 (Games)"
+   ],
+   "teams": [
+    "Miguel Tobon",
+    "Enrique Bogo"
+   ],
+   "player": null,
+   "mid": 63,
+   "yes_buy": 64,
+   "no_buy": 38,
+   "taken_at": "2026-11-01T19:34:27.061Z"
   },
   {
    "market_id": "2027428",
@@ -103,11 +125,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-01T19:42:54.259Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2030270:1:2026-11-01T19:42:54.259Z",
+   "key": "2030270:1",
+   "at": "2026-11-01T20:11:33.653Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Enrique Bogo +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+355",
+   "now_chance": 22,
+   "edge": 16,
+   "text": "Edge gone: Enrique Bogo +7.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-migtob-enrbog-2026-11-01"
+  },
   {
    "id": "new_edge:2030270:1:big",
    "key": "2030270:1",
@@ -139,7 +175,8 @@
  ],
  "alert_seen": [
   "new_edge:2030270:1:slight",
-  "new_edge:2030270:1:big"
+  "new_edge:2030270:1:big",
+  "gone:2030270:1:2026-11-01T19:42:54.259Z"
  ],
  "kalshi_checked": null
 }
