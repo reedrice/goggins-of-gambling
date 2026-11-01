@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187363",
-  "fetched_at": "2026-11-01T14:29:57.292Z",
+  "fetched_at": "2026-11-01T14:39:01.358Z",
   "tennis": true,
   "tennis_match": {
    "id": "187363",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Emma Van Poppel (NED) leads Darja Suvirdjonkova (SER) 6-4",
+     "text": "Darja Suvirdjonkova (SER) leads Emma Van Poppel (NED) 4-6 1-1",
      "type": "event"
     }
    ],
@@ -57,7 +57,11 @@
      "homeAway": "away",
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -99,7 +103,11 @@
      "homeAway": "home",
      "linescores": [
       {
-       "value": 4
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -152,14 +160,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Emma Van Poppel",
    "alias": "Emma Van Poppel",
    "name": "Emma Van Poppel",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Darja Suvirdjonkova",
@@ -171,7 +179,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-01T14:29:57.122Z",
+ "updated": "2026-11-01T14:39:01.168Z",
  "open_taken_at": "2026-10-31T20:16:56.032Z",
  "thresholds": {
   "big": 10,
@@ -220,6 +228,28 @@
    "mid": 94.5,
    "yes_buy": 95,
    "no_buy": 6,
+   "taken_at": "2026-11-01T13:20:35.677Z"
+  },
+  {
+   "market_id": "2022289",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Darja Suvirdjonkova cover -7.5 vs the Emma van Poppel in Darja Suvirdjonkova vs. Emma van Poppel?",
+   "sides": [
+    "Darja Suvirdjonkova -7.50 (Games)",
+    "Emma van Poppel +7.50 (Games)"
+   ],
+   "teams": [
+    "Darja Suvirdjonkova",
+    "Emma van Poppel"
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
    "taken_at": "2026-11-01T13:20:35.677Z"
   },
   {
@@ -287,28 +317,6 @@
    "yes_buy": 74,
    "no_buy": 27,
    "taken_at": "2026-11-01T13:50:04.000Z"
-  },
-  {
-   "market_id": "2022289",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Darja Suvirdjonkova cover -7.5 vs the Emma van Poppel in Darja Suvirdjonkova vs. Emma van Poppel?",
-   "sides": [
-    "Darja Suvirdjonkova -7.50 (Games)",
-    "Emma van Poppel +7.50 (Games)"
-   ],
-   "teams": [
-    "Darja Suvirdjonkova",
-    "Emma van Poppel"
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-11-01T13:20:35.677Z"
   },
   {
    "market_id": "2022318",
@@ -452,15 +460,35 @@
    "question": "Who will win in the upcoming wta event Darja Suvirdjonkova vs Emma van Poppel scheduled for November 1, 2026 at 1:00 PM UTC?",
    "side": "Darja Suvirdjonkova win",
    "open_chance": 83,
-   "now_chance": 39,
+   "now_chance": 38,
    "open_odds": "-488",
-   "now_odds": "+156",
-   "edge": 44,
+   "now_odds": "+163",
+   "edge": 45,
    "tier": "big",
-   "class": "news",
-   "reason": "Big move (44 pts), likely news",
-   "context": "Emma Van Poppel 6 · Darja Suvirdjonkova 4 · 1st Set (games by set)",
+   "class": "score",
+   "reason": "Explained by score: Darja Suvirdjonkova trailing in sets",
+   "context": "Emma Van Poppel 6, 1 · Darja Suvirdjonkova 4, 1 · 2nd Set (games by set)",
    "first_seen": "2026-11-01T13:50:04.000Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2022289:0",
+   "market_id": "2022289",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Darja Suvirdjonkova cover -7.5 vs the Emma van Poppel in Darja Suvirdjonkova vs. Emma van Poppel?",
+   "side": "Darja Suvirdjonkova -7.50 (Games)",
+   "open_chance": 34,
+   "now_chance": 21,
+   "open_odds": "+194",
+   "now_odds": "+376",
+   "edge": 13,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Darja Suvirdjonkova not above the games spread right now",
+   "context": "Emma Van Poppel 6, 1 · Darja Suvirdjonkova 4, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-11-01T13:59:59.425Z",
    "status": "open",
    "kalshi": null
   },
@@ -481,27 +509,7 @@
    "reason": "Explained by score: Darja Suvirdjonkova not above the games spread right now",
    "context": "Emma Van Poppel 6 · Darja Suvirdjonkova 4 · 1st Set (games by set)",
    "first_seen": "2026-11-01T14:29:57.122Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2022289:0",
-   "market_id": "2022289",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Darja Suvirdjonkova cover -7.5 vs the Emma van Poppel in Darja Suvirdjonkova vs. Emma van Poppel?",
-   "side": "Darja Suvirdjonkova -7.50 (Games)",
-   "open_chance": 34,
-   "now_chance": 21,
-   "open_odds": "+194",
-   "now_odds": "+376",
-   "edge": 13,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Darja Suvirdjonkova not above the games spread right now",
-   "context": "Emma Van Poppel 6 · Darja Suvirdjonkova 4 · 1st Set (games by set)",
-   "first_seen": "2026-11-01T13:59:59.425Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -521,7 +529,7 @@
    "reason": null,
    "context": "Emma Van Poppel 6 · Darja Suvirdjonkova 4 · 1st Set (games by set)",
    "first_seen": "2026-11-01T14:29:57.122Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -546,6 +554,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2022287:0:2026-11-01T14:29:57.122Z",
+   "key": "2022287:0",
+   "at": "2026-11-01T14:39:01.168Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Darja Suvirdjonkova +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-317",
+   "now_chance": 76,
+   "edge": 10,
+   "text": "Edge gone: Darja Suvirdjonkova +4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-darsuv-emmpop-2026-11-01"
+  },
   {
    "id": "new_edge:2022287:0:big",
    "key": "2022287:0",
@@ -637,7 +659,8 @@
   "new_edge:2021209:0:big",
   "news:2021209:0",
   "new_edge:2022287:0:big",
-  "gone:2022311:0:2026-11-01T13:50:04.000Z"
+  "gone:2022311:0:2026-11-01T13:50:04.000Z",
+  "gone:2022287:0:2026-11-01T14:29:57.122Z"
  ],
  "kalshi_checked": null
 }
