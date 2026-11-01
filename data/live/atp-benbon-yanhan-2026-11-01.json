@@ -4,12 +4,12 @@
  "game": "Benjamin Bonzi vs. Yannick Hanfmann",
  "url": "https://polymarket.us/sports/atp/atp-benbon-yanhan-2026-11-01",
  "start_time": "2026-11-01T11:40:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187350",
-  "fetched_at": "2026-11-01T13:40:38.098Z",
+  "fetched_at": "2026-11-01T13:49:57.464Z",
   "tennis": true,
   "tennis_match": {
    "id": "187350",
@@ -17,17 +17,17 @@
    "date": "2026-11-01T11:50Z",
    "startDate": "2026-11-01T11:50Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Benjamin Bonzi (FRA) leads Yannick Hanfmann (GER) 7-5 3-6 5-3",
+     "text": "Benjamin Bonzi (FRA) bt Yannick Hanfmann (GER) 7-5 3-6 6-4",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
      "linescores": [
       {
        "value": 5,
@@ -65,7 +66,8 @@
        "winner": true
       },
       {
-       "value": 3
+       "value": 4,
+       "winner": false
       }
      ],
      "athlete": {
@@ -105,6 +107,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
      "linescores": [
       {
        "value": 7,
@@ -115,7 +118,8 @@
        "winner": false
       },
       {
-       "value": 5
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -166,10 +170,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Yannick Hanfmann",
@@ -181,13 +185,13 @@
    "abbr": "Benjamin Bonzi",
    "alias": "Benjamin Bonzi",
    "name": "Benjamin Bonzi",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-01T13:40:37.933Z",
+ "updated": "2026-11-01T13:49:57.381Z",
  "open_taken_at": "2026-10-31T15:51:30.808Z",
  "thresholds": {
   "big": 10,
@@ -527,46 +531,6 @@
  ],
  "edges": [
   {
-   "key": "2014296:1",
-   "market_id": "2014296",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Benjamin Bonzi cover 1.5 vs the Yannick Hanfmann in Benjamin Bonzi vs. Yannick Hanfmann?",
-   "side": "Yannick Hanfmann -1.50 (Games)",
-   "open_chance": 48,
-   "now_chance": 18,
-   "open_odds": "+108",
-   "now_odds": "+456",
-   "edge": 30,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Yannick Hanfmann not above the games spread right now",
-   "context": "Yannick Hanfmann 5, 6, 3 · Benjamin Bonzi 7, 3, 5 · 3rd Set (games by set)",
-   "first_seen": "2026-11-01T11:49:52.806Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2014295:0",
-   "market_id": "2014295",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Benjamin Bonzi cover -1.5 vs the Yannick Hanfmann in Benjamin Bonzi vs. Yannick Hanfmann?",
-   "side": "Benjamin Bonzi -1.50 (Games)",
-   "open_chance": 50,
-   "now_chance": 33,
-   "open_odds": "+100",
-   "now_odds": "+203",
-   "edge": 17,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Benjamin Bonzi not above the games spread right now",
-   "context": "Yannick Hanfmann 5, 6, 3 · Benjamin Bonzi 7, 3, 5 · 3rd Set (games by set)",
-   "first_seen": "2026-11-01T12:53:57.353Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "2014305:1",
    "market_id": "2014305",
    "market": "Games total",
@@ -647,6 +611,26 @@
    "kalshi": null
   },
   {
+   "key": "2014296:1",
+   "market_id": "2014296",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Benjamin Bonzi cover 1.5 vs the Yannick Hanfmann in Benjamin Bonzi vs. Yannick Hanfmann?",
+   "side": "Yannick Hanfmann -1.50 (Games)",
+   "open_chance": 48,
+   "now_chance": 18,
+   "open_odds": "+108",
+   "now_odds": "+456",
+   "edge": 30,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Yannick Hanfmann not above the games spread right now",
+   "context": "Yannick Hanfmann 5, 6, 3 · Benjamin Bonzi 7, 3, 5 · 3rd Set (games by set)",
+   "first_seen": "2026-11-01T11:49:52.806Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "2014301:1",
    "market_id": "2014301",
    "market": "Sets spread",
@@ -663,6 +647,26 @@
    "reason": null,
    "context": "Yannick Hanfmann 5, 0 · Benjamin Bonzi 7, 1 · 2nd Set (games by set)",
    "first_seen": "2026-11-01T12:44:17.222Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "2014295:0",
+   "market_id": "2014295",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Benjamin Bonzi cover -1.5 vs the Yannick Hanfmann in Benjamin Bonzi vs. Yannick Hanfmann?",
+   "side": "Benjamin Bonzi -1.50 (Games)",
+   "open_chance": 50,
+   "now_chance": 33,
+   "open_odds": "+100",
+   "now_odds": "+203",
+   "edge": 17,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Benjamin Bonzi not above the games spread right now",
+   "context": "Yannick Hanfmann 5, 6, 3 · Benjamin Bonzi 7, 3, 5 · 3rd Set (games by set)",
+   "first_seen": "2026-11-01T12:53:57.353Z",
    "status": "gone",
    "kalshi": null
   },
