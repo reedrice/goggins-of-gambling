@@ -4,9 +4,9 @@
  "note": "Learned only from real graded results. Adjustments stay at 0 (and trust at 1) until a bucket or category has 30 graded picks. Small samples are noisy.",
  "sample": {
   "picks_logged": 2695,
-  "picks_graded": 2462,
+  "picks_graded": 2471,
   "predictions_graded": 145,
-  "clv_legs": 2344
+  "clv_legs": 2348
  },
  "calibration": {
   "picks": [
@@ -31,25 +31,25 @@
    {
     "lo": 20,
     "hi": 30,
-    "n": 171,
+    "n": 172,
     "avg_said": 25.3,
-    "actual": 15.2,
+    "actual": 15.1,
     "adjustment_pts": -6.4,
     "status": "applied"
    },
    {
     "lo": 30,
     "hi": 40,
-    "n": 336,
-    "avg_said": 35.1,
-    "actual": 28,
-    "adjustment_pts": -5.5,
+    "n": 337,
+    "avg_said": 35.2,
+    "actual": 27.9,
+    "adjustment_pts": -5.6,
     "status": "applied"
    },
    {
     "lo": 40,
     "hi": 50,
-    "n": 508,
+    "n": 511,
     "avg_said": 44.8,
     "actual": 35.8,
     "adjustment_pts": -7.5,
@@ -58,7 +58,7 @@
    {
     "lo": 50,
     "hi": 60,
-    "n": 571,
+    "n": 574,
     "avg_said": 54.3,
     "actual": 49,
     "adjustment_pts": -4.5,
@@ -67,10 +67,10 @@
    {
     "lo": 60,
     "hi": 70,
-    "n": 431,
+    "n": 432,
     "avg_said": 64.5,
-    "actual": 58.5,
-    "adjustment_pts": -4.9,
+    "actual": 58.6,
+    "adjustment_pts": -4.8,
     "status": "applied"
    },
    {
@@ -150,15 +150,15 @@
   ]
  },
  "market_shrink": {
-  "n": 2462,
+  "n": 2471,
   "raw_weight": 0,
   "weight": 0.04,
   "status": "applied"
  },
  "clv": {
-  "n": 2344,
+  "n": 2348,
   "avg_pts": 0.6,
-  "beat_close_pct": 32.7
+  "beat_close_pct": 32.6
  },
  "categories": [
   {
@@ -220,8 +220,8 @@
    "hit_rate": 36.6,
    "units": 3.05,
    "roi": 2.1,
-   "avg_clv": -0.4,
-   "clv_n": 142,
+   "avg_clv": -0.5,
+   "clv_n": 145,
    "trust": 1.01,
    "status": "applied"
   },
@@ -237,7 +237,7 @@
    "units": 27.74,
    "roi": 19.7,
    "avg_clv": 0.1,
-   "clv_n": 134,
+   "clv_n": 135,
    "trust": 1.12,
    "status": "applied"
   },
@@ -386,6 +386,22 @@
    "status": "applied"
   },
   {
+   "key": "NFL · spread",
+   "sport": "NFL",
+   "type": "spread",
+   "stat": null,
+   "n": 29,
+   "w": 5,
+   "l": 24,
+   "hit_rate": 17.2,
+   "units": -19.16,
+   "roi": -66.1,
+   "avg_clv": -0.3,
+   "clv_n": 36,
+   "trust": 1,
+   "status": "collecting data"
+  },
+  {
    "key": "NBA · prop · stl",
    "sport": "NBA",
    "type": "prop",
@@ -398,22 +414,6 @@
    "roi": 1.5,
    "avg_clv": -4.6,
    "clv_n": 24,
-   "trust": 1,
-   "status": "collecting data"
-  },
-  {
-   "key": "NFL · spread",
-   "sport": "NFL",
-   "type": "spread",
-   "stat": null,
-   "n": 25,
-   "w": 3,
-   "l": 22,
-   "hit_rate": 12,
-   "units": -18.68,
-   "roi": -74.7,
-   "avg_clv": -0.3,
-   "clv_n": 36,
    "trust": 1,
    "status": "collecting data"
   },
@@ -518,14 +518,30 @@
    "sport": "NFL",
    "type": "total",
    "stat": null,
-   "n": 14,
+   "n": 15,
    "w": 8,
-   "l": 6,
-   "hit_rate": 57.1,
-   "units": 2.26,
-   "roi": 16.1,
+   "l": 7,
+   "hit_rate": 53.3,
+   "units": 1.26,
+   "roi": 8.4,
    "avg_clv": 0.3,
    "clv_n": 22,
+   "trust": 1,
+   "status": "collecting data"
+  },
+  {
+   "key": "NFL · moneyline",
+   "sport": "NFL",
+   "type": "moneyline",
+   "stat": null,
+   "n": 14,
+   "w": 3,
+   "l": 11,
+   "hit_rate": 21.4,
+   "units": -4.88,
+   "roi": -34.9,
+   "avg_clv": -0.3,
+   "clv_n": 17,
    "trust": 1,
    "status": "collecting data"
   },
@@ -574,22 +590,6 @@
    "roi": -100,
    "avg_clv": null,
    "clv_n": 0,
-   "trust": 1,
-   "status": "collecting data"
-  },
-  {
-   "key": "NFL · moneyline",
-   "sport": "NFL",
-   "type": "moneyline",
-   "stat": null,
-   "n": 10,
-   "w": 2,
-   "l": 8,
-   "hit_rate": 20,
-   "units": -3.05,
-   "roi": -30.5,
-   "avg_clv": -0.3,
-   "clv_n": 17,
    "trust": 1,
    "status": "collecting data"
   },
@@ -937,8 +937,8 @@
  ],
  "worst": [
   "NBA + NHL · parlay",
-  "NFL · spread",
-  "NFL · prop · pyd"
+  "NFL · prop · pyd",
+  "NFL · spread"
  ],
- "updated_at": "2026-11-01T21:11:15.738Z"
+ "updated_at": "2026-11-01T21:21:12.491Z"
 }
