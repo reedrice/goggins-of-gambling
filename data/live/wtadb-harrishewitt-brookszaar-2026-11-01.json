@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185864",
-  "fetched_at": "2026-11-01T12:44:16.356Z",
+  "fetched_at": "2026-11-01T12:53:56.562Z",
   "tennis": true,
   "tennis_match": {
    "id": "185864",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Catherine Harrison (USA) & Dalayna Hewitt (USA) leads (2) Madeleine Brooks (GBR) & Lisa Zaar (SWE) 1-1",
+     "text": "(1) Catherine Harrison (USA) & Dalayna Hewitt (USA) leads (2) Madeleine Brooks (GBR) & Lisa Zaar (SWE) 3-2",
      "type": "event"
     }
    ],
@@ -55,13 +55,13 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "possession": false,
      "curatedRank": {
       "current": 2
      },
      "linescores": [
       {
-       "value": 1
+       "value": 2
       }
      ],
      "roster": {
@@ -136,13 +136,13 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "possession": true,
      "curatedRank": {
       "current": 1
      },
      "linescores": [
       {
-       "value": 1
+       "value": 3
       }
      ],
      "roster": {
@@ -254,7 +254,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-01T12:44:16.256Z",
+ "updated": "2026-11-01T12:53:56.462Z",
  "open_taken_at": "2026-10-31T14:49:13.857Z",
  "thresholds": {
   "big": 10,
@@ -284,8 +284,46 @@
    "taken_at": "2026-10-31T18:38:08.164Z"
   }
  ],
- "edges": [],
- "alerts": [],
- "alert_seen": [],
+ "edges": [
+  {
+   "key": "2010068:1",
+   "market_id": "2010068",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wtadb event Harrison / Hewitt vs Brooks / Zaar scheduled for November 1, 2026 at 1:00 PM UTC?",
+   "side": "Brooks M / Zaar L win",
+   "open_chance": 52,
+   "now_chance": 38,
+   "open_odds": "-108",
+   "now_odds": "+163",
+   "edge": 14,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Madeleine Brooks / Lisa Zaar 2 · Catherine Harrison / Dalayna Hewitt 3 · 1st Set (games by set)",
+   "first_seen": "2026-11-01T12:53:56.462Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
+ "alerts": [
+  {
+   "id": "new_edge:2010068:1:big",
+   "key": "2010068:1",
+   "at": "2026-11-01T12:53:56.462Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Brooks M / Zaar L win",
+   "market": "Moneyline",
+   "now_odds": "+163",
+   "now_chance": 38,
+   "edge": 14,
+   "text": "New big edge: Brooks M / Zaar L win (Moneyline), 14 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-harrishewitt-brookszaar-2026-11-01"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:2010068:1:big"
+ ],
  "kalshi_checked": null
 }
