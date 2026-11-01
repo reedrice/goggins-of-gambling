@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-01T14:08:23.749Z"
+  "fetched_at": "2026-11-01T14:20:57.418Z"
  },
- "updated": "2026-11-01T14:08:23.533Z",
+ "updated": "2026-11-01T14:20:57.248Z",
  "open_taken_at": "2026-10-31T17:52:24.484Z",
  "thresholds": {
   "big": 10,
@@ -63,48 +63,26 @@
    "taken_at": "2026-11-01T13:50:00.153Z"
   },
   {
-   "market_id": "2017866",
-   "market": "Sets spread",
+   "market_id": "2017877",
+   "market": "Set 2 winner",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Giovanni Mpetshi Perricard cover -1.5 vs the Yanis Ghazouani Durand in Giovanni Mpetshi Perricard vs. Yanis Ghazouani Durand?",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Giovanni Mpetshi Perricard win set 2 against Yanis Ghazouani Durand?",
    "sides": [
-    "Giovanni Mpetshi Perricard -1.50 (Sets)",
-    "Yanis Durand +1.50 (Sets)"
+    "Yes: Giovanni Mpetshi Perricard win set 2 against Yanis Ghazouani Durand",
+    "No: Giovanni Mpetshi Perricard win set 2 against Yanis Ghazouani Durand"
    ],
    "teams": [
     "Giovanni Mpetshi Perricard",
-    "Yanis Durand"
+    null
    ],
    "player": null,
-   "mid": 60.5,
-   "yes_buy": 61,
-   "no_buy": 40,
-   "taken_at": "2026-11-01T13:50:00.153Z"
-  },
-  {
-   "market_id": "2017862",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Giovanni Mpetshi Perricard cover -4.5 vs the Yanis Ghazouani Durand in Giovanni Mpetshi Perricard vs. Yanis Ghazouani Durand?",
-   "sides": [
-    "Giovanni Mpetshi Perricard -4.50 (Games)",
-    "Yanis Durand +4.50 (Games)"
-   ],
-   "teams": [
-    "Giovanni Mpetshi Perricard",
-    "Yanis Durand"
-   ],
-   "player": null,
-   "mid": 31.5,
-   "yes_buy": 32,
-   "no_buy": 69,
-   "taken_at": "2026-11-01T13:40:40.410Z"
+   "mid": 77.5,
+   "yes_buy": 78,
+   "no_buy": 23,
+   "taken_at": "2026-11-01T14:20:57.248Z"
   },
   {
    "market_id": "2017869",
@@ -148,6 +126,50 @@
    "mid": 25.5,
    "yes_buy": 28,
    "no_buy": 77,
+   "taken_at": "2026-11-01T13:40:40.410Z"
+  },
+  {
+   "market_id": "2017866",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Giovanni Mpetshi Perricard cover -1.5 vs the Yanis Ghazouani Durand in Giovanni Mpetshi Perricard vs. Yanis Ghazouani Durand?",
+   "sides": [
+    "Giovanni Mpetshi Perricard -1.50 (Sets)",
+    "Yanis Durand +1.50 (Sets)"
+   ],
+   "teams": [
+    "Giovanni Mpetshi Perricard",
+    "Yanis Durand"
+   ],
+   "player": null,
+   "mid": 60.5,
+   "yes_buy": 61,
+   "no_buy": 40,
+   "taken_at": "2026-11-01T13:50:00.153Z"
+  },
+  {
+   "market_id": "2017862",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Giovanni Mpetshi Perricard cover -4.5 vs the Yanis Ghazouani Durand in Giovanni Mpetshi Perricard vs. Yanis Ghazouani Durand?",
+   "sides": [
+    "Giovanni Mpetshi Perricard -4.50 (Games)",
+    "Yanis Durand +4.50 (Games)"
+   ],
+   "teams": [
+    "Giovanni Mpetshi Perricard",
+    "Yanis Durand"
+   ],
+   "player": null,
+   "mid": 31.5,
+   "yes_buy": 32,
+   "no_buy": 69,
    "taken_at": "2026-11-01T13:40:40.410Z"
   },
   {
@@ -219,6 +241,26 @@
  ],
  "edges": [
   {
+   "key": "2017869:0",
+   "market_id": "2017869",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Giovanni Mpetshi Perricard vs. Yanis Ghazouani Durand be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 44,
+   "now_chance": 40,
+   "open_odds": "+127",
+   "now_odds": "+150",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-01T13:59:55.871Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2017866:1",
    "market_id": "2017866",
    "market": "Sets spread",
@@ -235,31 +277,39 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-01T13:59:55.871Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2017869:0",
-   "market_id": "2017869",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Giovanni Mpetshi Perricard vs. Yanis Ghazouani Durand be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 44,
-   "now_chance": 30,
-   "open_odds": "+127",
-   "now_odds": "+233",
-   "edge": 14,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-01T13:59:55.871Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2017869:0:slight",
+   "key": "2017869:0",
+   "at": "2026-11-01T14:20:57.248Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+150",
+   "now_chance": 40,
+   "edge": 4,
+   "text": "New slight edge: Over 22.5 (Games) (Games total), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-gioper-yandur-2026-11-01"
+  },
+  {
+   "id": "gone:2017866:1:2026-11-01T13:59:55.871Z",
+   "key": "2017866:1",
+   "at": "2026-11-01T14:20:57.248Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Yanis Durand +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+355",
+   "now_chance": 22,
+   "edge": 18,
+   "text": "Edge gone: Yanis Durand +1.50 (Sets) (Sets spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-gioper-yandur-2026-11-01"
+  },
   {
    "id": "new_edge:2017866:1:big",
    "key": "2017866:1",
@@ -292,7 +342,9 @@
  "alert_seen": [
   "new_edge:2016522:0:big",
   "new_edge:2017866:1:big",
-  "new_edge:2017869:0:big"
+  "new_edge:2017869:0:big",
+  "new_edge:2017869:0:slight",
+  "gone:2017866:1:2026-11-01T13:59:55.871Z"
  ],
  "kalshi_checked": null
 }
