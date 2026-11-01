@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-01T21:47:44.818Z"
+  "fetched_at": "2026-11-01T21:57:13.186Z"
  },
- "updated": "2026-11-01T21:47:44.690Z",
+ "updated": "2026-11-01T21:57:13.081Z",
  "open_taken_at": "2026-10-31T22:19:27.493Z",
  "thresholds": {
   "big": 10,
@@ -33,6 +33,28 @@
    "teams": [
     "Younes Laaroussi",
     "Rafael Tosetto"
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-11-01T20:42:11.145Z"
+  },
+  {
+   "market_id": "2024280",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Younes Lalami Laaroussi vs. Rafael Tosetto be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
    ],
    "player": null,
    "mid": 33.5,
@@ -303,31 +325,29 @@
    "yes_buy": 34,
    "no_buy": 67,
    "taken_at": "2026-11-01T20:42:11.145Z"
-  },
-  {
-   "market_id": "2024280",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Younes Lalami Laaroussi vs. Rafael Tosetto be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-11-01T20:42:11.145Z"
   }
  ],
  "edges": [
+  {
+   "key": "2024277:0",
+   "market_id": "2024277",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Younes Lalami Laaroussi cover 7.5 vs the Rafael Tosetto in Younes Lalami Laaroussi vs. Rafael Tosetto?",
+   "side": "Younes Laaroussi +7.50 (Games)",
+   "open_chance": 34,
+   "now_chance": 21,
+   "open_odds": "+194",
+   "now_odds": "+376",
+   "edge": 13,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-01T21:57:13.081Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "2024035:0",
    "market_id": "2024035",
@@ -430,6 +450,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2024277:0:big",
+   "key": "2024277:0",
+   "at": "2026-11-01T21:57:13.081Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Younes Laaroussi +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+376",
+   "now_chance": 21,
+   "edge": 13,
+   "text": "New big edge: Younes Laaroussi +7.50 (Games) (Games spread), 13 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-youlaa-raftos-2026-11-01"
+  },
   {
    "id": "gone:2024277:1:2026-11-01T21:39:05.732Z",
    "key": "2024277:1",
@@ -581,7 +615,8 @@
   "new_edge:2024277:1:big",
   "gone:2024035:0:2026-11-01T21:09:07.207Z",
   "gone:2024275:1:2026-11-01T21:09:07.207Z",
-  "gone:2024277:1:2026-11-01T21:39:05.732Z"
+  "gone:2024277:1:2026-11-01T21:39:05.732Z",
+  "new_edge:2024277:0:big"
  ],
  "kalshi_checked": null
 }
