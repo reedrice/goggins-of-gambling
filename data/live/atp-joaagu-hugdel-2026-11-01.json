@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-01T23:25:14.059Z"
+  "fetched_at": "2026-11-01T23:33:26.037Z"
  },
- "updated": "2026-11-01T23:25:13.889Z",
+ "updated": "2026-11-01T23:33:25.946Z",
  "open_taken_at": "2026-10-31T23:19:36.539Z",
  "thresholds": {
   "big": 10,
@@ -39,28 +39,6 @@
    "yes_buy": 41,
    "no_buy": 64,
    "taken_at": "2026-10-31T23:50:41.350Z"
-  },
-  {
-   "market_id": "2026107",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Joaquin Aguilar Cardozo win set 1 against Hugo Dellien?",
-   "sides": [
-    "Yes: Joaquin Aguilar Cardozo win set 1 against Hugo Dellien",
-    "No: Joaquin Aguilar Cardozo win set 1 against Hugo Dellien"
-   ],
-   "teams": [
-    "Joaquin Aguilar",
-    null
-   ],
-   "player": null,
-   "mid": 22,
-   "yes_buy": 24,
-   "no_buy": 80,
-   "taken_at": "2026-11-01T17:13:12.627Z"
   },
   {
    "market_id": "2026100",
@@ -126,6 +104,28 @@
    "mid": 34.5,
    "yes_buy": 35,
    "no_buy": 66,
+   "taken_at": "2026-11-01T17:13:12.627Z"
+  },
+  {
+   "market_id": "2026107",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Joaquin Aguilar Cardozo win set 1 against Hugo Dellien?",
+   "sides": [
+    "Yes: Joaquin Aguilar Cardozo win set 1 against Hugo Dellien",
+    "No: Joaquin Aguilar Cardozo win set 1 against Hugo Dellien"
+   ],
+   "teams": [
+    "Joaquin Aguilar",
+    null
+   ],
+   "player": null,
+   "mid": 22,
+   "yes_buy": 24,
+   "no_buy": 80,
    "taken_at": "2026-11-01T17:13:12.627Z"
   },
   {
@@ -285,26 +285,6 @@
  ],
  "edges": [
   {
-   "key": "2026107:1",
-   "market_id": "2026107",
-   "market": "Set 1 winner",
-   "group": "game",
-   "question": "Will Joaquin Aguilar Cardozo win set 1 against Hugo Dellien?",
-   "side": "No: Joaquin Aguilar Cardozo win set 1 against Hugo Dellien",
-   "open_chance": 80,
-   "now_chance": 44,
-   "open_odds": "-400",
-   "now_odds": "+127",
-   "edge": 36,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-01T21:28:14.449Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "2026100:0",
    "market_id": "2026100",
    "market": "Games total",
@@ -365,6 +345,26 @@
    "kalshi": null
   },
   {
+   "key": "2026107:1",
+   "market_id": "2026107",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Joaquin Aguilar Cardozo win set 1 against Hugo Dellien?",
+   "side": "No: Joaquin Aguilar Cardozo win set 1 against Hugo Dellien",
+   "open_chance": 80,
+   "now_chance": 44,
+   "open_odds": "-400",
+   "now_odds": "+127",
+   "edge": 36,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-01T21:28:14.449Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "2026101:1",
    "market_id": "2026101",
    "market": "Games total",
@@ -406,6 +406,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2026107:1:2026-11-01T21:28:14.449Z",
+   "key": "2026107:1",
+   "at": "2026-11-01T23:33:25.946Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "No: Joaquin Aguilar Cardozo win set 1 against Hugo Dellien",
+   "market": "Set 1 winner",
+   "now_odds": "+127",
+   "now_chance": 44,
+   "edge": 36,
+   "text": "Edge gone: No: Joaquin Aguilar Cardozo win set 1 against Hugo Dellien (Set 1 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-joaagu-hugdel-2026-11-01"
+  },
   {
    "id": "new_edge:2026096:1:slight",
    "key": "2026096:1",
@@ -527,7 +541,8 @@
   "new_edge:2026107:1:big",
   "new_edge:2026082:1:slight",
   "new_edge:2026100:0:slight",
-  "new_edge:2026096:1:slight"
+  "new_edge:2026096:1:slight",
+  "gone:2026107:1:2026-11-01T21:28:14.449Z"
  ],
  "kalshi_checked": null
 }

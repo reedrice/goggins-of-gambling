@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-01T23:25:14.376Z"
+  "fetched_at": "2026-11-01T23:33:26.069Z"
  },
- "updated": "2026-11-01T23:25:14.204Z",
+ "updated": "2026-11-01T23:33:25.988Z",
  "open_taken_at": "2026-10-31T23:35:27.423Z",
  "thresholds": {
   "big": 10,
@@ -39,6 +39,28 @@
    "yes_buy": 63,
    "no_buy": 40,
    "taken_at": "2026-11-01T05:17:30.251Z"
+  },
+  {
+   "market_id": "2028523",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Andres Martin cover -1.5 vs the Patrick Zahraj in Andres Martin vs. Patrick Zahraj?",
+   "sides": [
+    "Andres Martin -1.50 (Sets)",
+    "Patrick Zahraj +1.50 (Sets)"
+   ],
+   "teams": [
+    "Andres Martin",
+    "Patrick Zahraj"
+   ],
+   "player": null,
+   "mid": 45.5,
+   "yes_buy": 46,
+   "no_buy": 55,
+   "taken_at": "2026-11-01T23:33:25.988Z"
   }
  ],
  "edges": [
@@ -50,11 +72,11 @@
    "question": "Who will win in the upcoming atp event Andres Martin vs Patrick Zahraj scheduled for November 1, 2026 at 2:00 PM UTC?",
    "side": "Patrick Zahraj win",
    "open_chance": 40,
-   "now_chance": 31,
+   "now_chance": 22,
    "open_odds": "+150",
-   "now_odds": "+223",
-   "edge": 9,
-   "tier": "slight",
+   "now_odds": "+355",
+   "edge": 18,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -64,6 +86,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2026230:1:big",
+   "key": "2026230:1",
+   "at": "2026-11-01T23:33:25.988Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Patrick Zahraj win",
+   "market": "Moneyline",
+   "now_odds": "+355",
+   "now_chance": 22,
+   "edge": 18,
+   "text": "New big edge: Patrick Zahraj win (Moneyline), 18 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-andmar-patzah-2026-11-01"
+  },
   {
    "id": "new_edge:2026230:1:slight",
    "key": "2026230:1",
@@ -80,7 +116,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2026230:1:slight"
+  "new_edge:2026230:1:slight",
+  "new_edge:2026230:1:big"
  ],
  "kalshi_checked": null
 }
