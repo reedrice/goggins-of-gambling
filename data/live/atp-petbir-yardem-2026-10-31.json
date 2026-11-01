@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-01T07:52:05.151Z"
+  "fetched_at": "2026-11-01T08:01:03.543Z"
  },
- "updated": "2026-11-01T07:52:05.043Z",
+ "updated": "2026-11-01T08:01:03.380Z",
  "open_taken_at": "2026-10-31T14:49:09.269Z",
  "thresholds": {
   "big": 10,
@@ -63,28 +63,6 @@
    "taken_at": "2026-11-01T06:08:22.158Z"
   },
   {
-   "market_id": "2007203",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Petr Bar Biryukov cover -1.5 vs the Yaroslav Demin in Petr Bar Biryukov vs. Yaroslav Demin?",
-   "sides": [
-    "Petr Bar Biryukov -1.50 (Games)",
-    "Yaroslav Demin +1.50 (Games)"
-   ],
-   "teams": [
-    "Petr Bar Biryukov",
-    "Yaroslav Demin"
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-11-01T06:08:22.158Z"
-  },
-  {
    "market_id": "2007205",
    "market": "Games spread",
    "group": "game",
@@ -105,6 +83,28 @@
    "yes_buy": 47,
    "no_buy": 58,
    "taken_at": "2026-11-01T02:02:29.958Z"
+  },
+  {
+   "market_id": "2007203",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Petr Bar Biryukov cover -1.5 vs the Yaroslav Demin in Petr Bar Biryukov vs. Yaroslav Demin?",
+   "sides": [
+    "Petr Bar Biryukov -1.50 (Games)",
+    "Yaroslav Demin +1.50 (Games)"
+   ],
+   "teams": [
+    "Petr Bar Biryukov",
+    "Yaroslav Demin"
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-11-01T06:08:22.158Z"
   },
   {
    "market_id": "2007225",
@@ -351,22 +351,42 @@
  ],
  "edges": [
   {
-   "key": "2007205:0",
-   "market_id": "2007205",
-   "market": "Games spread",
+   "key": "2005230:1",
+   "market_id": "2005230",
+   "market": "Moneyline",
    "group": "game",
-   "question": "Will the Petr Bar Biryukov cover 1.5 vs the Yaroslav Demin in Petr Bar Biryukov vs. Yaroslav Demin?",
-   "side": "Petr Bar Biryukov +1.50 (Games)",
-   "open_chance": 47,
-   "now_chance": 31,
-   "open_odds": "+113",
-   "now_odds": "+223",
-   "edge": 16,
+   "question": "Who will win in the upcoming atp event Petr Bar Biryukov vs Yaroslav Demin scheduled for November 1, 2026 at 2:00 AM UTC?",
+   "side": "Yaroslav Demin win",
+   "open_chance": 62,
+   "now_chance": 23,
+   "open_odds": "-163",
+   "now_odds": "+335",
+   "edge": 39,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-01T07:52:05.043Z",
+   "first_seen": "2026-11-01T06:17:36.529Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2007205:1",
+   "market_id": "2007205",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Petr Bar Biryukov cover 1.5 vs the Yaroslav Demin in Petr Bar Biryukov vs. Yaroslav Demin?",
+   "side": "Yaroslav Demin -1.50 (Games)",
+   "open_chance": 58,
+   "now_chance": 38,
+   "open_odds": "-138",
+   "now_odds": "+163",
+   "edge": 20,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-01T06:26:55.752Z",
    "status": "open",
    "kalshi": null
   },
@@ -382,26 +402,6 @@
    "open_odds": "+156",
    "now_odds": "+233",
    "edge": 9,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-01T07:32:48.845Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2005230:0",
-   "market_id": "2005230",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Petr Bar Biryukov vs Yaroslav Demin scheduled for November 1, 2026 at 2:00 AM UTC?",
-   "side": "Petr Bar Biryukov win",
-   "open_chance": 39,
-   "now_chance": 33,
-   "open_odds": "+156",
-   "now_odds": "+203",
-   "edge": 6,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -471,42 +471,22 @@
    "kalshi": null
   },
   {
-   "key": "2007205:1",
+   "key": "2007205:0",
    "market_id": "2007205",
    "market": "Games spread",
    "group": "game",
    "question": "Will the Petr Bar Biryukov cover 1.5 vs the Yaroslav Demin in Petr Bar Biryukov vs. Yaroslav Demin?",
-   "side": "Yaroslav Demin -1.50 (Games)",
-   "open_chance": 58,
-   "now_chance": 40,
-   "open_odds": "-138",
-   "now_odds": "+150",
-   "edge": 18,
+   "side": "Petr Bar Biryukov +1.50 (Games)",
+   "open_chance": 47,
+   "now_chance": 31,
+   "open_odds": "+113",
+   "now_odds": "+223",
+   "edge": 16,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-01T06:26:55.752Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "2005230:1",
-   "market_id": "2005230",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Petr Bar Biryukov vs Yaroslav Demin scheduled for November 1, 2026 at 2:00 AM UTC?",
-   "side": "Yaroslav Demin win",
-   "open_chance": 62,
-   "now_chance": 47,
-   "open_odds": "-163",
-   "now_odds": "+113",
-   "edge": 15,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-01T06:17:36.529Z",
+   "first_seen": "2026-11-01T07:52:05.043Z",
    "status": "gone",
    "kalshi": null
   },
@@ -631,6 +611,26 @@
    "kalshi": null
   },
   {
+   "key": "2005230:0",
+   "market_id": "2005230",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Petr Bar Biryukov vs Yaroslav Demin scheduled for November 1, 2026 at 2:00 AM UTC?",
+   "side": "Petr Bar Biryukov win",
+   "open_chance": 39,
+   "now_chance": 33,
+   "open_odds": "+156",
+   "now_odds": "+203",
+   "edge": 6,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-01T07:32:48.845Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "2007223:1",
    "market_id": "2007223",
    "market": "Games total",
@@ -692,6 +692,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2007205:0:2026-11-01T07:52:05.043Z",
+   "key": "2007205:0",
+   "at": "2026-11-01T08:01:03.380Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Petr Bar Biryukov +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+223",
+   "now_chance": 31,
+   "edge": 16,
+   "text": "Edge gone: Petr Bar Biryukov +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-petbir-yardem-2026-10-31"
+  },
+  {
+   "id": "gone:2005230:0:2026-11-01T07:32:48.845Z",
+   "key": "2005230:0",
+   "at": "2026-11-01T08:01:03.380Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Petr Bar Biryukov win",
+   "market": "Moneyline",
+   "now_odds": "+203",
+   "now_chance": 33,
+   "edge": 6,
+   "text": "Edge gone: Petr Bar Biryukov win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-petbir-yardem-2026-10-31"
+  },
   {
    "id": "new_edge:2007205:0:big",
    "key": "2007205:0",
@@ -1235,7 +1263,9 @@
   "new_edge:2007209:1:slight",
   "gone:2007225:1:2026-11-01T06:45:59.027Z",
   "new_edge:2007205:0:big",
-  "gone:2007205:1:2026-11-01T06:26:55.752Z"
+  "gone:2007205:1:2026-11-01T06:26:55.752Z",
+  "gone:2007205:0:2026-11-01T07:52:05.043Z",
+  "gone:2005230:0:2026-11-01T07:32:48.845Z"
  ],
  "kalshi_checked": null
 }

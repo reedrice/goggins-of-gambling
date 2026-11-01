@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-01T07:52:02.986Z"
+  "fetched_at": "2026-11-01T08:01:01.283Z"
  },
- "updated": "2026-11-01T07:52:02.868Z",
+ "updated": "2026-11-01T08:01:00.942Z",
  "open_taken_at": "2026-10-31T07:20:47.463Z",
  "thresholds": {
   "big": 10,
@@ -39,6 +39,28 @@
    "yes_buy": 51,
    "no_buy": 50,
    "taken_at": "2026-10-31T17:34:14.626Z"
+  },
+  {
+   "market_id": "2001762",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Terence Atmane vs. Coleman Wong be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 83.5,
+   "yes_buy": 84,
+   "no_buy": 17,
+   "taken_at": "2026-11-01T08:01:00.942Z"
   },
   {
    "market_id": "2001760",
@@ -83,6 +105,50 @@
    "yes_buy": 61,
    "no_buy": 44,
    "taken_at": "2026-11-01T04:04:55.457Z"
+  },
+  {
+   "market_id": "2001778",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Terence Atmane win set 1 against Coleman Wong?",
+   "sides": [
+    "Yes: Terence Atmane win set 1 against Coleman Wong",
+    "No: Terence Atmane win set 1 against Coleman Wong"
+   ],
+   "teams": [
+    "Terence Atmane",
+    null
+   ],
+   "player": null,
+   "mid": 52.5,
+   "yes_buy": 55,
+   "no_buy": 50,
+   "taken_at": "2026-11-01T08:01:00.942Z"
+  },
+  {
+   "market_id": "2001780",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Terence Atmane win set 2 against Coleman Wong?",
+   "sides": [
+    "Yes: Terence Atmane win set 2 against Coleman Wong",
+    "No: Terence Atmane win set 2 against Coleman Wong"
+   ],
+   "teams": [
+    "Terence Atmane",
+    null
+   ],
+   "player": null,
+   "mid": 53.5,
+   "yes_buy": 54,
+   "no_buy": 47,
+   "taken_at": "2026-11-01T08:01:00.942Z"
   },
   {
    "market_id": "2001764",
@@ -197,6 +263,26 @@
  ],
  "edges": [
   {
+   "key": "2001752:0",
+   "market_id": "2001752",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Terence Atmane cover -1.5 vs the Coleman Wong in Terence Atmane vs. Coleman Wong?",
+   "side": "Terence Atmane -1.50 (Games)",
+   "open_chance": 48,
+   "now_chance": 42,
+   "open_odds": "+108",
+   "now_odds": "+138",
+   "edge": 6,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-01T08:01:00.942Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2001752:1",
    "market_id": "2001752",
    "market": "Games spread",
@@ -213,7 +299,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-01T06:45:56.422Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -233,11 +319,53 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-01T07:52:02.868Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2001752:0:slight",
+   "key": "2001752:0",
+   "at": "2026-11-01T08:01:00.942Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Terence Atmane -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+138",
+   "now_chance": 42,
+   "edge": 6,
+   "text": "New slight edge: Terence Atmane -1.50 (Games) (Games spread), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-teratm-colwon-2026-11-01"
+  },
+  {
+   "id": "gone:2001752:1:2026-11-01T06:45:56.422Z",
+   "key": "2001752:1",
+   "at": "2026-11-01T08:01:00.942Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Coleman Wong +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 5,
+   "text": "Edge gone: Coleman Wong +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-teratm-colwon-2026-11-01"
+  },
+  {
+   "id": "gone:2001753:0:2026-11-01T07:52:02.868Z",
+   "key": "2001753:0",
+   "at": "2026-11-01T08:01:00.942Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Terence Atmane +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-133",
+   "now_chance": 57,
+   "edge": 4,
+   "text": "Edge gone: Terence Atmane +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-teratm-colwon-2026-11-01"
+  },
   {
    "id": "new_edge:2001752:1:slight",
    "key": "2001752:1",
@@ -269,7 +397,10 @@
  ],
  "alert_seen": [
   "new_edge:2001752:1:slight",
-  "new_edge:2001753:0:slight"
+  "new_edge:2001753:0:slight",
+  "new_edge:2001752:0:slight",
+  "gone:2001752:1:2026-11-01T06:45:56.422Z",
+  "gone:2001753:0:2026-11-01T07:52:02.868Z"
  ],
  "kalshi_checked": null
 }
