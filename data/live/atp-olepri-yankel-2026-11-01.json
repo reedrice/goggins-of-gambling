@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-01T11:12:04.813Z"
+  "fetched_at": "2026-11-01T11:21:14.894Z"
  },
- "updated": "2026-11-01T11:12:04.729Z",
+ "updated": "2026-11-01T11:21:14.823Z",
  "open_taken_at": "2026-10-31T17:52:24.090Z",
  "thresholds": {
   "big": 10,
@@ -107,28 +107,6 @@
    "taken_at": "2026-11-01T10:15:12.623Z"
   },
   {
-   "market_id": "2017768",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Oleg Prihodko win set 2 against Yannik Kelm?",
-   "sides": [
-    "Yes: Oleg Prihodko win set 2 against Yannik Kelm",
-    "No: Oleg Prihodko win set 2 against Yannik Kelm"
-   ],
-   "teams": [
-    "Oleg Prihodko",
-    null
-   ],
-   "player": null,
-   "mid": 32.5,
-   "yes_buy": 33,
-   "no_buy": 68,
-   "taken_at": "2026-11-01T10:15:12.623Z"
-  },
-  {
    "market_id": "2017759",
    "market": "Games total",
    "group": "game",
@@ -151,26 +129,48 @@
    "taken_at": "2026-11-01T10:15:12.623Z"
   },
   {
-   "market_id": "2017760",
-   "market": "Games total",
+   "market_id": "2017757",
+   "market": "Sets spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Oleg Prihodko vs. Yannik Kelm be more than 22.5?",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Oleg Prihodko cover -1.5 vs the Yannik Kelm in Oleg Prihodko vs. Yannik Kelm?",
    "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
+    "Oleg Prihodko -1.50 (Sets)",
+    "Yannik Kelm +1.50 (Sets)"
    ],
    "teams": [
-    null,
+    "Oleg Prihodko",
+    "Yannik Kelm"
+   ],
+   "player": null,
+   "mid": 31.5,
+   "yes_buy": 32,
+   "no_buy": 69,
+   "taken_at": "2026-11-01T10:15:12.623Z"
+  },
+  {
+   "market_id": "2017768",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Oleg Prihodko win set 2 against Yannik Kelm?",
+   "sides": [
+    "Yes: Oleg Prihodko win set 2 against Yannik Kelm",
+    "No: Oleg Prihodko win set 2 against Yannik Kelm"
+   ],
+   "teams": [
+    "Oleg Prihodko",
     null
    ],
    "player": null,
-   "mid": 47,
-   "yes_buy": 49,
-   "no_buy": 55,
-   "taken_at": "2026-11-01T08:49:51.442Z"
+   "mid": 32.5,
+   "yes_buy": 33,
+   "no_buy": 68,
+   "taken_at": "2026-11-01T10:15:12.623Z"
   },
   {
    "market_id": "2017762",
@@ -193,6 +193,28 @@
    "yes_buy": 39,
    "no_buy": 62,
    "taken_at": "2026-11-01T11:02:30.628Z"
+  },
+  {
+   "market_id": "2017760",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Oleg Prihodko vs. Yannik Kelm be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 47,
+   "yes_buy": 49,
+   "no_buy": 55,
+   "taken_at": "2026-11-01T08:49:51.442Z"
   },
   {
    "market_id": "2017761",
@@ -303,28 +325,6 @@
    "yes_buy": 32,
    "no_buy": 69,
    "taken_at": "2026-11-01T10:15:12.623Z"
-  },
-  {
-   "market_id": "2017757",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Oleg Prihodko cover -1.5 vs the Yannik Kelm in Oleg Prihodko vs. Yannik Kelm?",
-   "sides": [
-    "Oleg Prihodko -1.50 (Sets)",
-    "Yannik Kelm +1.50 (Sets)"
-   ],
-   "teams": [
-    "Oleg Prihodko",
-    "Yannik Kelm"
-   ],
-   "player": null,
-   "mid": 31.5,
-   "yes_buy": 32,
-   "no_buy": 69,
-   "taken_at": "2026-11-01T10:15:12.623Z"
   }
  ],
  "edges": [
@@ -376,35 +376,15 @@
    "question": "Will the Oleg Prihodko cover -1.5 vs the Yannik Kelm in Oleg Prihodko vs. Yannik Kelm?",
    "side": "Yannik Kelm +1.50 (Games)",
    "open_chance": 55,
-   "now_chance": 20,
+   "now_chance": 18,
    "open_odds": "-122",
-   "now_odds": "+400",
-   "edge": 35,
+   "now_odds": "+456",
+   "edge": 37,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-01T10:45:14.814Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2017768:1",
-   "market_id": "2017768",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Oleg Prihodko win set 2 against Yannik Kelm?",
-   "side": "No: Oleg Prihodko win set 2 against Yannik Kelm",
-   "open_chance": 68,
-   "now_chance": 38,
-   "open_odds": "-213",
-   "now_odds": "+163",
-   "edge": 30,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-01T11:02:30.628Z",
    "status": "open",
    "kalshi": null
   },
@@ -416,15 +396,55 @@
    "question": "Will the total in Oleg Prihodko vs. Yannik Kelm be more than 17.5?",
    "side": "Under 17.5 (Games)",
    "open_chance": 69,
-   "now_chance": 50,
+   "now_chance": 34,
    "open_odds": "-223",
-   "now_odds": "+100",
-   "edge": 19,
+   "now_odds": "+194",
+   "edge": 35,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-01T10:55:12.728Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2017757:1",
+   "market_id": "2017757",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Oleg Prihodko cover -1.5 vs the Yannik Kelm in Oleg Prihodko vs. Yannik Kelm?",
+   "side": "Yannik Kelm +1.50 (Sets)",
+   "open_chance": 69,
+   "now_chance": 39,
+   "open_odds": "-223",
+   "now_odds": "+156",
+   "edge": 30,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-01T11:21:14.823Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2017768:1",
+   "market_id": "2017768",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Oleg Prihodko win set 2 against Yannik Kelm?",
+   "side": "No: Oleg Prihodko win set 2 against Yannik Kelm",
+   "open_chance": 68,
+   "now_chance": 41,
+   "open_odds": "-213",
+   "now_odds": "+144",
+   "edge": 27,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-01T11:02:30.628Z",
    "status": "open",
    "kalshi": null
   },
@@ -436,10 +456,10 @@
    "question": "Will the Oleg Prihodko cover -7.5 vs the Yannik Kelm in Oleg Prihodko vs. Yannik Kelm?",
    "side": "Oleg Prihodko -7.50 (Games)",
    "open_chance": 32,
-   "now_chance": 22,
+   "now_chance": 21,
    "open_odds": "+213",
-   "now_odds": "+355",
-   "edge": 10,
+   "now_odds": "+376",
+   "edge": 11,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -456,11 +476,11 @@
    "question": "Will the total in Oleg Prihodko vs. Yannik Kelm be more than 22.5?",
    "side": "Over 22.5 (Games)",
    "open_chance": 49,
-   "now_chance": 40,
+   "now_chance": 39,
    "open_odds": "+104",
-   "now_odds": "+150",
-   "edge": 9,
-   "tier": "slight",
+   "now_odds": "+156",
+   "edge": 10,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -490,6 +510,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2017757:1:big",
+   "key": "2017757:1",
+   "at": "2026-11-01T11:21:14.823Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Yannik Kelm +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+156",
+   "now_chance": 39,
+   "edge": 30,
+   "text": "New big edge: Yannik Kelm +1.50 (Sets) (Sets spread), 30 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-olepri-yankel-2026-11-01"
+  },
+  {
+   "id": "new_edge:2017760:0:big",
+   "key": "2017760:0",
+   "at": "2026-11-01T11:21:14.823Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+156",
+   "now_chance": 39,
+   "edge": 10,
+   "text": "New big edge: Over 22.5 (Games) (Games total), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-olepri-yankel-2026-11-01"
+  },
   {
    "id": "new_edge:2017768:1:big",
    "key": "2017768:1",
@@ -673,7 +721,9 @@
   "new_edge:2017755:0:big",
   "gone:2017751:1:2026-11-01T10:45:14.814Z",
   "new_edge:2017768:1:big",
-  "new_edge:2017755:0:slight"
+  "new_edge:2017755:0:slight",
+  "new_edge:2017757:1:big",
+  "new_edge:2017760:0:big"
  ],
  "kalshi_checked": null
 }
