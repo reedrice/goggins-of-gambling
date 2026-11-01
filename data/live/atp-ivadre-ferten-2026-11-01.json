@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-01T19:14:07.331Z"
+  "fetched_at": "2026-11-01T19:24:02.087Z"
  },
- "updated": "2026-11-01T19:14:06.905Z",
+ "updated": "2026-11-01T19:24:02.001Z",
  "open_taken_at": "2026-11-01T00:17:17.409Z",
  "thresholds": {
   "big": 10,
@@ -41,26 +41,48 @@
    "taken_at": "2026-11-01T05:17:31.849Z"
   },
   {
-   "market_id": "2030200",
-   "market": "Sets spread",
+   "market_id": "2030210",
+   "market": "Set 2 winner",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Ivan Dreycopp cover 1.5 vs the Fermin Tenti in Ivan Dreycopp vs. Fermin Tenti?",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Ivan Dreycopp win set 2 against Fermin Tenti?",
    "sides": [
-    "Ivan Dreycopp +1.50 (Sets)",
-    "Fermin Tenti -1.50 (Sets)"
+    "Yes: Ivan Dreycopp win set 2 against Fermin Tenti",
+    "No: Ivan Dreycopp win set 2 against Fermin Tenti"
    ],
    "teams": [
     "Ivan Dreycopp",
-    "Fermin Tenti"
+    null
    ],
    "player": null,
-   "mid": 70.5,
+   "mid": 68,
    "yes_buy": 71,
-   "no_buy": 30,
-   "taken_at": "2026-11-01T17:46:20.551Z"
+   "no_buy": 35,
+   "taken_at": "2026-11-01T19:24:02.001Z"
+  },
+  {
+   "market_id": "2030204",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Ivan Dreycopp vs. Fermin Tenti be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 44.5,
+   "yes_buy": 47,
+   "no_buy": 58,
+   "taken_at": "2026-11-01T19:24:02.001Z"
   },
   {
    "market_id": "2030202",
@@ -104,6 +126,28 @@
    "mid": 22.5,
    "yes_buy": 23,
    "no_buy": 78,
+   "taken_at": "2026-11-01T17:46:20.551Z"
+  },
+  {
+   "market_id": "2030200",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Ivan Dreycopp cover 1.5 vs the Fermin Tenti in Ivan Dreycopp vs. Fermin Tenti?",
+   "sides": [
+    "Ivan Dreycopp +1.50 (Sets)",
+    "Fermin Tenti -1.50 (Sets)"
+   ],
+   "teams": [
+    "Ivan Dreycopp",
+    "Fermin Tenti"
+   ],
+   "player": null,
+   "mid": 70.5,
+   "yes_buy": 71,
+   "no_buy": 30,
    "taken_at": "2026-11-01T17:46:20.551Z"
   },
   {
@@ -226,35 +270,15 @@
    "question": "Who will win in the upcoming atp event Ivan Dreycopp vs Fermin Tenti scheduled for November 1, 2026 at 4:30 PM UTC?",
    "side": "Fermin Tenti win",
    "open_chance": 46,
-   "now_chance": 32,
+   "now_chance": 18,
    "open_odds": "+117",
-   "now_odds": "+213",
-   "edge": 14,
+   "now_odds": "+456",
+   "edge": 28,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-01T19:14:06.905Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2030200:1",
-   "market_id": "2030200",
-   "market": "Sets spread",
-   "group": "game",
-   "question": "Will the Ivan Dreycopp cover 1.5 vs the Fermin Tenti in Ivan Dreycopp vs. Fermin Tenti?",
-   "side": "Fermin Tenti -1.50 (Sets)",
-   "open_chance": 30,
-   "now_chance": 21,
-   "open_odds": "+233",
-   "now_odds": "+376",
-   "edge": 9,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-01T18:55:22.971Z",
    "status": "open",
    "kalshi": null
   },
@@ -297,9 +321,43 @@
    "first_seen": "2026-11-01T18:16:04.109Z",
    "status": "gone",
    "kalshi": null
+  },
+  {
+   "key": "2030200:1",
+   "market_id": "2030200",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Ivan Dreycopp cover 1.5 vs the Fermin Tenti in Ivan Dreycopp vs. Fermin Tenti?",
+   "side": "Fermin Tenti -1.50 (Sets)",
+   "open_chance": 30,
+   "now_chance": 21,
+   "open_odds": "+233",
+   "now_odds": "+376",
+   "edge": 9,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-01T18:55:22.971Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2030200:1:2026-11-01T18:55:22.971Z",
+   "key": "2030200:1",
+   "at": "2026-11-01T19:24:02.001Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Fermin Tenti -1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+376",
+   "now_chance": 21,
+   "edge": 9,
+   "text": "Edge gone: Fermin Tenti -1.50 (Sets) (Sets spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-ivadre-ferten-2026-11-01"
+  },
   {
    "id": "new_edge:2027426:1:big",
    "key": "2027426:1",
@@ -406,7 +464,8 @@
   "gone:2030209:0:2026-11-01T18:25:31.313Z",
   "new_edge:2030200:1:slight",
   "gone:2027426:0:2026-11-01T18:16:04.109Z",
-  "new_edge:2027426:1:big"
+  "new_edge:2027426:1:big",
+  "gone:2030200:1:2026-11-01T18:55:22.971Z"
  ],
  "kalshi_checked": null
 }

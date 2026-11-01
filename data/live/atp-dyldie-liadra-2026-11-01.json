@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-01T19:14:07.002Z"
+  "fetched_at": "2026-11-01T19:24:01.926Z"
  },
- "updated": "2026-11-01T19:14:06.899Z",
+ "updated": "2026-11-01T19:24:01.833Z",
  "open_taken_at": "2026-11-01T00:07:07.178Z",
  "thresholds": {
   "big": 10,
@@ -39,6 +39,50 @@
    "yes_buy": 69,
    "no_buy": 35,
    "taken_at": "2026-11-01T00:53:28.856Z"
+  },
+  {
+   "market_id": "2030002",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Dylan Dietrich win set 2 against Liam Draxl?",
+   "sides": [
+    "Yes: Dylan Dietrich win set 2 against Liam Draxl",
+    "No: Dylan Dietrich win set 2 against Liam Draxl"
+   ],
+   "teams": [
+    "Dylan Dietrich",
+    null
+   ],
+   "player": null,
+   "mid": 62,
+   "yes_buy": 63,
+   "no_buy": 39,
+   "taken_at": "2026-11-01T19:24:01.833Z"
+  },
+  {
+   "market_id": "2030001",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Dylan Dietrich win set 1 against Liam Draxl?",
+   "sides": [
+    "Yes: Dylan Dietrich win set 1 against Liam Draxl",
+    "No: Dylan Dietrich win set 1 against Liam Draxl"
+   ],
+   "teams": [
+    "Dylan Dietrich",
+    null
+   ],
+   "player": null,
+   "mid": 51.5,
+   "yes_buy": 52,
+   "no_buy": 49,
+   "taken_at": "2026-11-01T19:24:01.833Z"
   },
   {
    "market_id": "2029982",
@@ -131,6 +175,46 @@
  ],
  "edges": [
   {
+   "key": "2029982:0",
+   "market_id": "2029982",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Dylan Dietrich cover -1.5 vs the Liam Draxl in Dylan Dietrich vs. Liam Draxl?",
+   "side": "Dylan Dietrich -1.50 (Sets)",
+   "open_chance": 50,
+   "now_chance": 44,
+   "open_odds": "+100",
+   "now_odds": "+127",
+   "edge": 6,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-01T19:24:01.833Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2027095:0",
+   "market_id": "2027095",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Dylan Dietrich vs Liam Draxl scheduled for November 1, 2026 at 7:00 PM UTC?",
+   "side": "Dylan Dietrich win",
+   "open_chance": 69,
+   "now_chance": 64,
+   "open_odds": "-223",
+   "now_odds": "-178",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-01T19:24:01.833Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2029974:0",
    "market_id": "2029974",
    "market": "Games spread",
@@ -147,7 +231,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-01T19:14:06.899Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -172,6 +256,48 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2029982:0:slight",
+   "key": "2029982:0",
+   "at": "2026-11-01T19:24:01.833Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Dylan Dietrich -1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+127",
+   "now_chance": 44,
+   "edge": 6,
+   "text": "New slight edge: Dylan Dietrich -1.50 (Sets) (Sets spread), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-dyldie-liadra-2026-11-01"
+  },
+  {
+   "id": "new_edge:2027095:0:slight",
+   "key": "2027095:0",
+   "at": "2026-11-01T19:24:01.833Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Dylan Dietrich win",
+   "market": "Moneyline",
+   "now_odds": "-178",
+   "now_chance": 64,
+   "edge": 5,
+   "text": "New slight edge: Dylan Dietrich win (Moneyline), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-dyldie-liadra-2026-11-01"
+  },
+  {
+   "id": "gone:2029974:0:2026-11-01T19:14:06.899Z",
+   "key": "2029974:0",
+   "at": "2026-11-01T19:24:01.833Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Dylan Dietrich -4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+194",
+   "now_chance": 34,
+   "edge": 9,
+   "text": "Edge gone: Dylan Dietrich -4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-dyldie-liadra-2026-11-01"
+  },
   {
    "id": "new_edge:2029974:0:slight",
    "key": "2029974:0",
@@ -218,7 +344,10 @@
  "alert_seen": [
   "new_edge:2027095:1:slight",
   "new_edge:2029974:0:slight",
-  "gone:2027095:1:2026-11-01T05:17:30.949Z"
+  "gone:2027095:1:2026-11-01T05:17:30.949Z",
+  "new_edge:2029982:0:slight",
+  "new_edge:2027095:0:slight",
+  "gone:2029974:0:2026-11-01T19:14:06.899Z"
  ],
  "kalshi_checked": null
 }
