@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187321",
-  "fetched_at": "2026-11-01T04:04:55.706Z",
+  "fetched_at": "2026-11-01T04:14:09.021Z",
   "tennis": true,
   "tennis_match": {
    "id": "187321",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Emerson Jones (AUS) leads Alexandra Shubladze (RUS) 3-2",
+     "text": "Alexandra Shubladze (RUS) leads Emerson Jones (AUS) 4-3",
      "type": "event"
     }
    ],
@@ -55,9 +55,10 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
-       "value": 2
+       "value": 4
       }
      ],
      "athlete": {
@@ -97,6 +98,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 3
@@ -134,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 380,
    "type": {
     "id": "2",
@@ -171,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-01T04:04:55.615Z",
+ "updated": "2026-11-01T04:14:08.931Z",
  "open_taken_at": "2026-10-31T08:20:58.082Z",
  "thresholds": {
   "big": 10,
@@ -311,28 +318,6 @@
    "taken_at": "2026-11-01T03:16:23.694Z"
   },
   {
-   "market_id": "2002683",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Emerson Jones cover -1.5 vs the Alexandra Shubladze in Emerson Jones vs. Alexandra Shubladze?",
-   "sides": [
-    "Emerson Jones -1.50 (Games)",
-    "Alexandra Shubladze +1.50 (Games)"
-   ],
-   "teams": [
-    "Emerson Jones",
-    "Alexandra Shubladze"
-   ],
-   "player": null,
-   "mid": 40.5,
-   "yes_buy": 41,
-   "no_buy": 60,
-   "taken_at": "2026-11-01T03:16:23.694Z"
-  },
-  {
    "market_id": "2002694",
    "market": "Sets total",
    "group": "game",
@@ -355,6 +340,50 @@
    "taken_at": "2026-11-01T00:53:19.557Z"
   },
   {
+   "market_id": "2002683",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Emerson Jones cover -1.5 vs the Alexandra Shubladze in Emerson Jones vs. Alexandra Shubladze?",
+   "sides": [
+    "Emerson Jones -1.50 (Games)",
+    "Alexandra Shubladze +1.50 (Games)"
+   ],
+   "teams": [
+    "Emerson Jones",
+    "Alexandra Shubladze"
+   ],
+   "player": null,
+   "mid": 40.5,
+   "yes_buy": 41,
+   "no_buy": 60,
+   "taken_at": "2026-11-01T03:16:23.694Z"
+  },
+  {
+   "market_id": "2002699",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Emerson Jones win set 1 against Alexandra Shubladze?",
+   "sides": [
+    "Yes: Emerson Jones win set 1 against Alexandra Shubladze",
+    "No: Emerson Jones win set 1 against Alexandra Shubladze"
+   ],
+   "teams": [
+    "Emerson Jones",
+    null
+   ],
+   "player": null,
+   "mid": 45.5,
+   "yes_buy": 48,
+   "no_buy": 57,
+   "taken_at": "2026-10-31T18:47:34.805Z"
+  },
+  {
    "market_id": "2002693",
    "market": "Games total",
    "group": "game",
@@ -375,6 +404,28 @@
    "yes_buy": 30,
    "no_buy": 73,
    "taken_at": "2026-11-01T03:40:49.805Z"
+  },
+  {
+   "market_id": "2002689",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Emerson Jones cover -1.5 vs the Alexandra Shubladze in Emerson Jones vs. Alexandra Shubladze?",
+   "sides": [
+    "Emerson Jones -1.50 (Sets)",
+    "Alexandra Shubladze +1.50 (Sets)"
+   ],
+   "teams": [
+    "Emerson Jones",
+    "Alexandra Shubladze"
+   ],
+   "player": null,
+   "mid": 26.5,
+   "yes_buy": 29,
+   "no_buy": 76,
+   "taken_at": "2026-11-01T00:06:57.157Z"
   },
   {
    "market_id": "2002685",
@@ -463,50 +514,6 @@
    "yes_buy": 42,
    "no_buy": 62,
    "taken_at": "2026-11-01T03:57:07.963Z"
-  },
-  {
-   "market_id": "2002699",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Emerson Jones win set 1 against Alexandra Shubladze?",
-   "sides": [
-    "Yes: Emerson Jones win set 1 against Alexandra Shubladze",
-    "No: Emerson Jones win set 1 against Alexandra Shubladze"
-   ],
-   "teams": [
-    "Emerson Jones",
-    null
-   ],
-   "player": null,
-   "mid": 45.5,
-   "yes_buy": 48,
-   "no_buy": 57,
-   "taken_at": "2026-10-31T18:47:34.805Z"
-  },
-  {
-   "market_id": "2002689",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Emerson Jones cover -1.5 vs the Alexandra Shubladze in Emerson Jones vs. Alexandra Shubladze?",
-   "sides": [
-    "Emerson Jones -1.50 (Sets)",
-    "Alexandra Shubladze +1.50 (Sets)"
-   ],
-   "teams": [
-    "Emerson Jones",
-    "Alexandra Shubladze"
-   ],
-   "player": null,
-   "mid": 26.5,
-   "yes_buy": 29,
-   "no_buy": 76,
-   "taken_at": "2026-11-01T00:06:57.157Z"
   }
  ],
  "edges": [
@@ -518,14 +525,14 @@
    "question": "Will the total in Emerson Jones vs. Alexandra Shubladze be more than 17.5?",
    "side": "Under 17.5 (Games)",
    "open_chance": 62,
-   "now_chance": 24,
+   "now_chance": 22,
    "open_odds": "-163",
-   "now_odds": "+317",
-   "edge": 38,
+   "now_odds": "+355",
+   "edge": 40,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (38 pts), likely news",
-   "context": "Alexandra Shubladze 2 · Emerson Jones 3 · 1st Set (games by set)",
+   "reason": "Big move (40 pts), likely news",
+   "context": "Alexandra Shubladze 4 · Emerson Jones 3 · 1st Set (games by set)",
    "first_seen": "2026-11-01T03:57:07.963Z",
    "status": "open",
    "kalshi": null
@@ -538,15 +545,135 @@
    "question": "Will the Emerson Jones cover 4.5 vs the Alexandra Shubladze in Emerson Jones vs. Alexandra Shubladze?",
    "side": "Alexandra Shubladze -4.50 (Games)",
    "open_chance": 60,
-   "now_chance": 27,
+   "now_chance": 35,
    "open_odds": "-150",
-   "now_odds": "+270",
-   "edge": 33,
+   "now_odds": "+186",
+   "edge": 25,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Alexandra Shubladze not above the games spread right now",
-   "context": "Alexandra Shubladze 2 · Emerson Jones 3 · 1st Set (games by set)",
+   "context": "Alexandra Shubladze 4 · Emerson Jones 3 · 1st Set (games by set)",
    "first_seen": "2026-11-01T03:49:31.055Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2002699:0",
+   "market_id": "2002699",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Emerson Jones win set 1 against Alexandra Shubladze?",
+   "side": "Yes: Emerson Jones win set 1 against Alexandra Shubladze",
+   "open_chance": 48,
+   "now_chance": 32,
+   "open_odds": "+108",
+   "now_odds": "+213",
+   "edge": 16,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Emerson Jones not above the games spread right now",
+   "context": "Alexandra Shubladze 4 · Emerson Jones 3 · 1st Set (games by set)",
+   "first_seen": "2026-11-01T03:57:07.963Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2002689:0",
+   "market_id": "2002689",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Emerson Jones cover -1.5 vs the Alexandra Shubladze in Emerson Jones vs. Alexandra Shubladze?",
+   "side": "Emerson Jones -1.50 (Sets)",
+   "open_chance": 29,
+   "now_chance": 19,
+   "open_odds": "+245",
+   "now_odds": "+426",
+   "edge": 10,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Emerson Jones not above the sets spread right now",
+   "context": "Alexandra Shubladze 4 · Emerson Jones 3 · 1st Set (games by set)",
+   "first_seen": "2026-11-01T04:14:08.931Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2002645:0",
+   "market_id": "2002645",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Emerson Jones vs Alexandra Shubladze scheduled for November 1, 2026 at 3:10 AM UTC?",
+   "side": "Emerson Jones win",
+   "open_chance": 46,
+   "now_chance": 38,
+   "open_odds": "+117",
+   "now_odds": "+163",
+   "edge": 8,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Alexandra Shubladze 4 · Emerson Jones 3 · 1st Set (games by set)",
+   "first_seen": "2026-11-01T03:09:22.172Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2002692:1",
+   "market_id": "2002692",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Emerson Jones vs. Alexandra Shubladze be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 62,
+   "now_chance": 54,
+   "open_odds": "-163",
+   "now_odds": "-117",
+   "edge": 8,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Alexandra Shubladze 4 · Emerson Jones 3 · 1st Set (games by set)",
+   "first_seen": "2026-11-01T03:49:31.055Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2002684:0",
+   "market_id": "2002684",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Emerson Jones cover 1.5 vs the Alexandra Shubladze in Emerson Jones vs. Alexandra Shubladze?",
+   "side": "Emerson Jones +1.50 (Games)",
+   "open_chance": 52,
+   "now_chance": 47,
+   "open_odds": "-108",
+   "now_odds": "+113",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Alexandra Shubladze 4 · Emerson Jones 3 · 1st Set (games by set)",
+   "first_seen": "2026-11-01T03:23:55.767Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2002683:0",
+   "market_id": "2002683",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Emerson Jones cover -1.5 vs the Alexandra Shubladze in Emerson Jones vs. Alexandra Shubladze?",
+   "side": "Emerson Jones -1.50 (Games)",
+   "open_chance": 41,
+   "now_chance": 36,
+   "open_odds": "+144",
+   "now_odds": "+178",
+   "edge": 5,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Emerson Jones not above the games spread right now",
+   "context": "Alexandra Shubladze 4 · Emerson Jones 3 · 1st Set (games by set)",
+   "first_seen": "2026-11-01T04:14:08.931Z",
    "status": "open",
    "kalshi": null
   },
@@ -567,126 +694,6 @@
    "reason": "Explained by score: Emerson Jones not above the games spread right now",
    "context": "Alexandra Shubladze 2 · Emerson Jones 3 · 1st Set (games by set)",
    "first_seen": "2026-11-01T03:57:07.963Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2002685:0",
-   "market_id": "2002685",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Emerson Jones cover -4.5 vs the Alexandra Shubladze in Emerson Jones vs. Alexandra Shubladze?",
-   "side": "Emerson Jones -4.50 (Games)",
-   "open_chance": 41,
-   "now_chance": 27,
-   "open_odds": "+144",
-   "now_odds": "+270",
-   "edge": 14,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Emerson Jones not above the games spread right now",
-   "context": "Alexandra Shubladze 2 · Emerson Jones 3 · 1st Set (games by set)",
-   "first_seen": "2026-11-01T03:49:31.055Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2002645:1",
-   "market_id": "2002645",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Emerson Jones vs Alexandra Shubladze scheduled for November 1, 2026 at 3:10 AM UTC?",
-   "side": "Alexandra Shubladze win",
-   "open_chance": 55,
-   "now_chance": 45,
-   "open_odds": "-122",
-   "now_odds": "+122",
-   "edge": 10,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Alexandra Shubladze 2 · Emerson Jones 3 · 1st Set (games by set)",
-   "first_seen": "2026-11-01T04:04:55.615Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2002684:1",
-   "market_id": "2002684",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Emerson Jones cover 1.5 vs the Alexandra Shubladze in Emerson Jones vs. Alexandra Shubladze?",
-   "side": "Alexandra Shubladze -1.50 (Games)",
-   "open_chance": 54,
-   "now_chance": 45,
-   "open_odds": "-117",
-   "now_odds": "+122",
-   "edge": 9,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Alexandra Shubladze not above the games spread right now",
-   "context": "Alexandra Shubladze 2 · Emerson Jones 3 · 1st Set (games by set)",
-   "first_seen": "2026-11-01T03:49:31.055Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2002692:1",
-   "market_id": "2002692",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Emerson Jones vs. Alexandra Shubladze be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 62,
-   "now_chance": 54,
-   "open_odds": "-163",
-   "now_odds": "-117",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Alexandra Shubladze 2 · Emerson Jones 3 · 1st Set (games by set)",
-   "first_seen": "2026-11-01T03:49:31.055Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2002699:0",
-   "market_id": "2002699",
-   "market": "Set 1 winner",
-   "group": "game",
-   "question": "Will Emerson Jones win set 1 against Alexandra Shubladze?",
-   "side": "Yes: Emerson Jones win set 1 against Alexandra Shubladze",
-   "open_chance": 48,
-   "now_chance": 30,
-   "open_odds": "+108",
-   "now_odds": "+233",
-   "edge": 18,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Emerson Jones not above the games spread right now",
-   "context": "Alexandra Shubladze 2 · Emerson Jones 1 · 1st Set (games by set)",
-   "first_seen": "2026-11-01T03:57:07.963Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "2002645:0",
-   "market_id": "2002645",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Emerson Jones vs Alexandra Shubladze scheduled for November 1, 2026 at 3:10 AM UTC?",
-   "side": "Emerson Jones win",
-   "open_chance": 46,
-   "now_chance": 35,
-   "open_odds": "+117",
-   "now_odds": "+186",
-   "edge": 11,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Alexandra Shubladze 2 · Emerson Jones 1 · 1st Set (games by set)",
-   "first_seen": "2026-11-01T03:09:22.172Z",
    "status": "gone",
    "kalshi": null
   },
@@ -711,27 +718,75 @@
    "kalshi": null
   },
   {
-   "key": "2002684:0",
+   "key": "2002645:1",
+   "market_id": "2002645",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Emerson Jones vs Alexandra Shubladze scheduled for November 1, 2026 at 3:10 AM UTC?",
+   "side": "Alexandra Shubladze win",
+   "open_chance": 55,
+   "now_chance": 45,
+   "open_odds": "-122",
+   "now_odds": "+122",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Alexandra Shubladze 2 · Emerson Jones 3 · 1st Set (games by set)",
+   "first_seen": "2026-11-01T04:04:55.615Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "2002684:1",
    "market_id": "2002684",
    "market": "Games spread",
    "group": "game",
    "question": "Will the Emerson Jones cover 1.5 vs the Alexandra Shubladze in Emerson Jones vs. Alexandra Shubladze?",
-   "side": "Emerson Jones +1.50 (Games)",
-   "open_chance": 52,
-   "now_chance": 41,
-   "open_odds": "-108",
-   "now_odds": "+144",
-   "edge": 11,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Alexandra Shubladze 2 · Emerson Jones 1 · 1st Set (games by set)",
-   "first_seen": "2026-11-01T03:23:55.767Z",
+   "side": "Alexandra Shubladze -1.50 (Games)",
+   "open_chance": 54,
+   "now_chance": 45,
+   "open_odds": "-117",
+   "now_odds": "+122",
+   "edge": 9,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Alexandra Shubladze not above the games spread right now",
+   "context": "Alexandra Shubladze 2 · Emerson Jones 3 · 1st Set (games by set)",
+   "first_seen": "2026-11-01T03:49:31.055Z",
    "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2002684:0:slight",
+   "key": "2002684:0",
+   "at": "2026-11-01T04:14:08.931Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Emerson Jones +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+113",
+   "now_chance": 47,
+   "edge": 5,
+   "text": "New slight edge: Emerson Jones +1.50 (Games) (Games spread), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-emejon-aleshu-2026-10-31"
+  },
+  {
+   "id": "gone:2002645:1:2026-11-01T04:04:55.615Z",
+   "key": "2002645:1",
+   "at": "2026-11-01T04:14:08.931Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Alexandra Shubladze win",
+   "market": "Moneyline",
+   "now_odds": "+122",
+   "now_chance": 45,
+   "edge": 10,
+   "text": "Edge gone: Alexandra Shubladze win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-emejon-aleshu-2026-10-31"
+  },
   {
    "id": "new_edge:2002645:1:big",
    "key": "2002645:1",
@@ -914,7 +969,9 @@
   "new_edge:2002690:0:big",
   "new_edge:2002684:0:big",
   "new_edge:2002692:1:slight",
-  "new_edge:2002645:1:big"
+  "new_edge:2002645:1:big",
+  "new_edge:2002684:0:slight",
+  "gone:2002645:1:2026-11-01T04:04:55.615Z"
  ],
  "kalshi_checked": null
 }
