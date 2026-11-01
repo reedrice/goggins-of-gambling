@@ -4,12 +4,12 @@
  "game": "Bernet / Stricker vs. Arribage / Olivetti",
  "url": "https://polymarket.us/sports/atpdb/atpdb-bernetstrick-arribaolivet-2026-11-01",
  "start_time": "2026-11-01T12:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185169",
-  "fetched_at": "2026-11-01T13:50:03.399Z",
+  "fetched_at": "2026-11-01T13:59:58.829Z",
   "tennis": true,
   "tennis_match": {
    "id": "185169",
@@ -17,17 +17,17 @@
    "date": "2026-11-01T12:05Z",
    "startDate": "2026-11-01T12:05Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Henry Bernet (SUI) & Dominic Stricker (SUI) leads (3) Theo Arribage (FRA) & Albano Olivetti (FRA) 6-7 (6-8) 6-6 (3-2)",
+     "text": "(3) Theo Arribage (FRA) & Albano Olivetti (FRA) bt Henry Bernet (SUI) & Dominic Stricker (SUI) 7-6 (8-6) 7-6 (8-6)",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "curatedRank": {
       "current": 3
      },
@@ -65,8 +66,9 @@
        "winner": true
       },
       {
-       "value": 6,
-       "tiebreak": 2
+       "value": 7,
+       "tiebreak": 8,
+       "winner": true
       }
      ],
      "roster": {
@@ -141,6 +143,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "linescores": [
       {
        "value": 6,
@@ -149,7 +152,8 @@
       },
       {
        "value": 6,
-       "tiebreak": 3
+       "tiebreak": 6,
+       "winner": false
       }
      ],
      "roster": {
@@ -235,16 +239,16 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Theo Arribage / Albano Olivetti",
    "alias": "Theo Arribage / Albano Olivetti",
    "name": "Theo Arribage / Albano Olivetti",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Henry Bernet / Dominic Stricker",
@@ -256,7 +260,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-01T13:50:03.308Z",
+ "updated": "2026-11-01T13:59:58.745Z",
  "open_taken_at": "2026-10-31T19:43:39.244Z",
  "thresholds": {
   "big": 10,
@@ -304,16 +308,32 @@
    "reason": null,
    "context": "Theo Arribage / Albano Olivetti 7, 6 · Henry Bernet / Dominic Stricker 6, 6 · 2nd Set (games by set)",
    "first_seen": "2026-11-01T13:40:43.223Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
+ "alerts": [
+  {
+   "id": "gone:2019468:0:2026-11-01T13:40:43.223Z",
+   "key": "2019468:0",
+   "at": "2026-11-01T13:59:58.745Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Bernet H / Stricker D win",
+   "market": "Moneyline",
+   "now_odds": "+355",
+   "now_chance": 22,
+   "edge": 11,
+   "text": "Edge gone: Bernet H / Stricker D win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-bernetstrick-arribaolivet-2026-11-01"
+  }
+ ],
  "alert_seen": [
   "new_edge:2019468:1:slight",
   "gone:2019468:1:2026-11-01T04:42:33.221Z",
   "new_edge:2019468:0:slight",
-  "new_edge:2019468:0:big"
+  "new_edge:2019468:0:big",
+  "gone:2019468:0:2026-11-01T13:40:43.223Z"
  ],
  "kalshi_checked": null
 }

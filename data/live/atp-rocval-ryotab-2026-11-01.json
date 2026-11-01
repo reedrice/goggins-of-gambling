@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-01T13:50:08.682Z"
+  "fetched_at": "2026-11-01T14:00:04.113Z"
  },
- "updated": "2026-11-01T13:50:08.575Z",
+ "updated": "2026-11-01T14:00:03.985Z",
  "open_taken_at": "2026-11-01T00:17:16.671Z",
  "thresholds": {
   "big": 10,
@@ -83,6 +83,50 @@
    "yes_buy": 64,
    "no_buy": 37,
    "taken_at": "2026-11-01T13:20:40.887Z"
+  },
+  {
+   "market_id": "2030101",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Rocco Valente win set 2 against Ryo Tabata?",
+   "sides": [
+    "Yes: Rocco Valente win set 2 against Ryo Tabata",
+    "No: Rocco Valente win set 2 against Ryo Tabata"
+   ],
+   "teams": [
+    "Rocco Valente",
+    null
+   ],
+   "player": null,
+   "mid": 29,
+   "yes_buy": 32,
+   "no_buy": 74,
+   "taken_at": "2026-11-01T14:00:03.985Z"
+  },
+  {
+   "market_id": "2030091",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Rocco Valente cover 1.5 vs the Ryo Tabata in Rocco Valente vs. Ryo Tabata?",
+   "sides": [
+    "Rocco Valente +1.50 (Sets)",
+    "Ryo Tabata -1.50 (Sets)"
+   ],
+   "teams": [
+    "Rocco Valente",
+    "Ryo Tabata"
+   ],
+   "player": null,
+   "mid": 26.5,
+   "yes_buy": 29,
+   "no_buy": 76,
+   "taken_at": "2026-11-01T14:00:03.985Z"
   },
   {
    "market_id": "2030093",
@@ -241,17 +285,17 @@
  ],
  "edges": [
   {
-   "key": "2030092:0",
-   "market_id": "2030092",
-   "market": "Games total",
+   "key": "2030088:1",
+   "market_id": "2030088",
+   "market": "Games spread",
    "group": "game",
-   "question": "Will the total in Rocco Valente vs. Ryo Tabata be more than 17.5?",
-   "side": "Over 17.5 (Games)",
-   "open_chance": 64,
-   "now_chance": 49,
-   "open_odds": "-178",
-   "now_odds": "+104",
-   "edge": 15,
+   "question": "Will the Rocco Valente cover 7.5 vs the Ryo Tabata in Rocco Valente vs. Ryo Tabata?",
+   "side": "Ryo Tabata -7.50 (Games)",
+   "open_chance": 38,
+   "now_chance": 24,
+   "open_odds": "+163",
+   "now_odds": "+317",
+   "edge": 14,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -261,17 +305,17 @@
    "kalshi": null
   },
   {
-   "key": "2030088:1",
-   "market_id": "2030088",
-   "market": "Games spread",
+   "key": "2030092:0",
+   "market_id": "2030092",
+   "market": "Games total",
    "group": "game",
-   "question": "Will the Rocco Valente cover 7.5 vs the Ryo Tabata in Rocco Valente vs. Ryo Tabata?",
-   "side": "Ryo Tabata -7.50 (Games)",
-   "open_chance": 38,
-   "now_chance": 33,
-   "open_odds": "+163",
-   "now_odds": "+203",
-   "edge": 5,
+   "question": "Will the total in Rocco Valente vs. Ryo Tabata be more than 17.5?",
+   "side": "Over 17.5 (Games)",
+   "open_chance": 64,
+   "now_chance": 60,
+   "open_odds": "-178",
+   "now_odds": "-150",
+   "edge": 4,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -282,6 +326,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2030092:0:slight",
+   "key": "2030092:0",
+   "at": "2026-11-01T14:00:03.985Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-150",
+   "now_chance": 60,
+   "edge": 4,
+   "text": "New slight edge: Over 17.5 (Games) (Games total), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-rocval-ryotab-2026-11-01"
+  },
   {
    "id": "new_edge:2030088:1:slight",
    "key": "2030088:1",
@@ -329,7 +387,8 @@
   "new_edge:2027419:0:slight",
   "new_edge:2030092:0:big",
   "new_edge:2030088:1:big",
-  "new_edge:2030088:1:slight"
+  "new_edge:2030088:1:slight",
+  "new_edge:2030092:0:slight"
  ],
  "kalshi_checked": null
 }
