@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for mls",
-  "fetched_at": "2026-11-01T21:38:58.389Z"
+  "fetched_at": "2026-11-01T21:47:38.663Z"
  },
- "updated": "2026-11-01T21:38:58.385Z",
+ "updated": "2026-11-01T21:47:38.660Z",
  "open_taken_at": "2026-10-31T05:00:58.342Z",
  "thresholds": {
   "big": 10,
@@ -195,6 +195,28 @@
    "taken_at": "2026-10-31T22:43:15.891Z"
   },
   {
+   "market_id": "2024348",
+   "market": "Alt spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 2.5,
+   "question": "Will the Atlanta United FC cover 2.5 vs the Toronto FC in ATL vs TOR?",
+   "sides": [
+    "Atlanta United FC +2.50",
+    "Reds -2.50"
+   ],
+   "teams": [
+    "Atlanta United FC",
+    "Reds"
+   ],
+   "player": null,
+   "mid": 94,
+   "yes_buy": 95,
+   "no_buy": 7,
+   "taken_at": "2026-10-31T22:43:15.891Z"
+  },
+  {
    "market_id": "2024355",
    "market": "Alt total",
    "group": "game",
@@ -261,6 +283,28 @@
    "taken_at": "2026-10-31T22:43:15.891Z"
   },
   {
+   "market_id": "2024409",
+   "market": "1st half winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "first_half",
+   "line": null,
+   "question": "Will ATL vs TOR be tied at halftime?",
+   "sides": [
+    "Yes: ATL vs TOR be tied at halftime",
+    "No: ATL vs TOR be tied at halftime"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 36.5,
+   "yes_buy": 39,
+   "no_buy": 66,
+   "taken_at": "2026-11-01T00:17:03.702Z"
+  },
+  {
    "market_id": "2024415",
    "market": "1st half spread",
    "group": "game",
@@ -323,28 +367,6 @@
    "player": null,
    "mid": 36,
    "yes_buy": 38,
-   "no_buy": 66,
-   "taken_at": "2026-11-01T00:17:03.702Z"
-  },
-  {
-   "market_id": "2024409",
-   "market": "1st half winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "first_half",
-   "line": null,
-   "question": "Will ATL vs TOR be tied at halftime?",
-   "sides": [
-    "Yes: ATL vs TOR be tied at halftime",
-    "No: ATL vs TOR be tied at halftime"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 36.5,
-   "yes_buy": 39,
    "no_buy": 66,
    "taken_at": "2026-11-01T00:17:03.702Z"
   },
@@ -435,28 +457,6 @@
    "yes_buy": 9,
    "no_buy": 96,
    "taken_at": "2026-10-31T23:42:18.783Z"
-  },
-  {
-   "market_id": "2024348",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": 2.5,
-   "question": "Will the Atlanta United FC cover 2.5 vs the Toronto FC in ATL vs TOR?",
-   "sides": [
-    "Atlanta United FC +2.50",
-    "Reds -2.50"
-   ],
-   "teams": [
-    "Atlanta United FC",
-    "Reds"
-   ],
-   "player": null,
-   "mid": 94,
-   "yes_buy": 95,
-   "no_buy": 7,
-   "taken_at": "2026-10-31T22:43:15.891Z"
   },
   {
    "market_id": "2024423",
@@ -607,7 +607,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-01T21:28:05.996Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -692,6 +692,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2024425:1:2026-11-01T21:28:05.996Z",
+   "key": "2024425:1",
+   "at": "2026-11-01T21:47:38.660Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 2.5 (1st half)",
+   "market": "1st half total",
+   "now_odds": "-400",
+   "now_chance": 80,
+   "edge": 4,
+   "text": "Edge gone: Under 2.5 (1st half) (1st half total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/mls/mls-atl-tor-2026-11-01"
+  },
   {
    "id": "new_edge:1920319:1:slight",
    "key": "1920319:1",
@@ -783,7 +797,8 @@
   "gone:1920324:0:2026-11-01T21:19:03.429Z",
   "gone:2024346:1:2026-11-01T21:19:03.429Z",
   "gone:2024410:0:2026-11-01T21:19:03.429Z",
-  "gone:2024423:0:2026-11-01T08:57:06.429Z"
+  "gone:2024423:0:2026-11-01T08:57:06.429Z",
+  "gone:2024425:1:2026-11-01T21:28:05.996Z"
  ],
  "kalshi_checked": null
 }
