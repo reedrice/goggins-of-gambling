@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-02T14:35:13.583Z"
+  "fetched_at": "2026-11-02T14:45:28.827Z"
  },
- "updated": "2026-11-02T14:35:13.416Z",
+ "updated": "2026-11-02T14:45:28.753Z",
  "open_taken_at": "2026-11-01T19:24:08.257Z",
  "thresholds": {
   "big": 10,
@@ -107,28 +107,6 @@
    "taken_at": "2026-11-02T14:12:47.478Z"
   },
   {
-   "market_id": "2064941",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Mateo Del Pino vs. Joao Victor Couto Loureiro be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 43.5,
-   "yes_buy": 44,
-   "no_buy": 57,
-   "taken_at": "2026-11-02T14:35:13.416Z"
-  },
-  {
    "market_id": "2064931",
    "market": "Games spread",
    "group": "game",
@@ -173,6 +151,28 @@
    "taken_at": "2026-11-02T11:50:48.740Z"
   },
   {
+   "market_id": "2064946",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Mateo Del Pino win set 1 against Joao Victor Couto Loureiro?",
+   "sides": [
+    "Yes: Mateo Del Pino win set 1 against Joao Victor Couto Loureiro",
+    "No: Mateo Del Pino win set 1 against Joao Victor Couto Loureiro"
+   ],
+   "teams": [
+    "Mateo Del Pino",
+    null
+   ],
+   "player": null,
+   "mid": 32,
+   "yes_buy": 33,
+   "no_buy": 69,
+   "taken_at": "2026-11-02T14:12:47.478Z"
+  },
+  {
    "market_id": "2064940",
    "market": "Games total",
    "group": "game",
@@ -193,6 +193,28 @@
    "yes_buy": 17,
    "no_buy": 84,
    "taken_at": "2026-11-02T14:12:47.478Z"
+  },
+  {
+   "market_id": "2064941",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Mateo Del Pino vs. Joao Victor Couto Loureiro be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 43.5,
+   "yes_buy": 44,
+   "no_buy": 57,
+   "taken_at": "2026-11-02T14:35:13.416Z"
   },
   {
    "market_id": "2064932",
@@ -259,28 +281,6 @@
    "yes_buy": 18,
    "no_buy": 83,
    "taken_at": "2026-11-02T14:24:34.881Z"
-  },
-  {
-   "market_id": "2064946",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Mateo Del Pino win set 1 against Joao Victor Couto Loureiro?",
-   "sides": [
-    "Yes: Mateo Del Pino win set 1 against Joao Victor Couto Loureiro",
-    "No: Mateo Del Pino win set 1 against Joao Victor Couto Loureiro"
-   ],
-   "teams": [
-    "Mateo Del Pino",
-    null
-   ],
-   "player": null,
-   "mid": 32,
-   "yes_buy": 33,
-   "no_buy": 69,
-   "taken_at": "2026-11-02T14:12:47.478Z"
   }
  ],
  "edges": [
@@ -312,10 +312,10 @@
    "question": "Will the Mateo Del Pino cover 4.5 vs the Joao Victor Couto Loureiro in Mateo Del Pino vs. Joao Victor Couto Loureiro?",
    "side": "Mateo Del Pino +4.50 (Games)",
    "open_chance": 54,
-   "now_chance": 34,
+   "now_chance": 36,
    "open_odds": "-117",
-   "now_odds": "+194",
-   "edge": 20,
+   "now_odds": "+178",
+   "edge": 18,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -332,11 +332,11 @@
    "question": "Will the total in Mateo Del Pino vs. Joao Victor Couto Loureiro be more than 22.5?",
    "side": "Under 22.5 (Games)",
    "open_chance": 67,
-   "now_chance": 59,
+   "now_chance": 57,
    "open_odds": "-203",
-   "now_odds": "-144",
-   "edge": 8,
-   "tier": "slight",
+   "now_odds": "-133",
+   "edge": 10,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -346,6 +346,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2064939:1:big",
+   "key": "2064939:1",
+   "at": "2026-11-02T14:45:28.753Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-133",
+   "now_chance": 57,
+   "edge": 10,
+   "text": "New big edge: Under 22.5 (Games) (Games total), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-matpin-joalou-2026-11-02"
+  },
   {
    "id": "new_edge:2064938:0:big",
    "key": "2064938:0",
@@ -408,7 +422,8 @@
   "new_edge:2064933:0:slight",
   "new_edge:2064938:0:big",
   "new_edge:2064933:0:big",
-  "new_edge:2064939:1:slight"
+  "new_edge:2064939:1:slight",
+  "new_edge:2064939:1:big"
  ],
  "kalshi_checked": null
 }
