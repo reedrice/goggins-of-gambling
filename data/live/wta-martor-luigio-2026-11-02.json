@@ -4,12 +4,12 @@
  "game": "Maria Camila Torres Murcia vs. Luisina Giovannini",
  "url": "https://polymarket.us/sports/wta/wta-martor-luigio-2026-11-02",
  "start_time": "2026-11-02T16:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186718",
-  "fetched_at": "2026-11-02T17:29:34.353Z",
+  "fetched_at": "2026-11-02T17:42:47.922Z",
   "tennis": true,
   "tennis_match": {
    "id": "186718",
@@ -17,17 +17,17 @@
    "date": "2026-11-02T16:05Z",
    "startDate": "2026-11-02T16:05Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Luisina Giovannini (ARG) leads Maria Camila Torres Murcia (COL) 6-3 5-0",
+     "text": "Luisina Giovannini (ARG) bt Maria Camila Torres Murcia (COL) 6-3 6-0",
      "type": "event"
     }
    ],
@@ -55,13 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 5
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -101,13 +103,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "linescores": [
       {
        "value": 3,
        "winner": false
       },
       {
-       "value": 0
+       "value": 0,
+       "winner": false
       }
      ],
      "athlete": {
@@ -158,16 +162,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Luisina Giovannini",
    "alias": "Luisina Giovannini",
    "name": "Luisina Giovannini",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Maria Camila Torres Murcia",
@@ -179,7 +183,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-02T17:29:34.270Z",
+ "updated": "2026-11-02T17:42:47.810Z",
  "open_taken_at": "2026-11-01T22:37:21.828Z",
  "thresholds": {
   "big": 10,
@@ -381,7 +385,7 @@
    "reason": null,
    "context": "Luisina Giovannini 6, 5 · Maria Camila Torres Murcia 3, 0 · 2nd Set (games by set)",
    "first_seen": "2026-11-02T16:31:03.573Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -406,6 +410,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2073054:1:2026-11-02T16:31:03.573Z",
+   "key": "2073054:1",
+   "at": "2026-11-02T17:42:47.810Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+100",
+   "now_chance": 50,
+   "edge": 19,
+   "text": "Edge gone: Under 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-martor-luigio-2026-11-02"
+  },
   {
    "id": "new_edge:2073054:1:big",
    "key": "2073054:1",
@@ -452,7 +470,8 @@
  "alert_seen": [
   "new_edge:2073054:0:big",
   "new_edge:2073054:1:big",
-  "gone:2073054:0:2026-11-02T16:11:44.255Z"
+  "gone:2073054:0:2026-11-02T16:11:44.255Z",
+  "gone:2073054:1:2026-11-02T16:31:03.573Z"
  ],
  "kalshi_checked": null
 }

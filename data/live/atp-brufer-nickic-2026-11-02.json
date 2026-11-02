@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-02T17:29:29.114Z"
+  "fetched_at": "2026-11-02T17:42:42.661Z"
  },
- "updated": "2026-11-02T17:29:29.018Z",
+ "updated": "2026-11-02T17:42:42.578Z",
  "open_taken_at": "2026-11-01T05:07:48.078Z",
  "thresholds": {
   "big": 10,
@@ -195,26 +195,48 @@
    "taken_at": "2026-11-02T17:08:19.389Z"
   },
   {
-   "market_id": "2028347",
-   "market": "Sets total",
+   "market_id": "2028336",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Bruno Fernandez vs. Nicolas Kicker be more than 2.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Bruno Fernandez cover -1.5 vs the Nicolas Kicker in Bruno Fernandez vs. Nicolas Kicker?",
    "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
+    "Bruno Fernandez -1.50 (Games)",
+    "Nicolas Kicker +1.50 (Games)"
    ],
    "teams": [
-    null,
-    null
+    "Bruno Fernandez",
+    "Nicolas Kicker"
    ],
    "player": null,
-   "mid": 29.5,
-   "yes_buy": 32,
-   "no_buy": 73,
-   "taken_at": "2026-11-02T15:40:38.283Z"
+   "mid": 17.5,
+   "yes_buy": 18,
+   "no_buy": 83,
+   "taken_at": "2026-11-02T17:42:42.578Z"
+  },
+  {
+   "market_id": "2028338",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Bruno Fernandez cover -4.5 vs the Nicolas Kicker in Bruno Fernandez vs. Nicolas Kicker?",
+   "sides": [
+    "Bruno Fernandez -4.50 (Games)",
+    "Nicolas Kicker +4.50 (Games)"
+   ],
+   "teams": [
+    "Bruno Fernandez",
+    "Nicolas Kicker"
+   ],
+   "player": null,
+   "mid": 16.5,
+   "yes_buy": 17,
+   "no_buy": 84,
+   "taken_at": "2026-11-02T17:42:42.578Z"
   },
   {
    "market_id": "2028352",
@@ -237,6 +259,28 @@
    "yes_buy": 7,
    "no_buy": 95,
    "taken_at": "2026-11-02T17:18:09.088Z"
+  },
+  {
+   "market_id": "2028347",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Bruno Fernandez vs. Nicolas Kicker be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 29.5,
+   "yes_buy": 32,
+   "no_buy": 73,
+   "taken_at": "2026-11-02T15:40:38.283Z"
   },
   {
    "market_id": "2028342",
@@ -319,11 +363,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-02T17:08:19.389Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2028347:0:2026-11-02T17:08:19.389Z",
+   "key": "2028347:0",
+   "at": "2026-11-02T17:42:42.578Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 2.5 (Sets)",
+   "market": "Sets total",
+   "now_odds": "+317",
+   "now_chance": 24,
+   "edge": 8,
+   "text": "Edge gone: Over 2.5 (Sets) (Sets total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-brufer-nickic-2026-11-02"
+  },
   {
    "id": "new_edge:2028344:0:slight",
    "key": "2028344:0",
@@ -401,7 +459,8 @@
   "new_edge:2028347:0:slight",
   "gone:2028339:0:2026-11-02T17:08:19.389Z",
   "new_edge:2028344:0:slight",
-  "new_edge:2028339:0:slight"
+  "new_edge:2028339:0:slight",
+  "gone:2028347:0:2026-11-02T17:08:19.389Z"
  ],
  "kalshi_checked": null
 }

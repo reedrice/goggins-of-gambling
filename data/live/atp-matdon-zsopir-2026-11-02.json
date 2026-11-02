@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-02T17:29:37.911Z"
+  "fetched_at": "2026-11-02T17:42:51.414Z"
  },
- "updated": "2026-11-02T17:29:37.821Z",
+ "updated": "2026-11-02T17:42:51.233Z",
  "open_taken_at": "2026-11-02T16:21:52.260Z",
  "thresholds": {
   "big": 10,
@@ -41,28 +41,6 @@
    "taken_at": "2026-11-02T16:31:06.778Z"
   },
   {
-   "market_id": "2099409",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Matthew William Donald cover 7.5 vs the Zsombor Piros in Matthew William Donald vs. Zsombor Piros?",
-   "sides": [
-    "Matthew William Donald +7.50 (Games)",
-    "Zsombor Piros -7.50 (Games)"
-   ],
-   "teams": [
-    "Matthew William Donald",
-    "Zsombor Piros"
-   ],
-   "player": null,
-   "mid": 82.5,
-   "yes_buy": 83,
-   "no_buy": 18,
-   "taken_at": "2026-11-02T17:08:28.567Z"
-  },
-  {
    "market_id": "2099406",
    "market": "Games spread",
    "group": "game",
@@ -82,6 +60,28 @@
    "mid": 63.5,
    "yes_buy": 64,
    "no_buy": 37,
+   "taken_at": "2026-11-02T17:08:28.567Z"
+  },
+  {
+   "market_id": "2099409",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Matthew William Donald cover 7.5 vs the Zsombor Piros in Matthew William Donald vs. Zsombor Piros?",
+   "sides": [
+    "Matthew William Donald +7.50 (Games)",
+    "Zsombor Piros -7.50 (Games)"
+   ],
+   "teams": [
+    "Matthew William Donald",
+    "Zsombor Piros"
+   ],
+   "player": null,
+   "mid": 82.5,
+   "yes_buy": 83,
+   "no_buy": 18,
    "taken_at": "2026-11-02T17:08:28.567Z"
   },
   {
@@ -263,6 +263,26 @@
  ],
  "edges": [
   {
+   "key": "2099409:0",
+   "market_id": "2099409",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Matthew William Donald cover 7.5 vs the Zsombor Piros in Matthew William Donald vs. Zsombor Piros?",
+   "side": "Matthew William Donald +7.50 (Games)",
+   "open_chance": 83,
+   "now_chance": 63,
+   "open_odds": "-488",
+   "now_odds": "-170",
+   "edge": 20,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-02T17:29:37.821Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2099414:0",
    "market_id": "2099414",
    "market": "Games total",
@@ -301,29 +321,23 @@
    "first_seen": "2026-11-02T17:18:17.088Z",
    "status": "open",
    "kalshi": null
-  },
-  {
-   "key": "2099409:0",
-   "market_id": "2099409",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Matthew William Donald cover 7.5 vs the Zsombor Piros in Matthew William Donald vs. Zsombor Piros?",
-   "side": "Matthew William Donald +7.50 (Games)",
-   "open_chance": 83,
-   "now_chance": 79,
-   "open_odds": "-488",
-   "now_odds": "-376",
-   "edge": 4,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-02T17:29:37.821Z",
-   "status": "open",
-   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2099409:0:big",
+   "key": "2099409:0",
+   "at": "2026-11-02T17:42:51.233Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Matthew William Donald +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-170",
+   "now_chance": 63,
+   "edge": 20,
+   "text": "New big edge: Matthew William Donald +7.50 (Games) (Games spread), 20 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-matdon-zsopir-2026-11-02"
+  },
   {
    "id": "new_edge:2099414:0:big",
    "key": "2099414:0",
@@ -371,7 +385,8 @@
   "new_edge:2099214:1:slight",
   "new_edge:2099416:0:big",
   "new_edge:2099414:0:big",
-  "new_edge:2099409:0:slight"
+  "new_edge:2099409:0:slight",
+  "new_edge:2099409:0:big"
  ],
  "kalshi_checked": null
 }
