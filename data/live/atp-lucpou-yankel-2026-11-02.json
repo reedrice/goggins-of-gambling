@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-02T10:28:50.641Z"
+  "fetched_at": "2026-11-02T10:38:51.648Z"
  },
- "updated": "2026-11-02T10:28:50.581Z",
+ "updated": "2026-11-02T10:38:51.601Z",
  "open_taken_at": "2026-11-01T13:50:13.568Z",
  "thresholds": {
   "big": 10,
@@ -63,26 +63,26 @@
    "taken_at": "2026-11-02T10:19:08.523Z"
   },
   {
-   "market_id": "2054938",
-   "market": "Games spread",
+   "market_id": "2054944",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Lucas Poullain cover -4.5 vs the Yannik Kelm in Lucas Poullain vs. Yannik Kelm?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Lucas Poullain vs. Yannik Kelm be more than 17.5?",
    "sides": [
-    "Lucas Poullain -4.50 (Games)",
-    "Yannik Kelm +4.50 (Games)"
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
    ],
    "teams": [
-    "Lucas Poullain",
-    "Yannik Kelm"
+    null,
+    null
    ],
    "player": null,
-   "mid": 52.5,
-   "yes_buy": 55,
-   "no_buy": 50,
-   "taken_at": "2026-11-02T09:00:46.121Z"
+   "mid": 41.5,
+   "yes_buy": 42,
+   "no_buy": 59,
+   "taken_at": "2026-11-02T10:08:26.417Z"
   },
   {
    "market_id": "2054945",
@@ -173,26 +173,26 @@
    "taken_at": "2026-11-02T10:08:26.417Z"
   },
   {
-   "market_id": "2054944",
-   "market": "Games total",
+   "market_id": "2054938",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Lucas Poullain vs. Yannik Kelm be more than 17.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Lucas Poullain cover -4.5 vs the Yannik Kelm in Lucas Poullain vs. Yannik Kelm?",
    "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
+    "Lucas Poullain -4.50 (Games)",
+    "Yannik Kelm +4.50 (Games)"
    ],
    "teams": [
-    null,
-    null
+    "Lucas Poullain",
+    "Yannik Kelm"
    ],
    "player": null,
-   "mid": 41.5,
-   "yes_buy": 42,
-   "no_buy": 59,
-   "taken_at": "2026-11-02T10:08:26.417Z"
+   "mid": 52.5,
+   "yes_buy": 55,
+   "no_buy": 50,
+   "taken_at": "2026-11-02T09:00:46.121Z"
   },
   {
    "market_id": "2054936",
@@ -219,6 +219,26 @@
  ],
  "edges": [
   {
+   "key": "2054944:1",
+   "market_id": "2054944",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Lucas Poullain vs. Yannik Kelm be more than 17.5?",
+   "side": "Under 17.5 (Games)",
+   "open_chance": 59,
+   "now_chance": 38,
+   "open_odds": "-144",
+   "now_odds": "+163",
+   "edge": 21,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-02T10:38:51.601Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2054945:1",
    "market_id": "2054945",
    "market": "Games total",
@@ -239,46 +259,6 @@
    "kalshi": null
   },
   {
-   "key": "2054764:1",
-   "market_id": "2054764",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Lucas Poullain vs Yannik Kelm scheduled for November 2, 2026 at 9:00 AM UTC?",
-   "side": "Yannik Kelm win",
-   "open_chance": 34,
-   "now_chance": 20,
-   "open_odds": "+194",
-   "now_odds": "+400",
-   "edge": 14,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-02T00:44:16.897Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2054952:1",
-   "market_id": "2054952",
-   "market": "Set 1 winner",
-   "group": "game",
-   "question": "Will Lucas Poullain win set 1 against Yannik Kelm?",
-   "side": "No: Lucas Poullain win set 1 against Yannik Kelm",
-   "open_chance": 27,
-   "now_chance": 20,
-   "open_odds": "+270",
-   "now_odds": "+400",
-   "edge": 7,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-02T10:28:50.581Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "2054938:0",
    "market_id": "2054938",
    "market": "Games spread",
@@ -295,23 +275,37 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-02T10:08:26.417Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
   {
-   "id": "new_edge:2054952:1:slight",
-   "key": "2054952:1",
-   "at": "2026-11-02T10:28:50.581Z",
+   "id": "new_edge:2054944:1:big",
+   "key": "2054944:1",
+   "at": "2026-11-02T10:38:51.601Z",
    "type": "new_edge",
+   "tier": "big",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+163",
+   "now_chance": 38,
+   "edge": 21,
+   "text": "New big edge: Under 17.5 (Games) (Games total), 21 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-lucpou-yankel-2026-11-02"
+  },
+  {
+   "id": "gone:2054938:0:2026-11-02T10:08:26.417Z",
+   "key": "2054938:0",
+   "at": "2026-11-02T10:38:51.601Z",
+   "type": "gone",
    "tier": "slight",
-   "side": "No: Lucas Poullain win set 1 against Yannik Kelm",
-   "market": "Set 1 winner",
-   "now_odds": "+400",
-   "now_chance": 20,
-   "edge": 7,
-   "text": "New slight edge: No: Lucas Poullain win set 1 against Yannik Kelm (Set 1 winner), 7 points cheaper than open.",
+   "side": "Lucas Poullain -4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+104",
+   "now_chance": 49,
+   "edge": 6,
+   "text": "Edge gone: Lucas Poullain -4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-lucpou-yankel-2026-11-02"
   },
   {
@@ -343,20 +337,6 @@
    "url": "https://polymarket.us/sports/atp/atp-lucpou-yankel-2026-11-02"
   },
   {
-   "id": "new_edge:2054764:1:big",
-   "key": "2054764:1",
-   "at": "2026-11-02T10:19:08.523Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Yannik Kelm win",
-   "market": "Moneyline",
-   "now_odds": "+317",
-   "now_chance": 24,
-   "edge": 10,
-   "text": "New big edge: Yannik Kelm win (Moneyline), 10 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-lucpou-yankel-2026-11-02"
-  },
-  {
    "id": "new_edge:2054938:0:big",
    "key": "2054938:0",
    "at": "2026-11-02T10:08:26.417Z",
@@ -369,20 +349,6 @@
    "edge": 24,
    "text": "New big edge: Lucas Poullain -4.50 (Games) (Games spread), 24 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-lucpou-yankel-2026-11-02"
-  },
-  {
-   "id": "new_edge:2054764:1:slight",
-   "key": "2054764:1",
-   "at": "2026-11-02T10:08:26.417Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Yannik Kelm win",
-   "market": "Moneyline",
-   "now_odds": "+300",
-   "now_chance": 25,
-   "edge": 9,
-   "text": "New slight edge: Yannik Kelm win (Moneyline), 9 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-lucpou-yankel-2026-11-02"
   }
  ],
  "alert_seen": [
@@ -391,7 +357,9 @@
   "new_edge:2054945:1:big",
   "new_edge:2054764:1:big",
   "new_edge:2054952:1:slight",
-  "new_edge:2054938:0:slight"
+  "new_edge:2054938:0:slight",
+  "new_edge:2054944:1:big",
+  "gone:2054938:0:2026-11-02T10:08:26.417Z"
  ],
  "kalshi_checked": null
 }
