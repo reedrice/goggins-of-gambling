@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "185819",
-  "fetched_at": "2026-11-01T23:58:31.656Z",
+  "fetched_at": "2026-11-02T00:08:28.879Z",
   "tennis": true,
   "tennis_match": {
    "id": "185819",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Tatjana Maria (GER) leads (4) Bianca Andreescu (CAN) 1-6 6-2 3-2",
+     "text": "(4) Bianca Andreescu (CAN) leads (1) Tatjana Maria (GER) 6-1 2-6 4-3",
      "type": "event"
     }
    ],
@@ -69,7 +69,7 @@
        "winner": false
       },
       {
-       "value": 2
+       "value": 4
       }
      ],
      "athlete": {
@@ -200,7 +200,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-01T23:58:31.549Z",
+ "updated": "2026-11-02T00:08:28.753Z",
  "open_taken_at": "2026-11-01T04:34:38.516Z",
  "thresholds": {
   "big": 10,
@@ -386,22 +386,22 @@
  ],
  "edges": [
   {
-   "key": "2037346:1",
+   "key": "2037346:0",
    "market_id": "2037346",
    "market": "Moneyline",
    "group": "game",
    "question": "Who will win in the upcoming wta event Tatjana Maria vs Bianca Andreescu scheduled for November 1, 2026 at 10:00 PM UTC?",
-   "side": "Bianca Andreescu win",
-   "open_chance": 56,
+   "side": "Tatjana Maria win",
+   "open_chance": 49,
    "now_chance": 37,
-   "open_odds": "-127",
+   "open_odds": "+104",
    "now_odds": "+170",
-   "edge": 19,
+   "edge": 12,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Bianca Andreescu 6, 2, 2 · Tatjana Maria 1, 6, 3 · 3rd Set (games by set)",
-   "first_seen": "2026-11-01T23:58:31.549Z",
+   "context": "Bianca Andreescu 6, 2, 4 · Tatjana Maria 1, 6, 3 · 3rd Set (games by set)",
+   "first_seen": "2026-11-01T23:14:48.916Z",
    "status": "open",
    "kalshi": null
   },
@@ -446,6 +446,26 @@
    "kalshi": null
   },
   {
+   "key": "2037346:1",
+   "market_id": "2037346",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Tatjana Maria vs Bianca Andreescu scheduled for November 1, 2026 at 10:00 PM UTC?",
+   "side": "Bianca Andreescu win",
+   "open_chance": 56,
+   "now_chance": 37,
+   "open_odds": "-127",
+   "now_odds": "+170",
+   "edge": 19,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Bianca Andreescu 6, 2, 2 · Tatjana Maria 1, 6, 3 · 3rd Set (games by set)",
+   "first_seen": "2026-11-01T23:58:31.549Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "2039480:0",
    "market_id": "2039480",
    "market": "Games spread",
@@ -482,26 +502,6 @@
    "reason": "Explained by score: Tatjana Maria not above the games spread right now",
    "context": "Bianca Andreescu 6, 2 · Tatjana Maria 1, 5 · 2nd Set (games by set)",
    "first_seen": "2026-11-01T23:33:26.751Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "2037346:0",
-   "market_id": "2037346",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Tatjana Maria vs Bianca Andreescu scheduled for November 1, 2026 at 10:00 PM UTC?",
-   "side": "Tatjana Maria win",
-   "open_chance": 49,
-   "now_chance": 41,
-   "open_odds": "+104",
-   "now_odds": "+144",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Bianca Andreescu 6, 2, 1 · Tatjana Maria 1, 6, 1 · 3rd Set (games by set)",
-   "first_seen": "2026-11-01T23:14:48.916Z",
    "status": "gone",
    "kalshi": null
   },
@@ -547,6 +547,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2037346:1:2026-11-01T23:58:31.549Z",
+   "key": "2037346:1",
+   "at": "2026-11-02T00:08:28.753Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Bianca Andreescu win",
+   "market": "Moneyline",
+   "now_odds": "+170",
+   "now_chance": 37,
+   "edge": 19,
+   "text": "Edge gone: Bianca Andreescu win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-tatmar-biaand-2026-11-01"
+  },
   {
    "id": "new_edge:2037346:1:big",
    "key": "2037346:1",
@@ -805,7 +819,8 @@
   "news:2039486:1",
   "new_edge:2037346:0:slight",
   "new_edge:2037346:1:big",
-  "gone:2037346:0:2026-11-01T23:14:48.916Z"
+  "gone:2037346:0:2026-11-01T23:14:48.916Z",
+  "gone:2037346:1:2026-11-01T23:58:31.549Z"
  ],
  "kalshi_checked": null
 }
