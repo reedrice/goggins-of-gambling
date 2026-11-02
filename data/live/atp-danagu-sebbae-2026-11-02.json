@@ -4,12 +4,12 @@
  "game": "Daniel Merida vs. Sebastian Baez",
  "url": "https://polymarket.us/sports/atp/atp-danagu-sebbae-2026-11-02",
  "start_time": "2026-11-02T13:25:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186444",
-  "fetched_at": "2026-11-02T14:45:32.654Z",
+  "fetched_at": "2026-11-02T14:55:10.170Z",
   "tennis": true,
   "tennis_match": {
    "id": "186444",
@@ -17,17 +17,17 @@
    "date": "2026-11-02T13:35Z",
    "startDate": "2026-11-02T13:35Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Daniel Merida (ESP) leads Sebastian Baez (ARG) 6-4 4-1",
+     "text": "Daniel Merida (ESP) bt Sebastian Baez (ARG) 6-4 6-2",
      "type": "event"
     }
    ],
@@ -55,13 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
      "linescores": [
       {
        "value": 4,
        "winner": false
       },
       {
-       "value": 1
+       "value": 2,
+       "winner": false
       }
      ],
      "athlete": {
@@ -101,13 +103,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 4
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -158,10 +162,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Sebastian Baez",
@@ -173,13 +177,13 @@
    "abbr": "Daniel Merida",
    "alias": "Daniel Merida",
    "name": "Daniel Merida",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-02T14:45:32.553Z",
+ "updated": "2026-11-02T14:55:09.997Z",
  "open_taken_at": "2026-11-02T10:19:14.250Z",
  "thresholds": {
   "big": 10,
@@ -519,26 +523,6 @@
  ],
  "edges": [
   {
-   "key": "2089339:1",
-   "market_id": "2089339",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Daniel Merida cover -4.5 vs the Sebastian Baez in Daniel Merida vs. Sebastian Baez?",
-   "side": "Sebastian Baez +4.50 (Games)",
-   "open_chance": 61,
-   "now_chance": 50,
-   "open_odds": "-156",
-   "now_odds": "+100",
-   "edge": 11,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Sebastian Baez not above the games spread right now",
-   "context": "Sebastian Baez 4, 1 · Daniel Merida 6, 4 · 2nd Set (games by set)",
-   "first_seen": "2026-11-02T14:35:16.904Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "2089337:1",
    "market_id": "2089337",
    "market": "Games spread",
@@ -575,6 +559,26 @@
    "reason": null,
    "context": "Sebastian Baez 4 · Daniel Merida 5 · 1st Set (games by set)",
    "first_seen": "2026-11-02T12:54:37.804Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "2089339:1",
+   "market_id": "2089339",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Daniel Merida cover -4.5 vs the Sebastian Baez in Daniel Merida vs. Sebastian Baez?",
+   "side": "Sebastian Baez +4.50 (Games)",
+   "open_chance": 61,
+   "now_chance": 50,
+   "open_odds": "-156",
+   "now_odds": "+100",
+   "edge": 11,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Sebastian Baez not above the games spread right now",
+   "context": "Sebastian Baez 4, 1 · Daniel Merida 6, 4 · 2nd Set (games by set)",
+   "first_seen": "2026-11-02T14:35:16.904Z",
    "status": "gone",
    "kalshi": null
   }
