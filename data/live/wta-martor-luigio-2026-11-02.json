@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186718",
-  "fetched_at": "2026-11-02T16:56:19.782Z",
+  "fetched_at": "2026-11-02T17:08:25.233Z",
   "tennis": true,
   "tennis_match": {
    "id": "186718",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Luisina Giovannini (ARG) leads Maria Camila Torres Murcia (COL) 6-3",
+     "text": "Luisina Giovannini (ARG) leads Maria Camila Torres Murcia (COL) 6-3 1-0",
      "type": "event"
     }
    ],
@@ -55,9 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -97,9 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
-       "value": 3
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -134,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1007,
    "type": {
     "id": "2",
@@ -152,14 +167,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Luisina Giovannini",
    "alias": "Luisina Giovannini",
    "name": "Luisina Giovannini",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Maria Camila Torres Murcia",
@@ -171,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-02T16:56:19.668Z",
+ "updated": "2026-11-02T17:08:25.153Z",
  "open_taken_at": "2026-11-01T22:37:21.828Z",
  "thresholds": {
   "big": 10,
@@ -327,7 +342,7 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Luisina Giovannini 6 · Maria Camila Torres Murcia 3 · 1st Set (games by set)",
+   "context": "Luisina Giovannini 6, 1 · Maria Camila Torres Murcia 3, 0 · 2nd Set (games by set)",
    "first_seen": "2026-11-02T16:31:03.573Z",
    "status": "open",
    "kalshi": null

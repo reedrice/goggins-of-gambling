@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186665",
-  "fetched_at": "2026-11-02T16:56:14.479Z",
+  "fetched_at": "2026-11-02T17:08:18.922Z",
   "tennis": true,
   "tennis_match": {
    "id": "186665",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Diana Martynov (FRA) leads Sandra Samir (EGY) 7-5",
+     "text": "Diana Martynov (FRA) is tied with Sandra Samir (EGY) 7-5 0-0",
      "type": "event"
     }
    ],
@@ -55,9 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
-       "value": 5
+       "value": 5,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -97,9 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
-       "value": 7
+       "value": 7,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -134,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1082,
    "type": {
     "id": "2",
@@ -152,8 +167,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Sandra Samir",
@@ -165,13 +180,13 @@
    "abbr": "Diana Martynov",
    "alias": "Diana Martynov",
    "name": "Diana Martynov",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-02T16:56:14.054Z",
+ "updated": "2026-11-02T17:08:18.840Z",
  "open_taken_at": "2026-11-01T05:07:46.961Z",
  "thresholds": {
   "big": 10,
@@ -201,6 +216,28 @@
    "taken_at": "2026-11-02T03:52:17.048Z"
   },
   {
+   "market_id": "2034811",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Diana Martynov cover 7.5 vs the Sandra Samir in Diana Martynov vs. Sandra Samir?",
+   "sides": [
+    "Diana Martynov +7.50 (Games)",
+    "Sandra Samir -7.50 (Games)"
+   ],
+   "teams": [
+    "Diana Martynov",
+    "Sandra Samir"
+   ],
+   "player": null,
+   "mid": 94.5,
+   "yes_buy": 95,
+   "no_buy": 6,
+   "taken_at": "2026-11-02T15:51:29.789Z"
+  },
+  {
    "market_id": "2034806",
    "market": "Games spread",
    "group": "game",
@@ -223,26 +260,26 @@
    "taken_at": "2026-11-02T15:51:29.789Z"
   },
   {
-   "market_id": "2034811",
-   "market": "Games spread",
+   "market_id": "2034837",
+   "market": "Set 2 winner",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Diana Martynov cover 7.5 vs the Sandra Samir in Diana Martynov vs. Sandra Samir?",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Diana Martynov win set 2 against Sandra Samir?",
    "sides": [
-    "Diana Martynov +7.50 (Games)",
-    "Sandra Samir -7.50 (Games)"
+    "Yes: Diana Martynov win set 2 against Sandra Samir",
+    "No: Diana Martynov win set 2 against Sandra Samir"
    ],
    "teams": [
     "Diana Martynov",
-    "Sandra Samir"
+    null
    ],
    "player": null,
-   "mid": 94.5,
-   "yes_buy": 95,
-   "no_buy": 6,
-   "taken_at": "2026-11-02T15:51:29.789Z"
+   "mid": 73.5,
+   "yes_buy": 75,
+   "no_buy": 28,
+   "taken_at": "2026-11-02T17:08:18.840Z"
   },
   {
    "market_id": "2034819",
@@ -489,26 +526,6 @@
  ],
  "edges": [
   {
-   "key": "2021231:1",
-   "market_id": "2021231",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Diana Martynov vs Sandra Samir scheduled for November 2, 2026 at 9:00 AM UTC?",
-   "side": "Sandra Samir win",
-   "open_chance": 39,
-   "now_chance": 17,
-   "open_odds": "+156",
-   "now_odds": "+488",
-   "edge": 22,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Sandra Samir 5 · Diana Martynov 7 · 1st Set (games by set)",
-   "first_seen": "2026-11-02T15:40:37.653Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "2034821:1",
    "market_id": "2034821",
    "market": "Games total",
@@ -523,7 +540,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Sandra Samir 5 · Diana Martynov 7 · 1st Set (games by set)",
+   "context": "Sandra Samir 5, 0 · Diana Martynov 7, 0 · 2nd Set (games by set)",
    "first_seen": "2026-11-02T16:47:10.095Z",
    "status": "open",
    "kalshi": null
@@ -767,20 +784,6 @@
    "url": "https://polymarket.us/sports/wta/wta-diamar-sansam-2026-11-02"
   },
   {
-   "id": "new_edge:2021231:1:big",
-   "key": "2021231:1",
-   "at": "2026-11-02T16:47:10.095Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Sandra Samir win",
-   "market": "Moneyline",
-   "now_odds": "+317",
-   "now_chance": 24,
-   "edge": 15,
-   "text": "New big edge: Sandra Samir win (Moneyline), 15 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-diamar-sansam-2026-11-02"
-  },
-  {
    "id": "new_edge:2034819:1:big",
    "key": "2034819:1",
    "at": "2026-11-02T16:47:10.095Z",
@@ -946,34 +949,6 @@
    "now_chance": 67,
    "edge": 4,
    "text": "New slight edge: Diana Martynov +1.50 (Games) (Games spread), 4 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-diamar-sansam-2026-11-02"
-  },
-  {
-   "id": "gone:2021231:1:2026-11-02T15:40:37.653Z",
-   "key": "2021231:1",
-   "at": "2026-11-02T15:51:29.789Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Sandra Samir win",
-   "market": "Moneyline",
-   "now_odds": "+213",
-   "now_chance": 32,
-   "edge": 7,
-   "text": "Edge gone: Sandra Samir win (Moneyline) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-diamar-sansam-2026-11-02"
-  },
-  {
-   "id": "new_edge:2021231:1:slight",
-   "key": "2021231:1",
-   "at": "2026-11-02T15:40:37.653Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Sandra Samir win",
-   "market": "Moneyline",
-   "now_odds": "+213",
-   "now_chance": 32,
-   "edge": 7,
-   "text": "New slight edge: Sandra Samir win (Moneyline), 7 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-diamar-sansam-2026-11-02"
   },
   {
