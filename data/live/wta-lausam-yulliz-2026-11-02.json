@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186715",
-  "fetched_at": "2026-11-02T19:04:54.895Z",
+  "fetched_at": "2026-11-02T19:14:36.376Z",
   "tennis": true,
   "tennis_match": {
    "id": "186715",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Mon, November 2nd at 2:05 PM EST",
-     "shortDetail": "11/2 - 2:05 PM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Yuliana Lizarazo (COL) leads (5) Laura Samson (CZE) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "5be7aa49-0be5-be87-98e1-1e83bd6ba2b1",
       "displayName": "Yuliana Lizarazo",
@@ -87,9 +98,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "curatedRank": {
       "current": 5
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "2d5a4329-7cd8-3d8c-89db-ad55953745e8",
       "displayName": "Laura Samson",
@@ -122,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1007,
    "type": {
     "id": "2",
@@ -138,10 +160,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Mon, November 2nd at 2:05 PM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Yuliana Lizarazo",
@@ -159,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-02T19:04:54.797Z",
+ "updated": "2026-11-02T19:14:36.215Z",
  "open_taken_at": "2026-11-02T01:23:27.775Z",
  "thresholds": {
   "big": 10,
@@ -233,6 +255,72 @@
    "taken_at": "2026-11-02T19:04:54.797Z"
   },
   {
+   "market_id": "2078134",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Laura Samson cover -1.5 vs the Yuliana Lizarazo in Laura Samson vs. Yuliana Lizarazo?",
+   "sides": [
+    "Laura Samson -1.50 (Games)",
+    "Yuliana Lizarazo +1.50 (Games)"
+   ],
+   "teams": [
+    "Laura Samson",
+    "Yuliana Lizarazo"
+   ],
+   "player": null,
+   "mid": 90.5,
+   "yes_buy": 92,
+   "no_buy": 11,
+   "taken_at": "2026-11-02T19:14:36.215Z"
+  },
+  {
+   "market_id": "2078136",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Laura Samson cover 1.5 vs the Yuliana Lizarazo in Laura Samson vs. Yuliana Lizarazo?",
+   "sides": [
+    "Laura Samson +1.50 (Games)",
+    "Yuliana Lizarazo -1.50 (Games)"
+   ],
+   "teams": [
+    "Laura Samson",
+    "Yuliana Lizarazo"
+   ],
+   "player": null,
+   "mid": 88.5,
+   "yes_buy": 89,
+   "no_buy": 12,
+   "taken_at": "2026-11-02T19:14:36.215Z"
+  },
+  {
+   "market_id": "2078162",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Laura Samson win set 1 against Yuliana Lizarazo?",
+   "sides": [
+    "Yes: Laura Samson win set 1 against Yuliana Lizarazo",
+    "No: Laura Samson win set 1 against Yuliana Lizarazo"
+   ],
+   "teams": [
+    "Laura Samson",
+    null
+   ],
+   "player": null,
+   "mid": 88,
+   "yes_buy": 89,
+   "no_buy": 13,
+   "taken_at": "2026-11-02T19:14:36.215Z"
+  },
+  {
    "market_id": "2078147",
    "market": "Sets spread",
    "group": "game",
@@ -299,16 +387,16 @@
    "taken_at": "2026-11-02T17:08:26.865Z"
   },
   {
-   "market_id": "2078157",
-   "market": "Sets total",
+   "market_id": "2078153",
+   "market": "Games total",
    "group": "game",
    "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Laura Samson vs. Yuliana Lizarazo be more than 2.5?",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Laura Samson vs. Yuliana Lizarazo be more than 22.5?",
    "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
    ],
    "teams": [
     null,
@@ -321,16 +409,16 @@
    "taken_at": "2026-11-02T19:04:54.797Z"
   },
   {
-   "market_id": "2078153",
-   "market": "Games total",
+   "market_id": "2078157",
+   "market": "Sets total",
    "group": "game",
    "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Laura Samson vs. Yuliana Lizarazo be more than 22.5?",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Laura Samson vs. Yuliana Lizarazo be more than 2.5?",
    "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
    ],
    "teams": [
     null,
@@ -389,6 +477,26 @@
  ],
  "edges": [
   {
+   "key": "2078143:0",
+   "market_id": "2078143",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Laura Samson cover -7.5 vs the Yuliana Lizarazo in Laura Samson vs. Yuliana Lizarazo?",
+   "side": "Laura Samson -7.50 (Games)",
+   "open_chance": 55,
+   "now_chance": 47,
+   "open_odds": "-122",
+   "now_odds": "+113",
+   "edge": 8,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Laura Samson not above the games spread right now",
+   "context": "Yuliana Lizarazo 1 · Laura Samson 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-02T19:14:36.215Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2078151:0",
    "market_id": "2078151",
    "market": "Games total",
@@ -405,7 +513,7 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-02T19:04:54.797Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -425,11 +533,39 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-02T19:04:54.797Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2078151:0:2026-11-02T19:04:54.797Z",
+   "key": "2078151:0",
+   "at": "2026-11-02T19:14:36.215Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+300",
+   "now_chance": 25,
+   "edge": 18,
+   "text": "Edge gone: Over 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-lausam-yulliz-2026-11-02"
+  },
+  {
+   "id": "gone:2078143:1:2026-11-02T19:04:54.797Z",
+   "key": "2078143:1",
+   "at": "2026-11-02T19:14:36.215Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Yuliana Lizarazo +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+127",
+   "now_chance": 44,
+   "edge": 5,
+   "text": "Edge gone: Yuliana Lizarazo +7.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-lausam-yulliz-2026-11-02"
+  },
   {
    "id": "new_edge:2078151:0:big",
    "key": "2078151:0",
@@ -461,7 +597,9 @@
  ],
  "alert_seen": [
   "new_edge:2078151:0:big",
-  "new_edge:2078143:1:slight"
+  "new_edge:2078143:1:slight",
+  "gone:2078151:0:2026-11-02T19:04:54.797Z",
+  "gone:2078143:1:2026-11-02T19:04:54.797Z"
  ],
  "kalshi_checked": null
 }
