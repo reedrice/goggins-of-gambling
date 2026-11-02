@@ -3,1337 +3,42 @@
   "league": "nfl",
   "query_date": "2026-11-01",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261101&limit=1000",
-  "fetched_at": "2026-11-01T23:48:54.552Z",
+  "fetched_at": "2026-11-01T23:57:52.348Z",
   "events": [
     {
       "id": "401873032",
       "name": "Los Angeles Chargers at Los Angeles Rams",
       "date": "2026-11-01T21:05Z",
       "status": {
-        "clock": 130,
-        "displayClock": "2:10",
+        "clock": 0,
+        "displayClock": "0:00",
         "period": 4,
         "type": {
-          "id": "2",
-          "name": "STATUS_IN_PROGRESS",
-          "state": "in",
-          "completed": false,
-          "description": "In Progress",
-          "detail": "2:10 - 4th Quarter",
-          "shortDetail": "2:10 - 4th"
+          "id": "3",
+          "name": "STATUS_FINAL",
+          "state": "post",
+          "completed": true,
+          "description": "Final",
+          "detail": "Final",
+          "shortDetail": "Final"
         }
-      },
-      "boxscore": {
-        "players": [
-          {
-            "team": {
-              "abbreviation": "LAC"
-            },
-            "statistics": [
-              {
-                "name": "passing",
-                "keys": [
-                  "completions/passingAttempts",
-                  "passingYards",
-                  "yardsPerPassAttempt",
-                  "passingTouchdowns",
-                  "interceptions",
-                  "sacks-sackYardsLost",
-                  "adjQBR",
-                  "QBRating"
-                ],
-                "athletes": [
-                  {
-                    "athlete": {
-                      "displayName": "Justin Herbert"
-                    },
-                    "stats": [
-                      "24/32",
-                      "257",
-                      "8.0",
-                      "0",
-                      "2",
-                      "2-26",
-                      "72.0"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "rushing",
-                "keys": [
-                  "rushingAttempts",
-                  "rushingYards",
-                  "yardsPerRushAttempt",
-                  "rushingTouchdowns",
-                  "longRushing"
-                ],
-                "athletes": [
-                  {
-                    "athlete": {
-                      "displayName": "Kimani Vidal"
-                    },
-                    "stats": [
-                      "8",
-                      "23",
-                      "2.9",
-                      "0",
-                      "14"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Omarion Hampton"
-                    },
-                    "stats": [
-                      "9",
-                      "20",
-                      "2.2",
-                      "0",
-                      "6"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Justin Herbert"
-                    },
-                    "stats": [
-                      "4",
-                      "15",
-                      "3.8",
-                      "0",
-                      "5"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Keaton Mitchell"
-                    },
-                    "stats": [
-                      "4",
-                      "6",
-                      "1.5",
-                      "0",
-                      "3"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "receiving",
-                "keys": [
-                  "receptions",
-                  "receivingYards",
-                  "yardsPerReception",
-                  "receivingTouchdowns",
-                  "longReception",
-                  "receivingTargets"
-                ],
-                "athletes": [
-                  {
-                    "athlete": {
-                      "displayName": "Ladd McConkey"
-                    },
-                    "stats": [
-                      "4",
-                      "86",
-                      "21.5",
-                      "0",
-                      "54",
-                      "6"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Oronde Gadsden"
-                    },
-                    "stats": [
-                      "5",
-                      "52",
-                      "10.4",
-                      "0",
-                      "15",
-                      "5"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Quentin Johnston"
-                    },
-                    "stats": [
-                      "4",
-                      "37",
-                      "9.3",
-                      "0",
-                      "21",
-                      "4"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Tre' Harris"
-                    },
-                    "stats": [
-                      "3",
-                      "31",
-                      "10.3",
-                      "0",
-                      "15",
-                      "3"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Charlie Kolar"
-                    },
-                    "stats": [
-                      "1",
-                      "20",
-                      "20.0",
-                      "0",
-                      "20",
-                      "4"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Keaton Mitchell"
-                    },
-                    "stats": [
-                      "3",
-                      "17",
-                      "5.7",
-                      "0",
-                      "12",
-                      "3"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Kimani Vidal"
-                    },
-                    "stats": [
-                      "2",
-                      "7",
-                      "3.5",
-                      "0",
-                      "9",
-                      "2"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Omarion Hampton"
-                    },
-                    "stats": [
-                      "2",
-                      "7",
-                      "3.5",
-                      "0",
-                      "4",
-                      "3"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "fumbles",
-                "keys": [
-                  "fumbles",
-                  "fumblesLost",
-                  "fumblesRecovered"
-                ],
-                "athletes": [
-                  {
-                    "athlete": {
-                      "displayName": "Justin Herbert"
-                    },
-                    "stats": [
-                      "1",
-                      "0",
-                      "0"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "defensive",
-                "keys": [
-                  "totalTackles",
-                  "soloTackles",
-                  "sacks",
-                  "tacklesForLoss",
-                  "passesDefended",
-                  "QBHits",
-                  "defensiveTouchdowns"
-                ],
-                "athletes": [
-                  {
-                    "athlete": {
-                      "displayName": "Tony Jefferson"
-                    },
-                    "stats": [
-                      "7",
-                      "2",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Isas Waxter"
-                    },
-                    "stats": [
-                      "6",
-                      "5",
-                      "0",
-                      "2",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "RJ Mickens"
-                    },
-                    "stats": [
-                      "6",
-                      "2",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Daiyan Henley"
-                    },
-                    "stats": [
-                      "5",
-                      "3",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Del'Shawn Phillips"
-                    },
-                    "stats": [
-                      "5",
-                      "2",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Justin Eboigbe"
-                    },
-                    "stats": [
-                      "5",
-                      "2",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Tarheeb Still"
-                    },
-                    "stats": [
-                      "3",
-                      "1",
-                      "0",
-                      "0",
-                      "1",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Cam Hart"
-                    },
-                    "stats": [
-                      "3",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Tuli Tuipulotu"
-                    },
-                    "stats": [
-                      "2",
-                      "2",
-                      "1",
-                      "1",
-                      "0",
-                      "1",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Dalvin Tomlinson"
-                    },
-                    "stats": [
-                      "2",
-                      "2",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Quentin Johnston"
-                    },
-                    "stats": [
-                      "2",
-                      "2",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Troy Dye"
-                    },
-                    "stats": [
-                      "2",
-                      "1",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Kendall Williamson"
-                    },
-                    "stats": [
-                      "2",
-                      "1",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Teair Tart"
-                    },
-                    "stats": [
-                      "2",
-                      "1",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Marlowe Wax"
-                    },
-                    "stats": [
-                      "2",
-                      "1",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Khalil Mack"
-                    },
-                    "stats": [
-                      "2",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "KeAndre Lambert-Smith"
-                    },
-                    "stats": [
-                      "2",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Akheem Mesidor"
-                    },
-                    "stats": [
-                      "1",
-                      "1",
-                      "0",
-                      "0",
-                      "0",
-                      "1",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Nick Barrett"
-                    },
-                    "stats": [
-                      "1",
-                      "1",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Jamaree Caldwell"
-                    },
-                    "stats": [
-                      "1",
-                      "1",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Josh Harris"
-                    },
-                    "stats": [
-                      "1",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "interceptions",
-                "keys": [
-                  "interceptions",
-                  "interceptionYards",
-                  "interceptionTouchdowns"
-                ],
-                "athletes": [
-                  {
-                    "athlete": {
-                      "displayName": "Tarheeb Still"
-                    },
-                    "stats": [
-                      "1",
-                      "0",
-                      "0"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "kickReturns",
-                "keys": [
-                  "kickReturns",
-                  "kickReturnYards",
-                  "yardsPerKickReturn",
-                  "longKickReturn",
-                  "kickReturnTouchdowns"
-                ],
-                "athletes": [
-                  {
-                    "athlete": {
-                      "displayName": "Derius Davis"
-                    },
-                    "stats": [
-                      "2",
-                      "27",
-                      "13.5",
-                      "18",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Keaton Mitchell"
-                    },
-                    "stats": [
-                      "1",
-                      "20",
-                      "20.0",
-                      "20",
-                      "0"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "puntReturns",
-                "keys": [
-                  "puntReturns",
-                  "puntReturnYards",
-                  "yardsPerPuntReturn",
-                  "longPuntReturn",
-                  "puntReturnTouchdowns"
-                ],
-                "athletes": [
-                  {
-                    "athlete": {
-                      "displayName": "Derius Davis"
-                    },
-                    "stats": [
-                      "1",
-                      "7",
-                      "7.0",
-                      "7",
-                      "0"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "kicking",
-                "keys": [
-                  "fieldGoalsMade/fieldGoalAttempts",
-                  "fieldGoalPct",
-                  "longFieldGoalMade",
-                  "extraPointsMade/extraPointAttempts",
-                  "totalKickingPoints"
-                ],
-                "athletes": [
-                  {
-                    "athlete": {
-                      "displayName": "Cameron Dicker"
-                    },
-                    "stats": [
-                      "3/3",
-                      "100.0",
-                      "46",
-                      "0/0",
-                      "9"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "punting",
-                "keys": [
-                  "punts",
-                  "puntYards",
-                  "grossAvgPuntYards",
-                  "touchbacks",
-                  "puntsInside20",
-                  "longPunt"
-                ],
-                "athletes": [
-                  {
-                    "athlete": {
-                      "displayName": "JK Scott"
-                    },
-                    "stats": [
-                      "4",
-                      "191",
-                      "47.8",
-                      "0",
-                      "3",
-                      "57"
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "team": {
-              "abbreviation": "LAR"
-            },
-            "statistics": [
-              {
-                "name": "passing",
-                "keys": [
-                  "completions/passingAttempts",
-                  "passingYards",
-                  "yardsPerPassAttempt",
-                  "passingTouchdowns",
-                  "interceptions",
-                  "sacks-sackYardsLost",
-                  "adjQBR",
-                  "QBRating"
-                ],
-                "athletes": [
-                  {
-                    "athlete": {
-                      "displayName": "Matthew Stafford"
-                    },
-                    "stats": [
-                      "16/24",
-                      "151",
-                      "6.3",
-                      "1",
-                      "1",
-                      "1-5",
-                      "80.4"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "rushing",
-                "keys": [
-                  "rushingAttempts",
-                  "rushingYards",
-                  "yardsPerRushAttempt",
-                  "rushingTouchdowns",
-                  "longRushing"
-                ],
-                "athletes": [
-                  {
-                    "athlete": {
-                      "displayName": "Blake Corum"
-                    },
-                    "stats": [
-                      "11",
-                      "73",
-                      "6.6",
-                      "1",
-                      "23"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Kyren Williams"
-                    },
-                    "stats": [
-                      "12",
-                      "45",
-                      "3.8",
-                      "1",
-                      "9"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "receiving",
-                "keys": [
-                  "receptions",
-                  "receivingYards",
-                  "yardsPerReception",
-                  "receivingTouchdowns",
-                  "longReception",
-                  "receivingTargets"
-                ],
-                "athletes": [
-                  {
-                    "athlete": {
-                      "displayName": "Puka Nacua"
-                    },
-                    "stats": [
-                      "11",
-                      "80",
-                      "7.3",
-                      "1",
-                      "18",
-                      "12"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Tutu Atwell"
-                    },
-                    "stats": [
-                      "2",
-                      "52",
-                      "26.0",
-                      "0",
-                      "40",
-                      "4"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Tyler Higbee"
-                    },
-                    "stats": [
-                      "1",
-                      "14",
-                      "14.0",
-                      "0",
-                      "14",
-                      "2"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Kyren Williams"
-                    },
-                    "stats": [
-                      "1",
-                      "3",
-                      "3.0",
-                      "0",
-                      "3",
-                      "1"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Davis Allen"
-                    },
-                    "stats": [
-                      "1",
-                      "2",
-                      "2.0",
-                      "0",
-                      "2",
-                      "1"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Blake Corum"
-                    },
-                    "stats": [
-                      "0",
-                      "0",
-                      "0.0",
-                      "0",
-                      "0",
-                      "1"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Jordan Whittington"
-                    },
-                    "stats": [
-                      "0",
-                      "0",
-                      "0.0",
-                      "0",
-                      "0",
-                      "1"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Konata Mumpfield"
-                    },
-                    "stats": [
-                      "0",
-                      "0",
-                      "0.0",
-                      "0",
-                      "0",
-                      "2"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "fumbles",
-                "keys": [
-                  "fumbles",
-                  "fumblesLost",
-                  "fumblesRecovered"
-                ],
-                "athletes": []
-              },
-              {
-                "name": "defensive",
-                "keys": [
-                  "totalTackles",
-                  "soloTackles",
-                  "sacks",
-                  "tacklesForLoss",
-                  "passesDefended",
-                  "QBHits",
-                  "defensiveTouchdowns"
-                ],
-                "athletes": [
-                  {
-                    "athlete": {
-                      "displayName": "Trent McDuffie"
-                    },
-                    "stats": [
-                      "9",
-                      "5",
-                      "0",
-                      "1",
-                      "1",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Nate Landman"
-                    },
-                    "stats": [
-                      "8",
-                      "7",
-                      "0",
-                      "1",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Kamren Kinchens"
-                    },
-                    "stats": [
-                      "7",
-                      "4",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Quentin Lake"
-                    },
-                    "stats": [
-                      "7",
-                      "2",
-                      "0",
-                      "0",
-                      "2",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Josaiah Stewart"
-                    },
-                    "stats": [
-                      "6",
-                      "2",
-                      "1",
-                      "2",
-                      "0",
-                      "1",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Omar Speights"
-                    },
-                    "stats": [
-                      "5",
-                      "3",
-                      "0",
-                      "1",
-                      "1",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Wesley Bailey"
-                    },
-                    "stats": [
-                      "5",
-                      "2",
-                      "1",
-                      "1",
-                      "0",
-                      "1",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Kam Curl"
-                    },
-                    "stats": [
-                      "4",
-                      "3",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Josh Wallace"
-                    },
-                    "stats": [
-                      "4",
-                      "3",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Jaylen Watson"
-                    },
-                    "stats": [
-                      "4",
-                      "2",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Aaron Donald"
-                    },
-                    "stats": [
-                      "2",
-                      "2",
-                      "0",
-                      "1",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Braden Fiske"
-                    },
-                    "stats": [
-                      "2",
-                      "1",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Emmanuel Forbes Jr."
-                    },
-                    "stats": [
-                      "2",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Jaylen McCollough"
-                    },
-                    "stats": [
-                      "1",
-                      "1",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Tyler Davis"
-                    },
-                    "stats": [
-                      "1",
-                      "1",
-                      "0",
-                      "0",
-                      "0",
-                      "1",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Jordan Whittington"
-                    },
-                    "stats": [
-                      "1",
-                      "1",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Darryl Peterson III"
-                    },
-                    "stats": [
-                      "1",
-                      "1",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Konata Mumpfield"
-                    },
-                    "stats": [
-                      "1",
-                      "1",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Byron Young"
-                    },
-                    "stats": [
-                      "1",
-                      "1",
-                      "0",
-                      "0",
-                      "0",
-                      "1",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Larrell Murchison"
-                    },
-                    "stats": [
-                      "1",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "interceptions",
-                "keys": [
-                  "interceptions",
-                  "interceptionYards",
-                  "interceptionTouchdowns"
-                ],
-                "athletes": [
-                  {
-                    "athlete": {
-                      "displayName": "Quentin Lake"
-                    },
-                    "stats": [
-                      "1",
-                      "45",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Trent McDuffie"
-                    },
-                    "stats": [
-                      "1",
-                      "26",
-                      "0"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "kickReturns",
-                "keys": [
-                  "kickReturns",
-                  "kickReturnYards",
-                  "yardsPerKickReturn",
-                  "longKickReturn",
-                  "kickReturnTouchdowns"
-                ],
-                "athletes": [
-                  {
-                    "athlete": {
-                      "displayName": "Alex Bachman"
-                    },
-                    "stats": [
-                      "4",
-                      "87",
-                      "21.8",
-                      "28",
-                      "0"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "puntReturns",
-                "keys": [
-                  "puntReturns",
-                  "puntReturnYards",
-                  "yardsPerPuntReturn",
-                  "longPuntReturn",
-                  "puntReturnTouchdowns"
-                ],
-                "athletes": [
-                  {
-                    "athlete": {
-                      "displayName": "Alex Bachman"
-                    },
-                    "stats": [
-                      "2",
-                      "8",
-                      "4.0",
-                      "8",
-                      "0"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "kicking",
-                "keys": [
-                  "fieldGoalsMade/fieldGoalAttempts",
-                  "fieldGoalPct",
-                  "longFieldGoalMade",
-                  "extraPointsMade/extraPointAttempts",
-                  "totalKickingPoints"
-                ],
-                "athletes": [
-                  {
-                    "athlete": {
-                      "displayName": "Brandon McManus"
-                    },
-                    "stats": [
-                      "1/1",
-                      "100.0",
-                      "30",
-                      "3/3",
-                      "6"
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "punting",
-                "keys": [
-                  "punts",
-                  "puntYards",
-                  "grossAvgPuntYards",
-                  "touchbacks",
-                  "puntsInside20",
-                  "longPunt"
-                ],
-                "athletes": [
-                  {
-                    "athlete": {
-                      "displayName": "Ethan Evans"
-                    },
-                    "stats": [
-                      "5",
-                      "246",
-                      "49.2",
-                      "1",
-                      "0",
-                      "64"
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
       },
       "competitions": [
         {
           "id": "401873032",
           "date": "2026-11-01T21:05Z",
           "status": {
-            "clock": 130,
-            "displayClock": "2:10",
+            "clock": 0,
+            "displayClock": "0:00",
             "period": 4,
             "type": {
-              "id": "2",
-              "name": "STATUS_IN_PROGRESS",
-              "state": "in",
-              "completed": false,
-              "description": "In Progress",
-              "detail": "2:10 - 4th Quarter",
-              "shortDetail": "2:10 - 4th"
+              "id": "3",
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
             },
             "isTBDFlex": false
           },
@@ -1412,101 +117,40 @@
         }
       ],
       "player_usage": [],
-      "injuries": [
-        {
-          "team": "LAR",
-          "player": "Trent McDuffie",
-          "position": "CB",
-          "status": "Questionable"
-        },
-        {
-          "team": "LAR",
-          "player": "Jaylen Watson",
-          "position": "CB",
-          "status": "Questionable"
-        },
-        {
-          "team": "LAR",
-          "player": "Joe Cardona",
-          "position": "LS",
-          "status": "Out"
-        },
-        {
-          "team": "LAR",
-          "player": "Ty Simpson",
-          "position": "QB",
-          "status": "Out"
-        },
-        {
-          "team": "LAR",
-          "player": "Colby Parkinson",
-          "position": "TE",
-          "status": "Out"
-        },
-        {
-          "team": "LAC",
-          "player": "Rodney Shelley",
-          "position": "CB",
-          "status": "Out"
-        },
-        {
-          "team": "LAC",
-          "player": "Donte Jackson",
-          "position": "CB",
-          "status": "Out"
-        },
-        {
-          "team": "LAC",
-          "player": "Theo Wease Jr.",
-          "position": "WR",
-          "status": "Out"
-        },
-        {
-          "team": "LAC",
-          "player": "Brenen Thompson",
-          "position": "WR",
-          "status": "Out"
-        },
-        {
-          "team": "LAC",
-          "player": "Deane Leonard",
-          "position": "CB",
-          "status": "Out"
-        }
-      ],
+      "injuries": [],
       "starters": [],
       "starting_goalies": [],
       "probables": [],
       "book_lines": [],
       "coverage": {
-        "injuries": "published_report",
+        "injuries": "unavailable",
         "starters": "unverified",
         "goalies": "unverified",
         "hockey_lines": "unavailable",
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261101&limit=1000",
-      "fetched_at": "2026-11-01T23:48:54.552Z",
-      "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873032",
-      "details_checked_at": "2026-11-01T23:48:54.552Z",
-      "details_available": true
+      "fetched_at": "2026-11-01T23:57:52.348Z",
+      "details_source_url": null,
+      "details_checked_at": null,
+      "details_available": false
     },
     {
       "id": "401873033",
       "name": "Kansas City Chiefs at Denver Broncos",
       "date": "2026-11-01T21:25Z",
       "status": {
-        "clock": 66,
-        "displayClock": "1:06",
-        "period": 3,
+        "clock": 816,
+        "displayClock": "13:36",
+        "period": 4,
         "type": {
           "id": "2",
           "name": "STATUS_IN_PROGRESS",
           "state": "in",
           "completed": false,
           "description": "In Progress",
-          "detail": "1:06 - 3rd Quarter",
-          "shortDetail": "1:06 - 3rd"
+          "detail": "13:36 - 4th Quarter",
+          "shortDetail": "13:36 - 4th"
         }
       },
       "boxscore": {
@@ -1534,13 +178,13 @@
                       "displayName": "Patrick Mahomes"
                     },
                     "stats": [
-                      "22/31",
+                      "22/32",
                       "254",
-                      "8.2",
+                      "7.9",
                       "3",
                       "0",
                       "0-0",
-                      "127.6"
+                      "123.7"
                     ]
                   }
                 ]
@@ -1560,9 +204,9 @@
                       "displayName": "Kenneth Walker III"
                     },
                     "stats": [
-                      "10",
-                      "31",
-                      "3.1",
+                      "13",
+                      "41",
+                      "3.2",
                       "0",
                       "10"
                     ]
@@ -1584,11 +228,11 @@
                       "displayName": "Patrick Mahomes"
                     },
                     "stats": [
-                      "1",
                       "2",
-                      "2.0",
+                      "6",
+                      "3.0",
                       "0",
-                      "2"
+                      "4"
                     ]
                   }
                 ]
@@ -1640,7 +284,7 @@
                       "8.8",
                       "0",
                       "15",
-                      "5"
+                      "6"
                     ]
                   },
                   {
@@ -2080,9 +724,9 @@
                     },
                     "stats": [
                       "3",
-                      "9",
-                      "3.0",
-                      "9",
+                      "19",
+                      "6.3",
+                      "10",
                       "0"
                     ]
                   }
@@ -2438,10 +1082,24 @@
                       "displayName": "Pat Surtain II"
                     },
                     "stats": [
-                      "4",
-                      "4",
+                      "6",
+                      "5",
                       "0",
                       "0",
+                      "1",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Devon Key"
+                    },
+                    "stats": [
+                      "5",
+                      "2",
+                      "0",
+                      "1",
                       "1",
                       "0",
                       "0"
@@ -2471,20 +1129,6 @@
                       "0",
                       "0",
                       "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Devon Key"
-                    },
-                    "stats": [
-                      "3",
-                      "2",
-                      "0",
-                      "1",
-                      "1",
                       "0",
                       "0"
                     ]
@@ -2542,6 +1186,20 @@
                       "0",
                       "0",
                       "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Eyioma Uwazurike"
+                    },
+                    "stats": [
+                      "2",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "1",
                       "0"
                     ]
                   },
@@ -2626,20 +1284,6 @@
                       "0",
                       "1",
                       "3",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Eyioma Uwazurike"
-                    },
-                    "stats": [
-                      "1",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "1",
                       "0"
                     ]
                   },
@@ -2829,17 +1473,17 @@
           "id": "401873033",
           "date": "2026-11-01T21:25Z",
           "status": {
-            "clock": 66,
-            "displayClock": "1:06",
-            "period": 3,
+            "clock": 816,
+            "displayClock": "13:36",
+            "period": 4,
             "type": {
               "id": "2",
               "name": "STATUS_IN_PROGRESS",
               "state": "in",
               "completed": false,
               "description": "In Progress",
-              "detail": "1:06 - 3rd Quarter",
-              "shortDetail": "1:06 - 3rd"
+              "detail": "13:36 - 4th Quarter",
+              "shortDetail": "13:36 - 4th"
             },
             "isTBDFlex": false
           },
@@ -2863,6 +1507,11 @@
                   "value": 0,
                   "displayValue": "0",
                   "period": 3
+                },
+                {
+                  "value": 0,
+                  "displayValue": "0",
+                  "period": 4
                 }
               ],
               "team": {
@@ -2893,6 +1542,11 @@
                   "value": 7,
                   "displayValue": "7",
                   "period": 3
+                },
+                {
+                  "value": 0,
+                  "displayValue": "0",
+                  "period": 4
                 }
               ],
               "team": {
@@ -2982,9 +1636,9 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261101&limit=1000",
-      "fetched_at": "2026-11-01T23:48:54.552Z",
+      "fetched_at": "2026-11-01T23:57:52.348Z",
       "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873033",
-      "details_checked_at": "2026-11-01T23:48:54.552Z",
+      "details_checked_at": "2026-11-01T23:57:52.348Z",
       "details_available": true
     },
     {
@@ -2992,8 +1646,8 @@
       "name": "New England Patriots at Miami Dolphins",
       "date": "2026-11-01T21:25Z",
       "status": {
-        "clock": 900,
-        "displayClock": "15:00",
+        "clock": 713,
+        "displayClock": "11:53",
         "period": 4,
         "type": {
           "id": "2",
@@ -3001,8 +1655,8 @@
           "state": "in",
           "completed": false,
           "description": "In Progress",
-          "detail": "15:00 - 4th Quarter",
-          "shortDetail": "15:00 - 4th"
+          "detail": "11:53 - 4th Quarter",
+          "shortDetail": "11:53 - 4th"
         }
       },
       "boxscore": {
@@ -3030,13 +1684,13 @@
                       "displayName": "Drake Maye"
                     },
                     "stats": [
-                      "14/17",
-                      "149",
-                      "8.8",
-                      "1",
+                      "15/18",
+                      "197",
+                      "10.9",
+                      "2",
                       "0",
                       "3-17",
-                      "122.8"
+                      "149.3"
                     ]
                   }
                 ]
@@ -3056,9 +1710,9 @@
                       "displayName": "Rhamondre Stevenson"
                     },
                     "stats": [
-                      "16",
-                      "69",
-                      "4.3",
+                      "17",
+                      "74",
+                      "4.4",
                       "0",
                       "9"
                     ]
@@ -3114,6 +1768,19 @@
                 "athletes": [
                   {
                     "athlete": {
+                      "displayName": "DeMario Douglas"
+                    },
+                    "stats": [
+                      "3",
+                      "76",
+                      "25.3",
+                      "1",
+                      "48",
+                      "3"
+                    ]
+                  },
+                  {
+                    "athlete": {
                       "displayName": "Kyle Williams"
                     },
                     "stats": [
@@ -3149,19 +1816,6 @@
                       "0",
                       "20",
                       "3"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "DeMario Douglas"
-                    },
-                    "stats": [
-                      "2",
-                      "28",
-                      "14.0",
-                      "0",
-                      "26",
-                      "2"
                     ]
                   },
                   {
@@ -3263,10 +1917,10 @@
                       "displayName": "Christian Elliss"
                     },
                     "stats": [
-                      "6",
-                      "2",
+                      "7",
+                      "3",
                       "0.5",
-                      "1",
+                      "2",
                       "0",
                       "1",
                       "0"
@@ -3323,7 +1977,7 @@
                       "2",
                       "0",
                       "0",
-                      "0",
+                      "1",
                       "0",
                       "0"
                     ]
@@ -3359,6 +2013,34 @@
                   {
                     "athlete": {
                       "displayName": "Dre'Mont Jones"
+                    },
+                    "stats": [
+                      "3",
+                      "1",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Charles Woods"
+                    },
+                    "stats": [
+                      "2",
+                      "1",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Leonard Taylor III"
                     },
                     "stats": [
                       "2",
@@ -3442,20 +2124,6 @@
                   },
                   {
                     "athlete": {
-                      "displayName": "Leonard Taylor III"
-                    },
-                    "stats": [
-                      "1",
-                      "1",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
                       "displayName": "Andy Borregales"
                     },
                     "stats": [
@@ -3470,21 +2138,21 @@
                   },
                   {
                     "athlete": {
-                      "displayName": "Mike Brown"
+                      "displayName": "DaQuan Jones"
                     },
                     "stats": [
                       "1",
                       "0",
                       "0",
                       "0",
-                      "0",
+                      "1",
                       "0",
                       "0"
                     ]
                   },
                   {
                     "athlete": {
-                      "displayName": "Charles Woods"
+                      "displayName": "Mike Brown"
                     },
                     "stats": [
                       "1",
@@ -3547,7 +2215,18 @@
                   "interceptionYards",
                   "interceptionTouchdowns"
                 ],
-                "athletes": []
+                "athletes": [
+                  {
+                    "athlete": {
+                      "displayName": "Kevin Byard"
+                    },
+                    "stats": [
+                      "1",
+                      "0",
+                      "0"
+                    ]
+                  }
+                ]
               },
               {
                 "name": "kickReturns",
@@ -3602,8 +2281,8 @@
                       "1/2",
                       "50.0",
                       "34",
-                      "2/2",
-                      "5"
+                      "3/3",
+                      "6"
                     ]
                   }
                 ]
@@ -3659,13 +2338,13 @@
                       "displayName": "Malik Willis"
                     },
                     "stats": [
-                      "13/20",
+                      "13/21",
                       "117",
-                      "5.9",
+                      "5.6",
                       "1",
-                      "0",
+                      "1",
                       "5-16",
-                      "97.3"
+                      "72.9"
                     ]
                   }
                 ]
@@ -3685,9 +2364,9 @@
                       "displayName": "Ollie Gordon II"
                     },
                     "stats": [
-                      "13",
+                      "15",
                       "35",
-                      "2.7",
+                      "2.3",
                       "0",
                       "7"
                     ]
@@ -3740,7 +2419,7 @@
                       "12.0",
                       "0",
                       "18",
-                      "3"
+                      "4"
                     ]
                   },
                   {
@@ -3899,6 +2578,20 @@
                   },
                   {
                     "athlete": {
+                      "displayName": "Michael Taaffe"
+                    },
+                    "stats": [
+                      "5",
+                      "3",
+                      "0",
+                      "1",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
                       "displayName": "Josh Uche"
                     },
                     "stats": [
@@ -3913,6 +2606,20 @@
                   },
                   {
                     "athlete": {
+                      "displayName": "Chop Robinson"
+                    },
+                    "stats": [
+                      "4",
+                      "3",
+                      "2",
+                      "2",
+                      "0",
+                      "2",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
                       "displayName": "Jordan Phillips"
                     },
                     "stats": [
@@ -3922,34 +2629,6 @@
                       "0",
                       "0",
                       "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Michael Taaffe"
-                    },
-                    "stats": [
-                      "4",
-                      "3",
-                      "0",
-                      "1",
-                      "0",
-                      "0",
-                      "0"
-                    ]
-                  },
-                  {
-                    "athlete": {
-                      "displayName": "Chop Robinson"
-                    },
-                    "stats": [
-                      "3",
-                      "3",
-                      "2",
-                      "2",
-                      "0",
-                      "2",
                       "0"
                     ]
                   },
@@ -3974,6 +2653,20 @@
                     "stats": [
                       "3",
                       "2",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Chris Johnson"
+                    },
+                    "stats": [
+                      "3",
+                      "1",
                       "0",
                       "0",
                       "0",
@@ -4011,11 +2704,11 @@
                   },
                   {
                     "athlete": {
-                      "displayName": "Chris Johnson"
+                      "displayName": "Willie Gay Jr."
                     },
                     "stats": [
                       "2",
-                      "1",
+                      "0",
                       "0",
                       "0",
                       "0",
@@ -4025,11 +2718,11 @@
                   },
                   {
                     "athlete": {
-                      "displayName": "Willie Gay Jr."
+                      "displayName": "Malik Washington"
                     },
                     "stats": [
-                      "2",
-                      "0",
+                      "1",
+                      "1",
                       "0",
                       "0",
                       "0",
@@ -4105,9 +2798,9 @@
                       "displayName": "Jaylen Wright"
                     },
                     "stats": [
-                      "4",
-                      "116",
-                      "29.0",
+                      "5",
+                      "142",
+                      "28.4",
                       "43",
                       "0"
                     ]
@@ -4197,8 +2890,8 @@
           "id": "401873034",
           "date": "2026-11-01T21:25Z",
           "status": {
-            "clock": 900,
-            "displayClock": "15:00",
+            "clock": 713,
+            "displayClock": "11:53",
             "period": 4,
             "type": {
               "id": "2",
@@ -4206,8 +2899,8 @@
               "state": "in",
               "completed": false,
               "description": "In Progress",
-              "detail": "15:00 - 4th Quarter",
-              "shortDetail": "15:00 - 4th"
+              "detail": "11:53 - 4th Quarter",
+              "shortDetail": "11:53 - 4th"
             },
             "isTBDFlex": false
           },
@@ -4250,7 +2943,7 @@
             {
               "id": "17",
               "homeAway": "away",
-              "score": "17",
+              "score": "24",
               "linescores": [
                 {
                   "value": 3,
@@ -4268,8 +2961,8 @@
                   "period": 3
                 },
                 {
-                  "value": 0,
-                  "displayValue": "0",
+                  "value": 7,
+                  "displayValue": "7",
                   "period": 4
                 }
               ],
@@ -4360,9 +3053,9 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261101&limit=1000",
-      "fetched_at": "2026-11-01T23:48:54.552Z",
+      "fetched_at": "2026-11-01T23:57:52.348Z",
       "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873034",
-      "details_checked_at": "2026-11-01T23:48:54.552Z",
+      "details_checked_at": "2026-11-01T23:57:52.348Z",
       "details_available": true
     },
     {
@@ -4490,7 +3183,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261101&limit=1000",
-      "fetched_at": "2026-11-01T23:48:54.552Z",
+      "fetched_at": "2026-11-01T23:57:52.348Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -4632,7 +3325,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261101&limit=1000",
-      "fetched_at": "2026-11-01T23:48:54.552Z",
+      "fetched_at": "2026-11-01T23:57:52.348Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -4774,7 +3467,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261101&limit=1000",
-      "fetched_at": "2026-11-01T23:48:54.552Z",
+      "fetched_at": "2026-11-01T23:57:52.348Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -4904,7 +3597,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261101&limit=1000",
-      "fetched_at": "2026-11-01T23:48:54.552Z",
+      "fetched_at": "2026-11-01T23:57:52.348Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -5034,7 +3727,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261101&limit=1000",
-      "fetched_at": "2026-11-01T23:48:54.552Z",
+      "fetched_at": "2026-11-01T23:57:52.348Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -5164,7 +3857,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261101&limit=1000",
-      "fetched_at": "2026-11-01T23:48:54.552Z",
+      "fetched_at": "2026-11-01T23:57:52.348Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -5294,7 +3987,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261101&limit=1000",
-      "fetched_at": "2026-11-01T23:48:54.552Z",
+      "fetched_at": "2026-11-01T23:57:52.348Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -5424,7 +4117,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261101&limit=1000",
-      "fetched_at": "2026-11-01T23:48:54.552Z",
+      "fetched_at": "2026-11-01T23:57:52.348Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -5567,7 +4260,7 @@
       "probables": [],
       "book_lines": [
         {
-          "provider": "Draft Kings",
+          "provider": "DraftKings",
           "details": "WSH -6",
           "spread": -6,
           "total": 40.5
@@ -5581,9 +4274,9 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261101&limit=1000",
-      "fetched_at": "2026-11-01T23:48:54.552Z",
+      "fetched_at": "2026-11-01T23:57:52.348Z",
       "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873035",
-      "details_checked_at": "2026-11-01T23:48:54.552Z",
+      "details_checked_at": "2026-11-01T23:57:52.348Z",
       "details_available": true
     }
   ]
