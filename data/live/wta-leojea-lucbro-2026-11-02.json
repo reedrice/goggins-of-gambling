@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186711",
-  "fetched_at": "2026-11-02T16:00:54.838Z",
+  "fetched_at": "2026-11-02T16:11:44.566Z",
   "tennis": true,
   "tennis_match": {
    "id": "186711",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Mon, November 2nd at 11:05 AM EST",
-     "shortDetail": "11/2 - 11:05 AM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(1) Leolia Jeanjean (FRA) leads Lucia Bronzetti (ITA) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "b89e8ea6-ef2c-32e6-b209-74cd0a5d6f1c",
       "displayName": "Lucia Bronzetti",
@@ -87,9 +98,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "curatedRank": {
       "current": 1
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "d7309ed9-b61f-3624-8657-bb72feec433e",
       "displayName": "Leolia Jeanjean",
@@ -122,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1007,
    "type": {
     "id": "2",
@@ -138,10 +160,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Mon, November 2nd at 11:05 AM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Lucia Bronzetti",
@@ -159,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-02T16:00:54.740Z",
+ "updated": "2026-11-02T16:11:44.394Z",
  "open_taken_at": "2026-11-01T22:37:21.931Z",
  "thresholds": {
   "big": 10,
@@ -189,6 +211,72 @@
    "taken_at": "2026-11-02T04:30:54.193Z"
   },
   {
+   "market_id": "2073086",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Leolia Jeanjean cover 7.5 vs the Lucia Bronzetti in Leolia Jeanjean vs. Lucia Bronzetti?",
+   "sides": [
+    "Leolia Jeanjean +7.50 (Games)",
+    "Lucia Bronzetti -7.50 (Games)"
+   ],
+   "teams": [
+    "Leolia Jeanjean",
+    "Lucia Bronzetti"
+   ],
+   "player": null,
+   "mid": 86.5,
+   "yes_buy": 88,
+   "no_buy": 15,
+   "taken_at": "2026-11-02T16:11:44.394Z"
+  },
+  {
+   "market_id": "2073082",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Leolia Jeanjean cover 4.5 vs the Lucia Bronzetti in Leolia Jeanjean vs. Lucia Bronzetti?",
+   "sides": [
+    "Leolia Jeanjean +4.50 (Games)",
+    "Lucia Bronzetti -4.50 (Games)"
+   ],
+   "teams": [
+    "Leolia Jeanjean",
+    "Lucia Bronzetti"
+   ],
+   "player": null,
+   "mid": 80.5,
+   "yes_buy": 81,
+   "no_buy": 20,
+   "taken_at": "2026-11-02T16:11:44.394Z"
+  },
+  {
+   "market_id": "2073093",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Leolia Jeanjean vs. Lucia Bronzetti be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 69,
+   "yes_buy": 70,
+   "no_buy": 32,
+   "taken_at": "2026-11-02T16:11:44.394Z"
+  },
+  {
    "market_id": "2073090",
    "market": "Sets spread",
    "group": "game",
@@ -209,6 +297,50 @@
    "yes_buy": 72,
    "no_buy": 33,
    "taken_at": "2026-11-02T16:00:54.740Z"
+  },
+  {
+   "market_id": "2073078",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Leolia Jeanjean cover 1.5 vs the Lucia Bronzetti in Leolia Jeanjean vs. Lucia Bronzetti?",
+   "sides": [
+    "Leolia Jeanjean +1.50 (Games)",
+    "Lucia Bronzetti -1.50 (Games)"
+   ],
+   "teams": [
+    "Leolia Jeanjean",
+    "Lucia Bronzetti"
+   ],
+   "player": null,
+   "mid": 62.5,
+   "yes_buy": 63,
+   "no_buy": 38,
+   "taken_at": "2026-11-02T16:11:44.394Z"
+  },
+  {
+   "market_id": "2073095",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Leolia Jeanjean vs. Lucia Bronzetti be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 43.5,
+   "yes_buy": 45,
+   "no_buy": 58,
+   "taken_at": "2026-11-02T12:01:40.417Z"
   },
   {
    "market_id": "2073076",
@@ -233,6 +365,50 @@
    "taken_at": "2026-11-02T15:28:54.600Z"
   },
   {
+   "market_id": "2073080",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Leolia Jeanjean cover -4.5 vs the Lucia Bronzetti in Leolia Jeanjean vs. Lucia Bronzetti?",
+   "sides": [
+    "Leolia Jeanjean -4.50 (Games)",
+    "Lucia Bronzetti +4.50 (Games)"
+   ],
+   "teams": [
+    "Leolia Jeanjean",
+    "Lucia Bronzetti"
+   ],
+   "player": null,
+   "mid": 43.5,
+   "yes_buy": 44,
+   "no_buy": 57,
+   "taken_at": "2026-11-02T16:11:44.394Z"
+  },
+  {
+   "market_id": "2073099",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Leolia Jeanjean vs. Lucia Bronzetti be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 39.5,
+   "yes_buy": 40,
+   "no_buy": 61,
+   "taken_at": "2026-11-02T16:11:44.394Z"
+  },
+  {
    "market_id": "2073088",
    "market": "Sets spread",
    "group": "game",
@@ -255,29 +431,71 @@
    "taken_at": "2026-11-02T15:40:44.058Z"
   },
   {
-   "market_id": "2073095",
+   "market_id": "2073097",
    "market": "Games total",
    "group": "game",
    "mtype": "total",
    "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Leolia Jeanjean vs. Lucia Bronzetti be more than 22.5?",
+   "line": 27.5,
+   "question": "Will the total in Leolia Jeanjean vs. Lucia Bronzetti be more than 27.5?",
    "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
    ],
    "teams": [
     null,
     null
    ],
    "player": null,
-   "mid": 43.5,
-   "yes_buy": 45,
-   "no_buy": 58,
-   "taken_at": "2026-11-02T12:01:40.417Z"
+   "mid": 32.5,
+   "yes_buy": 33,
+   "no_buy": 68,
+   "taken_at": "2026-11-02T16:11:44.394Z"
+  },
+  {
+   "market_id": "2073084",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Leolia Jeanjean cover -7.5 vs the Lucia Bronzetti in Leolia Jeanjean vs. Lucia Bronzetti?",
+   "sides": [
+    "Leolia Jeanjean -7.50 (Games)",
+    "Lucia Bronzetti +7.50 (Games)"
+   ],
+   "teams": [
+    "Leolia Jeanjean",
+    "Lucia Bronzetti"
+   ],
+   "player": null,
+   "mid": 20.5,
+   "yes_buy": 22,
+   "no_buy": 81,
+   "taken_at": "2026-11-02T16:11:44.394Z"
   }
  ],
  "edges": [
+  {
+   "key": "2073095:1",
+   "market_id": "2073095",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Leolia Jeanjean vs. Lucia Bronzetti be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 58,
+   "now_chance": 44,
+   "open_odds": "-138",
+   "now_odds": "+127",
+   "edge": 14,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Lucia Bronzetti 0 · Leolia Jeanjean 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-02T16:11:44.394Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "2073076:1",
    "market_id": "2073076",
@@ -293,7 +511,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Lucia Bronzetti 0 · Leolia Jeanjean 0 · 1st Set (games by set)",
    "first_seen": "2026-11-02T16:00:54.740Z",
    "status": "open",
    "kalshi": null
@@ -306,20 +524,82 @@
    "question": "Who will win in the upcoming wta event Leolia Jeanjean vs Lucia Bronzetti scheduled for November 2, 2026 at 4:00 PM UTC?",
    "side": "Lucia Bronzetti win",
    "open_chance": 48,
-   "now_chance": 44,
+   "now_chance": 43,
    "open_odds": "+108",
-   "now_odds": "+127",
+   "now_odds": "+133",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Lucia Bronzetti 0 · Leolia Jeanjean 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-02T05:10:26.881Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2073090:0",
+   "market_id": "2073090",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Leolia Jeanjean cover 1.5 vs the Lucia Bronzetti in Leolia Jeanjean vs. Lucia Bronzetti?",
+   "side": "Leolia Jeanjean +1.50 (Sets)",
+   "open_chance": 72,
+   "now_chance": 68,
+   "open_odds": "-257",
+   "now_odds": "-213",
    "edge": 4,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-11-02T05:10:26.881Z",
-   "status": "gone",
+   "context": "Lucia Bronzetti 0 · Leolia Jeanjean 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-02T16:11:44.394Z",
+   "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2073095:1:big",
+   "key": "2073095:1",
+   "at": "2026-11-02T16:11:44.394Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+127",
+   "now_chance": 44,
+   "edge": 14,
+   "text": "New big edge: Under 22.5 (Games) (Games total), 14 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-leojea-lucbro-2026-11-02"
+  },
+  {
+   "id": "new_edge:2072594:1:slight",
+   "key": "2072594:1",
+   "at": "2026-11-02T16:11:44.394Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Lucia Bronzetti win",
+   "market": "Moneyline",
+   "now_odds": "+133",
+   "now_chance": 43,
+   "edge": 5,
+   "text": "New slight edge: Lucia Bronzetti win (Moneyline), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-leojea-lucbro-2026-11-02"
+  },
+  {
+   "id": "new_edge:2073090:0:slight",
+   "key": "2073090:0",
+   "at": "2026-11-02T16:11:44.394Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Leolia Jeanjean +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "-213",
+   "now_chance": 68,
+   "edge": 4,
+   "text": "New slight edge: Leolia Jeanjean +1.50 (Sets) (Sets spread), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-leojea-lucbro-2026-11-02"
+  },
   {
    "id": "new_edge:2073076:1:slight",
    "key": "2073076:1",
@@ -336,7 +616,10 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2073076:1:slight"
+  "new_edge:2073076:1:slight",
+  "new_edge:2073095:1:big",
+  "new_edge:2072594:1:slight",
+  "new_edge:2073090:0:slight"
  ],
  "kalshi_checked": null
 }
