@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186453",
-  "fetched_at": "2026-11-02T22:59:36.886Z",
+  "fetched_at": "2026-11-02T23:15:59.138Z",
   "tennis": true,
   "tennis_match": {
    "id": "186453",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "detail": "3rd Set",
+     "shortDetail": "3rd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Ugo Humbert (FRA) is tied with Botic Van De Zandschulp (NED) 7-6 (7-5) 6-6 (8-9)",
+     "text": "Ugo Humbert (FRA) leads Botic Van De Zandschulp (NED) 7-6 (7-5) 6-7 (9-11) 1-1",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 6,
@@ -62,8 +63,12 @@
        "winner": false
       },
       {
-       "value": 6,
-       "tiebreak": 9
+       "value": 7,
+       "tiebreak": 11,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -103,6 +108,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 7,
@@ -111,7 +117,11 @@
       },
       {
        "value": 6,
-       "tiebreak": 8
+       "tiebreak": 9,
+       "winner": false
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -146,6 +156,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 13,
    "type": {
     "id": "1",
@@ -164,14 +179,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "period": 3,
+  "clock": "3rd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Botic Van De Zandschulp",
    "alias": "Botic Van De Zandschulp",
    "name": "Botic Van De Zandschulp",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Ugo Humbert",
@@ -183,7 +198,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-02T22:59:36.778Z",
+ "updated": "2026-11-02T23:15:59.082Z",
  "open_taken_at": "2026-10-30T19:07:14.097Z",
  "thresholds": {
   "big": 10,
@@ -279,28 +294,6 @@
    "taken_at": "2026-11-02T01:49:29.447Z"
   },
   {
-   "market_id": "1983041",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Ugo Humbert win set 2 against Botic Van de Zandschulp?",
-   "sides": [
-    "Yes: Ugo Humbert win set 2 against Botic Van de Zandschulp",
-    "No: Ugo Humbert win set 2 against Botic Van de Zandschulp"
-   ],
-   "teams": [
-    "Ugo Humbert",
-    null
-   ],
-   "player": null,
-   "mid": 61.5,
-   "yes_buy": 62,
-   "no_buy": 39,
-   "taken_at": "2026-11-02T19:34:44.592Z"
-  },
-  {
    "market_id": "1983025",
    "market": "Games spread",
    "group": "game",
@@ -320,6 +313,28 @@
    "mid": 24.5,
    "yes_buy": 25,
    "no_buy": 76,
+   "taken_at": "2026-11-02T19:34:44.592Z"
+  },
+  {
+   "market_id": "1983041",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Ugo Humbert win set 2 against Botic Van de Zandschulp?",
+   "sides": [
+    "Yes: Ugo Humbert win set 2 against Botic Van de Zandschulp",
+    "No: Ugo Humbert win set 2 against Botic Van de Zandschulp"
+   ],
+   "teams": [
+    "Ugo Humbert",
+    null
+   ],
+   "player": null,
+   "mid": 61.5,
+   "yes_buy": 62,
+   "no_buy": 39,
    "taken_at": "2026-11-02T19:34:44.592Z"
   },
   {
@@ -523,26 +538,6 @@
  ],
  "edges": [
   {
-   "key": "1983023:1",
-   "market_id": "1983023",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Ugo Humbert cover -1.5 vs the Botic Van de Zandschulp in Ugo Humbert vs. Botic Van de Zandschulp?",
-   "side": "Botic van de Zandschulp +1.50 (Games)",
-   "open_chance": 49,
-   "now_chance": 22,
-   "open_odds": "+104",
-   "now_odds": "+355",
-   "edge": 27,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (27 pts), likely news",
-   "context": "Botic Van De Zandschulp 6, 6 · Ugo Humbert 7, 6 · 2nd Set (games by set)",
-   "first_seen": "2026-11-02T16:46:59.516Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "1982191:1",
    "market_id": "1982191",
    "market": "Moneyline",
@@ -550,14 +545,14 @@
    "question": "Who will win in the upcoming atp event Ugo Humbert vs Botic Van de Zandschulp scheduled for October 31, 2026 at 9:00 AM UTC?",
    "side": "Botic van de Zandschulp win",
    "open_chance": 41,
-   "now_chance": 19,
+   "now_chance": 35,
    "open_odds": "+144",
-   "now_odds": "+426",
-   "edge": 22,
-   "tier": "big",
+   "now_odds": "+186",
+   "edge": 6,
+   "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Botic Van De Zandschulp 6, 6 · Ugo Humbert 7, 6 · 2nd Set (games by set)",
+   "context": "Botic Van De Zandschulp 6, 7, 1 · Ugo Humbert 7, 6, 1 · 3rd Set (games by set)",
    "first_seen": "2026-11-02T22:24:51.134Z",
    "status": "open",
    "kalshi": null
@@ -570,35 +565,35 @@
    "question": "Will the Ugo Humbert cover 1.5 vs the Botic Van de Zandschulp in Ugo Humbert vs. Botic Van de Zandschulp?",
    "side": "Botic van de Zandschulp -1.50 (Games)",
    "open_chance": 35,
-   "now_chance": 17,
+   "now_chance": 29,
    "open_odds": "+186",
-   "now_odds": "+488",
-   "edge": 18,
-   "tier": "big",
+   "now_odds": "+245",
+   "edge": 6,
+   "tier": "slight",
    "class": "score",
    "reason": "Explained by score: Botic Van De Zandschulp not above the games spread right now",
-   "context": "Botic Van De Zandschulp 6, 6 · Ugo Humbert 7, 6 · 2nd Set (games by set)",
+   "context": "Botic Van De Zandschulp 6, 7, 1 · Ugo Humbert 7, 6, 1 · 3rd Set (games by set)",
    "first_seen": "2026-11-02T22:59:36.778Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1983041:0",
-   "market_id": "1983041",
-   "market": "Set 2 winner",
+   "key": "1983023:1",
+   "market_id": "1983023",
+   "market": "Games spread",
    "group": "game",
-   "question": "Will Ugo Humbert win set 2 against Botic Van de Zandschulp?",
-   "side": "Yes: Ugo Humbert win set 2 against Botic Van de Zandschulp",
-   "open_chance": 62,
-   "now_chance": 56,
-   "open_odds": "-163",
-   "now_odds": "-127",
-   "edge": 6,
+   "question": "Will the Ugo Humbert cover -1.5 vs the Botic Van de Zandschulp in Ugo Humbert vs. Botic Van de Zandschulp?",
+   "side": "Botic van de Zandschulp +1.50 (Games)",
+   "open_chance": 49,
+   "now_chance": 45,
+   "open_odds": "+104",
+   "now_odds": "+122",
+   "edge": 4,
    "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Ugo Humbert not above the games spread right now",
-   "context": "Botic Van De Zandschulp 6, 6 · Ugo Humbert 7, 6 · 2nd Set (games by set)",
-   "first_seen": "2026-11-02T21:49:18.088Z",
+   "class": "edge",
+   "reason": null,
+   "context": "Botic Van De Zandschulp 6, 7, 1 · Ugo Humbert 7, 6, 1 · 3rd Set (games by set)",
+   "first_seen": "2026-11-02T16:46:59.516Z",
    "status": "open",
    "kalshi": null
   },
@@ -679,6 +674,26 @@
    "reason": "Explained by score: Ugo Humbert not above the games spread right now",
    "context": "Botic Van De Zandschulp 5 · Ugo Humbert 5 · 1st Set (games by set)",
    "first_seen": "2026-11-02T02:29:22.652Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1983041:0",
+   "market_id": "1983041",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Ugo Humbert win set 2 against Botic Van de Zandschulp?",
+   "side": "Yes: Ugo Humbert win set 2 against Botic Van de Zandschulp",
+   "open_chance": 62,
+   "now_chance": 56,
+   "open_odds": "-163",
+   "now_odds": "-127",
+   "edge": 6,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Ugo Humbert not above the games spread right now",
+   "context": "Botic Van De Zandschulp 6, 6 · Ugo Humbert 7, 6 · 2nd Set (games by set)",
+   "first_seen": "2026-11-02T21:49:18.088Z",
    "status": "gone",
    "kalshi": null
   }

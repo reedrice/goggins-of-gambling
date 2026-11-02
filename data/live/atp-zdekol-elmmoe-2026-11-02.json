@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-02T22:59:47.100Z"
+  "fetched_at": "2026-11-02T23:16:07.816Z"
  },
- "updated": "2026-11-02T22:59:46.965Z",
+ "updated": "2026-11-02T23:16:07.770Z",
  "open_taken_at": "2026-11-01T05:07:48.935Z",
  "thresholds": {
   "big": 10,
@@ -85,6 +85,28 @@
    "taken_at": "2026-11-02T22:59:46.965Z"
   },
   {
+   "market_id": "2028491",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Zdenek Kolar vs. Elmer Moller be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 27.5,
+   "yes_buy": 28,
+   "no_buy": 73,
+   "taken_at": "2026-11-02T22:59:46.965Z"
+  },
+  {
    "market_id": "2028482",
    "market": "Games spread",
    "group": "game",
@@ -149,28 +171,6 @@
    "yes_buy": 29,
    "no_buy": 72,
    "taken_at": "2026-11-02T22:59:46.965Z"
-  },
-  {
-   "market_id": "2028491",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Zdenek Kolar vs. Elmer Moller be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 27.5,
-   "yes_buy": 28,
-   "no_buy": 73,
-   "taken_at": "2026-11-02T22:59:46.965Z"
   }
  ],
  "edges": [
@@ -182,11 +182,11 @@
    "question": "Who will win in the upcoming atp event Zdenek Kolar vs Elmer Moller scheduled for November 2, 2026 at 7:00 PM UTC?",
    "side": "Elmer Moeller win",
    "open_chance": 74,
-   "now_chance": 69,
+   "now_chance": 63,
    "open_odds": "-285",
-   "now_odds": "-223",
-   "edge": 5,
-   "tier": "slight",
+   "now_odds": "-170",
+   "edge": 11,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -196,6 +196,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2024071:1:big",
+   "key": "2024071:1",
+   "at": "2026-11-02T23:16:07.770Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Elmer Moeller win",
+   "market": "Moneyline",
+   "now_odds": "-170",
+   "now_chance": 63,
+   "edge": 11,
+   "text": "New big edge: Elmer Moeller win (Moneyline), 11 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-zdekol-elmmoe-2026-11-02"
+  },
   {
    "id": "new_edge:2024071:1:slight",
    "key": "2024071:1",
@@ -212,7 +226,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2024071:1:slight"
+  "new_edge:2024071:1:slight",
+  "new_edge:2024071:1:big"
  ],
  "kalshi_checked": null
 }
