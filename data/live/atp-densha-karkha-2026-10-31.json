@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186466",
-  "fetched_at": "2026-11-02T19:23:37.007Z",
+  "fetched_at": "2026-11-02T19:34:45.020Z",
   "tennis": true,
   "tennis_match": {
    "id": "186466",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Denis Shapovalov (CAN) is tied with Karen Khachanov (RUS) 3-6 3-2",
+     "text": "Karen Khachanov (RUS) leads Denis Shapovalov (CAN) 6-3 4-3",
      "type": "event"
     }
    ],
@@ -62,7 +62,7 @@
        "winner": true
       },
       {
-       "value": 2
+       "value": 4
       }
      ],
      "athlete": {
@@ -186,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-02T19:23:36.920Z",
+ "updated": "2026-11-02T19:34:44.957Z",
  "open_taken_at": "2026-10-30T19:07:14.369Z",
  "thresholds": {
   "big": 10,
@@ -216,6 +216,28 @@
    "taken_at": "2026-10-31T14:49:03.038Z"
   },
   {
+   "market_id": "1983081",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Denis Shapovalov cover 4.5 vs the Karen Khachanov in Denis Shapovalov vs. Karen Khachanov?",
+   "sides": [
+    "Denis Shapovalov +4.50 (Games)",
+    "Karen Khachanov -4.50 (Games)"
+   ],
+   "teams": [
+    "Denis Shapovalov",
+    "Karen Khachanov"
+   ],
+   "player": null,
+   "mid": 69.5,
+   "yes_buy": 70,
+   "no_buy": 31,
+   "taken_at": "2026-11-02T18:30:36.298Z"
+  },
+  {
    "market_id": "1983095",
    "market": "Set 2 winner",
    "group": "game",
@@ -238,26 +260,26 @@
    "taken_at": "2026-11-02T18:30:36.298Z"
   },
   {
-   "market_id": "1983081",
-   "market": "Games spread",
+   "market_id": "1983087",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Denis Shapovalov cover 4.5 vs the Karen Khachanov in Denis Shapovalov vs. Karen Khachanov?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Denis Shapovalov vs. Karen Khachanov be more than 22.5?",
    "sides": [
-    "Denis Shapovalov +4.50 (Games)",
-    "Karen Khachanov -4.50 (Games)"
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
    ],
    "teams": [
-    "Denis Shapovalov",
-    "Karen Khachanov"
+    null,
+    null
    ],
    "player": null,
-   "mid": 69.5,
-   "yes_buy": 70,
-   "no_buy": 31,
-   "taken_at": "2026-11-02T18:30:36.298Z"
+   "mid": 54,
+   "yes_buy": 57,
+   "no_buy": 49,
+   "taken_at": "2026-10-31T14:49:03.038Z"
   },
   {
    "market_id": "1983088",
@@ -346,28 +368,6 @@
    "yes_buy": 25,
    "no_buy": 76,
    "taken_at": "2026-11-02T18:30:36.298Z"
-  },
-  {
-   "market_id": "1983087",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Denis Shapovalov vs. Karen Khachanov be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 54,
-   "yes_buy": 57,
-   "no_buy": 49,
-   "taken_at": "2026-10-31T14:49:03.038Z"
   },
   {
    "market_id": "1983083",
@@ -526,6 +526,86 @@
  ],
  "edges": [
   {
+   "key": "1983087:0",
+   "market_id": "1983087",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Denis Shapovalov vs. Karen Khachanov be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 57,
+   "now_chance": 29,
+   "open_odds": "-133",
+   "now_odds": "+245",
+   "edge": 28,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (28 pts), likely news",
+   "context": "Karen Khachanov 6, 4 · Denis Shapovalov 3, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-11-02T18:42:23.462Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1983081:0",
+   "market_id": "1983081",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Denis Shapovalov cover 4.5 vs the Karen Khachanov in Denis Shapovalov vs. Karen Khachanov?",
+   "side": "Denis Shapovalov +4.50 (Games)",
+   "open_chance": 70,
+   "now_chance": 53,
+   "open_odds": "-233",
+   "now_odds": "-113",
+   "edge": 17,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Karen Khachanov 6, 4 · Denis Shapovalov 3, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-11-02T18:42:23.462Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1983095:0",
+   "market_id": "1983095",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Denis Shapovalov win set 2 against Karen Khachanov?",
+   "side": "Yes: Denis Shapovalov win set 2 against Karen Khachanov",
+   "open_chance": 40,
+   "now_chance": 30,
+   "open_odds": "+150",
+   "now_odds": "+233",
+   "edge": 10,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Denis Shapovalov not above the games spread right now",
+   "context": "Karen Khachanov 6, 4 · Denis Shapovalov 3, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-11-02T18:42:23.462Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1983088:0",
+   "market_id": "1983088",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Denis Shapovalov vs. Karen Khachanov be more than 27.5?",
+   "side": "Over 27.5 (Games)",
+   "open_chance": 36,
+   "now_chance": 28,
+   "open_odds": "+178",
+   "now_odds": "+257",
+   "edge": 8,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Karen Khachanov 6, 4 · Denis Shapovalov 3, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-11-02T18:42:23.462Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1983095:1",
    "market_id": "1983095",
    "market": "Set 2 winner",
@@ -542,67 +622,7 @@
    "reason": "Big move (32 pts), likely news",
    "context": "Karen Khachanov 6, 2 · Denis Shapovalov 3, 3 · 2nd Set (games by set)",
    "first_seen": "2026-11-02T19:04:39.432Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1983088:1",
-   "market_id": "1983088",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Denis Shapovalov vs. Karen Khachanov be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 67,
-   "now_chance": 47,
-   "open_odds": "-203",
-   "now_odds": "+113",
-   "edge": 20,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Karen Khachanov 6, 2 · Denis Shapovalov 3, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-11-02T19:04:39.432Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1983079:0",
-   "market_id": "1983079",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Denis Shapovalov cover 1.5 vs the Karen Khachanov in Denis Shapovalov vs. Karen Khachanov?",
-   "side": "Denis Shapovalov +1.50 (Games)",
-   "open_chance": 48,
-   "now_chance": 39,
-   "open_odds": "+108",
-   "now_odds": "+156",
-   "edge": 9,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Denis Shapovalov not above the games spread right now",
-   "context": "Karen Khachanov 6, 2 · Denis Shapovalov 3, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-11-02T18:30:36.298Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1982198:0",
-   "market_id": "1982198",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Denis Shapovalov vs Karen Khachanov scheduled for October 31, 2026 at 9:00 AM UTC?",
-   "side": "Denis Shapovalov win",
-   "open_chance": 39,
-   "now_chance": 34,
-   "open_odds": "+156",
-   "now_odds": "+194",
-   "edge": 5,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Denis Shapovalov trailing in sets",
-   "context": "Karen Khachanov 6, 2 · Denis Shapovalov 3, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-11-02T18:30:36.298Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -626,6 +646,26 @@
    "kalshi": null
   },
   {
+   "key": "1983088:1",
+   "market_id": "1983088",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Denis Shapovalov vs. Karen Khachanov be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 67,
+   "now_chance": 47,
+   "open_odds": "-203",
+   "now_odds": "+113",
+   "edge": 20,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Karen Khachanov 6, 2 · Denis Shapovalov 3, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-11-02T19:04:39.432Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "1983085:0",
    "market_id": "1983085",
    "market": "Sets spread",
@@ -638,26 +678,6 @@
    "now_odds": "+127",
    "edge": 17,
    "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Karen Khachanov 4 · Denis Shapovalov 3 · 1st Set (games by set)",
-   "first_seen": "2026-11-02T18:42:23.462Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1983087:0",
-   "market_id": "1983087",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Denis Shapovalov vs. Karen Khachanov be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 57,
-   "now_chance": 48,
-   "open_odds": "-133",
-   "now_odds": "+108",
-   "edge": 9,
-   "tier": "slight",
    "class": "edge",
    "reason": null,
    "context": "Karen Khachanov 4 · Denis Shapovalov 3 · 1st Set (games by set)",
@@ -684,69 +704,37 @@
    "first_seen": "2026-11-02T18:42:23.462Z",
    "status": "gone",
    "kalshi": null
-  },
-  {
-   "key": "1983088:0",
-   "market_id": "1983088",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Denis Shapovalov vs. Karen Khachanov be more than 27.5?",
-   "side": "Over 27.5 (Games)",
-   "open_chance": 36,
-   "now_chance": 30,
-   "open_odds": "+178",
-   "now_odds": "+233",
-   "edge": 6,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Karen Khachanov 3 · Denis Shapovalov 2 · 1st Set (games by set)",
-   "first_seen": "2026-11-02T18:42:23.462Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1983081:0",
-   "market_id": "1983081",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Denis Shapovalov cover 4.5 vs the Karen Khachanov in Denis Shapovalov vs. Karen Khachanov?",
-   "side": "Denis Shapovalov +4.50 (Games)",
-   "open_chance": 70,
-   "now_chance": 65,
-   "open_odds": "-233",
-   "now_odds": "-186",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Karen Khachanov 6, 0 · Denis Shapovalov 3, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-11-02T18:42:23.462Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "1983095:0",
-   "market_id": "1983095",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Denis Shapovalov win set 2 against Karen Khachanov?",
-   "side": "Yes: Denis Shapovalov win set 2 against Karen Khachanov",
-   "open_chance": 40,
-   "now_chance": 36,
-   "open_odds": "+150",
-   "now_odds": "+178",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Karen Khachanov 3 · Denis Shapovalov 2 · 1st Set (games by set)",
-   "first_seen": "2026-11-02T18:42:23.462Z",
-   "status": "gone",
-   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "news:1983087:0",
+   "key": "1983087:0",
+   "at": "2026-11-02T19:34:44.957Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+245",
+   "now_chance": 29,
+   "edge": 28,
+   "text": "Big move, likely news: Over 22.5 (Games) (Games total) is 28 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-densha-karkha-2026-10-31"
+  },
+  {
+   "id": "gone:1983088:1:2026-11-02T19:04:39.432Z",
+   "key": "1983088:1",
+   "at": "2026-11-02T19:34:44.957Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+113",
+   "now_chance": 47,
+   "edge": 20,
+   "text": "Edge gone: Under 27.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-densha-karkha-2026-10-31"
+  },
   {
    "id": "news:1983087:1",
    "key": "1983087:1",
@@ -832,20 +820,6 @@
    "url": "https://polymarket.us/sports/atp/atp-densha-karkha-2026-10-31"
   },
   {
-   "id": "gone:1982198:0:2026-11-02T18:30:36.298Z",
-   "key": "1982198:0",
-   "at": "2026-11-02T19:04:39.432Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Denis Shapovalov win",
-   "market": "Moneyline",
-   "now_odds": "+376",
-   "now_chance": 21,
-   "edge": 18,
-   "text": "Edge gone: Denis Shapovalov win (Moneyline) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-densha-karkha-2026-10-31"
-  },
-  {
    "id": "gone:1983085:0:2026-11-02T18:42:23.462Z",
    "key": "1983085:0",
    "at": "2026-11-02T19:04:39.432Z",
@@ -885,20 +859,6 @@
    "now_chance": 37,
    "edge": 8,
    "text": "Edge gone: Over 2.5 (Sets) (Sets total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-densha-karkha-2026-10-31"
-  },
-  {
-   "id": "news:1983079:0",
-   "key": "1983079:0",
-   "at": "2026-11-02T18:53:22.137Z",
-   "type": "news",
-   "tier": "big",
-   "side": "Denis Shapovalov +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+335",
-   "now_chance": 23,
-   "edge": 25,
-   "text": "Big move, likely news: Denis Shapovalov +1.50 (Games) (Games spread) is 25 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-densha-karkha-2026-10-31"
   },
   {
@@ -955,34 +915,6 @@
    "now_chance": 38,
    "edge": 23,
    "text": "New big edge: Denis Shapovalov +1.50 (Sets) (Sets spread), 23 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-densha-karkha-2026-10-31"
-  },
-  {
-   "id": "new_edge:1983079:0:big",
-   "key": "1983079:0",
-   "at": "2026-11-02T18:42:23.462Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Denis Shapovalov +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+300",
-   "now_chance": 25,
-   "edge": 23,
-   "text": "New big edge: Denis Shapovalov +1.50 (Games) (Games spread), 23 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-densha-karkha-2026-10-31"
-  },
-  {
-   "id": "new_edge:1982198:0:big",
-   "key": "1982198:0",
-   "at": "2026-11-02T18:42:23.462Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Denis Shapovalov win",
-   "market": "Moneyline",
-   "now_odds": "+376",
-   "now_chance": 21,
-   "edge": 18,
-   "text": "New big edge: Denis Shapovalov win (Moneyline), 18 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-densha-karkha-2026-10-31"
   },
   {
@@ -1070,34 +1002,6 @@
    "url": "https://polymarket.us/sports/atp/atp-densha-karkha-2026-10-31"
   },
   {
-   "id": "new_edge:1983079:0:slight",
-   "key": "1983079:0",
-   "at": "2026-11-02T18:30:36.298Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Denis Shapovalov +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+150",
-   "now_chance": 40,
-   "edge": 8,
-   "text": "New slight edge: Denis Shapovalov +1.50 (Games) (Games spread), 8 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-densha-karkha-2026-10-31"
-  },
-  {
-   "id": "new_edge:1982198:0:slight",
-   "key": "1982198:0",
-   "at": "2026-11-02T18:30:36.298Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Denis Shapovalov win",
-   "market": "Moneyline",
-   "now_odds": "+213",
-   "now_chance": 32,
-   "edge": 7,
-   "text": "New slight edge: Denis Shapovalov win (Moneyline), 7 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-densha-karkha-2026-10-31"
-  },
-  {
    "id": "new_edge:1983087:1:slight",
    "key": "1983087:1",
    "at": "2026-11-02T18:30:36.298Z",
@@ -1138,7 +1042,9 @@
   "gone:1983089:0:2026-11-02T18:42:23.462Z",
   "news:1983087:1",
   "new_edge:1983088:1:big",
-  "gone:1983081:0:2026-11-02T18:42:23.462Z"
+  "gone:1983081:0:2026-11-02T18:42:23.462Z",
+  "news:1983087:0",
+  "gone:1983088:1:2026-11-02T19:04:39.432Z"
  ],
  "kalshi_checked": null
 }
