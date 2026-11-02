@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-02T21:15:34.515Z"
+  "fetched_at": "2026-11-02T21:26:43.772Z"
  },
- "updated": "2026-11-02T21:15:34.450Z",
+ "updated": "2026-11-02T21:26:43.681Z",
  "open_taken_at": "2026-11-01T05:07:52.448Z",
  "thresholds": {
   "big": 10,
@@ -39,28 +39,6 @@
    "yes_buy": 49,
    "no_buy": 57,
    "taken_at": "2026-11-02T07:22:45.859Z"
-  },
-  {
-   "market_id": "2030629",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Nicolas Mejia vs. Murphy Cassone be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 83.5,
-   "yes_buy": 85,
-   "no_buy": 18,
-   "taken_at": "2026-11-02T20:50:51.903Z"
   },
   {
    "market_id": "2030620",
@@ -105,6 +83,28 @@
    "yes_buy": 50,
    "no_buy": 55,
    "taken_at": "2026-11-02T09:45:01.006Z"
+  },
+  {
+   "market_id": "2030646",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Nicolas Mejia win set 1 against Murphy Cassone?",
+   "sides": [
+    "Yes: Nicolas Mejia win set 1 against Murphy Cassone",
+    "No: Nicolas Mejia win set 1 against Murphy Cassone"
+   ],
+   "teams": [
+    "Nicolas Mejia",
+    null
+   ],
+   "player": null,
+   "mid": 38,
+   "yes_buy": 39,
+   "no_buy": 63,
+   "taken_at": "2026-11-02T20:39:34.661Z"
   },
   {
    "market_id": "2030616",
@@ -195,28 +195,6 @@
    "taken_at": "2026-11-02T20:17:06.839Z"
   },
   {
-   "market_id": "2030646",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Nicolas Mejia win set 1 against Murphy Cassone?",
-   "sides": [
-    "Yes: Nicolas Mejia win set 1 against Murphy Cassone",
-    "No: Nicolas Mejia win set 1 against Murphy Cassone"
-   ],
-   "teams": [
-    "Nicolas Mejia",
-    null
-   ],
-   "player": null,
-   "mid": 38,
-   "yes_buy": 39,
-   "no_buy": 63,
-   "taken_at": "2026-11-02T20:39:34.661Z"
-  },
-  {
    "market_id": "2030618",
    "market": "Games spread",
    "group": "game",
@@ -237,6 +215,28 @@
    "yes_buy": 24,
    "no_buy": 77,
    "taken_at": "2026-11-02T20:17:06.839Z"
+  },
+  {
+   "market_id": "2030629",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Nicolas Mejia vs. Murphy Cassone be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 83.5,
+   "yes_buy": 85,
+   "no_buy": 18,
+   "taken_at": "2026-11-02T20:50:51.903Z"
   },
   {
    "market_id": "2030648",
@@ -329,22 +329,42 @@
  ],
  "edges": [
   {
-   "key": "2028154:0",
-   "market_id": "2028154",
-   "market": "Moneyline",
+   "key": "2030631:1",
+   "market_id": "2030631",
+   "market": "Games total",
    "group": "game",
-   "question": "Who will win in the upcoming atp event Nicolas Mejia vs Murphy Cassone scheduled for November 2, 2026 at 3:00 PM UTC?",
-   "side": "Nicolas Mejia win",
-   "open_chance": 49,
-   "now_chance": 19,
-   "open_odds": "+104",
-   "now_odds": "+426",
-   "edge": 30,
+   "question": "Will the total in Nicolas Mejia vs. Murphy Cassone be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 55,
+   "now_chance": 32,
+   "open_odds": "-122",
+   "now_odds": "+213",
+   "edge": 23,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-02T09:45:01.006Z",
+   "first_seen": "2026-11-02T17:29:31.024Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2030646:1",
+   "market_id": "2030646",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Nicolas Mejia win set 1 against Murphy Cassone?",
+   "side": "No: Nicolas Mejia win set 1 against Murphy Cassone",
+   "open_chance": 63,
+   "now_chance": 40,
+   "open_odds": "-170",
+   "now_odds": "+150",
+   "edge": 23,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-02T21:26:43.681Z",
    "status": "open",
    "kalshi": null
   },
@@ -389,27 +409,103 @@
    "kalshi": null
   },
   {
-   "key": "2030631:1",
-   "market_id": "2030631",
-   "market": "Games total",
+   "key": "2028154:1",
+   "market_id": "2028154",
+   "market": "Moneyline",
    "group": "game",
-   "question": "Will the total in Nicolas Mejia vs. Murphy Cassone be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 55,
-   "now_chance": 50,
-   "open_odds": "-122",
-   "now_odds": "+100",
-   "edge": 5,
+   "question": "Who will win in the upcoming atp event Nicolas Mejia vs Murphy Cassone scheduled for November 2, 2026 at 3:00 PM UTC?",
+   "side": "Murphy Cassone win",
+   "open_chance": 57,
+   "now_chance": 51,
+   "open_odds": "-133",
+   "now_odds": "-104",
+   "edge": 6,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-02T17:29:31.024Z",
+   "first_seen": "2026-11-02T21:26:43.681Z",
    "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2028154:0",
+   "market_id": "2028154",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Nicolas Mejia vs Murphy Cassone scheduled for November 2, 2026 at 3:00 PM UTC?",
+   "side": "Nicolas Mejia win",
+   "open_chance": 49,
+   "now_chance": 19,
+   "open_odds": "+104",
+   "now_odds": "+426",
+   "edge": 30,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-02T09:45:01.006Z",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2030631:1:big",
+   "key": "2030631:1",
+   "at": "2026-11-02T21:26:43.681Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+213",
+   "now_chance": 32,
+   "edge": 23,
+   "text": "New big edge: Under 22.5 (Games) (Games total), 23 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-nicmej-murcas-2026-11-02"
+  },
+  {
+   "id": "new_edge:2030646:1:big",
+   "key": "2030646:1",
+   "at": "2026-11-02T21:26:43.681Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "No: Nicolas Mejia win set 1 against Murphy Cassone",
+   "market": "Set 1 winner",
+   "now_odds": "+150",
+   "now_chance": 40,
+   "edge": 23,
+   "text": "New big edge: No: Nicolas Mejia win set 1 against Murphy Cassone (Set 1 winner), 23 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-nicmej-murcas-2026-11-02"
+  },
+  {
+   "id": "new_edge:2028154:1:slight",
+   "key": "2028154:1",
+   "at": "2026-11-02T21:26:43.681Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Murphy Cassone win",
+   "market": "Moneyline",
+   "now_odds": "-104",
+   "now_chance": 51,
+   "edge": 6,
+   "text": "New slight edge: Murphy Cassone win (Moneyline), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-nicmej-murcas-2026-11-02"
+  },
+  {
+   "id": "gone:2028154:0:2026-11-02T09:45:01.006Z",
+   "key": "2028154:0",
+   "at": "2026-11-02T21:26:43.681Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Nicolas Mejia win",
+   "market": "Moneyline",
+   "now_odds": "+426",
+   "now_chance": 19,
+   "edge": 30,
+   "text": "Edge gone: Nicolas Mejia win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-nicmej-murcas-2026-11-02"
+  },
   {
    "id": "new_edge:2028154:0:slight",
    "key": "2028154:0",
@@ -487,7 +583,11 @@
   "new_edge:2030616:0:big",
   "new_edge:2030631:1:slight",
   "new_edge:2030646:1:slight",
-  "new_edge:2028154:0:slight"
+  "new_edge:2028154:0:slight",
+  "new_edge:2030631:1:big",
+  "new_edge:2030646:1:big",
+  "new_edge:2028154:1:slight",
+  "gone:2028154:0:2026-11-02T09:45:01.006Z"
  ],
  "kalshi_checked": null
 }
