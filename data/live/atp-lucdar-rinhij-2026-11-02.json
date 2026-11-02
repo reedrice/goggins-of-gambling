@@ -9,25 +9,25 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186456",
-  "fetched_at": "2026-11-02T10:08:28.240Z",
+  "fetched_at": "2026-11-02T10:19:10.116Z",
   "tennis": true,
   "tennis_match": {
    "id": "186456",
    "uid": "s:850~l:851~e:13-2026~c:186456",
-   "date": "2026-11-02T10:05Z",
-   "startDate": "2026-11-02T10:05Z",
+   "date": "2026-11-02T10:10Z",
+   "startDate": "2026-11-02T10:10Z",
    "timeValid": true,
    "recent": true,
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Mon, November 2nd at 5:05 AM EST",
-     "shortDetail": "11/2 - 5:05 AM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Rinky Hijikata (AUS) leads Luciano Darderi (ITA) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "a3565a03-7c82-893a-9835-1731783c3e77",
       "displayName": "Rinky Hijikata",
@@ -87,6 +98,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "3be13e6a-8bc0-3970-9c10-89b117bf4f71",
       "displayName": "Luciano Darderi",
@@ -119,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 13,
    "type": {
     "id": "1",
@@ -135,10 +157,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Mon, November 2nd at 5:05 AM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Rinky Hijikata",
@@ -156,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-02T10:08:28.174Z",
+ "updated": "2026-11-02T10:19:10.022Z",
  "open_taken_at": "2026-11-01T16:53:13.403Z",
  "thresholds": {
   "big": 10,
@@ -208,28 +230,6 @@
    "taken_at": "2026-11-02T06:31:48.249Z"
   },
   {
-   "market_id": "2059396",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Luciano Darderi cover 1.5 vs the Rinky Hijikata in Luciano Darderi vs. Rinky Hijikata?",
-   "sides": [
-    "Luciano Darderi +1.50 (Sets)",
-    "Rinky Hijikata -1.50 (Sets)"
-   ],
-   "teams": [
-    "Luciano Darderi",
-    "Rinky Hijikata"
-   ],
-   "player": null,
-   "mid": 64.5,
-   "yes_buy": 65,
-   "no_buy": 36,
-   "taken_at": "2026-11-02T10:08:28.174Z"
-  },
-  {
    "market_id": "2059392",
    "market": "Games spread",
    "group": "game",
@@ -250,6 +250,28 @@
    "yes_buy": 78,
    "no_buy": 26,
    "taken_at": "2026-11-02T04:01:25.437Z"
+  },
+  {
+   "market_id": "2059396",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Luciano Darderi cover 1.5 vs the Rinky Hijikata in Luciano Darderi vs. Rinky Hijikata?",
+   "sides": [
+    "Luciano Darderi +1.50 (Sets)",
+    "Rinky Hijikata -1.50 (Sets)"
+   ],
+   "teams": [
+    "Luciano Darderi",
+    "Rinky Hijikata"
+   ],
+   "player": null,
+   "mid": 64.5,
+   "yes_buy": 65,
+   "no_buy": 36,
+   "taken_at": "2026-11-02T10:08:28.174Z"
   },
   {
    "market_id": "2059398",
@@ -274,28 +296,6 @@
    "taken_at": "2026-11-02T01:58:18.382Z"
   },
   {
-   "market_id": "2059390",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Luciano Darderi cover 1.5 vs the Rinky Hijikata in Luciano Darderi vs. Rinky Hijikata?",
-   "sides": [
-    "Luciano Darderi +1.50 (Games)",
-    "Rinky Hijikata -1.50 (Games)"
-   ],
-   "teams": [
-    "Luciano Darderi",
-    "Rinky Hijikata"
-   ],
-   "player": null,
-   "mid": 53,
-   "yes_buy": 55,
-   "no_buy": 49,
-   "taken_at": "2026-11-02T02:20:09.961Z"
-  },
-  {
    "market_id": "2059406",
    "market": "Set 2 winner",
    "group": "game",
@@ -316,50 +316,6 @@
    "yes_buy": 48,
    "no_buy": 57,
    "taken_at": "2026-11-02T06:43:15.489Z"
-  },
-  {
-   "market_id": "2059405",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Luciano Darderi win set 1 against Rinky Hijikata?",
-   "sides": [
-    "Yes: Luciano Darderi win set 1 against Rinky Hijikata",
-    "No: Luciano Darderi win set 1 against Rinky Hijikata"
-   ],
-   "teams": [
-    "Luciano Darderi",
-    null
-   ],
-   "player": null,
-   "mid": 47,
-   "yes_buy": 49,
-   "no_buy": 55,
-   "taken_at": "2026-11-02T03:09:17.221Z"
-  },
-  {
-   "market_id": "2059389",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Luciano Darderi cover -1.5 vs the Rinky Hijikata in Luciano Darderi vs. Rinky Hijikata?",
-   "sides": [
-    "Luciano Darderi -1.50 (Games)",
-    "Rinky Hijikata +1.50 (Games)"
-   ],
-   "teams": [
-    "Luciano Darderi",
-    "Rinky Hijikata"
-   ],
-   "player": null,
-   "mid": 39,
-   "yes_buy": 42,
-   "no_buy": 64,
-   "taken_at": "2026-11-02T05:47:34.537Z"
   },
   {
    "market_id": "2059400",
@@ -384,6 +340,28 @@
    "taken_at": "2026-11-02T07:46:36.708Z"
   },
   {
+   "market_id": "2059390",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Luciano Darderi cover 1.5 vs the Rinky Hijikata in Luciano Darderi vs. Rinky Hijikata?",
+   "sides": [
+    "Luciano Darderi +1.50 (Games)",
+    "Rinky Hijikata -1.50 (Games)"
+   ],
+   "teams": [
+    "Luciano Darderi",
+    "Rinky Hijikata"
+   ],
+   "player": null,
+   "mid": 53,
+   "yes_buy": 55,
+   "no_buy": 49,
+   "taken_at": "2026-11-02T02:20:09.961Z"
+  },
+  {
    "market_id": "2059399",
    "market": "Games total",
    "group": "game",
@@ -406,26 +384,26 @@
    "taken_at": "2026-11-02T06:04:09.583Z"
   },
   {
-   "market_id": "2059395",
-   "market": "Sets spread",
+   "market_id": "2059389",
+   "market": "Games spread",
    "group": "game",
    "mtype": "spread",
-   "period": "tennis_match_sets_spread",
+   "period": "tennis_match_games_spread",
    "line": -1.5,
    "question": "Will the Luciano Darderi cover -1.5 vs the Rinky Hijikata in Luciano Darderi vs. Rinky Hijikata?",
    "sides": [
-    "Luciano Darderi -1.50 (Sets)",
-    "Rinky Hijikata +1.50 (Sets)"
+    "Luciano Darderi -1.50 (Games)",
+    "Rinky Hijikata +1.50 (Games)"
    ],
    "teams": [
     "Luciano Darderi",
     "Rinky Hijikata"
    ],
    "player": null,
-   "mid": 26.5,
-   "yes_buy": 27,
-   "no_buy": 74,
-   "taken_at": "2026-11-02T10:08:28.174Z"
+   "mid": 39,
+   "yes_buy": 42,
+   "no_buy": 64,
+   "taken_at": "2026-11-02T05:47:34.537Z"
   },
   {
    "market_id": "2059391",
@@ -448,26 +426,70 @@
    "yes_buy": 20,
    "no_buy": 86,
    "taken_at": "2026-11-02T09:45:03.897Z"
+  },
+  {
+   "market_id": "2059405",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Luciano Darderi win set 1 against Rinky Hijikata?",
+   "sides": [
+    "Yes: Luciano Darderi win set 1 against Rinky Hijikata",
+    "No: Luciano Darderi win set 1 against Rinky Hijikata"
+   ],
+   "teams": [
+    "Luciano Darderi",
+    null
+   ],
+   "player": null,
+   "mid": 47,
+   "yes_buy": 49,
+   "no_buy": 55,
+   "taken_at": "2026-11-02T03:09:17.221Z"
+  },
+  {
+   "market_id": "2059395",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Luciano Darderi cover -1.5 vs the Rinky Hijikata in Luciano Darderi vs. Rinky Hijikata?",
+   "sides": [
+    "Luciano Darderi -1.50 (Sets)",
+    "Rinky Hijikata +1.50 (Sets)"
+   ],
+   "teams": [
+    "Luciano Darderi",
+    "Rinky Hijikata"
+   ],
+   "player": null,
+   "mid": 26.5,
+   "yes_buy": 27,
+   "no_buy": 74,
+   "taken_at": "2026-11-02T10:08:28.174Z"
   }
  ],
  "edges": [
   {
-   "key": "2059392:0",
-   "market_id": "2059392",
-   "market": "Games spread",
+   "key": "2059405:0",
+   "market_id": "2059405",
+   "market": "Set 1 winner",
    "group": "game",
-   "question": "Will the Luciano Darderi cover 4.5 vs the Rinky Hijikata in Luciano Darderi vs. Rinky Hijikata?",
-   "side": "Luciano Darderi +4.50 (Games)",
-   "open_chance": 78,
-   "now_chance": 63,
-   "open_odds": "-355",
-   "now_odds": "-170",
-   "edge": 15,
+   "question": "Will Luciano Darderi win set 1 against Rinky Hijikata?",
+   "side": "Yes: Luciano Darderi win set 1 against Rinky Hijikata",
+   "open_chance": 49,
+   "now_chance": 18,
+   "open_odds": "+104",
+   "now_odds": "+456",
+   "edge": 31,
    "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-11-02T10:08:28.174Z",
+   "class": "score",
+   "reason": "Explained by score: Luciano Darderi not above the games spread right now",
+   "context": "Rinky Hijikata 1 · Luciano Darderi 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-02T09:45:03.897Z",
    "status": "open",
    "kalshi": null
   },
@@ -479,35 +501,15 @@
    "question": "Who will win in the upcoming atp event Luciano Darderi vs Rinky Hijikata scheduled for November 2, 2026 at 10:00 AM UTC?",
    "side": "Luciano Darderi win",
    "open_chance": 56,
-   "now_chance": 44,
+   "now_chance": 31,
    "open_odds": "-127",
-   "now_odds": "+127",
-   "edge": 12,
+   "now_odds": "+223",
+   "edge": 25,
    "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
+   "class": "news",
+   "reason": "Big move (25 pts), likely news",
+   "context": "Rinky Hijikata 1 · Luciano Darderi 0 · 1st Set (games by set)",
    "first_seen": "2026-11-01T19:53:20.775Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2059400:0",
-   "market_id": "2059400",
-   "market": "Sets total",
-   "group": "game",
-   "question": "Will the total in Luciano Darderi vs. Rinky Hijikata be more than 2.5?",
-   "side": "Over 2.5 (Sets)",
-   "open_chance": 46,
-   "now_chance": 38,
-   "open_odds": "+117",
-   "now_odds": "+163",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-11-02T10:08:28.174Z",
    "status": "open",
    "kalshi": null
   },
@@ -519,35 +521,135 @@
    "question": "Will the Luciano Darderi cover 1.5 vs the Rinky Hijikata in Luciano Darderi vs. Rinky Hijikata?",
    "side": "Luciano Darderi +1.50 (Games)",
    "open_chance": 55,
-   "now_chance": 50,
+   "now_chance": 38,
    "open_odds": "-122",
-   "now_odds": "+100",
-   "edge": 5,
-   "tier": "slight",
+   "now_odds": "+163",
+   "edge": 17,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Rinky Hijikata 1 · Luciano Darderi 0 · 1st Set (games by set)",
    "first_seen": "2026-11-02T06:04:09.583Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "2059405:0",
-   "market_id": "2059405",
-   "market": "Set 1 winner",
+   "key": "2059389:0",
+   "market_id": "2059389",
+   "market": "Games spread",
    "group": "game",
-   "question": "Will Luciano Darderi win set 1 against Rinky Hijikata?",
-   "side": "Yes: Luciano Darderi win set 1 against Rinky Hijikata",
-   "open_chance": 49,
-   "now_chance": 44,
-   "open_odds": "+104",
-   "now_odds": "+127",
+   "question": "Will the Luciano Darderi cover -1.5 vs the Rinky Hijikata in Luciano Darderi vs. Rinky Hijikata?",
+   "side": "Luciano Darderi -1.50 (Games)",
+   "open_chance": 42,
+   "now_chance": 26,
+   "open_odds": "+138",
+   "now_odds": "+285",
+   "edge": 16,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Luciano Darderi not above the games spread right now",
+   "context": "Rinky Hijikata 1 · Luciano Darderi 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-02T10:19:10.022Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2059396:0",
+   "market_id": "2059396",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Luciano Darderi cover 1.5 vs the Rinky Hijikata in Luciano Darderi vs. Rinky Hijikata?",
+   "side": "Luciano Darderi +1.50 (Sets)",
+   "open_chance": 65,
+   "now_chance": 53,
+   "open_odds": "-186",
+   "now_odds": "-113",
+   "edge": 12,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Rinky Hijikata 1 · Luciano Darderi 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-02T10:19:10.022Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2059400:0",
+   "market_id": "2059400",
+   "market": "Sets total",
+   "group": "game",
+   "question": "Will the total in Luciano Darderi vs. Rinky Hijikata be more than 2.5?",
+   "side": "Over 2.5 (Sets)",
+   "open_chance": 46,
+   "now_chance": 39,
+   "open_odds": "+117",
+   "now_odds": "+156",
+   "edge": 7,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Rinky Hijikata 1 · Luciano Darderi 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-02T10:08:28.174Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2059406:0",
+   "market_id": "2059406",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Luciano Darderi win set 2 against Rinky Hijikata?",
+   "side": "Yes: Luciano Darderi win set 2 against Rinky Hijikata",
+   "open_chance": 48,
+   "now_chance": 42,
+   "open_odds": "+108",
+   "now_odds": "+138",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Rinky Hijikata 1 · Luciano Darderi 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-02T10:19:10.022Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2059398:0",
+   "market_id": "2059398",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Luciano Darderi vs. Rinky Hijikata be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 56,
+   "now_chance": 51,
+   "open_odds": "-127",
+   "now_odds": "-104",
    "edge": 5,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-11-02T09:45:03.897Z",
+   "context": "Rinky Hijikata 1 · Luciano Darderi 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-02T10:19:10.022Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2059392:0",
+   "market_id": "2059392",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Luciano Darderi cover 4.5 vs the Rinky Hijikata in Luciano Darderi vs. Rinky Hijikata?",
+   "side": "Luciano Darderi +4.50 (Games)",
+   "open_chance": 78,
+   "now_chance": 74,
+   "open_odds": "-355",
+   "now_odds": "-285",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Rinky Hijikata 1 · Luciano Darderi 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-02T10:08:28.174Z",
    "status": "open",
    "kalshi": null
   },
@@ -566,7 +668,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Rinky Hijikata 1 · Luciano Darderi 0 · 1st Set (games by set)",
    "first_seen": "2026-11-02T10:08:28.174Z",
    "status": "open",
    "kalshi": null
@@ -593,6 +695,90 @@
   }
  ],
  "alerts": [
+  {
+   "id": "news:2058223:0",
+   "key": "2058223:0",
+   "at": "2026-11-02T10:19:10.022Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Luciano Darderi win",
+   "market": "Moneyline",
+   "now_odds": "+223",
+   "now_chance": 31,
+   "edge": 25,
+   "text": "Big move, likely news: Luciano Darderi win (Moneyline) is 25 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-lucdar-rinhij-2026-11-02"
+  },
+  {
+   "id": "new_edge:2059390:0:big",
+   "key": "2059390:0",
+   "at": "2026-11-02T10:19:10.022Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Luciano Darderi +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+163",
+   "now_chance": 38,
+   "edge": 17,
+   "text": "New big edge: Luciano Darderi +1.50 (Games) (Games spread), 17 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-lucdar-rinhij-2026-11-02"
+  },
+  {
+   "id": "new_edge:2059396:0:big",
+   "key": "2059396:0",
+   "at": "2026-11-02T10:19:10.022Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Luciano Darderi +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 12,
+   "text": "New big edge: Luciano Darderi +1.50 (Sets) (Sets spread), 12 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-lucdar-rinhij-2026-11-02"
+  },
+  {
+   "id": "new_edge:2059406:0:slight",
+   "key": "2059406:0",
+   "at": "2026-11-02T10:19:10.022Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Yes: Luciano Darderi win set 2 against Rinky Hijikata",
+   "market": "Set 2 winner",
+   "now_odds": "+138",
+   "now_chance": 42,
+   "edge": 6,
+   "text": "New slight edge: Yes: Luciano Darderi win set 2 against Rinky Hijikata (Set 2 winner), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-lucdar-rinhij-2026-11-02"
+  },
+  {
+   "id": "new_edge:2059398:0:slight",
+   "key": "2059398:0",
+   "at": "2026-11-02T10:19:10.022Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-104",
+   "now_chance": 51,
+   "edge": 5,
+   "text": "New slight edge: Over 22.5 (Games) (Games total), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-lucdar-rinhij-2026-11-02"
+  },
+  {
+   "id": "new_edge:2059392:0:slight",
+   "key": "2059392:0",
+   "at": "2026-11-02T10:19:10.022Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Luciano Darderi +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-285",
+   "now_chance": 74,
+   "edge": 4,
+   "text": "New slight edge: Luciano Darderi +4.50 (Games) (Games spread), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-lucdar-rinhij-2026-11-02"
+  },
   {
    "id": "new_edge:2059392:0:big",
    "key": "2059392:0",
@@ -684,7 +870,13 @@
   "new_edge:2059400:0:slight",
   "new_edge:2059390:0:slight",
   "new_edge:2059405:0:slight",
-  "new_edge:2059399:1:slight"
+  "new_edge:2059399:1:slight",
+  "news:2058223:0",
+  "new_edge:2059390:0:big",
+  "new_edge:2059396:0:big",
+  "new_edge:2059406:0:slight",
+  "new_edge:2059398:0:slight",
+  "new_edge:2059392:0:slight"
  ],
  "kalshi_checked": null
 }
