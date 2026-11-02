@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186672",
-  "fetched_at": "2026-11-02T13:41:15.202Z",
+  "fetched_at": "2026-11-02T13:51:45.984Z",
   "tennis": true,
   "tennis_match": {
    "id": "186672",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Warona Mdlulwa (RSA) leads Kristina Novak (SLO) 1-6 1-1",
+     "text": "Kristina Novak (SLO) leads Warona Mdlulwa (RSA) 6-1 2-1",
      "type": "event"
     }
    ],
@@ -55,13 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -101,6 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 1,
@@ -142,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1082,
    "type": {
     "id": "2",
@@ -179,13 +186,35 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-02T13:41:14.933Z",
+ "updated": "2026-11-02T13:51:45.918Z",
  "open_taken_at": "2026-11-01T05:07:46.376Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "2034469",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Warona Mdlulwa vs. Kristina Novak be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 30.5,
+   "yes_buy": 31,
+   "no_buy": 70,
+   "taken_at": "2026-11-02T11:30:33.575Z"
+  },
   {
    "market_id": "2034460",
    "market": "Games spread",
@@ -273,28 +302,6 @@
    "yes_buy": 13,
    "no_buy": 93,
    "taken_at": "2026-11-02T13:41:14.933Z"
-  },
-  {
-   "market_id": "2034469",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Warona Mdlulwa vs. Kristina Novak be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 30.5,
-   "yes_buy": 31,
-   "no_buy": 70,
-   "taken_at": "2026-11-02T11:30:33.575Z"
   },
   {
    "market_id": "2034450",
@@ -469,7 +476,7 @@
    "reason": null,
    "context": "Kristina Novak 6, 1 · Warona Mdlulwa 1, 1 · 2nd Set (games by set)",
    "first_seen": "2026-11-02T13:06:27.814Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -489,7 +496,7 @@
    "reason": null,
    "context": "Kristina Novak 6, 1 · Warona Mdlulwa 1, 1 · 2nd Set (games by set)",
    "first_seen": "2026-11-02T13:06:27.814Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
