@@ -4,14 +4,14 @@
  "game": "Mitchell Krueger vs. Andrew Fenty",
  "url": "https://polymarket.us/sports/atp/atp-mitkru-andfen-2026-11-02",
  "start_time": "2026-11-02T16:30:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-02T16:21:51.022Z"
+  "fetched_at": "2026-11-02T16:31:05.277Z"
  },
- "updated": "2026-11-02T16:21:50.968Z",
+ "updated": "2026-11-02T16:31:05.231Z",
  "open_taken_at": "2026-11-01T23:49:39.278Z",
  "thresholds": {
   "big": 10,
@@ -129,28 +129,6 @@
    "taken_at": "2026-11-02T16:21:50.968Z"
   },
   {
-   "market_id": "2075802",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Mitchell Krueger cover 1.5 vs the Andrew Fenty in Mitchell Krueger vs. Andrew Fenty?",
-   "sides": [
-    "Mitchell Krueger +1.50 (Games)",
-    "Andrew Fenty -1.50 (Games)"
-   ],
-   "teams": [
-    "Mitchell Krueger",
-    "Andrew Fenty"
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-11-02T16:21:50.968Z"
-  },
-  {
    "market_id": "2075822",
    "market": "Games total",
    "group": "game",
@@ -170,6 +148,28 @@
    "mid": 27.5,
    "yes_buy": 28,
    "no_buy": 73,
+   "taken_at": "2026-11-02T16:21:50.968Z"
+  },
+  {
+   "market_id": "2075802",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Mitchell Krueger cover 1.5 vs the Andrew Fenty in Mitchell Krueger vs. Andrew Fenty?",
+   "sides": [
+    "Mitchell Krueger +1.50 (Games)",
+    "Andrew Fenty -1.50 (Games)"
+   ],
+   "teams": [
+    "Mitchell Krueger",
+    "Andrew Fenty"
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
    "taken_at": "2026-11-02T16:21:50.968Z"
   }
  ],
@@ -191,11 +191,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-02T08:30:33.810Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2073764:1:2026-11-02T08:30:33.810Z",
+   "key": "2073764:1",
+   "at": "2026-11-02T16:31:05.231Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Andrew Fenty win",
+   "market": "Moneyline",
+   "now_odds": "+213",
+   "now_chance": 32,
+   "edge": 4,
+   "text": "Edge gone: Andrew Fenty win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-mitkru-andfen-2026-11-02"
+  },
   {
    "id": "new_edge:2073764:1:slight",
    "key": "2073764:1",
@@ -212,7 +226,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2073764:1:slight"
+  "new_edge:2073764:1:slight",
+  "gone:2073764:1:2026-11-02T08:30:33.810Z"
  ],
  "kalshi_checked": null
 }
