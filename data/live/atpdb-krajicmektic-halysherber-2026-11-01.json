@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187298",
-  "fetched_at": "2026-11-02T12:32:15.681Z",
+  "fetched_at": "2026-11-02T12:42:47.766Z",
   "tennis": true,
   "tennis_match": {
    "id": "187298",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Quentin Halys (FRA) & Pierre-Hugues Herbert (FRA) leads Austin Krajicek (USA) & Nikola Mektic (CRO) 6-5",
+     "text": "Quentin Halys (FRA) & Pierre-Hugues Herbert (FRA) leads Austin Krajicek (USA) & Nikola Mektic (CRO) 7-6 (7-5)",
      "type": "event"
     }
    ],
@@ -55,10 +55,10 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
      "linescores": [
       {
-       "value": 6
+       "value": 7,
+       "tiebreak": 7
       }
      ],
      "roster": {
@@ -133,10 +133,10 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "tiebreak": 5
       }
      ],
      "roster": {
@@ -206,11 +206,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 13,
    "type": {
     "id": "3",
@@ -248,7 +243,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-02T12:32:15.475Z",
+ "updated": "2026-11-02T12:42:47.730Z",
  "open_taken_at": "2026-10-31T14:49:10.913Z",
  "thresholds": {
   "big": 10,
@@ -287,14 +282,14 @@
    "question": "Who will win in the upcoming atpdb event Krajicek / Mektic vs Halys / Herbert scheduled for November 1, 2026 at 10:00 AM UTC?",
    "side": "Krajicek / Mektic win",
    "open_chance": 58,
-   "now_chance": 49,
+   "now_chance": 27,
    "open_odds": "-138",
-   "now_odds": "+104",
-   "edge": 9,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Quentin Halys / Pierre-Hugues Herbert 6 · Austin Krajicek / Nikola Mektic 5 · 1st Set (games by set)",
+   "now_odds": "+270",
+   "edge": 31,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (31 pts), likely news",
+   "context": "Quentin Halys / Pierre-Hugues Herbert 7 · Austin Krajicek / Nikola Mektic 6 · 1st Set (games by set)",
    "first_seen": "2026-11-01T18:46:07.580Z",
    "status": "open",
    "kalshi": null
@@ -321,6 +316,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "news:2006135:0",
+   "key": "2006135:0",
+   "at": "2026-11-02T12:42:47.730Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Krajicek / Mektic win",
+   "market": "Moneyline",
+   "now_odds": "+270",
+   "now_chance": 27,
+   "edge": 31,
+   "text": "Big move, likely news: Krajicek / Mektic win (Moneyline) is 31 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-krajicmektic-halysherber-2026-11-01"
+  },
   {
    "id": "new_edge:2006135:0:big",
    "key": "2006135:0",
@@ -397,7 +406,8 @@
   "new_edge:2006135:1:big",
   "gone:2006135:0:2026-11-01T18:46:07.580Z",
   "new_edge:2006135:0:big",
-  "gone:2006135:1:2026-11-02T12:01:21.755Z"
+  "gone:2006135:1:2026-11-02T12:01:21.755Z",
+  "news:2006135:0"
  ],
  "kalshi_checked": null
 }
