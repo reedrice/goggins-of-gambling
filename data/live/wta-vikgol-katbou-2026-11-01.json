@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186624",
-  "fetched_at": "2026-11-02T07:22:28.187Z",
+  "fetched_at": "2026-11-02T07:35:13.487Z",
   "tennis": true,
   "tennis_match": {
    "id": "186624",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(8) Katie Boulter (GBR) leads Viktorija Golubic (SUI) 6-2 5-2",
+     "text": "(8) Katie Boulter (GBR) leads Viktorija Golubic (SUI) 6-2 5-3",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "curatedRank": {
       "current": 8
      },
@@ -104,13 +105,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 2,
        "winner": false
       },
       {
-       "value": 2
+       "value": 3
       }
      ],
      "athlete": {
@@ -145,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 380,
    "type": {
     "id": "2",
@@ -182,35 +189,13 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-02T07:22:28.035Z",
+ "updated": "2026-11-02T07:35:13.410Z",
  "open_taken_at": "2026-10-31T08:54:42.734Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "2030834",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Viktorija Golubic vs. Katie Boulter be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 71.5,
-   "yes_buy": 72,
-   "no_buy": 29,
-   "taken_at": "2026-11-02T06:12:39.533Z"
-  },
   {
    "market_id": "2030828",
    "market": "Games spread",
@@ -232,6 +217,50 @@
    "yes_buy": 88,
    "no_buy": 13,
    "taken_at": "2026-11-02T06:31:29.090Z"
+  },
+  {
+   "market_id": "2030854",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Viktorija Golubic win set 2 against Katie Boulter?",
+   "sides": [
+    "Yes: Viktorija Golubic win set 2 against Katie Boulter",
+    "No: Viktorija Golubic win set 2 against Katie Boulter"
+   ],
+   "teams": [
+    "Viktorija Golubic",
+    null
+   ],
+   "player": null,
+   "mid": 42.5,
+   "yes_buy": 43,
+   "no_buy": 58,
+   "taken_at": "2026-11-02T06:20:42.558Z"
+  },
+  {
+   "market_id": "2030834",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Viktorija Golubic vs. Katie Boulter be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 71.5,
+   "yes_buy": 72,
+   "no_buy": 29,
+   "taken_at": "2026-11-02T06:12:39.533Z"
   },
   {
    "market_id": "2002794",
@@ -298,28 +327,6 @@
    "yes_buy": 51,
    "no_buy": 54,
    "taken_at": "2026-11-01T11:02:21.850Z"
-  },
-  {
-   "market_id": "2030854",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Viktorija Golubic win set 2 against Katie Boulter?",
-   "sides": [
-    "Yes: Viktorija Golubic win set 2 against Katie Boulter",
-    "No: Viktorija Golubic win set 2 against Katie Boulter"
-   ],
-   "teams": [
-    "Viktorija Golubic",
-    null
-   ],
-   "player": null,
-   "mid": 42.5,
-   "yes_buy": 43,
-   "no_buy": 58,
-   "taken_at": "2026-11-02T06:20:42.558Z"
   },
   {
    "market_id": "2030836",
