@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-02T03:43:08.699Z"
+  "fetched_at": "2026-11-02T03:52:20.141Z"
  },
- "updated": "2026-11-02T03:43:08.630Z",
+ "updated": "2026-11-02T03:52:20.013Z",
  "open_taken_at": "2026-11-01T08:39:40.307Z",
  "thresholds": {
   "big": 10,
@@ -19,26 +19,26 @@
  },
  "open": [
   {
-   "market_id": "2048727",
-   "market": "Moneyline",
+   "market_id": "2049682",
+   "market": "Set 2 winner",
    "group": "game",
    "mtype": "winner",
-   "period": "full_game",
+   "period": "tennis_set_2_winner",
    "line": null,
-   "question": "Who will win in the upcoming atp event Yosuke Watanuki vs Mitsuki Wei Kang Leong scheduled for November 2, 2026 at 3:10 AM UTC?",
+   "question": "Will Yosuke Watanuki win set 2 against Mitsuki Wei Kang Leong?",
    "sides": [
-    "Yosuke Watanuki win",
-    "Mitsuki Wei Kang Leong win"
+    "Yes: Yosuke Watanuki win set 2 against Mitsuki Wei Kang Leong",
+    "No: Yosuke Watanuki win set 2 against Mitsuki Wei Kang Leong"
    ],
    "teams": [
     "Yosuke Watanuki",
-    "Mitsuki Wei Kang Leong"
+    null
    ],
    "player": null,
-   "mid": 81.5,
-   "yes_buy": 82,
-   "no_buy": 19,
-   "taken_at": "2026-11-01T13:03:28.198Z"
+   "mid": 96,
+   "yes_buy": 99,
+   "no_buy": 7,
+   "taken_at": "2026-11-02T03:52:20.013Z"
   },
   {
    "market_id": "2049667",
@@ -63,28 +63,6 @@
    "taken_at": "2026-11-02T01:41:17.722Z"
   },
   {
-   "market_id": "2049673",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Yosuke Watanuki vs. Mitsuki Wei Kang Leong be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 66,
-   "yes_buy": 68,
-   "no_buy": 36,
-   "taken_at": "2026-11-02T03:33:48.456Z"
-  },
-  {
    "market_id": "2049674",
    "market": "Games total",
    "group": "game",
@@ -105,6 +83,50 @@
    "yes_buy": 42,
    "no_buy": 59,
    "taken_at": "2026-11-02T03:25:54.261Z"
+  },
+  {
+   "market_id": "2048727",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming atp event Yosuke Watanuki vs Mitsuki Wei Kang Leong scheduled for November 2, 2026 at 3:10 AM UTC?",
+   "sides": [
+    "Yosuke Watanuki win",
+    "Mitsuki Wei Kang Leong win"
+   ],
+   "teams": [
+    "Yosuke Watanuki",
+    "Mitsuki Wei Kang Leong"
+   ],
+   "player": null,
+   "mid": 81.5,
+   "yes_buy": 82,
+   "no_buy": 19,
+   "taken_at": "2026-11-01T13:03:28.198Z"
+  },
+  {
+   "market_id": "2049673",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Yosuke Watanuki vs. Mitsuki Wei Kang Leong be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 66,
+   "yes_buy": 68,
+   "no_buy": 36,
+   "taken_at": "2026-11-02T03:33:48.456Z"
   },
   {
    "market_id": "2049675",
@@ -211,7 +233,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-02T03:43:08.630Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -231,11 +253,39 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-02T03:43:08.630Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2049673:0:2026-11-02T03:43:08.630Z",
+   "key": "2049673:0",
+   "at": "2026-11-02T03:52:20.013Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-178",
+   "now_chance": 64,
+   "edge": 4,
+   "text": "Edge gone: Over 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-yoswat-mitleo-2026-11-01"
+  },
+  {
+   "id": "gone:2049675:0:2026-11-02T03:43:08.630Z",
+   "key": "2049675:0",
+   "at": "2026-11-02T03:52:20.013Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+156",
+   "now_chance": 39,
+   "edge": 4,
+   "text": "Edge gone: Over 27.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-yoswat-mitleo-2026-11-01"
+  },
   {
    "id": "new_edge:2049673:0:slight",
    "key": "2049673:0",
@@ -297,7 +347,9 @@
   "new_edge:2049667:1:big",
   "gone:2049667:1:2026-11-02T03:25:54.261Z",
   "new_edge:2049673:0:slight",
-  "new_edge:2049675:0:slight"
+  "new_edge:2049675:0:slight",
+  "gone:2049673:0:2026-11-02T03:43:08.630Z",
+  "gone:2049675:0:2026-11-02T03:43:08.630Z"
  ],
  "kalshi_checked": null
 }
