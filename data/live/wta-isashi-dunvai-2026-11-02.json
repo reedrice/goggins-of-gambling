@@ -4,12 +4,12 @@
  "game": "Isabella Shinikova vs. Dune Vaissaud",
  "url": "https://polymarket.us/sports/wta/wta-isashi-dunvai-2026-11-02",
  "start_time": "2026-11-02T11:00:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186675",
-  "fetched_at": "2026-11-02T10:59:33.051Z",
+  "fetched_at": "2026-11-02T11:10:17.477Z",
   "tennis": true,
   "tennis_match": {
    "id": "186675",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Mon, November 2nd at 6:05 AM EST",
-     "shortDetail": "11/2 - 6:05 AM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Isabella Shinikova (BUL) leads Dune Vaissaud (FRA) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "1e4c53a1-154d-324a-8ed3-c56a2abf5c46",
       "displayName": "Dune Vaissaud",
@@ -87,6 +98,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "a17b9d04-4ecf-a532-3711-491f38998f8a",
       "displayName": "Isabella Shinikova",
@@ -119,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1082,
    "type": {
     "id": "2",
@@ -135,10 +157,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Mon, November 2nd at 6:05 AM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Dune Vaissaud",
@@ -156,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-02T10:59:32.943Z",
+ "updated": "2026-11-02T11:10:17.347Z",
  "open_taken_at": "2026-11-01T05:07:46.638Z",
  "thresholds": {
   "big": 10,
@@ -186,26 +208,92 @@
    "taken_at": "2026-11-01T23:33:25.102Z"
   },
   {
-   "market_id": "2034544",
-   "market": "Sets spread",
+   "market_id": "2034564",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Isabella Shinikova win set 1 against Dune Vaissaud?",
+   "sides": [
+    "Yes: Isabella Shinikova win set 1 against Dune Vaissaud",
+    "No: Isabella Shinikova win set 1 against Dune Vaissaud"
+   ],
+   "teams": [
+    "Isabella Shinikova",
+    null
+   ],
+   "player": null,
+   "mid": 81,
+   "yes_buy": 83,
+   "no_buy": 21,
+   "taken_at": "2026-11-02T11:10:17.347Z"
+  },
+  {
+   "market_id": "2034534",
+   "market": "Games spread",
    "group": "game",
    "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Isabella Shinikova cover 1.5 vs the Dune Vaissaud in Isabella Shinikova vs. Dune Vaissaud?",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Isabella Shinikova cover 4.5 vs the Dune Vaissaud in Isabella Shinikova vs. Dune Vaissaud?",
    "sides": [
-    "Isabella Shinikova +1.50 (Sets)",
-    "Dune Vaissaud -1.50 (Sets)"
+    "Isabella Shinikova +4.50 (Games)",
+    "Dune Vaissaud -4.50 (Games)"
    ],
    "teams": [
     "Isabella Shinikova",
     "Dune Vaissaud"
    ],
    "player": null,
-   "mid": 74,
-   "yes_buy": 76,
-   "no_buy": 28,
-   "taken_at": "2026-11-01T22:07:25.225Z"
+   "mid": 80,
+   "yes_buy": 81,
+   "no_buy": 21,
+   "taken_at": "2026-11-02T11:10:17.347Z"
+  },
+  {
+   "market_id": "2034547",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Isabella Shinikova vs. Dune Vaissaud be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 80.5,
+   "yes_buy": 81,
+   "no_buy": 20,
+   "taken_at": "2026-11-02T11:10:17.347Z"
+  },
+  {
+   "market_id": "2034532",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Isabella Shinikova cover -4.5 vs the Dune Vaissaud in Isabella Shinikova vs. Dune Vaissaud?",
+   "sides": [
+    "Isabella Shinikova -4.50 (Games)",
+    "Dune Vaissaud +4.50 (Games)"
+   ],
+   "teams": [
+    "Isabella Shinikova",
+    "Dune Vaissaud"
+   ],
+   "player": null,
+   "mid": 47.5,
+   "yes_buy": 48,
+   "no_buy": 53,
+   "taken_at": "2026-11-02T11:10:17.347Z"
   },
   {
    "market_id": "2034549",
@@ -228,6 +316,94 @@
    "yes_buy": 45,
    "no_buy": 60,
    "taken_at": "2026-11-02T06:04:03.287Z"
+  },
+  {
+   "market_id": "2034553",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Isabella Shinikova vs. Dune Vaissaud be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 38.5,
+   "yes_buy": 39,
+   "no_buy": 62,
+   "taken_at": "2026-11-02T11:10:17.347Z"
+  },
+  {
+   "market_id": "2034551",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Isabella Shinikova vs. Dune Vaissaud be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 20.5,
+   "yes_buy": 21,
+   "no_buy": 80,
+   "taken_at": "2026-11-02T11:10:17.347Z"
+  },
+  {
+   "market_id": "2034536",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Isabella Shinikova cover -7.5 vs the Dune Vaissaud in Isabella Shinikova vs. Dune Vaissaud?",
+   "sides": [
+    "Isabella Shinikova -7.50 (Games)",
+    "Dune Vaissaud +7.50 (Games)"
+   ],
+   "teams": [
+    "Isabella Shinikova",
+    "Dune Vaissaud"
+   ],
+   "player": null,
+   "mid": 15.5,
+   "yes_buy": 16,
+   "no_buy": 85,
+   "taken_at": "2026-11-02T11:10:17.347Z"
+  },
+  {
+   "market_id": "2034544",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Isabella Shinikova cover 1.5 vs the Dune Vaissaud in Isabella Shinikova vs. Dune Vaissaud?",
+   "sides": [
+    "Isabella Shinikova +1.50 (Sets)",
+    "Dune Vaissaud -1.50 (Sets)"
+   ],
+   "teams": [
+    "Isabella Shinikova",
+    "Dune Vaissaud"
+   ],
+   "player": null,
+   "mid": 74,
+   "yes_buy": 76,
+   "no_buy": 28,
+   "taken_at": "2026-11-01T22:07:25.225Z"
   },
   {
    "market_id": "2034542",
@@ -274,8 +450,46 @@
    "taken_at": "2026-11-02T05:29:07.774Z"
   }
  ],
- "edges": [],
- "alerts": [],
- "alert_seen": [],
+ "edges": [
+  {
+   "key": "2021222:1",
+   "market_id": "2021222",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Isabella Shinikova vs Dune Vaissaud scheduled for November 2, 2026 at 9:00 AM UTC?",
+   "side": "Dune Vaissaud win",
+   "open_chance": 46,
+   "now_chance": 34,
+   "open_odds": "+117",
+   "now_odds": "+194",
+   "edge": 12,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Dune Vaissaud 0 · Isabella Shinikova 1 · 1st Set (games by set)",
+   "first_seen": "2026-11-02T11:10:17.347Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
+ "alerts": [
+  {
+   "id": "new_edge:2021222:1:big",
+   "key": "2021222:1",
+   "at": "2026-11-02T11:10:17.347Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Dune Vaissaud win",
+   "market": "Moneyline",
+   "now_odds": "+194",
+   "now_chance": 34,
+   "edge": 12,
+   "text": "New big edge: Dune Vaissaud win (Moneyline), 12 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-isashi-dunvai-2026-11-02"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:2021222:1:big"
+ ],
  "kalshi_checked": null
 }
