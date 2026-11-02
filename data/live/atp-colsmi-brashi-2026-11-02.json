@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-02T23:27:02.559Z"
+  "fetched_at": "2026-11-02T23:39:36.143Z"
  },
- "updated": "2026-11-02T23:27:02.512Z",
+ "updated": "2026-11-02T23:39:36.078Z",
  "open_taken_at": "2026-11-01T05:07:52.365Z",
  "thresholds": {
   "big": 10,
@@ -85,6 +85,50 @@
    "taken_at": "2026-11-02T23:27:02.512Z"
   },
   {
+   "market_id": "2030588",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Colton Smith cover 1.5 vs the Braden Shick in Colton Smith vs. Braden Shick?",
+   "sides": [
+    "Colton Smith +1.50 (Games)",
+    "Braden Shick -1.50 (Games)"
+   ],
+   "teams": [
+    "Colton Smith",
+    "Braden Shick"
+   ],
+   "player": null,
+   "mid": 79.5,
+   "yes_buy": 80,
+   "no_buy": 21,
+   "taken_at": "2026-11-02T23:39:36.078Z"
+  },
+  {
+   "market_id": "2030587",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Colton Smith cover -1.5 vs the Braden Shick in Colton Smith vs. Braden Shick?",
+   "sides": [
+    "Colton Smith -1.50 (Games)",
+    "Braden Shick +1.50 (Games)"
+   ],
+   "teams": [
+    "Colton Smith",
+    "Braden Shick"
+   ],
+   "player": null,
+   "mid": 77.5,
+   "yes_buy": 78,
+   "no_buy": 23,
+   "taken_at": "2026-11-02T23:39:36.078Z"
+  },
+  {
    "market_id": "2030595",
    "market": "Games total",
    "group": "game",
@@ -127,6 +171,28 @@
    "yes_buy": 68,
    "no_buy": 33,
    "taken_at": "2026-11-02T23:27:02.512Z"
+  },
+  {
+   "market_id": "2030589",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Colton Smith cover -4.5 vs the Braden Shick in Colton Smith vs. Braden Shick?",
+   "sides": [
+    "Colton Smith -4.50 (Games)",
+    "Braden Shick +4.50 (Games)"
+   ],
+   "teams": [
+    "Colton Smith",
+    "Braden Shick"
+   ],
+   "player": null,
+   "mid": 40,
+   "yes_buy": 42,
+   "no_buy": 62,
+   "taken_at": "2026-11-02T21:01:04.334Z"
   },
   {
    "market_id": "2030597",
@@ -173,28 +239,6 @@
    "taken_at": "2026-11-02T23:27:02.512Z"
   },
   {
-   "market_id": "2030589",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Colton Smith cover -4.5 vs the Braden Shick in Colton Smith vs. Braden Shick?",
-   "sides": [
-    "Colton Smith -4.50 (Games)",
-    "Braden Shick +4.50 (Games)"
-   ],
-   "teams": [
-    "Colton Smith",
-    "Braden Shick"
-   ],
-   "player": null,
-   "mid": 40,
-   "yes_buy": 42,
-   "no_buy": 62,
-   "taken_at": "2026-11-02T21:01:04.334Z"
-  },
-  {
    "market_id": "2030601",
    "market": "Sets total",
    "group": "game",
@@ -218,6 +262,26 @@
   }
  ],
  "edges": [
+  {
+   "key": "2030589:1",
+   "market_id": "2030589",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Colton Smith cover -4.5 vs the Braden Shick in Colton Smith vs. Braden Shick?",
+   "side": "Braden Shick +4.50 (Games)",
+   "open_chance": 62,
+   "now_chance": 44,
+   "open_odds": "-163",
+   "now_odds": "+127",
+   "edge": 18,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-02T23:39:36.078Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "2028150:1",
    "market_id": "2028150",
@@ -260,6 +324,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2030589:1:big",
+   "key": "2030589:1",
+   "at": "2026-11-02T23:39:36.078Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Braden Shick +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+127",
+   "now_chance": 44,
+   "edge": 18,
+   "text": "New big edge: Braden Shick +4.50 (Games) (Games spread), 18 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-colsmi-brashi-2026-11-02"
+  },
   {
    "id": "new_edge:2028150:1:big",
    "key": "2028150:1",
@@ -306,7 +384,8 @@
  "alert_seen": [
   "new_edge:2028150:1:slight",
   "new_edge:2028150:1:big",
-  "new_edge:2030597:1:slight"
+  "new_edge:2030597:1:slight",
+  "new_edge:2030589:1:big"
  ],
  "kalshi_checked": null
 }
