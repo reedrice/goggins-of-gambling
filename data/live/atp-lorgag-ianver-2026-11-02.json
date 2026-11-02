@@ -9,15 +9,37 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-02T13:29:31.768Z"
+  "fetched_at": "2026-11-02T13:41:21.836Z"
  },
- "updated": "2026-11-02T13:29:31.674Z",
+ "updated": "2026-11-02T13:41:21.697Z",
  "open_taken_at": "2026-11-01T16:04:56.896Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "2057924",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Lorenzo Gagliardo win set 2 against Ian Luca Vertberger?",
+   "sides": [
+    "Yes: Lorenzo Gagliardo win set 2 against Ian Luca Vertberger",
+    "No: Lorenzo Gagliardo win set 2 against Ian Luca Vertberger"
+   ],
+   "teams": [
+    "Lorenzo Gagliardo",
+    null
+   ],
+   "player": null,
+   "mid": 32.5,
+   "yes_buy": 33,
+   "no_buy": 68,
+   "taken_at": "2026-11-02T13:06:33.797Z"
+  },
   {
    "market_id": "2057911",
    "market": "Games spread",
@@ -193,28 +215,6 @@
    "yes_buy": 33,
    "no_buy": 68,
    "taken_at": "2026-11-02T13:06:33.797Z"
-  },
-  {
-   "market_id": "2057924",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Lorenzo Gagliardo win set 2 against Ian Luca Vertberger?",
-   "sides": [
-    "Yes: Lorenzo Gagliardo win set 2 against Ian Luca Vertberger",
-    "No: Lorenzo Gagliardo win set 2 against Ian Luca Vertberger"
-   ],
-   "teams": [
-    "Lorenzo Gagliardo",
-    null
-   ],
-   "player": null,
-   "mid": 32.5,
-   "yes_buy": 33,
-   "no_buy": 68,
-   "taken_at": "2026-11-02T13:06:33.797Z"
   }
  ],
  "edges": [
@@ -235,11 +235,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-02T13:17:46.906Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2057911:1:2026-11-02T13:17:46.906Z",
+   "key": "2057911:1",
+   "at": "2026-11-02T13:41:21.697Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Ian Luca Vertberger +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+203",
+   "now_chance": 33,
+   "edge": 34,
+   "text": "Edge gone: Ian Luca Vertberger +7.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-lorgag-ianver-2026-11-02"
+  },
   {
    "id": "new_edge:2057911:1:big",
    "key": "2057911:1",
@@ -256,7 +270,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2057911:1:big"
+  "new_edge:2057911:1:big",
+  "gone:2057911:1:2026-11-02T13:17:46.906Z"
  ],
  "kalshi_checked": null
 }
