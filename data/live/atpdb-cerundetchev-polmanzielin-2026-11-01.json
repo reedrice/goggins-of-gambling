@@ -4,12 +4,12 @@
  "game": "Cerundolo / Etcheverry vs. Polmans / Zielinski",
  "url": "https://polymarket.us/sports/atpdb/atpdb-cerundetchev-polmanzielin-2026-11-01",
  "start_time": "2026-11-02T12:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187306",
-  "fetched_at": "2026-11-02T13:17:30.372Z",
+  "fetched_at": "2026-11-02T13:29:36.963Z",
   "tennis": true,
   "tennis_match": {
    "id": "187306",
@@ -17,17 +17,17 @@
    "date": "2026-11-02T12:10Z",
    "startDate": "2026-11-02T12:10Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Francisco Cerundolo (ARG) & Tomas Martin Etcheverry (ARG) leads Marc Polmans (AUS) & Jan Zielinski (POL) 6-4 1-6 0-0 (3-2)",
+     "text": "Francisco Cerundolo (ARG) & Tomas Martin Etcheverry (ARG) bt Marc Polmans (AUS) & Jan Zielinski (POL) 6-4 1-6 1-0 (10-3)",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
      "linescores": [
       {
        "value": 4,
@@ -66,7 +67,8 @@
       },
       {
        "value": 0,
-       "tiebreak": 2
+       "tiebreak": 3,
+       "winner": false
       }
      ],
      "roster": {
@@ -141,6 +143,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
      "linescores": [
       {
        "value": 6,
@@ -151,8 +154,9 @@
        "winner": false
       },
       {
-       "value": 0,
-       "tiebreak": 3
+       "value": 1,
+       "tiebreak": 10,
+       "winner": true
       }
      ],
      "roster": {
@@ -238,10 +242,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Marc Polmans / Jan Zielinski",
@@ -253,13 +257,13 @@
    "abbr": "Francisco Cerundolo / Tomas Martin Etcheverry",
    "alias": "Francisco Cerundolo / Tomas Martin Etcheverry",
    "name": "Francisco Cerundolo / Tomas Martin Etcheverry",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-02T13:17:30.210Z",
+ "updated": "2026-11-02T13:29:36.902Z",
  "open_taken_at": "2026-10-31T14:49:10.181Z",
  "thresholds": {
   "big": 10,
@@ -307,7 +311,7 @@
    "reason": "Big move (35 pts), likely news",
    "context": "Marc Polmans / Jan Zielinski 4, 6, 0 · Francisco Cerundolo / Tomas Martin Etcheverry 6, 1, 0 · 3rd Set (games by set)",
    "first_seen": "2026-11-01T19:04:08.094Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {

@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-02T13:17:45.922Z"
+  "fetched_at": "2026-11-02T13:29:30.979Z"
  },
- "updated": "2026-11-02T13:17:45.774Z",
+ "updated": "2026-11-02T13:29:30.907Z",
  "open_taken_at": "2026-11-01T14:48:36.024Z",
  "thresholds": {
   "big": 10,
@@ -73,6 +73,28 @@
    "sides": [
     "Yes: Tomas Farjat win set 1 against Federico Aguilar Cardozo",
     "No: Tomas Farjat win set 1 against Federico Aguilar Cardozo"
+   ],
+   "teams": [
+    "Tomas Farjat",
+    null
+   ],
+   "player": null,
+   "mid": 32.5,
+   "yes_buy": 33,
+   "no_buy": 68,
+   "taken_at": "2026-11-02T13:06:32.826Z"
+  },
+  {
+   "market_id": "2056089",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Tomas Farjat win set 2 against Federico Aguilar Cardozo?",
+   "sides": [
+    "Yes: Tomas Farjat win set 2 against Federico Aguilar Cardozo",
+    "No: Tomas Farjat win set 2 against Federico Aguilar Cardozo"
    ],
    "teams": [
     "Tomas Farjat",
@@ -193,31 +215,29 @@
    "yes_buy": 34,
    "no_buy": 67,
    "taken_at": "2026-11-02T13:06:32.826Z"
-  },
-  {
-   "market_id": "2056089",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Tomas Farjat win set 2 against Federico Aguilar Cardozo?",
-   "sides": [
-    "Yes: Tomas Farjat win set 2 against Federico Aguilar Cardozo",
-    "No: Tomas Farjat win set 2 against Federico Aguilar Cardozo"
-   ],
-   "teams": [
-    "Tomas Farjat",
-    null
-   ],
-   "player": null,
-   "mid": 32.5,
-   "yes_buy": 33,
-   "no_buy": 68,
-   "taken_at": "2026-11-02T13:06:32.826Z"
   }
  ],
  "edges": [
+  {
+   "key": "2056089:1",
+   "market_id": "2056089",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Tomas Farjat win set 2 against Federico Aguilar Cardozo?",
+   "side": "No: Tomas Farjat win set 2 against Federico Aguilar Cardozo",
+   "open_chance": 68,
+   "now_chance": 50,
+   "open_odds": "-213",
+   "now_odds": "+100",
+   "edge": 18,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-02T13:29:30.907Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "2056088:1",
    "market_id": "2056088",
@@ -226,10 +246,10 @@
    "question": "Will Tomas Farjat win set 1 against Federico Aguilar Cardozo?",
    "side": "No: Tomas Farjat win set 1 against Federico Aguilar Cardozo",
    "open_chance": 68,
-   "now_chance": 53,
+   "now_chance": 51,
    "open_odds": "-213",
-   "now_odds": "-113",
-   "edge": 15,
+   "now_odds": "-104",
+   "edge": 17,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -261,6 +281,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:2056089:1:big",
+   "key": "2056089:1",
+   "at": "2026-11-02T13:29:30.907Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "No: Tomas Farjat win set 2 against Federico Aguilar Cardozo",
+   "market": "Set 2 winner",
+   "now_odds": "+100",
+   "now_chance": 50,
+   "edge": 18,
+   "text": "New big edge: No: Tomas Farjat win set 2 against Federico Aguilar Cardozo (Set 2 winner), 18 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-tomfar-fedcar-2026-11-02"
+  },
+  {
    "id": "new_edge:2056088:1:big",
    "key": "2056088:1",
    "at": "2026-11-02T13:17:45.774Z",
@@ -291,7 +325,8 @@
  ],
  "alert_seen": [
   "new_edge:2056088:1:big",
-  "new_edge:2056073:1:big"
+  "new_edge:2056073:1:big",
+  "new_edge:2056089:1:big"
  ],
  "kalshi_checked": null
 }
