@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186658",
-  "fetched_at": "2026-11-02T07:57:23.407Z",
+  "fetched_at": "2026-11-02T08:09:27.988Z",
   "tennis": true,
   "tennis_match": {
    "id": "186658",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Talia Gibson (AUS) & Maddison Inglis (AUS) leads (1) Mariia Kozyreva (RUS) & Maia Lumsden (GBR) 3-2",
+     "text": "(1) Mariia Kozyreva (RUS) & Maia Lumsden (GBR) leads Talia Gibson (AUS) & Maddison Inglis (AUS) 4-4",
      "type": "event"
     }
    ],
@@ -55,10 +55,10 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
-       "value": 3
+       "value": 4
       }
      ],
      "roster": {
@@ -133,13 +133,13 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "possession": false,
      "curatedRank": {
       "current": 1
      },
      "linescores": [
       {
-       "value": 2
+       "value": 4
       }
      ],
      "roster": {
@@ -251,7 +251,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-02T07:57:23.355Z",
+ "updated": "2026-11-02T08:09:27.877Z",
  "open_taken_at": "2026-11-01T05:07:32.124Z",
  "thresholds": {
   "big": 10,
@@ -290,20 +290,34 @@
    "question": "Who will win in the upcoming wtadb event Kozyreva / Lumsden vs Gibson / Inglis scheduled for November 2, 2026 at 6:00 AM UTC?",
    "side": "Gibson T / Inglis M win",
    "open_chance": 58,
-   "now_chance": 53,
+   "now_chance": 46,
    "open_odds": "-138",
-   "now_odds": "-113",
-   "edge": 5,
-   "tier": "slight",
+   "now_odds": "+117",
+   "edge": 12,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Talia Gibson / Maddison Inglis 1 · Mariia Kozyreva / Maia Lumsden 1 · 1st Set (games by set)",
+   "context": "Talia Gibson / Maddison Inglis 4 · Mariia Kozyreva / Maia Lumsden 4 · 1st Set (games by set)",
    "first_seen": "2026-11-01T20:02:10.458Z",
-   "status": "gone",
+   "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2004282:1:big",
+   "key": "2004282:1",
+   "at": "2026-11-02T08:09:27.877Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Gibson T / Inglis M win",
+   "market": "Moneyline",
+   "now_odds": "+117",
+   "now_chance": 46,
+   "edge": 12,
+   "text": "New big edge: Gibson T / Inglis M win (Moneyline), 12 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-kozyrelumsde-gibsoninglis-2026-11-02"
+  },
   {
    "id": "gone:2004282:1:2026-11-01T20:02:10.458Z",
    "key": "2004282:1",
@@ -335,7 +349,8 @@
  ],
  "alert_seen": [
   "new_edge:2004282:1:slight",
-  "gone:2004282:1:2026-11-01T20:02:10.458Z"
+  "gone:2004282:1:2026-11-01T20:02:10.458Z",
+  "new_edge:2004282:1:big"
  ],
  "kalshi_checked": null
 }
