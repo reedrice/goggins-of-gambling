@@ -9,37 +9,15 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-02T12:22:01.921Z"
+  "fetched_at": "2026-11-02T12:32:28.160Z"
  },
- "updated": "2026-11-02T12:22:01.857Z",
+ "updated": "2026-11-02T12:32:28.076Z",
  "open_taken_at": "2026-11-01T12:35:57.704Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "2053645",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Laura Boehner vs. Prathyusha Rachapudi be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 37.5,
-   "yes_buy": 38,
-   "no_buy": 63,
-   "taken_at": "2026-11-02T10:19:08.362Z"
-  },
   {
    "market_id": "2053647",
    "market": "Games total",
@@ -61,6 +39,28 @@
    "yes_buy": 14,
    "no_buy": 87,
    "taken_at": "2026-11-02T12:01:36.308Z"
+  },
+  {
+   "market_id": "2053645",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Laura Boehner vs. Prathyusha Rachapudi be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 37.5,
+   "yes_buy": 38,
+   "no_buy": 63,
+   "taken_at": "2026-11-02T10:19:08.362Z"
   },
   {
    "market_id": "2053641",
@@ -329,26 +329,6 @@
  ],
  "edges": [
   {
-   "key": "2053645:0",
-   "market_id": "2053645",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Laura Boehner vs. Prathyusha Rachapudi be more than 17.5?",
-   "side": "Over 17.5 (Games)",
-   "open_chance": 38,
-   "now_chance": 33,
-   "open_odds": "+163",
-   "now_odds": "+203",
-   "edge": 5,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-02T12:22:01.857Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "2053638:1",
    "market_id": "2053638",
    "market": "Games spread",
@@ -469,6 +449,26 @@
    "kalshi": null
   },
   {
+   "key": "2053645:0",
+   "market_id": "2053645",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Laura Boehner vs. Prathyusha Rachapudi be more than 17.5?",
+   "side": "Over 17.5 (Games)",
+   "open_chance": 38,
+   "now_chance": 33,
+   "open_odds": "+163",
+   "now_odds": "+203",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-02T12:22:01.857Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "2053646:0",
    "market_id": "2053646",
    "market": "Games total",
@@ -510,6 +510,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2053645:0:2026-11-02T12:22:01.857Z",
+   "key": "2053645:0",
+   "at": "2026-11-02T12:32:28.076Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+203",
+   "now_chance": 33,
+   "edge": 5,
+   "text": "Edge gone: Over 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-lauboe-prarac-2026-11-02"
+  },
   {
    "id": "new_edge:2053645:0:slight",
    "key": "2053645:0",
@@ -799,7 +813,8 @@
   "gone:2053637:1:2026-11-02T11:50:45.849Z",
   "gone:2053648:1:2026-11-02T11:50:45.849Z",
   "new_edge:2053645:0:slight",
-  "gone:2053646:0:2026-11-02T11:50:45.849Z"
+  "gone:2053646:0:2026-11-02T11:50:45.849Z",
+  "gone:2053645:0:2026-11-02T12:22:01.857Z"
  ],
  "kalshi_checked": null
 }
