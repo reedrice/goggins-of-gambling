@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-02T19:34:49.859Z"
+  "fetched_at": "2026-11-02T19:45:02.621Z"
  },
- "updated": "2026-11-02T19:34:49.821Z",
+ "updated": "2026-11-02T19:45:02.440Z",
  "open_taken_at": "2026-10-31T16:15:55.790Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-02T12:12:16.899Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2013544:0:2026-11-02T12:12:16.899Z",
+   "key": "2013544:0",
+   "at": "2026-11-02T19:45:02.440Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Casanova H / Ribero F win",
+   "market": "Moneyline",
+   "now_odds": "-186",
+   "now_chance": 65,
+   "edge": 6,
+   "text": "Edge gone: Casanova H / Ribero F win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-casanoribero-agamenesteve-2026-11-01"
+  },
   {
    "id": "new_edge:2013544:0:slight",
    "key": "2013544:0",
@@ -80,7 +94,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2013544:0:slight"
+  "new_edge:2013544:0:slight",
+  "gone:2013544:0:2026-11-02T12:12:16.899Z"
  ],
  "kalshi_checked": null
 }
