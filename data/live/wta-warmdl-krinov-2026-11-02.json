@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186672",
-  "fetched_at": "2026-11-02T13:51:45.984Z",
+  "fetched_at": "2026-11-02T14:01:49.107Z",
   "tennis": true,
   "tennis_match": {
    "id": "186672",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Kristina Novak (SLO) leads Warona Mdlulwa (RSA) 6-1 2-1",
+     "text": "Kristina Novak (SLO) leads Warona Mdlulwa (RSA) 6-1 4-2",
      "type": "event"
     }
    ],
@@ -55,14 +55,13 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 2
+       "value": 4
       }
      ],
      "athlete": {
@@ -102,14 +101,13 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
      "linescores": [
       {
        "value": 1,
        "winner": false
       },
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -144,11 +142,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 1082,
    "type": {
     "id": "2",
@@ -186,13 +179,35 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-02T13:51:45.918Z",
+ "updated": "2026-11-02T14:01:49.017Z",
  "open_taken_at": "2026-11-01T05:07:46.376Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "2034467",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Warona Mdlulwa vs. Kristina Novak be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 36.5,
+   "yes_buy": 37,
+   "no_buy": 64,
+   "taken_at": "2026-11-02T11:30:33.575Z"
+  },
   {
    "market_id": "2034469",
    "market": "Games total",
@@ -236,28 +251,6 @@
    "yes_buy": 44,
    "no_buy": 57,
    "taken_at": "2026-11-02T12:21:58.626Z"
-  },
-  {
-   "market_id": "2034467",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Warona Mdlulwa vs. Kristina Novak be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 36.5,
-   "yes_buy": 37,
-   "no_buy": 64,
-   "taken_at": "2026-11-02T11:30:33.575Z"
   },
   {
    "market_id": "2034452",
@@ -460,26 +453,6 @@
  ],
  "edges": [
   {
-   "key": "2034467:0",
-   "market_id": "2034467",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Warona Mdlulwa vs. Kristina Novak be more than 17.5?",
-   "side": "Over 17.5 (Games)",
-   "open_chance": 37,
-   "now_chance": 21,
-   "open_odds": "+170",
-   "now_odds": "+376",
-   "edge": 16,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Kristina Novak 6, 1 · Warona Mdlulwa 1, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-11-02T13:06:27.814Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "2034460:0",
    "market_id": "2034460",
    "market": "Games spread",
@@ -502,34 +475,6 @@
  ],
  "alerts": [
   {
-   "id": "new_edge:2034467:0:big",
-   "key": "2034467:0",
-   "at": "2026-11-02T13:41:14.933Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Over 17.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+376",
-   "now_chance": 21,
-   "edge": 16,
-   "text": "New big edge: Over 17.5 (Games) (Games total), 16 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-warmdl-krinov-2026-11-02"
-  },
-  {
-   "id": "gone:2034467:0:2026-11-02T13:06:27.814Z",
-   "key": "2034467:0",
-   "at": "2026-11-02T13:17:40.171Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Over 17.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+257",
-   "now_chance": 28,
-   "edge": 9,
-   "text": "Edge gone: Over 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-warmdl-krinov-2026-11-02"
-  },
-  {
    "id": "gone:2034460:0:2026-11-02T13:06:27.814Z",
    "key": "2034460:0",
    "at": "2026-11-02T13:17:40.171Z",
@@ -541,20 +486,6 @@
    "now_chance": 38,
    "edge": 6,
    "text": "Edge gone: Warona Mdlulwa +7.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-warmdl-krinov-2026-11-02"
-  },
-  {
-   "id": "new_edge:2034467:0:slight",
-   "key": "2034467:0",
-   "at": "2026-11-02T13:06:27.814Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Over 17.5 (Games)",
-   "market": "Games total",
-   "now_odds": "+257",
-   "now_chance": 28,
-   "edge": 9,
-   "text": "New slight edge: Over 17.5 (Games) (Games total), 9 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-warmdl-krinov-2026-11-02"
   },
   {

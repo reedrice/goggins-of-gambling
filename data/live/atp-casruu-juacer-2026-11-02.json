@@ -9,25 +9,25 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186469",
-  "fetched_at": "2026-11-02T13:51:50.574Z",
+  "fetched_at": "2026-11-02T14:01:54.460Z",
   "tennis": true,
   "tennis_match": {
    "id": "186469",
    "uid": "s:850~l:851~e:13-2026~c:186469",
-   "date": "2026-11-02T13:50Z",
-   "startDate": "2026-11-02T13:50Z",
+   "date": "2026-11-02T14:00Z",
+   "startDate": "2026-11-02T14:00Z",
    "timeValid": true,
    "recent": true,
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Mon, November 2nd at 8:50 AM EST",
-     "shortDetail": "11/2 - 8:50 AM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Casper Ruud (NOR) leads Juan Manuel Cerundolo (ARG) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "cede1b70-c5c9-9e18-9df8-47bde545ddd4",
       "displayName": "Juan Manuel Cerundolo",
@@ -87,6 +98,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "116ef01e-3239-e44f-9c8a-022f81012782",
       "displayName": "Casper Ruud",
@@ -119,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 13,
    "type": {
     "id": "1",
@@ -135,10 +157,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Mon, November 2nd at 8:50 AM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Juan Manuel Cerundolo",
@@ -156,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-02T13:51:50.511Z",
+ "updated": "2026-11-02T14:01:54.362Z",
  "open_taken_at": "2026-11-01T16:53:13.460Z",
  "thresholds": {
   "big": 10,
@@ -186,6 +208,28 @@
    "taken_at": "2026-11-01T18:46:18.803Z"
   },
   {
+   "market_id": "2059322",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Casper Ruud cover 7.5 vs the Juan Manuel Cerundolo in Casper Ruud vs. Juan Manuel Cerundolo?",
+   "sides": [
+    "Casper Ruud +7.50 (Games)",
+    "Juan Manuel Cerundolo -7.50 (Games)"
+   ],
+   "teams": [
+    "Casper Ruud",
+    "Juan Manuel Cerundolo"
+   ],
+   "player": null,
+   "mid": 91.5,
+   "yes_buy": 92,
+   "no_buy": 9,
+   "taken_at": "2026-11-02T14:01:54.362Z"
+  },
+  {
    "market_id": "2059320",
    "market": "Games spread",
    "group": "game",
@@ -206,6 +250,28 @@
    "yes_buy": 95,
    "no_buy": 10,
    "taken_at": "2026-11-02T13:29:31.679Z"
+  },
+  {
+   "market_id": "2059324",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Casper Ruud cover 1.5 vs the Juan Manuel Cerundolo in Casper Ruud vs. Juan Manuel Cerundolo?",
+   "sides": [
+    "Casper Ruud +1.50 (Sets)",
+    "Juan Manuel Cerundolo -1.50 (Sets)"
+   ],
+   "teams": [
+    "Casper Ruud",
+    "Juan Manuel Cerundolo"
+   ],
+   "player": null,
+   "mid": 85,
+   "yes_buy": 86,
+   "no_buy": 16,
+   "taken_at": "2026-11-02T14:01:54.362Z"
   },
   {
    "market_id": "2059325",
@@ -252,6 +318,28 @@
    "taken_at": "2026-11-02T09:56:30.920Z"
   },
   {
+   "market_id": "2059334",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Casper Ruud win set 2 against Juan Manuel Cerundolo?",
+   "sides": [
+    "Yes: Casper Ruud win set 2 against Juan Manuel Cerundolo",
+    "No: Casper Ruud win set 2 against Juan Manuel Cerundolo"
+   ],
+   "teams": [
+    "Casper Ruud",
+    null
+   ],
+   "player": null,
+   "mid": 66,
+   "yes_buy": 69,
+   "no_buy": 37,
+   "taken_at": "2026-11-02T06:52:07.558Z"
+  },
+  {
    "market_id": "2059317",
    "market": "Games spread",
    "group": "game",
@@ -296,28 +384,6 @@
    "taken_at": "2026-11-02T02:29:33.183Z"
   },
   {
-   "market_id": "2059334",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Casper Ruud win set 2 against Juan Manuel Cerundolo?",
-   "sides": [
-    "Yes: Casper Ruud win set 2 against Juan Manuel Cerundolo",
-    "No: Casper Ruud win set 2 against Juan Manuel Cerundolo"
-   ],
-   "teams": [
-    "Casper Ruud",
-    null
-   ],
-   "player": null,
-   "mid": 66,
-   "yes_buy": 69,
-   "no_buy": 37,
-   "taken_at": "2026-11-02T06:52:07.558Z"
-  },
-  {
    "market_id": "2059326",
    "market": "Games total",
    "group": "game",
@@ -338,50 +404,6 @@
    "yes_buy": 51,
    "no_buy": 50,
    "taken_at": "2026-11-02T02:20:10.120Z"
-  },
-  {
-   "market_id": "2059323",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Casper Ruud cover -1.5 vs the Juan Manuel Cerundolo in Casper Ruud vs. Juan Manuel Cerundolo?",
-   "sides": [
-    "Casper Ruud -1.50 (Sets)",
-    "Juan Manuel Cerundolo +1.50 (Sets)"
-   ],
-   "teams": [
-    "Casper Ruud",
-    "Juan Manuel Cerundolo"
-   ],
-   "player": null,
-   "mid": 47,
-   "yes_buy": 49,
-   "no_buy": 55,
-   "taken_at": "2026-11-02T06:04:09.704Z"
-  },
-  {
-   "market_id": "2059328",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Casper Ruud vs. Juan Manuel Cerundolo be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 38.5,
-   "yes_buy": 41,
-   "no_buy": 64,
-   "taken_at": "2026-11-02T07:35:30.720Z"
   },
   {
    "market_id": "2059327",
@@ -448,6 +470,50 @@
    "yes_buy": 5,
    "no_buy": 96,
    "taken_at": "2026-11-02T13:29:31.679Z"
+  },
+  {
+   "market_id": "2059323",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Casper Ruud cover -1.5 vs the Juan Manuel Cerundolo in Casper Ruud vs. Juan Manuel Cerundolo?",
+   "sides": [
+    "Casper Ruud -1.50 (Sets)",
+    "Juan Manuel Cerundolo +1.50 (Sets)"
+   ],
+   "teams": [
+    "Casper Ruud",
+    "Juan Manuel Cerundolo"
+   ],
+   "player": null,
+   "mid": 47,
+   "yes_buy": 49,
+   "no_buy": 55,
+   "taken_at": "2026-11-02T06:04:09.704Z"
+  },
+  {
+   "market_id": "2059328",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Casper Ruud vs. Juan Manuel Cerundolo be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 38.5,
+   "yes_buy": 41,
+   "no_buy": 64,
+   "taken_at": "2026-11-02T07:35:30.720Z"
   }
  ],
  "edges": [
@@ -464,10 +530,130 @@
    "now_odds": "+213",
    "edge": 13,
    "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Casper Ruud not above the games spread right now",
+   "context": "Juan Manuel Cerundolo 0 · Casper Ruud 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-02T03:25:56.002Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2059333:0",
+   "market_id": "2059333",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Casper Ruud win set 1 against Juan Manuel Cerundolo?",
+   "side": "Yes: Casper Ruud win set 1 against Juan Manuel Cerundolo",
+   "open_chance": 69,
+   "now_chance": 58,
+   "open_odds": "-223",
+   "now_odds": "-138",
+   "edge": 11,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Casper Ruud not above the games spread right now",
+   "context": "Juan Manuel Cerundolo 0 · Casper Ruud 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-02T14:01:54.362Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2059317:0",
+   "market_id": "2059317",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Casper Ruud cover -1.5 vs the Juan Manuel Cerundolo in Casper Ruud vs. Juan Manuel Cerundolo?",
+   "side": "Casper Ruud -1.50 (Games)",
+   "open_chance": 70,
+   "now_chance": 61,
+   "open_odds": "-233",
+   "now_odds": "-156",
+   "edge": 9,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Casper Ruud not above the games spread right now",
+   "context": "Juan Manuel Cerundolo 0 · Casper Ruud 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-02T14:01:54.362Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2058225:0",
+   "market_id": "2058225",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Casper Ruud vs Juan Manuel Cerundolo scheduled for November 2, 2026 at 12:20 PM UTC?",
+   "side": "Casper Ruud win",
+   "open_chance": 72,
+   "now_chance": 67,
+   "open_odds": "-257",
+   "now_odds": "-203",
+   "edge": 5,
+   "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-11-02T03:25:56.002Z",
+   "context": "Juan Manuel Cerundolo 0 · Casper Ruud 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-02T14:01:54.362Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2059325:0",
+   "market_id": "2059325",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Casper Ruud vs. Juan Manuel Cerundolo be more than 17.5?",
+   "side": "Over 17.5 (Games)",
+   "open_chance": 85,
+   "now_chance": 81,
+   "open_odds": "-567",
+   "now_odds": "-426",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Juan Manuel Cerundolo 0 · Casper Ruud 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-02T13:51:50.511Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2059318:0",
+   "market_id": "2059318",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Casper Ruud cover 1.5 vs the Juan Manuel Cerundolo in Casper Ruud vs. Juan Manuel Cerundolo?",
+   "side": "Casper Ruud +1.50 (Games)",
+   "open_chance": 79,
+   "now_chance": 75,
+   "open_odds": "-376",
+   "now_odds": "-300",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Juan Manuel Cerundolo 0 · Casper Ruud 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-02T13:17:46.968Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2059334:1",
+   "market_id": "2059334",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Casper Ruud win set 2 against Juan Manuel Cerundolo?",
+   "side": "No: Casper Ruud win set 2 against Juan Manuel Cerundolo",
+   "open_chance": 37,
+   "now_chance": 33,
+   "open_odds": "+170",
+   "now_odds": "+203",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Juan Manuel Cerundolo 0 · Casper Ruud 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-02T13:29:31.679Z",
    "status": "open",
    "kalshi": null
   },
@@ -488,7 +674,7 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-02T13:51:50.511Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -508,71 +694,53 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-02T00:44:18.233Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2059325:0",
-   "market_id": "2059325",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Casper Ruud vs. Juan Manuel Cerundolo be more than 17.5?",
-   "side": "Over 17.5 (Games)",
-   "open_chance": 85,
-   "now_chance": 81,
-   "open_odds": "-567",
-   "now_odds": "-426",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-11-02T13:51:50.511Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2059318:0",
-   "market_id": "2059318",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Casper Ruud cover 1.5 vs the Juan Manuel Cerundolo in Casper Ruud vs. Juan Manuel Cerundolo?",
-   "side": "Casper Ruud +1.50 (Games)",
-   "open_chance": 79,
-   "now_chance": 75,
-   "open_odds": "-376",
-   "now_odds": "-300",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-11-02T13:17:46.968Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2059334:1",
-   "market_id": "2059334",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Casper Ruud win set 2 against Juan Manuel Cerundolo?",
-   "side": "No: Casper Ruud win set 2 against Juan Manuel Cerundolo",
-   "open_chance": 37,
-   "now_chance": 33,
-   "open_odds": "+170",
-   "now_odds": "+203",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-11-02T13:29:31.679Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2058225:0:slight",
+   "key": "2058225:0",
+   "at": "2026-11-02T14:01:54.362Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Casper Ruud win",
+   "market": "Moneyline",
+   "now_odds": "-203",
+   "now_chance": 67,
+   "edge": 5,
+   "text": "New slight edge: Casper Ruud win (Moneyline), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-casruu-juacer-2026-11-02"
+  },
+  {
+   "id": "gone:2059328:0:2026-11-02T13:51:50.511Z",
+   "key": "2059328:0",
+   "at": "2026-11-02T14:01:54.362Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 2.5 (Sets)",
+   "market": "Sets total",
+   "now_odds": "+194",
+   "now_chance": 34,
+   "edge": 7,
+   "text": "Edge gone: Over 2.5 (Sets) (Sets total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-casruu-juacer-2026-11-02"
+  },
+  {
+   "id": "gone:2058225:1:2026-11-02T00:44:18.233Z",
+   "key": "2058225:1",
+   "at": "2026-11-02T14:01:54.362Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Juan Manuel Cerundolo win",
+   "market": "Moneyline",
+   "now_odds": "+270",
+   "now_chance": 27,
+   "edge": 5,
+   "text": "Edge gone: Juan Manuel Cerundolo win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-casruu-juacer-2026-11-02"
+  },
   {
    "id": "new_edge:2059319:0:big",
    "key": "2059319:0",
@@ -664,7 +832,10 @@
   "new_edge:2058225:1:slight",
   "new_edge:2059325:0:slight",
   "new_edge:2059318:0:slight",
-  "new_edge:2059334:1:slight"
+  "new_edge:2059334:1:slight",
+  "new_edge:2058225:0:slight",
+  "gone:2059328:0:2026-11-02T13:51:50.511Z",
+  "gone:2058225:1:2026-11-02T00:44:18.233Z"
  ],
  "kalshi_checked": null
 }
