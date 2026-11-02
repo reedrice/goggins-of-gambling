@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187366",
-  "fetched_at": "2026-11-02T09:23:59.013Z",
+  "fetched_at": "2026-11-02T09:34:02.987Z",
   "tennis": true,
   "tennis_match": {
    "id": "187366",
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 0
@@ -97,6 +98,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 5
@@ -134,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1082,
    "type": {
     "id": "2",
@@ -171,13 +178,35 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-02T09:23:58.918Z",
+ "updated": "2026-11-02T09:34:02.868Z",
  "open_taken_at": "2026-11-01T13:50:13.622Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "2054956",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Ana Sofia Sanchez cover -4.5 vs the Abigayel Vosloo in Ana Sofia Sanchez vs. Abigayel Vosloo?",
+   "sides": [
+    "Ana Sofia Sanchez -4.50 (Games)",
+    "Abigayel Vosloo +4.50 (Games)"
+   ],
+   "teams": [
+    "Ana Sofia Sanchez",
+    "Abigayel Vosloo"
+   ],
+   "player": null,
+   "mid": 93,
+   "yes_buy": 95,
+   "no_buy": 9,
+   "taken_at": "2026-11-02T09:34:02.868Z"
+  },
   {
    "market_id": "2054958",
    "market": "Games spread",
@@ -199,6 +228,28 @@
    "yes_buy": 94,
    "no_buy": 7,
    "taken_at": "2026-11-02T09:23:58.918Z"
+  },
+  {
+   "market_id": "2054960",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Ana Sofia Sanchez cover -1.5 vs the Abigayel Vosloo in Ana Sofia Sanchez vs. Abigayel Vosloo?",
+   "sides": [
+    "Ana Sofia Sanchez -1.50 (Sets)",
+    "Abigayel Vosloo +1.50 (Sets)"
+   ],
+   "teams": [
+    "Ana Sofia Sanchez",
+    "Abigayel Vosloo"
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-11-02T09:11:37.539Z"
   },
   {
    "market_id": "2054965",
@@ -267,28 +318,6 @@
    "taken_at": "2026-11-02T09:23:58.918Z"
   },
   {
-   "market_id": "2054960",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Ana Sofia Sanchez cover -1.5 vs the Abigayel Vosloo in Ana Sofia Sanchez vs. Abigayel Vosloo?",
-   "sides": [
-    "Ana Sofia Sanchez -1.50 (Sets)",
-    "Abigayel Vosloo +1.50 (Sets)"
-   ],
-   "teams": [
-    "Ana Sofia Sanchez",
-    "Abigayel Vosloo"
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-11-02T09:11:37.539Z"
-  },
-  {
    "market_id": "2054765",
    "market": "Moneyline",
    "group": "game",
@@ -313,44 +342,45 @@
  ],
  "edges": [
   {
-   "key": "2054965:1",
-   "market_id": "2054965",
-   "market": "Sets total",
+   "key": "2054960:1",
+   "market_id": "2054960",
+   "market": "Sets spread",
    "group": "game",
-   "question": "Will the total in Ana Sofia Sanchez vs. Abigayel Vosloo be more than 2.5?",
-   "side": "Under 2.5 (Sets)",
-   "open_chance": 98,
-   "now_chance": 63,
-   "open_odds": "-4900",
-   "now_odds": "-170",
-   "edge": 35,
+   "question": "Will the Ana Sofia Sanchez cover -1.5 vs the Abigayel Vosloo in Ana Sofia Sanchez vs. Abigayel Vosloo?",
+   "side": "Abigayel Vosloo +1.50 (Sets)",
+   "open_chance": 67,
+   "now_chance": 30,
+   "open_odds": "-203",
+   "now_odds": "+233",
+   "edge": 37,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (35 pts), likely news",
+   "reason": "Big move (37 pts), likely news",
    "context": "Abigayel Vosloo 0 · Ana Sofia Sanchez 5 · 1st Set (games by set)",
-   "first_seen": "2026-11-02T09:11:37.539Z",
+   "first_seen": "2026-11-02T09:34:02.868Z",
    "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
   {
-   "id": "news:2054965:1",
-   "key": "2054965:1",
-   "at": "2026-11-02T09:11:37.539Z",
+   "id": "news:2054960:1",
+   "key": "2054960:1",
+   "at": "2026-11-02T09:34:02.868Z",
    "type": "news",
    "tier": "big",
-   "side": "Under 2.5 (Sets)",
-   "market": "Sets total",
-   "now_odds": "-170",
-   "now_chance": 63,
-   "edge": 35,
-   "text": "Big move, likely news: Under 2.5 (Sets) (Sets total) is 35 points cheaper than open.",
+   "side": "Abigayel Vosloo +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+233",
+   "now_chance": 30,
+   "edge": 37,
+   "text": "Big move, likely news: Abigayel Vosloo +1.50 (Sets) (Sets spread) is 37 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-anasan-abivos-2026-11-02"
   }
  ],
  "alert_seen": [
-  "news:2054965:1"
+  "news:2054965:1",
+  "news:2054960:1"
  ],
  "kalshi_checked": null
 }

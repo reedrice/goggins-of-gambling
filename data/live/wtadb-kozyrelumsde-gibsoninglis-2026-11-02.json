@@ -4,12 +4,12 @@
  "game": "Kozyreva / Lumsden vs. Gibson / Inglis",
  "url": "https://polymarket.us/sports/wtadb/wtadb-kozyrelumsde-gibsoninglis-2026-11-02",
  "start_time": "2026-11-02T07:30:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186658",
-  "fetched_at": "2026-11-02T09:23:43.340Z",
+  "fetched_at": "2026-11-02T09:33:48.011Z",
   "tennis": true,
   "tennis_match": {
    "id": "186658",
@@ -17,17 +17,17 @@
    "date": "2026-11-02T07:35Z",
    "startDate": "2026-11-02T07:35Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Mariia Kozyreva (RUS) & Maia Lumsden (GBR) leads Talia Gibson (AUS) & Maddison Inglis (AUS) 7-5 4-6 0-0",
+     "text": "Talia Gibson (AUS) & Maddison Inglis (AUS) bt (1) Mariia Kozyreva (RUS) & Maia Lumsden (GBR) 5-7 6-4 1-0 (11-9)",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "linescores": [
       {
        "value": 5,
@@ -65,7 +66,9 @@
        "winner": true
       },
       {
-       "value": 0
+       "value": 1,
+       "tiebreak": 11,
+       "winner": true
       }
      ],
      "roster": {
@@ -140,6 +143,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "curatedRank": {
       "current": 1
      },
@@ -153,7 +157,9 @@
        "winner": false
       },
       {
-       "value": 0
+       "value": 0,
+       "tiebreak": 9,
+       "winner": false
       }
      ],
      "roster": {
@@ -239,16 +245,16 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Talia Gibson / Maddison Inglis",
    "alias": "Talia Gibson / Maddison Inglis",
    "name": "Talia Gibson / Maddison Inglis",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Mariia Kozyreva / Maia Lumsden",
@@ -260,7 +266,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-02T09:23:42.356Z",
+ "updated": "2026-11-02T09:33:47.867Z",
  "open_taken_at": "2026-11-01T05:07:32.124Z",
  "thresholds": {
   "big": 10,
@@ -308,16 +314,32 @@
    "reason": null,
    "context": "Talia Gibson / Maddison Inglis 5, 6, 0 · Mariia Kozyreva / Maia Lumsden 7, 4, 0 · 3rd Set (games by set)",
    "first_seen": "2026-11-02T09:00:33.397Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
+ "alerts": [
+  {
+   "id": "gone:2004282:1:2026-11-02T09:00:33.397Z",
+   "key": "2004282:1",
+   "at": "2026-11-02T09:33:47.867Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Gibson T / Inglis M win",
+   "market": "Moneyline",
+   "now_odds": "+100",
+   "now_chance": 50,
+   "edge": 8,
+   "text": "Edge gone: Gibson T / Inglis M win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-kozyrelumsde-gibsoninglis-2026-11-02"
+  }
+ ],
  "alert_seen": [
   "new_edge:2004282:1:slight",
   "gone:2004282:1:2026-11-01T20:02:10.458Z",
   "new_edge:2004282:1:big",
-  "news:2004282:1"
+  "news:2004282:1",
+  "gone:2004282:1:2026-11-02T09:00:33.397Z"
  ],
  "kalshi_checked": null
 }
