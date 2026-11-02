@@ -9,37 +9,15 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-02T23:39:34.553Z"
+  "fetched_at": "2026-11-02T23:50:52.043Z"
  },
- "updated": "2026-11-02T23:39:34.466Z",
+ "updated": "2026-11-02T23:50:51.917Z",
  "open_taken_at": "2026-11-01T05:07:48.156Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "2024051",
-   "market": "Moneyline",
-   "group": "game",
-   "mtype": "winner",
-   "period": "full_game",
-   "line": null,
-   "question": "Who will win in the upcoming atp event Carlos Maria Zarate vs Gonzalo Villanueva scheduled for November 2, 2026 at 1:00 PM UTC?",
-   "sides": [
-    "Carlos Maria Zarate win",
-    "Gonzalo Villanueva win"
-   ],
-   "teams": [
-    "Carlos Maria Zarate",
-    "Gonzalo Villanueva"
-   ],
-   "player": null,
-   "mid": 47,
-   "yes_buy": 49,
-   "no_buy": 55,
-   "taken_at": "2026-11-02T05:29:08.161Z"
-  },
   {
    "market_id": "2028335",
    "market": "Set 2 winner",
@@ -61,6 +39,28 @@
    "yes_buy": 44,
    "no_buy": 57,
    "taken_at": "2026-11-02T22:36:41.715Z"
+  },
+  {
+   "market_id": "2024051",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming atp event Carlos Maria Zarate vs Gonzalo Villanueva scheduled for November 2, 2026 at 1:00 PM UTC?",
+   "sides": [
+    "Carlos Maria Zarate win",
+    "Gonzalo Villanueva win"
+   ],
+   "teams": [
+    "Carlos Maria Zarate",
+    "Gonzalo Villanueva"
+   ],
+   "player": null,
+   "mid": 47,
+   "yes_buy": 49,
+   "no_buy": 55,
+   "taken_at": "2026-11-02T05:29:08.161Z"
   },
   {
    "market_id": "2028324",
@@ -153,6 +153,26 @@
  ],
  "edges": [
   {
+   "key": "2028335:1",
+   "market_id": "2028335",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Carlos Maria Zarate win set 2 against Gonzalo Villanueva?",
+   "side": "No: Carlos Maria Zarate win set 2 against Gonzalo Villanueva",
+   "open_chance": 57,
+   "now_chance": 51,
+   "open_odds": "-133",
+   "now_odds": "-104",
+   "edge": 6,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-02T23:50:51.917Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2024051:1",
    "market_id": "2024051",
    "market": "Moneyline",
@@ -169,7 +189,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-02T22:36:41.715Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -214,6 +234,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2028335:1:slight",
+   "key": "2028335:1",
+   "at": "2026-11-02T23:50:51.917Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "No: Carlos Maria Zarate win set 2 against Gonzalo Villanueva",
+   "market": "Set 2 winner",
+   "now_odds": "-104",
+   "now_chance": 51,
+   "edge": 6,
+   "text": "New slight edge: No: Carlos Maria Zarate win set 2 against Gonzalo Villanueva (Set 2 winner), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-carzar-gonvil-2026-11-02"
+  },
+  {
+   "id": "gone:2024051:1:2026-11-02T22:36:41.715Z",
+   "key": "2024051:1",
+   "at": "2026-11-02T23:50:51.917Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Gonzalo Villanueva win",
+   "market": "Moneyline",
+   "now_odds": "+223",
+   "now_chance": 31,
+   "edge": 24,
+   "text": "Edge gone: Gonzalo Villanueva win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-carzar-gonvil-2026-11-02"
+  },
   {
    "id": "gone:2028335:0:2026-11-02T23:16:07.143Z",
    "key": "2028335:0",
@@ -290,7 +338,9 @@
   "new_edge:2024051:1:big",
   "gone:2024051:0:2026-11-02T09:56:25.586Z",
   "new_edge:2028335:0:big",
-  "gone:2028335:0:2026-11-02T23:16:07.143Z"
+  "gone:2028335:0:2026-11-02T23:16:07.143Z",
+  "new_edge:2028335:1:slight",
+  "gone:2024051:1:2026-11-02T22:36:41.715Z"
  ],
  "kalshi_checked": null
 }
