@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-02T02:07:11.097Z"
+  "fetched_at": "2026-11-02T02:20:07.351Z"
  },
- "updated": "2026-11-02T02:07:10.999Z",
+ "updated": "2026-11-02T02:20:07.256Z",
  "open_taken_at": "2026-11-01T05:17:34.482Z",
  "thresholds": {
   "big": 10,
@@ -61,48 +61,137 @@
    "yes_buy": 63,
    "no_buy": 42,
    "taken_at": "2026-11-01T23:04:10.262Z"
+  },
+  {
+   "market_id": "2039468",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Evan Zhu vs. Yuta Shimizu be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 48.5,
+   "yes_buy": 49,
+   "no_buy": 52,
+   "taken_at": "2026-11-02T02:20:07.256Z"
+  },
+  {
+   "market_id": "2039466",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Evan Zhu cover 1.5 vs the Yuta Shimizu in Evan Zhu vs. Yuta Shimizu?",
+   "sides": [
+    "Evan Zhu +1.50 (Sets)",
+    "Yuta Shimizu -1.50 (Sets)"
+   ],
+   "teams": [
+    "Evan Zhu",
+    "Yuta Shimizu"
+   ],
+   "player": null,
+   "mid": 44.5,
+   "yes_buy": 45,
+   "no_buy": 56,
+   "taken_at": "2026-11-02T02:20:07.256Z"
+  },
+  {
+   "market_id": "2039476",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Evan Zhu win set 2 against Yuta Shimizu?",
+   "sides": [
+    "Yes: Evan Zhu win set 2 against Yuta Shimizu",
+    "No: Evan Zhu win set 2 against Yuta Shimizu"
+   ],
+   "teams": [
+    "Evan Zhu",
+    null
+   ],
+   "player": null,
+   "mid": 31.5,
+   "yes_buy": 32,
+   "no_buy": 69,
+   "taken_at": "2026-11-02T02:20:07.256Z"
+  },
+  {
+   "market_id": "2039475",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Evan Zhu win set 1 against Yuta Shimizu?",
+   "sides": [
+    "Yes: Evan Zhu win set 1 against Yuta Shimizu",
+    "No: Evan Zhu win set 1 against Yuta Shimizu"
+   ],
+   "teams": [
+    "Evan Zhu",
+    null
+   ],
+   "player": null,
+   "mid": 9.5,
+   "yes_buy": 10,
+   "no_buy": 91,
+   "taken_at": "2026-11-02T02:20:07.256Z"
   }
  ],
  "edges": [
   {
-   "key": "2039455:1",
-   "market_id": "2039455",
-   "market": "Moneyline",
+   "key": "2039462:1",
+   "market_id": "2039462",
+   "market": "Games spread",
    "group": "game",
-   "question": "Who will win in the upcoming atp event Evan Zhu vs Yuta Shimizu scheduled for November 2, 2026 at 2:00 AM UTC?",
-   "side": "Yuta Shimizu win",
-   "open_chance": 75,
-   "now_chance": 70,
-   "open_odds": "-300",
-   "now_odds": "-233",
-   "edge": 5,
-   "tier": "slight",
+   "question": "Will the Evan Zhu cover 4.5 vs the Yuta Shimizu in Evan Zhu vs. Yuta Shimizu?",
+   "side": "Yuta Shimizu -4.50 (Games)",
+   "open_chance": 42,
+   "now_chance": 32,
+   "open_odds": "+138",
+   "now_odds": "+213",
+   "edge": 10,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-01T11:12:18.564Z",
+   "first_seen": "2026-11-02T02:20:07.256Z",
    "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
   {
-   "id": "new_edge:2039455:1:slight",
-   "key": "2039455:1",
-   "at": "2026-11-02T02:07:10.999Z",
+   "id": "new_edge:2039462:1:big",
+   "key": "2039462:1",
+   "at": "2026-11-02T02:20:07.256Z",
    "type": "new_edge",
-   "tier": "slight",
-   "side": "Yuta Shimizu win",
-   "market": "Moneyline",
-   "now_odds": "-233",
-   "now_chance": 70,
-   "edge": 5,
-   "text": "New slight edge: Yuta Shimizu win (Moneyline), 5 points cheaper than open.",
+   "tier": "big",
+   "side": "Yuta Shimizu -4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+213",
+   "now_chance": 32,
+   "edge": 10,
+   "text": "New big edge: Yuta Shimizu -4.50 (Games) (Games spread), 10 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-evazhu-yutshi-2026-11-01"
   }
  ],
  "alert_seen": [
-  "new_edge:2039455:1:slight"
+  "new_edge:2039455:1:slight",
+  "new_edge:2039462:1:big"
  ],
  "kalshi_checked": null
 }
