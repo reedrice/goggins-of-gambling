@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-02T00:44:14.337Z"
+  "fetched_at": "2026-11-02T00:51:52.375Z"
  },
- "updated": "2026-11-02T00:44:14.191Z",
+ "updated": "2026-11-02T00:51:52.227Z",
  "open_taken_at": "2026-11-01T00:17:17.854Z",
  "thresholds": {
   "big": 10,
@@ -63,28 +63,6 @@
    "taken_at": "2026-11-02T00:35:19.342Z"
   },
   {
-   "market_id": "2030514",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Dominick Mosejczuk win set 2 against Kenta (2004) Miyoshi?",
-   "sides": [
-    "Yes: Dominick Mosejczuk win set 2 against Kenta (2004) Miyoshi",
-    "No: Dominick Mosejczuk win set 2 against Kenta (2004) Miyoshi"
-   ],
-   "teams": [
-    "Dominick Mosejczuk",
-    null
-   ],
-   "player": null,
-   "mid": 47,
-   "yes_buy": 49,
-   "no_buy": 55,
-   "taken_at": "2026-11-02T00:35:19.342Z"
-  },
-  {
    "market_id": "2030505",
    "market": "Games total",
    "group": "game",
@@ -104,6 +82,28 @@
    "mid": 56.5,
    "yes_buy": 57,
    "no_buy": 44,
+   "taken_at": "2026-11-02T00:35:19.342Z"
+  },
+  {
+   "market_id": "2030514",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Dominick Mosejczuk win set 2 against Kenta (2004) Miyoshi?",
+   "sides": [
+    "Yes: Dominick Mosejczuk win set 2 against Kenta (2004) Miyoshi",
+    "No: Dominick Mosejczuk win set 2 against Kenta (2004) Miyoshi"
+   ],
+   "teams": [
+    "Dominick Mosejczuk",
+    null
+   ],
+   "player": null,
+   "mid": 47,
+   "yes_buy": 49,
+   "no_buy": 55,
    "taken_at": "2026-11-02T00:35:19.342Z"
   },
   {
@@ -197,6 +197,26 @@
  ],
  "edges": [
   {
+   "key": "2030514:0",
+   "market_id": "2030514",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Dominick Mosejczuk win set 2 against Kenta (2004) Miyoshi?",
+   "side": "Yes: Dominick Mosejczuk win set 2 against Kenta (2004) Miyoshi",
+   "open_chance": 49,
+   "now_chance": 34,
+   "open_odds": "+104",
+   "now_odds": "+194",
+   "edge": 15,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-02T00:51:52.227Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2030505:0",
    "market_id": "2030505",
    "market": "Games total",
@@ -219,6 +239,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:2030514:0:big",
+   "key": "2030514:0",
+   "at": "2026-11-02T00:51:52.227Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Yes: Dominick Mosejczuk win set 2 against Kenta (2004) Miyoshi",
+   "market": "Set 2 winner",
+   "now_odds": "+194",
+   "now_chance": 34,
+   "edge": 15,
+   "text": "New big edge: Yes: Dominick Mosejczuk win set 2 against Kenta (2004) Miyoshi (Set 2 winner), 15 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-dommos-kenmiy-2026-11-01"
+  },
+  {
    "id": "new_edge:2030505:0:big",
    "key": "2030505:0",
    "at": "2026-11-02T00:44:14.191Z",
@@ -235,7 +269,8 @@
  ],
  "alert_seen": [
   "new_edge:2027431:0:big",
-  "new_edge:2030505:0:big"
+  "new_edge:2030505:0:big",
+  "new_edge:2030514:0:big"
  ],
  "kalshi_checked": null
 }

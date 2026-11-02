@@ -3,10 +3,10 @@
  "min_samples": 30,
  "note": "Learned only from real graded results. Adjustments stay at 0 (and trust at 1) until a bucket or category has 30 graded picks. Small samples are noisy.",
  "sample": {
-  "picks_logged": 2702,
-  "picks_graded": 2555,
+  "picks_logged": 2704,
+  "picks_graded": 2566,
   "predictions_graded": 145,
-  "clv_legs": 2375
+  "clv_legs": 2378
  },
  "calibration": {
   "picks": [
@@ -58,28 +58,28 @@
    {
     "lo": 50,
     "hi": 60,
-    "n": 596,
+    "n": 601,
     "avg_said": 54.3,
-    "actual": 48.7,
-    "adjustment_pts": -4.8,
+    "actual": 48.3,
+    "adjustment_pts": -5.1,
     "status": "applied"
    },
    {
     "lo": 60,
     "hi": 70,
-    "n": 454,
-    "avg_said": 64.5,
-    "actual": 58.4,
-    "adjustment_pts": -5.1,
+    "n": 458,
+    "avg_said": 64.6,
+    "actual": 58.5,
+    "adjustment_pts": -5,
     "status": "applied"
    },
    {
     "lo": 70,
     "hi": 80,
-    "n": 274,
+    "n": 276,
     "avg_said": 73,
-    "actual": 71.5,
-    "adjustment_pts": -1.1,
+    "actual": 71.4,
+    "adjustment_pts": -1.2,
     "status": "applied"
    },
    {
@@ -150,13 +150,13 @@
   ]
  },
  "market_shrink": {
-  "n": 2555,
+  "n": 2566,
   "raw_weight": 0,
   "weight": 0.04,
   "status": "applied"
  },
  "clv": {
-  "n": 2375,
+  "n": 2378,
   "avg_pts": 0.6,
   "beat_close_pct": 32.6
  },
@@ -205,7 +205,7 @@
    "units": -3.95,
    "roi": -2.6,
    "avg_clv": -0.5,
-   "clv_n": 147,
+   "clv_n": 149,
    "trust": 0.98,
    "status": "applied"
   },
@@ -214,12 +214,12 @@
    "sport": "NBA",
    "type": "spread",
    "stat": null,
-   "n": 148,
+   "n": 149,
    "w": 76,
-   "l": 72,
-   "hit_rate": 51.4,
-   "units": 0.27,
-   "roi": 0.2,
+   "l": 73,
+   "hit_rate": 51,
+   "units": -0.73,
+   "roi": -0.5,
    "avg_clv": -1,
    "clv_n": 147,
    "trust": 1,
@@ -237,7 +237,7 @@
    "units": 29.01,
    "roi": 20,
    "avg_clv": 0.1,
-   "clv_n": 138,
+   "clv_n": 139,
    "trust": 1.12,
    "status": "applied"
   },
@@ -310,12 +310,12 @@
    "sport": "NBA",
    "type": "prop",
    "stat": "reb",
-   "n": 93,
-   "w": 61,
+   "n": 94,
+   "w": 62,
    "l": 32,
-   "hit_rate": 65.6,
-   "units": 9.38,
-   "roi": 10.1,
+   "hit_rate": 66,
+   "units": 10.02,
+   "roi": 10.7,
    "avg_clv": 0.4,
    "clv_n": 94,
    "trust": 1.05,
@@ -326,15 +326,15 @@
    "sport": "NBA",
    "type": "total",
    "stat": null,
-   "n": 74,
+   "n": 77,
    "w": 45,
-   "l": 29,
-   "hit_rate": 60.8,
-   "units": 14.86,
-   "roi": 20.1,
+   "l": 32,
+   "hit_rate": 58.4,
+   "units": 11.86,
+   "roi": 15.4,
    "avg_clv": 1.2,
    "clv_n": 75,
-   "trust": 1.09,
+   "trust": 1.07,
    "status": "applied"
   },
   {
@@ -406,12 +406,12 @@
    "sport": "NFL",
    "type": "prop",
    "stat": "recyd",
-   "n": 33,
-   "w": 20,
+   "n": 34,
+   "w": 21,
    "l": 13,
-   "hit_rate": 60.6,
-   "units": -1.73,
-   "roi": -5.2,
+   "hit_rate": 61.8,
+   "units": -1.26,
+   "roi": -3.7,
    "avg_clv": -0.3,
    "clv_n": 34,
    "trust": 0.99,
@@ -434,6 +434,22 @@
    "status": "collecting data"
   },
   {
+   "key": "NFL · prop · rec",
+   "sport": "NFL",
+   "type": "prop",
+   "stat": "rec",
+   "n": 25,
+   "w": 15,
+   "l": 10,
+   "hit_rate": 60,
+   "units": -2.25,
+   "roi": -9,
+   "avg_clv": 2.8,
+   "clv_n": 25,
+   "trust": 1,
+   "status": "collecting data"
+  },
+  {
    "key": "MLB · prop · hits",
    "sport": "MLB",
    "type": "prop",
@@ -446,22 +462,6 @@
    "roi": 6.8,
    "avg_clv": -0.6,
    "clv_n": 24,
-   "trust": 1,
-   "status": "collecting data"
-  },
-  {
-   "key": "NFL · prop · rec",
-   "sport": "NFL",
-   "type": "prop",
-   "stat": "rec",
-   "n": 23,
-   "w": 13,
-   "l": 10,
-   "hit_rate": 56.5,
-   "units": -3.48,
-   "roi": -15.1,
-   "avg_clv": 2.8,
-   "clv_n": 25,
    "trust": 1,
    "status": "collecting data"
   },
@@ -502,14 +502,30 @@
    "sport": "NFL",
    "type": "prop",
    "stat": "int",
-   "n": 18,
+   "n": 19,
    "w": 10,
-   "l": 8,
-   "hit_rate": 55.6,
-   "units": 1.42,
-   "roi": 7.9,
+   "l": 9,
+   "hit_rate": 52.6,
+   "units": 0.42,
+   "roi": 2.2,
    "avg_clv": 0.2,
    "clv_n": 19,
+   "trust": 1,
+   "status": "collecting data"
+  },
+  {
+   "key": "NBA · moneyline",
+   "sport": "NBA",
+   "type": "moneyline",
+   "stat": null,
+   "n": 17,
+   "w": 7,
+   "l": 10,
+   "hit_rate": 41.2,
+   "units": 0.59,
+   "roi": 3.5,
+   "avg_clv": -0.1,
+   "clv_n": 16,
    "trust": 1,
    "status": "collecting data"
   },
@@ -530,22 +546,6 @@
    "status": "collecting data"
   },
   {
-   "key": "NBA · moneyline",
-   "sport": "NBA",
-   "type": "moneyline",
-   "stat": null,
-   "n": 16,
-   "w": 7,
-   "l": 9,
-   "hit_rate": 43.8,
-   "units": 1.59,
-   "roi": 10,
-   "avg_clv": -0.1,
-   "clv_n": 16,
-   "trust": 1,
-   "status": "collecting data"
-  },
-  {
    "key": "NBA · prop · blk",
    "sport": "NBA",
    "type": "prop",
@@ -562,6 +562,22 @@
    "status": "collecting data"
   },
   {
+   "key": "NFL · prop · ryd",
+   "sport": "NFL",
+   "type": "prop",
+   "stat": "ryd",
+   "n": 14,
+   "w": 5,
+   "l": 9,
+   "hit_rate": 35.7,
+   "units": -6.41,
+   "roi": -45.8,
+   "avg_clv": -0.9,
+   "clv_n": 14,
+   "trust": 1,
+   "status": "collecting data"
+  },
+  {
    "key": "NFL · prop · pyd",
    "sport": "NFL",
    "type": "prop",
@@ -574,22 +590,6 @@
    "roi": -64.9,
    "avg_clv": 2.1,
    "clv_n": 13,
-   "trust": 1,
-   "status": "collecting data"
-  },
-  {
-   "key": "NFL · prop · ryd",
-   "sport": "NFL",
-   "type": "prop",
-   "stat": "ryd",
-   "n": 13,
-   "w": 5,
-   "l": 8,
-   "hit_rate": 38.5,
-   "units": -5.41,
-   "roi": -41.7,
-   "avg_clv": -0.9,
-   "clv_n": 14,
    "trust": 1,
    "status": "collecting data"
   },
@@ -931,8 +931,8 @@
   }
  ],
  "best": [
-  "NBA · total",
   "Soccer · spread",
+  "NBA · total",
   "NBA · prop · ast"
  ],
  "worst": [
@@ -940,5 +940,5 @@
   "NFL · prop · pyd",
   "NFL · prop · ryd"
  ],
- "updated_at": "2026-11-02T00:46:12.728Z"
+ "updated_at": "2026-11-02T00:53:48.398Z"
 }
