@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-02T11:09:52.668Z"
+  "fetched_at": "2026-11-02T11:19:57.774Z"
  },
- "updated": "2026-11-02T11:09:52.539Z",
+ "updated": "2026-11-02T11:19:57.687Z",
  "open_taken_at": "2026-11-01T05:07:15.815Z",
  "thresholds": {
   "big": 10,
@@ -41,8 +41,52 @@
    "taken_at": "2026-11-01T05:07:15.815Z"
   },
   {
-   "market_id": "2023500",
+   "market_id": "2023499",
    "market": "Main total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 137.5,
+   "question": "Will the total in Merrimack vs. Appalachian State be more than 137.5?",
+   "sides": [
+    "Over 137.5",
+    "Under 137.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 41,
+   "yes_buy": 42,
+   "no_buy": 60,
+   "taken_at": "2026-11-01T14:29:29.082Z"
+  },
+  {
+   "market_id": "2023480",
+   "market": "Main spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 2.5,
+   "question": "Will Merrimack cover +2.5 vs Appalachian State in Merrimack vs. Appalachian State?",
+   "sides": [
+    "Warriors +2.50",
+    "Mountaineers -2.50"
+   ],
+   "teams": [
+    "Warriors",
+    "Mountaineers"
+   ],
+   "player": null,
+   "mid": 71,
+   "yes_buy": 73,
+   "no_buy": 31,
+   "taken_at": "2026-11-01T22:07:01.924Z"
+  },
+  {
+   "market_id": "2023500",
+   "market": "Alt total",
    "group": "game",
    "mtype": "total",
    "period": "full_game",
@@ -64,7 +108,7 @@
   },
   {
    "market_id": "2023476",
-   "market": "Main spread",
+   "market": "Alt spread",
    "group": "game",
    "mtype": "spread",
    "period": "full_game",
@@ -283,28 +327,6 @@
    "taken_at": "2026-11-01T22:46:28.220Z"
   },
   {
-   "market_id": "2023480",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": 2.5,
-   "question": "Will Merrimack cover +2.5 vs Appalachian State in Merrimack vs. Appalachian State?",
-   "sides": [
-    "Warriors +2.50",
-    "Mountaineers -2.50"
-   ],
-   "teams": [
-    "Warriors",
-    "Mountaineers"
-   ],
-   "player": null,
-   "mid": 71,
-   "yes_buy": 73,
-   "no_buy": 31,
-   "taken_at": "2026-11-01T22:07:01.924Z"
-  },
-  {
    "market_id": "2023504",
    "market": "Alt total",
    "group": "game",
@@ -457,28 +479,6 @@
    "yes_buy": 44,
    "no_buy": 59,
    "taken_at": "2026-11-01T22:46:28.220Z"
-  },
-  {
-   "market_id": "2023499",
-   "market": "Alt total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 137.5,
-   "question": "Will the total in Merrimack vs. Appalachian State be more than 137.5?",
-   "sides": [
-    "Over 137.5",
-    "Under 137.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 41,
-   "yes_buy": 42,
-   "no_buy": 60,
-   "taken_at": "2026-11-01T14:29:29.082Z"
   },
   {
    "market_id": "2023501",
@@ -835,6 +835,26 @@
  ],
  "edges": [
   {
+   "key": "2023480:0",
+   "market_id": "2023480",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will Merrimack cover +2.5 vs Appalachian State in Merrimack vs. Appalachian State?",
+   "side": "Warriors +2.50",
+   "open_chance": 73,
+   "now_chance": 36,
+   "open_odds": "-270",
+   "now_odds": "+178",
+   "edge": 37,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-02T00:43:51.769Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1913444:0",
    "market_id": "1913444",
    "market": "Moneyline",
@@ -842,11 +862,11 @@
    "question": "Who will win in the upcoming basketball event Merrimack vs Appalachian State scheduled for November 2, 2026 at 6:00AM ET?",
    "side": "Warriors win",
    "open_chance": 65,
-   "now_chance": 58,
+   "now_chance": 31,
    "open_odds": "-186",
-   "now_odds": "-138",
-   "edge": 7,
-   "tier": "slight",
+   "now_odds": "+223",
+   "edge": 34,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -855,22 +875,42 @@
    "kalshi": null
   },
   {
-   "key": "2023500:0",
+   "key": "2023476:0",
+   "market_id": "2023476",
+   "market": "Alt spread",
+   "group": "game",
+   "question": "Will Merrimack cover -3.5 vs Appalachian State in Merrimack vs. Appalachian State?",
+   "side": "Warriors -3.50",
+   "open_chance": 50,
+   "now_chance": 23,
+   "open_odds": "+100",
+   "now_odds": "+335",
+   "edge": 27,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-02T11:19:57.687Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2023500:1",
    "market_id": "2023500",
-   "market": "Main total",
+   "market": "Alt total",
    "group": "game",
    "question": "Will the total in Merrimack vs. Appalachian State be more than 133.5?",
-   "side": "Over 133.5",
-   "open_chance": 55,
-   "now_chance": 49,
-   "open_odds": "-122",
-   "now_odds": "+104",
-   "edge": 6,
+   "side": "Under 133.5",
+   "open_chance": 49,
+   "now_chance": 41,
+   "open_odds": "+104",
+   "now_odds": "+144",
+   "edge": 8,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-02T03:42:49.405Z",
+   "first_seen": "2026-11-02T11:19:57.687Z",
    "status": "open",
    "kalshi": null
   },
@@ -895,22 +935,22 @@
    "kalshi": null
   },
   {
-   "key": "2023480:0",
-   "market_id": "2023480",
-   "market": "Alt spread",
+   "key": "2023500:0",
+   "market_id": "2023500",
+   "market": "Main total",
    "group": "game",
-   "question": "Will Merrimack cover +2.5 vs Appalachian State in Merrimack vs. Appalachian State?",
-   "side": "Warriors +2.50",
-   "open_chance": 73,
-   "now_chance": 66,
-   "open_odds": "-270",
-   "now_odds": "-194",
-   "edge": 7,
+   "question": "Will the total in Merrimack vs. Appalachian State be more than 133.5?",
+   "side": "Over 133.5",
+   "open_chance": 55,
+   "now_chance": 49,
+   "open_odds": "-122",
+   "now_odds": "+104",
+   "edge": 6,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-02T00:43:51.769Z",
+   "first_seen": "2026-11-02T03:42:49.405Z",
    "status": "gone",
    "kalshi": null
   },
@@ -1157,6 +1197,76 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:2023480:0:big",
+   "key": "2023480:0",
+   "at": "2026-11-02T11:19:57.687Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Warriors +2.50",
+   "market": "Main spread",
+   "now_odds": "+178",
+   "now_chance": 36,
+   "edge": 37,
+   "text": "New big edge: Warriors +2.50 (Main spread), 37 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-merri-applst-2026-11-02"
+  },
+  {
+   "id": "new_edge:1913444:0:big",
+   "key": "1913444:0",
+   "at": "2026-11-02T11:19:57.687Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Warriors win",
+   "market": "Moneyline",
+   "now_odds": "+223",
+   "now_chance": 31,
+   "edge": 34,
+   "text": "New big edge: Warriors win (Moneyline), 34 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-merri-applst-2026-11-02"
+  },
+  {
+   "id": "new_edge:2023476:0:big",
+   "key": "2023476:0",
+   "at": "2026-11-02T11:19:57.687Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Warriors -3.50",
+   "market": "Alt spread",
+   "now_odds": "+335",
+   "now_chance": 23,
+   "edge": 27,
+   "text": "New big edge: Warriors -3.50 (Alt spread), 27 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-merri-applst-2026-11-02"
+  },
+  {
+   "id": "new_edge:2023500:1:slight",
+   "key": "2023500:1",
+   "at": "2026-11-02T11:19:57.687Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Under 133.5",
+   "market": "Alt total",
+   "now_odds": "+144",
+   "now_chance": 41,
+   "edge": 8,
+   "text": "New slight edge: Under 133.5 (Alt total), 8 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-merri-applst-2026-11-02"
+  },
+  {
+   "id": "gone:2023500:0:2026-11-02T03:42:49.405Z",
+   "key": "2023500:0",
+   "at": "2026-11-02T11:19:57.687Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 133.5",
+   "market": "Main total",
+   "now_odds": "+104",
+   "now_chance": 49,
+   "edge": 6,
+   "text": "Edge gone: Over 133.5 (Main total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-merri-applst-2026-11-02"
+  },
+  {
    "id": "new_edge:1913444:0:slight",
    "key": "1913444:0",
    "at": "2026-11-02T11:09:52.539Z",
@@ -1292,7 +1402,12 @@
   "gone:2023504:0:2026-11-02T10:28:17.588Z",
   "gone:2023506:0:2026-11-02T10:38:22.199Z",
   "gone:2024528:0:2026-11-02T04:48:14.027Z",
-  "gone:2023501:0:2026-11-02T10:18:38.290Z"
+  "gone:2023501:0:2026-11-02T10:18:38.290Z",
+  "new_edge:2023480:0:big",
+  "new_edge:1913444:0:big",
+  "new_edge:2023476:0:big",
+  "new_edge:2023500:1:slight",
+  "gone:2023500:0:2026-11-02T03:42:49.405Z"
  ],
  "kalshi_checked": null
 }
