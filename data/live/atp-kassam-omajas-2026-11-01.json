@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-02T06:12:52.936Z"
+  "fetched_at": "2026-11-02T06:20:56.939Z"
  },
- "updated": "2026-11-02T06:12:52.800Z",
+ "updated": "2026-11-02T06:20:56.779Z",
  "open_taken_at": "2026-11-01T12:35:57.412Z",
  "thresholds": {
   "big": 10,
@@ -39,6 +39,28 @@
    "yes_buy": 57,
    "no_buy": 49,
    "taken_at": "2026-11-01T13:11:26.875Z"
+  },
+  {
+   "market_id": "2053604",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Kasidit Samrej win set 2 against Omar Jasika?",
+   "sides": [
+    "Yes: Kasidit Samrej win set 2 against Omar Jasika",
+    "No: Kasidit Samrej win set 2 against Omar Jasika"
+   ],
+   "teams": [
+    "Kasidit Samrej",
+    null
+   ],
+   "player": null,
+   "mid": 47.5,
+   "yes_buy": 48,
+   "no_buy": 53,
+   "taken_at": "2026-11-02T04:57:53.127Z"
   },
   {
    "market_id": "2053593",
@@ -107,26 +129,26 @@
    "taken_at": "2026-11-02T05:19:41.470Z"
   },
   {
-   "market_id": "2053604",
-   "market": "Set 2 winner",
+   "market_id": "2053573",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Kasidit Samrej win set 2 against Omar Jasika?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Kasidit Samrej cover -1.5 vs the Omar Jasika in Kasidit Samrej vs. Omar Jasika?",
    "sides": [
-    "Yes: Kasidit Samrej win set 2 against Omar Jasika",
-    "No: Kasidit Samrej win set 2 against Omar Jasika"
+    "Kasidit Samrej -1.50 (Games)",
+    "Omar Jasika +1.50 (Games)"
    ],
    "teams": [
     "Kasidit Samrej",
-    null
+    "Omar Jasika"
    ],
    "player": null,
-   "mid": 47.5,
-   "yes_buy": 48,
-   "no_buy": 53,
-   "taken_at": "2026-11-02T04:57:53.127Z"
+   "mid": 43.5,
+   "yes_buy": 44,
+   "no_buy": 57,
+   "taken_at": "2026-11-02T04:48:32.948Z"
   },
   {
    "market_id": "2053575",
@@ -149,28 +171,6 @@
    "yes_buy": 54,
    "no_buy": 51,
    "taken_at": "2026-11-02T01:49:37.791Z"
-  },
-  {
-   "market_id": "2053573",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Kasidit Samrej cover -1.5 vs the Omar Jasika in Kasidit Samrej vs. Omar Jasika?",
-   "sides": [
-    "Kasidit Samrej -1.50 (Games)",
-    "Omar Jasika +1.50 (Games)"
-   ],
-   "teams": [
-    "Kasidit Samrej",
-    "Omar Jasika"
-   ],
-   "player": null,
-   "mid": 43.5,
-   "yes_buy": 44,
-   "no_buy": 57,
-   "taken_at": "2026-11-02T04:48:32.948Z"
   },
   {
    "market_id": "2053589",
@@ -285,6 +285,46 @@
  ],
  "edges": [
   {
+   "key": "2053604:1",
+   "market_id": "2053604",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Kasidit Samrej win set 2 against Omar Jasika?",
+   "side": "No: Kasidit Samrej win set 2 against Omar Jasika",
+   "open_chance": 53,
+   "now_chance": 33,
+   "open_odds": "-113",
+   "now_odds": "+203",
+   "edge": 20,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-02T06:04:07.536Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2053575:0",
+   "market_id": "2053575",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Kasidit Samrej cover 1.5 vs the Omar Jasika in Kasidit Samrej vs. Omar Jasika?",
+   "side": "Kasidit Samrej +1.50 (Games)",
+   "open_chance": 54,
+   "now_chance": 34,
+   "open_odds": "-117",
+   "now_odds": "+194",
+   "edge": 20,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-02T05:10:22.569Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2051607:0",
    "market_id": "2051607",
    "market": "Moneyline",
@@ -292,10 +332,10 @@
    "question": "Who will win in the upcoming atp event Kasidit Samrej vs Omar Jasika scheduled for November 2, 2026 at 2:00 AM UTC?",
    "side": "Kasidit Samrej win",
    "open_chance": 57,
-   "now_chance": 22,
+   "now_chance": 39,
    "open_odds": "-133",
-   "now_odds": "+355",
-   "edge": 35,
+   "now_odds": "+156",
+   "edge": 18,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -325,26 +365,6 @@
    "kalshi": null
   },
   {
-   "key": "2053575:0",
-   "market_id": "2053575",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Kasidit Samrej cover 1.5 vs the Omar Jasika in Kasidit Samrej vs. Omar Jasika?",
-   "side": "Kasidit Samrej +1.50 (Games)",
-   "open_chance": 54,
-   "now_chance": 41,
-   "open_odds": "-117",
-   "now_odds": "+144",
-   "edge": 13,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-02T05:10:22.569Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "2053573:0",
    "market_id": "2053573",
    "market": "Games spread",
@@ -365,6 +385,26 @@
    "kalshi": null
   },
   {
+   "key": "2053595:0",
+   "market_id": "2053595",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Kasidit Samrej vs. Omar Jasika be more than 27.5?",
+   "side": "Over 27.5 (Games)",
+   "open_chance": 46,
+   "now_chance": 39,
+   "open_odds": "+117",
+   "now_odds": "+156",
+   "edge": 7,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-02T05:56:09.705Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2053589:1",
    "market_id": "2053589",
    "market": "Sets spread",
@@ -376,26 +416,6 @@
    "open_odds": "-186",
    "now_odds": "+186",
    "edge": 30,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-02T06:04:07.536Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "2053604:1",
-   "market_id": "2053604",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Kasidit Samrej win set 2 against Omar Jasika?",
-   "side": "No: Kasidit Samrej win set 2 against Omar Jasika",
-   "open_chance": 53,
-   "now_chance": 30,
-   "open_odds": "-113",
-   "now_odds": "+233",
-   "edge": 23,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -423,29 +443,23 @@
    "first_seen": "2026-11-02T05:56:09.705Z",
    "status": "gone",
    "kalshi": null
-  },
-  {
-   "key": "2053595:0",
-   "market_id": "2053595",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Kasidit Samrej vs. Omar Jasika be more than 27.5?",
-   "side": "Over 27.5 (Games)",
-   "open_chance": 46,
-   "now_chance": 35,
-   "open_odds": "+117",
-   "now_odds": "+186",
-   "edge": 11,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-02T05:56:09.705Z",
-   "status": "gone",
-   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2053595:0:slight",
+   "key": "2053595:0",
+   "at": "2026-11-02T06:20:56.779Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+156",
+   "now_chance": 39,
+   "edge": 7,
+   "text": "New slight edge: Over 27.5 (Games) (Games total), 7 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-kassam-omajas-2026-11-01"
+  },
   {
    "id": "gone:2053589:1:2026-11-02T06:04:07.536Z",
    "key": "2053589:1",
@@ -719,7 +733,8 @@
   "gone:2053604:0:2026-11-02T05:56:09.705Z",
   "gone:2053595:0:2026-11-02T05:56:09.705Z",
   "gone:2053589:1:2026-11-02T06:04:07.536Z",
-  "gone:2053604:1:2026-11-02T06:04:07.536Z"
+  "gone:2053604:1:2026-11-02T06:04:07.536Z",
+  "new_edge:2053595:0:slight"
  ],
  "kalshi_checked": null
 }
