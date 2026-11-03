@@ -9,37 +9,15 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-03T01:19:08.473Z"
+  "fetched_at": "2026-11-03T01:27:42.733Z"
  },
- "updated": "2026-11-03T01:19:08.405Z",
+ "updated": "2026-11-03T01:27:42.642Z",
  "open_taken_at": "2026-11-01T05:07:22.877Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "2036229",
-   "market": "Main total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 146.5,
-   "question": "Will the total in Fordham vs. Kansas be more than 146.5?",
-   "sides": [
-    "Over 146.5",
-    "Under 146.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 42,
-   "yes_buy": 45,
-   "no_buy": 61,
-   "taken_at": "2026-11-02T06:42:49.590Z"
-  },
   {
    "market_id": "2034231",
    "market": "Main spread",
@@ -61,6 +39,28 @@
    "yes_buy": 47,
    "no_buy": 59,
    "taken_at": "2026-11-02T08:40:07.884Z"
+  },
+  {
+   "market_id": "2036229",
+   "market": "Main total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 146.5,
+   "question": "Will the total in Fordham vs. Kansas be more than 146.5?",
+   "sides": [
+    "Over 146.5",
+    "Under 146.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 42,
+   "yes_buy": 45,
+   "no_buy": 61,
+   "taken_at": "2026-11-02T06:42:49.590Z"
   },
   {
    "market_id": "2034270",
@@ -901,6 +901,26 @@
  ],
  "edges": [
   {
+   "key": "2034231:1",
+   "market_id": "2034231",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will Fordham cover +21.5 vs Kansas in Fordham vs. Kansas?",
+   "side": "Jayhawks -21.50",
+   "open_chance": 59,
+   "now_chance": 46,
+   "open_odds": "-144",
+   "now_odds": "+117",
+   "edge": 13,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-02T20:04:34.798Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2036229:1",
    "market_id": "2036229",
    "market": "Main total",
@@ -917,26 +937,6 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-02T22:12:14.918Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "2034231:1",
-   "market_id": "2034231",
-   "market": "Main spread",
-   "group": "game",
-   "question": "Will Fordham cover +21.5 vs Kansas in Fordham vs. Kansas?",
-   "side": "Jayhawks -21.50",
-   "open_chance": 59,
-   "now_chance": 50,
-   "open_odds": "-144",
-   "now_odds": "+100",
-   "edge": 9,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-02T20:04:34.798Z",
    "status": "gone",
    "kalshi": null
   },
@@ -1303,6 +1303,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:2034231:1:big",
+   "key": "2034231:1",
+   "at": "2026-11-03T01:27:42.642Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Jayhawks -21.50",
+   "market": "Main spread",
+   "now_odds": "+117",
+   "now_chance": 46,
+   "edge": 13,
+   "text": "New big edge: Jayhawks -21.50 (Main spread), 13 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-fordm-kan-2026-11-02"
+  },
+  {
    "id": "gone:2036229:1:2026-11-02T22:12:14.918Z",
    "key": "2036229:1",
    "at": "2026-11-03T01:06:30.824Z",
@@ -1483,7 +1497,8 @@
   "gone:2034237:1:2026-11-02T20:27:32.006Z",
   "gone:2034268:1:2026-11-03T00:54:27.069Z",
   "gone:2034234:1:2026-11-02T22:24:42.812Z",
-  "gone:2034229:1:2026-11-02T20:50:29.983Z"
+  "gone:2034229:1:2026-11-02T20:50:29.983Z",
+  "new_edge:2034231:1:big"
  ],
  "kalshi_checked": null
 }
