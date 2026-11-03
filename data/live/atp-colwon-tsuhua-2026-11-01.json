@@ -9,37 +9,15 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-03T10:21:24.689Z"
+  "fetched_at": "2026-11-03T10:32:32.983Z"
  },
- "updated": "2026-11-03T10:21:24.620Z",
+ "updated": "2026-11-03T10:32:32.888Z",
  "open_taken_at": "2026-10-31T14:49:11.943Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "2027636",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Coleman Wong win set 1 against Tsung-Hao Huang?",
-   "sides": [
-    "Yes: Coleman Wong win set 1 against Tsung-Hao Huang",
-    "No: Coleman Wong win set 1 against Tsung-Hao Huang"
-   ],
-   "teams": [
-    "Coleman Wong",
-    null
-   ],
-   "player": null,
-   "mid": 95.5,
-   "yes_buy": 97,
-   "no_buy": 6,
-   "taken_at": "2026-11-03T10:21:24.620Z"
-  },
   {
    "market_id": "2027628",
    "market": "Games total",
@@ -104,6 +82,28 @@
    "mid": 20.5,
    "yes_buy": 21,
    "no_buy": 80,
+   "taken_at": "2026-11-03T10:21:24.620Z"
+  },
+  {
+   "market_id": "2027636",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Coleman Wong win set 1 against Tsung-Hao Huang?",
+   "sides": [
+    "Yes: Coleman Wong win set 1 against Tsung-Hao Huang",
+    "No: Coleman Wong win set 1 against Tsung-Hao Huang"
+   ],
+   "teams": [
+    "Coleman Wong",
+    null
+   ],
+   "player": null,
+   "mid": 95.5,
+   "yes_buy": 97,
+   "no_buy": 6,
    "taken_at": "2026-11-03T10:21:24.620Z"
   },
   {
@@ -270,11 +270,11 @@
    "question": "Will the total in Coleman Wong vs. Tsung-Hao Huang be more than 17.5?",
    "side": "Under 17.5 (Games)",
    "open_chance": 67,
-   "now_chance": 48,
+   "now_chance": 61,
    "open_odds": "-203",
-   "now_odds": "+108",
-   "edge": 19,
-   "tier": "big",
+   "now_odds": "-156",
+   "edge": 6,
+   "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -284,6 +284,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2027628:1:slight",
+   "key": "2027628:1",
+   "at": "2026-11-03T10:32:32.888Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-156",
+   "now_chance": 61,
+   "edge": 6,
+   "text": "New slight edge: Under 17.5 (Games) (Games total), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-colwon-tsuhua-2026-11-01"
+  },
   {
    "id": "new_edge:2027628:1:big",
    "key": "2027628:1",
@@ -300,7 +314,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2027628:1:big"
+  "new_edge:2027628:1:big",
+  "new_edge:2027628:1:slight"
  ],
  "kalshi_checked": null
 }
