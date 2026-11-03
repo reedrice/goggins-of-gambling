@@ -9,25 +9,25 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186458",
-  "fetched_at": "2026-11-03T13:40:33.401Z",
+  "fetched_at": "2026-11-03T13:50:56.602Z",
   "tennis": true,
   "tennis_match": {
    "id": "186458",
    "uid": "s:850~l:851~e:13-2026~c:186458",
-   "date": "2026-11-03T13:40Z",
-   "startDate": "2026-11-03T13:40Z",
+   "date": "2026-11-03T13:45Z",
+   "startDate": "2026-11-03T13:45Z",
    "timeValid": true,
    "recent": true,
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Tue, November 3rd at 8:40 AM EST",
-     "shortDetail": "11/3 - 8:40 AM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(10) Novak Djokovic (SER) leads Valentin Vacherot (MON) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "d5288b98-9bfe-32f8-858f-20fb0d9e04d3",
       "displayName": "Valentin Vacherot",
@@ -87,9 +98,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 10
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "4a27bb1c-2422-55c3-208b-9e9d8c1f30af",
       "displayName": "Novak Djokovic",
@@ -122,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 13,
    "type": {
     "id": "1",
@@ -138,10 +160,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Tue, November 3rd at 8:40 AM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Valentin Vacherot",
@@ -159,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-03T13:40:33.312Z",
+ "updated": "2026-11-03T13:50:56.461Z",
  "open_taken_at": "2026-10-30T19:07:15.148Z",
  "thresholds": {
   "big": 10,
@@ -277,6 +299,28 @@
    "taken_at": "2026-11-03T12:12:25.533Z"
   },
   {
+   "market_id": "1983159",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Novak Djokovic vs. Valentin Vacherot be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 57,
+   "yes_buy": 58,
+   "no_buy": 44,
+   "taken_at": "2026-11-01T16:23:58.076Z"
+  },
+  {
    "market_id": "1983150",
    "market": "Games spread",
    "group": "game",
@@ -299,28 +343,6 @@
    "taken_at": "2026-11-01T13:30:03.627Z"
   },
   {
-   "market_id": "1983167",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Novak Djokovic win set 2 against Valentin Vacherot?",
-   "sides": [
-    "Yes: Novak Djokovic win set 2 against Valentin Vacherot",
-    "No: Novak Djokovic win set 2 against Valentin Vacherot"
-   ],
-   "teams": [
-    "Novak Djokovic",
-    null
-   ],
-   "player": null,
-   "mid": 61.5,
-   "yes_buy": 62,
-   "no_buy": 39,
-   "taken_at": "2026-11-03T12:55:44.519Z"
-  },
-  {
    "market_id": "1983166",
    "market": "Set 1 winner",
    "group": "game",
@@ -341,6 +363,28 @@
    "yes_buy": 63,
    "no_buy": 40,
    "taken_at": "2026-11-03T04:05:25.740Z"
+  },
+  {
+   "market_id": "1983167",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Novak Djokovic win set 2 against Valentin Vacherot?",
+   "sides": [
+    "Yes: Novak Djokovic win set 2 against Valentin Vacherot",
+    "No: Novak Djokovic win set 2 against Valentin Vacherot"
+   ],
+   "teams": [
+    "Novak Djokovic",
+    null
+   ],
+   "player": null,
+   "mid": 61.5,
+   "yes_buy": 62,
+   "no_buy": 39,
+   "taken_at": "2026-11-03T12:55:44.519Z"
   },
   {
    "market_id": "1983156",
@@ -387,28 +431,6 @@
    "taken_at": "2026-11-02T21:00:54.141Z"
   },
   {
-   "market_id": "1983152",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Novak Djokovic cover -4.5 vs the Valentin Vacherot in Novak Djokovic vs. Valentin Vacherot?",
-   "sides": [
-    "Novak Djokovic -4.50 (Games)",
-    "Valentin Vacherot +4.50 (Games)"
-   ],
-   "teams": [
-    "Novak Djokovic",
-    "Valentin Vacherot"
-   ],
-   "player": null,
-   "mid": 39.5,
-   "yes_buy": 40,
-   "no_buy": 61,
-   "taken_at": "2026-11-03T13:40:33.312Z"
-  },
-  {
    "market_id": "1983160",
    "market": "Games total",
    "group": "game",
@@ -431,26 +453,48 @@
    "taken_at": "2026-11-03T13:40:33.312Z"
   },
   {
-   "market_id": "1983159",
-   "market": "Games total",
+   "market_id": "1983154",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Novak Djokovic vs. Valentin Vacherot be more than 22.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Novak Djokovic cover -7.5 vs the Valentin Vacherot in Novak Djokovic vs. Valentin Vacherot?",
    "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
+    "Novak Djokovic -7.50 (Games)",
+    "Valentin Vacherot +7.50 (Games)"
    ],
    "teams": [
-    null,
-    null
+    "Novak Djokovic",
+    "Valentin Vacherot"
    ],
    "player": null,
-   "mid": 57,
-   "yes_buy": 58,
-   "no_buy": 44,
-   "taken_at": "2026-11-01T16:23:58.076Z"
+   "mid": 8,
+   "yes_buy": 10,
+   "no_buy": 94,
+   "taken_at": "2026-11-03T13:50:56.461Z"
+  },
+  {
+   "market_id": "1983152",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Novak Djokovic cover -4.5 vs the Valentin Vacherot in Novak Djokovic vs. Valentin Vacherot?",
+   "sides": [
+    "Novak Djokovic -4.50 (Games)",
+    "Valentin Vacherot +4.50 (Games)"
+   ],
+   "teams": [
+    "Novak Djokovic",
+    "Valentin Vacherot"
+   ],
+   "player": null,
+   "mid": 39.5,
+   "yes_buy": 40,
+   "no_buy": 61,
+   "taken_at": "2026-11-03T13:40:33.312Z"
   }
  ],
  "edges": [
@@ -462,35 +506,35 @@
    "question": "Who will win in the upcoming atp event Novak Djokovic vs Valentin Vacherot scheduled for October 31, 2026 at 9:00 AM UTC?",
    "side": "Novak Djokovic win",
    "open_chance": 74,
-   "now_chance": 67,
+   "now_chance": 64,
    "open_odds": "-285",
-   "now_odds": "-203",
-   "edge": 7,
-   "tier": "slight",
+   "now_odds": "-178",
+   "edge": 10,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Valentin Vacherot 0 · Novak Djokovic 0 · 1st Set (games by set)",
    "first_seen": "2026-11-01T05:07:28.970Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "1983166:0",
-   "market_id": "1983166",
-   "market": "Set 1 winner",
+   "key": "1983159:1",
+   "market_id": "1983159",
+   "market": "Games total",
    "group": "game",
-   "question": "Will Novak Djokovic win set 1 against Valentin Vacherot?",
-   "side": "Yes: Novak Djokovic win set 1 against Valentin Vacherot",
-   "open_chance": 63,
-   "now_chance": 59,
-   "open_odds": "-170",
-   "now_odds": "-144",
-   "edge": 4,
+   "question": "Will the total in Novak Djokovic vs. Valentin Vacherot be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 44,
+   "now_chance": 37,
+   "open_odds": "+127",
+   "now_odds": "+170",
+   "edge": 7,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-11-03T12:55:44.519Z",
+   "context": "Valentin Vacherot 0 · Novak Djokovic 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-03T13:50:56.461Z",
    "status": "open",
    "kalshi": null
   },
@@ -533,9 +577,71 @@
    "first_seen": "2026-11-03T04:05:25.740Z",
    "status": "gone",
    "kalshi": null
+  },
+  {
+   "key": "1983166:0",
+   "market_id": "1983166",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Novak Djokovic win set 1 against Valentin Vacherot?",
+   "side": "Yes: Novak Djokovic win set 1 against Valentin Vacherot",
+   "open_chance": 63,
+   "now_chance": 59,
+   "open_odds": "-170",
+   "now_odds": "-144",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-11-03T12:55:44.519Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1982217:0:big",
+   "key": "1982217:0",
+   "at": "2026-11-03T13:50:56.461Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Novak Djokovic win",
+   "market": "Moneyline",
+   "now_odds": "-178",
+   "now_chance": 64,
+   "edge": 10,
+   "text": "New big edge: Novak Djokovic win (Moneyline), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-novdjo-valvac-2026-10-31"
+  },
+  {
+   "id": "new_edge:1983159:1:slight",
+   "key": "1983159:1",
+   "at": "2026-11-03T13:50:56.461Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+170",
+   "now_chance": 37,
+   "edge": 7,
+   "text": "New slight edge: Under 22.5 (Games) (Games total), 7 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-novdjo-valvac-2026-10-31"
+  },
+  {
+   "id": "gone:1983166:0:2026-11-03T12:55:44.519Z",
+   "key": "1983166:0",
+   "at": "2026-11-03T13:50:56.461Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Yes: Novak Djokovic win set 1 against Valentin Vacherot",
+   "market": "Set 1 winner",
+   "now_odds": "-144",
+   "now_chance": 59,
+   "edge": 4,
+   "text": "Edge gone: Yes: Novak Djokovic win set 1 against Valentin Vacherot (Set 1 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-novdjo-valvac-2026-10-31"
+  },
   {
    "id": "new_edge:1982217:0:slight",
    "key": "1982217:0",
@@ -597,7 +703,10 @@
   "new_edge:1982217:0:slight",
   "new_edge:1983166:0:slight",
   "gone:1983159:0:2026-11-03T13:18:19.287Z",
-  "gone:1983150:0:2026-11-03T04:05:25.740Z"
+  "gone:1983150:0:2026-11-03T04:05:25.740Z",
+  "new_edge:1982217:0:big",
+  "new_edge:1983159:1:slight",
+  "gone:1983166:0:2026-11-03T12:55:44.519Z"
  ],
  "kalshi_checked": null
 }
