@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-03T02:20:48.846Z"
+  "fetched_at": "2026-11-03T02:31:06.029Z"
  },
- "updated": "2026-11-03T02:20:48.694Z",
+ "updated": "2026-11-03T02:31:05.892Z",
  "open_taken_at": "2026-11-01T05:07:22.459Z",
  "thresholds": {
   "big": 10,
@@ -873,11 +873,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-03T02:20:48.694Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2081478:0:2026-11-03T02:20:48.694Z",
+   "key": "2081478:0",
+   "at": "2026-11-03T02:31:05.892Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Islanders +10.50",
+   "market": "Main spread",
+   "now_odds": "+104",
+   "now_chance": 49,
+   "edge": 4,
+   "text": "Edge gone: Islanders +10.50 (Main spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-tamu-txst-2026-11-02"
+  },
   {
    "id": "new_edge:2081478:0:slight",
    "key": "2081478:0",
@@ -894,7 +908,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2081478:0:slight"
+  "new_edge:2081478:0:slight",
+  "gone:2081478:0:2026-11-03T02:20:48.694Z"
  ],
  "kalshi_checked": null
 }

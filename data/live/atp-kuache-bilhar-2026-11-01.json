@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-03T02:21:00.458Z"
+  "fetched_at": "2026-11-03T02:31:18.104Z"
  },
- "updated": "2026-11-03T02:21:00.304Z",
+ "updated": "2026-11-03T02:31:17.934Z",
  "open_taken_at": "2026-10-31T14:49:11.824Z",
  "thresholds": {
   "big": 10,
@@ -63,28 +63,6 @@
    "taken_at": "2026-11-03T02:06:43.858Z"
   },
   {
-   "market_id": "2027605",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Kuan-Shou Chen cover 4.5 vs the Billy Harris in Kuan-Shou Chen vs. Billy Harris?",
-   "sides": [
-    "Kuan-Shou Chen +4.50 (Games)",
-    "Billy Harris -4.50 (Games)"
-   ],
-   "teams": [
-    "Kuan-Shou Chen",
-    "Billy Harris"
-   ],
-   "player": null,
-   "mid": 44.5,
-   "yes_buy": 47,
-   "no_buy": 58,
-   "taken_at": "2026-11-02T22:36:37.117Z"
-  },
-  {
    "market_id": "2027611",
    "market": "Games total",
    "group": "game",
@@ -127,6 +105,28 @@
    "yes_buy": 27,
    "no_buy": 74,
    "taken_at": "2026-11-03T02:21:00.304Z"
+  },
+  {
+   "market_id": "2027605",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Kuan-Shou Chen cover 4.5 vs the Billy Harris in Kuan-Shou Chen vs. Billy Harris?",
+   "sides": [
+    "Kuan-Shou Chen +4.50 (Games)",
+    "Billy Harris -4.50 (Games)"
+   ],
+   "teams": [
+    "Kuan-Shou Chen",
+    "Billy Harris"
+   ],
+   "player": null,
+   "mid": 44.5,
+   "yes_buy": 47,
+   "no_buy": 58,
+   "taken_at": "2026-11-02T22:36:37.117Z"
   },
   {
    "market_id": "2027618",
@@ -191,7 +191,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-03T02:21:00.304Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -217,6 +217,20 @@
  ],
  "alerts": [
   {
+   "id": "gone:2027605:0:2026-11-03T02:21:00.304Z",
+   "key": "2027605:0",
+   "at": "2026-11-03T02:31:17.934Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Kuan-Shou Chen +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+138",
+   "now_chance": 42,
+   "edge": 5,
+   "text": "Edge gone: Kuan-Shou Chen +4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-kuache-bilhar-2026-11-01"
+  },
+  {
    "id": "new_edge:2027605:0:slight",
    "key": "2027605:0",
    "at": "2026-11-03T02:21:00.304Z",
@@ -233,7 +247,8 @@
  ],
  "alert_seen": [
   "new_edge:2006538:0:slight",
-  "new_edge:2027605:0:slight"
+  "new_edge:2027605:0:slight",
+  "gone:2027605:0:2026-11-03T02:21:00.304Z"
  ],
  "kalshi_checked": null
 }
