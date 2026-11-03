@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186621",
-  "fetched_at": "2026-11-03T08:50:52.424Z",
+  "fetched_at": "2026-11-03T09:00:36.003Z",
   "tennis": true,
   "tennis_match": {
    "id": "186621",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Maddison Inglis (AUS) leads Maya Joint (AUS) 5-5",
+     "text": "Maya Joint (AUS) leads Maddison Inglis (AUS) 7-5 1-0",
      "type": "event"
     }
    ],
@@ -55,10 +55,13 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
      "linescores": [
       {
-       "value": 5
+       "value": 7,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -98,10 +101,13 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
      "linescores": [
       {
-       "value": 5
+       "value": 5,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -136,11 +142,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 380,
    "type": {
     "id": "2",
@@ -159,14 +160,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Maya Joint",
    "alias": "Maya Joint",
    "name": "Maya Joint",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Maddison Inglis",
@@ -178,7 +179,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-03T08:50:52.340Z",
+ "updated": "2026-11-03T09:00:35.936Z",
  "open_taken_at": "2026-10-31T08:54:42.559Z",
  "thresholds": {
   "big": 10,
@@ -206,6 +207,50 @@
    "yes_buy": 29,
    "no_buy": 77,
    "taken_at": "2026-11-01T03:09:22.878Z"
+  },
+  {
+   "market_id": "2030932",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Maddison Inglis win set 2 against Maya Joint?",
+   "sides": [
+    "Yes: Maddison Inglis win set 2 against Maya Joint",
+    "No: Maddison Inglis win set 2 against Maya Joint"
+   ],
+   "teams": [
+    "Maddison Inglis",
+    null
+   ],
+   "player": null,
+   "mid": 30.5,
+   "yes_buy": 32,
+   "no_buy": 71,
+   "taken_at": "2026-11-03T08:18:13.486Z"
+  },
+  {
+   "market_id": "2030897",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Maddison Inglis cover 1.5 vs the Maya Joint in Maddison Inglis vs. Maya Joint?",
+   "sides": [
+    "Maddison Inglis +1.50 (Games)",
+    "Maya Joint -1.50 (Games)"
+   ],
+   "teams": [
+    "Maddison Inglis",
+    "Maya Joint"
+   ],
+   "player": null,
+   "mid": 29,
+   "yes_buy": 32,
+   "no_buy": 74,
+   "taken_at": "2026-11-03T04:39:02.430Z"
   },
   {
    "market_id": "2030914",
@@ -274,28 +319,6 @@
    "taken_at": "2026-11-03T07:35:41.313Z"
   },
   {
-   "market_id": "2030897",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Maddison Inglis cover 1.5 vs the Maya Joint in Maddison Inglis vs. Maya Joint?",
-   "sides": [
-    "Maddison Inglis +1.50 (Games)",
-    "Maya Joint -1.50 (Games)"
-   ],
-   "teams": [
-    "Maddison Inglis",
-    "Maya Joint"
-   ],
-   "player": null,
-   "mid": 29,
-   "yes_buy": 32,
-   "no_buy": 74,
-   "taken_at": "2026-11-03T04:39:02.430Z"
-  },
-  {
    "market_id": "2030901",
    "market": "Games spread",
    "group": "game",
@@ -316,28 +339,6 @@
    "yes_buy": 50,
    "no_buy": 55,
    "taken_at": "2026-11-02T00:51:47.507Z"
-  },
-  {
-   "market_id": "2030932",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Maddison Inglis win set 2 against Maya Joint?",
-   "sides": [
-    "Yes: Maddison Inglis win set 2 against Maya Joint",
-    "No: Maddison Inglis win set 2 against Maya Joint"
-   ],
-   "teams": [
-    "Maddison Inglis",
-    null
-   ],
-   "player": null,
-   "mid": 30.5,
-   "yes_buy": 32,
-   "no_buy": 71,
-   "taken_at": "2026-11-03T08:18:13.486Z"
   },
   {
    "market_id": "2030895",
@@ -518,62 +519,22 @@
  ],
  "edges": [
   {
-   "key": "2030914:1",
-   "market_id": "2030914",
-   "market": "Games total",
+   "key": "2030932:0",
+   "market_id": "2030932",
+   "market": "Set 2 winner",
    "group": "game",
-   "question": "Will the total in Maddison Inglis vs. Maya Joint be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 64,
-   "now_chance": 52,
-   "open_odds": "-178",
-   "now_odds": "-108",
-   "edge": 12,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Maya Joint 5 · Maddison Inglis 5 · 1st Set (games by set)",
-   "first_seen": "2026-11-03T07:35:41.313Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2030897:0",
-   "market_id": "2030897",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Maddison Inglis cover 1.5 vs the Maya Joint in Maddison Inglis vs. Maya Joint?",
-   "side": "Maddison Inglis +1.50 (Games)",
+   "question": "Will Maddison Inglis win set 2 against Maya Joint?",
+   "side": "Yes: Maddison Inglis win set 2 against Maya Joint",
    "open_chance": 32,
-   "now_chance": 21,
+   "now_chance": 22,
    "open_odds": "+213",
-   "now_odds": "+376",
-   "edge": 11,
+   "now_odds": "+355",
+   "edge": 10,
    "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Maya Joint 5 · Maddison Inglis 5 · 1st Set (games by set)",
-   "first_seen": "2026-11-03T08:18:13.486Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2030916:1",
-   "market_id": "2030916",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Maddison Inglis vs. Maya Joint be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 76,
-   "now_chance": 72,
-   "open_odds": "-317",
-   "now_odds": "-257",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Maya Joint 5 · Maddison Inglis 5 · 1st Set (games by set)",
-   "first_seen": "2026-11-03T08:50:52.340Z",
+   "class": "score",
+   "reason": "Explained by score: Maddison Inglis not above the games spread right now",
+   "context": "Maya Joint 7, 1 · Maddison Inglis 5, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-11-03T09:00:35.936Z",
    "status": "open",
    "kalshi": null
   },
@@ -594,6 +555,26 @@
    "reason": "Explained by score: Maddison Inglis not above the games spread right now",
    "context": "Maya Joint 4 · Maddison Inglis 4 · 1st Set (games by set)",
    "first_seen": "2026-11-03T08:29:27.597Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "2030914:1",
+   "market_id": "2030914",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Maddison Inglis vs. Maya Joint be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 64,
+   "now_chance": 52,
+   "open_odds": "-178",
+   "now_odds": "-108",
+   "edge": 12,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Maya Joint 5 · Maddison Inglis 5 · 1st Set (games by set)",
+   "first_seen": "2026-11-03T07:35:41.313Z",
    "status": "gone",
    "kalshi": null
   },
@@ -638,46 +619,6 @@
    "kalshi": null
   },
   {
-   "key": "2002792:0",
-   "market_id": "2002792",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Maddison Inglis vs Maya Joint scheduled for November 2, 2026 at 2:00 AM UTC?",
-   "side": "Maddison Inglis win",
-   "open_chance": 29,
-   "now_chance": 22,
-   "open_odds": "+245",
-   "now_odds": "+355",
-   "edge": 7,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Maya Joint 2 · Maddison Inglis 0 · 1st Set (games by set)",
-   "first_seen": "2026-11-01T03:32:27.811Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "2030897:1",
-   "market_id": "2030897",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Maddison Inglis cover 1.5 vs the Maya Joint in Maddison Inglis vs. Maya Joint?",
-   "side": "Maya Joint -1.50 (Games)",
-   "open_chance": 74,
-   "now_chance": 67,
-   "open_odds": "-285",
-   "now_odds": "-203",
-   "edge": 7,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-11-03T07:35:41.313Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "2030914:0",
    "market_id": "2030914",
    "market": "Games total",
@@ -714,6 +655,26 @@
    "reason": null,
    "context": "Maya Joint 3 · Maddison Inglis 2 · 1st Set (games by set)",
    "first_seen": "2026-11-03T08:29:27.597Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "2030916:1",
+   "market_id": "2030916",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Maddison Inglis vs. Maya Joint be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 76,
+   "now_chance": 72,
+   "open_odds": "-317",
+   "now_odds": "-257",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Maya Joint 5 · Maddison Inglis 5 · 1st Set (games by set)",
+   "first_seen": "2026-11-03T08:50:52.340Z",
    "status": "gone",
    "kalshi": null
   },
@@ -760,6 +721,20 @@
  ],
  "alerts": [
   {
+   "id": "gone:2030916:1:2026-11-03T08:50:52.340Z",
+   "key": "2030916:1",
+   "at": "2026-11-03T09:00:35.936Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-257",
+   "now_chance": 72,
+   "edge": 4,
+   "text": "Edge gone: Under 27.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-mading-mayjoi-2026-11-01"
+  },
+  {
    "id": "new_edge:2030914:1:big",
    "key": "2030914:1",
    "at": "2026-11-03T08:50:52.340Z",
@@ -771,20 +746,6 @@
    "now_chance": 52,
    "edge": 12,
    "text": "New big edge: Under 22.5 (Games) (Games total), 12 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-mading-mayjoi-2026-11-01"
-  },
-  {
-   "id": "new_edge:2030897:0:big",
-   "key": "2030897:0",
-   "at": "2026-11-03T08:50:52.340Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Maddison Inglis +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+376",
-   "now_chance": 21,
-   "edge": 11,
-   "text": "New big edge: Maddison Inglis +1.50 (Games) (Games spread), 11 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-mading-mayjoi-2026-11-01"
   },
   {
@@ -886,20 +847,6 @@
    "url": "https://polymarket.us/sports/wta/wta-mading-mayjoi-2026-11-01"
   },
   {
-   "id": "new_edge:2030897:0:slight",
-   "key": "2030897:0",
-   "at": "2026-11-03T08:29:27.597Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Maddison Inglis +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+317",
-   "now_chance": 24,
-   "edge": 8,
-   "text": "New slight edge: Maddison Inglis +1.50 (Games) (Games spread), 8 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-mading-mayjoi-2026-11-01"
-  },
-  {
    "id": "new_edge:2030914:0:slight",
    "key": "2030914:0",
    "at": "2026-11-03T08:29:27.597Z",
@@ -925,20 +872,6 @@
    "now_chance": 20,
    "edge": 5,
    "text": "New slight edge: Over 27.5 (Games) (Games total), 5 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-mading-mayjoi-2026-11-01"
-  },
-  {
-   "id": "gone:2002792:0:2026-11-01T03:32:27.811Z",
-   "key": "2002792:0",
-   "at": "2026-11-03T08:29:27.597Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Maddison Inglis win",
-   "market": "Moneyline",
-   "now_odds": "+355",
-   "now_chance": 22,
-   "edge": 7,
-   "text": "Edge gone: Maddison Inglis win (Moneyline) is no longer 4+ points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-mading-mayjoi-2026-11-01"
   },
   {
@@ -970,34 +903,6 @@
    "url": "https://polymarket.us/sports/wta/wta-mading-mayjoi-2026-11-01"
   },
   {
-   "id": "new_edge:2002792:0:slight",
-   "key": "2002792:0",
-   "at": "2026-11-03T08:18:13.486Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Maddison Inglis win",
-   "market": "Moneyline",
-   "now_odds": "+355",
-   "now_chance": 22,
-   "edge": 7,
-   "text": "New slight edge: Maddison Inglis win (Moneyline), 7 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-mading-mayjoi-2026-11-01"
-  },
-  {
-   "id": "gone:2030897:1:2026-11-03T07:35:41.313Z",
-   "key": "2030897:1",
-   "at": "2026-11-03T08:18:13.486Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Maya Joint -1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-203",
-   "now_chance": 67,
-   "edge": 7,
-   "text": "Edge gone: Maya Joint -1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-mading-mayjoi-2026-11-01"
-  },
-  {
    "id": "gone:2030901:1:2026-11-03T07:35:41.313Z",
    "key": "2030901:1",
    "at": "2026-11-03T08:18:13.486Z",
@@ -1023,20 +928,6 @@
    "now_chance": 60,
    "edge": 4,
    "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-mading-mayjoi-2026-11-01"
-  },
-  {
-   "id": "new_edge:2030897:1:slight",
-   "key": "2030897:1",
-   "at": "2026-11-03T08:06:40.649Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Maya Joint -1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-203",
-   "now_chance": 67,
-   "edge": 7,
-   "text": "New slight edge: Maya Joint -1.50 (Games) (Games spread), 7 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-mading-mayjoi-2026-11-01"
   },
   {
@@ -1091,7 +982,8 @@
   "gone:2030916:0:2026-11-03T08:29:27.597Z",
   "new_edge:2030914:1:big",
   "new_edge:2030897:0:big",
-  "new_edge:2030916:1:slight"
+  "new_edge:2030916:1:slight",
+  "gone:2030916:1:2026-11-03T08:50:52.340Z"
  ],
  "kalshi_checked": null
 }
