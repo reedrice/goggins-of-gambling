@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-03T01:27:39.357Z"
+  "fetched_at": "2026-11-03T01:36:37.600Z"
  },
- "updated": "2026-11-03T01:27:39.217Z",
+ "updated": "2026-11-03T01:36:37.472Z",
  "open_taken_at": "2026-11-01T05:07:19.272Z",
  "thresholds": {
   "big": 10,
@@ -39,6 +39,28 @@
    "yes_buy": 12,
    "no_buy": 92,
    "taken_at": "2026-11-01T05:07:19.272Z"
+  },
+  {
+   "market_id": "2068016",
+   "market": "Main spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 8.5,
+   "question": "Will LIU cover +8.5 vs Florida Atlantic in LIU vs. Florida Atlantic?",
+   "sides": [
+    "Sharks +8.50",
+    "Owls -8.50"
+   ],
+   "teams": [
+    "Sharks",
+    "Owls"
+   ],
+   "player": null,
+   "mid": 43,
+   "yes_buy": 46,
+   "no_buy": 60,
+   "taken_at": "2026-11-02T12:11:57.133Z"
   },
   {
    "market_id": "2068046",
@@ -523,28 +545,6 @@
    "yes_buy": 82,
    "no_buy": 23,
    "taken_at": "2026-11-02T15:51:08.174Z"
-  },
-  {
-   "market_id": "2068016",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": 8.5,
-   "question": "Will LIU cover +8.5 vs Florida Atlantic in LIU vs. Florida Atlantic?",
-   "sides": [
-    "Sharks +8.50",
-    "Owls -8.50"
-   ],
-   "teams": [
-    "Sharks",
-    "Owls"
-   ],
-   "player": null,
-   "mid": 43,
-   "yes_buy": 46,
-   "no_buy": 60,
-   "taken_at": "2026-11-02T12:11:57.133Z"
   },
   {
    "market_id": "2068025",
@@ -1121,22 +1121,22 @@
  ],
  "edges": [
   {
-   "key": "1913516:1",
-   "market_id": "1913516",
-   "market": "Moneyline",
+   "key": "2068016:1",
+   "market_id": "2068016",
+   "market": "Main spread",
    "group": "game",
-   "question": "Who will win in the upcoming basketball event LIU vs Florida Atlantic scheduled for November 2, 2026 at 7:00PM ET?",
-   "side": "Owls win",
-   "open_chance": 92,
-   "now_chance": 83,
-   "open_odds": "-1150",
-   "now_odds": "-488",
-   "edge": 9,
+   "question": "Will LIU cover +8.5 vs Florida Atlantic in LIU vs. Florida Atlantic?",
+   "side": "Owls -8.50",
+   "open_chance": 60,
+   "now_chance": 53,
+   "open_odds": "-150",
+   "now_odds": "-113",
+   "edge": 7,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-03T01:27:39.217Z",
+   "first_seen": "2026-11-02T13:17:12.725Z",
    "status": "open",
    "kalshi": null
   },
@@ -1601,26 +1601,6 @@
    "kalshi": null
   },
   {
-   "key": "2068016:1",
-   "market_id": "2068016",
-   "market": "Main spread",
-   "group": "game",
-   "question": "Will LIU cover +8.5 vs Florida Atlantic in LIU vs. Florida Atlantic?",
-   "side": "Owls -8.50",
-   "open_chance": 60,
-   "now_chance": 55,
-   "open_odds": "-150",
-   "now_odds": "-122",
-   "edge": 5,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-02T13:17:12.725Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "2068015:0",
    "market_id": "2068015",
    "market": "Main spread",
@@ -1663,17 +1643,17 @@
  ],
  "alerts": [
   {
-   "id": "new_edge:1913516:1:slight",
-   "key": "1913516:1",
-   "at": "2026-11-03T01:27:39.217Z",
+   "id": "new_edge:2068016:1:slight",
+   "key": "2068016:1",
+   "at": "2026-11-03T01:36:37.472Z",
    "type": "new_edge",
    "tier": "slight",
-   "side": "Owls win",
-   "market": "Moneyline",
-   "now_odds": "-488",
-   "now_chance": 83,
-   "edge": 9,
-   "text": "New slight edge: Owls win (Moneyline), 9 points cheaper than open.",
+   "side": "Owls -8.50",
+   "market": "Main spread",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 7,
+   "text": "New slight edge: Owls -8.50 (Main spread), 7 points cheaper than open.",
    "url": "https://polymarket.us/sports/cbb/cbb-liub-flatl-2026-11-02"
   },
   {
@@ -2432,7 +2412,8 @@
   "gone:2068040:0:2026-11-03T00:12:23.347Z",
   "gone:2068043:0:2026-11-03T01:19:05.534Z",
   "gone:2068042:0:2026-11-03T00:12:23.347Z",
-  "gone:2068045:0:2026-11-03T01:19:05.534Z"
+  "gone:2068045:0:2026-11-03T01:19:05.534Z",
+  "new_edge:2068016:1:slight"
  ],
  "kalshi_checked": null
 }
