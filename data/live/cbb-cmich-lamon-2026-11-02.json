@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-03T01:06:28.552Z"
+  "fetched_at": "2026-11-03T01:19:06.770Z"
  },
- "updated": "2026-11-03T01:06:28.410Z",
+ "updated": "2026-11-03T01:19:06.712Z",
  "open_taken_at": "2026-11-01T05:07:20.615Z",
  "thresholds": {
   "big": 10,
@@ -945,6 +945,26 @@
  ],
  "edges": [
   {
+   "key": "1913548:0",
+   "market_id": "1913548",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming basketball event Central Michigan vs Louisiana-Monroe scheduled for November 2, 2026 at 7:30PM ET?",
+   "side": "Chippewas win",
+   "open_chance": 61,
+   "now_chance": 51,
+   "open_odds": "-156",
+   "now_odds": "-104",
+   "edge": 10,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-03T01:19:06.712Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2033704:0",
    "market_id": "2033704",
    "market": "Alt total",
@@ -1227,6 +1247,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1913548:0:big",
+   "key": "1913548:0",
+   "at": "2026-11-03T01:19:06.712Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Chippewas win",
+   "market": "Moneyline",
+   "now_odds": "-104",
+   "now_chance": 51,
+   "edge": 10,
+   "text": "New big edge: Chippewas win (Moneyline), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-cmich-lamon-2026-11-02"
+  },
+  {
    "id": "gone:2033704:0:2026-11-02T02:06:55.485Z",
    "key": "2033704:0",
    "at": "2026-11-03T00:32:43.099Z",
@@ -1392,7 +1426,8 @@
   "gone:2033711:0:2026-11-02T20:39:13.431Z",
   "gone:2033681:1:2026-11-02T16:11:18.633Z",
   "gone:2073412:0:2026-11-02T14:12:12.377Z",
-  "gone:2033710:0:2026-11-02T22:12:12.768Z"
+  "gone:2033710:0:2026-11-02T22:12:12.768Z",
+  "new_edge:1913548:0:big"
  ],
  "kalshi_checked": null
 }
