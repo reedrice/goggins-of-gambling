@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-03T04:18:52.648Z"
+  "fetched_at": "2026-11-03T04:29:23.374Z"
  },
- "updated": "2026-11-03T04:18:52.587Z",
+ "updated": "2026-11-03T04:29:23.318Z",
  "open_taken_at": "2026-11-01T05:07:25.629Z",
  "thresholds": {
   "big": 10,
@@ -39,6 +39,50 @@
    "yes_buy": 10,
    "no_buy": 95,
    "taken_at": "2026-11-01T12:09:48.600Z"
+  },
+  {
+   "market_id": "2078308",
+   "market": "Main total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 164.5,
+   "question": "Will the total in Colgate vs. Washington be more than 164.5?",
+   "sides": [
+    "Over 164.5",
+    "Under 164.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 26,
+   "yes_buy": 29,
+   "no_buy": 77,
+   "taken_at": "2026-11-02T18:53:17.329Z"
+  },
+  {
+   "market_id": "2078272",
+   "market": "Main spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 16.5,
+   "question": "Will Colgate cover +16.5 vs Washington in Colgate vs. Washington?",
+   "sides": [
+    "Raiders +16.50",
+    "Huskies -16.50"
+   ],
+   "teams": [
+    "Raiders",
+    "Huskies"
+   ],
+   "player": null,
+   "mid": 57,
+   "yes_buy": 60,
+   "no_buy": 46,
+   "taken_at": "2026-11-02T18:53:17.329Z"
   },
   {
    "market_id": "2078271",
@@ -481,28 +525,6 @@
    "taken_at": "2026-11-03T00:21:48.371Z"
   },
   {
-   "market_id": "2078272",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": 16.5,
-   "question": "Will Colgate cover +16.5 vs Washington in Colgate vs. Washington?",
-   "sides": [
-    "Raiders +16.50",
-    "Huskies -16.50"
-   ],
-   "teams": [
-    "Raiders",
-    "Huskies"
-   ],
-   "player": null,
-   "mid": 57,
-   "yes_buy": 60,
-   "no_buy": 46,
-   "taken_at": "2026-11-02T18:53:17.329Z"
-  },
-  {
    "market_id": "2078297",
    "market": "Alt total",
    "group": "game",
@@ -654,28 +676,6 @@
    "mid": 22.5,
    "yes_buy": 25,
    "no_buy": 80,
-   "taken_at": "2026-11-02T18:53:17.329Z"
-  },
-  {
-   "market_id": "2078308",
-   "market": "Alt total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 164.5,
-   "question": "Will the total in Colgate vs. Washington be more than 164.5?",
-   "sides": [
-    "Over 164.5",
-    "Under 164.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 26,
-   "yes_buy": 29,
-   "no_buy": 77,
    "taken_at": "2026-11-02T18:53:17.329Z"
   },
   {
@@ -923,6 +923,46 @@
  ],
  "edges": [
   {
+   "key": "2078308:1",
+   "market_id": "2078308",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in Colgate vs. Washington be more than 164.5?",
+   "side": "Under 164.5",
+   "open_chance": 77,
+   "now_chance": 51,
+   "open_odds": "-335",
+   "now_odds": "-104",
+   "edge": 26,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-03T04:29:23.318Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2078272:0",
+   "market_id": "2078272",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will Colgate cover +16.5 vs Washington in Colgate vs. Washington?",
+   "side": "Raiders +16.50",
+   "open_chance": 60,
+   "now_chance": 53,
+   "open_odds": "-150",
+   "now_odds": "-113",
+   "edge": 7,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-03T04:29:23.318Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2081480:1",
    "market_id": "2081480",
    "market": "Alt total",
@@ -1005,6 +1045,34 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:2078308:1:big",
+   "key": "2078308:1",
+   "at": "2026-11-03T04:29:23.318Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 164.5",
+   "market": "Main total",
+   "now_odds": "-104",
+   "now_chance": 51,
+   "edge": 26,
+   "text": "New big edge: Under 164.5 (Main total), 26 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-colg-wash-2026-11-02"
+  },
+  {
+   "id": "new_edge:2078272:0:slight",
+   "key": "2078272:0",
+   "at": "2026-11-03T04:29:23.318Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Raiders +16.50",
+   "market": "Main spread",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 7,
+   "text": "New slight edge: Raiders +16.50 (Main spread), 7 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-colg-wash-2026-11-02"
+  },
+  {
    "id": "gone:2081480:1:2026-11-02T18:53:17.329Z",
    "key": "2081480:1",
    "at": "2026-11-03T03:01:39.392Z",
@@ -1036,7 +1104,9 @@
  "alert_seen": [
   "gone:2081480:1:2026-11-02T18:53:17.329Z",
   "gone:2078281:1:2026-11-03T02:06:32.735Z",
-  "new_edge:1913655:1:big"
+  "new_edge:1913655:1:big",
+  "new_edge:2078308:1:big",
+  "new_edge:2078272:0:slight"
  ],
  "kalshi_checked": null
 }

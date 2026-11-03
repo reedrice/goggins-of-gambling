@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-03T04:18:52.331Z"
+  "fetched_at": "2026-11-03T04:29:23.014Z"
  },
- "updated": "2026-11-03T04:18:52.263Z",
+ "updated": "2026-11-03T04:29:22.935Z",
  "open_taken_at": "2026-11-01T05:07:25.264Z",
  "thresholds": {
   "big": 10,
@@ -39,6 +39,50 @@
    "yes_buy": 8,
    "no_buy": 94,
    "taken_at": "2026-11-01T05:07:25.264Z"
+  },
+  {
+   "market_id": "2035534",
+   "market": "Main spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 16.5,
+   "question": "Will Montana cover +16.5 vs Oregon in Montana vs. Oregon?",
+   "sides": [
+    "Grizzlies +16.50",
+    "Ducks -16.50"
+   ],
+   "teams": [
+    "Grizzlies",
+    "Ducks"
+   ],
+   "player": null,
+   "mid": 47,
+   "yes_buy": 50,
+   "no_buy": 56,
+   "taken_at": "2026-11-01T17:46:07.715Z"
+  },
+  {
+   "market_id": "2035569",
+   "market": "Main total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 164.5,
+   "question": "Will the total in Montana vs. Oregon be more than 164.5?",
+   "sides": [
+    "Over 164.5",
+    "Under 164.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 22,
+   "yes_buy": 25,
+   "no_buy": 81,
+   "taken_at": "2026-11-01T22:46:38.036Z"
   },
   {
    "market_id": "2097057",
@@ -193,28 +237,6 @@
    "yes_buy": 63,
    "no_buy": 41,
    "taken_at": "2026-11-02T10:38:30.821Z"
-  },
-  {
-   "market_id": "2035534",
-   "market": "Main spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": 16.5,
-   "question": "Will Montana cover +16.5 vs Oregon in Montana vs. Oregon?",
-   "sides": [
-    "Grizzlies +16.50",
-    "Ducks -16.50"
-   ],
-   "teams": [
-    "Grizzlies",
-    "Ducks"
-   ],
-   "player": null,
-   "mid": 47,
-   "yes_buy": 50,
-   "no_buy": 56,
-   "taken_at": "2026-11-01T17:46:07.715Z"
   },
   {
    "market_id": "2098376",
@@ -745,28 +767,6 @@
    "taken_at": "2026-11-02T12:54:08.927Z"
   },
   {
-   "market_id": "2035569",
-   "market": "Alt total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 164.5,
-   "question": "Will the total in Montana vs. Oregon be more than 164.5?",
-   "sides": [
-    "Over 164.5",
-    "Under 164.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 22,
-   "yes_buy": 25,
-   "no_buy": 81,
-   "taken_at": "2026-11-01T22:46:38.036Z"
-  },
-  {
    "market_id": "2035571",
    "market": "Alt total",
    "group": "game",
@@ -1054,6 +1054,46 @@
   }
  ],
  "edges": [
+  {
+   "key": "2035534:1",
+   "market_id": "2035534",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will Montana cover +16.5 vs Oregon in Montana vs. Oregon?",
+   "side": "Ducks -16.50",
+   "open_chance": 56,
+   "now_chance": 30,
+   "open_odds": "-127",
+   "now_odds": "+233",
+   "edge": 26,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-03T04:29:22.935Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2035569:1",
+   "market_id": "2035569",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in Montana vs. Oregon be more than 164.5?",
+   "side": "Under 164.5",
+   "open_chance": 81,
+   "now_chance": 70,
+   "open_odds": "-426",
+   "now_odds": "-233",
+   "edge": 11,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-03T04:29:22.935Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "2036622:0",
    "market_id": "2036622",
@@ -1496,6 +1536,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2035534:1:big",
+   "key": "2035534:1",
+   "at": "2026-11-03T04:29:22.935Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Ducks -16.50",
+   "market": "Main spread",
+   "now_odds": "+233",
+   "now_chance": 30,
+   "edge": 26,
+   "text": "New big edge: Ducks -16.50 (Main spread), 26 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-mont-ore-2026-11-02"
+  },
+  {
+   "id": "new_edge:2035569:1:big",
+   "key": "2035569:1",
+   "at": "2026-11-03T04:29:22.935Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 164.5",
+   "market": "Main total",
+   "now_odds": "-233",
+   "now_chance": 70,
+   "edge": 11,
+   "text": "New big edge: Under 164.5 (Main total), 11 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-mont-ore-2026-11-02"
+  },
   {
    "id": "gone:2035566:0:2026-11-03T04:05:19.585Z",
    "key": "2035566:0",
@@ -1977,7 +2045,9 @@
   "new_edge:2035566:0:slight",
   "new_edge:2098376:0:slight",
   "gone:2035566:0:2026-11-03T04:05:19.585Z",
-  "gone:2098376:0:2026-11-03T04:05:19.585Z"
+  "gone:2098376:0:2026-11-03T04:05:19.585Z",
+  "new_edge:2035534:1:big",
+  "new_edge:2035569:1:big"
  ],
  "kalshi_checked": null
 }
