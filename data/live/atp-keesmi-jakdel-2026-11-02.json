@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-03T02:06:54.243Z"
+  "fetched_at": "2026-11-03T02:21:08.059Z"
  },
- "updated": "2026-11-03T02:06:54.103Z",
+ "updated": "2026-11-03T02:21:07.976Z",
  "open_taken_at": "2026-11-02T07:46:40.930Z",
  "thresholds": {
   "big": 10,
@@ -197,6 +197,26 @@
  ],
  "edges": [
   {
+   "key": "2087463:1",
+   "market_id": "2087463",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Keegan Smith vs Jake Delaney scheduled for November 3, 2026 at 2:00 AM UTC?",
+   "side": "Jake Delaney win",
+   "open_chance": 33,
+   "now_chance": 21,
+   "open_odds": "+203",
+   "now_odds": "+376",
+   "edge": 12,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-02T16:47:18.368Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2087541:0",
    "market_id": "2087541",
    "market": "Games total",
@@ -215,29 +235,23 @@
    "first_seen": "2026-11-03T02:06:54.103Z",
    "status": "open",
    "kalshi": null
-  },
-  {
-   "key": "2087463:1",
-   "market_id": "2087463",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Keegan Smith vs Jake Delaney scheduled for November 3, 2026 at 2:00 AM UTC?",
-   "side": "Jake Delaney win",
-   "open_chance": 33,
-   "now_chance": 28,
-   "open_odds": "+203",
-   "now_odds": "+257",
-   "edge": 5,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-02T16:47:18.368Z",
-   "status": "open",
-   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2087463:1:big",
+   "key": "2087463:1",
+   "at": "2026-11-03T02:21:07.976Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Jake Delaney win",
+   "market": "Moneyline",
+   "now_odds": "+376",
+   "now_chance": 21,
+   "edge": 12,
+   "text": "New big edge: Jake Delaney win (Moneyline), 12 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-keesmi-jakdel-2026-11-02"
+  },
   {
    "id": "new_edge:2087541:0:big",
    "key": "2087541:0",
@@ -269,7 +283,8 @@
  ],
  "alert_seen": [
   "new_edge:2087541:0:big",
-  "new_edge:2087463:1:slight"
+  "new_edge:2087463:1:slight",
+  "new_edge:2087463:1:big"
  ],
  "kalshi_checked": null
 }

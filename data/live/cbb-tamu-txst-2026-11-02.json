@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-03T02:06:28.708Z"
+  "fetched_at": "2026-11-03T02:20:48.846Z"
  },
- "updated": "2026-11-03T02:06:28.556Z",
+ "updated": "2026-11-03T02:20:48.694Z",
  "open_taken_at": "2026-11-01T05:07:22.459Z",
  "thresholds": {
   "big": 10,
@@ -41,28 +41,6 @@
    "taken_at": "2026-11-01T20:02:05.305Z"
   },
   {
-   "market_id": "2068911",
-   "market": "Main total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 142.5,
-   "question": "Will the total in Texas A&M-Corpus Christi vs. Texas State be more than 142.5?",
-   "sides": [
-    "Over 142.5",
-    "Under 142.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 50.5,
-   "yes_buy": 53,
-   "no_buy": 52,
-   "taken_at": "2026-11-02T15:40:19.108Z"
-  },
-  {
    "market_id": "2081478",
    "market": "Main spread",
    "group": "game",
@@ -77,6 +55,28 @@
    "teams": [
     "Islanders",
     "Bobcats"
+   ],
+   "player": null,
+   "mid": 50.5,
+   "yes_buy": 53,
+   "no_buy": 52,
+   "taken_at": "2026-11-02T15:40:19.108Z"
+  },
+  {
+   "market_id": "2068911",
+   "market": "Main total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 142.5,
+   "question": "Will the total in Texas A&M-Corpus Christi vs. Texas State be more than 142.5?",
+   "sides": [
+    "Over 142.5",
+    "Under 142.5"
+   ],
+   "teams": [
+    null,
+    null
    ],
    "player": null,
    "mid": 50.5,
@@ -855,8 +855,46 @@
    "taken_at": "2026-11-02T16:55:56.153Z"
   }
  ],
- "edges": [],
- "alerts": [],
- "alert_seen": [],
+ "edges": [
+  {
+   "key": "2081478:0",
+   "market_id": "2081478",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will Texas A&M-Corpus Christi cover +10.5 vs Texas State in Texas A&M-Corpus Christi vs. Texas State?",
+   "side": "Islanders +10.50",
+   "open_chance": 53,
+   "now_chance": 49,
+   "open_odds": "-113",
+   "now_odds": "+104",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-03T02:20:48.694Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
+ "alerts": [
+  {
+   "id": "new_edge:2081478:0:slight",
+   "key": "2081478:0",
+   "at": "2026-11-03T02:20:48.694Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Islanders +10.50",
+   "market": "Main spread",
+   "now_odds": "+104",
+   "now_chance": 49,
+   "edge": 4,
+   "text": "New slight edge: Islanders +10.50 (Main spread), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-tamu-txst-2026-11-02"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:2081478:0:slight"
+ ],
  "kalshi_checked": null
 }
