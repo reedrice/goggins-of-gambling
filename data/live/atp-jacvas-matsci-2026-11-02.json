@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-03T11:52:04.142Z"
+  "fetched_at": "2026-11-03T12:02:35.804Z"
  },
- "updated": "2026-11-03T11:52:04.057Z",
+ "updated": "2026-11-03T12:02:35.666Z",
  "open_taken_at": "2026-11-01T16:04:56.765Z",
  "thresholds": {
   "big": 10,
@@ -63,48 +63,26 @@
    "taken_at": "2026-11-03T11:52:04.057Z"
   },
   {
-   "market_id": "2057942",
-   "market": "Set 2 winner",
+   "market_id": "2057926",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Jacopo Vasami win set 2 against Matteo Sciahbasi?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Jacopo Vasami cover 1.5 vs the Matteo Sciahbasi in Jacopo Vasami vs. Matteo Sciahbasi?",
    "sides": [
-    "Yes: Jacopo Vasami win set 2 against Matteo Sciahbasi",
-    "No: Jacopo Vasami win set 2 against Matteo Sciahbasi"
+    "Jacopo Vasami +1.50 (Games)",
+    "Matteo Sciahbasi -1.50 (Games)"
    ],
    "teams": [
     "Jacopo Vasami",
-    null
+    "Matteo Sciahbasi"
    ],
    "player": null,
-   "mid": 69,
+   "mid": 71,
    "yes_buy": 72,
-   "no_buy": 34,
-   "taken_at": "2026-11-03T11:52:04.057Z"
-  },
-  {
-   "market_id": "2057933",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Jacopo Vasami vs. Matteo Sciahbasi be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 56.5,
-   "yes_buy": 57,
-   "no_buy": 44,
-   "taken_at": "2026-11-03T10:21:35.470Z"
+   "no_buy": 30,
+   "taken_at": "2026-11-03T12:02:35.666Z"
   },
   {
    "market_id": "2057925",
@@ -127,6 +105,28 @@
    "yes_buy": 51,
    "no_buy": 53,
    "taken_at": "2026-11-03T11:14:39.703Z"
+  },
+  {
+   "market_id": "2057933",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Jacopo Vasami vs. Matteo Sciahbasi be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 56.5,
+   "yes_buy": 57,
+   "no_buy": 44,
+   "taken_at": "2026-11-03T10:21:35.470Z"
   },
   {
    "market_id": "2057927",
@@ -195,6 +195,28 @@
    "taken_at": "2026-11-03T10:21:35.470Z"
   },
   {
+   "market_id": "2057942",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Jacopo Vasami win set 2 against Matteo Sciahbasi?",
+   "sides": [
+    "Yes: Jacopo Vasami win set 2 against Matteo Sciahbasi",
+    "No: Jacopo Vasami win set 2 against Matteo Sciahbasi"
+   ],
+   "teams": [
+    "Jacopo Vasami",
+    null
+   ],
+   "player": null,
+   "mid": 69,
+   "yes_buy": 72,
+   "no_buy": 34,
+   "taken_at": "2026-11-03T11:52:04.057Z"
+  },
+  {
    "market_id": "2057935",
    "market": "Games total",
    "group": "game",
@@ -241,18 +263,18 @@
  ],
  "edges": [
   {
-   "key": "2057657:1",
-   "market_id": "2057657",
-   "market": "Moneyline",
+   "key": "2057925:1",
+   "market_id": "2057925",
+   "market": "Games spread",
    "group": "game",
-   "question": "Who will win in the upcoming atp event Jacopo Vasami vs Matteo Sciahbasi scheduled for November 2, 2026 at 10:10 AM UTC?",
-   "side": "Matteo Sciahbasi win",
-   "open_chance": 23,
-   "now_chance": 18,
-   "open_odds": "+335",
-   "now_odds": "+456",
-   "edge": 5,
-   "tier": "slight",
+   "question": "Will the Jacopo Vasami cover -1.5 vs the Matteo Sciahbasi in Jacopo Vasami vs. Matteo Sciahbasi?",
+   "side": "Matteo Sciahbasi +1.50 (Games)",
+   "open_chance": 53,
+   "now_chance": 38,
+   "open_odds": "-113",
+   "now_odds": "+163",
+   "edge": 15,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -261,22 +283,42 @@
    "kalshi": null
   },
   {
-   "key": "2057925:1",
-   "market_id": "2057925",
-   "market": "Games spread",
+   "key": "2057941:0",
+   "market_id": "2057941",
+   "market": "Set 1 winner",
    "group": "game",
-   "question": "Will the Jacopo Vasami cover -1.5 vs the Matteo Sciahbasi in Jacopo Vasami vs. Matteo Sciahbasi?",
-   "side": "Matteo Sciahbasi +1.50 (Games)",
-   "open_chance": 53,
-   "now_chance": 48,
-   "open_odds": "-113",
-   "now_odds": "+108",
+   "question": "Will Jacopo Vasami win set 1 against Matteo Sciahbasi?",
+   "side": "Yes: Jacopo Vasami win set 1 against Matteo Sciahbasi",
+   "open_chance": 82,
+   "now_chance": 75,
+   "open_odds": "-456",
+   "now_odds": "-300",
+   "edge": 7,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-03T12:02:35.666Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2057934:0",
+   "market_id": "2057934",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Jacopo Vasami vs. Matteo Sciahbasi be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 44,
+   "now_chance": 39,
+   "open_odds": "+127",
+   "now_odds": "+156",
    "edge": 5,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-03T11:52:04.057Z",
+   "first_seen": "2026-11-03T12:02:35.666Z",
    "status": "open",
    "kalshi": null
   },
@@ -299,9 +341,85 @@
    "first_seen": "2026-11-02T01:49:39.102Z",
    "status": "gone",
    "kalshi": null
+  },
+  {
+   "key": "2057657:1",
+   "market_id": "2057657",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Jacopo Vasami vs Matteo Sciahbasi scheduled for November 2, 2026 at 10:10 AM UTC?",
+   "side": "Matteo Sciahbasi win",
+   "open_chance": 23,
+   "now_chance": 18,
+   "open_odds": "+335",
+   "now_odds": "+456",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-03T11:52:04.057Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2057925:1:big",
+   "key": "2057925:1",
+   "at": "2026-11-03T12:02:35.666Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Matteo Sciahbasi +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+163",
+   "now_chance": 38,
+   "edge": 15,
+   "text": "New big edge: Matteo Sciahbasi +1.50 (Games) (Games spread), 15 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-jacvas-matsci-2026-11-02"
+  },
+  {
+   "id": "new_edge:2057941:0:slight",
+   "key": "2057941:0",
+   "at": "2026-11-03T12:02:35.666Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Yes: Jacopo Vasami win set 1 against Matteo Sciahbasi",
+   "market": "Set 1 winner",
+   "now_odds": "-300",
+   "now_chance": 75,
+   "edge": 7,
+   "text": "New slight edge: Yes: Jacopo Vasami win set 1 against Matteo Sciahbasi (Set 1 winner), 7 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-jacvas-matsci-2026-11-02"
+  },
+  {
+   "id": "new_edge:2057934:0:slight",
+   "key": "2057934:0",
+   "at": "2026-11-03T12:02:35.666Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+156",
+   "now_chance": 39,
+   "edge": 5,
+   "text": "New slight edge: Over 22.5 (Games) (Games total), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-jacvas-matsci-2026-11-02"
+  },
+  {
+   "id": "gone:2057657:1:2026-11-03T11:52:04.057Z",
+   "key": "2057657:1",
+   "at": "2026-11-03T12:02:35.666Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Matteo Sciahbasi win",
+   "market": "Moneyline",
+   "now_odds": "+456",
+   "now_chance": 18,
+   "edge": 5,
+   "text": "Edge gone: Matteo Sciahbasi win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-jacvas-matsci-2026-11-02"
+  },
   {
    "id": "new_edge:2057657:1:slight",
    "key": "2057657:1",
@@ -363,7 +481,11 @@
   "new_edge:2057657:0:slight",
   "new_edge:2057657:1:slight",
   "new_edge:2057925:1:slight",
-  "gone:2057657:0:2026-11-02T01:49:39.102Z"
+  "gone:2057657:0:2026-11-02T01:49:39.102Z",
+  "new_edge:2057925:1:big",
+  "new_edge:2057941:0:slight",
+  "new_edge:2057934:0:slight",
+  "gone:2057657:1:2026-11-03T11:52:04.057Z"
  ],
  "kalshi_checked": null
 }

@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186454",
-  "fetched_at": "2026-11-03T11:51:49.541Z",
+  "fetched_at": "2026-11-03T12:02:23.250Z",
   "tennis": true,
   "tennis_match": {
    "id": "186454",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Andrey Rublev (RUS) is tied with Tomas Martin Etcheverry (ARG) 4-6 6-5",
+     "text": "Andrey Rublev (RUS) is tied with Tomas Martin Etcheverry (ARG) 4-6 7-6 (7-4)",
      "type": "event"
     }
    ],
@@ -55,14 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 5
+       "value": 6,
+       "tiebreak": 4
       }
      ],
      "athlete": {
@@ -102,14 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
      "linescores": [
       {
        "value": 4,
        "winner": false
       },
       {
-       "value": 6
+       "value": 7,
+       "tiebreak": 7
       }
      ],
      "athlete": {
@@ -144,11 +144,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 13,
    "type": {
     "id": "1",
@@ -186,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-03T11:51:49.484Z",
+ "updated": "2026-11-03T12:02:23.114Z",
  "open_taken_at": "2026-10-30T19:07:15.090Z",
  "thresholds": {
   "big": 10,
@@ -236,6 +231,28 @@
    "yes_buy": 69,
    "no_buy": 32,
    "taken_at": "2026-11-03T10:09:46.588Z"
+  },
+  {
+   "market_id": "1983204",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Andrey Rublev cover -1.5 vs the Tomas Martin Etcheverry in Andrey Rublev vs. Tomas Martin Etcheverry?",
+   "sides": [
+    "Andrey Rublev -1.50 (Games)",
+    "Tomas Etcheverry +1.50 (Games)"
+   ],
+   "teams": [
+    "Andrey Rublev",
+    "Tomas Etcheverry"
+   ],
+   "player": null,
+   "mid": 60,
+   "yes_buy": 62,
+   "no_buy": 42,
+   "taken_at": "2026-11-01T13:11:07.069Z"
   },
   {
    "market_id": "1983211",
@@ -302,28 +319,6 @@
    "yes_buy": 81,
    "no_buy": 20,
    "taken_at": "2026-11-03T10:32:28.141Z"
-  },
-  {
-   "market_id": "1983204",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Andrey Rublev cover -1.5 vs the Tomas Martin Etcheverry in Andrey Rublev vs. Tomas Martin Etcheverry?",
-   "sides": [
-    "Andrey Rublev -1.50 (Games)",
-    "Tomas Etcheverry +1.50 (Games)"
-   ],
-   "teams": [
-    "Andrey Rublev",
-    "Tomas Etcheverry"
-   ],
-   "player": null,
-   "mid": 60,
-   "yes_buy": 62,
-   "no_buy": 42,
-   "taken_at": "2026-11-01T13:11:07.069Z"
   },
   {
    "market_id": "1983214",
@@ -526,6 +521,46 @@
  ],
  "edges": [
   {
+   "key": "1983204:0",
+   "market_id": "1983204",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Andrey Rublev cover -1.5 vs the Tomas Martin Etcheverry in Andrey Rublev vs. Tomas Martin Etcheverry?",
+   "side": "Andrey Rublev -1.50 (Games)",
+   "open_chance": 62,
+   "now_chance": 29,
+   "open_odds": "-163",
+   "now_odds": "+245",
+   "edge": 33,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Andrey Rublev not above the games spread right now",
+   "context": "Tomas Martin Etcheverry 6, 6 · Andrey Rublev 4, 7 · 2nd Set (games by set)",
+   "first_seen": "2026-11-03T10:43:35.515Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1982213:0",
+   "market_id": "1982213",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Andrey Rublev vs Tomas Martin Etcheverry scheduled for October 31, 2026 at 9:00 AM UTC?",
+   "side": "Andrey Rublev win",
+   "open_chance": 70,
+   "now_chance": 63,
+   "open_odds": "-233",
+   "now_odds": "-170",
+   "edge": 7,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Andrey Rublev trailing in sets",
+   "context": "Tomas Martin Etcheverry 6, 6 · Andrey Rublev 4, 7 · 2nd Set (games by set)",
+   "first_seen": "2026-11-03T10:43:35.515Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "1983205:0",
    "market_id": "1983205",
    "market": "Games spread",
@@ -542,87 +577,7 @@
    "reason": "Big move (41 pts), likely news",
    "context": "Tomas Martin Etcheverry 6, 5 · Andrey Rublev 4, 6 · 2nd Set (games by set)",
    "first_seen": "2026-11-03T11:03:57.739Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1982213:0",
-   "market_id": "1982213",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Andrey Rublev vs Tomas Martin Etcheverry scheduled for October 31, 2026 at 9:00 AM UTC?",
-   "side": "Andrey Rublev win",
-   "open_chance": 70,
-   "now_chance": 35,
-   "open_odds": "-233",
-   "now_odds": "+186",
-   "edge": 35,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Andrey Rublev trailing in sets",
-   "context": "Tomas Martin Etcheverry 6, 5 · Andrey Rublev 4, 6 · 2nd Set (games by set)",
-   "first_seen": "2026-11-03T10:43:35.515Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1983204:0",
-   "market_id": "1983204",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Andrey Rublev cover -1.5 vs the Tomas Martin Etcheverry in Andrey Rublev vs. Tomas Martin Etcheverry?",
-   "side": "Andrey Rublev -1.50 (Games)",
-   "open_chance": 62,
-   "now_chance": 31,
-   "open_odds": "-163",
-   "now_odds": "+223",
-   "edge": 31,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Andrey Rublev not above the games spread right now",
-   "context": "Tomas Martin Etcheverry 6, 5 · Andrey Rublev 4, 6 · 2nd Set (games by set)",
-   "first_seen": "2026-11-03T10:43:35.515Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1983211:0",
-   "market_id": "1983211",
-   "market": "Sets spread",
-   "group": "game",
-   "question": "Will the Andrey Rublev cover 1.5 vs the Tomas Martin Etcheverry in Andrey Rublev vs. Tomas Martin Etcheverry?",
-   "side": "Andrey Rublev +1.50 (Sets)",
-   "open_chance": 69,
-   "now_chance": 57,
-   "open_odds": "-223",
-   "now_odds": "-133",
-   "edge": 12,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Tomas Martin Etcheverry 6, 5 · Andrey Rublev 4, 6 · 2nd Set (games by set)",
-   "first_seen": "2026-11-03T11:51:49.484Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "1983222:0",
-   "market_id": "1983222",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Andrey Rublev win set 2 against Tomas Martin Etcheverry?",
-   "side": "Yes: Andrey Rublev win set 2 against Tomas Martin Etcheverry",
-   "open_chance": 67,
-   "now_chance": 57,
-   "open_odds": "-203",
-   "now_odds": "-133",
-   "edge": 10,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Tomas Martin Etcheverry 6, 5 · Andrey Rublev 4, 6 · 2nd Set (games by set)",
-   "first_seen": "2026-11-03T11:40:24.556Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -682,6 +637,46 @@
    "reason": "Big move (26 pts), likely news",
    "context": "Tomas Martin Etcheverry 6, 2 · Andrey Rublev 4, 3 · 2nd Set (games by set)",
    "first_seen": "2026-11-03T11:03:57.739Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1983211:0",
+   "market_id": "1983211",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Andrey Rublev cover 1.5 vs the Tomas Martin Etcheverry in Andrey Rublev vs. Tomas Martin Etcheverry?",
+   "side": "Andrey Rublev +1.50 (Sets)",
+   "open_chance": 69,
+   "now_chance": 57,
+   "open_odds": "-223",
+   "now_odds": "-133",
+   "edge": 12,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Tomas Martin Etcheverry 6, 5 · Andrey Rublev 4, 6 · 2nd Set (games by set)",
+   "first_seen": "2026-11-03T11:51:49.484Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1983222:0",
+   "market_id": "1983222",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Andrey Rublev win set 2 against Tomas Martin Etcheverry?",
+   "side": "Yes: Andrey Rublev win set 2 against Tomas Martin Etcheverry",
+   "open_chance": 67,
+   "now_chance": 57,
+   "open_odds": "-203",
+   "now_odds": "-133",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Tomas Martin Etcheverry 6, 5 · Andrey Rublev 4, 6 · 2nd Set (games by set)",
+   "first_seen": "2026-11-03T11:40:24.556Z",
    "status": "gone",
    "kalshi": null
   },
@@ -747,6 +742,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1983211:0:2026-11-03T11:51:49.484Z",
+   "key": "1983211:0",
+   "at": "2026-11-03T12:02:23.114Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Andrey Rublev +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "-133",
+   "now_chance": 57,
+   "edge": 12,
+   "text": "Edge gone: Andrey Rublev +1.50 (Sets) (Sets spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-andrub-tometc-2026-10-31"
+  },
+  {
+   "id": "gone:1983222:0:2026-11-03T11:40:24.556Z",
+   "key": "1983222:0",
+   "at": "2026-11-03T12:02:23.114Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Yes: Andrey Rublev win set 2 against Tomas Martin Etcheverry",
+   "market": "Set 2 winner",
+   "now_odds": "-133",
+   "now_chance": 57,
+   "edge": 10,
+   "text": "Edge gone: Yes: Andrey Rublev win set 2 against Tomas Martin Etcheverry (Set 2 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-andrub-tometc-2026-10-31"
+  },
   {
    "id": "new_edge:1983211:0:big",
    "key": "1983211:0",
@@ -1005,7 +1028,9 @@
   "news:1983214:1",
   "news:1983215:1",
   "new_edge:1983211:0:big",
-  "new_edge:1983222:0:big"
+  "new_edge:1983222:0:big",
+  "gone:1983211:0:2026-11-03T11:51:49.484Z",
+  "gone:1983222:0:2026-11-03T11:40:24.556Z"
  ],
  "kalshi_checked": null
 }
