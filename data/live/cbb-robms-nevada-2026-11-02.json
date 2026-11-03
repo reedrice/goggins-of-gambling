@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-03T03:24:37.117Z"
+  "fetched_at": "2026-11-03T03:36:42.542Z"
  },
- "updated": "2026-11-03T03:24:37.033Z",
+ "updated": "2026-11-03T03:36:42.454Z",
  "open_taken_at": "2026-11-01T05:07:26.138Z",
  "thresholds": {
   "big": 10,
@@ -61,6 +61,28 @@
    "yes_buy": 54,
    "no_buy": 51,
    "taken_at": "2026-11-01T22:46:38.826Z"
+  },
+  {
+   "market_id": "2035970",
+   "market": "Main total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 145.5,
+   "question": "Will the total in Robert Morris vs. Nevada be more than 145.5?",
+   "sides": [
+    "Over 145.5",
+    "Under 145.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 48,
+   "yes_buy": 51,
+   "no_buy": 55,
+   "taken_at": "2026-11-01T22:37:05.036Z"
   },
   {
    "market_id": "2056861",
@@ -479,28 +501,6 @@
    "yes_buy": 55,
    "no_buy": 49,
    "taken_at": "2026-11-01T22:46:38.826Z"
-  },
-  {
-   "market_id": "2035970",
-   "market": "Alt total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 145.5,
-   "question": "Will the total in Robert Morris vs. Nevada be more than 145.5?",
-   "sides": [
-    "Over 145.5",
-    "Under 145.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 48,
-   "yes_buy": 51,
-   "no_buy": 55,
-   "taken_at": "2026-11-01T22:37:05.036Z"
   },
   {
    "market_id": "2035943",
@@ -989,6 +989,26 @@
  ],
  "edges": [
   {
+   "key": "2035970:0",
+   "market_id": "2035970",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in Robert Morris vs. Nevada be more than 145.5?",
+   "side": "Over 145.5",
+   "open_chance": 51,
+   "now_chance": 46,
+   "open_odds": "-104",
+   "now_odds": "+117",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-03T03:36:42.454Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2035971:1",
    "market_id": "2035971",
    "market": "Alt total",
@@ -1051,6 +1071,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:2035970:0:slight",
+   "key": "2035970:0",
+   "at": "2026-11-03T03:36:42.454Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 145.5",
+   "market": "Main total",
+   "now_odds": "+117",
+   "now_chance": 46,
+   "edge": 5,
+   "text": "New slight edge: Over 145.5 (Main total), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-robms-nevada-2026-11-02"
+  },
+  {
    "id": "gone:2035971:1:2026-11-02T05:10:12.451Z",
    "key": "2035971:1",
    "at": "2026-11-03T03:01:39.700Z",
@@ -1081,7 +1115,8 @@
  ],
  "alert_seen": [
   "gone:2035971:1:2026-11-02T05:10:12.451Z",
-  "gone:2035949:1:2026-11-03T02:06:33.409Z"
+  "gone:2035949:1:2026-11-03T02:06:33.409Z",
+  "new_edge:2035970:0:slight"
  ],
  "kalshi_checked": null
 }
