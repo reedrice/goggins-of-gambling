@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for ucl",
-  "fetched_at": "2026-11-03T13:50:50.598Z"
+  "fetched_at": "2026-11-03T14:01:29.199Z"
  },
- "updated": "2026-11-03T13:50:50.592Z",
+ "updated": "2026-11-03T14:01:29.195Z",
  "open_taken_at": "2026-11-02T06:03:35.464Z",
  "thresholds": {
   "big": 10,
@@ -415,6 +415,28 @@
    "taken_at": "2026-11-02T06:03:35.464Z"
   },
   {
+   "market_id": "1767746",
+   "market": "2nd half total",
+   "group": "game",
+   "mtype": "total",
+   "period": "second_half",
+   "line": 1.5,
+   "question": "Will the total in FCB vs AST be more than 1.5?",
+   "sides": [
+    "Over 1.5 (2nd half)",
+    "Under 1.5 (2nd half)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 70.5,
+   "yes_buy": 73,
+   "no_buy": 32,
+   "taken_at": "2026-11-03T07:03:41.392Z"
+  },
+  {
    "market_id": "1767717",
    "market": "1st half winner",
    "group": "game",
@@ -479,6 +501,28 @@
    "yes_buy": 60,
    "no_buy": 42,
    "taken_at": "2026-11-03T12:55:38.249Z"
+  },
+  {
+   "market_id": "2123203",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Nicolas Jackson record at least 2 goals in FCB vs AST?",
+   "sides": [
+    "Yes: Nicolas Jackson record at least 2 goals in FCB vs AST",
+    "No: Nicolas Jackson record at least 2 goals in FCB vs AST"
+   ],
+   "teams": [
+    "The Villa",
+    "The Villa"
+   ],
+   "player": "Nicolas Jackson",
+   "mid": 6.5,
+   "yes_buy": 9,
+   "no_buy": 96,
+   "taken_at": "2026-11-03T14:01:29.195Z"
   },
   {
    "market_id": "2123184",
@@ -547,28 +591,6 @@
    "taken_at": "2026-11-03T12:55:38.249Z"
   },
   {
-   "market_id": "1767746",
-   "market": "2nd half total",
-   "group": "game",
-   "mtype": "total",
-   "period": "second_half",
-   "line": 1.5,
-   "question": "Will the total in FCB vs AST be more than 1.5?",
-   "sides": [
-    "Over 1.5 (2nd half)",
-    "Under 1.5 (2nd half)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 70.5,
-   "yes_buy": 73,
-   "no_buy": 32,
-   "taken_at": "2026-11-03T07:03:41.392Z"
-  },
-  {
    "market_id": "1767689",
    "market": "Alt spread",
    "group": "game",
@@ -613,7 +635,48 @@
    "taken_at": "2026-11-02T07:22:04.858Z"
   }
  ],
- "edges": [],
+ "edges": [
+  {
+   "key": "1767746:0",
+   "market_id": "1767746",
+   "market": "2nd half total",
+   "group": "game",
+   "question": "Will the total in FCB vs AST be more than 1.5?",
+   "side": "Over 1.5 (2nd half)",
+   "open_chance": 73,
+   "now_chance": 52,
+   "open_odds": "-270",
+   "now_odds": "-108",
+   "edge": 21,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-03T14:01:29.195Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "1767696:1",
+   "market_id": "1767696",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in FCB vs AST be more than 5.5?",
+   "side": "Under 5.5",
+   "open_chance": 75,
+   "now_chance": 71,
+   "open_odds": "-300",
+   "now_odds": "-245",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-03T14:01:29.195Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
  "alerts": [],
  "alert_seen": [],
  "kalshi_checked": null
