@@ -4,14 +4,14 @@
  "game": "Jiang / Wong vs. Neel / Olmos",
  "url": "https://polymarket.us/sports/wtadb/wtadb-jiangwong-neeolm-2026-11-02",
  "start_time": "2026-11-03T07:45:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-03T09:10:23.000Z"
+  "fetched_at": "2026-11-03T09:21:00.905Z"
  },
- "updated": "2026-11-03T09:10:22.914Z",
+ "updated": "2026-11-03T09:21:00.832Z",
  "open_taken_at": "2026-11-01T05:07:31.737Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-02T23:39:29.077Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2004278:1:2026-11-02T23:39:29.077Z",
+   "key": "2004278:1",
+   "at": "2026-11-03T09:21:00.832Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Neel / Olmos win",
+   "market": "Moneyline",
+   "now_odds": "+456",
+   "now_chance": 18,
+   "edge": 44,
+   "text": "Edge gone: Neel / Olmos win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-jiangwong-neeolm-2026-11-02"
+  },
   {
    "id": "new_edge:2004278:1:big",
    "key": "2004278:1",
@@ -80,7 +94,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2004278:1:big"
+  "new_edge:2004278:1:big",
+  "gone:2004278:1:2026-11-02T23:39:29.077Z"
  ],
  "kalshi_checked": null
 }

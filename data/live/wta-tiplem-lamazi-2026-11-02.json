@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186666",
-  "fetched_at": "2026-11-03T09:10:31.407Z",
+  "fetched_at": "2026-11-03T09:21:10.249Z",
   "tennis": true,
   "tennis_match": {
    "id": "186666",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Tue, November 3rd at 4:10 AM EST",
-     "shortDetail": "11/3 - 4:10 AM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Tiphanie Lemaitre (FRA) leads Lamis Alhussein Abdel Aziz (EGY) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "d7610e96-e8c0-3ca6-99d1-c8decc1035cc",
       "displayName": "Lamis Alhussein Abdel Aziz",
@@ -87,6 +98,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "3630ca38-df7b-35f2-9724-ed46b38a23db",
       "displayName": "Tiphanie Lemaitre",
@@ -119,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1082,
    "type": {
     "id": "2",
@@ -135,10 +157,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Tue, November 3rd at 4:10 AM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Lamis Alhussein Abdel Aziz",
@@ -156,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-03T09:10:31.293Z",
+ "updated": "2026-11-03T09:21:10.166Z",
  "open_taken_at": "2026-11-01T05:07:46.300Z",
  "thresholds": {
   "big": 10,
@@ -186,6 +208,28 @@
    "taken_at": "2026-11-02T21:38:23.390Z"
   },
   {
+   "market_id": "2034570",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Tiphanie Lemaitre cover 1.5 vs the Lamis Alhussein Abdel Aziz in Tiphanie Lemaitre vs. Lamis Alhussein Abdel Aziz?",
+   "sides": [
+    "Tiphanie Lemaitre +1.50 (Games)",
+    "Lamis Alhussein Abdel Aziz -1.50 (Games)"
+   ],
+   "teams": [
+    "Tiphanie Lemaitre",
+    "Lamis Alhussein Abdel Aziz"
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-11-03T09:10:31.293Z"
+  },
+  {
    "market_id": "2034583",
    "market": "Sets spread",
    "group": "game",
@@ -208,47 +252,25 @@
    "taken_at": "2026-11-02T13:06:27.848Z"
   },
   {
-   "market_id": "2034575",
-   "market": "Games spread",
+   "market_id": "2034586",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Tiphanie Lemaitre cover 4.5 vs the Lamis Alhussein Abdel Aziz in Tiphanie Lemaitre vs. Lamis Alhussein Abdel Aziz?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Tiphanie Lemaitre vs. Lamis Alhussein Abdel Aziz be more than 17.5?",
    "sides": [
-    "Tiphanie Lemaitre +4.50 (Games)",
-    "Lamis Alhussein Abdel Aziz -4.50 (Games)"
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
    ],
    "teams": [
-    "Tiphanie Lemaitre",
-    "Lamis Alhussein Abdel Aziz"
+    null,
+    null
    ],
    "player": null,
-   "mid": 71.5,
-   "yes_buy": 72,
-   "no_buy": 29,
-   "taken_at": "2026-11-03T09:10:31.293Z"
-  },
-  {
-   "market_id": "2034579",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Tiphanie Lemaitre cover 7.5 vs the Lamis Alhussein Abdel Aziz in Tiphanie Lemaitre vs. Lamis Alhussein Abdel Aziz?",
-   "sides": [
-    "Tiphanie Lemaitre +7.50 (Games)",
-    "Lamis Alhussein Abdel Aziz -7.50 (Games)"
-   ],
-   "teams": [
-    "Tiphanie Lemaitre",
-    "Lamis Alhussein Abdel Aziz"
-   ],
-   "player": null,
-   "mid": 71.5,
-   "yes_buy": 72,
-   "no_buy": 29,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
    "taken_at": "2026-11-03T09:10:31.293Z"
   },
   {
@@ -274,42 +296,42 @@
    "taken_at": "2026-11-03T09:10:31.293Z"
   },
   {
-   "market_id": "2034577",
+   "market_id": "2034573",
    "market": "Games spread",
    "group": "game",
    "mtype": "spread",
    "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Tiphanie Lemaitre cover -7.5 vs the Lamis Alhussein Abdel Aziz in Tiphanie Lemaitre vs. Lamis Alhussein Abdel Aziz?",
+   "line": -4.5,
+   "question": "Will the Tiphanie Lemaitre cover -4.5 vs the Lamis Alhussein Abdel Aziz in Tiphanie Lemaitre vs. Lamis Alhussein Abdel Aziz?",
    "sides": [
-    "Tiphanie Lemaitre -7.50 (Games)",
-    "Lamis Alhussein Abdel Aziz +7.50 (Games)"
+    "Tiphanie Lemaitre -4.50 (Games)",
+    "Lamis Alhussein Abdel Aziz +4.50 (Games)"
    ],
    "teams": [
     "Tiphanie Lemaitre",
     "Lamis Alhussein Abdel Aziz"
    ],
    "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-11-03T09:10:31.293Z"
+   "mid": 45,
+   "yes_buy": 48,
+   "no_buy": 58,
+   "taken_at": "2026-11-03T00:21:58.562Z"
   },
   {
-   "market_id": "2034570",
-   "market": "Games spread",
+   "market_id": "2034588",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Tiphanie Lemaitre cover 1.5 vs the Lamis Alhussein Abdel Aziz in Tiphanie Lemaitre vs. Lamis Alhussein Abdel Aziz?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Tiphanie Lemaitre vs. Lamis Alhussein Abdel Aziz be more than 22.5?",
    "sides": [
-    "Tiphanie Lemaitre +1.50 (Games)",
-    "Lamis Alhussein Abdel Aziz -1.50 (Games)"
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
    ],
    "teams": [
-    "Tiphanie Lemaitre",
-    "Lamis Alhussein Abdel Aziz"
+    null,
+    null
    ],
    "player": null,
    "mid": 33.5,
@@ -362,50 +384,6 @@
    "taken_at": "2026-11-03T09:10:31.293Z"
   },
   {
-   "market_id": "2034586",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Tiphanie Lemaitre vs. Lamis Alhussein Abdel Aziz be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-11-03T09:10:31.293Z"
-  },
-  {
-   "market_id": "2034588",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Tiphanie Lemaitre vs. Lamis Alhussein Abdel Aziz be more than 22.5?",
-   "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-11-03T09:10:31.293Z"
-  },
-  {
    "market_id": "2034590",
    "market": "Games total",
    "group": "game",
@@ -428,29 +406,133 @@
    "taken_at": "2026-11-03T09:10:31.293Z"
   },
   {
-   "market_id": "2034573",
+   "market_id": "2034575",
    "market": "Games spread",
    "group": "game",
    "mtype": "spread",
    "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Tiphanie Lemaitre cover -4.5 vs the Lamis Alhussein Abdel Aziz in Tiphanie Lemaitre vs. Lamis Alhussein Abdel Aziz?",
+   "line": 4.5,
+   "question": "Will the Tiphanie Lemaitre cover 4.5 vs the Lamis Alhussein Abdel Aziz in Tiphanie Lemaitre vs. Lamis Alhussein Abdel Aziz?",
    "sides": [
-    "Tiphanie Lemaitre -4.50 (Games)",
-    "Lamis Alhussein Abdel Aziz +4.50 (Games)"
+    "Tiphanie Lemaitre +4.50 (Games)",
+    "Lamis Alhussein Abdel Aziz -4.50 (Games)"
    ],
    "teams": [
     "Tiphanie Lemaitre",
     "Lamis Alhussein Abdel Aziz"
    ],
    "player": null,
-   "mid": 45,
-   "yes_buy": 48,
-   "no_buy": 58,
-   "taken_at": "2026-11-03T00:21:58.562Z"
+   "mid": 71.5,
+   "yes_buy": 72,
+   "no_buy": 29,
+   "taken_at": "2026-11-03T09:10:31.293Z"
+  },
+  {
+   "market_id": "2034579",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Tiphanie Lemaitre cover 7.5 vs the Lamis Alhussein Abdel Aziz in Tiphanie Lemaitre vs. Lamis Alhussein Abdel Aziz?",
+   "sides": [
+    "Tiphanie Lemaitre +7.50 (Games)",
+    "Lamis Alhussein Abdel Aziz -7.50 (Games)"
+   ],
+   "teams": [
+    "Tiphanie Lemaitre",
+    "Lamis Alhussein Abdel Aziz"
+   ],
+   "player": null,
+   "mid": 71.5,
+   "yes_buy": 72,
+   "no_buy": 29,
+   "taken_at": "2026-11-03T09:10:31.293Z"
+  },
+  {
+   "market_id": "2034577",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Tiphanie Lemaitre cover -7.5 vs the Lamis Alhussein Abdel Aziz in Tiphanie Lemaitre vs. Lamis Alhussein Abdel Aziz?",
+   "sides": [
+    "Tiphanie Lemaitre -7.50 (Games)",
+    "Lamis Alhussein Abdel Aziz +7.50 (Games)"
+   ],
+   "teams": [
+    "Tiphanie Lemaitre",
+    "Lamis Alhussein Abdel Aziz"
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-11-03T09:10:31.293Z"
   }
  ],
  "edges": [
+  {
+   "key": "2034570:1",
+   "market_id": "2034570",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Tiphanie Lemaitre cover 1.5 vs the Lamis Alhussein Abdel Aziz in Tiphanie Lemaitre vs. Lamis Alhussein Abdel Aziz?",
+   "side": "Lamis Alhussein Abdel Aziz -1.50 (Games)",
+   "open_chance": 67,
+   "now_chance": 25,
+   "open_odds": "-203",
+   "now_odds": "+300",
+   "edge": 42,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Lamis Alhussein Abdel Aziz not above the games spread right now",
+   "context": "Lamis Alhussein Abdel Aziz 0 · Tiphanie Lemaitre 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-03T09:21:10.166Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2034586:1",
+   "market_id": "2034586",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Tiphanie Lemaitre vs. Lamis Alhussein Abdel Aziz be more than 17.5?",
+   "side": "Under 17.5 (Games)",
+   "open_chance": 67,
+   "now_chance": 26,
+   "open_odds": "-203",
+   "now_odds": "+285",
+   "edge": 41,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (41 pts), likely news",
+   "context": "Lamis Alhussein Abdel Aziz 0 · Tiphanie Lemaitre 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-03T09:21:10.166Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2034568:1",
+   "market_id": "2034568",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Tiphanie Lemaitre cover -1.5 vs the Lamis Alhussein Abdel Aziz in Tiphanie Lemaitre vs. Lamis Alhussein Abdel Aziz?",
+   "side": "Lamis Alhussein Abdel Aziz +1.50 (Games)",
+   "open_chance": 67,
+   "now_chance": 40,
+   "open_odds": "-203",
+   "now_odds": "+150",
+   "edge": 27,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (27 pts), likely news",
+   "context": "Lamis Alhussein Abdel Aziz 0 · Tiphanie Lemaitre 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-03T09:21:10.166Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "2034581:0",
    "market_id": "2034581",
@@ -464,9 +546,9 @@
    "now_odds": "+194",
    "edge": 16,
    "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
+   "class": "score",
+   "reason": "Explained by score: Tiphanie Lemaitre not above the sets spread right now",
+   "context": "Lamis Alhussein Abdel Aziz 0 · Tiphanie Lemaitre 0 · 1st Set (games by set)",
    "first_seen": "2026-11-03T09:10:31.293Z",
    "status": "open",
    "kalshi": null
@@ -486,13 +568,109 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Lamis Alhussein Abdel Aziz 0 · Tiphanie Lemaitre 0 · 1st Set (games by set)",
    "first_seen": "2026-11-03T09:10:31.293Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2034573:1",
+   "market_id": "2034573",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Tiphanie Lemaitre cover -4.5 vs the Lamis Alhussein Abdel Aziz in Tiphanie Lemaitre vs. Lamis Alhussein Abdel Aziz?",
+   "side": "Lamis Alhussein Abdel Aziz +4.50 (Games)",
+   "open_chance": 58,
+   "now_chance": 52,
+   "open_odds": "-138",
+   "now_odds": "-108",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Lamis Alhussein Abdel Aziz 0 · Tiphanie Lemaitre 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-03T09:21:10.166Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2034588:1",
+   "market_id": "2034588",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Tiphanie Lemaitre vs. Lamis Alhussein Abdel Aziz be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 67,
+   "now_chance": 63,
+   "open_odds": "-203",
+   "now_odds": "-170",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Lamis Alhussein Abdel Aziz 0 · Tiphanie Lemaitre 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-03T09:21:10.166Z",
    "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "news:2034586:1",
+   "key": "2034586:1",
+   "at": "2026-11-03T09:21:10.166Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+285",
+   "now_chance": 26,
+   "edge": 41,
+   "text": "Big move, likely news: Under 17.5 (Games) (Games total) is 41 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-tiplem-lamazi-2026-11-02"
+  },
+  {
+   "id": "news:2034568:1",
+   "key": "2034568:1",
+   "at": "2026-11-03T09:21:10.166Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Lamis Alhussein Abdel Aziz +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+150",
+   "now_chance": 40,
+   "edge": 27,
+   "text": "Big move, likely news: Lamis Alhussein Abdel Aziz +1.50 (Games) (Games spread) is 27 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-tiplem-lamazi-2026-11-02"
+  },
+  {
+   "id": "new_edge:2034573:1:slight",
+   "key": "2034573:1",
+   "at": "2026-11-03T09:21:10.166Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Lamis Alhussein Abdel Aziz +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-108",
+   "now_chance": 52,
+   "edge": 6,
+   "text": "New slight edge: Lamis Alhussein Abdel Aziz +4.50 (Games) (Games spread), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-tiplem-lamazi-2026-11-02"
+  },
+  {
+   "id": "new_edge:2034588:1:slight",
+   "key": "2034588:1",
+   "at": "2026-11-03T09:21:10.166Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-170",
+   "now_chance": 63,
+   "edge": 4,
+   "text": "New slight edge: Under 22.5 (Games) (Games total), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-tiplem-lamazi-2026-11-02"
+  },
   {
    "id": "new_edge:2034581:0:big",
    "key": "2034581:0",
@@ -524,7 +702,11 @@
  ],
  "alert_seen": [
   "new_edge:2034581:0:big",
-  "new_edge:2034583:0:slight"
+  "new_edge:2034583:0:slight",
+  "news:2034586:1",
+  "news:2034568:1",
+  "new_edge:2034573:1:slight",
+  "new_edge:2034588:1:slight"
  ],
  "kalshi_checked": null
 }

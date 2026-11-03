@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186670",
-  "fetched_at": "2026-11-03T09:10:37.396Z",
+  "fetched_at": "2026-11-03T09:21:16.767Z",
   "tennis": true,
   "tennis_match": {
    "id": "186670",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Tue, November 3rd at 4:10 AM EST",
-     "shortDetail": "11/3 - 4:10 AM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(3) Martyna Kubka (POL) leads Darja Suvirdjonkova (SER) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "curatedRank": {
       "current": 3
      },
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "930d6df0-0299-38ae-9091-c001504e4dac",
       "displayName": "Martyna Kubka",
@@ -90,6 +101,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "c8723c5f-047b-39d4-ab4c-9b202eff6c6c",
       "displayName": "Darja Suvirdjonkova",
@@ -122,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1082,
    "type": {
     "id": "2",
@@ -138,10 +160,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Tue, November 3rd at 4:10 AM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Martyna Kubka",
@@ -159,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-03T09:10:37.300Z",
+ "updated": "2026-11-03T09:21:16.701Z",
  "open_taken_at": "2026-11-02T13:51:54.971Z",
  "thresholds": {
   "big": 10,
@@ -187,28 +209,6 @@
    "yes_buy": 8,
    "no_buy": 95,
    "taken_at": "2026-11-02T21:26:48.114Z"
-  },
-  {
-   "market_id": "2096813",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Darja Suvirdjonkova cover -1.5 vs the Martyna Kubka in Darja Suvirdjonkova vs. Martyna Kubka?",
-   "sides": [
-    "Darja Suvirdjonkova -1.50 (Games)",
-    "Martyna Kubka +1.50 (Games)"
-   ],
-   "teams": [
-    "Darja Suvirdjonkova",
-    "Martyna Kubka"
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-11-03T09:10:37.300Z"
   },
   {
    "market_id": "2096814",
@@ -335,6 +335,50 @@
    "teams": [
     null,
     null
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-11-03T09:10:37.300Z"
+  },
+  {
+   "market_id": "2096819",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Darja Suvirdjonkova cover -1.5 vs the Martyna Kubka in Darja Suvirdjonkova vs. Martyna Kubka?",
+   "sides": [
+    "Darja Suvirdjonkova -1.50 (Sets)",
+    "Martyna Kubka +1.50 (Sets)"
+   ],
+   "teams": [
+    "Darja Suvirdjonkova",
+    "Martyna Kubka"
+   ],
+   "player": null,
+   "mid": 5,
+   "yes_buy": 6,
+   "no_buy": 96,
+   "taken_at": "2026-11-03T09:21:16.701Z"
+  },
+  {
+   "market_id": "2096813",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Darja Suvirdjonkova cover -1.5 vs the Martyna Kubka in Darja Suvirdjonkova vs. Martyna Kubka?",
+   "sides": [
+    "Darja Suvirdjonkova -1.50 (Games)",
+    "Martyna Kubka +1.50 (Games)"
+   ],
+   "teams": [
+    "Darja Suvirdjonkova",
+    "Martyna Kubka"
    ],
    "player": null,
    "mid": 33.5,
