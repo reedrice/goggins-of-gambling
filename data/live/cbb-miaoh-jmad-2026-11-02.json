@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-03T00:00:47.224Z"
+  "fetched_at": "2026-11-03T00:12:22.648Z"
  },
- "updated": "2026-11-03T00:00:47.123Z",
+ "updated": "2026-11-03T00:12:22.589Z",
  "open_taken_at": "2026-11-01T05:07:18.473Z",
  "thresholds": {
   "big": 10,
@@ -945,22 +945,22 @@
  ],
  "edges": [
   {
-   "key": "1913498:0",
+   "key": "1913498:1",
    "market_id": "1913498",
    "market": "Moneyline",
    "group": "game",
    "question": "Who will win in the upcoming basketball event Miami (OH) vs James Madison scheduled for November 2, 2026 at 7:00PM ET?",
-   "side": "RedHawks win",
-   "open_chance": 55,
-   "now_chance": 50,
-   "open_odds": "-122",
-   "now_odds": "+100",
+   "side": "Dukes win",
+   "open_chance": 46,
+   "now_chance": 41,
+   "open_odds": "+117",
+   "now_odds": "+144",
    "edge": 5,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-01T23:03:52.106Z",
+   "first_seen": "2026-11-03T00:12:22.589Z",
    "status": "open",
    "kalshi": null
   },
@@ -1225,6 +1225,26 @@
    "kalshi": null
   },
   {
+   "key": "1913498:0",
+   "market_id": "1913498",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming basketball event Miami (OH) vs James Madison scheduled for November 2, 2026 at 7:00PM ET?",
+   "side": "RedHawks win",
+   "open_chance": 55,
+   "now_chance": 50,
+   "open_odds": "-122",
+   "now_odds": "+100",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-01T23:03:52.106Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "2033099:1",
    "market_id": "2033099",
    "market": "Alt total",
@@ -1306,6 +1326,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1913498:1:slight",
+   "key": "1913498:1",
+   "at": "2026-11-03T00:12:22.589Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Dukes win",
+   "market": "Moneyline",
+   "now_odds": "+144",
+   "now_chance": 41,
+   "edge": 5,
+   "text": "New slight edge: Dukes win (Moneyline), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-miaoh-jmad-2026-11-02"
+  },
+  {
+   "id": "gone:1913498:0:2026-11-01T23:03:52.106Z",
+   "key": "1913498:0",
+   "at": "2026-11-03T00:12:22.589Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "RedHawks win",
+   "market": "Moneyline",
+   "now_odds": "+100",
+   "now_chance": 50,
+   "edge": 5,
+   "text": "Edge gone: RedHawks win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-miaoh-jmad-2026-11-02"
+  },
   {
    "id": "new_edge:1913498:0:slight",
    "key": "1913498:0",
@@ -1577,7 +1625,9 @@
   "gone:2033099:1:2026-11-02T23:50:27.574Z",
   "gone:2033075:0:2026-11-02T23:26:41.203Z",
   "gone:2033065:0:2026-11-02T22:12:10.208Z",
-  "gone:2033068:0:2026-11-02T22:59:23.670Z"
+  "gone:2033068:0:2026-11-02T22:59:23.670Z",
+  "new_edge:1913498:1:slight",
+  "gone:1913498:0:2026-11-01T23:03:52.106Z"
  ],
  "kalshi_checked": null
 }
