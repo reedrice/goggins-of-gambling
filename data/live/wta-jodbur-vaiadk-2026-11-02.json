@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186582",
-  "fetched_at": "2026-11-03T12:12:34.702Z",
+  "fetched_at": "2026-11-03T12:23:26.212Z",
   "tennis": true,
   "tennis_match": {
    "id": "186582",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Jodie Burrage (GBR) leads Vaishnavi Adkar (IND) 5-3",
+     "text": "Vaishnavi Adkar (IND) is tied with Jodie Burrage (GBR) 3-6 1-0",
      "type": "event"
     }
    ],
@@ -55,10 +55,13 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
      "linescores": [
       {
-       "value": 3
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -98,10 +101,13 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -136,11 +142,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 889,
    "type": {
     "id": "2",
@@ -159,8 +160,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Vaishnavi Adkar",
@@ -172,13 +173,13 @@
    "abbr": "Jodie Burrage",
    "alias": "Jodie Burrage",
    "name": "Jodie Burrage",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-03T12:12:34.555Z",
+ "updated": "2026-11-03T12:23:26.134Z",
  "open_taken_at": "2026-11-01T05:07:40.350Z",
  "thresholds": {
   "big": 10,
@@ -230,25 +231,47 @@
    "taken_at": "2026-11-03T09:10:28.320Z"
   },
   {
-   "market_id": "2031364",
-   "market": "Games total",
+   "market_id": "2031357",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Jodie Burrage vs. Vaishnavi Adkar be more than 17.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Jodie Burrage cover 1.5 vs the Vaishnavi Adkar in Jodie Burrage vs. Vaishnavi Adkar?",
    "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
+    "Jodie Burrage +1.50 (Games)",
+    "Vaishnavi Adkar -1.50 (Games)"
    ],
    "teams": [
-    null,
-    null
+    "Jodie Burrage",
+    "Vaishnavi Adkar"
    ],
    "player": null,
-   "mid": 70.5,
-   "yes_buy": 71,
-   "no_buy": 30,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-11-03T09:10:28.320Z"
+  },
+  {
+   "market_id": "2031356",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Jodie Burrage cover -1.5 vs the Vaishnavi Adkar in Jodie Burrage vs. Vaishnavi Adkar?",
+   "sides": [
+    "Jodie Burrage -1.50 (Games)",
+    "Vaishnavi Adkar +1.50 (Games)"
+   ],
+   "teams": [
+    "Jodie Burrage",
+    "Vaishnavi Adkar"
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
    "taken_at": "2026-11-03T09:10:28.320Z"
   },
   {
@@ -296,6 +319,28 @@
    "taken_at": "2026-11-03T09:10:28.320Z"
   },
   {
+   "market_id": "2031364",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Jodie Burrage vs. Vaishnavi Adkar be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 70.5,
+   "yes_buy": 71,
+   "no_buy": 30,
+   "taken_at": "2026-11-03T09:10:28.320Z"
+  },
+  {
    "market_id": "2031366",
    "market": "Games total",
    "group": "game",
@@ -315,28 +360,6 @@
    "mid": 21.5,
    "yes_buy": 22,
    "no_buy": 79,
-   "taken_at": "2026-11-03T09:10:28.320Z"
-  },
-  {
-   "market_id": "2031356",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Jodie Burrage cover -1.5 vs the Vaishnavi Adkar in Jodie Burrage vs. Vaishnavi Adkar?",
-   "sides": [
-    "Jodie Burrage -1.50 (Games)",
-    "Vaishnavi Adkar +1.50 (Games)"
-   ],
-   "teams": [
-    "Jodie Burrage",
-    "Vaishnavi Adkar"
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
    "taken_at": "2026-11-03T09:10:28.320Z"
   },
   {
@@ -428,28 +451,6 @@
    "taken_at": "2026-11-02T07:01:24.099Z"
   },
   {
-   "market_id": "2031357",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Jodie Burrage cover 1.5 vs the Vaishnavi Adkar in Jodie Burrage vs. Vaishnavi Adkar?",
-   "sides": [
-    "Jodie Burrage +1.50 (Games)",
-    "Vaishnavi Adkar -1.50 (Games)"
-   ],
-   "teams": [
-    "Jodie Burrage",
-    "Vaishnavi Adkar"
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-11-03T09:10:28.320Z"
-  },
-  {
    "market_id": "2031362",
    "market": "Sets spread",
    "group": "game",
@@ -518,22 +519,22 @@
  ],
  "edges": [
   {
-   "key": "2031365:0",
-   "market_id": "2031365",
-   "market": "Games total",
+   "key": "2031356:1",
+   "market_id": "2031356",
+   "market": "Games spread",
    "group": "game",
-   "question": "Will the total in Jodie Burrage vs. Vaishnavi Adkar be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 43,
-   "now_chance": 33,
-   "open_odds": "+133",
-   "now_odds": "+203",
-   "edge": 10,
+   "question": "Will the Jodie Burrage cover -1.5 vs the Vaishnavi Adkar in Jodie Burrage vs. Vaishnavi Adkar?",
+   "side": "Vaishnavi Adkar +1.50 (Games)",
+   "open_chance": 67,
+   "now_chance": 27,
+   "open_odds": "-203",
+   "now_odds": "+270",
+   "edge": 40,
    "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Vaishnavi Adkar 3 · Jodie Burrage 5 · 1st Set (games by set)",
-   "first_seen": "2026-11-03T09:58:32.999Z",
+   "class": "score",
+   "reason": "Explained by score: Vaishnavi Adkar not above the games spread right now",
+   "context": "Vaishnavi Adkar 3, 1 · Jodie Burrage 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-11-03T10:09:56.090Z",
    "status": "open",
    "kalshi": null
   },
@@ -545,36 +546,16 @@
    "question": "Will the total in Jodie Burrage vs. Vaishnavi Adkar be more than 2.5?",
    "side": "Over 2.5 (Sets)",
    "open_chance": 34,
-   "now_chance": 25,
+   "now_chance": 28,
    "open_odds": "+194",
-   "now_odds": "+300",
-   "edge": 9,
+   "now_odds": "+257",
+   "edge": 6,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Vaishnavi Adkar 3 · Jodie Burrage 5 · 1st Set (games by set)",
+   "context": "Vaishnavi Adkar 3, 1 · Jodie Burrage 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-11-03T12:12:34.555Z",
    "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2031356:1",
-   "market_id": "2031356",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Jodie Burrage cover -1.5 vs the Vaishnavi Adkar in Jodie Burrage vs. Vaishnavi Adkar?",
-   "side": "Vaishnavi Adkar +1.50 (Games)",
-   "open_chance": 67,
-   "now_chance": 30,
-   "open_odds": "-203",
-   "now_odds": "+233",
-   "edge": 37,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (37 pts), likely news",
-   "context": "Vaishnavi Adkar 3 · Jodie Burrage 2 · 1st Set (games by set)",
-   "first_seen": "2026-11-03T10:09:56.090Z",
-   "status": "gone",
    "kalshi": null
   },
   {
@@ -593,26 +574,6 @@
    "class": "news",
    "reason": "Big move (35 pts), likely news",
    "context": "Pregame",
-   "first_seen": "2026-11-03T10:09:56.090Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "2031357:1",
-   "market_id": "2031357",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Jodie Burrage cover 1.5 vs the Vaishnavi Adkar in Jodie Burrage vs. Vaishnavi Adkar?",
-   "side": "Vaishnavi Adkar -1.50 (Games)",
-   "open_chance": 67,
-   "now_chance": 33,
-   "open_odds": "-203",
-   "now_odds": "+203",
-   "edge": 34,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Vaishnavi Adkar not above the games spread right now",
-   "context": "Vaishnavi Adkar 0 · Jodie Burrage 0 · 1st Set (games by set)",
    "first_seen": "2026-11-03T10:09:56.090Z",
    "status": "gone",
    "kalshi": null
@@ -698,6 +659,26 @@
    "kalshi": null
   },
   {
+   "key": "2031365:0",
+   "market_id": "2031365",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Jodie Burrage vs. Vaishnavi Adkar be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 43,
+   "now_chance": 33,
+   "open_odds": "+133",
+   "now_odds": "+203",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Vaishnavi Adkar 3 · Jodie Burrage 5 · 1st Set (games by set)",
+   "first_seen": "2026-11-03T09:58:32.999Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "2031362:0",
    "market_id": "2031362",
    "market": "Sets spread",
@@ -719,6 +700,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2031365:0:2026-11-03T09:58:32.999Z",
+   "key": "2031365:0",
+   "at": "2026-11-03T12:23:26.134Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+203",
+   "now_chance": 33,
+   "edge": 10,
+   "text": "Edge gone: Over 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-jodbur-vaiadk-2026-11-02"
+  },
   {
    "id": "new_edge:2031367:0:slight",
    "key": "2031367:0",
@@ -815,20 +810,6 @@
    "now_chance": 34,
    "edge": 23,
    "text": "Edge gone: Jodie Burrage -4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-jodbur-vaiadk-2026-11-02"
-  },
-  {
-   "id": "news:2031357:1",
-   "key": "2031357:1",
-   "at": "2026-11-03T10:43:41.847Z",
-   "type": "news",
-   "tier": "big",
-   "side": "Vaishnavi Adkar -1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+203",
-   "now_chance": 33,
-   "edge": 34,
-   "text": "Big move, likely news: Vaishnavi Adkar -1.50 (Games) (Games spread) is 34 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-jodbur-vaiadk-2026-11-02"
   },
   {
@@ -934,7 +915,8 @@
   "gone:2031358:1:2026-11-03T11:40:32.324Z",
   "gone:2031372:1:2026-11-03T11:51:57.134Z",
   "gone:2014272:1:2026-11-03T11:40:32.324Z",
-  "new_edge:2031367:0:slight"
+  "new_edge:2031367:0:slight",
+  "gone:2031365:0:2026-11-03T09:58:32.999Z"
  ],
  "kalshi_checked": null
 }
