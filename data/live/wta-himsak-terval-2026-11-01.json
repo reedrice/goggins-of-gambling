@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186629",
-  "fetched_at": "2026-11-03T10:32:43.246Z",
+  "fetched_at": "2026-11-03T10:43:46.642Z",
   "tennis": true,
   "tennis_match": {
    "id": "186629",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Himeno Sakatsume (JPN) leads Tereza Valentova (CZE) 3-6 1-1",
+     "text": "Himeno Sakatsume (JPN) is tied with Tereza Valentova (CZE) 3-6 3-2",
      "type": "event"
     }
    ],
@@ -55,14 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -102,14 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
        "value": 3,
        "winner": false
       },
       {
-       "value": 1
+       "value": 3
       }
      ],
      "athlete": {
@@ -186,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-03T10:32:43.161Z",
+ "updated": "2026-11-03T10:43:46.569Z",
  "open_taken_at": "2026-11-01T07:33:11.149Z",
  "thresholds": {
   "big": 10,
@@ -216,26 +216,48 @@
    "taken_at": "2026-11-01T14:00:07.196Z"
   },
   {
-   "market_id": "2075856",
-   "market": "Games total",
+   "market_id": "2075864",
+   "market": "Set 2 winner",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Himeno Sakatsume vs. Tereza Valentova be more than 22.5?",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Himeno Sakatsume win set 2 against Tereza Valentova?",
    "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
+    "Yes: Himeno Sakatsume win set 2 against Tereza Valentova",
+    "No: Himeno Sakatsume win set 2 against Tereza Valentova"
    ],
    "teams": [
-    null,
+    "Himeno Sakatsume",
     null
    ],
    "player": null,
-   "mid": 29.5,
-   "yes_buy": 32,
-   "no_buy": 73,
-   "taken_at": "2026-11-03T09:00:44.905Z"
+   "mid": 21,
+   "yes_buy": 23,
+   "no_buy": 81,
+   "taken_at": "2026-11-03T09:58:38.131Z"
+  },
+  {
+   "market_id": "2075846",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Himeno Sakatsume cover 4.5 vs the Tereza Valentova in Himeno Sakatsume vs. Tereza Valentova?",
+   "sides": [
+    "Himeno Sakatsume +4.50 (Games)",
+    "Tereza Valentova -4.50 (Games)"
+   ],
+   "teams": [
+    "Himeno Sakatsume",
+    "Tereza Valentova"
+   ],
+   "player": null,
+   "mid": 41.5,
+   "yes_buy": 44,
+   "no_buy": 61,
+   "taken_at": "2026-11-02T00:51:52.903Z"
   },
   {
    "market_id": "2075857",
@@ -304,6 +326,50 @@
    "taken_at": "2026-11-03T09:10:33.441Z"
   },
   {
+   "market_id": "2075839",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Himeno Sakatsume cover -1.5 vs the Tereza Valentova in Himeno Sakatsume vs. Tereza Valentova?",
+   "sides": [
+    "Himeno Sakatsume -1.50 (Games)",
+    "Tereza Valentova +1.50 (Games)"
+   ],
+   "teams": [
+    "Himeno Sakatsume",
+    "Tereza Valentova"
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-11-03T09:10:33.441Z"
+  },
+  {
+   "market_id": "2075856",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Himeno Sakatsume vs. Tereza Valentova be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 29.5,
+   "yes_buy": 32,
+   "no_buy": 73,
+   "taken_at": "2026-11-03T09:00:44.905Z"
+  },
+  {
    "market_id": "2075848",
    "market": "Games spread",
    "group": "game",
@@ -346,28 +412,6 @@
    "yes_buy": 65,
    "no_buy": 36,
    "taken_at": "2026-11-03T09:10:33.441Z"
-  },
-  {
-   "market_id": "2075864",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Himeno Sakatsume win set 2 against Tereza Valentova?",
-   "sides": [
-    "Yes: Himeno Sakatsume win set 2 against Tereza Valentova",
-    "No: Himeno Sakatsume win set 2 against Tereza Valentova"
-   ],
-   "teams": [
-    "Himeno Sakatsume",
-    null
-   ],
-   "player": null,
-   "mid": 21,
-   "yes_buy": 23,
-   "no_buy": 81,
-   "taken_at": "2026-11-03T09:58:38.131Z"
   },
   {
    "market_id": "2075854",
@@ -414,28 +458,6 @@
    "taken_at": "2026-11-03T09:48:37.983Z"
   },
   {
-   "market_id": "2075846",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Himeno Sakatsume cover 4.5 vs the Tereza Valentova in Himeno Sakatsume vs. Tereza Valentova?",
-   "sides": [
-    "Himeno Sakatsume +4.50 (Games)",
-    "Tereza Valentova -4.50 (Games)"
-   ],
-   "teams": [
-    "Himeno Sakatsume",
-    "Tereza Valentova"
-   ],
-   "player": null,
-   "mid": 41.5,
-   "yes_buy": 44,
-   "no_buy": 61,
-   "taken_at": "2026-11-02T00:51:52.903Z"
-  },
-  {
    "market_id": "2075863",
    "market": "Set 1 winner",
    "group": "game",
@@ -480,28 +502,6 @@
    "taken_at": "2026-11-03T09:31:09.715Z"
   },
   {
-   "market_id": "2075839",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Himeno Sakatsume cover -1.5 vs the Tereza Valentova in Himeno Sakatsume vs. Tereza Valentova?",
-   "sides": [
-    "Himeno Sakatsume -1.50 (Games)",
-    "Tereza Valentova +1.50 (Games)"
-   ],
-   "teams": [
-    "Himeno Sakatsume",
-    "Tereza Valentova"
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-11-03T09:10:33.441Z"
-  },
-  {
    "market_id": "2075852",
    "market": "Sets spread",
    "group": "game",
@@ -526,42 +526,42 @@
  ],
  "edges": [
   {
-   "key": "2075841:0",
-   "market_id": "2075841",
-   "market": "Games spread",
+   "key": "2075864:1",
+   "market_id": "2075864",
+   "market": "Set 2 winner",
    "group": "game",
-   "question": "Will the Himeno Sakatsume cover 1.5 vs the Tereza Valentova in Himeno Sakatsume vs. Tereza Valentova?",
-   "side": "Himeno Sakatsume +1.50 (Games)",
-   "open_chance": 34,
-   "now_chance": 18,
-   "open_odds": "+194",
-   "now_odds": "+456",
-   "edge": 16,
+   "question": "Will Himeno Sakatsume win set 2 against Tereza Valentova?",
+   "side": "No: Himeno Sakatsume win set 2 against Tereza Valentova",
+   "open_chance": 81,
+   "now_chance": 57,
+   "open_odds": "-426",
+   "now_odds": "-133",
+   "edge": 24,
    "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Himeno Sakatsume not above the games spread right now",
-   "context": "Tereza Valentova 6, 1 · Himeno Sakatsume 3, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-11-03T10:32:43.161Z",
+   "class": "edge",
+   "reason": null,
+   "context": "Tereza Valentova 6, 2 · Himeno Sakatsume 3, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-11-03T10:10:02.306Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "2075856:0",
-   "market_id": "2075856",
-   "market": "Games total",
+   "key": "2042394:0",
+   "market_id": "2042394",
+   "market": "Moneyline",
    "group": "game",
-   "question": "Will the total in Himeno Sakatsume vs. Tereza Valentova be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 32,
-   "now_chance": 26,
-   "open_odds": "+213",
-   "now_odds": "+285",
-   "edge": 6,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Tereza Valentova 6, 1 · Himeno Sakatsume 3, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-11-03T09:58:38.131Z",
+   "question": "Who will win in the upcoming wta event Himeno Sakatsume vs Tereza Valentova scheduled for November 2, 2026 at 2:00 AM UTC?",
+   "side": "Himeno Sakatsume win",
+   "open_chance": 30,
+   "now_chance": 17,
+   "open_odds": "+233",
+   "now_odds": "+488",
+   "edge": 13,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Himeno Sakatsume trailing in sets",
+   "context": "Tereza Valentova 6, 2 · Himeno Sakatsume 3, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-11-03T10:43:46.569Z",
    "status": "open",
    "kalshi": null
   },
@@ -573,56 +573,16 @@
    "question": "Will the Himeno Sakatsume cover 4.5 vs the Tereza Valentova in Himeno Sakatsume vs. Tereza Valentova?",
    "side": "Himeno Sakatsume +4.50 (Games)",
    "open_chance": 44,
-   "now_chance": 28,
+   "now_chance": 37,
    "open_odds": "+127",
-   "now_odds": "+257",
-   "edge": 16,
-   "tier": "big",
+   "now_odds": "+170",
+   "edge": 7,
+   "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Tereza Valentova 6, 0 · Himeno Sakatsume 3, 0 · 2nd Set (games by set)",
+   "context": "Tereza Valentova 6, 2 · Himeno Sakatsume 3, 3 · 2nd Set (games by set)",
    "first_seen": "2026-11-03T09:58:38.131Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "2075864:1",
-   "market_id": "2075864",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Himeno Sakatsume win set 2 against Tereza Valentova?",
-   "side": "No: Himeno Sakatsume win set 2 against Tereza Valentova",
-   "open_chance": 81,
-   "now_chance": 68,
-   "open_odds": "-426",
-   "now_odds": "-213",
-   "edge": 13,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Himeno Sakatsume not above the games spread right now",
-   "context": "Tereza Valentova 6, 0 · Himeno Sakatsume 3, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-11-03T10:10:02.306Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "2075839:0",
-   "market_id": "2075839",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Himeno Sakatsume cover -1.5 vs the Tereza Valentova in Himeno Sakatsume vs. Tereza Valentova?",
-   "side": "Himeno Sakatsume -1.50 (Games)",
-   "open_chance": 34,
-   "now_chance": 21,
-   "open_odds": "+194",
-   "now_odds": "+376",
-   "edge": 13,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Himeno Sakatsume not above the games spread right now",
-   "context": "Tereza Valentova 1 · Himeno Sakatsume 1 · 1st Set (games by set)",
-   "first_seen": "2026-11-03T09:40:05.700Z",
-   "status": "gone",
+   "status": "open",
    "kalshi": null
   },
   {
@@ -706,6 +666,26 @@
    "kalshi": null
   },
   {
+   "key": "2075856:0",
+   "market_id": "2075856",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Himeno Sakatsume vs. Tereza Valentova be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 32,
+   "now_chance": 26,
+   "open_odds": "+213",
+   "now_odds": "+285",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Tereza Valentova 6, 1 · Himeno Sakatsume 3, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-11-03T09:58:38.131Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "2075857:1",
    "market_id": "2075857",
    "market": "Games total",
@@ -747,6 +727,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2075864:1:big",
+   "key": "2075864:1",
+   "at": "2026-11-03T10:43:46.569Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "No: Himeno Sakatsume win set 2 against Tereza Valentova",
+   "market": "Set 2 winner",
+   "now_odds": "-133",
+   "now_chance": 57,
+   "edge": 24,
+   "text": "New big edge: No: Himeno Sakatsume win set 2 against Tereza Valentova (Set 2 winner), 24 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-himsak-terval-2026-11-01"
+  },
+  {
+   "id": "new_edge:2075846:0:slight",
+   "key": "2075846:0",
+   "at": "2026-11-03T10:43:46.569Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Himeno Sakatsume +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+170",
+   "now_chance": 37,
+   "edge": 7,
+   "text": "New slight edge: Himeno Sakatsume +4.50 (Games) (Games spread), 7 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-himsak-terval-2026-11-01"
+  },
   {
    "id": "gone:2075854:0:2026-11-03T10:21:33.789Z",
    "key": "2075854:0",
@@ -976,7 +984,9 @@
   "gone:2075856:0:2026-11-03T09:58:38.131Z",
   "new_edge:2075854:0:big",
   "gone:2075857:1:2026-11-03T10:10:02.306Z",
-  "gone:2075854:0:2026-11-03T10:21:33.789Z"
+  "gone:2075854:0:2026-11-03T10:21:33.789Z",
+  "new_edge:2075864:1:big",
+  "new_edge:2075846:0:slight"
  ],
  "kalshi_checked": null
 }
