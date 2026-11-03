@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-03T00:21:44.116Z"
+  "fetched_at": "2026-11-03T00:32:42.862Z"
  },
- "updated": "2026-11-03T00:21:44.064Z",
+ "updated": "2026-11-03T00:32:42.801Z",
  "open_taken_at": "2026-11-01T05:07:20.268Z",
  "thresholds": {
   "big": 10,
@@ -19,8 +19,30 @@
  },
  "open": [
   {
-   "market_id": "2068297",
+   "market_id": "2068286",
    "market": "Main spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 14.5,
+   "question": "Will Florida Gulf Coast cover +14.5 vs UCF in Florida Gulf Coast vs. UCF?",
+   "sides": [
+    "Eagles +14.50",
+    "Knights -14.50"
+   ],
+   "teams": [
+    "Eagles",
+    "Knights"
+   ],
+   "player": null,
+   "mid": 26.5,
+   "yes_buy": 28,
+   "no_buy": 75,
+   "taken_at": "2026-11-02T22:24:39.747Z"
+  },
+  {
+   "market_id": "2068297",
+   "market": "Alt spread",
    "group": "game",
    "mtype": "spread",
    "period": "full_game",
@@ -481,28 +503,6 @@
    "taken_at": "2026-11-02T18:53:11.667Z"
   },
   {
-   "market_id": "2068286",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": 14.5,
-   "question": "Will Florida Gulf Coast cover +14.5 vs UCF in Florida Gulf Coast vs. UCF?",
-   "sides": [
-    "Eagles +14.50",
-    "Knights -14.50"
-   ],
-   "teams": [
-    "Eagles",
-    "Knights"
-   ],
-   "player": null,
-   "mid": 26.5,
-   "yes_buy": 28,
-   "no_buy": 75,
-   "taken_at": "2026-11-02T22:24:39.747Z"
-  },
-  {
    "market_id": "2068317",
    "market": "Alt total",
    "group": "game",
@@ -659,6 +659,26 @@
  ],
  "edges": [
   {
+   "key": "2068286:1",
+   "market_id": "2068286",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will Florida Gulf Coast cover +14.5 vs UCF in Florida Gulf Coast vs. UCF?",
+   "side": "Knights -14.50",
+   "open_chance": 75,
+   "now_chance": 71,
+   "open_odds": "-300",
+   "now_odds": "-245",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-03T00:32:42.801Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2068308:0",
    "market_id": "2068308",
    "market": "Main total",
@@ -800,6 +820,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2068286:1:slight",
+   "key": "2068286:1",
+   "at": "2026-11-03T00:32:42.801Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Knights -14.50",
+   "market": "Main spread",
+   "now_odds": "-245",
+   "now_chance": 71,
+   "edge": 4,
+   "text": "New slight edge: Knights -14.50 (Main spread), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-flgc-ucf-2026-11-02"
+  },
   {
    "id": "gone:2068308:0:2026-11-03T00:12:24.478Z",
    "key": "2068308:0",
@@ -951,7 +985,8 @@
   "gone:2068308:0:2026-11-03T00:12:24.478Z",
   "gone:2068323:1:2026-11-03T00:12:24.478Z",
   "gone:2072524:0:2026-11-03T00:12:24.478Z",
-  "gone:2068309:0:2026-11-03T00:12:24.478Z"
+  "gone:2068309:0:2026-11-03T00:12:24.478Z",
+  "new_edge:2068286:1:slight"
  ],
  "kalshi_checked": null
 }

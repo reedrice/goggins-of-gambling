@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-03T00:21:59.564Z"
+  "fetched_at": "2026-11-03T00:33:02.739Z"
  },
- "updated": "2026-11-03T00:21:59.441Z",
+ "updated": "2026-11-03T00:33:02.606Z",
  "open_taken_at": "2026-11-01T05:07:48.546Z",
  "thresholds": {
   "big": 10,
@@ -63,6 +63,28 @@
    "taken_at": "2026-11-02T22:12:32.217Z"
   },
   {
+   "market_id": "2028435",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Gustavo Heide vs. Guido Ivan Justo be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 41.5,
+   "yes_buy": 44,
+   "no_buy": 61,
+   "taken_at": "2026-11-02T17:08:20.037Z"
+  },
+  {
    "market_id": "2028427",
    "market": "Games spread",
    "group": "game",
@@ -107,48 +129,26 @@
    "taken_at": "2026-11-02T22:12:32.217Z"
   },
   {
-   "market_id": "2028435",
-   "market": "Games total",
+   "market_id": "2028443",
+   "market": "Set 2 winner",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Gustavo Heide vs. Guido Ivan Justo be more than 22.5?",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Gustavo Heide win set 2 against Guido Ivan Justo?",
    "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 41.5,
-   "yes_buy": 44,
-   "no_buy": 61,
-   "taken_at": "2026-11-02T17:08:20.037Z"
-  },
-  {
-   "market_id": "2028428",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Gustavo Heide cover -4.5 vs the Guido Ivan Justo in Gustavo Heide vs. Guido Ivan Justo?",
-   "sides": [
-    "Gustavo Heide -4.50 (Games)",
-    "Guido Justo +4.50 (Games)"
+    "Yes: Gustavo Heide win set 2 against Guido Ivan Justo",
+    "No: Gustavo Heide win set 2 against Guido Ivan Justo"
    ],
    "teams": [
     "Gustavo Heide",
-    "Guido Justo"
+    null
    ],
    "player": null,
-   "mid": 41.5,
-   "yes_buy": 42,
-   "no_buy": 59,
-   "taken_at": "2026-11-02T22:12:32.217Z"
+   "mid": 69.5,
+   "yes_buy": 70,
+   "no_buy": 31,
+   "taken_at": "2026-11-02T22:25:01.157Z"
   },
   {
    "market_id": "2028436",
@@ -173,26 +173,26 @@
    "taken_at": "2026-11-02T22:12:32.217Z"
   },
   {
-   "market_id": "2028443",
-   "market": "Set 2 winner",
+   "market_id": "2028428",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Gustavo Heide win set 2 against Guido Ivan Justo?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Gustavo Heide cover -4.5 vs the Guido Ivan Justo in Gustavo Heide vs. Guido Ivan Justo?",
    "sides": [
-    "Yes: Gustavo Heide win set 2 against Guido Ivan Justo",
-    "No: Gustavo Heide win set 2 against Guido Ivan Justo"
+    "Gustavo Heide -4.50 (Games)",
+    "Guido Justo +4.50 (Games)"
    ],
    "teams": [
     "Gustavo Heide",
-    null
+    "Guido Justo"
    ],
    "player": null,
-   "mid": 69.5,
-   "yes_buy": 70,
-   "no_buy": 31,
-   "taken_at": "2026-11-02T22:25:01.157Z"
+   "mid": 41.5,
+   "yes_buy": 42,
+   "no_buy": 59,
+   "taken_at": "2026-11-02T22:12:32.217Z"
   },
   {
    "market_id": "2028437",
@@ -285,6 +285,26 @@
  ],
  "edges": [
   {
+   "key": "2028435:1",
+   "market_id": "2028435",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Gustavo Heide vs. Guido Ivan Justo be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 61,
+   "now_chance": 20,
+   "open_odds": "-156",
+   "now_odds": "+400",
+   "edge": 41,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-02T22:12:32.217Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2028426:1",
    "market_id": "2028426",
    "market": "Games spread",
@@ -305,42 +325,22 @@
    "kalshi": null
   },
   {
-   "key": "2028435:1",
-   "market_id": "2028435",
-   "market": "Games total",
+   "key": "2028443:0",
+   "market_id": "2028443",
+   "market": "Set 2 winner",
    "group": "game",
-   "question": "Will the total in Gustavo Heide vs. Guido Ivan Justo be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 61,
-   "now_chance": 52,
-   "open_odds": "-156",
-   "now_odds": "-108",
-   "edge": 9,
+   "question": "Will Gustavo Heide win set 2 against Guido Ivan Justo?",
+   "side": "Yes: Gustavo Heide win set 2 against Guido Ivan Justo",
+   "open_chance": 70,
+   "now_chance": 62,
+   "open_odds": "-233",
+   "now_odds": "-163",
+   "edge": 8,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-02T22:12:32.217Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2028428:0",
-   "market_id": "2028428",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Gustavo Heide cover -4.5 vs the Guido Ivan Justo in Gustavo Heide vs. Guido Ivan Justo?",
-   "side": "Gustavo Heide -4.50 (Games)",
-   "open_chance": 42,
-   "now_chance": 33,
-   "open_odds": "+138",
-   "now_odds": "+203",
-   "edge": 9,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-02T23:16:07.486Z",
+   "first_seen": "2026-11-02T23:39:34.914Z",
    "status": "open",
    "kalshi": null
   },
@@ -352,15 +352,35 @@
    "question": "Who will win in the upcoming atp event Gustavo Heide vs Guido Ivan Justo scheduled for November 2, 2026 at 7:00 PM UTC?",
    "side": "Guido Justo win",
    "open_chance": 27,
-   "now_chance": 23,
+   "now_chance": 21,
    "open_odds": "+270",
-   "now_odds": "+335",
-   "edge": 4,
+   "now_odds": "+376",
+   "edge": 6,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-02T22:25:01.157Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2028436:1",
+   "market_id": "2028436",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Gustavo Heide vs. Guido Ivan Justo be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 76,
+   "now_chance": 70,
+   "open_odds": "-317",
+   "now_odds": "-233",
+   "edge": 6,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-02T22:59:46.746Z",
    "status": "open",
    "kalshi": null
   },
@@ -405,26 +425,6 @@
    "kalshi": null
   },
   {
-   "key": "2028443:0",
-   "market_id": "2028443",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Gustavo Heide win set 2 against Guido Ivan Justo?",
-   "side": "Yes: Gustavo Heide win set 2 against Guido Ivan Justo",
-   "open_chance": 70,
-   "now_chance": 58,
-   "open_odds": "-233",
-   "now_odds": "-138",
-   "edge": 12,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-02T23:39:34.914Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "2028428:1",
    "market_id": "2028428",
    "market": "Games spread",
@@ -445,22 +445,22 @@
    "kalshi": null
   },
   {
-   "key": "2028436:1",
-   "market_id": "2028436",
-   "market": "Games total",
+   "key": "2028428:0",
+   "market_id": "2028428",
+   "market": "Games spread",
    "group": "game",
-   "question": "Will the total in Gustavo Heide vs. Guido Ivan Justo be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 76,
-   "now_chance": 67,
-   "open_odds": "-317",
-   "now_odds": "-203",
+   "question": "Will the Gustavo Heide cover -4.5 vs the Guido Ivan Justo in Gustavo Heide vs. Guido Ivan Justo?",
+   "side": "Gustavo Heide -4.50 (Games)",
+   "open_chance": 42,
+   "now_chance": 33,
+   "open_odds": "+138",
+   "now_odds": "+203",
    "edge": 9,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-02T22:59:46.746Z",
+   "first_seen": "2026-11-02T23:16:07.486Z",
    "status": "gone",
    "kalshi": null
   },
@@ -506,6 +506,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2028428:0:2026-11-02T23:16:07.486Z",
+   "key": "2028428:0",
+   "at": "2026-11-03T00:33:02.606Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Gustavo Heide -4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+203",
+   "now_chance": 33,
+   "edge": 9,
+   "text": "Edge gone: Gustavo Heide -4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-gushei-guijus-2026-11-02"
+  },
   {
    "id": "gone:2028436:1:2026-11-02T22:59:46.746Z",
    "key": "2028436:1",
@@ -853,7 +867,8 @@
   "gone:2028427:1:2026-11-02T22:36:42.173Z",
   "gone:2028443:0:2026-11-02T23:39:34.914Z",
   "new_edge:2028443:0:big",
-  "gone:2028436:1:2026-11-02T22:59:46.746Z"
+  "gone:2028436:1:2026-11-02T22:59:46.746Z",
+  "gone:2028428:0:2026-11-02T23:16:07.486Z"
  ],
  "kalshi_checked": null
 }
