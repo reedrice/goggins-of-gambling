@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186670",
-  "fetched_at": "2026-11-03T09:40:09.320Z",
+  "fetched_at": "2026-11-03T09:48:41.544Z",
   "tennis": true,
   "tennis_match": {
    "id": "186670",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(3) Martyna Kubka (POL) leads Darja Suvirdjonkova (SER) 4-1",
+     "text": "(3) Martyna Kubka (POL) leads Darja Suvirdjonkova (SER) 5-2",
      "type": "event"
     }
    ],
@@ -61,7 +61,7 @@
      },
      "linescores": [
       {
-       "value": 4
+       "value": 5
       }
      ],
      "athlete": {
@@ -104,7 +104,7 @@
      "possession": true,
      "linescores": [
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -181,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-03T09:40:09.162Z",
+ "updated": "2026-11-03T09:48:41.412Z",
  "open_taken_at": "2026-11-02T13:51:54.971Z",
  "thresholds": {
   "big": 10,
@@ -299,28 +299,6 @@
    "taken_at": "2026-11-03T09:10:37.300Z"
   },
   {
-   "market_id": "2096821",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Darja Suvirdjonkova vs. Martyna Kubka be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-11-03T09:10:37.300Z"
-  },
-  {
    "market_id": "2096822",
    "market": "Games total",
    "group": "game",
@@ -357,6 +335,28 @@
    "teams": [
     null,
     null
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-11-03T09:10:37.300Z"
+  },
+  {
+   "market_id": "2096813",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Darja Suvirdjonkova cover -1.5 vs the Martyna Kubka in Darja Suvirdjonkova vs. Martyna Kubka?",
+   "sides": [
+    "Darja Suvirdjonkova -1.50 (Games)",
+    "Martyna Kubka +1.50 (Games)"
+   ],
+   "teams": [
+    "Darja Suvirdjonkova",
+    "Martyna Kubka"
    ],
    "player": null,
    "mid": 33.5,
@@ -431,20 +431,20 @@
    "taken_at": "2026-11-03T09:21:16.701Z"
   },
   {
-   "market_id": "2096813",
-   "market": "Games spread",
+   "market_id": "2096821",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Darja Suvirdjonkova cover -1.5 vs the Martyna Kubka in Darja Suvirdjonkova vs. Martyna Kubka?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Darja Suvirdjonkova vs. Martyna Kubka be more than 17.5?",
    "sides": [
-    "Darja Suvirdjonkova -1.50 (Games)",
-    "Martyna Kubka +1.50 (Games)"
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
    ],
    "teams": [
-    "Darja Suvirdjonkova",
-    "Martyna Kubka"
+    null,
+    null
    ],
    "player": null,
    "mid": 33.5,
@@ -453,7 +453,28 @@
    "taken_at": "2026-11-03T09:10:37.300Z"
   }
  ],
- "edges": [],
+ "edges": [
+  {
+   "key": "2096813:0",
+   "market_id": "2096813",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Darja Suvirdjonkova cover -1.5 vs the Martyna Kubka in Darja Suvirdjonkova vs. Martyna Kubka?",
+   "side": "Darja Suvirdjonkova -1.50 (Games)",
+   "open_chance": 34,
+   "now_chance": 26,
+   "open_odds": "+194",
+   "now_odds": "+285",
+   "edge": 8,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Darja Suvirdjonkova not above the games spread right now",
+   "context": "Martyna Kubka 5 · Darja Suvirdjonkova 2 · 1st Set (games by set)",
+   "first_seen": "2026-11-03T09:48:41.412Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
  "alerts": [],
  "alert_seen": [],
  "kalshi_checked": null

@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-03T09:40:06.351Z"
+  "fetched_at": "2026-11-03T09:48:38.538Z"
  },
- "updated": "2026-11-03T09:40:06.208Z",
+ "updated": "2026-11-03T09:48:38.396Z",
  "open_taken_at": "2026-11-01T12:35:57.664Z",
  "thresholds": {
   "big": 10,
@@ -151,6 +151,28 @@
    "taken_at": "2026-11-02T03:25:54.758Z"
   },
   {
+   "market_id": "2053605",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Massimo Giunta cover -1.5 vs the Adrian Andreev in Massimo Giunta vs. Adrian Andreev?",
+   "sides": [
+    "Massimo Giunta -1.50 (Games)",
+    "Adrian Andreev +1.50 (Games)"
+   ],
+   "teams": [
+    "Massimo Giunta",
+    "Adrian Andreev"
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-11-03T09:10:34.178Z"
+  },
+  {
    "market_id": "2053633",
    "market": "Set 1 winner",
    "group": "game",
@@ -173,25 +195,25 @@
    "taken_at": "2026-11-03T09:21:13.232Z"
   },
   {
-   "market_id": "2053605",
-   "market": "Games spread",
+   "market_id": "2053621",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Massimo Giunta cover -1.5 vs the Adrian Andreev in Massimo Giunta vs. Adrian Andreev?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Massimo Giunta vs. Adrian Andreev be more than 27.5?",
    "sides": [
-    "Massimo Giunta -1.50 (Games)",
-    "Adrian Andreev +1.50 (Games)"
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
    ],
    "teams": [
-    "Massimo Giunta",
-    "Adrian Andreev"
+    null,
+    null
    ],
    "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
+   "mid": 32.5,
+   "yes_buy": 33,
+   "no_buy": 68,
    "taken_at": "2026-11-03T09:10:34.178Z"
   },
   {
@@ -239,6 +261,28 @@
    "taken_at": "2026-11-02T15:17:50.643Z"
   },
   {
+   "market_id": "2053614",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Massimo Giunta cover -1.5 vs the Adrian Andreev in Massimo Giunta vs. Adrian Andreev?",
+   "sides": [
+    "Massimo Giunta -1.50 (Sets)",
+    "Adrian Andreev +1.50 (Sets)"
+   ],
+   "teams": [
+    "Massimo Giunta",
+    "Adrian Andreev"
+   ],
+   "player": null,
+   "mid": 31.5,
+   "yes_buy": 33,
+   "no_buy": 70,
+   "taken_at": "2026-11-03T09:48:38.396Z"
+  },
+  {
    "market_id": "2053623",
    "market": "Sets total",
    "group": "game",
@@ -249,28 +293,6 @@
    "sides": [
     "Over 2.5 (Sets)",
     "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 32.5,
-   "yes_buy": 33,
-   "no_buy": 68,
-   "taken_at": "2026-11-03T09:10:34.178Z"
-  },
-  {
-   "market_id": "2053621",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Massimo Giunta vs. Adrian Andreev be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
    ],
    "teams": [
     null,
@@ -329,6 +351,26 @@
  ],
  "edges": [
   {
+   "key": "2053633:0",
+   "market_id": "2053633",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Massimo Giunta win set 1 against Adrian Andreev?",
+   "side": "Yes: Massimo Giunta win set 1 against Adrian Andreev",
+   "open_chance": 85,
+   "now_chance": 42,
+   "open_odds": "-567",
+   "now_odds": "+138",
+   "edge": 43,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-03T09:40:06.208Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2053612:1",
    "market_id": "2053612",
    "market": "Games spread",
@@ -336,10 +378,10 @@
    "question": "Will the Massimo Giunta cover 7.5 vs the Adrian Andreev in Massimo Giunta vs. Adrian Andreev?",
    "side": "Adrian Andreev -7.50 (Games)",
    "open_chance": 67,
-   "now_chance": 28,
+   "now_chance": 27,
    "open_odds": "-203",
-   "now_odds": "+257",
-   "edge": 39,
+   "now_odds": "+270",
+   "edge": 40,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -389,26 +431,6 @@
    "kalshi": null
   },
   {
-   "key": "2053633:0",
-   "market_id": "2053633",
-   "market": "Set 1 winner",
-   "group": "game",
-   "question": "Will Massimo Giunta win set 1 against Adrian Andreev?",
-   "side": "Yes: Massimo Giunta win set 1 against Adrian Andreev",
-   "open_chance": 85,
-   "now_chance": 51,
-   "open_odds": "-567",
-   "now_odds": "-104",
-   "edge": 34,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-03T09:40:06.208Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "2053610:1",
    "market_id": "2053610",
    "market": "Games spread",
@@ -425,6 +447,26 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-03T09:10:34.178Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2053605:1",
+   "market_id": "2053605",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Massimo Giunta cover -1.5 vs the Adrian Andreev in Massimo Giunta vs. Adrian Andreev?",
+   "side": "Adrian Andreev +1.50 (Games)",
+   "open_chance": 67,
+   "now_chance": 57,
+   "open_odds": "-203",
+   "now_odds": "-133",
+   "edge": 10,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-03T09:31:10.253Z",
    "status": "open",
    "kalshi": null
   },
@@ -469,22 +511,22 @@
    "kalshi": null
   },
   {
-   "key": "2053605:1",
-   "market_id": "2053605",
-   "market": "Games spread",
+   "key": "2053621:1",
+   "market_id": "2053621",
+   "market": "Games total",
    "group": "game",
-   "question": "Will the Massimo Giunta cover -1.5 vs the Adrian Andreev in Massimo Giunta vs. Adrian Andreev?",
-   "side": "Adrian Andreev +1.50 (Games)",
-   "open_chance": 67,
+   "question": "Will the total in Massimo Giunta vs. Adrian Andreev be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 68,
    "now_chance": 60,
-   "open_odds": "-203",
+   "open_odds": "-213",
    "now_odds": "-150",
-   "edge": 7,
+   "edge": 8,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-03T09:31:10.253Z",
+   "first_seen": "2026-11-03T09:48:38.396Z",
    "status": "open",
    "kalshi": null
   },
@@ -530,6 +572,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2053605:1:big",
+   "key": "2053605:1",
+   "at": "2026-11-03T09:48:38.396Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Adrian Andreev +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-133",
+   "now_chance": 57,
+   "edge": 10,
+   "text": "New big edge: Adrian Andreev +1.50 (Games) (Games spread), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-masgiu-adrand-2026-11-02"
+  },
+  {
+   "id": "new_edge:2053621:1:slight",
+   "key": "2053621:1",
+   "at": "2026-11-03T09:48:38.396Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Under 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-150",
+   "now_chance": 60,
+   "edge": 8,
+   "text": "New slight edge: Under 27.5 (Games) (Games total), 8 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-masgiu-adrand-2026-11-02"
+  },
   {
    "id": "new_edge:2053612:1:big",
    "key": "2053612:1",
@@ -726,7 +796,9 @@
   "new_edge:2053612:1:big",
   "new_edge:2053608:1:big",
   "new_edge:2053633:0:big",
-  "new_edge:2051610:0:slight"
+  "new_edge:2051610:0:slight",
+  "new_edge:2053605:1:big",
+  "new_edge:2053621:1:slight"
  ],
  "kalshi_checked": null
 }
