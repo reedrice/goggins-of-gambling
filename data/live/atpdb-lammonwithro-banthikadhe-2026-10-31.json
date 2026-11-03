@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-03T08:18:13.230Z"
+  "fetched_at": "2026-11-03T08:29:27.253Z"
  },
- "updated": "2026-11-03T08:18:13.152Z",
+ "updated": "2026-11-03T08:29:27.181Z",
  "open_taken_at": "2026-10-31T05:29:52.386Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-03T08:18:13.152Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1999225:0:2026-11-03T08:18:13.152Z",
+   "key": "1999225:0",
+   "at": "2026-11-03T08:29:27.181Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Lammons / Withrow win",
+   "market": "Moneyline",
+   "now_odds": "-285",
+   "now_chance": 74,
+   "edge": 5,
+   "text": "Edge gone: Lammons / Withrow win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-lammonwithro-banthikadhe-2026-10-31"
+  },
   {
    "id": "new_edge:1999225:0:slight",
    "key": "1999225:0",
@@ -80,7 +94,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1999225:0:slight"
+  "new_edge:1999225:0:slight",
+  "gone:1999225:0:2026-11-03T08:18:13.152Z"
  ],
  "kalshi_checked": null
 }
