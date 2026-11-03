@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-03T01:36:37.600Z"
+  "fetched_at": "2026-11-03T01:46:34.614Z"
  },
- "updated": "2026-11-03T01:36:37.472Z",
+ "updated": "2026-11-03T01:46:34.535Z",
  "open_taken_at": "2026-11-01T05:07:19.272Z",
  "thresholds": {
   "big": 10,
@@ -1121,22 +1121,22 @@
  ],
  "edges": [
   {
-   "key": "2068016:1",
-   "market_id": "2068016",
-   "market": "Main spread",
+   "key": "1913516:1",
+   "market_id": "1913516",
+   "market": "Moneyline",
    "group": "game",
-   "question": "Will LIU cover +8.5 vs Florida Atlantic in LIU vs. Florida Atlantic?",
-   "side": "Owls -8.50",
-   "open_chance": 60,
-   "now_chance": 53,
-   "open_odds": "-150",
-   "now_odds": "-113",
-   "edge": 7,
-   "tier": "slight",
+   "question": "Who will win in the upcoming basketball event LIU vs Florida Atlantic scheduled for November 2, 2026 at 7:00PM ET?",
+   "side": "Owls win",
+   "open_chance": 92,
+   "now_chance": 74,
+   "open_odds": "-1150",
+   "now_odds": "-285",
+   "edge": 18,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-02T13:17:12.725Z",
+   "first_seen": "2026-11-03T01:46:34.535Z",
    "status": "open",
    "kalshi": null
   },
@@ -1401,6 +1401,26 @@
    "kalshi": null
   },
   {
+   "key": "2068016:1",
+   "market_id": "2068016",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will LIU cover +8.5 vs Florida Atlantic in LIU vs. Florida Atlantic?",
+   "side": "Owls -8.50",
+   "open_chance": 60,
+   "now_chance": 53,
+   "open_odds": "-150",
+   "now_odds": "-113",
+   "edge": 7,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-02T13:17:12.725Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "2068021:0",
    "market_id": "2068021",
    "market": "Alt spread",
@@ -1642,6 +1662,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1913516:1:big",
+   "key": "1913516:1",
+   "at": "2026-11-03T01:46:34.535Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Owls win",
+   "market": "Moneyline",
+   "now_odds": "-285",
+   "now_chance": 74,
+   "edge": 18,
+   "text": "New big edge: Owls win (Moneyline), 18 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-liub-flatl-2026-11-02"
+  },
+  {
+   "id": "gone:2068016:1:2026-11-02T13:17:12.725Z",
+   "key": "2068016:1",
+   "at": "2026-11-03T01:46:34.535Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Owls -8.50",
+   "market": "Main spread",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 7,
+   "text": "Edge gone: Owls -8.50 (Main spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-liub-flatl-2026-11-02"
+  },
   {
    "id": "new_edge:2068016:1:slight",
    "key": "2068016:1",
@@ -2313,34 +2361,6 @@
    "edge": 8,
    "text": "New slight edge: Under 157.5 (Alt total), 8 points cheaper than open.",
    "url": "https://polymarket.us/sports/cbb/cbb-liub-flatl-2026-11-02"
-  },
-  {
-   "id": "new_edge:2068046:1:slight",
-   "key": "2068046:1",
-   "at": "2026-11-03T00:00:47.886Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Under 147.5",
-   "market": "Alt total",
-   "now_odds": "+223",
-   "now_chance": 31,
-   "edge": 6,
-   "text": "New slight edge: Under 147.5 (Alt total), 6 points cheaper than open.",
-   "url": "https://polymarket.us/sports/cbb/cbb-liub-flatl-2026-11-02"
-  },
-  {
-   "id": "new_edge:2068044:1:slight",
-   "key": "2068044:1",
-   "at": "2026-11-03T00:00:47.886Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Under 149.5",
-   "market": "Alt total",
-   "now_odds": "+178",
-   "now_chance": 36,
-   "edge": 6,
-   "text": "New slight edge: Under 149.5 (Alt total), 6 points cheaper than open.",
-   "url": "https://polymarket.us/sports/cbb/cbb-liub-flatl-2026-11-02"
   }
  ],
  "alert_seen": [
@@ -2413,7 +2433,9 @@
   "gone:2068043:0:2026-11-03T01:19:05.534Z",
   "gone:2068042:0:2026-11-03T00:12:23.347Z",
   "gone:2068045:0:2026-11-03T01:19:05.534Z",
-  "new_edge:2068016:1:slight"
+  "new_edge:2068016:1:slight",
+  "new_edge:1913516:1:big",
+  "gone:2068016:1:2026-11-02T13:17:12.725Z"
  ],
  "kalshi_checked": null
 }

@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-03T01:36:55.617Z"
+  "fetched_at": "2026-11-03T01:46:55.018Z"
  },
- "updated": "2026-11-03T01:36:55.478Z",
+ "updated": "2026-11-03T01:46:54.969Z",
  "open_taken_at": "2026-11-01T05:07:48.516Z",
  "thresholds": {
   "big": 10,
@@ -39,6 +39,50 @@
    "yes_buy": 73,
    "no_buy": 28,
    "taken_at": "2026-11-02T11:30:34.726Z"
+  },
+  {
+   "market_id": "2028424",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Juan Carlos Prado Angelo win set 1 against Pedro Boscardin Dias?",
+   "sides": [
+    "Yes: Juan Carlos Prado Angelo win set 1 against Pedro Boscardin Dias",
+    "No: Juan Carlos Prado Angelo win set 1 against Pedro Boscardin Dias"
+   ],
+   "teams": [
+    "Juan Carlos Prado",
+    null
+   ],
+   "player": null,
+   "mid": 71.5,
+   "yes_buy": 74,
+   "no_buy": 31,
+   "taken_at": "2026-11-03T01:46:54.969Z"
+  },
+  {
+   "market_id": "2028417",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Juan Carlos Prado Angelo vs. Pedro Boscardin Dias be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 43,
+   "yes_buy": 44,
+   "no_buy": 58,
+   "taken_at": "2026-11-03T01:46:54.969Z"
   },
   {
    "market_id": "2028410",
@@ -103,11 +147,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-02T16:21:46.390Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2024060:0:2026-11-02T16:21:46.390Z",
+   "key": "2024060:0",
+   "at": "2026-11-03T01:46:54.969Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Juan Carlos Prado win",
+   "market": "Moneyline",
+   "now_odds": "-223",
+   "now_chance": 69,
+   "edge": 4,
+   "text": "Edge gone: Juan Carlos Prado win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-juapra-peddia-2026-11-02"
+  },
   {
    "id": "new_edge:2024060:0:slight",
    "key": "2024060:0",
@@ -124,7 +182,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2024060:0:slight"
+  "new_edge:2024060:0:slight",
+  "gone:2024060:0:2026-11-02T16:21:46.390Z"
  ],
  "kalshi_checked": null
 }
