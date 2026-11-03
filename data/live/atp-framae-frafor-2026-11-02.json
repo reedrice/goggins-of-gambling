@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-03T16:04:16.635Z"
+  "fetched_at": "2026-11-03T16:18:10.627Z"
  },
- "updated": "2026-11-03T16:04:16.531Z",
+ "updated": "2026-11-03T16:18:10.535Z",
  "open_taken_at": "2026-11-01T05:07:42.718Z",
  "thresholds": {
   "big": 10,
@@ -61,6 +61,28 @@
    "yes_buy": 77,
    "no_buy": 24,
    "taken_at": "2026-11-03T16:04:16.531Z"
+  },
+  {
+   "market_id": "2027890",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Francesco Maestrelli cover 1.5 vs the Francesco Forti in Francesco Maestrelli vs. Francesco Forti?",
+   "sides": [
+    "Francesco Maestrelli +1.50 (Sets)",
+    "Francesco Forti -1.50 (Sets)"
+   ],
+   "teams": [
+    "Francesco Maestrelli",
+    "Francesco Forti"
+   ],
+   "player": null,
+   "mid": 87,
+   "yes_buy": 89,
+   "no_buy": 15,
+   "taken_at": "2026-11-03T16:18:10.535Z"
   },
   {
    "market_id": "2027878",
@@ -193,6 +215,72 @@
    "yes_buy": 50,
    "no_buy": 52,
    "taken_at": "2026-11-03T10:09:57.368Z"
+  },
+  {
+   "market_id": "2027880",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Francesco Maestrelli cover -4.5 vs the Francesco Forti in Francesco Maestrelli vs. Francesco Forti?",
+   "sides": [
+    "Francesco Maestrelli -4.50 (Games)",
+    "Francesco Forti +4.50 (Games)"
+   ],
+   "teams": [
+    "Francesco Maestrelli",
+    "Francesco Forti"
+   ],
+   "player": null,
+   "mid": 36.5,
+   "yes_buy": 37,
+   "no_buy": 64,
+   "taken_at": "2026-11-03T16:18:10.535Z"
+  },
+  {
+   "market_id": "2027896",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Francesco Maestrelli vs. Francesco Forti be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 35.5,
+   "yes_buy": 36,
+   "no_buy": 65,
+   "taken_at": "2026-11-03T16:18:10.535Z"
+  },
+  {
+   "market_id": "2027884",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Francesco Maestrelli cover -7.5 vs the Francesco Forti in Francesco Maestrelli vs. Francesco Forti?",
+   "sides": [
+    "Francesco Maestrelli -7.50 (Games)",
+    "Francesco Forti +7.50 (Games)"
+   ],
+   "teams": [
+    "Francesco Maestrelli",
+    "Francesco Forti"
+   ],
+   "player": null,
+   "mid": 31.5,
+   "yes_buy": 32,
+   "no_buy": 69,
+   "taken_at": "2026-11-03T16:18:10.535Z"
   }
  ],
  "edges": [
@@ -204,11 +292,11 @@
    "question": "Who will win in the upcoming atp event Francesco Maestrelli vs Francesco Forti scheduled for November 2, 2026 at 9:00 AM UTC?",
    "side": "Francesco Forti win",
    "open_chance": 35,
-   "now_chance": 29,
+   "now_chance": 20,
    "open_odds": "+186",
-   "now_odds": "+245",
-   "edge": 6,
-   "tier": "slight",
+   "now_odds": "+400",
+   "edge": 15,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -238,6 +326,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2017029:1:big",
+   "key": "2017029:1",
+   "at": "2026-11-03T16:18:10.535Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Francesco Forti win",
+   "market": "Moneyline",
+   "now_odds": "+400",
+   "now_chance": 20,
+   "edge": 15,
+   "text": "New big edge: Francesco Forti win (Moneyline), 15 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-framae-frafor-2026-11-02"
+  },
   {
    "id": "new_edge:2017029:1:slight",
    "key": "2017029:1",
@@ -269,7 +371,8 @@
  ],
  "alert_seen": [
   "new_edge:2017029:1:slight",
-  "new_edge:2027876:0:slight"
+  "new_edge:2027876:0:slight",
+  "new_edge:2017029:1:big"
  ],
  "kalshi_checked": null
 }
