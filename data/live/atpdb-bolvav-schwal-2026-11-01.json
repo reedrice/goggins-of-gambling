@@ -4,12 +4,12 @@
  "game": "Bolelli / Vavassori vs. Schnaitter / Wallner",
  "url": "https://polymarket.us/sports/atpdb/atpdb-bolvav-schwal-2026-11-01",
  "start_time": "2026-11-03T13:35:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187304",
-  "fetched_at": "2026-11-03T14:57:35.741Z",
+  "fetched_at": "2026-11-03T15:08:19.750Z",
   "tennis": true,
   "tennis_match": {
    "id": "187304",
@@ -17,17 +17,17 @@
    "date": "2026-11-03T13:45Z",
    "startDate": "2026-11-03T13:45Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(5) Simone Bolelli (ITA) & Andrea Vavassori (ITA) leads Jakob Schnaitter (GER) & Mark Wallner (GER) 6-3 3-6 0-0 (6-5)",
+     "text": "(5) Simone Bolelli (ITA) & Andrea Vavassori (ITA) bt Jakob Schnaitter (GER) & Mark Wallner (GER) 6-3 3-6 1-0 (10-6)",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
      "linescores": [
       {
        "value": 3,
@@ -66,7 +67,8 @@
       },
       {
        "value": 0,
-       "tiebreak": 5
+       "tiebreak": 6,
+       "winner": false
       }
      ],
      "roster": {
@@ -141,6 +143,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
      "curatedRank": {
       "current": 5
      },
@@ -154,8 +157,9 @@
        "winner": false
       },
       {
-       "value": 0,
-       "tiebreak": 6
+       "value": 1,
+       "tiebreak": 10,
+       "winner": true
       }
      ],
      "roster": {
@@ -241,10 +245,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Jakob Schnaitter / Mark Wallner",
@@ -256,13 +260,13 @@
    "abbr": "Simone Bolelli / Andrea Vavassori",
    "alias": "Simone Bolelli / Andrea Vavassori",
    "name": "Simone Bolelli / Andrea Vavassori",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-03T14:57:35.644Z",
+ "updated": "2026-11-03T15:08:19.609Z",
  "open_taken_at": "2026-10-31T14:49:10.289Z",
  "thresholds": {
   "big": 10,
@@ -310,7 +314,7 @@
    "reason": null,
    "context": "Jakob Schnaitter / Mark Wallner 3, 6, 0 · Simone Bolelli / Andrea Vavassori 6, 3, 0 · 3rd Set (games by set)",
    "first_seen": "2026-11-03T14:29:54.086Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
