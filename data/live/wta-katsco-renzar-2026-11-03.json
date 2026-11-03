@@ -4,12 +4,12 @@
  "game": "Katrina Scott vs. Renata Zarazua",
  "url": "https://polymarket.us/sports/wta/wta-katsco-renzar-2026-11-03",
  "start_time": "2026-11-03T16:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186720",
-  "fetched_at": "2026-11-03T16:48:07.247Z",
+  "fetched_at": "2026-11-03T22:03:35.563Z",
   "tennis": true,
   "tennis_match": {
    "id": "186720",
@@ -17,17 +17,17 @@
    "date": "2026-11-03T16:05Z",
    "startDate": "2026-11-03T16:05Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(2) Renata Zarazua (MEX) leads Katrina Scott (USA) 6-1 1-0",
+     "text": "(2) Renata Zarazua (MEX) bt Katrina Scott (USA) 6-1 6-1",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "winner": true,
      "curatedRank": {
       "current": 2
      },
@@ -65,7 +65,8 @@
        "winner": true
       },
       {
-       "value": 1
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -105,14 +106,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "winner": false,
      "linescores": [
       {
        "value": 1,
        "winner": false
       },
       {
-       "value": 0
+       "value": 1,
+       "winner": false
       }
      ],
      "athlete": {
@@ -147,11 +149,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 1007,
    "type": {
     "id": "2",
@@ -168,16 +165,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Renata Zarazua",
    "alias": "Renata Zarazua",
    "name": "Renata Zarazua",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Katrina Scott",
@@ -189,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-03T16:48:07.114Z",
+ "updated": "2026-11-03T22:03:35.467Z",
  "open_taken_at": "2026-11-02T21:49:34.693Z",
  "thresholds": {
   "big": 10,
@@ -501,7 +498,7 @@
    "reason": "Big move (45 pts), likely news",
    "context": "Renata Zarazua 6, 1 · Katrina Scott 1, 0 · 2nd Set (games by set)",
    "first_seen": "2026-11-03T16:33:23.368Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -521,7 +518,7 @@
    "reason": "Big move (25 pts), likely news",
    "context": "Renata Zarazua 6, 1 · Katrina Scott 1, 0 · 2nd Set (games by set)",
    "first_seen": "2026-11-03T16:48:07.114Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -541,11 +538,25 @@
    "reason": null,
    "context": "Renata Zarazua 6, 1 · Katrina Scott 1, 0 · 2nd Set (games by set)",
    "first_seen": "2026-11-03T16:33:23.368Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2110169:0:2026-11-03T16:33:23.368Z",
+   "key": "2110169:0",
+   "at": "2026-11-03T22:03:35.467Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+456",
+   "now_chance": 18,
+   "edge": 5,
+   "text": "Edge gone: Over 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-katsco-renzar-2026-11-03"
+  },
   {
    "id": "news:2110168:0",
    "key": "2110168:0",
@@ -596,7 +607,8 @@
   "new_edge:2110167:0:big",
   "news:2110165:0",
   "new_edge:2110169:0:slight",
-  "news:2110168:0"
+  "news:2110168:0",
+  "gone:2110169:0:2026-11-03T16:33:23.368Z"
  ],
  "kalshi_checked": null
 }

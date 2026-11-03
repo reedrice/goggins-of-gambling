@@ -3,31 +3,31 @@
  "slug": "wta-rebmas-alitub-2026-11-03",
  "game": "Rebeka Masarova vs. Alice Tubello",
  "url": "https://polymarket.us/sports/wta/wta-rebmas-alitub-2026-11-03",
- "start_time": "2026-11-03T17:10:00Z",
- "status": "pregame",
+ "start_time": "2026-11-03T18:20:00Z",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186707",
-  "fetched_at": "2026-11-03T16:48:05.399Z",
+  "fetched_at": "2026-11-03T22:03:36.004Z",
   "tennis": true,
   "tennis_match": {
    "id": "186707",
    "uid": "s:850~l:900~e:1007-2026~c:186707",
-   "date": "2026-11-03T17:30Z",
-   "startDate": "2026-11-03T17:30Z",
+   "date": "2026-11-03T18:25Z",
+   "startDate": "2026-11-03T18:25Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Tue, November 3rd at 12:30 PM EST",
-     "shortDetail": "11/3 - 12:30 PM EST"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Alice Tubello (FRA) bt Rebeka Masarova (SUI) 6-3 6-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,17 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "0d54348a-f88f-3110-a913-5b9381e2a9c3",
       "displayName": "Alice Tubello",
@@ -87,6 +103,17 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 0,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "1974ca83-b187-9eeb-8480-5d3b758db3d3",
       "displayName": "Rebeka Masarova",
@@ -135,16 +162,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Tue, November 3rd at 12:30 PM EST",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Alice Tubello",
    "alias": "Alice Tubello",
    "name": "Alice Tubello",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Rebeka Masarova",
@@ -156,7 +183,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-03T16:48:05.230Z",
+ "updated": "2026-11-03T22:03:35.910Z",
  "open_taken_at": "2026-11-02T06:04:12.397Z",
  "thresholds": {
   "big": 10,
@@ -314,7 +341,7 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-02T22:12:36.474Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -334,11 +361,43 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-03T09:48:40.183Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:2072606:1:2026-11-02T22:12:36.474Z",
+   "key": "2072606:1",
+   "at": "2026-11-03T22:03:35.910Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Alice Tubello win",
+   "market": "Moneyline",
+   "now_odds": "+113",
+   "now_chance": 47,
+   "edge": 9,
+   "text": "Edge gone: Alice Tubello win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-rebmas-alitub-2026-11-03"
+  },
+  {
+   "id": "gone:2076146:1:2026-11-03T09:48:40.183Z",
+   "key": "2076146:1",
+   "at": "2026-11-03T22:03:35.910Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Alice Tubello -1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+223",
+   "now_chance": 31,
+   "edge": 5,
+   "text": "Edge gone: Alice Tubello -1.50 (Sets) (Sets spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-rebmas-alitub-2026-11-03"
+  }
+ ],
+ "alert_seen": [
+  "gone:2072606:1:2026-11-02T22:12:36.474Z",
+  "gone:2076146:1:2026-11-03T09:48:40.183Z"
+ ],
  "kalshi_checked": null
 }
