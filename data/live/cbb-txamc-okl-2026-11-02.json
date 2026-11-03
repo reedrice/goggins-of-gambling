@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-03T01:46:38.111Z"
+  "fetched_at": "2026-11-03T01:54:48.000Z"
  },
- "updated": "2026-11-03T01:46:38.019Z",
+ "updated": "2026-11-03T01:54:47.897Z",
  "open_taken_at": "2026-11-01T05:07:22.805Z",
  "thresholds": {
   "big": 10,
@@ -659,6 +659,26 @@
  ],
  "edges": [
   {
+   "key": "1913592:1",
+   "market_id": "1913592",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming basketball event East Texas A&M vs Oklahoma scheduled for November 2, 2026 at 8:00PM ET?",
+   "side": "Sooners win",
+   "open_chance": 90,
+   "now_chance": 82,
+   "open_odds": "-900",
+   "now_odds": "-456",
+   "edge": 8,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-03T01:54:47.897Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2069009:0",
    "market_id": "2069009",
    "market": "Alt total",
@@ -821,6 +841,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1913592:1:slight",
+   "key": "1913592:1",
+   "at": "2026-11-03T01:54:47.897Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Sooners win",
+   "market": "Moneyline",
+   "now_odds": "-456",
+   "now_chance": 82,
+   "edge": 8,
+   "text": "New slight edge: Sooners win (Moneyline), 8 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-txamc-okl-2026-11-02"
+  },
+  {
    "id": "gone:2069009:0:2026-11-02T22:36:25.533Z",
    "key": "2069009:0",
    "at": "2026-11-03T01:06:30.692Z",
@@ -911,7 +945,8 @@
   "gone:2069005:0:2026-11-03T00:21:45.862Z",
   "gone:2068979:1:2026-11-03T00:12:27.097Z",
   "gone:2069017:0:2026-11-02T23:15:51.503Z",
-  "gone:2069011:0:2026-11-02T22:36:25.533Z"
+  "gone:2069011:0:2026-11-02T22:36:25.533Z",
+  "new_edge:1913592:1:slight"
  ],
  "kalshi_checked": null
 }
