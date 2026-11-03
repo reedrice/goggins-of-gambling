@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186668",
-  "fetched_at": "2026-11-03T15:49:12.649Z",
+  "fetched_at": "2026-11-03T16:04:18.390Z",
   "tennis": true,
   "tennis_match": {
    "id": "186668",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(5) Justina Mikulskyte (LTU) leads Maayan Laron (ISR) 7-5 2-1",
+     "text": "Maayan Laron (ISR) is tied with (5) Justina Mikulskyte (LTU) 5-7 3-2",
      "type": "event"
     }
    ],
@@ -55,13 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
        "value": 5,
        "winner": false
       },
       {
-       "value": 1
+       "value": 3
       }
      ],
      "athlete": {
@@ -101,6 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 5
      },
@@ -145,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1082,
    "type": {
     "id": "2",
@@ -182,7 +189,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-03T15:49:12.563Z",
+ "updated": "2026-11-03T16:04:18.278Z",
  "open_taken_at": "2026-11-01T05:07:46.319Z",
  "thresholds": {
   "big": 10,
@@ -234,28 +241,6 @@
    "taken_at": "2026-11-03T11:52:00.496Z"
   },
   {
-   "market_id": "2034609",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Justina Mikulskyte cover 1.5 vs the Maayan Laron in Justina Mikulskyte vs. Maayan Laron?",
-   "sides": [
-    "Justina Mikulskyte +1.50 (Games)",
-    "Maayan Laron -1.50 (Games)"
-   ],
-   "teams": [
-    "Justina Mikulskyte",
-    "Maayan Laron"
-   ],
-   "player": null,
-   "mid": 60.5,
-   "yes_buy": 63,
-   "no_buy": 42,
-   "taken_at": "2026-11-03T13:51:05.430Z"
-  },
-  {
    "market_id": "2034617",
    "market": "Games spread",
    "group": "game",
@@ -278,26 +263,26 @@
    "taken_at": "2026-11-03T11:52:00.496Z"
   },
   {
-   "market_id": "2034643",
-   "market": "Set 2 winner",
+   "market_id": "2034609",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Justina Mikulskyte win set 2 against Maayan Laron?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Justina Mikulskyte cover 1.5 vs the Maayan Laron in Justina Mikulskyte vs. Maayan Laron?",
    "sides": [
-    "Yes: Justina Mikulskyte win set 2 against Maayan Laron",
-    "No: Justina Mikulskyte win set 2 against Maayan Laron"
+    "Justina Mikulskyte +1.50 (Games)",
+    "Maayan Laron -1.50 (Games)"
    ],
    "teams": [
     "Justina Mikulskyte",
-    null
+    "Maayan Laron"
    ],
    "player": null,
-   "mid": 86.5,
-   "yes_buy": 88,
-   "no_buy": 15,
-   "taken_at": "2026-11-03T15:49:12.563Z"
+   "mid": 60.5,
+   "yes_buy": 63,
+   "no_buy": 42,
+   "taken_at": "2026-11-03T13:51:05.430Z"
   },
   {
    "market_id": "2034607",
@@ -320,6 +305,50 @@
    "yes_buy": 60,
    "no_buy": 42,
    "taken_at": "2026-11-03T14:01:47.249Z"
+  },
+  {
+   "market_id": "2034628",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Justina Mikulskyte vs. Maayan Laron be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 22.5,
+   "yes_buy": 23,
+   "no_buy": 78,
+   "taken_at": "2026-11-03T12:02:32.253Z"
+  },
+  {
+   "market_id": "2034643",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Justina Mikulskyte win set 2 against Maayan Laron?",
+   "sides": [
+    "Yes: Justina Mikulskyte win set 2 against Maayan Laron",
+    "No: Justina Mikulskyte win set 2 against Maayan Laron"
+   ],
+   "teams": [
+    "Justina Mikulskyte",
+    null
+   ],
+   "player": null,
+   "mid": 86.5,
+   "yes_buy": 88,
+   "no_buy": 15,
+   "taken_at": "2026-11-03T15:49:12.563Z"
   },
   {
    "market_id": "2034619",
@@ -386,28 +415,6 @@
    "yes_buy": 34,
    "no_buy": 67,
    "taken_at": "2026-11-03T11:52:00.496Z"
-  },
-  {
-   "market_id": "2034628",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Justina Mikulskyte vs. Maayan Laron be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 22.5,
-   "yes_buy": 23,
-   "no_buy": 78,
-   "taken_at": "2026-11-03T12:02:32.253Z"
   },
   {
    "market_id": "2034622",
@@ -522,6 +529,46 @@
  ],
  "edges": [
   {
+   "key": "2034628:1",
+   "market_id": "2034628",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Justina Mikulskyte vs. Maayan Laron be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 78,
+   "now_chance": 54,
+   "open_odds": "-355",
+   "now_odds": "-117",
+   "edge": 24,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Maayan Laron 5, 3 · Justina Mikulskyte 7, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-11-03T16:04:18.278Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2034607:1",
+   "market_id": "2034607",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Justina Mikulskyte cover -1.5 vs the Maayan Laron in Justina Mikulskyte vs. Maayan Laron?",
+   "side": "Maayan Laron +1.50 (Games)",
+   "open_chance": 42,
+   "now_chance": 25,
+   "open_odds": "+138",
+   "now_odds": "+300",
+   "edge": 17,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Maayan Laron 5, 3 · Justina Mikulskyte 7, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-11-03T16:04:18.278Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2034611:0",
    "market_id": "2034611",
    "market": "Games spread",
@@ -623,6 +670,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2034628:1:big",
+   "key": "2034628:1",
+   "at": "2026-11-03T16:04:18.278Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-117",
+   "now_chance": 54,
+   "edge": 24,
+   "text": "New big edge: Under 27.5 (Games) (Games total), 24 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-jusmik-maalar-2026-11-02"
+  },
   {
    "id": "gone:2034626:1:2026-11-03T15:08:10.186Z",
    "key": "2034626:1",
@@ -796,7 +857,8 @@
   "new_edge:2034626:1:big",
   "gone:2034628:0:2026-11-03T13:51:05.430Z",
   "new_edge:2034628:1:slight",
-  "gone:2034626:1:2026-11-03T15:08:10.186Z"
+  "gone:2034626:1:2026-11-03T15:08:10.186Z",
+  "new_edge:2034628:1:big"
  ],
  "kalshi_checked": null
 }
