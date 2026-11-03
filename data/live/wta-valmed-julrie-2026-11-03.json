@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186708",
-  "fetched_at": "2026-11-03T22:03:22.855Z",
+  "fetched_at": "2026-11-03T22:21:44.677Z",
   "tennis": true,
   "tennis_match": {
    "id": "186708",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Tue, November 3rd at 5:00 PM EST",
-     "shortDetail": "11/3 - 5:00 PM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Julia Riera (ARG) leads Valentina Mediorreal Arias (COL) 3-1",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 3
+      }
+     ],
      "athlete": {
       "guid": "e9d09cae-b708-3f38-8cd7-d721730a0a46",
       "displayName": "Julia Riera",
@@ -87,6 +98,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "97a902df-1c85-336b-8858-0496b023b3dc",
       "displayName": "Valentina Mediorreal Arias",
@@ -119,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1007,
    "type": {
     "id": "2",
@@ -135,10 +157,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Tue, November 3rd at 5:00 PM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Julia Riera",
@@ -156,13 +178,101 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-03T22:03:22.792Z",
+ "updated": "2026-11-03T22:21:44.595Z",
  "open_taken_at": "2026-11-02T06:04:12.978Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "2078119",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Valentina Mediorreal Arias vs. Julia Riera be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 45.5,
+   "yes_buy": 46,
+   "no_buy": 55,
+   "taken_at": "2026-11-03T22:21:44.595Z"
+  },
+  {
+   "market_id": "2078102",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Valentina Mediorreal Arias cover 4.5 vs the Julia Riera in Valentina Mediorreal Arias vs. Julia Riera?",
+   "sides": [
+    "Valentina Mediorreal +4.50 (Games)",
+    "Julia Riera -4.50 (Games)"
+   ],
+   "teams": [
+    "Valentina Mediorreal",
+    "Julia Riera"
+   ],
+   "player": null,
+   "mid": 23.5,
+   "yes_buy": 24,
+   "no_buy": 77,
+   "taken_at": "2026-11-03T22:21:44.595Z"
+  },
+  {
+   "market_id": "2078117",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Valentina Mediorreal Arias vs. Julia Riera be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 17.5,
+   "yes_buy": 20,
+   "no_buy": 85,
+   "taken_at": "2026-11-03T22:21:44.595Z"
+  },
+  {
+   "market_id": "2078096",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Valentina Mediorreal Arias cover -1.5 vs the Julia Riera in Valentina Mediorreal Arias vs. Julia Riera?",
+   "sides": [
+    "Valentina Mediorreal -1.50 (Games)",
+    "Julia Riera +1.50 (Games)"
+   ],
+   "teams": [
+    "Valentina Mediorreal",
+    "Julia Riera"
+   ],
+   "player": null,
+   "mid": 10.5,
+   "yes_buy": 11,
+   "no_buy": 90,
+   "taken_at": "2026-11-03T22:21:44.595Z"
+  },
   {
    "market_id": "2078100",
    "market": "Games spread",
