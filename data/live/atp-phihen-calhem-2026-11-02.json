@@ -4,14 +4,14 @@
  "game": "Philip Henning vs. Calvin Hemery",
  "url": "https://polymarket.us/sports/atp/atp-phihen-calhem-2026-11-02",
  "start_time": "2026-11-03T10:50:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-03T10:43:42.775Z"
+  "fetched_at": "2026-11-03T10:54:29.733Z"
  },
- "updated": "2026-11-03T10:43:42.727Z",
+ "updated": "2026-11-03T10:54:29.654Z",
  "open_taken_at": "2026-11-01T05:07:42.698Z",
  "thresholds": {
   "big": 10,
@@ -41,26 +41,48 @@
    "taken_at": "2026-11-02T00:25:17.471Z"
   },
   {
-   "market_id": "2027854",
-   "market": "Games total",
+   "market_id": "2027838",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Philip Henning vs. Calvin Hemery be more than 17.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Philip Henning cover 4.5 vs the Calvin Hemery in Philip Henning vs. Calvin Hemery?",
    "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
+    "Philip Henning +4.50 (Games)",
+    "Calvin Hemery -4.50 (Games)"
    ],
    "teams": [
-    null,
-    null
+    "Philip Henning",
+    "Calvin Hemery"
    ],
    "player": null,
-   "mid": 61.5,
-   "yes_buy": 62,
-   "no_buy": 39,
-   "taken_at": "2026-11-03T10:21:29.496Z"
+   "mid": 78,
+   "yes_buy": 79,
+   "no_buy": 23,
+   "taken_at": "2026-11-03T10:54:29.654Z"
+  },
+  {
+   "market_id": "2027833",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Philip Henning cover 1.5 vs the Calvin Hemery in Philip Henning vs. Calvin Hemery?",
+   "sides": [
+    "Philip Henning +1.50 (Games)",
+    "Calvin Hemery -1.50 (Games)"
+   ],
+   "teams": [
+    "Philip Henning",
+    "Calvin Hemery"
+   ],
+   "player": null,
+   "mid": 60.5,
+   "yes_buy": 61,
+   "no_buy": 40,
+   "taken_at": "2026-11-03T10:54:29.654Z"
   },
   {
    "market_id": "2027857",
@@ -171,10 +193,70 @@
    "yes_buy": 32,
    "no_buy": 69,
    "taken_at": "2026-11-03T10:21:29.496Z"
+  },
+  {
+   "market_id": "2027854",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Philip Henning vs. Calvin Hemery be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 61.5,
+   "yes_buy": 62,
+   "no_buy": 39,
+   "taken_at": "2026-11-03T10:21:29.496Z"
   }
  ],
- "edges": [],
- "alerts": [],
- "alert_seen": [],
+ "edges": [
+  {
+   "key": "2027830:1",
+   "market_id": "2027830",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Philip Henning cover -1.5 vs the Calvin Hemery in Philip Henning vs. Calvin Hemery?",
+   "side": "Calvin Hemery +1.50 (Games)",
+   "open_chance": 68,
+   "now_chance": 50,
+   "open_odds": "-213",
+   "now_odds": "+100",
+   "edge": 18,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-03T10:54:29.654Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
+ "alerts": [
+  {
+   "id": "new_edge:2027830:1:big",
+   "key": "2027830:1",
+   "at": "2026-11-03T10:54:29.654Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Calvin Hemery +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+100",
+   "now_chance": 50,
+   "edge": 18,
+   "text": "New big edge: Calvin Hemery +1.50 (Games) (Games spread), 18 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-phihen-calhem-2026-11-02"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:2027830:1:big"
+ ],
  "kalshi_checked": null
 }
