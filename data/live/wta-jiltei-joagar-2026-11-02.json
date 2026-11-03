@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186583",
-  "fetched_at": "2026-11-03T05:31:15.309Z",
+  "fetched_at": "2026-11-03T05:41:21.311Z",
   "tennis": true,
   "tennis_match": {
    "id": "186583",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Tue, November 2nd at 12:35 AM EST",
-     "shortDetail": "11/3 - 12:35 AM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Jil Teichmann (SUI) leads Joanna Garland (TPO) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "84ea73a5-5f1f-c657-ddae-0ed0c40143b8",
       "displayName": "Joanna Garland",
@@ -87,6 +98,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "6daca5c1-ddfe-f3b0-7b05-d5b8a7fee9d2",
       "displayName": "Jil Teichmann",
@@ -119,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 889,
    "type": {
     "id": "2",
@@ -135,10 +157,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Tue, November 2nd at 12:35 AM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Joanna Garland",
@@ -156,7 +178,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-03T05:31:15.206Z",
+ "updated": "2026-11-03T05:41:21.133Z",
  "open_taken_at": "2026-11-01T05:07:37.352Z",
  "thresholds": {
   "big": 10,
@@ -184,6 +206,72 @@
    "yes_buy": 53,
    "no_buy": 48,
    "taken_at": "2026-11-01T11:30:28.180Z"
+  },
+  {
+   "market_id": "2031292",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Jil Teichmann vs. Joanna Garland be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 80.5,
+   "yes_buy": 81,
+   "no_buy": 20,
+   "taken_at": "2026-11-03T05:41:21.133Z"
+  },
+  {
+   "market_id": "2031287",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Jil Teichmann cover 4.5 vs the Joanna Garland in Jil Teichmann vs. Joanna Garland?",
+   "sides": [
+    "Jil Teichmann +4.50 (Games)",
+    "Joanna Garland -4.50 (Games)"
+   ],
+   "teams": [
+    "Jil Teichmann",
+    "Joanna Garland"
+   ],
+   "player": null,
+   "mid": 63.5,
+   "yes_buy": 66,
+   "no_buy": 39,
+   "taken_at": "2026-11-03T05:41:21.133Z"
+  },
+  {
+   "market_id": "2031285",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Jil Teichmann cover 1.5 vs the Joanna Garland in Jil Teichmann vs. Joanna Garland?",
+   "sides": [
+    "Jil Teichmann +1.50 (Games)",
+    "Joanna Garland -1.50 (Games)"
+   ],
+   "teams": [
+    "Jil Teichmann",
+    "Joanna Garland"
+   ],
+   "player": null,
+   "mid": 57.5,
+   "yes_buy": 58,
+   "no_buy": 43,
+   "taken_at": "2026-11-03T05:41:21.133Z"
   },
   {
    "market_id": "2031300",
@@ -274,6 +362,28 @@
    "taken_at": "2026-11-02T23:50:48.259Z"
   },
   {
+   "market_id": "2031288",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Jil Teichmann cover -7.5 vs the Joanna Garland in Jil Teichmann vs. Joanna Garland?",
+   "sides": [
+    "Jil Teichmann -7.50 (Games)",
+    "Joanna Garland +7.50 (Games)"
+   ],
+   "teams": [
+    "Jil Teichmann",
+    "Joanna Garland"
+   ],
+   "player": null,
+   "mid": 4,
+   "yes_buy": 6,
+   "no_buy": 98,
+   "taken_at": "2026-11-03T05:41:21.133Z"
+  },
+  {
    "market_id": "2031291",
    "market": "Sets spread",
    "group": "game",
@@ -318,7 +428,48 @@
    "taken_at": "2026-11-02T06:03:58.109Z"
   }
  ],
- "edges": [],
+ "edges": [
+  {
+   "key": "2031284:0",
+   "market_id": "2031284",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Jil Teichmann cover -1.5 vs the Joanna Garland in Jil Teichmann vs. Joanna Garland?",
+   "side": "Jil Teichmann -1.50 (Games)",
+   "open_chance": 51,
+   "now_chance": 44,
+   "open_odds": "-104",
+   "now_odds": "+127",
+   "edge": 7,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Jil Teichmann not above the games spread right now",
+   "context": "Joanna Garland 0 · Jil Teichmann 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-03T05:41:21.133Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2031300:1",
+   "market_id": "2031300",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Jil Teichmann win set 1 against Joanna Garland?",
+   "side": "No: Jil Teichmann win set 1 against Joanna Garland",
+   "open_chance": 50,
+   "now_chance": 46,
+   "open_odds": "+100",
+   "now_odds": "+117",
+   "edge": 4,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Jil Teichmann not above the games spread right now",
+   "context": "Joanna Garland 0 · Jil Teichmann 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-03T05:41:21.133Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
  "alerts": [],
  "alert_seen": [],
  "kalshi_checked": null
