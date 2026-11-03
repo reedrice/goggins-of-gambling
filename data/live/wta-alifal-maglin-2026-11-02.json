@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186587",
-  "fetched_at": "2026-11-03T15:32:31.303Z",
+  "fetched_at": "2026-11-03T15:49:15.548Z",
   "tennis": true,
   "tennis_match": {
    "id": "186587",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Aliona Falei (BLR) leads (3) Magda Linette (POL) 6-7 (3-7) 0-0",
+     "text": "(3) Magda Linette (POL) leads Aliona Falei (BLR) 7-6 (7-3) 2-1",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "possession": true,
      "curatedRank": {
       "current": 3
      },
@@ -66,7 +66,7 @@
        "winner": true
       },
       {
-       "value": 0
+       "value": 2
       }
      ],
      "athlete": {
@@ -106,7 +106,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
        "value": 6,
@@ -114,7 +114,7 @@
        "winner": false
       },
       {
-       "value": 0
+       "value": 1
       }
      ],
      "athlete": {
@@ -191,7 +191,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-03T15:32:31.206Z",
+ "updated": "2026-11-03T15:49:15.470Z",
  "open_taken_at": "2026-11-01T15:37:11.354Z",
  "thresholds": {
   "big": 10,
@@ -243,26 +243,26 @@
    "taken_at": "2026-11-02T06:04:08.911Z"
   },
   {
-   "market_id": "2057954",
-   "market": "Sets total",
+   "market_id": "2057960",
+   "market": "Set 2 winner",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Aliona Falei vs. Magda Linette be more than 2.5?",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Aliona Falei win set 2 against Magda Linette?",
    "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
+    "Yes: Aliona Falei win set 2 against Magda Linette",
+    "No: Aliona Falei win set 2 against Magda Linette"
    ],
    "teams": [
-    null,
+    "Aliona Falei",
     null
    ],
    "player": null,
    "mid": 37,
-   "yes_buy": 39,
-   "no_buy": 65,
-   "taken_at": "2026-11-02T05:38:18.731Z"
+   "yes_buy": 40,
+   "no_buy": 66,
+   "taken_at": "2026-11-02T07:35:29.924Z"
   },
   {
    "market_id": "2057953",
@@ -287,26 +287,26 @@
    "taken_at": "2026-11-02T10:38:52.510Z"
   },
   {
-   "market_id": "2057960",
-   "market": "Set 2 winner",
+   "market_id": "2057954",
+   "market": "Sets total",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Aliona Falei win set 2 against Magda Linette?",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Aliona Falei vs. Magda Linette be more than 2.5?",
    "sides": [
-    "Yes: Aliona Falei win set 2 against Magda Linette",
-    "No: Aliona Falei win set 2 against Magda Linette"
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
    ],
    "teams": [
-    "Aliona Falei",
+    null,
     null
    ],
    "player": null,
    "mid": 37,
-   "yes_buy": 40,
-   "no_buy": 66,
-   "taken_at": "2026-11-02T07:35:29.924Z"
+   "yes_buy": 39,
+   "no_buy": 65,
+   "taken_at": "2026-11-02T05:38:18.731Z"
   },
   {
    "market_id": "2057959",
@@ -509,62 +509,42 @@
  ],
  "edges": [
   {
-   "key": "2056215:0",
-   "market_id": "2056215",
-   "market": "Moneyline",
+   "key": "2057960:0",
+   "market_id": "2057960",
+   "market": "Set 2 winner",
    "group": "game",
-   "question": "Who will win in the upcoming wta event Aliona Falei vs Magda Linette scheduled for November 2, 2026 at 9:30 AM UTC?",
-   "side": "Aliona Falei win",
-   "open_chance": 39,
-   "now_chance": 19,
-   "open_odds": "+156",
-   "now_odds": "+426",
-   "edge": 20,
+   "question": "Will Aliona Falei win set 2 against Magda Linette?",
+   "side": "Yes: Aliona Falei win set 2 against Magda Linette",
+   "open_chance": 40,
+   "now_chance": 18,
+   "open_odds": "+150",
+   "now_odds": "+456",
+   "edge": 22,
    "tier": "big",
    "class": "score",
-   "reason": "Explained by score: Aliona Falei trailing in sets",
-   "context": "Magda Linette 7, 0 · Aliona Falei 6, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-11-01T19:53:20.358Z",
+   "reason": "Explained by score: Aliona Falei not above the games spread right now",
+   "context": "Magda Linette 7, 2 · Aliona Falei 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-11-03T15:49:15.470Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "2057952:1",
+   "key": "2057952:0",
    "market_id": "2057952",
    "market": "Games total",
    "group": "game",
    "question": "Will the total in Aliona Falei vs. Magda Linette be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 62,
-   "now_chance": 46,
-   "open_odds": "-163",
-   "now_odds": "+117",
-   "edge": 16,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Magda Linette 7, 0 · Aliona Falei 6, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-11-03T15:08:12.569Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2057953:1",
-   "market_id": "2057953",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Aliona Falei vs. Magda Linette be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 71,
-   "now_chance": 64,
-   "open_odds": "-245",
-   "now_odds": "-178",
-   "edge": 7,
+   "side": "Over 22.5 (Games)",
+   "open_chance": 43,
+   "now_chance": 39,
+   "open_odds": "+133",
+   "now_odds": "+156",
+   "edge": 4,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Magda Linette 7, 0 · Aliona Falei 6, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-11-03T15:18:59.062Z",
+   "context": "Magda Linette 7, 2 · Aliona Falei 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-11-03T15:49:15.470Z",
    "status": "open",
    "kalshi": null
   },
@@ -609,22 +589,22 @@
    "kalshi": null
   },
   {
-   "key": "2056215:1",
-   "market_id": "2056215",
-   "market": "Moneyline",
+   "key": "2057952:1",
+   "market_id": "2057952",
+   "market": "Games total",
    "group": "game",
-   "question": "Who will win in the upcoming wta event Aliona Falei vs Magda Linette scheduled for November 2, 2026 at 9:30 AM UTC?",
-   "side": "Magda Linette win",
-   "open_chance": 66,
-   "now_chance": 47,
-   "open_odds": "-194",
-   "now_odds": "+113",
-   "edge": 19,
+   "question": "Will the total in Aliona Falei vs. Magda Linette be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 62,
+   "now_chance": 46,
+   "open_odds": "-163",
+   "now_odds": "+117",
+   "edge": 16,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Magda Linette 4 · Aliona Falei 5 · 1st Set (games by set)",
-   "first_seen": "2026-11-03T14:09:56.792Z",
+   "context": "Magda Linette 7, 0 · Aliona Falei 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-11-03T15:08:12.569Z",
    "status": "gone",
    "kalshi": null
   },
@@ -643,26 +623,6 @@
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Magda Linette not above the games spread right now",
-   "context": "Magda Linette 4 · Aliona Falei 5 · 1st Set (games by set)",
-   "first_seen": "2026-11-03T14:09:56.792Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "2057960:1",
-   "market_id": "2057960",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Aliona Falei win set 2 against Magda Linette?",
-   "side": "No: Aliona Falei win set 2 against Magda Linette",
-   "open_chance": 66,
-   "now_chance": 57,
-   "open_odds": "-194",
-   "now_odds": "-133",
-   "edge": 9,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
    "context": "Magda Linette 4 · Aliona Falei 5 · 1st Set (games by set)",
    "first_seen": "2026-11-03T14:09:56.792Z",
    "status": "gone",
@@ -771,6 +731,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:2057952:0:slight",
+   "key": "2057952:0",
+   "at": "2026-11-03T15:49:15.470Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+156",
+   "now_chance": 39,
+   "edge": 4,
+   "text": "New slight edge: Over 22.5 (Games) (Games total), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-alifal-maglin-2026-11-02"
+  },
+  {
    "id": "gone:2057954:0:2026-11-02T11:39:35.141Z",
    "key": "2057954:0",
    "at": "2026-11-03T15:32:31.206Z",
@@ -782,20 +756,6 @@
    "now_chance": 33,
    "edge": 6,
    "text": "Edge gone: Over 2.5 (Sets) (Sets total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-alifal-maglin-2026-11-02"
-  },
-  {
-   "id": "new_edge:2057953:1:slight",
-   "key": "2057953:1",
-   "at": "2026-11-03T15:18:59.062Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Under 27.5 (Games)",
-   "market": "Games total",
-   "now_odds": "-178",
-   "now_chance": 64,
-   "edge": 7,
-   "text": "New slight edge: Under 27.5 (Games) (Games total), 7 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-alifal-maglin-2026-11-02"
   },
   {
@@ -824,48 +784,6 @@
    "now_chance": 38,
    "edge": 24,
    "text": "New big edge: Under 22.5 (Games) (Games total), 24 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-alifal-maglin-2026-11-02"
-  },
-  {
-   "id": "new_edge:2056215:0:big",
-   "key": "2056215:0",
-   "at": "2026-11-03T15:08:12.569Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Aliona Falei win",
-   "market": "Moneyline",
-   "now_odds": "+245",
-   "now_chance": 29,
-   "edge": 10,
-   "text": "New big edge: Aliona Falei win (Moneyline), 10 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-alifal-maglin-2026-11-02"
-  },
-  {
-   "id": "gone:2057960:1:2026-11-03T14:09:56.792Z",
-   "key": "2057960:1",
-   "at": "2026-11-03T14:46:03.546Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "No: Aliona Falei win set 2 against Magda Linette",
-   "market": "Set 2 winner",
-   "now_odds": "-156",
-   "now_chance": 61,
-   "edge": 5,
-   "text": "Edge gone: No: Aliona Falei win set 2 against Magda Linette (Set 2 winner) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-alifal-maglin-2026-11-02"
-  },
-  {
-   "id": "new_edge:2056215:1:slight",
-   "key": "2056215:1",
-   "at": "2026-11-03T14:30:02.705Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Magda Linette win",
-   "market": "Moneyline",
-   "now_odds": "-163",
-   "now_chance": 62,
-   "edge": 4,
-   "text": "New slight edge: Magda Linette win (Moneyline), 4 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-alifal-maglin-2026-11-02"
   },
   {
@@ -911,20 +829,6 @@
    "url": "https://polymarket.us/sports/wta/wta-alifal-maglin-2026-11-02"
   },
   {
-   "id": "gone:2056215:1:2026-11-03T14:09:56.792Z",
-   "key": "2056215:1",
-   "at": "2026-11-03T14:20:35.263Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Magda Linette win",
-   "market": "Moneyline",
-   "now_odds": "-108",
-   "now_chance": 52,
-   "edge": 14,
-   "text": "Edge gone: Magda Linette win (Moneyline) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-alifal-maglin-2026-11-02"
-  },
-  {
    "id": "news:2057959:1",
    "key": "2057959:1",
    "at": "2026-11-03T14:09:56.792Z",
@@ -936,48 +840,6 @@
    "now_chance": 40,
    "edge": 25,
    "text": "Big move, likely news: No: Aliona Falei win set 1 against Magda Linette (Set 1 winner) is 25 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-alifal-maglin-2026-11-02"
-  },
-  {
-   "id": "new_edge:2056215:1:big",
-   "key": "2056215:1",
-   "at": "2026-11-03T14:09:56.792Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Magda Linette win",
-   "market": "Moneyline",
-   "now_odds": "-108",
-   "now_chance": 52,
-   "edge": 14,
-   "text": "New big edge: Magda Linette win (Moneyline), 14 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-alifal-maglin-2026-11-02"
-  },
-  {
-   "id": "new_edge:2057960:1:slight",
-   "key": "2057960:1",
-   "at": "2026-11-03T14:09:56.792Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "No: Aliona Falei win set 2 against Magda Linette",
-   "market": "Set 2 winner",
-   "now_odds": "-138",
-   "now_chance": 58,
-   "edge": 8,
-   "text": "New slight edge: No: Aliona Falei win set 2 against Magda Linette (Set 2 winner), 8 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-alifal-maglin-2026-11-02"
-  },
-  {
-   "id": "gone:2056215:0:2026-11-01T19:53:20.358Z",
-   "key": "2056215:0",
-   "at": "2026-11-03T14:09:56.792Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Aliona Falei win",
-   "market": "Moneyline",
-   "now_odds": "+203",
-   "now_chance": 33,
-   "edge": 6,
-   "text": "Edge gone: Aliona Falei win (Moneyline) is no longer 4+ points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-alifal-maglin-2026-11-02"
   },
   {
@@ -1021,20 +883,6 @@
    "edge": 6,
    "text": "New slight edge: Over 2.5 (Sets) (Sets total), 6 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-alifal-maglin-2026-11-02"
-  },
-  {
-   "id": "new_edge:2056215:0:slight",
-   "key": "2056215:0",
-   "at": "2026-11-02T11:30:37.322Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Aliona Falei win",
-   "market": "Moneyline",
-   "now_odds": "+186",
-   "now_chance": 35,
-   "edge": 4,
-   "text": "New slight edge: Aliona Falei win (Moneyline), 4 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-alifal-maglin-2026-11-02"
   }
  ],
  "alert_seen": [
@@ -1056,7 +904,8 @@
   "new_edge:2056215:0:big",
   "new_edge:2057953:1:slight",
   "gone:2057952:1:2026-11-03T15:08:12.569Z",
-  "gone:2057954:0:2026-11-02T11:39:35.141Z"
+  "gone:2057954:0:2026-11-02T11:39:35.141Z",
+  "new_edge:2057952:0:slight"
  ],
  "kalshi_checked": null
 }
