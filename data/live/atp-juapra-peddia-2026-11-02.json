@@ -9,15 +9,59 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-03T02:41:37.605Z"
+  "fetched_at": "2026-11-03T02:51:58.749Z"
  },
- "updated": "2026-11-03T02:41:37.532Z",
+ "updated": "2026-11-03T02:51:58.599Z",
  "open_taken_at": "2026-11-01T05:07:48.516Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "2028412",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Juan Carlos Prado Angelo cover -7.5 vs the Pedro Boscardin Dias in Juan Carlos Prado Angelo vs. Pedro Boscardin Dias?",
+   "sides": [
+    "Juan Carlos Prado -7.50 (Games)",
+    "Pedro Boscardin Dias +7.50 (Games)"
+   ],
+   "teams": [
+    "Juan Carlos Prado",
+    "Pedro Boscardin Dias"
+   ],
+   "player": null,
+   "mid": 43.5,
+   "yes_buy": 44,
+   "no_buy": 57,
+   "taken_at": "2026-11-03T02:41:37.532Z"
+  },
+  {
+   "market_id": "2028416",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Juan Carlos Prado Angelo vs. Pedro Boscardin Dias be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 55.5,
+   "yes_buy": 56,
+   "no_buy": 45,
+   "taken_at": "2026-11-03T01:55:05.912Z"
+  },
   {
    "market_id": "2024060",
    "market": "Moneyline",
@@ -61,50 +105,6 @@
    "yes_buy": 72,
    "no_buy": 30,
    "taken_at": "2026-11-03T02:31:22.246Z"
-  },
-  {
-   "market_id": "2028416",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Juan Carlos Prado Angelo vs. Pedro Boscardin Dias be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 55.5,
-   "yes_buy": 56,
-   "no_buy": 45,
-   "taken_at": "2026-11-03T01:55:05.912Z"
-  },
-  {
-   "market_id": "2028412",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Juan Carlos Prado Angelo cover -7.5 vs the Pedro Boscardin Dias in Juan Carlos Prado Angelo vs. Pedro Boscardin Dias?",
-   "sides": [
-    "Juan Carlos Prado -7.50 (Games)",
-    "Pedro Boscardin Dias +7.50 (Games)"
-   ],
-   "teams": [
-    "Juan Carlos Prado",
-    "Pedro Boscardin Dias"
-   ],
-   "player": null,
-   "mid": 43.5,
-   "yes_buy": 44,
-   "no_buy": 57,
-   "taken_at": "2026-11-03T02:41:37.532Z"
   },
   {
    "market_id": "2028417",
@@ -248,11 +248,11 @@
    "question": "Will the total in Juan Carlos Prado Angelo vs. Pedro Boscardin Dias be more than 17.5?",
    "side": "Over 17.5 (Games)",
    "open_chance": 56,
-   "now_chance": 48,
+   "now_chance": 29,
    "open_odds": "-127",
-   "now_odds": "+108",
-   "edge": 8,
-   "tier": "slight",
+   "now_odds": "+245",
+   "edge": 27,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -277,7 +277,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-03T02:41:37.532Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -297,11 +297,53 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-03T02:31:22.246Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2028416:0:big",
+   "key": "2028416:0",
+   "at": "2026-11-03T02:51:58.599Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+245",
+   "now_chance": 29,
+   "edge": 27,
+   "text": "New big edge: Over 17.5 (Games) (Games total), 27 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-juapra-peddia-2026-11-02"
+  },
+  {
+   "id": "gone:2028425:1:2026-11-03T02:41:37.532Z",
+   "key": "2028425:1",
+   "at": "2026-11-03T02:51:58.599Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "No: Juan Carlos Prado Angelo win set 2 against Pedro Boscardin Dias",
+   "market": "Set 2 winner",
+   "now_odds": "+335",
+   "now_chance": 23,
+   "edge": 7,
+   "text": "Edge gone: No: Juan Carlos Prado Angelo win set 2 against Pedro Boscardin Dias (Set 2 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-juapra-peddia-2026-11-02"
+  },
+  {
+   "id": "gone:2028417:0:2026-11-03T02:31:22.246Z",
+   "key": "2028417:0",
+   "at": "2026-11-03T02:51:58.599Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+163",
+   "now_chance": 38,
+   "edge": 6,
+   "text": "Edge gone: Over 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-juapra-peddia-2026-11-02"
+  },
   {
    "id": "new_edge:2028425:1:slight",
    "key": "2028425:1",
@@ -352,7 +394,10 @@
   "gone:2028410:1:2026-11-03T01:55:05.912Z",
   "new_edge:2028416:0:slight",
   "new_edge:2028417:0:slight",
-  "new_edge:2028425:1:slight"
+  "new_edge:2028425:1:slight",
+  "new_edge:2028416:0:big",
+  "gone:2028425:1:2026-11-03T02:41:37.532Z",
+  "gone:2028417:0:2026-11-03T02:31:22.246Z"
  ],
  "kalshi_checked": null
 }
