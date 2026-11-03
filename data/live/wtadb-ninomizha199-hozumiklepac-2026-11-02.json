@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-03T07:23:34.916Z"
+  "fetched_at": "2026-11-03T07:35:42.012Z"
  },
- "updated": "2026-11-03T07:23:34.841Z",
+ "updated": "2026-11-03T07:35:41.874Z",
  "open_taken_at": "2026-11-01T05:07:31.716Z",
  "thresholds": {
   "big": 10,
@@ -59,7 +59,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-03T07:03:49.725Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -84,6 +84,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2004277:1:2026-11-03T07:03:49.725Z",
+   "key": "2004277:1",
+   "at": "2026-11-03T07:35:41.874Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Hozumi / Klepac win",
+   "market": "Moneyline",
+   "now_odds": "+213",
+   "now_chance": 32,
+   "edge": 27,
+   "text": "Edge gone: Hozumi / Klepac win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-ninomizha199-hozumiklepac-2026-11-02"
+  },
   {
    "id": "new_edge:2004277:1:big",
    "key": "2004277:1",
@@ -130,7 +144,8 @@
  "alert_seen": [
   "new_edge:2004277:0:big",
   "gone:2004277:0:2026-11-03T06:34:19.693Z",
-  "new_edge:2004277:1:big"
+  "new_edge:2004277:1:big",
+  "gone:2004277:1:2026-11-03T07:03:49.725Z"
  ],
  "kalshi_checked": null
 }
