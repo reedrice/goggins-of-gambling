@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-03T03:55:41.554Z"
+  "fetched_at": "2026-11-03T04:05:20.123Z"
  },
- "updated": "2026-11-03T03:55:41.409Z",
+ "updated": "2026-11-03T04:05:20.021Z",
  "open_taken_at": "2026-11-01T05:07:25.778Z",
  "thresholds": {
   "big": 10,
@@ -39,6 +39,28 @@
    "yes_buy": 23,
    "no_buy": 83,
    "taken_at": "2026-11-01T05:07:25.778Z"
+  },
+  {
+   "market_id": "2035718",
+   "market": "Main spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 7.5,
+   "question": "Will North Alabama cover +7.5 vs UC Davis in North Alabama vs. UC Davis?",
+   "sides": [
+    "Lions +7.50",
+    "Aggies -7.50"
+   ],
+   "teams": [
+    "Lions",
+    "Aggies"
+   ],
+   "player": null,
+   "mid": 44,
+   "yes_buy": 47,
+   "no_buy": 59,
+   "taken_at": "2026-11-01T22:46:38.481Z"
   },
   {
    "market_id": "2035807",
@@ -412,28 +434,6 @@
    "mid": 37,
    "yes_buy": 40,
    "no_buy": 66,
-   "taken_at": "2026-11-01T22:46:38.481Z"
-  },
-  {
-   "market_id": "2035718",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": 7.5,
-   "question": "Will North Alabama cover +7.5 vs UC Davis in North Alabama vs. UC Davis?",
-   "sides": [
-    "Lions +7.50",
-    "Aggies -7.50"
-   ],
-   "teams": [
-    "Lions",
-    "Aggies"
-   ],
-   "player": null,
-   "mid": 44,
-   "yes_buy": 47,
-   "no_buy": 59,
    "taken_at": "2026-11-01T22:46:38.481Z"
   },
   {
@@ -989,6 +989,26 @@
  ],
  "edges": [
   {
+   "key": "2035718:0",
+   "market_id": "2035718",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will North Alabama cover +7.5 vs UC Davis in North Alabama vs. UC Davis?",
+   "side": "Lions +7.50",
+   "open_chance": 47,
+   "now_chance": 33,
+   "open_odds": "+113",
+   "now_odds": "+203",
+   "edge": 14,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-03T00:32:48.711Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2035804:1",
    "market_id": "2035804",
    "market": "Alt total",
@@ -1209,26 +1229,6 @@
    "kalshi": null
   },
   {
-   "key": "2035718:0",
-   "market_id": "2035718",
-   "market": "Alt spread",
-   "group": "game",
-   "question": "Will North Alabama cover +7.5 vs UC Davis in North Alabama vs. UC Davis?",
-   "side": "Lions +7.50",
-   "open_chance": 47,
-   "now_chance": 42,
-   "open_odds": "+113",
-   "now_odds": "+138",
-   "edge": 5,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-03T00:32:48.711Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "2035815:1",
    "market_id": "2035815",
    "market": "Alt total",
@@ -1350,6 +1350,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2035718:0:big",
+   "key": "2035718:0",
+   "at": "2026-11-03T04:05:20.021Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Lions +7.50",
+   "market": "Main spread",
+   "now_odds": "+203",
+   "now_chance": 33,
+   "edge": 14,
+   "text": "New big edge: Lions +7.50 (Main spread), 14 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-nal-ucdv-2026-11-02"
+  },
   {
    "id": "gone:2035804:1:2026-11-03T00:42:42.211Z",
    "key": "2035804:1",
@@ -1549,7 +1563,8 @@
   "gone:2035815:1:2026-11-03T01:27:45.650Z",
   "new_edge:1913657:0:slight",
   "new_edge:1913657:1:slight",
-  "gone:1913657:0:2026-11-03T03:24:36.672Z"
+  "gone:1913657:0:2026-11-03T03:24:36.672Z",
+  "new_edge:2035718:0:big"
  ],
  "kalshi_checked": null
 }
