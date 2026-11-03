@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-03T00:12:22.726Z"
+  "fetched_at": "2026-11-03T00:21:42.751Z"
  },
- "updated": "2026-11-03T00:12:22.659Z",
+ "updated": "2026-11-03T00:21:42.695Z",
  "open_taken_at": "2026-11-01T05:07:18.511Z",
  "thresholds": {
   "big": 10,
@@ -39,6 +39,50 @@
    "yes_buy": 10,
    "no_buy": 94,
    "taken_at": "2026-11-01T05:07:18.511Z"
+  },
+  {
+   "market_id": "2065408",
+   "market": "Main total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 159.5,
+   "question": "Will the total in UNC Asheville vs. Richmond be more than 159.5?",
+   "sides": [
+    "Over 159.5",
+    "Under 159.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 32.5,
+   "yes_buy": 34,
+   "no_buy": 69,
+   "taken_at": "2026-11-02T15:51:07.457Z"
+  },
+  {
+   "market_id": "2065340",
+   "market": "Main spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": -1.5,
+   "question": "Will UNC Asheville cover -1.5 vs Richmond in UNC Asheville vs. Richmond?",
+   "sides": [
+    "Bulldogs -1.50",
+    "Spiders +1.50"
+   ],
+   "teams": [
+    "Bulldogs",
+    "Spiders"
+   ],
+   "player": null,
+   "mid": 4.5,
+   "yes_buy": 7,
+   "no_buy": 98,
+   "taken_at": "2026-11-02T18:30:22.991Z"
   },
   {
    "market_id": "2065306",
@@ -569,28 +613,6 @@
    "taken_at": "2026-11-02T03:25:38.097Z"
   },
   {
-   "market_id": "2065408",
-   "market": "Alt total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 159.5,
-   "question": "Will the total in UNC Asheville vs. Richmond be more than 159.5?",
-   "sides": [
-    "Over 159.5",
-    "Under 159.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 32.5,
-   "yes_buy": 34,
-   "no_buy": 69,
-   "taken_at": "2026-11-02T15:51:07.457Z"
-  },
-  {
    "market_id": "2065414",
    "market": "Alt total",
    "group": "game",
@@ -765,28 +787,6 @@
    "yes_buy": 12,
    "no_buy": 94,
    "taken_at": "2026-11-02T15:51:07.457Z"
-  },
-  {
-   "market_id": "2065340",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": -1.5,
-   "question": "Will UNC Asheville cover -1.5 vs Richmond in UNC Asheville vs. Richmond?",
-   "sides": [
-    "Bulldogs -1.50",
-    "Spiders +1.50"
-   ],
-   "teams": [
-    "Bulldogs",
-    "Spiders"
-   ],
-   "player": null,
-   "mid": 4.5,
-   "yes_buy": 7,
-   "no_buy": 98,
-   "taken_at": "2026-11-02T18:30:22.991Z"
   },
   {
    "market_id": "2099957",
@@ -1143,6 +1143,26 @@
  ],
  "edges": [
   {
+   "key": "2065408:1",
+   "market_id": "2065408",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in UNC Asheville vs. Richmond be more than 159.5?",
+   "side": "Under 159.5",
+   "open_chance": 69,
+   "now_chance": 48,
+   "open_odds": "-223",
+   "now_odds": "+108",
+   "edge": 21,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-03T00:21:42.695Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2068628:1",
    "market_id": "2068628",
    "market": "Alt total",
@@ -1404,6 +1424,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2065408:1:big",
+   "key": "2065408:1",
+   "at": "2026-11-03T00:21:42.695Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 159.5",
+   "market": "Main total",
+   "now_odds": "+108",
+   "now_chance": 48,
+   "edge": 21,
+   "text": "New big edge: Under 159.5 (Main total), 21 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-ncashe-rich-2026-11-02"
+  },
   {
    "id": "gone:2068628:1:2026-11-02T16:00:25.472Z",
    "key": "2068628:1",
@@ -1705,7 +1739,8 @@
   "gone:2065379:1:2026-11-02T15:40:15.265Z",
   "gone:2065377:1:2026-11-02T15:51:07.457Z",
   "gone:2065318:0:2026-11-02T15:51:07.457Z",
-  "gone:2065315:0:2026-11-02T16:00:25.472Z"
+  "gone:2065315:0:2026-11-02T16:00:25.472Z",
+  "new_edge:2065408:1:big"
  ],
  "kalshi_checked": null
 }
