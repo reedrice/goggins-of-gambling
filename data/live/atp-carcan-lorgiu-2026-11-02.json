@@ -4,14 +4,14 @@
  "game": "Carlo Alberto Caniato vs. Lorenzo Giustino",
  "url": "https://polymarket.us/sports/atp/atp-carcan-lorgiu-2026-11-02",
  "start_time": "2026-11-03T12:10:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-03T12:02:30.578Z"
+  "fetched_at": "2026-11-03T12:12:35.820Z"
  },
- "updated": "2026-11-03T12:02:30.492Z",
+ "updated": "2026-11-03T12:12:35.702Z",
  "open_taken_at": "2026-11-01T05:07:42.468Z",
  "thresholds": {
   "big": 10,
@@ -63,6 +63,28 @@
    "taken_at": "2026-11-03T10:43:42.674Z"
   },
   {
+   "market_id": "2027949",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Carlo Alberto Caniato cover 4.5 vs the Lorenzo Giustino in Carlo Alberto Caniato vs. Lorenzo Giustino?",
+   "sides": [
+    "Carlo Alberto Caniato +4.50 (Games)",
+    "Lorenzo Giustino -4.50 (Games)"
+   ],
+   "teams": [
+    "Carlo Alberto Caniato",
+    "Lorenzo Giustino"
+   ],
+   "player": null,
+   "mid": 59,
+   "yes_buy": 61,
+   "no_buy": 43,
+   "taken_at": "2026-11-03T12:12:35.702Z"
+  },
+  {
    "market_id": "2027947",
    "market": "Games spread",
    "group": "game",
@@ -83,6 +105,28 @@
    "yes_buy": 62,
    "no_buy": 44,
    "taken_at": "2026-11-03T11:04:06.648Z"
+  },
+  {
+   "market_id": "2027963",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Carlo Alberto Caniato win set 2 against Lorenzo Giustino?",
+   "sides": [
+    "Yes: Carlo Alberto Caniato win set 2 against Lorenzo Giustino",
+    "No: Carlo Alberto Caniato win set 2 against Lorenzo Giustino"
+   ],
+   "teams": [
+    "Carlo Alberto Caniato",
+    null
+   ],
+   "player": null,
+   "mid": 55,
+   "yes_buy": 57,
+   "no_buy": 47,
+   "taken_at": "2026-11-03T12:12:35.702Z"
   },
   {
    "market_id": "2027955",
@@ -246,20 +290,34 @@
    "question": "Will the Carlo Alberto Caniato cover 1.5 vs the Lorenzo Giustino in Carlo Alberto Caniato vs. Lorenzo Giustino?",
    "side": "Carlo Alberto Caniato +1.50 (Games)",
    "open_chance": 62,
-   "now_chance": 57,
+   "now_chance": 58,
    "open_odds": "-163",
-   "now_odds": "-133",
-   "edge": 5,
+   "now_odds": "-138",
+   "edge": 4,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-03T11:14:33.753Z",
-   "status": "gone",
+   "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2027946:0:big",
+   "key": "2027946:0",
+   "at": "2026-11-03T12:12:35.702Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Carlo Alberto Caniato -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+104",
+   "now_chance": 49,
+   "edge": 10,
+   "text": "New big edge: Carlo Alberto Caniato -1.50 (Games) (Games spread), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-carcan-lorgiu-2026-11-02"
+  },
   {
    "id": "new_edge:2027947:0:slight",
    "key": "2027947:0",
@@ -276,7 +334,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2027947:0:slight"
+  "new_edge:2027947:0:slight",
+  "new_edge:2027946:0:big"
  ],
  "kalshi_checked": null
 }
