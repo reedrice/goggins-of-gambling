@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-03T02:31:18.104Z"
+  "fetched_at": "2026-11-03T02:41:32.545Z"
  },
- "updated": "2026-11-03T02:31:17.934Z",
+ "updated": "2026-11-03T02:41:32.467Z",
  "open_taken_at": "2026-10-31T14:49:11.824Z",
  "thresholds": {
   "big": 10,
@@ -85,28 +85,6 @@
    "taken_at": "2026-11-03T02:06:43.858Z"
   },
   {
-   "market_id": "2027619",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Kuan-Shou Chen win set 2 against Billy Harris?",
-   "sides": [
-    "Yes: Kuan-Shou Chen win set 2 against Billy Harris",
-    "No: Kuan-Shou Chen win set 2 against Billy Harris"
-   ],
-   "teams": [
-    "Kuan-Shou Chen",
-    null
-   ],
-   "player": null,
-   "mid": 26.5,
-   "yes_buy": 27,
-   "no_buy": 74,
-   "taken_at": "2026-11-03T02:21:00.304Z"
-  },
-  {
    "market_id": "2027605",
    "market": "Games spread",
    "group": "game",
@@ -127,6 +105,28 @@
    "yes_buy": 47,
    "no_buy": 58,
    "taken_at": "2026-11-02T22:36:37.117Z"
+  },
+  {
+   "market_id": "2027619",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Kuan-Shou Chen win set 2 against Billy Harris?",
+   "sides": [
+    "Yes: Kuan-Shou Chen win set 2 against Billy Harris",
+    "No: Kuan-Shou Chen win set 2 against Billy Harris"
+   ],
+   "teams": [
+    "Kuan-Shou Chen",
+    null
+   ],
+   "player": null,
+   "mid": 26.5,
+   "yes_buy": 27,
+   "no_buy": 74,
+   "taken_at": "2026-11-03T02:21:00.304Z"
   },
   {
    "market_id": "2027618",
@@ -182,16 +182,56 @@
    "question": "Will the Kuan-Shou Chen cover 4.5 vs the Billy Harris in Kuan-Shou Chen vs. Billy Harris?",
    "side": "Kuan-Shou Chen +4.50 (Games)",
    "open_chance": 47,
-   "now_chance": 42,
+   "now_chance": 35,
    "open_odds": "+113",
-   "now_odds": "+138",
-   "edge": 5,
-   "tier": "slight",
+   "now_odds": "+186",
+   "edge": 12,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-03T02:21:00.304Z",
-   "status": "gone",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2006538:0",
+   "market_id": "2006538",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Kuan-Shou Chen vs Billy Harris scheduled for November 2, 2026 at 2:00 AM UTC?",
+   "side": "Kuan-Shou Chen win",
+   "open_chance": 26,
+   "now_chance": 17,
+   "open_odds": "+285",
+   "now_odds": "+488",
+   "edge": 9,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-03T02:41:32.467Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2027610:0",
+   "market_id": "2027610",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Kuan-Shou Chen vs. Billy Harris be more than 17.5?",
+   "side": "Over 17.5 (Games)",
+   "open_chance": 69,
+   "now_chance": 63,
+   "open_odds": "-223",
+   "now_odds": "-170",
+   "edge": 6,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-03T02:41:32.467Z",
+   "status": "open",
    "kalshi": null
   },
   {
@@ -216,6 +256,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2027605:0:big",
+   "key": "2027605:0",
+   "at": "2026-11-03T02:41:32.467Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Kuan-Shou Chen +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+186",
+   "now_chance": 35,
+   "edge": 12,
+   "text": "New big edge: Kuan-Shou Chen +4.50 (Games) (Games spread), 12 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-kuache-bilhar-2026-11-01"
+  },
+  {
+   "id": "new_edge:2027610:0:slight",
+   "key": "2027610:0",
+   "at": "2026-11-03T02:41:32.467Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-170",
+   "now_chance": 63,
+   "edge": 6,
+   "text": "New slight edge: Over 17.5 (Games) (Games total), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-kuache-bilhar-2026-11-01"
+  },
   {
    "id": "gone:2027605:0:2026-11-03T02:21:00.304Z",
    "key": "2027605:0",
@@ -248,7 +316,9 @@
  "alert_seen": [
   "new_edge:2006538:0:slight",
   "new_edge:2027605:0:slight",
-  "gone:2027605:0:2026-11-03T02:21:00.304Z"
+  "gone:2027605:0:2026-11-03T02:21:00.304Z",
+  "new_edge:2027605:0:big",
+  "new_edge:2027610:0:slight"
  ],
  "kalshi_checked": null
 }
