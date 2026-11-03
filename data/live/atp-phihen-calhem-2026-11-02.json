@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-03T10:54:29.733Z"
+  "fetched_at": "2026-11-03T11:04:06.962Z"
  },
- "updated": "2026-11-03T10:54:29.654Z",
+ "updated": "2026-11-03T11:04:06.869Z",
  "open_taken_at": "2026-11-01T05:07:42.698Z",
  "thresholds": {
   "big": 10,
@@ -39,6 +39,28 @@
    "yes_buy": 54,
    "no_buy": 47,
    "taken_at": "2026-11-02T00:25:17.471Z"
+  },
+  {
+   "market_id": "2027854",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Philip Henning vs. Calvin Hemery be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 61.5,
+   "yes_buy": 62,
+   "no_buy": 39,
+   "taken_at": "2026-11-03T10:21:29.496Z"
   },
   {
    "market_id": "2027838",
@@ -83,6 +105,50 @@
    "yes_buy": 61,
    "no_buy": 40,
    "taken_at": "2026-11-03T10:54:29.654Z"
+  },
+  {
+   "market_id": "2027874",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Philip Henning win set 2 against Calvin Hemery?",
+   "sides": [
+    "Yes: Philip Henning win set 2 against Calvin Hemery",
+    "No: Philip Henning win set 2 against Calvin Hemery"
+   ],
+   "teams": [
+    "Philip Henning",
+    null
+   ],
+   "player": null,
+   "mid": 58,
+   "yes_buy": 59,
+   "no_buy": 43,
+   "taken_at": "2026-11-03T11:04:06.869Z"
+  },
+  {
+   "market_id": "2027871",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Philip Henning win set 1 against Calvin Hemery?",
+   "sides": [
+    "Yes: Philip Henning win set 1 against Calvin Hemery",
+    "No: Philip Henning win set 1 against Calvin Hemery"
+   ],
+   "teams": [
+    "Philip Henning",
+    null
+   ],
+   "player": null,
+   "mid": 57,
+   "yes_buy": 58,
+   "no_buy": 44,
+   "taken_at": "2026-11-03T11:04:06.869Z"
   },
   {
    "market_id": "2027857",
@@ -195,29 +261,49 @@
    "taken_at": "2026-11-03T10:21:29.496Z"
   },
   {
-   "market_id": "2027854",
-   "market": "Games total",
+   "market_id": "2027841",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Philip Henning vs. Calvin Hemery be more than 17.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Philip Henning cover -7.5 vs the Calvin Hemery in Philip Henning vs. Calvin Hemery?",
    "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
+    "Philip Henning -7.50 (Games)",
+    "Calvin Hemery +7.50 (Games)"
    ],
    "teams": [
-    null,
-    null
+    "Philip Henning",
+    "Calvin Hemery"
    ],
    "player": null,
-   "mid": 61.5,
-   "yes_buy": 62,
-   "no_buy": 39,
-   "taken_at": "2026-11-03T10:21:29.496Z"
+   "mid": 11.5,
+   "yes_buy": 12,
+   "no_buy": 89,
+   "taken_at": "2026-11-03T11:04:06.869Z"
   }
  ],
  "edges": [
+  {
+   "key": "2027854:1",
+   "market_id": "2027854",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Philip Henning vs. Calvin Hemery be more than 17.5?",
+   "side": "Under 17.5 (Games)",
+   "open_chance": 39,
+   "now_chance": 21,
+   "open_odds": "+156",
+   "now_odds": "+376",
+   "edge": 18,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-03T11:04:06.869Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "2027830:1",
    "market_id": "2027830",
@@ -241,6 +327,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:2027854:1:big",
+   "key": "2027854:1",
+   "at": "2026-11-03T11:04:06.869Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+376",
+   "now_chance": 21,
+   "edge": 18,
+   "text": "New big edge: Under 17.5 (Games) (Games total), 18 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-phihen-calhem-2026-11-02"
+  },
+  {
    "id": "new_edge:2027830:1:big",
    "key": "2027830:1",
    "at": "2026-11-03T10:54:29.654Z",
@@ -256,7 +356,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2027830:1:big"
+  "new_edge:2027830:1:big",
+  "new_edge:2027854:1:big"
  ],
  "kalshi_checked": null
 }
