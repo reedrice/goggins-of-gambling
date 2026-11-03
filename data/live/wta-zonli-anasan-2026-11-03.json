@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186667",
-  "fetched_at": "2026-11-03T15:19:01.566Z",
+  "fetched_at": "2026-11-03T15:32:32.821Z",
   "tennis": true,
   "tennis_match": {
    "id": "186667",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Zongyu Li (CHN) leads Ana Sofia Sanchez (MEX) 4-2",
+     "text": "Zongyu Li (CHN) leads Ana Sofia Sanchez (MEX) 6-2 1-0",
      "type": "event"
     }
    ],
@@ -55,10 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
-       "value": 2
+       "value": 2,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -98,10 +102,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
-       "value": 4
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -159,8 +167,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Ana Sofia Sanchez",
@@ -172,13 +180,13 @@
    "abbr": "Li Zongyu",
    "alias": "Li Zongyu",
    "name": "Li Zongyu",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-03T15:19:01.464Z",
+ "updated": "2026-11-03T15:32:32.741Z",
  "open_taken_at": "2026-11-02T13:51:55.106Z",
  "thresholds": {
   "big": 10,
@@ -208,47 +216,25 @@
    "taken_at": "2026-11-02T21:38:30.474Z"
   },
   {
-   "market_id": "2096836",
+   "market_id": "2096834",
    "market": "Games spread",
    "group": "game",
    "mtype": "spread",
    "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Zongyu Li cover 7.5 vs the Ana Sofia Sanchez in Zongyu Li vs. Ana Sofia Sanchez?",
+   "line": 4.5,
+   "question": "Will the Zongyu Li cover 4.5 vs the Ana Sofia Sanchez in Zongyu Li vs. Ana Sofia Sanchez?",
    "sides": [
-    "Zongyu Li +7.50 (Games)",
-    "Ana Sofia Sanchez -7.50 (Games)"
+    "Zongyu Li +4.50 (Games)",
+    "Ana Sofia Sanchez -4.50 (Games)"
    ],
    "teams": [
     "Zongyu Li",
     "Ana Sofia Sanchez"
    ],
    "player": null,
-   "mid": 87,
-   "yes_buy": 88,
-   "no_buy": 14,
-   "taken_at": "2026-11-03T14:57:44.924Z"
-  },
-  {
-   "market_id": "2096839",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Zongyu Li vs. Ana Sofia Sanchez be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 75.5,
-   "yes_buy": 76,
-   "no_buy": 25,
+   "mid": 72.5,
+   "yes_buy": 74,
+   "no_buy": 29,
    "taken_at": "2026-11-03T14:46:06.818Z"
   },
   {
@@ -274,6 +260,28 @@
    "taken_at": "2026-11-03T10:10:06.841Z"
   },
   {
+   "market_id": "2096839",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Zongyu Li vs. Ana Sofia Sanchez be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 75.5,
+   "yes_buy": 76,
+   "no_buy": 25,
+   "taken_at": "2026-11-03T14:46:06.818Z"
+  },
+  {
    "market_id": "2096840",
    "market": "Games total",
    "group": "game",
@@ -294,6 +302,72 @@
    "yes_buy": 45,
    "no_buy": 57,
    "taken_at": "2026-11-03T10:10:06.841Z"
+  },
+  {
+   "market_id": "2096835",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Zongyu Li cover -7.5 vs the Ana Sofia Sanchez in Zongyu Li vs. Ana Sofia Sanchez?",
+   "sides": [
+    "Zongyu Li -7.50 (Games)",
+    "Ana Sofia Sanchez +7.50 (Games)"
+   ],
+   "teams": [
+    "Zongyu Li",
+    "Ana Sofia Sanchez"
+   ],
+   "player": null,
+   "mid": 18,
+   "yes_buy": 19,
+   "no_buy": 83,
+   "taken_at": "2026-11-03T14:57:44.924Z"
+  },
+  {
+   "market_id": "2096841",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Zongyu Li vs. Ana Sofia Sanchez be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 26.5,
+   "yes_buy": 27,
+   "no_buy": 74,
+   "taken_at": "2026-11-03T14:46:06.818Z"
+  },
+  {
+   "market_id": "2096836",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Zongyu Li cover 7.5 vs the Ana Sofia Sanchez in Zongyu Li vs. Ana Sofia Sanchez?",
+   "sides": [
+    "Zongyu Li +7.50 (Games)",
+    "Ana Sofia Sanchez -7.50 (Games)"
+   ],
+   "teams": [
+    "Zongyu Li",
+    "Ana Sofia Sanchez"
+   ],
+   "player": null,
+   "mid": 87,
+   "yes_buy": 88,
+   "no_buy": 14,
+   "taken_at": "2026-11-03T14:57:44.924Z"
   },
   {
    "market_id": "2096837",
@@ -338,72 +412,6 @@
    "yes_buy": 42,
    "no_buy": 64,
    "taken_at": "2026-11-03T10:10:06.841Z"
-  },
-  {
-   "market_id": "2096841",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Zongyu Li vs. Ana Sofia Sanchez be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 26.5,
-   "yes_buy": 27,
-   "no_buy": 74,
-   "taken_at": "2026-11-03T14:46:06.818Z"
-  },
-  {
-   "market_id": "2096835",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Zongyu Li cover -7.5 vs the Ana Sofia Sanchez in Zongyu Li vs. Ana Sofia Sanchez?",
-   "sides": [
-    "Zongyu Li -7.50 (Games)",
-    "Ana Sofia Sanchez +7.50 (Games)"
-   ],
-   "teams": [
-    "Zongyu Li",
-    "Ana Sofia Sanchez"
-   ],
-   "player": null,
-   "mid": 18,
-   "yes_buy": 19,
-   "no_buy": 83,
-   "taken_at": "2026-11-03T14:57:44.924Z"
-  },
-  {
-   "market_id": "2096834",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Zongyu Li cover 4.5 vs the Ana Sofia Sanchez in Zongyu Li vs. Ana Sofia Sanchez?",
-   "sides": [
-    "Zongyu Li +4.50 (Games)",
-    "Ana Sofia Sanchez -4.50 (Games)"
-   ],
-   "teams": [
-    "Zongyu Li",
-    "Ana Sofia Sanchez"
-   ],
-   "player": null,
-   "mid": 72.5,
-   "yes_buy": 74,
-   "no_buy": 29,
-   "taken_at": "2026-11-03T14:46:06.818Z"
   },
   {
    "market_id": "2096831",
@@ -474,42 +482,62 @@
  ],
  "edges": [
   {
-   "key": "2096832:1",
-   "market_id": "2096832",
-   "market": "Games spread",
+   "key": "2096839:0",
+   "market_id": "2096839",
+   "market": "Games total",
    "group": "game",
-   "question": "Will the Zongyu Li cover 1.5 vs the Ana Sofia Sanchez in Zongyu Li vs. Ana Sofia Sanchez?",
-   "side": "Ana Sofia Sanchez -1.50 (Games)",
-   "open_chance": 49,
-   "now_chance": 28,
-   "open_odds": "+104",
-   "now_odds": "+257",
-   "edge": 21,
+   "question": "Will the total in Zongyu Li vs. Ana Sofia Sanchez be more than 17.5?",
+   "side": "Over 17.5 (Games)",
+   "open_chance": 76,
+   "now_chance": 64,
+   "open_odds": "-317",
+   "now_odds": "-178",
+   "edge": 12,
    "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Ana Sofia Sanchez not above the games spread right now",
-   "context": "Ana Sofia Sanchez 2 · Li Zongyu 4 · 1st Set (games by set)",
-   "first_seen": "2026-11-03T14:57:44.924Z",
+   "class": "edge",
+   "reason": null,
+   "context": "Ana Sofia Sanchez 2, 0 · Li Zongyu 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-11-03T15:32:32.741Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "2094897:1",
-   "market_id": "2094897",
-   "market": "Moneyline",
+   "key": "2096835:1",
+   "market_id": "2096835",
+   "market": "Games spread",
    "group": "game",
-   "question": "Who will win in the upcoming wta event Zongyu Li vs Ana Sofia Sanchez scheduled for November 3, 2026 at 9:00 AM UTC?",
-   "side": "Ana Sofia Sanchez win",
-   "open_chance": 52,
-   "now_chance": 34,
-   "open_odds": "-108",
-   "now_odds": "+194",
-   "edge": 18,
+   "question": "Will the Zongyu Li cover -7.5 vs the Ana Sofia Sanchez in Zongyu Li vs. Ana Sofia Sanchez?",
+   "side": "Ana Sofia Sanchez +7.50 (Games)",
+   "open_chance": 83,
+   "now_chance": 73,
+   "open_odds": "-488",
+   "now_odds": "-270",
+   "edge": 10,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Ana Sofia Sanchez 2 · Li Zongyu 4 · 1st Set (games by set)",
-   "first_seen": "2026-11-03T14:57:44.924Z",
+   "context": "Ana Sofia Sanchez 2, 0 · Li Zongyu 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-11-03T15:32:32.741Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2096841:0",
+   "market_id": "2096841",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Zongyu Li vs. Ana Sofia Sanchez be more than 27.5?",
+   "side": "Over 27.5 (Games)",
+   "open_chance": 27,
+   "now_chance": 20,
+   "open_odds": "+270",
+   "now_odds": "+400",
+   "edge": 7,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Ana Sofia Sanchez 2, 0 · Li Zongyu 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-11-03T15:32:32.741Z",
    "status": "open",
    "kalshi": null
   },
@@ -530,66 +558,6 @@
    "reason": null,
    "context": "Ana Sofia Sanchez 2 · Li Zongyu 4 · 1st Set (games by set)",
    "first_seen": "2026-11-03T14:46:06.818Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2096839:1",
-   "market_id": "2096839",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Zongyu Li vs. Ana Sofia Sanchez be more than 17.5?",
-   "side": "Under 17.5 (Games)",
-   "open_chance": 25,
-   "now_chance": 19,
-   "open_odds": "+300",
-   "now_odds": "+426",
-   "edge": 6,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Ana Sofia Sanchez 2 · Li Zongyu 4 · 1st Set (games by set)",
-   "first_seen": "2026-11-03T15:19:01.464Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2096840:1",
-   "market_id": "2096840",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Zongyu Li vs. Ana Sofia Sanchez be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 57,
-   "now_chance": 51,
-   "open_odds": "-133",
-   "now_odds": "-104",
-   "edge": 6,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Ana Sofia Sanchez 2 · Li Zongyu 4 · 1st Set (games by set)",
-   "first_seen": "2026-11-03T14:46:06.818Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2096834:1",
-   "market_id": "2096834",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Zongyu Li cover 4.5 vs the Ana Sofia Sanchez in Zongyu Li vs. Ana Sofia Sanchez?",
-   "side": "Ana Sofia Sanchez -4.50 (Games)",
-   "open_chance": 29,
-   "now_chance": 19,
-   "open_odds": "+245",
-   "now_odds": "+426",
-   "edge": 10,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Ana Sofia Sanchez not above the games spread right now",
-   "context": "Ana Sofia Sanchez 1 · Li Zongyu 3 · 1st Set (games by set)",
-   "first_seen": "2026-11-03T15:08:14.410Z",
    "status": "gone",
    "kalshi": null
   },
@@ -610,6 +578,46 @@
    "reason": "Explained by score: Ana Sofia Sanchez not above the games spread right now",
    "context": "Ana Sofia Sanchez 1 · Li Zongyu 3 · 1st Set (games by set)",
    "first_seen": "2026-11-03T14:57:44.924Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "2096839:1",
+   "market_id": "2096839",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Zongyu Li vs. Ana Sofia Sanchez be more than 17.5?",
+   "side": "Under 17.5 (Games)",
+   "open_chance": 25,
+   "now_chance": 19,
+   "open_odds": "+300",
+   "now_odds": "+426",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Ana Sofia Sanchez 2 · Li Zongyu 4 · 1st Set (games by set)",
+   "first_seen": "2026-11-03T15:19:01.464Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "2096840:1",
+   "market_id": "2096840",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Zongyu Li vs. Ana Sofia Sanchez be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 57,
+   "now_chance": 51,
+   "open_odds": "-133",
+   "now_odds": "-104",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Ana Sofia Sanchez 2 · Li Zongyu 4 · 1st Set (games by set)",
+   "first_seen": "2026-11-03T14:46:06.818Z",
    "status": "gone",
    "kalshi": null
   },
@@ -636,6 +644,76 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:2096839:0:big",
+   "key": "2096839:0",
+   "at": "2026-11-03T15:32:32.741Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-178",
+   "now_chance": 64,
+   "edge": 12,
+   "text": "New big edge: Over 17.5 (Games) (Games total), 12 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-zonli-anasan-2026-11-03"
+  },
+  {
+   "id": "new_edge:2096835:1:big",
+   "key": "2096835:1",
+   "at": "2026-11-03T15:32:32.741Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Ana Sofia Sanchez +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-270",
+   "now_chance": 73,
+   "edge": 10,
+   "text": "New big edge: Ana Sofia Sanchez +7.50 (Games) (Games spread), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-zonli-anasan-2026-11-03"
+  },
+  {
+   "id": "new_edge:2096841:0:slight",
+   "key": "2096841:0",
+   "at": "2026-11-03T15:32:32.741Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+400",
+   "now_chance": 20,
+   "edge": 7,
+   "text": "New slight edge: Over 27.5 (Games) (Games total), 7 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-zonli-anasan-2026-11-03"
+  },
+  {
+   "id": "gone:2096839:1:2026-11-03T15:19:01.464Z",
+   "key": "2096839:1",
+   "at": "2026-11-03T15:32:32.741Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+426",
+   "now_chance": 19,
+   "edge": 6,
+   "text": "Edge gone: Under 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-zonli-anasan-2026-11-03"
+  },
+  {
+   "id": "gone:2096840:1:2026-11-03T14:46:06.818Z",
+   "key": "2096840:1",
+   "at": "2026-11-03T15:32:32.741Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-104",
+   "now_chance": 51,
+   "edge": 6,
+   "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-zonli-anasan-2026-11-03"
+  },
+  {
    "id": "new_edge:2096837:1:big",
    "key": "2096837:1",
    "at": "2026-11-03T15:19:01.464Z",
@@ -661,20 +739,6 @@
    "now_chance": 19,
    "edge": 6,
    "text": "New slight edge: Under 17.5 (Games) (Games total), 6 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-zonli-anasan-2026-11-03"
-  },
-  {
-   "id": "new_edge:2094897:1:big",
-   "key": "2094897:1",
-   "at": "2026-11-03T14:57:44.924Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Ana Sofia Sanchez win",
-   "market": "Moneyline",
-   "now_odds": "+156",
-   "now_chance": 39,
-   "edge": 13,
-   "text": "New big edge: Ana Sofia Sanchez win (Moneyline), 13 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-zonli-anasan-2026-11-03"
   },
   {
@@ -726,7 +790,12 @@
   "new_edge:2094897:1:big",
   "gone:2096837:1:2026-11-03T14:46:06.818Z",
   "new_edge:2096837:1:big",
-  "new_edge:2096839:1:slight"
+  "new_edge:2096839:1:slight",
+  "new_edge:2096839:0:big",
+  "new_edge:2096835:1:big",
+  "new_edge:2096841:0:slight",
+  "gone:2096839:1:2026-11-03T15:19:01.464Z",
+  "gone:2096840:1:2026-11-03T14:46:06.818Z"
  ],
  "kalshi_checked": null
 }
