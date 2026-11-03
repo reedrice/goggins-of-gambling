@@ -4,12 +4,12 @@
  "game": "Elena Pridankina vs. Paula Badosa",
  "url": "https://polymarket.us/sports/wta/wta-elepri-paubad-2026-11-01",
  "start_time": "2026-11-03T13:15:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186615",
-  "fetched_at": "2026-11-03T14:30:02.087Z",
+  "fetched_at": "2026-11-03T14:46:02.531Z",
   "tennis": true,
   "tennis_match": {
    "id": "186615",
@@ -17,17 +17,17 @@
    "date": "2026-11-03T13:25Z",
    "startDate": "2026-11-03T13:25Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 1,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "id": "38",
+     "name": "STATUS_RETIRED",
+     "state": "post",
+     "completed": true,
+     "description": "Retired",
+     "detail": "Retired",
+     "shortDetail": "Retired"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Elena Pridankina (RUS) leads Paula Badosa (ESP) 6-5",
+     "text": "Elena Pridankina (RUS) bt Paula Badosa (ESP) 7-5 ret",
      "type": "event"
     }
    ],
@@ -55,10 +55,11 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "winner": false,
      "linescores": [
       {
-       "value": 5
+       "value": 5,
+       "winner": false
       }
      ],
      "athlete": {
@@ -98,10 +99,11 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "winner": true,
      "linescores": [
       {
-       "value": 6
+       "value": 7,
+       "winner": false
       }
      ],
      "athlete": {
@@ -136,11 +138,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 380,
    "type": {
     "id": "2",
@@ -157,10 +154,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_RETIRED",
   "period": 1,
-  "clock": "1st Set",
+  "clock": "Retired",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Paula Badosa",
@@ -178,7 +175,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-03T14:30:01.946Z",
+ "updated": "2026-11-03T14:46:02.167Z",
  "open_taken_at": "2026-11-01T07:33:11.559Z",
  "thresholds": {
   "big": 10,
@@ -534,7 +531,7 @@
    "reason": "Big move (38 pts), likely news",
    "context": "Paula Badosa 5 · Elena Pridankina 6 · 1st Set (games by set)",
    "first_seen": "2026-11-03T14:09:55.713Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -554,7 +551,7 @@
    "reason": "Explained by score: Paula Badosa not above the games spread right now",
    "context": "Paula Badosa 5 · Elena Pridankina 6 · 1st Set (games by set)",
    "first_seen": "2026-11-03T14:30:01.946Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -574,7 +571,7 @@
    "reason": null,
    "context": "Paula Badosa 5 · Elena Pridankina 6 · 1st Set (games by set)",
    "first_seen": "2026-11-03T14:09:55.713Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -594,7 +591,7 @@
    "reason": null,
    "context": "Paula Badosa 5 · Elena Pridankina 6 · 1st Set (games by set)",
    "first_seen": "2026-11-03T14:09:55.713Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -839,6 +836,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2075893:1:2026-11-03T14:09:55.713Z",
+   "key": "2075893:1",
+   "at": "2026-11-03T14:46:02.167Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+156",
+   "now_chance": 39,
+   "edge": 20,
+   "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-elepri-paubad-2026-11-01"
+  },
   {
    "id": "news:2042414:1",
    "key": "2042414:1",
@@ -1203,7 +1214,8 @@
   "gone:2075894:1:2026-11-03T14:09:55.713Z",
   "news:2042414:1",
   "new_edge:2075894:1:big",
-  "gone:2075895:1:2026-11-03T14:20:34.409Z"
+  "gone:2075895:1:2026-11-03T14:20:34.409Z",
+  "gone:2075893:1:2026-11-03T14:09:55.713Z"
  ],
  "kalshi_checked": null
 }
