@@ -9,15 +9,37 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-03T03:14:30.361Z"
+  "fetched_at": "2026-11-03T03:24:36.332Z"
  },
- "updated": "2026-11-03T03:14:30.292Z",
+ "updated": "2026-11-03T03:24:36.260Z",
  "open_taken_at": "2026-11-01T05:07:25.176Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "2064078",
+   "market": "Main spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 34.5,
+   "question": "Will Northwestern State cover +34.5 vs Baylor in Northwestern State vs. Baylor?",
+   "sides": [
+    "Demons +34.50",
+    "Bears -34.50"
+   ],
+   "teams": [
+    "Demons",
+    "Bears"
+   ],
+   "player": null,
+   "mid": 66,
+   "yes_buy": 69,
+   "no_buy": 37,
+   "taken_at": "2026-11-02T14:34:52.585Z"
+  },
   {
    "market_id": "2064076",
    "market": "Main spread",
@@ -303,28 +325,6 @@
    "yes_buy": 61,
    "no_buy": 44,
    "taken_at": "2026-11-02T18:53:16.868Z"
-  },
-  {
-   "market_id": "2064078",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": 34.5,
-   "question": "Will Northwestern State cover +34.5 vs Baylor in Northwestern State vs. Baylor?",
-   "sides": [
-    "Demons +34.50",
-    "Bears -34.50"
-   ],
-   "teams": [
-    "Demons",
-    "Bears"
-   ],
-   "player": null,
-   "mid": 66,
-   "yes_buy": 69,
-   "no_buy": 37,
-   "taken_at": "2026-11-02T14:34:52.585Z"
   },
   {
    "market_id": "2081438",
@@ -769,6 +769,26 @@
  ],
  "edges": [
   {
+   "key": "2064078:0",
+   "market_id": "2064078",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will Northwestern State cover +34.5 vs Baylor in Northwestern State vs. Baylor?",
+   "side": "Demons +34.50",
+   "open_chance": 69,
+   "now_chance": 47,
+   "open_odds": "-223",
+   "now_odds": "+113",
+   "edge": 22,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-02T15:06:35.809Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2064077:0",
    "market_id": "2064077",
    "market": "Alt spread",
@@ -805,26 +825,6 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-02T18:53:16.868Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "2064078:0",
-   "market_id": "2064078",
-   "market": "Alt spread",
-   "group": "game",
-   "question": "Will Northwestern State cover +34.5 vs Baylor in Northwestern State vs. Baylor?",
-   "side": "Demons +34.50",
-   "open_chance": 69,
-   "now_chance": 59,
-   "open_odds": "-223",
-   "now_odds": "-144",
-   "edge": 10,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-02T15:06:35.809Z",
    "status": "gone",
    "kalshi": null
   },
@@ -1011,6 +1011,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:2064078:0:big",
+   "key": "2064078:0",
+   "at": "2026-11-03T03:24:36.260Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Demons +34.50",
+   "market": "Main spread",
+   "now_odds": "+113",
+   "now_chance": 47,
+   "edge": 22,
+   "text": "New big edge: Demons +34.50 (Main spread), 22 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-nwst-bayl-2026-11-02"
+  },
+  {
    "id": "gone:2064077:0:2026-11-02T15:06:35.809Z",
    "key": "2064077:0",
    "at": "2026-11-03T02:31:08.738Z",
@@ -1161,7 +1175,8 @@
   "gone:2098044:0:2026-11-02T17:17:53.880Z",
   "gone:2081437:0:2026-11-03T01:46:40.394Z",
   "gone:2064103:1:2026-11-02T18:53:16.868Z",
-  "gone:2064081:0:2026-11-03T01:54:51.236Z"
+  "gone:2064081:0:2026-11-03T01:54:51.236Z",
+  "new_edge:2064078:0:big"
  ],
  "kalshi_checked": null
 }
