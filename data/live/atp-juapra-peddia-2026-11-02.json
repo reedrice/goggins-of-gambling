@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-03T01:55:06.012Z"
+  "fetched_at": "2026-11-03T02:06:49.592Z"
  },
- "updated": "2026-11-03T01:55:05.912Z",
+ "updated": "2026-11-03T02:06:49.438Z",
  "open_taken_at": "2026-11-01T05:07:48.516Z",
  "thresholds": {
   "big": 10,
@@ -41,28 +41,6 @@
    "taken_at": "2026-11-02T11:30:34.726Z"
   },
   {
-   "market_id": "2028415",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Juan Carlos Prado Angelo cover 1.5 vs the Pedro Boscardin Dias in Juan Carlos Prado Angelo vs. Pedro Boscardin Dias?",
-   "sides": [
-    "Juan Carlos Prado +1.50 (Sets)",
-    "Pedro Boscardin Dias -1.50 (Sets)"
-   ],
-   "teams": [
-    "Juan Carlos Prado",
-    "Pedro Boscardin Dias"
-   ],
-   "player": null,
-   "mid": 92.5,
-   "yes_buy": 94,
-   "no_buy": 9,
-   "taken_at": "2026-11-03T01:55:05.912Z"
-  },
-  {
    "market_id": "2028424",
    "market": "Set 1 winner",
    "group": "game",
@@ -83,6 +61,28 @@
    "yes_buy": 74,
    "no_buy": 31,
    "taken_at": "2026-11-03T01:46:54.969Z"
+  },
+  {
+   "market_id": "2028415",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Juan Carlos Prado Angelo cover 1.5 vs the Pedro Boscardin Dias in Juan Carlos Prado Angelo vs. Pedro Boscardin Dias?",
+   "sides": [
+    "Juan Carlos Prado +1.50 (Sets)",
+    "Pedro Boscardin Dias -1.50 (Sets)"
+   ],
+   "teams": [
+    "Juan Carlos Prado",
+    "Pedro Boscardin Dias"
+   ],
+   "player": null,
+   "mid": 92.5,
+   "yes_buy": 94,
+   "no_buy": 9,
+   "taken_at": "2026-11-03T01:55:05.912Z"
   },
   {
    "market_id": "2028410",
@@ -191,11 +191,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-03T01:55:05.912Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2028410:1:2026-11-03T01:55:05.912Z",
+   "key": "2028410:1",
+   "at": "2026-11-03T02:06:49.438Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Pedro Boscardin Dias +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+144",
+   "now_chance": 41,
+   "edge": 19,
+   "text": "Edge gone: Pedro Boscardin Dias +4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-juapra-peddia-2026-11-02"
+  },
   {
    "id": "new_edge:2028410:1:big",
    "key": "2028410:1",
@@ -214,7 +228,8 @@
  "alert_seen": [
   "new_edge:2024060:0:slight",
   "gone:2024060:0:2026-11-02T16:21:46.390Z",
-  "new_edge:2028410:1:big"
+  "new_edge:2028410:1:big",
+  "gone:2028410:1:2026-11-03T01:55:05.912Z"
  ],
  "kalshi_checked": null
 }

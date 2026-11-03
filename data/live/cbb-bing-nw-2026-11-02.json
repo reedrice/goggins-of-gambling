@@ -9,15 +9,37 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-03T01:54:47.309Z"
+  "fetched_at": "2026-11-03T02:06:28.302Z"
  },
- "updated": "2026-11-03T01:54:47.217Z",
+ "updated": "2026-11-03T02:06:28.141Z",
  "open_taken_at": "2026-11-01T05:07:22.022Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "2068822",
+   "market": "Main total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 162.5,
+   "question": "Will the total in Binghamton vs. Northwestern be more than 162.5?",
+   "sides": [
+    "Over 162.5",
+    "Under 162.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 14.5,
+   "yes_buy": 17,
+   "no_buy": 88,
+   "taken_at": "2026-11-02T17:07:59.074Z"
+  },
   {
    "market_id": "1913576",
    "market": "Moneyline",
@@ -503,28 +525,6 @@
    "taken_at": "2026-11-02T17:07:59.074Z"
   },
   {
-   "market_id": "2068822",
-   "market": "Alt total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 162.5,
-   "question": "Will the total in Binghamton vs. Northwestern be more than 162.5?",
-   "sides": [
-    "Over 162.5",
-    "Under 162.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 14.5,
-   "yes_buy": 17,
-   "no_buy": 88,
-   "taken_at": "2026-11-02T17:07:59.074Z"
-  },
-  {
    "market_id": "2068826",
    "market": "Alt total",
    "group": "game",
@@ -615,6 +615,26 @@
  ],
  "edges": [
   {
+   "key": "2068822:1",
+   "market_id": "2068822",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in Binghamton vs. Northwestern be more than 162.5?",
+   "side": "Under 162.5",
+   "open_chance": 88,
+   "now_chance": 54,
+   "open_odds": "-733",
+   "now_odds": "-117",
+   "edge": 34,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-03T02:06:28.141Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2068783:1",
    "market_id": "2068783",
    "market": "Alt spread",
@@ -677,6 +697,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:2068822:1:big",
+   "key": "2068822:1",
+   "at": "2026-11-03T02:06:28.141Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 162.5",
+   "market": "Main total",
+   "now_odds": "-117",
+   "now_chance": 54,
+   "edge": 34,
+   "text": "New big edge: Under 162.5 (Main total), 34 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-bing-nw-2026-11-02"
+  },
+  {
    "id": "gone:2068783:1:2026-11-02T16:21:32.457Z",
    "key": "2068783:1",
    "at": "2026-11-03T01:06:29.753Z",
@@ -707,7 +741,8 @@
  ],
  "alert_seen": [
   "gone:2068783:1:2026-11-02T16:21:32.457Z",
-  "gone:2068795:1:2026-11-03T00:32:44.443Z"
+  "gone:2068795:1:2026-11-03T00:32:44.443Z",
+  "new_edge:2068822:1:big"
  ],
  "kalshi_checked": null
 }
