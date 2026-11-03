@@ -4,12 +4,12 @@
  "game": "Viktoria Morvayova vs. Polina Kudermetova",
  "url": "https://polymarket.us/sports/wta/wta-vikmor-polkud-2026-11-02",
  "start_time": "2026-11-03T11:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186579",
-  "fetched_at": "2026-11-03T12:34:38.017Z",
+  "fetched_at": "2026-11-03T12:45:44.727Z",
   "tennis": true,
   "tennis_match": {
    "id": "186579",
@@ -17,17 +17,17 @@
    "date": "2026-11-03T11:05Z",
    "startDate": "2026-11-03T11:05Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(6) Polina Kudermetova (UZB) leads Viktoria Morvayova (SVK) 6-3 4-6 3-1",
+     "text": "(6) Polina Kudermetova (UZB) bt Viktoria Morvayova (SVK) 6-3 4-6 6-1",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "winner": true,
      "curatedRank": {
       "current": 6
      },
@@ -69,7 +69,8 @@
        "winner": false
       },
       {
-       "value": 3
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -109,7 +110,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "winner": false,
      "linescores": [
       {
        "value": 3,
@@ -120,7 +121,8 @@
        "winner": true
       },
       {
-       "value": 1
+       "value": 1,
+       "winner": false
       }
      ],
      "athlete": {
@@ -155,11 +157,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 889,
    "type": {
     "id": "2",
@@ -176,16 +173,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Polina Kudermetova",
    "alias": "Polina Kudermetova",
    "name": "Polina Kudermetova",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Viktoria Morvayova",
@@ -197,7 +194,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-03T12:34:37.807Z",
+ "updated": "2026-11-03T12:45:44.645Z",
  "open_taken_at": "2026-11-01T15:37:11.520Z",
  "thresholds": {
   "big": 10,
@@ -553,27 +550,7 @@
    "reason": "Big move (41 pts), likely news",
    "context": "Polina Kudermetova 6, 4, 3 · Viktoria Morvayova 3, 6, 1 · 3rd Set (games by set)",
    "first_seen": "2026-11-03T12:23:32.618Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2075923:1",
-   "market_id": "2075923",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Viktoria Morvayova cover 4.5 vs the Polina Kudermetova in Viktoria Morvayova vs. Polina Kudermetova?",
-   "side": "Polina Kudermetova -4.50 (Games)",
-   "open_chance": 63,
-   "now_chance": 53,
-   "open_odds": "-170",
-   "now_odds": "-113",
-   "edge": 10,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Polina Kudermetova not above the games spread right now",
-   "context": "Polina Kudermetova 6, 4, 3 · Viktoria Morvayova 3, 6, 1 · 3rd Set (games by set)",
-   "first_seen": "2026-11-03T09:58:39.493Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -673,6 +650,26 @@
    "reason": null,
    "context": "Polina Kudermetova 6, 2 · Viktoria Morvayova 3, 3 · 2nd Set (games by set)",
    "first_seen": "2026-11-03T11:04:12.334Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "2075923:1",
+   "market_id": "2075923",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Viktoria Morvayova cover 4.5 vs the Polina Kudermetova in Viktoria Morvayova vs. Polina Kudermetova?",
+   "side": "Polina Kudermetova -4.50 (Games)",
+   "open_chance": 63,
+   "now_chance": 53,
+   "open_odds": "-170",
+   "now_odds": "-113",
+   "edge": 10,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Polina Kudermetova not above the games spread right now",
+   "context": "Polina Kudermetova 6, 4, 3 · Viktoria Morvayova 3, 6, 1 · 3rd Set (games by set)",
+   "first_seen": "2026-11-03T09:58:39.493Z",
    "status": "gone",
    "kalshi": null
   },
