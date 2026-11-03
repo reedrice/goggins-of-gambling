@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186628",
-  "fetched_at": "2026-11-03T12:23:39.339Z",
+  "fetched_at": "2026-11-03T12:34:45.774Z",
   "tennis": true,
   "tennis_match": {
    "id": "186628",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(2) Alexandra Eala (PHI) leads Emerson Jones (AUS) 5-4",
+     "text": "(2) Alexandra Eala (PHI) leads Emerson Jones (AUS) 6-4 1-0",
      "type": "event"
     }
    ],
@@ -60,7 +60,11 @@
      },
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1
       }
      ],
      "athlete": {
@@ -102,7 +106,11 @@
      "homeAway": "home",
      "linescores": [
       {
-       "value": 4
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -155,14 +163,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Alexandra Eala",
    "alias": "Alexandra Eala",
    "name": "Alexandra Eala",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Emerson Jones",
@@ -174,7 +182,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-03T12:23:39.227Z",
+ "updated": "2026-11-03T12:34:45.656Z",
  "open_taken_at": "2026-11-03T11:04:18.519Z",
  "thresholds": {
   "big": 10,
@@ -202,6 +210,28 @@
    "yes_buy": 16,
    "no_buy": 86,
    "taken_at": "2026-11-03T11:40:46.236Z"
+  },
+  {
+   "market_id": "2125792",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Emerson Jones win set 2 against Alexandra Eala?",
+   "sides": [
+    "Yes: Emerson Jones win set 2 against Alexandra Eala",
+    "No: Emerson Jones win set 2 against Alexandra Eala"
+   ],
+   "teams": [
+    "Emerson Jones",
+    null
+   ],
+   "player": null,
+   "mid": 17,
+   "yes_buy": 20,
+   "no_buy": 86,
+   "taken_at": "2026-11-03T12:34:45.656Z"
   },
   {
    "market_id": "2125791",
@@ -244,7 +274,7 @@
    "reason": "Explained by score: Emerson Jones not above the games spread right now",
    "context": "Alexandra Eala 5 · Emerson Jones 4 · 1st Set (games by set)",
    "first_seen": "2026-11-03T12:23:39.227Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
