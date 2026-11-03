@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186660",
-  "fetched_at": "2026-11-03T14:09:53.593Z",
+  "fetched_at": "2026-11-03T14:20:32.569Z",
   "tennis": true,
   "tennis_match": {
    "id": "186660",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Jian Ibrahim (EGY) leads Ksenia Zaytseva (RUS) 0-6 2-2",
+     "text": "Ksenia Zaytseva (RUS) leads Jian Ibrahim (EGY) 6-0 5-2",
      "type": "event"
     }
    ],
@@ -55,14 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 2
+       "value": 5
       }
      ],
      "athlete": {
@@ -102,7 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
        "value": 0,
@@ -186,35 +186,13 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-03T14:09:53.445Z",
+ "updated": "2026-11-03T14:20:32.420Z",
  "open_taken_at": "2026-11-01T05:07:46.730Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "2034701",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Jian Ibrahim vs. Ksenia Zaytseva be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-11-03T11:52:00.490Z"
-  },
   {
    "market_id": "2034703",
    "market": "Games total",
@@ -274,6 +252,28 @@
    "teams": [
     "Jian Ibrahim",
     "Ksenia Zaytseva"
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-11-03T11:52:00.490Z"
+  },
+  {
+   "market_id": "2034701",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Jian Ibrahim vs. Ksenia Zaytseva be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
    ],
    "player": null,
    "mid": 33.5,
@@ -410,7 +410,7 @@
    "reason": null,
    "context": "Ksenia Zaytseva 6, 2 · Jian Ibrahim 0, 2 · 2nd Set (games by set)",
    "first_seen": "2026-11-03T13:29:07.656Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -435,6 +435,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2034701:0:2026-11-03T13:29:07.656Z",
+   "key": "2034701:0",
+   "at": "2026-11-03T14:20:32.420Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+456",
+   "now_chance": 18,
+   "edge": 16,
+   "text": "Edge gone: Over 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-jiaibr-ksenza-2026-11-02"
+  },
   {
    "id": "gone:2034695:0:2026-11-03T13:29:07.656Z",
    "key": "2034695:0",
@@ -481,7 +495,8 @@
  "alert_seen": [
   "new_edge:2034701:0:big",
   "new_edge:2034695:0:big",
-  "gone:2034695:0:2026-11-03T13:29:07.656Z"
+  "gone:2034695:0:2026-11-03T13:29:07.656Z",
+  "gone:2034701:0:2026-11-03T13:29:07.656Z"
  ],
  "kalshi_checked": null
 }
