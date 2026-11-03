@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187304",
-  "fetched_at": "2026-11-03T14:45:44.375Z",
+  "fetched_at": "2026-11-03T14:57:35.741Z",
   "tennis": true,
   "tennis_match": {
    "id": "187304",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "detail": "3rd Set",
+     "shortDetail": "3rd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Jakob Schnaitter (GER) & Mark Wallner (GER) is tied with (5) Simone Bolelli (ITA) & Andrea Vavassori (ITA) 3-6 5-2",
+     "text": "(5) Simone Bolelli (ITA) & Andrea Vavassori (ITA) leads Jakob Schnaitter (GER) & Mark Wallner (GER) 6-3 3-6 0-0 (6-5)",
      "type": "event"
     }
    ],
@@ -55,14 +55,18 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
      "linescores": [
       {
        "value": 3,
        "winner": false
       },
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0,
+       "tiebreak": 5
       }
      ],
      "roster": {
@@ -137,7 +141,6 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
      "curatedRank": {
       "current": 5
      },
@@ -147,7 +150,12 @@
        "winner": true
       },
       {
-       "value": 2
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 0,
+       "tiebreak": 6
       }
      ],
      "roster": {
@@ -217,11 +225,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 13,
    "type": {
     "id": "3",
@@ -240,14 +243,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "period": 3,
+  "clock": "3rd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Jakob Schnaitter / Mark Wallner",
    "alias": "Jakob Schnaitter / Mark Wallner",
    "name": "Jakob Schnaitter / Mark Wallner",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Simone Bolelli / Andrea Vavassori",
@@ -259,7 +262,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-03T14:45:44.153Z",
+ "updated": "2026-11-03T14:57:35.644Z",
  "open_taken_at": "2026-10-31T14:49:10.289Z",
  "thresholds": {
   "big": 10,
@@ -305,9 +308,9 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Jakob Schnaitter / Mark Wallner 3, 2 · Simone Bolelli / Andrea Vavassori 6, 1 · 2nd Set (games by set)",
+   "context": "Jakob Schnaitter / Mark Wallner 3, 6, 0 · Simone Bolelli / Andrea Vavassori 6, 3, 0 · 3rd Set (games by set)",
    "first_seen": "2026-11-03T14:29:54.086Z",
-   "status": "gone",
+   "status": "open",
    "kalshi": null
   }
  ],
