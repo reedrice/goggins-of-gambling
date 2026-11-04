@@ -4,12 +4,12 @@
  "game": "Tommy Paul vs. Daniel Merida",
  "url": "https://polymarket.us/sports/atp/atp-tompau-danagu-2026-11-04",
  "start_time": "2026-11-04T11:45:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186487",
-  "fetched_at": "2026-11-04T12:44:53.675Z",
+  "fetched_at": "2026-11-04T12:52:31.777Z",
   "tennis": true,
   "tennis_match": {
    "id": "186487",
@@ -17,17 +17,17 @@
    "date": "2026-11-04T11:55Z",
    "startDate": "2026-11-04T11:55Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(12) Tommy Paul (USA) leads Daniel Merida (ESP) 6-1 4-1",
+     "text": "(12) Tommy Paul (USA) bt Daniel Merida (ESP) 6-1 6-1",
      "type": "event"
     }
    ],
@@ -55,14 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "winner": false,
      "linescores": [
       {
        "value": 1,
        "winner": false
       },
       {
-       "value": 1
+       "value": 1,
+       "winner": false
       }
      ],
      "athlete": {
@@ -102,7 +103,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "winner": true,
      "curatedRank": {
       "current": 12
      },
@@ -112,7 +113,8 @@
        "winner": true
       },
       {
-       "value": 4
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -147,11 +149,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 13,
    "type": {
     "id": "1",
@@ -168,10 +165,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Daniel Merida",
@@ -183,41 +180,19 @@
    "abbr": "Tommy Paul",
    "alias": "Tommy Paul",
    "name": "Tommy Paul",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T12:44:53.610Z",
+ "updated": "2026-11-04T12:52:31.685Z",
  "open_taken_at": "2026-11-03T16:33:27.534Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "2131136",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Tommy Paul cover -1.5 vs the Daniel Merida in Tommy Paul vs. Daniel Merida?",
-   "sides": [
-    "Tommy Paul -1.50 (Sets)",
-    "Daniel Merida Aguilar +1.50 (Sets)"
-   ],
-   "teams": [
-    "Tommy Paul",
-    "Daniel Merida Aguilar"
-   ],
-   "player": null,
-   "mid": 53.5,
-   "yes_buy": 54,
-   "no_buy": 47,
-   "taken_at": "2026-11-04T11:38:39.723Z"
-  },
   {
    "market_id": "2131143",
    "market": "Games total",
@@ -239,6 +214,28 @@
    "yes_buy": 83,
    "no_buy": 22,
    "taken_at": "2026-11-03T22:21:49.434Z"
+  },
+  {
+   "market_id": "2131136",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Tommy Paul cover -1.5 vs the Daniel Merida in Tommy Paul vs. Daniel Merida?",
+   "sides": [
+    "Tommy Paul -1.50 (Sets)",
+    "Daniel Merida Aguilar +1.50 (Sets)"
+   ],
+   "teams": [
+    "Tommy Paul",
+    "Daniel Merida Aguilar"
+   ],
+   "player": null,
+   "mid": 53.5,
+   "yes_buy": 54,
+   "no_buy": 47,
+   "taken_at": "2026-11-04T11:38:39.723Z"
   },
   {
    "market_id": "2131147",
