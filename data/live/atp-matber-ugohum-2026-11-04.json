@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186489",
-  "fetched_at": "2026-11-04T18:38:33.251Z",
+  "fetched_at": "2026-11-04T18:56:34.720Z",
   "tennis": true,
   "tennis_match": {
    "id": "186489",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Matteo Berrettini (ITA) leads Ugo Humbert (FRA) 7-6 (7-3) 1-0",
+     "text": "Matteo Berrettini (ITA) leads Ugo Humbert (FRA) 7-6 (7-3) 3-1",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 6,
@@ -62,7 +63,7 @@
        "winner": false
       },
       {
-       "value": 0
+       "value": 1
       }
      ],
      "athlete": {
@@ -102,6 +103,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 7,
@@ -109,7 +111,7 @@
        "winner": true
       },
       {
-       "value": 1
+       "value": 3
       }
      ],
      "athlete": {
@@ -144,6 +146,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 13,
    "type": {
     "id": "1",
@@ -181,7 +188,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T18:38:33.109Z",
+ "updated": "2026-11-04T18:56:34.610Z",
  "open_taken_at": "2026-11-03T15:49:23.746Z",
  "thresholds": {
   "big": 10,
@@ -211,28 +218,6 @@
    "taken_at": "2026-11-03T16:48:10.938Z"
   },
   {
-   "market_id": "2131203",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Matteo Berrettini cover 7.5 vs the Ugo Humbert in Matteo Berrettini vs. Ugo Humbert?",
-   "sides": [
-    "Matteo Berrettini +7.50 (Games)",
-    "Ugo Humbert -7.50 (Games)"
-   ],
-   "teams": [
-    "Matteo Berrettini",
-    "Ugo Humbert"
-   ],
-   "player": null,
-   "mid": 86.5,
-   "yes_buy": 87,
-   "no_buy": 14,
-   "taken_at": "2026-11-04T17:09:46.217Z"
-  },
-  {
    "market_id": "2131120",
    "market": "Games spread",
    "group": "game",
@@ -253,6 +238,28 @@
    "yes_buy": 87,
    "no_buy": 18,
    "taken_at": "2026-11-04T14:34:52.939Z"
+  },
+  {
+   "market_id": "2131203",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Matteo Berrettini cover 7.5 vs the Ugo Humbert in Matteo Berrettini vs. Ugo Humbert?",
+   "sides": [
+    "Matteo Berrettini +7.50 (Games)",
+    "Ugo Humbert -7.50 (Games)"
+   ],
+   "teams": [
+    "Matteo Berrettini",
+    "Ugo Humbert"
+   ],
+   "player": null,
+   "mid": 86.5,
+   "yes_buy": 87,
+   "no_buy": 14,
+   "taken_at": "2026-11-04T17:09:46.217Z"
   },
   {
    "market_id": "2131104",
@@ -319,6 +326,28 @@
    "yes_buy": 50,
    "no_buy": 56,
    "taken_at": "2026-11-04T13:42:16.364Z"
+  },
+  {
+   "market_id": "2131216",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Matteo Berrettini vs. Ugo Humbert be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 38,
+   "yes_buy": 40,
+   "no_buy": 64,
+   "taken_at": "2026-11-04T12:52:31.402Z"
   },
   {
    "market_id": "2131331",
@@ -431,28 +460,6 @@
    "taken_at": "2026-11-04T17:09:46.217Z"
   },
   {
-   "market_id": "2131216",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Matteo Berrettini vs. Ugo Humbert be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 38,
-   "yes_buy": 40,
-   "no_buy": 64,
-   "taken_at": "2026-11-04T12:52:31.402Z"
-  },
-  {
    "market_id": "2131328",
    "market": "Sets spread",
    "group": "game",
@@ -528,55 +535,15 @@
    "question": "Will the Matteo Berrettini cover -1.5 vs the Ugo Humbert in Matteo Berrettini vs. Ugo Humbert?",
    "side": "Ugo Humbert +1.50 (Games)",
    "open_chance": 62,
-   "now_chance": 39,
+   "now_chance": 17,
    "open_odds": "-163",
-   "now_odds": "+156",
-   "edge": 23,
+   "now_odds": "+488",
+   "edge": 45,
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Ugo Humbert not above the games spread right now",
-   "context": "Ugo Humbert 6, 0 · Matteo Berrettini 7, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-11-04T18:30:10.410Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2130713:1",
-   "market_id": "2130713",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atp event Matteo Berrettini vs Ugo Humbert scheduled for November 4, 2026 at 10:00 AM UTC?",
-   "side": "Ugo Humbert win",
-   "open_chance": 51,
-   "now_chance": 30,
-   "open_odds": "-104",
-   "now_odds": "+233",
-   "edge": 21,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Ugo Humbert trailing in sets",
-   "context": "Ugo Humbert 6, 0 · Matteo Berrettini 7, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-11-04T18:30:10.410Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2131104:1",
-   "market_id": "2131104",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Matteo Berrettini cover 1.5 vs the Ugo Humbert in Matteo Berrettini vs. Ugo Humbert?",
-   "side": "Ugo Humbert -1.50 (Games)",
-   "open_chance": 47,
-   "now_chance": 28,
-   "open_odds": "+113",
-   "now_odds": "+257",
-   "edge": 19,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Ugo Humbert not above the games spread right now",
-   "context": "Ugo Humbert 6, 0 · Matteo Berrettini 7, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-11-04T18:30:10.410Z",
+   "context": "Ugo Humbert 6, 1 · Matteo Berrettini 7, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-11-04T18:56:34.610Z",
    "status": "open",
    "kalshi": null
   },
@@ -588,15 +555,15 @@
    "question": "Will Matteo Berrettini win set 2 against Ugo Humbert?",
    "side": "No: Matteo Berrettini win set 2 against Ugo Humbert",
    "open_chance": 56,
-   "now_chance": 51,
+   "now_chance": 19,
    "open_odds": "-127",
-   "now_odds": "-104",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Ugo Humbert 6, 0 · Matteo Berrettini 7, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-11-04T18:38:33.109Z",
+   "now_odds": "+426",
+   "edge": 37,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (37 pts), likely news",
+   "context": "Ugo Humbert 6, 1 · Matteo Berrettini 7, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-11-04T18:56:34.610Z",
    "status": "open",
    "kalshi": null
   },
@@ -621,22 +588,22 @@
    "kalshi": null
   },
   {
-   "key": "2130713:0",
-   "market_id": "2130713",
-   "market": "Moneyline",
+   "key": "2131216:0",
+   "market_id": "2131216",
+   "market": "Games total",
    "group": "game",
-   "question": "Who will win in the upcoming atp event Matteo Berrettini vs Ugo Humbert scheduled for November 4, 2026 at 10:00 AM UTC?",
-   "side": "Matteo Berrettini win",
-   "open_chance": 51,
-   "now_chance": 40,
-   "open_odds": "-104",
-   "now_odds": "+150",
-   "edge": 11,
+   "question": "Will the total in Matteo Berrettini vs. Ugo Humbert be more than 27.5?",
+   "side": "Over 27.5 (Games)",
+   "open_chance": 40,
+   "now_chance": 18,
+   "open_odds": "+150",
+   "now_odds": "+456",
+   "edge": 22,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Ugo Humbert 5 · Matteo Berrettini 5 · 1st Set (games by set)",
-   "first_seen": "2026-11-04T12:52:31.402Z",
+   "context": "Ugo Humbert 6, 0 · Matteo Berrettini 7, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-11-04T18:50:44.734Z",
    "status": "gone",
    "kalshi": null
   },
@@ -681,66 +648,6 @@
    "kalshi": null
   },
   {
-   "key": "2131104:0",
-   "market_id": "2131104",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Matteo Berrettini cover 1.5 vs the Ugo Humbert in Matteo Berrettini vs. Ugo Humbert?",
-   "side": "Matteo Berrettini +1.50 (Games)",
-   "open_chance": 56,
-   "now_chance": 49,
-   "open_odds": "-127",
-   "now_odds": "+104",
-   "edge": 7,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Ugo Humbert 5 · Matteo Berrettini 5 · 1st Set (games by set)",
-   "first_seen": "2026-11-04T17:54:39.764Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "2131094:0",
-   "market_id": "2131094",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Matteo Berrettini cover -1.5 vs the Ugo Humbert in Matteo Berrettini vs. Ugo Humbert?",
-   "side": "Matteo Berrettini -1.50 (Games)",
-   "open_chance": 43,
-   "now_chance": 37,
-   "open_odds": "+133",
-   "now_odds": "+170",
-   "edge": 6,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Matteo Berrettini not above the games spread right now",
-   "context": "Ugo Humbert 5 · Matteo Berrettini 5 · 1st Set (games by set)",
-   "first_seen": "2026-11-04T16:42:37.998Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "2131184:0",
-   "market_id": "2131184",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Matteo Berrettini win set 2 against Ugo Humbert?",
-   "side": "Yes: Matteo Berrettini win set 2 against Ugo Humbert",
-   "open_chance": 50,
-   "now_chance": 46,
-   "open_odds": "+100",
-   "now_odds": "+117",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Ugo Humbert 6 · Matteo Berrettini 6 · 1st Set (games by set)",
-   "first_seen": "2026-11-04T17:09:46.217Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "2131329:1",
    "market_id": "2131329",
    "market": "Sets spread",
@@ -763,101 +670,45 @@
  ],
  "alerts": [
   {
-   "id": "new_edge:2131184:1:slight",
+   "id": "news:2131184:1",
    "key": "2131184:1",
-   "at": "2026-11-04T18:38:33.109Z",
-   "type": "new_edge",
-   "tier": "slight",
+   "at": "2026-11-04T18:56:34.610Z",
+   "type": "news",
+   "tier": "big",
    "side": "No: Matteo Berrettini win set 2 against Ugo Humbert",
    "market": "Set 2 winner",
-   "now_odds": "-104",
-   "now_chance": 51,
-   "edge": 5,
-   "text": "New slight edge: No: Matteo Berrettini win set 2 against Ugo Humbert (Set 2 winner), 5 points cheaper than open.",
+   "now_odds": "+426",
+   "now_chance": 19,
+   "edge": 37,
+   "text": "Big move, likely news: No: Matteo Berrettini win set 2 against Ugo Humbert (Set 2 winner) is 37 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-matber-ugohum-2026-11-04"
   },
   {
-   "id": "new_edge:2130713:1:big",
-   "key": "2130713:1",
-   "at": "2026-11-04T18:32:39.929Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Ugo Humbert win",
-   "market": "Moneyline",
-   "now_odds": "+213",
-   "now_chance": 32,
-   "edge": 19,
-   "text": "New big edge: Ugo Humbert win (Moneyline), 19 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-matber-ugohum-2026-11-04"
-  },
-  {
-   "id": "new_edge:2131094:1:big",
-   "key": "2131094:1",
-   "at": "2026-11-04T18:30:10.410Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Ugo Humbert +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+100",
-   "now_chance": 50,
-   "edge": 12,
-   "text": "New big edge: Ugo Humbert +1.50 (Games) (Games spread), 12 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-matber-ugohum-2026-11-04"
-  },
-  {
-   "id": "new_edge:2130713:1:slight",
-   "key": "2130713:1",
-   "at": "2026-11-04T18:30:10.410Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Ugo Humbert win",
-   "market": "Moneyline",
-   "now_odds": "+133",
-   "now_chance": 43,
-   "edge": 8,
-   "text": "New slight edge: Ugo Humbert win (Moneyline), 8 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-matber-ugohum-2026-11-04"
-  },
-  {
-   "id": "gone:2131104:0:2026-11-04T17:54:39.764Z",
-   "key": "2131104:0",
-   "at": "2026-11-04T18:30:10.410Z",
+   "id": "gone:2131216:0:2026-11-04T18:50:44.734Z",
+   "key": "2131216:0",
+   "at": "2026-11-04T18:56:34.610Z",
    "type": "gone",
-   "tier": "slight",
-   "side": "Matteo Berrettini +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+104",
-   "now_chance": 49,
-   "edge": 7,
-   "text": "Edge gone: Matteo Berrettini +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "tier": "big",
+   "side": "Over 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+456",
+   "now_chance": 18,
+   "edge": 22,
+   "text": "Edge gone: Over 27.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-matber-ugohum-2026-11-04"
   },
   {
-   "id": "new_edge:2130713:0:big",
-   "key": "2130713:0",
-   "at": "2026-11-04T18:11:11.001Z",
+   "id": "new_edge:2131216:0:big",
+   "key": "2131216:0",
+   "at": "2026-11-04T18:50:44.734Z",
    "type": "new_edge",
    "tier": "big",
-   "side": "Matteo Berrettini win",
-   "market": "Moneyline",
-   "now_odds": "+170",
-   "now_chance": 37,
-   "edge": 14,
-   "text": "New big edge: Matteo Berrettini win (Moneyline), 14 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-matber-ugohum-2026-11-04"
-  },
-  {
-   "id": "new_edge:2131104:0:big",
-   "key": "2131104:0",
-   "at": "2026-11-04T18:11:11.001Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Matteo Berrettini +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+122",
-   "now_chance": 45,
-   "edge": 11,
-   "text": "New big edge: Matteo Berrettini +1.50 (Games) (Games spread), 11 points cheaper than open.",
+   "side": "Over 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+456",
+   "now_chance": 18,
+   "edge": 22,
+   "text": "New big edge: Over 27.5 (Games) (Games total), 22 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-matber-ugohum-2026-11-04"
   },
   {
@@ -875,48 +726,6 @@
    "url": "https://polymarket.us/sports/atp/atp-matber-ugohum-2026-11-04"
   },
   {
-   "id": "new_edge:2131104:0:slight",
-   "key": "2131104:0",
-   "at": "2026-11-04T17:54:39.764Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Matteo Berrettini +1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-108",
-   "now_chance": 52,
-   "edge": 4,
-   "text": "New slight edge: Matteo Berrettini +1.50 (Games) (Games spread), 4 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-matber-ugohum-2026-11-04"
-  },
-  {
-   "id": "gone:2130713:0:2026-11-04T12:52:31.402Z",
-   "key": "2130713:0",
-   "at": "2026-11-04T17:48:58.890Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Matteo Berrettini win",
-   "market": "Moneyline",
-   "now_odds": "+113",
-   "now_chance": 47,
-   "edge": 4,
-   "text": "Edge gone: Matteo Berrettini win (Moneyline) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-matber-ugohum-2026-11-04"
-  },
-  {
-   "id": "gone:2131184:0:2026-11-04T17:09:46.217Z",
-   "key": "2131184:0",
-   "at": "2026-11-04T17:48:58.890Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Yes: Matteo Berrettini win set 2 against Ugo Humbert",
-   "market": "Set 2 winner",
-   "now_odds": "+117",
-   "now_chance": 46,
-   "edge": 4,
-   "text": "Edge gone: Yes: Matteo Berrettini win set 2 against Ugo Humbert (Set 2 winner) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-matber-ugohum-2026-11-04"
-  },
-  {
    "id": "new_edge:2131327:0:big",
    "key": "2131327:0",
    "at": "2026-11-04T17:42:46.001Z",
@@ -931,20 +740,6 @@
    "url": "https://polymarket.us/sports/atp/atp-matber-ugohum-2026-11-04"
   },
   {
-   "id": "gone:2131094:0:2026-11-04T16:42:37.998Z",
-   "key": "2131094:0",
-   "at": "2026-11-04T17:42:46.001Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Matteo Berrettini -1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+163",
-   "now_chance": 38,
-   "edge": 5,
-   "text": "Edge gone: Matteo Berrettini -1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-matber-ugohum-2026-11-04"
-  },
-  {
    "id": "gone:2131329:1:2026-11-04T17:11:45.675Z",
    "key": "2131329:1",
    "at": "2026-11-04T17:42:46.001Z",
@@ -956,48 +751,6 @@
    "now_chance": 75,
    "edge": 4,
    "text": "Edge gone: Ugo Humbert +1.50 (Sets) (Sets spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-matber-ugohum-2026-11-04"
-  },
-  {
-   "id": "new_edge:2130713:0:slight",
-   "key": "2130713:0",
-   "at": "2026-11-04T17:11:45.675Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Matteo Berrettini win",
-   "market": "Moneyline",
-   "now_odds": "+117",
-   "now_chance": 46,
-   "edge": 5,
-   "text": "New slight edge: Matteo Berrettini win (Moneyline), 5 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-matber-ugohum-2026-11-04"
-  },
-  {
-   "id": "new_edge:2131094:0:slight",
-   "key": "2131094:0",
-   "at": "2026-11-04T17:11:45.675Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Matteo Berrettini -1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+163",
-   "now_chance": 38,
-   "edge": 5,
-   "text": "New slight edge: Matteo Berrettini -1.50 (Games) (Games spread), 5 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-matber-ugohum-2026-11-04"
-  },
-  {
-   "id": "new_edge:2131184:0:slight",
-   "key": "2131184:0",
-   "at": "2026-11-04T17:11:45.675Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Yes: Matteo Berrettini win set 2 against Ugo Humbert",
-   "market": "Set 2 winner",
-   "now_odds": "+117",
-   "now_chance": 46,
-   "edge": 4,
-   "text": "New slight edge: Yes: Matteo Berrettini win set 2 against Ugo Humbert (Set 2 winner), 4 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-matber-ugohum-2026-11-04"
   },
   {
@@ -1034,7 +787,10 @@
   "new_edge:2130713:1:slight",
   "gone:2131104:0:2026-11-04T17:54:39.764Z",
   "new_edge:2130713:1:big",
-  "new_edge:2131184:1:slight"
+  "new_edge:2131184:1:slight",
+  "new_edge:2131216:0:big",
+  "news:2131184:1",
+  "gone:2131216:0:2026-11-04T18:50:44.734Z"
  ],
  "kalshi_checked": null
 }
