@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-04T19:36:24.494Z"
+  "fetched_at": "2026-11-04T19:54:34.379Z"
  },
- "updated": "2026-11-04T19:36:24.395Z",
+ "updated": "2026-11-04T19:54:34.311Z",
  "open_taken_at": "2026-11-03T22:03:28.955Z",
  "thresholds": {
   "big": 10,
@@ -41,28 +41,6 @@
    "taken_at": "2026-11-04T18:56:35.661Z"
   },
   {
-   "market_id": "2138900",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -7.5,
-   "question": "Will the Oriol Roca Batalla cover -7.5 vs the Ryo Tabata in Oriol Roca Batalla vs. Ryo Tabata?",
-   "sides": [
-    "Oriol Roca Batalla -7.50 (Games)",
-    "Ryo Tabata +7.50 (Games)"
-   ],
-   "teams": [
-    "Oriol Roca Batalla",
-    "Ryo Tabata"
-   ],
-   "player": null,
-   "mid": 31.5,
-   "yes_buy": 32,
-   "no_buy": 69,
-   "taken_at": "2026-11-04T19:11:42.740Z"
-  },
-  {
    "market_id": "2138904",
    "market": "Games total",
    "group": "game",
@@ -83,6 +61,28 @@
    "yes_buy": 68,
    "no_buy": 33,
    "taken_at": "2026-11-04T18:20:55.650Z"
+  },
+  {
+   "market_id": "2138900",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Oriol Roca Batalla cover -7.5 vs the Ryo Tabata in Oriol Roca Batalla vs. Ryo Tabata?",
+   "sides": [
+    "Oriol Roca Batalla -7.50 (Games)",
+    "Ryo Tabata +7.50 (Games)"
+   ],
+   "teams": [
+    "Oriol Roca Batalla",
+    "Ryo Tabata"
+   ],
+   "player": null,
+   "mid": 31.5,
+   "yes_buy": 32,
+   "no_buy": 69,
+   "taken_at": "2026-11-04T19:11:42.740Z"
   },
   {
    "market_id": "2136189",
@@ -323,7 +323,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-04T19:13:50.004Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -343,7 +343,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-04T19:28:43.901Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -468,6 +468,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2138900:1:2026-11-04T19:28:43.901Z",
+   "key": "2138900:1",
+   "at": "2026-11-04T19:48:41.332Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Ryo Tabata +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+245",
+   "now_chance": 29,
+   "edge": 40,
+   "text": "Edge gone: Ryo Tabata +7.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-oribat-ryotab-2026-11-04"
+  },
   {
    "id": "new_edge:2138900:1:big",
    "key": "2138900:1",
@@ -685,7 +699,8 @@
   "gone:2138898:1:2026-11-04T19:13:50.004Z",
   "gone:2138904:0:2026-11-04T19:13:50.004Z",
   "gone:2138905:0:2026-11-04T19:13:50.004Z",
-  "new_edge:2138900:1:big"
+  "new_edge:2138900:1:big",
+  "gone:2138900:1:2026-11-04T19:28:43.901Z"
  ],
  "kalshi_checked": null
 }
