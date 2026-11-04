@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186638",
-  "fetched_at": "2026-11-04T08:40:52.617Z",
+  "fetched_at": "2026-11-04T08:52:46.355Z",
   "tennis": true,
   "tennis_match": {
    "id": "186638",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Wed, November 4th at 3:45 AM EST",
-     "shortDetail": "11/4 - 3:45 AM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(8) Katie Boulter (GBR) leads Claire Liu (USA) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 8
      },
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "deff75f7-ab53-fa1f-d53b-1d2c6433e266",
       "displayName": "Katie Boulter",
@@ -90,6 +101,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "ad12e018-5348-4a47-cd25-5919b2190e67",
       "displayName": "Claire Liu",
@@ -122,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 380,
    "type": {
     "id": "2",
@@ -138,10 +160,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Wed, November 4th at 3:45 AM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Katie Boulter",
@@ -159,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T08:40:52.511Z",
+ "updated": "2026-11-04T08:52:46.222Z",
  "open_taken_at": "2026-11-03T06:01:53.481Z",
  "thresholds": {
   "big": 10,
@@ -233,6 +255,28 @@
    "taken_at": "2026-11-04T07:16:35.619Z"
   },
   {
+   "market_id": "2113758",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Claire Liu cover 4.5 vs the Katie Boulter in Claire Liu vs. Katie Boulter?",
+   "sides": [
+    "Claire Liu +4.50 (Games)",
+    "Katie Boulter -4.50 (Games)"
+   ],
+   "teams": [
+    "Claire Liu",
+    "Katie Boulter"
+   ],
+   "player": null,
+   "mid": 58.5,
+   "yes_buy": 59,
+   "no_buy": 42,
+   "taken_at": "2026-11-04T07:16:35.619Z"
+  },
+  {
    "market_id": "2113762",
    "market": "Sets spread",
    "group": "game",
@@ -255,25 +299,69 @@
    "taken_at": "2026-11-03T06:01:53.481Z"
   },
   {
-   "market_id": "2113758",
-   "market": "Games spread",
+   "market_id": "2113764",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Claire Liu cover 4.5 vs the Katie Boulter in Claire Liu vs. Katie Boulter?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Claire Liu vs. Katie Boulter be more than 22.5?",
    "sides": [
-    "Claire Liu +4.50 (Games)",
-    "Katie Boulter -4.50 (Games)"
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 45,
+   "yes_buy": 46,
+   "no_buy": 56,
+   "taken_at": "2026-11-03T10:10:05.614Z"
+  },
+  {
+   "market_id": "2113772",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Claire Liu win set 2 against Katie Boulter?",
+   "sides": [
+    "Yes: Claire Liu win set 2 against Katie Boulter",
+    "No: Claire Liu win set 2 against Katie Boulter"
    ],
    "teams": [
     "Claire Liu",
-    "Katie Boulter"
+    null
    ],
    "player": null,
-   "mid": 58.5,
-   "yes_buy": 59,
-   "no_buy": 42,
+   "mid": 44,
+   "yes_buy": 47,
+   "no_buy": 59,
+   "taken_at": "2026-11-04T05:47:42.915Z"
+  },
+  {
+   "market_id": "2113766",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Claire Liu vs. Katie Boulter be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 35.5,
+   "yes_buy": 36,
+   "no_buy": 65,
    "taken_at": "2026-11-04T07:16:35.619Z"
   },
   {
@@ -299,69 +387,25 @@
    "taken_at": "2026-11-03T10:10:05.614Z"
   },
   {
-   "market_id": "2113771",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Claire Liu win set 1 against Katie Boulter?",
-   "sides": [
-    "Yes: Claire Liu win set 1 against Katie Boulter",
-    "No: Claire Liu win set 1 against Katie Boulter"
-   ],
-   "teams": [
-    "Claire Liu",
-    null
-   ],
-   "player": null,
-   "mid": 42.5,
-   "yes_buy": 45,
-   "no_buy": 60,
-   "taken_at": "2026-11-03T09:31:12.545Z"
-  },
-  {
-   "market_id": "2113764",
+   "market_id": "2113765",
    "market": "Games total",
    "group": "game",
    "mtype": "total",
    "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Claire Liu vs. Katie Boulter be more than 22.5?",
+   "line": 27.5,
+   "question": "Will the total in Claire Liu vs. Katie Boulter be more than 27.5?",
    "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
    ],
    "teams": [
     null,
     null
    ],
    "player": null,
-   "mid": 45,
-   "yes_buy": 46,
-   "no_buy": 56,
-   "taken_at": "2026-11-03T10:10:05.614Z"
-  },
-  {
-   "market_id": "2113766",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Claire Liu vs. Katie Boulter be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 35.5,
-   "yes_buy": 36,
-   "no_buy": 65,
+   "mid": 25.5,
+   "yes_buy": 26,
+   "no_buy": 75,
    "taken_at": "2026-11-04T07:16:35.619Z"
   },
   {
@@ -387,25 +431,47 @@
    "taken_at": "2026-11-04T07:16:35.619Z"
   },
   {
-   "market_id": "2113765",
-   "market": "Games total",
+   "market_id": "2113771",
+   "market": "Set 1 winner",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Claire Liu vs. Katie Boulter be more than 27.5?",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Claire Liu win set 1 against Katie Boulter?",
    "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
+    "Yes: Claire Liu win set 1 against Katie Boulter",
+    "No: Claire Liu win set 1 against Katie Boulter"
    ],
    "teams": [
-    null,
+    "Claire Liu",
     null
    ],
    "player": null,
-   "mid": 25.5,
-   "yes_buy": 26,
-   "no_buy": 75,
+   "mid": 42.5,
+   "yes_buy": 45,
+   "no_buy": 60,
+   "taken_at": "2026-11-03T09:31:12.545Z"
+  },
+  {
+   "market_id": "2113757",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Claire Liu cover -4.5 vs the Katie Boulter in Claire Liu vs. Katie Boulter?",
+   "sides": [
+    "Claire Liu -4.50 (Games)",
+    "Katie Boulter +4.50 (Games)"
+   ],
+   "teams": [
+    "Claire Liu",
+    "Katie Boulter"
+   ],
+   "player": null,
+   "mid": 20.5,
+   "yes_buy": 21,
+   "no_buy": 80,
    "taken_at": "2026-11-04T07:16:35.619Z"
   },
   {
@@ -431,28 +497,6 @@
    "taken_at": "2026-11-04T07:16:35.619Z"
   },
   {
-   "market_id": "2113757",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Claire Liu cover -4.5 vs the Katie Boulter in Claire Liu vs. Katie Boulter?",
-   "sides": [
-    "Claire Liu -4.50 (Games)",
-    "Katie Boulter +4.50 (Games)"
-   ],
-   "teams": [
-    "Claire Liu",
-    "Katie Boulter"
-   ],
-   "player": null,
-   "mid": 20.5,
-   "yes_buy": 21,
-   "no_buy": 80,
-   "taken_at": "2026-11-04T07:16:35.619Z"
-  },
-  {
    "market_id": "2113759",
    "market": "Games spread",
    "group": "game",
@@ -473,31 +517,49 @@
    "yes_buy": 13,
    "no_buy": 93,
    "taken_at": "2026-11-04T07:16:35.619Z"
-  },
-  {
-   "market_id": "2113772",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Claire Liu win set 2 against Katie Boulter?",
-   "sides": [
-    "Yes: Claire Liu win set 2 against Katie Boulter",
-    "No: Claire Liu win set 2 against Katie Boulter"
-   ],
-   "teams": [
-    "Claire Liu",
-    null
-   ],
-   "player": null,
-   "mid": 44,
-   "yes_buy": 47,
-   "no_buy": 59,
-   "taken_at": "2026-11-04T05:47:42.915Z"
   }
  ],
  "edges": [
+  {
+   "key": "2113771:0",
+   "market_id": "2113771",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Claire Liu win set 1 against Katie Boulter?",
+   "side": "Yes: Claire Liu win set 1 against Katie Boulter",
+   "open_chance": 45,
+   "now_chance": 21,
+   "open_odds": "+122",
+   "now_odds": "+376",
+   "edge": 24,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Claire Liu not above the games spread right now",
+   "context": "Katie Boulter 1 · Claire Liu 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-04T08:52:46.222Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2113756:0",
+   "market_id": "2113756",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Claire Liu cover 1.5 vs the Katie Boulter in Claire Liu vs. Katie Boulter?",
+   "side": "Claire Liu +1.50 (Games)",
+   "open_chance": 48,
+   "now_chance": 30,
+   "open_odds": "+108",
+   "now_odds": "+233",
+   "edge": 18,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Katie Boulter 1 · Claire Liu 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-04T07:38:00.825Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "2113762:0",
    "market_id": "2113762",
@@ -506,14 +568,14 @@
    "question": "Will the Claire Liu cover 1.5 vs the Katie Boulter in Claire Liu vs. Katie Boulter?",
    "side": "Claire Liu +1.50 (Sets)",
    "open_chance": 65,
-   "now_chance": 61,
+   "now_chance": 49,
    "open_odds": "-186",
-   "now_odds": "-156",
-   "edge": 4,
-   "tier": "slight",
+   "now_odds": "+104",
+   "edge": 16,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Katie Boulter 1 · Claire Liu 0 · 1st Set (games by set)",
    "first_seen": "2026-11-04T07:16:35.619Z",
    "status": "open",
    "kalshi": null
@@ -526,36 +588,76 @@
    "question": "Will the Claire Liu cover -1.5 vs the Katie Boulter in Claire Liu vs. Katie Boulter?",
    "side": "Claire Liu -1.50 (Games)",
    "open_chance": 38,
-   "now_chance": 34,
+   "now_chance": 22,
    "open_odds": "+163",
-   "now_odds": "+194",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
+   "now_odds": "+355",
+   "edge": 16,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Claire Liu not above the games spread right now",
+   "context": "Katie Boulter 1 · Claire Liu 0 · 1st Set (games by set)",
    "first_seen": "2026-11-04T07:27:42.894Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "2113756:0",
-   "market_id": "2113756",
+   "key": "2087487:0",
+   "market_id": "2087487",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Claire Liu vs Katie Boulter scheduled for November 4, 2026 at 6:00 AM UTC?",
+   "side": "Claire Liu win",
+   "open_chance": 42,
+   "now_chance": 27,
+   "open_odds": "+138",
+   "now_odds": "+270",
+   "edge": 15,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Katie Boulter 1 · Claire Liu 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-04T08:52:46.222Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2113758:0",
+   "market_id": "2113758",
    "market": "Games spread",
    "group": "game",
-   "question": "Will the Claire Liu cover 1.5 vs the Katie Boulter in Claire Liu vs. Katie Boulter?",
-   "side": "Claire Liu +1.50 (Games)",
-   "open_chance": 48,
-   "now_chance": 39,
-   "open_odds": "+108",
-   "now_odds": "+156",
-   "edge": 9,
+   "question": "Will the Claire Liu cover 4.5 vs the Katie Boulter in Claire Liu vs. Katie Boulter?",
+   "side": "Claire Liu +4.50 (Games)",
+   "open_chance": 59,
+   "now_chance": 51,
+   "open_odds": "-144",
+   "now_odds": "-104",
+   "edge": 8,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-11-04T07:38:00.825Z",
-   "status": "gone",
+   "context": "Katie Boulter 1 · Claire Liu 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-04T08:52:46.222Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2113772:0",
+   "market_id": "2113772",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Claire Liu win set 2 against Katie Boulter?",
+   "side": "Yes: Claire Liu win set 2 against Katie Boulter",
+   "open_chance": 47,
+   "now_chance": 41,
+   "open_odds": "+113",
+   "now_odds": "+144",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Katie Boulter 1 · Claire Liu 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-04T08:52:46.222Z",
+   "status": "open",
    "kalshi": null
   },
   {
@@ -580,6 +682,76 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2113756:0:big",
+   "key": "2113756:0",
+   "at": "2026-11-04T08:52:46.222Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Claire Liu +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+233",
+   "now_chance": 30,
+   "edge": 18,
+   "text": "New big edge: Claire Liu +1.50 (Games) (Games spread), 18 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-claliu-katbou-2026-11-04"
+  },
+  {
+   "id": "new_edge:2113762:0:big",
+   "key": "2113762:0",
+   "at": "2026-11-04T08:52:46.222Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Claire Liu +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+104",
+   "now_chance": 49,
+   "edge": 16,
+   "text": "New big edge: Claire Liu +1.50 (Sets) (Sets spread), 16 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-claliu-katbou-2026-11-04"
+  },
+  {
+   "id": "new_edge:2087487:0:big",
+   "key": "2087487:0",
+   "at": "2026-11-04T08:52:46.222Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Claire Liu win",
+   "market": "Moneyline",
+   "now_odds": "+270",
+   "now_chance": 27,
+   "edge": 15,
+   "text": "New big edge: Claire Liu win (Moneyline), 15 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-claliu-katbou-2026-11-04"
+  },
+  {
+   "id": "new_edge:2113758:0:slight",
+   "key": "2113758:0",
+   "at": "2026-11-04T08:52:46.222Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Claire Liu +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-104",
+   "now_chance": 51,
+   "edge": 8,
+   "text": "New slight edge: Claire Liu +4.50 (Games) (Games spread), 8 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-claliu-katbou-2026-11-04"
+  },
+  {
+   "id": "new_edge:2113772:0:slight",
+   "key": "2113772:0",
+   "at": "2026-11-04T08:52:46.222Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Yes: Claire Liu win set 2 against Katie Boulter",
+   "market": "Set 2 winner",
+   "now_odds": "+144",
+   "now_chance": 41,
+   "edge": 6,
+   "text": "New slight edge: Yes: Claire Liu win set 2 against Katie Boulter (Set 2 winner), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-claliu-katbou-2026-11-04"
+  },
   {
    "id": "new_edge:2113762:0:slight",
    "key": "2113762:0",
@@ -611,7 +783,12 @@
  ],
  "alert_seen": [
   "new_edge:2113762:0:slight",
-  "new_edge:2113755:0:slight"
+  "new_edge:2113755:0:slight",
+  "new_edge:2113756:0:big",
+  "new_edge:2113762:0:big",
+  "new_edge:2087487:0:big",
+  "new_edge:2113758:0:slight",
+  "new_edge:2113772:0:slight"
  ],
  "kalshi_checked": null
 }
