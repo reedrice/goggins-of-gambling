@@ -4,30 +4,30 @@
  "game": "Andreozzi / Guinard vs. Pavlasek / Rikl",
  "url": "https://polymarket.us/sports/atpdb/atpdb-andgui-pavrik-2026-11-01",
  "start_time": "2026-11-04T11:20:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187299",
-  "fetched_at": "2026-11-04T11:18:30.226Z",
+  "fetched_at": "2026-11-04T11:27:19.811Z",
   "tennis": true,
   "tennis_match": {
    "id": "187299",
    "uid": "s:850~l:851~e:13-2026~c:187299",
-   "date": "2026-11-04T11:30Z",
-   "startDate": "2026-11-04T11:30Z",
+   "date": "2026-11-04T11:25Z",
+   "startDate": "2026-11-04T11:25Z",
    "timeValid": true,
    "recent": true,
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Wed, November 4th at 6:30 AM EST",
-     "shortDetail": "11/4 - 6:30 AM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Guido Andreozzi (ARG) & Manuel Guinard (FRA) leads Adam Pavlasek (CZE) & Patrik Rikl (CZE) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "roster": {
       "displayName": "Adam Pavlasek / Patrik Rikl",
       "shortDisplayName": "A. Pavlasek / P. Rikl",
@@ -122,6 +133,12 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "roster": {
       "displayName": "Guido Andreozzi / Manuel Guinard",
       "shortDisplayName": "G. Andreozzi / M. Guinard",
@@ -189,6 +206,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 13,
    "type": {
     "id": "3",
@@ -205,10 +227,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Wed, November 4th at 6:30 AM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Adam Pavlasek / Patrik Rikl",
@@ -226,7 +248,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T11:18:30.119Z",
+ "updated": "2026-11-04T11:27:19.681Z",
  "open_taken_at": "2026-10-31T14:49:10.781Z",
  "thresholds": {
   "big": 10,
@@ -274,11 +296,25 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-01T14:20:51.006Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2006132:1:2026-11-01T14:20:51.006Z",
+   "key": "2006132:1",
+   "at": "2026-11-04T11:27:19.681Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Pavlasek / Rikl win",
+   "market": "Moneyline",
+   "now_odds": "+122",
+   "now_chance": 45,
+   "edge": 5,
+   "text": "Edge gone: Pavlasek / Rikl win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-andgui-pavrik-2026-11-01"
+  },
   {
    "id": "new_edge:2006132:1:slight",
    "key": "2006132:1",
@@ -295,7 +331,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2006132:1:slight"
+  "new_edge:2006132:1:slight",
+  "gone:2006132:1:2026-11-01T14:20:51.006Z"
  ],
  "kalshi_checked": null
 }
