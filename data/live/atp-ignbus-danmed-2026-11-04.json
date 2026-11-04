@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186483",
-  "fetched_at": "2026-11-04T13:59:04.950Z",
+  "fetched_at": "2026-11-04T14:07:37.295Z",
   "tennis": true,
   "tennis_match": {
    "id": "186483",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Wed, November 4th at 9:00 AM EST",
-     "shortDetail": "11/4 - 9:00 AM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Ignacio Buse (PER) leads (4) Daniil Medvedev (RUS) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "curatedRank": {
       "current": 4
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "469710ae-79d9-770e-e3b7-d71e5148642c",
       "displayName": "Daniil Medvedev",
@@ -90,6 +101,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "e641ada5-0c26-3c63-8287-f4888518f394",
       "displayName": "Ignacio Buse",
@@ -122,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 13,
    "type": {
     "id": "1",
@@ -138,10 +160,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Wed, November 4th at 9:00 AM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Daniil Medvedev",
@@ -159,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T13:59:04.889Z",
+ "updated": "2026-11-04T14:07:37.233Z",
  "open_taken_at": "2026-11-02T12:12:31.357Z",
  "thresholds": {
   "big": 10,
@@ -255,28 +277,6 @@
    "taken_at": "2026-11-03T10:10:05.920Z"
   },
   {
-   "market_id": "2091714",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Ignacio Buse cover 1.5 vs the Daniil Medvedev in Ignacio Buse vs. Daniil Medvedev?",
-   "sides": [
-    "Ignacio Buse +1.50 (Sets)",
-    "Daniil Medvedev -1.50 (Sets)"
-   ],
-   "teams": [
-    "Ignacio Buse",
-    "Daniil Medvedev"
-   ],
-   "player": null,
-   "mid": 39.5,
-   "yes_buy": 40,
-   "no_buy": 61,
-   "taken_at": "2026-11-04T12:36:36.292Z"
-  },
-  {
    "market_id": "2091716",
    "market": "Games total",
    "group": "game",
@@ -297,6 +297,28 @@
    "yes_buy": 38,
    "no_buy": 68,
    "taken_at": "2026-11-03T22:45:57.631Z"
+  },
+  {
+   "market_id": "2091714",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Ignacio Buse cover 1.5 vs the Daniil Medvedev in Ignacio Buse vs. Daniil Medvedev?",
+   "sides": [
+    "Ignacio Buse +1.50 (Sets)",
+    "Daniil Medvedev -1.50 (Sets)"
+   ],
+   "teams": [
+    "Ignacio Buse",
+    "Daniil Medvedev"
+   ],
+   "player": null,
+   "mid": 39.5,
+   "yes_buy": 40,
+   "no_buy": 61,
+   "taken_at": "2026-11-04T12:36:36.292Z"
   },
   {
    "market_id": "2091718",
@@ -453,28 +475,6 @@
    "taken_at": "2026-11-04T12:36:36.292Z"
   },
   {
-   "market_id": "2091713",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Ignacio Buse cover -1.5 vs the Daniil Medvedev in Ignacio Buse vs. Daniil Medvedev?",
-   "sides": [
-    "Ignacio Buse -1.50 (Sets)",
-    "Daniil Medvedev +1.50 (Sets)"
-   ],
-   "teams": [
-    "Ignacio Buse",
-    "Daniil Medvedev"
-   ],
-   "player": null,
-   "mid": 9.5,
-   "yes_buy": 10,
-   "no_buy": 91,
-   "taken_at": "2026-11-04T12:36:36.292Z"
-  },
-  {
    "market_id": "2091709",
    "market": "Games spread",
    "group": "game",
@@ -495,9 +495,91 @@
    "yes_buy": 16,
    "no_buy": 85,
    "taken_at": "2026-11-04T12:36:36.292Z"
+  },
+  {
+   "market_id": "2091713",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Ignacio Buse cover -1.5 vs the Daniil Medvedev in Ignacio Buse vs. Daniil Medvedev?",
+   "sides": [
+    "Ignacio Buse -1.50 (Sets)",
+    "Daniil Medvedev +1.50 (Sets)"
+   ],
+   "teams": [
+    "Ignacio Buse",
+    "Daniil Medvedev"
+   ],
+   "player": null,
+   "mid": 9.5,
+   "yes_buy": 10,
+   "no_buy": 91,
+   "taken_at": "2026-11-04T12:36:36.292Z"
   }
  ],
  "edges": [
+  {
+   "key": "2091715:1",
+   "market_id": "2091715",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Ignacio Buse vs. Daniil Medvedev be more than 17.5?",
+   "side": "Under 17.5 (Games)",
+   "open_chance": 43,
+   "now_chance": 22,
+   "open_odds": "+133",
+   "now_odds": "+355",
+   "edge": 21,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Daniil Medvedev 0 · Ignacio Buse 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-04T14:07:37.233Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2091710:1",
+   "market_id": "2091710",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Ignacio Buse cover 4.5 vs the Daniil Medvedev in Ignacio Buse vs. Daniil Medvedev?",
+   "side": "Daniil Medvedev -4.50 (Games)",
+   "open_chance": 58,
+   "now_chance": 48,
+   "open_odds": "-138",
+   "now_odds": "+108",
+   "edge": 10,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Daniil Medvedev not above the games spread right now",
+   "context": "Daniil Medvedev 0 · Ignacio Buse 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-04T12:27:27.572Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2091716:1",
+   "market_id": "2091716",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Ignacio Buse vs. Daniil Medvedev be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 68,
+   "now_chance": 58,
+   "open_odds": "-213",
+   "now_odds": "-138",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Daniil Medvedev 0 · Ignacio Buse 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-04T12:36:36.292Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "2090352:0",
    "market_id": "2090352",
@@ -513,28 +595,28 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Daniil Medvedev 0 · Ignacio Buse 0 · 1st Set (games by set)",
    "first_seen": "2026-11-04T10:47:52.601Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "2091716:1",
-   "market_id": "2091716",
-   "market": "Games total",
+   "key": "2091723:1",
+   "market_id": "2091723",
+   "market": "Set 1 winner",
    "group": "game",
-   "question": "Will the total in Ignacio Buse vs. Daniil Medvedev be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 68,
-   "now_chance": 61,
-   "open_odds": "-213",
-   "now_odds": "-156",
+   "question": "Will Ignacio Buse win set 1 against Daniil Medvedev?",
+   "side": "No: Ignacio Buse win set 1 against Daniil Medvedev",
+   "open_chance": 82,
+   "now_chance": 75,
+   "open_odds": "-456",
+   "now_odds": "-300",
    "edge": 7,
    "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-11-04T12:36:36.292Z",
+   "class": "score",
+   "reason": "Explained by score: Ignacio Buse not above the games spread right now",
+   "context": "Daniil Medvedev 0 · Ignacio Buse 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-04T12:00:54.794Z",
    "status": "open",
    "kalshi": null
   },
@@ -551,50 +633,10 @@
    "now_odds": "+376",
    "edge": 5,
    "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
+   "class": "score",
+   "reason": "Explained by score: Daniil Medvedev not above the games spread right now",
+   "context": "Daniil Medvedev 0 · Ignacio Buse 0 · 1st Set (games by set)",
    "first_seen": "2026-11-04T13:00:08.969Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2091710:1",
-   "market_id": "2091710",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Ignacio Buse cover 4.5 vs the Daniil Medvedev in Ignacio Buse vs. Daniil Medvedev?",
-   "side": "Daniil Medvedev -4.50 (Games)",
-   "open_chance": 58,
-   "now_chance": 53,
-   "open_odds": "-138",
-   "now_odds": "-113",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-11-04T12:27:27.572Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2091723:1",
-   "market_id": "2091723",
-   "market": "Set 1 winner",
-   "group": "game",
-   "question": "Will Ignacio Buse win set 1 against Daniil Medvedev?",
-   "side": "No: Ignacio Buse win set 1 against Daniil Medvedev",
-   "open_chance": 82,
-   "now_chance": 77,
-   "open_odds": "-456",
-   "now_odds": "-335",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-11-04T12:00:54.794Z",
    "status": "open",
    "kalshi": null
   },
@@ -613,7 +655,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Daniil Medvedev 0 · Ignacio Buse 0 · 1st Set (games by set)",
    "first_seen": "2026-11-04T12:29:44.818Z",
    "status": "open",
    "kalshi": null
@@ -631,15 +673,57 @@
    "now_odds": "-426",
    "edge": 4,
    "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
+   "class": "score",
+   "reason": "Explained by score: Daniil Medvedev not above the games spread right now",
+   "context": "Daniil Medvedev 0 · Ignacio Buse 0 · 1st Set (games by set)",
    "first_seen": "2026-11-04T12:44:50.379Z",
    "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2091715:1:big",
+   "key": "2091715:1",
+   "at": "2026-11-04T14:07:37.233Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+355",
+   "now_chance": 22,
+   "edge": 21,
+   "text": "New big edge: Under 17.5 (Games) (Games total), 21 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-ignbus-danmed-2026-11-04"
+  },
+  {
+   "id": "new_edge:2091716:1:big",
+   "key": "2091716:1",
+   "at": "2026-11-04T14:07:37.233Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-138",
+   "now_chance": 58,
+   "edge": 10,
+   "text": "New big edge: Under 22.5 (Games) (Games total), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-ignbus-danmed-2026-11-04"
+  },
+  {
+   "id": "gone:2091710:1:2026-11-04T12:27:27.572Z",
+   "key": "2091710:1",
+   "at": "2026-11-04T14:01:39.523Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Daniil Medvedev -4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 5,
+   "text": "Edge gone: Daniil Medvedev -4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-ignbus-danmed-2026-11-04"
+  },
   {
    "id": "new_edge:2091712:1:slight",
    "key": "2091712:1",
@@ -746,7 +830,10 @@
   "new_edge:2091723:1:slight",
   "new_edge:2091724:1:slight",
   "new_edge:2091708:1:slight",
-  "new_edge:2091712:1:slight"
+  "new_edge:2091712:1:slight",
+  "gone:2091710:1:2026-11-04T12:27:27.572Z",
+  "new_edge:2091715:1:big",
+  "new_edge:2091716:1:big"
  ],
  "kalshi_checked": null
 }
