@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186576",
-  "fetched_at": "2026-11-04T14:26:28.291Z",
+  "fetched_at": "2026-11-04T14:34:51.788Z",
   "tennis": true,
   "tennis_match": {
    "id": "186576",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Janice Tjen (INA) is tied with Joanna Garland (TPO) 7-6 (7-1) 1-1",
+     "text": "(1) Janice Tjen (INA) leads Joanna Garland (TPO) 7-6 (7-1) 2-1",
      "type": "event"
     }
    ],
@@ -55,7 +55,6 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
      "linescores": [
       {
        "value": 6,
@@ -103,7 +102,6 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
      "curatedRank": {
       "current": 1
      },
@@ -114,7 +112,7 @@
        "winner": true
       },
       {
-       "value": 1
+       "value": 2
       }
      ],
      "athlete": {
@@ -149,11 +147,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 889,
    "type": {
     "id": "2",
@@ -191,7 +184,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T14:26:28.128Z",
+ "updated": "2026-11-04T14:34:51.659Z",
  "open_taken_at": "2026-11-03T12:34:46.216Z",
  "thresholds": {
   "big": 10,
@@ -309,20 +302,20 @@
    "taken_at": "2026-11-04T12:52:29.942Z"
   },
   {
-   "market_id": "2127711",
-   "market": "Games total",
+   "market_id": "2127706",
+   "market": "Sets spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Janice Tjen vs. Joanna Garland be more than 22.5?",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Janice Tjen cover -1.5 vs the Joanna Garland in Janice Tjen vs. Joanna Garland?",
    "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
+    "Janice Tjen -1.50 (Sets)",
+    "Joanna Garland +1.50 (Sets)"
    ],
    "teams": [
-    null,
-    null
+    "Janice Tjen",
+    "Joanna Garland"
    ],
    "player": null,
    "mid": 41.5,
@@ -353,28 +346,6 @@
    "taken_at": "2026-11-04T10:47:54.766Z"
   },
   {
-   "market_id": "2127700",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Janice Tjen cover -4.5 vs the Joanna Garland in Janice Tjen vs. Joanna Garland?",
-   "sides": [
-    "Janice Tjen -4.50 (Games)",
-    "Joanna Garland +4.50 (Games)"
-   ],
-   "teams": [
-    "Janice Tjen",
-    "Joanna Garland"
-   ],
-   "player": null,
-   "mid": 38,
-   "yes_buy": 41,
-   "no_buy": 65,
-   "taken_at": "2026-11-04T00:03:33.560Z"
-  },
-  {
    "market_id": "2127714",
    "market": "Sets total",
    "group": "game",
@@ -397,20 +368,64 @@
    "taken_at": "2026-11-04T11:36:24.801Z"
   },
   {
-   "market_id": "2127706",
-   "market": "Sets spread",
+   "market_id": "2127696",
+   "market": "Games spread",
    "group": "game",
    "mtype": "spread",
-   "period": "tennis_match_sets_spread",
+   "period": "tennis_match_games_spread",
    "line": -1.5,
    "question": "Will the Janice Tjen cover -1.5 vs the Joanna Garland in Janice Tjen vs. Joanna Garland?",
    "sides": [
-    "Janice Tjen -1.50 (Sets)",
-    "Joanna Garland +1.50 (Sets)"
+    "Janice Tjen -1.50 (Games)",
+    "Joanna Garland +1.50 (Games)"
    ],
    "teams": [
     "Janice Tjen",
     "Joanna Garland"
+   ],
+   "player": null,
+   "mid": 62.5,
+   "yes_buy": 63,
+   "no_buy": 38,
+   "taken_at": "2026-11-04T10:47:54.766Z"
+  },
+  {
+   "market_id": "2127700",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Janice Tjen cover -4.5 vs the Joanna Garland in Janice Tjen vs. Joanna Garland?",
+   "sides": [
+    "Janice Tjen -4.50 (Games)",
+    "Joanna Garland +4.50 (Games)"
+   ],
+   "teams": [
+    "Janice Tjen",
+    "Joanna Garland"
+   ],
+   "player": null,
+   "mid": 38,
+   "yes_buy": 41,
+   "no_buy": 65,
+   "taken_at": "2026-11-04T00:03:33.560Z"
+  },
+  {
+   "market_id": "2127711",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Janice Tjen vs. Joanna Garland be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
    ],
    "player": null,
    "mid": 41.5,
@@ -463,28 +478,6 @@
    "taken_at": "2026-11-03T22:03:26.032Z"
   },
   {
-   "market_id": "2127696",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Janice Tjen cover -1.5 vs the Joanna Garland in Janice Tjen vs. Joanna Garland?",
-   "sides": [
-    "Janice Tjen -1.50 (Games)",
-    "Joanna Garland +1.50 (Games)"
-   ],
-   "teams": [
-    "Janice Tjen",
-    "Joanna Garland"
-   ],
-   "player": null,
-   "mid": 62.5,
-   "yes_buy": 63,
-   "no_buy": 38,
-   "taken_at": "2026-11-04T10:47:54.766Z"
-  },
-  {
    "market_id": "2127709",
    "market": "Games total",
    "group": "game",
@@ -531,6 +524,106 @@
  ],
  "edges": [
   {
+   "key": "2127706:1",
+   "market_id": "2127706",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Janice Tjen cover -1.5 vs the Joanna Garland in Janice Tjen vs. Joanna Garland?",
+   "side": "Joanna Garland +1.50 (Sets)",
+   "open_chance": 59,
+   "now_chance": 34,
+   "open_odds": "-144",
+   "now_odds": "+194",
+   "edge": 25,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (25 pts), likely news",
+   "context": "Joanna Garland 6, 1 · Janice Tjen 7, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-11-04T11:03:28.464Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2127714:0",
+   "market_id": "2127714",
+   "market": "Sets total",
+   "group": "game",
+   "question": "Will the total in Janice Tjen vs. Joanna Garland be more than 2.5?",
+   "side": "Over 2.5 (Sets)",
+   "open_chance": 44,
+   "now_chance": 31,
+   "open_odds": "+127",
+   "now_odds": "+223",
+   "edge": 13,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Joanna Garland 6, 1 · Janice Tjen 7, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-11-04T12:18:10.789Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2127698:1",
+   "market_id": "2127698",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Janice Tjen cover 1.5 vs the Joanna Garland in Janice Tjen vs. Joanna Garland?",
+   "side": "Joanna Garland -1.50 (Games)",
+   "open_chance": 31,
+   "now_chance": 22,
+   "open_odds": "+223",
+   "now_odds": "+355",
+   "edge": 9,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Joanna Garland not above the games spread right now",
+   "context": "Joanna Garland 6, 1 · Janice Tjen 7, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-11-04T14:16:37.833Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2127720:1",
+   "market_id": "2127720",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Janice Tjen win set 2 against Joanna Garland?",
+   "side": "No: Janice Tjen win set 2 against Joanna Garland",
+   "open_chance": 36,
+   "now_chance": 30,
+   "open_odds": "+178",
+   "now_odds": "+233",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Joanna Garland 6, 1 · Janice Tjen 7, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-11-04T14:16:37.833Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2127713:1",
+   "market_id": "2127713",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Janice Tjen vs. Joanna Garland be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 74,
+   "now_chance": 68,
+   "open_odds": "-285",
+   "now_odds": "-213",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Joanna Garland 6, 1 · Janice Tjen 7, 2 · 2nd Set (games by set)",
+   "first_seen": "2026-11-04T14:28:52.032Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2127700:0",
    "market_id": "2127700",
    "market": "Games spread",
@@ -547,106 +640,6 @@
    "reason": "Explained by score: Janice Tjen not above the games spread right now",
    "context": "Joanna Garland 6, 1 · Janice Tjen 7, 1 · 2nd Set (games by set)",
    "first_seen": "2026-11-04T13:50:33.981Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2127711:1",
-   "market_id": "2127711",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Janice Tjen vs. Joanna Garland be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 59,
-   "now_chance": 41,
-   "open_odds": "-144",
-   "now_odds": "+144",
-   "edge": 18,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Joanna Garland 6, 1 · Janice Tjen 7, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-11-04T13:42:14.964Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2126813:1",
-   "market_id": "2126813",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Janice Tjen vs Joanna Garland scheduled for November 4, 2026 at 9:30 AM UTC?",
-   "side": "Joanna Garland win",
-   "open_chance": 36,
-   "now_chance": 19,
-   "open_odds": "+178",
-   "now_odds": "+426",
-   "edge": 17,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Joanna Garland trailing in sets",
-   "context": "Joanna Garland 6, 1 · Janice Tjen 7, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-11-04T14:26:28.128Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2127698:1",
-   "market_id": "2127698",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Janice Tjen cover 1.5 vs the Joanna Garland in Janice Tjen vs. Joanna Garland?",
-   "side": "Joanna Garland -1.50 (Games)",
-   "open_chance": 31,
-   "now_chance": 17,
-   "open_odds": "+223",
-   "now_odds": "+488",
-   "edge": 14,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Joanna Garland not above the games spread right now",
-   "context": "Joanna Garland 6, 1 · Janice Tjen 7, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-11-04T14:16:37.833Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2127720:0",
-   "market_id": "2127720",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Janice Tjen win set 2 against Joanna Garland?",
-   "side": "Yes: Janice Tjen win set 2 against Joanna Garland",
-   "open_chance": 69,
-   "now_chance": 63,
-   "open_odds": "-223",
-   "now_odds": "-170",
-   "edge": 6,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Janice Tjen not above the games spread right now",
-   "context": "Joanna Garland 6, 1 · Janice Tjen 7, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-11-04T13:02:43.696Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2127706:1",
-   "market_id": "2127706",
-   "market": "Sets spread",
-   "group": "game",
-   "question": "Will the Janice Tjen cover -1.5 vs the Joanna Garland in Janice Tjen vs. Joanna Garland?",
-   "side": "Joanna Garland +1.50 (Sets)",
-   "open_chance": 59,
-   "now_chance": 35,
-   "open_odds": "-144",
-   "now_odds": "+186",
-   "edge": 24,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Joanna Garland 6, 0 · Janice Tjen 7, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-11-04T11:03:28.464Z",
    "status": "gone",
    "kalshi": null
   },
@@ -691,22 +684,22 @@
    "kalshi": null
   },
   {
-   "key": "2127714:0",
-   "market_id": "2127714",
-   "market": "Sets total",
+   "key": "2127711:1",
+   "market_id": "2127711",
+   "market": "Games total",
    "group": "game",
-   "question": "Will the total in Janice Tjen vs. Joanna Garland be more than 2.5?",
-   "side": "Over 2.5 (Sets)",
-   "open_chance": 44,
-   "now_chance": 29,
-   "open_odds": "+127",
-   "now_odds": "+245",
-   "edge": 15,
+   "question": "Will the total in Janice Tjen vs. Joanna Garland be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 59,
+   "now_chance": 41,
+   "open_odds": "-144",
+   "now_odds": "+144",
+   "edge": 18,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Joanna Garland 6, 0 · Janice Tjen 7, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-11-04T12:18:10.789Z",
+   "context": "Joanna Garland 6, 1 · Janice Tjen 7, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-11-04T13:42:14.964Z",
    "status": "gone",
    "kalshi": null
   },
@@ -731,26 +724,6 @@
    "kalshi": null
   },
   {
-   "key": "2127720:1",
-   "market_id": "2127720",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Janice Tjen win set 2 against Joanna Garland?",
-   "side": "No: Janice Tjen win set 2 against Joanna Garland",
-   "open_chance": 36,
-   "now_chance": 29,
-   "open_odds": "+178",
-   "now_odds": "+245",
-   "edge": 7,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Joanna Garland 6, 0 · Janice Tjen 7, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-11-04T14:16:37.833Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "2127696:1",
    "market_id": "2127696",
    "market": "Games spread",
@@ -758,15 +731,35 @@
    "question": "Will the Janice Tjen cover -1.5 vs the Joanna Garland in Janice Tjen vs. Joanna Garland?",
    "side": "Joanna Garland +1.50 (Games)",
    "open_chance": 38,
-   "now_chance": 32,
+   "now_chance": 27,
    "open_odds": "+163",
-   "now_odds": "+213",
-   "edge": 6,
-   "tier": "slight",
+   "now_odds": "+270",
+   "edge": 11,
+   "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Joanna Garland 6, 1 · Janice Tjen 7, 1 · 2nd Set (games by set)",
    "first_seen": "2026-11-04T11:13:05.114Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "2127720:0",
+   "market_id": "2127720",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Janice Tjen win set 2 against Joanna Garland?",
+   "side": "Yes: Janice Tjen win set 2 against Joanna Garland",
+   "open_chance": 69,
+   "now_chance": 63,
+   "open_odds": "-223",
+   "now_odds": "-170",
+   "edge": 6,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Janice Tjen not above the games spread right now",
+   "context": "Joanna Garland 6, 1 · Janice Tjen 7, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-11-04T13:02:43.696Z",
    "status": "gone",
    "kalshi": null
   },
@@ -812,6 +805,48 @@
   }
  ],
  "alerts": [
+  {
+   "id": "news:2127706:1",
+   "key": "2127706:1",
+   "at": "2026-11-04T14:34:51.659Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Joanna Garland +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+194",
+   "now_chance": 34,
+   "edge": 25,
+   "text": "Big move, likely news: Joanna Garland +1.50 (Sets) (Sets spread) is 25 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-jantje-joagar-2026-11-04"
+  },
+  {
+   "id": "new_edge:2127696:1:big",
+   "key": "2127696:1",
+   "at": "2026-11-04T14:28:52.032Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Joanna Garland +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+270",
+   "now_chance": 27,
+   "edge": 11,
+   "text": "New big edge: Joanna Garland +1.50 (Games) (Games spread), 11 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-jantje-joagar-2026-11-04"
+  },
+  {
+   "id": "new_edge:2127713:1:slight",
+   "key": "2127713:1",
+   "at": "2026-11-04T14:28:52.032Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Under 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-223",
+   "now_chance": 69,
+   "edge": 5,
+   "text": "New slight edge: Under 27.5 (Games) (Games total), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-jantje-joagar-2026-11-04"
+  },
   {
    "id": "gone:2127720:1:2026-11-04T14:16:37.833Z",
    "key": "2127720:1",
@@ -1123,7 +1158,10 @@
   "gone:2127714:1:2026-11-04T13:42:14.964Z",
   "new_edge:2127706:1:big",
   "new_edge:2127720:1:slight",
-  "gone:2127720:1:2026-11-04T14:16:37.833Z"
+  "gone:2127720:1:2026-11-04T14:16:37.833Z",
+  "new_edge:2127696:1:big",
+  "new_edge:2127713:1:slight",
+  "news:2127706:1"
  ],
  "kalshi_checked": null
 }
