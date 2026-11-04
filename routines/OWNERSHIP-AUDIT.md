@@ -21,7 +21,7 @@ All six data routines are enabled and github-actions-owned in owners.json. Delay
 ## Duplicates and uncertainty
 
 - Verified locally: keep-live-bets-feed-updating is PAUSED. Its old ten-minute rule is inert; keep it paused.
-- User-supplied Grok report: five former site schedules still wake, pull, gate-check and skip. These are redundant AI wakeups, not current production writers. Disable only those five site schedules in that account and obtain confirmation. Shutdown has not been independently verified.
+- Follow-up confirmed by Reed via Grok on November 4: Daily Slate & Odds Digest, Lineup & Goalie Check, Late Scratch Check, Play Money Leaderboard Update and Weekly Learning Review are all paused. No replacements or repository changes were made in that external setup. This is account-holder confirmation, not independent Grok inspection. GitHub Actions retains ownership.
 - Pablo/Richie external schedules or unpublished work remain unverified. Historical authorship is not proof of a running scheduler. No other account/project was inspected and no message was sent.
 - GitHub cron, health recovery and Cloudflare assistance intentionally target one serialized workflow with active-run checks/cooldowns. They are not independent feed writers. Two Pages paths cover ordinary code pushes versus built-in-token maintenance commits.
 - Browser refresh timers read published snapshots; they are not ingestion or AI jobs. Personal account readers remain separate and read-only.
@@ -44,4 +44,4 @@ Run 41815074281 successfully published generated commit df0874ba8825ff7d02e6766a
 
 Final verification: run 41816406654 succeeded, published generated commit 7e8099fd79a26da8de68d6562cdbf3e9d4136257, and deployed Pages at 2026-11-04T10:55:12Z. Public ESPN index: 48 snapshots, captured 10:53:42Z; served market files captured through 10:54:26Z; published slate date Nov 4. Independent watchdog at 10:55:47Z reported healthy with no problems. Publication/source/health suite: 32 passed; expanded source/progress/performance suite: 36 passed. Original failed push cause cannot be reconstructed because the former runner discarded stderr. Publication is restored, diagnostics/retries are repaired, and real final source capture resolves the observed post-processing staleness; the five-minute target remains best-effort, not a timing guarantee.
 
-[Verified recovery run](https://github.com/reedrice/goggins-of-gambling/actions/runs/41816406654). Grok duplicate schedules still require account-side pause confirmation; no unrelated project or schedule was inspected or changed.
+[Verified recovery run](https://github.com/reedrice/goggins-of-gambling/actions/runs/41816406654). The five obsolete Grok site schedules were subsequently confirmed paused by Reed; no unrelated project or schedule was inspected or changed.

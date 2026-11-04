@@ -1,6 +1,6 @@
 # Production routines
 
-GitHub Actions owns all five former Grok routines plus the Live Bets feed. See owners.json, ACTIONS.md, ESPN.md and [OWNERSHIP-AUDIT.md](OWNERSHIP-AUDIT.md). No scheduled Grok/ChatGPT work for sports-data ingestion, grading, public leaderboard or learning. November 4 audit: Grok reports five obsolete site schedules still wake and skip; external shutdown is not verified. Never create fallback AI polling or sandbox background jobs.
+GitHub Actions owns all five former Grok routines plus the Live Bets feed. See owners.json, ACTIONS.md, ESPN.md and [OWNERSHIP-AUDIT.md](OWNERSHIP-AUDIT.md). No scheduled Grok/ChatGPT work for sports-data ingestion, grading, public leaderboard or learning. November 4 follow-up: Reed relayed confirmation that all five obsolete Grok site schedules are paused, with no replacements. GitHub Actions retains ownership. Never create fallback AI polling or sandbox background jobs.
 
 Schedules (America/Chicago, evaluated by maintenance with a five-minute target; publication can be delayed):
 - Daily slate: latest five-minute slot.
