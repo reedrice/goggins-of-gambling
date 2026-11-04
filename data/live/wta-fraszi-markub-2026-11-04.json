@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186678",
-  "fetched_at": "2026-11-04T11:36:25.059Z",
+  "fetched_at": "2026-11-04T11:44:15.664Z",
   "tennis": true,
   "tennis_match": {
    "id": "186678",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Wed, November 4th at 6:35 AM EST",
-     "shortDetail": "11/4 - 6:35 AM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(3) Martyna Kubka (POL) leads Franziska Sziedat (GER) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "curatedRank": {
       "current": 3
      },
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "930d6df0-0299-38ae-9091-c001504e4dac",
       "displayName": "Martyna Kubka",
@@ -90,6 +101,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "e8418319-3a29-347c-b221-30561431275e",
       "displayName": "Franziska Sziedat",
@@ -122,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1082,
    "type": {
     "id": "2",
@@ -138,10 +160,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Wed, November 4th at 6:35 AM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Martyna Kubka",
@@ -159,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T11:36:24.954Z",
+ "updated": "2026-11-04T11:44:15.534Z",
  "open_taken_at": "2026-11-03T13:18:39.848Z",
  "thresholds": {
   "big": 10,
@@ -187,6 +209,28 @@
    "yes_buy": 7,
    "no_buy": 94,
    "taken_at": "2026-11-03T22:03:26.440Z"
+  },
+  {
+   "market_id": "2127726",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Franziska Sziedat cover 7.5 vs the Martyna Kubka in Franziska Sziedat vs. Martyna Kubka?",
+   "sides": [
+    "Franziska Sziedat +7.50 (Games)",
+    "Martyna Kubka -7.50 (Games)"
+   ],
+   "teams": [
+    "Franziska Sziedat",
+    "Martyna Kubka"
+   ],
+   "player": null,
+   "mid": 59.5,
+   "yes_buy": 60,
+   "no_buy": 41,
+   "taken_at": "2026-11-04T11:38:38.369Z"
   },
   {
    "market_id": "2127729",

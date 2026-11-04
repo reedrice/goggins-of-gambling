@@ -4,12 +4,12 @@
  "game": "Talia Gibson vs. Aliaksandra Sasnovich",
  "url": "https://polymarket.us/sports/wta/wta-talgib-alisas-2026-11-04",
  "start_time": "2026-11-04T08:30:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186633",
-  "fetched_at": "2026-11-04T11:36:24.095Z",
+  "fetched_at": "2026-11-04T11:44:14.852Z",
   "tennis": true,
   "tennis_match": {
    "id": "186633",
@@ -17,17 +17,17 @@
    "date": "2026-11-04T08:30Z",
    "startDate": "2026-11-04T08:30Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(5) Talia Gibson (AUS) leads Aliaksandra Sasnovich (BLR) 1-6 7-5 6-6",
+     "text": "Aliaksandra Sasnovich (BLR) bt (5) Talia Gibson (AUS) 6-1 5-7 7-6 (9-7)",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "linescores": [
       {
        "value": 6,
@@ -65,7 +66,9 @@
        "winner": false
       },
       {
-       "value": 6
+       "value": 7,
+       "tiebreak": 9,
+       "winner": true
       }
      ],
      "athlete": {
@@ -105,6 +108,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "curatedRank": {
       "current": 5
      },
@@ -118,7 +122,9 @@
        "winner": true
       },
       {
-       "value": 6
+       "value": 6,
+       "tiebreak": 7,
+       "winner": false
       }
      ],
      "athlete": {
@@ -169,16 +175,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Aliaksandra Sasnovich",
    "alias": "Aliaksandra Sasnovich",
    "name": "Aliaksandra Sasnovich",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Talia Gibson",
@@ -190,7 +196,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T11:36:23.992Z",
+ "updated": "2026-11-04T11:44:14.763Z",
  "open_taken_at": "2026-11-03T08:18:34.169Z",
  "thresholds": {
   "big": 10,
@@ -530,26 +536,6 @@
  ],
  "edges": [
   {
-   "key": "2123274:1",
-   "market_id": "2123274",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Talia Gibson vs Aliaksandra Sasnovich scheduled for November 4, 2026 at 6:00 AM UTC?",
-   "side": "Aliaksandra Sasnovich win",
-   "open_chance": 63,
-   "now_chance": 25,
-   "open_odds": "-170",
-   "now_odds": "+300",
-   "edge": 38,
-   "tier": "big",
-   "class": "news",
-   "reason": "Big move (38 pts), likely news",
-   "context": "Aliaksandra Sasnovich 6, 5, 6 · Talia Gibson 1, 7, 6 · 3rd Set (games by set)",
-   "first_seen": "2026-11-04T10:36:25.007Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "2123298:0",
    "market_id": "2123298",
    "market": "Games total",
@@ -670,6 +656,26 @@
    "kalshi": null
   },
   {
+   "key": "2123274:1",
+   "market_id": "2123274",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Talia Gibson vs Aliaksandra Sasnovich scheduled for November 4, 2026 at 6:00 AM UTC?",
+   "side": "Aliaksandra Sasnovich win",
+   "open_chance": 63,
+   "now_chance": 52,
+   "open_odds": "-170",
+   "now_odds": "-108",
+   "edge": 11,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Aliaksandra Sasnovich 6, 5, 6 · Talia Gibson 1, 7, 6 · 3rd Set (games by set)",
+   "first_seen": "2026-11-04T10:36:25.007Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "2123297:1",
    "market_id": "2123297",
    "market": "Sets spread",
@@ -711,6 +717,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2123274:1:2026-11-04T10:36:25.007Z",
+   "key": "2123274:1",
+   "at": "2026-11-04T11:44:14.763Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Aliaksandra Sasnovich win",
+   "market": "Moneyline",
+   "now_odds": "-108",
+   "now_chance": 52,
+   "edge": 11,
+   "text": "Edge gone: Aliaksandra Sasnovich win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-talgib-alisas-2026-11-04"
+  },
   {
    "id": "news:2123274:1",
    "key": "2123274:1",
@@ -966,7 +986,8 @@
   "gone:2123301:0:2026-11-04T07:38:02.173Z",
   "news:2123300:1",
   "new_edge:2123274:1:big",
-  "news:2123274:1"
+  "news:2123274:1",
+  "gone:2123274:1:2026-11-04T10:36:25.007Z"
  ],
  "kalshi_checked": null
 }
