@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186627",
-  "fetched_at": "2026-11-04T06:09:30.501Z",
+  "fetched_at": "2026-11-04T06:20:48.760Z",
   "tennis": true,
   "tennis_match": {
    "id": "186627",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Wed, November 3rd at 1:10 AM EST",
-     "shortDetail": "11/4 - 1:10 AM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Mika Stojsavljevic (GBR) leads Sofia Kenin (USA) 2-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "20fc0e8a-e72d-0817-ac38-68d13f620ef8",
       "displayName": "Sofia Kenin",
@@ -87,6 +98,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 2
+      }
+     ],
      "athlete": {
       "guid": "43a2ce3d-8359-391e-be1b-1ee26043160f",
       "displayName": "Mika Stojsavljevic",
@@ -119,6 +136,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 380,
    "type": {
     "id": "2",
@@ -135,10 +157,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Wed, November 3rd at 1:10 AM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Sofia Kenin",
@@ -156,13 +178,36 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T06:09:30.376Z",
+ "updated": "2026-11-04T06:20:48.653Z",
  "open_taken_at": "2026-11-04T05:37:39.456Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
- "open": [],
+ "open": [
+  {
+   "market_id": "2157618",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming wta event Mika Stojsavljevic vs Sofia Kenin scheduled for November 4, 2026 at 6:00 AM UTC?",
+   "sides": [
+    "Mika Stojsavljevic win",
+    "Sofia Kenin win"
+   ],
+   "teams": [
+    "Mika Stojsavljevic",
+    "Sofia Kenin"
+   ],
+   "player": null,
+   "mid": 38.5,
+   "yes_buy": 39,
+   "no_buy": 62,
+   "taken_at": "2026-11-04T06:20:48.653Z"
+  }
+ ],
  "edges": [],
  "alerts": [],
  "alert_seen": [],
