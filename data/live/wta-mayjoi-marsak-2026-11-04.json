@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186632",
-  "fetched_at": "2026-11-04T11:52:42.422Z",
+  "fetched_at": "2026-11-04T12:00:55.712Z",
   "tennis": true,
   "tennis_match": {
    "id": "186632",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(4) Maria Sakkari (GRE) is tied with Maya Joint (AUS) 4-6 3-0",
+     "text": "(4) Maria Sakkari (GRE) is tied with Maya Joint (AUS) 4-6 3-1",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 4
      },
@@ -104,13 +105,14 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 0
+       "value": 1
       }
      ],
      "athlete": {
@@ -145,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 380,
    "type": {
     "id": "2",
@@ -182,7 +189,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T11:52:42.328Z",
+ "updated": "2026-11-04T12:00:55.650Z",
  "open_taken_at": "2026-11-03T09:48:44.884Z",
  "thresholds": {
   "big": 10,
@@ -212,28 +219,6 @@
    "taken_at": "2026-11-03T12:34:45.192Z"
   },
   {
-   "market_id": "2125628",
-   "market": "Sets total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Maya Joint vs. Maria Sakkari be more than 2.5?",
-   "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 37.5,
-   "yes_buy": 40,
-   "no_buy": 65,
-   "taken_at": "2026-11-04T11:18:37.985Z"
-  },
-  {
    "market_id": "2125626",
    "market": "Games total",
    "group": "game",
@@ -254,28 +239,6 @@
    "yes_buy": 43,
    "no_buy": 61,
    "taken_at": "2026-11-03T22:03:25.262Z"
-  },
-  {
-   "market_id": "2125620",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Maya Joint cover 4.5 vs the Maria Sakkari in Maya Joint vs. Maria Sakkari?",
-   "sides": [
-    "Maya Joint +4.50 (Games)",
-    "Maria Sakkari -4.50 (Games)"
-   ],
-   "teams": [
-    "Maya Joint",
-    "Maria Sakkari"
-   ],
-   "player": null,
-   "mid": 59.5,
-   "yes_buy": 62,
-   "no_buy": 43,
-   "taken_at": "2026-11-04T01:07:36.014Z"
   },
   {
    "market_id": "2125618",
@@ -366,28 +329,6 @@
    "taken_at": "2026-11-04T08:08:10.956Z"
   },
   {
-   "market_id": "2125623",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Maya Joint cover -1.5 vs the Maria Sakkari in Maya Joint vs. Maria Sakkari?",
-   "sides": [
-    "Maya Joint -1.50 (Sets)",
-    "Maria Sakkari +1.50 (Sets)"
-   ],
-   "teams": [
-    "Maya Joint",
-    "Maria Sakkari"
-   ],
-   "player": null,
-   "mid": 22,
-   "yes_buy": 24,
-   "no_buy": 80,
-   "taken_at": "2026-11-04T11:03:27.716Z"
-  },
-  {
    "market_id": "2125619",
    "market": "Games spread",
    "group": "game",
@@ -408,6 +349,72 @@
    "yes_buy": 32,
    "no_buy": 74,
    "taken_at": "2026-11-04T10:54:18.125Z"
+  },
+  {
+   "market_id": "2125620",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Maya Joint cover 4.5 vs the Maria Sakkari in Maya Joint vs. Maria Sakkari?",
+   "sides": [
+    "Maya Joint +4.50 (Games)",
+    "Maria Sakkari -4.50 (Games)"
+   ],
+   "teams": [
+    "Maya Joint",
+    "Maria Sakkari"
+   ],
+   "player": null,
+   "mid": 59.5,
+   "yes_buy": 62,
+   "no_buy": 43,
+   "taken_at": "2026-11-04T01:07:36.014Z"
+  },
+  {
+   "market_id": "2125628",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Maya Joint vs. Maria Sakkari be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 37.5,
+   "yes_buy": 40,
+   "no_buy": 65,
+   "taken_at": "2026-11-04T11:18:37.985Z"
+  },
+  {
+   "market_id": "2125623",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Maya Joint cover -1.5 vs the Maria Sakkari in Maya Joint vs. Maria Sakkari?",
+   "sides": [
+    "Maya Joint -1.50 (Sets)",
+    "Maria Sakkari +1.50 (Sets)"
+   ],
+   "teams": [
+    "Maya Joint",
+    "Maria Sakkari"
+   ],
+   "player": null,
+   "mid": 22,
+   "yes_buy": 24,
+   "no_buy": 80,
+   "taken_at": "2026-11-04T11:03:27.716Z"
   },
   {
    "market_id": "2125633",
@@ -529,15 +536,55 @@
    "question": "Will the total in Maya Joint vs. Maria Sakkari be more than 22.5?",
    "side": "Under 22.5 (Games)",
    "open_chance": 61,
-   "now_chance": 29,
+   "now_chance": 28,
    "open_odds": "-156",
-   "now_odds": "+245",
-   "edge": 32,
+   "now_odds": "+257",
+   "edge": 33,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (32 pts), likely news",
-   "context": "Maria Sakkari 4, 3 · Maya Joint 6, 0 · 2nd Set (games by set)",
+   "reason": "Big move (33 pts), likely news",
+   "context": "Maria Sakkari 4, 3 · Maya Joint 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-11-04T10:47:53.800Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2125634:0",
+   "market_id": "2125634",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Maya Joint win set 2 against Maria Sakkari?",
+   "side": "Yes: Maya Joint win set 2 against Maria Sakkari",
+   "open_chance": 42,
+   "now_chance": 19,
+   "open_odds": "+138",
+   "now_odds": "+426",
+   "edge": 23,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Maya Joint not above the games spread right now",
+   "context": "Maria Sakkari 4, 3 · Maya Joint 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-11-04T11:55:43.767Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2124321:1",
+   "market_id": "2124321",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Maya Joint vs Maria Sakkari scheduled for November 4, 2026 at 10:30 AM UTC?",
+   "side": "Maria Sakkari win",
+   "open_chance": 68,
+   "now_chance": 55,
+   "open_odds": "-213",
+   "now_odds": "-122",
+   "edge": 13,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Maria Sakkari trailing in sets",
+   "context": "Maria Sakkari 4, 3 · Maya Joint 6, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-11-04T11:27:28.639Z",
    "status": "open",
    "kalshi": null
   },
@@ -556,28 +603,8 @@
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Maria Sakkari 4, 3 · Maya Joint 6, 0 · 2nd Set (games by set)",
+   "context": "Maria Sakkari 4, 3 · Maya Joint 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-11-04T11:18:37.985Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2124321:1",
-   "market_id": "2124321",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Maya Joint vs Maria Sakkari scheduled for November 4, 2026 at 10:30 AM UTC?",
-   "side": "Maria Sakkari win",
-   "open_chance": 68,
-   "now_chance": 60,
-   "open_odds": "-213",
-   "now_odds": "-150",
-   "edge": 8,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Maria Sakkari trailing in sets",
-   "context": "Maria Sakkari 4, 3 · Maya Joint 6, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-11-04T11:27:28.639Z",
    "status": "open",
    "kalshi": null
   },
@@ -596,48 +623,8 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Maria Sakkari 4, 3 · Maya Joint 6, 0 · 2nd Set (games by set)",
+   "context": "Maria Sakkari 4, 3 · Maya Joint 6, 1 · 2nd Set (games by set)",
    "first_seen": "2026-11-04T11:52:42.328Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2125620:1",
-   "market_id": "2125620",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Maya Joint cover 4.5 vs the Maria Sakkari in Maya Joint vs. Maria Sakkari?",
-   "side": "Maria Sakkari -4.50 (Games)",
-   "open_chance": 43,
-   "now_chance": 38,
-   "open_odds": "+133",
-   "now_odds": "+163",
-   "edge": 5,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Maria Sakkari not above the games spread right now",
-   "context": "Maria Sakkari 4, 3 · Maya Joint 6, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-11-04T11:44:14.788Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2125618:1",
-   "market_id": "2125618",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Maya Joint cover 1.5 vs the Maria Sakkari in Maya Joint vs. Maria Sakkari?",
-   "side": "Maria Sakkari -1.50 (Games)",
-   "open_chance": 59,
-   "now_chance": 55,
-   "open_odds": "-144",
-   "now_odds": "-122",
-   "edge": 4,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Maria Sakkari not above the games spread right now",
-   "context": "Maria Sakkari 4, 3 · Maya Joint 6, 0 · 2nd Set (games by set)",
-   "first_seen": "2026-11-04T11:36:24.031Z",
    "status": "open",
    "kalshi": null
   },
@@ -662,21 +649,21 @@
    "kalshi": null
   },
   {
-   "key": "2125619:0",
-   "market_id": "2125619",
+   "key": "2125620:1",
+   "market_id": "2125620",
    "market": "Games spread",
    "group": "game",
-   "question": "Will the Maya Joint cover -4.5 vs the Maria Sakkari in Maya Joint vs. Maria Sakkari?",
-   "side": "Maya Joint -4.50 (Games)",
-   "open_chance": 32,
-   "now_chance": 20,
-   "open_odds": "+213",
-   "now_odds": "+400",
-   "edge": 12,
+   "question": "Will the Maya Joint cover 4.5 vs the Maria Sakkari in Maya Joint vs. Maria Sakkari?",
+   "side": "Maria Sakkari -4.50 (Games)",
+   "open_chance": 43,
+   "now_chance": 30,
+   "open_odds": "+133",
+   "now_odds": "+233",
+   "edge": 13,
    "tier": "big",
    "class": "score",
-   "reason": "Explained by score: Maya Joint not above the games spread right now",
-   "context": "Maria Sakkari 4, 0 · Maya Joint 6, 0 · 2nd Set (games by set)",
+   "reason": "Explained by score: Maria Sakkari not above the games spread right now",
+   "context": "Maria Sakkari 4, 3 · Maya Joint 6, 0 · 2nd Set (games by set)",
    "first_seen": "2026-11-04T11:44:14.788Z",
    "status": "gone",
    "kalshi": null
@@ -758,6 +745,26 @@
    "reason": null,
    "context": "Maria Sakkari 4 · Maya Joint 2 · 1st Set (games by set)",
    "first_seen": "2026-11-04T11:03:27.716Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "2125618:1",
+   "market_id": "2125618",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Maya Joint cover 1.5 vs the Maria Sakkari in Maya Joint vs. Maria Sakkari?",
+   "side": "Maria Sakkari -1.50 (Games)",
+   "open_chance": 59,
+   "now_chance": 55,
+   "open_odds": "-144",
+   "now_odds": "-122",
+   "edge": 4,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Maria Sakkari not above the games spread right now",
+   "context": "Maria Sakkari 4, 3 · Maya Joint 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-11-04T11:36:24.031Z",
    "status": "gone",
    "kalshi": null
   },

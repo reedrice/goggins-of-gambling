@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186487",
-  "fetched_at": "2026-11-04T11:52:44.625Z",
+  "fetched_at": "2026-11-04T12:00:57.506Z",
   "tennis": true,
   "tennis_match": {
    "id": "186487",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Wed, November 4th at 6:55 AM EST",
-     "shortDetail": "11/4 - 6:55 AM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Daniel Merida (ESP) leads (12) Tommy Paul (USA) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,11 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "0564092a-c5de-3614-be36-924fc421d5c9",
       "displayName": "Daniel Merida",
@@ -90,6 +100,11 @@
      "curatedRank": {
       "current": 12
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "8965d2eb-1419-a6e6-5d3f-573b8b0bc565",
       "displayName": "Tommy Paul",
@@ -138,10 +153,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Wed, November 4th at 6:55 AM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Daniel Merida",
@@ -159,7 +174,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T11:52:44.551Z",
+ "updated": "2026-11-04T12:00:57.434Z",
  "open_taken_at": "2026-11-03T16:33:27.534Z",
  "thresholds": {
   "big": 10,
@@ -187,6 +202,28 @@
    "yes_buy": 79,
    "no_buy": 22,
    "taken_at": "2026-11-03T22:03:27.945Z"
+  },
+  {
+   "market_id": "2131145",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Tommy Paul cover 4.5 vs the Daniel Merida in Tommy Paul vs. Daniel Merida?",
+   "sides": [
+    "Tommy Paul +4.50 (Games)",
+    "Daniel Merida Aguilar -4.50 (Games)"
+   ],
+   "teams": [
+    "Tommy Paul",
+    "Daniel Merida Aguilar"
+   ],
+   "player": null,
+   "mid": 85.5,
+   "yes_buy": 87,
+   "no_buy": 16,
+   "taken_at": "2026-11-04T11:36:26.673Z"
   },
   {
    "market_id": "2131140",
@@ -299,28 +336,6 @@
    "taken_at": "2026-11-04T11:36:26.673Z"
   },
   {
-   "market_id": "2131142",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Tommy Paul win set 1 against Daniel Merida?",
-   "sides": [
-    "Yes: Tommy Paul win set 1 against Daniel Merida",
-    "No: Tommy Paul win set 1 against Daniel Merida"
-   ],
-   "teams": [
-    "Tommy Paul",
-    null
-   ],
-   "player": null,
-   "mid": 72,
-   "yes_buy": 74,
-   "no_buy": 30,
-   "taken_at": "2026-11-03T22:03:27.945Z"
-  },
-  {
    "market_id": "2131144",
    "market": "Set 2 winner",
    "group": "game",
@@ -343,6 +358,28 @@
    "taken_at": "2026-11-04T11:29:49.988Z"
   },
   {
+   "market_id": "2131142",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Tommy Paul win set 1 against Daniel Merida?",
+   "sides": [
+    "Yes: Tommy Paul win set 1 against Daniel Merida",
+    "No: Tommy Paul win set 1 against Daniel Merida"
+   ],
+   "teams": [
+    "Tommy Paul",
+    null
+   ],
+   "player": null,
+   "mid": 72,
+   "yes_buy": 74,
+   "no_buy": 30,
+   "taken_at": "2026-11-03T22:03:27.945Z"
+  },
+  {
    "market_id": "2131136",
    "market": "Sets spread",
    "group": "game",
@@ -363,28 +400,6 @@
    "yes_buy": 54,
    "no_buy": 47,
    "taken_at": "2026-11-04T11:38:39.723Z"
-  },
-  {
-   "market_id": "2131146",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Tommy Paul cover -4.5 vs the Daniel Merida in Tommy Paul vs. Daniel Merida?",
-   "sides": [
-    "Tommy Paul -4.50 (Games)",
-    "Daniel Merida Aguilar +4.50 (Games)"
-   ],
-   "teams": [
-    "Tommy Paul",
-    "Daniel Merida Aguilar"
-   ],
-   "player": null,
-   "mid": 47,
-   "yes_buy": 49,
-   "no_buy": 55,
-   "taken_at": "2026-11-03T22:03:27.945Z"
   },
   {
    "market_id": "2131141",
@@ -431,6 +446,28 @@
    "taken_at": "2026-11-04T11:36:26.673Z"
   },
   {
+   "market_id": "2131146",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Tommy Paul cover -4.5 vs the Daniel Merida in Tommy Paul vs. Daniel Merida?",
+   "sides": [
+    "Tommy Paul -4.50 (Games)",
+    "Daniel Merida Aguilar +4.50 (Games)"
+   ],
+   "teams": [
+    "Tommy Paul",
+    "Daniel Merida Aguilar"
+   ],
+   "player": null,
+   "mid": 47,
+   "yes_buy": 49,
+   "no_buy": 55,
+   "taken_at": "2026-11-03T22:03:27.945Z"
+  },
+  {
    "market_id": "2131147",
    "market": "Games total",
    "group": "game",
@@ -473,31 +510,49 @@
    "yes_buy": 17,
    "no_buy": 84,
    "taken_at": "2026-11-04T11:36:26.673Z"
-  },
-  {
-   "market_id": "2131145",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Tommy Paul cover 4.5 vs the Daniel Merida in Tommy Paul vs. Daniel Merida?",
-   "sides": [
-    "Tommy Paul +4.50 (Games)",
-    "Daniel Merida Aguilar -4.50 (Games)"
-   ],
-   "teams": [
-    "Tommy Paul",
-    "Daniel Merida Aguilar"
-   ],
-   "player": null,
-   "mid": 85.5,
-   "yes_buy": 87,
-   "no_buy": 16,
-   "taken_at": "2026-11-04T11:36:26.673Z"
   }
  ],
  "edges": [
+  {
+   "key": "2131146:0",
+   "market_id": "2131146",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Tommy Paul cover -4.5 vs the Daniel Merida in Tommy Paul vs. Daniel Merida?",
+   "side": "Tommy Paul -4.50 (Games)",
+   "open_chance": 49,
+   "now_chance": 29,
+   "open_odds": "+104",
+   "now_odds": "+245",
+   "edge": 20,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Tommy Paul not above the games spread right now",
+   "context": "Daniel Merida 1 · Tommy Paul 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-04T12:00:57.434Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2131136:0",
+   "market_id": "2131136",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Tommy Paul cover -1.5 vs the Daniel Merida in Tommy Paul vs. Daniel Merida?",
+   "side": "Tommy Paul -1.50 (Sets)",
+   "open_chance": 54,
+   "now_chance": 47,
+   "open_odds": "-117",
+   "now_odds": "+113",
+   "edge": 7,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Tommy Paul not above the sets spread right now",
+   "context": "Daniel Merida 1 · Tommy Paul 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-04T12:00:57.434Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "2131138:1",
    "market_id": "2131138",
@@ -513,7 +568,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Daniel Merida 1 · Tommy Paul 0 · 1st Set (games by set)",
    "first_seen": "2026-11-04T11:52:44.551Z",
    "status": "open",
    "kalshi": null
@@ -535,7 +590,7 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-04T11:52:44.551Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -555,11 +610,39 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-04T11:46:43.663Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2131142:1:2026-11-04T11:52:44.551Z",
+   "key": "2131142:1",
+   "at": "2026-11-04T12:00:57.434Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "No: Tommy Paul win set 1 against Daniel Merida",
+   "market": "Set 1 winner",
+   "now_odds": "+285",
+   "now_chance": 26,
+   "edge": 4,
+   "text": "Edge gone: No: Tommy Paul win set 1 against Daniel Merida (Set 1 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-tompau-danagu-2026-11-04"
+  },
+  {
+   "id": "gone:2131136:1:2026-11-04T11:46:43.663Z",
+   "key": "2131136:1",
+   "at": "2026-11-04T12:00:57.434Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Daniel Merida Aguilar +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "+133",
+   "now_chance": 43,
+   "edge": 4,
+   "text": "Edge gone: Daniel Merida Aguilar +1.50 (Sets) (Sets spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-tompau-danagu-2026-11-04"
+  },
   {
    "id": "new_edge:2131138:1:slight",
    "key": "2131138:1",
@@ -606,7 +689,9 @@
  "alert_seen": [
   "new_edge:2131136:1:slight",
   "new_edge:2131138:1:slight",
-  "new_edge:2131142:1:slight"
+  "new_edge:2131142:1:slight",
+  "gone:2131142:1:2026-11-04T11:52:44.551Z",
+  "gone:2131136:1:2026-11-04T11:46:43.663Z"
  ],
  "kalshi_checked": null
 }
