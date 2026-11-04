@@ -9,15 +9,37 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-04T19:11:44.641Z"
+  "fetched_at": "2026-11-04T19:20:47.670Z"
  },
- "updated": "2026-11-04T19:11:44.501Z",
+ "updated": "2026-11-04T19:20:47.521Z",
  "open_taken_at": "2026-11-04T00:03:37.419Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "2147685",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming atp event Gonzalo Bueno vs Eduardo Ribeiro scheduled for November 4, 2026 at 6:00 PM UTC?",
+   "sides": [
+    "Gonzalo Bueno win",
+    "Eduardo Ribeiro win"
+   ],
+   "teams": [
+    "Gonzalo Bueno",
+    "Eduardo Ribeiro"
+   ],
+   "player": null,
+   "mid": 63,
+   "yes_buy": 65,
+   "no_buy": 39,
+   "taken_at": "2026-11-04T06:09:29.355Z"
+  },
   {
    "market_id": "2148232",
    "market": "Games spread",
@@ -105,28 +127,6 @@
    "yes_buy": 60,
    "no_buy": 41,
    "taken_at": "2026-11-04T18:11:14.296Z"
-  },
-  {
-   "market_id": "2147685",
-   "market": "Moneyline",
-   "group": "game",
-   "mtype": "winner",
-   "period": "full_game",
-   "line": null,
-   "question": "Who will win in the upcoming atp event Gonzalo Bueno vs Eduardo Ribeiro scheduled for November 4, 2026 at 6:00 PM UTC?",
-   "sides": [
-    "Gonzalo Bueno win",
-    "Eduardo Ribeiro win"
-   ],
-   "teams": [
-    "Gonzalo Bueno",
-    "Eduardo Ribeiro"
-   ],
-   "player": null,
-   "mid": 63,
-   "yes_buy": 65,
-   "no_buy": 39,
-   "taken_at": "2026-11-04T06:09:29.355Z"
   },
   {
    "market_id": "2148227",
@@ -358,11 +358,11 @@
    "question": "Will Gonzalo Bueno win set 2 against Eduardo Ribeiro?",
    "side": "Yes: Gonzalo Bueno win set 2 against Eduardo Ribeiro",
    "open_chance": 60,
-   "now_chance": 54,
+   "now_chance": 23,
    "open_odds": "-150",
-   "now_odds": "-117",
-   "edge": 6,
-   "tier": "slight",
+   "now_odds": "+335",
+   "edge": 37,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -398,10 +398,10 @@
    "question": "Who will win in the upcoming atp event Gonzalo Bueno vs Eduardo Ribeiro scheduled for November 4, 2026 at 6:00 PM UTC?",
    "side": "Eduardo Ribeiro win",
    "open_chance": 39,
-   "now_chance": 17,
+   "now_chance": 23,
    "open_odds": "+156",
-   "now_odds": "+488",
-   "edge": 22,
+   "now_odds": "+335",
+   "edge": 16,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -492,6 +492,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2148255:0:big",
+   "key": "2148255:0",
+   "at": "2026-11-04T19:20:47.521Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Yes: Gonzalo Bueno win set 2 against Eduardo Ribeiro",
+   "market": "Set 2 winner",
+   "now_odds": "+335",
+   "now_chance": 23,
+   "edge": 37,
+   "text": "New big edge: Yes: Gonzalo Bueno win set 2 against Eduardo Ribeiro (Set 2 winner), 37 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-gonbue-edurib-2026-11-04"
+  },
   {
    "id": "new_edge:2148255:0:slight",
    "key": "2148255:0",
@@ -721,7 +735,8 @@
   "gone:2148243:0:2026-11-04T18:50:48.215Z",
   "new_edge:2148255:1:slight",
   "new_edge:2148255:0:slight",
-  "gone:2148255:1:2026-11-04T19:06:51.300Z"
+  "gone:2148255:1:2026-11-04T19:06:51.300Z",
+  "new_edge:2148255:0:big"
  ],
  "kalshi_checked": null
 }
