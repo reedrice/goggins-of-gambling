@@ -4,12 +4,12 @@
  "game": "Adkar / Bhosale vs. Brooks / Rajecki",
  "url": "https://polymarket.us/sports/wtadb/wtadb-adkarbhosal-brooksrajeck-2026-11-02",
  "start_time": "2026-11-04T14:40:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186602",
-  "fetched_at": "2026-11-04T15:51:02.497Z",
+  "fetched_at": "2026-11-04T16:17:09.945Z",
   "tennis": true,
   "tennis_match": {
    "id": "186602",
@@ -17,17 +17,17 @@
    "date": "2026-11-04T14:35Z",
    "startDate": "2026-11-04T14:35Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(4) Madeleine Brooks (GBR) & Amelia Rajecki (GBR) is tied with Vaishnavi Adkar (IND) & Rutuja Bhosale (IND) 4-6 4-3",
+     "text": "Vaishnavi Adkar (IND) & Rutuja Bhosale (IND) bt (4) Madeleine Brooks (GBR) & Amelia Rajecki (GBR) 6-4 6-4",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "winner": false,
      "curatedRank": {
       "current": 4
      },
@@ -65,7 +65,8 @@
        "winner": false
       },
       {
-       "value": 4
+       "value": 4,
+       "winner": false
       }
      ],
      "roster": {
@@ -140,14 +141,15 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "winner": true,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 3
+       "value": 6,
+       "winner": true
       }
      ],
      "roster": {
@@ -217,11 +219,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 889,
    "type": {
     "id": "4",
@@ -238,10 +235,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Madeleine Brooks / Amelia Rajecki",
@@ -253,13 +250,13 @@
    "abbr": "Vaishnavi Adkar / Rutuja Bhosale",
    "alias": "Vaishnavi Adkar / Rutuja Bhosale",
    "name": "Vaishnavi Adkar / Rutuja Bhosale",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T15:51:02.403Z",
+ "updated": "2026-11-04T16:17:09.850Z",
  "open_taken_at": "2026-11-01T05:07:38.002Z",
  "thresholds": {
   "big": 10,
@@ -307,11 +304,25 @@
    "reason": null,
    "context": "Madeleine Brooks / Amelia Rajecki 4, 4 · Vaishnavi Adkar / Rutuja Bhosale 6, 3 · 2nd Set (games by set)",
    "first_seen": "2026-11-04T14:41:46.877Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2010071:1:2026-11-04T14:41:46.877Z",
+   "key": "2010071:1",
+   "at": "2026-11-04T16:17:09.850Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Brooks M / Rajecki A win",
+   "market": "Moneyline",
+   "now_odds": "-122",
+   "now_chance": 55,
+   "edge": 24,
+   "text": "Edge gone: Brooks M / Rajecki A win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-adkarbhosal-brooksrajeck-2026-11-02"
+  },
   {
    "id": "news:2010071:1",
    "key": "2010071:1",
@@ -358,7 +369,8 @@
  "alert_seen": [
   "new_edge:2010071:1:slight",
   "new_edge:2010071:1:big",
-  "news:2010071:1"
+  "news:2010071:1",
+  "gone:2010071:1:2026-11-04T14:41:46.877Z"
  ],
  "kalshi_checked": null
 }
