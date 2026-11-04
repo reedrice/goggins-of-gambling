@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186725",
-  "fetched_at": "2026-11-04T18:00:58.617Z",
+  "fetched_at": "2026-11-04T18:11:12.291Z",
   "tennis": true,
   "tennis_match": {
    "id": "186725",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(5) Laura Samson (CZE) is tied with Carole Monnet (FRA) 6-3 6-6",
+     "text": "Carole Monnet (FRA) is tied with (5) Laura Samson (CZE) 3-6 7-6 (7-4)",
      "type": "event"
     }
    ],
@@ -61,7 +61,8 @@
        "winner": false
       },
       {
-       "value": 6
+       "value": 7,
+       "tiebreak": 7
       }
      ],
      "athlete": {
@@ -110,7 +111,8 @@
        "winner": true
       },
       {
-       "value": 6
+       "value": 6,
+       "tiebreak": 4
       }
      ],
      "athlete": {
@@ -182,7 +184,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T18:00:58.531Z",
+ "updated": "2026-11-04T18:11:12.190Z",
  "open_taken_at": "2026-11-03T22:03:29.042Z",
  "thresholds": {
   "big": 10,
@@ -210,6 +212,28 @@
    "yes_buy": 66,
    "no_buy": 35,
    "taken_at": "2026-11-04T02:59:23.019Z"
+  },
+  {
+   "market_id": "2138968",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Laura Samson cover -1.5 vs the Carole Monnet in Laura Samson vs. Carole Monnet?",
+   "sides": [
+    "Laura Samson -1.50 (Games)",
+    "Carole Monnet +1.50 (Games)"
+   ],
+   "teams": [
+    "Laura Samson",
+    "Carole Monnet"
+   ],
+   "player": null,
+   "mid": 69,
+   "yes_buy": 72,
+   "no_buy": 34,
+   "taken_at": "2026-11-04T16:51:54.802Z"
   },
   {
    "market_id": "2138971",
@@ -388,28 +412,6 @@
    "taken_at": "2026-11-04T16:23:08.178Z"
   },
   {
-   "market_id": "2138968",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Laura Samson cover -1.5 vs the Carole Monnet in Laura Samson vs. Carole Monnet?",
-   "sides": [
-    "Laura Samson -1.50 (Games)",
-    "Carole Monnet +1.50 (Games)"
-   ],
-   "teams": [
-    "Laura Samson",
-    "Carole Monnet"
-   ],
-   "player": null,
-   "mid": 69,
-   "yes_buy": 72,
-   "no_buy": 34,
-   "taken_at": "2026-11-04T16:51:54.802Z"
-  },
-  {
    "market_id": "2138979",
    "market": "Sets total",
    "group": "game",
@@ -500,6 +502,26 @@
  ],
  "edges": [
   {
+   "key": "2138968:0",
+   "market_id": "2138968",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Laura Samson cover -1.5 vs the Carole Monnet in Laura Samson vs. Carole Monnet?",
+   "side": "Laura Samson -1.50 (Games)",
+   "open_chance": 72,
+   "now_chance": 59,
+   "open_odds": "-257",
+   "now_odds": "-144",
+   "edge": 13,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Carole Monnet 3, 7 · Laura Samson 6, 6 · 2nd Set (games by set)",
+   "first_seen": "2026-11-04T18:11:12.190Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2136209:0",
    "market_id": "2136209",
    "market": "Moneyline",
@@ -507,14 +529,14 @@
    "question": "Who will win in the upcoming wta event Laura Samson vs Carole Monnet scheduled for November 4, 2026 at 6:00 PM UTC?",
    "side": "Laura Samson win",
    "open_chance": 66,
-   "now_chance": 55,
+   "now_chance": 56,
    "open_odds": "-194",
-   "now_odds": "-122",
-   "edge": 11,
+   "now_odds": "-127",
+   "edge": 10,
    "tier": "big",
    "class": "edge",
    "reason": null,
-   "context": "Carole Monnet 3, 6 · Laura Samson 6, 6 · 2nd Set (games by set)",
+   "context": "Carole Monnet 3, 7 · Laura Samson 6, 6 · 2nd Set (games by set)",
    "first_seen": "2026-11-04T18:00:58.531Z",
    "status": "open",
    "kalshi": null
@@ -681,6 +703,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2138968:0:big",
+   "key": "2138968:0",
+   "at": "2026-11-04T18:11:12.190Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Laura Samson -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-144",
+   "now_chance": 59,
+   "edge": 13,
+   "text": "New big edge: Laura Samson -1.50 (Games) (Games spread), 13 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-lausam-carmon-2026-11-04"
+  },
   {
    "id": "gone:2138970:1:2026-11-04T17:18:04.908Z",
    "key": "2138970:1",
@@ -867,7 +903,8 @@
   "new_edge:2138985:0:big",
   "gone:2138970:1:2026-11-04T17:18:04.908Z",
   "gone:2138985:0:2026-11-04T17:18:04.908Z",
-  "gone:2138978:0:2026-11-04T16:35:48.575Z"
+  "gone:2138978:0:2026-11-04T16:35:48.575Z",
+  "new_edge:2138968:0:big"
  ],
  "kalshi_checked": null
 }
