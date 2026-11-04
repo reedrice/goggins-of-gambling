@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186696",
-  "fetched_at": "2026-11-04T10:36:23.514Z",
+  "fetched_at": "2026-11-04T10:54:16.586Z",
   "tennis": true,
   "tennis_match": {
    "id": "186696",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Prathyusha Rachapudi (IND) & Saumya Vig (IND) leads Ashmitha Easwaramurthi (IND) & Abigayel Vosloo (RSA) 3-2",
+     "text": "Prathyusha Rachapudi (IND) & Saumya Vig (IND) is tied with Ashmitha Easwaramurthi (IND) & Abigayel Vosloo (RSA) 6-3 0-0",
      "type": "event"
     }
    ],
@@ -58,7 +58,11 @@
      "possession": true,
      "linescores": [
       {
-       "value": 2
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "roster": {
@@ -136,7 +140,11 @@
      "possession": false,
      "linescores": [
       {
-       "value": 3
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "roster": {
@@ -229,8 +237,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Ashmitha Easwaramurthi / Abigayel Vosloo",
@@ -242,13 +250,13 @@
    "abbr": "Prathyusha Rachapudi / Saumya Vig",
    "alias": "Prathyusha Rachapudi / Saumya Vig",
    "name": "Prathyusha Rachapudi / Saumya Vig",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T10:36:23.361Z",
+ "updated": "2026-11-04T10:54:16.501Z",
  "open_taken_at": "2026-11-01T14:30:07.655Z",
  "thresholds": {
   "big": 10,
@@ -280,6 +288,26 @@
  ],
  "edges": [
   {
+   "key": "2054978:1",
+   "market_id": "2054978",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wtadb event Rachapudi / Vig vs Easwaramurthi / Vosloo scheduled for November 2, 2026 at 9:00 AM UTC?",
+   "side": "Easwaramurthi A / Vosloo A win",
+   "open_chance": 41,
+   "now_chance": 20,
+   "open_odds": "+144",
+   "now_odds": "+400",
+   "edge": 21,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Ashmitha Easwaramurthi / Abigayel Vosloo 3, 0 · Prathyusha Rachapudi / Saumya Vig 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-11-04T10:47:52.208Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2054978:0",
    "market_id": "2054978",
    "market": "Moneyline",
@@ -302,6 +330,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:2054978:1:big",
+   "key": "2054978:1",
+   "at": "2026-11-04T10:47:52.208Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Easwaramurthi A / Vosloo A win",
+   "market": "Moneyline",
+   "now_odds": "+285",
+   "now_chance": 26,
+   "edge": 15,
+   "text": "New big edge: Easwaramurthi A / Vosloo A win (Moneyline), 15 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-rachapvig-easwarvosloo-2026-11-02"
+  },
+  {
    "id": "gone:2054978:0:2026-11-04T04:24:04.468Z",
    "key": "2054978:0",
    "at": "2026-11-04T10:36:23.361Z",
@@ -317,7 +359,8 @@
   }
  ],
  "alert_seen": [
-  "gone:2054978:0:2026-11-04T04:24:04.468Z"
+  "gone:2054978:0:2026-11-04T04:24:04.468Z",
+  "new_edge:2054978:1:big"
  ],
  "kalshi_checked": null
 }
