@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186722",
-  "fetched_at": "2026-11-04T20:36:43.933Z",
+  "fetched_at": "2026-11-04T20:47:55.047Z",
   "tennis": true,
   "tennis_match": {
    "id": "186722",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Despina Papamichail (GRE) leads (2) Renata Zarazua (MEX) 6-6",
+     "text": "Despina Papamichail (GRE) leads (2) Renata Zarazua (MEX) 6-7 (6-8) 0-0",
      "type": "event"
     }
    ],
@@ -55,12 +55,18 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "curatedRank": {
       "current": 2
      },
      "linescores": [
       {
-       "value": 6
+       "value": 7,
+       "tiebreak": 8,
+       "winner": true
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -100,9 +106,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "tiebreak": 6,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -137,6 +149,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1007,
    "type": {
     "id": "2",
@@ -155,14 +172,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Renata Zarazua",
    "alias": "Renata Zarazua",
    "name": "Renata Zarazua",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Despina Papamichail",
@@ -174,7 +191,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T20:36:43.824Z",
+ "updated": "2026-11-04T20:47:54.977Z",
  "open_taken_at": "2026-11-03T22:03:30.117Z",
  "thresholds": {
   "big": 10,
@@ -486,27 +503,7 @@
    "reason": "Explained by score: Despina Papamichail not above the games spread right now",
    "context": "Renata Zarazua 6 · Despina Papamichail 6 · 1st Set (games by set)",
    "first_seen": "2026-11-04T20:04:49.000Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2145122:1",
-   "market_id": "2145122",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Despina Papamichail vs Renata Zarazua scheduled for November 4, 2026 at 6:00 PM UTC?",
-   "side": "Renata Zarazua win",
-   "open_chance": 78,
-   "now_chance": 72,
-   "open_odds": "-355",
-   "now_odds": "-257",
-   "edge": 6,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Renata Zarazua 6 · Despina Papamichail 6 · 1st Set (games by set)",
-   "first_seen": "2026-11-04T19:48:42.463Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -586,20 +583,6 @@
    "url": "https://polymarket.us/sports/wta/wta-despap-renzar-2026-11-04"
   },
   {
-   "id": "new_edge:2145122:1:slight",
-   "key": "2145122:1",
-   "at": "2026-11-04T20:10:08.600Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Renata Zarazua win",
-   "market": "Moneyline",
-   "now_odds": "-223",
-   "now_chance": 69,
-   "edge": 9,
-   "text": "New slight edge: Renata Zarazua win (Moneyline), 9 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-despap-renzar-2026-11-04"
-  },
-  {
    "id": "news:2145285:1",
    "key": "2145285:1",
    "at": "2026-11-04T20:04:49.000Z",
@@ -611,34 +594,6 @@
    "now_chance": 33,
    "edge": 61,
    "text": "Big move, likely news: No: Despina Papamichail win set 1 against Renata Zarazua (Set 1 winner) is 61 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-despap-renzar-2026-11-04"
-  },
-  {
-   "id": "news:2145122:1",
-   "key": "2145122:1",
-   "at": "2026-11-04T19:54:35.530Z",
-   "type": "news",
-   "tier": "big",
-   "side": "Renata Zarazua win",
-   "market": "Moneyline",
-   "now_odds": "-113",
-   "now_chance": 53,
-   "edge": 25,
-   "text": "Big move, likely news: Renata Zarazua win (Moneyline) is 25 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-despap-renzar-2026-11-04"
-  },
-  {
-   "id": "new_edge:2145122:1:big",
-   "key": "2145122:1",
-   "at": "2026-11-04T19:48:42.463Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Renata Zarazua win",
-   "market": "Moneyline",
-   "now_odds": "-203",
-   "now_chance": 67,
-   "edge": 11,
-   "text": "New big edge: Renata Zarazua win (Moneyline), 11 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-despap-renzar-2026-11-04"
   },
   {
