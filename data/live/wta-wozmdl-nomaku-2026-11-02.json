@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186662",
-  "fetched_at": "2026-11-04T10:54:14.358Z",
+  "fetched_at": "2026-11-04T11:09:28.788Z",
   "tennis": true,
   "tennis_match": {
    "id": "186662",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(2) Noma Noha Akugue (GER) leads Wozuko Mdlulwa (RSA) 5-2",
+     "text": "(2) Noma Noha Akugue (GER) leads Wozuko Mdlulwa (RSA) 6-2 3-0",
      "type": "event"
     }
    ],
@@ -55,13 +55,16 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
      "curatedRank": {
       "current": 2
      },
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 3
       }
      ],
      "athlete": {
@@ -101,10 +104,13 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
      "linescores": [
       {
-       "value": 2
+       "value": 2,
+       "winner": false
+      },
+      {
+       "value": 0
       }
      ],
      "athlete": {
@@ -139,11 +145,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 1082,
    "type": {
     "id": "2",
@@ -162,14 +163,14 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Noma Noha Akugue",
    "alias": "Noma Noha Akugue",
    "name": "Noma Noha Akugue",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Wozuko Mdlulwa",
@@ -181,7 +182,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T10:54:14.262Z",
+ "updated": "2026-11-04T11:09:28.662Z",
  "open_taken_at": "2026-11-01T05:07:46.108Z",
  "thresholds": {
   "big": 10,
@@ -189,26 +190,26 @@
  },
  "open": [
   {
-   "market_id": "2034435",
-   "market": "Sets total",
+   "market_id": "2034430",
+   "market": "Games total",
    "group": "game",
    "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Wozuko Mdlulwa vs. Noma Noha Akugue be more than 2.5?",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Wozuko Mdlulwa vs. Noma Noha Akugue be more than 22.5?",
    "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
    ],
    "teams": [
     null,
     null
    ],
    "player": null,
-   "mid": 50.5,
-   "yes_buy": 51,
-   "no_buy": 50,
-   "taken_at": "2026-11-04T10:54:14.262Z"
+   "mid": 13.5,
+   "yes_buy": 14,
+   "no_buy": 87,
+   "taken_at": "2026-11-04T10:47:49.821Z"
   },
   {
    "market_id": "2034415",
@@ -255,48 +256,26 @@
    "taken_at": "2026-11-04T10:47:49.821Z"
   },
   {
-   "market_id": "2034430",
-   "market": "Games total",
+   "market_id": "2034421",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Wozuko Mdlulwa vs. Noma Noha Akugue be more than 22.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Wozuko Mdlulwa cover 7.5 vs the Noma Noha Akugue in Wozuko Mdlulwa vs. Noma Noha Akugue?",
    "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
+    "Wozuko Mdlulwa +7.50 (Games)",
+    "Noma Noha Akugue -7.50 (Games)"
    ],
    "teams": [
-    null,
-    null
+    "Wozuko Mdlulwa",
+    "Noma Noha Akugue"
    ],
    "player": null,
-   "mid": 13.5,
-   "yes_buy": 14,
-   "no_buy": 87,
-   "taken_at": "2026-11-04T10:47:49.821Z"
-  },
-  {
-   "market_id": "2034433",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Wozuko Mdlulwa vs. Noma Noha Akugue be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 13.5,
-   "yes_buy": 14,
-   "no_buy": 87,
-   "taken_at": "2026-11-04T10:47:49.821Z"
+   "mid": 55.5,
+   "yes_buy": 58,
+   "no_buy": 47,
+   "taken_at": "2026-11-02T06:04:02.851Z"
   },
   {
    "market_id": "2034428",
@@ -321,26 +300,48 @@
    "taken_at": "2026-11-03T22:21:42.719Z"
   },
   {
-   "market_id": "2034421",
-   "market": "Games spread",
+   "market_id": "2034435",
+   "market": "Sets total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Wozuko Mdlulwa cover 7.5 vs the Noma Noha Akugue in Wozuko Mdlulwa vs. Noma Noha Akugue?",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Wozuko Mdlulwa vs. Noma Noha Akugue be more than 2.5?",
    "sides": [
-    "Wozuko Mdlulwa +7.50 (Games)",
-    "Noma Noha Akugue -7.50 (Games)"
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
    ],
    "teams": [
-    "Wozuko Mdlulwa",
-    "Noma Noha Akugue"
+    null,
+    null
    ],
    "player": null,
-   "mid": 55.5,
-   "yes_buy": 58,
-   "no_buy": 47,
-   "taken_at": "2026-11-02T06:04:02.851Z"
+   "mid": 50.5,
+   "yes_buy": 51,
+   "no_buy": 50,
+   "taken_at": "2026-11-04T10:54:14.262Z"
+  },
+  {
+   "market_id": "2034433",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Wozuko Mdlulwa vs. Noma Noha Akugue be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 13.5,
+   "yes_buy": 14,
+   "no_buy": 87,
+   "taken_at": "2026-11-04T10:47:49.821Z"
   },
   {
    "market_id": "2021211",
