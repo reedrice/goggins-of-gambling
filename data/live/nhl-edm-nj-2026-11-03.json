@@ -4,22 +4,22 @@
  "game": "EDM Oilers vs. NJD Devils",
  "url": "https://polymarket.us/sports/nhl/nhl-edm-nj-2026-11-03",
  "start_time": "2026-11-04T00:30:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892636",
-  "fetched_at": "2026-11-04T03:11:46.188Z",
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
-  "period": 5,
-  "clock": "0:00",
+  "fetched_at": "2026-11-04T03:20:56.934Z",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 0,
+  "clock": null,
   "regulation_secs_left": 0,
   "home": {
    "abbr": "NJ",
    "alias": "Devils",
    "name": "New Jersey Devils",
-   "score": 3,
+   "score": 4,
    "id": "11"
   },
   "away": {
@@ -114,7 +114,7 @@
    }
   ]
  },
- "updated": "2026-11-04T03:11:45.984Z",
+ "updated": "2026-11-04T03:20:56.705Z",
  "open_taken_at": "2026-11-02T06:03:49.524Z",
  "thresholds": {
   "big": 10,
@@ -2654,26 +2654,6 @@
  ],
  "edges": [
   {
-   "key": "1961558:1",
-   "market_id": "1961558",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming hockey event EDM Oilers vs NJD Devils scheduled for November 4, 2026 at 12:30 AM UTC?",
-   "side": "Devils win",
-   "open_chance": 61,
-   "now_chance": 51,
-   "open_odds": "-156",
-   "now_odds": "-104",
-   "edge": 10,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "NJ tied, OT 0:00",
-   "first_seen": "2026-11-04T02:34:13.931Z",
-   "status": "open",
-   "kalshi": false
-  },
-  {
    "key": "2113906:0",
    "market_id": "2113906",
    "market": "Player prop",
@@ -2851,7 +2831,7 @@
    "context": "NJ down 1, End of Q1",
    "first_seen": "2026-11-04T00:56:41.616Z",
    "status": "gone",
-   "kalshi": null
+   "kalshi": true
   },
   {
    "key": "2124222:0",
@@ -2892,6 +2872,26 @@
    "first_seen": "2026-11-03T22:03:14.009Z",
    "status": "gone",
    "kalshi": true
+  },
+  {
+   "key": "1961558:1",
+   "market_id": "1961558",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming hockey event EDM Oilers vs NJD Devils scheduled for November 4, 2026 at 12:30 AM UTC?",
+   "side": "Devils win",
+   "open_chance": 61,
+   "now_chance": 51,
+   "open_odds": "-156",
+   "now_odds": "-104",
+   "edge": 10,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "NJ tied, OT 0:00",
+   "first_seen": "2026-11-04T02:34:13.931Z",
+   "status": "gone",
+   "kalshi": false
   },
   {
    "key": "2113914:0",
@@ -3171,7 +3171,7 @@
    "context": "NJ tied, Q1 16:05",
    "first_seen": "2026-11-03T09:30:56.295Z",
    "status": "gone",
-   "kalshi": null
+   "kalshi": true
   },
   {
    "key": "2113897:1",
@@ -3235,6 +3235,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1961558:1:2026-11-04T02:34:13.931Z",
+   "key": "1961558:1",
+   "at": "2026-11-04T03:20:56.705Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Devils win",
+   "market": "Moneyline",
+   "now_odds": "-104",
+   "now_chance": 51,
+   "edge": 10,
+   "text": "Edge gone: Devils win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-edm-nj-2026-11-03"
+  },
   {
    "id": "new_edge:1961558:1:big",
    "key": "1961558:1",
@@ -3877,10 +3891,11 @@
   "gone:1961562:0:2026-11-04T02:03:58.676Z",
   "gone:2113914:0:2026-11-04T01:19:37.876Z",
   "new_edge:1961558:1:big",
-  "gone:2113900:0:2026-11-03T22:03:14.009Z"
+  "gone:2113900:0:2026-11-03T22:03:14.009Z",
+  "gone:1961558:1:2026-11-04T02:34:13.931Z"
  ],
  "kalshi_checked": {
-  "at": "2026-11-04T03:11:46.735Z",
+  "at": "2026-11-04T03:20:57.218Z",
   "event": "26NOV03EDMNJ"
  }
 }
