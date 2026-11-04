@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-04T18:30:06.793Z"
+  "fetched_at": "2026-11-04T18:38:29.905Z"
  },
- "updated": "2026-11-04T18:30:06.667Z",
+ "updated": "2026-11-04T18:38:29.813Z",
  "open_taken_at": "2026-11-01T05:07:43.406Z",
  "thresholds": {
   "big": 10,
@@ -43,6 +43,26 @@
  ],
  "edges": [
   {
+   "key": "2017910:1",
+   "market_id": "2017910",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atpdb event Barry / Wendelken vs Blancaneaux / Zheng scheduled for November 2, 2026 at 2:00 PM UTC?",
+   "side": "Blancaneaux G / Zheng M win",
+   "open_chance": 46,
+   "now_chance": 40,
+   "open_odds": "+117",
+   "now_odds": "+150",
+   "edge": 6,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-04T18:38:29.813Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2017910:0",
    "market_id": "2017910",
    "market": "Moneyline",
@@ -50,20 +70,48 @@
    "question": "Who will win in the upcoming atpdb event Barry / Wendelken vs Blancaneaux / Zheng scheduled for November 2, 2026 at 2:00 PM UTC?",
    "side": "Barry C / Wendelken H win",
    "open_chance": 55,
-   "now_chance": 46,
+   "now_chance": 49,
    "open_odds": "-122",
-   "now_odds": "+117",
-   "edge": 9,
+   "now_odds": "+104",
+   "edge": 6,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-04T17:42:41.911Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2017910:1:slight",
+   "key": "2017910:1",
+   "at": "2026-11-04T18:38:29.813Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Blancaneaux G / Zheng M win",
+   "market": "Moneyline",
+   "now_odds": "+150",
+   "now_chance": 40,
+   "edge": 6,
+   "text": "New slight edge: Blancaneaux G / Zheng M win (Moneyline), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-barrywendel-blancazheng-2026-11-02"
+  },
+  {
+   "id": "gone:2017910:0:2026-11-04T17:42:41.911Z",
+   "key": "2017910:0",
+   "at": "2026-11-04T18:38:29.813Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Barry C / Wendelken H win",
+   "market": "Moneyline",
+   "now_odds": "+104",
+   "now_chance": 49,
+   "edge": 6,
+   "text": "Edge gone: Barry C / Wendelken H win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-barrywendel-blancazheng-2026-11-02"
+  },
   {
    "id": "new_edge:2017910:0:slight",
    "key": "2017910:0",
@@ -80,7 +128,9 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2017910:0:slight"
+  "new_edge:2017910:0:slight",
+  "new_edge:2017910:1:slight",
+  "gone:2017910:0:2026-11-04T17:42:41.911Z"
  ],
  "kalshi_checked": null
 }
