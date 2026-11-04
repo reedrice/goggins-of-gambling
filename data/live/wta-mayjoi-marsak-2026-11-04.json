@@ -4,12 +4,12 @@
  "game": "Maya Joint vs. Maria Sakkari",
  "url": "https://polymarket.us/sports/wta/wta-mayjoi-marsak-2026-11-04",
  "start_time": "2026-11-04T10:50:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186632",
-  "fetched_at": "2026-11-04T13:00:10.070Z",
+  "fetched_at": "2026-11-04T13:08:37.017Z",
   "tennis": true,
   "tennis_match": {
    "id": "186632",
@@ -17,17 +17,17 @@
    "date": "2026-11-04T10:50Z",
    "startDate": "2026-11-04T10:50Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(4) Maria Sakkari (GRE) leads Maya Joint (AUS) 4-6 6-3 4-3",
+     "text": "(4) Maria Sakkari (GRE) bt Maya Joint (AUS) 4-6 6-3 6-3",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "curatedRank": {
       "current": 4
      },
@@ -68,7 +69,8 @@
        "winner": true
       },
       {
-       "value": 4
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -108,6 +110,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "linescores": [
       {
        "value": 6,
@@ -118,7 +121,8 @@
        "winner": false
       },
       {
-       "value": 3
+       "value": 3,
+       "winner": false
       }
      ],
      "athlete": {
@@ -169,16 +173,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Maria Sakkari",
    "alias": "Maria Sakkari",
    "name": "Maria Sakkari",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Maya Joint",
@@ -190,7 +194,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T13:00:09.988Z",
+ "updated": "2026-11-04T13:08:36.889Z",
  "open_taken_at": "2026-11-03T09:48:44.884Z",
  "thresholds": {
   "big": 10,
@@ -550,6 +554,26 @@
    "kalshi": null
   },
   {
+   "key": "2124321:0",
+   "market_id": "2124321",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Maya Joint vs Maria Sakkari scheduled for November 4, 2026 at 10:30 AM UTC?",
+   "side": "Maya Joint win",
+   "open_chance": 36,
+   "now_chance": 24,
+   "open_odds": "+178",
+   "now_odds": "+317",
+   "edge": 12,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Maria Sakkari 4, 6, 4 · Maya Joint 6, 3, 3 · 3rd Set (games by set)",
+   "first_seen": "2026-11-04T13:02:43.333Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "2125617:0",
    "market_id": "2125617",
    "market": "Games spread",
@@ -691,6 +715,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2124321:0:2026-11-04T13:02:43.333Z",
+   "key": "2124321:0",
+   "at": "2026-11-04T13:08:36.889Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Maya Joint win",
+   "market": "Moneyline",
+   "now_odds": "+317",
+   "now_chance": 24,
+   "edge": 12,
+   "text": "Edge gone: Maya Joint win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-mayjoi-marsak-2026-11-04"
+  },
   {
    "id": "gone:2125617:1:2026-11-04T11:52:42.328Z",
    "key": "2125617:1",
@@ -912,7 +950,8 @@
   "news:2125626:1",
   "new_edge:2125617:1:slight",
   "gone:2125617:1:2026-11-04T11:52:42.328Z",
-  "news:2125627:1"
+  "news:2125627:1",
+  "gone:2124321:0:2026-11-04T13:02:43.333Z"
  ],
  "kalshi_checked": null
 }
