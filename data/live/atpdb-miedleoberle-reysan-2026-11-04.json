@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187301",
-  "fetched_at": "2026-11-04T14:07:38.118Z",
+  "fetched_at": "2026-11-04T14:16:37.562Z",
   "tennis": true,
   "tennis_match": {
    "id": "187301",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": true,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "detail": "3rd Set",
+     "shortDetail": "3rd"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Lucas Miedler (AUT) & Neil Oberleitner (AUT) is tied with Arthur Reymond (FRA) & Luca Sanchez (FRA) 5-7 4-1",
+     "text": "Lucas Miedler (AUT) & Neil Oberleitner (AUT) leads Arthur Reymond (FRA) & Luca Sanchez (FRA) 5-7 6-2 0-0 (5-0)",
      "type": "event"
     }
    ],
@@ -55,14 +55,18 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
      "linescores": [
       {
        "value": 7,
        "winner": true
       },
       {
-       "value": 1
+       "value": 2,
+       "winner": false
+      },
+      {
+       "value": 0,
+       "tiebreak": 0
       }
      ],
      "roster": {
@@ -137,14 +141,18 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
      "linescores": [
       {
        "value": 5,
        "winner": false
       },
       {
-       "value": 4
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0,
+       "tiebreak": 5
       }
      ],
      "roster": {
@@ -214,11 +222,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 13,
    "type": {
     "id": "3",
@@ -237,8 +240,8 @@
   },
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "period": 3,
+  "clock": "3rd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Arthur Reymond / Luca Sanchez",
@@ -250,13 +253,13 @@
    "abbr": "Lucas Miedler / Neil Oberleitner",
    "alias": "Lucas Miedler / Neil Oberleitner",
    "name": "Lucas Miedler / Neil Oberleitner",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T14:07:38.050Z",
+ "updated": "2026-11-04T14:16:37.479Z",
  "open_taken_at": "2026-11-03T10:32:51.756Z",
  "thresholds": {
   "big": 10,
@@ -286,86 +289,8 @@
    "taken_at": "2026-11-04T06:32:56.367Z"
   }
  ],
- "edges": [
-  {
-   "key": "2125635:0",
-   "market_id": "2125635",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming atpdb event Miedler / Oberleitner vs Reymond / Sanchez scheduled for November 4, 2026 at 10:00 AM UTC?",
-   "side": "Miedler L / Oberleitner N win",
-   "open_chance": 73,
-   "now_chance": 69,
-   "open_odds": "-270",
-   "now_odds": "-223",
-   "edge": 4,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Arthur Reymond / Luca Sanchez 7, 1 · Lucas Miedler / Neil Oberleitner 5, 4 · 2nd Set (games by set)",
-   "first_seen": "2026-11-04T13:50:33.599Z",
-   "status": "open",
-   "kalshi": null
-  }
- ],
- "alerts": [
-  {
-   "id": "gone:2125635:0:2026-11-04T13:50:33.599Z",
-   "key": "2125635:0",
-   "at": "2026-11-04T14:01:40.434Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Miedler L / Oberleitner N win",
-   "market": "Moneyline",
-   "now_odds": "-223",
-   "now_chance": 69,
-   "edge": 4,
-   "text": "Edge gone: Miedler L / Oberleitner N win (Moneyline) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atpdb/atpdb-miedleoberle-reysan-2026-11-04"
-  },
-  {
-   "id": "new_edge:2125635:0:slight",
-   "key": "2125635:0",
-   "at": "2026-11-04T13:59:05.814Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Miedler L / Oberleitner N win",
-   "market": "Moneyline",
-   "now_odds": "-223",
-   "now_chance": 69,
-   "edge": 4,
-   "text": "New slight edge: Miedler L / Oberleitner N win (Moneyline), 4 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atpdb/atpdb-miedleoberle-reysan-2026-11-04"
-  },
-  {
-   "id": "new_edge:2125635:0:big",
-   "key": "2125635:0",
-   "at": "2026-11-04T13:54:00.829Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Miedler L / Oberleitner N win",
-   "market": "Moneyline",
-   "now_odds": "-163",
-   "now_chance": 62,
-   "edge": 11,
-   "text": "New big edge: Miedler L / Oberleitner N win (Moneyline), 11 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atpdb/atpdb-miedleoberle-reysan-2026-11-04"
-  },
-  {
-   "id": "news:2125635:0",
-   "key": "2125635:0",
-   "at": "2026-11-04T13:50:33.599Z",
-   "type": "news",
-   "tier": "big",
-   "side": "Miedler L / Oberleitner N win",
-   "market": "Moneyline",
-   "now_odds": "+133",
-   "now_chance": 43,
-   "edge": 30,
-   "text": "Big move, likely news: Miedler L / Oberleitner N win (Moneyline) is 30 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atpdb/atpdb-miedleoberle-reysan-2026-11-04"
-  }
- ],
+ "edges": [],
+ "alerts": [],
  "alert_seen": [
   "news:2125635:0",
   "new_edge:2125635:0:big",
