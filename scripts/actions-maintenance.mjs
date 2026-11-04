@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 // Deterministic CI job. No LLM calls. Regenerate against latest main after a push race.
 import fs from 'node:fs';import {execFileSync} from 'node:child_process';import {decide,stamp} from './routine-gate.mjs';import {shouldTick} from './live-tick.mjs';
+import {publishGeneratedCommit} from './git-publication.mjs';
 export const ALLOWED=['data/live/','routines/owners.json','data/predictions.json','data/pick-history.json','data/live-record.json','data/learning.json','data/live-feedback.json','data/play/leaderboard.json','data/routines/','data/picks.json','data/markets/','data/positions.json','data/espn/','data/testing/'];
 export const allowed=p=>ALLOWED.some(a=>a.endsWith('/')?p.startsWith(a):p===a);
 export function checkFresh(games,started){const due=games.filter(g=>g.status!=='final'&&shouldTick({start:g.start_time,status:g.status},started));const stale=due.filter(g=>!Number.isFinite(Date.parse(g.updated))||Date.parse(g.updated)<started-30000);if(stale.length)throw Error('Due games were not refreshed: '+stale.map(g=>g.slug).join(', '));console.log('Fresh due games: '+due.length);}
-function main(){
+async function main(){
  if(process.env.GITHUB_ACTIONS!=='true'||process.env.GITHUB_REPOSITORY!=='reedrice/goggins-of-gambling'||process.env.GITHUB_REF!=='refs/heads/main')throw Error('Production GitHub Actions only');
  const git=(...args)=>execFileSync('git',args,{encoding:'utf8',stdio:['ignore','pipe','pipe']}).trim();
  const run=script=>execFileSync(process.execPath,script,{stdio:'inherit',timeout:900000});
@@ -33,10 +34,11 @@ function main(){
    git('add','--',...[...tracked,...untracked].filter(allowed));
    if(!git('diff','--cached','--name-only')){output('true');return;}
    git('commit','-m','live: scheduled feed, verified grading and feedback refresh');
-   try{git('push','origin','HEAD:main');output('true');return;}catch(e){git('fetch','origin','main');if(git('rev-parse','HEAD^')===git('rev-parse','origin/main'))throw Error('Push failed without a main race');console.log('Main advanced; regenerate against the new main.');}
+   if(await publishGeneratedCommit({git,secrets:[process.env.GITHUB_TOKEN,process.env.GH_TOKEN]})==='published'){output('true');return;}
+   console.log('Main advanced; regenerate against the new main.');
  }
  throw Error('Main advanced on every retry; no stale data overwritten');
 }
-if(process.argv[1]?.endsWith('actions-maintenance.mjs'))try{main();}catch(e){console.error(e.message?.split('\n')[0]);process.exitCode=1;}
+if(process.argv[1]?.endsWith('actions-maintenance.mjs'))main().catch(e=>{console.error(e.message);process.exitCode=1;});
 
 

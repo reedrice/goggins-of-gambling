@@ -109,3 +109,5 @@ Runtime asset changes require `node scripts/bump-version.mjs` and stamp verifica
 ## Copy-paste instruction for new bots
 
 > Read ONBOARDING.md in reedrice/goggins-of-gambling and follow its reading order. Inspect current relevant code before proposing changes. State your assigned role, current behavior and uncertainties. Separate proposals from authorization. Preserve privacy, data accuracy, performance and existing production routines. Do not implement or deploy during a planning-only assignment.
+
+Current operational evidence and duplicate-schedule status: [routines/OWNERSHIP-AUDIT.md](routines/OWNERSHIP-AUDIT.md).
