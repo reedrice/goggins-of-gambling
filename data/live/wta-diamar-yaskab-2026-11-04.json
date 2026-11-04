@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186682",
-  "fetched_at": "2026-11-04T16:23:04.676Z",
+  "fetched_at": "2026-11-04T16:42:36.064Z",
   "tennis": true,
   "tennis_match": {
    "id": "186682",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Diana Martynov (FRA) is tied with (6) Yasmine Kabbaj (LAO) 2-6 1-0",
+     "text": "(6) Yasmine Kabbaj (LAO) leads Diana Martynov (FRA) 6-2 3-1",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 6
      },
@@ -64,7 +65,7 @@
        "winner": true
       },
       {
-       "value": 0
+       "value": 3
       }
      ],
      "athlete": {
@@ -104,6 +105,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "linescores": [
       {
        "value": 2,
@@ -145,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1082,
    "type": {
     "id": "2",
@@ -182,13 +189,35 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T16:23:04.479Z",
+ "updated": "2026-11-04T16:42:35.887Z",
  "open_taken_at": "2026-11-03T06:01:55.594Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "2113781",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Diana Martynov vs. Yasmine Kabbaj be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 75.5,
+   "yes_buy": 76,
+   "no_buy": 25,
+   "taken_at": "2026-11-04T15:43:47.473Z"
+  },
   {
    "market_id": "2103092",
    "market": "Moneyline",
@@ -232,6 +261,28 @@
    "yes_buy": 49,
    "no_buy": 55,
    "taken_at": "2026-11-04T16:23:04.479Z"
+  },
+  {
+   "market_id": "2113775",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Diana Martynov cover -4.5 vs the Yasmine Kabbaj in Diana Martynov vs. Yasmine Kabbaj?",
+   "sides": [
+    "Diana Martynov -4.50 (Games)",
+    "Yasmine Kabbaj +4.50 (Games)"
+   ],
+   "teams": [
+    "Diana Martynov",
+    "Yasmine Kabbaj"
+   ],
+   "player": null,
+   "mid": 27.5,
+   "yes_buy": 28,
+   "no_buy": 73,
+   "taken_at": "2026-11-04T15:34:14.412Z"
   },
   {
    "market_id": "2113782",
@@ -278,28 +329,6 @@
    "taken_at": "2026-11-04T16:16:54.603Z"
   },
   {
-   "market_id": "2113781",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Diana Martynov vs. Yasmine Kabbaj be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 75.5,
-   "yes_buy": 76,
-   "no_buy": 25,
-   "taken_at": "2026-11-04T15:43:47.473Z"
-  },
-  {
    "market_id": "2113779",
    "market": "Sets spread",
    "group": "game",
@@ -342,28 +371,6 @@
    "yes_buy": 26,
    "no_buy": 75,
    "taken_at": "2026-11-04T15:43:47.473Z"
-  },
-  {
-   "market_id": "2113775",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Diana Martynov cover -4.5 vs the Yasmine Kabbaj in Diana Martynov vs. Yasmine Kabbaj?",
-   "sides": [
-    "Diana Martynov -4.50 (Games)",
-    "Yasmine Kabbaj +4.50 (Games)"
-   ],
-   "teams": [
-    "Diana Martynov",
-    "Yasmine Kabbaj"
-   ],
-   "player": null,
-   "mid": 27.5,
-   "yes_buy": 28,
-   "no_buy": 73,
-   "taken_at": "2026-11-04T15:34:14.412Z"
   },
   {
    "market_id": "2113778",
@@ -500,6 +507,46 @@
  ],
  "edges": [
   {
+   "key": "2113781:0",
+   "market_id": "2113781",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Diana Martynov vs. Yasmine Kabbaj be more than 17.5?",
+   "side": "Over 17.5 (Games)",
+   "open_chance": 76,
+   "now_chance": 22,
+   "open_odds": "-317",
+   "now_odds": "+355",
+   "edge": 54,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (54 pts), likely news",
+   "context": "Yasmine Kabbaj 6, 3 · Diana Martynov 2, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-11-04T16:42:35.887Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2113790:0",
+   "market_id": "2113790",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Diana Martynov win set 2 against Yasmine Kabbaj?",
+   "side": "Yes: Diana Martynov win set 2 against Yasmine Kabbaj",
+   "open_chance": 49,
+   "now_chance": 28,
+   "open_odds": "+104",
+   "now_odds": "+257",
+   "edge": 21,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Diana Martynov not above the games spread right now",
+   "context": "Yasmine Kabbaj 6, 2 · Diana Martynov 2, 1 · 2nd Set (games by set)",
+   "first_seen": "2026-11-04T16:35:44.665Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "2113782:0",
    "market_id": "2113782",
    "market": "Games total",
@@ -516,27 +563,7 @@
    "reason": null,
    "context": "Yasmine Kabbaj 6, 0 · Diana Martynov 2, 1 · 2nd Set (games by set)",
    "first_seen": "2026-11-04T16:16:54.603Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2103092:0",
-   "market_id": "2103092",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Diana Martynov vs Yasmine Kabbaj scheduled for November 4, 2026 at 10:00 AM UTC?",
-   "side": "Diana Martynov win",
-   "open_chance": 33,
-   "now_chance": 22,
-   "open_odds": "+203",
-   "now_odds": "+355",
-   "edge": 11,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Diana Martynov trailing in sets",
-   "context": "Yasmine Kabbaj 6, 0 · Diana Martynov 2, 1 · 2nd Set (games by set)",
-   "first_seen": "2026-11-04T16:16:54.603Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -562,17 +589,31 @@
  ],
  "alerts": [
   {
-   "id": "new_edge:2103092:0:big",
-   "key": "2103092:0",
-   "at": "2026-11-04T16:16:54.603Z",
-   "type": "new_edge",
+   "id": "news:2113781:0",
+   "key": "2113781:0",
+   "at": "2026-11-04T16:42:35.887Z",
+   "type": "news",
    "tier": "big",
-   "side": "Diana Martynov win",
-   "market": "Moneyline",
-   "now_odds": "+488",
-   "now_chance": 17,
-   "edge": 16,
-   "text": "New big edge: Diana Martynov win (Moneyline), 16 points cheaper than open.",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+355",
+   "now_chance": 22,
+   "edge": 54,
+   "text": "Big move, likely news: Over 17.5 (Games) (Games total) is 54 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-diamar-yaskab-2026-11-04"
+  },
+  {
+   "id": "gone:2113782:0:2026-11-04T16:16:54.603Z",
+   "key": "2113782:0",
+   "at": "2026-11-04T16:35:44.665Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+203",
+   "now_chance": 33,
+   "edge": 12,
+   "text": "Edge gone: Over 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-diamar-yaskab-2026-11-04"
   },
   {
@@ -624,7 +665,9 @@
   "new_edge:2103092:1:big",
   "gone:2113776:0:2026-11-04T15:34:14.412Z",
   "new_edge:2103092:0:big",
-  "new_edge:2113782:0:big"
+  "new_edge:2113782:0:big",
+  "gone:2113782:0:2026-11-04T16:16:54.603Z",
+  "news:2113781:0"
  ],
  "kalshi_checked": null
 }

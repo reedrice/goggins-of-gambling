@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186733",
-  "fetched_at": "2026-11-04T16:23:04.695Z",
+  "fetched_at": "2026-11-04T16:42:36.273Z",
   "tennis": true,
   "tennis_match": {
    "id": "186733",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(1) Leolia Jeanjean (FRA) leads Carolina Alves (BRA) 2-1",
+     "text": "(1) Leolia Jeanjean (FRA) leads Carolina Alves (BRA) 4-1",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "linescores": [
       {
        "value": 1
@@ -97,12 +98,13 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 1
      },
      "linescores": [
       {
-       "value": 2
+       "value": 4
       }
      ],
      "athlete": {
@@ -137,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1007,
    "type": {
     "id": "2",
@@ -174,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T16:23:04.496Z",
+ "updated": "2026-11-04T16:42:36.149Z",
  "open_taken_at": "2026-11-03T06:01:56.236Z",
  "thresholds": {
   "big": 10,
@@ -226,50 +233,6 @@
    "taken_at": "2026-11-04T16:16:54.747Z"
   },
   {
-   "market_id": "2113798",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Leolia Jeanjean cover 1.5 vs the Carolina Alves in Leolia Jeanjean vs. Carolina Alves?",
-   "sides": [
-    "Leolia Jeanjean +1.50 (Sets)",
-    "Carolina M. Alves -1.50 (Sets)"
-   ],
-   "teams": [
-    "Leolia Jeanjean",
-    "Carolina M. Alves"
-   ],
-   "player": null,
-   "mid": 92,
-   "yes_buy": 95,
-   "no_buy": 11,
-   "taken_at": "2026-11-04T16:16:54.747Z"
-  },
-  {
-   "market_id": "2113794",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 4.5,
-   "question": "Will the Leolia Jeanjean cover 4.5 vs the Carolina Alves in Leolia Jeanjean vs. Carolina Alves?",
-   "sides": [
-    "Leolia Jeanjean +4.50 (Games)",
-    "Carolina M. Alves -4.50 (Games)"
-   ],
-   "teams": [
-    "Leolia Jeanjean",
-    "Carolina M. Alves"
-   ],
-   "player": null,
-   "mid": 87.5,
-   "yes_buy": 88,
-   "no_buy": 13,
-   "taken_at": "2026-11-04T16:16:54.747Z"
-  },
-  {
    "market_id": "2113791",
    "market": "Games spread",
    "group": "game",
@@ -292,26 +255,26 @@
    "taken_at": "2026-11-04T16:23:04.496Z"
   },
   {
-   "market_id": "2113807",
-   "market": "Set 1 winner",
+   "market_id": "2113792",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Leolia Jeanjean win set 1 against Carolina Alves?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Leolia Jeanjean cover 1.5 vs the Carolina Alves in Leolia Jeanjean vs. Carolina Alves?",
    "sides": [
-    "Yes: Leolia Jeanjean win set 1 against Carolina Alves",
-    "No: Leolia Jeanjean win set 1 against Carolina Alves"
+    "Leolia Jeanjean +1.50 (Games)",
+    "Carolina M. Alves -1.50 (Games)"
    ],
    "teams": [
     "Leolia Jeanjean",
-    null
+    "Carolina M. Alves"
    ],
    "player": null,
-   "mid": 79,
-   "yes_buy": 80,
-   "no_buy": 22,
-   "taken_at": "2026-11-04T16:23:04.496Z"
+   "mid": 82,
+   "yes_buy": 83,
+   "no_buy": 19,
+   "taken_at": "2026-11-04T16:35:44.728Z"
   },
   {
    "market_id": "2113800",
@@ -356,6 +319,94 @@
    "yes_buy": 23,
    "no_buy": 78,
    "taken_at": "2026-11-04T16:16:54.747Z"
+  },
+  {
+   "market_id": "2113807",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Leolia Jeanjean win set 1 against Carolina Alves?",
+   "sides": [
+    "Yes: Leolia Jeanjean win set 1 against Carolina Alves",
+    "No: Leolia Jeanjean win set 1 against Carolina Alves"
+   ],
+   "teams": [
+    "Leolia Jeanjean",
+    null
+   ],
+   "player": null,
+   "mid": 79,
+   "yes_buy": 80,
+   "no_buy": 22,
+   "taken_at": "2026-11-04T16:23:04.496Z"
+  },
+  {
+   "market_id": "2113798",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Leolia Jeanjean cover 1.5 vs the Carolina Alves in Leolia Jeanjean vs. Carolina Alves?",
+   "sides": [
+    "Leolia Jeanjean +1.50 (Sets)",
+    "Carolina M. Alves -1.50 (Sets)"
+   ],
+   "teams": [
+    "Leolia Jeanjean",
+    "Carolina M. Alves"
+   ],
+   "player": null,
+   "mid": 92,
+   "yes_buy": 95,
+   "no_buy": 11,
+   "taken_at": "2026-11-04T16:16:54.747Z"
+  },
+  {
+   "market_id": "2113794",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 4.5,
+   "question": "Will the Leolia Jeanjean cover 4.5 vs the Carolina Alves in Leolia Jeanjean vs. Carolina Alves?",
+   "sides": [
+    "Leolia Jeanjean +4.50 (Games)",
+    "Carolina M. Alves -4.50 (Games)"
+   ],
+   "teams": [
+    "Leolia Jeanjean",
+    "Carolina M. Alves"
+   ],
+   "player": null,
+   "mid": 87.5,
+   "yes_buy": 88,
+   "no_buy": 13,
+   "taken_at": "2026-11-04T16:16:54.747Z"
+  },
+  {
+   "market_id": "2113795",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Leolia Jeanjean cover -7.5 vs the Carolina Alves in Leolia Jeanjean vs. Carolina Alves?",
+   "sides": [
+    "Leolia Jeanjean -7.50 (Games)",
+    "Carolina M. Alves +7.50 (Games)"
+   ],
+   "teams": [
+    "Leolia Jeanjean",
+    "Carolina M. Alves"
+   ],
+   "player": null,
+   "mid": 34.5,
+   "yes_buy": 37,
+   "no_buy": 68,
+   "taken_at": "2026-11-04T16:35:44.728Z"
   },
   {
    "market_id": "2113802",
@@ -404,44 +455,115 @@
  ],
  "edges": [
   {
-   "key": "2104356:1",
-   "market_id": "2104356",
-   "market": "Moneyline",
+   "key": "2113791:1",
+   "market_id": "2113791",
+   "market": "Games spread",
    "group": "game",
-   "question": "Who will win in the upcoming wta event Leolia Jeanjean vs Carolina Alves scheduled for November 4, 2026 at 6:00 PM UTC?",
-   "side": "Carolina M. Alves win",
-   "open_chance": 27,
-   "now_chance": 19,
-   "open_odds": "+270",
-   "now_odds": "+426",
-   "edge": 8,
+   "question": "Will the Leolia Jeanjean cover -1.5 vs the Carolina Alves in Leolia Jeanjean vs. Carolina Alves?",
+   "side": "Carolina M. Alves +1.50 (Games)",
+   "open_chance": 23,
+   "now_chance": 17,
+   "open_odds": "+335",
+   "now_odds": "+488",
+   "edge": 6,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Carolina Alves 1 · Leolia Jeanjean 2 · 1st Set (games by set)",
-   "first_seen": "2026-11-04T16:23:04.496Z",
+   "context": "Carolina Alves 1 · Leolia Jeanjean 4 · 1st Set (games by set)",
+   "first_seen": "2026-11-04T16:35:44.728Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2113801:0",
+   "market_id": "2113801",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Leolia Jeanjean vs. Carolina Alves be more than 27.5?",
+   "side": "Over 27.5 (Games)",
+   "open_chance": 23,
+   "now_chance": 18,
+   "open_odds": "+335",
+   "now_odds": "+456",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Carolina Alves 1 · Leolia Jeanjean 4 · 1st Set (games by set)",
+   "first_seen": "2026-11-04T16:35:44.728Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2113800:0",
+   "market_id": "2113800",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Leolia Jeanjean vs. Carolina Alves be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 34,
+   "now_chance": 30,
+   "open_odds": "+194",
+   "now_odds": "+233",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Carolina Alves 1 · Leolia Jeanjean 4 · 1st Set (games by set)",
+   "first_seen": "2026-11-04T16:35:44.728Z",
    "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
   {
-   "id": "new_edge:2104356:1:slight",
-   "key": "2104356:1",
-   "at": "2026-11-04T16:23:04.496Z",
+   "id": "new_edge:2113791:1:slight",
+   "key": "2113791:1",
+   "at": "2026-11-04T16:35:44.728Z",
    "type": "new_edge",
    "tier": "slight",
-   "side": "Carolina M. Alves win",
-   "market": "Moneyline",
-   "now_odds": "+426",
-   "now_chance": 19,
-   "edge": 8,
-   "text": "New slight edge: Carolina M. Alves win (Moneyline), 8 points cheaper than open.",
+   "side": "Carolina M. Alves +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+456",
+   "now_chance": 18,
+   "edge": 5,
+   "text": "New slight edge: Carolina M. Alves +1.50 (Games) (Games spread), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-leojea-caralv-2026-11-04"
+  },
+  {
+   "id": "new_edge:2113801:0:slight",
+   "key": "2113801:0",
+   "at": "2026-11-04T16:35:44.728Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+456",
+   "now_chance": 18,
+   "edge": 5,
+   "text": "New slight edge: Over 27.5 (Games) (Games total), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-leojea-caralv-2026-11-04"
+  },
+  {
+   "id": "new_edge:2113800:0:slight",
+   "key": "2113800:0",
+   "at": "2026-11-04T16:35:44.728Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+233",
+   "now_chance": 30,
+   "edge": 4,
+   "text": "New slight edge: Over 22.5 (Games) (Games total), 4 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-leojea-caralv-2026-11-04"
   }
  ],
  "alert_seen": [
-  "new_edge:2104356:1:slight"
+  "new_edge:2104356:1:slight",
+  "new_edge:2113791:1:slight",
+  "new_edge:2113801:0:slight",
+  "new_edge:2113800:0:slight"
  ],
  "kalshi_checked": null
 }
