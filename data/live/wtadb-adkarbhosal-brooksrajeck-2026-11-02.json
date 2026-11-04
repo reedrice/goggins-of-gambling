@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186602",
-  "fetched_at": "2026-11-04T14:49:05.306Z",
+  "fetched_at": "2026-11-04T14:57:49.758Z",
   "tennis": true,
   "tennis_match": {
    "id": "186602",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Vaishnavi Adkar (IND) & Rutuja Bhosale (IND) leads (4) Madeleine Brooks (GBR) & Amelia Rajecki (GBR) 2-1",
+     "text": "Vaishnavi Adkar (IND) & Rutuja Bhosale (IND) leads (4) Madeleine Brooks (GBR) & Amelia Rajecki (GBR) 4-1",
      "type": "event"
     }
    ],
@@ -139,7 +139,7 @@
      "possession": true,
      "linescores": [
       {
-       "value": 2
+       "value": 4
       }
      ],
      "roster": {
@@ -251,7 +251,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T14:49:05.186Z",
+ "updated": "2026-11-04T14:57:49.677Z",
  "open_taken_at": "2026-11-01T05:07:38.002Z",
  "thresholds": {
   "big": 10,
@@ -290,20 +290,48 @@
    "question": "Who will win in the upcoming wtadb event Adkar / Bhosale vs Brooks / Rajecki scheduled for November 2, 2026 at 9:30 AM UTC?",
    "side": "Brooks M / Rajecki A win",
    "open_chance": 79,
-   "now_chance": 71,
+   "now_chance": 50,
    "open_odds": "-376",
-   "now_odds": "-245",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Madeleine Brooks / Amelia Rajecki 1 · Vaishnavi Adkar / Rutuja Bhosale 2 · 1st Set (games by set)",
+   "now_odds": "+100",
+   "edge": 29,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (29 pts), likely news",
+   "context": "Madeleine Brooks / Amelia Rajecki 1 · Vaishnavi Adkar / Rutuja Bhosale 4 · 1st Set (games by set)",
    "first_seen": "2026-11-04T14:41:46.877Z",
    "status": "open",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "news:2010071:1",
+   "key": "2010071:1",
+   "at": "2026-11-04T14:57:49.677Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Brooks M / Rajecki A win",
+   "market": "Moneyline",
+   "now_odds": "+100",
+   "now_chance": 50,
+   "edge": 29,
+   "text": "Big move, likely news: Brooks M / Rajecki A win (Moneyline) is 29 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-adkarbhosal-brooksrajeck-2026-11-02"
+  },
+  {
+   "id": "new_edge:2010071:1:big",
+   "key": "2010071:1",
+   "at": "2026-11-04T14:51:48.679Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Brooks M / Rajecki A win",
+   "market": "Moneyline",
+   "now_odds": "-213",
+   "now_chance": 68,
+   "edge": 11,
+   "text": "New big edge: Brooks M / Rajecki A win (Moneyline), 11 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-adkarbhosal-brooksrajeck-2026-11-02"
+  },
   {
    "id": "new_edge:2010071:1:slight",
    "key": "2010071:1",
@@ -320,7 +348,9 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2010071:1:slight"
+  "new_edge:2010071:1:slight",
+  "new_edge:2010071:1:big",
+  "news:2010071:1"
  ],
  "kalshi_checked": null
 }
