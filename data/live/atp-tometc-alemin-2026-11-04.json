@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186481",
-  "fetched_at": "2026-11-04T14:16:38.053Z",
+  "fetched_at": "2026-11-04T14:26:28.240Z",
   "tennis": true,
   "tennis_match": {
    "id": "186481",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(8) Alex de Minaur (AUS) leads Tomas Martin Etcheverry (ARG) 6-5",
+     "text": "Tomas Martin Etcheverry (ARG) leads (8) Alex de Minaur (AUS) 6-6 (4-2)",
      "type": "event"
     }
    ],
@@ -55,13 +55,13 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
      "curatedRank": {
       "current": 8
      },
      "linescores": [
       {
-       "value": 6
+       "value": 6,
+       "tiebreak": 2
       }
      ],
      "athlete": {
@@ -101,10 +101,10 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "tiebreak": 4
       }
      ],
      "athlete": {
@@ -139,11 +139,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 13,
    "type": {
     "id": "1",
@@ -181,7 +176,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T14:16:37.921Z",
+ "updated": "2026-11-04T14:26:28.180Z",
  "open_taken_at": "2026-11-03T13:18:39.782Z",
  "thresholds": {
   "big": 10,
@@ -211,26 +206,48 @@
    "taken_at": "2026-11-03T14:10:03.233Z"
   },
   {
-   "market_id": "2127644",
-   "market": "Games spread",
+   "market_id": "2127662",
+   "market": "Set 1 winner",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Tomas Martin Etcheverry cover 7.5 vs the Alex de Minaur in Tomas Martin Etcheverry vs. Alex de Minaur?",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Tomas Martin Etcheverry win set 1 against Alex de Minaur?",
    "sides": [
-    "Tomas Etcheverry +7.50 (Games)",
-    "Alex de Minaur -7.50 (Games)"
+    "Yes: Tomas Martin Etcheverry win set 1 against Alex de Minaur",
+    "No: Tomas Martin Etcheverry win set 1 against Alex de Minaur"
    ],
    "teams": [
     "Tomas Etcheverry",
-    "Alex de Minaur"
+    null
    ],
    "player": null,
-   "mid": 88,
-   "yes_buy": 90,
-   "no_buy": 14,
-   "taken_at": "2026-11-04T13:08:37.566Z"
+   "mid": 26,
+   "yes_buy": 28,
+   "no_buy": 76,
+   "taken_at": "2026-11-03T22:03:26.252Z"
+  },
+  {
+   "market_id": "2127651",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Tomas Martin Etcheverry vs. Alex de Minaur be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 45.5,
+   "yes_buy": 47,
+   "no_buy": 56,
+   "taken_at": "2026-11-04T02:04:07.455Z"
   },
   {
    "market_id": "2127652",
@@ -321,28 +338,6 @@
    "taken_at": "2026-11-04T13:02:43.770Z"
   },
   {
-   "market_id": "2127662",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Tomas Martin Etcheverry win set 1 against Alex de Minaur?",
-   "sides": [
-    "Yes: Tomas Martin Etcheverry win set 1 against Alex de Minaur",
-    "No: Tomas Martin Etcheverry win set 1 against Alex de Minaur"
-   ],
-   "teams": [
-    "Tomas Etcheverry",
-    null
-   ],
-   "player": null,
-   "mid": 26,
-   "yes_buy": 28,
-   "no_buy": 76,
-   "taken_at": "2026-11-03T22:03:26.252Z"
-  },
-  {
    "market_id": "2127638",
    "market": "Games spread",
    "group": "game",
@@ -365,26 +360,26 @@
    "taken_at": "2026-11-04T13:08:37.566Z"
   },
   {
-   "market_id": "2127651",
-   "market": "Games total",
+   "market_id": "2127644",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Tomas Martin Etcheverry vs. Alex de Minaur be more than 22.5?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Tomas Martin Etcheverry cover 7.5 vs the Alex de Minaur in Tomas Martin Etcheverry vs. Alex de Minaur?",
    "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
+    "Tomas Etcheverry +7.50 (Games)",
+    "Alex de Minaur -7.50 (Games)"
    ],
    "teams": [
-    null,
-    null
+    "Tomas Etcheverry",
+    "Alex de Minaur"
    ],
    "player": null,
-   "mid": 45.5,
-   "yes_buy": 47,
-   "no_buy": 56,
-   "taken_at": "2026-11-04T02:04:07.455Z"
+   "mid": 88,
+   "yes_buy": 90,
+   "no_buy": 14,
+   "taken_at": "2026-11-04T13:08:37.566Z"
   },
   {
    "market_id": "2127649",
@@ -499,6 +494,86 @@
  ],
  "edges": [
   {
+   "key": "2127662:1",
+   "market_id": "2127662",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Tomas Martin Etcheverry win set 1 against Alex de Minaur?",
+   "side": "No: Tomas Martin Etcheverry win set 1 against Alex de Minaur",
+   "open_chance": 76,
+   "now_chance": 21,
+   "open_odds": "-317",
+   "now_odds": "+376",
+   "edge": 55,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Tomas Martin Etcheverry not above the games spread right now",
+   "context": "Alex de Minaur 6 · Tomas Martin Etcheverry 6 · 1st Set (games by set)",
+   "first_seen": "2026-11-04T14:19:43.606Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2127651:1",
+   "market_id": "2127651",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Tomas Martin Etcheverry vs. Alex de Minaur be more than 22.5?",
+   "side": "Under 22.5 (Games)",
+   "open_chance": 56,
+   "now_chance": 25,
+   "open_odds": "-127",
+   "now_odds": "+300",
+   "edge": 31,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (31 pts), likely news",
+   "context": "Alex de Minaur 6 · Tomas Martin Etcheverry 6 · 1st Set (games by set)",
+   "first_seen": "2026-11-04T13:50:34.137Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2127652:1",
+   "market_id": "2127652",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Tomas Martin Etcheverry vs. Alex de Minaur be more than 27.5?",
+   "side": "Under 27.5 (Games)",
+   "open_chance": 77,
+   "now_chance": 48,
+   "open_odds": "-335",
+   "now_odds": "+108",
+   "edge": 29,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (29 pts), likely news",
+   "context": "Alex de Minaur 6 · Tomas Martin Etcheverry 6 · 1st Set (games by set)",
+   "first_seen": "2026-11-04T13:02:43.770Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2127574:1",
+   "market_id": "2127574",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Tomas Martin Etcheverry vs Alex de Minaur scheduled for November 4, 2026 at 10:00 AM UTC?",
+   "side": "Alex de Minaur win",
+   "open_chance": 80,
+   "now_chance": 64,
+   "open_odds": "-400",
+   "now_odds": "-178",
+   "edge": 16,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Alex de Minaur 6 · Tomas Martin Etcheverry 6 · 1st Set (games by set)",
+   "first_seen": "2026-11-04T14:26:28.180Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2127637:0",
    "market_id": "2127637",
    "market": "Games spread",
@@ -513,7 +588,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Alex de Minaur 6 · Tomas Martin Etcheverry 5 · 1st Set (games by set)",
+   "context": "Alex de Minaur 6 · Tomas Martin Etcheverry 6 · 1st Set (games by set)",
    "first_seen": "2026-11-04T13:50:34.137Z",
    "status": "open",
    "kalshi": null
@@ -533,29 +608,29 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Alex de Minaur 6 · Tomas Martin Etcheverry 5 · 1st Set (games by set)",
+   "context": "Alex de Minaur 6 · Tomas Martin Etcheverry 6 · 1st Set (games by set)",
    "first_seen": "2026-11-04T14:01:40.722Z",
    "status": "open",
    "kalshi": null
   },
   {
-   "key": "2127651:1",
-   "market_id": "2127651",
-   "market": "Games total",
+   "key": "2127664:1",
+   "market_id": "2127664",
+   "market": "Set 2 winner",
    "group": "game",
-   "question": "Will the total in Tomas Martin Etcheverry vs. Alex de Minaur be more than 22.5?",
-   "side": "Under 22.5 (Games)",
-   "open_chance": 56,
-   "now_chance": 34,
-   "open_odds": "-127",
-   "now_odds": "+194",
-   "edge": 22,
-   "tier": "big",
+   "question": "Will Tomas Martin Etcheverry win set 2 against Alex de Minaur?",
+   "side": "No: Tomas Martin Etcheverry win set 2 against Alex de Minaur",
+   "open_chance": 78,
+   "now_chance": 74,
+   "open_odds": "-355",
+   "now_odds": "-285",
+   "edge": 4,
+   "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Alex de Minaur 5 · Tomas Martin Etcheverry 4 · 1st Set (games by set)",
-   "first_seen": "2026-11-04T13:50:34.137Z",
-   "status": "gone",
+   "context": "Alex de Minaur 6 · Tomas Martin Etcheverry 6 · 1st Set (games by set)",
+   "first_seen": "2026-11-04T14:26:28.180Z",
+   "status": "open",
    "kalshi": null
   },
   {
@@ -579,22 +654,22 @@
    "kalshi": null
   },
   {
-   "key": "2127652:1",
-   "market_id": "2127652",
-   "market": "Games total",
+   "key": "2127574:0",
+   "market_id": "2127574",
+   "market": "Moneyline",
    "group": "game",
-   "question": "Will the total in Tomas Martin Etcheverry vs. Alex de Minaur be more than 27.5?",
-   "side": "Under 27.5 (Games)",
-   "open_chance": 77,
-   "now_chance": 66,
-   "open_odds": "-335",
-   "now_odds": "-194",
-   "edge": 11,
-   "tier": "big",
+   "question": "Who will win in the upcoming atp event Tomas Martin Etcheverry vs Alex de Minaur scheduled for November 4, 2026 at 10:00 AM UTC?",
+   "side": "Tomas Etcheverry win",
+   "open_chance": 26,
+   "now_chance": 20,
+   "open_odds": "+285",
+   "now_odds": "+400",
+   "edge": 6,
+   "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Alex de Minaur 5 · Tomas Martin Etcheverry 4 · 1st Set (games by set)",
-   "first_seen": "2026-11-04T13:02:43.770Z",
+   "context": "Alex de Minaur 6 · Tomas Martin Etcheverry 5 · 1st Set (games by set)",
+   "first_seen": "2026-11-04T14:19:43.606Z",
    "status": "gone",
    "kalshi": null
   },
@@ -640,6 +715,76 @@
   }
  ],
  "alerts": [
+  {
+   "id": "news:2127651:1",
+   "key": "2127651:1",
+   "at": "2026-11-04T14:26:28.180Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+300",
+   "now_chance": 25,
+   "edge": 31,
+   "text": "Big move, likely news: Under 22.5 (Games) (Games total) is 31 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-tometc-alemin-2026-11-04"
+  },
+  {
+   "id": "news:2127652:1",
+   "key": "2127652:1",
+   "at": "2026-11-04T14:26:28.180Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Under 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+108",
+   "now_chance": 48,
+   "edge": 29,
+   "text": "Big move, likely news: Under 27.5 (Games) (Games total) is 29 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-tometc-alemin-2026-11-04"
+  },
+  {
+   "id": "new_edge:2127574:1:big",
+   "key": "2127574:1",
+   "at": "2026-11-04T14:26:28.180Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Alex de Minaur win",
+   "market": "Moneyline",
+   "now_odds": "-178",
+   "now_chance": 64,
+   "edge": 16,
+   "text": "New big edge: Alex de Minaur win (Moneyline), 16 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-tometc-alemin-2026-11-04"
+  },
+  {
+   "id": "new_edge:2127664:1:slight",
+   "key": "2127664:1",
+   "at": "2026-11-04T14:26:28.180Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "No: Tomas Martin Etcheverry win set 2 against Alex de Minaur",
+   "market": "Set 2 winner",
+   "now_odds": "-285",
+   "now_chance": 74,
+   "edge": 4,
+   "text": "New slight edge: No: Tomas Martin Etcheverry win set 2 against Alex de Minaur (Set 2 winner), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-tometc-alemin-2026-11-04"
+  },
+  {
+   "id": "gone:2127574:0:2026-11-04T14:19:43.606Z",
+   "key": "2127574:0",
+   "at": "2026-11-04T14:26:28.180Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Tomas Etcheverry win",
+   "market": "Moneyline",
+   "now_odds": "+400",
+   "now_chance": 20,
+   "edge": 6,
+   "text": "Edge gone: Tomas Etcheverry win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-tometc-alemin-2026-11-04"
+  },
   {
    "id": "gone:2127664:0:2026-11-04T12:44:52.131Z",
    "key": "2127664:0",
@@ -870,7 +1015,12 @@
   "new_edge:2127635:1:slight",
   "gone:2127651:1:2026-11-04T13:50:34.137Z",
   "new_edge:2127652:1:big",
-  "gone:2127664:0:2026-11-04T12:44:52.131Z"
+  "gone:2127664:0:2026-11-04T12:44:52.131Z",
+  "news:2127651:1",
+  "news:2127652:1",
+  "new_edge:2127574:1:big",
+  "new_edge:2127664:1:slight",
+  "gone:2127574:0:2026-11-04T14:19:43.606Z"
  ],
  "kalshi_checked": null
 }
