@@ -4,12 +4,12 @@
  "game": "Jazmin Ortenzi vs. Bianca Andreescu",
  "url": "https://polymarket.us/sports/wta/wta-jazort-biaand-2026-11-04",
  "start_time": "2026-11-04T22:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186726",
-  "fetched_at": "2026-11-04T23:07:39.305Z",
+  "fetched_at": "2026-11-04T23:25:39.504Z",
   "tennis": true,
   "tennis_match": {
    "id": "186726",
@@ -17,17 +17,17 @@
    "date": "2026-11-04T22:00Z",
    "startDate": "2026-11-04T22:00Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(8) Bianca Andreescu (CAN) leads Jazmin Ortenzi (ARG) 6-2 3-2",
+     "text": "(8) Bianca Andreescu (CAN) bt Jazmin Ortenzi (ARG) 6-2 6-3",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "winner": true,
      "curatedRank": {
       "current": 8
      },
@@ -65,7 +65,8 @@
        "winner": true
       },
       {
-       "value": 3
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -105,14 +106,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "winner": false,
      "linescores": [
       {
        "value": 2,
        "winner": false
       },
       {
-       "value": 2
+       "value": 3,
+       "winner": false
       }
      ],
      "athlete": {
@@ -147,11 +149,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 1007,
    "type": {
     "id": "2",
@@ -168,16 +165,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Bianca Andreescu",
    "alias": "Bianca Andreescu",
    "name": "Bianca Andreescu",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Jazmin Ortenzi",
@@ -189,13 +186,35 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T23:07:39.257Z",
+ "updated": "2026-11-04T23:25:39.329Z",
  "open_taken_at": "2026-11-03T22:03:29.947Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "2140768",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Jazmin Ortenzi win set 2 against Bianca Andreescu?",
+   "sides": [
+    "Yes: Jazmin Ortenzi win set 2 against Bianca Andreescu",
+    "No: Jazmin Ortenzi win set 2 against Bianca Andreescu"
+   ],
+   "teams": [
+    "Jazmin Ortenzi",
+    null
+   ],
+   "player": null,
+   "mid": 43.5,
+   "yes_buy": 46,
+   "no_buy": 59,
+   "taken_at": "2026-11-04T22:49:51.652Z"
+  },
   {
    "market_id": "2140228",
    "market": "Moneyline",
@@ -283,28 +302,6 @@
    "yes_buy": 18,
    "no_buy": 83,
    "taken_at": "2026-11-04T22:08:53.594Z"
-  },
-  {
-   "market_id": "2140768",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Jazmin Ortenzi win set 2 against Bianca Andreescu?",
-   "sides": [
-    "Yes: Jazmin Ortenzi win set 2 against Bianca Andreescu",
-    "No: Jazmin Ortenzi win set 2 against Bianca Andreescu"
-   ],
-   "teams": [
-    "Jazmin Ortenzi",
-    null
-   ],
-   "player": null,
-   "mid": 43.5,
-   "yes_buy": 46,
-   "no_buy": 59,
-   "taken_at": "2026-11-04T22:49:51.652Z"
   },
   {
    "market_id": "2140754",
@@ -529,26 +526,6 @@
  ],
  "edges": [
   {
-   "key": "2140768:0",
-   "market_id": "2140768",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Jazmin Ortenzi win set 2 against Bianca Andreescu?",
-   "side": "Yes: Jazmin Ortenzi win set 2 against Bianca Andreescu",
-   "open_chance": 46,
-   "now_chance": 19,
-   "open_odds": "+117",
-   "now_odds": "+426",
-   "edge": 27,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Jazmin Ortenzi not above the games spread right now",
-   "context": "Bianca Andreescu 6, 2 · Jazmin Ortenzi 2, 2 · 2nd Set (games by set)",
-   "first_seen": "2026-11-04T22:57:09.206Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "2140760:0",
    "market_id": "2140760",
    "market": "Games total",
@@ -630,20 +607,6 @@
   }
  ],
  "alerts": [
-  {
-   "id": "new_edge:2140768:0:big",
-   "key": "2140768:0",
-   "at": "2026-11-04T22:57:09.206Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Yes: Jazmin Ortenzi win set 2 against Bianca Andreescu",
-   "market": "Set 2 winner",
-   "now_odds": "+355",
-   "now_chance": 22,
-   "edge": 24,
-   "text": "New big edge: Yes: Jazmin Ortenzi win set 2 against Bianca Andreescu (Set 2 winner), 24 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-jazort-biaand-2026-11-04"
-  },
   {
    "id": "gone:2140754:0:2026-11-04T22:49:51.652Z",
    "key": "2140754:0",
