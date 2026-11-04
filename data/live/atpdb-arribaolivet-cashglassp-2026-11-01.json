@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187294",
-  "fetched_at": "2026-11-04T11:09:24.959Z",
+  "fetched_at": "2026-11-04T11:18:30.048Z",
   "tennis": true,
   "tennis_match": {
    "id": "187294",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Theo Arribage (FRA) & Albano Olivetti (FRA) is tied with (7) Julian Cash (GBR) & Lloyd Glasspool (GBR) 6-7 (5-7) 2-1",
+     "text": "Theo Arribage (FRA) & Albano Olivetti (FRA) is tied with (7) Julian Cash (GBR) & Lloyd Glasspool (GBR) 6-7 (5-7) 4-2",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "possession": false,
      "curatedRank": {
       "current": 7
      },
@@ -66,7 +66,7 @@
        "winner": true
       },
       {
-       "value": 1
+       "value": 2
       }
      ],
      "roster": {
@@ -141,7 +141,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
        "value": 6,
@@ -149,7 +149,7 @@
        "winner": false
       },
       {
-       "value": 2
+       "value": 4
       }
      ],
      "roster": {
@@ -261,7 +261,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T11:09:24.847Z",
+ "updated": "2026-11-04T11:18:29.967Z",
  "open_taken_at": "2026-10-31T14:49:10.666Z",
  "thresholds": {
   "big": 10,
@@ -309,11 +309,25 @@
    "reason": null,
    "context": "Julian Cash / Lloyd Glasspool 7, 1 · Theo Arribage / Albano Olivetti 6, 2 · 2nd Set (games by set)",
    "first_seen": "2026-11-04T10:47:44.767Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2006130:0:2026-11-04T10:47:44.767Z",
+   "key": "2006130:0",
+   "at": "2026-11-04T11:12:55.929Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Arribage / Olivetti win",
+   "market": "Moneyline",
+   "now_odds": "+127",
+   "now_chance": 44,
+   "edge": 4,
+   "text": "Edge gone: Arribage / Olivetti win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-arribaolivet-cashglassp-2026-11-01"
+  },
   {
    "id": "news:2006130:0",
    "key": "2006130:0",
@@ -360,7 +374,8 @@
  "alert_seen": [
   "new_edge:2006130:0:slight",
   "new_edge:2006130:0:big",
-  "news:2006130:0"
+  "news:2006130:0",
+  "gone:2006130:0:2026-11-04T10:47:44.767Z"
  ],
  "kalshi_checked": null
 }

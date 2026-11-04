@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186572",
-  "fetched_at": "2026-11-04T11:09:32.710Z",
+  "fetched_at": "2026-11-04T11:18:38.230Z",
   "tennis": true,
   "tennis_match": {
    "id": "186572",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Robin Montgomery (USA) is tied with Jeline Vandromme (BEL) 6-4 3-3",
+     "text": "Jeline Vandromme (BEL) is tied with Robin Montgomery (USA) 4-6 4-3",
      "type": "event"
     }
    ],
@@ -55,13 +55,14 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "linescores": [
       {
        "value": 4,
        "winner": false
       },
       {
-       "value": 3
+       "value": 4
       }
      ],
      "athlete": {
@@ -101,6 +102,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "linescores": [
       {
        "value": 6,
@@ -142,6 +144,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 889,
    "type": {
     "id": "2",
@@ -179,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T11:09:32.582Z",
+ "updated": "2026-11-04T11:18:38.161Z",
  "open_taken_at": "2026-11-03T11:04:18.571Z",
  "thresholds": {
   "big": 10,
@@ -253,6 +260,28 @@
    "taken_at": "2026-11-04T10:36:25.451Z"
   },
   {
+   "market_id": "2125810",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Robin Montgomery win set 2 against Jeline Vandromme?",
+   "sides": [
+    "Yes: Robin Montgomery win set 2 against Jeline Vandromme",
+    "No: Robin Montgomery win set 2 against Jeline Vandromme"
+   ],
+   "teams": [
+    "Robin Montgomery",
+    null
+   ],
+   "player": null,
+   "mid": 70.5,
+   "yes_buy": 71,
+   "no_buy": 30,
+   "taken_at": "2026-11-04T10:36:25.451Z"
+  },
+  {
    "market_id": "2125793",
    "market": "Games spread",
    "group": "game",
@@ -275,26 +304,26 @@
    "taken_at": "2026-11-03T13:29:17.134Z"
   },
   {
-   "market_id": "2125810",
-   "market": "Set 2 winner",
+   "market_id": "2125799",
+   "market": "Sets spread",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Robin Montgomery win set 2 against Jeline Vandromme?",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Robin Montgomery cover -1.5 vs the Jeline Vandromme in Robin Montgomery vs. Jeline Vandromme?",
    "sides": [
-    "Yes: Robin Montgomery win set 2 against Jeline Vandromme",
-    "No: Robin Montgomery win set 2 against Jeline Vandromme"
+    "Robin Montgomery -1.50 (Sets)",
+    "Jeline Vandromme +1.50 (Sets)"
    ],
    "teams": [
     "Robin Montgomery",
-    null
+    "Jeline Vandromme"
    ],
    "player": null,
-   "mid": 70.5,
-   "yes_buy": 71,
-   "no_buy": 30,
-   "taken_at": "2026-11-04T10:36:25.451Z"
+   "mid": 58.5,
+   "yes_buy": 60,
+   "no_buy": 43,
+   "taken_at": "2026-11-04T11:13:04.709Z"
   },
   {
    "market_id": "2125802",
@@ -453,6 +482,46 @@
  ],
  "edges": [
   {
+   "key": "2125810:0",
+   "market_id": "2125810",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Robin Montgomery win set 2 against Jeline Vandromme?",
+   "side": "Yes: Robin Montgomery win set 2 against Jeline Vandromme",
+   "open_chance": 71,
+   "now_chance": 33,
+   "open_odds": "-245",
+   "now_odds": "+203",
+   "edge": 38,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Robin Montgomery not above the games spread right now",
+   "context": "Jeline Vandromme 4, 4 · Robin Montgomery 6, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-11-04T10:47:54.191Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2125794:0",
+   "market_id": "2125794",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Robin Montgomery cover 1.5 vs the Jeline Vandromme in Robin Montgomery vs. Jeline Vandromme?",
+   "side": "Robin Montgomery +1.50 (Games)",
+   "open_chance": 87,
+   "now_chance": 78,
+   "open_odds": "-669",
+   "now_odds": "-355",
+   "edge": 9,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Jeline Vandromme 4, 4 · Robin Montgomery 6, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-11-04T10:47:54.191Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2125732:1",
    "market_id": "2125732",
    "market": "Moneyline",
@@ -460,14 +529,14 @@
    "question": "Who will win in the upcoming wta event Robin Montgomery vs Jeline Vandromme scheduled for November 4, 2026 at 9:30 AM UTC?",
    "side": "Jeline Vandromme win",
    "open_chance": 42,
-   "now_chance": 21,
+   "now_chance": 35,
    "open_odds": "+138",
-   "now_odds": "+376",
-   "edge": 21,
-   "tier": "big",
+   "now_odds": "+186",
+   "edge": 7,
+   "tier": "slight",
    "class": "score",
    "reason": "Explained by score: Jeline Vandromme trailing in sets",
-   "context": "Jeline Vandromme 4, 3 · Robin Montgomery 6, 3 · 2nd Set (games by set)",
+   "context": "Jeline Vandromme 4, 4 · Robin Montgomery 6, 3 · 2nd Set (games by set)",
    "first_seen": "2026-11-04T10:36:25.451Z",
    "status": "open",
    "kalshi": null
@@ -489,7 +558,7 @@
    "reason": "Explained by score: Robin Montgomery not above the games spread right now",
    "context": "Jeline Vandromme 4, 3 · Robin Montgomery 6, 3 · 2nd Set (games by set)",
    "first_seen": "2026-11-04T10:47:54.191Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -509,7 +578,7 @@
    "reason": "Explained by score: Jeline Vandromme not above the games spread right now",
    "context": "Jeline Vandromme 4, 3 · Robin Montgomery 6, 3 · 2nd Set (games by set)",
    "first_seen": "2026-11-04T10:47:54.191Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -520,16 +589,16 @@
    "question": "Will the total in Robin Montgomery vs. Jeline Vandromme be more than 22.5?",
    "side": "Under 22.5 (Games)",
    "open_chance": 61,
-   "now_chance": 44,
+   "now_chance": 42,
    "open_odds": "-156",
-   "now_odds": "+127",
-   "edge": 17,
+   "now_odds": "+138",
+   "edge": 19,
    "tier": "big",
    "class": "edge",
    "reason": null,
    "context": "Jeline Vandromme 4, 3 · Robin Montgomery 6, 3 · 2nd Set (games by set)",
    "first_seen": "2026-11-04T10:47:54.191Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -540,60 +609,34 @@
    "question": "Will the total in Robin Montgomery vs. Jeline Vandromme be more than 27.5?",
    "side": "Under 27.5 (Games)",
    "open_chance": 74,
-   "now_chance": 60,
+   "now_chance": 61,
    "open_odds": "-285",
-   "now_odds": "-150",
-   "edge": 14,
+   "now_odds": "-156",
+   "edge": 13,
    "tier": "big",
    "class": "edge",
    "reason": null,
    "context": "Jeline Vandromme 4, 3 · Robin Montgomery 6, 3 · 2nd Set (games by set)",
    "first_seen": "2026-11-04T10:47:54.191Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2125810:0",
-   "market_id": "2125810",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Robin Montgomery win set 2 against Jeline Vandromme?",
-   "side": "Yes: Robin Montgomery win set 2 against Jeline Vandromme",
-   "open_chance": 71,
-   "now_chance": 59,
-   "open_odds": "-245",
-   "now_odds": "-144",
-   "edge": 12,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Robin Montgomery not above the games spread right now",
-   "context": "Jeline Vandromme 4, 3 · Robin Montgomery 6, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-11-04T10:47:54.191Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2125794:0",
-   "market_id": "2125794",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Robin Montgomery cover 1.5 vs the Jeline Vandromme in Robin Montgomery vs. Jeline Vandromme?",
-   "side": "Robin Montgomery +1.50 (Games)",
-   "open_chance": 87,
-   "now_chance": 82,
-   "open_odds": "-669",
-   "now_odds": "-456",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Jeline Vandromme 4, 3 · Robin Montgomery 6, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-11-04T10:47:54.191Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2125803:1:2026-11-04T10:47:54.191Z",
+   "key": "2125803:1",
+   "at": "2026-11-04T11:18:38.161Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-156",
+   "now_chance": 61,
+   "edge": 13,
+   "text": "Edge gone: Under 27.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-robmon-jelvan-2026-11-04"
+  },
   {
    "id": "new_edge:2125802:1:big",
    "key": "2125802:1",
@@ -700,7 +743,8 @@
   "new_edge:2125803:1:big",
   "gone:2125802:1:2026-11-04T10:47:54.191Z",
   "gone:2125794:0:2026-11-04T10:47:54.191Z",
-  "new_edge:2125802:1:big"
+  "new_edge:2125802:1:big",
+  "gone:2125803:1:2026-11-04T10:47:54.191Z"
  ],
  "kalshi_checked": null
 }

@@ -4,12 +4,12 @@
  "game": "Mattia Bellucci vs. Arthur Rinderknech",
  "url": "https://polymarket.us/sports/atp/atp-matbel-artrin-2026-11-04",
  "start_time": "2026-11-04T10:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186488",
-  "fetched_at": "2026-11-04T11:09:32.905Z",
+  "fetched_at": "2026-11-04T11:18:38.594Z",
   "tennis": true,
   "tennis_match": {
    "id": "186488",
@@ -17,17 +17,17 @@
    "date": "2026-11-04T10:05Z",
    "startDate": "2026-11-04T10:05Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Arthur Rinderknech (FRA) leads Mattia Bellucci (ITA) 6-4 4-0",
+     "text": "Arthur Rinderknech (FRA) bt Mattia Bellucci (ITA) 6-4 6-1",
      "type": "event"
     }
    ],
@@ -55,13 +55,15 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "linescores": [
       {
        "value": 6,
        "winner": true
       },
       {
-       "value": 4
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -101,13 +103,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "linescores": [
       {
        "value": 4,
        "winner": false
       },
       {
-       "value": 0
+       "value": 1,
+       "winner": false
       }
      ],
      "athlete": {
@@ -158,16 +162,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Arthur Rinderknech",
    "alias": "Arthur Rinderknech",
    "name": "Arthur Rinderknech",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Mattia Bellucci",
@@ -179,35 +183,13 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T11:09:32.743Z",
+ "updated": "2026-11-04T11:18:38.481Z",
  "open_taken_at": "2026-11-03T12:23:39.622Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "2126794",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Mattia Bellucci cover 7.5 vs the Arthur Rinderknech in Mattia Bellucci vs. Arthur Rinderknech?",
-   "sides": [
-    "Mattia Bellucci +7.50 (Games)",
-    "Arthur Rinderknech -7.50 (Games)"
-   ],
-   "teams": [
-    "Mattia Bellucci",
-    "Arthur Rinderknech"
-   ],
-   "player": null,
-   "mid": 95,
-   "yes_buy": 98,
-   "no_buy": 8,
-   "taken_at": "2026-11-04T10:36:25.816Z"
-  },
   {
    "market_id": "2126792",
    "market": "Games spread",
@@ -251,6 +233,28 @@
    "yes_buy": 59,
    "no_buy": 45,
    "taken_at": "2026-11-03T22:58:40.219Z"
+  },
+  {
+   "market_id": "2126794",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Mattia Bellucci cover 7.5 vs the Arthur Rinderknech in Mattia Bellucci vs. Arthur Rinderknech?",
+   "sides": [
+    "Mattia Bellucci +7.50 (Games)",
+    "Arthur Rinderknech -7.50 (Games)"
+   ],
+   "teams": [
+    "Mattia Bellucci",
+    "Arthur Rinderknech"
+   ],
+   "player": null,
+   "mid": 95,
+   "yes_buy": 98,
+   "no_buy": 8,
+   "taken_at": "2026-11-04T10:36:25.816Z"
   },
   {
    "market_id": "2126797",
@@ -511,9 +515,9 @@
    "tier": "big",
    "class": "score",
    "reason": "Explained by score: Mattia Bellucci not above the games spread right now",
-   "context": "Arthur Rinderknech 6, 4 · Mattia Bellucci 4, 0 · 2nd Set (games by set)",
+   "context": "Arthur Rinderknech 6, 5 · Mattia Bellucci 4, 0 · 2nd Set (games by set)",
    "first_seen": "2026-11-04T11:03:28.271Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -531,9 +535,9 @@
    "tier": "big",
    "class": "news",
    "reason": "Big move (39 pts), likely news",
-   "context": "Arthur Rinderknech 6, 4 · Mattia Bellucci 4, 0 · 2nd Set (games by set)",
+   "context": "Arthur Rinderknech 6, 5 · Mattia Bellucci 4, 0 · 2nd Set (games by set)",
    "first_seen": "2026-11-04T11:03:28.271Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
