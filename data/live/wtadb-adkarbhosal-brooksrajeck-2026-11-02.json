@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186602",
-  "fetched_at": "2026-11-04T14:34:46.622Z",
+  "fetched_at": "2026-11-04T14:41:46.934Z",
   "tennis": true,
   "tennis_match": {
    "id": "186602",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Wed, November 4th at 9:35 AM EST",
-     "shortDetail": "11/4 - 9:35 AM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Vaishnavi Adkar (IND) & Rutuja Bhosale (IND) leads (4) Madeleine Brooks (GBR) & Amelia Rajecki (GBR) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,15 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
      "curatedRank": {
       "current": 4
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "roster": {
       "displayName": "Madeleine Brooks / Amelia Rajecki",
       "shortDisplayName": "M. Brooks / A. Rajecki",
@@ -125,6 +136,12 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "roster": {
       "displayName": "Vaishnavi Adkar / Rutuja Bhosale",
       "shortDisplayName": "V. Adkar / R. Bhosale",
@@ -192,6 +209,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 889,
    "type": {
     "id": "4",
@@ -208,10 +230,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Wed, November 4th at 9:35 AM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Madeleine Brooks / Amelia Rajecki",
@@ -229,7 +251,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T14:34:46.464Z",
+ "updated": "2026-11-04T14:41:46.877Z",
  "open_taken_at": "2026-11-01T05:07:38.002Z",
  "thresholds": {
   "big": 10,
@@ -259,7 +281,28 @@
    "taken_at": "2026-11-03T22:03:17.806Z"
   }
  ],
- "edges": [],
+ "edges": [
+  {
+   "key": "2010071:1",
+   "market_id": "2010071",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wtadb event Adkar / Bhosale vs Brooks / Rajecki scheduled for November 2, 2026 at 9:30 AM UTC?",
+   "side": "Brooks M / Rajecki A win",
+   "open_chance": 79,
+   "now_chance": 66,
+   "open_odds": "-376",
+   "now_odds": "-194",
+   "edge": 13,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Madeleine Brooks / Amelia Rajecki 0 · Vaishnavi Adkar / Rutuja Bhosale 1 · 1st Set (games by set)",
+   "first_seen": "2026-11-04T14:41:46.877Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
  "alerts": [],
  "alert_seen": [],
  "kalshi_checked": null

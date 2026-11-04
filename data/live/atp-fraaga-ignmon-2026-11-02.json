@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-04T14:34:48.757Z"
+  "fetched_at": "2026-11-04T14:41:48.537Z"
  },
- "updated": "2026-11-04T14:34:48.646Z",
+ "updated": "2026-11-04T14:41:48.487Z",
  "open_taken_at": "2026-11-01T05:07:51.744Z",
  "thresholds": {
   "big": 10,
@@ -63,28 +63,6 @@
    "taken_at": "2026-11-04T14:26:25.017Z"
   },
   {
-   "market_id": "2030383",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Franco Agamenone cover -1.5 vs the Ignacio Monzon in Franco Agamenone vs. Ignacio Monzon?",
-   "sides": [
-    "Franco Agamenone -1.50 (Sets)",
-    "Ignacio Monzon +1.50 (Sets)"
-   ],
-   "teams": [
-    "Franco Agamenone",
-    "Ignacio Monzon"
-   ],
-   "player": null,
-   "mid": 54.5,
-   "yes_buy": 55,
-   "no_buy": 46,
-   "taken_at": "2026-11-03T22:03:21.698Z"
-  },
-  {
    "market_id": "2030405",
    "market": "Set 2 winner",
    "group": "game",
@@ -105,6 +83,28 @@
    "yes_buy": 80,
    "no_buy": 21,
    "taken_at": "2026-11-04T14:19:40.538Z"
+  },
+  {
+   "market_id": "2030383",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Franco Agamenone cover -1.5 vs the Ignacio Monzon in Franco Agamenone vs. Ignacio Monzon?",
+   "sides": [
+    "Franco Agamenone -1.50 (Sets)",
+    "Ignacio Monzon +1.50 (Sets)"
+   ],
+   "teams": [
+    "Franco Agamenone",
+    "Ignacio Monzon"
+   ],
+   "player": null,
+   "mid": 54.5,
+   "yes_buy": 55,
+   "no_buy": 46,
+   "taken_at": "2026-11-03T22:03:21.698Z"
   },
   {
    "market_id": "2030385",
@@ -175,6 +175,26 @@
  ],
  "edges": [
   {
+   "key": "2027435:0",
+   "market_id": "2027435",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Franco Agamenone vs Ignacio Monzon scheduled for November 2, 2026 at 1:00 PM UTC?",
+   "side": "Franco Agamenone win",
+   "open_chance": 80,
+   "now_chance": 73,
+   "open_odds": "-400",
+   "now_odds": "-270",
+   "edge": 7,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-04T14:41:48.487Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2027435:1",
    "market_id": "2027435",
    "market": "Moneyline",
@@ -191,11 +211,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-04T14:34:48.646Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2027435:1:2026-11-04T14:34:48.646Z",
+   "key": "2027435:1",
+   "at": "2026-11-04T14:36:36.236Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Ignacio Monzon win",
+   "market": "Moneyline",
+   "now_odds": "+488",
+   "now_chance": 17,
+   "edge": 4,
+   "text": "Edge gone: Ignacio Monzon win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-fraaga-ignmon-2026-11-02"
+  },
   {
    "id": "new_edge:2027435:1:slight",
    "key": "2027435:1",
@@ -214,7 +248,8 @@
  "alert_seen": [
   "new_edge:2027435:0:slight",
   "gone:2027435:0:2026-11-04T01:55:32.378Z",
-  "new_edge:2027435:1:slight"
+  "new_edge:2027435:1:slight",
+  "gone:2027435:1:2026-11-04T14:34:48.646Z"
  ],
  "kalshi_checked": null
 }
