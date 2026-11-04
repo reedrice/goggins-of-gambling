@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-04T09:15:52.446Z"
+  "fetched_at": "2026-11-04T09:27:56.663Z"
  },
- "updated": "2026-11-04T09:15:52.390Z",
+ "updated": "2026-11-04T09:27:56.587Z",
  "open_taken_at": "2026-11-03T15:49:24.162Z",
  "thresholds": {
   "big": 10,
@@ -39,6 +39,28 @@
    "yes_buy": 23,
    "no_buy": 79,
    "taken_at": "2026-11-03T22:03:27.654Z"
+  },
+  {
+   "market_id": "2131220",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Leonardo Rossi cover 7.5 vs the Remy Bertola in Leonardo Rossi vs. Remy Bertola?",
+   "sides": [
+    "Leonardo Rossi +7.50 (Games)",
+    "Remy Bertola -7.50 (Games)"
+   ],
+   "teams": [
+    "Leonardo Rossi",
+    "Remy Bertola"
+   ],
+   "player": null,
+   "mid": 93.5,
+   "yes_buy": 94,
+   "no_buy": 7,
+   "taken_at": "2026-11-04T09:27:56.587Z"
   },
   {
    "market_id": "2131188",
@@ -151,25 +173,25 @@
    "taken_at": "2026-11-04T03:30:36.250Z"
   },
   {
-   "market_id": "2131162",
-   "market": "Set 1 winner",
+   "market_id": "2131316",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Leonardo Rossi win set 1 against Remy Bertola?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Leonardo Rossi cover -1.5 vs the Remy Bertola in Leonardo Rossi vs. Remy Bertola?",
    "sides": [
-    "Yes: Leonardo Rossi win set 1 against Remy Bertola",
-    "No: Leonardo Rossi win set 1 against Remy Bertola"
+    "Leonardo Rossi -1.50 (Games)",
+    "Remy Bertola +1.50 (Games)"
    ],
    "teams": [
     "Leonardo Rossi",
-    null
+    "Remy Bertola"
    ],
    "player": null,
-   "mid": 37.5,
-   "yes_buy": 38,
-   "no_buy": 63,
+   "mid": 15.5,
+   "yes_buy": 16,
+   "no_buy": 85,
    "taken_at": "2026-11-04T09:15:52.390Z"
   },
   {
@@ -217,25 +239,25 @@
    "taken_at": "2026-11-04T09:05:06.943Z"
   },
   {
-   "market_id": "2131316",
-   "market": "Games spread",
+   "market_id": "2131162",
+   "market": "Set 1 winner",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -1.5,
-   "question": "Will the Leonardo Rossi cover -1.5 vs the Remy Bertola in Leonardo Rossi vs. Remy Bertola?",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Leonardo Rossi win set 1 against Remy Bertola?",
    "sides": [
-    "Leonardo Rossi -1.50 (Games)",
-    "Remy Bertola +1.50 (Games)"
+    "Yes: Leonardo Rossi win set 1 against Remy Bertola",
+    "No: Leonardo Rossi win set 1 against Remy Bertola"
    ],
    "teams": [
     "Leonardo Rossi",
-    "Remy Bertola"
+    null
    ],
    "player": null,
-   "mid": 15.5,
-   "yes_buy": 16,
-   "no_buy": 85,
+   "mid": 37.5,
+   "yes_buy": 38,
+   "no_buy": 63,
    "taken_at": "2026-11-04T09:15:52.390Z"
   },
   {
@@ -263,6 +285,46 @@
  ],
  "edges": [
   {
+   "key": "2131162:0",
+   "market_id": "2131162",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Leonardo Rossi win set 1 against Remy Bertola?",
+   "side": "Yes: Leonardo Rossi win set 1 against Remy Bertola",
+   "open_chance": 38,
+   "now_chance": 19,
+   "open_odds": "+163",
+   "now_odds": "+426",
+   "edge": 19,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-04T09:27:56.587Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2131316:1",
+   "market_id": "2131316",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Leonardo Rossi cover -1.5 vs the Remy Bertola in Leonardo Rossi vs. Remy Bertola?",
+   "side": "Remy Bertola +1.50 (Games)",
+   "open_chance": 85,
+   "now_chance": 72,
+   "open_odds": "-567",
+   "now_odds": "-257",
+   "edge": 13,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-04T09:27:56.587Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2131207:1",
    "market_id": "2131207",
    "market": "Games total",
@@ -283,6 +345,26 @@
    "kalshi": null
   },
   {
+   "key": "2130717:0",
+   "market_id": "2130717",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Leonardo Rossi vs Remy Bertola scheduled for November 4, 2026 at 10:00 AM UTC?",
+   "side": "Leonardo Rossi win",
+   "open_chance": 23,
+   "now_chance": 18,
+   "open_odds": "+335",
+   "now_odds": "+456",
+   "edge": 5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-04T09:27:56.587Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2130717:1",
    "market_id": "2130717",
    "market": "Moneyline",
@@ -299,11 +381,67 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-04T09:15:52.390Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2131162:0:big",
+   "key": "2131162:0",
+   "at": "2026-11-04T09:27:56.587Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Yes: Leonardo Rossi win set 1 against Remy Bertola",
+   "market": "Set 1 winner",
+   "now_odds": "+426",
+   "now_chance": 19,
+   "edge": 19,
+   "text": "New big edge: Yes: Leonardo Rossi win set 1 against Remy Bertola (Set 1 winner), 19 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-leoros-rember-2026-11-04"
+  },
+  {
+   "id": "new_edge:2131316:1:big",
+   "key": "2131316:1",
+   "at": "2026-11-04T09:27:56.587Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Remy Bertola +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-257",
+   "now_chance": 72,
+   "edge": 13,
+   "text": "New big edge: Remy Bertola +1.50 (Games) (Games spread), 13 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-leoros-rember-2026-11-04"
+  },
+  {
+   "id": "new_edge:2130717:0:slight",
+   "key": "2130717:0",
+   "at": "2026-11-04T09:27:56.587Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Leonardo Rossi win",
+   "market": "Moneyline",
+   "now_odds": "+456",
+   "now_chance": 18,
+   "edge": 5,
+   "text": "New slight edge: Leonardo Rossi win (Moneyline), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-leoros-rember-2026-11-04"
+  },
+  {
+   "id": "gone:2130717:1:2026-11-04T09:15:52.390Z",
+   "key": "2130717:1",
+   "at": "2026-11-04T09:27:56.587Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Remy Bertola win",
+   "market": "Moneyline",
+   "now_odds": "-285",
+   "now_chance": 74,
+   "edge": 5,
+   "text": "Edge gone: Remy Bertola win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-leoros-rember-2026-11-04"
+  },
   {
    "id": "new_edge:2131207:1:slight",
    "key": "2131207:1",
@@ -335,7 +473,11 @@
  ],
  "alert_seen": [
   "new_edge:2131207:1:slight",
-  "new_edge:2130717:1:slight"
+  "new_edge:2130717:1:slight",
+  "new_edge:2131162:0:big",
+  "new_edge:2131316:1:big",
+  "new_edge:2130717:0:slight",
+  "gone:2130717:1:2026-11-04T09:15:52.390Z"
  ],
  "kalshi_checked": null
 }

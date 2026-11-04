@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-04T09:15:52.301Z"
+  "fetched_at": "2026-11-04T09:27:56.472Z"
  },
- "updated": "2026-11-04T09:15:52.232Z",
+ "updated": "2026-11-04T09:27:56.397Z",
  "open_taken_at": "2026-11-03T15:49:23.737Z",
  "thresholds": {
   "big": 10,
@@ -41,26 +41,26 @@
    "taken_at": "2026-11-03T22:03:27.343Z"
   },
   {
-   "market_id": "2131157",
+   "market_id": "2131156",
    "market": "Games spread",
    "group": "game",
    "mtype": "spread",
    "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Adrian Andreev cover 7.5 vs the Jacopo Vasami in Adrian Andreev vs. Jacopo Vasami?",
+   "line": 4.5,
+   "question": "Will the Adrian Andreev cover 4.5 vs the Jacopo Vasami in Adrian Andreev vs. Jacopo Vasami?",
    "sides": [
-    "Adrian Andreev +7.50 (Games)",
-    "Jacopo Vasami -7.50 (Games)"
+    "Adrian Andreev +4.50 (Games)",
+    "Jacopo Vasami -4.50 (Games)"
    ],
    "teams": [
     "Adrian Andreev",
     "Jacopo Vasami"
    ],
    "player": null,
-   "mid": 95.5,
-   "yes_buy": 97,
-   "no_buy": 6,
-   "taken_at": "2026-11-04T09:15:52.232Z"
+   "mid": 84.5,
+   "yes_buy": 85,
+   "no_buy": 16,
+   "taken_at": "2026-11-04T09:27:56.397Z"
   },
   {
    "market_id": "2131169",
@@ -107,28 +107,6 @@
    "taken_at": "2026-11-04T09:15:52.232Z"
   },
   {
-   "market_id": "2131199",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Adrian Andreev win set 1 against Jacopo Vasami?",
-   "sides": [
-    "Yes: Adrian Andreev win set 1 against Jacopo Vasami",
-    "No: Adrian Andreev win set 1 against Jacopo Vasami"
-   ],
-   "teams": [
-    "Adrian Andreev",
-    null
-   ],
-   "player": null,
-   "mid": 56,
-   "yes_buy": 57,
-   "no_buy": 45,
-   "taken_at": "2026-11-04T09:15:52.232Z"
-  },
-  {
    "market_id": "2131118",
    "market": "Games total",
    "group": "game",
@@ -147,6 +125,28 @@
    "player": null,
    "mid": 55.5,
    "yes_buy": 56,
+   "no_buy": 45,
+   "taken_at": "2026-11-04T09:15:52.232Z"
+  },
+  {
+   "market_id": "2131199",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Adrian Andreev win set 1 against Jacopo Vasami?",
+   "sides": [
+    "Yes: Adrian Andreev win set 1 against Jacopo Vasami",
+    "No: Adrian Andreev win set 1 against Jacopo Vasami"
+   ],
+   "teams": [
+    "Adrian Andreev",
+    null
+   ],
+   "player": null,
+   "mid": 56,
+   "yes_buy": 57,
    "no_buy": 45,
    "taken_at": "2026-11-04T09:15:52.232Z"
   },
@@ -303,10 +303,70 @@
    "yes_buy": 26,
    "no_buy": 75,
    "taken_at": "2026-11-04T09:15:52.232Z"
+  },
+  {
+   "market_id": "2131157",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Adrian Andreev cover 7.5 vs the Jacopo Vasami in Adrian Andreev vs. Jacopo Vasami?",
+   "sides": [
+    "Adrian Andreev +7.50 (Games)",
+    "Jacopo Vasami -7.50 (Games)"
+   ],
+   "teams": [
+    "Adrian Andreev",
+    "Jacopo Vasami"
+   ],
+   "player": null,
+   "mid": 95.5,
+   "yes_buy": 97,
+   "no_buy": 6,
+   "taken_at": "2026-11-04T09:15:52.232Z"
   }
  ],
- "edges": [],
- "alerts": [],
- "alert_seen": [],
+ "edges": [
+  {
+   "key": "2131199:0",
+   "market_id": "2131199",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Adrian Andreev win set 1 against Jacopo Vasami?",
+   "side": "Yes: Adrian Andreev win set 1 against Jacopo Vasami",
+   "open_chance": 57,
+   "now_chance": 53,
+   "open_odds": "-133",
+   "now_odds": "-113",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-04T09:27:56.397Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
+ "alerts": [
+  {
+   "id": "new_edge:2131199:0:slight",
+   "key": "2131199:0",
+   "at": "2026-11-04T09:27:56.397Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Yes: Adrian Andreev win set 1 against Jacopo Vasami",
+   "market": "Set 1 winner",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 4,
+   "text": "New slight edge: Yes: Adrian Andreev win set 1 against Jacopo Vasami (Set 1 winner), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-adrand-jacvas-2026-11-04"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:2131199:0:slight"
+ ],
  "kalshi_checked": null
 }
