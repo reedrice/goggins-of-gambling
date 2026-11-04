@@ -4,12 +4,12 @@
  "game": "Robin Montgomery vs. Jeline Vandromme",
  "url": "https://polymarket.us/sports/wta/wta-robmon-jelvan-2026-11-04",
  "start_time": "2026-11-04T09:30:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186572",
-  "fetched_at": "2026-11-04T12:36:37.708Z",
+  "fetched_at": "2026-11-04T12:44:51.867Z",
   "tennis": true,
   "tennis_match": {
    "id": "186572",
@@ -17,17 +17,17 @@
    "date": "2026-11-04T09:35Z",
    "startDate": "2026-11-04T09:35Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Robin Montgomery (USA) leads Jeline Vandromme (BEL) 6-4 3-6 6-5",
+     "text": "Robin Montgomery (USA) bt Jeline Vandromme (BEL) 6-4 3-6 7-5",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "winner": false,
      "linescores": [
       {
        "value": 4,
@@ -66,7 +66,8 @@
        "winner": true
       },
       {
-       "value": 5
+       "value": 5,
+       "winner": false
       }
      ],
      "athlete": {
@@ -106,7 +107,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "winner": true,
      "linescores": [
       {
        "value": 6,
@@ -117,7 +118,8 @@
        "winner": false
       },
       {
-       "value": 6
+       "value": 7,
+       "winner": true
       }
      ],
      "athlete": {
@@ -152,11 +154,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 889,
    "type": {
     "id": "2",
@@ -173,10 +170,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Jeline Vandromme",
@@ -188,13 +185,13 @@
    "abbr": "Robin Montgomery",
    "alias": "Robin Montgomery",
    "name": "Robin Montgomery",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T12:36:37.650Z",
+ "updated": "2026-11-04T12:44:51.770Z",
  "open_taken_at": "2026-11-03T11:04:18.571Z",
  "thresholds": {
   "big": 10,
@@ -490,26 +487,6 @@
  ],
  "edges": [
   {
-   "key": "2125732:1",
-   "market_id": "2125732",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Robin Montgomery vs Jeline Vandromme scheduled for November 4, 2026 at 9:30 AM UTC?",
-   "side": "Jeline Vandromme win",
-   "open_chance": 42,
-   "now_chance": 21,
-   "open_odds": "+138",
-   "now_odds": "+376",
-   "edge": 21,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Jeline Vandromme 4, 6, 5 · Robin Montgomery 6, 3, 6 · 3rd Set (games by set)",
-   "first_seen": "2026-11-04T12:36:37.650Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "2125794:0",
    "market_id": "2125794",
    "market": "Games spread",
@@ -608,9 +585,57 @@
    "first_seen": "2026-11-04T10:47:54.191Z",
    "status": "gone",
    "kalshi": null
+  },
+  {
+   "key": "2125732:1",
+   "market_id": "2125732",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Robin Montgomery vs Jeline Vandromme scheduled for November 4, 2026 at 9:30 AM UTC?",
+   "side": "Jeline Vandromme win",
+   "open_chance": 42,
+   "now_chance": 36,
+   "open_odds": "+138",
+   "now_odds": "+178",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Jeline Vandromme 4, 6, 5 · Robin Montgomery 6, 3, 6 · 3rd Set (games by set)",
+   "first_seen": "2026-11-04T12:36:37.650Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2125732:1:2026-11-04T12:36:37.650Z",
+   "key": "2125732:1",
+   "at": "2026-11-04T12:44:51.770Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Jeline Vandromme win",
+   "market": "Moneyline",
+   "now_odds": "+178",
+   "now_chance": 36,
+   "edge": 6,
+   "text": "Edge gone: Jeline Vandromme win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-robmon-jelvan-2026-11-04"
+  },
+  {
+   "id": "new_edge:2125732:1:slight",
+   "key": "2125732:1",
+   "at": "2026-11-04T12:38:40.930Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Jeline Vandromme win",
+   "market": "Moneyline",
+   "now_odds": "+178",
+   "now_chance": 36,
+   "edge": 6,
+   "text": "New slight edge: Jeline Vandromme win (Moneyline), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-robmon-jelvan-2026-11-04"
+  },
   {
    "id": "new_edge:2125732:1:big",
    "key": "2125732:1",
@@ -671,7 +696,9 @@
   "gone:2125793:1:2026-11-04T10:47:54.191Z",
   "gone:2125732:0:2026-11-04T11:20:54.612Z",
   "news:2125732:0",
-  "new_edge:2125732:1:big"
+  "new_edge:2125732:1:big",
+  "new_edge:2125732:1:slight",
+  "gone:2125732:1:2026-11-04T12:36:37.650Z"
  ],
  "kalshi_checked": null
 }
