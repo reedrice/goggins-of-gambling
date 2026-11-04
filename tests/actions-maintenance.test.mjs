@@ -1,4 +1,15 @@
-import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {allowed,checkFresh} from '../scripts/actions-maintenance.mjs';import {decide,setOwner} from '../scripts/routine-gate.mjs';
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {allowed,checkFresh,finalRefreshDue} from '../scripts/actions-maintenance.mjs';import {decide,setOwner} from '../scripts/routine-gate.mjs';
+
+test('final refresh only re-fetches captures aged by slow work, preserving source timestamps',()=>{
+ const now=Date.parse('2026-11-04T10:00:00Z'),fresh=new Date(now-60000).toISOString(),old=new Date(now-5*60000).toISOString();
+ const game={status:'live',start_time:new Date(now-3600000).toISOString(),updated:fresh};
+ assert.equal(finalRefreshDue({updated_at:fresh},[game],now),false);
+ assert.equal(finalRefreshDue({updated_at:old},[game],now),true);
+ assert.equal(finalRefreshDue({updated_at:fresh},[{...game,updated:old}],now),true);
+ assert.equal(finalRefreshDue({updated_at:fresh},[{...game,status:'final',updated:old}],now),false);
+ assert.equal(finalRefreshDue({},[game],now),true);
+ assert.equal(game.updated,fresh);
+});
 test('CI writes only public feed, record, feedback and routine files',()=>{for(const p of ['data/live/test.json','data/live-record.json','routines/owners.json'])assert.ok(allowed(p));for(const p of ['data/trent-picks.json','config.js','private/keys.json','js/app.js','.cache/private.json'])assert.ok(!allowed(p));});
 test('freshness failure rejects a successful process with stale due-game data',()=>{const now=Date.parse('2026-10-21T08:00:00Z'),g={slug:'test',status:'live',start_time:'2026-10-21T07:00:00Z'};assert.throws(()=>checkFresh([{...g,updated:'2026-10-21T07:50:00Z'}],now));checkFresh([{...g,updated:'2026-10-21T08:00:01Z'}],now);});
 test('new owner gates bots off and workflow copies cannot run in the sandbox',()=>{const d={routines:{'live-feed-update':{enabled:true,owner:'chatgpt'}}},a=setOwner(d,'live-feed-update','github-actions');assert.ok(decide(a,'live-feed-update','github-actions').run);assert.ok(!decide(a,'live-feed-update','chatgpt').run);const workflow=fs.readFileSync('.github/workflows/live-maintenance.yml','utf8'),source=fs.readFileSync('scripts/actions-maintenance.mjs','utf8');assert.ok(workflow.includes("github.repository == 'reedrice/goggins-of-gambling'"));assert.ok(source.includes("process.env.GITHUB_REPOSITORY!=='reedrice/goggins-of-gambling'"));assert.ok(!/openai|anthropic|codex exec|--force/.test(workflow));assert.ok(!source.includes("['push','--force'"));});

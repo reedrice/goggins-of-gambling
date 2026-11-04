@@ -35,3 +35,7 @@ Maintenance requires the current main snapshot and its own newly created commit 
 Verify completed maintenance, owner stamps and actual served live/ESPN/picks JSON after Pages propagation. Code-only deployment does not freshen old snapshots. Recovery evidence is recorded in HANDOFF.md. No new AI scheduler is needed.
 
 Evidence: [failed publication](https://github.com/reedrice/goggins-of-gambling/actions/runs/41808827243), [initial recovery](https://github.com/reedrice/goggins-of-gambling/actions/runs/41814464627), [public watchdog](https://mib-feed-watchdog.reedrice9.workers.dev/status).
+
+## Verified recovery and freshness follow-up
+
+Run 41815074281 successfully published generated commit df0874ba8825ff7d02e6766a761d2114263cec78 and deployed Pages at 10:42:32Z. Shallow checkout took 16 seconds. Public verification exposed a separate timing issue: early captures aged beyond five minutes while slower ledger/record/slate work ran. Added one conditional pre-publication refresh of the existing ESPN status and live-market fetchers when captures exceed four minutes. Status-only mode skips duplicate historical/model-history work; it retains the existing four-worker and 32-summary request bounds. No timestamp-only freshness claims or new scheduler. The extra source pass is bounded to once per maintenance attempt and runs only after slow work. Publication, source, health and watchdog checks: 32 tests passed. Final public health evidence follows in HANDOFF.md.

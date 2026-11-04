@@ -5,6 +5,10 @@ import {publishGeneratedCommit} from './git-publication.mjs';
 export const ALLOWED=['data/live/','routines/owners.json','data/predictions.json','data/pick-history.json','data/live-record.json','data/learning.json','data/live-feedback.json','data/play/leaderboard.json','data/routines/','data/picks.json','data/markets/','data/positions.json','data/espn/','data/testing/'];
 export const allowed=p=>ALLOWED.some(a=>a.endsWith('/')?p.startsWith(a):p===a);
 export function checkFresh(games,started){const due=games.filter(g=>g.status!=='final'&&shouldTick({start:g.start_time,status:g.status},started));const stale=due.filter(g=>!Number.isFinite(Date.parse(g.updated))||Date.parse(g.updated)<started-30000);if(stale.length)throw Error('Due games were not refreshed: '+stale.map(g=>g.slug).join(', '));console.log('Fresh due games: '+due.length);}
+export function finalRefreshDue(espn,games,now=Date.now()){
+ const old=t=>!Number.isFinite(Date.parse(t))||now-Date.parse(t)>4*60000;
+ return old(espn?.updated_at)||(games||[]).some(g=>g.status!=='final'&&shouldTick({start:g.start_time,status:g.status},now)&&old(g.updated));
+}
 async function main(){
  if(process.env.GITHUB_ACTIONS!=='true'||process.env.GITHUB_REPOSITORY!=='reedrice/goggins-of-gambling'||process.env.GITHUB_REF!=='refs/heads/main')throw Error('Production GitHub Actions only');
  const git=(...args)=>execFileSync('git',args,{encoding:'utf8',stdio:['ignore','pipe','pipe']}).trim();
@@ -29,6 +33,15 @@ async function main(){
    // Persist the feed stamp for the source-backed routine runner, still in this unpublished CI tree.
    fs.writeFileSync('routines/owners.json',JSON.stringify(stamp(owners,'live-feed-update','github-actions'),null,2)+'\n');
    run(['scripts/fetch-espn-flags.mjs']);run(['scripts/scheduled-routines.mjs']);run(['tests/no-instructions.test.mjs']);run(['tests/no-ai-runtime.test.mjs']);
+   // Slow historical/model/record jobs must not make the served live capture old.
+   // Reuse the same bounded fetcher once; never relabel an old capture as fresh.
+   if(finalRefreshDue(JSON.parse(fs.readFileSync('data/espn/index.json')),JSON.parse(fs.readFileSync('data/live/index.json')).games)){
+    console.log('Live captures aged during maintenance; refreshing source snapshots once before publication.');
+    run(['scripts/fetch-espn-status.mjs','--status-only']);
+    const finalStarted=Date.now();run(['scripts/live-tick.mjs']);
+    checkFresh(JSON.parse(fs.readFileSync('data/live/index.json')).games,finalStarted);
+    fs.writeFileSync('routines/owners.json',JSON.stringify(stamp(JSON.parse(fs.readFileSync('routines/owners.json')),'live-feed-update','github-actions'),null,2)+'\n');
+   }
    const tracked=git('diff','--name-only').split('\n').filter(Boolean),untracked=git('ls-files','--others','--exclude-standard').split('\n').filter(Boolean);
    if([...tracked,...untracked].some(p=>!allowed(p)))throw Error('Refuse changes outside public maintenance allowlist');
    git('add','--',...[...tracked,...untracked].filter(allowed));
