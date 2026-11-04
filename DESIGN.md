@@ -18,10 +18,10 @@ Linked from [AGENTS.md](AGENTS.md). Detail and history are in [HANDOFF.md](HANDO
 - **Mock-ups first** for the redesign: 2–3 styles from Reed's screenshots, then build.
 - **Analytics button.** ONE control on every bet: a pill "Analytics 58% · Market 49% ›" (`.oc-btn`). No separate "Dig deeper" button; the UI never says "Dig deeper" or "Our chance" (code names stay).
 - **Analytics sheet** (internally Dig deeper; one tap on the Analytics pill, any bet type, every surface):
-  - **Prop bets** open on that player's history for *that* prop: game bars vs the line, green = hit, red = miss, plus "8 of 10".
+  - **Player markets** open on that player's history for *that* prop: game bars vs the line, green = hit, red = miss, plus "8 of 10".
   - **Line stepper** (− / +): the bars recolor live.
-  - **Stat chips** stay on the same player and switch to his other position-appropriate prop bets.
-  - **Game bets** show **one team at a time** (tap the team chip to switch, never side by side). Totals = each game's combined total vs the line; Margin = win/cover margin. Same stepper and L5 / L10 / Season / vs-opp chips.
+  - **Stat chips** stay on the same player and switch to his other position-appropriate player markets.
+  - **Game markets** show **one team at a time** (tap the team chip to switch, never side by side). Totals = each game's combined total vs the line; Margin = win/cover margin. Same stepper and L5 / L10 / Season / vs-opp chips.
   - Minimal: chips, one big number, bars, one quiet footer line.
 - **Current season by default, everywhere.** Prop bars, team bars and the Analytics History part use only this season's games (preseason excluded). If there are only a few, show what exists ("Hit in 1 of 2"), never padded with last season. Last season is tucked into a "Last season" chip at the end of the chips.
 
@@ -38,7 +38,7 @@ Reed explicitly replaced the stepped Polymarket-style chart above with a smoothe
 Palette is user-selectable in Settings → Appearance, including custom canvas/accent. Ocean blue replaces the prior orange default. Geometry, glass blur and spacing remain fixed; components follow semantic role tokens. User-selected custom light palettes use contrasting dark text. The fixed default canvas is not a restriction on future palette choices.
 
 ### Card contrast and mobile override (Reed, Oct 21)
-Content panels use --surface-panel (7% contrasting glass) and --panel-border (11%); navigation and controls retain the quieter 3%/5% glass. Custom light palettes use black rather than white glass. Existing Live Bets big/slight categories use restrained green/amber tints; score/news-explained moves use the existing warning red, without changing classification or claiming these are new risk grades.
+Content panels use --surface-panel (7% contrasting glass) and --panel-border (11%); navigation and controls retain the quieter 3%/5% glass. Custom light palettes use black rather than white glass. Existing Live markets big/slight categories use restrained green/amber tints; score/news-explained moves use the existing warning red, without changing classification or claiming these are new risk grades.
 Below 768px, --radius-panel, --panel-padding and --module-gap become 16px. Controls remain 16px. The six-tab dock uses 9px labels and 17px icons with 52px targets and safe-area clearance. The score ticker becomes a manual horizontal flex scroller; duplicate marquee content is hidden. This explicitly supersedes the earlier fixed 24px mobile geometry and identical glass on every surface. Preserve these responsive role tokens in future layouts.
 
 ## Chart density and stable colors (Reed, Oct 21)

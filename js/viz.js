@@ -616,7 +616,7 @@
     const sec = el('section', 'viz-sec');
     const sub = el('div', 'viz-sub', `Line: ${p.n}+ ${p.stat.label}`);
     const chips = el('div', 'viz-chips'), price = el('div', 'viz-price');
-    sec.append(el('h4', 'viz-h', `📊 Prop bet history: ${p.player}`), sub, chips, price);
+    sec.append(el('h4', 'viz-h', `📊 Player market history: ${p.player}`), sub, chips, price);
     // Line chips: ONLY lines Polymarket US lists for this player + stat in this game.
     let lines = [], n = p.n, redraw = () => {};
     const no = leg.side === 1;
@@ -787,8 +787,8 @@
     // One prop bet: a short plain title ("Jayson Tatum 25+ points" / "Jayson Tatum under 25 points").
     const p1 = legs.length === 1 && parseProp(legs[0]);
     const title = p1 ? (legs[0].side === 1 ? `${p1.player} under ${p1.n} ${p1.stat.label}` : `${p1.player} ${p1.n}+ ${p1.stat.label}`) : spec.title;
-    sheet.append(x, el('div', 'viz-title', title || 'Bet'));
-    if (spec.sub) sheet.append(el('div', 'viz-subtitle', String(spec.sub).replace(/Player prop/g, 'Prop bet')));
+    sheet.append(x, el('div', 'viz-title', title || 'Market details'));
+    if (spec.sub) sheet.append(el('div', 'viz-subtitle', String(spec.sub).replace(/Player prop/g, 'Player market')));
     for (const leg of legs) {
       const wrap = el('div', 'viz-leg');
       if (legs.length > 1) wrap.append(el('div', 'viz-legname', leg.text || leg.question || ''));

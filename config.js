@@ -21,7 +21,7 @@ window.APP_CONFIG = Object.freeze({
   /** Short label reserved for a future web manifest / home-screen icon (currently unused). */
   shortName: 'MIB',
   /** One-line pitch shown on the onboarding screen. */
-  onboardingPitch: 'No soft bets. No guessing. Set your bankroll and earn every unit.',
+  onboardingPitch: 'Sports wagering and prediction-market analysis. Real-money activity involves risk; simulations use points only.',
   /**
    * OUR SPORTS, in display order (sport chips on Picks and Build a Bet).
    * Every one is first-class: Polymarket US markets (MarketsCore.LEAGUES),
@@ -37,7 +37,7 @@ window.APP_CONFIG = Object.freeze({
     'Stay hard.',
     'Discipline beats hunches.',
     'Respect the unit.',
-    'No edge, no bet.',
+    'Compare prices. Respect uncertainty.',
     'Callous the bankroll.'
   ],
 

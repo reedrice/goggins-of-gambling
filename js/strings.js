@@ -37,7 +37,7 @@ window.STR = {
     short: (stake, pays) => `${stake} → ${pays}`,          // compact: Build-a-bet buttons, other-app prices
     slipNote: 'at these prices',
     howTitle: 'How prices work',
-    diffNote: '"Pays less" means the same bet wins you a little less money on that app than on yours. "Pays more" means it wins you more.'
+    diffNote: '"Pays less" means the same selection wins you a little less money on that app than on yours. "Pays more" means it wins you more.'
   },
 
   // ---------------------------------------------------------------- 2nd-grade money words
@@ -49,7 +49,7 @@ window.STR = {
       label: { confirmed: 'Lineup: good to go.', at_risk: 'Lineup: heads up.', out: 'Lineup: not playing.' },
       source: 'Source:',
     },
-    betGet: (stake, back) => `Bet ${stake} → get ${back} back`,
+    betGet: (stake, back) => `Example stake ${stake} → total return ${back} if successful`,
     // one pick
     chance: { of10: n => `Wins about ${n} out of 10 times`, oneIn: n => `Wins about 1 in ${n} times`, almost: 'Wins almost every time' },
     // combo of k picks (2 = "Both win …", 3+ = "All 3 win …")
@@ -68,7 +68,7 @@ window.STR = {
     // Spreads: '+1.5 = they win, or lose by just 1 run'
     spreadPlus: (line, n, unit) => (n === 1 ? `${line} = they win, or lose by just 1 ${unit}` : `${line} = they win, or lose by ${n} ${unit} or less`),
     spreadMinus: (line, n, unit) => `${line} = they must win by ${n} ${unit} or more`,
-    youBet: stake => `You bet ${stake}`,
+    youBet: stake => `Recorded stake ${stake}`,
     youGet: back => `If it wins you get ${back} back`,
     gotBack: back => `got ${back} back`
   },
@@ -76,14 +76,14 @@ window.STR = {
   posTip: (abbr, name) => `${abbr} = ${name}`,
 
   // ---------------------------------------------------------------- tabs
-  tabs: { picks: 'Picks', calc: 'Build a bet', bets: 'My bets', record: 'Record', trent: 'Fade Trent', settings: 'Settings' },
+  tabs: { picks: 'Picks', calc: 'Market builder', bets: 'My activity', record: 'Record', trent: 'Fade Trent', settings: 'Settings' },
 
   // ---------------------------------------------------------------- Fade Trent tab (app.js renderTrent, js/trent.js, HANDOFF §28)
   trent: {
     title: 'Fade Trent',
     checked: (time, partial) => `Checked ${time} CT${partial ? ' \u00b7 Recent posts only' : ''}`,
     notChecking: 'Post checks have not started.',
-    intro: handle => `Picks @${handle} posted on X, checked against the real final scores. "Fade" means betting the other side.`,
+    intro: handle => `Picks @${handle} posted on X, checked against the real final scores. "Fade" compares the opposite wagering outcome.`,
     loadError: 'Couldn\'t load Trent\'s picks. Try again later.',
     record: 'His record', winPct: 'He wins', units: 'His units', fade: 'Fade record',
     unitsNote: (n, a) => `From ${n} picks with units.${a ? ` ${a} spread pick${a > 1 ? 's' : ''} had no odds, so the usual -110 was used.` : ''}`,
@@ -99,7 +99,7 @@ window.STR = {
 
   // ---------------------------------------------------------------- header / platform toggle
   bankroll: 'My money',
-  myPlatform: 'I bet on',
+  myPlatform: 'My platform',
   platformSaved: name => `Links will open ${name}.`,
 
   // ---------------------------------------------------------------- onboarding
@@ -108,27 +108,27 @@ window.STR = {
     private: '🔒 This stays on your phone only. Nobody else can see it.',
     name: 'Your name',
     namePh: 'e.g. Reed',
-    bankroll: 'How much money are you setting aside for betting?',
+    bankroll: 'Money allocated to wagering or prediction-market trading ($)',
     bankrollPh: 'e.g. 500',
-    unit: 'Your standard bet',
-    unitHint: 'We suggest 2% of your money',
-    max: 'Most you\'ll ever put on one bet slip',
-    maxHint: 'We suggest 5% of your money',
+    unit: 'Your reference stake',
+    unitHint: 'Initial value: 2% of your money; choose your own amount',
+    max: 'Maximum amount per recorded slip',
+    maxHint: 'Initial value: 5% of your money; choose your own limit',
     end: 'Stop date (optional)',
     endHint: 'When you plan to check how it went',
-    platform: 'Where do you bet?',
-    platformHint: 'We\'ll open this app when you tap a bet. You can change it any time.',
+    platform: 'Which platform do you use?',
+    platformHint: 'We\'ll open this app when you tap a selection. You can change it any time.',
     submit: 'START',
     errName: 'Type your name.',
     errBankroll: 'Type how much money you\'re setting aside.',
-    errUnit: 'Your standard bet has to be more than $0 and less than your total.',
+    errUnit: 'Your reference stake has to be more than $0 and less than your total.',
     errMax: 'The most per slip has to be more than $0.',
     done: tagline => `You're set. ${tagline}.`
   },
 
   // ---------------------------------------------------------------- picks
   /** Picks tab toggle. The Live Bets view itself is Richie's (js/live-bets.js, HANDOFF §32). */
-  live: { group: 'Which view', today: "Today's Picks", live: 'Live Bets 🔴', soon: 'Live bets coming soon' },
+  live: { group: 'Which view', today: "Today's Picks", live: 'Live markets 🔴', soon: 'Live markets coming soon' },
   picks: {
     scores: {
       title: 'Live scores', upcoming: 'Upcoming today', loading: 'Checking ESPN…', pause: 'Pause', resume: 'Resume', at: '@', soccer: 'Soccer',
@@ -167,9 +167,9 @@ window.STR = {
     empty: 'Nothing here today.',
     sections: {
       predictions: 'Who we think wins',
-      singles: 'Single bets',
-      props: 'Player bets',
-      parlays: 'Combo bets',
+      singles: 'Single selections',
+      props: 'Player markets',
+      parlays: 'Multi-leg selections',
       longshots: 'Big payout combos (hard to hit)',
       lottery: '🎟️ Lottery tickets (just for fun, almost never hit)',
       nonsports: 'Not sports'
@@ -194,8 +194,8 @@ window.STR = {
     kalshiEventOnly: 'Kalshi game page',
     // "Other apps" line on single-bet cards (from data/book-odds.json).
     // base = the user's "My platform" name; mine = its price (+ payout).
-    toCalc: 'Use in bet builder',
-    loaded: 'Added to the bet builder. Now type what your app says it pays.'
+    toCalc: 'Use in market builder',
+    loaded: 'Added to the market builder. Now type what your app says it pays.'
   },
 
   /** Size text (units vs the user's standard bet). Not shown as advice on cards (§54). */
@@ -212,26 +212,26 @@ window.STR = {
 
   // ---------------------------------------------------------------- calculator
   calc: {
-    title: 'Build a bet',
-    searchPh: 'Search a team, city, player or bet (e.g. "purdy")',
+    title: 'Market builder',
+    searchPh: 'Search a team, city, player or market (e.g. "purdy")',
     /** Build-a-bet filter panel (js/picker.js + js/picker-filters.js). */
     f: {
       title: 'Filters',
       step1: '1. Pick a day',
-      step2: '2. What kind of bet?',
+      step2: '2. Which market type?',
       step3: '3. Pick a team',
       step4: '4. Pick a player',
       allDays: 'All days',
       anySport: 'All sports',
-      teamBets: 'Team bets',
-      playerProps: 'Player props',
-      allBets: 'All bets',
-      noBets: 'No bet type picked',
+      teamBets: 'Game markets',
+      playerProps: 'Player markets',
+      allBets: 'All markets',
+      noBets: 'No market type selected',
       teamSubs: {
         moneyline: 'Who wins',
         spread: 'Spread (win or lose by)',
         total: 'Total score (over/under)',
-        other: 'Other game bets (halves, quarters, first to score…)'
+        other: 'Other game markets (halves, quarters, first to score…)'
       },
       propSubs: {
         yards: 'Yards', receptions: 'Catches', tds: 'Touchdowns',
@@ -239,21 +239,21 @@ window.STR = {
         hits: 'Hits, bases & RBIs', homers: 'Home runs', pitching: 'Strikeouts & pitching',
         goals: 'Goals', assists: 'Assists', points: 'Points', rebounds: 'Rebounds',
         threes: '3-pointers', combos: 'Combos (PRA, double-double)', defense: 'Blocks & steals', shots: 'Shots & saves',
-        other: 'Other player bets'
+        other: 'Other player markets'
       },
       anyTeam: 'Any team',
       anyPlayer: 'Any player',
-      noPlayers: 'No player bets for this team yet',
+      noPlayers: 'No player markets for this team yet',
       reset: 'Reset filters',
-      loading: 'Loading bets…',
-      match: n => `${n} bet${n === 1 ? '' : 's'} match`,
-      dayTotal: (n, day) => `${n} bets for ${day}. Tick a bet type, pick a team or search to see them.`,
-      gameBets: 'Game bets',
-      propBets: 'Player props',
-      noProps: 'No player bets posted for these games yet. Polymarket US usually adds them about a day before the game.',
+      loading: 'Loading markets…',
+      match: n => `${n} market${n === 1 ? '' : 's'} match`,
+      dayTotal: (n, day) => `${n} markets for ${day}. Select a market type, team or search to see them.`,
+      gameBets: 'Game markets',
+      propBets: 'Player markets',
+      noProps: 'No player markets posted for these games yet. Polymarket US usually adds them about a day before the game.',
       noMatch: 'Nothing matches these filters. Try Reset filters.',
-      matchGames: (n, g) => `${n} bet${n === 1 ? '' : 's'} in ${g} game${g === 1 ? '' : 's'}`,
-      betsCount: n => `${n} bet${n === 1 ? '' : 's'}`,
+      matchGames: (n, g) => `${n} market${n === 1 ? '' : 's'} in ${g} game${g === 1 ? '' : 's'}`,
+      betsCount: n => `${n} market${n === 1 ? '' : 's'}`,
       expandAll: 'Open all',
       collapseAll: 'Close all',
       /** Prop category names (Polymarket stat key -> plain words). Unknown ones are made readable automatically. */
@@ -276,23 +276,23 @@ window.STR = {
     },
     browse: 'Browse games',
     hideBrowse: 'Hide games',
-    manual: '+ Type a bet yourself',
-    manualHint: 'For Kalshi, Bovada or any other app: type what you\'re betting and its price.',
+    manual: '+ Enter a selection manually',
+    manualHint: 'Enter the selection and price quoted by your platform.',
     today: 'Today', tomorrow: 'Tomorrow',
     allSports: 'All',
     noGames: 'No games for these days.',
     noResults: 'Nothing found. Try a team or player name.',
     searching: 'Searching…',
-    gameLines: 'Main bets (who wins, spread, total points)',
-    playerProps: 'Player bets',
-    other: 'Other bets',
+    gameLines: 'Main game markets (winner, spread, total points)',
+    playerProps: 'Player markets',
+    other: 'Other markets',
     showMore: n => `Show ${n} more`, showLess: n => `Show ${n} less`,
     back: '← All games',
     yes: 'Yes', no: 'No',
     added: desc => `Added: ${desc}`,
-    slip: 'Your bet slip',
+    slip: 'Your selection slip',
     slipEmpty: 'No picks yet. Search or browse above, then tap a price to add it.',
-    legDesc: 'What you\'re betting on',
+    legDesc: 'Selection or market',
     legDescPh: 'e.g. Guardians +1.5',
     legPlatform: 'App',
     legPrice: 'Price',
@@ -307,11 +307,11 @@ window.STR = {
     refresh: '↻ Refresh prices',
     refreshed: 'Prices refreshed.',
     refreshFail: 'Couldn\'t get live prices right now. Showing the last known prices.',
-    category: 'Type of bet',
+    category: 'Record type',
     quoted: 'What your app says it pays (type it in)',
     quotedPh: 'e.g. 2.97',
     quotedHint: 'If your app says "$10 pays $29.70", type 2.97 (that\'s $29.70 ÷ $10).',
-    stakeLabel: 'Your bet ($)',
+    stakeLabel: 'Recorded stake ($)',
     myChance: 'How likely do you think this wins?',
     myChanceHint: 'Optional. We\'ll guess if you leave it blank.',
     myChancePh: '%',
@@ -320,66 +320,66 @@ window.STR = {
     outGap: 'Your app vs. our math',
     outProfit: 'Win or lose per $10, over many tries',
     outReturn: 'If it wins, you get back',
-    outSize: 'How big a bet',
+    outSize: 'Stake amount',
     overMax: max => `That's more than your limit of ${max} per slip.`,
     overMaxConfirm: max => `That's more than your ${max} limit per slip. Save anyway?`,
     share: 'Share these numbers (no dollar amounts) to help improve picks',
     shareOff: 'Sharing is off. Add your GitHub key in Settings to turn it on.',
-    saveBet: 'Save bet',
+    saveBet: 'Save record',
     clear: 'Start over',
     errLegs: 'Every pick needs a price we can read.',
     errQuoted: 'Type what the app says it pays (e.g. 2.97).',
-    errStake: 'Type how much you\'re betting.',
-    saved: 'Saved to My bets.',
+    errStake: 'Enter the amount recorded on your platform.',
+    saved: 'Record saved to My activity.',
     shared: 'Numbers shared ✔',
     shareFail: msg => `Sharing didn't work: ${msg}`
   },
 
-  categories: { single: 'Single bet', prop: 'Player bet', parlay: 'Combo bet', longshot: 'Big payout combo', nonsports: 'Not sports' },
+  categories: { single: 'Single selection', prop: 'Player market', parlay: 'Multi-leg selection', longshot: 'Big payout combo', nonsports: 'Not sports' },
 
   // ---------------------------------------------------------------- my bets
   /** PLAY MONEY: points only, just for fun (js/play.js, app.js "play money"). */
   play: {
     label: 'Play money, just for fun',
     banner: '🎮 Play money, just for fun. No real money. Points only.',
-    viewMine: 'My bets', viewPlay: 'Play money 🎮', viewGroup: 'Which bets',
+    viewMine: 'My activity', viewPlay: 'Play money 🎮', viewGroup: 'Which activity',
     title: 'Play money',
     nameLabel: 'Pick a display name', namePh: 'e.g. Reed', nameHint: '2 to 20 letters or numbers. Others will see it on the leaderboard.',
     start: 'Start with 1,000 points',
-    points: 'Points', wl: 'Won-Lost', roi: 'Gain per point bet', best: 'Best hit',
-    open: n => `Open play bets (${n})`, settled: 'Finished play bets', none: 'No play bets yet. Tap "🎮 Play" on a pick card or use Build a Bet.',
-    betGet: (s, x) => `Bet ${s} pts, get ${x} back`,
+    points: 'Points', wl: 'Won-Lost', roi: 'Gain per point committed', best: 'Best hit',
+    open: n => `Open simulations (${n})`, settled: 'Completed simulations', none: 'No simulations yet. Tap "🎮 Play" on a pick card or use Market builder.',
+    betGet: (s, x) => `Commit ${s} points; receive ${x} points if successful`,
     won: x => `Won · got ${x} pts back`, lost: 'Lost', push: 'Refunded', waiting: 'Waiting for the result',
-    check: 'Check results', checking: 'Checking results…', settledN: n => `${n} play bet(s) finished.`,
+    check: 'Check results', checking: 'Checking results…', settledN: n => `${n} simulation(s) completed.`,
     board: 'Leaderboard', boardNote: 'Shared board updates when the daily job runs. Your own row updates right away.',
     colName: 'Name', colPts: 'Points', colWL: 'W-L', colRoi: 'ROI', colBest: 'Best hit',
     you: '(you)', notPosted: 'not posted yet',
-    post: 'Post my score', postNote: 'Opens a ready-made GitHub post (needs a free GitHub account). The leaderboard script checks every bet against the real results.',
-    calcTitle: '🎮 Bet play points on this slip', calcStake: 'Points to bet', calcBtn: n => `Bet ${n} play pts`,
-    calcNeedsReal: 'Play bets need picks from the game list (real Polymarket US markets).',
+    post: 'Post my score', postNote: 'Opens a ready-made GitHub post (needs a free GitHub account). The leaderboard script checks every selection against the real results.',
+    calcTitle: '🎮 Simulate this slip with points', calcStake: 'Points committed', calcBtn: n => `Simulate with ${n} points`,
+    calcNeedsReal: 'Simulations need picks from the game list (real Polymarket US markets).',
     cardBtn: '🎮 Play',
-    confirm: (desc, odds, s, x) => `Play money, just for fun.\n\n${desc}\nPolymarket US price: ${odds}\nBet ${s} pts, get ${x} back if it wins.`,
-    placed: (s, x) => `Play bet placed: ${s} pts → ${x} back if it wins.`,
-    err: { stake: 'Type a whole number of points.', broke: 'Not enough points.', legs: 'Add 1 to 10 picks first.', price: 'Couldn\'t get a live Polymarket US price. Try again.', name: 'Pick a display name first (Play money view on My Bets).' }
+    confirm: (desc, odds, s, x) => `Play money, just for fun.\n\n${desc}\nPolymarket US price: ${odds}\nCommit ${s} points; receive ${x} points if successful.`,
+    placed: (s, x) => `Simulation recorded: ${s} pts → ${x} back if it wins.`,
+    err: { stake: 'Type a whole number of points.', broke: 'Not enough points.', legs: 'Add 1 to 10 picks first.', price: 'Couldn\'t get a live Polymarket US price. Try again.', name: 'Pick a display name first (Play money view on My activity).' }
   },
   bets: {
     title: name => `${name}'s money`,
-    privateNote: (unit, max) => `🔒 Only on this phone. Standard bet ${unit} · Limit per slip ${max}`,
+    privateNote: (unit, max) => `🔒 Only on this phone. Reference stake ${unit} · Limit per slip ${max}`,
     windowEnds: d => ` · Stop date ${d}`,
-    now: 'Money now', pl: 'Won / lost', open: 'Money in open bets', roi: 'Return',
+    now: 'Money now', pl: 'Won / lost', open: 'Money in open records', roi: 'Return',
     chart: 'Your money over time',
-    openTitle: n => `Open bets (${n})`,
-    openEmpty: 'No open bets yet. Use a pick or build a bet.',
-    settledTitle: 'Finished bets',
+    openTitle: n => `Open records (${n})`,
+    openEmpty: 'No open records yet. Add a selection in the market builder.',
+    settledTitle: 'Settled records',
     settledEmpty: 'Nothing finished yet.',
-    bet: 'Bet', result: 'Result', amount: 'Bet', plCol: 'Won / lost',
+    bet: 'Selection', result: 'Result', amount: 'Stake', plCol: 'Won / lost',
     toWin: 'Could win',
     appPays: 'App pays', ourEst: 'Our estimate',
     won: 'Won', lost: 'Lost', push: 'Tie / refund', del: 'Delete', reopen: 'Undo',
     status: { open: 'open', won: 'won', lost: 'lost', push: 'refund' },
     shared: ' · shared ✔', sharePending: ' · not shared yet',
-    delConfirm: 'Delete this bet? (Anything already shared stays shared.)',
-    recordTitle: 'How each type of bet is doing',
+    delConfirm: 'Delete this record? Anything already shared remains public.',
+    recordTitle: 'Results by record type',
     type: 'Type', wlp: 'Won-Lost-Refund', all: 'All',
     backup: 'Back up',
     export: 'Save a backup file', import: 'Load a backup file',
@@ -403,16 +403,16 @@ window.STR = {
       calTitle: 'Were our chances right?', calEmpty: 'No graded picks yet.',
       colWhat: 'Kind', colSaid: 'We said %', colN: 'Graded', colActual: 'Won %', colAdj: 'Change',
       what: { pick: 'Picks', game: 'Game winners' },
-      catsTitle: 'Best and worst kinds of bets', catsEmpty: 'Needs at least 10 graded picks of one kind.',
+      catsTitle: 'Best and worst kinds of selections', catsEmpty: 'Needs at least 10 graded picks of one kind.',
       best: 'Best so far:', worst: 'Worst so far:', tooFew: 'too few to trust yet',
-      catStat: (w, l, roi, n) => `${w}-${l}, ${roi > 0 ? '+' : ''}${roi}% per bet (${n} graded)`,
+      catStat: (w, l, roi, n) => `${w}-${l}, ${roi > 0 ? '+' : ''}${roi}% per selection (${n} graded)`,
       noisy: 'Small samples are noisy: a few games can swing these numbers a lot.'
     },
     /** "Live Bets record" (app.js liveRecordHtml, data/live-record.json, HANDOFF §35). */
     live: {
-      testing:{title:'NBA prop bets · Testing',states:{paused:'Testing paused — review required',collecting_history:'Collecting verified history',collecting_results:'Collecting future results',window_complete:'Evaluation window complete'},history:'Historical games',predictions:'Predictions logged',settled:'Settled',qualified:'Passed experimental margin',window:'Evaluation window',waiting:'Starts with the first eligible prediction',note:'Experimental estimates only. Live alerts are unchanged. Position and role proxies are not verified coaching assignments.',criteria:'56-day window; each stat category needs at least 300 settled qualifying predictions, 100 games and 30 game dates. These are coverage floors, not proof of statistical power. No automatic promotion.',frozen:'Frozen model',range:'Probability ranges and cost reserves are experimental; actual fees and fills are not verified.'},
-      title: 'Live Bets record', bySport:'By sport', sport:'Sport / market', other:'Other', gameLines:'Game lines', propBets:'Prop bets', otherMarkets:'Other markets',
-      intro: 'Every live alert, kept for good (wins and losses) and graded on the real final result. Each one counts as a flat 1 unit bet at the odds when the alert went out.',
+      testing:{title:'NBA player markets · Testing',states:{paused:'Testing paused — review required',collecting_history:'Collecting verified history',collecting_results:'Collecting future results',window_complete:'Evaluation window complete'},history:'Historical games',predictions:'Predictions logged',settled:'Settled',qualified:'Passed experimental margin',window:'Evaluation window',waiting:'Starts with the first eligible prediction',note:'Experimental estimates only. Live alerts are unchanged. Position and role proxies are not verified coaching assignments.',criteria:'56-day window; each stat category needs at least 300 settled qualifying predictions, 100 games and 30 game dates. These are coverage floors, not proof of statistical power. No automatic promotion.',frozen:'Frozen model',range:'Probability ranges and cost reserves are experimental; actual fees and fills are not verified.'},
+      title: 'Live markets record', bySport:'By sport', sport:'Sport / market', other:'Other', gameLines:'Game lines', propBets:'Player markets', otherMarkets:'Other markets',
+      intro: 'Every live alert, kept for good (wins and losses) and graded on the real final result. Each one counts as a hypothetical flat 1-unit stake at the odds when the alert went out.',
       none: 'No live alerts graded yet.', empty: 'No live alerts yet. They start once games are live.',
       wlp: 'W-L-P', hit: 'Hit rate', expected: 'Expected', units: 'Units', roi: 'ROI', sample: 'Graded',
       all: 'All', big: 'Big', slight: 'Slight', untiered: 'No tier',
@@ -434,19 +434,19 @@ window.STR = {
     recent: 'Recent picks', date: 'Date', pick: 'Pick', chance: 'Chance', result: 'Result',
     resultWords: { win: 'won', loss: 'lost', pending: 'not finished', push: 'refund' },
     gameTitle: 'Game lines', unitsBox: 'Units won/lost',
-    gameUnitsNote: 'Units: as if we bet 1u on every pick, at the last Polymarket price we saved. Tap a pick to see its slip.',
+    gameUnitsNote: 'Units: using a hypothetical 1u stake on every pick, at the last Polymarket price we saved. Tap a pick to see its slip.',
     noPriceNote: n => `${n} win${n === 1 ? '' : 's'} had no saved price, so ${n === 1 ? 'it counts' : 'they count'} as 0u.`,
     // "Our Picks-page picks" section (HANDOFF §40). Units only, never dollars.
     hist: {
       linesTitle:'Game lines', linesIntro:'Published moneylines, spreads and totals from the Picks screen.',
-      logIntro:'The site’s published picks and their results. Your personal bets are tracked in My Bets.',
-      singlesTitle: 'Single Bets', singlesIntro: 'One-bet plays from the Picks screen. Tap one to see its slip.',
+      logIntro:'The site’s published picks and their results. Your personal selections are tracked in My activity.',
+      singlesTitle: 'Single selections', singlesIntro: 'Selections published on the Picks screen. Open one to inspect its details.',
       combosTitle: 'Combos', combosIntro: 'Multi-leg plays from the Picks screen. Tap one to see every leg.',
       none: 'No Picks-page picks saved yet.', won: 'Won', lost: 'Lost', open: 'Not finished', units: 'Units won/lost',
       unitsNote: 'Units use the price when the pick was posted and the size it was tracked at.',
       cat: { single: 'Single', prop: 'Player prop', parlay: 'Combo', longshot: 'Longshot', nonsports: 'Non-sports' },
       combo: (n, t) => `${n}-leg combo: ${t}`, allOdds: 'Odds if all win', stake: 'Size',
-      unitsRes: 'Units', legs: n => (n === 1 ? 'The bet' : `The ${n} legs`),
+      unitsRes: 'Units', legs: n => (n === 1 ? 'The selection' : `The ${n} legs`),
       priceNote: 'Uses the price when we posted the pick.'
     },
     // Slip pop-up when you tap a Recent picks row (HANDOFF §39).
@@ -460,8 +460,8 @@ window.STR = {
     },
     // "How each app's prices compare": one block per app, three columns.
     platTitle: 'How each app\'s prices compare',
-    platNote: 'Which apps pay more or less for the same bet. Two sources: combo bets people logged here, and (soon) prices we pull in automatically.',
-    colLogged: 'Bets you logged',      // count of manual entries in the shared bet log
+    platNote: 'Which apps pay more or less for the same selection. Two sources: combo selections people logged here, and (soon) prices we pull in automatically.',
+    colLogged: 'Records you shared',      // count of manual entries in the shared bet log
     colGap: 'Paid vs. our estimate',   // average payout difference of those bets, e.g. -6.9%
     colFeed: 'From odds feed',         // count of automatic price checks (The Odds API)
     colDiff: app => `Pays vs. ${app}`, // average payout vs. the user's "My platform", in words (no cents): "pays less" / "pays more"
@@ -475,9 +475,9 @@ window.STR = {
     feedBaseline: 'Your app (we compare others to this)',
     feedMissing: 'Not in the odds feed',
     feedPaid: 'Needs a paid odds plan',
-    platNone: 'No bets logged yet',
+    platNone: 'No records shared yet',
     platOther: 'Other apps',
-    platLag: n => `${n} shared bet(s). New ones can take a minute or two to show up.`,
+    platLag: n => `${n} shared selection(s). New ones can take a minute or two to show up.`,
     logError: 'Couldn\'t load the shared numbers.'
   },
 
@@ -485,14 +485,14 @@ window.STR = {
   settings: {
     title: 'Settings',
     profile: 'Your info',
-    name: 'Name', bankroll: 'Money set aside ($)', unit: 'Standard bet ($)', max: 'Limit per slip ($)', end: 'Stop date',
-    saveProfile: 'Save', twoPct: 'Set my standard bet to 2% of my money now',
-    profileSaved: 'Saved.', profileErr: 'Fill in name, money, standard bet and limit with numbers above 0.',
-    platform: 'Where do you bet?',
+    name: 'Name', bankroll: 'Money set aside ($)', unit: 'Reference stake ($)', max: 'Limit per slip ($)', end: 'Stop date',
+    saveProfile: 'Save', twoPct: 'Set my reference stake to 2% of my money now',
+    profileSaved: 'Saved.', profileErr: 'Fill in name, money, reference stake and limit with numbers above 0.',
+    platform: 'Which platform do you use?',
     priceFormat: 'Show prices as',
     formats: { american: 'American odds (-170), like Vegas', decimal: 'Decimal (1.59)' },   // no cents option (Reed, Oct 19 2026)
     sharing: 'Sharing numbers',
-    sharingNote: (path, repo) => `Sharing sends only what you bet on, prices, payouts and results, never dollar amounts, to ${path} in ${repo} under your GitHub name. Only people Reed added can share.`,
+    sharingNote: (path, repo) => `Sharing sends only your selections, prices, payouts and results, never dollar amounts, to ${path} in ${repo} under your GitHub name. Only people Reed added can share.`,
     tokenHow: 'How to get a key',
     tokenSteps: 'On GitHub: Settings → Developer settings → Fine-grained tokens → Generate. Pick only this repo and set "Contents" to "Read and write". The key stays on this phone.',
     tokenSaved: login => `Key saved${login ? ` · signed in as ${login}` : ''}.`,
@@ -505,12 +505,12 @@ window.STR = {
     tokenOk: login => `Key works. Signed in as ${login}.`,
     tokenNoWrite: login => `Saved, but ${login} can't share to this repo yet. Ask Reed to add you.`,
     tokenRemoved: 'Key removed.',
-    shareDefault: 'Share new bets automatically',
-    resync: n => `Share ${n} bet(s) that didn't go through`,
-    backupNote: 'Backups include your info and bets, never your GitHub key.',
+    shareDefault: 'Share new records automatically',
+    resync: n => `Share ${n} record(s) that didn't go through`,
+    backupNote: 'Backups include your info and selections, never your GitHub key.',
     danger: 'Start over',
     reset: 'Erase everything on this phone',
-    resetConfirm: 'Erase your info, bets and key from this phone? Save a backup first if you want to keep them.'
+    resetConfirm: 'Erase your info, selections and key from this phone? Save a backup first if you want to keep them.'
   },
 
   // ---------------------------------------------------------------- pick evaluation
@@ -550,36 +550,36 @@ window.STR = {
   // ---------------------------------------------------------------- tooltips (i)
   tips: {
     learning: '"Change" is how many points we add to or take off our chance for picks like these, once we have 30 graded. "Trust in our chances" of 1 means we keep our number; lower means we lean toward the app\'s price. "Beat the closing price" means the price moved our way before the game started, a good sign.',
-    liveRecord: '"Hit rate" is how often the alerts won. "Expected" is how often they should win going by their own odds at alert time. Beating Expected over many alerts is what counts. Units: each alert = 1 unit bet.',
-    fadeTrent: 'Trent\'s picks come straight from his X posts. Only picks he wrote out in words count; picks only in a picture or with an unclear bet are skipped or marked unclear. Each one is checked against the real final score. "Fade" is the other side of his bet: if he lost, fading him won.',
-    americanOdds: '+127 means a $100 bet wins $127. −150 means you bet $150 to win $100. Plus numbers win more than you bet; minus numbers win less. "Vegas" is the best number we found at the big sportsbooks for the same bet.',
-    howPrices: 'Every bet shows what you get back: "$10 → $22.73" means bet $10 and get $22.73 back if you win. The small number is the same price the Vegas way: +127 means a $100 bet wins $127, −150 means you bet $150 to win $100. Bigger plus numbers win less often but pay more.',
-    price: 'What this bet pays, the Vegas way. +150 means a $100 bet wins $150. −150 means you bet $150 to win $100.',
-    fair: 'What this bet should pay, going by the big sportsbooks.',
+    liveRecord: '"Hit rate" is how often the alerts won. "Expected" is how often they should win going by their own odds at alert time. Beating Expected over many alerts is what counts. Units: each alert uses a hypothetical 1-unit stake.',
+    fadeTrent: 'Trent\'s picks come straight from his X posts. Only picks he wrote out in words count; picks only in a picture or with an unclear selection are skipped or marked unclear. Each one is checked against the real final score. "Fade" is the other side of his selection: if he lost, fading him won.',
+    americanOdds: '+127 means a $100 stake earns $127 profit. −150 means a $150 stake is required to win $100. Plus numbers win more than the stake; minus numbers win less. "Vegas" is the best number we found at the big sportsbooks for the same selection.',
+    howPrices: 'Every selection shows what you get back: "$10 → $22.73" means a $10 stake returns $22.73 in total if successful. The small number is the same price the Vegas way: +127 means a $100 stake earns $127 profit, −150 means a $150 stake is required to win $100. Bigger plus numbers win less often but pay more.',
+    price: 'What this selection pays, the Vegas way. +150 means a $100 stake earns $150 profit. −150 means a $150 stake is required to win $100.',
+    fair: 'What this selection should pay, going by the big sportsbooks.',
     advantage: 'If your app pays more than it should, that\'s a good deal.',
-    payout: 'How much you get back if you win, counting the money you bet. Bet $10 → get $25 back.',
+    payout: 'How much you get back if you win, counting the money staked. Example: a $10 stake returns $25 in total if successful.',
     ourPayout: 'What this combo should pay if every pick wins, using today\'s prices.',
-    chance: 'How often this wins. "6 out of 10" means if you made this bet 10 times, you\'d win about 6.',
-    skipBelow: 'Your app sometimes pays less for combos than the math says. If it pays less than this, don\'t bet it.',
-    unit: 'Your standard bet is how much you usually bet on one thing. Picks that win more often get more of it. Hard-to-hit ones get less.',
+    chance: 'How often this wins. "6 out of 10" means if you made this selection 10 times, you\'d win about 6.',
+    skipBelow: 'Below this payout, the quote falls below the comparison threshold. Actual fees and market rules may differ.',
+    unit: 'A reference stake is your personal display setting. It is not a recommended amount.',
     related: 'These picks are from the same game, so one can help the other happen. Apps often pay less for these combos.',
     gap: 'Did your app pay more or less than our math? −7% means it paid a little less.',
-    profit: 'If you made this exact bet many, many times, this is what you\'d win or lose on average for every $10. Below $0 means you\'d slowly lose money.',
+    profit: 'If you made this exact selection many, many times, this is what you\'d win or lose on average for every $10. Below $0 means you\'d slowly lose money.',
     myChance: 'If you have your own guess, type it and we\'ll use it. Example: type 40 if you think it wins 4 times in 10.',
-    quoted: 'Look at your app\'s bet slip. If it says "$10 pays $29.70", type 2.97 (that\'s $29.70 ÷ $10). We use it to check the payout.',
+    quoted: 'Look at your app\'s selection slip. If it says "$10 pays $29.70", type 2.97 (that\'s $29.70 ÷ $10). We use it to check the payout.',
     snapshot: 'Prices come from a daily copy of the markets and update live when you open a game or tap Refresh.',
-    share: 'Only the bet details are shared (what, price, payout, result) so we can learn which apps pay fairly. Your dollar amounts never leave this phone.',
-    roi: 'Money won or lost compared with the money you bet. Example: +10% means you\'re up $10 for every $100 you\'ve bet.',
+    share: 'Only the selection details are shared (what, price, payout, result) so we can learn which apps pay fairly. Your dollar amounts never leave this phone.',
+    roi: 'Money won or lost compared with the money staked. Example: +10% means you\'re up $10 for every $100 you\'ve staked.',
     calibration: 'If we\'re honest, picks we give 60% should win about 6 out of 10 times. This table checks that.',
-    myPlatform: 'Tapping "Open in app" takes you to this app\'s page for the bet. If the bet isn\'t on Kalshi, we\'ll say so and open a search.',
-    colLogged: 'How many combo bets you or your friends saved with "Share" on for this app.',
+    myPlatform: 'Tapping "Open in app" takes you to this app\'s page for the selection. If the selection isn\'t on Kalshi, we\'ll say so and open a search.',
+    colLogged: 'How many combo selections you or your friends saved with "Share" on for this app.',
     colGap: 'Did the app pay more or less than our math on combos people saved? −7% means it paid a little less.',
-    colDiff: 'Does this app pay more or less than your app for the same bet? "Pays less" means you\'d win a bit less money there. A dash means we don\'t have your app\'s price for those bets yet.',
+    colDiff: 'Does this app pay more or less than your app for the same selection? "Pays less" means you\'d win a bit less money there. A dash means we don\'t have your app\'s price for those selections yet.',
     colFeed: 'How many of our picks we found on this app in the daily price check.',
-    hitChance: 'My best guess at how often this bet wins, going by the big sportsbooks. "1 in 4" means you\'d win about once every 4 tries.',
-    risk: 'Good chance = wins 6 or more times out of 10. Coin flip = about half the time. Hard to hit = 3 or 4 out of 10. Very hard to hit = less than 1 in 4. Harder bets should be smaller bets.',
+    hitChance: 'My best guess at how often this selection wins, going by the big sportsbooks. "1 in 4" means you\'d win about once every 4 tries.',
+    risk: 'Good chance = wins 6 or more times out of 10. Coin flip = about half the time. Hard to hit = 3 or 4 out of 10. Very hard to hit = less than 1 in 4. Lower estimated probabilities imply more frequent unsuccessful outcomes.',
     take: 'A short read on the price: fair, cheap or pricey compared with what it should be.',
-    otherApps: 'Every morning we check the same bet on other apps. If one is cheaper than your app, we show it. Cheaper ticket = more money back if you win.',
+    otherApps: 'Every morning we check the same selection on other apps. If one is cheaper than your app, we show it. Cheaper ticket = more money back if you win.',
     colTotal: 'How many comparisons we have for this app so far, from both sources. More means the numbers are more reliable.',
     priceFormat: 'Only changes how prices look. You can still type prices any way you like.'
   },
@@ -593,8 +593,8 @@ window.STR = {
  * @param {number} u e.g. 0.5 @returns {string} "half your standard bet"
  */
 function unitWords(u) {
-  const words = { 0.25: 'a quarter of your standard bet', 0.5: 'half your standard bet', 0.75: 'three-quarters of your standard bet', 1: 'your standard bet', 2: '2× your standard bet' };
-  return words[u] || `${u}× your standard bet`;
+  const words = { 0.25: 'a quarter of your reference stake', 0.5: 'half your reference stake', 0.75: 'three-quarters of your reference stake', 1: 'your reference stake', 2: '2× your reference stake' };
+  return words[u] || `${u}× your reference stake`;
 }
 window.STR.unitWords = unitWords;
 
@@ -608,12 +608,12 @@ window.STR.liveBets = {
  design: {
    filters: { all: 'All', big: 'Big edge', slight: 'Slight edge', new: 'New' },
    tiers: { big: 'Big edge', slight: 'Slight edge' }, edge: 'Edge', gone: 'No longer active',
-   filterLabel: 'Filter edges', game: 'Game', gameLines: 'Game lines', propBets: 'Prop bets',
+   filterLabel: 'Filter edges', game: 'Game', gameLines: 'Game lines', propBets: 'Player markets',
    details: 'Details', market: 'Market ↗', chart: 'Chart', review: 'Review', update: 'Update',
-   holding:'✓ Already holding', holdingsLocked:'Holdings locked · Unlock in My Bets',
+   holding:'✓ Already holding', holdingsLocked:'Holdings locked · Unlock in My activity',
    holdingsSync:time=>'Holdings synced '+time, holdingsStale:time=>'Holdings may be old · Synced '+time,
    holdingsError:time=>'Holdings sync failed · Last synced '+time,
-   holdingsPending:'Holdings not synced · Open My Bets',
+   holdingsPending:'Holdings not synced · Open My activity',
    holdingNote:time=>'Exact Polymarket contract and outcome held at last sync: '+time+'. No badge does not confirm that you have no position. Combo legs and unfilled orders are excluded.',
    unverified: 'Game context unverified', cheaper: n => `${n} pts below opening price`,
    payout: n => `$10 returns $${n}`, opened: (odds, time) => `Opened ${odds} · First seen ${time}`,
@@ -628,14 +628,14 @@ window.STR.liveBets = {
  all: 'All games', games: n => n + (n === 1 ? ' game' : ' games'), failed: n => n + ' game feeds unavailable; retrying',
  stale: 'Some prices may be old. The feed is waiting for an update.',
  noGames:'No active or upcoming games in this selection.', empty: 'Markets checked. No qualifying price movements right now; new markets are being watched from their first captured price.',
- unavailable: 'Live bets are unavailable. Retrying in a minute.'
+ unavailable: 'Live markets are unavailable. Retrying in a minute.'
 };
 
 window.STR.comboLab = {
  separateGames:'One leg per game. Same-game generation is disabled to avoid conflicting legs.',
  sameGame: 'Allow same-game legs', correlated: 'Same-game legs can be correlated. Multiplying their prices does not give the true combined chance or an executable payout.',
  title: 'Longshot combo', legs: 'Number of legs', markets: 'Market types', legCount: n => n + ' legs',
- mixed: 'Mixed', lines: 'Game lines', props: 'Player prop bets', generate: 'Generate combo', chart: 'Chart', use: 'Use in builder',
+ mixed: 'Mixed', lines: 'Game lines', props: 'Player player markets', generate: 'Generate combo', chart: 'Chart', use: 'Use in builder',
  loading: "Checking today's live and upcoming markets...",
  note: 'Random market selection, not a prediction or an edge rating. One leg per game. Multiplied prices are an illustration assuming independence; the platform may not offer this combo or this payout. Every leg must win.',
  price: (odds,pay) => 'Illustrative combined odds ' + odds + ' | $10 returns $' + pay.toLocaleString('en-US') + ' if all win, before fees.',
@@ -664,7 +664,7 @@ window.STR.progress = {
  stayUnder:(n,final)=>final?`Finished below ${n}`:`Still below ${n} — must stay below until the end`, overLimit:'At or above the limit',
  marginGuide:'Behind ← | line to beat | → Ahead', centerTie:'Center = tied', centerLine:'Center = spread',
  gameElapsed: 'Game elapsed · regulation', marginScale:'Score margin · center is the line to beat', segmentPending:'This part of the game has not started yet.', legs: n => `Live progress · ${n} legs`,
- explanation: 'Game statistics, not a win probability. Live scores do not refresh the saved betting prices. Final settlement may follow different market rules.',
+ explanation: 'Game statistics, not a win probability. Live scores do not refresh saved market prices. Final settlement may follow different market rules.',
  stats: { reb:'rebounds', ast:'assists', pts:'points', goals:'goals', stl:'steals', blk:'blocks', saves:'saves', threes:'threes', pra:'points + rebounds + assists', passyd:'passing yards', rushyd:'rushing yards', recyd:'receiving yards', rec:'receptions', ptd:'passing touchdowns', int:'interceptions', hits:'hits', hr:'home runs', rbi:'RBIs', k:'strikeouts', runs:'runs', score:'points / goals' }
 };
 
@@ -674,9 +674,9 @@ window.STR.pmSync = {
  connect:'Encrypt and connect', unlock:'Unlock sync', connecting:'Checking connection…', syncing:'Syncing account…',
  unlockNote:'Use the local password you created here, not your Apple or Polymarket password.',
  setupNote:'Keys and account data are encrypted in this browser with your local password. This reader cannot place, change or cancel orders. The API key itself may have broader permissions. Never use your Apple or Polymarket password here.',
- refresh:'Sync now', lock:'Lock', disconnect:'Disconnect', disconnectConfirm:'Remove the encrypted Polymarket connection and cached account data from this device? Your manual bets remain.',
+ refresh:'Sync now', lock:'Lock', disconnect:'Disconnect', disconnectConfirm:'Remove the encrypted Polymarket connection and cached account data from this device? Your manual records remain.',
  checked:time=>'Synced '+time+' CT', unknown:'—', spent:'Trade spending', returned:'Sales returned', won:'Settlement gains', lost:'Settlement losses', net:'Net settlement P/L', record:'Settlement W–L–Even',
- metricNote:'Polymarket settlements only, using reported realized P/L changes. Open positions and manual bets are separate. One settled market or combo counts as one record; this is not a per-fill win rate.',
+ metricNote:'Polymarket settlements only, using reported realized P/L changes. Open positions and manual records are separate. One settled market or combo counts as one record; this is not a per-fill win rate.',
  spendingUnavailable:'Spending and sales totals are unavailable when the API does not identify trade direction. They are not inferred from trading volume. Settlement gains are profit, not total payouts.',
  unclassified:n=>n+' settlements lack enough information to classify.', positions:n=>'Open positions ('+n+')', noPositions:'No open positions reported.',
  totalInvested:'Total invested · Open positions', reportedInvested:'Reported invested · Partial subtotal', notProvided:'Not provided', totalPotentialPayout:'Total payout · If all win',
@@ -686,10 +686,10 @@ window.STR.pmSync = {
  positionAmountsNote:'Remaining position only. Payout is the gross contract return, not profit or an early cash-out quote. Unavailable costs stay blank; fees are not inferred.',
  positionInfo:(quantity,cost,value)=>'Reported cost basis '+cost+' · Unrealized P/L '+value,
  progressUnavailable:'Live progress unavailable for this market.', activity:'Recent trading activity', noActivity:'No trading activity reported.',
- combo:'Combo bet', comboTitle:n=>n+'-leg combo', bet:'Bet',
+ combo:'Multi-leg position', comboTitle:n=>n+'-leg combo', bet:'Position',
  trade:label=>label+' · Trade recorded', settlement:label=>label+' · Settled',
  pollNote:'Updates automatically while this page is open and unlocked. Reloading locks the connection.',
- manual:'Manually tracked bets',
+ manual:'Manual records',
  errors:{storage:'Could not save the encrypted account on this device. Check browser storage space.',keys:'Check the Key ID and Base64 secret key.',password:'Choose a local password with at least 12 characters.',unlock:'Could not unlock. Check your local password.',vault:'Saved connection format is unsupported.',auth:'Polymarket rejected the key. Verify it belongs to your Apple-linked account.',rate:'Polymarket rate limit reached. Retrying shortly.',network:'Could not reach Polymarket. Last synced data are retained.',schema:'Polymarket returned an unsupported account format.',pagination:'Full account history could not be loaded. Totals were not replaced.'}
 };
 
@@ -697,13 +697,13 @@ window.STR.comboSafety={
  periodConflict:'Conflicting legs: with the verified halftime score, these full-game and second-half outcomes cannot both win.',
  conflict:'Conflicting legs: these outcomes cannot both win. Remove one leg.',
  duplicate:'Duplicate market: this is the same outcome twice. Remove the repeated leg.',
- sameGame:'Compatibility warning: these legs share a game and may conflict. Full-game and half/quarter bets count different scores. Compatibility has not been verified.',
+ sameGame:'Compatibility warning: these legs share a game and may conflict. Full-game and half/quarter selections count different scores. Compatibility has not been verified.',
  unknown:'Compatibility could not be checked because some legs lack a verified game or market.',
- recordOnly:'Save this only as a record of an existing bet? This does not verify that the legs can win together.'
+ recordOnly:'Save this only as a record of an existing selection? This does not verify that the legs can win together.'
 };
 
 window.STR.liveFeedback={title:'Alert quality',juicy:'Juicy',bad:'Bad alert',notes:'Team notes',note:'Optional note',submit:'Share feedback',
- publicNote:'Shared publicly on GitHub for bot review. No stakes, account details or credentials. Your review is separate from whether the bet won.',
+ publicNote:'Shared publicly on GitHub for bot review. No stakes, account details or credentials. Your review is separate from whether the selection won.',
  invalid:'Use a note of 500 characters or less, without money amounts or credentials.',
  continue:'Finish submitting on GitHub. It is not saved until you submit there. ',github:'Continue on GitHub',
  saved:'Feedback saved on GitHub. Shared counts update after the next scheduled review.'};
@@ -717,7 +717,7 @@ window.STR.liveFeedback.saving='Saving…';
 window.STR.liveFeedback.failed='Could not save feedback. Your vote has not been saved; try again.';
 window.STR.liveFeedback.savedDirect='Saved. Your team feedback will be included in the next review.';
 
-window.STR.kalshiPrivate={title:'Kalshi · private connection',privacy:'Your keys and Kalshi bets stay in your own private panel. They are not sent to Reed or shared with the team.',steps:['One time: create your private panel in your own Cloudflare account using the setup button. Cloudflare will copy the template into your own GitHub account.','Paste your personal panel URL below.','Enter your read-only Kalshi keys inside your private panel, then choose a local unlock password.'],deploy:'Set up private connection',url:'Your personal panel URL',owned:'I deployed this panel in my own Cloudflare account.',connect:'Open my private panel',invalid:'Use your own HTTPS workers.dev panel URL, without a path. Shared Reed-hosted connections are not accepted.',open:'Open private panel in a new tab',remove:'Remove panel',frame:'Your isolated private Kalshi account',storage:'If the embedded panel cannot save or unlock in this browser, open it in its own tab. Removing this panel only removes its saved address here; disconnect inside your personal panel to erase its encrypted account data.'};
+window.STR.kalshiPrivate={title:'Kalshi · private connection',privacy:'Your keys and Kalshi positions stay in your own private panel. They are not sent to Reed or shared with the team.',steps:['One time: create your private panel in your own Cloudflare account using the setup button. Cloudflare will copy the template into your own GitHub account.','Paste your personal panel URL below.','Enter your read-only Kalshi keys inside your private panel, then choose a local unlock password.'],deploy:'Set up private connection',url:'Your personal panel URL',owned:'I deployed this panel in my own Cloudflare account.',connect:'Open my private panel',invalid:'Use your own HTTPS workers.dev panel URL, without a path. Shared Reed-hosted connections are not accepted.',open:'Open private panel in a new tab',remove:'Remove panel',frame:'Your isolated private Kalshi account',storage:'If the embedded panel cannot save or unlock in this browser, open it in its own tab. Removing this panel only removes its saved address here; disconnect inside your personal panel to erase its encrypted account data.'};
 Object.assign(window.STR.kalshiPrivate,{
 accountsTitle:'Create your accounts',accountsIntro:'Already have Cloudflare and GitHub accounts? Go straight to step 2.',cloudflare:'Create Cloudflare account',github:'Create GitHub account',accountsHelp:'New to Cloudflare? Start here',accountsSteps:['Open Create Cloudflare account. Register with your own email and password, then verify your email if prompted.','Create or sign in to your own GitHub account too. Cloudflare uses it to save your personal copy of the panel.','Return here after signing in. You do not need to add a website, buy a domain, change DNS or open PowerShell.'],
 deployTitle:'Create your private panel',deployIntro:'This button opens Cloudflare and installs your own copy. Keep this tab open so you can return.',deploy:'Deploy my panel',deployHelp:'What do I click in Cloudflare?',deploySteps:['Sign in to your own Cloudflare account. If asked to choose an account, select yours.','Connect your own GitHub account when prompted and authorize Cloudflare to create the panel repository.','Keep the template settings and choose Create and deploy (or Deploy). Wait for the build to succeed. No Kalshi keys or extra resources need to be added in Cloudflare.','Open the deployed panel using Visit or the workers.dev link. To find it later: Cloudflare → Workers & Pages → private-kalshi-tracker → its workers.dev address.','Copy the full HTTPS panel address, not the Cloudflare dashboard address. Return here for step 3.'],docs:'Cloudflare setup guide ↗',
@@ -739,12 +739,12 @@ window.STR.slate.names.tennis='Tennis';
 
 window.STR.liveScoreboard = {rank:n=>`#${n}`,rankLabel:n=>`National rank ${n}`,title:'Sport scoreboard',loading:'Checking ESPN…',unavailable:'Scores unavailable · retrying with the next update',empty:'No games reported for today.',delayed:'Scores may be delayed',checked:time=>`ESPN checked ${time} CT`,previous:'Previous games',next:'Next games'};
 window.STR.liveScoreboard.allGames='Show all games';
-window.STR.liveScoreboard.game=name=>`Filter bets: ${name}`;
+window.STR.liveScoreboard.game=name=>`Filter markets: ${name}`;
 
 window.STR.progress.noGameCompact='Live score unverified';
 
 window.STR.liveScoreboard.conferences={empty:"No games in this group today.",title:"College football conference filters",all:"All conferences",top25:"Top 25",nonconference:"Non-conference",unknown:"Conference unavailable"};
 
-window.STR.listPaging={log:"Bet log",previous:"Previous",next:"Next",range:(start,end,total)=>`${start}–${end} of ${total}`};
+window.STR.listPaging={log:"Selection log",previous:"Previous",next:"Next",range:(start,end,total)=>`${start}–${end} of ${total}`};
 
-window.STR.liveLayout={title:"Layout",game:"Game lines",prop:"Prop bets",split:(game,prop)=>`${game} game lines / ${prop} prop bets`};
+window.STR.liveLayout={title:"Layout",game:"Game lines",prop:"Player markets",split:(game,prop)=>`${game} game ${game === 1 ? 'line' : 'lines'} / ${prop} player ${prop === 1 ? 'market' : 'markets'}`};

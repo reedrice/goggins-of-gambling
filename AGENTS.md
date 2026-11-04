@@ -15,7 +15,7 @@ Read in this order:
 5. [README.md](README.md) (features, privacy) and [ROADMAP.md](ROADMAP.md).
 
 ## What this is
-"Goggins of Gambling" is a mobile-first, **static** betting *analyzer* for Reed and friends (plain HTML/CSS/JS, no build step, no backend). It shows daily picks with neutral reads, a Build a Bet market picker, My Bets (a private bankroll tracker in localStorage), Record (calibration), Fade Trent and Settings. Prices come from Polymarket US (public gateway), Vegas lines from The Odds API, and stats from ESPN's free APIs. **It is an analyzer, not a pick seller.**
+"Men in Black" is a mobile-first, **static** sports wagering and prediction-market *analyzer* for Reed and friends (plain HTML/CSS/JS, no build step, no backend). It shows daily picks with neutral reads, a Market builder, My activity (a private bankroll tracker in localStorage), Record (calibration), Fade Trent and Settings. Prices come from Polymarket US (public gateway), Vegas lines from The Odds API, and stats from ESPN's free APIs. **It is an analyzer, not a pick seller.**
 
 ## Architecture / file map (detail: HANDOFF §2–§3)
 - `index.html` loads every script with a `?v=<version>` cache-buster. `config.js` holds the brand and platforms.
@@ -79,7 +79,7 @@ Unclear Trent bets are flagged `needs_clarification` + `question` and stay pendi
 1. **Privacy:** never commit dollar amounts, bankrolls, stakes, tokens or keys. Money lives only in the user's localStorage.
 2. **`ODDS_API_KEY`** is read from the environment only. Never print, log, echo or commit it.
 3. **Analyzer, not pick seller:** no bet instructions ("tap No on…"), no suggested bets or stakes, no advice wording on the site. Use neutral reads and examples only ("$10 → $20", the user's own unit). `tests/no-instructions.test.mjs` guards this. How-to-bet help stays in private chat.
-4. Say **"prop bets"** (not "props") in UI text.
+4. Use **“player markets”** in UI text. Use market for an offering, selection for an outcome, position for an actual holding and record for a saved entry. Simulations use points only. Preserve internal identifiers and historical source records.
 5. **No cents** anywhere on screen. Show whole dollars and American odds (§29, §52).
 6. **Exactly 6 tabs.** New features go in sheets or pop-ups (e.g. Dig deeper), never a new tab.
 7. **Analytics** = the blend of history (ESPN, beta-shrunk) + no-vig Vegas + the market, in log-odds, clamped to 3–97% (`js/our-chance.js`). The UI label is "Analytics", never "Our chance".

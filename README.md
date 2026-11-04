@@ -1,6 +1,8 @@
-# Betting dashboard
+# Men in Black — market analysis dashboard
 
-A mobile-first static dashboard for daily picks, a private bankroll tracker, a bet calculator, and a shared calibration log. It's plain HTML, CSS, and JS with no build step and no backend, hosted on GitHub Pages.
+A mobile-first static dashboard for daily picks, a private bankroll tracker, a selection and payout calculator, and a shared calibration log. It's plain HTML, CSS, and JS with no build step, hosted on GitHub Pages; supporting services are documented in ONBOARDING.md.
+
+Analyzes sports wagering and prediction markets, including real-money activity. The separate play-money simulation uses points only. Real-money activity involves risk; displayed estimates do not guarantee returns.
 
 **Live:** https://reedrice.github.io/goggins-of-gambling/
 
@@ -12,12 +14,12 @@ If you're an AI agent or a new maintainer, start with **[ONBOARDING.md](ONBOARDI
 
 | Tab | What it does |
 |---|---|
-| **Onboarding** | On first visit, a full-screen setup asks for display name, starting money, standard bet size (default 2%), most per bet (default 5%), an optional end date, and **which app you bet on** (Polymarket US or Kalshi). Nothing else shows until it's done. |
-| **"I bet on" bar** | Under the header. Picks Polymarket US or Kalshi; every **Open** button deep-links there. Same setting as onboarding and Settings. |
-| **Picks** | Renders `data/picks.json`: game predictions, single bets, player props, parlays, long shots, and non-sports markets. Stakes are stored in **units** and converted to dollars with *your* unit size. |
-| **Build a bet** | A **market picker**: a step-by-step **Filters** panel (day, sport, team bets or player props with sub-types like yards or goals, team with logos, player with position, e.g. "Brock Purdy · QB"), a search box ("purdy", "san") on top of it, or browse by game, then tap Yes/No to add a pick at its Polymarket US price (live when you open a game; daily snapshot otherwise). Team logos everywhere; picks from the same game get flagged. **Type a bet yourself** for any other app (prices as `63`, `0.63`, `-150`, `+120`, or `2.5`). Shows the payout, chance to win, how the app's payout compares to ours, and expected profit per $10. **Save bet** adds the slip to your tracker. |
-| **Bets** | Current bankroll, a bankroll-over-time chart, open bets with settle won/lost/push, settled P/L, and W-L-P and ROI for singles, props, parlays, long shots, and non-sports. Export and import JSON backups. |
-| **Record** | Win-pick accuracy and a calibration table (5-point buckets) from `data/predictions.json`, plus how each of 10 apps compares: combo bets people logged, prices pulled daily from The Odds API vs. Polymarket US, and the total. |
+| **Onboarding** | On first visit, a full-screen setup asks for display name, starting money, reference stake (default 2%), maximum per slip (default 5%), an optional end date, and **which platform you use** (Polymarket US or Kalshi). Nothing else shows until it's done. |
+| **Platform selector** | Under the header. Picks Polymarket US or Kalshi; every **Open** button deep-links there. Same setting as onboarding and Settings. |
+| **Picks** | Renders `data/picks.json`: game predictions, single selections, player markets, parlays, long shots, and non-sports markets. Stakes are stored in **units** and converted to dollars with *your* unit size. |
+| **Market builder** | A **market picker**: a step-by-step **Filters** panel (day, sport, game markets or player markets with sub-types like yards or goals, team with logos, player with position, e.g. "Brock Purdy · QB"), a search box ("purdy", "san") on top of it, or browse by game, then tap Yes/No to add a pick at its Polymarket US price (live when you open a game; daily snapshot otherwise). Team logos everywhere; picks from the same game get flagged. **Enter a selection manually** for any other app (prices as `63`, `0.63`, `-150`, `+120`, or `2.5`). Shows the payout, chance to win, how the app's payout compares to ours, and expected profit per $10. **Save record** adds the slip to your tracker. |
+| **My activity** | Current bankroll, a bankroll-over-time chart, open records with settle won/lost/push, settled P/L, and W-L-P and ROI for singles, props, parlays, long shots, and non-sports. Export and import JSON backups. |
+| **Record** | Win-pick accuracy and a calibration table (5-point buckets) from `data/predictions.json`, plus how each of 10 apps compares: multi-leg selections people logged, prices pulled daily from The Odds API vs. Polymarket US, and the total. |
 | **Settings** | Edit or reset your profile, choose your app and price format (cents default, American or decimal), manage your GitHub token, set the share default, and re-sync failed shares. |
 
 ## Privacy: who sees what
@@ -88,7 +90,7 @@ A daily job overwrites this whole file. All fields are optional unless marked **
 | `start_time` | ISO 8601 | first game's start (legs can have their own) |
 | `prediction_id` | string | game prediction to show on the card (default: matched by game name) |
 | `polymarket_url`, `kalshi_url`, `kalshi_match`, `kalshi_price` | written by `scripts/fetch-markets.mjs` | per-platform Open links; `kalshi_match` is `market`, `event` or `none` |
-| `player`, `player_team`, `league` | written by `scripts/fetch-markets.mjs` | for player props (picks and legs): who it is, for the position badge ("Brock Purdy QB") |
+| `player`, `player_team`, `league` | written by `scripts/fetch-markets.mjs` | for player markets (picks and legs): who it is, for the position badge ("Brock Purdy QB") |
 
 **MultiPick** (parlays, long shots) has the Pick fields plus:
 
@@ -98,7 +100,7 @@ A daily job overwrites this whole file. All fields are optional unless marked **
 | `est_multiple` | number | product of 1/price across legs |
 | `quoted_multiple` | number/null | what the platform actually quoted, if known |
 | `same_game` | boolean | legs are from the same game (correlated). Default from leg `market_id`s |
-| `skip_below` | number | don't bet if the app quotes below this multiple |
+| `skip_below` | number | comparison threshold for the quoted payout |
 
 **Prediction** (`sections.predictions`): `{ id, sport, game, start_time (ISO), pick, win_prob (50–100), projected_score, player_projections: [string], reasoning }`.
 

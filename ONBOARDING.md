@@ -48,14 +48,14 @@ Public flow: **sports/market APIs → deterministic Node.js scripts in GitHub Ac
 
 Branding comes from [config.js](config.js); current interface branding is Men in Black, repository name goggins-of-gambling.
 
-Preserve exactly six main sections: **Picks, Build a Bet, My Bets, Record, Fade Trent, Settings.** Live Bets is within Picks. Preserve the mobile dock, safe areas, touch targets and keyboard access. A desktop navigation rail is only a design idea, not approved work; never depend on hover alone.
+Preserve exactly six main sections: **Picks, Market builder, My activity, Record, Fade Trent, Settings.** Live markets is within Picks. Preserve the mobile dock, safe areas, touch targets and keyboard access. A desktop navigation rail is only a design idea, not approved work; never depend on hover alone.
 
-Recent Live Bets essentials (verify against current code):
-- Saved desktop game-line/prop-bet allocations: 4/0, 3/1, 2/2, 1/3, 0/4. Narrow screens adapt.
+Recent Live markets essentials (verify against current code):
+- Saved desktop game-line/player-market allocations: 4/0, 3/1, 2/2, 1/3, 0/4. Narrow screens adapt.
 - One compact Layout disclosure opens five visual previews; selection saves, closes and restores focus. Do not rebuild this existing feature as a new proposal.
 - Layout is below the scoreboard and above edge filters, beside conditional Polymarket holdings status. Unlinked visitors see Layout without irrelevant holdings clutter/checks.
 - Hidden categories create no cards. Sparse slates retain consistent card tracks rather than stretching into unused category space.
-- Lists use bounded six-item pages. Activity/history/log are on-demand where implemented. Bet log starts collapsed and releases cards on close; record totals cover all published records.
+- Lists use bounded six-item pages. Activity/history/log are on-demand where implemented. Selection log starts collapsed and releases cards on close; record totals cover all published records.
 - Card/row/pagination gaps share the 12px token. Previous/Next are slightly narrower than card tracks; the count sits separately.
 - Preserve sport/conference/Top 25/tier filters and scoreboard-game selection/deselection, source freshness, progress, Market/Chart and expandable Details.
 - Odds are bold: inclusive -115 through +115 yellow; below -115 green; above +115 red. Never change exact outcome/line/period meaning.
@@ -66,7 +66,7 @@ css/theme.css loads last and owns semantic canvas/text/surface/border/accent/foc
 
 Repeated cards/rows/pills omit expensive backdrop blur and broad shadows. Navigation/sheets retain appropriate glass. Atmosphere follows full page content and scrolls normally; do not restore fixed animated backgrounds or a 100vh clipping seam.
 
-Preserve shared caching, bounded fan-out, unchanged-DOM reuse, lazy closed sections, pagination and near-viewport progress hydration. No new timer for visual features. Existing Live Bets checks are about 30 seconds and relevant progress checks 15 seconds; these read published snapshots, not guaranteed provider updates.
+Preserve shared caching, bounded fan-out, unchanged-DOM reuse, lazy closed sections, pagination and near-viewport progress hydration. No new timer for visual features. Existing Live markets checks are about 30 seconds and relevant progress checks 15 seconds; these read published snapshots, not guaranteed provider updates.
 
 Synthetic tests cover 64 games/2048 options, 2000 progress hosts, and 12000 record entries. These are functional/load regressions, not proof of 60fps or upstream capacity. Hosting changes alone do not fix browser rendering lag.
 
@@ -78,7 +78,7 @@ For mockups: use actual existing structure, coherent labeled illustrative data, 
 - Already holding depends on synced positions and exact market/outcome identity, not name similarity or a stored preference.
 - localStorage is not inherently secure. Preferences may live there; preserve existing encrypted vaults and origin isolation. Never commit private credentials, stakes, bankrolls, or account responses.
 - Kalshi private data remains on each user's isolated origin; no parent messages carrying portfolio data or shared private relay. Unlinked/locked accounts must not trigger private portfolio reads.
-- Use [js/strings.js](js/strings.js), say prop bets, retain American odds/current money formatting and HTTPS links. Keep public wording neutral, not stake/bet instructions.
+- Use [js/strings.js](js/strings.js), say player markets, retain American odds/current money formatting and HTTPS links. Keep public wording neutral, not stake/bet instructions.
 - Use deterministic scripts and existing Actions. No new AI routines, duplicate ingestion, paid API activation, scraping loops or sports database/ORM changes without authorization.
 - The retained two-hour Fade Trent browser check is an explicit AI exception, requires device/session availability and consumes usage. Read [routines/FADE-TRENT.md](routines/FADE-TRENT.md) and its owner gate; do not expand it.
 - Before touching NBA testing read [routines/NBA-PROP-TESTING.md](routines/NBA-PROP-TESTING.md). Do not tune the frozen model/protocol/helpers against results, regenerate its freeze or automatically promote experimental estimates. UI work must preserve the experiment.
@@ -89,8 +89,8 @@ For mockups: use actual existing structure, coherent labeled illustrative data, 
 | --- | --- |
 | Navigation/screens | index.html, js/app.js, config.js |
 | Theme/responsive design | css/README.md, css/theme.css, DESIGN.md |
-| Live Bets | js/live-bets.js, js/live-scoreboard.js, js/strings.js |
-| Build a Bet | js/picker*.js, js/markets-core.js, js/calc.js |
+| Live markets | js/live-bets.js, js/live-scoreboard.js, js/strings.js |
+| Market builder | js/picker*.js, js/markets-core.js, js/calc.js |
 | Scores/progress/requests | js/bet-progress.js, js/public-json.js, js/picks-scores.js |
 | Accounts/privacy | js/storage.js, js/polymarket-sync.js, js/kalshi-sync.js, personal relay docs |
 | Analytics/experiment | js/our-chance.js, routines/NBA-PROP-TESTING.md, relevant scripts/tests |
@@ -102,7 +102,7 @@ Inspect scripts before executing: some commit/push, publish, or stamp ownership.
 
 When authorized, inspect worktree status and current source; preserve unrelated edits and newer generated feeds. Make the smallest complete change using existing services/tokens. Run proportionate tests and relevant browser checks; describe what was actually measured.
 
-For Live Bets, relevant suites include browser-performance, saturday-performance, live-bets, progress-snapshot, public-json and holding-badge. Preserve no-instructions/no-AI and frozen-protocol guards. Record changes/validation in HANDOFF.md.
+For Live markets, relevant suites include browser-performance, saturday-performance, live-bets, progress-snapshot, public-json and holding-badge. Preserve no-instructions/no-AI and frozen-protocol guards. Record changes/validation in HANDOFF.md.
 
 Runtime asset changes require `node scripts/bump-version.mjs` and stamp verification; documentation-only changes do not. Follow current GitOps publication rules, commit only intended files, reconcile races, never force-push or overwrite newer feeds/owners. Review publisher scope before running it. Verify the relevant public result, not just the local commit.
 

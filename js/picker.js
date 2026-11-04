@@ -630,7 +630,7 @@
         <button type="button" class="gcard" data-game="${esc(e.slug)}">
           <span class="glogos">${window.Teams.badges(teamsOf(e), 30)}</span>
           <span class="gmain"><b>${esc(shortTitle(e))}</b><span class="muted small">${esc(e.sport)} · ${esc(when(e.start_time, e.date !== today))}</span></span>
-          <span class="gcount muted small">${e.market_count} bets ›</span>
+          <span class="gcount muted small">${e.market_count} markets ›</span>
         </button>`).join('') : `<div class="muted pad">${esc(STR.calc.noGames)}</div>`;
     }
 

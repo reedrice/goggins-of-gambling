@@ -86,7 +86,7 @@
     y += 150;
     if (info.chance) { x.fillStyle = C.text; x.font = F(600, 34); x.textAlign = 'center'; x.fillText(info.chance, W / 2, y); x.textAlign = 'left'; }
     x.fillStyle = C.muted; x.font = F(500, 22); x.textAlign = 'center';
-    x.fillText('Just for fun. Prices change; check your app before you bet.', W / 2, Hh - 60); x.textAlign = 'left';
+    x.fillText('Market analysis. Prices change. Real-money activity involves risk.', W / 2, Hh - 60); x.textAlign = 'left';
     return cv;
   }
   function roundRect(x, a, b, w, h, r) { x.beginPath(); x.moveTo(a + r, b); x.arcTo(a + w, b, a + w, b + h, r); x.arcTo(a + w, b + h, a, b + h, r); x.arcTo(a, b + h, a, b, r); x.arcTo(a, b, a + w, b, r); x.closePath(); }

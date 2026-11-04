@@ -261,7 +261,7 @@
     const sec = el('div', 'dd-sec'); body.append(sec);   // history bars + stats: secondary, below (scroll)
     const loading = el('div', 'dd-none', 'Loading stats…'); sec.append(loading);
     const drop = () => loading.remove(); new MutationObserver((m, o) => { if (sec.children.length > 1) { drop(); o.disconnect(); } }).observe(sec, { childList: true });
-    try { if (!(s && s.kind !== 'prop' ? (await teamView(sec, s, spec), true) : await playerView(sec, spec, s))) sec.append((globalThis.Viz && globalThis.Viz.note ? globalThis.Viz.note('ESPN', 'no stats for this bet', 'dd-none') : el('div', 'dd-none', 'no stats for this bet'))); }
+    try { if (!(s && s.kind !== 'prop' ? (await teamView(sec, s, spec), true) : await playerView(sec, spec, s))) sec.append((globalThis.Viz && globalThis.Viz.note ? globalThis.Viz.note('ESPN', 'No verified statistics for this selection', 'dd-none') : el('div', 'dd-none', 'No verified statistics for this selection'))); }
     catch (e) { if (typeof console !== 'undefined') console.warn('dig deeper', e); sec.replaceChildren((globalThis.Viz && globalThis.Viz.note ? globalThis.Viz.note('', "Couldn't reach ESPN · try again", 'dd-none') : el('div', 'dd-none', "Couldn't reach ESPN · try again"))); }
   }
   return { open, close, teamRows, POSITION_STATS, STATS: S, posGroup, statsFor, rows, split, shares };

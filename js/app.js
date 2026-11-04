@@ -617,7 +617,7 @@
 
   /** Pre-filled GitHub issue for "Post my score" (public; no token needed). */
   function postScoreUrl(st) {
-    const body = 'Play money, just for fun. Posted from the dashboard; the leaderboard script re-checks every bet.\n\n```json\n' + JSON.stringify(PY.submission(st.name, st.bets)) + '\n```';
+    const body = 'Play money, just for fun. Posted from the dashboard; the leaderboard script re-checks every points-only simulation.\n\n```json\n' + JSON.stringify(PY.submission(st.name, st.bets)) + '\n```';
     return `https://github.com/${CFG.repoOwner || 'reedrice'}/${CFG.repoName || 'goggins-of-gambling'}/issues/new?title=${encodeURIComponent(PY.ISSUE_PREFIX + st.name)}&body=${encodeURIComponent(body)}`;
   }
 

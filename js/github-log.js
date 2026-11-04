@@ -169,7 +169,7 @@
       if (i >= 0) log.records[i] = record; else log.records.push(record);
       log.updated_at = new Date().toISOString();
       const body = {
-        message: `bet-log: ${i >= 0 ? 'update' : 'add'} ${record.id} (${record.result}) by ${record.author}\n\n` +
+        message: `Calibration: ${i >= 0 ? 'update' : 'add'} shared result ${record.id} (${record.result}) by ${record.author}\n\n` +
                  `${record.platform}, ${record.legs.length} leg(s), est ${record.estimated_multiple}x, quoted ${record.quoted_multiple}x.\n` +
                  'Written by the dashboard calibration log. Contains no dollar amounts.',
         content: b64encode(JSON.stringify(log, null, 2) + '\n'),

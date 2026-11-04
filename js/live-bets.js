@@ -237,9 +237,9 @@
    * by scripts/live-kalshi.mjs: true = ✓, false = dim dash, null/missing = no badge.
    */
   function platBadges(e) {
-    const out = [{ cls: 'lb-plat-on', text: 'Polymarket ✓', why: 'This bet and its price come from Polymarket US.' }];
-    if (e.kalshi === true) out.push({ cls: 'lb-plat-on', text: 'Kalshi ✓', why: 'Kalshi has this same bet too. Its price can be different.' });
-    else if (e.kalshi === false) out.push({ cls: 'lb-plat-off', text: 'Kalshi —', why: 'We checked Kalshi. It does not have this bet right now.' });
+    const out = [{ cls: 'lb-plat-on', text: 'Polymarket ✓', why: 'This market and its displayed price come from Polymarket US.' }];
+    if (e.kalshi === true) out.push({ cls: 'lb-plat-on', text: 'Kalshi ✓', why: 'A corresponding Kalshi market was found. Prices and settlement rules may differ.' });
+    else if (e.kalshi === false) out.push({ cls: 'lb-plat-off', text: 'Kalshi —', why: 'No corresponding Kalshi market was found at the last check.' });
     return out;
   }
   function platRow(e) {
@@ -499,7 +499,7 @@
     const toolbar=el('div','lb-refresh-row'), refresh=el('button','lb-review',liveText().refresh), status=el('span','lb-refresh-status');
     refresh.type='button';refresh.title=liveText().refreshHelp;status.setAttribute('role','status');
     toolbar.append(refresh,status);const content=el('div');rootEl.replaceChildren(toolbar,content);
-    content.append(el('div', 'live-bets-empty', 'Loading live bets…'));
+    content.append(el('div', 'live-bets-empty', 'Loading live markets…'));
     let loading=false;
     let last = null;
     const ui = { slug: 'all', when:'today', sport:initialSport, filter: 'all', layout:readLayout(), visitBase: readSeen(), details: new Set(), game: false, prop: false, reasons: false, redraw: (force=false) => { if(force)content._lbViewKey=null;if (last) draw(content, last, ui); } };

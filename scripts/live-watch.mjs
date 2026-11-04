@@ -497,7 +497,7 @@ const periodWord = slug => ({ nhl: 'P', mlb: 'Inn ' }[slug.split('-')[0]] || 'Q'
  * Prices only, no dollars.
  */
 export function appendHistory(hist, open, ev, ctx, nowIso, slug = open.slug) {
-  const h = hist && hist.m ? hist : { _note: 'Yes-side chance (0-100) over time for the Live Bets chart. No dollar amounts.', slug, t0: nowIso, ids: {}, marks: [], m: {} };
+  const h = hist && hist.m ? hist : { _note: 'Yes-side chance (0-100) over time for the live market chart. No dollar amounts.', slug, t0: nowIso, ids: {}, marks: [], m: {} };
   const min = Math.round((Date.parse(nowIso) - Date.parse(h.t0)) / 60e3);
   const byId = Object.fromEntries((ev.markets || []).map(m => [m.id, m]));
   for (const o of open.markets) {
