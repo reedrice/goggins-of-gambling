@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186485",
-  "fetched_at": "2026-11-04T20:34:39.155Z",
+  "fetched_at": "2026-11-04T20:36:43.299Z",
   "tennis": true,
   "tennis_match": {
    "id": "186485",
@@ -17,17 +17,17 @@
    "date": "2026-11-04T18:10Z",
    "startDate": "2026-11-04T18:10Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Thiago Agustin Tirante (ARG) leads Jan-Lennard Struff (GER) 7-6 (7-5) 3-6 6-6 (3-6)",
+     "text": "Jan-Lennard Struff (GER) bt Thiago Agustin Tirante (ARG) 6-7 (5-7) 6-3 7-6 (7-3)",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "linescores": [
       {
        "value": 6,
@@ -66,8 +67,9 @@
        "winner": true
       },
       {
-       "value": 6,
-       "tiebreak": 6
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
       }
      ],
      "athlete": {
@@ -107,6 +109,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "linescores": [
       {
        "value": 7,
@@ -119,7 +122,8 @@
       },
       {
        "value": 6,
-       "tiebreak": 3
+       "tiebreak": 3,
+       "winner": false
       }
      ],
      "athlete": {
@@ -170,16 +174,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Jan-Lennard Struff",
    "alias": "Jan-Lennard Struff",
    "name": "Jan-Lennard Struff",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Thiago Agustin Tirante",
@@ -191,7 +195,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-04T20:34:39.093Z",
+ "updated": "2026-11-04T20:36:43.198Z",
  "open_taken_at": "2026-11-03T22:03:29.373Z",
  "thresholds": {
   "big": 10,
