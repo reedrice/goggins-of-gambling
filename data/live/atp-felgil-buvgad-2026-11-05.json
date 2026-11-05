@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-05T09:52:49.356Z"
+  "fetched_at": "2026-11-05T10:01:34.055Z"
  },
- "updated": "2026-11-05T09:52:49.263Z",
+ "updated": "2026-11-05T10:01:33.975Z",
  "open_taken_at": "2026-11-04T11:36:32.928Z",
  "thresholds": {
   "big": 10,
@@ -351,18 +351,18 @@
  ],
  "edges": [
   {
-   "key": "2162660:1",
-   "market_id": "2162660",
-   "market": "Moneyline",
+   "key": "2164167:1",
+   "market_id": "2164167",
+   "market": "Set 1 winner",
    "group": "game",
-   "question": "Who will win in the upcoming atp event Felix Gill vs Buvaysar Gadamauri scheduled for November 5, 2026 at 9:00 AM UTC?",
-   "side": "Buvaysar Gadamauri win",
-   "open_chance": 45,
-   "now_chance": 36,
-   "open_odds": "+122",
-   "now_odds": "+178",
-   "edge": 9,
-   "tier": "slight",
+   "question": "Will Felix Gill win set 1 against Buvaysar Gadamauri?",
+   "side": "No: Felix Gill win set 1 against Buvaysar Gadamauri",
+   "open_chance": 43,
+   "now_chance": 32,
+   "open_odds": "+133",
+   "now_odds": "+213",
+   "edge": 11,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -371,18 +371,18 @@
    "kalshi": null
   },
   {
-   "key": "2164167:1",
-   "market_id": "2164167",
-   "market": "Set 1 winner",
+   "key": "2162660:1",
+   "market_id": "2162660",
+   "market": "Moneyline",
    "group": "game",
-   "question": "Will Felix Gill win set 1 against Buvaysar Gadamauri?",
-   "side": "No: Felix Gill win set 1 against Buvaysar Gadamauri",
-   "open_chance": 43,
-   "now_chance": 36,
-   "open_odds": "+133",
-   "now_odds": "+178",
-   "edge": 7,
-   "tier": "slight",
+   "question": "Who will win in the upcoming atp event Felix Gill vs Buvaysar Gadamauri scheduled for November 5, 2026 at 9:00 AM UTC?",
+   "side": "Buvaysar Gadamauri win",
+   "open_chance": 45,
+   "now_chance": 35,
+   "open_odds": "+122",
+   "now_odds": "+186",
+   "edge": 10,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -392,6 +392,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2164167:1:big",
+   "key": "2164167:1",
+   "at": "2026-11-05T10:01:33.975Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "No: Felix Gill win set 1 against Buvaysar Gadamauri",
+   "market": "Set 1 winner",
+   "now_odds": "+213",
+   "now_chance": 32,
+   "edge": 11,
+   "text": "New big edge: No: Felix Gill win set 1 against Buvaysar Gadamauri (Set 1 winner), 11 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-felgil-buvgad-2026-11-05"
+  },
+  {
+   "id": "new_edge:2162660:1:big",
+   "key": "2162660:1",
+   "at": "2026-11-05T10:01:33.975Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Buvaysar Gadamauri win",
+   "market": "Moneyline",
+   "now_odds": "+186",
+   "now_chance": 35,
+   "edge": 10,
+   "text": "New big edge: Buvaysar Gadamauri win (Moneyline), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-felgil-buvgad-2026-11-05"
+  },
   {
    "id": "new_edge:2162660:1:slight",
    "key": "2162660:1",
@@ -423,7 +451,9 @@
  ],
  "alert_seen": [
   "new_edge:2162660:1:slight",
-  "new_edge:2164167:1:slight"
+  "new_edge:2164167:1:slight",
+  "new_edge:2164167:1:big",
+  "new_edge:2162660:1:big"
  ],
  "kalshi_checked": null
 }
