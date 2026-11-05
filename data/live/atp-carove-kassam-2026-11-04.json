@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-05T10:25:35.145Z"
+  "fetched_at": "2026-11-05T10:27:42.036Z"
  },
- "updated": "2026-11-05T10:25:35.016Z",
+ "updated": "2026-11-05T10:27:41.942Z",
  "open_taken_at": "2026-11-04T05:37:39.315Z",
  "thresholds": {
   "big": 10,
@@ -107,25 +107,25 @@
    "taken_at": "2026-11-05T10:25:35.016Z"
   },
   {
-   "market_id": "2157929",
-   "market": "Sets total",
+   "market_id": "2157934",
+   "market": "Set 1 winner",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Carl Emil Overbeck vs. Kasidit Samrej be more than 2.5?",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Carl Emil Overbeck win set 1 against Kasidit Samrej?",
    "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
+    "Yes: Carl Emil Overbeck win set 1 against Kasidit Samrej",
+    "No: Carl Emil Overbeck win set 1 against Kasidit Samrej"
    ],
    "teams": [
-    null,
+    "Carl Overbeck",
     null
    ],
    "player": null,
    "mid": 52.5,
-   "yes_buy": 54,
-   "no_buy": 49,
+   "yes_buy": 53,
+   "no_buy": 48,
    "taken_at": "2026-11-05T10:25:35.016Z"
   },
   {
@@ -151,25 +151,25 @@
    "taken_at": "2026-11-05T10:25:35.016Z"
   },
   {
-   "market_id": "2157934",
-   "market": "Set 1 winner",
+   "market_id": "2157929",
+   "market": "Sets total",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Carl Emil Overbeck win set 1 against Kasidit Samrej?",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Carl Emil Overbeck vs. Kasidit Samrej be more than 2.5?",
    "sides": [
-    "Yes: Carl Emil Overbeck win set 1 against Kasidit Samrej",
-    "No: Carl Emil Overbeck win set 1 against Kasidit Samrej"
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
    ],
    "teams": [
-    "Carl Overbeck",
+    null,
     null
    ],
    "player": null,
    "mid": 52.5,
-   "yes_buy": 53,
-   "no_buy": 48,
+   "yes_buy": 54,
+   "no_buy": 49,
    "taken_at": "2026-11-05T10:25:35.016Z"
   },
   {
@@ -261,6 +261,28 @@
    "taken_at": "2026-11-05T10:25:35.016Z"
   },
   {
+   "market_id": "2157924",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Carl Emil Overbeck cover -1.5 vs the Kasidit Samrej in Carl Emil Overbeck vs. Kasidit Samrej?",
+   "sides": [
+    "Carl Overbeck -1.50 (Sets)",
+    "Kasidit Samrej +1.50 (Sets)"
+   ],
+   "teams": [
+    "Carl Overbeck",
+    "Kasidit Samrej"
+   ],
+   "player": null,
+   "mid": 27,
+   "yes_buy": 30,
+   "no_buy": 76,
+   "taken_at": "2026-11-05T10:27:41.942Z"
+  },
+  {
    "market_id": "2157920",
    "market": "Games spread",
    "group": "game",
@@ -323,11 +345,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-04T22:27:47.849Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2157617:0:2026-11-04T22:27:47.849Z",
+   "key": "2157617:0",
+   "at": "2026-11-05T10:27:41.942Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Carl Overbeck win",
+   "market": "Moneyline",
+   "now_odds": "-117",
+   "now_chance": 54,
+   "edge": 5,
+   "text": "Edge gone: Carl Overbeck win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-carove-kassam-2026-11-04"
+  },
   {
    "id": "new_edge:2157617:0:slight",
    "key": "2157617:0",
@@ -344,7 +380,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2157617:0:slight"
+  "new_edge:2157617:0:slight",
+  "gone:2157617:0:2026-11-04T22:27:47.849Z"
  ],
  "kalshi_checked": null
 }
