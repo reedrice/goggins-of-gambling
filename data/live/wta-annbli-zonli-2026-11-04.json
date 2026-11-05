@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186683",
-  "fetched_at": "2026-11-05T09:04:10.274Z",
+  "fetched_at": "2026-11-05T09:13:00.238Z",
   "tennis": true,
   "tennis_match": {
    "id": "186683",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Thu, November 5th at 4:05 AM EST",
-     "shortDetail": "11/5 - 4:05 AM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Zongyu Li (CHN) leads (1) Anna Blinkova (FRA) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "232c7c96-18e4-31b5-b7af-926eb62bf7ec",
       "displayName": "Li Zongyu",
@@ -87,9 +98,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 1
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "593f9215-e57e-b6d2-5985-26405c504503",
       "displayName": "Anna Blinkova",
@@ -122,6 +139,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 1082,
    "type": {
     "id": "2",
@@ -138,10 +160,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Thu, November 5th at 4:05 AM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Li Zongyu",
@@ -159,7 +181,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-05T09:04:10.201Z",
+ "updated": "2026-11-05T09:13:00.123Z",
  "open_taken_at": "2026-11-04T06:09:26.734Z",
  "thresholds": {
   "big": 10,
@@ -211,28 +233,6 @@
    "taken_at": "2026-11-05T09:04:10.201Z"
   },
   {
-   "market_id": "2134266",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 7.5,
-   "question": "Will the Anna Blinkova cover 7.5 vs the Zongyu Li in Anna Blinkova vs. Zongyu Li?",
-   "sides": [
-    "Anna Blinkova +7.50 (Games)",
-    "Zongyu Li -7.50 (Games)"
-   ],
-   "teams": [
-    "Anna Blinkova",
-    "Zongyu Li"
-   ],
-   "player": null,
-   "mid": 89.5,
-   "yes_buy": 90,
-   "no_buy": 11,
-   "taken_at": "2026-11-05T09:04:10.201Z"
-  },
-  {
    "market_id": "2134269",
    "market": "Sets spread",
    "group": "game",
@@ -255,6 +255,116 @@
    "taken_at": "2026-11-04T09:15:53.529Z"
   },
   {
+   "market_id": "2134266",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 7.5,
+   "question": "Will the Anna Blinkova cover 7.5 vs the Zongyu Li in Anna Blinkova vs. Zongyu Li?",
+   "sides": [
+    "Anna Blinkova +7.50 (Games)",
+    "Zongyu Li -7.50 (Games)"
+   ],
+   "teams": [
+    "Anna Blinkova",
+    "Zongyu Li"
+   ],
+   "player": null,
+   "mid": 89.5,
+   "yes_buy": 90,
+   "no_buy": 11,
+   "taken_at": "2026-11-05T09:04:10.201Z"
+  },
+  {
+   "market_id": "2134258",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Anna Blinkova cover -1.5 vs the Zongyu Li in Anna Blinkova vs. Zongyu Li?",
+   "sides": [
+    "Anna Blinkova -1.50 (Games)",
+    "Zongyu Li +1.50 (Games)"
+   ],
+   "teams": [
+    "Anna Blinkova",
+    "Zongyu Li"
+   ],
+   "player": null,
+   "mid": 74.5,
+   "yes_buy": 75,
+   "no_buy": 26,
+   "taken_at": "2026-11-05T09:06:43.154Z"
+  },
+  {
+   "market_id": "2134259",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Anna Blinkova cover 1.5 vs the Zongyu Li in Anna Blinkova vs. Zongyu Li?",
+   "sides": [
+    "Anna Blinkova +1.50 (Games)",
+    "Zongyu Li -1.50 (Games)"
+   ],
+   "teams": [
+    "Anna Blinkova",
+    "Zongyu Li"
+   ],
+   "player": null,
+   "mid": 82.5,
+   "yes_buy": 83,
+   "no_buy": 18,
+   "taken_at": "2026-11-05T09:13:00.123Z"
+  },
+  {
+   "market_id": "2134268",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Anna Blinkova cover -1.5 vs the Zongyu Li in Anna Blinkova vs. Zongyu Li?",
+   "sides": [
+    "Anna Blinkova -1.50 (Sets)",
+    "Zongyu Li +1.50 (Sets)"
+   ],
+   "teams": [
+    "Anna Blinkova",
+    "Zongyu Li"
+   ],
+   "player": null,
+   "mid": 71,
+   "yes_buy": 73,
+   "no_buy": 31,
+   "taken_at": "2026-11-05T00:16:38.922Z"
+  },
+  {
+   "market_id": "2134261",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Anna Blinkova cover -4.5 vs the Zongyu Li in Anna Blinkova vs. Zongyu Li?",
+   "sides": [
+    "Anna Blinkova -4.50 (Games)",
+    "Zongyu Li +4.50 (Games)"
+   ],
+   "teams": [
+    "Anna Blinkova",
+    "Zongyu Li"
+   ],
+   "player": null,
+   "mid": 69,
+   "yes_buy": 72,
+   "no_buy": 34,
+   "taken_at": "2026-11-05T09:13:00.123Z"
+  },
+  {
    "market_id": "2134264",
    "market": "Games spread",
    "group": "game",
@@ -275,28 +385,6 @@
    "yes_buy": 36,
    "no_buy": 66,
    "taken_at": "2026-11-05T02:11:25.959Z"
-  },
-  {
-   "market_id": "2134271",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Anna Blinkova vs. Zongyu Li be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 54,
-   "yes_buy": 57,
-   "no_buy": 49,
-   "taken_at": "2026-11-05T05:49:16.298Z"
   },
   {
    "market_id": "2134273",
@@ -343,26 +431,26 @@
    "taken_at": "2026-11-05T09:04:10.201Z"
   },
   {
-   "market_id": "2134268",
-   "market": "Sets spread",
+   "market_id": "2134271",
+   "market": "Games total",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": -1.5,
-   "question": "Will the Anna Blinkova cover -1.5 vs the Zongyu Li in Anna Blinkova vs. Zongyu Li?",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Anna Blinkova vs. Zongyu Li be more than 17.5?",
    "sides": [
-    "Anna Blinkova -1.50 (Sets)",
-    "Zongyu Li +1.50 (Sets)"
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
    ],
    "teams": [
-    "Anna Blinkova",
-    "Zongyu Li"
+    null,
+    null
    ],
    "player": null,
-   "mid": 71,
-   "yes_buy": 73,
-   "no_buy": 31,
-   "taken_at": "2026-11-05T00:16:38.922Z"
+   "mid": 54,
+   "yes_buy": 57,
+   "no_buy": 49,
+   "taken_at": "2026-11-05T05:49:16.298Z"
   },
   {
    "market_id": "2134276",
@@ -389,6 +477,66 @@
  ],
  "edges": [
   {
+   "key": "2134258:1",
+   "market_id": "2134258",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Anna Blinkova cover -1.5 vs the Zongyu Li in Anna Blinkova vs. Zongyu Li?",
+   "side": "Zongyu Li +1.50 (Games)",
+   "open_chance": 26,
+   "now_chance": 17,
+   "open_odds": "+285",
+   "now_odds": "+488",
+   "edge": 9,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Li Zongyu 1 · Anna Blinkova 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-05T09:13:00.123Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2134274:0",
+   "market_id": "2134274",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Anna Blinkova vs. Zongyu Li be more than 27.5?",
+   "side": "Over 27.5 (Games)",
+   "open_chance": 25,
+   "now_chance": 17,
+   "open_odds": "+300",
+   "now_odds": "+488",
+   "edge": 8,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Li Zongyu 1 · Anna Blinkova 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-05T09:13:00.123Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2134264:0",
+   "market_id": "2134264",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Anna Blinkova cover -7.5 vs the Zongyu Li in Anna Blinkova vs. Zongyu Li?",
+   "side": "Anna Blinkova -7.50 (Games)",
+   "open_chance": 36,
+   "now_chance": 31,
+   "open_odds": "+178",
+   "now_odds": "+223",
+   "edge": 5,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Anna Blinkova not above the games spread right now",
+   "context": "Li Zongyu 1 · Anna Blinkova 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-05T09:13:00.123Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2134271:0",
    "market_id": "2134271",
    "market": "Games total",
@@ -405,7 +553,7 @@
    "reason": "Big move (26 pts), likely news",
    "context": "Pregame",
    "first_seen": "2026-11-05T09:04:10.201Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -425,11 +573,101 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-05T09:04:10.201Z",
-   "status": "open",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "2134273:0",
+   "market_id": "2134273",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Anna Blinkova vs. Zongyu Li be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 29,
+   "now_chance": 24,
+   "open_odds": "+245",
+   "now_odds": "+317",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-11-05T09:06:43.154Z",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2134258:1:slight",
+   "key": "2134258:1",
+   "at": "2026-11-05T09:13:00.123Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Zongyu Li +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+488",
+   "now_chance": 17,
+   "edge": 9,
+   "text": "New slight edge: Zongyu Li +1.50 (Games) (Games spread), 9 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-annbli-zonli-2026-11-04"
+  },
+  {
+   "id": "new_edge:2134274:0:slight",
+   "key": "2134274:0",
+   "at": "2026-11-05T09:13:00.123Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 27.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+488",
+   "now_chance": 17,
+   "edge": 8,
+   "text": "New slight edge: Over 27.5 (Games) (Games total), 8 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-annbli-zonli-2026-11-04"
+  },
+  {
+   "id": "gone:2134273:0:2026-11-05T09:06:43.154Z",
+   "key": "2134273:0",
+   "at": "2026-11-05T09:13:00.123Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+317",
+   "now_chance": 24,
+   "edge": 5,
+   "text": "Edge gone: Over 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-annbli-zonli-2026-11-04"
+  },
+  {
+   "id": "new_edge:2134273:0:slight",
+   "key": "2134273:0",
+   "at": "2026-11-05T09:06:43.154Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+317",
+   "now_chance": 24,
+   "edge": 5,
+   "text": "New slight edge: Over 22.5 (Games) (Games total), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-annbli-zonli-2026-11-04"
+  },
+  {
+   "id": "gone:2134264:1:2026-11-05T09:04:10.201Z",
+   "key": "2134264:1",
+   "at": "2026-11-05T09:06:43.154Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Zongyu Li +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 13,
+   "text": "Edge gone: Zongyu Li +7.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-annbli-zonli-2026-11-04"
+  },
   {
    "id": "news:2134271:0",
    "key": "2134271:0",
@@ -461,7 +699,12 @@
  ],
  "alert_seen": [
   "news:2134271:0",
-  "new_edge:2134264:1:big"
+  "new_edge:2134264:1:big",
+  "new_edge:2134273:0:slight",
+  "gone:2134264:1:2026-11-05T09:04:10.201Z",
+  "new_edge:2134258:1:slight",
+  "new_edge:2134274:0:slight",
+  "gone:2134273:0:2026-11-05T09:06:43.154Z"
  ],
  "kalshi_checked": null
 }
