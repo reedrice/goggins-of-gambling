@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186631",
-  "fetched_at": "2026-11-05T07:57:44.877Z",
+  "fetched_at": "2026-11-05T08:11:28.577Z",
   "tennis": true,
   "tennis_match": {
    "id": "186631",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Antonia Ruzic (CRO) leads (6) Wang Xinyu (CHN) 6-3 4-6 1-0",
+     "text": "Antonia Ruzic (CRO) leads (6) Wang Xinyu (CHN) 6-3 4-6 4-0",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "possession": false,
      "linescores": [
       {
        "value": 6,
@@ -66,7 +66,7 @@
        "winner": false
       },
       {
-       "value": 1
+       "value": 4
       }
      ],
      "athlete": {
@@ -106,7 +106,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "possession": true,
      "curatedRank": {
       "current": 6
      },
@@ -197,7 +197,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-05T07:57:44.790Z",
+ "updated": "2026-11-05T08:11:28.493Z",
  "open_taken_at": "2026-11-04T08:31:18.327Z",
  "thresholds": {
   "big": 10,
@@ -249,28 +249,6 @@
    "taken_at": "2026-11-05T06:08:49.991Z"
   },
   {
-   "market_id": "2161139",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Xinyu Wang vs. Antonia Ruzic be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 25.5,
-   "yes_buy": 26,
-   "no_buy": 75,
-   "taken_at": "2026-11-05T06:06:04.143Z"
-  },
-  {
    "market_id": "2161130",
    "market": "Games spread",
    "group": "game",
@@ -291,6 +269,28 @@
    "yes_buy": 57,
    "no_buy": 49,
    "taken_at": "2026-11-04T12:44:58.373Z"
+  },
+  {
+   "market_id": "2161139",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Xinyu Wang vs. Antonia Ruzic be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 25.5,
+   "yes_buy": 26,
+   "no_buy": 75,
+   "taken_at": "2026-11-05T06:06:04.143Z"
   },
   {
    "market_id": "2161129",
@@ -537,6 +537,26 @@
  ],
  "edges": [
   {
+   "key": "2161132:0",
+   "market_id": "2161132",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Xinyu Wang cover 4.5 vs the Antonia Ruzic in Xinyu Wang vs. Antonia Ruzic?",
+   "side": "Xinyu Wang +4.50 (Games)",
+   "open_chance": 79,
+   "now_chance": 40,
+   "open_odds": "-376",
+   "now_odds": "+150",
+   "edge": 39,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Wang Xinyu not above the games spread right now",
+   "context": "Antonia Ruzic 6, 4, 4 · Wang Xinyu 3, 6, 0 · 3rd Set (games by set)",
+   "first_seen": "2026-11-05T06:18:43.207Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2161139:1",
    "market_id": "2161139",
    "market": "Games total",
@@ -544,76 +564,16 @@
    "question": "Will the total in Xinyu Wang vs. Antonia Ruzic be more than 27.5?",
    "side": "Under 27.5 (Games)",
    "open_chance": 75,
-   "now_chance": 29,
+   "now_chance": 41,
    "open_odds": "-300",
-   "now_odds": "+245",
-   "edge": 46,
+   "now_odds": "+144",
+   "edge": 34,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (46 pts), likely news",
-   "context": "Antonia Ruzic 6, 4, 1 · Wang Xinyu 3, 6, 0 · 3rd Set (games by set)",
+   "reason": "Big move (34 pts), likely news",
+   "context": "Antonia Ruzic 6, 4, 3 · Wang Xinyu 3, 6, 0 · 3rd Set (games by set)",
    "first_seen": "2026-11-05T07:00:44.523Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2161130:0",
-   "market_id": "2161130",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Xinyu Wang cover 1.5 vs the Antonia Ruzic in Xinyu Wang vs. Antonia Ruzic?",
-   "side": "Xinyu Wang +1.50 (Games)",
-   "open_chance": 57,
-   "now_chance": 40,
-   "open_odds": "-133",
-   "now_odds": "+150",
-   "edge": 17,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Wang Xinyu not above the games spread right now",
-   "context": "Antonia Ruzic 6, 4, 1 · Wang Xinyu 3, 6, 0 · 3rd Set (games by set)",
-   "first_seen": "2026-11-05T06:24:41.044Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2159848:0",
-   "market_id": "2159848",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Xinyu Wang vs Antonia Ruzic scheduled for November 5, 2026 at 6:00 AM UTC?",
-   "side": "Xinyu Wang win",
-   "open_chance": 53,
-   "now_chance": 37,
-   "open_odds": "-113",
-   "now_odds": "+170",
-   "edge": 16,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Antonia Ruzic 6, 4, 1 · Wang Xinyu 3, 6, 0 · 3rd Set (games by set)",
-   "first_seen": "2026-11-05T06:18:43.207Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2161132:1",
-   "market_id": "2161132",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Xinyu Wang cover 4.5 vs the Antonia Ruzic in Xinyu Wang vs. Antonia Ruzic?",
-   "side": "Antonia Ruzic -4.50 (Games)",
-   "open_chance": 26,
-   "now_chance": 20,
-   "open_odds": "+285",
-   "now_odds": "+400",
-   "edge": 6,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Antonia Ruzic not above the games spread right now",
-   "context": "Antonia Ruzic 6, 4, 1 · Wang Xinyu 3, 6, 0 · 3rd Set (games by set)",
-   "first_seen": "2026-11-05T07:49:49.519Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -677,66 +637,6 @@
    "kalshi": null
   },
   {
-   "key": "2161132:0",
-   "market_id": "2161132",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Xinyu Wang cover 4.5 vs the Antonia Ruzic in Xinyu Wang vs. Antonia Ruzic?",
-   "side": "Xinyu Wang +4.50 (Games)",
-   "open_chance": 79,
-   "now_chance": 65,
-   "open_odds": "-376",
-   "now_odds": "-186",
-   "edge": 14,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Antonia Ruzic 6, 2 · Wang Xinyu 3, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-11-05T06:18:43.207Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "2161130:1",
-   "market_id": "2161130",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Xinyu Wang cover 1.5 vs the Antonia Ruzic in Xinyu Wang vs. Antonia Ruzic?",
-   "side": "Antonia Ruzic -1.50 (Games)",
-   "open_chance": 49,
-   "now_chance": 39,
-   "open_odds": "+104",
-   "now_odds": "+156",
-   "edge": 10,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: Antonia Ruzic not above the games spread right now",
-   "context": "Antonia Ruzic 6, 4, 0 · Wang Xinyu 3, 6, 0 · 3rd Set (games by set)",
-   "first_seen": "2026-11-05T06:06:04.143Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "2159848:1",
-   "market_id": "2159848",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming wta event Xinyu Wang vs Antonia Ruzic scheduled for November 5, 2026 at 6:00 AM UTC?",
-   "side": "Antonia Ruzic win",
-   "open_chance": 51,
-   "now_chance": 42,
-   "open_odds": "-104",
-   "now_odds": "+138",
-   "edge": 9,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Antonia Ruzic 6, 4, 0 · Wang Xinyu 3, 6, 0 · 3rd Set (games by set)",
-   "first_seen": "2026-11-04T17:42:50.934Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "2161129:1",
    "market_id": "2161129",
    "market": "Games spread",
@@ -753,6 +653,26 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-05T05:37:34.169Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "2161132:1",
+   "market_id": "2161132",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Xinyu Wang cover 4.5 vs the Antonia Ruzic in Xinyu Wang vs. Antonia Ruzic?",
+   "side": "Antonia Ruzic -4.50 (Games)",
+   "open_chance": 26,
+   "now_chance": 20,
+   "open_odds": "+285",
+   "now_odds": "+400",
+   "edge": 6,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Antonia Ruzic not above the games spread right now",
+   "context": "Antonia Ruzic 6, 4, 1 · Wang Xinyu 3, 6, 0 · 3rd Set (games by set)",
+   "first_seen": "2026-11-05T07:49:49.519Z",
    "status": "gone",
    "kalshi": null
   },
@@ -878,20 +798,6 @@
   }
  ],
  "alerts": [
-  {
-   "id": "gone:2159848:0:2026-11-05T06:18:43.207Z",
-   "key": "2159848:0",
-   "at": "2026-11-05T07:42:18.562Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Xinyu Wang win",
-   "market": "Moneyline",
-   "now_odds": "+127",
-   "now_chance": 44,
-   "edge": 9,
-   "text": "Edge gone: Xinyu Wang win (Moneyline) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-xinwan-antruz-2026-11-05"
-  },
   {
    "id": "news:2161139:1",
    "key": "2161139:1",
@@ -1089,20 +995,6 @@
    "url": "https://polymarket.us/sports/wta/wta-xinwan-antruz-2026-11-05"
   },
   {
-   "id": "new_edge:2159848:0:slight",
-   "key": "2159848:0",
-   "at": "2026-11-05T06:26:45.018Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Xinyu Wang win",
-   "market": "Moneyline",
-   "now_odds": "+127",
-   "now_chance": 44,
-   "edge": 9,
-   "text": "New slight edge: Xinyu Wang win (Moneyline), 9 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-xinwan-antruz-2026-11-05"
-  },
-  {
    "id": "new_edge:2161138:1:slight",
    "key": "2161138:1",
    "at": "2026-11-05T06:26:45.018Z",
@@ -1159,20 +1051,6 @@
    "url": "https://polymarket.us/sports/wta/wta-xinwan-antruz-2026-11-05"
   },
   {
-   "id": "new_edge:2159848:0:big",
-   "key": "2159848:0",
-   "at": "2026-11-05T06:18:43.207Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Xinyu Wang win",
-   "market": "Moneyline",
-   "now_odds": "+150",
-   "now_chance": 40,
-   "edge": 13,
-   "text": "New big edge: Xinyu Wang win (Moneyline), 13 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-xinwan-antruz-2026-11-05"
-  },
-  {
    "id": "new_edge:2161146:0:slight",
    "key": "2161146:0",
    "at": "2026-11-05T06:18:43.207Z",
@@ -1215,20 +1093,6 @@
    "url": "https://polymarket.us/sports/wta/wta-xinwan-antruz-2026-11-05"
   },
   {
-   "id": "gone:2159848:1:2026-11-04T17:42:50.934Z",
-   "key": "2159848:1",
-   "at": "2026-11-05T06:18:43.207Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Antonia Ruzic win",
-   "market": "Moneyline",
-   "now_odds": "+113",
-   "now_chance": 47,
-   "edge": 4,
-   "text": "Edge gone: Antonia Ruzic win (Moneyline) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-xinwan-antruz-2026-11-05"
-  },
-  {
    "id": "new_edge:2161136:0:slight",
    "key": "2161136:0",
    "at": "2026-11-05T06:15:34.755Z",
@@ -1254,34 +1118,6 @@
    "now_chance": 57,
    "edge": 5,
    "text": "New slight edge: Under 2.5 (Sets) (Sets total), 5 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-xinwan-antruz-2026-11-05"
-  },
-  {
-   "id": "new_edge:2159848:1:slight",
-   "key": "2159848:1",
-   "at": "2026-11-05T06:15:34.755Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Antonia Ruzic win",
-   "market": "Moneyline",
-   "now_odds": "+113",
-   "now_chance": 47,
-   "edge": 4,
-   "text": "New slight edge: Antonia Ruzic win (Moneyline), 4 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-xinwan-antruz-2026-11-05"
-  },
-  {
-   "id": "gone:2161130:1:2026-11-05T06:06:04.143Z",
-   "key": "2161130:1",
-   "at": "2026-11-05T06:15:34.755Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Antonia Ruzic -1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+156",
-   "now_chance": 39,
-   "edge": 10,
-   "text": "Edge gone: Antonia Ruzic -1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-xinwan-antruz-2026-11-05"
   },
   {
@@ -1366,34 +1202,6 @@
    "now_chance": 34,
    "edge": 4,
    "text": "New slight edge: Xinyu Wang -1.50 (Sets) (Sets spread), 4 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-xinwan-antruz-2026-11-05"
-  },
-  {
-   "id": "new_edge:2159848:1:big",
-   "key": "2159848:1",
-   "at": "2026-11-05T06:06:04.143Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Antonia Ruzic win",
-   "market": "Moneyline",
-   "now_odds": "+144",
-   "now_chance": 41,
-   "edge": 10,
-   "text": "New big edge: Antonia Ruzic win (Moneyline), 10 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-xinwan-antruz-2026-11-05"
-  },
-  {
-   "id": "new_edge:2161130:1:big",
-   "key": "2161130:1",
-   "at": "2026-11-05T06:06:04.143Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Antonia Ruzic -1.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+156",
-   "now_chance": 39,
-   "edge": 10,
-   "text": "New big edge: Antonia Ruzic -1.50 (Games) (Games spread), 10 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-xinwan-antruz-2026-11-05"
   },
   {
