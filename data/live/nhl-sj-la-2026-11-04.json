@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892646",
-  "fetched_at": "2026-11-05T04:07:18.803Z",
+  "fetched_at": "2026-11-05T04:09:40.632Z",
   "game_state": "in",
   "espn_status": "STATUS_END_PERIOD",
   "period": 1,
@@ -117,7 +117,7 @@
    }
   ]
  },
- "updated": "2026-11-05T04:07:18.599Z",
+ "updated": "2026-11-05T04:09:40.505Z",
  "open_taken_at": "2026-11-03T06:01:36.256Z",
  "thresholds": {
   "big": 10,
@@ -585,6 +585,28 @@
    "yes_buy": 20,
    "no_buy": 81,
    "taken_at": "2026-11-04T15:51:02.096Z"
+  },
+  {
+   "market_id": "2155633",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Macklin Celebrini record at least 2 points in SJS vs LAK?",
+   "sides": [
+    "Yes: Macklin Celebrini record at least 2 points in SJS vs LAK",
+    "No: Macklin Celebrini record at least 2 points in SJS vs LAK"
+   ],
+   "teams": [
+    "Sharks",
+    "Sharks"
+   ],
+   "player": "Macklin Celebrini",
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-11-04T05:58:22.101Z"
   },
   {
    "market_id": "2153052",
@@ -2039,28 +2061,6 @@
    "taken_at": "2026-11-04T11:12:55.225Z"
   },
   {
-   "market_id": "2155633",
-   "market": "Player prop",
-   "group": "prop",
-   "mtype": "prop",
-   "period": "full_game",
-   "line": 2,
-   "question": "Will Macklin Celebrini record at least 2 points in SJS vs LAK?",
-   "sides": [
-    "Yes: Macklin Celebrini record at least 2 points in SJS vs LAK",
-    "No: Macklin Celebrini record at least 2 points in SJS vs LAK"
-   ],
-   "teams": [
-    "Sharks",
-    "Sharks"
-   ],
-   "player": "Macklin Celebrini",
-   "mid": 33.5,
-   "yes_buy": 34,
-   "no_buy": 67,
-   "taken_at": "2026-11-04T05:58:22.101Z"
-  },
-  {
    "market_id": "2159815",
    "market": "Player prop",
    "group": "prop",
@@ -2526,13 +2526,13 @@
    "question": "Will Drew Doughty record at least 1 assists in SJS vs LAK?",
    "side": "No: Drew Doughty record at least 1 assists in SJS vs LAK",
    "open_chance": 75,
-   "now_chance": 42,
+   "now_chance": 41,
    "open_odds": "-300",
-   "now_odds": "+138",
-   "edge": 33,
+   "now_odds": "+144",
+   "edge": 34,
    "tier": "big",
    "class": "news",
-   "reason": "Big move (33 pts), likely news",
+   "reason": "Big move (34 pts), likely news",
    "context": "LA up 3, End of Q1",
    "first_seen": "2026-11-05T04:07:18.599Z",
    "status": "open",
@@ -2679,22 +2679,22 @@
    "kalshi": true
   },
   {
-   "key": "1998132:1",
-   "market_id": "1998132",
-   "market": "Alt total",
-   "group": "game",
-   "question": "Will the total in SJS vs LAK be more than 8.5?",
-   "side": "Under 8.5",
-   "open_chance": 83,
-   "now_chance": 73,
-   "open_odds": "-488",
-   "now_odds": "-270",
+   "key": "2155633:0",
+   "market_id": "2155633",
+   "market": "Player prop",
+   "group": "prop",
+   "question": "Will Macklin Celebrini record at least 2 points in SJS vs LAK?",
+   "side": "Yes: Macklin Celebrini record at least 2 points in SJS vs LAK",
+   "open_chance": 34,
+   "now_chance": 24,
+   "open_odds": "+194",
+   "now_odds": "+317",
    "edge": 10,
    "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: scoring above pace (3 pts, pace 2)",
-   "context": "SJ 0, LA 3, End of Q1",
-   "first_seen": "2026-11-05T03:58:39.537Z",
+   "class": "edge",
+   "reason": null,
+   "context": "SJ down 3, End of Q1",
+   "first_seen": "2026-11-05T04:09:40.505Z",
    "status": "open",
    "kalshi": true
   },
@@ -2754,6 +2754,26 @@
    "class": "edge",
    "reason": null,
    "context": "SJ down 3, End of Q1",
+   "first_seen": "2026-11-05T03:58:39.537Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "1998132:1",
+   "market_id": "1998132",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in SJS vs LAK be more than 8.5?",
+   "side": "Under 8.5",
+   "open_chance": 83,
+   "now_chance": 76,
+   "open_odds": "-488",
+   "now_odds": "-317",
+   "edge": 7,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: scoring above pace (3 pts, pace 2)",
+   "context": "SJ 0, LA 3, End of Q1",
    "first_seen": "2026-11-05T03:58:39.537Z",
    "status": "open",
    "kalshi": true
@@ -3380,6 +3400,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2155633:0:big",
+   "key": "2155633:0",
+   "at": "2026-11-05T04:09:40.505Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Yes: Macklin Celebrini record at least 2 points in SJS vs LAK",
+   "market": "Player prop",
+   "now_odds": "+317",
+   "now_chance": 24,
+   "edge": 10,
+   "text": "New big edge: Yes: Macklin Celebrini record at least 2 points in SJS vs LAK (Player prop), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-sj-la-2026-11-04"
+  },
   {
    "id": "news:2161125:1",
    "key": "2161125:1",
@@ -4065,20 +4099,6 @@
    "edge": 6,
    "text": "New slight edge: Yes: Tyler Toffoli record at least 1 assists in SJS vs LAK (Player prop), 6 points cheaper than open.",
    "url": "https://polymarket.us/sports/nhl/nhl-sj-la-2026-11-04"
-  },
-  {
-   "id": "new_edge:2155709:0:slight",
-   "key": "2155709:0",
-   "at": "2026-11-05T03:05:49.020Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Yes: Will Smith record at least 1 assists in SJS vs LAK",
-   "market": "Player prop",
-   "now_odds": "+150",
-   "now_chance": 40,
-   "edge": 5,
-   "text": "New slight edge: Yes: Will Smith record at least 1 assists in SJS vs LAK (Player prop), 5 points cheaper than open.",
-   "url": "https://polymarket.us/sports/nhl/nhl-sj-la-2026-11-04"
   }
  ],
  "alert_seen": [
@@ -4152,10 +4172,11 @@
   "news:2161125:1",
   "new_edge:2155717:0:big",
   "new_edge:2153046:0:slight",
-  "gone:2161123:1:2026-11-05T03:58:39.537Z"
+  "gone:2161123:1:2026-11-05T03:58:39.537Z",
+  "new_edge:2155633:0:big"
  ],
  "kalshi_checked": {
-  "at": "2026-11-05T04:07:18.841Z",
+  "at": "2026-11-05T04:09:41.156Z",
   "event": "26NOV04SJLA"
  }
 }
