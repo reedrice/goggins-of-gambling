@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186639",
-  "fetched_at": "2026-11-05T08:47:24.319Z",
+  "fetched_at": "2026-11-05T08:56:34.452Z",
   "tennis": true,
   "tennis_match": {
    "id": "186639",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Thu, November 5th at 3:45 AM EST",
-     "shortDetail": "11/5 - 3:45 AM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Mika Stojsavljevic (GBR) leads Zeynep Sonmez (TUR) 1-1",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,11 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "6622e0f6-f237-3a2d-a338-313771d30b51",
       "displayName": "Zeynep Sonmez",
@@ -87,6 +97,11 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "linescores": [
+      {
+       "value": 1
+      }
+     ],
      "athlete": {
       "guid": "43a2ce3d-8359-391e-be1b-1ee26043160f",
       "displayName": "Mika Stojsavljevic",
@@ -135,10 +150,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Thu, November 5th at 3:45 AM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Zeynep Sonmez",
@@ -156,7 +171,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-05T08:47:24.238Z",
+ "updated": "2026-11-05T08:56:34.342Z",
  "open_taken_at": "2026-11-04T08:52:56.963Z",
  "thresholds": {
   "big": 10,
@@ -208,28 +223,6 @@
    "taken_at": "2026-11-05T07:33:43.314Z"
   },
   {
-   "market_id": "2161155",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 17.5,
-   "question": "Will the total in Mika Stojsavljevic vs. Zeynep Sonmez be more than 17.5?",
-   "sides": [
-    "Over 17.5 (Games)",
-    "Under 17.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 66.5,
-   "yes_buy": 67,
-   "no_buy": 34,
-   "taken_at": "2026-11-05T07:16:09.999Z"
-  },
-  {
    "market_id": "2161150",
    "market": "Games spread",
    "group": "game",
@@ -272,6 +265,28 @@
    "yes_buy": 37,
    "no_buy": 69,
    "taken_at": "2026-11-05T00:36:43.408Z"
+  },
+  {
+   "market_id": "2161163",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Mika Stojsavljevic win set 1 against Zeynep Sonmez?",
+   "sides": [
+    "Yes: Mika Stojsavljevic win set 1 against Zeynep Sonmez",
+    "No: Mika Stojsavljevic win set 1 against Zeynep Sonmez"
+   ],
+   "teams": [
+    "Mika Stojsavljevic",
+    null
+   ],
+   "player": null,
+   "mid": 29.5,
+   "yes_buy": 32,
+   "no_buy": 73,
+   "taken_at": "2026-11-04T20:47:56.094Z"
   },
   {
    "market_id": "2161158",
@@ -362,28 +377,6 @@
    "taken_at": "2026-11-05T07:16:09.999Z"
   },
   {
-   "market_id": "2161149",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": -4.5,
-   "question": "Will the Mika Stojsavljevic cover -4.5 vs the Zeynep Sonmez in Mika Stojsavljevic vs. Zeynep Sonmez?",
-   "sides": [
-    "Mika Stojsavljevic -4.50 (Games)",
-    "Zeynep Sonmez +4.50 (Games)"
-   ],
-   "teams": [
-    "Mika Stojsavljevic",
-    "Zeynep Sonmez"
-   ],
-   "player": null,
-   "mid": 21.5,
-   "yes_buy": 22,
-   "no_buy": 79,
-   "taken_at": "2026-11-05T07:16:09.999Z"
-  },
-  {
    "market_id": "2161153",
    "market": "Sets spread",
    "group": "game",
@@ -404,6 +397,28 @@
    "yes_buy": 16,
    "no_buy": 88,
    "taken_at": "2026-11-05T00:10:43.877Z"
+  },
+  {
+   "market_id": "2161149",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Mika Stojsavljevic cover -4.5 vs the Zeynep Sonmez in Mika Stojsavljevic vs. Zeynep Sonmez?",
+   "sides": [
+    "Mika Stojsavljevic -4.50 (Games)",
+    "Zeynep Sonmez +4.50 (Games)"
+   ],
+   "teams": [
+    "Mika Stojsavljevic",
+    "Zeynep Sonmez"
+   ],
+   "player": null,
+   "mid": 21.5,
+   "yes_buy": 22,
+   "no_buy": 79,
+   "taken_at": "2026-11-05T07:16:09.999Z"
   },
   {
    "market_id": "2161151",
@@ -428,6 +443,28 @@
    "taken_at": "2026-11-05T07:16:09.999Z"
   },
   {
+   "market_id": "2161155",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Mika Stojsavljevic vs. Zeynep Sonmez be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 66.5,
+   "yes_buy": 67,
+   "no_buy": 34,
+   "taken_at": "2026-11-05T07:16:09.999Z"
+  },
+  {
    "market_id": "2161154",
    "market": "Sets spread",
    "group": "game",
@@ -448,28 +485,6 @@
    "yes_buy": 45,
    "no_buy": 57,
    "taken_at": "2026-11-05T00:10:43.877Z"
-  },
-  {
-   "market_id": "2161163",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Mika Stojsavljevic win set 1 against Zeynep Sonmez?",
-   "sides": [
-    "Yes: Mika Stojsavljevic win set 1 against Zeynep Sonmez",
-    "No: Mika Stojsavljevic win set 1 against Zeynep Sonmez"
-   ],
-   "teams": [
-    "Mika Stojsavljevic",
-    null
-   ],
-   "player": null,
-   "mid": 29.5,
-   "yes_buy": 32,
-   "no_buy": 73,
-   "taken_at": "2026-11-04T20:47:56.094Z"
   },
   {
    "market_id": "2161164",
@@ -510,28 +525,8 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Zeynep Sonmez 1 · Mika Stojsavljevic 1 · 1st Set (games by set)",
    "first_seen": "2026-11-04T12:36:44.623Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2161150:0",
-   "market_id": "2161150",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Mika Stojsavljevic cover 4.5 vs the Zeynep Sonmez in Mika Stojsavljevic vs. Zeynep Sonmez?",
-   "side": "Mika Stojsavljevic +4.50 (Games)",
-   "open_chance": 50,
-   "now_chance": 42,
-   "open_odds": "+100",
-   "now_odds": "+138",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-11-05T03:44:43.139Z",
    "status": "open",
    "kalshi": null
   },
@@ -550,7 +545,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Zeynep Sonmez 1 · Mika Stojsavljevic 1 · 1st Set (games by set)",
    "first_seen": "2026-11-05T07:42:18.555Z",
    "status": "open",
    "kalshi": null
@@ -568,11 +563,31 @@
    "now_odds": "-270",
    "edge": 4,
    "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
+   "class": "score",
+   "reason": "Explained by score: Zeynep Sonmez not above the games spread right now",
+   "context": "Zeynep Sonmez 1 · Mika Stojsavljevic 1 · 1st Set (games by set)",
    "first_seen": "2026-11-05T07:33:43.314Z",
    "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2161150:0",
+   "market_id": "2161150",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Mika Stojsavljevic cover 4.5 vs the Zeynep Sonmez in Mika Stojsavljevic vs. Zeynep Sonmez?",
+   "side": "Mika Stojsavljevic +4.50 (Games)",
+   "open_chance": 50,
+   "now_chance": 42,
+   "open_odds": "+100",
+   "now_odds": "+138",
+   "edge": 8,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Zeynep Sonmez 0 · Mika Stojsavljevic 0 · 1st Set (games by set)",
+   "first_seen": "2026-11-05T03:44:43.139Z",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -657,6 +672,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2161150:0:2026-11-05T03:44:43.139Z",
+   "key": "2161150:0",
+   "at": "2026-11-05T08:56:34.342Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Mika Stojsavljevic +4.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+138",
+   "now_chance": 42,
+   "edge": 8,
+   "text": "Edge gone: Mika Stojsavljevic +4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-miksto-zeyson-2026-11-05"
+  },
   {
    "id": "new_edge:2161150:0:slight",
    "key": "2161150:0",
@@ -763,7 +792,8 @@
   "new_edge:2161148:1:slight",
   "new_edge:2161158:0:slight",
   "gone:2161150:1:2026-11-05T07:33:43.314Z",
-  "new_edge:2161150:0:slight"
+  "new_edge:2161150:0:slight",
+  "gone:2161150:0:2026-11-05T03:44:43.139Z"
  ],
  "kalshi_checked": null
 }
