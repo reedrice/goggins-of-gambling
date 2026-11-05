@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-05T00:16:37.506Z"
+  "fetched_at": "2026-11-05T00:25:03.520Z"
  },
- "updated": "2026-11-05T00:16:37.420Z",
+ "updated": "2026-11-05T00:25:03.353Z",
  "open_taken_at": "2026-11-03T06:01:58.138Z",
  "thresholds": {
   "big": 10,
@@ -61,6 +61,28 @@
    "yes_buy": 53,
    "no_buy": 48,
    "taken_at": "2026-11-04T23:19:43.372Z"
+  },
+  {
+   "market_id": "2118137",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Gustavo Heide cover 1.5 vs the Juan Carlos Prado Angelo in Gustavo Heide vs. Juan Carlos Prado Angelo?",
+   "sides": [
+    "Gustavo Heide +1.50 (Games)",
+    "Juan Carlos Prado -1.50 (Games)"
+   ],
+   "teams": [
+    "Gustavo Heide",
+    "Juan Carlos Prado"
+   ],
+   "player": null,
+   "mid": 70.5,
+   "yes_buy": 71,
+   "no_buy": 30,
+   "taken_at": "2026-11-04T22:43:40.982Z"
   },
   {
    "market_id": "2118145",
@@ -261,28 +283,6 @@
    "taken_at": "2026-11-04T22:08:51.447Z"
   },
   {
-   "market_id": "2118137",
-   "market": "Games spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_games_spread",
-   "line": 1.5,
-   "question": "Will the Gustavo Heide cover 1.5 vs the Juan Carlos Prado Angelo in Gustavo Heide vs. Juan Carlos Prado Angelo?",
-   "sides": [
-    "Gustavo Heide +1.50 (Games)",
-    "Juan Carlos Prado -1.50 (Games)"
-   ],
-   "teams": [
-    "Gustavo Heide",
-    "Juan Carlos Prado"
-   ],
-   "player": null,
-   "mid": 70.5,
-   "yes_buy": 71,
-   "no_buy": 30,
-   "taken_at": "2026-11-04T22:43:40.982Z"
-  },
-  {
    "market_id": "2118138",
    "market": "Games spread",
    "group": "game",
@@ -329,22 +329,22 @@
  ],
  "edges": [
   {
-   "key": "2118153:1",
-   "market_id": "2118153",
-   "market": "Set 2 winner",
+   "key": "2118137:0",
+   "market_id": "2118137",
+   "market": "Games spread",
    "group": "game",
-   "question": "Will Gustavo Heide win set 2 against Juan Carlos Prado Angelo?",
-   "side": "No: Gustavo Heide win set 2 against Juan Carlos Prado Angelo",
-   "open_chance": 48,
-   "now_chance": 20,
-   "open_odds": "+108",
-   "now_odds": "+400",
-   "edge": 28,
+   "question": "Will the Gustavo Heide cover 1.5 vs the Juan Carlos Prado Angelo in Gustavo Heide vs. Juan Carlos Prado Angelo?",
+   "side": "Gustavo Heide +1.50 (Games)",
+   "open_chance": 71,
+   "now_chance": 29,
+   "open_odds": "-245",
+   "now_odds": "+245",
+   "edge": 42,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-05T00:16:37.420Z",
+   "first_seen": "2026-11-05T00:25:03.353Z",
    "status": "open",
    "kalshi": null
   },
@@ -489,26 +489,6 @@
    "kalshi": null
   },
   {
-   "key": "2118153:0",
-   "market_id": "2118153",
-   "market": "Set 2 winner",
-   "group": "game",
-   "question": "Will Gustavo Heide win set 2 against Juan Carlos Prado Angelo?",
-   "side": "Yes: Gustavo Heide win set 2 against Juan Carlos Prado Angelo",
-   "open_chance": 53,
-   "now_chance": 48,
-   "open_odds": "-113",
-   "now_odds": "+108",
-   "edge": 5,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-04T23:43:40.288Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
    "key": "2118143:0",
    "market_id": "2118143",
    "market": "Sets spread",
@@ -531,31 +511,17 @@
  ],
  "alerts": [
   {
-   "id": "new_edge:2118153:1:big",
-   "key": "2118153:1",
-   "at": "2026-11-05T00:16:37.420Z",
+   "id": "new_edge:2118137:0:big",
+   "key": "2118137:0",
+   "at": "2026-11-05T00:25:03.353Z",
    "type": "new_edge",
    "tier": "big",
-   "side": "No: Gustavo Heide win set 2 against Juan Carlos Prado Angelo",
-   "market": "Set 2 winner",
-   "now_odds": "+400",
-   "now_chance": 20,
-   "edge": 28,
-   "text": "New big edge: No: Gustavo Heide win set 2 against Juan Carlos Prado Angelo (Set 2 winner), 28 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-gushei-juapra-2026-11-04"
-  },
-  {
-   "id": "new_edge:2118153:0:big",
-   "key": "2118153:0",
-   "at": "2026-11-04T23:59:37.751Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Yes: Gustavo Heide win set 2 against Juan Carlos Prado Angelo",
-   "market": "Set 2 winner",
-   "now_odds": "+223",
-   "now_chance": 31,
-   "edge": 22,
-   "text": "New big edge: Yes: Gustavo Heide win set 2 against Juan Carlos Prado Angelo (Set 2 winner), 22 points cheaper than open.",
+   "side": "Gustavo Heide +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+245",
+   "now_chance": 29,
+   "edge": 42,
+   "text": "New big edge: Gustavo Heide +1.50 (Games) (Games spread), 42 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-gushei-juapra-2026-11-04"
   },
   {
@@ -573,20 +539,6 @@
    "url": "https://polymarket.us/sports/atp/atp-gushei-juapra-2026-11-04"
   },
   {
-   "id": "gone:2118153:0:2026-11-04T23:43:40.288Z",
-   "key": "2118153:0",
-   "at": "2026-11-04T23:57:00.702Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "Yes: Gustavo Heide win set 2 against Juan Carlos Prado Angelo",
-   "market": "Set 2 winner",
-   "now_odds": "+127",
-   "now_chance": 44,
-   "edge": 9,
-   "text": "Edge gone: Yes: Gustavo Heide win set 2 against Juan Carlos Prado Angelo (Set 2 winner) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-gushei-juapra-2026-11-04"
-  },
-  {
    "id": "new_edge:2118136:0:big",
    "key": "2118136:0",
    "at": "2026-11-04T23:49:07.935Z",
@@ -598,20 +550,6 @@
    "now_chance": 31,
    "edge": 24,
    "text": "New big edge: Gustavo Heide -1.50 (Games) (Games spread), 24 points cheaper than open.",
-   "url": "https://polymarket.us/sports/atp/atp-gushei-juapra-2026-11-04"
-  },
-  {
-   "id": "new_edge:2118153:0:slight",
-   "key": "2118153:0",
-   "at": "2026-11-04T23:43:40.288Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Yes: Gustavo Heide win set 2 against Juan Carlos Prado Angelo",
-   "market": "Set 2 winner",
-   "now_odds": "+127",
-   "now_chance": 44,
-   "edge": 9,
-   "text": "New slight edge: Yes: Gustavo Heide win set 2 against Juan Carlos Prado Angelo (Set 2 winner), 9 points cheaper than open.",
    "url": "https://polymarket.us/sports/atp/atp-gushei-juapra-2026-11-04"
   },
   {
@@ -787,7 +725,8 @@
   "new_edge:2118145:0:slight",
   "gone:2118153:0:2026-11-04T23:43:40.288Z",
   "new_edge:2118153:0:big",
-  "new_edge:2118153:1:big"
+  "new_edge:2118153:1:big",
+  "new_edge:2118137:0:big"
  ],
  "kalshi_checked": null
 }
