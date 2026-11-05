@@ -3,31 +3,31 @@
  "slug": "atpdb-grazeb-halysherber-2026-11-04",
  "game": "Granollers / Zeballos vs. Halys / Herbert",
  "url": "https://polymarket.us/sports/atpdb/atpdb-grazeb-halysherber-2026-11-04",
- "start_time": "2026-11-05T12:20:00Z",
- "status": "pregame",
+ "start_time": "2026-11-05T14:30:00Z",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186508",
-  "fetched_at": "2026-11-05T10:27:39.560Z",
+  "fetched_at": "2026-11-05T17:46:02.645Z",
   "tennis": true,
   "tennis_match": {
    "id": "186508",
    "uid": "s:850~l:851~e:13-2026~c:186508",
-   "date": "2026-11-05T13:00Z",
-   "startDate": "2026-11-05T13:00Z",
+   "date": "2026-11-05T14:35Z",
+   "startDate": "2026-11-05T14:35Z",
    "timeValid": true,
    "recent": false,
    "status": {
-    "period": 1,
+    "period": 3,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Thu, November 5th at 8:00 AM EST",
-     "shortDetail": "11/5 - 8:00 AM EST"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Quentin Halys (FRA) & Pierre-Hugues Herbert (FRA) bt (3) Marcel Granollers (ESP) & Horacio Zeballos (ARG) 4-6 6-3 1-0 (10-7)",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,22 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1,
+       "tiebreak": 10,
+       "winner": true
+      }
+     ],
      "roster": {
       "displayName": "Quentin Halys / Pierre-Hugues Herbert",
       "shortDisplayName": "Q. Halys / P. Herbert",
@@ -122,9 +143,25 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "curatedRank": {
       "current": 3
      },
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 0,
+       "tiebreak": 7,
+       "winner": false
+      }
+     ],
      "roster": {
       "displayName": "Marcel Granollers / Horacio Zeballos",
       "shortDisplayName": "M. Granollers / H. Zeballos",
@@ -208,28 +245,28 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Thu, November 5th at 8:00 AM EST",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Quentin Halys / Pierre-Hugues Herbert",
    "alias": "Quentin Halys / Pierre-Hugues Herbert",
    "name": "Quentin Halys / Pierre-Hugues Herbert",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Marcel Granollers / Horacio Zeballos",
    "alias": "Marcel Granollers / Horacio Zeballos",
    "name": "Marcel Granollers / Horacio Zeballos",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-05T10:27:39.398Z",
+ "updated": "2026-11-05T17:46:02.546Z",
  "open_taken_at": "2026-11-02T13:41:28.131Z",
  "thresholds": {
   "big": 10,
@@ -277,11 +314,28 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-04T22:10:39.022Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:2093718:0:2026-11-04T22:10:39.022Z",
+   "key": "2093718:0",
+   "at": "2026-11-05T17:46:02.546Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Granollers / Zeballos win",
+   "market": "Moneyline",
+   "now_odds": "-117",
+   "now_chance": 54,
+   "edge": 5,
+   "text": "Edge gone: Granollers / Zeballos win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-grazeb-halysherber-2026-11-04"
+  }
+ ],
+ "alert_seen": [
+  "gone:2093718:0:2026-11-04T22:10:39.022Z"
+ ],
  "kalshi_checked": null
 }

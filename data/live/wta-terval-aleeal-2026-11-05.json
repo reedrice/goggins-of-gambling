@@ -3,31 +3,31 @@
  "slug": "wta-terval-aleeal-2026-11-05",
  "game": "Tereza Valentova vs. Alexandra Eala",
  "url": "https://polymarket.us/sports/wta/wta-terval-aleeal-2026-11-05",
- "start_time": "2026-11-05T10:30:00Z",
- "status": "pregame",
+ "start_time": "2026-11-05T11:10:00Z",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186630",
-  "fetched_at": "2026-11-05T10:27:39.875Z",
+  "fetched_at": "2026-11-05T17:46:04.943Z",
   "tennis": true,
   "tennis_match": {
    "id": "186630",
    "uid": "s:850~l:900~e:380-2026~c:186630",
-   "date": "2026-11-05T10:30Z",
-   "startDate": "2026-11-05T10:30Z",
+   "date": "2026-11-05T11:10Z",
+   "startDate": "2026-11-05T11:10Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Thu, November 5th at 5:30 AM EST",
-     "shortDetail": "11/5 - 5:30 AM EST"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(2) Alexandra Eala (PHI) bt Tereza Valentova (CZE) 6-4 7-6 (9-7)",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,21 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "curatedRank": {
       "current": 2
      },
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 7,
+       "tiebreak": 9,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "067c21f8-c2a6-3d19-beeb-5cf5874910ec",
       "displayName": "Alexandra Eala",
@@ -90,6 +107,18 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "tiebreak": 7,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "41bd01d1-d5a9-3adb-b6b7-ceec8e439b40",
       "displayName": "Tereza Valentova",
@@ -138,16 +167,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Thu, November 5th at 5:30 AM EST",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Alexandra Eala",
    "alias": "Alexandra Eala",
    "name": "Alexandra Eala",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Tereza Valentova",
@@ -159,7 +188,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-05T10:27:39.744Z",
+ "updated": "2026-11-05T17:46:04.830Z",
  "open_taken_at": "2026-11-04T06:09:24.264Z",
  "thresholds": {
   "big": 10,
@@ -383,11 +412,28 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-04T23:07:37.688Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:2148369:1:2026-11-04T23:07:37.688Z",
+   "key": "2148369:1",
+   "at": "2026-11-05T17:46:04.830Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-133",
+   "now_chance": 57,
+   "edge": 5,
+   "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-terval-aleeal-2026-11-05"
+  }
+ ],
+ "alert_seen": [
+  "gone:2148369:1:2026-11-04T23:07:37.688Z"
+ ],
  "kalshi_checked": null
 }

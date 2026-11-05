@@ -3,31 +3,31 @@
  "slug": "wta-jusmik-tiplem-2026-11-04",
  "game": "Justina Mikulskyte vs. Tiphanie Lemaitre",
  "url": "https://polymarket.us/sports/wta/wta-jusmik-tiplem-2026-11-04",
- "start_time": "2026-11-05T10:30:00Z",
- "status": "pregame",
+ "start_time": "2026-11-05T11:20:00Z",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186677",
-  "fetched_at": "2026-11-05T10:27:40.460Z",
+  "fetched_at": "2026-11-05T17:46:04.148Z",
   "tennis": true,
   "tennis_match": {
    "id": "186677",
    "uid": "s:850~l:900~e:1082-2026~c:186677",
-   "date": "2026-11-05T10:30Z",
-   "startDate": "2026-11-05T10:30Z",
+   "date": "2026-11-05T11:25Z",
+   "startDate": "2026-11-05T11:25Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Thu, November 5th at 5:30 AM EST",
-     "shortDetail": "11/5 - 5:30 AM EST"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(5) Justina Mikulskyte (LTU) bt Tiphanie Lemaitre (FRA) 6-3 7-5",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,17 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 5,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "3630ca38-df7b-35f2-9724-ed46b38a23db",
       "displayName": "Tiphanie Lemaitre",
@@ -87,9 +103,20 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
      "curatedRank": {
       "current": 5
      },
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 7,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "9e1f506b-8807-f7a2-7c99-0abdb6b7e563",
       "displayName": "Justina Mikulskyte",
@@ -138,10 +165,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Thu, November 5th at 5:30 AM EST",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Tiphanie Lemaitre",
@@ -153,13 +180,13 @@
    "abbr": "Justina Mikulskyte",
    "alias": "Justina Mikulskyte",
    "name": "Justina Mikulskyte",
-   "score": 0
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-05T10:27:40.386Z",
+ "updated": "2026-11-05T17:46:04.040Z",
  "open_taken_at": "2026-11-03T16:48:11.915Z",
  "thresholds": {
   "big": 10,
@@ -449,7 +476,7 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-04T17:48:59.308Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -469,11 +496,39 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-05T10:19:52.071Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2132067:0:2026-11-04T17:48:59.308Z",
+   "key": "2132067:0",
+   "at": "2026-11-05T17:46:04.040Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Justina Mikulskyte win",
+   "market": "Moneyline",
+   "now_odds": "+138",
+   "now_chance": 42,
+   "edge": 7,
+   "text": "Edge gone: Justina Mikulskyte win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-jusmik-tiplem-2026-11-04"
+  },
+  {
+   "id": "gone:2132342:1:2026-11-05T10:19:52.071Z",
+   "key": "2132342:1",
+   "at": "2026-11-05T17:46:04.040Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Tiphanie Lemaitre -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+104",
+   "now_chance": 49,
+   "edge": 7,
+   "text": "Edge gone: Tiphanie Lemaitre -1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-jusmik-tiplem-2026-11-04"
+  },
   {
    "id": "new_edge:2132067:0:slight",
    "key": "2132067:0",
@@ -490,7 +545,9 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2132067:0:slight"
+  "new_edge:2132067:0:slight",
+  "gone:2132067:0:2026-11-04T17:48:59.308Z",
+  "gone:2132342:1:2026-11-05T10:19:52.071Z"
  ],
  "kalshi_checked": null
 }

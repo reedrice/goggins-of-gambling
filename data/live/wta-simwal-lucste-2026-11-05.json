@@ -3,31 +3,31 @@
  "slug": "wta-simwal-lucste-2026-11-05",
  "game": "Simona Waltert vs. Lucrezia Stefanini",
  "url": "https://polymarket.us/sports/wta/wta-simwal-lucste-2026-11-05",
- "start_time": "2026-11-05T10:40:00Z",
- "status": "pregame",
+ "start_time": "2026-11-05T11:30:00Z",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186585",
-  "fetched_at": "2026-11-05T10:27:41.349Z",
+  "fetched_at": "2026-11-05T17:46:04.519Z",
   "tennis": true,
   "tennis_match": {
    "id": "186585",
    "uid": "s:850~l:900~e:889-2026~c:186585",
-   "date": "2026-11-05T11:00Z",
-   "startDate": "2026-11-05T11:00Z",
+   "date": "2026-11-05T11:35Z",
+   "startDate": "2026-11-05T11:35Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Thu, November 5th at 6:00 AM EST",
-     "shortDetail": "11/5 - 6:00 AM EST"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(10) Lucrezia Stefanini (ITA) bt Simona Waltert (SUI) 6-2 6-3",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,20 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "curatedRank": {
       "current": 10
      },
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "be01e737-57fa-3db6-a828-8a0a3bbfbb68",
       "displayName": "Lucrezia Stefanini",
@@ -90,6 +106,17 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 2,
+       "winner": false
+      },
+      {
+       "value": 3,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "326bcb83-8418-c4a2-8e55-aedd00a1979a",
       "displayName": "Simona Waltert",
@@ -138,16 +165,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Thu, November 5th at 6:00 AM EST",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Lucrezia Stefanini",
    "alias": "Lucrezia Stefanini",
    "name": "Lucrezia Stefanini",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Simona Waltert",
@@ -159,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-05T10:27:41.217Z",
+ "updated": "2026-11-05T17:46:04.414Z",
  "open_taken_at": "2026-11-04T06:09:28.593Z",
  "thresholds": {
   "big": 10,
@@ -295,11 +322,28 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-04T14:07:41.540Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:2143064:0:2026-11-04T14:07:41.540Z",
+   "key": "2143064:0",
+   "at": "2026-11-05T17:46:04.414Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Simona Waltert win",
+   "market": "Moneyline",
+   "now_odds": "+186",
+   "now_chance": 35,
+   "edge": 5,
+   "text": "Edge gone: Simona Waltert win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-simwal-lucste-2026-11-05"
+  }
+ ],
+ "alert_seen": [
+  "gone:2143064:0:2026-11-04T14:07:41.540Z"
+ ],
  "kalshi_checked": null
 }
