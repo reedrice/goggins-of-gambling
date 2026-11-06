@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186500",
-  "fetched_at": "2026-11-06T11:50:49.553Z",
+  "fetched_at": "2026-11-06T12:06:10.118Z",
   "tennis": true,
   "tennis_match": {
    "id": "186500",
@@ -17,7 +17,7 @@
    "date": "2026-11-06T13:00Z",
    "startDate": "2026-11-06T13:00Z",
    "timeValid": true,
-   "recent": false,
+   "recent": true,
    "status": {
     "period": 1,
     "type": {
@@ -162,7 +162,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-06T11:50:49.368Z",
+ "updated": "2026-11-06T12:06:10.014Z",
  "open_taken_at": "2026-11-05T17:45:58.978Z",
  "thresholds": {
   "big": 10,
@@ -192,28 +192,6 @@
    "taken_at": "2026-11-05T17:45:58.978Z"
   },
   {
-   "market_id": "2200972",
-   "market": "Sets spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Ben Shelton cover 1.5 vs the Tommy Paul in Ben Shelton vs. Tommy Paul?",
-   "sides": [
-    "Ben Shelton +1.50 (Sets)",
-    "Tommy Paul -1.50 (Sets)"
-   ],
-   "teams": [
-    "Ben Shelton",
-    "Tommy Paul"
-   ],
-   "player": null,
-   "mid": 67,
-   "yes_buy": 70,
-   "no_buy": 36,
-   "taken_at": "2026-11-06T11:06:11.246Z"
-  },
-  {
    "market_id": "2200966",
    "market": "Games spread",
    "group": "game",
@@ -234,6 +212,28 @@
    "yes_buy": 54,
    "no_buy": 51,
    "taken_at": "2026-11-05T17:55:03.422Z"
+  },
+  {
+   "market_id": "2200977",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Ben Shelton vs. Tommy Paul be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 45.5,
+   "yes_buy": 46,
+   "no_buy": 55,
+   "taken_at": "2026-11-06T10:57:03.184Z"
   },
   {
    "market_id": "2200986",
@@ -302,26 +302,26 @@
    "taken_at": "2026-11-06T03:57:45.858Z"
   },
   {
-   "market_id": "2200977",
-   "market": "Sets total",
+   "market_id": "2200972",
+   "market": "Sets spread",
    "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_sets",
-   "line": 2.5,
-   "question": "Will the total in Ben Shelton vs. Tommy Paul be more than 2.5?",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Ben Shelton cover 1.5 vs the Tommy Paul in Ben Shelton vs. Tommy Paul?",
    "sides": [
-    "Over 2.5 (Sets)",
-    "Under 2.5 (Sets)"
+    "Ben Shelton +1.50 (Sets)",
+    "Tommy Paul -1.50 (Sets)"
    ],
    "teams": [
-    null,
-    null
+    "Ben Shelton",
+    "Tommy Paul"
    ],
    "player": null,
-   "mid": 45.5,
-   "yes_buy": 46,
-   "no_buy": 55,
-   "taken_at": "2026-11-06T10:57:03.184Z"
+   "mid": 67,
+   "yes_buy": 70,
+   "no_buy": 36,
+   "taken_at": "2026-11-06T11:06:11.246Z"
   },
   {
    "market_id": "2200971",
@@ -364,7 +364,7 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-06T10:57:03.184Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],

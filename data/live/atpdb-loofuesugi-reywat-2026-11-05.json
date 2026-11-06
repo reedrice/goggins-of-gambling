@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-06T11:50:48.953Z"
+  "fetched_at": "2026-11-06T12:06:09.646Z"
  },
- "updated": "2026-11-06T11:50:48.893Z",
+ "updated": "2026-11-06T12:06:09.493Z",
  "open_taken_at": "2026-11-05T17:45:58.221Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-06T11:50:48.893Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2197772:1:2026-11-06T11:50:48.893Z",
+   "key": "2197772:1",
+   "at": "2026-11-06T11:59:05.431Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Reynolds / Watt win",
+   "market": "Moneyline",
+   "now_odds": "-122",
+   "now_chance": 55,
+   "edge": 5,
+   "text": "Edge gone: Reynolds / Watt win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-loofuesugi-reywat-2026-11-05"
+  },
   {
    "id": "new_edge:2197772:1:slight",
    "key": "2197772:1",
@@ -80,7 +94,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2197772:1:slight"
+  "new_edge:2197772:1:slight",
+  "gone:2197772:1:2026-11-06T11:50:48.893Z"
  ],
  "kalshi_checked": null
 }
