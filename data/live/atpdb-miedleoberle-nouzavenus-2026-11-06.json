@@ -3,31 +3,31 @@
  "slug": "atpdb-miedleoberle-nouzavenus-2026-11-06",
  "game": "Miedler / Oberleitner vs. Nouza / Venus",
  "url": "https://polymarket.us/sports/atpdb/atpdb-miedleoberle-nouzavenus-2026-11-06",
- "start_time": "2026-11-06T14:10:00Z",
- "status": "pregame",
+ "start_time": "2026-11-06T14:45:00Z",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186509",
-  "fetched_at": "2026-11-06T13:45:50.977Z",
+  "fetched_at": "2026-11-06T17:50:51.840Z",
   "tennis": true,
   "tennis_match": {
    "id": "186509",
    "uid": "s:850~l:851~e:13-2026~c:186509",
-   "date": "2026-11-06T14:30Z",
-   "startDate": "2026-11-06T14:30Z",
+   "date": "2026-11-06T14:50Z",
+   "startDate": "2026-11-06T14:50Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 3,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Fri, November 6th at 9:30 AM EST",
-     "shortDetail": "11/6 - 9:30 AM EST"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Lucas Miedler (AUT) & Neil Oberleitner (AUT) bt Petr Nouza (CZE) & Michael Venus (NZL) 6-7 (12-14) 6-4 1-0 (10-5)",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,23 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 7,
+       "tiebreak": 14,
+       "winner": true
+      },
+      {
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 0,
+       "tiebreak": 5,
+       "winner": false
+      }
+     ],
      "roster": {
       "displayName": "Petr Nouza / Michael Venus",
       "shortDisplayName": "P. Nouza / M. Venus",
@@ -122,6 +144,23 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 6,
+       "tiebreak": 12,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1,
+       "tiebreak": 10,
+       "winner": true
+      }
+     ],
      "roster": {
       "displayName": "Lucas Miedler / Neil Oberleitner",
       "shortDisplayName": "L. Miedler / N. Oberleitner",
@@ -205,28 +244,28 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Fri, November 6th at 9:30 AM EST",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Petr Nouza / Michael Venus",
    "alias": "Petr Nouza / Michael Venus",
    "name": "Petr Nouza / Michael Venus",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Lucas Miedler / Neil Oberleitner",
    "alias": "Lucas Miedler / Neil Oberleitner",
    "name": "Lucas Miedler / Neil Oberleitner",
-   "score": 0
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-06T13:45:50.885Z",
+ "updated": "2026-11-06T17:50:51.755Z",
  "open_taken_at": "2026-11-05T17:45:58.280Z",
  "thresholds": {
   "big": 10,
@@ -274,11 +313,28 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-06T04:07:40.967Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:2197805:1:2026-11-06T04:07:40.967Z",
+   "key": "2197805:1",
+   "at": "2026-11-06T17:50:51.755Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Nouza P / Venus M win",
+   "market": "Moneyline",
+   "now_odds": "+203",
+   "now_chance": 33,
+   "edge": 6,
+   "text": "Edge gone: Nouza P / Venus M win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-miedleoberle-nouzavenus-2026-11-06"
+  }
+ ],
+ "alert_seen": [
+  "gone:2197805:1:2026-11-06T04:07:40.967Z"
+ ],
  "kalshi_checked": null
 }

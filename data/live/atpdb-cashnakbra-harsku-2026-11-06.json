@@ -4,12 +4,12 @@
  "game": "Cash / Nakashima Bra vs. Harrison / Skupski",
  "url": "https://polymarket.us/sports/atpdb/atpdb-cashnakbra-harsku-2026-11-06",
  "start_time": "2026-11-06T13:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186521",
-  "fetched_at": "2026-11-06T13:45:49.992Z",
+  "fetched_at": "2026-11-06T17:50:51.596Z",
   "tennis": true,
   "tennis_match": {
    "id": "186521",
@@ -17,17 +17,17 @@
    "date": "2026-11-06T13:05Z",
    "startDate": "2026-11-06T13:05Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(2) Christian Harrison (USA) & Neal Skupski (GBR) leads Robert Cash (USA) & Brandon Nakashima (USA) 6-5",
+     "text": "(2) Christian Harrison (USA) & Neal Skupski (GBR) bt Robert Cash (USA) & Brandon Nakashima (USA) 7-6 (7-5) 6-4",
      "type": "event"
     }
    ],
@@ -55,12 +55,19 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "curatedRank": {
       "current": 2
      },
      "linescores": [
       {
-       "value": 6
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
       }
      ],
      "roster": {
@@ -135,9 +142,16 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "tiebreak": 5,
+       "winner": false
+      },
+      {
+       "value": 4,
+       "winner": false
       }
      ],
      "roster": {
@@ -223,16 +237,16 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Christian Harrison / Neal Skupski",
    "alias": "Christian Harrison / Neal Skupski",
    "name": "Christian Harrison / Neal Skupski",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Robert Cash / Brandon Nakashima",
@@ -244,7 +258,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-06T13:45:49.864Z",
+ "updated": "2026-11-06T17:50:51.512Z",
  "open_taken_at": "2026-11-05T06:06:12.313Z",
  "thresholds": {
   "big": 10,

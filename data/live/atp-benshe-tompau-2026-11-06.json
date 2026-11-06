@@ -4,12 +4,12 @@
  "game": "Ben Shelton vs. Tommy Paul",
  "url": "https://polymarket.us/sports/atp/atp-benshe-tompau-2026-11-06",
  "start_time": "2026-11-06T13:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186500",
-  "fetched_at": "2026-11-06T13:45:51.337Z",
+  "fetched_at": "2026-11-06T17:50:51.011Z",
   "tennis": true,
   "tennis_match": {
    "id": "186500",
@@ -17,17 +17,17 @@
    "date": "2026-11-06T13:10Z",
    "startDate": "2026-11-06T13:10Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(3) Ben Shelton (USA) leads (12) Tommy Paul (USA) 5-4",
+     "text": "(3) Ben Shelton (USA) bt (12) Tommy Paul (USA) 6-4 4-6 6-3",
      "type": "event"
     }
    ],
@@ -55,13 +55,22 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "winner": false,
      "curatedRank": {
       "current": 12
      },
      "linescores": [
       {
-       "value": 4
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 3,
+       "winner": false
       }
      ],
      "athlete": {
@@ -101,13 +110,22 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "winner": true,
      "curatedRank": {
       "current": 3
      },
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -142,11 +160,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 13,
    "type": {
     "id": "1",
@@ -163,28 +176,28 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Tommy Paul",
    "alias": "Tommy Paul",
    "name": "Tommy Paul",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Ben Shelton",
    "alias": "Ben Shelton",
    "name": "Ben Shelton",
-   "score": 0
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-06T13:45:51.245Z",
+ "updated": "2026-11-06T17:50:50.875Z",
  "open_taken_at": "2026-11-05T17:45:58.978Z",
  "thresholds": {
   "big": 10,
@@ -518,7 +531,7 @@
    "reason": null,
    "context": "Tommy Paul 4 · Ben Shelton 5 · 1st Set (games by set)",
    "first_seen": "2026-11-06T13:06:50.988Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -538,7 +551,7 @@
    "reason": null,
    "context": "Tommy Paul 4 · Ben Shelton 5 · 1st Set (games by set)",
    "first_seen": "2026-11-06T12:43:35.922Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -558,7 +571,7 @@
    "reason": null,
    "context": "Tommy Paul 4 · Ben Shelton 5 · 1st Set (games by set)",
    "first_seen": "2026-11-06T13:45:51.245Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -763,6 +776,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2200714:1:2026-11-06T13:45:51.245Z",
+   "key": "2200714:1",
+   "at": "2026-11-06T17:50:50.875Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Tommy Paul win",
+   "market": "Moneyline",
+   "now_odds": "+113",
+   "now_chance": 47,
+   "edge": 7,
+   "text": "Edge gone: Tommy Paul win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-benshe-tompau-2026-11-06"
+  },
   {
    "id": "new_edge:2200985:1:big",
    "key": "2200985:1",
@@ -1079,7 +1106,8 @@
   "gone:2200975:1:2026-11-06T13:33:57.308Z",
   "new_edge:2200985:1:big",
   "new_edge:2200965:1:big",
-  "new_edge:2200714:1:slight"
+  "new_edge:2200714:1:slight",
+  "gone:2200714:1:2026-11-06T13:45:51.245Z"
  ],
  "kalshi_checked": null
 }

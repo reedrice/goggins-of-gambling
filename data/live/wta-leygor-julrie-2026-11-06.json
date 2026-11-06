@@ -4,30 +4,30 @@
  "game": "Leyre Romero Gormaz vs. Julia Riera",
  "url": "https://polymarket.us/sports/wta/wta-leygor-julrie-2026-11-06",
  "start_time": "2026-11-06T17:00:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186734",
-  "fetched_at": "2026-11-06T13:45:52.689Z",
+  "fetched_at": "2026-11-06T17:57:39.355Z",
   "tennis": true,
   "tennis_match": {
    "id": "186734",
    "uid": "s:850~l:900~e:1007-2026~c:186734",
-   "date": "2026-11-06T17:00Z",
-   "startDate": "2026-11-06T17:00Z",
+   "date": "2026-11-06T17:10Z",
+   "startDate": "2026-11-06T17:10Z",
    "timeValid": true,
-   "recent": false,
+   "recent": true,
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Fri, November 6th at 12:00 PM EST",
-     "shortDetail": "11/6 - 12:00 PM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Julia Riera (ARG) leads Leyre Romero Gormaz (ESP) 6-3",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,11 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "linescores": [
+      {
+       "value": 6
+      }
+     ],
      "athlete": {
       "guid": "e9d09cae-b708-3f38-8cd7-d721730a0a46",
       "displayName": "Julia Riera",
@@ -87,6 +97,11 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "linescores": [
+      {
+       "value": 3
+      }
+     ],
      "athlete": {
       "guid": "4698cc67-8d6e-3ef4-9d6a-2b152e8f0be0",
       "displayName": "Leyre Romero Gormaz",
@@ -135,10 +150,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Fri, November 6th at 12:00 PM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Julia Riera",
@@ -156,7 +171,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-06T13:45:52.596Z",
+ "updated": "2026-11-06T17:57:39.260Z",
  "open_taken_at": "2026-11-05T22:56:07.911Z",
  "thresholds": {
   "big": 10,
@@ -186,26 +201,114 @@
    "taken_at": "2026-11-06T03:12:54.803Z"
   },
   {
-   "market_id": "2212541",
-   "market": "Set 1 winner",
+   "market_id": "2212527",
+   "market": "Sets spread",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Leyre Romero Gormaz win set 1 against Julia Riera?",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Leyre Romero Gormaz cover 1.5 vs the Julia Riera in Leyre Romero Gormaz vs. Julia Riera?",
    "sides": [
-    "Yes: Leyre Romero Gormaz win set 1 against Julia Riera",
-    "No: Leyre Romero Gormaz win set 1 against Julia Riera"
+    "Leyre Romero Gormaz +1.50 (Sets)",
+    "Julia Riera -1.50 (Sets)"
    ],
    "teams": [
     "Leyre Romero Gormaz",
+    "Julia Riera"
+   ],
+   "player": null,
+   "mid": 40.5,
+   "yes_buy": 41,
+   "no_buy": 60,
+   "taken_at": "2026-11-06T17:57:39.260Z"
+  },
+  {
+   "market_id": "2212535",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Leyre Romero Gormaz vs. Julia Riera be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
     null
    ],
    "player": null,
-   "mid": 55.5,
-   "yes_buy": 57,
-   "no_buy": 46,
-   "taken_at": "2026-11-06T04:53:41.641Z"
+   "mid": 27.5,
+   "yes_buy": 28,
+   "no_buy": 73,
+   "taken_at": "2026-11-06T17:50:47.671Z"
+  },
+  {
+   "market_id": "2212524",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Leyre Romero Gormaz cover -7.5 vs the Julia Riera in Leyre Romero Gormaz vs. Julia Riera?",
+   "sides": [
+    "Leyre Romero Gormaz -7.50 (Games)",
+    "Julia Riera +7.50 (Games)"
+   ],
+   "teams": [
+    "Leyre Romero Gormaz",
+    "Julia Riera"
+   ],
+   "player": null,
+   "mid": 6,
+   "yes_buy": 9,
+   "no_buy": 97,
+   "taken_at": "2026-11-06T17:57:39.260Z"
+  },
+  {
+   "market_id": "2212532",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 17.5,
+   "question": "Will the total in Leyre Romero Gormaz vs. Julia Riera be more than 17.5?",
+   "sides": [
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 82,
+   "yes_buy": 83,
+   "no_buy": 19,
+   "taken_at": "2026-11-06T17:50:47.671Z"
+  },
+  {
+   "market_id": "2212534",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Leyre Romero Gormaz vs. Julia Riera be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 49.5,
+   "yes_buy": 50,
+   "no_buy": 51,
+   "taken_at": "2026-11-06T17:50:47.671Z"
   },
   {
    "market_id": "2212520",
@@ -228,10 +331,149 @@
    "yes_buy": 54,
    "no_buy": 51,
    "taken_at": "2026-11-06T04:45:43.065Z"
+  },
+  {
+   "market_id": "2212536",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Leyre Romero Gormaz vs. Julia Riera be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 32.5,
+   "yes_buy": 33,
+   "no_buy": 68,
+   "taken_at": "2026-11-06T17:50:47.671Z"
+  },
+  {
+   "market_id": "2212526",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Leyre Romero Gormaz cover -1.5 vs the Julia Riera in Leyre Romero Gormaz vs. Julia Riera?",
+   "sides": [
+    "Leyre Romero Gormaz -1.50 (Sets)",
+    "Julia Riera +1.50 (Sets)"
+   ],
+   "teams": [
+    "Leyre Romero Gormaz",
+    "Julia Riera"
+   ],
+   "player": null,
+   "mid": 29,
+   "yes_buy": 31,
+   "no_buy": 73,
+   "taken_at": "2026-11-06T17:50:47.671Z"
+  },
+  {
+   "market_id": "2212541",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Leyre Romero Gormaz win set 1 against Julia Riera?",
+   "sides": [
+    "Yes: Leyre Romero Gormaz win set 1 against Julia Riera",
+    "No: Leyre Romero Gormaz win set 1 against Julia Riera"
+   ],
+   "teams": [
+    "Leyre Romero Gormaz",
+    null
+   ],
+   "player": null,
+   "mid": 55.5,
+   "yes_buy": 57,
+   "no_buy": 46,
+   "taken_at": "2026-11-06T04:53:41.641Z"
   }
  ],
- "edges": [],
- "alerts": [],
- "alert_seen": [],
+ "edges": [
+  {
+   "key": "2209956:0",
+   "market_id": "2209956",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming wta event Leyre Romero Gormaz vs Julia Riera scheduled for November 6, 2026 at 4:00 PM UTC?",
+   "side": "Leyre Romero Gormaz win",
+   "open_chance": 57,
+   "now_chance": 23,
+   "open_odds": "-133",
+   "now_odds": "+335",
+   "edge": 34,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (34 pts), likely news",
+   "context": "Julia Riera 6 · Leyre Romero Gormaz 3 · 1st Set (games by set)",
+   "first_seen": "2026-11-06T17:50:47.671Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2212520:0",
+   "market_id": "2212520",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Leyre Romero Gormaz cover -1.5 vs the Julia Riera in Leyre Romero Gormaz vs. Julia Riera?",
+   "side": "Leyre Romero Gormaz -1.50 (Games)",
+   "open_chance": 54,
+   "now_chance": 41,
+   "open_odds": "-117",
+   "now_odds": "+144",
+   "edge": 13,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Leyre Romero Gormaz not above the games spread right now",
+   "context": "Julia Riera 4 · Leyre Romero Gormaz 3 · 1st Set (games by set)",
+   "first_seen": "2026-11-06T17:50:47.671Z",
+   "status": "gone",
+   "kalshi": null
+  }
+ ],
+ "alerts": [
+  {
+   "id": "news:2209956:0",
+   "key": "2209956:0",
+   "at": "2026-11-06T17:57:39.260Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Leyre Romero Gormaz win",
+   "market": "Moneyline",
+   "now_odds": "+335",
+   "now_chance": 23,
+   "edge": 34,
+   "text": "Big move, likely news: Leyre Romero Gormaz win (Moneyline) is 34 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-leygor-julrie-2026-11-06"
+  },
+  {
+   "id": "new_edge:2209956:0:big",
+   "key": "2209956:0",
+   "at": "2026-11-06T17:50:47.671Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Leyre Romero Gormaz win",
+   "market": "Moneyline",
+   "now_odds": "+113",
+   "now_chance": 47,
+   "edge": 10,
+   "text": "New big edge: Leyre Romero Gormaz win (Moneyline), 10 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-leygor-julrie-2026-11-06"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:2209956:0:big",
+  "news:2209956:0"
+ ],
  "kalshi_checked": null
 }

@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-06T13:45:33.051Z"
+  "fetched_at": "2026-11-06T17:57:23.722Z"
  },
- "updated": "2026-11-06T13:45:32.976Z",
+ "updated": "2026-11-06T17:57:23.649Z",
  "open_taken_at": "2026-11-05T06:05:54.516Z",
  "thresholds": {
   "big": 10,
@@ -19,8 +19,74 @@
  },
  "open": [
   {
-   "market_id": "2209249",
+   "market_id": "2209250",
    "market": "Main total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 154.5,
+   "question": "Will the total in Delaware vs. Wisconsin be more than 154.5?",
+   "sides": [
+    "Over 154.5",
+    "Under 154.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 55,
+   "yes_buy": 56,
+   "no_buy": 46,
+   "taken_at": "2026-11-06T17:50:31.087Z"
+  },
+  {
+   "market_id": "2218457",
+   "market": "Main spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 25.5,
+   "question": "Will Delaware cover +25.5 vs Wisconsin in Delaware vs. Wisconsin?",
+   "sides": [
+    "Fightin' Blue Hens +25.50",
+    "Badgers -25.50"
+   ],
+   "teams": [
+    "Fightin' Blue Hens",
+    "Badgers"
+   ],
+   "player": null,
+   "mid": 52.5,
+   "yes_buy": 54,
+   "no_buy": 49,
+   "taken_at": "2026-11-06T03:27:10.731Z"
+  },
+  {
+   "market_id": "2209251",
+   "market": "Alt total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 150.5,
+   "question": "Will the total in Delaware vs. Wisconsin be more than 150.5?",
+   "sides": [
+    "Over 150.5",
+    "Under 150.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 65,
+   "yes_buy": 66,
+   "no_buy": 36,
+   "taken_at": "2026-11-06T17:50:31.087Z"
+  },
+  {
+   "market_id": "2209249",
+   "market": "Alt total",
    "group": "game",
    "mtype": "total",
    "period": "full_game",
@@ -42,7 +108,7 @@
   },
   {
    "market_id": "2209223",
-   "market": "Main spread",
+   "market": "Alt spread",
    "group": "game",
    "mtype": "spread",
    "period": "full_game",
@@ -83,31 +149,30 @@
    "yes_buy": 56,
    "no_buy": 49,
    "taken_at": "2026-11-06T10:56:45.060Z"
-  },
-  {
-   "market_id": "2218457",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": 25.5,
-   "question": "Will Delaware cover +25.5 vs Wisconsin in Delaware vs. Wisconsin?",
-   "sides": [
-    "Fightin' Blue Hens +25.50",
-    "Badgers -25.50"
-   ],
-   "teams": [
-    "Fightin' Blue Hens",
-    "Badgers"
-   ],
-   "player": null,
-   "mid": 52.5,
-   "yes_buy": 54,
-   "no_buy": 49,
-   "taken_at": "2026-11-06T03:27:10.731Z"
   }
  ],
- "edges": [],
+ "edges": [
+  {
+   "key": "2209249:1",
+   "market_id": "2209249",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in Delaware vs. Wisconsin be more than 152.5?",
+   "side": "Under 152.5",
+   "open_chance": 49,
+   "now_chance": 41,
+   "open_odds": "+104",
+   "now_odds": "+144",
+   "edge": 8,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-06T17:50:31.087Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
  "alerts": [],
  "alert_seen": [],
  "kalshi_checked": null
