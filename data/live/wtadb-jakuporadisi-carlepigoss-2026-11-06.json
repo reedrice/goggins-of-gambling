@@ -4,12 +4,12 @@
  "game": "Jakupovic / Radisic vs. Carle / Pigossi",
  "url": "https://polymarket.us/sports/wtadb/wtadb-jakuporadisi-carlepigoss-2026-11-06",
  "start_time": "2026-11-06T17:50:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186738",
-  "fetched_at": "2026-11-06T18:17:59.411Z",
+  "fetched_at": "2026-11-06T22:27:30.160Z",
   "tennis": true,
   "tennis_match": {
    "id": "186738",
@@ -17,17 +17,17 @@
    "date": "2026-11-06T18:05Z",
    "startDate": "2026-11-06T18:05Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Maria Lourdes Carle (ARG) & Laura Pigossi (BRA) leads (1) Dalila Jakupovic (SLO) & Nika Radisic (SLO) 2-0",
+     "text": "Maria Lourdes Carle (ARG) & Laura Pigossi (BRA) bt (1) Dalila Jakupovic (SLO) & Nika Radisic (SLO) 7-5 6-7 (4-7) 1-0 (10-3)",
      "type": "event"
     }
    ],
@@ -55,10 +55,21 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "winner": true,
      "linescores": [
       {
-       "value": 2
+       "value": 7,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "tiebreak": 4,
+       "winner": false
+      },
+      {
+       "value": 1,
+       "tiebreak": 10,
+       "winner": true
       }
      ],
      "roster": {
@@ -133,13 +144,24 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "winner": false,
      "curatedRank": {
       "current": 1
      },
      "linescores": [
       {
-       "value": 0
+       "value": 5,
+       "winner": false
+      },
+      {
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 0,
+       "tiebreak": 3,
+       "winner": false
       }
      ],
      "roster": {
@@ -209,11 +231,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 1007,
    "type": {
     "id": "4",
@@ -230,28 +247,28 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Maria Lourdes Carle / Laura Pigossi",
    "alias": "Maria Lourdes Carle / Laura Pigossi",
    "name": "Maria Lourdes Carle / Laura Pigossi",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Dalila Jakupovic / Nika Radisic",
    "alias": "Dalila Jakupovic / Nika Radisic",
    "name": "Dalila Jakupovic / Nika Radisic",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-06T18:17:59.349Z",
+ "updated": "2026-11-06T22:27:30.095Z",
  "open_taken_at": "2026-11-06T03:12:55.523Z",
  "thresholds": {
   "big": 10,
@@ -299,11 +316,25 @@
    "reason": null,
    "context": "Maria Lourdes Carle / Laura Pigossi 2 · Dalila Jakupovic / Nika Radisic 0 · 1st Set (games by set)",
    "first_seen": "2026-11-06T18:17:59.349Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2217304:0:2026-11-06T18:17:59.349Z",
+   "key": "2217304:0",
+   "at": "2026-11-06T22:27:30.095Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Jakupovic D / Radisic N win",
+   "market": "Moneyline",
+   "now_odds": "-133",
+   "now_chance": 57,
+   "edge": 8,
+   "text": "Edge gone: Jakupovic D / Radisic N win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-jakuporadisi-carlepigoss-2026-11-06"
+  },
   {
    "id": "new_edge:2217304:0:slight",
    "key": "2217304:0",
@@ -320,7 +351,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2217304:0:slight"
+  "new_edge:2217304:0:slight",
+  "gone:2217304:0:2026-11-06T18:17:59.349Z"
  ],
  "kalshi_checked": null
 }

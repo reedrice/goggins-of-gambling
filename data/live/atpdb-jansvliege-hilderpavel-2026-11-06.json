@@ -4,14 +4,14 @@
  "game": "Jans / Vliegen vs. Hilderbrand / Pavel",
  "url": "https://polymarket.us/sports/atpdb/atpdb-jansvliege-hilderpavel-2026-11-06",
  "start_time": "2026-11-06T18:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-06T18:17:58.741Z"
+  "fetched_at": "2026-11-06T22:27:29.632Z"
  },
- "updated": "2026-11-06T18:17:58.689Z",
+ "updated": "2026-11-06T22:27:29.473Z",
  "open_taken_at": "2026-11-05T22:56:08.015Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-06T18:17:58.689Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2210033:1:2026-11-06T18:17:58.689Z",
+   "key": "2210033:1",
+   "at": "2026-11-06T22:27:29.473Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Hilderbrand T / Pavel B win",
+   "market": "Moneyline",
+   "now_odds": "+376",
+   "now_chance": 21,
+   "edge": 13,
+   "text": "Edge gone: Hilderbrand T / Pavel B win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-jansvliege-hilderpavel-2026-11-06"
+  },
   {
    "id": "new_edge:2210033:1:big",
    "key": "2210033:1",
@@ -80,7 +94,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2210033:1:big"
+  "new_edge:2210033:1:big",
+  "gone:2210033:1:2026-11-06T18:17:58.689Z"
  ],
  "kalshi_checked": null
 }
