@@ -3,13 +3,13 @@
  "slug": "atpdb-heliovpatten-bonrin-2026-11-06",
  "game": "Heliovaara / Patten vs. Bonzi / Rinderknech",
  "url": "https://polymarket.us/sports/atpdb/atpdb-heliovpatten-bonrin-2026-11-06",
- "start_time": "2026-11-06T18:00:00Z",
- "status": "pregame",
+ "start_time": "2026-11-06T18:05:00Z",
+ "status": "live",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186511",
-  "fetched_at": "2026-11-06T17:57:38.697Z",
+  "fetched_at": "2026-11-06T18:17:58.109Z",
   "tennis": true,
   "tennis_match": {
    "id": "186511",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Fri, November 6th at 1:15 PM EST",
-     "shortDetail": "11/6 - 1:15 PM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(1) Harri Heliovaara (FIN) & Henry Patten (GBR) leads Benjamin Bonzi (FRA) & Arthur Rinderknech (FRA) 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,12 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "roster": {
       "displayName": "Benjamin Bonzi / Arthur Rinderknech",
       "shortDisplayName": "B. Bonzi / A. Rinderknech",
@@ -122,9 +133,15 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": true,
      "curatedRank": {
       "current": 1
      },
+     "linescores": [
+      {
+       "value": 0
+      }
+     ],
      "roster": {
       "displayName": "Harri Heliovaara / Henry Patten",
       "shortDisplayName": "H. Heliovaara / H. Patten",
@@ -192,6 +209,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 13,
    "type": {
     "id": "3",
@@ -208,10 +230,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Fri, November 6th at 1:15 PM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Benjamin Bonzi / Arthur Rinderknech",
@@ -229,7 +251,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-06T17:57:38.543Z",
+ "updated": "2026-11-06T18:17:58.037Z",
  "open_taken_at": "2026-11-05T17:45:59.738Z",
  "thresholds": {
   "big": 10,
@@ -275,13 +297,30 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
+   "context": "Benjamin Bonzi / Arthur Rinderknech 0 · Harri Heliovaara / Henry Patten 0 · 1st Set (games by set)",
    "first_seen": "2026-11-06T04:34:03.702Z",
-   "status": "gone",
+   "status": "open",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "new_edge:2203375:0:slight",
+   "key": "2203375:0",
+   "at": "2026-11-06T18:17:58.037Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Heliovaara / Patten win",
+   "market": "Moneyline",
+   "now_odds": "-257",
+   "now_chance": 72,
+   "edge": 4,
+   "text": "New slight edge: Heliovaara / Patten win (Moneyline), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-heliovpatten-bonrin-2026-11-06"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:2203375:0:slight"
+ ],
  "kalshi_checked": null
 }

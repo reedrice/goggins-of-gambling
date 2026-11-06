@@ -4,12 +4,12 @@
  "game": "Luca Van Assche vs. Rinky Hijikata",
  "url": "https://polymarket.us/sports/atp/atp-lucass-rinhij-2026-11-06",
  "start_time": "2026-11-06T15:15:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186501",
-  "fetched_at": "2026-11-06T17:57:38.861Z",
+  "fetched_at": "2026-11-06T18:08:08.430Z",
   "tennis": true,
   "tennis_match": {
    "id": "186501",
@@ -17,17 +17,17 @@
    "date": "2026-11-06T15:20Z",
    "startDate": "2026-11-06T15:20Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "3rd Set",
-     "shortDetail": "3rd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Luca Van Assche (FRA) leads Rinky Hijikata (AUS) 6-4 6-7 (4-7) 5-5",
+     "text": "Luca Van Assche (FRA) bt Rinky Hijikata (AUS) 6-4 6-7 (4-7) 7-5",
      "type": "event"
     }
    ],
@@ -55,6 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
      "linescores": [
       {
        "value": 4,
@@ -66,7 +67,8 @@
        "winner": true
       },
       {
-       "value": 5
+       "value": 5,
+       "winner": false
       }
      ],
      "athlete": {
@@ -106,6 +108,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
      "linescores": [
       {
        "value": 6,
@@ -117,7 +120,8 @@
        "winner": false
       },
       {
-       "value": 5
+       "value": 7,
+       "winner": true
       }
      ],
      "athlete": {
@@ -168,10 +172,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 3,
-  "clock": "3rd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Rinky Hijikata",
@@ -183,13 +187,13 @@
    "abbr": "Luca Van Assche",
    "alias": "Luca Van Assche",
    "name": "Luca Van Assche",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-06T17:57:38.718Z",
+ "updated": "2026-11-06T18:08:08.377Z",
  "open_taken_at": "2026-11-05T17:46:00.210Z",
  "thresholds": {
   "big": 10,
@@ -347,7 +351,7 @@
    "reason": null,
    "context": "Rinky Hijikata 4, 7, 5 · Luca Van Assche 6, 6, 5 · 3rd Set (games by set)",
    "first_seen": "2026-11-06T17:50:47.238Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -392,6 +396,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2205069:1:2026-11-06T17:50:47.238Z",
+   "key": "2205069:1",
+   "at": "2026-11-06T18:08:08.377Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Rinky Hijikata +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+223",
+   "now_chance": 31,
+   "edge": 17,
+   "text": "Edge gone: Rinky Hijikata +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-lucass-rinhij-2026-11-06"
+  },
   {
    "id": "new_edge:2205069:1:big",
    "key": "2205069:1",
@@ -468,7 +486,8 @@
   "new_edge:2205069:1:slight",
   "gone:2205083:1:2026-11-06T05:57:22.628Z",
   "new_edge:2205069:1:big",
-  "gone:2203929:1:2026-11-05T18:41:53.208Z"
+  "gone:2203929:1:2026-11-05T18:41:53.208Z",
+  "gone:2205069:1:2026-11-06T17:50:47.238Z"
  ],
  "kalshi_checked": null
 }
