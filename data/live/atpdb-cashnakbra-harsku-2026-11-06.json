@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186521",
-  "fetched_at": "2026-11-06T13:20:17.926Z",
+  "fetched_at": "2026-11-06T13:33:56.150Z",
   "tennis": true,
   "tennis_match": {
    "id": "186521",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Robert Cash (USA) & Brandon Nakashima (USA) leads (2) Christian Harrison (USA) & Neal Skupski (GBR) 2-2",
+     "text": "(2) Christian Harrison (USA) & Neal Skupski (GBR) leads Robert Cash (USA) & Brandon Nakashima (USA) 4-3",
      "type": "event"
     }
    ],
@@ -55,13 +55,13 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "possession": false,
      "curatedRank": {
       "current": 2
      },
      "linescores": [
       {
-       "value": 2
+       "value": 4
       }
      ],
      "roster": {
@@ -136,10 +136,10 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "possession": true,
      "linescores": [
       {
-       "value": 2
+       "value": 3
       }
      ],
      "roster": {
@@ -251,7 +251,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-06T13:20:17.857Z",
+ "updated": "2026-11-06T13:33:56.042Z",
  "open_taken_at": "2026-11-05T06:06:12.313Z",
  "thresholds": {
   "big": 10,
@@ -299,11 +299,25 @@
    "reason": null,
    "context": "Christian Harrison / Neal Skupski 2 · Robert Cash / Brandon Nakashima 2 · 1st Set (games by set)",
    "first_seen": "2026-11-06T13:20:17.857Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2174983:0:2026-11-06T13:20:17.857Z",
+   "key": "2174983:0",
+   "at": "2026-11-06T13:27:11.345Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Cash R / Nakashima Bra win",
+   "market": "Moneyline",
+   "now_odds": "+270",
+   "now_chance": 27,
+   "edge": 6,
+   "text": "Edge gone: Cash R / Nakashima Bra win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-cashnakbra-harsku-2026-11-06"
+  },
   {
    "id": "new_edge:2174983:0:slight",
    "key": "2174983:0",
@@ -320,7 +334,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2174983:0:slight"
+  "new_edge:2174983:0:slight",
+  "gone:2174983:0:2026-11-06T13:20:17.857Z"
  ],
  "kalshi_checked": null
 }
