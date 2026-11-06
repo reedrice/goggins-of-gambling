@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-06T03:27:17.162Z"
+  "fetched_at": "2026-11-06T03:35:06.853Z"
  },
- "updated": "2026-11-06T03:27:17.103Z",
+ "updated": "2026-11-06T03:35:06.736Z",
  "open_taken_at": "2026-11-05T08:47:32.677Z",
  "thresholds": {
   "big": 10,
@@ -63,6 +63,50 @@
    "taken_at": "2026-11-05T18:50:01.655Z"
   },
   {
+   "market_id": "2194802",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Jan Kumstat win set 2 against Harold Mayot?",
+   "sides": [
+    "Yes: Jan Kumstat win set 2 against Harold Mayot",
+    "No: Jan Kumstat win set 2 against Harold Mayot"
+   ],
+   "teams": [
+    "Jan Kumstat",
+    null
+   ],
+   "player": null,
+   "mid": 42.5,
+   "yes_buy": 44,
+   "no_buy": 59,
+   "taken_at": "2026-11-06T03:35:06.736Z"
+  },
+  {
+   "market_id": "2194801",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Jan Kumstat win set 1 against Harold Mayot?",
+   "sides": [
+    "Yes: Jan Kumstat win set 1 against Harold Mayot",
+    "No: Jan Kumstat win set 1 against Harold Mayot"
+   ],
+   "teams": [
+    "Jan Kumstat",
+    null
+   ],
+   "player": null,
+   "mid": 39.5,
+   "yes_buy": 42,
+   "no_buy": 63,
+   "taken_at": "2026-11-06T03:35:06.736Z"
+  },
+  {
    "market_id": "2194782",
    "market": "Games spread",
    "group": "game",
@@ -85,8 +129,46 @@
    "taken_at": "2026-11-05T19:16:12.483Z"
   }
  ],
- "edges": [],
- "alerts": [],
- "alert_seen": [],
+ "edges": [
+  {
+   "key": "2194782:0",
+   "market_id": "2194782",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Jan Kumstat cover 1.5 vs the Harold Mayot in Jan Kumstat vs. Harold Mayot?",
+   "side": "Jan Kumstat +1.50 (Games)",
+   "open_chance": 48,
+   "now_chance": 40,
+   "open_odds": "+108",
+   "now_odds": "+150",
+   "edge": 8,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-06T03:35:06.736Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
+ "alerts": [
+  {
+   "id": "new_edge:2194782:0:slight",
+   "key": "2194782:0",
+   "at": "2026-11-06T03:35:06.736Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Jan Kumstat +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+150",
+   "now_chance": 40,
+   "edge": 8,
+   "text": "New slight edge: Jan Kumstat +1.50 (Games) (Games spread), 8 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-jankum-harmay-2026-11-05"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:2194782:0:slight"
+ ],
  "kalshi_checked": null
 }
