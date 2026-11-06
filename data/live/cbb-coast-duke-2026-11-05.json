@@ -4,20 +4,42 @@
  "game": "Coastal Carolina vs. Duke",
  "url": "https://polymarket.us/sports/cbb/cbb-coast-duke-2026-11-05",
  "start_time": "2026-11-06T01:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-06T03:19:14.469Z"
+  "fetched_at": "2026-11-06T03:27:08.000Z"
  },
- "updated": "2026-11-06T03:19:14.335Z",
+ "updated": "2026-11-06T03:27:07.951Z",
  "open_taken_at": "2026-11-04T06:09:12.726Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "2179320",
+   "market": "Main spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 62.5,
+   "question": "Will Coastal Carolina cover +62.5 vs Duke in Coastal Carolina vs. Duke?",
+   "sides": [
+    "Chanticleers +62.50",
+    "Blue Devils -62.50"
+   ],
+   "teams": [
+    "Chanticleers",
+    "Blue Devils"
+   ],
+   "player": null,
+   "mid": 96,
+   "yes_buy": 99,
+   "no_buy": 7,
+   "taken_at": "2026-11-05T17:45:40.572Z"
+  },
   {
    "market_id": "2179329",
    "market": "Main total",
@@ -899,28 +921,6 @@
    "taken_at": "2026-11-05T17:45:40.572Z"
   },
   {
-   "market_id": "2179320",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": 62.5,
-   "question": "Will Coastal Carolina cover +62.5 vs Duke in Coastal Carolina vs. Duke?",
-   "sides": [
-    "Chanticleers +62.50",
-    "Blue Devils -62.50"
-   ],
-   "teams": [
-    "Chanticleers",
-    "Blue Devils"
-   ],
-   "player": null,
-   "mid": 96,
-   "yes_buy": 99,
-   "no_buy": 7,
-   "taken_at": "2026-11-05T17:45:40.572Z"
-  },
-  {
    "market_id": "2179348",
    "market": "Alt total",
    "group": "game",
@@ -944,6 +944,26 @@
   }
  ],
  "edges": [
+  {
+   "key": "2179320:0",
+   "market_id": "2179320",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will Coastal Carolina cover +62.5 vs Duke in Coastal Carolina vs. Duke?",
+   "side": "Chanticleers +62.50",
+   "open_chance": 99,
+   "now_chance": 58,
+   "open_odds": "-9900",
+   "now_odds": "-138",
+   "edge": 41,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-06T03:21:32.753Z",
+   "status": "gone",
+   "kalshi": null
+  },
   {
    "key": "2179312:0",
    "market_id": "2179312",
@@ -1107,6 +1127,34 @@
  ],
  "alerts": [
   {
+   "id": "gone:2179320:0:2026-11-06T03:21:32.753Z",
+   "key": "2179320:0",
+   "at": "2026-11-06T03:27:07.951Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Chanticleers +62.50",
+   "market": "Main spread",
+   "now_odds": "-138",
+   "now_chance": 58,
+   "edge": 41,
+   "text": "Edge gone: Chanticleers +62.50 (Main spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-coast-duke-2026-11-05"
+  },
+  {
+   "id": "new_edge:2179320:0:big",
+   "key": "2179320:0",
+   "at": "2026-11-06T03:21:32.753Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Chanticleers +62.50",
+   "market": "Main spread",
+   "now_odds": "-138",
+   "now_chance": 58,
+   "edge": 41,
+   "text": "New big edge: Chanticleers +62.50 (Main spread), 41 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-coast-duke-2026-11-05"
+  },
+  {
    "id": "gone:2179312:0:2026-11-05T22:55:53.331Z",
    "key": "2179312:0",
    "at": "2026-11-06T03:12:41.631Z",
@@ -1182,7 +1230,9 @@
   "gone:2179328:1:2026-11-05T17:45:40.572Z",
   "gone:2179301:0:2026-11-05T09:06:33.059Z",
   "gone:2179755:1:2026-11-05T17:45:40.572Z",
-  "gone:2179311:1:2026-11-05T22:55:53.331Z"
+  "gone:2179311:1:2026-11-05T22:55:53.331Z",
+  "new_edge:2179320:0:big",
+  "gone:2179320:0:2026-11-06T03:21:32.753Z"
  ],
  "kalshi_checked": null
 }
