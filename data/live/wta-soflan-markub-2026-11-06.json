@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186689",
-  "fetched_at": "2026-11-06T11:40:25.754Z",
+  "fetched_at": "2026-11-06T11:50:47.819Z",
   "tennis": true,
   "tennis_match": {
    "id": "186689",
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(3) Martyna Kubka (POL) leads (8) Sofya Lansere (RUS) 4-3",
+     "text": "(8) Sofya Lansere (RUS) leads (3) Martyna Kubka (POL) 5-4",
      "type": "event"
     }
    ],
@@ -55,7 +55,6 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
      "curatedRank": {
       "current": 3
      },
@@ -101,13 +100,12 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
      "curatedRank": {
       "current": 8
      },
      "linescores": [
       {
-       "value": 3
+       "value": 5
       }
      ],
      "athlete": {
@@ -142,11 +140,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 1082,
    "type": {
     "id": "2",
@@ -184,7 +177,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-06T11:40:25.567Z",
+ "updated": "2026-11-06T11:50:47.683Z",
  "open_taken_at": "2026-11-05T06:06:09.606Z",
  "thresholds": {
   "big": 10,
@@ -280,26 +273,26 @@
    "taken_at": "2026-11-05T22:56:03.898Z"
   },
   {
-   "market_id": "2183270",
-   "market": "Sets spread",
+   "market_id": "2183279",
+   "market": "Set 1 winner",
    "group": "game",
-   "mtype": "spread",
-   "period": "tennis_match_sets_spread",
-   "line": 1.5,
-   "question": "Will the Sofya Lansere cover 1.5 vs the Martyna Kubka in Sofya Lansere vs. Martyna Kubka?",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Sofya Lansere win set 1 against Martyna Kubka?",
    "sides": [
-    "Sofya Lansere +1.50 (Sets)",
-    "Martyna Kubka -1.50 (Sets)"
+    "Yes: Sofya Lansere win set 1 against Martyna Kubka",
+    "No: Sofya Lansere win set 1 against Martyna Kubka"
    ],
    "teams": [
     "Sofya Lansere",
-    "Martyna Kubka"
+    null
    ],
    "player": null,
-   "mid": 56.5,
-   "yes_buy": 57,
-   "no_buy": 44,
-   "taken_at": "2026-11-06T10:57:00.978Z"
+   "mid": 38.5,
+   "yes_buy": 41,
+   "no_buy": 64,
+   "taken_at": "2026-11-06T04:53:37.652Z"
   },
   {
    "market_id": "2183272",
@@ -368,28 +361,6 @@
    "taken_at": "2026-11-06T10:57:00.978Z"
   },
   {
-   "market_id": "2183273",
-   "market": "Games total",
-   "group": "game",
-   "mtype": "total",
-   "period": "tennis_match_total_games",
-   "line": 27.5,
-   "question": "Will the total in Sofya Lansere vs. Martyna Kubka be more than 27.5?",
-   "sides": [
-    "Over 27.5 (Games)",
-    "Under 27.5 (Games)"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 27.5,
-   "yes_buy": 28,
-   "no_buy": 73,
-   "taken_at": "2026-11-06T10:57:00.978Z"
-  },
-  {
    "market_id": "2183263",
    "market": "Games spread",
    "group": "game",
@@ -434,6 +405,28 @@
    "taken_at": "2026-11-06T10:57:00.978Z"
   },
   {
+   "market_id": "2183273",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Sofya Lansere vs. Martyna Kubka be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 27.5,
+   "yes_buy": 28,
+   "no_buy": 73,
+   "taken_at": "2026-11-06T10:57:00.978Z"
+  },
+  {
    "market_id": "2183265",
    "market": "Games spread",
    "group": "game",
@@ -453,6 +446,28 @@
    "mid": 26.5,
    "yes_buy": 27,
    "no_buy": 74,
+   "taken_at": "2026-11-06T10:57:00.978Z"
+  },
+  {
+   "market_id": "2183270",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": 1.5,
+   "question": "Will the Sofya Lansere cover 1.5 vs the Martyna Kubka in Sofya Lansere vs. Martyna Kubka?",
+   "sides": [
+    "Sofya Lansere +1.50 (Sets)",
+    "Martyna Kubka -1.50 (Sets)"
+   ],
+   "teams": [
+    "Sofya Lansere",
+    "Martyna Kubka"
+   ],
+   "player": null,
+   "mid": 56.5,
+   "yes_buy": 57,
+   "no_buy": 44,
    "taken_at": "2026-11-06T10:57:00.978Z"
   },
   {
@@ -476,31 +491,29 @@
    "yes_buy": 27,
    "no_buy": 74,
    "taken_at": "2026-11-06T10:57:00.978Z"
-  },
-  {
-   "market_id": "2183279",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Sofya Lansere win set 1 against Martyna Kubka?",
-   "sides": [
-    "Yes: Sofya Lansere win set 1 against Martyna Kubka",
-    "No: Sofya Lansere win set 1 against Martyna Kubka"
-   ],
-   "teams": [
-    "Sofya Lansere",
-    null
-   ],
-   "player": null,
-   "mid": 38.5,
-   "yes_buy": 41,
-   "no_buy": 64,
-   "taken_at": "2026-11-06T04:53:37.652Z"
   }
  ],
  "edges": [
+  {
+   "key": "2183279:1",
+   "market_id": "2183279",
+   "market": "Set 1 winner",
+   "group": "game",
+   "question": "Will Sofya Lansere win set 1 against Martyna Kubka?",
+   "side": "No: Sofya Lansere win set 1 against Martyna Kubka",
+   "open_chance": 64,
+   "now_chance": 19,
+   "open_odds": "-178",
+   "now_odds": "+426",
+   "edge": 45,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (45 pts), likely news",
+   "context": "Martyna Kubka 4 · Sofya Lansere 5 · 1st Set (games by set)",
+   "first_seen": "2026-11-06T11:50:47.683Z",
+   "status": "open",
+   "kalshi": null
+  },
   {
    "key": "2183272:1",
    "market_id": "2183272",
@@ -509,14 +522,14 @@
    "question": "Will the total in Sofya Lansere vs. Martyna Kubka be more than 22.5?",
    "side": "Under 22.5 (Games)",
    "open_chance": 64,
-   "now_chance": 55,
+   "now_chance": 36,
    "open_odds": "-178",
-   "now_odds": "-122",
-   "edge": 9,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Martyna Kubka 4 · Sofya Lansere 3 · 1st Set (games by set)",
+   "now_odds": "+178",
+   "edge": 28,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (28 pts), likely news",
+   "context": "Martyna Kubka 4 · Sofya Lansere 5 · 1st Set (games by set)",
    "first_seen": "2026-11-06T11:21:14.228Z",
    "status": "open",
    "kalshi": null
@@ -529,15 +542,135 @@
    "question": "Who will win in the upcoming wta event Sofya Lansere vs Martyna Kubka scheduled for November 6, 2026 at 10:00 AM UTC?",
    "side": "Martyna Kubka win",
    "open_chance": 69,
-   "now_chance": 62,
+   "now_chance": 42,
    "open_odds": "-223",
-   "now_odds": "-163",
+   "now_odds": "+138",
+   "edge": 27,
+   "tier": "big",
+   "class": "news",
+   "reason": "Big move (27 pts), likely news",
+   "context": "Martyna Kubka 4 · Sofya Lansere 5 · 1st Set (games by set)",
+   "first_seen": "2026-11-05T22:56:03.898Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2183264:1",
+   "market_id": "2183264",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Sofya Lansere cover 1.5 vs the Martyna Kubka in Sofya Lansere vs. Martyna Kubka?",
+   "side": "Martyna Kubka -1.50 (Games)",
+   "open_chance": 66,
+   "now_chance": 42,
+   "open_odds": "-194",
+   "now_odds": "+138",
+   "edge": 24,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Martyna Kubka not above the games spread right now",
+   "context": "Martyna Kubka 4 · Sofya Lansere 5 · 1st Set (games by set)",
+   "first_seen": "2026-11-06T11:03:35.312Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2183266:1",
+   "market_id": "2183266",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Sofya Lansere cover 4.5 vs the Martyna Kubka in Sofya Lansere vs. Martyna Kubka?",
+   "side": "Martyna Kubka -4.50 (Games)",
+   "open_chance": 44,
+   "now_chance": 21,
+   "open_odds": "+127",
+   "now_odds": "+376",
+   "edge": 23,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Martyna Kubka not above the games spread right now",
+   "context": "Martyna Kubka 4 · Sofya Lansere 5 · 1st Set (games by set)",
+   "first_seen": "2026-11-06T11:03:35.312Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2183274:1",
+   "market_id": "2183274",
+   "market": "Sets total",
+   "group": "game",
+   "question": "Will the total in Sofya Lansere vs. Martyna Kubka be more than 2.5?",
+   "side": "Under 2.5 (Sets)",
+   "open_chance": 66,
+   "now_chance": 50,
+   "open_odds": "-194",
+   "now_odds": "+100",
+   "edge": 16,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Martyna Kubka 4 · Sofya Lansere 5 · 1st Set (games by set)",
+   "first_seen": "2026-11-06T11:50:47.683Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2183269:1",
+   "market_id": "2183269",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Sofya Lansere cover -1.5 vs the Martyna Kubka in Sofya Lansere vs. Martyna Kubka?",
+   "side": "Martyna Kubka +1.50 (Sets)",
+   "open_chance": 78,
+   "now_chance": 67,
+   "open_odds": "-355",
+   "now_odds": "-203",
+   "edge": 11,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Martyna Kubka 4 · Sofya Lansere 5 · 1st Set (games by set)",
+   "first_seen": "2026-11-06T11:50:47.683Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2183265:0",
+   "market_id": "2183265",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Sofya Lansere cover -4.5 vs the Martyna Kubka in Sofya Lansere vs. Martyna Kubka?",
+   "side": "Sofya Lansere -4.50 (Games)",
+   "open_chance": 27,
+   "now_chance": 20,
+   "open_odds": "+270",
+   "now_odds": "+400",
    "edge": 7,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Sofya Lansere not above the games spread right now",
+   "context": "Martyna Kubka 4 · Sofya Lansere 5 · 1st Set (games by set)",
+   "first_seen": "2026-11-06T11:50:47.683Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2183263:1",
+   "market_id": "2183263",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Sofya Lansere cover -1.5 vs the Martyna Kubka in Sofya Lansere vs. Martyna Kubka?",
+   "side": "Martyna Kubka +1.50 (Games)",
+   "open_chance": 66,
+   "now_chance": 61,
+   "open_odds": "-194",
+   "now_odds": "-156",
+   "edge": 5,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Martyna Kubka 4 · Sofya Lansere 3 · 1st Set (games by set)",
-   "first_seen": "2026-11-05T22:56:03.898Z",
+   "context": "Martyna Kubka 4 · Sofya Lansere 5 · 1st Set (games by set)",
+   "first_seen": "2026-11-06T11:50:47.683Z",
    "status": "open",
    "kalshi": null
   },
@@ -556,9 +689,9 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Martyna Kubka 4 · Sofya Lansere 3 · 1st Set (games by set)",
+   "context": "Martyna Kubka 4 · Sofya Lansere 4 · 1st Set (games by set)",
    "first_seen": "2026-11-06T11:12:20.777Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -569,75 +702,15 @@
    "question": "Will the Sofya Lansere cover -1.5 vs the Martyna Kubka in Sofya Lansere vs. Martyna Kubka?",
    "side": "Sofya Lansere -1.50 (Games)",
    "open_chance": 35,
-   "now_chance": 30,
+   "now_chance": 31,
    "open_odds": "+186",
-   "now_odds": "+233",
-   "edge": 5,
+   "now_odds": "+223",
+   "edge": 4,
    "tier": "slight",
    "class": "score",
    "reason": "Explained by score: Sofya Lansere not above the games spread right now",
-   "context": "Martyna Kubka 4 · Sofya Lansere 3 · 1st Set (games by set)",
+   "context": "Martyna Kubka 4 · Sofya Lansere 4 · 1st Set (games by set)",
    "first_seen": "2026-11-06T11:06:09.029Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2183266:1",
-   "market_id": "2183266",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Sofya Lansere cover 4.5 vs the Martyna Kubka in Sofya Lansere vs. Martyna Kubka?",
-   "side": "Martyna Kubka -4.50 (Games)",
-   "open_chance": 44,
-   "now_chance": 40,
-   "open_odds": "+127",
-   "now_odds": "+150",
-   "edge": 4,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Martyna Kubka not above the games spread right now",
-   "context": "Martyna Kubka 4 · Sofya Lansere 3 · 1st Set (games by set)",
-   "first_seen": "2026-11-06T11:03:35.312Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2183264:1",
-   "market_id": "2183264",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Sofya Lansere cover 1.5 vs the Martyna Kubka in Sofya Lansere vs. Martyna Kubka?",
-   "side": "Martyna Kubka -1.50 (Games)",
-   "open_chance": 66,
-   "now_chance": 62,
-   "open_odds": "-194",
-   "now_odds": "-163",
-   "edge": 4,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Martyna Kubka not above the games spread right now",
-   "context": "Martyna Kubka 4 · Sofya Lansere 3 · 1st Set (games by set)",
-   "first_seen": "2026-11-06T11:03:35.312Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2183266:0",
-   "market_id": "2183266",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Sofya Lansere cover 4.5 vs the Martyna Kubka in Sofya Lansere vs. Martyna Kubka?",
-   "side": "Sofya Lansere +4.50 (Games)",
-   "open_chance": 61,
-   "now_chance": 56,
-   "open_odds": "-156",
-   "now_odds": "-127",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Martyna Kubka 3 · Sofya Lansere 2 · 1st Set (games by set)",
-   "first_seen": "2026-11-06T10:57:00.978Z",
    "status": "gone",
    "kalshi": null
   },
@@ -684,6 +757,104 @@
  ],
  "alerts": [
   {
+   "id": "news:2183279:1",
+   "key": "2183279:1",
+   "at": "2026-11-06T11:50:47.683Z",
+   "type": "news",
+   "tier": "big",
+   "side": "No: Sofya Lansere win set 1 against Martyna Kubka",
+   "market": "Set 1 winner",
+   "now_odds": "+426",
+   "now_chance": 19,
+   "edge": 45,
+   "text": "Big move, likely news: No: Sofya Lansere win set 1 against Martyna Kubka (Set 1 winner) is 45 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-soflan-markub-2026-11-06"
+  },
+  {
+   "id": "news:2183272:1",
+   "key": "2183272:1",
+   "at": "2026-11-06T11:50:47.683Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+178",
+   "now_chance": 36,
+   "edge": 28,
+   "text": "Big move, likely news: Under 22.5 (Games) (Games total) is 28 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-soflan-markub-2026-11-06"
+  },
+  {
+   "id": "news:2164918:1",
+   "key": "2164918:1",
+   "at": "2026-11-06T11:50:47.683Z",
+   "type": "news",
+   "tier": "big",
+   "side": "Martyna Kubka win",
+   "market": "Moneyline",
+   "now_odds": "+138",
+   "now_chance": 42,
+   "edge": 27,
+   "text": "Big move, likely news: Martyna Kubka win (Moneyline) is 27 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-soflan-markub-2026-11-06"
+  },
+  {
+   "id": "new_edge:2183274:1:big",
+   "key": "2183274:1",
+   "at": "2026-11-06T11:50:47.683Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 2.5 (Sets)",
+   "market": "Sets total",
+   "now_odds": "+100",
+   "now_chance": 50,
+   "edge": 16,
+   "text": "New big edge: Under 2.5 (Sets) (Sets total), 16 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-soflan-markub-2026-11-06"
+  },
+  {
+   "id": "new_edge:2183269:1:big",
+   "key": "2183269:1",
+   "at": "2026-11-06T11:50:47.683Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Martyna Kubka +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "-203",
+   "now_chance": 67,
+   "edge": 11,
+   "text": "New big edge: Martyna Kubka +1.50 (Sets) (Sets spread), 11 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-soflan-markub-2026-11-06"
+  },
+  {
+   "id": "new_edge:2183263:1:slight",
+   "key": "2183263:1",
+   "at": "2026-11-06T11:50:47.683Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Martyna Kubka +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-156",
+   "now_chance": 61,
+   "edge": 5,
+   "text": "New slight edge: Martyna Kubka +1.50 (Games) (Games spread), 5 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-soflan-markub-2026-11-06"
+  },
+  {
+   "id": "new_edge:2183272:1:big",
+   "key": "2183272:1",
+   "at": "2026-11-06T11:44:00.486Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+100",
+   "now_chance": 50,
+   "edge": 14,
+   "text": "New big edge: Under 22.5 (Games) (Games total), 14 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-soflan-markub-2026-11-06"
+  },
+  {
    "id": "new_edge:2183272:1:slight",
    "key": "2183272:1",
    "at": "2026-11-06T11:21:14.228Z",
@@ -712,20 +883,6 @@
    "url": "https://polymarket.us/sports/wta/wta-soflan-markub-2026-11-06"
   },
   {
-   "id": "new_edge:2183266:0:slight",
-   "key": "2183266:0",
-   "at": "2026-11-06T11:14:53.904Z",
-   "type": "new_edge",
-   "tier": "slight",
-   "side": "Sofya Lansere +4.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "-108",
-   "now_chance": 52,
-   "edge": 9,
-   "text": "New slight edge: Sofya Lansere +4.50 (Games) (Games spread), 9 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-soflan-markub-2026-11-06"
-  },
-  {
    "id": "new_edge:2183270:0:slight",
    "key": "2183270:0",
    "at": "2026-11-06T11:14:53.904Z",
@@ -737,20 +894,6 @@
    "now_chance": 53,
    "edge": 4,
    "text": "New slight edge: Sofya Lansere +1.50 (Sets) (Sets spread), 4 points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-soflan-markub-2026-11-06"
-  },
-  {
-   "id": "new_edge:2183266:0:big",
-   "key": "2183266:0",
-   "at": "2026-11-06T11:12:20.777Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Sofya Lansere +4.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+122",
-   "now_chance": 45,
-   "edge": 16,
-   "text": "New big edge: Sofya Lansere +4.50 (Games) (Games spread), 16 points cheaper than open.",
    "url": "https://polymarket.us/sports/wta/wta-soflan-markub-2026-11-06"
   },
   {
@@ -782,20 +925,6 @@
    "url": "https://polymarket.us/sports/wta/wta-soflan-markub-2026-11-06"
   },
   {
-   "id": "gone:2183266:0:2026-11-06T10:57:00.978Z",
-   "key": "2183266:0",
-   "at": "2026-11-06T11:03:35.312Z",
-   "type": "gone",
-   "tier": "big",
-   "side": "Sofya Lansere +4.50 (Games)",
-   "market": "Games spread",
-   "now_odds": "+100",
-   "now_chance": 50,
-   "edge": 11,
-   "text": "Edge gone: Sofya Lansere +4.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/wta/wta-soflan-markub-2026-11-06"
-  },
-  {
    "id": "gone:2164918:1:2026-11-05T22:56:03.898Z",
    "key": "2164918:1",
    "at": "2026-11-06T11:03:35.312Z",
@@ -822,7 +951,14 @@
   "new_edge:2183271:1:big",
   "new_edge:2183272:1:slight",
   "gone:2183270:0:2026-11-06T11:12:20.777Z",
-  "gone:2183271:1:2026-11-06T11:06:09.029Z"
+  "gone:2183271:1:2026-11-06T11:06:09.029Z",
+  "new_edge:2183272:1:big",
+  "news:2183279:1",
+  "news:2183272:1",
+  "news:2164918:1",
+  "new_edge:2183274:1:big",
+  "new_edge:2183269:1:big",
+  "new_edge:2183263:1:slight"
  ],
  "kalshi_checked": null
 }
