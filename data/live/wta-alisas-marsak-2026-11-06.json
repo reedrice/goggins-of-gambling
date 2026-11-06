@@ -4,12 +4,12 @@
  "game": "Aliaksandra Sasnovich vs. Maria Sakkari",
  "url": "https://polymarket.us/sports/wta/wta-alisas-marsak-2026-11-06",
  "start_time": "2026-11-06T10:40:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186635",
-  "fetched_at": "2026-11-06T12:06:08.025Z",
+  "fetched_at": "2026-11-06T12:14:57.822Z",
   "tennis": true,
   "tennis_match": {
    "id": "186635",
@@ -17,17 +17,17 @@
    "date": "2026-11-06T10:40Z",
    "startDate": "2026-11-06T10:40Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(4) Maria Sakkari (GRE) leads Aliaksandra Sasnovich (BLR) 6-2 4-3",
+     "text": "(4) Maria Sakkari (GRE) bt Aliaksandra Sasnovich (BLR) 6-2 6-3",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "winner": true,
      "curatedRank": {
       "current": 4
      },
@@ -65,7 +65,8 @@
        "winner": true
       },
       {
-       "value": 4
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -105,14 +106,15 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "winner": false,
      "linescores": [
       {
        "value": 2,
        "winner": false
       },
       {
-       "value": 3
+       "value": 3,
+       "winner": false
       }
      ],
      "athlete": {
@@ -147,11 +149,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 380,
    "type": {
     "id": "2",
@@ -168,16 +165,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 2,
-  "clock": "2nd Set",
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Maria Sakkari",
    "alias": "Maria Sakkari",
    "name": "Maria Sakkari",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Aliaksandra Sasnovich",
@@ -189,7 +186,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-06T12:06:07.837Z",
+ "updated": "2026-11-06T12:14:57.680Z",
  "open_taken_at": "2026-11-05T06:06:09.321Z",
  "thresholds": {
   "big": 10,
@@ -507,46 +504,6 @@
  ],
  "edges": [
   {
-   "key": "2183200:0",
-   "market_id": "2183200",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Aliaksandra Sasnovich vs. Maria Sakkari be more than 22.5?",
-   "side": "Over 22.5 (Games)",
-   "open_chance": 44,
-   "now_chance": 26,
-   "open_odds": "+127",
-   "now_odds": "+285",
-   "edge": 18,
-   "tier": "big",
-   "class": "edge",
-   "reason": null,
-   "context": "Maria Sakkari 6, 4 · Aliaksandra Sasnovich 2, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-11-06T12:06:07.837Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2183199:0",
-   "market_id": "2183199",
-   "market": "Games total",
-   "group": "game",
-   "question": "Will the total in Aliaksandra Sasnovich vs. Maria Sakkari be more than 17.5?",
-   "side": "Over 17.5 (Games)",
-   "open_chance": 81,
-   "now_chance": 73,
-   "open_odds": "-426",
-   "now_odds": "-270",
-   "edge": 8,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Maria Sakkari 6, 4 · Aliaksandra Sasnovich 2, 3 · 2nd Set (games by set)",
-   "first_seen": "2026-11-06T12:06:07.837Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
    "key": "2183208:0",
    "market_id": "2183208",
    "market": "Set 2 winner",
@@ -563,6 +520,26 @@
    "reason": "Explained by score: Aliaksandra Sasnovich not above the games spread right now",
    "context": "Maria Sakkari 6, 4 · Aliaksandra Sasnovich 2, 2 · 2nd Set (games by set)",
    "first_seen": "2026-11-06T11:03:35.277Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "2183200:0",
+   "market_id": "2183200",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Aliaksandra Sasnovich vs. Maria Sakkari be more than 22.5?",
+   "side": "Over 22.5 (Games)",
+   "open_chance": 44,
+   "now_chance": 26,
+   "open_odds": "+127",
+   "now_odds": "+285",
+   "edge": 18,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "Maria Sakkari 6, 4 · Aliaksandra Sasnovich 2, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-11-06T12:06:07.837Z",
    "status": "gone",
    "kalshi": null
   },
@@ -627,6 +604,26 @@
    "kalshi": null
   },
   {
+   "key": "2183199:0",
+   "market_id": "2183199",
+   "market": "Games total",
+   "group": "game",
+   "question": "Will the total in Aliaksandra Sasnovich vs. Maria Sakkari be more than 17.5?",
+   "side": "Over 17.5 (Games)",
+   "open_chance": 81,
+   "now_chance": 73,
+   "open_odds": "-426",
+   "now_odds": "-270",
+   "edge": 8,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Maria Sakkari 6, 4 · Aliaksandra Sasnovich 2, 3 · 2nd Set (games by set)",
+   "first_seen": "2026-11-06T12:06:07.837Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "2183196:1",
    "market_id": "2183196",
    "market": "Games spread",
@@ -648,6 +645,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2183200:0:2026-11-06T12:06:07.837Z",
+   "key": "2183200:0",
+   "at": "2026-11-06T12:14:57.680Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+285",
+   "now_chance": 26,
+   "edge": 18,
+   "text": "Edge gone: Over 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-alisas-marsak-2026-11-06"
+  },
+  {
+   "id": "gone:2183199:0:2026-11-06T12:06:07.837Z",
+   "key": "2183199:0",
+   "at": "2026-11-06T12:14:57.680Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-270",
+   "now_chance": 73,
+   "edge": 8,
+   "text": "Edge gone: Over 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-alisas-marsak-2026-11-06"
+  },
   {
    "id": "gone:2183196:0:2026-11-06T11:50:47.632Z",
    "key": "2183196:0",
@@ -812,7 +837,9 @@
   "new_edge:2183196:0:big",
   "gone:2183202:0:2026-11-06T11:44:00.433Z",
   "gone:2183201:0:2026-11-06T11:40:25.582Z",
-  "gone:2183196:0:2026-11-06T11:50:47.632Z"
+  "gone:2183196:0:2026-11-06T11:50:47.632Z",
+  "gone:2183200:0:2026-11-06T12:06:07.837Z",
+  "gone:2183199:0:2026-11-06T12:06:07.837Z"
  ],
  "kalshi_checked": null
 }
