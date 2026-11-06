@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186521",
-  "fetched_at": "2026-11-06T13:06:49.905Z",
+  "fetched_at": "2026-11-06T13:20:17.926Z",
   "tennis": true,
   "tennis_match": {
    "id": "186521",
@@ -21,13 +21,13 @@
    "status": {
     "period": 1,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Fri, November 6th at 8:05 AM EST",
-     "shortDetail": "11/6 - 8:05 AM EST"
+     "description": "In Progress",
+     "detail": "1st Set",
+     "shortDetail": "1st"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Robert Cash (USA) & Brandon Nakashima (USA) leads (2) Christian Harrison (USA) & Neal Skupski (GBR) 2-2",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,15 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 2
      },
+     "linescores": [
+      {
+       "value": 2
+      }
+     ],
      "roster": {
       "displayName": "Christian Harrison / Neal Skupski",
       "shortDisplayName": "C. Harrison / N. Skupski",
@@ -125,6 +136,12 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 2
+      }
+     ],
      "roster": {
       "displayName": "Robert Cash / Brandon Nakashima",
       "shortDisplayName": "R. Cash / B. Nakashima",
@@ -192,6 +209,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 13,
    "type": {
     "id": "3",
@@ -208,10 +230,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
   "period": 1,
-  "clock": "Fri, November 6th at 8:05 AM EST",
+  "clock": "1st Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Christian Harrison / Neal Skupski",
@@ -229,7 +251,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-06T13:06:49.796Z",
+ "updated": "2026-11-06T13:20:17.857Z",
  "open_taken_at": "2026-11-05T06:06:12.313Z",
  "thresholds": {
   "big": 10,
@@ -259,8 +281,46 @@
    "taken_at": "2026-11-05T18:01:54.269Z"
   }
  ],
- "edges": [],
- "alerts": [],
- "alert_seen": [],
+ "edges": [
+  {
+   "key": "2174983:0",
+   "market_id": "2174983",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atpdb event Cash / Nakashima Bra vs Harrison / Skupski scheduled for November 6, 2026 at 9:00 AM UTC?",
+   "side": "Cash R / Nakashima Bra win",
+   "open_chance": 33,
+   "now_chance": 27,
+   "open_odds": "+203",
+   "now_odds": "+270",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Christian Harrison / Neal Skupski 2 · Robert Cash / Brandon Nakashima 2 · 1st Set (games by set)",
+   "first_seen": "2026-11-06T13:20:17.857Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
+ "alerts": [
+  {
+   "id": "new_edge:2174983:0:slight",
+   "key": "2174983:0",
+   "at": "2026-11-06T13:20:17.857Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Cash R / Nakashima Bra win",
+   "market": "Moneyline",
+   "now_odds": "+270",
+   "now_chance": 27,
+   "edge": 6,
+   "text": "New slight edge: Cash R / Nakashima Bra win (Moneyline), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-cashnakbra-harsku-2026-11-06"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:2174983:0:slight"
+ ],
  "kalshi_checked": null
 }
