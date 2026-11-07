@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-07T02:30:29.602Z"
+  "fetched_at": "2026-11-07T08:55:55.633Z"
  },
- "updated": "2026-11-07T02:30:29.409Z",
+ "updated": "2026-11-07T08:55:55.472Z",
  "open_taken_at": "2026-11-06T06:05:16.589Z",
  "thresholds": {
   "big": 10,
@@ -85,26 +85,48 @@
    "taken_at": "2026-11-06T22:26:58.106Z"
   },
   {
-   "market_id": "2242875",
+   "market_id": "2242897",
    "market": "Alt spread",
    "group": "game",
    "mtype": "spread",
    "period": "full_game",
-   "line": 1.5,
-   "question": "Will the Wofford cover 1.5 vs the Western Carolina in Wofford vs. Western Carolina?",
+   "line": 20.5,
+   "question": "Will the Wofford cover 20.5 vs the Western Carolina in Wofford vs. Western Carolina?",
    "sides": [
-    "Terriers +1.50",
-    "Catamounts -1.50"
+    "Terriers +20.50",
+    "Catamounts -20.50"
    ],
    "teams": [
     "Terriers",
     "Catamounts"
    ],
    "player": null,
-   "mid": 43.3,
-   "yes_buy": 46,
-   "no_buy": 59.5,
-   "taken_at": "2026-11-06T22:26:58.106Z"
+   "mid": 82.5,
+   "yes_buy": 85,
+   "no_buy": 20,
+   "taken_at": "2026-11-07T08:49:39.653Z"
+  },
+  {
+   "market_id": "2242888",
+   "market": "Alt spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 8.5,
+   "question": "Will the Wofford cover 8.5 vs the Western Carolina in Wofford vs. Western Carolina?",
+   "sides": [
+    "Terriers +8.50",
+    "Catamounts -8.50"
+   ],
+   "teams": [
+    "Terriers",
+    "Catamounts"
+   ],
+   "player": null,
+   "mid": 62.5,
+   "yes_buy": 64,
+   "no_buy": 39,
+   "taken_at": "2026-11-07T08:49:39.653Z"
   },
   {
    "market_id": "2247267",
@@ -129,6 +151,50 @@
    "taken_at": "2026-11-06T22:26:58.106Z"
   },
   {
+   "market_id": "2247273",
+   "market": "Alt total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 56.5,
+   "question": "Will the total in Wofford vs. Western Carolina be more than 56.5?",
+   "sides": [
+    "Over 56.5",
+    "Under 56.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 45,
+   "yes_buy": 48,
+   "no_buy": 58,
+   "taken_at": "2026-11-07T08:49:39.653Z"
+  },
+  {
+   "market_id": "2242875",
+   "market": "Alt spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 1.5,
+   "question": "Will the Wofford cover 1.5 vs the Western Carolina in Wofford vs. Western Carolina?",
+   "sides": [
+    "Terriers +1.50",
+    "Catamounts -1.50"
+   ],
+   "teams": [
+    "Terriers",
+    "Catamounts"
+   ],
+   "player": null,
+   "mid": 43.3,
+   "yes_buy": 46,
+   "no_buy": 59.5,
+   "taken_at": "2026-11-06T22:26:58.106Z"
+  },
+  {
    "market_id": "2247275",
    "market": "Alt total",
    "group": "game",
@@ -149,9 +215,72 @@
    "yes_buy": 40,
    "no_buy": 66,
    "taken_at": "2026-11-06T22:26:58.106Z"
+  },
+  {
+   "market_id": "2242869",
+   "market": "Alt spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": -3.5,
+   "question": "Will the Wofford cover -3.5 vs the Western Carolina in Wofford vs. Western Carolina?",
+   "sides": [
+    "Terriers -3.50",
+    "Catamounts +3.50"
+   ],
+   "teams": [
+    "Terriers",
+    "Catamounts"
+   ],
+   "player": null,
+   "mid": 30,
+   "yes_buy": 32.5,
+   "no_buy": 72.5,
+   "taken_at": "2026-11-07T08:49:39.653Z"
   }
  ],
- "edges": [],
+ "edges": [
+  {
+   "key": "2242875:0",
+   "market_id": "2242875",
+   "market": "Alt spread",
+   "group": "game",
+   "question": "Will the Wofford cover 1.5 vs the Western Carolina in Wofford vs. Western Carolina?",
+   "side": "Terriers +1.50",
+   "open_chance": 46,
+   "now_chance": 42,
+   "open_odds": "+117",
+   "now_odds": "+138",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-07T08:49:39.653Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2247275:1",
+   "market_id": "2247275",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in Wofford vs. Western Carolina be more than 58.5?",
+   "side": "Under 58.5",
+   "open_chance": 66,
+   "now_chance": 62,
+   "open_odds": "-194",
+   "now_odds": "-163",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-07T08:49:39.653Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
  "alerts": [],
  "alert_seen": [],
  "kalshi_checked": null
