@@ -4,12 +4,12 @@
  "game": "Nikoloz Basilashvili vs. Francesco Passaro",
  "url": "https://polymarket.us/sports/atp/atp-nikbas-frapas-2026-11-07",
  "start_time": "2026-11-07T10:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187452",
-  "fetched_at": "2026-11-07T10:00:36.655Z",
+  "fetched_at": "2026-11-07T15:21:47.965Z",
   "tennis": true,
   "tennis_match": {
    "id": "187452",
@@ -17,17 +17,17 @@
    "date": "2026-11-07T10:00Z",
    "startDate": "2026-11-07T10:00Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, November 7th at 5:00 AM EST",
-     "shortDetail": "11/7 - 5:00 AM EST"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Nikoloz Basilashvili (GEO) bt Francesco Passaro (ITA) 6-4 6-3",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,17 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 3,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "b8b54f64-8a98-83e9-e277-6748bfceca6b",
       "displayName": "Francesco Passaro",
@@ -87,6 +103,17 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "5dc21899-ba8c-2090-ba30-c0169a979977",
       "displayName": "Nikoloz Basilashvili",
@@ -135,10 +162,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sat, November 7th at 5:00 AM EST",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Francesco Passaro",
@@ -150,13 +177,13 @@
    "abbr": "Nikoloz Basilashvili",
    "alias": "Nikoloz Basilashvili",
    "name": "Nikoloz Basilashvili",
-   "score": 0
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-07T10:00:36.567Z",
+ "updated": "2026-11-07T15:21:47.864Z",
  "open_taken_at": "2026-11-06T17:50:50.565Z",
  "thresholds": {
   "big": 10,
@@ -270,7 +297,7 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-07T08:50:06.276Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -290,11 +317,39 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-07T08:58:56.241Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2239133:1:2026-11-07T08:50:06.276Z",
+   "key": "2239133:1",
+   "at": "2026-11-07T15:21:47.864Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Francesco Passaro win",
+   "market": "Moneyline",
+   "now_odds": "+213",
+   "now_chance": 32,
+   "edge": 5,
+   "text": "Edge gone: Francesco Passaro win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-nikbas-frapas-2026-11-07"
+  },
+  {
+   "id": "gone:2239966:1:2026-11-07T08:58:56.241Z",
+   "key": "2239966:1",
+   "at": "2026-11-07T15:21:47.864Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "No: Nikoloz Basilashvili win set 1 against Francesco Passaro",
+   "market": "Set 1 winner",
+   "now_odds": "+170",
+   "now_chance": 37,
+   "edge": 5,
+   "text": "Edge gone: No: Nikoloz Basilashvili win set 1 against Francesco Passaro (Set 1 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-nikbas-frapas-2026-11-07"
+  },
   {
    "id": "new_edge:2239133:1:slight",
    "key": "2239133:1",
@@ -326,7 +381,9 @@
  ],
  "alert_seen": [
   "new_edge:2239133:1:slight",
-  "new_edge:2239966:1:slight"
+  "new_edge:2239966:1:slight",
+  "gone:2239133:1:2026-11-07T08:50:06.276Z",
+  "gone:2239966:1:2026-11-07T08:58:56.241Z"
  ],
  "kalshi_checked": null
 }

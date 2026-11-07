@@ -4,14 +4,14 @@
  "game": "Anna Blinkova vs. Yasmine Kabbaj",
  "url": "https://polymarket.us/sports/wta/wta-annbli-yaskab-2026-11-06",
  "start_time": "2026-11-06T15:30:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-07T10:00:40.054Z"
+  "fetched_at": "2026-11-07T15:21:48.844Z"
  },
- "updated": "2026-11-07T10:00:39.973Z",
+ "updated": "2026-11-07T15:21:48.659Z",
  "open_taken_at": "2026-11-05T17:45:57.934Z",
  "thresholds": {
   "big": 10,
@@ -323,11 +323,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-06T17:50:46.806Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2198754:0:2026-11-06T17:50:46.806Z",
+   "key": "2198754:0",
+   "at": "2026-11-07T15:21:48.659Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+113",
+   "now_chance": 47,
+   "edge": 12,
+   "text": "Edge gone: Over 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-annbli-yaskab-2026-11-06"
+  },
   {
    "id": "new_edge:2198754:0:big",
    "key": "2198754:0",
@@ -344,7 +358,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2198754:0:big"
+  "new_edge:2198754:0:big",
+  "gone:2198754:0:2026-11-06T17:50:46.806Z"
  ],
  "kalshi_checked": null
 }

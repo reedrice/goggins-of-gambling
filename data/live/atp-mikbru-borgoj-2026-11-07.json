@@ -4,12 +4,12 @@
  "game": "Mika Brunold vs. Borna Gojo",
  "url": "https://polymarket.us/sports/atp/atp-mikbru-borgoj-2026-11-07",
  "start_time": "2026-11-07T10:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187453",
-  "fetched_at": "2026-11-07T10:00:36.495Z",
+  "fetched_at": "2026-11-07T15:21:47.903Z",
   "tennis": true,
   "tennis_match": {
    "id": "187453",
@@ -17,17 +17,17 @@
    "date": "2026-11-07T10:00Z",
    "startDate": "2026-11-07T10:00Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 3,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, November 7th at 5:00 AM EST",
-     "shortDetail": "11/7 - 5:00 AM EST"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Borna Gojo (CRO) bt Mika Brunold (SUI) 7-5 4-6 7-6 (9-7)",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,22 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 7,
+       "winner": true
+      },
+      {
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 7,
+       "tiebreak": 9,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "9986e727-3bd2-dcee-e95d-6186b7a85dc7",
       "displayName": "Borna Gojo",
@@ -87,6 +108,22 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 5,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "tiebreak": 7,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "3fe2ed2f-33da-3a62-af56-a6570643f2cb",
       "displayName": "Mika Brunold",
@@ -135,28 +172,28 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sat, November 7th at 5:00 AM EST",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Borna Gojo",
    "alias": "Borna Gojo",
    "name": "Borna Gojo",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Mika Brunold",
    "alias": "Mika Brunold",
    "name": "Mika Brunold",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-07T10:00:36.411Z",
+ "updated": "2026-11-07T15:21:47.819Z",
  "open_taken_at": "2026-11-06T17:50:50.558Z",
  "thresholds": {
   "big": 10,
@@ -292,11 +329,25 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-07T09:53:54.670Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2239995:1:2026-11-07T09:53:54.670Z",
+   "key": "2239995:1",
+   "at": "2026-11-07T15:21:47.819Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+100",
+   "now_chance": 50,
+   "edge": 4,
+   "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-mikbru-borgoj-2026-11-07"
+  },
   {
    "id": "new_edge:2239995:1:slight",
    "key": "2239995:1",
@@ -313,7 +364,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2239995:1:slight"
+  "new_edge:2239995:1:slight",
+  "gone:2239995:1:2026-11-07T09:53:54.670Z"
  ],
  "kalshi_checked": null
 }
