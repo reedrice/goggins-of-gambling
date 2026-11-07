@@ -4,14 +4,14 @@
  "game": "Hampton vs. Elon",
  "url": "https://polymarket.us/sports/cfb/cfb-hamp-elon-2026-11-07",
  "start_time": "2026-11-07T19:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-07T19:44:42.279Z"
+  "fetched_at": "2026-11-07T22:56:56.114Z"
  },
- "updated": "2026-11-07T19:44:42.197Z",
+ "updated": "2026-11-07T22:56:55.892Z",
  "open_taken_at": "2026-11-06T06:05:18.597Z",
  "thresholds": {
   "big": 10,
@@ -477,11 +477,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-07T19:44:42.197Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:1764094:1:2026-11-07T19:44:42.197Z",
+   "key": "1764094:1",
+   "at": "2026-11-07T22:56:55.892Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Phoenix win",
+   "market": "Moneyline",
+   "now_odds": "-441",
+   "now_chance": 81.5,
+   "edge": 10,
+   "text": "Edge gone: Phoenix win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-hamp-elon-2026-11-07"
+  },
   {
    "id": "new_edge:1764094:1:big",
    "key": "1764094:1",
@@ -498,7 +512,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:1764094:1:big"
+  "new_edge:1764094:1:big",
+  "gone:1764094:1:2026-11-07T19:44:42.197Z"
  ],
  "kalshi_checked": null
 }

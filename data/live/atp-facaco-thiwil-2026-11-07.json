@@ -4,14 +4,14 @@
  "game": "Facundo Diaz Acosta vs. Thiago Seyboth Wild",
  "url": "https://polymarket.us/sports/atp/atp-facaco-thiwil-2026-11-07",
  "start_time": "2026-11-07T19:40:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-07T19:45:06.912Z"
+  "fetched_at": "2026-11-07T22:56:53.505Z"
  },
- "updated": "2026-11-07T19:45:06.813Z",
+ "updated": "2026-11-07T22:56:53.328Z",
  "open_taken_at": "2026-11-07T02:13:21.638Z",
  "thresholds": {
   "big": 10,
@@ -257,11 +257,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-07T19:36:11.244Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2253168:0:2026-11-07T19:36:11.244Z",
+   "key": "2253168:0",
+   "at": "2026-11-07T22:56:53.328Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Facundo Acosta +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+117",
+   "now_chance": 46,
+   "edge": 5,
+   "text": "Edge gone: Facundo Acosta +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-facaco-thiwil-2026-11-07"
+  },
   {
    "id": "new_edge:2253168:0:slight",
    "key": "2253168:0",
@@ -278,7 +292,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2253168:0:slight"
+  "new_edge:2253168:0:slight",
+  "gone:2253168:0:2026-11-07T19:36:11.244Z"
  ],
  "kalshi_checked": null
 }

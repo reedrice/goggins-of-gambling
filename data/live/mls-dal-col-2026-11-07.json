@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for mls",
-  "fetched_at": "2026-11-07T19:45:03.278Z"
+  "fetched_at": "2026-11-07T23:07:10.015Z"
  },
- "updated": "2026-11-07T19:45:03.273Z",
+ "updated": "2026-11-07T23:07:10.012Z",
  "open_taken_at": "2026-11-06T06:05:40.901Z",
  "thresholds": {
   "big": 10,
@@ -393,25 +393,25 @@
    "taken_at": "2026-11-07T02:13:16.468Z"
   },
   {
-   "market_id": "2253476",
+   "market_id": "2253475",
    "market": "1st half spread",
    "group": "game",
    "mtype": "spread",
    "period": "first_half",
-   "line": 1.5,
-   "question": "Will the FC Dallas cover 1.5 vs the Colorado Rapids SC in DAL vs COL?",
+   "line": -1.5,
+   "question": "Will the FC Dallas cover -1.5 vs the Colorado Rapids SC in DAL vs COL?",
    "sides": [
-    "Hoops +1.50 (1st half)",
-    "Rapids -1.50 (1st half)"
+    "Hoops -1.50 (1st half)",
+    "Rapids +1.50 (1st half)"
    ],
    "teams": [
     "Hoops",
     "Rapids"
    ],
    "player": null,
-   "mid": 94,
-   "yes_buy": 97,
-   "no_buy": 9,
+   "mid": 10,
+   "yes_buy": 13,
+   "no_buy": 93,
    "taken_at": "2026-11-07T02:13:16.468Z"
   },
   {
@@ -437,25 +437,47 @@
    "taken_at": "2026-11-07T02:13:16.468Z"
   },
   {
-   "market_id": "2253475",
+   "market_id": "2253506",
+   "market": "1st half total",
+   "group": "game",
+   "mtype": "total",
+   "period": "first_half",
+   "line": 3.5,
+   "question": "Will the total in DAL vs COL be more than 3.5?",
+   "sides": [
+    "Over 3.5 (1st half)",
+    "Under 3.5 (1st half)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 4,
+   "yes_buy": 5,
+   "no_buy": 97,
+   "taken_at": "2026-11-07T22:56:38.272Z"
+  },
+  {
+   "market_id": "2253476",
    "market": "1st half spread",
    "group": "game",
    "mtype": "spread",
    "period": "first_half",
-   "line": -1.5,
-   "question": "Will the FC Dallas cover -1.5 vs the Colorado Rapids SC in DAL vs COL?",
+   "line": 1.5,
+   "question": "Will the FC Dallas cover 1.5 vs the Colorado Rapids SC in DAL vs COL?",
    "sides": [
-    "Hoops -1.50 (1st half)",
-    "Rapids +1.50 (1st half)"
+    "Hoops +1.50 (1st half)",
+    "Rapids -1.50 (1st half)"
    ],
    "teams": [
     "Hoops",
     "Rapids"
    ],
    "player": null,
-   "mid": 10,
-   "yes_buy": 13,
-   "no_buy": 93,
+   "mid": 94,
+   "yes_buy": 97,
+   "no_buy": 9,
    "taken_at": "2026-11-07T02:13:16.468Z"
   },
   {
@@ -483,6 +505,46 @@
  ],
  "edges": [
   {
+   "key": "2147646:0",
+   "market_id": "2147646",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Will Colorado Rapids SC win against FC Dallas in the MLS match scheduled for Nov 7, 2026?",
+   "side": "Yes: Colorado Rapids SC win against FC Dallas in the MLS match scheduled for Nov 7, 2026",
+   "open_chance": 29,
+   "now_chance": 25,
+   "open_odds": "+245",
+   "now_odds": "+300",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-07T23:07:10.012Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2253244:1",
+   "market_id": "2253244",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will the FC Dallas cover -1.5 vs the Colorado Rapids SC in DAL vs COL?",
+   "side": "Rapids +1.50",
+   "open_chance": 78,
+   "now_chance": 74,
+   "open_odds": "-355",
+   "now_odds": "-285",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-07T22:56:38.272Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2253453:1",
    "market_id": "2253453",
    "market": "1st half winner",
@@ -499,7 +561,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-07T19:36:07.122Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
