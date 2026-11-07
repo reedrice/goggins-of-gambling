@@ -3,13 +3,13 @@
  "slug": "atp-adrman-jansim-2026-11-07",
  "game": "Adrian Mannarino vs. Jan Simonsson",
  "url": "https://polymarket.us/sports/atp/atp-adrman-jansim-2026-11-07",
- "start_time": "2026-11-07T15:30:00Z",
- "status": "pregame",
+ "start_time": "2026-11-07T15:25:00Z",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187450",
-  "fetched_at": "2026-11-07T15:28:45.867Z",
+  "fetched_at": "2026-11-07T19:36:23.736Z",
   "tennis": true,
   "tennis_match": {
    "id": "187450",
@@ -17,17 +17,17 @@
    "date": "2026-11-07T14:30Z",
    "startDate": "2026-11-07T14:30Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, November 7th at 9:30 AM EST",
-     "shortDetail": "11/7 - 9:30 AM EST"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Adrian Mannarino (FRA) bt Jan Simonsson (SWE) 6-4 6-1",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,17 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 1,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "df1f5783-1d23-32ba-92df-70fb93d65a70",
       "displayName": "Jan Simonsson",
@@ -87,6 +103,17 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "dbc865c9-ab39-49ff-dbb3-895a876665d3",
       "displayName": "Adrian Mannarino",
@@ -135,10 +162,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sat, November 7th at 9:30 AM EST",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Jan Simonsson",
@@ -150,13 +177,13 @@
    "abbr": "Adrian Mannarino",
    "alias": "Adrian Mannarino",
    "name": "Adrian Mannarino",
-   "score": 0
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-07T15:28:45.774Z",
+ "updated": "2026-11-07T19:36:23.621Z",
  "open_taken_at": "2026-11-06T22:27:27.951Z",
  "thresholds": {
   "big": 10,
@@ -512,7 +539,7 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-07T15:21:38.749Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -532,11 +559,43 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-07T08:50:06.952Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:2248190:0:2026-11-07T15:21:38.749Z",
+   "key": "2248190:0",
+   "at": "2026-11-07T19:36:23.621Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Adrian Mannarino -7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+122",
+   "now_chance": 45,
+   "edge": 7,
+   "text": "Edge gone: Adrian Mannarino -7.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-adrman-jansim-2026-11-07"
+  },
+  {
+   "id": "gone:2248195:1:2026-11-07T08:50:06.952Z",
+   "key": "2248195:1",
+   "at": "2026-11-07T19:36:23.621Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-163",
+   "now_chance": 62,
+   "edge": 5,
+   "text": "Edge gone: Under 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-adrman-jansim-2026-11-07"
+  }
+ ],
+ "alert_seen": [
+  "gone:2248190:0:2026-11-07T15:21:38.749Z",
+  "gone:2248195:1:2026-11-07T08:50:06.952Z"
+ ],
  "kalshi_checked": null
 }

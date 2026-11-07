@@ -4,12 +4,12 @@
  "game": "Viktor Durasovic vs. Aleksandr Shevchenko",
  "url": "https://polymarket.us/sports/atp/atp-vikdur-aleshe-2026-11-07",
  "start_time": "2026-11-07T14:40:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187449",
-  "fetched_at": "2026-11-07T15:28:45.216Z",
+  "fetched_at": "2026-11-07T19:36:24.378Z",
   "tennis": true,
   "tennis_match": {
    "id": "187449",
@@ -17,17 +17,17 @@
    "date": "2026-11-07T13:00Z",
    "startDate": "2026-11-07T13:00Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, November 7th at 8:00 AM EST",
-     "shortDetail": "11/7 - 8:00 AM EST"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Aleksandr Shevchenko (KAZ) bt Viktor Durasovic (NOR) 6-1 6-1",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,17 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "de169e60-0a75-3e19-944b-9b685744b9ce",
       "displayName": "Aleksandr Shevchenko",
@@ -87,6 +103,17 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 1,
+       "winner": false
+      },
+      {
+       "value": 1,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "73b4b697-4e85-5d7b-6d5c-d4ebfd2b02a6",
       "displayName": "Viktor Durasovic",
@@ -135,16 +162,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sat, November 7th at 8:00 AM EST",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Aleksandr Shevchenko",
    "alias": "Aleksandr Shevchenko",
    "name": "Aleksandr Shevchenko",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Viktor Durasovic",
@@ -156,7 +183,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-07T15:28:45.109Z",
+ "updated": "2026-11-07T19:36:24.318Z",
  "open_taken_at": "2026-11-06T17:50:50.187Z",
  "thresholds": {
   "big": 10,

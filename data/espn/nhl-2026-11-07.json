@@ -3,52 +3,66 @@
   "league": "nhl",
   "query_date": "2026-11-07",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261107&limit=1000",
-  "fetched_at": "2026-11-07T15:28:05.208Z",
+  "fetched_at": "2026-11-07T19:44:21.840Z",
   "events": [
     {
       "id": "401892662",
       "name": "Florida Panthers at Washington Capitals",
       "date": "2026-11-07T17:30Z",
       "status": {
-        "clock": 0,
-        "displayClock": "0:00",
-        "period": 0,
+        "clock": 725,
+        "displayClock": "12:05",
+        "period": 3,
         "type": {
-          "id": "1",
-          "name": "STATUS_SCHEDULED",
-          "state": "pre",
+          "id": "2",
+          "name": "STATUS_IN_PROGRESS",
+          "state": "in",
           "completed": false,
-          "description": "Scheduled",
-          "detail": "Sat, November 7th at 12:30 PM EST",
-          "shortDetail": "11/7 - 12:30 PM EST"
+          "description": "In Progress",
+          "detail": "12:05 - 3rd Period",
+          "shortDetail": "12:05 - 3rd"
         }
-      },
-      "boxscore": {
-        "players": []
       },
       "competitions": [
         {
           "id": "401892662",
           "date": "2026-11-07T17:30Z",
           "status": {
-            "clock": 0,
-            "displayClock": "0:00",
-            "period": 0,
+            "clock": 725,
+            "displayClock": "12:05",
+            "period": 3,
             "type": {
-              "id": "1",
-              "name": "STATUS_SCHEDULED",
-              "state": "pre",
+              "id": "2",
+              "name": "STATUS_IN_PROGRESS",
+              "state": "in",
               "completed": false,
-              "description": "Scheduled",
-              "detail": "Sat, November 7th at 12:30 PM EST",
-              "shortDetail": "11/7 - 12:30 PM EST"
+              "description": "In Progress",
+              "detail": "12:05 - 3rd Period",
+              "shortDetail": "12:05 - 3rd"
             }
           },
           "competitors": [
             {
               "id": "23",
               "homeAway": "home",
-              "score": "0",
+              "score": "4",
+              "linescores": [
+                {
+                  "value": 1,
+                  "displayValue": "1",
+                  "period": 1
+                },
+                {
+                  "value": 2,
+                  "displayValue": "2",
+                  "period": 2
+                },
+                {
+                  "value": 1,
+                  "displayValue": "1",
+                  "period": 3
+                }
+              ],
               "team": {
                 "id": "23",
                 "abbreviation": "WSH",
@@ -61,7 +75,24 @@
             {
               "id": "26",
               "homeAway": "away",
-              "score": "0",
+              "score": "2",
+              "linescores": [
+                {
+                  "value": 2,
+                  "displayValue": "2",
+                  "period": 1
+                },
+                {
+                  "value": 0,
+                  "displayValue": "0",
+                  "period": 2
+                },
+                {
+                  "value": 0,
+                  "displayValue": "0",
+                  "period": 3
+                }
+              ],
               "team": {
                 "id": "26",
                 "abbreviation": "FLA",
@@ -75,44 +106,7 @@
         }
       ],
       "player_usage": [],
-      "injuries": [
-        {
-          "team": "WSH",
-          "player": "Vincent Desharnais",
-          "position": "D",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "WSH",
-          "player": "Rasmus Sandin",
-          "position": "D",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "WSH",
-          "player": "Patrick Thomas",
-          "position": "C",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "FLA",
-          "player": "Brad Marchand",
-          "position": "LW",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "FLA",
-          "player": "Aleksander Barkov",
-          "position": "C",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "FLA",
-          "player": "Jonah Gadjovich",
-          "position": "LW",
-          "status": "Injured Reserve"
-        }
-      ],
+      "injuries": [],
       "starters": [],
       "starting_goalies": [],
       "probables": [
@@ -124,33 +118,26 @@
           "confirmed": false
         },
         {
-          "player": "Jacob Markstrom",
+          "player": "Akira Schmid",
           "position": "probableStartingGoalie",
           "team": "FLA",
           "status": "probable",
           "confirmed": false
         }
       ],
-      "book_lines": [
-        {
-          "provider": "DraftKings",
-          "details": "WSH -122",
-          "spread": -1.5,
-          "total": 6.5
-        }
-      ],
+      "book_lines": [],
       "coverage": {
-        "injuries": "published_report",
+        "injuries": "unavailable",
         "starters": "unverified",
         "goalies": "unverified",
         "hockey_lines": "unavailable",
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261107&limit=1000",
-      "fetched_at": "2026-11-07T15:28:05.208Z",
-      "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/summary?event=401892662",
-      "details_checked_at": "2026-11-07T15:28:05.208Z",
-      "details_available": true
+      "fetched_at": "2026-11-07T19:44:21.840Z",
+      "details_source_url": null,
+      "details_checked_at": null,
+      "details_available": false
     },
     {
       "id": "401892663",
@@ -159,19 +146,16 @@
       "status": {
         "clock": 0,
         "displayClock": "0:00",
-        "period": 0,
+        "period": 2,
         "type": {
-          "id": "1",
-          "name": "STATUS_SCHEDULED",
-          "state": "pre",
+          "id": "22",
+          "name": "STATUS_END_PERIOD",
+          "state": "in",
           "completed": false,
-          "description": "Scheduled",
-          "detail": "Sat, November 7th at 1:00 PM EST",
-          "shortDetail": "11/7 - 1:00 PM EST"
+          "description": "End of Period",
+          "detail": "End of 2nd Period",
+          "shortDetail": "End of 2nd"
         }
-      },
-      "boxscore": {
-        "players": []
       },
       "competitions": [
         {
@@ -180,22 +164,34 @@
           "status": {
             "clock": 0,
             "displayClock": "0:00",
-            "period": 0,
+            "period": 2,
             "type": {
-              "id": "1",
-              "name": "STATUS_SCHEDULED",
-              "state": "pre",
+              "id": "22",
+              "name": "STATUS_END_PERIOD",
+              "state": "in",
               "completed": false,
-              "description": "Scheduled",
-              "detail": "Sat, November 7th at 1:00 PM EST",
-              "shortDetail": "11/7 - 1:00 PM EST"
+              "description": "End of Period",
+              "detail": "End of 2nd Period",
+              "shortDetail": "End of 2nd"
             }
           },
           "competitors": [
             {
               "id": "27",
               "homeAway": "home",
-              "score": "0",
+              "score": "2",
+              "linescores": [
+                {
+                  "value": 1,
+                  "displayValue": "1",
+                  "period": 1
+                },
+                {
+                  "value": 1,
+                  "displayValue": "1",
+                  "period": 2
+                }
+              ],
               "team": {
                 "id": "27",
                 "abbreviation": "NSH",
@@ -208,7 +204,19 @@
             {
               "id": "19",
               "homeAway": "away",
-              "score": "0",
+              "score": "1",
+              "linescores": [
+                {
+                  "value": 1,
+                  "displayValue": "1",
+                  "period": 1
+                },
+                {
+                  "value": 0,
+                  "displayValue": "0",
+                  "period": 2
+                }
+              ],
               "team": {
                 "id": "19",
                 "abbreviation": "STL",
@@ -222,38 +230,7 @@
         }
       ],
       "player_usage": [],
-      "injuries": [
-        {
-          "team": "NSH",
-          "player": "Jonathan Marchessault",
-          "position": "RW",
-          "status": "Day-To-Day"
-        },
-        {
-          "team": "STL",
-          "player": "Logan Mailloux",
-          "position": "D",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "STL",
-          "player": "Torey Krug",
-          "position": "D",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "STL",
-          "player": "Dillon Dube",
-          "position": "C",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "STL",
-          "player": "Tyler Tucker",
-          "position": "D",
-          "status": "Injured Reserve"
-        }
-      ],
+      "injuries": [],
       "starters": [],
       "starting_goalies": [],
       "probables": [
@@ -272,26 +249,19 @@
           "confirmed": false
         }
       ],
-      "book_lines": [
-        {
-          "provider": "DraftKings",
-          "details": "STL -110",
-          "spread": 1.5,
-          "total": 5.5
-        }
-      ],
+      "book_lines": [],
       "coverage": {
-        "injuries": "published_report",
+        "injuries": "unavailable",
         "starters": "unverified",
         "goalies": "unverified",
         "hockey_lines": "unavailable",
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261107&limit=1000",
-      "fetched_at": "2026-11-07T15:28:05.208Z",
-      "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/summary?event=401892663",
-      "details_checked_at": "2026-11-07T15:28:05.208Z",
-      "details_available": true
+      "fetched_at": "2026-11-07T19:44:21.840Z",
+      "details_source_url": null,
+      "details_checked_at": null,
+      "details_available": false
     },
     {
       "id": "401892664",
@@ -310,9 +280,6 @@
           "detail": "Sat, November 7th at 5:00 PM EST",
           "shortDetail": "11/7 - 5:00 PM EST"
         }
-      },
-      "boxscore": {
-        "players": []
       },
       "competitions": [
         {
@@ -363,68 +330,7 @@
         }
       ],
       "player_usage": [],
-      "injuries": [
-        {
-          "team": "SEA",
-          "player": "Curtis Douglas",
-          "position": "C",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "SEA",
-          "player": "Jared McCann",
-          "position": "LW",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "SEA",
-          "player": "Jacob Melanson",
-          "position": "RW",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "SEA",
-          "player": "Ryan Lindgren",
-          "position": "D",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "SEA",
-          "player": "Jake O'Brien",
-          "position": "C",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "NYR",
-          "player": "Sean Durzi",
-          "position": "D",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "NYR",
-          "player": "Igor Shesterkin",
-          "position": "G",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "NYR",
-          "player": "Joe Veleno",
-          "position": "C",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "NYR",
-          "player": "Aidan Thompson",
-          "position": "C",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "NYR",
-          "player": "Adam Sykora",
-          "position": "LW",
-          "status": "Injured Reserve"
-        }
-      ],
+      "injuries": [],
       "starters": [],
       "starting_goalies": [],
       "probables": [
@@ -445,24 +351,24 @@
       ],
       "book_lines": [
         {
-          "provider": "DraftKings",
+          "provider": "Draft Kings",
           "details": "NYR -135",
           "spread": 1.5,
           "total": 6.5
         }
       ],
       "coverage": {
-        "injuries": "published_report",
+        "injuries": "unavailable",
         "starters": "unverified",
         "goalies": "unverified",
         "hockey_lines": "unavailable",
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261107&limit=1000",
-      "fetched_at": "2026-11-07T15:28:05.208Z",
-      "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/summary?event=401892664",
-      "details_checked_at": "2026-11-07T15:28:05.208Z",
-      "details_available": true
+      "fetched_at": "2026-11-07T19:44:21.840Z",
+      "details_source_url": null,
+      "details_checked_at": null,
+      "details_available": false
     },
     {
       "id": "401892665",
@@ -552,7 +458,7 @@
       ],
       "book_lines": [
         {
-          "provider": "DraftKings",
+          "provider": "Draft Kings",
           "details": "MTL -122",
           "spread": 1.5,
           "total": 6.5
@@ -566,7 +472,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261107&limit=1000",
-      "fetched_at": "2026-11-07T15:28:05.208Z",
+      "fetched_at": "2026-11-07T19:44:21.840Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -659,8 +565,8 @@
       ],
       "book_lines": [
         {
-          "provider": "DraftKings",
-          "details": "UTAH -115",
+          "provider": "Draft Kings",
+          "details": "UTAH -120",
           "spread": 1.5,
           "total": 6.5
         }
@@ -673,7 +579,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261107&limit=1000",
-      "fetched_at": "2026-11-07T15:28:05.208Z",
+      "fetched_at": "2026-11-07T19:44:21.840Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -757,7 +663,7 @@
           "confirmed": false
         },
         {
-          "player": "Connor Hellebuyck",
+          "player": "Jake Allen",
           "position": "probableStartingGoalie",
           "team": "NJ",
           "status": "probable",
@@ -766,8 +672,8 @@
       ],
       "book_lines": [
         {
-          "provider": "DraftKings",
-          "details": "NJ -155",
+          "provider": "Draft Kings",
+          "details": "NJ -148",
           "spread": 1.5,
           "total": 5.5
         }
@@ -780,7 +686,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261107&limit=1000",
-      "fetched_at": "2026-11-07T15:28:05.208Z",
+      "fetched_at": "2026-11-07T19:44:21.840Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -873,7 +779,7 @@
       ],
       "book_lines": [
         {
-          "provider": "DraftKings",
+          "provider": "Draft Kings",
           "details": "CAR -440",
           "spread": -1.5,
           "total": 6.5
@@ -887,7 +793,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261107&limit=1000",
-      "fetched_at": "2026-11-07T15:28:05.208Z",
+      "fetched_at": "2026-11-07T19:44:21.840Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -980,7 +886,7 @@
       ],
       "book_lines": [
         {
-          "provider": "DraftKings",
+          "provider": "Draft Kings",
           "details": "DAL -305",
           "spread": -1.5,
           "total": 6.5
@@ -994,7 +900,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261107&limit=1000",
-      "fetched_at": "2026-11-07T15:28:05.208Z",
+      "fetched_at": "2026-11-07T19:44:21.840Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -1078,7 +984,7 @@
           "confirmed": false
         },
         {
-          "player": "Andrei Vasilevskiy",
+          "player": "Dennis Hildeby",
           "position": "probableStartingGoalie",
           "team": "TB",
           "status": "probable",
@@ -1087,8 +993,8 @@
       ],
       "book_lines": [
         {
-          "provider": "DraftKings",
-          "details": "TB -142",
+          "provider": "Draft Kings",
+          "details": "TB -135",
           "spread": 1.5,
           "total": 6.5
         }
@@ -1101,7 +1007,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261107&limit=1000",
-      "fetched_at": "2026-11-07T15:28:05.208Z",
+      "fetched_at": "2026-11-07T19:44:21.840Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -1194,7 +1100,7 @@
       ],
       "book_lines": [
         {
-          "provider": "DraftKings",
+          "provider": "Draft Kings",
           "details": "COL -225",
           "spread": -1.5,
           "total": 6.5
@@ -1208,7 +1114,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261107&limit=1000",
-      "fetched_at": "2026-11-07T15:28:05.208Z",
+      "fetched_at": "2026-11-07T19:44:21.840Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -1285,14 +1191,14 @@
       "starting_goalies": [],
       "probables": [
         {
-          "player": "Anton Forsberg",
+          "player": "Darcy Kuemper",
           "position": "probableStartingGoalie",
           "team": "LA",
           "status": "probable",
           "confirmed": false
         },
         {
-          "player": "Arturs Silovs",
+          "player": "Sergei Murashov",
           "position": "probableStartingGoalie",
           "team": "PIT",
           "status": "probable",
@@ -1301,8 +1207,8 @@
       ],
       "book_lines": [
         {
-          "provider": "DraftKings",
-          "details": "LA -130",
+          "provider": "Draft Kings",
+          "details": "LA -122",
           "spread": -1.5,
           "total": 6.5
         }
@@ -1315,7 +1221,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261107&limit=1000",
-      "fetched_at": "2026-11-07T15:28:05.208Z",
+      "fetched_at": "2026-11-07T19:44:21.840Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -1392,7 +1298,7 @@
       "starting_goalies": [],
       "probables": [
         {
-          "player": "Tristan Jarry",
+          "player": "Devon Levi",
           "position": "probableStartingGoalie",
           "team": "EDM",
           "status": "probable",
@@ -1408,8 +1314,8 @@
       ],
       "book_lines": [
         {
-          "provider": "DraftKings",
-          "details": "EDM -310",
+          "provider": "Draft Kings",
+          "details": "EDM -360",
           "spread": -1.5,
           "total": 6.5
         }
@@ -1422,7 +1328,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261107&limit=1000",
-      "fetched_at": "2026-11-07T15:28:05.208Z",
+      "fetched_at": "2026-11-07T19:44:21.840Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
