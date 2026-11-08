@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-08T02:43:42.303Z"
+  "fetched_at": "2026-11-08T02:57:43.108Z"
  },
- "updated": "2026-11-08T02:43:42.157Z",
+ "updated": "2026-11-08T02:57:43.001Z",
  "open_taken_at": "2026-11-06T06:05:21.618Z",
  "thresholds": {
   "big": 10,
@@ -461,6 +461,26 @@
  ],
  "edges": [
   {
+   "key": "1785600:0",
+   "market_id": "1785600",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming football event West Florida vs North Alabama scheduled for November 8, 2026 at 12:00 AM UTC?",
+   "side": "Argonauts win",
+   "open_chance": 36,
+   "now_chance": 21.5,
+   "open_odds": "+178",
+   "now_odds": "+365",
+   "edge": 14.5,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-08T02:57:43.001Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2247093:1",
    "market_id": "2247093",
    "market": "Main spread",
@@ -483,6 +503,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:1785600:0:big",
+   "key": "1785600:0",
+   "at": "2026-11-08T02:57:43.001Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Argonauts win",
+   "market": "Moneyline",
+   "now_odds": "+365",
+   "now_chance": 21.5,
+   "edge": 14.5,
+   "text": "New big edge: Argonauts win (Moneyline), 15 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-uwfl-nal-2026-11-07"
+  },
+  {
    "id": "gone:2247093:1:2026-11-07T19:35:51.307Z",
    "key": "2247093:1",
    "at": "2026-11-08T02:11:44.775Z",
@@ -498,7 +532,8 @@
   }
  ],
  "alert_seen": [
-  "gone:2247093:1:2026-11-07T19:35:51.307Z"
+  "gone:2247093:1:2026-11-07T19:35:51.307Z",
+  "new_edge:1785600:0:big"
  ],
  "kalshi_checked": null
 }
