@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-08T02:23:32.339Z"
+  "fetched_at": "2026-11-08T02:32:41.008Z"
  },
- "updated": "2026-11-08T02:23:32.266Z",
+ "updated": "2026-11-08T02:32:40.799Z",
  "open_taken_at": "2026-11-07T15:21:46.619Z",
  "thresholds": {
   "big": 10,
@@ -63,6 +63,28 @@
    "taken_at": "2026-11-08T02:23:32.266Z"
   },
   {
+   "market_id": "2272699",
+   "market": "Set 2 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_2_winner",
+   "line": null,
+   "question": "Will Koki Matsuda win set 2 against Yuki Mochizuki?",
+   "sides": [
+    "Yes: Koki Matsuda win set 2 against Yuki Mochizuki",
+    "No: Koki Matsuda win set 2 against Yuki Mochizuki"
+   ],
+   "teams": [
+    "Koki Matsuda",
+    null
+   ],
+   "player": null,
+   "mid": 92,
+   "yes_buy": 93,
+   "no_buy": 9,
+   "taken_at": "2026-11-08T02:12:01.211Z"
+  },
+  {
    "market_id": "2272661",
    "market": "Games spread",
    "group": "game",
@@ -104,28 +126,6 @@
    "mid": 37.5,
    "yes_buy": 38,
    "no_buy": 63,
-   "taken_at": "2026-11-08T02:12:01.211Z"
-  },
-  {
-   "market_id": "2272699",
-   "market": "Set 2 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_2_winner",
-   "line": null,
-   "question": "Will Koki Matsuda win set 2 against Yuki Mochizuki?",
-   "sides": [
-    "Yes: Koki Matsuda win set 2 against Yuki Mochizuki",
-    "No: Koki Matsuda win set 2 against Yuki Mochizuki"
-   ],
-   "teams": [
-    "Koki Matsuda",
-    null
-   ],
-   "player": null,
-   "mid": 92,
-   "yes_buy": 93,
-   "no_buy": 9,
    "taken_at": "2026-11-08T02:12:01.211Z"
   },
   {
@@ -191,11 +191,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-08T02:23:32.266Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2272676:1:2026-11-08T02:23:32.266Z",
+   "key": "2272676:1",
+   "at": "2026-11-08T02:32:40.799Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+223",
+   "now_chance": 31,
+   "edge": 32,
+   "text": "Edge gone: Under 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-kokmat-yukmoc-2026-11-07"
+  },
   {
    "id": "new_edge:2272676:1:big",
    "key": "2272676:1",
@@ -212,7 +226,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2272676:1:big"
+  "new_edge:2272676:1:big",
+  "gone:2272676:1:2026-11-08T02:23:32.266Z"
  ],
  "kalshi_checked": null
 }
