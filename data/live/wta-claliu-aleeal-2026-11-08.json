@@ -4,30 +4,30 @@
  "game": "Claire Liu vs. Alexandra Eala",
  "url": "https://polymarket.us/sports/wta/wta-claliu-aleeal-2026-11-08",
  "start_time": "2026-11-08T08:00:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186642",
-  "fetched_at": "2026-11-08T03:56:55.679Z",
+  "fetched_at": "2026-11-08T09:09:54.207Z",
   "tennis": true,
   "tennis_match": {
    "id": "186642",
    "uid": "s:850~l:900~e:380-2026~c:186642",
-   "date": "2026-11-08T08:00Z",
-   "startDate": "2026-11-08T08:00Z",
+   "date": "2026-11-08T08:05Z",
+   "startDate": "2026-11-08T08:05Z",
    "timeValid": true,
-   "recent": false,
+   "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Sun, November 8th at 3:00 AM EST",
-     "shortDetail": "11/8 - 3:00 AM EST"
+     "description": "In Progress",
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Claire Liu (USA) is tied with (2) Alexandra Eala (PHI) 6-3 0-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,19 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 2
      },
+     "linescores": [
+      {
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "067c21f8-c2a6-3d19-beeb-5cf5874910ec",
       "displayName": "Alexandra Eala",
@@ -90,6 +105,16 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 0
+      }
+     ],
      "athlete": {
       "guid": "ad12e018-5348-4a47-cd25-5919b2190e67",
       "displayName": "Claire Liu",
@@ -122,6 +147,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 380,
    "type": {
     "id": "2",
@@ -138,10 +168,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sun, November 8th at 3:00 AM EST",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Alexandra Eala",
@@ -153,13 +183,13 @@
    "abbr": "Claire Liu",
    "alias": "Claire Liu",
    "name": "Claire Liu",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-08T03:56:55.483Z",
+ "updated": "2026-11-08T09:09:54.147Z",
  "open_taken_at": "2026-11-07T15:21:45.081Z",
  "thresholds": {
   "big": 10,
@@ -211,48 +241,92 @@
    "taken_at": "2026-11-08T02:12:00.868Z"
   },
   {
-   "market_id": "2270280",
+   "market_id": "2270278",
    "market": "Games total",
    "group": "game",
    "mtype": "total",
    "period": "tennis_match_total_games",
-   "line": 22.5,
-   "question": "Will the total in Claire Liu vs. Alexandra Eala be more than 22.5?",
+   "line": 17.5,
+   "question": "Will the total in Claire Liu vs. Alexandra Eala be more than 17.5?",
    "sides": [
-    "Over 22.5 (Games)",
-    "Under 22.5 (Games)"
+    "Over 17.5 (Games)",
+    "Under 17.5 (Games)"
    ],
    "teams": [
     null,
     null
    ],
    "player": null,
-   "mid": 47,
-   "yes_buy": 49,
-   "no_buy": 55,
-   "taken_at": "2026-11-07T22:56:47.387Z"
+   "mid": 84.5,
+   "yes_buy": 87,
+   "no_buy": 18,
+   "taken_at": "2026-11-08T09:02:19.916Z"
   },
   {
-   "market_id": "2270295",
-   "market": "Set 1 winner",
+   "market_id": "2270267",
+   "market": "Games spread",
    "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Claire Liu win set 1 against Alexandra Eala?",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": 1.5,
+   "question": "Will the Claire Liu cover 1.5 vs the Alexandra Eala in Claire Liu vs. Alexandra Eala?",
    "sides": [
-    "Yes: Claire Liu win set 1 against Alexandra Eala",
-    "No: Claire Liu win set 1 against Alexandra Eala"
+    "Claire Liu +1.50 (Games)",
+    "Alexandra Eala -1.50 (Games)"
    ],
    "teams": [
     "Claire Liu",
+    "Alexandra Eala"
+   ],
+   "player": null,
+   "mid": 77.5,
+   "yes_buy": 78,
+   "no_buy": 23,
+   "taken_at": "2026-11-08T09:02:19.916Z"
+  },
+  {
+   "market_id": "2270265",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -1.5,
+   "question": "Will the Claire Liu cover -1.5 vs the Alexandra Eala in Claire Liu vs. Alexandra Eala?",
+   "sides": [
+    "Claire Liu -1.50 (Games)",
+    "Alexandra Eala +1.50 (Games)"
+   ],
+   "teams": [
+    "Claire Liu",
+    "Alexandra Eala"
+   ],
+   "player": null,
+   "mid": 67.5,
+   "yes_buy": 68,
+   "no_buy": 33,
+   "taken_at": "2026-11-08T09:02:19.916Z"
+  },
+  {
+   "market_id": "2270284",
+   "market": "Sets total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_sets",
+   "line": 2.5,
+   "question": "Will the total in Claire Liu vs. Alexandra Eala be more than 2.5?",
+   "sides": [
+    "Over 2.5 (Sets)",
+    "Under 2.5 (Sets)"
+   ],
+   "teams": [
+    null,
     null
    ],
    "player": null,
-   "mid": 33.5,
-   "yes_buy": 35,
-   "no_buy": 68,
-   "taken_at": "2026-11-07T19:36:17.885Z"
+   "mid": 54.5,
+   "yes_buy": 56,
+   "no_buy": 47,
+   "taken_at": "2026-11-08T09:02:19.916Z"
   },
   {
    "market_id": "2270297",
@@ -275,31 +349,220 @@
    "yes_buy": 36,
    "no_buy": 69,
    "taken_at": "2026-11-07T19:36:17.885Z"
+  },
+  {
+   "market_id": "2270274",
+   "market": "Sets spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_sets_spread",
+   "line": -1.5,
+   "question": "Will the Claire Liu cover -1.5 vs the Alexandra Eala in Claire Liu vs. Alexandra Eala?",
+   "sides": [
+    "Claire Liu -1.50 (Sets)",
+    "Alexandra Eala +1.50 (Sets)"
+   ],
+   "teams": [
+    "Claire Liu",
+    "Alexandra Eala"
+   ],
+   "player": null,
+   "mid": 47,
+   "yes_buy": 50,
+   "no_buy": 56,
+   "taken_at": "2026-11-08T09:02:19.916Z"
+  },
+  {
+   "market_id": "2270280",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 22.5,
+   "question": "Will the total in Claire Liu vs. Alexandra Eala be more than 22.5?",
+   "sides": [
+    "Over 22.5 (Games)",
+    "Under 22.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 47,
+   "yes_buy": 49,
+   "no_buy": 55,
+   "taken_at": "2026-11-07T22:56:47.387Z"
+  },
+  {
+   "market_id": "2270268",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -4.5,
+   "question": "Will the Claire Liu cover -4.5 vs the Alexandra Eala in Claire Liu vs. Alexandra Eala?",
+   "sides": [
+    "Claire Liu -4.50 (Games)",
+    "Alexandra Eala +4.50 (Games)"
+   ],
+   "teams": [
+    "Claire Liu",
+    "Alexandra Eala"
+   ],
+   "player": null,
+   "mid": 49.5,
+   "yes_buy": 50,
+   "no_buy": 51,
+   "taken_at": "2026-11-08T09:02:19.916Z"
+  },
+  {
+   "market_id": "2270282",
+   "market": "Games total",
+   "group": "game",
+   "mtype": "total",
+   "period": "tennis_match_total_games",
+   "line": 27.5,
+   "question": "Will the total in Claire Liu vs. Alexandra Eala be more than 27.5?",
+   "sides": [
+    "Over 27.5 (Games)",
+    "Under 27.5 (Games)"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 28.5,
+   "yes_buy": 29,
+   "no_buy": 72,
+   "taken_at": "2026-11-08T09:02:19.916Z"
+  },
+  {
+   "market_id": "2270272",
+   "market": "Games spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "tennis_match_games_spread",
+   "line": -7.5,
+   "question": "Will the Claire Liu cover -7.5 vs the Alexandra Eala in Claire Liu vs. Alexandra Eala?",
+   "sides": [
+    "Claire Liu -7.50 (Games)",
+    "Alexandra Eala +7.50 (Games)"
+   ],
+   "teams": [
+    "Claire Liu",
+    "Alexandra Eala"
+   ],
+   "player": null,
+   "mid": 7,
+   "yes_buy": 8,
+   "no_buy": 94,
+   "taken_at": "2026-11-08T09:02:19.916Z"
+  },
+  {
+   "market_id": "2270295",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Claire Liu win set 1 against Alexandra Eala?",
+   "sides": [
+    "Yes: Claire Liu win set 1 against Alexandra Eala",
+    "No: Claire Liu win set 1 against Alexandra Eala"
+   ],
+   "teams": [
+    "Claire Liu",
+    null
+   ],
+   "player": null,
+   "mid": 33.5,
+   "yes_buy": 35,
+   "no_buy": 68,
+   "taken_at": "2026-11-07T19:36:17.885Z"
   }
  ],
  "edges": [
   {
-   "key": "2270270:1",
-   "market_id": "2270270",
-   "market": "Games spread",
+   "key": "2270255:1",
+   "market_id": "2270255",
+   "market": "Moneyline",
    "group": "game",
-   "question": "Will the Claire Liu cover 4.5 vs the Alexandra Eala in Claire Liu vs. Alexandra Eala?",
-   "side": "Alexandra Eala -4.50 (Games)",
-   "open_chance": 46,
-   "now_chance": 42,
-   "open_odds": "+117",
-   "now_odds": "+138",
+   "question": "Who will win in the upcoming wta event Claire Liu vs Alexandra Eala scheduled for November 8, 2026 at 5:30 AM UTC?",
+   "side": "Alexandra Eala win",
+   "open_chance": 71,
+   "now_chance": 32,
+   "open_odds": "-245",
+   "now_odds": "+213",
+   "edge": 39,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Alexandra Eala trailing in sets",
+   "context": "Alexandra Eala 3, 0 · Claire Liu 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-11-08T09:02:19.916Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2270297:1",
+   "market_id": "2270297",
+   "market": "Set 2 winner",
+   "group": "game",
+   "question": "Will Claire Liu win set 2 against Alexandra Eala?",
+   "side": "No: Claire Liu win set 2 against Alexandra Eala",
+   "open_chance": 69,
+   "now_chance": 49,
+   "open_odds": "-223",
+   "now_odds": "+104",
+   "edge": 20,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: Claire Liu not above the games spread right now",
+   "context": "Alexandra Eala 3, 0 · Claire Liu 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-11-08T09:09:54.147Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2270274:1",
+   "market_id": "2270274",
+   "market": "Sets spread",
+   "group": "game",
+   "question": "Will the Claire Liu cover -1.5 vs the Alexandra Eala in Claire Liu vs. Alexandra Eala?",
+   "side": "Alexandra Eala +1.50 (Sets)",
+   "open_chance": 56,
+   "now_chance": 52,
+   "open_odds": "-127",
+   "now_odds": "-108",
    "edge": 4,
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-11-08T03:18:02.974Z",
+   "context": "Alexandra Eala 3, 0 · Claire Liu 6, 0 · 2nd Set (games by set)",
+   "first_seen": "2026-11-08T09:09:54.147Z",
    "status": "open",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "new_edge:2270274:1:slight",
+   "key": "2270274:1",
+   "at": "2026-11-08T09:09:54.147Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Alexandra Eala +1.50 (Sets)",
+   "market": "Sets spread",
+   "now_odds": "-108",
+   "now_chance": 52,
+   "edge": 4,
+   "text": "New slight edge: Alexandra Eala +1.50 (Sets) (Sets spread), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-claliu-aleeal-2026-11-08"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:2270274:1:slight"
+ ],
  "kalshi_checked": null
 }
