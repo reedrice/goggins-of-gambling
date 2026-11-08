@@ -9,12 +9,12 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892670",
-  "fetched_at": "2026-11-08T03:39:27.973Z",
+  "fetched_at": "2026-11-08T03:48:08.142Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
-  "period": 3,
-  "clock": "0:59",
-  "regulation_secs_left": 959,
+  "period": 4,
+  "clock": "2:18",
+  "regulation_secs_left": 138,
   "home": {
    "abbr": "MIN",
    "alias": "Wild",
@@ -107,7 +107,7 @@
    }
   ]
  },
- "updated": "2026-11-08T03:39:27.729Z",
+ "updated": "2026-11-08T03:48:07.991Z",
  "open_taken_at": "2026-11-06T06:05:38.191Z",
  "thresholds": {
   "big": 10,
@@ -2273,6 +2273,26 @@
  ],
  "edges": [
   {
+   "key": "2120166:1",
+   "market_id": "2120166",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming hockey event TBL Lightning vs MIN Wild scheduled for November 8, 2026 at 1:00 AM UTC?",
+   "side": "Wild win",
+   "open_chance": 48,
+   "now_chance": 31,
+   "open_odds": "+108",
+   "now_odds": "+223",
+   "edge": 17,
+   "tier": "big",
+   "class": "edge",
+   "reason": null,
+   "context": "MIN tied, Q4 2:18",
+   "first_seen": "2026-11-08T03:48:07.991Z",
+   "status": "open",
+   "kalshi": false
+  },
+  {
    "key": "2261212:1",
    "market_id": "2261212",
    "market": "Player prop",
@@ -2287,7 +2307,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "MIN tied, Q3 0:59",
+   "context": "MIN tied, Q4 2:18",
    "first_seen": "2026-11-07T19:36:05.424Z",
    "status": "open",
    "kalshi": true
@@ -2714,6 +2734,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2120166:1:big",
+   "key": "2120166:1",
+   "at": "2026-11-08T03:48:07.991Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Wild win",
+   "market": "Moneyline",
+   "now_odds": "+223",
+   "now_chance": 31,
+   "edge": 17,
+   "text": "New big edge: Wild win (Moneyline), 17 points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-tb-min-2026-11-07"
+  },
   {
    "id": "new_edge:2120183:0:slight",
    "key": "2120183:0",
@@ -3189,10 +3223,11 @@
   "new_edge:2120181:0:slight",
   "gone:2120183:0:2026-11-08T02:25:43.449Z",
   "gone:2120181:0:2026-11-06T18:08:01.966Z",
-  "new_edge:2120183:0:slight"
+  "new_edge:2120183:0:slight",
+  "new_edge:2120166:1:big"
  ],
  "kalshi_checked": {
-  "at": "2026-11-08T03:39:28.035Z",
+  "at": "2026-11-08T03:48:08.175Z",
   "event": "26NOV07TBMIN"
  }
 }
