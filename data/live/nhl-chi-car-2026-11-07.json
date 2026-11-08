@@ -9,24 +9,24 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892668",
-  "fetched_at": "2026-11-08T03:17:57.312Z",
+  "fetched_at": "2026-11-08T03:25:50.270Z",
   "game_state": "in",
   "espn_status": "STATUS_IN_PROGRESS",
   "period": 3,
-  "clock": "6:19",
-  "regulation_secs_left": 1279,
+  "clock": "1:40",
+  "regulation_secs_left": 1000,
   "home": {
    "abbr": "CAR",
    "alias": "Hurricanes",
    "name": "Carolina Hurricanes",
-   "score": 7,
+   "score": 8,
    "id": "7"
   },
   "away": {
    "abbr": "CHI",
    "alias": "Blackhawks",
    "name": "Chicago Blackhawks",
-   "score": 1,
+   "score": 2,
    "id": "4"
   },
   "possession": null,
@@ -75,9 +75,9 @@
    },
    {
     "team": "CHI",
-    "player": "Roman Kantserov",
-    "short": "R. Kantserov",
-    "pos": "RW"
+    "player": "Connor Bedard",
+    "short": "C. Bedard",
+    "pos": "C"
    },
    {
     "team": "CHI",
@@ -87,41 +87,19 @@
    },
    {
     "team": "CHI",
-    "player": "Roman Kantserov",
-    "short": "R. Kantserov",
-    "pos": "RW"
+    "player": "Connor Bedard",
+    "short": "C. Bedard",
+    "pos": "C"
    }
   ]
  },
- "updated": "2026-11-08T03:17:56.906Z",
+ "updated": "2026-11-08T03:25:50.048Z",
  "open_taken_at": "2026-11-06T06:05:38.220Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "2120123",
-   "market": "Main total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 9.5,
-   "question": "Will the total in CHI vs CAR be more than 9.5?",
-   "sides": [
-    "Over 9.5",
-    "Under 9.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 8,
-   "yes_buy": 11,
-   "no_buy": 95,
-   "taken_at": "2026-11-06T17:50:41.561Z"
-  },
   {
    "market_id": "2254933",
    "market": "Player prop",
@@ -561,6 +539,50 @@
    "yes_buy": 5,
    "no_buy": 96,
    "taken_at": "2026-11-08T02:11:52.042Z"
+  },
+  {
+   "market_id": "2120123",
+   "market": "Main total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 9.5,
+   "question": "Will the total in CHI vs CAR be more than 9.5?",
+   "sides": [
+    "Over 9.5",
+    "Under 9.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 8,
+   "yes_buy": 11,
+   "no_buy": 95,
+   "taken_at": "2026-11-06T17:50:41.561Z"
+  },
+  {
+   "market_id": "2254942",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Roman Kantserov record at least 1 assists in CHI vs CAR?",
+   "sides": [
+    "Yes: Roman Kantserov record at least 1 assists in CHI vs CAR",
+    "No: Roman Kantserov record at least 1 assists in CHI vs CAR"
+   ],
+   "teams": [
+    "Blackhawks",
+    "Blackhawks"
+   ],
+   "player": "Roman Kantserov",
+   "mid": 22.5,
+   "yes_buy": 23,
+   "no_buy": 78,
+   "taken_at": "2026-11-07T02:13:14.037Z"
   },
   {
    "market_id": "2120122",
@@ -1641,28 +1663,6 @@
    "taken_at": "2026-11-07T08:49:59.472Z"
   },
   {
-   "market_id": "2254942",
-   "market": "Player prop",
-   "group": "prop",
-   "mtype": "prop",
-   "period": "full_game",
-   "line": 1,
-   "question": "Will Roman Kantserov record at least 1 assists in CHI vs CAR?",
-   "sides": [
-    "Yes: Roman Kantserov record at least 1 assists in CHI vs CAR",
-    "No: Roman Kantserov record at least 1 assists in CHI vs CAR"
-   ],
-   "teams": [
-    "Blackhawks",
-    "Blackhawks"
-   ],
-   "player": "Roman Kantserov",
-   "mid": 22.5,
-   "yes_buy": 23,
-   "no_buy": 78,
-   "taken_at": "2026-11-07T02:13:14.037Z"
-  },
-  {
    "market_id": "2254922",
    "market": "Player prop",
    "group": "prop",
@@ -2083,26 +2083,6 @@
  ],
  "edges": [
   {
-   "key": "2120123:1",
-   "market_id": "2120123",
-   "market": "Main total",
-   "group": "game",
-   "question": "Will the total in CHI vs CAR be more than 9.5?",
-   "side": "Under 9.5",
-   "open_chance": 95,
-   "now_chance": 61,
-   "open_odds": "-1900",
-   "now_odds": "-156",
-   "edge": 34,
-   "tier": "big",
-   "class": "score",
-   "reason": "Explained by score: scoring above pace (8 pts, pace 6)",
-   "context": "CHI 1, CAR 7, Q3 6:19",
-   "first_seen": "2026-11-08T02:11:52.042Z",
-   "status": "open",
-   "kalshi": true
-  },
-  {
    "key": "2254936:0",
    "market_id": "2254936",
    "market": "Player prop",
@@ -2117,7 +2097,7 @@
    "tier": "slight",
    "class": "edge",
    "reason": null,
-   "context": "CHI down 6, Q3 6:19",
+   "context": "CHI down 6, Q3 1:40",
    "first_seen": "2026-11-08T02:43:48.424Z",
    "status": "open",
    "kalshi": true
@@ -2158,6 +2138,26 @@
    "class": "score",
    "reason": "Explained by score: scoring above pace (8 pts, pace 5)",
    "context": "CHI 1, CAR 7, Q3 9:25",
+   "first_seen": "2026-11-08T02:11:52.042Z",
+   "status": "gone",
+   "kalshi": true
+  },
+  {
+   "key": "2120123:1",
+   "market_id": "2120123",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in CHI vs CAR be more than 9.5?",
+   "side": "Under 9.5",
+   "open_chance": 95,
+   "now_chance": 70,
+   "open_odds": "-1900",
+   "now_odds": "-233",
+   "edge": 25,
+   "tier": "big",
+   "class": "score",
+   "reason": "Explained by score: scoring above pace (9 pts, pace 7)",
+   "context": "CHI 2, CAR 7, Q3 3:47",
    "first_seen": "2026-11-08T02:11:52.042Z",
    "status": "gone",
    "kalshi": true
@@ -2413,26 +2413,6 @@
    "now_chance": 67,
    "open_odds": "-257",
    "now_odds": "-203",
-   "edge": 5,
-   "tier": "slight",
-   "class": "edge",
-   "reason": null,
-   "context": "Pregame",
-   "first_seen": "2026-11-07T15:21:32.690Z",
-   "status": "gone",
-   "kalshi": true
-  },
-  {
-   "key": "2254942:1",
-   "market_id": "2254942",
-   "market": "Player prop",
-   "group": "prop",
-   "question": "Will Roman Kantserov record at least 1 assists in CHI vs CAR?",
-   "side": "No: Roman Kantserov record at least 1 assists in CHI vs CAR",
-   "open_chance": 78,
-   "now_chance": 73,
-   "open_odds": "-355",
-   "now_odds": "-270",
    "edge": 5,
    "tier": "slight",
    "class": "edge",
@@ -2877,20 +2857,6 @@
    "url": "https://polymarket.us/sports/nhl/nhl-chi-car-2026-11-07"
   },
   {
-   "id": "gone:2254942:1:2026-11-07T15:21:32.690Z",
-   "key": "2254942:1",
-   "at": "2026-11-08T02:11:52.042Z",
-   "type": "gone",
-   "tier": "slight",
-   "side": "No: Roman Kantserov record at least 1 assists in CHI vs CAR",
-   "market": "Player prop",
-   "now_odds": "-270",
-   "now_chance": 73,
-   "edge": 5,
-   "text": "Edge gone: No: Roman Kantserov record at least 1 assists in CHI vs CAR (Player prop) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/nhl/nhl-chi-car-2026-11-07"
-  },
-  {
    "id": "gone:2254886:0:2026-11-07T19:36:05.270Z",
    "key": "2254886:0",
    "at": "2026-11-08T02:11:52.042Z",
@@ -3022,7 +2988,7 @@
   "gone:2266644:0:2026-11-07T19:36:05.270Z"
  ],
  "kalshi_checked": {
-  "at": "2026-11-08T03:17:57.347Z",
+  "at": "2026-11-08T03:25:50.288Z",
   "event": "26NOV07CHICAR"
  }
 }
