@@ -9,37 +9,15 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-08T02:32:37.330Z"
+  "fetched_at": "2026-11-08T02:43:52.690Z"
  },
- "updated": "2026-11-08T02:32:37.181Z",
+ "updated": "2026-11-08T02:43:52.545Z",
  "open_taken_at": "2026-11-07T09:05:41.773Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
-  {
-   "market_id": "2266594",
-   "market": "Moneyline",
-   "group": "game",
-   "mtype": "winner",
-   "period": "full_game",
-   "line": null,
-   "question": "Who will win in the upcoming atp event Moerani Bouzige vs Jesse Delaney scheduled for November 8, 2026 at 1:10 AM UTC?",
-   "sides": [
-    "Moerani Bouzige win",
-    "Jesse Delaney win"
-   ],
-   "teams": [
-    "Moerani Bouzige",
-    "Jesse Delaney"
-   ],
-   "player": null,
-   "mid": 89,
-   "yes_buy": 90,
-   "no_buy": 12,
-   "taken_at": "2026-11-07T15:21:40.860Z"
-  },
   {
    "market_id": "2267244",
    "market": "Games spread",
@@ -61,28 +39,6 @@
    "yes_buy": 84,
    "no_buy": 17,
    "taken_at": "2026-11-08T02:11:57.340Z"
-  },
-  {
-   "market_id": "2267257",
-   "market": "Set 1 winner",
-   "group": "game",
-   "mtype": "winner",
-   "period": "tennis_set_1_winner",
-   "line": null,
-   "question": "Will Moerani Bouzige win set 1 against Jesse Delaney?",
-   "sides": [
-    "Yes: Moerani Bouzige win set 1 against Jesse Delaney",
-    "No: Moerani Bouzige win set 1 against Jesse Delaney"
-   ],
-   "teams": [
-    "Moerani Bouzige",
-    null
-   ],
-   "player": null,
-   "mid": 85.5,
-   "yes_buy": 86,
-   "no_buy": 15,
-   "taken_at": "2026-11-08T02:23:28.450Z"
   },
   {
    "market_id": "2267258",
@@ -107,6 +63,28 @@
    "taken_at": "2026-11-08T02:23:28.450Z"
   },
   {
+   "market_id": "2267257",
+   "market": "Set 1 winner",
+   "group": "game",
+   "mtype": "winner",
+   "period": "tennis_set_1_winner",
+   "line": null,
+   "question": "Will Moerani Bouzige win set 1 against Jesse Delaney?",
+   "sides": [
+    "Yes: Moerani Bouzige win set 1 against Jesse Delaney",
+    "No: Moerani Bouzige win set 1 against Jesse Delaney"
+   ],
+   "teams": [
+    "Moerani Bouzige",
+    null
+   ],
+   "player": null,
+   "mid": 85.5,
+   "yes_buy": 86,
+   "no_buy": 15,
+   "taken_at": "2026-11-08T02:23:28.450Z"
+  },
+  {
    "market_id": "2267251",
    "market": "Games total",
    "group": "game",
@@ -127,6 +105,28 @@
    "yes_buy": 32,
    "no_buy": 69,
    "taken_at": "2026-11-08T02:11:57.340Z"
+  },
+  {
+   "market_id": "2266594",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming atp event Moerani Bouzige vs Jesse Delaney scheduled for November 8, 2026 at 1:10 AM UTC?",
+   "sides": [
+    "Moerani Bouzige win",
+    "Jesse Delaney win"
+   ],
+   "teams": [
+    "Moerani Bouzige",
+    "Jesse Delaney"
+   ],
+   "player": null,
+   "mid": 89,
+   "yes_buy": 90,
+   "no_buy": 12,
+   "taken_at": "2026-11-07T15:21:40.860Z"
   },
   {
    "market_id": "2267245",
@@ -204,11 +204,11 @@
    "question": "Will Moerani Bouzige win set 1 against Jesse Delaney?",
    "side": "Yes: Moerani Bouzige win set 1 against Jesse Delaney",
    "open_chance": 86,
-   "now_chance": 81,
+   "now_chance": 68,
    "open_odds": "-614",
-   "now_odds": "-426",
-   "edge": 5,
-   "tier": "slight",
+   "now_odds": "-213",
+   "edge": 18,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -218,6 +218,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2267257:0:big",
+   "key": "2267257:0",
+   "at": "2026-11-08T02:43:52.545Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Yes: Moerani Bouzige win set 1 against Jesse Delaney",
+   "market": "Set 1 winner",
+   "now_odds": "-213",
+   "now_chance": 68,
+   "edge": 18,
+   "text": "New big edge: Yes: Moerani Bouzige win set 1 against Jesse Delaney (Set 1 winner), 18 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-moebou-jesdel-2026-11-07"
+  },
   {
    "id": "new_edge:2267257:0:slight",
    "key": "2267257:0",
@@ -234,7 +248,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2267257:0:slight"
+  "new_edge:2267257:0:slight",
+  "new_edge:2267257:0:big"
  ],
  "kalshi_checked": null
 }
