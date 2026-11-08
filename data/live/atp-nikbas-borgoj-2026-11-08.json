@@ -4,12 +4,12 @@
  "game": "Nikoloz Basilashvili vs. Borna Gojo",
  "url": "https://polymarket.us/sports/atp/atp-nikbas-borgoj-2026-11-08",
  "start_time": "2026-11-08T11:00:00Z",
- "status": "pregame",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187456",
-  "fetched_at": "2026-11-08T09:34:39.458Z",
+  "fetched_at": "2026-11-08T21:16:57.885Z",
   "tennis": true,
   "tennis_match": {
    "id": "187456",
@@ -19,15 +19,15 @@
    "timeValid": true,
    "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sun, November 8th at 6:00 AM EST",
-     "shortDetail": "11/8 - 6:00 AM EST"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Borna Gojo (CRO) bt Nikoloz Basilashvili (GEO) 6-3 7-6 (7-5)",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,18 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "9986e727-3bd2-dcee-e95d-6186b7a85dc7",
       "displayName": "Borna Gojo",
@@ -87,6 +104,18 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "tiebreak": 5,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "5dc21899-ba8c-2090-ba30-c0169a979977",
       "displayName": "Nikoloz Basilashvili",
@@ -135,16 +164,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sun, November 8th at 6:00 AM EST",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Borna Gojo",
    "alias": "Borna Gojo",
    "name": "Borna Gojo",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Nikoloz Basilashvili",
@@ -156,7 +185,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-08T09:34:39.389Z",
+ "updated": "2026-11-08T21:16:57.785Z",
  "open_taken_at": "2026-11-07T15:21:47.212Z",
  "thresholds": {
   "big": 10,

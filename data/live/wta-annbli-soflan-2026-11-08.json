@@ -3,31 +3,31 @@
  "slug": "wta-annbli-soflan-2026-11-08",
  "game": "Anna Blinkova vs. Sofya Lansere",
  "url": "https://polymarket.us/sports/wta/wta-annbli-soflan-2026-11-08",
- "start_time": "2026-11-08T10:00:00Z",
- "status": "pregame",
+ "start_time": "2026-11-08T10:30:00Z",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186690",
-  "fetched_at": "2026-11-08T09:34:43.357Z",
+  "fetched_at": "2026-11-08T21:17:04.315Z",
   "tennis": true,
   "tennis_match": {
    "id": "186690",
    "uid": "s:850~l:900~e:1082-2026~c:186690",
-   "date": "2026-11-08T10:00Z",
-   "startDate": "2026-11-08T10:00Z",
+   "date": "2026-11-08T11:10Z",
+   "startDate": "2026-11-08T11:10Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 3,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sun, November 8th at 5:00 AM EST",
-     "shortDetail": "11/8 - 5:00 AM EST"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(8) Sofya Lansere (RUS) bt (1) Anna Blinkova (FRA) 5-7 6-1 6-4",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,24 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "curatedRank": {
       "current": 8
      },
+     "linescores": [
+      {
+       "value": 5,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "930a4678-94f2-04e2-2c9e-90ba7477e491",
       "displayName": "Sofya Lansere",
@@ -90,9 +110,24 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "curatedRank": {
       "current": 1
      },
+     "linescores": [
+      {
+       "value": 7,
+       "winner": true
+      },
+      {
+       "value": 1,
+       "winner": false
+      },
+      {
+       "value": 4,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "593f9215-e57e-b6d2-5985-26405c504503",
       "displayName": "Anna Blinkova",
@@ -141,28 +176,28 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sun, November 8th at 5:00 AM EST",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Sofya Lansere",
    "alias": "Sofya Lansere",
    "name": "Sofya Lansere",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Anna Blinkova",
    "alias": "Anna Blinkova",
    "name": "Anna Blinkova",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-08T09:34:43.258Z",
+ "updated": "2026-11-08T21:17:04.165Z",
  "open_taken_at": "2026-11-07T19:36:23.304Z",
  "thresholds": {
   "big": 10,
@@ -254,11 +289,28 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-08T02:12:04.720Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:2281647:0:2026-11-08T02:12:04.720Z",
+   "key": "2281647:0",
+   "at": "2026-11-08T21:17:04.165Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Anna Blinkova win",
+   "market": "Moneyline",
+   "now_odds": "-285",
+   "now_chance": 74,
+   "edge": 5,
+   "text": "Edge gone: Anna Blinkova win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-annbli-soflan-2026-11-08"
+  }
+ ],
+ "alert_seen": [
+  "gone:2281647:0:2026-11-08T02:12:04.720Z"
+ ],
  "kalshi_checked": null
 }
