@@ -4,14 +4,14 @@
  "game": "Luca Staeheli vs. Takuya Kumasaka",
  "url": "https://polymarket.us/sports/atp/atp-lucsta-takkum-2026-11-08",
  "start_time": "2026-11-09T02:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-09T03:08:44.131Z"
+  "fetched_at": "2026-11-09T07:54:41.517Z"
  },
- "updated": "2026-11-09T03:08:43.996Z",
+ "updated": "2026-11-09T07:54:41.395Z",
  "open_taken_at": "2026-11-08T09:02:33.111Z",
  "thresholds": {
   "big": 10,
@@ -279,7 +279,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-09T02:58:38.284Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -299,7 +299,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-09T03:08:43.996Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -319,11 +319,53 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-09T03:08:43.996Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2304835:0:2026-11-09T02:58:38.284Z",
+   "key": "2304835:0",
+   "at": "2026-11-09T07:54:41.395Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Luca Staeheli win",
+   "market": "Moneyline",
+   "now_odds": "+488",
+   "now_chance": 17,
+   "edge": 38,
+   "text": "Edge gone: Luca Staeheli win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-lucsta-takkum-2026-11-08"
+  },
+  {
+   "id": "gone:2305415:0:2026-11-09T03:08:43.996Z",
+   "key": "2305415:0",
+   "at": "2026-11-09T07:54:41.395Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-108",
+   "now_chance": 52,
+   "edge": 37,
+   "text": "Edge gone: Over 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-lucsta-takkum-2026-11-08"
+  },
+  {
+   "id": "gone:2305412:0:2026-11-09T03:08:43.996Z",
+   "key": "2305412:0",
+   "at": "2026-11-09T07:54:41.395Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Luca Staeheli +7.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-127",
+   "now_chance": 56,
+   "edge": 20,
+   "text": "Edge gone: Luca Staeheli +7.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-lucsta-takkum-2026-11-08"
+  },
   {
    "id": "new_edge:2305415:0:big",
    "key": "2305415:0",
@@ -370,7 +412,10 @@
  "alert_seen": [
   "new_edge:2304835:0:big",
   "new_edge:2305415:0:big",
-  "new_edge:2305412:0:big"
+  "new_edge:2305412:0:big",
+  "gone:2304835:0:2026-11-09T02:58:38.284Z",
+  "gone:2305415:0:2026-11-09T03:08:43.996Z",
+  "gone:2305412:0:2026-11-09T03:08:43.996Z"
  ],
  "kalshi_checked": null
 }
