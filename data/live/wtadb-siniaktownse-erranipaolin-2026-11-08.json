@@ -4,12 +4,12 @@
  "game": "Siniakova / Townsend vs. Errani / Paolini",
  "url": "https://polymarket.us/sports/wtadb/wtadb-siniaktownse-erranipaolin-2026-11-08",
  "start_time": "2026-11-09T00:55:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187391",
-  "fetched_at": "2026-11-09T01:15:54.290Z",
+  "fetched_at": "2026-11-09T02:58:44.084Z",
   "tennis": true,
   "tennis_match": {
    "id": "187391",
@@ -17,17 +17,17 @@
    "date": "2026-11-09T01:10Z",
    "startDate": "2026-11-09T01:10Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(8) Sara Errani (ITA) & Jasmine Paolini (ITA) leads (2) Katerina Siniakova (CZE) & Taylor Townsend (USA) 1-0",
+     "text": "(8) Sara Errani (ITA) & Jasmine Paolini (ITA) bt (2) Katerina Siniakova (CZE) & Taylor Townsend (USA) 4-6 6-1 1-0 (10-8)",
      "type": "event"
     }
    ],
@@ -55,13 +55,23 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "winner": true,
      "curatedRank": {
       "current": 8
      },
      "linescores": [
       {
-       "value": 1
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1,
+       "tiebreak": 10,
+       "winner": true
       }
      ],
      "roster": {
@@ -136,13 +146,23 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "winner": false,
      "curatedRank": {
       "current": 2
      },
      "linescores": [
       {
-       "value": 0
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1,
+       "winner": false
+      },
+      {
+       "value": 0,
+       "tiebreak": 8,
+       "winner": false
       }
      ],
      "roster": {
@@ -212,11 +232,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 382,
    "type": {
     "id": "4",
@@ -233,28 +248,28 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Sara Errani / Jasmine Paolini",
    "alias": "Sara Errani / Jasmine Paolini",
    "name": "Sara Errani / Jasmine Paolini",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Katerina Siniakova / Taylor Townsend",
    "alias": "Katerina Siniakova / Taylor Townsend",
    "name": "Katerina Siniakova / Taylor Townsend",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-09T01:15:54.127Z",
+ "updated": "2026-11-09T02:58:43.967Z",
  "open_taken_at": "2026-11-07T08:50:02.685Z",
  "thresholds": {
   "big": 10,
