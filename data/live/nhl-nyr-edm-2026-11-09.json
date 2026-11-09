@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892680",
-  "fetched_at": "2026-11-09T07:59:14.060Z",
+  "fetched_at": "2026-11-09T21:44:28.441Z",
   "game_state": "pre",
   "espn_status": "STATUS_SCHEDULED",
   "period": 0,
@@ -36,14 +36,7 @@
     "player": "Colton Dach",
     "short": "C. Dach",
     "pos": "C",
-    "status": "Day-To-Day"
-   },
-   {
-    "team": "EDM",
-    "player": "Ryan Nugent-Hopkins",
-    "short": "R. Nugent-Hopkins",
-    "pos": "C",
-    "status": "Day-To-Day"
+    "status": "Out"
    },
    {
     "team": "EDM",
@@ -67,11 +60,18 @@
     "status": "Injured Reserve"
    },
    {
+    "team": "EDM",
+    "player": "Frederik Andersen",
+    "short": "F. Andersen",
+    "pos": "G",
+    "status": "Injured Reserve"
+   },
+   {
     "team": "NYR",
     "player": "Alberts Smits",
     "short": "A. Smits",
     "pos": "D",
-    "status": "Day-To-Day"
+    "status": "Out"
    },
    {
     "team": "NYR",
@@ -142,7 +142,7 @@
    }
   ]
  },
- "updated": "2026-11-09T07:59:13.906Z",
+ "updated": "2026-11-09T21:44:28.374Z",
  "open_taken_at": "2026-11-08T09:02:14.482Z",
  "thresholds": {
   "big": 10,
@@ -348,28 +348,6 @@
    "taken_at": "2026-11-08T21:16:30.653Z"
   },
   {
-   "market_id": "2190047",
-   "market": "Alt total",
-   "group": "game",
-   "mtype": "total",
-   "period": "full_game",
-   "line": 8.5,
-   "question": "Will the total in NYR vs EDM be more than 8.5?",
-   "sides": [
-    "Over 8.5",
-    "Under 8.5"
-   ],
-   "teams": [
-    null,
-    null
-   ],
-   "player": null,
-   "mid": 22,
-   "yes_buy": 24,
-   "no_buy": 80,
-   "taken_at": "2026-11-08T21:16:30.653Z"
-  },
-  {
    "market_id": "2190026",
    "market": "Alt spread",
    "group": "game",
@@ -389,6 +367,28 @@
    "mid": 21.5,
    "yes_buy": 22,
    "no_buy": 79,
+   "taken_at": "2026-11-08T21:16:30.653Z"
+  },
+  {
+   "market_id": "2190047",
+   "market": "Alt total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 8.5,
+   "question": "Will the total in NYR vs EDM be more than 8.5?",
+   "sides": [
+    "Over 8.5",
+    "Under 8.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 22,
+   "yes_buy": 24,
+   "no_buy": 80,
    "taken_at": "2026-11-08T21:16:30.653Z"
   },
   {
@@ -436,26 +436,92 @@
    "taken_at": "2026-11-09T01:01:41.325Z"
   },
   {
-   "market_id": "2190023",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
+   "market_id": "2340265",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
    "period": "full_game",
-   "line": -3.5,
-   "question": "Will the NYR Rangers cover -3.5 vs the EDM Oilers in NYR vs EDM?",
+   "line": 1,
+   "question": "Will Connor McDavid record at least 1 points in NYR vs EDM?",
    "sides": [
-    "Rangers -3.50",
-    "Oilers +3.50"
+    "Yes: Connor McDavid record at least 1 points in NYR vs EDM",
+    "No: Connor McDavid record at least 1 points in NYR vs EDM"
    ],
    "teams": [
-    "Rangers",
+    "Oilers",
     "Oilers"
    ],
-   "player": null,
-   "mid": 5.5,
-   "yes_buy": 8,
-   "no_buy": 97,
-   "taken_at": "2026-11-09T01:01:41.325Z"
+   "player": "Connor McDavid",
+   "mid": 84,
+   "yes_buy": 85,
+   "no_buy": 17,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340269",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Leon Draisaitl record at least 1 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Leon Draisaitl record at least 1 points in NYR vs EDM",
+    "No: Leon Draisaitl record at least 1 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Leon Draisaitl",
+   "mid": 80.5,
+   "yes_buy": 81,
+   "no_buy": 20,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340325",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Connor McDavid record at least 1 assists in NYR vs EDM?",
+   "sides": [
+    "Yes: Connor McDavid record at least 1 assists in NYR vs EDM",
+    "No: Connor McDavid record at least 1 assists in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Connor McDavid",
+   "mid": 65.5,
+   "yes_buy": 66,
+   "no_buy": 35,
+   "taken_at": "2026-11-09T02:58:31.723Z"
+  },
+  {
+   "market_id": "2340272",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Evan Bouchard record at least 1 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Evan Bouchard record at least 1 points in NYR vs EDM",
+    "No: Evan Bouchard record at least 1 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Evan Bouchard",
+   "mid": 68.5,
+   "yes_buy": 69,
+   "no_buy": 32,
+   "taken_at": "2026-11-09T21:34:58.997Z"
   },
   {
    "market_id": "2340329",
@@ -502,26 +568,26 @@
    "taken_at": "2026-11-09T02:58:31.723Z"
   },
   {
-   "market_id": "2340263",
+   "market_id": "2340260",
    "market": "Player prop",
    "group": "prop",
    "mtype": "prop",
    "period": "full_game",
    "line": 1,
-   "question": "Will J.T. Miller record at least 1 points in NYR vs EDM?",
+   "question": "Will Adam Fox record at least 1 points in NYR vs EDM?",
    "sides": [
-    "Yes: J.T. Miller record at least 1 points in NYR vs EDM",
-    "No: J.T. Miller record at least 1 points in NYR vs EDM"
+    "Yes: Adam Fox record at least 1 points in NYR vs EDM",
+    "No: Adam Fox record at least 1 points in NYR vs EDM"
    ],
    "teams": [
     "Rangers",
     "Rangers"
    ],
-   "player": "J.T. Miller",
-   "mid": 52,
-   "yes_buy": 54,
-   "no_buy": 50,
-   "taken_at": "2026-11-09T07:54:22.485Z"
+   "player": "Adam Fox",
+   "mid": 60.5,
+   "yes_buy": 61,
+   "no_buy": 40,
+   "taken_at": "2026-11-09T21:34:58.997Z"
   },
   {
    "market_id": "2340253",
@@ -546,6 +612,50 @@
    "taken_at": "2026-11-09T02:58:31.723Z"
   },
   {
+   "market_id": "2340266",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Connor McDavid record at least 2 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Connor McDavid record at least 2 points in NYR vs EDM",
+    "No: Connor McDavid record at least 2 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Connor McDavid",
+   "mid": 47.5,
+   "yes_buy": 48,
+   "no_buy": 53,
+   "taken_at": "2026-11-09T02:58:31.723Z"
+  },
+  {
+   "market_id": "2340263",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will J.T. Miller record at least 1 points in NYR vs EDM?",
+   "sides": [
+    "Yes: J.T. Miller record at least 1 points in NYR vs EDM",
+    "No: J.T. Miller record at least 1 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "J.T. Miller",
+   "mid": 52,
+   "yes_buy": 54,
+   "no_buy": 50,
+   "taken_at": "2026-11-09T07:54:22.485Z"
+  },
+  {
    "market_id": "2340315",
    "market": "Player prop",
    "group": "prop",
@@ -566,6 +676,50 @@
    "yes_buy": 49,
    "no_buy": 54,
    "taken_at": "2026-11-09T07:54:22.485Z"
+  },
+  {
+   "market_id": "2340256",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Alexis Lafreniere record at least 1 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Alexis Lafreniere record at least 1 points in NYR vs EDM",
+    "No: Alexis Lafreniere record at least 1 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Alexis Lafreniere",
+   "mid": 52.5,
+   "yes_buy": 53,
+   "no_buy": 48,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340258",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Pavel Dorofeyev record at least 1 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Pavel Dorofeyev record at least 1 points in NYR vs EDM",
+    "No: Pavel Dorofeyev record at least 1 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Pavel Dorofeyev",
+   "mid": 52.5,
+   "yes_buy": 53,
+   "no_buy": 48,
+   "taken_at": "2026-11-09T21:34:58.997Z"
   },
   {
    "market_id": "2340275",
@@ -612,6 +766,72 @@
    "taken_at": "2026-11-09T02:58:31.723Z"
   },
   {
+   "market_id": "2344890",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Vasily Podkolzin record at least 1 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Vasily Podkolzin record at least 1 points in NYR vs EDM",
+    "No: Vasily Podkolzin record at least 1 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Vasily Podkolzin",
+   "mid": 47.5,
+   "yes_buy": 48,
+   "no_buy": 53,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340298",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Leon Draisaitl record at least 1 goals in NYR vs EDM?",
+   "sides": [
+    "Yes: Leon Draisaitl record at least 1 goals in NYR vs EDM",
+    "No: Leon Draisaitl record at least 1 goals in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Leon Draisaitl",
+   "mid": 46.5,
+   "yes_buy": 47,
+   "no_buy": 54,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2344881",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Gabe Perreault record at least 1 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Gabe Perreault record at least 1 points in NYR vs EDM",
+    "No: Gabe Perreault record at least 1 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Gabe Perreault",
+   "mid": 46.5,
+   "yes_buy": 47,
+   "no_buy": 54,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
    "market_id": "2340301",
    "market": "Player prop",
    "group": "prop",
@@ -634,26 +854,70 @@
    "taken_at": "2026-11-09T07:54:22.485Z"
   },
   {
-   "market_id": "2340319",
+   "market_id": "2354699",
    "market": "Player prop",
    "group": "prop",
    "mtype": "prop",
    "period": "full_game",
    "line": 1,
-   "question": "Will Alexis Lafreniere record at least 1 assists in NYR vs EDM?",
+   "question": "Will Kasperi Kapanen record at least 1 points in NYR vs EDM?",
    "sides": [
-    "Yes: Alexis Lafreniere record at least 1 assists in NYR vs EDM",
-    "No: Alexis Lafreniere record at least 1 assists in NYR vs EDM"
+    "Yes: Kasperi Kapanen record at least 1 points in NYR vs EDM",
+    "No: Kasperi Kapanen record at least 1 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Kasperi Kapanen",
+   "mid": 41.5,
+   "yes_buy": 42,
+   "no_buy": 59,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2351000",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Tye Kartye record at least 1 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Tye Kartye record at least 1 points in NYR vs EDM",
+    "No: Tye Kartye record at least 1 points in NYR vs EDM"
    ],
    "teams": [
     "Rangers",
     "Rangers"
    ],
-   "player": "Alexis Lafreniere",
-   "mid": 36.5,
-   "yes_buy": 38,
-   "no_buy": 65,
-   "taken_at": "2026-11-09T07:54:22.485Z"
+   "player": "Tye Kartye",
+   "mid": 40.5,
+   "yes_buy": 41,
+   "no_buy": 60,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2344900",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Mattias Ekholm record at least 1 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Mattias Ekholm record at least 1 points in NYR vs EDM",
+    "No: Mattias Ekholm record at least 1 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Mattias Ekholm",
+   "mid": 39.5,
+   "yes_buy": 40,
+   "no_buy": 61,
+   "taken_at": "2026-11-09T21:34:58.997Z"
   },
   {
    "market_id": "2340317",
@@ -678,22 +942,44 @@
    "taken_at": "2026-11-09T02:58:31.723Z"
   },
   {
-   "market_id": "2340326",
+   "market_id": "2351002",
    "market": "Player prop",
    "group": "prop",
    "mtype": "prop",
    "period": "full_game",
-   "line": 2,
-   "question": "Will Connor McDavid record at least 2 assists in NYR vs EDM?",
+   "line": 1,
+   "question": "Will Oliver Bjorkstrand record at least 1 points in NYR vs EDM?",
    "sides": [
-    "Yes: Connor McDavid record at least 2 assists in NYR vs EDM",
-    "No: Connor McDavid record at least 2 assists in NYR vs EDM"
+    "Yes: Oliver Bjorkstrand record at least 1 points in NYR vs EDM",
+    "No: Oliver Bjorkstrand record at least 1 points in NYR vs EDM"
    ],
    "teams": [
-    "Oilers",
-    "Oilers"
+    "Rangers",
+    "Rangers"
    ],
-   "player": "Connor McDavid",
+   "player": "Oliver Bjorkstrand",
+   "mid": 37.5,
+   "yes_buy": 38,
+   "no_buy": 63,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340319",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Alexis Lafreniere record at least 1 assists in NYR vs EDM?",
+   "sides": [
+    "Yes: Alexis Lafreniere record at least 1 assists in NYR vs EDM",
+    "No: Alexis Lafreniere record at least 1 assists in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Alexis Lafreniere",
    "mid": 36.5,
    "yes_buy": 38,
    "no_buy": 65,
@@ -722,6 +1008,28 @@
    "taken_at": "2026-11-09T02:58:31.723Z"
   },
   {
+   "market_id": "2340326",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Connor McDavid record at least 2 assists in NYR vs EDM?",
+   "sides": [
+    "Yes: Connor McDavid record at least 2 assists in NYR vs EDM",
+    "No: Connor McDavid record at least 2 assists in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Connor McDavid",
+   "mid": 36.5,
+   "yes_buy": 38,
+   "no_buy": 65,
+   "taken_at": "2026-11-09T07:54:22.485Z"
+  },
+  {
    "market_id": "2344908",
    "market": "Player prop",
    "group": "prop",
@@ -744,26 +1052,70 @@
    "taken_at": "2026-11-09T07:54:22.485Z"
   },
   {
-   "market_id": "2340282",
+   "market_id": "2340304",
    "market": "Player prop",
    "group": "prop",
    "mtype": "prop",
    "period": "full_game",
    "line": 1,
-   "question": "Will Alexis Lafreniere record at least 1 goals in NYR vs EDM?",
+   "question": "Will Zach Hyman record at least 1 goals in NYR vs EDM?",
    "sides": [
-    "Yes: Alexis Lafreniere record at least 1 goals in NYR vs EDM",
-    "No: Alexis Lafreniere record at least 1 goals in NYR vs EDM"
+    "Yes: Zach Hyman record at least 1 goals in NYR vs EDM",
+    "No: Zach Hyman record at least 1 goals in NYR vs EDM"
    ],
    "teams": [
-    "Rangers",
-    "Rangers"
+    "Oilers",
+    "Oilers"
    ],
-   "player": "Alexis Lafreniere",
+   "player": "Zach Hyman",
+   "mid": 32.5,
+   "yes_buy": 33,
+   "no_buy": 68,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340273",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Evan Bouchard record at least 2 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Evan Bouchard record at least 2 points in NYR vs EDM",
+    "No: Evan Bouchard record at least 2 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Evan Bouchard",
    "mid": 32.5,
    "yes_buy": 33,
    "no_buy": 68,
    "taken_at": "2026-11-09T02:58:31.723Z"
+  },
+  {
+   "market_id": "2360110",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Ryan Shea record at least 1 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Ryan Shea record at least 1 points in NYR vs EDM",
+    "No: Ryan Shea record at least 1 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Ryan Shea",
+   "mid": 32.5,
+   "yes_buy": 33,
+   "no_buy": 68,
+   "taken_at": "2026-11-09T21:34:58.997Z"
   },
   {
    "market_id": "2340278",
@@ -788,26 +1140,26 @@
    "taken_at": "2026-11-09T07:54:22.485Z"
   },
   {
-   "market_id": "2340273",
+   "market_id": "2340268",
    "market": "Player prop",
    "group": "prop",
    "mtype": "prop",
    "period": "full_game",
-   "line": 2,
-   "question": "Will Evan Bouchard record at least 2 points in NYR vs EDM?",
+   "line": 3,
+   "question": "Will Connor McDavid record at least 3 points in NYR vs EDM?",
    "sides": [
-    "Yes: Evan Bouchard record at least 2 points in NYR vs EDM",
-    "No: Evan Bouchard record at least 2 points in NYR vs EDM"
+    "Yes: Connor McDavid record at least 3 points in NYR vs EDM",
+    "No: Connor McDavid record at least 3 points in NYR vs EDM"
    ],
    "teams": [
     "Oilers",
     "Oilers"
    ],
-   "player": "Evan Bouchard",
-   "mid": 32.5,
-   "yes_buy": 33,
-   "no_buy": 68,
-   "taken_at": "2026-11-09T02:58:31.723Z"
+   "player": "Connor McDavid",
+   "mid": 30.5,
+   "yes_buy": 31,
+   "no_buy": 70,
+   "taken_at": "2026-11-09T21:34:58.997Z"
   },
   {
    "market_id": "2340323",
@@ -876,6 +1228,72 @@
    "taken_at": "2026-11-09T02:58:31.723Z"
   },
   {
+   "market_id": "2340285",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Mika Zibanejad record at least 1 goals in NYR vs EDM?",
+   "sides": [
+    "Yes: Mika Zibanejad record at least 1 goals in NYR vs EDM",
+    "No: Mika Zibanejad record at least 1 goals in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Mika Zibanejad",
+   "mid": 23.5,
+   "yes_buy": 25,
+   "no_buy": 78,
+   "taken_at": "2026-11-09T02:58:31.723Z"
+  },
+  {
+   "market_id": "2351004",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Tye Kartye record at least 1 assists in NYR vs EDM?",
+   "sides": [
+    "Yes: Tye Kartye record at least 1 assists in NYR vs EDM",
+    "No: Tye Kartye record at least 1 assists in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Tye Kartye",
+   "mid": 27.5,
+   "yes_buy": 28,
+   "no_buy": 73,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340282",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Alexis Lafreniere record at least 1 goals in NYR vs EDM?",
+   "sides": [
+    "Yes: Alexis Lafreniere record at least 1 goals in NYR vs EDM",
+    "No: Alexis Lafreniere record at least 1 goals in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Alexis Lafreniere",
+   "mid": 32.5,
+   "yes_buy": 33,
+   "no_buy": 68,
+   "taken_at": "2026-11-09T02:58:31.723Z"
+  },
+  {
    "market_id": "2344906",
    "market": "Player prop",
    "group": "prop",
@@ -896,6 +1314,116 @@
    "yes_buy": 29,
    "no_buy": 74,
    "taken_at": "2026-11-09T07:54:22.485Z"
+  },
+  {
+   "market_id": "2351006",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Oliver Bjorkstrand record at least 1 assists in NYR vs EDM?",
+   "sides": [
+    "Yes: Oliver Bjorkstrand record at least 1 assists in NYR vs EDM",
+    "No: Oliver Bjorkstrand record at least 1 assists in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Oliver Bjorkstrand",
+   "mid": 24.5,
+   "yes_buy": 25,
+   "no_buy": 76,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2360112",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Ryan Shea record at least 1 assists in NYR vs EDM?",
+   "sides": [
+    "Yes: Ryan Shea record at least 1 assists in NYR vs EDM",
+    "No: Ryan Shea record at least 1 assists in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Ryan Shea",
+   "mid": 24.5,
+   "yes_buy": 25,
+   "no_buy": 76,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340261",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Adam Fox record at least 2 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Adam Fox record at least 2 points in NYR vs EDM",
+    "No: Adam Fox record at least 2 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Adam Fox",
+   "mid": 24.5,
+   "yes_buy": 25,
+   "no_buy": 76,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2354701",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Kasperi Kapanen record at least 1 assists in NYR vs EDM?",
+   "sides": [
+    "Yes: Kasperi Kapanen record at least 1 assists in NYR vs EDM",
+    "No: Kasperi Kapanen record at least 1 assists in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Kasperi Kapanen",
+   "mid": 23.5,
+   "yes_buy": 24,
+   "no_buy": 77,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340330",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Leon Draisaitl record at least 2 assists in NYR vs EDM?",
+   "sides": [
+    "Yes: Leon Draisaitl record at least 2 assists in NYR vs EDM",
+    "No: Leon Draisaitl record at least 2 assists in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Leon Draisaitl",
+   "mid": 23.5,
+   "yes_buy": 24,
+   "no_buy": 77,
+   "taken_at": "2026-11-09T21:34:58.997Z"
   },
   {
    "market_id": "2340307",
@@ -920,6 +1448,28 @@
    "taken_at": "2026-11-09T07:54:22.485Z"
   },
   {
+   "market_id": "2340288",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Gabe Perreault record at least 1 goals in NYR vs EDM?",
+   "sides": [
+    "Yes: Gabe Perreault record at least 1 goals in NYR vs EDM",
+    "No: Gabe Perreault record at least 1 goals in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Gabe Perreault",
+   "mid": 23.5,
+   "yes_buy": 24,
+   "no_buy": 77,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
    "market_id": "2340290",
    "market": "Player prop",
    "group": "prop",
@@ -942,26 +1492,114 @@
    "taken_at": "2026-11-09T07:54:22.485Z"
   },
   {
-   "market_id": "2340285",
+   "market_id": "2340309",
    "market": "Player prop",
    "group": "prop",
    "mtype": "prop",
    "period": "full_game",
    "line": 1,
-   "question": "Will Mika Zibanejad record at least 1 goals in NYR vs EDM?",
+   "question": "Will Vasily Podkolzin record at least 1 goals in NYR vs EDM?",
    "sides": [
-    "Yes: Mika Zibanejad record at least 1 goals in NYR vs EDM",
-    "No: Mika Zibanejad record at least 1 goals in NYR vs EDM"
+    "Yes: Vasily Podkolzin record at least 1 goals in NYR vs EDM",
+    "No: Vasily Podkolzin record at least 1 goals in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Vasily Podkolzin",
+   "mid": 23.5,
+   "yes_buy": 24,
+   "no_buy": 77,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340254",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Mika Zibanejad record at least 2 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Mika Zibanejad record at least 2 points in NYR vs EDM",
+    "No: Mika Zibanejad record at least 2 points in NYR vs EDM"
    ],
    "teams": [
     "Rangers",
     "Rangers"
    ],
    "player": "Mika Zibanejad",
-   "mid": 23.5,
-   "yes_buy": 25,
+   "mid": 22.5,
+   "yes_buy": 23,
    "no_buy": 78,
-   "taken_at": "2026-11-09T02:58:31.723Z"
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340257",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Alexis Lafreniere record at least 2 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Alexis Lafreniere record at least 2 points in NYR vs EDM",
+    "No: Alexis Lafreniere record at least 2 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Alexis Lafreniere",
+   "mid": 20.5,
+   "yes_buy": 21,
+   "no_buy": 80,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340271",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 3,
+   "question": "Will Leon Draisaitl record at least 3 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Leon Draisaitl record at least 3 points in NYR vs EDM",
+    "No: Leon Draisaitl record at least 3 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Leon Draisaitl",
+   "mid": 20.5,
+   "yes_buy": 21,
+   "no_buy": 80,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340328",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Evan Bouchard record at least 2 assists in NYR vs EDM?",
+   "sides": [
+    "Yes: Evan Bouchard record at least 2 assists in NYR vs EDM",
+    "No: Evan Bouchard record at least 2 assists in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Evan Bouchard",
+   "mid": 19.5,
+   "yes_buy": 20,
+   "no_buy": 81,
+   "taken_at": "2026-11-09T21:34:58.997Z"
   },
   {
    "market_id": "2340311",
@@ -984,6 +1622,644 @@
    "yes_buy": 19,
    "no_buy": 82,
    "taken_at": "2026-11-09T02:58:31.723Z"
+  },
+  {
+   "market_id": "2340294",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Will Cuylle record at least 1 goals in NYR vs EDM?",
+   "sides": [
+    "Yes: Will Cuylle record at least 1 goals in NYR vs EDM",
+    "No: Will Cuylle record at least 1 goals in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Will Cuylle",
+   "mid": 19.5,
+   "yes_buy": 20,
+   "no_buy": 81,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340292",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Tye Kartye record at least 1 goals in NYR vs EDM?",
+   "sides": [
+    "Yes: Tye Kartye record at least 1 goals in NYR vs EDM",
+    "No: Tye Kartye record at least 1 goals in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Tye Kartye",
+   "mid": 18.5,
+   "yes_buy": 19,
+   "no_buy": 82,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340264",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will J.T. Miller record at least 2 points in NYR vs EDM?",
+   "sides": [
+    "Yes: J.T. Miller record at least 2 points in NYR vs EDM",
+    "No: J.T. Miller record at least 2 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "J.T. Miller",
+   "mid": 17.5,
+   "yes_buy": 18,
+   "no_buy": 83,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340259",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Pavel Dorofeyev record at least 2 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Pavel Dorofeyev record at least 2 points in NYR vs EDM",
+    "No: Pavel Dorofeyev record at least 2 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Pavel Dorofeyev",
+   "mid": 17.5,
+   "yes_buy": 18,
+   "no_buy": 83,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340276",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Zach Hyman record at least 2 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Zach Hyman record at least 2 points in NYR vs EDM",
+    "No: Zach Hyman record at least 2 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Zach Hyman",
+   "mid": 17.5,
+   "yes_buy": 18,
+   "no_buy": 83,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340296",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Oliver Bjorkstrand record at least 1 goals in NYR vs EDM?",
+   "sides": [
+    "Yes: Oliver Bjorkstrand record at least 1 goals in NYR vs EDM",
+    "No: Oliver Bjorkstrand record at least 1 goals in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Oliver Bjorkstrand",
+   "mid": 16.5,
+   "yes_buy": 17,
+   "no_buy": 84,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340316",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Adam Fox record at least 2 assists in NYR vs EDM?",
+   "sides": [
+    "Yes: Adam Fox record at least 2 assists in NYR vs EDM",
+    "No: Adam Fox record at least 2 assists in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Adam Fox",
+   "mid": 15.5,
+   "yes_buy": 16,
+   "no_buy": 85,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2344885",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Gabe Perreault record at least 2 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Gabe Perreault record at least 2 points in NYR vs EDM",
+    "No: Gabe Perreault record at least 2 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Gabe Perreault",
+   "mid": 14.5,
+   "yes_buy": 15,
+   "no_buy": 86,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2344895",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Vasily Podkolzin record at least 2 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Vasily Podkolzin record at least 2 points in NYR vs EDM",
+    "No: Vasily Podkolzin record at least 2 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Vasily Podkolzin",
+   "mid": 13.5,
+   "yes_buy": 14,
+   "no_buy": 87,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340299",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Leon Draisaitl record at least 2 goals in NYR vs EDM?",
+   "sides": [
+    "Yes: Leon Draisaitl record at least 2 goals in NYR vs EDM",
+    "No: Leon Draisaitl record at least 2 goals in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Leon Draisaitl",
+   "mid": 12.5,
+   "yes_buy": 13,
+   "no_buy": 88,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340314",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Jason Dickinson record at least 1 goals in NYR vs EDM?",
+   "sides": [
+    "Yes: Jason Dickinson record at least 1 goals in NYR vs EDM",
+    "No: Jason Dickinson record at least 1 goals in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Jason Dickinson",
+   "mid": 11.5,
+   "yes_buy": 12,
+   "no_buy": 89,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340302",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Connor McDavid record at least 2 goals in NYR vs EDM?",
+   "sides": [
+    "Yes: Connor McDavid record at least 2 goals in NYR vs EDM",
+    "No: Connor McDavid record at least 2 goals in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Connor McDavid",
+   "mid": 10.5,
+   "yes_buy": 11,
+   "no_buy": 90,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340274",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 3,
+   "question": "Will Evan Bouchard record at least 3 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Evan Bouchard record at least 3 points in NYR vs EDM",
+    "No: Evan Bouchard record at least 3 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Evan Bouchard",
+   "mid": 10.5,
+   "yes_buy": 11,
+   "no_buy": 90,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2351001",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Tye Kartye record at least 2 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Tye Kartye record at least 2 points in NYR vs EDM",
+    "No: Tye Kartye record at least 2 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Tye Kartye",
+   "mid": 10.5,
+   "yes_buy": 11,
+   "no_buy": 90,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340313",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Owen Michaels record at least 1 goals in NYR vs EDM?",
+   "sides": [
+    "Yes: Owen Michaels record at least 1 goals in NYR vs EDM",
+    "No: Owen Michaels record at least 1 goals in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Owen Michaels",
+   "mid": 9.5,
+   "yes_buy": 10,
+   "no_buy": 91,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2361233",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Kasperi Kapanen record at least 2 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Kasperi Kapanen record at least 2 points in NYR vs EDM",
+    "No: Kasperi Kapanen record at least 2 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Kasperi Kapanen",
+   "mid": 9.5,
+   "yes_buy": 10,
+   "no_buy": 91,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2344905",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Mattias Ekholm record at least 2 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Mattias Ekholm record at least 2 points in NYR vs EDM",
+    "No: Mattias Ekholm record at least 2 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Mattias Ekholm",
+   "mid": 9.5,
+   "yes_buy": 10,
+   "no_buy": 91,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340318",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Mika Zibanejad record at least 2 assists in NYR vs EDM?",
+   "sides": [
+    "Yes: Mika Zibanejad record at least 2 assists in NYR vs EDM",
+    "No: Mika Zibanejad record at least 2 assists in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Mika Zibanejad",
+   "mid": 8.5,
+   "yes_buy": 9,
+   "no_buy": 92,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2351003",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Oliver Bjorkstrand record at least 2 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Oliver Bjorkstrand record at least 2 points in NYR vs EDM",
+    "No: Oliver Bjorkstrand record at least 2 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Oliver Bjorkstrand",
+   "mid": 8.5,
+   "yes_buy": 9,
+   "no_buy": 92,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340320",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Alexis Lafreniere record at least 2 assists in NYR vs EDM?",
+   "sides": [
+    "Yes: Alexis Lafreniere record at least 2 assists in NYR vs EDM",
+    "No: Alexis Lafreniere record at least 2 assists in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Alexis Lafreniere",
+   "mid": 7.5,
+   "yes_buy": 8,
+   "no_buy": 93,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340322",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will J.T. Miller record at least 2 assists in NYR vs EDM?",
+   "sides": [
+    "Yes: J.T. Miller record at least 2 assists in NYR vs EDM",
+    "No: J.T. Miller record at least 2 assists in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "J.T. Miller",
+   "mid": 7.5,
+   "yes_buy": 8,
+   "no_buy": 93,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2344909",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Mattias Ekholm record at least 2 assists in NYR vs EDM?",
+   "sides": [
+    "Yes: Mattias Ekholm record at least 2 assists in NYR vs EDM",
+    "No: Mattias Ekholm record at least 2 assists in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Mattias Ekholm",
+   "mid": 6.5,
+   "yes_buy": 7,
+   "no_buy": 94,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340262",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 3,
+   "question": "Will Adam Fox record at least 3 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Adam Fox record at least 3 points in NYR vs EDM",
+    "No: Adam Fox record at least 3 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Adam Fox",
+   "mid": 6.5,
+   "yes_buy": 7,
+   "no_buy": 94,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2360111",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Ryan Shea record at least 2 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Ryan Shea record at least 2 points in NYR vs EDM",
+    "No: Ryan Shea record at least 2 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Oilers",
+    "Oilers"
+   ],
+   "player": "Ryan Shea",
+   "mid": 6.5,
+   "yes_buy": 7,
+   "no_buy": 94,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340324",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Pavel Dorofeyev record at least 2 assists in NYR vs EDM?",
+   "sides": [
+    "Yes: Pavel Dorofeyev record at least 2 assists in NYR vs EDM",
+    "No: Pavel Dorofeyev record at least 2 assists in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Pavel Dorofeyev",
+   "mid": 5.5,
+   "yes_buy": 6,
+   "no_buy": 95,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340279",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Pavel Dorofeyev record at least 2 goals in NYR vs EDM?",
+   "sides": [
+    "Yes: Pavel Dorofeyev record at least 2 goals in NYR vs EDM",
+    "No: Pavel Dorofeyev record at least 2 goals in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Pavel Dorofeyev",
+   "mid": 5.5,
+   "yes_buy": 6,
+   "no_buy": 95,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2340255",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 3,
+   "question": "Will Mika Zibanejad record at least 3 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Mika Zibanejad record at least 3 points in NYR vs EDM",
+    "No: Mika Zibanejad record at least 3 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Mika Zibanejad",
+   "mid": 5.5,
+   "yes_buy": 6,
+   "no_buy": 95,
+   "taken_at": "2026-11-09T21:34:58.997Z"
+  },
+  {
+   "market_id": "2344779",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 3,
+   "question": "Will Pavel Dorofeyev record at least 3 points in NYR vs EDM?",
+   "sides": [
+    "Yes: Pavel Dorofeyev record at least 3 points in NYR vs EDM",
+    "No: Pavel Dorofeyev record at least 3 points in NYR vs EDM"
+   ],
+   "teams": [
+    "Rangers",
+    "Rangers"
+   ],
+   "player": "Pavel Dorofeyev",
+   "mid": 5,
+   "yes_buy": 8,
+   "no_buy": 98,
+   "taken_at": "2026-11-09T07:54:22.485Z"
+  },
+  {
+   "market_id": "2190023",
+   "market": "Alt spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": -3.5,
+   "question": "Will the NYR Rangers cover -3.5 vs the EDM Oilers in NYR vs EDM?",
+   "sides": [
+    "Rangers -3.50",
+    "Oilers +3.50"
+   ],
+   "teams": [
+    "Rangers",
+    "Oilers"
+   ],
+   "player": null,
+   "mid": 5.5,
+   "yes_buy": 8,
+   "no_buy": 97,
+   "taken_at": "2026-11-09T01:01:41.325Z"
   },
   {
    "market_id": "2344907",
@@ -1030,28 +2306,6 @@
    "taken_at": "2026-11-09T07:54:22.485Z"
   },
   {
-   "market_id": "2344779",
-   "market": "Player prop",
-   "group": "prop",
-   "mtype": "prop",
-   "period": "full_game",
-   "line": 3,
-   "question": "Will Pavel Dorofeyev record at least 3 points in NYR vs EDM?",
-   "sides": [
-    "Yes: Pavel Dorofeyev record at least 3 points in NYR vs EDM",
-    "No: Pavel Dorofeyev record at least 3 points in NYR vs EDM"
-   ],
-   "teams": [
-    "Rangers",
-    "Rangers"
-   ],
-   "player": "Pavel Dorofeyev",
-   "mid": 5,
-   "yes_buy": 8,
-   "no_buy": 98,
-   "taken_at": "2026-11-09T07:54:22.485Z"
-  },
-  {
    "market_id": "2344911",
    "market": "Player prop",
    "group": "prop",
@@ -1072,57 +2326,234 @@
    "yes_buy": 7,
    "no_buy": 98,
    "taken_at": "2026-11-09T07:54:22.485Z"
-  },
+  }
+ ],
+ "edges": [
   {
-   "market_id": "2340325",
-   "market": "Player prop",
-   "group": "prop",
-   "mtype": "prop",
-   "period": "full_game",
-   "line": 1,
-   "question": "Will Connor McDavid record at least 1 assists in NYR vs EDM?",
-   "sides": [
-    "Yes: Connor McDavid record at least 1 assists in NYR vs EDM",
-    "No: Connor McDavid record at least 1 assists in NYR vs EDM"
-   ],
-   "teams": [
-    "Oilers",
-    "Oilers"
-   ],
-   "player": "Connor McDavid",
-   "mid": 65.5,
-   "yes_buy": 66,
-   "no_buy": 35,
-   "taken_at": "2026-11-09T02:58:31.723Z"
-  },
-  {
+   "key": "2340266:1",
    "market_id": "2340266",
    "market": "Player prop",
    "group": "prop",
-   "mtype": "prop",
-   "period": "full_game",
-   "line": 2,
    "question": "Will Connor McDavid record at least 2 points in NYR vs EDM?",
-   "sides": [
-    "Yes: Connor McDavid record at least 2 points in NYR vs EDM",
-    "No: Connor McDavid record at least 2 points in NYR vs EDM"
-   ],
-   "teams": [
-    "Oilers",
-    "Oilers"
-   ],
-   "player": "Connor McDavid",
-   "mid": 47.5,
-   "yes_buy": 48,
-   "no_buy": 53,
-   "taken_at": "2026-11-09T02:58:31.723Z"
+   "side": "No: Connor McDavid record at least 2 points in NYR vs EDM",
+   "open_chance": 53,
+   "now_chance": 44,
+   "open_odds": "-113",
+   "now_odds": "+127",
+   "edge": 9,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-11-09T21:34:58.997Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "2340325:1",
+   "market_id": "2340325",
+   "market": "Player prop",
+   "group": "prop",
+   "question": "Will Connor McDavid record at least 1 assists in NYR vs EDM?",
+   "side": "No: Connor McDavid record at least 1 assists in NYR vs EDM",
+   "open_chance": 35,
+   "now_chance": 27,
+   "open_odds": "+186",
+   "now_odds": "+270",
+   "edge": 8,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-11-09T21:34:58.997Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "2340253:1",
+   "market_id": "2340253",
+   "market": "Player prop",
+   "group": "prop",
+   "question": "Will Mika Zibanejad record at least 1 points in NYR vs EDM?",
+   "side": "No: Mika Zibanejad record at least 1 points in NYR vs EDM",
+   "open_chance": 48,
+   "now_chance": 42,
+   "open_odds": "+108",
+   "now_odds": "+138",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-11-09T21:34:58.997Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "2340270:1",
+   "market_id": "2340270",
+   "market": "Player prop",
+   "group": "prop",
+   "question": "Will Leon Draisaitl record at least 2 points in NYR vs EDM?",
+   "side": "No: Leon Draisaitl record at least 2 points in NYR vs EDM",
+   "open_chance": 59,
+   "now_chance": 53,
+   "open_odds": "-144",
+   "now_odds": "-113",
+   "edge": 6,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-11-09T21:34:58.997Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "2340329:1",
+   "market_id": "2340329",
+   "market": "Player prop",
+   "group": "prop",
+   "question": "Will Leon Draisaitl record at least 1 assists in NYR vs EDM?",
+   "side": "No: Leon Draisaitl record at least 1 assists in NYR vs EDM",
+   "open_chance": 44,
+   "now_chance": 39,
+   "open_odds": "+127",
+   "now_odds": "+156",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-11-09T21:34:58.997Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "2340315:1",
+   "market_id": "2340315",
+   "market": "Player prop",
+   "group": "prop",
+   "question": "Will Adam Fox record at least 1 assists in NYR vs EDM?",
+   "side": "No: Adam Fox record at least 1 assists in NYR vs EDM",
+   "open_chance": 54,
+   "now_chance": 49,
+   "open_odds": "-117",
+   "now_odds": "+104",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-11-09T21:34:58.997Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "2340285:1",
+   "market_id": "2340285",
+   "market": "Player prop",
+   "group": "prop",
+   "question": "Will Mika Zibanejad record at least 1 goals in NYR vs EDM?",
+   "side": "No: Mika Zibanejad record at least 1 goals in NYR vs EDM",
+   "open_chance": 78,
+   "now_chance": 73,
+   "open_odds": "-355",
+   "now_odds": "-270",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-11-09T21:34:58.997Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2340282:0",
+   "market_id": "2340282",
+   "market": "Player prop",
+   "group": "prop",
+   "question": "Will Alexis Lafreniere record at least 1 goals in NYR vs EDM?",
+   "side": "Yes: Alexis Lafreniere record at least 1 goals in NYR vs EDM",
+   "open_chance": 33,
+   "now_chance": 28,
+   "open_odds": "+203",
+   "now_odds": "+257",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-11-09T21:34:58.997Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2340275:1",
+   "market_id": "2340275",
+   "market": "Player prop",
+   "group": "prop",
+   "question": "Will Zach Hyman record at least 1 points in NYR vs EDM?",
+   "side": "No: Zach Hyman record at least 1 points in NYR vs EDM",
+   "open_chance": 52,
+   "now_chance": 48,
+   "open_odds": "-108",
+   "now_odds": "+108",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-11-09T21:34:58.997Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "2340326:0",
+   "market_id": "2340326",
+   "market": "Player prop",
+   "group": "prop",
+   "question": "Will Connor McDavid record at least 2 assists in NYR vs EDM?",
+   "side": "Yes: Connor McDavid record at least 2 assists in NYR vs EDM",
+   "open_chance": 38,
+   "now_chance": 34,
+   "open_odds": "+163",
+   "now_odds": "+194",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-11-09T21:34:58.997Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "2344910:1",
+   "market_id": "2344910",
+   "market": "Player prop",
+   "group": "prop",
+   "question": "Will Vasily Podkolzin record at least 1 assists in NYR vs EDM?",
+   "side": "No: Vasily Podkolzin record at least 1 assists in NYR vs EDM",
+   "open_chance": 75,
+   "now_chance": 71,
+   "open_odds": "-300",
+   "now_odds": "-245",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-11-09T21:34:58.997Z",
+   "status": "open",
+   "kalshi": true
   }
  ],
- "edges": [],
  "alerts": [],
  "alert_seen": [],
  "kalshi_checked": {
-  "at": "2026-11-09T07:59:14.076Z",
+  "at": "2026-11-09T21:44:28.457Z",
   "event": "26NOV09NYREDM"
  }
 }

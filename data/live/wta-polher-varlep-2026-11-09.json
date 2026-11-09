@@ -3,31 +3,31 @@
  "slug": "wta-polher-varlep-2026-11-09",
  "game": "Polona Hercog vs. Varvara Lepchenko",
  "url": "https://polymarket.us/sports/wta/wta-polher-varlep-2026-11-09",
- "start_time": "2026-11-09T15:00:00Z",
- "status": "pregame",
+ "start_time": "2026-11-09T15:30:00Z",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186749",
-  "fetched_at": "2026-11-09T07:59:29.890Z",
+  "fetched_at": "2026-11-09T21:35:18.225Z",
   "tennis": true,
   "tennis_match": {
    "id": "186749",
    "uid": "s:850~l:900~e:1084-2026~c:186749",
-   "date": "2026-11-09T15:00Z",
-   "startDate": "2026-11-09T15:00Z",
+   "date": "2026-11-09T15:35Z",
+   "startDate": "2026-11-09T15:35Z",
    "timeValid": true,
    "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Mon, November 9th at 10:00 AM EST",
-     "shortDetail": "11/9 - 10:00 AM EST"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Polona Hercog (SLO) bt Varvara Lepchenko (USA) 6-2 7-6 (7-3)",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,18 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 2,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "tiebreak": 3,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "abb46dba-4c61-b31d-df08-cfa4a24403d1",
       "displayName": "Varvara Lepchenko",
@@ -87,6 +104,18 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "aeb4f263-714c-9587-d0d4-c8c2fa30a6fc",
       "displayName": "Polona Hercog",
@@ -135,10 +164,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Mon, November 9th at 10:00 AM EST",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Varvara Lepchenko",
@@ -150,13 +179,13 @@
    "abbr": "Polona Hercog",
    "alias": "Polona Hercog",
    "name": "Polona Hercog",
-   "score": 0
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-09T07:59:29.738Z",
+ "updated": "2026-11-09T21:35:18.171Z",
  "open_taken_at": "2026-11-08T21:16:52.756Z",
  "thresholds": {
   "big": 10,
@@ -226,11 +255,28 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-09T07:59:29.738Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:2334439:0:2026-11-09T07:59:29.738Z",
+   "key": "2334439:0",
+   "at": "2026-11-09T21:35:18.171Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Polona Hercog win",
+   "market": "Moneyline",
+   "now_odds": "-127",
+   "now_chance": 56,
+   "edge": 6,
+   "text": "Edge gone: Polona Hercog win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-polher-varlep-2026-11-09"
+  }
+ ],
+ "alert_seen": [
+  "gone:2334439:0:2026-11-09T07:59:29.738Z"
+ ],
  "kalshi_checked": null
 }
