@@ -3,31 +3,31 @@
  "slug": "wta-cocgau-jespeg-2026-11-08",
  "game": "Coco Gauff vs. Jessica Pegula",
  "url": "https://polymarket.us/sports/wta/wta-cocgau-jespeg-2026-11-08",
- "start_time": "2026-11-08T21:30:00Z",
- "status": "pregame",
+ "start_time": "2026-11-08T21:50:00Z",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187374",
-  "fetched_at": "2026-11-08T21:24:51.958Z",
+  "fetched_at": "2026-11-09T01:01:56.057Z",
   "tennis": true,
   "tennis_match": {
    "id": "187374",
    "uid": "s:850~l:900~e:382-2026~c:187374",
-   "date": "2026-11-08T21:30Z",
-   "startDate": "2026-11-08T21:30Z",
+   "date": "2026-11-08T22:05Z",
+   "startDate": "2026-11-08T22:05Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 3,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sun, November 8th at 4:30 PM EST",
-     "shortDetail": "11/8 - 4:30 PM EST"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(4) Coco Gauff (USA) bt (5) Jessica Pegula (USA) 6-4 6-7 (5-7) 6-2",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,25 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
      "curatedRank": {
       "current": 5
      },
+     "linescores": [
+      {
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 2,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "63f9c1e5-14bd-003f-c269-31543931ad1d",
       "displayName": "Jessica Pegula",
@@ -90,9 +111,25 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
      "curatedRank": {
       "current": 4
      },
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "tiebreak": 5,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "ca44c2b0-9dea-ab40-2541-b50a4442ff8e",
       "displayName": "Coco Gauff",
@@ -141,28 +178,28 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sun, November 8th at 4:30 PM EST",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Jessica Pegula",
    "alias": "Jessica Pegula",
    "name": "Jessica Pegula",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Coco Gauff",
    "alias": "Coco Gauff",
    "name": "Coco Gauff",
-   "score": 0
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-08T21:24:51.809Z",
+ "updated": "2026-11-09T01:01:55.756Z",
  "open_taken_at": "2026-11-07T08:50:03.020Z",
  "thresholds": {
   "big": 10,
@@ -496,7 +533,7 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-08T03:20:41.984Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -516,11 +553,43 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-08T21:16:27.990Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:2253097:1:2026-11-08T03:20:41.984Z",
+   "key": "2253097:1",
+   "at": "2026-11-09T01:01:55.756Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+113",
+   "now_chance": 47,
+   "edge": 11,
+   "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-cocgau-jespeg-2026-11-08"
+  },
+  {
+   "id": "gone:2253074:0:2026-11-08T21:16:27.990Z",
+   "key": "2253074:0",
+   "at": "2026-11-09T01:01:55.756Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Coco Gauff -1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-104",
+   "now_chance": 51,
+   "edge": 5,
+   "text": "Edge gone: Coco Gauff -1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-cocgau-jespeg-2026-11-08"
+  }
+ ],
+ "alert_seen": [
+  "gone:2253097:1:2026-11-08T03:20:41.984Z",
+  "gone:2253074:0:2026-11-08T21:16:27.990Z"
+ ],
  "kalshi_checked": null
 }

@@ -4,14 +4,14 @@
  "game": "Federico Zeballos vs. Alex Hernandez",
  "url": "https://polymarket.us/sports/atp/atp-fedzeb-aleher-2026-11-08",
  "start_time": "2026-11-08T20:45:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-08T21:25:01.865Z"
+  "fetched_at": "2026-11-09T01:01:53.580Z"
  },
- "updated": "2026-11-08T21:25:01.705Z",
+ "updated": "2026-11-09T01:01:53.494Z",
  "open_taken_at": "2026-11-08T02:12:08.169Z",
  "thresholds": {
   "big": 10,
@@ -213,11 +213,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-08T21:25:01.705Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2293991:0:2026-11-08T21:25:01.705Z",
+   "key": "2293991:0",
+   "at": "2026-11-09T01:01:53.494Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Federico Zeballos +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+456",
+   "now_chance": 18,
+   "edge": 17,
+   "text": "Edge gone: Federico Zeballos +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-fedzeb-aleher-2026-11-08"
+  },
   {
    "id": "new_edge:2293991:0:big",
    "key": "2293991:0",
@@ -234,7 +248,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2293991:0:big"
+  "new_edge:2293991:0:big",
+  "gone:2293991:0:2026-11-08T21:25:01.705Z"
  ],
  "kalshi_checked": null
 }

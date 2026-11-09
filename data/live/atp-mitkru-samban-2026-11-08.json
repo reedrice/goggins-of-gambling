@@ -4,14 +4,14 @@
  "game": "Mitchell Krueger vs. Samir Banerjee",
  "url": "https://polymarket.us/sports/atp/atp-mitkru-samban-2026-11-08",
  "start_time": "2026-11-08T20:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-08T21:25:03.563Z"
+  "fetched_at": "2026-11-09T01:01:53.840Z"
  },
- "updated": "2026-11-08T21:25:03.435Z",
+ "updated": "2026-11-09T01:01:53.680Z",
  "open_taken_at": "2026-11-08T02:12:08.629Z",
  "thresholds": {
   "big": 10,
@@ -169,11 +169,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-08T21:25:03.435Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2296490:1:2026-11-08T21:25:03.435Z",
+   "key": "2296490:1",
+   "at": "2026-11-09T01:01:53.680Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Samir Banerjee +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "+245",
+   "now_chance": 29,
+   "edge": 4,
+   "text": "Edge gone: Samir Banerjee +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-mitkru-samban-2026-11-08"
+  },
   {
    "id": "new_edge:2296490:1:slight",
    "key": "2296490:1",
@@ -190,7 +204,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2296490:1:slight"
+  "new_edge:2296490:1:slight",
+  "gone:2296490:1:2026-11-08T21:25:03.435Z"
  ],
  "kalshi_checked": null
 }
