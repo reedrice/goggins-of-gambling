@@ -3,31 +3,31 @@
  "slug": "wta-biaand-rebmas-2026-11-09",
  "game": "Bianca Andreescu vs. Rebeka Masarova",
  "url": "https://polymarket.us/sports/wta/wta-biaand-rebmas-2026-11-09",
- "start_time": "2026-11-10T16:10:00Z",
- "status": "pregame",
+ "start_time": "2026-11-10T17:45:00Z",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186745",
-  "fetched_at": "2026-11-10T03:59:51.700Z",
+  "fetched_at": "2026-11-10T22:01:53.264Z",
   "tennis": true,
   "tennis_match": {
    "id": "186745",
    "uid": "s:850~l:900~e:1084-2026~c:186745",
-   "date": "2026-11-10T16:30Z",
-   "startDate": "2026-11-10T16:30Z",
+   "date": "2026-11-10T17:55Z",
+   "startDate": "2026-11-10T17:55Z",
    "timeValid": true,
    "recent": false,
    "status": {
-    "period": 1,
+    "period": 3,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Tue, November 10th at 11:30 AM EST",
-     "shortDetail": "11/10 - 11:30 AM EST"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(3) Bianca Andreescu (CAN) bt Rebeka Masarova (SUI) 3-6 6-3 6-4",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,21 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 4,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "1974ca83-b187-9eeb-8480-5d3b758db3d3",
       "displayName": "Rebeka Masarova",
@@ -87,9 +107,24 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
      "curatedRank": {
       "current": 3
      },
+     "linescores": [
+      {
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "6fd6b28f-61b2-9ac1-4a0e-cd5bd4a3aa20",
       "displayName": "Bianca Andreescu",
@@ -138,28 +173,28 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Tue, November 10th at 11:30 AM EST",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Rebeka Masarova",
    "alias": "Rebeka Masarova",
    "name": "Rebeka Masarova",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Bianca Andreescu",
    "alias": "Bianca Andreescu",
    "name": "Bianca Andreescu",
-   "score": 0
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-10T03:59:51.560Z",
+ "updated": "2026-11-10T22:01:53.118Z",
  "open_taken_at": "2026-11-09T07:54:38.576Z",
  "thresholds": {
   "big": 10,
@@ -207,11 +242,28 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-09T21:35:09.373Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:2334434:0:2026-11-09T21:35:09.373Z",
+   "key": "2334434:0",
+   "at": "2026-11-10T22:01:53.118Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Bianca Andreescu win",
+   "market": "Moneyline",
+   "now_odds": "-335",
+   "now_chance": 77,
+   "edge": 6,
+   "text": "Edge gone: Bianca Andreescu win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-biaand-rebmas-2026-11-09"
+  }
+ ],
+ "alert_seen": [
+  "gone:2334434:0:2026-11-09T21:35:09.373Z"
+ ],
  "kalshi_checked": null
 }

@@ -3,43 +3,48 @@
  "slug": "atp-artrin-miokec-2026-11-08",
  "game": "Arthur Rinderknech vs. Miomir Kecmanovic",
  "url": "https://polymarket.us/sports/atp/atp-artrin-miokec-2026-11-08",
- "start_time": "2026-11-10T14:20:00Z",
- "status": "pregame",
+ "start_time": "2026-11-10T14:30:00Z",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186527",
-  "fetched_at": "2026-11-10T03:59:48.499Z",
+  "fetched_at": "2026-11-10T22:01:43.864Z",
   "tennis": true,
   "tennis_match": {
    "id": "186527",
    "uid": "s:850~l:851~e:148-2026~c:186527",
-   "date": "2026-11-10T15:00Z",
-   "startDate": "2026-11-10T15:00Z",
+   "date": "2026-11-10T14:35Z",
+   "startDate": "2026-11-10T14:35Z",
    "timeValid": true,
    "recent": false,
    "status": {
-    "period": 1,
+    "period": 3,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Tue, November 10th at 10:00 AM EST",
-     "shortDetail": "11/10 - 10:00 AM EST"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
     "fullName": "Stockholm, Sweden",
-    "court": "Court 1"
+    "court": "Center Court"
    },
    "format": {
     "regulation": {
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Miomir Kecmanovic (SER) bt Arthur Rinderknech (FRA) 7-6 (7-4) 4-6 6-4",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,22 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "6972f310-caca-a4fc-3e06-78b5cefa7387",
       "displayName": "Miomir Kecmanovic",
@@ -87,6 +108,22 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 6,
+       "tiebreak": 4,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 4,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "af9a067d-8c11-96c1-b14e-b2de7424a1bc",
       "displayName": "Arthur Rinderknech",
@@ -135,28 +172,28 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Tue, November 10th at 10:00 AM EST",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Miomir Kecmanovic",
    "alias": "Miomir Kecmanovic",
    "name": "Miomir Kecmanovic",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Arthur Rinderknech",
    "alias": "Arthur Rinderknech",
    "name": "Arthur Rinderknech",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-10T03:59:48.379Z",
+ "updated": "2026-11-10T22:01:43.778Z",
  "open_taken_at": "2026-11-08T09:02:19.227Z",
  "thresholds": {
   "big": 10,
@@ -292,11 +329,28 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-10T03:52:03.088Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:2269650:0:2026-11-10T03:52:03.088Z",
+   "key": "2269650:0",
+   "at": "2026-11-10T22:01:43.778Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Arthur Rinderknech win",
+   "market": "Moneyline",
+   "now_odds": "-194",
+   "now_chance": 66,
+   "edge": 4,
+   "text": "Edge gone: Arthur Rinderknech win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-artrin-miokec-2026-11-08"
+  }
+ ],
+ "alert_seen": [
+  "gone:2269650:0:2026-11-10T03:52:03.088Z"
+ ],
  "kalshi_checked": null
 }
