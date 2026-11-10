@@ -3,7 +3,7 @@
   "league": "nhl",
   "query_date": "2026-11-09",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261109&limit=1000",
-  "fetched_at": "2026-11-09T21:44:08.142Z",
+  "fetched_at": "2026-11-10T03:59:26.913Z",
   "events": [
     {
       "id": "401892680",
@@ -12,19 +12,16 @@
       "status": {
         "clock": 0,
         "displayClock": "0:00",
-        "period": 0,
+        "period": 3,
         "type": {
-          "id": "1",
-          "name": "STATUS_SCHEDULED",
-          "state": "pre",
-          "completed": false,
-          "description": "Scheduled",
-          "detail": "Mon, November 9th at 8:00 PM EST",
-          "shortDetail": "11/9 - 8:00 PM EST"
+          "id": "3",
+          "name": "STATUS_FINAL",
+          "state": "post",
+          "completed": true,
+          "description": "Final",
+          "detail": "Final",
+          "shortDetail": "Final"
         }
-      },
-      "boxscore": {
-        "players": []
       },
       "competitions": [
         {
@@ -33,22 +30,257 @@
           "status": {
             "clock": 0,
             "displayClock": "0:00",
-            "period": 0,
+            "period": 3,
             "type": {
-              "id": "1",
-              "name": "STATUS_SCHEDULED",
-              "state": "pre",
-              "completed": false,
-              "description": "Scheduled",
-              "detail": "Mon, November 9th at 8:00 PM EST",
-              "shortDetail": "11/9 - 8:00 PM EST"
-            }
+              "id": "3",
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            },
+            "featuredAthletes": [
+              {
+                "name": "firstStar",
+                "displayName": "First Star",
+                "shortDisplayName": "First Star",
+                "abbreviation": "FS",
+                "playerId": 4894487,
+                "athlete": {
+                  "id": "4894487",
+                  "fullName": "Devon Levi",
+                  "displayName": "Devon Levi",
+                  "shortName": "D. Levi",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/nhl/player/_/id/4894487"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/4894487.png",
+                  "jersey": "27",
+                  "position": "G",
+                  "team": {
+                    "id": "6"
+                  }
+                },
+                "team": {
+                  "id": "6"
+                },
+                "statistics": [
+                  {
+                    "name": "saves",
+                    "abbreviation": "SV",
+                    "displayValue": "28"
+                  },
+                  {
+                    "name": "savePct",
+                    "abbreviation": "SV%",
+                    "displayValue": ".966"
+                  },
+                  {
+                    "name": "plusMinus",
+                    "abbreviation": "+/-",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "goals",
+                    "abbreviation": "G",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "ytdGoals",
+                    "abbreviation": "YTDG",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "assists",
+                    "abbreviation": "A",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "points",
+                    "abbreviation": "PTS",
+                    "displayValue": "0"
+                  }
+                ],
+                "projections": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/hockey/leagues/nhl/events/401892680/competitions/401892680/competitors/6/roster/4894487/projections?lang=en&region=us"
+                }
+              },
+              {
+                "name": "secondStar",
+                "displayName": "Second Star",
+                "shortDisplayName": "Second Star",
+                "abbreviation": "SS",
+                "playerId": 3114727,
+                "athlete": {
+                  "id": "3114727",
+                  "fullName": "Leon Draisaitl",
+                  "displayName": "Leon Draisaitl",
+                  "shortName": "L. Draisaitl",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/nhl/player/_/id/3114727"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/3114727.png",
+                  "jersey": "29",
+                  "position": "C",
+                  "team": {
+                    "id": "6"
+                  }
+                },
+                "team": {
+                  "id": "6"
+                },
+                "statistics": [
+                  {
+                    "name": "saves",
+                    "abbreviation": "SV",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "savePct",
+                    "abbreviation": "SV%",
+                    "displayValue": ".000"
+                  },
+                  {
+                    "name": "plusMinus",
+                    "abbreviation": "+/-",
+                    "displayValue": "2"
+                  },
+                  {
+                    "name": "goals",
+                    "abbreviation": "G",
+                    "displayValue": "2"
+                  },
+                  {
+                    "name": "ytdGoals",
+                    "abbreviation": "YTDG",
+                    "displayValue": "18"
+                  },
+                  {
+                    "name": "assists",
+                    "abbreviation": "A",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "points",
+                    "abbreviation": "PTS",
+                    "displayValue": "2"
+                  }
+                ],
+                "projections": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/hockey/leagues/nhl/events/401892680/competitions/401892680/competitors/6/roster/3114727/projections?lang=en&region=us"
+                }
+              },
+              {
+                "name": "thirdStar",
+                "displayName": "Third Star",
+                "shortDisplayName": "Third Star",
+                "abbreviation": "TS",
+                "playerId": 4197146,
+                "athlete": {
+                  "id": "4197146",
+                  "fullName": "Adam Fox",
+                  "displayName": "Adam Fox",
+                  "shortName": "A. Fox",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/nhl/player/_/id/4197146"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/4197146.png",
+                  "jersey": "23",
+                  "position": "D",
+                  "team": {
+                    "id": "13"
+                  }
+                },
+                "team": {
+                  "id": "13"
+                },
+                "statistics": [
+                  {
+                    "name": "saves",
+                    "abbreviation": "SV",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "savePct",
+                    "abbreviation": "SV%",
+                    "displayValue": ".000"
+                  },
+                  {
+                    "name": "plusMinus",
+                    "abbreviation": "+/-",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "goals",
+                    "abbreviation": "G",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "ytdGoals",
+                    "abbreviation": "YTDG",
+                    "displayValue": "2"
+                  },
+                  {
+                    "name": "assists",
+                    "abbreviation": "A",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "points",
+                    "abbreviation": "PTS",
+                    "displayValue": "0"
+                  }
+                ],
+                "projections": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/hockey/leagues/nhl/events/401892680/competitions/401892680/competitors/13/roster/4197146/projections?lang=en&region=us"
+                }
+              }
+            ]
           },
           "competitors": [
             {
               "id": "6",
               "homeAway": "home",
-              "score": "0",
+              "score": "3",
+              "linescores": [
+                {
+                  "value": 1,
+                  "displayValue": "1",
+                  "period": 1
+                },
+                {
+                  "value": 1,
+                  "displayValue": "1",
+                  "period": 2
+                },
+                {
+                  "value": 1,
+                  "displayValue": "1",
+                  "period": 3
+                }
+              ],
               "team": {
                 "id": "6",
                 "abbreviation": "EDM",
@@ -61,7 +293,24 @@
             {
               "id": "13",
               "homeAway": "away",
-              "score": "0",
+              "score": "1",
+              "linescores": [
+                {
+                  "value": 0,
+                  "displayValue": "0",
+                  "period": 1
+                },
+                {
+                  "value": 1,
+                  "displayValue": "1",
+                  "period": 2
+                },
+                {
+                  "value": 0,
+                  "displayValue": "0",
+                  "period": 3
+                }
+              ],
               "team": {
                 "id": "13",
                 "abbreviation": "NYR",
@@ -75,68 +324,7 @@
         }
       ],
       "player_usage": [],
-      "injuries": [
-        {
-          "team": "EDM",
-          "player": "Colton Dach",
-          "position": "C",
-          "status": "Out"
-        },
-        {
-          "team": "EDM",
-          "player": "Isaac Howard",
-          "position": "LW",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "EDM",
-          "player": "Alec Regula",
-          "position": "D",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "EDM",
-          "player": "Matt Savoie",
-          "position": "C",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "EDM",
-          "player": "Frederik Andersen",
-          "position": "G",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "NYR",
-          "player": "Alberts Smits",
-          "position": "D",
-          "status": "Out"
-        },
-        {
-          "team": "NYR",
-          "player": "Sean Durzi",
-          "position": "D",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "NYR",
-          "player": "Igor Shesterkin",
-          "position": "G",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "NYR",
-          "player": "Joe Veleno",
-          "position": "C",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "NYR",
-          "player": "Aidan Thompson",
-          "position": "C",
-          "status": "Injured Reserve"
-        }
-      ],
+      "injuries": [],
       "starters": [],
       "starting_goalies": [],
       "probables": [
@@ -155,64 +343,1322 @@
           "confirmed": false
         }
       ],
-      "book_lines": [
-        {
-          "provider": "Draft Kings",
-          "details": "EDM -162",
-          "spread": -1.5,
-          "total": 6.5
-        }
-      ],
+      "book_lines": [],
       "coverage": {
-        "injuries": "published_report",
+        "injuries": "unavailable",
         "starters": "unverified",
         "goalies": "unverified",
         "hockey_lines": "unavailable",
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261109&limit=1000",
-      "fetched_at": "2026-11-09T21:44:08.142Z",
-      "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/summary?event=401892680",
-      "details_checked_at": "2026-11-09T21:44:08.142Z",
-      "details_available": true
+      "fetched_at": "2026-11-10T03:59:26.913Z",
+      "details_source_url": null,
+      "details_checked_at": null,
+      "details_available": false
     },
     {
       "id": "401892681",
       "name": "Philadelphia Flyers at Vancouver Canucks",
       "date": "2026-11-10T02:30Z",
       "status": {
-        "clock": 0,
-        "displayClock": "0:00",
-        "period": 0,
+        "clock": 373,
+        "displayClock": "6:13",
+        "period": 2,
         "type": {
-          "id": "1",
-          "name": "STATUS_SCHEDULED",
-          "state": "pre",
+          "id": "2",
+          "name": "STATUS_IN_PROGRESS",
+          "state": "in",
           "completed": false,
-          "description": "Scheduled",
-          "detail": "Mon, November 9th at 9:30 PM EST",
-          "shortDetail": "11/9 - 9:30 PM EST"
+          "description": "In Progress",
+          "detail": "6:13 - 2nd Period",
+          "shortDetail": "6:13 - 2nd"
         }
       },
       "boxscore": {
-        "players": []
+        "players": [
+          {
+            "team": {
+              "abbreviation": "PHI"
+            },
+            "statistics": [
+              {
+                "name": "forwards",
+                "keys": [
+                  "blockedShots",
+                  "hits",
+                  "takeaways",
+                  "plusMinus",
+                  "timeOnIce",
+                  "powerPlayTimeOnIce",
+                  "shortHandedTimeOnIce",
+                  "evenStrengthTimeOnIce",
+                  "shifts",
+                  "goals",
+                  "ytdGoals",
+                  "assists",
+                  "shotsTotal",
+                  "shotsMissed",
+                  "shootoutGoals",
+                  "faceoffsWon",
+                  "faceoffsLost",
+                  "faceoffPercent",
+                  "giveaways",
+                  "penalties",
+                  "penaltyMinutes"
+                ],
+                "athletes": [
+                  {
+                    "athlete": {
+                      "displayName": "Noel Acciari"
+                    },
+                    "stats": [
+                      "0",
+                      "2",
+                      "0",
+                      "1",
+                      "7:52",
+                      "0:00",
+                      "1:36",
+                      "6:16",
+                      "11",
+                      "0",
+                      "3",
+                      "0",
+                      "1",
+                      "1",
+                      "0",
+                      "1",
+                      "1",
+                      "50.0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Denver Barkey"
+                    },
+                    "stats": [
+                      "0",
+                      "0",
+                      "1",
+                      "0",
+                      "8:41",
+                      "1:46",
+                      "0:00",
+                      "6:55",
+                      "12",
+                      "0",
+                      "2",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "0",
+                      "1",
+                      "2"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Michael Bunting"
+                    },
+                    "stats": [
+                      "0",
+                      "1",
+                      "0",
+                      "1",
+                      "5:48",
+                      "0:00",
+                      "0:00",
+                      "5:48",
+                      "8",
+                      "1",
+                      "1",
+                      "0",
+                      "2",
+                      "1",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Noah Cates"
+                    },
+                    "stats": [
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "7:32",
+                      "0:00",
+                      "0:49",
+                      "6:43",
+                      "12",
+                      "0",
+                      "2",
+                      "0",
+                      "1",
+                      "3",
+                      "0",
+                      "5",
+                      "1",
+                      "83.3",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Sean Couturier"
+                    },
+                    "stats": [
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "8:01",
+                      "0:00",
+                      "1:37",
+                      "6:24",
+                      "12",
+                      "0",
+                      "1",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "2",
+                      "2",
+                      "50.0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Christian Dvorak"
+                    },
+                    "stats": [
+                      "0",
+                      "1",
+                      "0",
+                      "1",
+                      "8:25",
+                      "0:21",
+                      "1:16",
+                      "6:48",
+                      "11",
+                      "0",
+                      "3",
+                      "2",
+                      "0",
+                      "0",
+                      "0",
+                      "2",
+                      "3",
+                      "40.0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Tyson Foerster"
+                    },
+                    "stats": [
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "8:40",
+                      "0:00",
+                      "0:32",
+                      "8:08",
+                      "11",
+                      "0",
+                      "3",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Travis Konecny"
+                    },
+                    "stats": [
+                      "0",
+                      "3",
+                      "0",
+                      "0",
+                      "8:01",
+                      "0:22",
+                      "0:05",
+                      "7:34",
+                      "12",
+                      "1",
+                      "2",
+                      "0",
+                      "1",
+                      "2",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Porter Martone"
+                    },
+                    "stats": [
+                      "0",
+                      "4",
+                      "0",
+                      "0",
+                      "9:23",
+                      "1:47",
+                      "0:00",
+                      "7:36",
+                      "10",
+                      "0",
+                      "3",
+                      "0",
+                      "4",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "2",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Matvei Michkov"
+                    },
+                    "stats": [
+                      "0",
+                      "0",
+                      "1",
+                      "0",
+                      "9:01",
+                      "2:08",
+                      "0:00",
+                      "6:53",
+                      "10",
+                      "0",
+                      "10",
+                      "1",
+                      "2",
+                      "1",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Owen Tippett"
+                    },
+                    "stats": [
+                      "1",
+                      "3",
+                      "0",
+                      "0",
+                      "7:29",
+                      "0:00",
+                      "0:00",
+                      "7:29",
+                      "9",
+                      "0",
+                      "2",
+                      "0",
+                      "0",
+                      "1",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "1",
+                      "1",
+                      "2"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Trevor Zegras"
+                    },
+                    "stats": [
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "10:21",
+                      "2:08",
+                      "0:00",
+                      "8:13",
+                      "13",
+                      "0",
+                      "4",
+                      "0",
+                      "1",
+                      "1",
+                      "0",
+                      "4",
+                      "2",
+                      "66.7",
+                      "2",
+                      "0",
+                      "0"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "defenses",
+                "keys": [
+                  "blockedShots",
+                  "hits",
+                  "takeaways",
+                  "plusMinus",
+                  "timeOnIce",
+                  "powerPlayTimeOnIce",
+                  "shortHandedTimeOnIce",
+                  "evenStrengthTimeOnIce",
+                  "shifts",
+                  "goals",
+                  "ytdGoals",
+                  "assists",
+                  "shotsTotal",
+                  "shotsMissed",
+                  "shootoutGoals",
+                  "faceoffsWon",
+                  "faceoffsLost",
+                  "faceoffPercent",
+                  "giveaways",
+                  "penalties",
+                  "penaltyMinutes"
+                ],
+                "athletes": [
+                  {
+                    "athlete": {
+                      "displayName": "Oliver Bonk"
+                    },
+                    "stats": [
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "10:20",
+                      "0:00",
+                      "0:00",
+                      "10:20",
+                      "11",
+                      "0",
+                      "1",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "2",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Jamie Drysdale"
+                    },
+                    "stats": [
+                      "1",
+                      "0",
+                      "0",
+                      "1",
+                      "11:40",
+                      "1:54",
+                      "0:54",
+                      "8:52",
+                      "17",
+                      "0",
+                      "1",
+                      "0",
+                      "0",
+                      "1",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "David Jiricek"
+                    },
+                    "stats": [
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "9:14",
+                      "0:14",
+                      "0:00",
+                      "9:00",
+                      "13",
+                      "0",
+                      "0",
+                      "0",
+                      "1",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Travis Sanheim"
+                    },
+                    "stats": [
+                      "0",
+                      "0",
+                      "0",
+                      "1",
+                      "11:59",
+                      "0:00",
+                      "2:07",
+                      "9:52",
+                      "17",
+                      "0",
+                      "1",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Nick Seeler"
+                    },
+                    "stats": [
+                      "2",
+                      "0",
+                      "1",
+                      "0",
+                      "9:46",
+                      "0:00",
+                      "1:22",
+                      "8:24",
+                      "14",
+                      "0",
+                      "0",
+                      "1",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Cam York"
+                    },
+                    "stats": [
+                      "1",
+                      "0",
+                      "0",
+                      "0",
+                      "12:02",
+                      "0:00",
+                      "1:34",
+                      "10:28",
+                      "13",
+                      "0",
+                      "0",
+                      "0",
+                      "1",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "1",
+                      "0",
+                      "0"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "skaters",
+                "keys": [
+                  "blockedShots",
+                  "hits",
+                  "takeaways",
+                  "plusMinus",
+                  "timeOnIce",
+                  "powerPlayTimeOnIce",
+                  "shortHandedTimeOnIce",
+                  "evenStrengthTimeOnIce",
+                  "shifts",
+                  "goals",
+                  "ytdGoals",
+                  "assists",
+                  "shotsTotal",
+                  "shotsMissed",
+                  "shootoutGoals",
+                  "faceoffsWon",
+                  "faceoffsLost",
+                  "faceoffPercent",
+                  "giveaways",
+                  "penalties",
+                  "penaltyMinutes"
+                ],
+                "athletes": []
+              },
+              {
+                "name": "goalies",
+                "keys": [
+                  "goalsAgainst",
+                  "shotsAgainst",
+                  "shootoutSaves",
+                  "shootoutShotsAgainst",
+                  "saves",
+                  "savePct",
+                  "evenStrengthSaves",
+                  "powerPlaySaves",
+                  "shortHandedSaves",
+                  "timeOnIce",
+                  "ytdGoals",
+                  "penaltyMinutes"
+                ],
+                "athletes": [
+                  {
+                    "athlete": {
+                      "displayName": "Joseph Woll"
+                    },
+                    "stats": [
+                      "0",
+                      "5",
+                      "0",
+                      "0",
+                      "5",
+                      "1.000",
+                      "5",
+                      "0",
+                      "0",
+                      "33:13",
+                      "0",
+                      "0"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "team": {
+              "abbreviation": "VAN"
+            },
+            "statistics": [
+              {
+                "name": "forwards",
+                "keys": [
+                  "blockedShots",
+                  "hits",
+                  "takeaways",
+                  "plusMinus",
+                  "timeOnIce",
+                  "powerPlayTimeOnIce",
+                  "shortHandedTimeOnIce",
+                  "evenStrengthTimeOnIce",
+                  "shifts",
+                  "goals",
+                  "ytdGoals",
+                  "assists",
+                  "shotsTotal",
+                  "shotsMissed",
+                  "shootoutGoals",
+                  "faceoffsWon",
+                  "faceoffsLost",
+                  "faceoffPercent",
+                  "giveaways",
+                  "penalties",
+                  "penaltyMinutes"
+                ],
+                "athletes": [
+                  {
+                    "athlete": {
+                      "displayName": "Arshdeep Bains"
+                    },
+                    "stats": [
+                      "0",
+                      "1",
+                      "0",
+                      "0",
+                      "6:15",
+                      "0:00",
+                      "0:00",
+                      "6:15",
+                      "9",
+                      "0",
+                      "2",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Brock Boeser"
+                    },
+                    "stats": [
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "12:03",
+                      "2:00",
+                      "1:44",
+                      "8:19",
+                      "13",
+                      "0",
+                      "7",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "1",
+                      "0",
+                      "100.0",
+                      "2",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Paul Cotter"
+                    },
+                    "stats": [
+                      "0",
+                      "2",
+                      "0",
+                      "0",
+                      "9:13",
+                      "0:54",
+                      "0:00",
+                      "8:19",
+                      "11",
+                      "0",
+                      "4",
+                      "0",
+                      "0",
+                      "1",
+                      "0",
+                      "0",
+                      "3",
+                      "0.0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Jake DeBrusk"
+                    },
+                    "stats": [
+                      "0",
+                      "1",
+                      "1",
+                      "0",
+                      "8:48",
+                      "1:58",
+                      "0:00",
+                      "6:50",
+                      "11",
+                      "0",
+                      "5",
+                      "0",
+                      "1",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Brendan Gallagher"
+                    },
+                    "stats": [
+                      "0",
+                      "0",
+                      "0",
+                      "-1",
+                      "6:53",
+                      "0:02",
+                      "0:00",
+                      "6:51",
+                      "9",
+                      "0",
+                      "0",
+                      "0",
+                      "1",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Linus Karlsson"
+                    },
+                    "stats": [
+                      "0",
+                      "1",
+                      "0",
+                      "0",
+                      "6:44",
+                      "1:00",
+                      "0:00",
+                      "5:44",
+                      "12",
+                      "0",
+                      "4",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "0",
+                      "1",
+                      "2"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Jonathan Lekkerimaki"
+                    },
+                    "stats": [
+                      "0",
+                      "1",
+                      "0",
+                      "0",
+                      "10:37",
+                      "2:01",
+                      "0:00",
+                      "8:36",
+                      "12",
+                      "0",
+                      "6",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Drew O'Connor"
+                    },
+                    "stats": [
+                      "2",
+                      "0",
+                      "0",
+                      "0",
+                      "7:01",
+                      "0:00",
+                      "0:24",
+                      "6:37",
+                      "12",
+                      "0",
+                      "2",
+                      "0",
+                      "0",
+                      "2",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Liam Ohgren"
+                    },
+                    "stats": [
+                      "0",
+                      "1",
+                      "0",
+                      "-1",
+                      "6:33",
+                      "0:48",
+                      "0:00",
+                      "5:45",
+                      "9",
+                      "0",
+                      "6",
+                      "0",
+                      "1",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Elias Pettersson"
+                    },
+                    "stats": [
+                      "1",
+                      "0",
+                      "1",
+                      "0",
+                      "13:01",
+                      "2:04",
+                      "1:44",
+                      "9:13",
+                      "14",
+                      "0",
+                      "4",
+                      "0",
+                      "1",
+                      "0",
+                      "0",
+                      "5",
+                      "6",
+                      "45.5",
+                      "2",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Marco Rossi"
+                    },
+                    "stats": [
+                      "1",
+                      "0",
+                      "0",
+                      "-1",
+                      "6:09",
+                      "0:54",
+                      "0:00",
+                      "5:15",
+                      "8",
+                      "0",
+                      "3",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "2",
+                      "1",
+                      "66.7",
+                      "1",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Max Sasson"
+                    },
+                    "stats": [
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "7:17",
+                      "0:00",
+                      "0:24",
+                      "6:53",
+                      "12",
+                      "0",
+                      "5",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "1",
+                      "4",
+                      "20.0",
+                      "1",
+                      "0",
+                      "0"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "defenses",
+                "keys": [
+                  "blockedShots",
+                  "hits",
+                  "takeaways",
+                  "plusMinus",
+                  "timeOnIce",
+                  "powerPlayTimeOnIce",
+                  "shortHandedTimeOnIce",
+                  "evenStrengthTimeOnIce",
+                  "shifts",
+                  "goals",
+                  "ytdGoals",
+                  "assists",
+                  "shotsTotal",
+                  "shotsMissed",
+                  "shootoutGoals",
+                  "faceoffsWon",
+                  "faceoffsLost",
+                  "faceoffPercent",
+                  "giveaways",
+                  "penalties",
+                  "penaltyMinutes"
+                ],
+                "athletes": [
+                  {
+                    "athlete": {
+                      "displayName": "Guillaume Brisebois"
+                    },
+                    "stats": [
+                      "2",
+                      "0",
+                      "0",
+                      "0",
+                      "9:52",
+                      "0:00",
+                      "1:18",
+                      "8:34",
+                      "15",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "1",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Zeev Buium"
+                    },
+                    "stats": [
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "14:25",
+                      "0:44",
+                      "0:00",
+                      "13:41",
+                      "14",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "1",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "1",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Filip Hronek"
+                    },
+                    "stats": [
+                      "3",
+                      "1",
+                      "0",
+                      "0",
+                      "16:32",
+                      "2:18",
+                      "1:48",
+                      "12:26",
+                      "17",
+                      "0",
+                      "1",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Jamie Oleksiak"
+                    },
+                    "stats": [
+                      "1",
+                      "1",
+                      "0",
+                      "0",
+                      "12:32",
+                      "0:03",
+                      "0:46",
+                      "11:43",
+                      "15",
+                      "0",
+                      "2",
+                      "0",
+                      "0",
+                      "1",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Elias N. Pettersson"
+                    },
+                    "stats": [
+                      "0",
+                      "0",
+                      "0",
+                      "-1",
+                      "5:51",
+                      "0:04",
+                      "0:00",
+                      "5:47",
+                      "9",
+                      "0",
+                      "3",
+                      "0",
+                      "1",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "0",
+                      "1",
+                      "2"
+                    ]
+                  },
+                  {
+                    "athlete": {
+                      "displayName": "Luke Schenn"
+                    },
+                    "stats": [
+                      "3",
+                      "0",
+                      "0",
+                      "-1",
+                      "5:39",
+                      "0:00",
+                      "0:24",
+                      "5:15",
+                      "10",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0",
+                      "0.0",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "skaters",
+                "keys": [
+                  "blockedShots",
+                  "hits",
+                  "takeaways",
+                  "plusMinus",
+                  "timeOnIce",
+                  "powerPlayTimeOnIce",
+                  "shortHandedTimeOnIce",
+                  "evenStrengthTimeOnIce",
+                  "shifts",
+                  "goals",
+                  "ytdGoals",
+                  "assists",
+                  "shotsTotal",
+                  "shotsMissed",
+                  "shootoutGoals",
+                  "faceoffsWon",
+                  "faceoffsLost",
+                  "faceoffPercent",
+                  "giveaways",
+                  "penalties",
+                  "penaltyMinutes"
+                ],
+                "athletes": []
+              },
+              {
+                "name": "goalies",
+                "keys": [
+                  "goalsAgainst",
+                  "shotsAgainst",
+                  "shootoutSaves",
+                  "shootoutShotsAgainst",
+                  "saves",
+                  "savePct",
+                  "evenStrengthSaves",
+                  "powerPlaySaves",
+                  "shortHandedSaves",
+                  "timeOnIce",
+                  "ytdGoals",
+                  "penaltyMinutes"
+                ],
+                "athletes": [
+                  {
+                    "athlete": {
+                      "displayName": "Leevi Merilainen"
+                    },
+                    "stats": [
+                      "2",
+                      "14",
+                      "0",
+                      "0",
+                      "12",
+                      ".857",
+                      "9",
+                      "3",
+                      "0",
+                      "33:43",
+                      "0",
+                      "0"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       "competitions": [
         {
           "id": "401892681",
           "date": "2026-11-10T02:30Z",
           "status": {
-            "clock": 0,
-            "displayClock": "0:00",
-            "period": 0,
+            "clock": 373,
+            "displayClock": "6:13",
+            "period": 2,
             "type": {
-              "id": "1",
-              "name": "STATUS_SCHEDULED",
-              "state": "pre",
+              "id": "2",
+              "name": "STATUS_IN_PROGRESS",
+              "state": "in",
               "completed": false,
-              "description": "Scheduled",
-              "detail": "Mon, November 9th at 9:30 PM EST",
-              "shortDetail": "11/9 - 9:30 PM EST"
+              "description": "In Progress",
+              "detail": "6:13 - 2nd Period",
+              "shortDetail": "6:13 - 2nd"
             }
           },
           "competitors": [
@@ -220,6 +1666,18 @@
               "id": "22",
               "homeAway": "home",
               "score": "0",
+              "linescores": [
+                {
+                  "value": 0,
+                  "displayValue": "0",
+                  "period": 1
+                },
+                {
+                  "value": 0,
+                  "displayValue": "0",
+                  "period": 2
+                }
+              ],
               "team": {
                 "id": "22",
                 "abbreviation": "VAN",
@@ -232,7 +1690,19 @@
             {
               "id": "15",
               "homeAway": "away",
-              "score": "0",
+              "score": "2",
+              "linescores": [
+                {
+                  "value": 1,
+                  "displayValue": "1",
+                  "period": 1
+                },
+                {
+                  "value": 1,
+                  "displayValue": "1",
+                  "period": 2
+                }
+              ],
               "team": {
                 "id": "15",
                 "abbreviation": "PHI",
@@ -308,14 +1778,7 @@
           "confirmed": false
         }
       ],
-      "book_lines": [
-        {
-          "provider": "Draft Kings",
-          "details": "PHI -135",
-          "spread": 1.5,
-          "total": 6.5
-        }
-      ],
+      "book_lines": [],
       "coverage": {
         "injuries": "published_report",
         "starters": "unverified",
@@ -324,9 +1787,9 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261109&limit=1000",
-      "fetched_at": "2026-11-09T21:44:08.142Z",
+      "fetched_at": "2026-11-10T03:59:26.913Z",
       "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/summary?event=401892681",
-      "details_checked_at": "2026-11-09T21:44:08.142Z",
+      "details_checked_at": "2026-11-10T03:59:26.913Z",
       "details_available": true
     },
     {
@@ -336,19 +1799,16 @@
       "status": {
         "clock": 0,
         "displayClock": "0:00",
-        "period": 0,
+        "period": 1,
         "type": {
-          "id": "1",
-          "name": "STATUS_SCHEDULED",
-          "state": "pre",
+          "id": "22",
+          "name": "STATUS_END_PERIOD",
+          "state": "in",
           "completed": false,
-          "description": "Scheduled",
-          "detail": "Mon, November 9th at 10:00 PM EST",
-          "shortDetail": "11/9 - 10:00 PM EST"
+          "description": "End of Period",
+          "detail": "End of 1st Period",
+          "shortDetail": "End of 1st"
         }
-      },
-      "boxscore": {
-        "players": []
       },
       "competitions": [
         {
@@ -357,22 +1817,29 @@
           "status": {
             "clock": 0,
             "displayClock": "0:00",
-            "period": 0,
+            "period": 1,
             "type": {
-              "id": "1",
-              "name": "STATUS_SCHEDULED",
-              "state": "pre",
+              "id": "22",
+              "name": "STATUS_END_PERIOD",
+              "state": "in",
               "completed": false,
-              "description": "Scheduled",
-              "detail": "Mon, November 9th at 10:00 PM EST",
-              "shortDetail": "11/9 - 10:00 PM EST"
+              "description": "End of Period",
+              "detail": "End of 1st Period",
+              "shortDetail": "End of 1st"
             }
           },
           "competitors": [
             {
               "id": "18",
               "homeAway": "home",
-              "score": "0",
+              "score": "1",
+              "linescores": [
+                {
+                  "value": 1,
+                  "displayValue": "1",
+                  "period": 1
+                }
+              ],
               "team": {
                 "id": "18",
                 "abbreviation": "SJ",
@@ -385,7 +1852,14 @@
             {
               "id": "12",
               "homeAway": "away",
-              "score": "0",
+              "score": "1",
+              "linescores": [
+                {
+                  "value": 1,
+                  "displayValue": "1",
+                  "period": 1
+                }
+              ],
               "team": {
                 "id": "12",
                 "abbreviation": "NYI",
@@ -399,56 +1873,7 @@
         }
       ],
       "player_usage": [],
-      "injuries": [
-        {
-          "team": "SJ",
-          "player": "Igor Chernyshov",
-          "position": "LW",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "SJ",
-          "player": "Quentin Musty",
-          "position": "LW",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "SJ",
-          "player": "Kyle Keyser",
-          "position": "G",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "NYI",
-          "player": "Matias Maccelli",
-          "position": "LW",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "NYI",
-          "player": "Mathew Barzal",
-          "position": "C",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "NYI",
-          "player": "Ryan Pulock",
-          "position": "D",
-          "status": "Out"
-        },
-        {
-          "team": "NYI",
-          "player": "Calum Ritchie",
-          "position": "C",
-          "status": "Injured Reserve"
-        },
-        {
-          "team": "NYI",
-          "player": "Alexander Romanov",
-          "position": "D",
-          "status": "Injured Reserve"
-        }
-      ],
+      "injuries": [],
       "starters": [],
       "starting_goalies": [],
       "probables": [
@@ -467,26 +1892,19 @@
           "confirmed": false
         }
       ],
-      "book_lines": [
-        {
-          "provider": "Draft Kings",
-          "details": "NYI -142",
-          "spread": 1.5,
-          "total": 6.5
-        }
-      ],
+      "book_lines": [],
       "coverage": {
-        "injuries": "published_report",
+        "injuries": "unavailable",
         "starters": "unverified",
         "goalies": "unverified",
         "hockey_lines": "unavailable",
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261109&limit=1000",
-      "fetched_at": "2026-11-09T21:44:08.142Z",
-      "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/summary?event=401892682",
-      "details_checked_at": "2026-11-09T21:44:08.142Z",
-      "details_available": true
+      "fetched_at": "2026-11-10T03:59:26.913Z",
+      "details_source_url": null,
+      "details_checked_at": null,
+      "details_available": false
     }
   ]
 }
