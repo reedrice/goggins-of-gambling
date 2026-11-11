@@ -3,31 +3,31 @@
  "slug": "wta-andgar-jazort-2026-11-11",
  "game": "Andrea Lazaro Garcia vs. Jazmin Ortenzi",
  "url": "https://polymarket.us/sports/wta/wta-andgar-jazort-2026-11-11",
- "start_time": "2026-11-11T15:00:00Z",
- "status": "pregame",
+ "start_time": "2026-11-11T15:10:00Z",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186760",
-  "fetched_at": "2026-11-11T13:02:26.252Z",
+  "fetched_at": "2026-11-11T20:00:52.225Z",
   "tennis": true,
   "tennis_match": {
    "id": "186760",
    "uid": "s:850~l:900~e:1084-2026~c:186760",
-   "date": "2026-11-11T15:00Z",
-   "startDate": "2026-11-11T15:00Z",
+   "date": "2026-11-11T15:10Z",
+   "startDate": "2026-11-11T15:10Z",
    "timeValid": true,
    "recent": false,
    "status": {
-    "period": 1,
+    "period": 3,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Wed, November 11th at 10:00 AM EST",
-     "shortDetail": "11/11 - 10:00 AM EST"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Andrea Lazaro Garcia (ESP) bt Jazmin Ortenzi (ARG) 2-6 6-4 6-4",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,21 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 4,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "9dff472e-f004-3a98-b3fc-0900f6b4de41",
       "displayName": "Jazmin Ortenzi",
@@ -87,6 +107,21 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 2,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "b335644a-7bee-3665-824a-c61bddbddcc7",
       "displayName": "Andrea Lazaro Garcia",
@@ -135,28 +170,28 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Wed, November 11th at 10:00 AM EST",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Jazmin Ortenzi",
    "alias": "Jazmin Ortenzi",
    "name": "Jazmin Ortenzi",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Andrea Lazaro Garcia",
    "alias": "Andrea Lazaro Garcia",
    "name": "Andrea Lazaro Garcia",
-   "score": 0
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-11T13:02:26.167Z",
+ "updated": "2026-11-11T20:00:52.172Z",
  "open_taken_at": "2026-11-10T22:01:42.552Z",
  "thresholds": {
   "big": 10,
@@ -204,11 +239,28 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-11T12:56:29.272Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:2403925:0:2026-11-11T12:56:29.272Z",
+   "key": "2403925:0",
+   "at": "2026-11-11T20:00:52.172Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Andrea Lazaro Garcia win",
+   "market": "Moneyline",
+   "now_odds": "-117",
+   "now_chance": 54,
+   "edge": 5,
+   "text": "Edge gone: Andrea Lazaro Garcia win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-andgar-jazort-2026-11-11"
+  }
+ ],
+ "alert_seen": [
+  "gone:2403925:0:2026-11-11T12:56:29.272Z"
+ ],
  "kalshi_checked": null
 }

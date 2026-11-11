@@ -3,31 +3,31 @@
  "slug": "wta-lucbro-eliman-2026-11-11",
  "game": "Lucia Bronzetti vs. Elizabeth Mandlik",
  "url": "https://polymarket.us/sports/wta/wta-lucbro-eliman-2026-11-11",
- "start_time": "2026-11-11T16:10:00Z",
- "status": "pregame",
+ "start_time": "2026-11-11T16:55:00Z",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186761",
-  "fetched_at": "2026-11-11T13:02:25.700Z",
+  "fetched_at": "2026-11-11T20:00:52.746Z",
   "tennis": true,
   "tennis_match": {
    "id": "186761",
    "uid": "s:850~l:900~e:1084-2026~c:186761",
-   "date": "2026-11-11T16:30Z",
-   "startDate": "2026-11-11T16:30Z",
+   "date": "2026-11-11T16:55Z",
+   "startDate": "2026-11-11T16:55Z",
    "timeValid": true,
    "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Wed, November 11th at 11:30 AM EST",
-     "shortDetail": "11/11 - 11:30 AM EST"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 3
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Elizabeth Mandlik (USA) bt (8) Lucia Bronzetti (ITA) 7-6 (7-5) 6-3",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,18 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
+     "linescores": [
+      {
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "52c9e741-3a8f-34c5-8ef5-c8c203b81469",
       "displayName": "Elizabeth Mandlik",
@@ -87,9 +104,21 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "curatedRank": {
       "current": 8
      },
+     "linescores": [
+      {
+       "value": 6,
+       "tiebreak": 5,
+       "winner": false
+      },
+      {
+       "value": 3,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "b89e8ea6-ef2c-32e6-b209-74cd0a5d6f1c",
       "displayName": "Lucia Bronzetti",
@@ -138,16 +167,16 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Wed, November 11th at 11:30 AM EST",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Elizabeth Mandlik",
    "alias": "Elizabeth Mandlik",
    "name": "Elizabeth Mandlik",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Lucia Bronzetti",
@@ -159,7 +188,7 @@
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-11T13:02:25.562Z",
+ "updated": "2026-11-11T20:00:52.699Z",
  "open_taken_at": "2026-11-10T22:01:42.010Z",
  "thresholds": {
   "big": 10,
@@ -229,11 +258,28 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-11T12:56:28.592Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:2396862:1:2026-11-11T12:56:28.592Z",
+   "key": "2396862:1",
+   "at": "2026-11-11T20:00:52.699Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Elizabeth Mandlik win",
+   "market": "Moneyline",
+   "now_odds": "+156",
+   "now_chance": 39,
+   "edge": 6,
+   "text": "Edge gone: Elizabeth Mandlik win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-lucbro-eliman-2026-11-11"
+  }
+ ],
+ "alert_seen": [
+  "gone:2396862:1:2026-11-11T12:56:28.592Z"
+ ],
  "kalshi_checked": null
 }

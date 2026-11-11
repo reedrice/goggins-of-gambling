@@ -4,14 +4,14 @@
  "game": "Kilian Feldbausch vs. Tiago Pereira",
  "url": "https://polymarket.us/sports/atp/atp-kilfel-tiaper-2026-11-09",
  "start_time": "2026-11-11T12:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-11T13:02:19.233Z"
+  "fetched_at": "2026-11-11T20:00:49.586Z"
  },
- "updated": "2026-11-11T13:02:19.159Z",
+ "updated": "2026-11-11T20:00:49.542Z",
  "open_taken_at": "2026-11-08T09:02:24.588Z",
  "thresholds": {
   "big": 10,
@@ -301,7 +301,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-11T12:56:21.788Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -321,7 +321,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-11T13:02:19.159Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -341,11 +341,53 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-11T13:02:19.159Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2281621:0:2026-11-11T12:56:21.788Z",
+   "key": "2281621:0",
+   "at": "2026-11-11T20:00:49.542Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Kilian Feldbausch win",
+   "market": "Moneyline",
+   "now_odds": "+104",
+   "now_chance": 49,
+   "edge": 23,
+   "text": "Edge gone: Kilian Feldbausch win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-kilfel-tiaper-2026-11-09"
+  },
+  {
+   "id": "gone:2293094:1:2026-11-11T13:02:19.159Z",
+   "key": "2293094:1",
+   "at": "2026-11-11T20:00:49.542Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+186",
+   "now_chance": 35,
+   "edge": 11,
+   "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-kilfel-tiaper-2026-11-09"
+  },
+  {
+   "id": "gone:2293107:1:2026-11-11T13:02:19.159Z",
+   "key": "2293107:1",
+   "at": "2026-11-11T20:00:49.542Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "No: Kilian Feldbausch win set 2 against Tiago Pereira",
+   "market": "Set 2 winner",
+   "now_odds": "+203",
+   "now_chance": 33,
+   "edge": 7,
+   "text": "Edge gone: No: Kilian Feldbausch win set 2 against Tiago Pereira (Set 2 winner) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-kilfel-tiaper-2026-11-09"
+  },
   {
    "id": "new_edge:2293094:1:big",
    "key": "2293094:1",
@@ -392,7 +434,10 @@
  "alert_seen": [
   "new_edge:2281621:0:big",
   "new_edge:2293094:1:big",
-  "new_edge:2293107:1:slight"
+  "new_edge:2293107:1:slight",
+  "gone:2281621:0:2026-11-11T12:56:21.788Z",
+  "gone:2293094:1:2026-11-11T13:02:19.159Z",
+  "gone:2293107:1:2026-11-11T13:02:19.159Z"
  ],
  "kalshi_checked": null
 }

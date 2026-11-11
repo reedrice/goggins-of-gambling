@@ -4,12 +4,12 @@
  "game": "Lorenzo Sonego vs. Alejandro Tabilo",
  "url": "https://polymarket.us/sports/atp/atp-lorson-aletab-2026-11-11",
  "start_time": "2026-11-11T12:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186540",
-  "fetched_at": "2026-11-11T13:02:24.303Z",
+  "fetched_at": "2026-11-11T20:00:49.562Z",
   "tennis": true,
   "tennis_match": {
    "id": "186540",
@@ -17,17 +17,17 @@
    "date": "2026-11-11T12:05Z",
    "startDate": "2026-11-11T12:05Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(4) Alejandro Tabilo (CHI) leads Lorenzo Sonego (ITA) 6-5",
+     "text": "(4) Alejandro Tabilo (CHI) bt Lorenzo Sonego (ITA) 7-6 (7-2) 6-7 (7-9) 7-5",
      "type": "event"
     }
    ],
@@ -55,13 +55,24 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "winner": true,
      "curatedRank": {
       "current": 4
      },
      "linescores": [
       {
-       "value": 6
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "tiebreak": 7,
+       "winner": false
+      },
+      {
+       "value": 7,
+       "winner": true
       }
      ],
      "athlete": {
@@ -101,10 +112,21 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "winner": false,
      "linescores": [
       {
-       "value": 5
+       "value": 6,
+       "tiebreak": 2,
+       "winner": false
+      },
+      {
+       "value": 7,
+       "tiebreak": 9,
+       "winner": true
+      },
+      {
+       "value": 5,
+       "winner": false
       }
      ],
      "athlete": {
@@ -139,11 +161,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 148,
    "type": {
     "id": "1",
@@ -160,28 +177,28 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Alejandro Tabilo",
    "alias": "Alejandro Tabilo",
    "name": "Alejandro Tabilo",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Lorenzo Sonego",
    "alias": "Lorenzo Sonego",
    "name": "Lorenzo Sonego",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-11T13:02:24.219Z",
+ "updated": "2026-11-11T20:00:49.506Z",
  "open_taken_at": "2026-11-10T22:01:41.016Z",
  "thresholds": {
   "big": 10,
@@ -515,7 +532,7 @@
    "reason": null,
    "context": "Alejandro Tabilo 6 · Lorenzo Sonego 5 · 1st Set (games by set)",
    "first_seen": "2026-11-11T12:56:27.081Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -535,11 +552,25 @@
    "reason": "Explained by score: Lorenzo Sonego not above the games spread right now",
    "context": "Alejandro Tabilo 6 · Lorenzo Sonego 5 · 1st Set (games by set)",
    "first_seen": "2026-11-11T13:02:24.219Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2393511:1:2026-11-11T12:56:27.081Z",
+   "key": "2393511:1",
+   "at": "2026-11-11T20:00:49.506Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+194",
+   "now_chance": 34,
+   "edge": 16,
+   "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-lorson-aletab-2026-11-11"
+  },
   {
    "id": "new_edge:2393511:1:big",
    "key": "2393511:1",
@@ -556,7 +587,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2393511:1:big"
+  "new_edge:2393511:1:big",
+  "gone:2393511:1:2026-11-11T12:56:27.081Z"
  ],
  "kalshi_checked": null
 }
