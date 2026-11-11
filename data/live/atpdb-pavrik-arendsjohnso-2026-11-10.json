@@ -4,30 +4,30 @@
  "game": "Pavlasek / Rikl vs. Arends / Johnson",
  "url": "https://polymarket.us/sports/atpdb/atpdb-pavrik-arendsjohnso-2026-11-10",
  "start_time": "2026-11-11T12:00:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186563",
-  "fetched_at": "2026-11-11T00:14:38.901Z",
+  "fetched_at": "2026-11-11T13:02:22.000Z",
   "tennis": true,
   "tennis_match": {
    "id": "186563",
    "uid": "s:850~l:851~e:148-2026~c:186563",
-   "date": "2026-11-11T12:00Z",
-   "startDate": "2026-11-11T12:00Z",
+   "date": "2026-11-11T12:05Z",
+   "startDate": "2026-11-11T12:05Z",
    "timeValid": true,
-   "recent": false,
+   "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Wed, November 11th at 7:00 AM EST",
-     "shortDetail": "11/11 - 7:00 AM EST"
+     "description": "In Progress",
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "Adam Pavlasek (CZE) & Patrik Rikl (CZE) leads Sander Arends (NED) & Luke Johnson (GBR) 7-6 (8-6) 1-0",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,6 +55,17 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
+     "linescores": [
+      {
+       "value": 6,
+       "tiebreak": 6,
+       "winner": false
+      },
+      {
+       "value": 0
+      }
+     ],
      "roster": {
       "displayName": "Sander Arends / Luke Johnson",
       "shortDisplayName": "S. Arends / L. Johnson",
@@ -122,6 +138,17 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
+     "linescores": [
+      {
+       "value": 7,
+       "tiebreak": 8,
+       "winner": true
+      },
+      {
+       "value": 1
+      }
+     ],
      "roster": {
       "displayName": "Adam Pavlasek / Patrik Rikl",
       "shortDisplayName": "A. Pavlasek / P. Rikl",
@@ -189,6 +216,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 148,
    "type": {
     "id": "3",
@@ -205,10 +237,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Wed, November 11th at 7:00 AM EST",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Sander Arends / Luke Johnson",
@@ -220,13 +252,13 @@
    "abbr": "Adam Pavlasek / Patrik Rikl",
    "alias": "Adam Pavlasek / Patrik Rikl",
    "name": "Adam Pavlasek / Patrik Rikl",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-11T00:14:38.756Z",
+ "updated": "2026-11-11T13:02:21.920Z",
  "open_taken_at": "2026-11-09T07:54:36.911Z",
  "thresholds": {
   "big": 10,
@@ -258,6 +290,8 @@
  ],
  "edges": [],
  "alerts": [],
- "alert_seen": [],
+ "alert_seen": [
+  "new_edge:2326281:1:big"
+ ],
  "kalshi_checked": null
 }
