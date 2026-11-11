@@ -4,12 +4,12 @@
  "game": "Elina Svitolina vs. Karolina Muchova",
  "url": "https://polymarket.us/sports/wta/wta-elisvi-karmuc-2026-11-11",
  "start_time": "2026-11-11T20:10:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187385",
-  "fetched_at": "2026-11-11T20:17:44.675Z",
+  "fetched_at": "2026-11-11T23:09:15.932Z",
   "tennis": true,
   "tennis_match": {
    "id": "187385",
@@ -17,17 +17,17 @@
    "date": "2026-11-11T20:10Z",
    "startDate": "2026-11-11T20:10Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(6) Elina Svitolina (UKR) leads (7) Karolina Muchova (CZE) 1-0",
+     "text": "(6) Elina Svitolina (UKR) bt (7) Karolina Muchova (CZE) 3-6 6-2 6-2",
      "type": "event"
     }
    ],
@@ -55,13 +55,22 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "winner": false,
      "curatedRank": {
       "current": 7
      },
      "linescores": [
       {
-       "value": 0
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 2,
+       "winner": false
+      },
+      {
+       "value": 2,
+       "winner": false
       }
      ],
      "athlete": {
@@ -101,13 +110,22 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "winner": true,
      "curatedRank": {
       "current": 6
      },
      "linescores": [
       {
-       "value": 1
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -142,11 +160,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 382,
    "type": {
     "id": "2",
@@ -163,28 +176,28 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Karolina Muchova",
    "alias": "Karolina Muchova",
    "name": "Karolina Muchova",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Elina Svitolina",
    "alias": "Elina Svitolina",
    "name": "Elina Svitolina",
-   "score": 0
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-11T20:17:44.558Z",
+ "updated": "2026-11-11T23:09:15.770Z",
  "open_taken_at": "2026-11-10T22:01:38.731Z",
  "thresholds": {
   "big": 10,
@@ -540,7 +553,7 @@
    "reason": null,
    "context": "Karolina Muchova 0 · Elina Svitolina 1 · 1st Set (games by set)",
    "first_seen": "2026-11-11T20:17:44.558Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -560,7 +573,7 @@
    "reason": "Explained by score: Karolina Muchova not above the sets spread right now",
    "context": "Karolina Muchova 0 · Elina Svitolina 1 · 1st Set (games by set)",
    "first_seen": "2026-11-11T20:17:44.558Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -580,7 +593,7 @@
    "reason": null,
    "context": "Karolina Muchova 0 · Elina Svitolina 1 · 1st Set (games by set)",
    "first_seen": "2026-11-11T20:17:44.558Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -600,47 +613,7 @@
    "reason": null,
    "context": "Karolina Muchova 0 · Elina Svitolina 1 · 1st Set (games by set)",
    "first_seen": "2026-11-11T20:17:44.558Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2382093:1",
-   "market_id": "2382093",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Elina Svitolina cover 4.5 vs the Karolina Muchova in Elina Svitolina vs. Karolina Muchova?",
-   "side": "Karolina Muchova -4.50 (Games)",
-   "open_chance": 32,
-   "now_chance": 28,
-   "open_odds": "+213",
-   "now_odds": "+257",
-   "edge": 4,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Karolina Muchova not above the games spread right now",
-   "context": "Karolina Muchova 0 · Elina Svitolina 1 · 1st Set (games by set)",
-   "first_seen": "2026-11-11T20:17:44.558Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2382092:0",
-   "market_id": "2382092",
-   "market": "Games spread",
-   "group": "game",
-   "question": "Will the Elina Svitolina cover -4.5 vs the Karolina Muchova in Elina Svitolina vs. Karolina Muchova?",
-   "side": "Elina Svitolina -4.50 (Games)",
-   "open_chance": 32,
-   "now_chance": 28,
-   "open_odds": "+213",
-   "now_odds": "+257",
-   "edge": 4,
-   "tier": "slight",
-   "class": "score",
-   "reason": "Explained by score: Elina Svitolina not above the games spread right now",
-   "context": "Karolina Muchova 0 · Elina Svitolina 1 · 1st Set (games by set)",
-   "first_seen": "2026-11-11T20:17:44.558Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -660,6 +633,46 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-11T20:00:42.562Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "2382093:1",
+   "market_id": "2382093",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Elina Svitolina cover 4.5 vs the Karolina Muchova in Elina Svitolina vs. Karolina Muchova?",
+   "side": "Karolina Muchova -4.50 (Games)",
+   "open_chance": 32,
+   "now_chance": 28,
+   "open_odds": "+213",
+   "now_odds": "+257",
+   "edge": 4,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Karolina Muchova not above the games spread right now",
+   "context": "Karolina Muchova 0 · Elina Svitolina 1 · 1st Set (games by set)",
+   "first_seen": "2026-11-11T20:17:44.558Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "2382092:0",
+   "market_id": "2382092",
+   "market": "Games spread",
+   "group": "game",
+   "question": "Will the Elina Svitolina cover -4.5 vs the Karolina Muchova in Elina Svitolina vs. Karolina Muchova?",
+   "side": "Elina Svitolina -4.50 (Games)",
+   "open_chance": 32,
+   "now_chance": 28,
+   "open_odds": "+213",
+   "now_odds": "+257",
+   "edge": 4,
+   "tier": "slight",
+   "class": "score",
+   "reason": "Explained by score: Elina Svitolina not above the games spread right now",
+   "context": "Karolina Muchova 0 · Elina Svitolina 1 · 1st Set (games by set)",
+   "first_seen": "2026-11-11T20:17:44.558Z",
    "status": "gone",
    "kalshi": null
   },
@@ -685,6 +698,48 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2382090:1:2026-11-11T20:17:44.558Z",
+   "key": "2382090:1",
+   "at": "2026-11-11T23:09:15.770Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Karolina Muchova +1.50 (Games)",
+   "market": "Games spread",
+   "now_odds": "-122",
+   "now_chance": 55,
+   "edge": 17,
+   "text": "Edge gone: Karolina Muchova +1.50 (Games) (Games spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-elisvi-karmuc-2026-11-11"
+  },
+  {
+   "id": "gone:2382098:1:2026-11-11T20:17:44.558Z",
+   "key": "2382098:1",
+   "at": "2026-11-11T23:09:15.770Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 17.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+300",
+   "now_chance": 25,
+   "edge": 10,
+   "text": "Edge gone: Under 17.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-elisvi-karmuc-2026-11-11"
+  },
+  {
+   "id": "gone:2382099:1:2026-11-11T20:17:44.558Z",
+   "key": "2382099:1",
+   "at": "2026-11-11T23:09:15.770Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Under 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "+144",
+   "now_chance": 41,
+   "edge": 10,
+   "text": "Edge gone: Under 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wta/wta-elisvi-karmuc-2026-11-11"
+  },
   {
    "id": "new_edge:2382090:1:big",
    "key": "2382090:1",
@@ -791,7 +846,10 @@
   "new_edge:2382090:1:big",
   "new_edge:2382098:1:big",
   "new_edge:2382099:1:big",
-  "gone:2382091:0:2026-11-11T20:00:42.562Z"
+  "gone:2382091:0:2026-11-11T20:00:42.562Z",
+  "gone:2382090:1:2026-11-11T20:17:44.558Z",
+  "gone:2382098:1:2026-11-11T20:17:44.558Z",
+  "gone:2382099:1:2026-11-11T20:17:44.558Z"
  ],
  "kalshi_checked": null
 }
