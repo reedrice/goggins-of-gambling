@@ -4,12 +4,12 @@
  "game": "Laura Samson vs. Carolina Alves",
  "url": "https://polymarket.us/sports/wta/wta-lausam-caralv-2026-11-09",
  "start_time": "2026-11-10T20:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186757",
-  "fetched_at": "2026-11-10T22:10:44.491Z",
+  "fetched_at": "2026-11-10T23:57:52.219Z",
   "tennis": true,
   "tennis_match": {
    "id": "186757",
@@ -17,17 +17,17 @@
    "date": "2026-11-10T19:55Z",
    "startDate": "2026-11-10T19:55Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(5) Laura Samson (CZE) leads Carolina Alves (BRA) 6-7 (3-7) 5-5",
+     "text": "(5) Laura Samson (CZE) bt Carolina Alves (BRA) 6-7 (3-7) 7-6 (7-5) 6-1",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "winner": false,
      "linescores": [
       {
        "value": 7,
@@ -63,7 +63,13 @@
        "winner": true
       },
       {
-       "value": 5
+       "value": 6,
+       "tiebreak": 5,
+       "winner": false
+      },
+      {
+       "value": 1,
+       "winner": false
       }
      ],
      "athlete": {
@@ -103,7 +109,7 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "winner": true,
      "curatedRank": {
       "current": 5
      },
@@ -114,7 +120,13 @@
        "winner": false
       },
       {
-       "value": 5
+       "value": 7,
+       "tiebreak": 7,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
       }
      ],
      "athlete": {
@@ -149,11 +161,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 1084,
    "type": {
     "id": "2",
@@ -170,10 +177,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Carolina Alves",
@@ -185,13 +192,13 @@
    "abbr": "Laura Samson",
    "alias": "Laura Samson",
    "name": "Laura Samson",
-   "score": 0
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-10T22:10:44.045Z",
+ "updated": "2026-11-10T23:57:52.067Z",
  "open_taken_at": "2026-11-09T07:54:38.141Z",
  "thresholds": {
   "big": 10,
@@ -261,7 +268,7 @@
    "reason": "Explained by score: Laura Samson trailing in sets",
    "context": "Carolina Alves 7, 5 · Laura Samson 6, 5 · 2nd Set (games by set)",
    "first_seen": "2026-11-10T22:01:36.425Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
