@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-12T23:05:45.505Z"
+  "fetched_at": "2026-11-12T23:13:27.213Z"
  },
- "updated": "2026-11-12T23:05:45.399Z",
+ "updated": "2026-11-12T23:13:27.134Z",
  "open_taken_at": "2026-11-11T12:56:30.899Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-12T22:54:57.072Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2417680:0:2026-11-12T22:54:57.072Z",
+   "key": "2417680:0",
+   "at": "2026-11-12T23:07:43.227Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Joao Lucas Da Silva win",
+   "market": "Moneyline",
+   "now_odds": "+113",
+   "now_chance": 47,
+   "edge": 13,
+   "text": "Edge gone: Joao Lucas Da Silva win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-joasil-gonbue-2026-11-12"
+  },
   {
    "id": "new_edge:2417680:0:big",
    "key": "2417680:0",
@@ -80,7 +94,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2417680:0:big"
+  "new_edge:2417680:0:big",
+  "gone:2417680:0:2026-11-12T22:54:57.072Z"
  ],
  "kalshi_checked": null
 }
