@@ -3,7 +3,7 @@
   "league": "nhl",
   "query_date": "2026-11-12",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261112&limit=1000",
-  "fetched_at": "2026-11-12T04:16:46.630Z",
+  "fetched_at": "2026-11-12T22:54:34.144Z",
   "events": [
     {
       "id": "401891808",
@@ -12,15 +12,15 @@
       "status": {
         "clock": 0,
         "displayClock": "0:00",
-        "period": 0,
+        "period": 3,
         "type": {
-          "id": "1",
-          "name": "STATUS_SCHEDULED",
-          "state": "pre",
-          "completed": false,
-          "description": "Scheduled",
-          "detail": "Thu, November 12th at 12:00 PM EST",
-          "shortDetail": "11/12 - 12:00 PM EST"
+          "id": "3",
+          "name": "STATUS_FINAL",
+          "state": "post",
+          "completed": true,
+          "description": "Final",
+          "detail": "Final",
+          "shortDetail": "Final"
         }
       },
       "competitions": [
@@ -30,22 +30,401 @@
           "status": {
             "clock": 0,
             "displayClock": "0:00",
-            "period": 0,
+            "period": 3,
             "type": {
-              "id": "1",
-              "name": "STATUS_SCHEDULED",
-              "state": "pre",
-              "completed": false,
-              "description": "Scheduled",
-              "detail": "Thu, November 12th at 12:00 PM EST",
-              "shortDetail": "11/12 - 12:00 PM EST"
-            }
+              "id": "3",
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            },
+            "featuredAthletes": [
+              {
+                "name": "winningGoalie",
+                "displayName": "Winning Goalie",
+                "shortDisplayName": "Winning Goalie",
+                "abbreviation": "W",
+                "playerId": 4996097,
+                "athlete": {
+                  "id": "4996097",
+                  "fullName": "Brandon Bussi",
+                  "displayName": "Brandon Bussi",
+                  "shortName": "B. Bussi",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/nhl/player/_/id/4996097"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/4996097.png",
+                  "jersey": "32",
+                  "position": "G",
+                  "team": {
+                    "id": "7"
+                  }
+                },
+                "team": {
+                  "id": "7"
+                },
+                "statistics": [
+                  {
+                    "name": "saves",
+                    "abbreviation": "SV",
+                    "displayValue": "12"
+                  },
+                  {
+                    "name": "savePct",
+                    "abbreviation": "SV%",
+                    "displayValue": ".923"
+                  },
+                  {
+                    "name": "plusMinus",
+                    "abbreviation": "+/-",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "goals",
+                    "abbreviation": "G",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "ytdGoals",
+                    "abbreviation": "YTDG",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "assists",
+                    "abbreviation": "A",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "points",
+                    "abbreviation": "PTS",
+                    "displayValue": "0"
+                  }
+                ],
+                "projections": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/hockey/leagues/nhl/events/401891808/competitions/401891808/competitors/7/roster/4996097/projections?lang=en&region=us"
+                }
+              },
+              {
+                "name": "losingGoalie",
+                "displayName": "Losing Goalie",
+                "shortDisplayName": "Losing Goalie",
+                "abbreviation": "L",
+                "playerId": 5657,
+                "athlete": {
+                  "id": "5657",
+                  "fullName": "Philipp Grubauer",
+                  "displayName": "Philipp Grubauer",
+                  "shortName": "P. Grubauer",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/nhl/player/_/id/5657"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/5657.png",
+                  "jersey": "31",
+                  "position": "G",
+                  "team": {
+                    "id": "124292"
+                  }
+                },
+                "team": {
+                  "id": "124292"
+                },
+                "statistics": [
+                  {
+                    "name": "saves",
+                    "abbreviation": "SV",
+                    "displayValue": "26"
+                  },
+                  {
+                    "name": "savePct",
+                    "abbreviation": "SV%",
+                    "displayValue": ".867"
+                  },
+                  {
+                    "name": "plusMinus",
+                    "abbreviation": "+/-",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "goals",
+                    "abbreviation": "G",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "ytdGoals",
+                    "abbreviation": "YTDG",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "assists",
+                    "abbreviation": "A",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "points",
+                    "abbreviation": "PTS",
+                    "displayValue": "0"
+                  }
+                ],
+                "projections": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/hockey/leagues/nhl/events/401891808/competitions/401891808/competitors/124292/roster/5657/projections?lang=en&region=us"
+                }
+              },
+              {
+                "name": "firstStar",
+                "displayName": "First Star",
+                "shortDisplayName": "First Star",
+                "abbreviation": "FS",
+                "playerId": 3904173,
+                "athlete": {
+                  "id": "3904173",
+                  "fullName": "Sebastian Aho",
+                  "displayName": "Sebastian Aho",
+                  "shortName": "S. Aho",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/nhl/player/_/id/3904173"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/3904173.png",
+                  "jersey": "20",
+                  "position": "C",
+                  "team": {
+                    "id": "7"
+                  }
+                },
+                "team": {
+                  "id": "7"
+                },
+                "statistics": [
+                  {
+                    "name": "saves",
+                    "abbreviation": "SV",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "savePct",
+                    "abbreviation": "SV%",
+                    "displayValue": ".000"
+                  },
+                  {
+                    "name": "plusMinus",
+                    "abbreviation": "+/-",
+                    "displayValue": "1"
+                  },
+                  {
+                    "name": "goals",
+                    "abbreviation": "G",
+                    "displayValue": "2"
+                  },
+                  {
+                    "name": "ytdGoals",
+                    "abbreviation": "YTDG",
+                    "displayValue": "12"
+                  },
+                  {
+                    "name": "assists",
+                    "abbreviation": "A",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "points",
+                    "abbreviation": "PTS",
+                    "displayValue": "2"
+                  }
+                ],
+                "projections": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/hockey/leagues/nhl/events/401891808/competitions/401891808/competitors/7/roster/3904173/projections?lang=en&region=us"
+                }
+              },
+              {
+                "name": "secondStar",
+                "displayName": "Second Star",
+                "shortDisplayName": "Second Star",
+                "abbreviation": "SS",
+                "playerId": 4233611,
+                "athlete": {
+                  "id": "4233611",
+                  "fullName": "Juuso Valimaki",
+                  "displayName": "Juuso Valimaki",
+                  "shortName": "J. Valimaki",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/nhl/player/_/id/4233611"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/4233611.png",
+                  "jersey": "8",
+                  "position": "D",
+                  "team": {
+                    "id": "7"
+                  }
+                },
+                "team": {
+                  "id": "7"
+                },
+                "statistics": [
+                  {
+                    "name": "saves",
+                    "abbreviation": "SV",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "savePct",
+                    "abbreviation": "SV%",
+                    "displayValue": ".000"
+                  },
+                  {
+                    "name": "plusMinus",
+                    "abbreviation": "+/-",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "goals",
+                    "abbreviation": "G",
+                    "displayValue": "1"
+                  },
+                  {
+                    "name": "ytdGoals",
+                    "abbreviation": "YTDG",
+                    "displayValue": "3"
+                  },
+                  {
+                    "name": "assists",
+                    "abbreviation": "A",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "points",
+                    "abbreviation": "PTS",
+                    "displayValue": "1"
+                  }
+                ],
+                "projections": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/hockey/leagues/nhl/events/401891808/competitions/401891808/competitors/7/roster/4233611/projections?lang=en&region=us"
+                }
+              },
+              {
+                "name": "thirdStar",
+                "displayName": "Third Star",
+                "shortDisplayName": "Third Star",
+                "abbreviation": "TS",
+                "playerId": 3114741,
+                "athlete": {
+                  "id": "3114741",
+                  "fullName": "Nikolaj Ehlers",
+                  "displayName": "Nikolaj Ehlers",
+                  "shortName": "N. Ehlers",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/nhl/player/_/id/3114741"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/3114741.png",
+                  "jersey": "27",
+                  "position": "LW",
+                  "team": {
+                    "id": "7"
+                  }
+                },
+                "team": {
+                  "id": "7"
+                },
+                "statistics": [
+                  {
+                    "name": "saves",
+                    "abbreviation": "SV",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "savePct",
+                    "abbreviation": "SV%",
+                    "displayValue": ".000"
+                  },
+                  {
+                    "name": "plusMinus",
+                    "abbreviation": "+/-",
+                    "displayValue": "2"
+                  },
+                  {
+                    "name": "goals",
+                    "abbreviation": "G",
+                    "displayValue": "1"
+                  },
+                  {
+                    "name": "ytdGoals",
+                    "abbreviation": "YTDG",
+                    "displayValue": "5"
+                  },
+                  {
+                    "name": "assists",
+                    "abbreviation": "A",
+                    "displayValue": "1"
+                  },
+                  {
+                    "name": "points",
+                    "abbreviation": "PTS",
+                    "displayValue": "2"
+                  }
+                ],
+                "projections": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/hockey/leagues/nhl/events/401891808/competitions/401891808/competitors/7/roster/3114741/projections?lang=en&region=us"
+                }
+              }
+            ]
           },
           "competitors": [
             {
               "id": "124292",
               "homeAway": "home",
-              "score": "0",
+              "score": "1",
+              "linescores": [
+                {
+                  "value": 0,
+                  "displayValue": "0",
+                  "period": 1
+                },
+                {
+                  "value": 0,
+                  "displayValue": "0",
+                  "period": 2
+                },
+                {
+                  "value": 1,
+                  "displayValue": "1",
+                  "period": 3
+                }
+              ],
               "team": {
                 "id": "124292",
                 "abbreviation": "SEA",
@@ -58,7 +437,24 @@
             {
               "id": "7",
               "homeAway": "away",
-              "score": "0",
+              "score": "4",
+              "linescores": [
+                {
+                  "value": 2,
+                  "displayValue": "2",
+                  "period": 1
+                },
+                {
+                  "value": 1,
+                  "displayValue": "1",
+                  "period": 2
+                },
+                {
+                  "value": 1,
+                  "displayValue": "1",
+                  "period": 3
+                }
+              ],
               "team": {
                 "id": "7",
                 "abbreviation": "CAR",
@@ -84,21 +480,14 @@
           "confirmed": false
         },
         {
-          "player": "Pyotr Kochetkov",
+          "player": "Brandon Bussi",
           "position": "probableStartingGoalie",
           "team": "CAR",
           "status": "probable",
           "confirmed": false
         }
       ],
-      "book_lines": [
-        {
-          "provider": "DraftKings",
-          "details": "CAR -290",
-          "spread": 1.5,
-          "total": 6.5
-        }
-      ],
+      "book_lines": [],
       "coverage": {
         "injuries": "unavailable",
         "starters": "unverified",
@@ -107,7 +496,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261112&limit=1000",
-      "fetched_at": "2026-11-12T04:16:46.630Z",
+      "fetched_at": "2026-11-12T22:54:34.144Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -129,6 +518,9 @@
           "detail": "Thu, November 12th at 7:00 PM EST",
           "shortDetail": "11/12 - 7:00 PM EST"
         }
+      },
+      "boxscore": {
+        "players": []
       },
       "competitions": [
         {
@@ -179,7 +571,38 @@
         }
       ],
       "player_usage": [],
-      "injuries": [],
+      "injuries": [
+        {
+          "team": "BOS",
+          "player": "James Hagens",
+          "position": "C",
+          "status": "Injured Reserve"
+        },
+        {
+          "team": "MTL",
+          "player": "Ivan Demidov",
+          "position": "RW",
+          "status": "Injured Reserve"
+        },
+        {
+          "team": "MTL",
+          "player": "Sam Montembeault",
+          "position": "G",
+          "status": "Injured Reserve"
+        },
+        {
+          "team": "MTL",
+          "player": "Bryce Pickford",
+          "position": "D",
+          "status": "Injured Reserve"
+        },
+        {
+          "team": "MTL",
+          "player": "Lucas Condotta",
+          "position": "LW",
+          "status": "Injured Reserve"
+        }
+      ],
       "starters": [],
       "starting_goalies": [],
       "probables": [
@@ -201,23 +624,23 @@
       "book_lines": [
         {
           "provider": "DraftKings",
-          "details": "BOS -120",
+          "details": "BOS -125",
           "spread": -1.5,
           "total": 6.5
         }
       ],
       "coverage": {
-        "injuries": "unavailable",
+        "injuries": "published_report",
         "starters": "unverified",
         "goalies": "unverified",
         "hockey_lines": "unavailable",
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261112&limit=1000",
-      "fetched_at": "2026-11-12T04:16:46.630Z",
-      "details_source_url": null,
-      "details_checked_at": null,
-      "details_available": false
+      "fetched_at": "2026-11-12T22:54:34.144Z",
+      "details_source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/summary?event=401892696",
+      "details_checked_at": "2026-11-12T22:54:34.144Z",
+      "details_available": true
     },
     {
       "id": "401892697",
@@ -291,7 +714,7 @@
       "starting_goalies": [],
       "probables": [
         {
-          "player": "Sergei Bobrovsky",
+          "player": "Anthony Stolarz",
           "position": "probableStartingGoalie",
           "team": "TOR",
           "status": "probable",
@@ -321,7 +744,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261112&limit=1000",
-      "fetched_at": "2026-11-12T04:16:46.630Z",
+      "fetched_at": "2026-11-12T22:54:34.144Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -405,7 +828,7 @@
           "confirmed": false
         },
         {
-          "player": "Mackenzie Blackwood",
+          "player": "Scott Wedgewood",
           "position": "probableStartingGoalie",
           "team": "COL",
           "status": "probable",
@@ -415,8 +838,8 @@
       "book_lines": [
         {
           "provider": "DraftKings",
-          "details": "COL -120",
-          "spread": 1.5,
+          "details": "OTT -112",
+          "spread": -1.5,
           "total": 6.5
         }
       ],
@@ -428,7 +851,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261112&limit=1000",
-      "fetched_at": "2026-11-12T04:16:46.630Z",
+      "fetched_at": "2026-11-12T22:54:34.144Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -522,7 +945,7 @@
       "book_lines": [
         {
           "provider": "DraftKings",
-          "details": "NJ -148",
+          "details": "NJ -155",
           "spread": -1.5,
           "total": 6.5
         }
@@ -535,7 +958,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261112&limit=1000",
-      "fetched_at": "2026-11-12T04:16:46.630Z",
+      "fetched_at": "2026-11-12T22:54:34.144Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -629,7 +1052,7 @@
       "book_lines": [
         {
           "provider": "DraftKings",
-          "details": "TB -118",
+          "details": "TB -115",
           "spread": 1.5,
           "total": 6.5
         }
@@ -642,7 +1065,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261112&limit=1000",
-      "fetched_at": "2026-11-12T04:16:46.630Z",
+      "fetched_at": "2026-11-12T22:54:34.144Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -719,7 +1142,7 @@
       "starting_goalies": [],
       "probables": [
         {
-          "player": "Jacob Markstrom",
+          "player": "Akira Schmid",
           "position": "probableStartingGoalie",
           "team": "FLA",
           "status": "probable",
@@ -736,7 +1159,7 @@
       "book_lines": [
         {
           "provider": "DraftKings",
-          "details": "FLA -170",
+          "details": "FLA -185",
           "spread": -1.5,
           "total": 5.5
         }
@@ -749,7 +1172,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261112&limit=1000",
-      "fetched_at": "2026-11-12T04:16:46.630Z",
+      "fetched_at": "2026-11-12T22:54:34.144Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -843,7 +1266,7 @@
       "book_lines": [
         {
           "provider": "DraftKings",
-          "details": "BUF -148",
+          "details": "BUF -155",
           "spread": 1.5,
           "total": 6.5
         }
@@ -856,7 +1279,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261112&limit=1000",
-      "fetched_at": "2026-11-12T04:16:46.630Z",
+      "fetched_at": "2026-11-12T22:54:34.144Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -950,7 +1373,7 @@
       "book_lines": [
         {
           "provider": "DraftKings",
-          "details": "DAL -185",
+          "details": "DAL -162",
           "spread": -1.5,
           "total": 5.5
         }
@@ -963,7 +1386,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261112&limit=1000",
-      "fetched_at": "2026-11-12T04:16:46.630Z",
+      "fetched_at": "2026-11-12T22:54:34.144Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -1057,8 +1480,8 @@
       "book_lines": [
         {
           "provider": "DraftKings",
-          "details": "UTAH -135",
-          "spread": -1.5,
+          "details": "STL -130",
+          "spread": 1.5,
           "total": 6.5
         }
       ],
@@ -1070,7 +1493,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261112&limit=1000",
-      "fetched_at": "2026-11-12T04:16:46.630Z",
+      "fetched_at": "2026-11-12T22:54:34.144Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
@@ -1177,7 +1600,7 @@
         "note": "No inferred starters, depth-chart promotions, probable-to-confirmed conversions or hockey line combinations. Tennis/golf do not have team starting lineups."
       },
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261112&limit=1000",
-      "fetched_at": "2026-11-12T04:16:46.630Z",
+      "fetched_at": "2026-11-12T22:54:34.144Z",
       "details_source_url": null,
       "details_checked_at": null,
       "details_available": false
