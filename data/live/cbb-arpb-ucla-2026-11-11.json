@@ -4,20 +4,42 @@
  "game": "Arkansas-Pine Bluff vs. UCLA",
  "url": "https://polymarket.us/sports/cbb/cbb-arpb-ucla-2026-11-11",
  "start_time": "2026-11-12T02:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-12T03:58:52.696Z"
+  "fetched_at": "2026-11-12T04:08:52.288Z"
  },
- "updated": "2026-11-12T03:58:52.509Z",
+ "updated": "2026-11-12T04:08:52.071Z",
  "open_taken_at": "2026-11-10T22:01:24.608Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
  "open": [
+  {
+   "market_id": "2418485",
+   "market": "Main spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 55.5,
+   "question": "Will Arkansas-Pine Bluff cover +55.5 vs UCLA in Arkansas-Pine Bluff vs. UCLA?",
+   "sides": [
+    "Golden Lions +55.50",
+    "Bruins -55.50"
+   ],
+   "teams": [
+    "Golden Lions",
+    "Bruins"
+   ],
+   "player": null,
+   "mid": 76.5,
+   "yes_buy": 79,
+   "no_buy": 26,
+   "taken_at": "2026-11-11T20:00:33.191Z"
+  },
   {
    "market_id": "2418524",
    "market": "Main total",
@@ -127,28 +149,6 @@
    "yes_buy": 97,
    "no_buy": 7,
    "taken_at": "2026-11-12T03:49:53.065Z"
-  },
-  {
-   "market_id": "2418485",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": 55.5,
-   "question": "Will Arkansas-Pine Bluff cover +55.5 vs UCLA in Arkansas-Pine Bluff vs. UCLA?",
-   "sides": [
-    "Golden Lions +55.50",
-    "Bruins -55.50"
-   ],
-   "teams": [
-    "Golden Lions",
-    "Bruins"
-   ],
-   "player": null,
-   "mid": 76.5,
-   "yes_buy": 79,
-   "no_buy": 26,
-   "taken_at": "2026-11-11T20:00:33.191Z"
   },
   {
    "market_id": "2418505",
@@ -851,7 +851,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-12T03:58:52.509Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -871,7 +871,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-12T03:58:52.509Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -957,6 +957,34 @@
  ],
  "alerts": [
   {
+   "id": "gone:2418495:1:2026-11-12T03:58:52.509Z",
+   "key": "2418495:1",
+   "at": "2026-11-12T04:00:28.660Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Bruins -68.50",
+   "market": "Alt spread",
+   "now_odds": "+257",
+   "now_chance": 28,
+   "edge": 41,
+   "text": "Edge gone: Bruins -68.50 (Alt spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-arpb-ucla-2026-11-11"
+  },
+  {
+   "id": "gone:2418524:0:2026-11-12T03:58:52.509Z",
+   "key": "2418524:0",
+   "at": "2026-11-12T04:00:28.660Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 137.5",
+   "market": "Main total",
+   "now_odds": "-122",
+   "now_chance": 55,
+   "edge": 38,
+   "text": "Edge gone: Over 137.5 (Main total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-arpb-ucla-2026-11-11"
+  },
+  {
    "id": "new_edge:2418495:1:big",
    "key": "2418495:1",
    "at": "2026-11-12T03:58:52.509Z",
@@ -1017,7 +1045,9 @@
   "gone:2429295:0:2026-11-11T23:08:59.768Z",
   "gone:2418502:0:2026-11-11T23:08:59.768Z",
   "new_edge:2418495:1:big",
-  "new_edge:2418524:0:big"
+  "new_edge:2418524:0:big",
+  "gone:2418495:1:2026-11-12T03:58:52.509Z",
+  "gone:2418524:0:2026-11-12T03:58:52.509Z"
  ],
  "kalshi_checked": null
 }
