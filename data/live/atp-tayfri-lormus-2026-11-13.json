@@ -4,30 +4,30 @@
  "game": "Taylor Fritz vs. Lorenzo Musetti",
  "url": "https://polymarket.us/sports/atp/atp-tayfri-lormus-2026-11-13",
  "start_time": "2026-11-13T16:00:00Z",
- "status": "pregame",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186547",
-  "fetched_at": "2026-11-13T07:41:51.317Z",
+  "fetched_at": "2026-11-13T18:09:20.174Z",
   "tennis": true,
   "tennis_match": {
    "id": "186547",
    "uid": "s:850~l:851~e:148-2026~c:186547",
-   "date": "2026-11-13T16:00Z",
-   "startDate": "2026-11-13T16:00Z",
+   "date": "2026-11-13T16:05Z",
+   "startDate": "2026-11-13T16:05Z",
    "timeValid": true,
    "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Fri, November 13th at 11:00 AM EST",
-     "shortDetail": "11/13 - 11:00 AM EST"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(1) Taylor Fritz (USA) bt (3) Lorenzo Musetti (ITA) 6-4 6-2",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,20 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
      "curatedRank": {
       "current": 3
      },
+     "linescores": [
+      {
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 2,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "9b79e506-da5f-e10a-6b4e-9a2a93ed34bb",
       "displayName": "Lorenzo Musetti",
@@ -90,9 +106,20 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
      "curatedRank": {
       "current": 1
      },
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "6493155f-cacc-7aa5-ba78-d952efa4c652",
       "displayName": "Taylor Fritz",
@@ -141,10 +168,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Fri, November 13th at 11:00 AM EST",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Lorenzo Musetti",
@@ -156,13 +183,13 @@
    "abbr": "Taylor Fritz",
    "alias": "Taylor Fritz",
    "name": "Taylor Fritz",
-   "score": 0
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-13T07:41:51.245Z",
+ "updated": "2026-11-13T18:09:20.027Z",
  "open_taken_at": "2026-11-12T22:46:22.961Z",
  "thresholds": {
   "big": 10,
@@ -298,11 +325,28 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-13T07:27:28.247Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:2471262:1:2026-11-13T07:27:28.247Z",
+   "key": "2471262:1",
+   "at": "2026-11-13T18:09:20.027Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Lorenzo Musetti win",
+   "market": "Moneyline",
+   "now_odds": "+144",
+   "now_chance": 41,
+   "edge": 6,
+   "text": "Edge gone: Lorenzo Musetti win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-tayfri-lormus-2026-11-13"
+  }
+ ],
+ "alert_seen": [
+  "gone:2471262:1:2026-11-13T07:27:28.247Z"
+ ],
  "kalshi_checked": null
 }

@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892713",
-  "fetched_at": "2026-11-13T07:41:47.624Z",
+  "fetched_at": "2026-11-13T18:17:53.692Z",
   "game_state": "pre",
   "espn_status": "STATUS_SCHEDULED",
   "period": 0,
@@ -128,7 +128,7 @@
    }
   ]
  },
- "updated": "2026-11-13T07:41:47.411Z",
+ "updated": "2026-11-13T18:17:53.525Z",
  "open_taken_at": "2026-11-13T07:27:24.245Z",
  "thresholds": {
   "big": 10,
@@ -158,28 +158,6 @@
    "taken_at": "2026-11-13T07:27:24.245Z"
   },
   {
-   "market_id": "2381159",
-   "market": "Main spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": 1.5,
-   "question": "Will the OTT Senators cover 1.5 vs the PIT Penguins in OTT vs PIT?",
-   "sides": [
-    "Senators +1.50",
-    "Penguins -1.50"
-   ],
-   "teams": [
-    "Senators",
-    "Penguins"
-   ],
-   "player": null,
-   "mid": 70,
-   "yes_buy": 73,
-   "no_buy": 33,
-   "taken_at": "2026-11-13T07:27:24.245Z"
-  },
-  {
    "market_id": "2381170",
    "market": "Main total",
    "group": "game",
@@ -202,25 +180,25 @@
    "taken_at": "2026-11-13T07:27:24.245Z"
   },
   {
-   "market_id": "2381167",
-   "market": "Alt total",
+   "market_id": "2381157",
+   "market": "Main spread",
    "group": "game",
-   "mtype": "total",
+   "mtype": "spread",
    "period": "full_game",
-   "line": 4.5,
-   "question": "Will the total in OTT vs PIT be more than 4.5?",
+   "line": -1.5,
+   "question": "Will the OTT Senators cover -1.5 vs the PIT Penguins in OTT vs PIT?",
    "sides": [
-    "Over 4.5",
-    "Under 4.5"
+    "Senators -1.50",
+    "Penguins +1.50"
    ],
    "teams": [
-    null,
-    null
+    "Senators",
+    "Penguins"
    ],
    "player": null,
-   "mid": 82,
-   "yes_buy": 83,
-   "no_buy": 19,
+   "mid": 29,
+   "yes_buy": 32,
+   "no_buy": 74,
    "taken_at": "2026-11-13T07:27:24.245Z"
   },
   {
@@ -246,6 +224,50 @@
    "taken_at": "2026-11-13T07:27:24.245Z"
   },
   {
+   "market_id": "2381167",
+   "market": "Alt total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 4.5,
+   "question": "Will the total in OTT vs PIT be more than 4.5?",
+   "sides": [
+    "Over 4.5",
+    "Under 4.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 82,
+   "yes_buy": 83,
+   "no_buy": 19,
+   "taken_at": "2026-11-13T07:27:24.245Z"
+  },
+  {
+   "market_id": "2381159",
+   "market": "Alt spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 1.5,
+   "question": "Will the OTT Senators cover 1.5 vs the PIT Penguins in OTT vs PIT?",
+   "sides": [
+    "Senators +1.50",
+    "Penguins -1.50"
+   ],
+   "teams": [
+    "Senators",
+    "Penguins"
+   ],
+   "player": null,
+   "mid": 70,
+   "yes_buy": 73,
+   "no_buy": 33,
+   "taken_at": "2026-11-13T07:27:24.245Z"
+  },
+  {
    "market_id": "2381168",
    "market": "Alt total",
    "group": "game",
@@ -265,28 +287,6 @@
    "mid": 61,
    "yes_buy": 62,
    "no_buy": 40,
-   "taken_at": "2026-11-13T07:27:24.245Z"
-  },
-  {
-   "market_id": "2381157",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": -1.5,
-   "question": "Will the OTT Senators cover -1.5 vs the PIT Penguins in OTT vs PIT?",
-   "sides": [
-    "Senators -1.50",
-    "Penguins +1.50"
-   ],
-   "teams": [
-    "Senators",
-    "Penguins"
-   ],
-   "player": null,
-   "mid": 29,
-   "yes_buy": 32,
-   "no_buy": 74,
    "taken_at": "2026-11-13T07:27:24.245Z"
   },
   {
@@ -356,11 +356,92 @@
    "taken_at": "2026-11-13T07:27:24.245Z"
   }
  ],
- "edges": [],
+ "edges": [
+  {
+   "key": "2381157:1",
+   "market_id": "2381157",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will the OTT Senators cover -1.5 vs the PIT Penguins in OTT vs PIT?",
+   "side": "Penguins +1.50",
+   "open_chance": 74,
+   "now_chance": 69,
+   "open_odds": "-285",
+   "now_odds": "-223",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-11-13T18:09:14.455Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2381160:1",
+   "market_id": "2381160",
+   "market": "Alt spread",
+   "group": "game",
+   "question": "Will the OTT Senators cover 2.5 vs the PIT Penguins in OTT vs PIT?",
+   "side": "Penguins -2.50",
+   "open_chance": 23,
+   "now_chance": 18,
+   "open_odds": "+335",
+   "now_odds": "+456",
+   "edge": 5,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-11-13T18:09:14.455Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2381159:1",
+   "market_id": "2381159",
+   "market": "Alt spread",
+   "group": "game",
+   "question": "Will the OTT Senators cover 1.5 vs the PIT Penguins in OTT vs PIT?",
+   "side": "Penguins -1.50",
+   "open_chance": 33,
+   "now_chance": 29,
+   "open_odds": "+203",
+   "now_odds": "+245",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-11-13T18:09:14.455Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2381156:1",
+   "market_id": "2381156",
+   "market": "Alt spread",
+   "group": "game",
+   "question": "Will the OTT Senators cover -2.5 vs the PIT Penguins in OTT vs PIT?",
+   "side": "Penguins +2.50",
+   "open_chance": 84,
+   "now_chance": 80,
+   "open_odds": "-525",
+   "now_odds": "-400",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-11-13T18:09:14.455Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
  "alerts": [],
  "alert_seen": [],
  "kalshi_checked": {
-  "at": "2026-11-13T07:41:47.737Z",
+  "at": "2026-11-13T18:17:53.796Z",
   "event": "26NOV14OTTPIT"
  }
 }
