@@ -4,14 +4,14 @@
  "game": "Lammons / Smith vs. Jans / Vliegen",
  "url": "https://polymarket.us/sports/atpdb/atpdb-lammonsmith-jansvliege-2026-11-13",
  "start_time": "2026-11-13T18:10:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-13T18:17:56.083Z"
+  "fetched_at": "2026-11-13T23:31:10.813Z"
  },
- "updated": "2026-11-13T18:17:56.004Z",
+ "updated": "2026-11-13T23:31:10.665Z",
  "open_taken_at": "2026-11-13T07:27:28.607Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-13T18:17:56.004Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2477932:0:2026-11-13T18:17:56.004Z",
+   "key": "2477932:0",
+   "at": "2026-11-13T23:31:10.665Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Lammons N / Smith J-P win",
+   "market": "Moneyline",
+   "now_odds": "+144",
+   "now_chance": 41,
+   "edge": 4,
+   "text": "Edge gone: Lammons N / Smith J-P win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atpdb/atpdb-lammonsmith-jansvliege-2026-11-13"
+  },
   {
    "id": "new_edge:2477932:0:slight",
    "key": "2477932:0",
@@ -80,7 +94,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2477932:0:slight"
+  "new_edge:2477932:0:slight",
+  "gone:2477932:0:2026-11-13T18:17:56.004Z"
  ],
  "kalshi_checked": null
 }

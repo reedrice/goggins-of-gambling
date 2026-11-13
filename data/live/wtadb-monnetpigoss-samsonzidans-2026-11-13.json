@@ -4,12 +4,12 @@
  "game": "Monnet / Pigossi vs. Samson / Zidansek",
  "url": "https://polymarket.us/sports/wtadb/wtadb-monnetpigoss-samsonzidans-2026-11-13",
  "start_time": "2026-11-13T18:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186775",
-  "fetched_at": "2026-11-13T18:17:55.751Z",
+  "fetched_at": "2026-11-13T23:31:11.205Z",
   "tennis": true,
   "tennis_match": {
    "id": "186775",
@@ -17,17 +17,17 @@
    "date": "2026-11-13T18:10Z",
    "startDate": "2026-11-13T18:10Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Laura Samson (CZE) & Tamara Zidansek (SLO) leads Carole Monnet (FRA) & Laura Pigossi (BRA) 1-0",
+     "text": "Laura Samson (CZE) & Tamara Zidansek (SLO) bt Carole Monnet (FRA) & Laura Pigossi (BRA) 3-6 6-4 1-0 (10-6)",
      "type": "event"
     }
    ],
@@ -55,10 +55,20 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "winner": true,
      "linescores": [
       {
-       "value": 1
+       "value": 3,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1,
+       "tiebreak": 10,
+       "winner": true
       }
      ],
      "roster": {
@@ -133,10 +143,20 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "winner": false,
      "linescores": [
       {
-       "value": 0
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 0,
+       "tiebreak": 6,
+       "winner": false
       }
      ],
      "roster": {
@@ -206,11 +226,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 1084,
    "type": {
     "id": "4",
@@ -227,28 +242,28 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Laura Samson / Tamara Zidansek",
    "alias": "Laura Samson / Tamara Zidansek",
    "name": "Laura Samson / Tamara Zidansek",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Carole Monnet / Laura Pigossi",
    "alias": "Carole Monnet / Laura Pigossi",
    "name": "Carole Monnet / Laura Pigossi",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-13T18:17:55.667Z",
+ "updated": "2026-11-13T23:31:11.051Z",
  "open_taken_at": "2026-11-12T22:46:22.556Z",
  "thresholds": {
   "big": 10,

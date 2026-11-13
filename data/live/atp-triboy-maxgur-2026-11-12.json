@@ -4,14 +4,14 @@
  "game": "Tristan Boyer vs. Max Alcala Gurri",
  "url": "https://polymarket.us/sports/atp/atp-triboy-maxgur-2026-11-12",
  "start_time": "2026-11-13T17:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-13T18:17:54.632Z"
+  "fetched_at": "2026-11-13T23:31:10.413Z"
  },
- "updated": "2026-11-13T18:17:54.535Z",
+ "updated": "2026-11-13T23:31:10.221Z",
  "open_taken_at": "2026-11-12T22:46:19.127Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-13T18:09:15.446Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2439213:1:2026-11-13T18:09:15.446Z",
+   "key": "2439213:1",
+   "at": "2026-11-13T23:31:10.221Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Max Alcala Gurri win",
+   "market": "Moneyline",
+   "now_odds": "+245",
+   "now_chance": 29,
+   "edge": 26,
+   "text": "Edge gone: Max Alcala Gurri win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-triboy-maxgur-2026-11-12"
+  },
   {
    "id": "new_edge:2439213:1:big",
    "key": "2439213:1",
@@ -80,7 +94,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2439213:1:big"
+  "new_edge:2439213:1:big",
+  "gone:2439213:1:2026-11-13T18:09:15.446Z"
  ],
  "kalshi_checked": null
 }
