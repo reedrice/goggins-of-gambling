@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-13T23:40:10.056Z"
+  "fetched_at": "2026-11-13T23:48:34.170Z"
  },
- "updated": "2026-11-13T23:40:09.916Z",
+ "updated": "2026-11-13T23:48:34.029Z",
  "open_taken_at": "2026-11-12T22:46:21.915Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-13T23:31:07.129Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2465793:1:2026-11-13T23:31:07.129Z",
+   "key": "2465793:1",
+   "at": "2026-11-13T23:48:34.029Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Michael Zheng win",
+   "market": "Moneyline",
+   "now_odds": "+108",
+   "now_chance": 48,
+   "edge": 16,
+   "text": "Edge gone: Michael Zheng win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-stekoz-miczhe-2026-11-13"
+  },
   {
    "id": "new_edge:2465793:1:big",
    "key": "2465793:1",
@@ -80,7 +94,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2465793:1:big"
+  "new_edge:2465793:1:big",
+  "gone:2465793:1:2026-11-13T23:31:07.129Z"
  ],
  "kalshi_checked": null
 }
