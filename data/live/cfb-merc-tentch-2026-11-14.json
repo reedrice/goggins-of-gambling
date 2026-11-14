@@ -4,14 +4,14 @@
  "game": "Mercer vs. Tennessee Tech",
  "url": "https://polymarket.us/sports/cfb/cfb-merc-tentch-2026-11-14",
  "start_time": "2026-11-14T19:30:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-14T15:48:24.693Z"
+  "fetched_at": "2026-11-14T20:11:01.703Z"
  },
- "updated": "2026-11-14T15:48:24.539Z",
+ "updated": "2026-11-14T20:11:01.518Z",
  "open_taken_at": "2026-11-13T07:27:15.307Z",
  "thresholds": {
   "big": 10,
@@ -527,6 +527,26 @@
  ],
  "edges": [
   {
+   "key": "2019381:1",
+   "market_id": "2019381",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming football event Mercer vs Tennessee Tech scheduled for November 14, 2026 at 7:30 PM UTC?",
+   "side": "Golden Eagles win",
+   "open_chance": 73,
+   "now_chance": 48,
+   "open_odds": "-270",
+   "now_odds": "+108",
+   "edge": 25,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-14T20:00:39.909Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2501427:0",
    "market_id": "2501427",
    "market": "Alt total",
@@ -543,11 +563,43 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-14T15:19:09.689Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "new_edge:2019381:1:big",
+   "key": "2019381:1",
+   "at": "2026-11-14T20:00:39.909Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Golden Eagles win",
+   "market": "Moneyline",
+   "now_odds": "-120",
+   "now_chance": 54.5,
+   "edge": 18.5,
+   "text": "New big edge: Golden Eagles win (Moneyline), 19 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-merc-tentch-2026-11-14"
+  },
+  {
+   "id": "gone:2501427:0:2026-11-14T15:19:09.689Z",
+   "key": "2501427:0",
+   "at": "2026-11-14T20:00:39.909Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 52.5",
+   "market": "Alt total",
+   "now_odds": "+127",
+   "now_chance": 44,
+   "edge": 7,
+   "text": "Edge gone: Over 52.5 (Alt total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-merc-tentch-2026-11-14"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:2019381:1:big",
+  "gone:2501427:0:2026-11-14T15:19:09.689Z"
+ ],
  "kalshi_checked": null
 }

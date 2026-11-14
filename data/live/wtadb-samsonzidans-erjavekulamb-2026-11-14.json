@@ -4,12 +4,12 @@
  "game": "Samson / Zidansek vs. Erjavec / Kulambayeva",
  "url": "https://polymarket.us/sports/wtadb/wtadb-samsonzidans-erjavekulamb-2026-11-14",
  "start_time": "2026-11-14T15:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "186780",
-  "fetched_at": "2026-11-14T15:48:40.155Z",
+  "fetched_at": "2026-11-14T20:01:01.993Z",
   "tennis": true,
   "tennis_match": {
    "id": "186780",
@@ -17,17 +17,17 @@
    "date": "2026-11-14T15:05Z",
    "startDate": "2026-11-14T15:05Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 1,
+    "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "1st Set",
-     "shortDetail": "1st"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "Laura Samson (CZE) & Tamara Zidansek (SLO) leads Veronika Erjavec (SLO) & Zhibek Kulambayeva (KAZ) 5-5",
+     "text": "Veronika Erjavec (SLO) & Zhibek Kulambayeva (KAZ) bt Laura Samson (CZE) & Tamara Zidansek (SLO) 5-7 6-2 1-0 (14-12)",
      "type": "event"
     }
    ],
@@ -55,9 +55,20 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "winner": true,
      "linescores": [
       {
-       "value": 5
+       "value": 5,
+       "winner": false
+      },
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 1,
+       "tiebreak": 14,
+       "winner": true
       }
      ],
      "roster": {
@@ -132,9 +143,20 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "winner": false,
      "linescores": [
       {
-       "value": 5
+       "value": 7,
+       "winner": true
+      },
+      {
+       "value": 2,
+       "winner": false
+      },
+      {
+       "value": 0,
+       "tiebreak": 12,
+       "winner": false
       }
      ],
      "roster": {
@@ -220,28 +242,28 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
-  "period": 1,
-  "clock": "1st Set",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Veronika Erjavec / Zhibek Kulambayeva",
    "alias": "Veronika Erjavec / Zhibek Kulambayeva",
    "name": "Veronika Erjavec / Zhibek Kulambayeva",
-   "score": 0
+   "score": 2
   },
   "home": {
    "abbr": "Laura Samson / Tamara Zidansek",
    "alias": "Laura Samson / Tamara Zidansek",
    "name": "Laura Samson / Tamara Zidansek",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-14T15:48:40.007Z",
+ "updated": "2026-11-14T20:01:01.942Z",
  "open_taken_at": "2026-11-13T23:31:09.321Z",
  "thresholds": {
   "big": 10,
@@ -289,11 +311,25 @@
    "reason": null,
    "context": "Veronika Erjavec / Zhibek Kulambayeva 5 · Laura Samson / Tamara Zidansek 5 · 1st Set (games by set)",
    "first_seen": "2026-11-14T15:25:36.100Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2504635:1:2026-11-14T15:25:36.100Z",
+   "key": "2504635:1",
+   "at": "2026-11-14T20:01:01.942Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Erjavec V / Kulambayeva Z win",
+   "market": "Moneyline",
+   "now_odds": "-127",
+   "now_chance": 56,
+   "edge": 11,
+   "text": "Edge gone: Erjavec V / Kulambayeva Z win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/wtadb/wtadb-samsonzidans-erjavekulamb-2026-11-14"
+  },
   {
    "id": "news:2504635:1",
    "key": "2504635:1",
@@ -325,7 +361,8 @@
  ],
  "alert_seen": [
   "new_edge:2504635:1:big",
-  "news:2504635:1"
+  "news:2504635:1",
+  "gone:2504635:1:2026-11-14T15:25:36.100Z"
  ],
  "kalshi_checked": null
 }
