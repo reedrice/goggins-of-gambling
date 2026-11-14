@@ -4,14 +4,14 @@
  "game": "Sebastian Gorzny vs. August Holmgren",
  "url": "https://polymarket.us/sports/atp/atp-sebgor-aughol-2026-11-13",
  "start_time": "2026-11-14T03:10:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-14T03:53:36.556Z"
+  "fetched_at": "2026-11-14T15:19:34.306Z"
  },
- "updated": "2026-11-14T03:53:36.467Z",
+ "updated": "2026-11-14T15:19:34.245Z",
  "open_taken_at": "2026-11-13T07:27:29.076Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-14T03:37:42.042Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2485103:1:2026-11-14T03:37:42.042Z",
+   "key": "2485103:1",
+   "at": "2026-11-14T15:19:34.245Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "August Holmgren win",
+   "market": "Moneyline",
+   "now_odds": "+127",
+   "now_chance": 44,
+   "edge": 10,
+   "text": "Edge gone: August Holmgren win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-sebgor-aughol-2026-11-13"
+  },
   {
    "id": "new_edge:2485103:1:slight",
    "key": "2485103:1",
@@ -95,7 +109,8 @@
  ],
  "alert_seen": [
   "new_edge:2485103:1:big",
-  "new_edge:2485103:1:slight"
+  "new_edge:2485103:1:slight",
+  "gone:2485103:1:2026-11-14T03:37:42.042Z"
  ],
  "kalshi_checked": null
 }
