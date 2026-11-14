@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-14T20:19:59.291Z"
+  "fetched_at": "2026-11-14T20:29:01.187Z"
  },
- "updated": "2026-11-14T20:19:59.197Z",
+ "updated": "2026-11-14T20:29:01.013Z",
  "open_taken_at": "2026-11-13T07:27:15.541Z",
  "thresholds": {
   "big": 10,
@@ -593,6 +593,26 @@
  ],
  "edges": [
   {
+   "key": "2022531:1",
+   "market_id": "2022531",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming football event Lindenwood vs UT Martin scheduled for November 14, 2026 at 8:00 PM UTC?",
+   "side": "Skyhawks win",
+   "open_chance": 50.5,
+   "now_chance": 33,
+   "open_odds": "-102",
+   "now_odds": "+203",
+   "edge": 17.5,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-14T15:19:09.825Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2500377:1",
    "market_id": "2500377",
    "market": "Alt spread",
@@ -604,26 +624,6 @@
    "open_odds": "+120",
    "now_odds": "+156",
    "edge": 6.5,
-   "tier": "slight",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-14T15:19:09.825Z",
-   "status": "gone",
-   "kalshi": null
-  },
-  {
-   "key": "2022531:1",
-   "market_id": "2022531",
-   "market": "Moneyline",
-   "group": "game",
-   "question": "Who will win in the upcoming football event Lindenwood vs UT Martin scheduled for November 14, 2026 at 8:00 PM UTC?",
-   "side": "Skyhawks win",
-   "open_chance": 50.5,
-   "now_chance": 44.5,
-   "open_odds": "-102",
-   "now_odds": "+125",
-   "edge": 6,
    "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -674,6 +674,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2022531:1:big",
+   "key": "2022531:1",
+   "at": "2026-11-14T20:29:01.013Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Skyhawks win",
+   "market": "Moneyline",
+   "now_odds": "+203",
+   "now_chance": 33,
+   "edge": 17.5,
+   "text": "New big edge: Skyhawks win (Moneyline), 18 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-jac-tmrt-2026-11-14"
+  },
   {
    "id": "gone:2022531:1:2026-11-14T15:19:09.825Z",
    "key": "2022531:1",
@@ -765,7 +779,8 @@
   "gone:2500377:1:2026-11-14T15:19:09.825Z",
   "gone:2500371:1:2026-11-14T15:19:09.825Z",
   "gone:2022531:1:2026-11-14T15:19:09.825Z",
-  "gone:2500375:1:2026-11-14T15:19:09.825Z"
+  "gone:2500375:1:2026-11-14T15:19:09.825Z",
+  "new_edge:2022531:1:big"
  ],
  "kalshi_checked": null
 }

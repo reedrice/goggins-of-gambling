@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-14T20:19:57.627Z"
+  "fetched_at": "2026-11-14T20:28:58.789Z"
  },
- "updated": "2026-11-14T20:19:57.552Z",
+ "updated": "2026-11-14T20:28:58.623Z",
  "open_taken_at": "2026-11-13T07:27:13.380Z",
  "thresholds": {
   "big": 10,
@@ -534,11 +534,11 @@
    "question": "Who will win in the upcoming football event Delaware State vs Howard scheduled for November 14, 2026 at 6:00 PM UTC?",
    "side": "Hornets win",
    "open_chance": 59,
-   "now_chance": 53.5,
+   "now_chance": 29.5,
    "open_odds": "-144",
-   "now_odds": "-115",
-   "edge": 5.5,
-   "tier": "slight",
+   "now_odds": "+239",
+   "edge": 29.5,
+   "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
@@ -568,6 +568,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2018158:0:big",
+   "key": "2018158:0",
+   "at": "2026-11-14T20:28:58.623Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Hornets win",
+   "market": "Moneyline",
+   "now_odds": "+239",
+   "now_chance": 29.5,
+   "edge": 29.5,
+   "text": "New big edge: Hornets win (Moneyline), 30 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-delst-howrd-2026-11-14"
+  },
+  {
+   "id": "gone:2018158:0:2026-11-14T20:19:57.552Z",
+   "key": "2018158:0",
+   "at": "2026-11-14T20:22:40.621Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Hornets win",
+   "market": "Moneyline",
+   "now_odds": "-115",
+   "now_chance": 53.5,
+   "edge": 5.5,
+   "text": "Edge gone: Hornets win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-delst-howrd-2026-11-14"
+  },
   {
    "id": "new_edge:2018158:0:slight",
    "key": "2018158:0",
@@ -614,7 +642,9 @@
  "alert_seen": [
   "new_edge:2018158:1:slight",
   "gone:2018158:1:2026-11-14T20:00:38.486Z",
-  "new_edge:2018158:0:slight"
+  "new_edge:2018158:0:slight",
+  "gone:2018158:0:2026-11-14T20:19:57.552Z",
+  "new_edge:2018158:0:big"
  ],
  "kalshi_checked": null
 }
