@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-14T20:10:55.910Z"
+  "fetched_at": "2026-11-14T20:19:53.196Z"
  },
- "updated": "2026-11-14T20:10:55.872Z",
+ "updated": "2026-11-14T20:19:53.140Z",
  "open_taken_at": "2026-11-13T07:27:07.792Z",
  "thresholds": {
   "big": 10,
@@ -1011,22 +1011,22 @@
  ],
  "edges": [
   {
-   "key": "1997907:0",
+   "key": "1997907:1",
    "market_id": "1997907",
    "market": "Moneyline",
    "group": "game",
    "question": "Who will win in the upcoming basketball event The Citadel vs North Florida scheduled for November 14, 2026 at 2:00PM ET?",
-   "side": "Bulldogs win",
-   "open_chance": 40,
-   "now_chance": 29,
-   "open_odds": "+150",
-   "now_odds": "+245",
-   "edge": 11,
-   "tier": "big",
+   "side": "Ospreys win",
+   "open_chance": 62,
+   "now_chance": 58,
+   "open_odds": "-163",
+   "now_odds": "-138",
+   "edge": 4,
+   "tier": "slight",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-14T20:00:34.351Z",
+   "first_seen": "2026-11-14T20:19:53.140Z",
    "status": "open",
    "kalshi": null
   },
@@ -1042,6 +1042,26 @@
    "open_odds": "-300",
    "now_odds": "-138",
    "edge": 17,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-14T20:00:34.351Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
+   "key": "1997907:0",
+   "market_id": "1997907",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming basketball event The Citadel vs North Florida scheduled for November 14, 2026 at 2:00PM ET?",
+   "side": "Bulldogs win",
+   "open_chance": 40,
+   "now_chance": 29,
+   "open_odds": "+150",
+   "now_odds": "+245",
+   "edge": 11,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
@@ -1072,6 +1092,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:1997907:1:slight",
+   "key": "1997907:1",
+   "at": "2026-11-14T20:19:53.140Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Ospreys win",
+   "market": "Moneyline",
+   "now_odds": "-138",
+   "now_chance": 58,
+   "edge": 4,
+   "text": "New slight edge: Ospreys win (Moneyline), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-cita-nfl-2026-11-14"
+  },
+  {
+   "id": "gone:1997907:0:2026-11-14T20:00:34.351Z",
+   "key": "1997907:0",
+   "at": "2026-11-14T20:13:40.588Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Bulldogs win",
+   "market": "Moneyline",
+   "now_odds": "+245",
+   "now_chance": 29,
+   "edge": 11,
+   "text": "Edge gone: Bulldogs win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-cita-nfl-2026-11-14"
+  },
   {
    "id": "gone:2519958:0:2026-11-14T20:00:34.351Z",
    "key": "2519958:0",
@@ -1148,7 +1196,9 @@
   "new_edge:1997907:0:big",
   "new_edge:2519927:0:slight",
   "gone:2519958:0:2026-11-14T20:00:34.351Z",
-  "gone:2519927:0:2026-11-14T20:00:34.351Z"
+  "gone:2519927:0:2026-11-14T20:00:34.351Z",
+  "gone:1997907:0:2026-11-14T20:00:34.351Z",
+  "new_edge:1997907:1:slight"
  ],
  "kalshi_checked": null
 }

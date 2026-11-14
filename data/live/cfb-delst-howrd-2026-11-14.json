@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-14T20:11:00.071Z"
+  "fetched_at": "2026-11-14T20:19:57.627Z"
  },
- "updated": "2026-11-14T20:11:00.010Z",
+ "updated": "2026-11-14T20:19:57.552Z",
  "open_taken_at": "2026-11-13T07:27:13.380Z",
  "thresholds": {
   "big": 10,
@@ -527,6 +527,26 @@
  ],
  "edges": [
   {
+   "key": "2018158:0",
+   "market_id": "2018158",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming football event Delaware State vs Howard scheduled for November 14, 2026 at 6:00 PM UTC?",
+   "side": "Hornets win",
+   "open_chance": 59,
+   "now_chance": 53.5,
+   "open_odds": "-144",
+   "now_odds": "-115",
+   "edge": 5.5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-14T20:19:57.552Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2018158:1",
    "market_id": "2018158",
    "market": "Moneyline",
@@ -543,11 +563,39 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-14T20:00:38.486Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "new_edge:2018158:0:slight",
+   "key": "2018158:0",
+   "at": "2026-11-14T20:19:57.552Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Hornets win",
+   "market": "Moneyline",
+   "now_odds": "-115",
+   "now_chance": 53.5,
+   "edge": 5.5,
+   "text": "New slight edge: Hornets win (Moneyline), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-delst-howrd-2026-11-14"
+  },
+  {
+   "id": "gone:2018158:1:2026-11-14T20:00:38.486Z",
+   "key": "2018158:1",
+   "at": "2026-11-14T20:13:44.909Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Bison win",
+   "market": "Moneyline",
+   "now_odds": "+182",
+   "now_chance": 35.5,
+   "edge": 6.5,
+   "text": "Edge gone: Bison win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-delst-howrd-2026-11-14"
+  },
   {
    "id": "new_edge:2018158:1:slight",
    "key": "2018158:1",
@@ -564,7 +612,9 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2018158:1:slight"
+  "new_edge:2018158:1:slight",
+  "gone:2018158:1:2026-11-14T20:00:38.486Z",
+  "new_edge:2018158:0:slight"
  ],
  "kalshi_checked": null
 }

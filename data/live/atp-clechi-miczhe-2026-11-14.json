@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-14T20:11:13.481Z"
+  "fetched_at": "2026-11-14T20:20:11.914Z"
  },
- "updated": "2026-11-14T20:11:13.403Z",
+ "updated": "2026-11-14T20:20:11.840Z",
  "open_taken_at": "2026-11-14T03:37:43.902Z",
  "thresholds": {
   "big": 10,
@@ -43,6 +43,26 @@
  ],
  "edges": [
   {
+   "key": "2515588:1",
+   "market_id": "2515588",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming atp event Clement Chidekh vs Michael Zheng scheduled for November 14, 2026 at 5:40 PM UTC?",
+   "side": "Michael Zheng win",
+   "open_chance": 48,
+   "now_chance": 42,
+   "open_odds": "+108",
+   "now_odds": "+138",
+   "edge": 6,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-14T20:13:58.491Z",
+   "status": "gone",
+   "kalshi": null
+  },
+  {
    "key": "2515588:0",
    "market_id": "2515588",
    "market": "Moneyline",
@@ -64,6 +84,34 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2515588:1:2026-11-14T20:13:58.491Z",
+   "key": "2515588:1",
+   "at": "2026-11-14T20:20:11.840Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Michael Zheng win",
+   "market": "Moneyline",
+   "now_odds": "+138",
+   "now_chance": 42,
+   "edge": 6,
+   "text": "Edge gone: Michael Zheng win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-clechi-miczhe-2026-11-14"
+  },
+  {
+   "id": "new_edge:2515588:1:slight",
+   "key": "2515588:1",
+   "at": "2026-11-14T20:13:58.491Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Michael Zheng win",
+   "market": "Moneyline",
+   "now_odds": "+138",
+   "now_chance": 42,
+   "edge": 6,
+   "text": "New slight edge: Michael Zheng win (Moneyline), 6 points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-clechi-miczhe-2026-11-14"
+  },
   {
    "id": "gone:2515588:0:2026-11-14T20:00:52.298Z",
    "key": "2515588:0",
@@ -95,7 +143,9 @@
  ],
  "alert_seen": [
   "new_edge:2515588:0:slight",
-  "gone:2515588:0:2026-11-14T20:00:52.298Z"
+  "gone:2515588:0:2026-11-14T20:00:52.298Z",
+  "new_edge:2515588:1:slight",
+  "gone:2515588:1:2026-11-14T20:13:58.491Z"
  ],
  "kalshi_checked": null
 }

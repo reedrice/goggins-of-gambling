@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-14T20:11:01.907Z"
+  "fetched_at": "2026-11-14T20:19:59.566Z"
  },
- "updated": "2026-11-14T20:11:01.846Z",
+ "updated": "2026-11-14T20:19:59.438Z",
  "open_taken_at": "2026-11-13T07:27:15.743Z",
  "thresholds": {
   "big": 10,
@@ -413,9 +413,57 @@
    "first_seen": "2026-11-14T15:19:10.033Z",
    "status": "gone",
    "kalshi": null
+  },
+  {
+   "key": "2022538:1",
+   "market_id": "2022538",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming football event Jackson State vs Alabama State scheduled for November 14, 2026 at 8:00 PM UTC?",
+   "side": "Hornets win",
+   "open_chance": 48,
+   "now_chance": 44,
+   "open_odds": "+108",
+   "now_odds": "+127",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-14T20:13:46.635Z",
+   "status": "gone",
+   "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2022538:1:2026-11-14T20:13:46.635Z",
+   "key": "2022538:1",
+   "at": "2026-11-14T20:19:59.438Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Hornets win",
+   "market": "Moneyline",
+   "now_odds": "+127",
+   "now_chance": 44,
+   "edge": 4,
+   "text": "Edge gone: Hornets win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-jackst-alast-2026-11-14"
+  },
+  {
+   "id": "new_edge:2022538:1:slight",
+   "key": "2022538:1",
+   "at": "2026-11-14T20:13:46.635Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Hornets win",
+   "market": "Moneyline",
+   "now_odds": "+127",
+   "now_chance": 44,
+   "edge": 4,
+   "text": "New slight edge: Hornets win (Moneyline), 4 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-jackst-alast-2026-11-14"
+  },
   {
    "id": "gone:2501483:0:2026-11-14T15:19:10.033Z",
    "key": "2501483:0",
@@ -432,7 +480,9 @@
   }
  ],
  "alert_seen": [
-  "gone:2501483:0:2026-11-14T15:19:10.033Z"
+  "gone:2501483:0:2026-11-14T15:19:10.033Z",
+  "new_edge:2022538:1:slight",
+  "gone:2022538:1:2026-11-14T20:13:46.635Z"
  ],
  "kalshi_checked": null
 }

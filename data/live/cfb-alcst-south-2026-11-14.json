@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-14T20:11:01.905Z"
+  "fetched_at": "2026-11-14T20:19:59.348Z"
  },
- "updated": "2026-11-14T20:11:01.838Z",
+ "updated": "2026-11-14T20:19:59.280Z",
  "open_taken_at": "2026-11-13T07:27:15.664Z",
  "thresholds": {
   "big": 10,
@@ -505,6 +505,26 @@
  ],
  "edges": [
   {
+   "key": "2022536:0",
+   "market_id": "2022536",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming football event Alcorn State vs Southern scheduled for November 14, 2026 at 8:00 PM UTC?",
+   "side": "Braves win",
+   "open_chance": 56,
+   "now_chance": 46.5,
+   "open_odds": "-127",
+   "now_odds": "+115",
+   "edge": 9.5,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-14T20:13:46.574Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2501473:0",
    "market_id": "2501473",
    "market": "Alt total",
@@ -527,6 +547,20 @@
  ],
  "alerts": [
   {
+   "id": "new_edge:2022536:0:slight",
+   "key": "2022536:0",
+   "at": "2026-11-14T20:13:46.574Z",
+   "type": "new_edge",
+   "tier": "slight",
+   "side": "Braves win",
+   "market": "Moneyline",
+   "now_odds": "+106",
+   "now_chance": 48.5,
+   "edge": 7.5,
+   "text": "New slight edge: Braves win (Moneyline), 8 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-alcst-south-2026-11-14"
+  },
+  {
    "id": "gone:2501473:0:2026-11-14T15:19:09.990Z",
    "key": "2501473:0",
    "at": "2026-11-14T20:00:40.134Z",
@@ -542,7 +576,8 @@
   }
  ],
  "alert_seen": [
-  "gone:2501473:0:2026-11-14T15:19:09.990Z"
+  "gone:2501473:0:2026-11-14T15:19:09.990Z",
+  "new_edge:2022536:0:slight"
  ],
  "kalshi_checked": null
 }
