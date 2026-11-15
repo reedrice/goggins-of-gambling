@@ -4,30 +4,30 @@
  "game": "Alexander Zverev vs. Rafael Jodar",
  "url": "https://polymarket.us/sports/atp/atp-alezve-rafjod-2026-11-15",
  "start_time": "2026-11-15T13:00:00Z",
- "status": "pregame",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187505",
-  "fetched_at": "2026-11-14T20:29:17.501Z",
+  "fetched_at": "2026-11-15T15:05:39.953Z",
   "tennis": true,
   "tennis_match": {
    "id": "187505",
    "uid": "s:850~l:851~e:339-2026~c:187505",
-   "date": "2026-11-15T13:00Z",
-   "startDate": "2026-11-15T13:00Z",
+   "date": "2026-11-15T13:25Z",
+   "startDate": "2026-11-15T13:25Z",
    "timeValid": true,
    "recent": false,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
-     "completed": false,
-     "description": "Scheduled",
-     "detail": "Sun, November 15th at 8:00 AM EST",
-     "shortDetail": "11/15 - 8:00 AM EST"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(1) Alexander Zverev (GER) bt (8) Rafael Jodar (ESP) 6-4 6-4",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,20 @@
      "type": "athlete",
      "order": 2,
      "homeAway": "away",
+     "winner": false,
      "curatedRank": {
       "current": 8
      },
+     "linescores": [
+      {
+       "value": 4,
+       "winner": false
+      },
+      {
+       "value": 4,
+       "winner": false
+      }
+     ],
      "athlete": {
       "guid": "14a740e2-9290-3b00-84d2-8a65c9754208",
       "displayName": "Rafael Jodar",
@@ -90,9 +106,20 @@
      "type": "athlete",
      "order": 1,
      "homeAway": "home",
+     "winner": true,
      "curatedRank": {
       "current": 1
      },
+     "linescores": [
+      {
+       "value": 6,
+       "winner": true
+      },
+      {
+       "value": 6,
+       "winner": true
+      }
+     ],
      "athlete": {
       "guid": "fd06b6ea-593b-d5b3-da2b-767ec3e4232c",
       "displayName": "Alexander Zverev",
@@ -141,10 +168,10 @@
    "doubles": false,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sun, November 15th at 8:00 AM EST",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 2,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Rafael Jodar",
@@ -156,13 +183,13 @@
    "abbr": "Alexander Zverev",
    "alias": "Alexander Zverev",
    "name": "Alexander Zverev",
-   "score": 0
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-14T20:29:17.367Z",
+ "updated": "2026-11-15T15:05:39.886Z",
  "open_taken_at": "2026-11-14T15:19:25.956Z",
  "thresholds": {
   "big": 10,
@@ -320,11 +347,28 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-14T20:00:51.831Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "gone:2513544:0:2026-11-14T20:00:51.831Z",
+   "key": "2513544:0",
+   "at": "2026-11-15T15:05:39.886Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 22.5 (Games)",
+   "market": "Games total",
+   "now_odds": "-113",
+   "now_chance": 53,
+   "edge": 4,
+   "text": "Edge gone: Over 22.5 (Games) (Games total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-alezve-rafjod-2026-11-15"
+  }
+ ],
+ "alert_seen": [
+  "gone:2513544:0:2026-11-14T20:00:51.831Z"
+ ],
  "kalshi_checked": null
 }

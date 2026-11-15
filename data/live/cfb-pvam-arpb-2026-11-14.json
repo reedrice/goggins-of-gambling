@@ -4,14 +4,14 @@
  "game": "Prairie View A&M vs. Arkansas-Pine Bluff",
  "url": "https://polymarket.us/sports/cfb/cfb-pvam-arpb-2026-11-14",
  "start_time": "2026-11-14T20:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-14T20:29:01.087Z"
+  "fetched_at": "2026-11-15T15:05:55.179Z"
  },
- "updated": "2026-11-14T20:29:00.972Z",
+ "updated": "2026-11-15T15:05:55.104Z",
  "open_taken_at": "2026-11-13T07:27:15.442Z",
  "thresholds": {
   "big": 10,
@@ -521,7 +521,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-13T23:30:55.706Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -546,6 +546,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2022529:1:2026-11-13T23:30:55.706Z",
+   "key": "2022529:1",
+   "at": "2026-11-15T15:05:55.104Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Golden Lions win",
+   "market": "Moneyline",
+   "now_odds": "+130",
+   "now_chance": 43.5,
+   "edge": 9,
+   "text": "Edge gone: Golden Lions win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-pvam-arpb-2026-11-14"
+  },
   {
    "id": "new_edge:2022529:1:big",
    "key": "2022529:1",
@@ -592,7 +606,8 @@
  "alert_seen": [
   "new_edge:2022529:1:slight",
   "gone:2500332:1:2026-11-14T15:19:09.763Z",
-  "new_edge:2022529:1:big"
+  "new_edge:2022529:1:big",
+  "gone:2022529:1:2026-11-13T23:30:55.706Z"
  ],
  "kalshi_checked": null
 }
