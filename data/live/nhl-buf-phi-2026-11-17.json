@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892732",
-  "fetched_at": "2026-11-16T10:27:33.871Z",
+  "fetched_at": "2026-11-16T15:47:09.647Z",
   "game_state": "pre",
   "espn_status": "STATUS_SCHEDULED",
   "period": 0,
@@ -36,7 +36,7 @@
     "player": "Denver Barkey",
     "short": "D. Barkey",
     "pos": "C",
-    "status": "Out"
+    "status": "Day-To-Day"
    },
    {
     "team": "PHI",
@@ -107,7 +107,7 @@
    }
   ]
  },
- "updated": "2026-11-16T10:27:33.766Z",
+ "updated": "2026-11-16T15:47:08.517Z",
  "open_taken_at": "2026-11-16T10:13:50.717Z",
  "thresholds": {
   "big": 10,
@@ -137,47 +137,25 @@
    "taken_at": "2026-11-16T10:13:50.717Z"
   },
   {
-   "market_id": "2481062",
+   "market_id": "2481063",
    "market": "Main total",
    "group": "game",
    "mtype": "total",
    "period": "full_game",
-   "line": 5.5,
-   "question": "Will the total in BUF vs PHI be more than 5.5?",
+   "line": 6.5,
+   "question": "Will the total in BUF vs PHI be more than 6.5?",
    "sides": [
-    "Over 5.5",
-    "Under 5.5"
+    "Over 6.5",
+    "Under 6.5"
    ],
    "teams": [
     null,
     null
    ],
    "player": null,
-   "mid": 57,
-   "yes_buy": 60,
-   "no_buy": 46,
-   "taken_at": "2026-11-16T10:13:50.717Z"
-  },
-  {
-   "market_id": "2481045",
-   "market": "Main spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": -1.5,
-   "question": "Will the BUF Sabres cover -1.5 vs the PHI Flyers in BUF vs PHI?",
-   "sides": [
-    "Sabres -1.50",
-    "Flyers +1.50"
-   ],
-   "teams": [
-    "Sabres",
-    "Flyers"
-   ],
-   "player": null,
-   "mid": 34,
-   "yes_buy": 37,
-   "no_buy": 69,
+   "mid": 46,
+   "yes_buy": 49,
+   "no_buy": 57,
    "taken_at": "2026-11-16T10:13:50.717Z"
   },
   {
@@ -203,6 +181,28 @@
    "taken_at": "2026-11-16T10:13:50.717Z"
   },
   {
+   "market_id": "2481062",
+   "market": "Alt total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 5.5,
+   "question": "Will the total in BUF vs PHI be more than 5.5?",
+   "sides": [
+    "Over 5.5",
+    "Under 5.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 57,
+   "yes_buy": 60,
+   "no_buy": 46,
+   "taken_at": "2026-11-16T10:13:50.717Z"
+  },
+  {
    "market_id": "2481066",
    "market": "Alt total",
    "group": "game",
@@ -225,33 +225,74 @@
    "taken_at": "2026-11-16T10:13:50.717Z"
   },
   {
-   "market_id": "2481063",
-   "market": "Main total",
+   "market_id": "2481045",
+   "market": "Main spread",
    "group": "game",
-   "mtype": "total",
+   "mtype": "spread",
    "period": "full_game",
-   "line": 6.5,
-   "question": "Will the total in BUF vs PHI be more than 6.5?",
+   "line": -1.5,
+   "question": "Will the BUF Sabres cover -1.5 vs the PHI Flyers in BUF vs PHI?",
    "sides": [
-    "Over 6.5",
-    "Under 6.5"
+    "Sabres -1.50",
+    "Flyers +1.50"
    ],
    "teams": [
-    null,
-    null
+    "Sabres",
+    "Flyers"
    ],
    "player": null,
-   "mid": 46,
-   "yes_buy": 49,
-   "no_buy": 57,
+   "mid": 34,
+   "yes_buy": 37,
+   "no_buy": 69,
    "taken_at": "2026-11-16T10:13:50.717Z"
   }
  ],
- "edges": [],
+ "edges": [
+  {
+   "key": "2481063:1",
+   "market_id": "2481063",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in BUF vs PHI be more than 6.5?",
+   "side": "Under 6.5",
+   "open_chance": 57,
+   "now_chance": 53,
+   "open_odds": "-133",
+   "now_odds": "-113",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-11-16T15:41:15.223Z",
+   "status": "open",
+   "kalshi": true
+  },
+  {
+   "key": "2481062:1",
+   "market_id": "2481062",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in BUF vs PHI be more than 5.5?",
+   "side": "Under 5.5",
+   "open_chance": 46,
+   "now_chance": 42,
+   "open_odds": "+117",
+   "now_odds": "+138",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-11-16T15:41:15.223Z",
+   "status": "open",
+   "kalshi": true
+  }
+ ],
  "alerts": [],
  "alert_seen": [],
  "kalshi_checked": {
-  "at": "2026-11-16T10:27:33.885Z",
+  "at": "2026-11-16T15:47:09.896Z",
   "event": "26NOV17BUFPHI"
  }
 }

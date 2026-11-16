@@ -4,14 +4,14 @@
  "game": "Kimmer Coppejans vs. Carlo Alberto Caniato",
  "url": "https://polymarket.us/sports/atp/atp-kimcop-carcan-2026-11-16",
  "start_time": "2026-11-16T09:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-16T10:27:42.639Z"
+  "fetched_at": "2026-11-16T15:41:31.057Z"
  },
- "updated": "2026-11-16T10:27:42.595Z",
+ "updated": "2026-11-16T15:41:30.979Z",
  "open_taken_at": "2026-11-16T10:14:03.460Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-16T10:20:08.258Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2578886:1:2026-11-16T10:20:08.258Z",
+   "key": "2578886:1",
+   "at": "2026-11-16T15:41:30.979Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Carlo Alberto Caniato win",
+   "market": "Moneyline",
+   "now_odds": "+376",
+   "now_chance": 21,
+   "edge": 13,
+   "text": "Edge gone: Carlo Alberto Caniato win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-kimcop-carcan-2026-11-16"
+  },
   {
    "id": "new_edge:2578886:1:big",
    "key": "2578886:1",
@@ -80,7 +94,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2578886:1:big"
+  "new_edge:2578886:1:big",
+  "gone:2578886:1:2026-11-16T10:20:08.258Z"
  ],
  "kalshi_checked": null
 }
