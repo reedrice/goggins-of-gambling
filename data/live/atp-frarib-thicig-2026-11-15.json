@@ -4,14 +4,14 @@
  "game": "Franco Ribero vs. Thiago Cigarran",
  "url": "https://polymarket.us/sports/atp/atp-frarib-thicig-2026-11-15",
  "start_time": "2026-11-15T14:40:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-15T15:20:24.071Z"
+  "fetched_at": "2026-11-16T10:14:08.226Z"
  },
- "updated": "2026-11-15T15:20:24.006Z",
+ "updated": "2026-11-16T10:14:08.163Z",
  "open_taken_at": "2026-11-15T15:05:31.364Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-15T15:12:12.045Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2542650:1:2026-11-15T15:12:12.045Z",
+   "key": "2542650:1",
+   "at": "2026-11-16T10:14:08.163Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Thiago Cigarran win",
+   "market": "Moneyline",
+   "now_odds": "+300",
+   "now_chance": 25,
+   "edge": 25,
+   "text": "Edge gone: Thiago Cigarran win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-frarib-thicig-2026-11-15"
+  },
   {
    "id": "new_edge:2542650:1:big",
    "key": "2542650:1",
@@ -95,7 +109,8 @@
  ],
  "alert_seen": [
   "new_edge:2542650:1:slight",
-  "new_edge:2542650:1:big"
+  "new_edge:2542650:1:big",
+  "gone:2542650:1:2026-11-15T15:12:12.045Z"
  ],
  "kalshi_checked": null
 }

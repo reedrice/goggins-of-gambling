@@ -4,39 +4,53 @@
  "game": "EDM Oilers vs. PHI Flyers",
  "url": "https://polymarket.us/sports/nhl/nhl-edm-phi-2026-11-15",
  "start_time": "2026-11-16T00:30:00Z",
- "status": "pregame",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892721",
-  "fetched_at": "2026-11-15T15:20:14.564Z",
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
+  "fetched_at": "2026-11-16T10:14:19.562Z",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
   "period": 0,
   "clock": null,
-  "regulation_secs_left": 3600,
+  "regulation_secs_left": 0,
   "home": {
    "abbr": "PHI",
    "alias": "Flyers",
    "name": "Philadelphia Flyers",
-   "score": null,
+   "score": 2,
    "id": "15"
   },
   "away": {
    "abbr": "EDM",
    "alias": "Oilers",
    "name": "Edmonton Oilers",
-   "score": null,
+   "score": 5,
    "id": "6"
   },
   "possession": null,
   "injuries": [
    {
     "team": "PHI",
+    "player": "Denver Barkey",
+    "short": "D. Barkey",
+    "pos": "C",
+    "status": "Out"
+   },
+   {
+    "team": "PHI",
     "player": "Nikita Grebenkin",
     "short": "N. Grebenkin",
     "pos": "RW",
     "status": "Injured Reserve"
+   },
+   {
+    "team": "EDM",
+    "player": "Ryan Nugent-Hopkins",
+    "short": "R. Nugent-Hopkins",
+    "pos": "C",
+    "status": "Out"
    },
    {
     "team": "EDM",
@@ -65,34 +79,27 @@
     "short": "F. Andersen",
     "pos": "G",
     "status": "Injured Reserve"
-   },
-   {
-    "team": "EDM",
-    "player": "Mattias Janmark",
-    "short": "M. Janmark",
-    "pos": "C",
-    "status": "Injured Reserve"
    }
   ],
   "in_game_injuries": [],
   "leaders": [
    {
     "team": "PHI",
-    "player": "Matvei Michkov",
-    "short": "M. Michkov",
-    "pos": "RW"
+    "player": "Noah Cates",
+    "short": "N. Cates",
+    "pos": "LW"
    },
    {
     "team": "PHI",
-    "player": "Trevor Zegras",
-    "short": "T. Zegras",
-    "pos": "C"
+    "player": "Cam York",
+    "short": "C. York",
+    "pos": "D"
    },
    {
     "team": "PHI",
-    "player": "Matvei Michkov",
-    "short": "M. Michkov",
-    "pos": "RW"
+    "player": "Noah Cates",
+    "short": "N. Cates",
+    "pos": "LW"
    },
    {
     "team": "EDM",
@@ -108,13 +115,13 @@
    },
    {
     "team": "EDM",
-    "player": "Connor McDavid",
-    "short": "C. McDavid",
+    "player": "Leon Draisaitl",
+    "short": "L. Draisaitl",
     "pos": "C"
    }
   ]
  },
- "updated": "2026-11-15T15:20:14.453Z",
+ "updated": "2026-11-16T10:14:19.464Z",
  "open_taken_at": "2026-11-14T15:19:24.894Z",
  "thresholds": {
   "big": 10,
@@ -2252,8 +2259,8 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-15T15:05:20.355Z",
-   "status": "open",
-   "kalshi": true
+   "status": "gone",
+   "kalshi": null
   },
   {
    "key": "2420133:0",
@@ -2272,14 +2279,43 @@
    "reason": null,
    "context": "Pregame",
    "first_seen": "2026-11-15T15:05:20.355Z",
-   "status": "open",
-   "kalshi": true
+   "status": "gone",
+   "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
- "kalshi_checked": {
-  "at": "2026-11-15T15:20:14.574Z",
-  "event": "26NOV15EDMPHI"
- }
+ "alerts": [
+  {
+   "id": "gone:2420130:0:2026-11-15T15:05:20.355Z",
+   "key": "2420130:0",
+   "at": "2026-11-16T10:14:19.464Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 5.5",
+   "market": "Main total",
+   "now_odds": "-127",
+   "now_chance": 56,
+   "edge": 4,
+   "text": "Edge gone: Over 5.5 (Main total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-edm-phi-2026-11-15"
+  },
+  {
+   "id": "gone:2420133:0:2026-11-15T15:05:20.355Z",
+   "key": "2420133:0",
+   "at": "2026-11-16T10:14:19.464Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 6.5",
+   "market": "Alt total",
+   "now_odds": "+122",
+   "now_chance": 45,
+   "edge": 4,
+   "text": "Edge gone: Over 6.5 (Alt total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/nhl/nhl-edm-phi-2026-11-15"
+  }
+ ],
+ "alert_seen": [
+  "gone:2420130:0:2026-11-15T15:05:20.355Z",
+  "gone:2420133:0:2026-11-15T15:05:20.355Z"
+ ],
+ "kalshi_checked": null
 }
