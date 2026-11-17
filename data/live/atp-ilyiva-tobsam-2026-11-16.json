@@ -4,14 +4,14 @@
  "game": "Ilya Ivashka vs. Toby Samuel",
  "url": "https://polymarket.us/sports/atp/atp-ilyiva-tobsam-2026-11-16",
  "start_time": "2026-11-16T15:05:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-16T16:01:44.323Z"
+  "fetched_at": "2026-11-16T23:52:19.887Z"
  },
- "updated": "2026-11-16T16:01:44.269Z",
+ "updated": "2026-11-16T23:52:19.824Z",
  "open_taken_at": "2026-11-15T15:05:26.909Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-16T15:41:20.488Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2533855:1:2026-11-16T15:41:20.488Z",
+   "key": "2533855:1",
+   "at": "2026-11-16T23:52:19.824Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Toby Samuel win",
+   "market": "Moneyline",
+   "now_odds": "-133",
+   "now_chance": 57,
+   "edge": 18,
+   "text": "Edge gone: Toby Samuel win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-ilyiva-tobsam-2026-11-16"
+  },
   {
    "id": "new_edge:2533855:1:slight",
    "key": "2533855:1",
@@ -95,7 +109,8 @@
  ],
  "alert_seen": [
   "new_edge:2533855:1:big",
-  "new_edge:2533855:1:slight"
+  "new_edge:2533855:1:slight",
+  "gone:2533855:1:2026-11-16T15:41:20.488Z"
  ],
  "kalshi_checked": null
 }
