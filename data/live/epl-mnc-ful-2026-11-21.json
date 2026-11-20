@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "no ESPN league for epl",
-  "fetched_at": "2026-11-20T08:41:45.694Z"
+  "fetched_at": "2026-11-20T23:20:07.998Z"
  },
- "updated": "2026-11-20T08:41:45.687Z",
+ "updated": "2026-11-20T23:20:07.994Z",
  "open_taken_at": "2026-11-20T08:35:30.854Z",
  "thresholds": {
   "big": 10,
@@ -85,28 +85,6 @@
    "taken_at": "2026-11-20T08:35:30.854Z"
   },
   {
-   "market_id": "2491052",
-   "market": "Main spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": -1.5,
-   "question": "Will the Manchester City FC cover -1.5 vs the Fulham FC in MNC vs FUL?",
-   "sides": [
-    "City -1.50",
-    "The Cottagers +1.50"
-   ],
-   "teams": [
-    "City",
-    "The Cottagers"
-   ],
-   "player": null,
-   "mid": 46.5,
-   "yes_buy": 47,
-   "no_buy": 54,
-   "taken_at": "2026-11-20T08:35:30.854Z"
-  },
-  {
    "market_id": "2491061",
    "market": "Main total",
    "group": "game",
@@ -129,25 +107,25 @@
    "taken_at": "2026-11-20T08:35:30.854Z"
   },
   {
-   "market_id": "2491058",
-   "market": "Alt total",
+   "market_id": "2491052",
+   "market": "Main spread",
    "group": "game",
-   "mtype": "total",
+   "mtype": "spread",
    "period": "full_game",
-   "line": 1.5,
-   "question": "Will the total in MNC vs FUL be more than 1.5?",
+   "line": -1.5,
+   "question": "Will the Manchester City FC cover -1.5 vs the Fulham FC in MNC vs FUL?",
    "sides": [
-    "Over 1.5",
-    "Under 1.5"
+    "City -1.50",
+    "The Cottagers +1.50"
    ],
    "teams": [
-    null,
-    null
+    "City",
+    "The Cottagers"
    ],
    "player": null,
-   "mid": 85.5,
-   "yes_buy": 86,
-   "no_buy": 15,
+   "mid": 46.5,
+   "yes_buy": 47,
+   "no_buy": 54,
    "taken_at": "2026-11-20T08:35:30.854Z"
   },
   {
@@ -214,6 +192,28 @@
    "mid": 27,
    "yes_buy": 28,
    "no_buy": 74,
+   "taken_at": "2026-11-20T08:35:30.854Z"
+  },
+  {
+   "market_id": "2491058",
+   "market": "Alt total",
+   "group": "game",
+   "mtype": "total",
+   "period": "full_game",
+   "line": 1.5,
+   "question": "Will the total in MNC vs FUL be more than 1.5?",
+   "sides": [
+    "Over 1.5",
+    "Under 1.5"
+   ],
+   "teams": [
+    null,
+    null
+   ],
+   "player": null,
+   "mid": 85.5,
+   "yes_buy": 86,
+   "no_buy": 15,
    "taken_at": "2026-11-20T08:35:30.854Z"
   },
   {
@@ -413,9 +413,94 @@
    "yes_buy": 36,
    "no_buy": 69,
    "taken_at": "2026-11-20T08:35:30.854Z"
+  },
+  {
+   "market_id": "2734575",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Gonzalo Garcia record at least 2 goals in MNC vs FUL?",
+   "sides": [
+    "Yes: Gonzalo Garcia record at least 2 goals in MNC vs FUL",
+    "No: Gonzalo Garcia record at least 2 goals in MNC vs FUL"
+   ],
+   "teams": [
+    "The Cottagers",
+    "The Cottagers"
+   ],
+   "player": "Gonzalo Garcia",
+   "mid": 4,
+   "yes_buy": 6,
+   "no_buy": 98,
+   "taken_at": "2026-11-20T23:10:08.076Z"
+  },
+  {
+   "market_id": "2734566",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 2,
+   "question": "Will Jeremy Doku record at least 2 goals in MNC vs FUL?",
+   "sides": [
+    "Yes: Jeremy Doku record at least 2 goals in MNC vs FUL",
+    "No: Jeremy Doku record at least 2 goals in MNC vs FUL"
+   ],
+   "teams": [
+    "City",
+    "City"
+   ],
+   "player": "Jeremy Doku",
+   "mid": 4.5,
+   "yes_buy": 7,
+   "no_buy": 98,
+   "taken_at": "2026-11-20T23:10:08.076Z"
   }
  ],
- "edges": [],
+ "edges": [
+  {
+   "key": "2491061:1",
+   "market_id": "2491061",
+   "market": "Main total",
+   "group": "game",
+   "question": "Will the total in MNC vs FUL be more than 3.5?",
+   "side": "Under 3.5",
+   "open_chance": 58,
+   "now_chance": 54,
+   "open_odds": "-138",
+   "now_odds": "-117",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-20T23:10:08.076Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
+   "key": "2491063:1",
+   "market_id": "2491063",
+   "market": "Alt total",
+   "group": "game",
+   "question": "Will the total in MNC vs FUL be more than 4.5?",
+   "side": "Under 4.5",
+   "open_chance": 77,
+   "now_chance": 73,
+   "open_odds": "-335",
+   "now_odds": "-270",
+   "edge": 4,
+   "tier": "slight",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-20T23:10:08.076Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
  "alerts": [],
  "alert_seen": [],
  "kalshi_checked": null
