@@ -4,30 +4,30 @@
  "game": "Arevalo / Pavic vs. Harrison / Skupski",
  "url": "https://polymarket.us/sports/atpdb/atpdb-arevalpavic-harsku-2026-11-21",
  "start_time": "2026-11-21T11:00:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187530",
-  "fetched_at": "2026-11-20T23:20:16.664Z",
+  "fetched_at": "2026-11-21T12:28:38.503Z",
   "tennis": true,
   "tennis_match": {
    "id": "187530",
    "uid": "s:850~l:851~e:339-2026~c:187530",
-   "date": "2026-11-21T11:00Z",
-   "startDate": "2026-11-21T11:00Z",
+   "date": "2026-11-21T11:10Z",
+   "startDate": "2026-11-21T11:10Z",
    "timeValid": true,
-   "recent": false,
+   "recent": true,
    "status": {
-    "period": 1,
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Sat, November 21st at 6:00 AM EST",
-     "shortDetail": "11/21 - 6:00 AM EST"
+     "description": "In Progress",
+     "detail": "2nd Set",
+     "shortDetail": "2nd"
     }
    },
    "venue": {
@@ -39,7 +39,12 @@
      "periods": 5
     }
    },
-   "notes": [],
+   "notes": [
+    {
+     "text": "(4) Marcelo Arevalo (ESA) & Mate Pavic (CRO) is tied with (2) Christian Harrison (USA) & Neal Skupski (GBR) 7-6 (12-10) 2-2",
+     "type": "event"
+    }
+   ],
    "geoBroadcasts": [],
    "broadcasts": [],
    "broadcast": "",
@@ -50,9 +55,20 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
+     "possession": true,
      "curatedRank": {
       "current": 2
      },
+     "linescores": [
+      {
+       "value": 6,
+       "tiebreak": 10,
+       "winner": false
+      },
+      {
+       "value": 2
+      }
+     ],
      "roster": {
       "displayName": "Christian Harrison / Neal Skupski",
       "shortDisplayName": "C. Harrison / N. Skupski",
@@ -125,9 +141,20 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
+     "possession": false,
      "curatedRank": {
       "current": 4
      },
+     "linescores": [
+      {
+       "value": 7,
+       "tiebreak": 12,
+       "winner": true
+      },
+      {
+       "value": 2
+      }
+     ],
      "roster": {
       "displayName": "Marcelo Arevalo / Mate Pavic",
       "shortDisplayName": "M. Arevalo / M. Pavic",
@@ -195,6 +222,11 @@
      "statistics": []
     }
    ],
+   "situation": {
+    "onFirst": false,
+    "onSecond": false,
+    "onThird": false
+   },
    "tournamentId": 339,
    "type": {
     "id": "3",
@@ -211,10 +243,10 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "pre",
-  "espn_status": "STATUS_SCHEDULED",
-  "period": 1,
-  "clock": "Sat, November 21st at 6:00 AM EST",
+  "game_state": "in",
+  "espn_status": "STATUS_IN_PROGRESS",
+  "period": 2,
+  "clock": "2nd Set",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Christian Harrison / Neal Skupski",
@@ -226,19 +258,42 @@
    "abbr": "Marcelo Arevalo / Mate Pavic",
    "alias": "Marcelo Arevalo / Mate Pavic",
    "name": "Marcelo Arevalo / Mate Pavic",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-20T23:20:16.548Z",
+ "updated": "2026-11-21T12:28:38.430Z",
  "open_taken_at": "2026-11-20T23:10:16.026Z",
  "thresholds": {
   "big": 10,
   "slight": 4
  },
- "open": [],
+ "open": [
+  {
+   "market_id": "2745608",
+   "market": "Moneyline",
+   "group": "game",
+   "mtype": "winner",
+   "period": "full_game",
+   "line": null,
+   "question": "Who will win in the upcoming atpdb event Arevalo / Pavic vs Harrison / Skupski scheduled for November 21, 2026 at 10:30 AM UTC?",
+   "sides": [
+    "Arevalo / Pavic win",
+    "Harrison / Skupski win"
+   ],
+   "teams": [
+    "Arevalo / Pavic",
+    "Harrison / Skupski"
+   ],
+   "player": null,
+   "mid": 62.5,
+   "yes_buy": 63,
+   "no_buy": 38,
+   "taken_at": "2026-11-21T12:19:29.106Z"
+  }
+ ],
  "edges": [],
  "alerts": [],
  "alert_seen": [],
