@@ -4,14 +4,14 @@
  "game": "Duquesne vs. Central Connecticut State",
  "url": "https://polymarket.us/sports/cfb/cfb-duq-cencon-2026-11-21",
  "start_time": "2026-11-21T17:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-21T18:29:09.207Z"
+  "fetched_at": "2026-11-21T23:31:18.329Z"
  },
- "updated": "2026-11-21T18:29:09.095Z",
+ "updated": "2026-11-21T23:31:18.271Z",
  "open_taken_at": "2026-11-20T08:35:23.150Z",
  "thresholds": {
   "big": 10,
@@ -323,11 +323,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-21T18:18:59.358Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2280691:1:2026-11-21T18:18:59.358Z",
+   "key": "2280691:1",
+   "at": "2026-11-21T23:31:18.271Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Blue Devils win",
+   "market": "Moneyline",
+   "now_odds": "+178",
+   "now_chance": 36,
+   "edge": 34.5,
+   "text": "Edge gone: Blue Devils win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-duq-cencon-2026-11-21"
+  },
   {
    "id": "new_edge:2280691:1:big",
    "key": "2280691:1",
@@ -344,7 +358,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2280691:1:big"
+  "new_edge:2280691:1:big",
+  "gone:2280691:1:2026-11-21T18:18:59.358Z"
  ],
  "kalshi_checked": null
 }

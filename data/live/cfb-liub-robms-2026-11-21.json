@@ -4,14 +4,14 @@
  "game": "LIU vs. Robert Morris",
  "url": "https://polymarket.us/sports/cfb/cfb-liub-robms-2026-11-21",
  "start_time": "2026-11-21T17:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-21T18:29:09.277Z"
+  "fetched_at": "2026-11-21T23:31:19.315Z"
  },
- "updated": "2026-11-21T18:29:09.204Z",
+ "updated": "2026-11-21T23:31:19.253Z",
  "open_taken_at": "2026-11-20T08:35:23.390Z",
  "thresholds": {
   "big": 10,
@@ -367,11 +367,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-21T18:18:59.612Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2280694:0:2026-11-21T18:18:59.612Z",
+   "key": "2280694:0",
+   "at": "2026-11-21T23:31:19.253Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Sharks win",
+   "market": "Moneyline",
+   "now_odds": "+213",
+   "now_chance": 32,
+   "edge": 13,
+   "text": "Edge gone: Sharks win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-liub-robms-2026-11-21"
+  },
   {
    "id": "new_edge:2280694:0:big",
    "key": "2280694:0",
@@ -388,7 +402,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2280694:0:big"
+  "new_edge:2280694:0:big",
+  "gone:2280694:0:2026-11-21T18:18:59.612Z"
  ],
  "kalshi_checked": null
 }

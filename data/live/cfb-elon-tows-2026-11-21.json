@@ -4,14 +4,14 @@
  "game": "Elon vs. Towson",
  "url": "https://polymarket.us/sports/cfb/cfb-elon-tows-2026-11-21",
  "start_time": "2026-11-21T18:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-21T18:29:10.239Z"
+  "fetched_at": "2026-11-21T23:31:18.441Z"
  },
- "updated": "2026-11-21T18:29:10.147Z",
+ "updated": "2026-11-21T23:31:18.367Z",
  "open_taken_at": "2026-11-20T08:35:24.229Z",
  "thresholds": {
   "big": 10,
@@ -301,7 +301,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-21T18:29:10.147Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -326,6 +326,20 @@
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2282064:1:2026-11-21T18:29:10.147Z",
+   "key": "2282064:1",
+   "at": "2026-11-21T23:31:18.367Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Tigers win",
+   "market": "Moneyline",
+   "now_odds": "+130",
+   "now_chance": 43.5,
+   "edge": 12,
+   "text": "Edge gone: Tigers win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-elon-tows-2026-11-21"
+  },
   {
    "id": "new_edge:2282064:1:big",
    "key": "2282064:1",
@@ -357,7 +371,8 @@
  ],
  "alert_seen": [
   "gone:2742001:0:2026-11-21T12:19:09.134Z",
-  "new_edge:2282064:1:big"
+  "new_edge:2282064:1:big",
+  "gone:2282064:1:2026-11-21T18:29:10.147Z"
  ],
  "kalshi_checked": null
 }

@@ -4,12 +4,12 @@
  "game": "Krawietz / Puetz vs. Arribage / Olivetti",
  "url": "https://polymarket.us/sports/atpdb/atpdb-krawiepuetz-arribaolivet-2026-11-21",
  "start_time": "2026-11-21T17:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187531",
-  "fetched_at": "2026-11-21T18:29:24.994Z",
+  "fetched_at": "2026-11-21T23:31:14.726Z",
   "tennis": true,
   "tennis_match": {
    "id": "187531",
@@ -17,17 +17,17 @@
    "date": "2026-11-21T17:10Z",
    "startDate": "2026-11-21T17:10Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(6) Theo Arribage (FRA) & Albano Olivetti (FRA) leads (7) Kevin Krawietz (GER) & Tim Puetz (GER) 7-6 (7-4) 4-3",
+     "text": "(6) Theo Arribage (FRA) & Albano Olivetti (FRA) bt (7) Kevin Krawietz (GER) & Tim Puetz (GER) 7-6 (7-4) 6-7 (6-8) 1-0 (12-10)",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": false,
+     "winner": true,
      "curatedRank": {
       "current": 6
      },
@@ -66,7 +66,14 @@
        "winner": true
       },
       {
-       "value": 4
+       "value": 6,
+       "tiebreak": 6,
+       "winner": false
+      },
+      {
+       "value": 1,
+       "tiebreak": 12,
+       "winner": true
       }
      ],
      "roster": {
@@ -141,7 +148,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": true,
+     "winner": false,
      "curatedRank": {
       "current": 7
      },
@@ -152,7 +159,14 @@
        "winner": false
       },
       {
-       "value": 3
+       "value": 7,
+       "tiebreak": 8,
+       "winner": true
+      },
+      {
+       "value": 0,
+       "tiebreak": 10,
+       "winner": false
       }
      ],
      "roster": {
@@ -222,11 +236,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 339,
    "type": {
     "id": "3",
@@ -243,28 +252,28 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Theo Arribage / Albano Olivetti",
    "alias": "Theo Arribage / Albano Olivetti",
    "name": "Theo Arribage / Albano Olivetti",
-   "score": 1
+   "score": 2
   },
   "home": {
    "abbr": "Kevin Krawietz / Tim Puetz",
    "alias": "Kevin Krawietz / Tim Puetz",
    "name": "Kevin Krawietz / Tim Puetz",
-   "score": 0
+   "score": 1
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-21T18:29:24.923Z",
+ "updated": "2026-11-21T23:31:14.671Z",
  "open_taken_at": "2026-11-20T23:10:16.040Z",
  "thresholds": {
   "big": 10,
@@ -312,7 +321,7 @@
    "reason": "Big move (27 pts), likely news",
    "context": "Theo Arribage / Albano Olivetti 7, 4 · Kevin Krawietz / Tim Puetz 6, 3 · 2nd Set (games by set)",
    "first_seen": "2026-11-21T18:19:14.421Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],

@@ -4,14 +4,14 @@
  "game": "New Hampshire vs. Maine",
  "url": "https://polymarket.us/sports/cfb/cfb-nhamp-maine-2026-11-21",
  "start_time": "2026-11-21T18:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-21T18:29:10.272Z"
+  "fetched_at": "2026-11-21T23:31:19.971Z"
  },
- "updated": "2026-11-21T18:29:10.211Z",
+ "updated": "2026-11-21T23:31:19.897Z",
  "open_taken_at": "2026-11-20T08:35:24.409Z",
  "thresholds": {
   "big": 10,
@@ -147,11 +147,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-21T18:19:00.534Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2282066:0:2026-11-21T18:19:00.534Z",
+   "key": "2282066:0",
+   "at": "2026-11-21T23:31:19.897Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Wildcats win",
+   "market": "Moneyline",
+   "now_odds": "+111",
+   "now_chance": 47.5,
+   "edge": 12.5,
+   "text": "Edge gone: Wildcats win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-nhamp-maine-2026-11-21"
+  },
   {
    "id": "new_edge:2282066:0:big",
    "key": "2282066:0",
@@ -168,7 +182,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2282066:0:big"
+  "new_edge:2282066:0:big",
+  "gone:2282066:0:2026-11-21T18:19:00.534Z"
  ],
  "kalshi_checked": null
 }

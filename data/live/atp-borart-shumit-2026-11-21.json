@@ -4,14 +4,14 @@
  "game": "Bor Artnak vs. Shunsuke Mitsui",
  "url": "https://polymarket.us/sports/atp/atp-borart-shumit-2026-11-21",
  "start_time": "2026-11-21T18:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "tennis match not uniquely found on ESPN",
-  "fetched_at": "2026-11-21T18:29:25.600Z"
+  "fetched_at": "2026-11-21T23:31:14.196Z"
  },
- "updated": "2026-11-21T18:29:25.508Z",
+ "updated": "2026-11-21T23:31:14.148Z",
  "open_taken_at": "2026-11-21T12:19:29.977Z",
  "thresholds": {
   "big": 10,
@@ -59,11 +59,25 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-21T18:29:25.508Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
  "alerts": [
+  {
+   "id": "gone:2757755:0:2026-11-21T18:29:25.508Z",
+   "key": "2757755:0",
+   "at": "2026-11-21T23:31:14.148Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Bor Artnak win",
+   "market": "Moneyline",
+   "now_odds": "+270",
+   "now_chance": 27,
+   "edge": 15,
+   "text": "Edge gone: Bor Artnak win (Moneyline) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/atp/atp-borart-shumit-2026-11-21"
+  },
   {
    "id": "new_edge:2757755:0:big",
    "key": "2757755:0",
@@ -80,7 +94,8 @@
   }
  ],
  "alert_seen": [
-  "new_edge:2757755:0:big"
+  "new_edge:2757755:0:big",
+  "gone:2757755:0:2026-11-21T18:29:25.508Z"
  ],
  "kalshi_checked": null
 }
