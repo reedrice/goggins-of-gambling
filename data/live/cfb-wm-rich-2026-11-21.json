@@ -4,14 +4,14 @@
  "game": "William & Mary vs. Richmond",
  "url": "https://polymarket.us/sports/cfb/cfb-wm-rich-2026-11-21",
  "start_time": "2026-11-21T17:00:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-21T12:28:18.507Z"
+  "fetched_at": "2026-11-21T18:29:09.019Z"
  },
- "updated": "2026-11-21T12:28:18.437Z",
+ "updated": "2026-11-21T18:29:08.869Z",
  "open_taken_at": "2026-11-20T08:35:22.904Z",
  "thresholds": {
   "big": 10,
@@ -241,6 +241,26 @@
  ],
  "edges": [
   {
+   "key": "2280687:1",
+   "market_id": "2280687",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming football event William & Mary vs Richmond scheduled for November 21, 2026 at 5:00 PM UTC?",
+   "side": "Spiders win",
+   "open_chance": 71,
+   "now_chance": 45,
+   "open_odds": "-245",
+   "now_odds": "+122",
+   "edge": 26,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-21T18:18:59.098Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2740247:1",
    "market_id": "2740247",
    "market": "Main spread",
@@ -257,7 +277,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-21T12:19:07.705Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -277,11 +297,58 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-21T12:28:18.437Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "new_edge:2280687:1:big",
+   "key": "2280687:1",
+   "at": "2026-11-21T18:18:59.098Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Spiders win",
+   "market": "Moneyline",
+   "now_odds": "-102",
+   "now_chance": 50.5,
+   "edge": 20.5,
+   "text": "New big edge: Spiders win (Moneyline), 21 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-wm-rich-2026-11-21"
+  },
+  {
+   "id": "gone:2740247:1:2026-11-21T12:19:07.705Z",
+   "key": "2740247:1",
+   "at": "2026-11-21T18:18:59.098Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Spiders -6.50",
+   "market": "Main spread",
+   "now_odds": "-117",
+   "now_chance": 54,
+   "edge": 4.5,
+   "text": "Edge gone: Spiders -6.50 (Main spread) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-wm-rich-2026-11-21"
+  },
+  {
+   "id": "gone:2740945:0:2026-11-21T12:28:18.437Z",
+   "key": "2740945:0",
+   "at": "2026-11-21T18:18:59.098Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Over 44.5",
+   "market": "Alt total",
+   "now_odds": "-108",
+   "now_chance": 52,
+   "edge": 4,
+   "text": "Edge gone: Over 44.5 (Alt total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-wm-rich-2026-11-21"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:2280687:1:big",
+  "gone:2740247:1:2026-11-21T12:19:07.705Z",
+  "gone:2740945:0:2026-11-21T12:28:18.437Z"
+ ],
  "kalshi_checked": null
 }

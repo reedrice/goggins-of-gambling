@@ -4,14 +4,14 @@
  "game": "Brown vs. Dartmouth",
  "url": "https://polymarket.us/sports/cfb/cfb-brwn-dart-2026-11-21",
  "start_time": "2026-11-21T18:00:00Z",
- "status": "pregame",
+ "status": "live",
  "game_context": {
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-21T12:28:20.419Z"
+  "fetched_at": "2026-11-21T18:29:10.587Z"
  },
- "updated": "2026-11-21T12:28:20.317Z",
+ "updated": "2026-11-21T18:29:10.454Z",
  "open_taken_at": "2026-11-20T08:35:24.641Z",
  "thresholds": {
   "big": 10,
@@ -109,6 +109,26 @@
  ],
  "edges": [
   {
+   "key": "2282070:0",
+   "market_id": "2282070",
+   "market": "Moneyline",
+   "group": "game",
+   "question": "Who will win in the upcoming football event Brown vs Dartmouth scheduled for November 21, 2026 at 6:00 PM UTC?",
+   "side": "Bears win",
+   "open_chance": 50,
+   "now_chance": 26,
+   "open_odds": "+100",
+   "now_odds": "+285",
+   "edge": 24,
+   "tier": "big",
+   "class": "unverified",
+   "reason": "Game info unavailable, can't check why it moved",
+   "context": "Game info unavailable, not checked",
+   "first_seen": "2026-11-21T18:19:00.788Z",
+   "status": "open",
+   "kalshi": null
+  },
+  {
    "key": "2741079:1",
    "market_id": "2741079",
    "market": "Alt total",
@@ -125,11 +145,43 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-21T12:19:09.648Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   }
  ],
- "alerts": [],
- "alert_seen": [],
+ "alerts": [
+  {
+   "id": "new_edge:2282070:0:big",
+   "key": "2282070:0",
+   "at": "2026-11-21T18:19:00.788Z",
+   "type": "new_edge",
+   "tier": "big",
+   "side": "Bears win",
+   "market": "Moneyline",
+   "now_odds": "+160",
+   "now_chance": 38.5,
+   "edge": 11.5,
+   "text": "New big edge: Bears win (Moneyline), 12 points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-brwn-dart-2026-11-21"
+  },
+  {
+   "id": "gone:2741079:1:2026-11-21T12:19:09.648Z",
+   "key": "2741079:1",
+   "at": "2026-11-21T18:19:00.788Z",
+   "type": "gone",
+   "tier": "slight",
+   "side": "Under 37.5",
+   "market": "Alt total",
+   "now_odds": "+117",
+   "now_chance": 46,
+   "edge": 5,
+   "text": "Edge gone: Under 37.5 (Alt total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cfb/cfb-brwn-dart-2026-11-21"
+  }
+ ],
+ "alert_seen": [
+  "new_edge:2282070:0:big",
+  "gone:2741079:1:2026-11-21T12:19:09.648Z"
+ ],
  "kalshi_checked": null
 }

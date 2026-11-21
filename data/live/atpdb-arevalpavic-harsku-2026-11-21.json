@@ -4,12 +4,12 @@
  "game": "Arevalo / Pavic vs. Harrison / Skupski",
  "url": "https://polymarket.us/sports/atpdb/atpdb-arevalpavic-harsku-2026-11-21",
  "start_time": "2026-11-21T11:00:00Z",
- "status": "live",
+ "status": "final",
  "game_context": {
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "187530",
-  "fetched_at": "2026-11-21T12:28:38.503Z",
+  "fetched_at": "2026-11-21T18:19:20.507Z",
   "tennis": true,
   "tennis_match": {
    "id": "187530",
@@ -17,17 +17,17 @@
    "date": "2026-11-21T11:10Z",
    "startDate": "2026-11-21T11:10Z",
    "timeValid": true,
-   "recent": true,
+   "recent": false,
    "status": {
-    "period": 2,
+    "period": 3,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2nd Set",
-     "shortDetail": "2nd"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    },
    "venue": {
@@ -41,7 +41,7 @@
    },
    "notes": [
     {
-     "text": "(4) Marcelo Arevalo (ESA) & Mate Pavic (CRO) is tied with (2) Christian Harrison (USA) & Neal Skupski (GBR) 7-6 (12-10) 2-2",
+     "text": "(4) Marcelo Arevalo (ESA) & Mate Pavic (CRO) bt (2) Christian Harrison (USA) & Neal Skupski (GBR) 7-6 (12-10) 6-7 (7-9) 1-0 (10-7)",
      "type": "event"
     }
    ],
@@ -55,7 +55,7 @@
      "type": "team",
      "order": 2,
      "homeAway": "away",
-     "possession": true,
+     "winner": false,
      "curatedRank": {
       "current": 2
      },
@@ -66,7 +66,14 @@
        "winner": false
       },
       {
-       "value": 2
+       "value": 7,
+       "tiebreak": 9,
+       "winner": true
+      },
+      {
+       "value": 0,
+       "tiebreak": 7,
+       "winner": false
       }
      ],
      "roster": {
@@ -141,7 +148,7 @@
      "type": "team",
      "order": 1,
      "homeAway": "home",
-     "possession": false,
+     "winner": true,
      "curatedRank": {
       "current": 4
      },
@@ -152,7 +159,14 @@
        "winner": true
       },
       {
-       "value": 2
+       "value": 6,
+       "tiebreak": 7,
+       "winner": false
+      },
+      {
+       "value": 1,
+       "tiebreak": 10,
+       "winner": true
       }
      ],
      "roster": {
@@ -222,11 +236,6 @@
      "statistics": []
     }
    ],
-   "situation": {
-    "onFirst": false,
-    "onSecond": false,
-    "onThird": false
-   },
    "tournamentId": 339,
    "type": {
     "id": "3",
@@ -243,28 +252,28 @@
    "doubles": true,
    "setTarget": 2
   },
-  "game_state": "in",
-  "espn_status": "STATUS_IN_PROGRESS",
-  "period": 2,
-  "clock": "2nd Set",
+  "game_state": "post",
+  "espn_status": "STATUS_FINAL",
+  "period": 3,
+  "clock": "Final",
   "regulation_secs_left": null,
   "away": {
    "abbr": "Christian Harrison / Neal Skupski",
    "alias": "Christian Harrison / Neal Skupski",
    "name": "Christian Harrison / Neal Skupski",
-   "score": 0
+   "score": 1
   },
   "home": {
    "abbr": "Marcelo Arevalo / Mate Pavic",
    "alias": "Marcelo Arevalo / Mate Pavic",
    "name": "Marcelo Arevalo / Mate Pavic",
-   "score": 1
+   "score": 2
   },
   "injuries": [],
   "in_game_injuries": [],
   "leaders": []
  },
- "updated": "2026-11-21T12:28:38.430Z",
+ "updated": "2026-11-21T18:19:20.467Z",
  "open_taken_at": "2026-11-20T23:10:16.026Z",
  "thresholds": {
   "big": 10,
