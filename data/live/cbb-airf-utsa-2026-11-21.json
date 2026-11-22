@@ -9,9 +9,9 @@
   "available": false,
   "source": "ESPN site.api.espn.com",
   "error": "game not found on ESPN scoreboard",
-  "fetched_at": "2026-11-21T23:40:45.027Z"
+  "fetched_at": "2026-11-22T00:00:15.062Z"
  },
- "updated": "2026-11-21T23:40:44.966Z",
+ "updated": "2026-11-22T00:00:14.898Z",
  "open_taken_at": "2026-11-20T08:35:20.779Z",
  "thresholds": {
   "big": 10,
@@ -571,23 +571,23 @@
  ],
  "edges": [
   {
-   "key": "2750623:0",
-   "market_id": "2750623",
-   "market": "Main spread",
+   "key": "2750651:0",
+   "market_id": "2750651",
+   "market": "Main total",
    "group": "game",
-   "question": "Will Air Force cover +14.5 vs UTSA in Air Force vs. UTSA?",
-   "side": "Falcons +14.50",
-   "open_chance": 81,
-   "now_chance": 31,
-   "open_odds": "-426",
-   "now_odds": "+223",
-   "edge": 50,
+   "question": "Will the total in Air Force vs. UTSA be more than 162.5?",
+   "side": "Over 162.5",
+   "open_chance": 89,
+   "now_chance": 21,
+   "open_odds": "-809",
+   "now_odds": "+376",
+   "edge": 68,
    "tier": "big",
    "class": "unverified",
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-21T23:30:52.897Z",
-   "status": "open",
+   "first_seen": "2026-11-21T23:40:44.966Z",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -607,27 +607,7 @@
    "reason": "Game info unavailable, can't check why it moved",
    "context": "Game info unavailable, not checked",
    "first_seen": "2026-11-21T23:40:44.966Z",
-   "status": "open",
-   "kalshi": null
-  },
-  {
-   "key": "2750651:0",
-   "market_id": "2750651",
-   "market": "Main total",
-   "group": "game",
-   "question": "Will the total in Air Force vs. UTSA be more than 162.5?",
-   "side": "Over 162.5",
-   "open_chance": 89,
-   "now_chance": 59,
-   "open_odds": "-809",
-   "now_odds": "-144",
-   "edge": 30,
-   "tier": "big",
-   "class": "unverified",
-   "reason": "Game info unavailable, can't check why it moved",
-   "context": "Game info unavailable, not checked",
-   "first_seen": "2026-11-21T23:40:44.966Z",
-   "status": "open",
+   "status": "gone",
    "kalshi": null
   },
   {
@@ -753,6 +733,34 @@
  ],
  "alerts": [
   {
+   "id": "gone:2750651:0:2026-11-21T23:40:44.966Z",
+   "key": "2750651:0",
+   "at": "2026-11-22T00:00:14.898Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 162.5",
+   "market": "Main total",
+   "now_odds": "+376",
+   "now_chance": 21,
+   "edge": 68,
+   "text": "Edge gone: Over 162.5 (Main total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-airf-utsa-2026-11-21"
+  },
+  {
+   "id": "gone:2750645:0:2026-11-21T23:40:44.966Z",
+   "key": "2750645:0",
+   "at": "2026-11-21T23:54:07.386Z",
+   "type": "gone",
+   "tier": "big",
+   "side": "Over 168.5",
+   "market": "Alt total",
+   "now_odds": "+285",
+   "now_chance": 26,
+   "edge": 36,
+   "text": "Edge gone: Over 168.5 (Alt total) is no longer 4+ points cheaper than open.",
+   "url": "https://polymarket.us/sports/cbb/cbb-airf-utsa-2026-11-21"
+  },
+  {
    "id": "new_edge:2750645:0:big",
    "key": "2750645:0",
    "at": "2026-11-21T23:40:44.966Z",
@@ -792,20 +800,6 @@
    "now_chance": 18,
    "edge": 22,
    "text": "Edge gone: Over 178.5 (Alt total) is no longer 4+ points cheaper than open.",
-   "url": "https://polymarket.us/sports/cbb/cbb-airf-utsa-2026-11-21"
-  },
-  {
-   "id": "new_edge:2750623:0:big",
-   "key": "2750623:0",
-   "at": "2026-11-21T23:30:52.897Z",
-   "type": "new_edge",
-   "tier": "big",
-   "side": "Falcons +14.50",
-   "market": "Main spread",
-   "now_odds": "+245",
-   "now_chance": 29,
-   "edge": 52,
-   "text": "New big edge: Falcons +14.50 (Main spread), 52 points cheaper than open.",
    "url": "https://polymarket.us/sports/cbb/cbb-airf-utsa-2026-11-21"
   },
   {
@@ -906,7 +900,9 @@
   "gone:2750646:1:2026-11-21T18:18:57.409Z",
   "new_edge:2750645:0:big",
   "new_edge:2750651:0:big",
-  "gone:2750650:0:2026-11-21T23:30:52.897Z"
+  "gone:2750650:0:2026-11-21T23:30:52.897Z",
+  "gone:2750645:0:2026-11-21T23:40:44.966Z",
+  "gone:2750651:0:2026-11-21T23:40:44.966Z"
  ],
  "kalshi_checked": null
 }
