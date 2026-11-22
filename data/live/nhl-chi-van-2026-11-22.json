@@ -9,7 +9,7 @@
   "available": true,
   "source": "ESPN site.api.espn.com",
   "event_id": "401892772",
-  "fetched_at": "2026-11-22T00:00:31.966Z",
+  "fetched_at": "2026-11-22T12:03:05.580Z",
   "game_state": "pre",
   "espn_status": "STATUS_SCHEDULED",
   "period": 0,
@@ -68,6 +68,13 @@
    },
    {
     "team": "CHI",
+    "player": "Connor Bedard",
+    "short": "C. Bedard",
+    "pos": "C",
+    "status": "Out"
+   },
+   {
+    "team": "CHI",
     "player": "Anton Frondell",
     "short": "A. Frondell",
     "pos": "C",
@@ -79,13 +86,6 @@
     "short": "B. Byram",
     "pos": "D",
     "status": "Injured Reserve"
-   },
-   {
-    "team": "CHI",
-    "player": "Connor Bedard",
-    "short": "C. Bedard",
-    "pos": "C",
-    "status": "Out"
    }
   ],
   "in_game_injuries": [],
@@ -98,9 +98,9 @@
    },
    {
     "team": "VAN",
-    "player": "Elias Pettersson",
-    "short": "E. Pettersson",
-    "pos": "C"
+    "player": "Brock Boeser",
+    "short": "B. Boeser",
+    "pos": "RW"
    },
    {
     "team": "VAN",
@@ -128,7 +128,7 @@
    }
   ]
  },
- "updated": "2026-11-22T00:00:31.617Z",
+ "updated": "2026-11-22T12:03:05.367Z",
  "open_taken_at": "2026-11-21T12:19:27.472Z",
  "thresholds": {
   "big": 10,
@@ -158,28 +158,6 @@
    "taken_at": "2026-11-21T12:19:27.472Z"
   },
   {
-   "market_id": "2664158",
-   "market": "Main spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": 1.5,
-   "question": "Will the CHI Blackhawks cover 1.5 vs the VAN Canucks in CHI vs VAN?",
-   "sides": [
-    "Blackhawks +1.50",
-    "Canucks -1.50"
-   ],
-   "teams": [
-    "Blackhawks",
-    "Canucks"
-   ],
-   "player": null,
-   "mid": 70,
-   "yes_buy": 72,
-   "no_buy": 32,
-   "taken_at": "2026-11-21T18:19:13.723Z"
-  },
-  {
    "market_id": "2664169",
    "market": "Main total",
    "group": "game",
@@ -200,6 +178,28 @@
    "yes_buy": 49,
    "no_buy": 55,
    "taken_at": "2026-11-21T18:19:13.723Z"
+  },
+  {
+   "market_id": "2664156",
+   "market": "Main spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": -1.5,
+   "question": "Will the CHI Blackhawks cover -1.5 vs the VAN Canucks in CHI vs VAN?",
+   "sides": [
+    "Blackhawks -1.50",
+    "Canucks +1.50"
+   ],
+   "teams": [
+    "Blackhawks",
+    "Canucks"
+   ],
+   "player": null,
+   "mid": 29,
+   "yes_buy": 32,
+   "no_buy": 74,
+   "taken_at": "2026-11-21T12:19:27.472Z"
   },
   {
    "market_id": "2664161",
@@ -290,6 +290,28 @@
    "taken_at": "2026-11-21T23:31:06.388Z"
   },
   {
+   "market_id": "2664158",
+   "market": "Alt spread",
+   "group": "game",
+   "mtype": "spread",
+   "period": "full_game",
+   "line": 1.5,
+   "question": "Will the CHI Blackhawks cover 1.5 vs the VAN Canucks in CHI vs VAN?",
+   "sides": [
+    "Blackhawks +1.50",
+    "Canucks -1.50"
+   ],
+   "teams": [
+    "Blackhawks",
+    "Canucks"
+   ],
+   "player": null,
+   "mid": 70,
+   "yes_buy": 72,
+   "no_buy": 32,
+   "taken_at": "2026-11-21T18:19:13.723Z"
+  },
+  {
    "market_id": "2664167",
    "market": "Alt total",
    "group": "game",
@@ -310,28 +332,6 @@
    "yes_buy": 61,
    "no_buy": 42,
    "taken_at": "2026-11-21T23:31:06.388Z"
-  },
-  {
-   "market_id": "2664156",
-   "market": "Alt spread",
-   "group": "game",
-   "mtype": "spread",
-   "period": "full_game",
-   "line": -1.5,
-   "question": "Will the CHI Blackhawks cover -1.5 vs the VAN Canucks in CHI vs VAN?",
-   "sides": [
-    "Blackhawks -1.50",
-    "Canucks +1.50"
-   ],
-   "teams": [
-    "Blackhawks",
-    "Canucks"
-   ],
-   "player": null,
-   "mid": 29,
-   "yes_buy": 32,
-   "no_buy": 74,
-   "taken_at": "2026-11-21T12:19:27.472Z"
   },
   {
    "market_id": "2664171",
@@ -442,13 +442,276 @@
    "yes_buy": 10,
    "no_buy": 95,
    "taken_at": "2026-11-21T23:31:06.388Z"
+  },
+  {
+   "market_id": "2803872",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Filip Chytil record at least 1 points in CHI vs VAN?",
+   "sides": [
+    "Yes: Filip Chytil record at least 1 points in CHI vs VAN",
+    "No: Filip Chytil record at least 1 points in CHI vs VAN"
+   ],
+   "teams": [
+    "Canucks",
+    "Canucks"
+   ],
+   "player": "Filip Chytil",
+   "mid": 45.5,
+   "yes_buy": 46,
+   "no_buy": 55,
+   "taken_at": "2026-11-22T11:55:53.191Z"
+  },
+  {
+   "market_id": "2803884",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Marco Rossi record at least 1 points in CHI vs VAN?",
+   "sides": [
+    "Yes: Marco Rossi record at least 1 points in CHI vs VAN",
+    "No: Marco Rossi record at least 1 points in CHI vs VAN"
+   ],
+   "teams": [
+    "Canucks",
+    "Canucks"
+   ],
+   "player": "Marco Rossi",
+   "mid": 44.5,
+   "yes_buy": 46,
+   "no_buy": 57,
+   "taken_at": "2026-11-22T11:55:53.191Z"
+  },
+  {
+   "market_id": "2792549",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Roman Kantserov record at least 1 assists in CHI vs VAN?",
+   "sides": [
+    "Yes: Roman Kantserov record at least 1 assists in CHI vs VAN",
+    "No: Roman Kantserov record at least 1 assists in CHI vs VAN"
+   ],
+   "teams": [
+    "Blackhawks",
+    "Blackhawks"
+   ],
+   "player": "Roman Kantserov",
+   "mid": 32,
+   "yes_buy": 35,
+   "no_buy": 71,
+   "taken_at": "2026-11-22T11:55:53.191Z"
+  },
+  {
+   "market_id": "2792509",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Frank Nazar record at least 1 goals in CHI vs VAN?",
+   "sides": [
+    "Yes: Frank Nazar record at least 1 goals in CHI vs VAN",
+    "No: Frank Nazar record at least 1 goals in CHI vs VAN"
+   ],
+   "teams": [
+    "Blackhawks",
+    "Blackhawks"
+   ],
+   "player": "Frank Nazar",
+   "mid": 33,
+   "yes_buy": 34,
+   "no_buy": 68,
+   "taken_at": "2026-11-22T11:55:53.191Z"
+  },
+  {
+   "market_id": "2803888",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Zeev Buium record at least 1 points in CHI vs VAN?",
+   "sides": [
+    "Yes: Zeev Buium record at least 1 points in CHI vs VAN",
+    "No: Zeev Buium record at least 1 points in CHI vs VAN"
+   ],
+   "teams": [
+    "Canucks",
+    "Canucks"
+   ],
+   "player": "Zeev Buium",
+   "mid": 33.5,
+   "yes_buy": 34,
+   "no_buy": 67,
+   "taken_at": "2026-11-22T11:55:53.191Z"
+  },
+  {
+   "market_id": "2803909",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Jake DeBrusk record at least 1 assists in CHI vs VAN?",
+   "sides": [
+    "Yes: Jake DeBrusk record at least 1 assists in CHI vs VAN",
+    "No: Jake DeBrusk record at least 1 assists in CHI vs VAN"
+   ],
+   "teams": [
+    "Canucks",
+    "Canucks"
+   ],
+   "player": "Jake DeBrusk",
+   "mid": 30,
+   "yes_buy": 33,
+   "no_buy": 73,
+   "taken_at": "2026-11-22T11:55:53.191Z"
+  },
+  {
+   "market_id": "2792532",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Jake DeBrusk record at least 1 goals in CHI vs VAN?",
+   "sides": [
+    "Yes: Jake DeBrusk record at least 1 goals in CHI vs VAN",
+    "No: Jake DeBrusk record at least 1 goals in CHI vs VAN"
+   ],
+   "teams": [
+    "Canucks",
+    "Canucks"
+   ],
+   "player": "Jake DeBrusk",
+   "mid": 31.5,
+   "yes_buy": 33,
+   "no_buy": 70,
+   "taken_at": "2026-11-22T11:55:53.191Z"
+  },
+  {
+   "market_id": "2792515",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Roman Kantserov record at least 1 goals in CHI vs VAN?",
+   "sides": [
+    "Yes: Roman Kantserov record at least 1 goals in CHI vs VAN",
+    "No: Roman Kantserov record at least 1 goals in CHI vs VAN"
+   ],
+   "teams": [
+    "Blackhawks",
+    "Blackhawks"
+   ],
+   "player": "Roman Kantserov",
+   "mid": 29.5,
+   "yes_buy": 32,
+   "no_buy": 73,
+   "taken_at": "2026-11-22T11:55:53.191Z"
+  },
+  {
+   "market_id": "2792512",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Tyler Bertuzzi record at least 1 goals in CHI vs VAN?",
+   "sides": [
+    "Yes: Tyler Bertuzzi record at least 1 goals in CHI vs VAN",
+    "No: Tyler Bertuzzi record at least 1 goals in CHI vs VAN"
+   ],
+   "teams": [
+    "Blackhawks",
+    "Blackhawks"
+   ],
+   "player": "Tyler Bertuzzi",
+   "mid": 29.5,
+   "yes_buy": 31,
+   "no_buy": 72,
+   "taken_at": "2026-11-22T12:03:05.367Z"
+  },
+  {
+   "market_id": "2792521",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Ryan Donato record at least 1 goals in CHI vs VAN?",
+   "sides": [
+    "Yes: Ryan Donato record at least 1 goals in CHI vs VAN",
+    "No: Ryan Donato record at least 1 goals in CHI vs VAN"
+   ],
+   "teams": [
+    "Blackhawks",
+    "Blackhawks"
+   ],
+   "player": "Ryan Donato",
+   "mid": 19,
+   "yes_buy": 21,
+   "no_buy": 83,
+   "taken_at": "2026-11-22T11:55:53.191Z"
+  },
+  {
+   "market_id": "2792529",
+   "market": "Player prop",
+   "group": "prop",
+   "mtype": "prop",
+   "period": "full_game",
+   "line": 1,
+   "question": "Will Brock Boeser record at least 1 goals in CHI vs VAN?",
+   "sides": [
+    "Yes: Brock Boeser record at least 1 goals in CHI vs VAN",
+    "No: Brock Boeser record at least 1 goals in CHI vs VAN"
+   ],
+   "teams": [
+    "Canucks",
+    "Canucks"
+   ],
+   "player": "Brock Boeser",
+   "mid": 33.5,
+   "yes_buy": 36,
+   "no_buy": 69,
+   "taken_at": "2026-11-22T11:55:53.191Z"
   }
  ],
- "edges": [],
+ "edges": [
+  {
+   "key": "2664156:1",
+   "market_id": "2664156",
+   "market": "Main spread",
+   "group": "game",
+   "question": "Will the CHI Blackhawks cover -1.5 vs the VAN Canucks in CHI vs VAN?",
+   "side": "Canucks +1.50",
+   "open_chance": 74,
+   "now_chance": 70,
+   "open_odds": "-285",
+   "now_odds": "-233",
+   "edge": 4,
+   "tier": "slight",
+   "class": "edge",
+   "reason": null,
+   "context": "Pregame",
+   "first_seen": "2026-11-22T11:55:53.191Z",
+   "status": "open",
+   "kalshi": null
+  }
+ ],
  "alerts": [],
  "alert_seen": [],
  "kalshi_checked": {
-  "at": "2026-11-22T00:00:31.974Z",
+  "at": "2026-11-22T12:03:05.597Z",
   "event": "26NOV22CHIVAN"
  }
 }
